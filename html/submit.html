@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>폰트 등록 신청 — LETSUM(렛섬)</title>
+<title>폰트 등록·제보 — LETSUM(렛섬)</title>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="폰트 등록 신청 — LETSUM(렛섬)"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새에서 비교하고, 글자 지원과 라이선스까지 한 화면에서 확인합니다.">
@@ -17,57 +17,34 @@
       <a href="index.html">작업대</a>
       <a href="guide.html">라이선스 가이드</a>
       <a href="subset.html">서브셋 도구</a>
-      <a href="submit.html" class="on">폰트 등록</a>
+      <a href="submit.html" class="on">폰트 등록·제보</a>
     </nav>
     <div class="sp"></div>
   </div>
 </header>
 
 <main class="wrap page">
-  <h1>폰트 등록 신청</h1>
-  <p class="lead">폰트 제작자·배포사라면 직접 등록을 신청할 수 있습니다. 접수된 폰트는 라이선스 원문 검수를 거쳐 공개됩니다.</p>
+  <h1>폰트 등록·제보</h1>
+  <p class="lead">폰트 제작자·배포사의 등록 신청과 이용자의 무료 폰트 제보를 받습니다. 접수된 폰트는 라이선스 원문 검수를 거쳐 공개됩니다.</p>
 
-  <form class="demo" id="submitForm">
-    <label>신청 유형
-      <select name="reqtype">
-        <option>무료 폰트 등록 신청</option>
-        <option>제작자 입점 신청 (유료 폰트)</option>
-      </select>
-    </label>
-    <label>폰트 이름 <input required name="name" placeholder="예: 고요체"></label>
-    <label>제작자 / 저작권자 <input required name="designer" placeholder="예: 홍길동"></label>
-    <label>공식 배포 페이지 주소 <input required name="dist" type="url" placeholder="https://"></label>
-    <label>라이선스 원문 주소 <input required name="license" type="url" placeholder="https://"></label>
-    <label>라이선스 종류
-      <select name="type">
-        <option>OFL (Open Font License)</option>
-        <option>자체 라이선스 (상업용 무료)</option>
-        <option>기타 — 검수 시 확인</option>
-      </select>
-    </label>
-    <label>연락 이메일 <input required name="email" type="email" placeholder="you@example.com"></label>
-    <label>메모 <textarea name="memo" rows="3" placeholder="굵기 구성, 특징 등을 알려주세요"></textarea></label>
-    <button class="btn blue" type="submit">신청하기</button>
-    <p class="note" id="formMsg">※ 시안 안내: 이 폼은 데모로, 입력 내용은 이 브라우저에만 저장되고 서버로 전송되지 않습니다. 정식 서비스에서는 관리자 검수 큐로 접수됩니다.</p>
-  </form>
+  <!-- Google Forms 임베드: 아래 FORM_URL을 실제 폼의 "삽입" 주소로 바꾸면 폼이 표시됩니다 -->
+  <div id="formWrap"></div>
+  <div class="callout" id="formAlt">
+    <b>접수 방법</b><br>
+    등록·제보는 접수 폼으로 받습니다. 폼이 보이지 않으면 아래 내용을 적어 <a href="mailto:interq4@naver.com?subject=%5BLETSUM%5D%20%ED%8F%B0%ED%8A%B8%20%EB%93%B1%EB%A1%9D%C2%B7%EC%A0%9C%EB%B3%B4" style="color:var(--accent);font-weight:700">interq4@naver.com</a>으로 보내 주세요.<br>
+    <span class="note">폰트 이름 · 제작자/저작권자 · 공식 배포 페이지 주소 · 라이선스 원문 주소 · 라이선스 종류(OFL/자체/기타) · 연락 이메일 · 메모(굵기 구성, 특징)</span>
+  </div>
+  <script>
+  var FORM_URL = ""; // 예: https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true
+  if (FORM_URL) { document.getElementById("formWrap").innerHTML = '<iframe src="' + FORM_URL + '" width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0" style="border:1px solid var(--rule2);background:#fff">로드 중…</iframe>'; document.getElementById("formAlt").querySelector("b").textContent = "폼이 열리지 않을 때"; }
+  </script>
 </main>
 
 <footer>
   <div class="wrap">
-    <p class="fine">LETSUM(렛섬) 시안 — 모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다.</p>
+    <p class="fine">LETSUM(렛섬) — 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a> · 모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다.<br><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="admin.html">관리자</a></p>
   </div>
 </footer>
 
-<script>
-document.getElementById("submitForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(this).entries());
-  const list = JSON.parse(localStorage.getItem("fm_submits") || "[]");
-  list.push({ ...data, at: new Date().toISOString(), status: "검수 대기" });
-  localStorage.setItem("fm_submits", JSON.stringify(list));
-  document.getElementById("formMsg").textContent = "✅ 신청이 접수되었습니다(데모: 이 브라우저에 저장). 관리자 화면에서 신청 내역을 확인할 수 있습니다.";
-  this.reset();
-});
-</script>
 </body>
 </html>

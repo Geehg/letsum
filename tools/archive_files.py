@@ -40,13 +40,16 @@ def google_zip(family, dest):
     raw = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read().decode("utf-8")
     man = json.loads(raw[raw.index("{"):])["manifest"]
     buf = io.BytesIO(); srcs = []
+    # 내용이 같으면 해시도 같도록 ZIP 안의 시각을 고정한다(재업로드 방지)
+    def put(z, name, data):
+        zi = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0)); zi.compress_type = zipfile.ZIP_DEFLATED; z.writestr(zi, data)
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for f in man.get("files", []):  # OFL.txt 등 본문이 들어 있는 파일
-            z.writestr(f["filename"], f["contents"])
+            put(z, f["filename"], f["contents"])
         for r in man.get("fileRefs", []):  # 폰트 파일
             data = urllib.request.urlopen(urllib.request.Request(r["url"], headers=UA), timeout=120).read()
-            z.writestr(r["filename"], data); srcs.append(r["url"])
-        z.writestr("SOURCE.txt", f"Mirrored by LETSUM from Google Fonts ({date.today().isoformat()})\n" + "\n".join(srcs) + "\n")
+            put(z, r["filename"], data); srcs.append(r["url"])
+        put(z, "SOURCE.txt", "Mirrored by LETSUM from Google Fonts\n" + "\n".join(srcs) + "\n")
     data = buf.getvalue(); open(dest, "wb").write(data)
     return hashlib.sha256(data).hexdigest(), len(data), srcs
 

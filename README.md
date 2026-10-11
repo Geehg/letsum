@@ -3,8 +3,8 @@
 LETSUM(렛섬) — 한글 폰트 작업대. 상업용 무료 한글 폰트를 **고르고, 검증하고, 바로 적용**하는 흐름을 한 화면에 둡니다.
 
 - 사이트: https://letsum.app (NAS 컨테이너 포트 8516, nginx 정적 서빙)
-- 소스: `html/` — `index.html`(작업대) · `guide.html`(라이선스 가이드) · `subset.html`(서브셋 생성기) · `submit.html`(폰트 등록) · `admin.html`(관리자 데모)
-- 데이터: `html/js/data.js` — 폰트 14종(전부 OFL, Google Fonts로 렌더링), 문장 프리셋, 상황별 큐레이션, 유료 폰트 대안, 라틴 짝꿍
+- 소스: `html/` — `index.html`(작업대) · `guide.html`(라이선스 가이드) · `subset.html`(서브셋 생성기) · `submit.html`(폰트 등록) · `admin.html`(관리자, 브라우저 저장 데모) · `privacy.html` · `terms.html`
+- 데이터: `html/js/data.js` — 폰트 38종(Google Fonts 한글 전체, 전부 OFL), 문장 프리셋, 상황별 큐레이션, 유료 폰트 대안, 라틴 짝꿍
 - 리서치: `docs/research_v2_global_benchmark.md`, `docs/demand_and_download_strategy.md`(실수요·다운로드 전략), `docs/automation_feasibility.md` — 국내·해외 벤치마크와 리디자인 근거
 
 ## 주요 기능

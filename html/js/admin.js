@@ -9,12 +9,13 @@
   const logged = sessionStorage.getItem("fm_admin") === "1";
   if (logged) showDash();
 
-  $("#loginForm").addEventListener("submit", (e) => {
+  async function sha256(t) { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""); }
+  $("#loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    if ($("#aid").value === ADMIN_ACCOUNT.id && $("#apw").value === ADMIN_ACCOUNT.pw) {
+    if ($("#aid").value === ADMIN_ACCOUNT.id && (await sha256($("#apw").value)) === ADMIN_ACCOUNT.pwHash) {
       sessionStorage.setItem("fm_admin", "1"); showDash();
     } else {
-      $("#loginMsg").textContent = "아이디 또는 비밀번호가 다릅니다. (데모: admin / font1234)";
+      $("#loginMsg").textContent = "아이디 또는 비밀번호가 다릅니다.";
     }
   });
   $("#logoutBtn").addEventListener("click", () => { sessionStorage.removeItem("fm_admin"); location.reload(); });

@@ -82,5 +82,149 @@
   "ok": true,
   "code": 200,
   "checked": "2026-10-11"
+ },
+ "asta-sans": {
+  "url": "https://fonts.google.com/download?family=Asta+Sans",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gothic-a1": {
+  "url": "https://fonts.google.com/download?family=Gothic+A1",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "nanum-gothic": {
+  "url": "https://fonts.google.com/download?family=Nanum+Gothic",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "nanum-myeongjo": {
+  "url": "https://fonts.google.com/download?family=Nanum+Myeongjo",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "nanum-gothic-coding": {
+  "url": "https://fonts.google.com/download?family=Nanum+Gothic+Coding",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "nanum-brush-script": {
+  "url": "https://fonts.google.com/download?family=Nanum+Brush+Script",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "sunflower": {
+  "url": "https://fonts.google.com/download?family=Sunflower",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "stylish": {
+  "url": "https://fonts.google.com/download?family=Stylish",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "song-myung": {
+  "url": "https://fonts.google.com/download?family=Song+Myung",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "diphylleia": {
+  "url": "https://fonts.google.com/download?family=Diphylleia",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "grandiflora-one": {
+  "url": "https://fonts.google.com/download?family=Grandiflora+One",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "orbit": {
+  "url": "https://fonts.google.com/download?family=Orbit",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "moirai-one": {
+  "url": "https://fonts.google.com/download?family=Moirai+One",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gasoek-one": {
+  "url": "https://fonts.google.com/download?family=Gasoek+One",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "bagel-fat-one": {
+  "url": "https://fonts.google.com/download?family=Bagel+Fat+One",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "cute-font": {
+  "url": "https://fonts.google.com/download?family=Cute+Font",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "black-and-white-picture": {
+  "url": "https://fonts.google.com/download?family=Black+And+White+Picture",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gugi": {
+  "url": "https://fonts.google.com/download?family=Gugi",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "kirang-haerang": {
+  "url": "https://fonts.google.com/download?family=Kirang+Haerang",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "yeon-sung": {
+  "url": "https://fonts.google.com/download?family=Yeon+Sung",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "dokdo": {
+  "url": "https://fonts.google.com/download?family=Dokdo",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "east-sea-dokdo": {
+  "url": "https://fonts.google.com/download?family=East+Sea+Dokdo",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gamja-flower": {
+  "url": "https://fonts.google.com/download?family=Gamja+Flower",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "hi-melody": {
+  "url": "https://fonts.google.com/download?family=Hi+Melody",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
  }
 }

@@ -41,7 +41,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "asta-sans",
   "category": "Sans Serif",
   "weights": [
    "300",
@@ -88,7 +88,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "bagel-fat-one",
   "category": "Display",
   "weights": [
    "400"
@@ -130,7 +130,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "black-and-white-picture",
   "category": "Display",
   "weights": [
    "400"
@@ -212,7 +212,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "cute-font",
   "category": "Display",
   "weights": [
    "400"
@@ -254,7 +254,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "diphylleia",
   "category": "Serif",
   "weights": [
    "400"
@@ -337,7 +337,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "dokdo",
   "category": "Display",
   "weights": [
    "400"
@@ -425,7 +425,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "east-sea-dokdo",
   "category": "Handwriting",
   "weights": [
    "400"
@@ -513,7 +513,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "gamja-flower",
   "category": "Handwriting",
   "weights": [
    "400"
@@ -555,7 +555,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "gasoek-one",
   "category": "Sans Serif",
   "weights": [
    "400"
@@ -613,7 +613,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "gothic-a1",
   "category": "Sans Serif",
   "weights": [
    "100",
@@ -748,7 +748,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "grandiflora-one",
   "category": "Serif",
   "weights": [
    "400"
@@ -790,7 +790,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "gugi",
   "category": "Display",
   "weights": [
    "400"
@@ -896,7 +896,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "hi-melody",
   "category": "Handwriting",
   "weights": [
    "400"
@@ -1039,7 +1039,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "kirang-haerang",
   "category": "Display",
   "weights": [
    "400"
@@ -1081,7 +1081,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "moirai-one",
   "category": "Display",
   "weights": [
    "400"
@@ -1123,7 +1123,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "nanum-brush-script",
   "category": "Handwriting",
   "weights": [
    "400"
@@ -1168,7 +1168,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "nanum-gothic",
   "category": "Sans Serif",
   "weights": [
    "400",
@@ -1213,7 +1213,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "nanum-gothic-coding",
   "category": "Handwriting",
   "weights": [
    "400",
@@ -1259,7 +1259,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "nanum-myeongjo",
   "category": "Serif",
   "weights": [
    "400",
@@ -1471,7 +1471,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "orbit",
   "category": "Sans Serif",
   "weights": [
    "400"
@@ -1595,7 +1595,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "song-myung",
   "category": "Serif",
   "weights": [
    "400"
@@ -1636,7 +1636,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "stylish",
   "category": "Sans Serif",
   "weights": [
    "400"
@@ -1681,7 +1681,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "sunflower",
   "category": "Sans Serif",
   "weights": [
    "300",
@@ -1724,7 +1724,7 @@
   "history": [],
   "license_auto": "OFL",
   "review": "pending",
-  "site_id": null,
+  "site_id": "yeon-sung",
   "category": "Display",
   "weights": [
    "400"
@@ -1858,7 +1858,7 @@
     "url": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
     "tag": "2.003R",
     "published": "2024-07-30T18:57:27Z",
-    "license": null
+    "license": "NOASSERTION"
    }
   },
   "first_seen": "2026-10-11",
