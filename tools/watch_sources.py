@@ -202,19 +202,49 @@ def export_candidates(catalog):
         "// 자동 생성 초안 — TODO를 채우고 라이선스 원문을 확인한 뒤 data.js로 옮기세요\n" + "\n".join(stub(r) for r in rows) + "\n")
     return len(rows)
 
+LINKS = os.path.join(HERE, "..", "html", "data", "links.json")
+
+def check_links():
+    """사이트에 올라간 폰트의 직접 다운로드 링크가 살아 있는지 점검 → html/data/links.json (끊기면 UI가 배포처 페이지로 안내)."""
+    try:
+        src = open(SITE_DATA, encoding="utf-8").read()
+    except Exception:
+        return {}
+    out = {}
+    for m in re.finditer(r'\{ id: "([^"]+)", name: "[^"]*", en: "([^"]+)"', src):
+        fid, en = m.group(1), m.group(2)
+        url = f"https://fonts.google.com/download?family={en.replace(' ', '+')}"
+        try:
+            req = urllib.request.Request(url, headers=dict(UA, Range="bytes=0-0"))
+            with urllib.request.urlopen(req, timeout=25) as r:
+                ok = r.status in (200, 206)
+                out[fid] = {"url": url, "ok": ok, "code": r.status, "checked": TODAY}
+        except urllib.error.HTTPError as e:
+            out[fid] = {"url": url, "ok": False, "code": e.code, "checked": TODAY}
+        except Exception as e:
+            out[fid] = {"url": url, "ok": False, "code": str(e)[:40], "checked": TODAY}
+    os.makedirs(os.path.dirname(LINKS), exist_ok=True)
+    json.dump(out, open(LINKS, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return out
+
 def main():
     os.makedirs(STATE_DIR, exist_ok=True)
+    links = check_links()
+    dead = [k for k, v in links.items() if not v["ok"]]
     catalog = load_json(CATALOG, {})
     first = not catalog
     snap = {"checked": TODAY, "google": root_google(), "fontsource": root_fontsource(), "github": root_github(),
             "kogl": root_kogl(), "pages": root_pages()}
     changes = merge(catalog, snap)
+    for k in dead:
+        changes.append(f"- 🔗 다운로드 직링크 끊김: **{k}** ({links[k]['code']}) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요")
     json.dump(catalog, open(CATALOG, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(snap, open(SNAPSHOT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     n_cand = export_candidates(catalog)
     roots = {k: len(v) for k, v in snap.items() if isinstance(v, dict)}
     stat = (f"카탈로그 {len(catalog)}종 · 루트 수집 " + ", ".join(f"{k} {v}" for k, v in roots.items())
-            + f" · 사이트 반영 {sum(1 for r in catalog.values() if r.get('site_id'))}종 · 검수 대기 {sum(1 for r in catalog.values() if r.get('review') == 'pending')}종")
+            + f" · 사이트 반영 {sum(1 for r in catalog.values() if r.get('site_id'))}종 · 검수 대기 {sum(1 for r in catalog.values() if r.get('review') == 'pending')}종"
+            + f" · 다운로드 링크 {len(links) - len(dead)}/{len(links)} 정상")
     body = "\n".join(changes) if (changes and not first) else ("- 최초 수집 — 모든 레코드를 새로 만들었습니다" if first else "- 변경 없음")
     md = f"# 배포처 수집 보고 — {TODAY}\n\n{stat}\n\n{body}\n\n> 라이선스 해석·사이트 공개는 자동화하지 않습니다. 카탈로그(tools/state/catalog.json)의 review 필드는 사람이 바꿉니다." + (f"\n> 승인 후 미반영 {n_cand}종 초안: tools/state/candidates.data.js" if n_cand else "")
     open(REPORT, "w", encoding="utf-8").write(md + "\n")

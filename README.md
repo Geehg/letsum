@@ -5,13 +5,16 @@ LETSUM(렛섬) — 한글 폰트 작업대. 상업용 무료 한글 폰트를 **
 - 사이트: https://letsum.app (NAS 컨테이너 포트 8516, nginx 정적 서빙)
 - 소스: `html/` — `index.html`(작업대) · `guide.html`(라이선스 가이드) · `subset.html`(서브셋 생성기) · `submit.html`(폰트 등록) · `admin.html`(관리자 데모)
 - 데이터: `html/js/data.js` — 폰트 14종(전부 OFL, Google Fonts로 렌더링), 문장 프리셋, 상황별 큐레이션, 유료 폰트 대안, 라틴 짝꿍
-- 리서치: `docs/research_v2_global_benchmark.md` — 국내·해외 벤치마크와 리디자인 근거
+- 리서치: `docs/research_v2_global_benchmark.md`, `docs/demand_and_download_strategy.md`(실수요·다운로드 전략), `docs/automation_feasibility.md` — 국내·해외 벤치마크와 리디자인 근거
 
 ## 주요 기능
 - 전역 컨트롤 데크: 문장(프리셋 7종)·크기·굵기·반전·영문 짝꿍이 모든 행에 동시 적용
 - 목록 / 격자 / 맥락(썸네일·책 본문·자막·메뉴판·카드뉴스·UI) 3가지 보기
 - 한글 특화 검증: 내 문장 글자 누락 검사, 옛한글·한자 자동 검출, 글자 범위 태그, 초성 검색
 - 필터: 분류·분위기·사용 범위(라이선스 매트릭스)·글자 범위·즐겨찾기 / 상황별 큐레이션 / 유료 폰트 대안
+- 받기 패널: 원 배포처 ZIP 직링크(주간 상태 점검, 끊기면 페이지 안내) · 설치/PPT 적용 안내 · 라이선스 증빙 텍스트 저장
+- 히어로: 이번 주 신규 배포 폰트 슬라이드(없으면 최근 등록순)
+- 폰트별 정적 페이지 `font/<id>.html` + sitemap (`node tools/build_pages.js`, 검색 유입구)
 - 비교 트레이(최대 4종) → 나란히 보기, 상세 모달(테스터·매트릭스·임베드 코드·npm)
 
 ## 운영 원칙

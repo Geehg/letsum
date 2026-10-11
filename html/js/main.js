@@ -400,6 +400,37 @@
     modal.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
   }
 
+  // ---------- 다운로드 경로 (3단계: 자체 미러 → 원 배포처 직링크 → 배포처 페이지) ----------
+  // links.json은 tools/watch_sources.py가 매주 직링크 응답을 점검해 쓴다. 없으면 링크가 살아 있다고 본다.
+  let links = {};
+  fetch("data/links.json?v=" + Date.now()).then((r) => (r.ok ? r.json() : {})).then((j) => { links = j || {}; }).catch(() => {});
+  function dlFor(f) {
+    const gfam = f.en.replace(/ /g, "+");
+    const o = f.dl || {};
+    const zip = o.mirror || o.zip || `https://fonts.google.com/download?family=${gfam}`;
+    const page = o.page || `https://fonts.google.com/specimen/${gfam}`;
+    const st = links[f.id];
+    return { zip, page, ok: !(st && st.ok === false), checked: st && st.checked, srcName: o.mirror ? "LETSUM 미러" : (o.srcName || "Google Fonts") };
+  }
+  // 라이선스 증빙: 사용 시점의 사용 범위·검수일·출처를 텍스트로 보관 (분쟁 대비)
+  function saveProof(f, dl) {
+    const now = new Date();
+    const lines = [
+      "LETSUM 라이선스 확인 기록", "=".repeat(28), "",
+      `폰트: ${f.name} (${f.en})`, `저작권자: ${f.holder} · 제작: ${f.designer}`,
+      `라이선스: ${f.license}${f.license === "OFL" ? " (SIL Open Font License 1.1) — 상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지" : ""}`,
+      `LETSUM 검수: ${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}`, "",
+      "사용 범위:", ...LICENSE_CATS.map((c) => `  - ${c.label}: ${f.matrix[c.key] === "ok" ? "사용 가능" : f.matrix[c.key] === "no" ? "사용 금지" : "조건부"}`), "",
+      `원 배포처: ${dl.page}`, `다운로드: ${dl.zip}`, `LETSUM 페이지: https://letsum.app/#f=${f.id}`, "",
+      `저장 시각: ${now.toLocaleString("ko-KR")} (${now.toISOString()})`, "",
+      "※ 이 기록은 LETSUM이 정리한 참고 정보입니다. 최종 확인은 저작권자의 원문 라이선스를 따릅니다.",
+    ];
+    const blob = new Blob(["﻿" + lines.join("\n")], { type: "text/plain;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = `LETSUM_라이선스증빙_${f.name}_${now.toISOString().slice(0, 10)}.txt`; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
   // ---------- 상세 모달 ----------
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
   function openDetail(id) {
@@ -410,6 +441,8 @@
     const d = detect[f.id] || {};
     const miss = coverage[f.id] || [];
     const pairDef = LATIN_PAIRS.find((p) => p.id === f.pair);
+    const dl = dlFor(f);
+    try { history.replaceState(null, "", "#f=" + f.id); } catch (e) {}
     modal.className = "modal";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
@@ -460,7 +493,23 @@
           ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? "폰트 파일의 수정·복제·배포 가능, 단 폰트 파일 자체의 유료 판매는 금지" : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
         </table></div>
 
-      <div class="m-sec"><h3>바로 적용</h3>
+      <div class="m-sec"><h3>받기</h3>
+        <div class="dlrow">
+          ${dl.ok ? `<a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 바로 받기 <small>원 배포처 파일 · TTF/OTF 설치용</small></a>` : ""}
+          <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
+          <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
+        </div>
+        ${dl.ok ? "" : `<p class="note" style="margin-top:6px">⚠ 직접 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않아 배포처 페이지로 안내합니다.</p>`}
+        <p class="note" style="margin-top:8px">${dl.ok ? `파일은 저희 서버가 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 바로 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
+        <details class="howto"><summary>설치 · PPT/한글 적용 안내 (Windows · Mac · 아이폰 · 갤럭시)</summary>
+          <div class="howto-body">
+            <p><b>Windows</b> — ZIP 압축을 풀고 .ttf/.otf 파일을 우클릭 → <b>모든 사용자용으로 설치</b>. 여러 굵기 파일은 전부 설치합니다.</p>
+            <p><b>Mac</b> — 파일을 더블클릭 → 서체 관리자에서 <b>설치</b>. 또는 서체 관리자에 드래그.</p>
+            <p><b>PPT·한글·포토샵에 안 보일 때</b> — ① 프로그램을 <b>완전히 종료 후 다시 실행</b> ② 목록에는 파일명이 아니라 <b>글꼴 이름</b>(이 폰트는 "${esc(f.en)}" 또는 "${esc(f.name)}")으로 뜹니다 ③ .woff/.woff2는 웹 전용이라 설치되지 않습니다 ④ 다른 PC에서 열면 글꼴이 바뀌니 PPT는 <b>파일 &gt; 옵션 &gt; 저장 &gt; 파일의 글꼴 포함</b>으로 저장하거나 PDF로 보내세요.</p>
+            <p><b>아이폰</b> — iOS는 폰트 설치 앱(예: iFont, Fontcase)으로 프로필을 설치해야 하며, 시스템 글꼴은 바뀌지 않고 Pages·Keynote 등 앱 안에서만 쓸 수 있습니다. <b>갤럭시</b> — 설정 &gt; 디스플레이 &gt; 글꼴에서는 Galaxy Store 글꼴만 적용됩니다. 문서 앱 안에서 쓰려면 앱별 글꼴 추가 기능을 이용하세요.</p>
+            <p><b>영상·디자인 프로그램</b> — 프리미어·애프터이펙트·피그마는 설치 후 재실행하면 바로 나타납니다. 캔바(무료)는 자체 폰트만 쓸 수 있고, 유료 플랜에서 업로드가 됩니다.</p>
+          </div>
+        </details>
         <div class="codehead"><span>웹폰트 (Google Fonts CDN)</span><button class="abtn" data-copy="c1">복사</button></div>
         <pre class="code" id="c1">&lt;link href="${gfont}" rel="stylesheet"&gt;
 font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰트로: */ font-family: ${esc(pairDef.family)}, ${esc(f.family)};` : ""}</pre>
@@ -469,7 +518,6 @@ font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰�
 import "@fontsource/${f.id}/400.css";</pre>
         <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
-          <a class="btn" href="${specimen}" target="_blank" rel="noopener">원 배포처에서 다운로드 ↗</a>
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           <button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>
         </div></div>
@@ -492,6 +540,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => { pv.textContent = TEXT_PRESETS.find((p) => p.id === b.dataset.tp).t; }));
     modal.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#" + b.dataset.copy).textContent); } catch (e) {} b.textContent = "복사됨 ✓"; setTimeout(() => (b.textContent = "복사"), 1500); }));
     modal.querySelectorAll(".simcard[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+    $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
     $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
     $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
     $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });
@@ -511,14 +560,47 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#dsgSupport").addEventListener("click", () => alert("후원 기능은 준비 중입니다. 정식 서비스에서 제공될 예정입니다."));
     modal.querySelectorAll("[data-did]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.did)));
   }
-  function closeModal() { overlay.classList.remove("open"); }
+  function closeModal() { overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
+  // 폰트별 정적 페이지(font/<id>.html)와 공유 링크에서 #f=<id>로 들어오면 바로 상세를 연다
+  function openFromHash() { const m = location.hash.match(/^#f=([\w-]+)/); if (m && FONTS.some((x) => x.id === m[1])) openDetail(m[1]); }
+  window.addEventListener("hashchange", openFromHash);
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
+  // ---------- 신규 폰트 슬라이드 (히어로) ----------
+  // 이번 주(월~일) 등록분을 보여주고, 없으면 최근 등록 8종을 "최근 등록" 라벨로 보여준다
+  function renderNew() {
+    const track = $("#nbTrack"); if (!track) return;
+    const now = new Date(); const day = (now.getDay() + 6) % 7; // 월=0
+    const mon = new Date(now); mon.setDate(now.getDate() - day); mon.setHours(0, 0, 0, 0);
+    const iso = (d) => d.toISOString().slice(0, 10);
+    const byNew = [...FONTS].sort((a, b) => b.added.localeCompare(a.added));
+    let list = byNew.filter((f) => f.added >= iso(mon)); let week = true;
+    if (!list.length) { list = byNew.slice(0, 8); week = false; }
+    const latest = byNew[0].added.replace(/-/g, ".");
+    $("#nbLabel").textContent = week ? "이번 주 신규" : "최근 등록";
+    $("#nbTitle").textContent = week ? `이번 주 새로 배포된 한글 무료 폰트 ${list.length}종` : "최근 등록된 한글 무료 폰트";
+    $("#nbMeta").textContent = (week ? `${iso(mon).replace(/-/g, ".")} 주간` : `이번 주 신규 없음 · 최신 갱신 ${latest} 기준`) + ` · 전체 ${FONTS.length}종 · 검수 ${FONTS.map((f) => f.verified).sort().pop().replace(/-/g, ".")}`;
+    track.innerHTML = list.map((f) => `
+      <article class="slide" data-id="${f.id}" tabindex="0">
+        <div class="s-top"><span class="s-date">${f.added.replace(/-/g, ".")} 등록</span>${f.added >= iso(mon) ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
+        <div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>
+        <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)} · 굵기 ${f.weights.length}종</span></div>
+          <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}</div></div>
+      </article>`).join("");
+    track.querySelectorAll(".slide").forEach((el) => {
+      el.addEventListener("click", () => openDetail(el.dataset.id));
+      el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
+    });
+    const step = () => (track.querySelector(".slide")?.getBoundingClientRect().width || 420) + 14;
+    $("#nbPrev").addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    $("#nbNext").addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+  }
+
   // ---------- 시작 ----------
-  $("#statN").textContent = FONTS.length + "종";
-  $("#statDate").textContent = FONTS.map((f) => f.verified).sort().pop().replace(/-/g, ".");
+  renderNew();
   render();
   renderTray();
+  openFromHash();
   detectAll().then(() => { render(); runCoverage(); });
 })();
