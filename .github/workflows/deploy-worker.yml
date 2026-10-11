@@ -1,0 +1,28 @@
+# worker/(좋아요·댓글 API)가 바뀌면 Cloudflare에 배포. 무료 플랜. 비밀 값이 없으면 건너뛴다.
+name: deploy-worker
+on:
+  push:
+    branches: [main]
+    paths: ["worker/**", ".github/workflows/deploy-worker.yml"]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Skip without token
+        id: chk
+        run: if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "CLOUDFLARE_API_TOKEN 없음 — 배포 건너뜀"; echo "skip=1" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v5
+        if: steps.chk.outputs.skip != '1'
+        with: { node-version: 22 }
+      - name: Migrate & deploy
+        if: steps.chk.outputs.skip != '1'
+        working-directory: worker
+        run: |
+          npm i --no-audit --no-fund
+          npx wrangler d1 migrations apply letsum --remote
+          npx wrangler deploy

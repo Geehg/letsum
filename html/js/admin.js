@@ -92,3 +92,40 @@
     persist(); overlay.classList.remove("open"); showDash();
   });
 })();
+
+// ---------- 댓글 관리 (Cloudflare Worker /api/admin) ----------
+(function () {
+  const form = document.getElementById("ckForm"); if (!form) return;
+  const keyEl = document.getElementById("ckKey"), list = document.getElementById("ckList"), msg = document.getElementById("ckMsg");
+  const e = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+  try { keyEl.value = sessionStorage.getItem("ls_admin_key") || ""; } catch (x) {}
+  const key = () => keyEl.value.trim();
+  async function call(path, body) {
+    const r = await fetch("/api/admin/" + path, { method: body ? "POST" : "GET", headers: Object.assign({ authorization: "Bearer " + key() }, body ? { "content-type": "application/json" } : {}), body: body ? JSON.stringify(body) : undefined });
+    const j = await r.json().catch(() => ({ error: "서버 응답 없음" }));
+    if (!r.ok) throw new Error(j.error || "오류");
+    return j;
+  }
+  async function load() {
+    msg.textContent = "불러오는 중…";
+    try {
+      const j = await call("comments?filter=" + document.getElementById("ckFilter").value);
+      try { sessionStorage.setItem("ls_admin_key", key()); } catch (x) {}
+      const name = (id) => { const f = (window.FONTS || []).find((x) => x.id === id); return f ? f.name : id; };
+      msg.textContent = `${j.items.length}건`;
+      list.innerHTML = j.items.length ? `<table class="spec"><tr><th>폰트</th><th>작성</th><th>내용</th><th>상태</th><th></th></tr>${j.items.map((c) => `<tr>
+        <td><a class="linklike" href="index.html#f=${e(c.font_id)}" target="_blank">${e(name(c.font_id))}</a></td>
+        <td>${e(c.name)}<br><span class="note">${new Date(c.created).toLocaleString("ko-KR")}</span></td>
+        <td style="max-width:420px;word-break:break-word">${e(c.body)}</td>
+        <td>${c.hidden ? "숨김" : "공개"}${c.reports ? ` · 신고 ${c.reports}` : ""}</td>
+        <td style="white-space:nowrap"><button class="btn sm ghost" data-act="${c.hidden ? "show" : "hide"}" data-cid="${c.id}">${c.hidden ? "복구" : "숨김"}</button>
+          <button class="btn sm ghost" data-act="delete" data-cid="${c.id}">삭제</button></td></tr>`).join("")}</table>` : '<p class="note">해당하는 댓글이 없습니다.</p>';
+      list.querySelectorAll("[data-act]").forEach((b) => b.addEventListener("click", async () => {
+        if (b.dataset.act === "delete" && !confirm("이 댓글을 영구 삭제할까요?")) return;
+        try { await call("comment", { commentId: +b.dataset.cid, action: b.dataset.act }); load(); } catch (x) { msg.textContent = x.message; }
+      }));
+    } catch (x) { msg.textContent = x.message; list.innerHTML = ""; }
+  }
+  form.addEventListener("submit", (ev) => { ev.preventDefault(); load(); });
+  document.getElementById("ckFilter").addEventListener("change", load);
+})();

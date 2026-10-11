@@ -353,6 +353,45 @@
     </article>`;
   }
 
+  // ---------- 좋아요 수·댓글 (Cloudflare Worker /api — 서버가 없거나 실패하면 조용히 숨김) ----------
+  const social = {}; let apiOk = true;
+  async function api(path, opt) {
+    if (!apiOk) return null;
+    try {
+      const r = await fetch("/api/" + path, opt && { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(opt) });
+      if (!(r.headers.get("content-type") || "").includes("json")) { apiOk = false; return null; }
+      const j = await r.json(); return r.ok ? j : { error: j.error || "오류" };
+    } catch (e) { return null; }
+  }
+  async function loadStats(ids) {
+    ids = ids.filter((id) => !social[id]); if (!ids.length) return;
+    for (let i = 0; i < ids.length; i += 60) {
+      const j = await api("stats?ids=" + ids.slice(i, i + 60).join(","));
+      if (!j || j.error) return;
+      Object.assign(social, j);
+    }
+    paintSocial();
+  }
+  function paintSocial() {
+    $$("[data-likes]").forEach((el) => { const s = social[el.dataset.likes]; el.textContent = s && s.likes ? s.likes.toLocaleString() : ""; });
+    $$("[data-cmts]").forEach((el) => { const s = social[el.dataset.cmts]; el.textContent = s && s.comments ? s.comments.toLocaleString() : ""; });
+  }
+  // 좋아요 = 즐겨찾기(이 브라우저) + 서버 좋아요 수
+  async function toggleLike(id) {
+    const on = !favs.has(id); toggleSet(favs, id); save("fm_favs", [...favs]);
+    const s = social[id] || (social[id] = { likes: 0, comments: 0, liked: false });
+    s.likes = Math.max(0, s.likes + (on ? 1 : -1)); s.liked = on;
+    const j = await api("like", { id, on });
+    if (j && !j.error) s.likes = j.likes;
+    return on;
+  }
+  const IC = {
+    heart: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.4 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.6 0 5.6 3.5 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    cmt: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    share: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    save: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 3.5h12v17l-6-4.6-6 4.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  };
+
   // ---------- 피드 보기 (인스타그램식 카드) ----------
   // 한 폰트 = 한 게시물. 가운데 이미지는 넘겨 보는 슬라이드: ① 문장 샘플 ② 디자인 적용안 ③ 설명 카드 ④ 굵기 가족
   // 좋아요는 즐겨찾기(이 브라우저에만 저장), 저장은 비교 담기. 서버가 없어 좋아요 수·댓글은 표시하지 않는다(가짜 숫자 금지).
@@ -389,10 +428,11 @@
           <span>${esc(dl.srcName)} · ${esc(licInfo(f).short)}${f.intro ? " · 소개 전용" : ""}</span><button data-open="${f.id}">상세·라이선스 보기</button></div>
       </div>
       <div class="ig-act">
-        <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="좋아요(즐겨찾기)" title="좋아요 — 이 브라우저의 즐겨찾기에 저장">${favs.has(f.id) ? "♥" : "♡"}</button>
-        <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">↗</button>
+        <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-like="${f.id}" aria-label="좋아요" title="좋아요 — 즐겨찾기에도 저장">${IC.heart}</button><span class="ig-n" data-likes="${f.id}"></span>
+        <button class="ig-ic" data-cmt="${f.id}" aria-label="댓글" title="댓글 보기·쓰기">${IC.cmt}</button><span class="ig-n" data-cmts="${f.id}"></span>
+        <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         <span class="sp"></span>
-        ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${cmp.has(f.id) ? "■" : "□"}</button>`}
+        ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
       </div>
       <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
       <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
@@ -410,8 +450,15 @@
       const f = FONTS.find((x) => x.id === b.dataset.share);
       const url = `${location.origin}/font/${f.id}.html`;
       try { if (navigator.share) { await navigator.share({ title: `${f.name} — LETSUM`, text: f.desc, url }); return; } } catch (e) { if (e && e.name === "AbortError") return; }
-      try { await navigator.clipboard.writeText(url); b.textContent = "✓"; b.title = "링크 복사됨"; setTimeout(() => { b.textContent = "↗"; }, 1500); } catch (e) { prompt("링크를 복사하세요", url); }
+      try { await navigator.clipboard.writeText(url); b.classList.add("done"); b.title = "링크 복사됨"; setTimeout(() => b.classList.remove("done"), 1500); } catch (e) { prompt("링크를 복사하세요", url); }
     }));
+    host.querySelectorAll("[data-like]").forEach((b) => b.addEventListener("click", async () => {
+      const id = b.dataset.like; b.classList.toggle("on", !favs.has(id)); b.classList.add("pop");
+      setTimeout(() => b.classList.remove("pop"), 300);
+      const p = toggleLike(id); paintSocial(); await p; paintSocial();
+    }));
+    host.querySelectorAll("[data-cmt]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.cmt, "comments")));
+    loadStats([...host.querySelectorAll(".ig[data-id]")].map((el) => el.dataset.id));
     $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
   }
 
@@ -481,7 +528,7 @@
       el.addEventListener("click", (e) => { if (e.target.closest("button, a")) return; openDetail(el.dataset.id); });
       el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
     });
-    host.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => { toggleSet(favs, b.dataset.fav); save("fm_favs", [...favs]); render(); }));
+    host.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => { toggleLike(b.dataset.fav); render(); })); // 즐겨찾기 = 좋아요
     host.querySelectorAll("[data-cmp]").forEach((b) => b.addEventListener("click", () => toggleCmp(b.dataset.cmp)));
     host.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
   }
@@ -569,7 +616,7 @@
 
   // ---------- 상세 모달 ----------
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
-  function openDetail(id) {
+  function openDetail(id, focus) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
     ensureFace(f);
     if (f.webfont && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
@@ -661,14 +708,24 @@ import "@fontsource/${f.id}/400.css";</pre>
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           ${f.intro ? "" : `<button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>`}
         </div></div>
+      <div class="m-sec" id="cmtSec"><h3>댓글 <span class="note" id="cmtCount"></span></h3>
+        <form class="cmt-form" id="cmtForm" autocomplete="off">
+          <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임">
+          <input name="website" class="hp" tabindex="-1" aria-hidden="true" placeholder="비워 두세요">
+          <textarea name="body" maxlength="500" rows="2" placeholder="이 폰트를 어디에 써 보셨나요? 사용 후기·팁을 남겨 주세요 (500자)" aria-label="댓글 내용" required></textarea>
+          <div class="cmt-row"><span class="note">로그인 없이 남깁니다. 개인정보(연락처 등)는 쓰지 마세요. 부적절한 글은 신고 3회 시 자동 숨김됩니다.</span><button class="btn" type="submit">남기기</button></div>
+          <p class="note cmt-msg" id="cmtMsg"></p>
+        </form>
+        <div class="cmt-list" id="cmtList"><p class="note">불러오는 중…</p></div></div>
       <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 사용 범위는 저작권자의 규정에 따라 달라질 수 있습니다.</p>`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
     const commonBind = () => {
+      bindComments(f, focus);
       $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
       $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
-      $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
+      $("#favBtn").addEventListener("click", () => { toggleLike(f.id); openDetail(f.id); render(); });
     };
     if (f.intro) { commonBind(); return; }
     const LONG = BODY;
@@ -688,6 +745,31 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll(".simcard[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
     commonBind();
     $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });
+  }
+  const fmtAgo = (t) => { const d = (Date.now() - t) / 1000; return d < 60 ? "방금" : d < 3600 ? `${Math.floor(d / 60)}분 전` : d < 86400 ? `${Math.floor(d / 3600)}시간 전` : new Date(t).toLocaleDateString("ko-KR"); };
+  const cmtHTML = (c) => `<div class="cmt" data-cid="${c.id}"><b>${esc(c.name)}</b><span class="note">${fmtAgo(c.created)}</span><p>${esc(c.body).replace(/\n/g, "<br>")}</p><button class="linklike cmt-rep" data-rep="${c.id}">신고</button></div>`;
+  async function bindComments(f, focus) {
+    const list = $("#cmtList"), form = $("#cmtForm"), msg = $("#cmtMsg");
+    if (focus === "comments") setTimeout(() => $("#cmtSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    const j = await api("comments?id=" + f.id);
+    if (!j || j.error) { $("#cmtSec").style.display = apiOk ? "" : "none"; list.innerHTML = '<p class="note">댓글을 불러오지 못했습니다.</p>'; return; }
+    const draw = (items) => {
+      $("#cmtCount").textContent = items.length ? `${items.length}개` : "";
+      list.innerHTML = items.length ? items.map(cmtHTML).join("") : '<p class="note">아직 댓글이 없습니다. 첫 사용 후기를 남겨 주세요.</p>';
+      list.querySelectorAll("[data-rep]").forEach((b) => b.addEventListener("click", async () => {
+        if (!confirm("이 댓글을 신고할까요? 신고가 3회 쌓이면 자동으로 숨겨집니다.")) return;
+        await api("report", { commentId: +b.dataset.rep }); b.textContent = "신고됨"; b.disabled = true;
+      }));
+    };
+    let items = j.items || []; draw(items);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); const fd = new FormData(form); const btn = form.querySelector("button[type=submit]");
+      btn.disabled = true; msg.textContent = "";
+      const r = await api("comments", { id: f.id, name: fd.get("name"), body: fd.get("body"), website: fd.get("website") });
+      btn.disabled = false;
+      if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
+      if (r.item) { items = [r.item, ...items]; draw(items); form.reset(); const s = social[f.id]; if (s) { s.comments++; paintSocial(); } }
+    });
   }
   function openDesigner(name) {
     const list = FONTS.filter((f) => f.designer === name);

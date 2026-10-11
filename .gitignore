@@ -22,3 +22,7 @@ tools/archive/
 
 # 재배포 금지 라이선스의 웹폰트 — letsum.app 서버에만 두고 공개 저장소에 올리지 않는다(tools/deploy_hosted_fonts.sh)
 html/fonts-hosted/
+
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars

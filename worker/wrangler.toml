@@ -1,0 +1,16 @@
+# LETSUM 좋아요·댓글 API — Cloudflare Workers 무료 플랜 + D1(무료).
+# letsum.app/api/* 로만 동작하고 나머지 주소는 기존처럼 NAS(정적 사이트)로 간다.
+# 무료 한도를 넘으면 요청이 실패할 뿐 청구되지 않는다(유료 플랜으로 바꾸지 말 것).
+name = "letsum-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "letsum"
+database_id = "REPLACE_WITH_D1_ID"
+migrations_dir = "migrations"
+
+# 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT

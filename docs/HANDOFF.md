@@ -30,6 +30,12 @@ tools/run.sh finish "메시지"  ⑧ 커밋·푸시·잠금 해제 → 운영자
 ```
 도구가 실패하면 고치기 전에 **다른 단계로 넘어가지 않는다.** 실패를 숨기려고 데이터를 손으로 덮어쓰지 않는다.
 
+### 좋아요·댓글 API (worker/)
+- Cloudflare Worker `letsum-api`가 `letsum.app/api/*`만 처리(나머지는 NAS). DB는 D1 `letsum`. 구조: `worker/migrations/0001_init.sql`
+- 로컬 실행: `cd worker && npm i && npx wrangler d1 migrations apply letsum --local && npx wrangler dev --local` (`.dev.vars`에 ADMIN_KEY·VOTER_SALT — git 제외)
+- 배포: `worker/**`를 main에 푸시하면 GitHub Actions(`deploy-worker.yml`)가 배포. 저장소 비밀 `CLOUDFLARE_API_TOKEN`·`CLOUDFLARE_ACCOUNT_ID` 필요(없으면 건너뜀)
+- 댓글 관리: `admin.html` → 댓글 관리(관리자 키 = Worker 비밀 ADMIN_KEY)
+
 ### 배포 주의
 - `nginx/default.conf`는 컨테이너에 **파일 단위로** 연결돼 있어, 바꾼 뒤 "받아와 재배포"만으로는 반영되지 않는다. 운영자가 컨테이너를 **재시작**(`sudo docker restart letsum-web`)해야 한다.
 - html·css·js·data는 재배포만으로 반영된다(nginx no-cache + `?v=` 버전). css/js를 바꾸면 HTML의 `?v=` 숫자를 올린다.

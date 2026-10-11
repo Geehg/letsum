@@ -444,8 +444,13 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 .ig-dl span{font-size:12px;opacity:.8}
 .ig-dl button{align-self:flex-start;font-size:12px;color:var(--paper);text-decoration:underline;padding:0;background:none}
 .ig-act{display:flex;align-items:center;gap:6px;padding:8px 10px 2px}
-.ig-ic{font-size:22px;line-height:1;width:34px;height:34px;color:var(--ink);background:none}
-.ig-ic.on[data-fav]{color:var(--no)}
+.ig-ic{line-height:0;width:34px;height:34px;display:grid;place-items:center;color:var(--ink);background:none;transition:transform .15s}
+.ig-ic.on[data-like]{color:var(--no)}.ig-ic.on[data-like] path{fill:currentColor}
+.ig-ic.on[data-cmp] path{fill:currentColor}
+.ig-ic.pop{transform:scale(1.25)}
+.ig-ic.done{color:#2f8a3a}
+.ig-n{font-size:13px;font-weight:700;min-width:0;margin:0 6px 0 -4px;color:var(--ink)}
+.ig-n:empty{margin:0}
 .ig-ic:hover{transform:scale(1.08)}
 .ig-cap{font-size:13px;line-height:1.55;padding:2px 12px 0;margin:0;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ig-cap b{color:var(--ink);margin-right:4px}
@@ -454,3 +459,17 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 @media (hover:none){.ig-dl{transform:none;position:static;padding:10px 12px}.ig-media{aspect-ratio:auto}.ig-track{aspect-ratio:1/1}.ig-nav{opacity:.85}}
 :root[data-theme="dark"] .ig-tags{color:#8db8ee}
 @media (max-width:760px){.feed-mode .deck{position:static}}
+
+/* 댓글 */
+.cmt-form{display:flex;flex-direction:column;gap:8px}
+.cmt-form input,.cmt-form textarea{font:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--rule2);background:var(--paper);color:var(--ink);width:100%;box-sizing:border-box;resize:vertical}
+.cmt-form input[name=name]{max-width:220px}
+.cmt-form input:focus,.cmt-form textarea:focus{outline:2px solid var(--lime);border-color:var(--ink)}
+.cmt-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cmt-row{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.cmt-msg{color:var(--no);margin:0}
+.cmt-list{margin-top:14px;display:flex;flex-direction:column}
+.cmt{padding:10px 0;border-top:1px solid var(--rule);position:relative}
+.cmt b{font-size:13.5px;margin-right:8px}
+.cmt p{margin:4px 0 0;font-size:14px;line-height:1.6;color:var(--ink2);word-break:break-word}
+.cmt-rep{position:absolute;top:10px;right:0;font-size:11.5px;color:var(--ink3)}

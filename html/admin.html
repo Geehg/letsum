@@ -7,7 +7,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="관리자 — LETSUM(렛섬)"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새에서 비교하고, 글자 지원과 라이선스까지 한 화면에서 확인합니다.">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 <header>
@@ -53,6 +53,16 @@
       <tbody id="fontRows"></tbody>
     </table>
 
+    <h2>댓글 관리</h2>
+    <p class="note">서버(Cloudflare Worker)에 저장된 댓글입니다. 관리자 키는 Cloudflare에 비밀 값(ADMIN_KEY)으로 등록한 값이며, 이 브라우저 탭을 닫으면 지워집니다.</p>
+    <form class="demo" id="ckForm" style="margin-top:8px;flex-direction:row;align-items:flex-end;gap:8px;flex-wrap:wrap">
+      <label style="flex:1;min-width:220px">관리자 키 <input id="ckKey" type="password" autocomplete="off"></label>
+      <select id="ckFilter" aria-label="보기"><option value="all">전체</option><option value="reported">신고된 댓글</option><option value="hidden">숨김</option></select>
+      <button class="btn sm" type="submit">불러오기</button>
+    </form>
+    <p class="note" id="ckMsg"></p>
+    <div id="ckList"></div>
+
     <h2>등록 신청 내역</h2>
     <div id="submitList"><p class="note">접수된 신청이 없습니다.</p></div>
   </div>
@@ -85,7 +95,7 @@
   <div class="wrap"><p class="fine">LETSUM(렛섬) 관리자</p></div>
 </footer>
 
-<script src="js/data.js?v=3"></script>
-<script src="js/admin.js?v=3"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/admin.js?v=6"></script>
 </body>
 </html>
