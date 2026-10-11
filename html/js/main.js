@@ -477,7 +477,7 @@
     const lines = [
       "LETSUM 라이선스 확인 기록", "=".repeat(28), "",
       `폰트: ${f.name} (${f.en})`, `저작권자: ${f.holder} · 제작: ${f.designer}`,
-      `라이선스: ${f.license}${f.license === "OFL" ? " (SIL Open Font License 1.1) — 상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지" : ""}`,
+      `라이선스: ${licInfo(f).full} — ${licInfo(f).note}`,
       `LETSUM 검수: ${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}`, "",
       "사용 범위:", ...LICENSE_CATS.map((c) => `  - ${c.label}: ${f.matrix[c.key] === "ok" ? "사용 가능" : f.matrix[c.key] === "no" ? "사용 금지" : "조건부"}`), "",
       `원 배포처: ${dl.page}`, `다운로드: ${dl.zip}`, `LETSUM 페이지: https://letsum.app/#f=${f.id}`, "",
@@ -507,7 +507,7 @@
     modal.className = "modal";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span><span class="badge free">상업용 무료 · OFL</span>${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
+      <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span><span class="badge free">상업용 무료 · ${esc(licInfo(f).short)}</span>${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
       <p class="m-sub">저작권자 ${esc(f.holder)} · 제작 <button class="linklike" id="dsgBtn">${esc(f.designer)}</button> · ${f.mood.join(" · ")}</p>
       <div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
       <div class="tester">
@@ -544,7 +544,7 @@
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           <tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>
-          <tr><th>라이선스</th><td>${f.license} (SIL Open Font License 1.1)</td></tr>
+          <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}</td></tr>
           <tr><th>검수</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
@@ -552,7 +552,7 @@
       <div class="m-sec"><h3>사용 범위 (라이선스 매트릭스)</h3>
         <table class="matrix">
           <tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
-          ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? "폰트 파일의 수정·복제·배포 가능, 단 폰트 파일 자체의 유료 판매는 금지" : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
+          ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? esc(licInfo(f).note) : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
         </table></div>
 
       <div class="m-sec"><h3>받기</h3>

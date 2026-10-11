@@ -1822,13 +1822,13 @@
     "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.3.0",
     "tag": "v3.3.0",
     "published": "2021-06-07T02:18:00Z",
-    "license": null
+    "license": "OFL-1.1"
    }
   },
   "first_seen": "2026-10-11",
   "last_seen": "2026-10-11",
   "history": [],
-  "license_auto": null,
+  "license_auto": "OFL",
   "review": "pending",
   "site_id": null
  },
@@ -1942,8 +1942,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworlddotum"
  },
  "kcc김훈체": {
   "name": "KCC김훈체",
@@ -2265,8 +2265,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kccimkwontaek"
  },
  "kcc차쌤체": {
   "name": "KCC차쌤체",
@@ -2289,8 +2289,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kccchassam"
  },
  "제주명조체": {
   "name": "제주명조체",
@@ -2371,8 +2371,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworlddotum"
  },
  "kopubworld돋움체m": {
   "name": "Kopub World 돋움체 M",
@@ -2397,8 +2397,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworlddotum"
  },
  "kopubworld바탕체b": {
   "name": "Kopub World 바탕체 B",
@@ -2423,8 +2423,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworldbatang"
  },
  "kopubworld바탕체l": {
   "name": "Kopub World 바탕체 L",
@@ -2449,8 +2449,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworldbatang"
  },
  "kopubworld바탕체m": {
   "name": "Kopub World 바탕체 M",
@@ -2475,8 +2475,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kopubworldbatang"
  },
  "나눔고딕": {
   "name": "나눔고딕",
@@ -3335,8 +3335,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gimhaegaya"
  },
  "김해가야체r": {
   "name": "김해가야체R",
@@ -3385,8 +3385,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-makgeolli"
  },
  "순천체b": {
   "name": "순천체B",
@@ -3521,8 +3521,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-3-yangpyeong-b"
  },
  "포천오성과한음체b": {
   "name": "포천오성과한음체B",
@@ -3597,8 +3597,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-wandocleansea"
  },
  "완도청정바다체r": {
   "name": "완도청정바다체R",
@@ -3649,8 +3649,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-wandohope"
  },
  "정선동강체": {
   "name": "정선동강체",
@@ -4047,8 +4047,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapogoldenpier"
  },
  "mapo꽃섬": {
   "name": "Mapo꽃섬",
@@ -4074,8 +4074,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapoflowerisland"
  },
  "mapo당안리발전소": {
   "name": "Mapo당안리발전소",
@@ -4127,8 +4127,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapodacapo"
  },
  "mapo마포나루": {
   "name": "Mapo마포나루",
@@ -4154,8 +4154,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapomaponaru"
  },
  "mapo배낭여행": {
   "name": "Mapo배낭여행",
@@ -4181,8 +4181,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapobackpacking"
  },
  "mapo애민": {
   "name": "Mapo애민",
@@ -4208,8 +4208,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapoagape"
  },
  "mapo한아름": {
   "name": "Mapo한아름",
@@ -4235,8 +4235,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapopeacefull"
  },
  "국립박물관문화재단클래식체b": {
   "name": "국립박물관문화재단클래식체B",
@@ -4340,8 +4340,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapohongdaefreedom"
  },
  "경기천년바탕체b": {
   "name": "경기천년바탕체B",
@@ -4757,8 +4757,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gimpogothic"
  },
  "김포평화고딕체r": {
   "name": "김포평화고딕체R",
@@ -4809,8 +4809,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-munhwajaedolbom-bold"
  },
  "문화재돌봄체r": {
   "name": "문화재돌봄체R",
@@ -4889,8 +4889,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-62570"
  },
  "서울한강체l": {
   "name": "서울한강체L",
@@ -4915,8 +4915,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-seoulhangang"
  },
  "서울한강체m": {
   "name": "서울한강체M",
@@ -5019,8 +5019,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-seoulhangangc"
  },
  "서울한강장체m": {
   "name": "서울한강장체M",
@@ -5149,8 +5149,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-seoulnamsan"
  },
  "서울남산체m": {
   "name": "서울남산체M",
@@ -5253,8 +5253,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-seoulnamsanc"
  },
  "서울남산장체m": {
   "name": "서울남산장체M",
@@ -5569,8 +5569,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-haenamfont"
  },
  "전주완판본체각b": {
   "name": "전주완판본체각B",
@@ -5751,8 +5751,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-changwondangamasac"
  },
  "칠곡할매서체권안자할머니": {
   "name": "칠곡할매서체(권안자할머니)",
@@ -6114,8 +6114,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-knps-kkomi"
  },
  "국립공원반달이": {
   "name": "국립공원 반달이",
@@ -6139,8 +6139,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-knps-bandali"
  },
  "국립공원반달이꼬미icon": {
   "name": "국립공원 반달이&꼬미 icon",
@@ -6191,8 +6191,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sangju-gyeongcheon-island"
  },
  "상주곶감체": {
   "name": "상주곶감체",
@@ -6218,8 +6218,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sangju-gotgam"
  },
  "상주다정다감체": {
   "name": "상주다정다감체",
@@ -6245,8 +6245,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sangju-dajungdagam"
  },
  "상주해례본체": {
   "name": "상주해례본체",
@@ -6272,8 +6272,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sangju-haerye"
  },
  "kcc정범체": {
   "name": "KCC정범체",
@@ -6353,8 +6353,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kotra-gothic"
  },
  "코트라도약체": {
   "name": "코트라 도약체",
@@ -6380,8 +6380,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kotra-leap"
  },
  "코트라볼드체": {
   "name": "코트라 볼드체",
@@ -6407,8 +6407,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kotra-bold"
  },
  "코트라희망체": {
   "name": "코트라 희망체",
@@ -6434,8 +6434,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kotra-hope"
  },
  "코트라손글씨체": {
   "name": "코트라 손글씨체",
@@ -6461,8 +6461,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kotra-songeulssi"
  },
  "acc어린이가을담은체": {
   "name": "ACC어린이가을담은체",
@@ -6488,8 +6488,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-accchildrenfallotf"
  },
  "acc어린이마음고운체": {
   "name": "ACC어린이마음고운체",
@@ -6515,8 +6515,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-accchildrenheartotf"
  },
  "acc어린이하늘맑은체": {
   "name": "ACC어린이하늘맑은체",
@@ -6542,8 +6542,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-accchildrenskyotf"
  },
  "횡성한우체": {
   "name": "횡성한우체",
@@ -6569,8 +6569,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-hoengseong-hanu"
  },
  "충북대70주년체b": {
   "name": "충북대70주년체B",
@@ -6596,8 +6596,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-chungbuk-national-university-bold"
  },
  "충북대70주년체r": {
   "name": "충북대70주년체R",
@@ -6650,8 +6650,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-cbnu-jikji"
  },
  "수성혜정체": {
   "name": "수성혜정체",
@@ -6677,8 +6677,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-suseong-hyejeong"
  },
  "수성바탕체": {
   "name": "수성바탕체",
@@ -6704,8 +6704,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-suseong-batang"
  },
  "수성돋움체": {
   "name": "수성돋움체",
@@ -6731,8 +6731,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-suseong-dotum"
  },
  "박용준투사회보체": {
   "name": "박용준투사회보체",
@@ -6810,8 +6810,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-dalseodarling"
  },
  "달서힐링체b": {
   "name": "달서힐링체B",
@@ -6837,8 +6837,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-dalseohealing"
  },
  "달서힐링체m": {
   "name": "달서힐링체M",
@@ -6891,8 +6891,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kimm-bold"
  },
  "한국기계연구원b": {
   "name": "한국기계연구원B",
@@ -6995,8 +6995,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-saenggeo-jincheon"
  },
  "kcc손기정체": {
   "name": "KCC손기정체",
@@ -7049,8 +7049,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-taebaek-milkyway"
  },
  "김정철손글씨체": {
   "name": "김정철_손글씨체",
@@ -7261,8 +7261,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gwangyang-touching"
  },
  "광양햇살체r": {
   "name": "광양햇살체R",
@@ -7288,8 +7288,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gwangyang-sunshine"
  },
  "광양햇살체b": {
   "name": "광양햇살체B",
@@ -7342,8 +7342,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-kogl-761ece2e"
  },
  "하남다움체제목체": {
   "name": "하남다움체 제목체",
@@ -7423,8 +7423,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-dobong"
  },
  "완주누리체r": {
   "name": "완주누리체 R",
@@ -7449,8 +7449,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-wanjunuriche"
  },
  "완주대둔산체b": {
   "name": "완주대둔산체 B",
@@ -7475,8 +7475,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-wanjudaedunsanche"
  },
  "완주대둔산체r": {
   "name": "완주대둔산체 R",
@@ -7501,8 +7501,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-wanjudaedunsanche"
  },
  "평창체b": {
   "name": "평창체 B",
@@ -7628,8 +7628,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-goseong-geumgangnuri"
  },
  "태백체": {
   "name": "태백체",
@@ -7655,8 +7655,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-taebaek-font"
  },
  "학교안심곧은제목m": {
   "name": "학교안심 곧은제목 M",
@@ -8305,8 +8305,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-yeongjupunggiginseng"
  },
  "kcc안창호체": {
   "name": "KCC안창호체",
@@ -9029,8 +9029,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-koddiud-ongothic"
  },
  "koddiud온고딕eb": {
   "name": "KoddiUD 온고딕 EB",
@@ -9056,8 +9056,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-koddiud-ongothic"
  },
  "koddiud온고딕r": {
   "name": "KoddiUD 온고딕 R",
@@ -9083,8 +9083,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-koddiud-ongothic"
  },
  "속초바다돋움": {
   "name": "속초바다 돋움",
@@ -9108,8 +9108,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sokcho-bada-dotum"
  },
  "속초바다바탕": {
   "name": "속초바다 바탕",
@@ -9134,8 +9134,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sokcho-bada-batang"
  },
  "속초바다손글씨": {
   "name": "속초바다 손글씨",
@@ -9160,8 +9160,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-sokcho-bada-calligraphy"
  },
  "감탄로드감탄체": {
   "name": "감탄로드 감탄체",
@@ -9378,8 +9378,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-yeojuceramic-dingbat"
  },
  "양주별산체": {
   "name": "양주별산체",
@@ -9430,8 +9430,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-yeongjuseonbi"
  },
  "전기안전체b": {
   "name": "전기안전체 B",
@@ -9457,8 +9457,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-electrical-safety"
  },
  "전기안전체r": {
   "name": "전기안전체 R",
@@ -9484,8 +9484,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-electrical-safety"
  },
  "여주도자체딩벳": {
   "name": "여주도자체 딩벳",
@@ -9538,8 +9538,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-soyo-maple"
  },
  "소요단풍체b": {
   "name": "소요단풍체 B",
@@ -9565,8 +9565,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-soyo-maple"
  },
  "학교안심그림일기r": {
   "name": "학교안심 그림일기 R",
@@ -10155,8 +10155,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-high1-wonchuri-body"
  },
  "하이원원추리체r": {
   "name": "하이원 원추리체 R",
@@ -10182,8 +10182,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-high1-wonchuri-body"
  },
  "하이원원추리제목체b": {
   "name": "하이원 원추리 제목체 B",
@@ -10340,8 +10340,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-waguri-ttf"
  },
  "영도체b": {
   "name": "영도체B",
@@ -10367,8 +10367,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-yeongdo"
  },
  "영도체h": {
   "name": "영도체H",
@@ -10448,8 +10448,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-eunpyeongsagadogseo"
  },
  "한글재민체60": {
   "name": "한글재민체 6.0",
@@ -13573,8 +13573,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-seoulalrim"
  },
  "서울알림체eb": {
   "name": "서울알림체EB",
@@ -14791,8 +14791,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gyeonggititle"
  },
  "서울남산체": {
   "name": "서울남산체",
@@ -14863,8 +14863,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gyeonggibatangotf"
  },
  "남양주고딕체": {
   "name": "남양주 고딕체",
@@ -15247,8 +15247,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gimpotitle"
  },
  "김포평화바탕": {
   "name": "김포평화바탕",
@@ -15271,8 +15271,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-gimpobatang"
  },
  "mapo당인리발전소": {
   "name": "Mapo 당인리발전소",
@@ -15295,8 +15295,8 @@
   "last_seen": "2026-10-11",
   "history": [],
   "license_auto": "공공누리 제1유형",
-  "review": "pending",
-  "site_id": null
+  "review": "approved",
+  "site_id": "k-mapodpp"
  },
  "칠곡할매서체권안자할머니체": {
   "name": "칠곡할매서체 권안자 할머니체",

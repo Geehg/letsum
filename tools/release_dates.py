@@ -20,7 +20,9 @@ PUBLIC_MAKERS = ("한국저작권위원회", "한국교육학술정보원", "의
 GF_FIRST_SINCE = "2021-01-01"
 
 def n(s): return re.sub(r"[^0-9a-z가-힣]", "", unicodedata.normalize("NFC", s or "").lower())
-def clean(s): return re.sub(r"\s+(R|L|B|M|EB|Black|Outline|Regular|Light|Bold|Medium)$", "", (s or "").strip())
+def clean(s):
+    s = re.sub(r"\s+(R|L|B|M|EB|BL|Black|Outline|Regular|Light|Bold|Medium)$", "", (s or "").strip())
+    return re.sub(r"(체)(R|L|B|M|EB|BL)$", r"\1", s)  # 서울남산체L → 서울남산체
 
 src = open(DATA, encoding="utf-8").read()
 fonts = [(m.group(1), m.group(2), m.group(3)) for m in re.finditer(r'\{ id: "([^"]+)", name: "([^"]*)", en: "([^"]+)"', src)]
@@ -50,7 +52,10 @@ for fid, name, en in fonts:
             out[fid] = {"date": d, "src": "Google Fonts 최초 공개", "url": f"https://fonts.google.com/specimen/{en.replace(' ', '+')}"}
         continue
     hit = first.get(n(clean(name)))
-    if hit and any(p in (hit[2] or "") for p in PUBLIC_MAKERS):
+    lic = (re.search(r'\{ id: "' + re.escape(fid) + r'".*?license: "([^"]+)"', src, re.S) or [None, ""])[1]
+    if hit and lic.startswith("공공누리"):  # 공공누리는 공공기관 저작물 — 기관이 공유마당에 직접 등록한 날 = 배포일
+        out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}
+    elif hit and any(p in (hit[2] or "") for p in PUBLIC_MAKERS):
         out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}
     elif hit and fid.startswith("k-hakgyoansim"):  # 저작자 칸이 빈 학교안심(2025) — 제작사는 한국교육학술정보원
         out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}

@@ -77,14 +77,18 @@ def cmap_stats(tt):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--mirror", required=True); ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--licenses", default="OFL", help="쉼표 구분. 예: OFL,공공누리 제1유형 (재배포가 허용된 라이선스만)")
     a = ap.parse_args()
+    LICS = set(x.strip() for x in a.licenses.split(","))
+    ALLOWED = {"OFL", "공공누리 제1유형"}  # 변경·재배포가 허용된 것만 웹폰트로 변환 (3유형=변경금지는 제외)
+    assert LICS <= ALLOWED, f"재배포·변경 허용 라이선스만 가능: {ALLOWED}"
     cat = json.load(open(CATALOG, encoding="utf-8"))
     wanted = {}  # norm name → catalog record (OFL 공공 레코드, 검수 대기)
     for k, r in cat.items():
         kg = r["sources"].get("kogl")
-        if kg and kg.get("license") == "OFL" and not r.get("site_id") and r.get("review") == "pending":
+        if kg and kg.get("license") in LICS and not r.get("site_id") and r.get("review") == "pending":
             wanted.setdefault(norm(r["name"]), r)
-    print(f"카탈로그 OFL 공공 레코드 {len(wanted)}개 (정규화 이름 기준)")
+    print(f"카탈로그 대상({','.join(sorted(LICS))}) 공공 레코드 {len(wanted)}개 (정규화 이름 기준)")
 
     files, licenses = [], {}
     for p, b in iter_fonts(BUNDLE):
@@ -113,7 +117,7 @@ def main():
     print(f"매칭된 패밀리 {len(fams)}개 / 대상 {len(wanted)}개")
 
     out_dir = os.path.join(a.mirror, "webfonts"); os.makedirs(out_dir, exist_ok=True)
-    meta = {}
+    meta, failed = {}, []
     for i, (name, e) in enumerate(sorted(fams.items(), key=lambda kv: -(kv[1]["rec"]["sources"]["kogl"].get("downloads") or 0))):
         if a.limit and i >= a.limit: break
         first = e["files"][0]
@@ -127,22 +131,42 @@ def main():
         d = os.path.join(out_dir, fid); os.makedirs(d, exist_ok=True)
         weights, stat = [], None
         for w, f in sorted(byw.items()):
-            tt = TTFont(io.BytesIO(f["bytes"])); tt.flavor = "woff2"
-            dest = os.path.join(d, f"{w}.woff2"); tt.save(dest); weights.append(w)
-            if stat is None or w == 400: stat = cmap_stats(tt)
+            dest = os.path.join(d, f"{w}.woff2")
+            try:
+                tt = TTFont(io.BytesIO(f["bytes"])); tt.flavor = "woff2"; tt.save(dest)
+            except Exception:
+                try:  # 일부 테이블이 깨진 파일: 해석하지 않고(lazy) 원본 그대로 WOFF2로 감싼다 — 글리프 무변경
+                    import tempfile
+                    with tempfile.NamedTemporaryFile(suffix=".ttf", delete=False) as tf: tf.write(f["bytes"])
+                    tt = TTFont(tf.name, lazy=True); tt.flavor = "woff2"; tt.save(dest); os.unlink(tf.name)
+                except Exception as ex:
+                    print(f"  ! {name} {w} 변환 실패: {str(ex)[:80]}"); failed.append(f"{name} {w}"); continue
+            weights.append(w)
+            if stat is None or w == 400:
+                try: stat = cmap_stats(TTFont(io.BytesIO(f["bytes"])))
+                except Exception: stat = stat or (0, False, False)
+        if not weights:
+            shutil.rmtree(d, ignore_errors=True); continue
         lic = next((v for k, v in licenses.items() if k and k in first["path"]), None)
-        open(os.path.join(d, "OFL.txt"), "wb").write(lic or (f"{name} — SIL Open Font License 1.1\n원 배포처: {e['rec']['sources']['kogl'].get('page')}\n라이선스 원문: https://openfontlicense.org/open-font-license-official-text/\n").encode("utf-8"))
+        rlic = e["rec"]["sources"]["kogl"].get("license")
+        if rlic == "OFL":
+            open(os.path.join(d, "OFL.txt"), "wb").write(lic or (f"{name} — SIL Open Font License 1.1\n원 배포처: {e['rec']['sources']['kogl'].get('page')}\n라이선스 원문: https://openfontlicense.org/open-font-license-official-text/\n").encode("utf-8"))
+        else:
+            open(os.path.join(d, "LICENSE.txt"), "w", encoding="utf-8").write(
+                f"{name}\n저작권자: {e['rec']['sources']['kogl'].get('author') or ''}\n이용조건: {rlic} — 출처(저작권자) 표시 조건으로 상업 이용·변경 가능\n원 배포처: {e['rec']['sources']['kogl'].get('page')}\n공공누리: https://www.kogl.or.kr/info/licenseType1.do\n이 파일은 letsum.app 미리보기 전용 WOFF2이며, 원본 글리프를 변경하지 않았습니다.\n")
         rfn = "reserved font name" in ((lic or b"").decode("utf-8", "ignore").lower() + first["license"].lower())
         syl, old, hanja = stat
         meta[fid] = {"name": name, "en": first["en"], "ko": first["ko"], "author": e["rec"]["sources"]["kogl"].get("author"),
                      "page": e["rec"]["sources"]["kogl"].get("page"), "downloads": e["rec"]["sources"]["kogl"].get("downloads"),
-                     "weights": weights, "cov": syl, "old": old, "hanja": hanja, "rfn": rfn,
+                     "weights": weights, "license": e["rec"]["sources"]["kogl"].get("license"), "cov": syl, "old": old, "hanja": hanja, "rfn": rfn,
                      "files": {w: f"{PAGES_BASE}/{fid}/{w}.woff2" for w in weights},
                      "bytes": sum(os.path.getsize(os.path.join(d, f"{w}.woff2")) for w in weights), "catalog_key": norm(name)}
         meta[fid]["source_files"] = sorted(set(os.path.basename(f["path"]) for f in e["files"]))
         print(f"  {fid}: {name} 굵기 {weights} 한글 {syl}자 {'옛한글 ' if old else ''}{'한자 ' if hanja else ''}{meta[fid]['bytes']//1024}KB")
-    json.dump(meta, open(OUT_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    old = json.load(open(OUT_META, encoding="utf-8")) if os.path.exists(OUT_META) else {}
+    old.update(meta); json.dump(old, open(OUT_META, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     unmatched = sorted(set(r["name"] for r in wanted.values()) - set(fams))
+    if failed: print("변환 실패:", ", ".join(failed))
     print(f"\n웹폰트 {len(meta)}개, 총 {sum(m['bytes'] for m in meta.values())//1024//1024}MB · 묶음에 없음 {len(unmatched)}개")
     open(os.path.join(HERE, "state", "webfonts_unmatched.txt"), "w", encoding="utf-8").write("\n".join(unmatched) + "\n")
 

@@ -143,6 +143,28 @@ def root_kogl():
         r.update(license=lic, commercial=com, modify=mod)
     return out
 
+NEWS_QUERIES = ["무료 글꼴 배포", "무료 서체 배포", "무료 폰트 배포", "전용서체 무료 배포", "폰트 무료 공개"]
+
+def root_news():
+    """Google 뉴스 RSS(무료·키 불필요)로 최근 30일 '무료 글꼴·서체 배포' 기사를 모은다. 폰트 레코드가 아니라 '새 배포 후보' 목록.
+    기사 제목만 저장하고, 등록 여부·라이선스는 사람이 원 배포처에서 확인한다."""
+    import html as _h, urllib.parse
+    out = {}
+    for q in NEWS_QUERIES:
+        url = "https://news.google.com/rss/search?q=" + urllib.parse.quote(q + " when:30d") + "&hl=ko&gl=KR&ceid=KR:ko"
+        try:
+            x = get(url).decode("utf-8", "ignore")
+        except Exception:
+            continue
+        for item in re.findall(r"<item>(.*?)</item>", x, re.S):
+            t = _h.unescape((re.search(r"<title>(.*?)</title>", item, re.S) or [None, ""])[1])
+            link = (re.search(r"<link>(.*?)</link>", item, re.S) or [None, ""])[1]
+            d = (re.search(r"<pubDate>(.*?)</pubDate>", item, re.S) or [None, ""])[1]
+            key = re.sub(r"\s+-\s+[^-]+$", "", t).strip()  # 끝의 ' - 언론사' 제거
+            if key and key not in out:
+                out[key] = {"title": t, "url": link, "pubDate": d}
+    return out
+
 def root_pages():
     out = {}
     for name, url in WATCH_PAGES.items():
@@ -296,8 +318,12 @@ def main():
     catalog = load_json(CATALOG, {})
     first = not catalog
     snap = {"checked": TODAY, "google": root_google(), "fontsource": root_fontsource(), "github": root_github(),
-            "kogl": root_kogl(), "pages": root_pages()}
+            "kogl": root_kogl(), "pages": root_pages(), "news": root_news()}
     changes = merge(catalog, snap)
+    prev_news = load_json(SNAPSHOT, {}).get("news", {}) if not first else {}
+    for k, v in snap.get("news", {}).items():
+        if k not in prev_news:
+            changes.append(f"- 📰 새 배포 소식: {v['title']} → {v['url']}")
     for k in dead:
         changes.append(f"- 🔗 다운로드 직링크 끊김: **{k}** ({links[k]['code']}) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요")
     json.dump(catalog, open(CATALOG, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

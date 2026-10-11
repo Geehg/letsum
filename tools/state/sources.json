@@ -1036,19 +1036,21 @@
    "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.3.0",
    "tag": "v3.3.0",
    "published": "2021-06-07T02:18:00Z",
-   "license": null
+   "license": "OFL-1.1"
   },
   "Source Han Sans": {
    "repo": "adobe-fonts/source-han-sans",
-   "url": "https://github.com/adobe-fonts/source-han-sans",
-   "error": "HTTP Error 403: rate limit exceeded",
-   "license": null
+   "url": "https://github.com/adobe-fonts/source-han-sans/releases/tag/2.005R",
+   "tag": "2.005R",
+   "published": "2025-06-18T21:21:40Z",
+   "license": "NOASSERTION"
   },
   "Source Han Serif": {
    "repo": "adobe-fonts/source-han-serif",
-   "url": "https://github.com/adobe-fonts/source-han-serif",
-   "error": "HTTP Error 403: rate limit exceeded",
-   "license": null
+   "url": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
+   "tag": "2.003R",
+   "published": "2024-07-30T18:57:27Z",
+   "license": "NOASSERTION"
   }
  },
  "kogl": {
@@ -10322,6 +10324,648 @@
   "공유마당 민간 안심글꼴": {
    "sha": "090ac0f68b266687",
    "url": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  }
+ },
+ "news": {
+  "\"가독성 좋은 회사 폰트 공유하자\"…HS효성, 글꼴 무료 배포": {
+   "title": "\"가독성 좋은 회사 폰트 공유하자\"…HS효성, 글꼴 무료 배포 - 지디넷코리아",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1EckM5UnFCcGdHVnJBQ0lwNlBEanJVZFFSQ21zVXgxUEhXeGdGcm1KS1dhVVRFem1aVXA0WF9BNlVHdWdPb1BHQWszbXRJeDktNVIwdmFB?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 05:53:17 GMT"
+  },
+  "부산시, 전용서체 '부산단디체' 11일부터 무료 배포… 사투리가 글꼴로": {
+   "title": "부산시, 전용서체 '부산단디체' 11일부터 무료 배포… 사투리가 글꼴로 - 아시아경제",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5RLTVwX3dWM2RJYmxaMk5nU0ZkVk5lc2pDaVN0ZWI1R0xld0pOSXlxQWxTck1OdEp2N2w2bVVHcjl4WXBjX0xVTnhJblFHeDl2WDJSTGo5Tk5ZaG45d3pXaw?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 00:46:41 GMT"
+  },
+  "부산교육청, 시·도교육청 최초 'AI한글폰트' 2종 무료 배포": {
+   "title": "부산교육청, 시·도교육청 최초 'AI한글폰트' 2종 무료 배포 - 뉴스핌",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE93Y3Z5Q3hVM2dDY0djSXRHWFFTcGJYbUpVempPakpmVmFER3BaeXJrRG9aVXVqazBsYk9NMmcwYU1tUWVBS0ZBaENBOXg4UVRKMndObm93b2MybEN4?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:03:00 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용 서체 무료 배포…글꼴 다양성 기여": {
+   "title": "HS효성, 한글날 100주년 맞아 전용 서체 무료 배포…글꼴 다양성 기여 - 백세시대",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5FR2MtaGZiQ2E0YnRMSmVIT2RDV0Q5Z1BRUDM0RU15eER5Q3FXZnJ1b1RGeG9naml5U2FaQ2VJQ003WjZNZVJaZm15YTBzOHB1UmROMTNyMzJoUHFSZHB0ak1VSkRZTDdadnRz?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:17:18 GMT"
+  },
+  "부산교육청, ‘AI 한글 폰트’ 2종 무료 배포": {
+   "title": "부산교육청, ‘AI 한글 폰트’ 2종 무료 배포 - 교육언론[창]",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB4VWtRMVk5VE1XTFQtakFpM1FMNllFbWZBTVRjU1ozU0ZIa3Y5cTE0TkZUYlZzRzZnUUNNZkZGX3NsbXpQWkhocG02YlVTbmNLWGQxdmx3Z3l0MUZUcVVsbjBsZEpTSmFZWGRuSdIBcEFVX3lxTE9UaUhrWW5uNjdmVUtYWU9IczNPMUVKOG9IaG1sNlhOXy1nd1YyU1JGQ1lmVXFoWWJMU1ZKOWV4S0F5cEtsb0NNelhhOTd6elY5SHhqUF96cVNycGM2Q2RtX1VPYnN1d2ZCU3FROFg1RW8?oc=5",
+   "pubDate": "Fri, 09 Oct 2026 04:16:04 GMT"
+  },
+  "부산시교육청, AI 한글 폰트 배포…학생·교사 손글씨 활용": {
+   "title": "부산시교육청, AI 한글 폰트 배포…학생·교사 손글씨 활용 - 연합뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE83YmV3R3NBUS1adGp3OV95Z2pTVVJ3eUxSbkljNVRLYU1scEdLZjVjVXVZeDREN0NtdzFIQXVPcVZMOVYwSGtfQVlkdWJTQ3I1UnpkdmcyY0JMN3PSAWBBVV95cUxQY0hQLVBkajk5QWpUaW15bmFtdnFMZXdvNXBUaC05cFB2N0JIOVg0TzZfSHgzbGd6bzFUaTQtN0J5WXR5REZTblNHUmU0VkQ5RmotejhLV0NIQy01MHpfckQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:00:37 GMT"
+  },
+  "부산 글꼴 ‘단디체’ 아시나요…오늘(11)부터 무료배포": {
+   "title": "부산 글꼴 ‘단디체’ 아시나요…오늘(11)부터 무료배포 - 쿠키뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9lU180NURQeVpyOVVYa3dGQzFTdWZTQnBpcHRMRUY1SWVsTklwOERZNmpxRDFGUWpFalhfRW1fYmFteXNfS3pKMDktS0xteEY3ZEE5clJvckZRbWtUQ09sWWlTcw?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 07:21:48 GMT"
+  },
+  "市 개발 ‘부산 단디체’ 무료 배포…130개국서 활용 가능": {
+   "title": "市 개발 ‘부산 단디체’ 무료 배포…130개국서 활용 가능 - 국제신문",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOeXJZN2c0YkhLOGRjODVlUjdDS045b0wzcE5xcG1BLXdNenNFRVN1MzF2SkJPbE9XQnp2QXY1UkhabVNzT1lVa3FscGhrb1Y3QnltLURrYkE4RzBnQXhwSmFvTnlCQ3pTXzFFemNJc196aE1sMmhlMVo0MDI4RkhfN2NmRHQ1c1VtOURRNmFR?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 10:51:00 GMT"
+  },
+  "무료 폰트라도 상업적으로 쓰면 저작권 분쟁": {
+   "title": "무료 폰트라도 상업적으로 쓰면 저작권 분쟁 - 공감신문",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBPM21Kc25vbl9IajlpMnByR1M5ZDJpOGhQbERBcHBzYi1MM2x2VGRxSGwtbDJIWTE0Zmd6c3VZWUk1Uk9UVDA2aDBvRUhMcmgzUE83TmZSNjhkTG9YVUM0NG1YVnRBREdH?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:22:01 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용 서체 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 100주년 맞아 전용 서체 ‘HS효성체’ 무료 배포 - 에너지경제신문",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04YThTck40TkpscUNqZmFRN0l0X19MMWRDV29TYnZwcERYNXJYaDBXTUw1Sm9CWk0zbWk1VXhNU2RGeXBUakctYVN2OExpb3ZMeXVsOWZ4d3ZXbXc?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:33:54 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용 서체 무료 배포": {
+   "title": "HS효성, 한글날 100주년 맞아 전용 서체 무료 배포 - 매일일보",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBzQmZYaXdrWTlPNVNzc0Y5a2pXOURCRzFZMm5tbnd0QklhZ1FMYmNrd0NRVmV0VllWT3VjQ1d3VTJwUkJJT2VHb05vMEhHZEF5aXh2d1BTV3A0OGJHZ3FOaU5EN1g?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 13:57:25 GMT"
+  },
+  "HS효성, 한글날 맞아 전용 서체 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 맞아 전용 서체 ‘HS효성체’ 무료 배포 - 부산일보",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5KNVgxZmZaS2VhNG1Ia2pFcjdVaWp1TjBKaXVMX2VvOTV1U0dXTHdfVjZwWkwyZHdMSlpibVQxLTFEQ0VjLV85RWxNMmowWVNVbjVQUVNqYmJ0Ri1UYUEteUtRLVNVQzU4SXhEZXdYNkZqamNa?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 05:46:34 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 글꼴 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 글꼴 무료 배포 - 더퍼블릭",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE93a0tQQWZteWdQZ0h3VFNheTdmR0VsQnhyV1NUWFVqdm5seDM2dUVuUDg1bE1hc1k5cXFjbUY3NEFFamVBUkpNMmxRbjZ3QkdORUtyM3NOQlNGcnVsV3pVejJZdDFjMlk1VzE1Zmh1TdIBb0FVX3lxTE93a0tQQWZteWdQZ0h3VFNheTdmR0VsQnhyV1NUWFVqdm5seDM2dUVuUDg1bE1hc1k5cXFjbUY3NEFFamVBUkpNMmxRbjZ3QkdORUtyM3NOQlNGcnVsV3pVejJZdDFjMlk1VzE1Zmh1TQ?oc=5",
+   "pubDate": "Fri, 09 Oct 2026 05:32:07 GMT"
+  },
+  "\"우리 글꼴 마음껏 쓰세요\" HS효성체 무료배포": {
+   "title": "\"우리 글꼴 마음껏 쓰세요\" HS효성체 무료배포 - 매일경제",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBWb05mekFCVFFqYWVQMm1ORXNMa3M4RlgteW5VbXpxVjJ0MXl5eTM2S05kQlRScGlFaDV3b2xpWGs2S04zbDRXNDRmYmhhX2hmZDh1ZGlB?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 08:14:23 GMT"
+  },
+  "부산교육청, 학생·교사 손글씨 AI 폰트 첫 무료 배포": {
+   "title": "부산교육청, 학생·교사 손글씨 AI 폰트 첫 무료 배포 - 중도일보",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE80RUl2R1VQak5PM3FlbHhZUDZrMlJ0Y0JEcVNCbVZkWUtXNFd1aDNwTmE3V2xUTEFRVHJNQkJLbW5abFR5UWVXNkZkby1KR04wN0h2eTN3Y3pGY29Xa2Qtc3pzMEg?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:50:48 GMT"
+  },
+  "글꼴도 혜자롭게…GS25, ‘혜자로운체’ 무료 배포": {
+   "title": "글꼴도 혜자롭게…GS25, ‘혜자로운체’ 무료 배포 - 포쓰저널",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9Db0NIc2x6LU5DZEgyVDRpbXc1QWFKNzRDRzh4a2NteDcwUzBjT3V1cWcwY2RUTjh3d2J1Q1pmSHAtZE51U3M4eDNJMVpqYzhOdWxhMS0xbGpmanFXb2JkNGo3U0U?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:28:37 GMT"
+  },
+  "부산교육청, AI 한글 폰트 2종 무료 배포": {
+   "title": "부산교육청, AI 한글 폰트 2종 무료 배포 - 문화저널21",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qak4weU5lc1AyX1lyUDFvV1JzZFRqTThaVnZqbVFfQ2FDZ2FDamFOLXBiN3QwdEVQSnpOUjFXX2dQWDRHa3FZQWZLUFlYaTMxdmJ5aXQ4Z3lUUzVvQjdCcTgwMFhhNVk?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:22:15 GMT"
+  },
+  "부산시, 도시브랜드 서체 '부산단디체' 무료 배포…역동성과 단단한 이미지": {
+   "title": "부산시, 도시브랜드 서체 '부산단디체' 무료 배포…역동성과 단단한 이미지 - 뉴스핌",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wV3NtSkFSNGtrYk9mdmwxcE9PY184b0FuVnI5Y1dRbHdUa0xXOWtGZFo4OHR0VjFwNW1TTmxEY1YtSFZ1T1l1ODlFT2ZEVTNYOWJsdC1aSjRWc2Fo?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 02:36:00 GMT"
+  },
+  "학생·교사 손 글씨가 폰트로… 부산교육청, 한글날 맞아 2종 무료 배포": {
+   "title": "학생·교사 손 글씨가 폰트로… 부산교육청, 한글날 맞아 2종 무료 배포 - 부산일보",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xZWN4QnM3aVhSQ3Q1TFd6STFfN2ZITzg3ZUw2d1FfMXNzOGp1bEhwUDJkM25RZWQzb2djbVZkYlNyVDNKUEhqa1dQYk9uRWhRUUswdl9TcV81ekRRc0NBMHVQNllHSXdpckt3UFBNX0VSdw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:12:52 GMT"
+  },
+  "\"회사 폰트 예쁜데 같이 쓰자\"…HS효성, 한글날 맞아 전용서체 무료 공개": {
+   "title": "\"회사 폰트 예쁜데 같이 쓰자\"…HS효성, 한글날 맞아 전용서체 무료 공개 - 신아일보",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5qN2UxSG9KRVloRzZQVkZNRXc2SHhuYnQ4WUV4bGxmbTFHaE90YTlmX2dOcFI2bTA4ZGs3VXdQMXdJbkliNl9mWlBkZlJ0MHFCYTJDb09pUDYxVWpzeG85TWVuQ3FYX1dZNGZmaEJmc1c?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:02:41 GMT"
+  },
+  "빗썸, 글꼴 빗썸고딕 무료 배포…한글날 100주년 기념": {
+   "title": "빗썸, 글꼴 빗썸고딕 무료 배포…한글날 100주년 기념 - 아주경제",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4yaXNINXZ1ZlN3NWViUGtjNHFHVkxqbzZLNXhvU2NxTTAtaUUtaTZmREJ3MEZ3NC1TZE5nMzFYelR3d192dmR1QURoeWxDUmdyZ2pUWGZ2ZHpBZ9IBWEFVX3lxTE9LSm52NjJ5SE4zNmpKcG5uOENWOXV0c09aM1VpN3lXc3JSVm9Edm9BMkk1Z3BXNmF5R0ZiNUtKUkQ0dzR6b0RNVHJWdmpfM2JhR252SURWa2E?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:39:01 GMT"
+  },
+  "부산시교육청, AI 한글 손글씨 폰트 2종 무료 배포": {
+   "title": "부산시교육청, AI 한글 손글씨 폰트 2종 무료 배포 - 뉴스프리존",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE90ZkgwRHdNS2JRRVVtai0ybms1cFZubGVsWk5fcjhqeVE0SndEOGFIeFg4dkd6cUZ6ZkoxYWRqOVgxN3FmcTdSbjh4M29pLUJIQTRTZWJGVWNTc19qOUd0YmQySEExMER3SmdVMGp6RFp2alXSAXdBVV95cUxNYWk2X2lOQmtoRUVHdmRuSU90NkhBM1B3MmVuOHFmb2NjT09UaGJGUU56b3FTNkhQMkZEcU9walJxMkhCMGx1QUM1YzdUU09Rb3hRUkEyTjhEU0x4dUNockVWWjhEb1ROM3c5QWh1OEdua1FxRmFicw?oc=5",
+   "pubDate": "Fri, 09 Oct 2026 06:38:46 GMT"
+  },
+  "부산의 새로운 전용서체 ‘부산단디체’ 오늘부터 무료 배포": {
+   "title": "부산의 새로운 전용서체 ‘부산단디체’ 오늘부터 무료 배포 - 서프라이즈뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzU3pCSkZLenE0dDk5UFFMcEdubVJuY0MzdXVMV0c0dEJlb2hSWVB4RHZ6SlFWd1JuMHVYOHdwel90b2RxUi1qUnpoOWp3SS0yRUVmbk94NnhFeTNKTWVCZ2JCN1NORjZSWTN3dEFB?oc=5",
+   "pubDate": "Sat, 10 Oct 2026 23:26:13 GMT"
+  },
+  "“부산의 글씨, 세계를 향해 단디 서다”…부산 전용서체 ‘부산단디체’ 무료배포": {
+   "title": "“부산의 글씨, 세계를 향해 단디 서다”…부산 전용서체 ‘부산단디체’ 무료배포 - 복지TV부울경방송",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OTFFXOUlfQ201dXd3ZWE4SUNiQ1VsQ1hYelNrcmVZaWFMaThscUlXQjNjNmxUenZmazhvNEw0ZG9aY3JSYnM4MjVBRlZBX2lXcU8yNlB4RFhEeEFtMmNDaThhdWZsVUZt?oc=5",
+   "pubDate": "Sat, 10 Oct 2026 22:35:58 GMT"
+  },
+  "[한글날 100돌②] \"글씨가 곧 브랜드 정체성\"… 기업의 얼굴이 된 한글": {
+   "title": "[한글날 100돌②] \"글씨가 곧 브랜드 정체성\"… 기업의 얼굴이 된 한글 - 뉴스컬처",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBacDBPeTRoWG9UUklub29RZHNpSkdVZ0VGT3daWWF3WEVXSlc2Rk9YV0tjM1l1TjZYcjJaTzVUY0s2MjBsN2Q4TERJejhEWG1BSE1LY0NKYUYyNWJQR281Tm1TbkJoZw?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 10:02:15 GMT"
+  },
+  "부산시, 새 전용서체 '부산단디체' 11일부터 무료 배포": {
+   "title": "부산시, 새 전용서체 '부산단디체' 11일부터 무료 배포 - 국제뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1FWnBwS3cwTVdFTDZMeXJyU2cya3AxZ2hrbTRFNVFRZENOcXNEeXduMDIycU9uaTB5OFl5LVo1S1N3NmtfNjhORVRBcElQZDNGLUVORHNOZURwVkNOaEItZ2pCaWFwd3k0TGUzdnRB?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 01:50:29 GMT"
+  },
+  "HS효성, 한글날 맞아 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 맞아 ‘HS효성체’ 무료 배포 - TIN뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE4wdWZYNFFnajdVRTk5d2lZbWk1REJzVjVxbnhjVkNyOU9UQ3c5bk1yaU11Tzg1T1JLNk5VdHo3TzN0aHMxS2c?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:07:00 GMT"
+  },
+  "HS효성, '한글날 제정 100주년' 맞아 그룹 전용 서체 무료 배포": {
+   "title": "HS효성, '한글날 제정 100주년' 맞아 그룹 전용 서체 무료 배포 - 파이낸셜포스트",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBUS29Bc1RxMF9XeER6QXZMNmlBTG9MS0REOURYVV9iVnZPMVFMMVZsSHZJUUdiNlZpbUdiSEJ5SVJOb042Nm9yU3BnRS12RVFNcVBQV2dPMkROMm9zT04xYWppeHRYSWRoNTJfM09ZT3lJdnJC?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 03:39:52 GMT"
+  },
+  "HS효성, 기업 전용 서체 공개...한글날 기념 무료 배포": {
+   "title": "HS효성, 기업 전용 서체 공개...한글날 기념 무료 배포 - KPI뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1xT0VHNnplZWVRWEJ2RHNlTGNXbFZpUXpvWk8yNUszbnE1MmVDQlJGbzFleGVMZFoxdU0yR05HVVI1ZFMydEFSZFVzbmZSdXpkcUlycWhjMA?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:50:49 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 공개": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 공개 - 아시아투데이",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9VeWdVS1E0N2tSVzl3WkY3Nm5tODN4bV9rNGtqbW1CV1o3Q3pvdEtJRmIyNkZuX19rVEVSN0dGY1g2NVZpVExfN1dya25vdFY3c0kyOC1QUmw0N08zVTV0dXBuNXlITGtURUFnNUVn?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:44:56 GMT"
+  },
+  "누구나 무료로…“‘부산단디체’ 단디 쓰이소”": {
+   "title": "누구나 무료로…“‘부산단디체’ 단디 쓰이소” - 부산일보",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9BbmtwbEh0bi0wWXZnN2JiRjlDTW1qdHpmeHVIa3VqWFBfUEFMaGhVZHhVbmFJTFJiR1pXTDItZ0hHVFI2VHZBOW1DNW9UZ2NiUFZ5ZnlnZ3pBNDVRbXFJNGNQaXl2T04yc1hfXzdXOEI4LWFZWHpETjhzQUU?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 06:43:34 GMT"
+  },
+  "HS효성, 직원 제안으로 전용 서체 무료 배포": {
+   "title": "HS효성, 직원 제안으로 전용 서체 무료 배포 - 스마트비즈",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB6WXF4XzJsbzlrVnAyQ3RQd3pEZ0FVU29UMm4xTHR3VzlfQmhYZUtYcU1pZGlSU1Y5TGVaUmlhZFJFdlRZWU9FLUQ3ZEFrVWFCRzNweWZ6a2xUUnVBbzFWcE0yWjdJV1pGdlhjMQ?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 05:02:23 GMT"
+  },
+  "부산시, 새 도시브랜드 전용서체 ′부산단디체′ 무료 배포…지자체 최초 130개국 글로벌 호환": {
+   "title": "부산시, 새 도시브랜드 전용서체 ′부산단디체′ 무료 배포…지자체 최초 130개국 글로벌 호환 - 메가경제",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5rT2VoejM3QUhTNEFoazdNcWVLazljd0xDRG1BTXotMU5aQkdMZmNjaXJGdnBQMTY5VEFFdlNGZm9FWnFmb2o4VkJuSnJhVUNwMV9oYXJESHo4VDBkdVZKVDJwVUpob2hOUmV3RW9kdk9WUdIBckFVX3lxTE5rT2VoejM3QUhTNEFoazdNcWVLazljd0xDRG1BTXotMU5aQkdMZmNjaXJGdnBQMTY5VEFFdlNGZm9FWnFmb2o4VkJuSnJhVUNwMV9oYXJESHo4VDBkdVZKVDJwVUpob2hOUmV3RW9kdk9WUQ?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 01:26:49 GMT"
+  },
+  "HS효성, 한글날 100주년 전용 서체 무료 배포": {
+   "title": "HS효성, 한글날 100주년 전용 서체 무료 배포 - https://www.2news.co.kr/",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE91NU02T2dwU3pfNVR4MlBPeTJLMmNJamtGSGhFNjNmMmVXWDdKeWZXV0NTQnZjQWJDM01ITXVfelgzMXpONjE2dXRvNkNpRDVzLWltVzZILWc2TlhJeGx6NGNBekFpb1NR?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:49:00 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 배포 - 한국경제",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5xdFVpN01jeUM2ZHdFUzN5VEl6dHNJWktKTEVKaUxtazhRVmFQMlZrbXplM2lBeUNNRGE4MW5tSjg1Y25DcnlGR3NNTmE5aFBscXpjU1VtdVZZQQ?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:04:21 GMT"
+  },
+  "한글날 맞아 '혜자로운' 글씨체 푼다…GS25, 전용 서체 무료 배포": {
+   "title": "한글날 맞아 '혜자로운' 글씨체 푼다…GS25, 전용 서체 무료 배포 - 파이낸셜뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBPR1pRUm9zV3R6cWpMNFMtaFp5YWlXQUcweE1zM24xY3hmTWFUM3U2NnhRN2dtQmljdHlXSzdtbTR2UFQ5cHFIaFgxNGdnV3RMY00ta1ZJZVBxZw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 05:15:33 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 'HS효성체' 무료 배포 - 머니투데이": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 'HS효성체' 무료 배포 - 머니투데이 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBHaFZlcG1NeDZTUG5QSWdSclJuaTJxRzF5RU5tWTFqT1dtRjhpVWE2cWQ0cG5KLUMzUTRDcHI5eUFmMEc4d3ZrakJIdHdDQmJCRjltUkRzWXgwTU9aMVllQUlncHE5b1MyMGlLR9IBckFVX3lxTE4zem45RkM2OW5fcE4xOWZtSEI4QWV6YjI4YjdEY00za3JoMnU2dWVxMDdZbTFKSHBfZFVfYmhza19JdDcwYkxtMC1QeERMMEFWUUV2bUo3ZC1oWmNpeENnc280RlU4MjZQZTh5MUNvWU1wdw?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:51:49 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용 서체 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 100주년 맞아 전용 서체 'HS효성체' 무료 배포 - 퍼블릭뉴스통신",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1qQ1dkY1VuWGo0eXNWNlh6eVZBT3hLM3RobmRiUEVTTXhhcHJacFVINlBleWgtbExNb2wzczJRT1BCXzQ0eElfeTM1em5nWnFMbVQ4WjlfME5ndnl1aGs0bzkycGtZSkpSc1E?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:09:03 GMT"
+  },
+  "HS효성, 한글날 맞아 전용 서체 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 맞아 전용 서체 'HS효성체' 무료 배포 - 뉴스포스트",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBUTGxFWXEyUy1lRWhFTGtaSzI1anVzcTE1UHdlX3RJdUFvNXUzT2NGbmtFUjRIRElmaGVOdVZfRzVIVXRPTDBLeU95VGMzMU9nOFFwUVlLeTFqVDBzQkhLNkJLWkdRWExaM3c?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 08:31:23 GMT"
+  },
+  "부산교육청, AI 손글씨 폰트 무료 배포": {
+   "title": "부산교육청, AI 손글씨 폰트 무료 배포 - 데일리한국",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBKU0FaRzItQWtXRDhSMXZIWE5hZFdRVjVGUG5nQkRpWTduanotY1hvSUd2Qi1YVHA1bGxNTkRYZjVJZFhsUlFmSzdkaFJ4Q3JSeFhiOThpTEJtSXUtdnRVZDIwX0hjZExlQkZ5UVBPSdIBc0FVX3lxTE4zbHBCT0FKck9QWTNTQ1ZyRk5Rc1V6M0M3Y2lwM2p3MU54QWJYSUNEN29tUzZRbTJnOUZueFlJZkNQOUNvTVBsbE1ETVlwLUw4b244a0RiTnZ6YkUyVFdJdjNWZlNuWm9nQWd6RUYwb3hLRkE?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:00:22 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용서체 무료 공개": {
+   "title": "HS효성, 한글날 100주년 맞아 전용서체 무료 공개 - 스페셜경제",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4yQUlyeVpqaFFmUWJNWjBWZHo5a1VJZ09tWVVvUHBnYmxRSHQxODYtWmpCN0RsVlRtOWd2WFcxbE9lZFJHTHJaaENJUmQzMmNpb2c0OHgwMVNCTzI2MUZhR0R6UTJNTjd1UF9Zdg?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:39:50 GMT"
+  },
+  "GS25, 한글날 맞아 전용 서체 ‘GS혜자로운체’ 무료 배포": {
+   "title": "GS25, 한글날 맞아 전용 서체 ‘GS혜자로운체’ 무료 배포 - 팝콘뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1lZnNzb2hwMkUyaXpYbkdVNGtDOGJyMVVYR09ZX04tMGd6ajZOUWRxdi1EOHE4ZFNJdlhlUGwxemJ5MGRXdlBaS3BTTVZjOEZ2cXNwckhPTHpYZXgzaTV2TEQ4WWY5Y2pHX3NWRVZB0gFyQVVfeXFMT2RZZ0pEcHdjaEV5LWtuaTFoM2RXWERwMndQdHQ4Qy1UUUVPNGZsYnpyajJVLU43VXBudno2dElKWThGTG1zeWpnZVpyYllaTDBtLXhDbEp6N2pjcElnQS1jdjBTbTZLaWhudGJiQnFGRFFR?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:21:58 GMT"
+  },
+  "부산 사투리 '단디'가 글씨로…새 서체 7종 무료 배포": {
+   "title": "부산 사투리 '단디'가 글씨로…새 서체 7종 무료 배포 - 더쎈뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qOGh6MTlnbW91UFM4U2xxNzc2WXVBY0RpTDB1VHJNOHVyYTQxT3dOQUU0SXg5WUxoM0RhaVp6Vm5DR1NTbGtENUYyNHlhZ0x1MzdTZHh4U0IybnhwbEE4TE5EZFU5d3c?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 03:45:59 GMT"
+  },
+  "HS효성, 한글날 맞아 전용 서체 무료 공개…임직원 제안으로 성사": {
+   "title": "HS효성, 한글날 맞아 전용 서체 무료 공개…임직원 제안으로 성사 - 더트래커",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1GUVQ1Rzd3a3VnWlVXYlY0bEVlMlJvOG5vcGdzR3BuaERQc3FaeHdXQ0tXN2c4R19MbUJPV0gxMTNubnBpRzF3Qk05MUNUNENhekRPV2FFRGo?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:19:37 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 100주년 맞아 ‘HS효성체’ 무료 배포 - 공감신문",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1pNHBDVnhwVW84Vklpc0FWaVlNUVFuaFR6X21ZT2lmRE4wZjB0blZYNVhndnhnYk1FYmpvLUdWTWRIQmxLdFc0QnR6UFViZ282OUd6QVRUZEVEUFVPRWlodDNJMEo3bVpC?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:12:08 GMT"
+  },
+  "부산교육청, 학생·교사 손글씨 담은 'AI 한글 폰트' 2종 무료 배포": {
+   "title": "부산교육청, 학생·교사 손글씨 담은 'AI 한글 폰트' 2종 무료 배포 - 부산파이낸셜뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4yS1ZUeloxTWxqeWl6cHh1b2xVQ3h5a0RXMUJJd2pIS3Rhek1kMWdUU29jOGxtSi16NGNBVlc0ZjdiQ2laNXFsSy1kZDJIdFdXU25UVDFqVm13TElm?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:30:00 GMT"
+  },
+  "부산의 새로운 전용서체 「부산단디체」 오늘(11일)부터 무료 배포": {
+   "title": "부산의 새로운 전용서체 「부산단디체」 오늘(11일)부터 무료 배포 - 세계로컬타임즈",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5lQWx6WFJwZXIwVWw5VWFJdnlzcGRjajRSWjNDbWg5aDBhR3g1aWVmS2FKUnhIU3VzcFRMSWQ5YUFIYmROU191Q08yLWpDSUpodFJWQTg4bmNYWjhHQVlydNIBXkFVX3lxTE1GdTZKeVQ5c3pfcExWR0ZuX2F1UDdiM3J3VUMtYXUyUTF6SWJPZDNCMm1vczJTQjdCYlE1akh3bklIM2NWTjlxTk03UGlFN2RCRVNzZHdKRlR3dGNoZnc?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 03:02:56 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 'HS효성체' 무료 배포 - 뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBzWkZVaGtPT0JONXFKWHlnUHBNYmdKQ2s2aXBFX2diT0puRmNpZmhmYWRwYWlGVGFEUWt1X2R2MVZDcHM2OC04eGZhdkhINTMwZmpBX05zRTk2Nk9oaUdjLdIBeEFVX3lxTFBrMm9FTGF2eEtUbk1ORUk1cW9XSEtvNktHcFF3Y28ydzVxLWcwRDNjWVk5bkFacGVvQ3NTWEJpeDZPUVdaUTVyRnRiMDltM2pVaDB2TFNmdUFzQ1VVb1pXWHppc0RjUWpYU3duSnJpZ0RMTDM0UjUzZw?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 05:38:21 GMT"
+  },
+  "HS효성, 기업 정체성 담은 'HS효성체' 무료 배포": {
+   "title": "HS효성, 기업 정체성 담은 'HS효성체' 무료 배포 - 더팩트",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9qTDRfV3lYNzR1V2ltekJJLUd3VkNZeUZvSWZnZUFGRUhTSUNIbTdYZFU4TUJuRGRfRUtybXlCUE1kZmpWbEtyc0dYVHUzeDhaR3o0N3JVTlRZQdIBVEFVX3lxTE83d3IydmZEWU1XWTdXQlc3RTl0dW5sTHk3UDZvZkctb25pMUlVRmZSdC1mRDhiOGxmN1huNkJuYnhqOEJKWGxXM1Nxak41VHhQRE1Mag?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 04:49:59 GMT"
+  },
+  "빗썸, 한글날 맞아 전용 서체 '빗썸고딕' 무료 공개": {
+   "title": "빗썸, 한글날 맞아 전용 서체 '빗썸고딕' 무료 공개 - 블루밍비트",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5xelNURUpwX0EzV3dhNzhiWmxjQU5MSl9sQmlHTzJpNEQ0MWUtTEpQRkxZdmN5TlZ3MlkwQUN3ME1HdGVCeTFXMWladG5aSm01?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:49:41 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 기념 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 기념 ‘HS효성체’ 무료 배포 - 한국증권신문",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8xcnZnTEpmZzY4N25kX3Y4SkcxODdTZWVPMkpZcThraU8zbFMwZUhVVlAzdEpPenQ3Z1g2Y3VmbFVqazZYc1lDZEZyYTJkd3pKaTFIVXpKYmxBdW9HQ0RFcV9WSUJGa2ticG85Sg?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 06:13:17 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 전용 서체 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 전용 서체 ‘HS효성체’ 무료 배포 - CNB뉴스",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9JOGJ0anpXaFAwelR1WVBhelJnNlF4ZlEwaEYteUhkMi1QTUR2eklrRWQxYWtZdUNEUnNZZ1Q5ZC1WSmVLNjZuVXoyT0o4UFBIOEdWTFZ3RjR2UlpiVkNYcFQ3V3d4RGF3c21z?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:44:21 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 기념 HS효성체 홈페이지 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 기념 HS효성체 홈페이지 무료 배포 - 컨슈머타임스",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9VOEg3YnZCNGs0MnI3OHhETjZMTUVKVEs4ZUtBdExLandCaWg4bnc4SVNid3BxVjBmOG5Gc0tBNk9ROENLLXJkOWhqd3ppWkVwWWgzR0pDVkhBN2UyZS0wTVhvWXVfUi1sV1E?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:15:28 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 전용 서체 '빗썸고딕' 무료 배포": {
+   "title": "빗썸, 한글날 100주년 맞아 전용 서체 '빗썸고딕' 무료 배포 - IT타임스",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5iTmVjVm1nb2czNzJoSHZsSkFnOG9hWkh1cUlrYkdrVzdEemlldkEtZ2xvWS04SENNVWkyTlJUMEF5WTJrbGRjNlByNHUwc1c3cVJmaEpJa1l4cFRtQXRTa1g1QkU4WFIx?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:28:51 GMT"
+  },
+  "부산의 새로운 전용서체 '부산단디체' 오늘부터 무료 배포": {
+   "title": "부산의 새로운 전용서체 '부산단디체' 오늘부터 무료 배포 - 웹이코노미",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9pY19uaVM5cmJtckZnS2tFMXluN3V0cWNvNEp3X1ZLZlhYY0M5QXVPRGFGUkEzWkdnSXpsQVNFS2ZCMlA5YUdxQngxdVpGWnBydWF4Yl9vZ0xsSUs4aHlkNjZtbzdReXNlNkllUFE5LUQxdw?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 10:20:24 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 전용 서체 ‘빗썸고딕’ 무료 배포": {
+   "title": "빗썸, 한글날 100주년 맞아 전용 서체 ‘빗썸고딕’ 무료 배포 - 헤럴드경제",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9QMWo5NXZWaWdXVGxkUFFNUTB1YjFUZjI0bFRWdUc1akRmSzhNMzZDcmJwYTY5SDRvXy1XcWFmdF9KLUZRaWRtRk1vaUMtd2lwcjJvQ0xn?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:28:57 GMT"
+  },
+  "HS효성, 기업정체성 담은 'HS효성체' 한글날 100주년 맞아 무료 배포": {
+   "title": "HS효성, 기업정체성 담은 'HS효성체' 한글날 100주년 맞아 무료 배포 - 화이트페이퍼",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9YQ19RTDBLd1lpcnd3MHNyd1FkeWdEaWc4X0MtQlBkdy01M04tbm5KUnotczhwQWZXOTU5M2pSUENnaGxLVHhDWlQzOU9ObERpRnhMUnlnV01fa29vQXJmU0dGTndiMjBqdlBLaEhDUUXSAXNBVV95cUxQZjB6ZDhrODRVdHJBTEJTcnZZbTZ3SGkzX2JLQ2ZidW9ZWkJQUWdlTF9IcXV3VG95WTZoempkS1RhY3kxcjhlS3pYV1ZCcUo5Q0JOc2VUbW1fVW1lWGpQZW9iajlkMUYwcVlUU1UtbWliajhF?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 06:19:46 GMT"
+  },
+  "HS효성, 한글날 100주년 기념 ‘HS효성체’ 무료 배포": {
+   "title": "HS효성, 한글날 100주년 기념 ‘HS효성체’ 무료 배포 - kor.theasian.asia",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE12LXFXM1RrT3IwcVNmdUp1azIwM0thajRONzRURnBDMUsyd0tJZl9PMkY4cWRBOEw2X0ZXVnp5UFQ4bDZ2a0UtR0Q5MVBjdTBMaHow?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:12:02 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 '빗썸고딕' 무료 배포": {
+   "title": "빗썸, 한글날 100주년 맞아 '빗썸고딕' 무료 배포 - 핀포인트뉴스",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Gbkw1NXFLY2xVNURCd2ZEeUJoLTFYcHdXNEJRMXhUakNEWWY5QmM1V1lnVGJwbzhicGxFMjhYanp4cDFSWkxJR09ETkUtVlQtZi1LYVotRFBVbmpEQmgwMFYtdnB5RVoyTnNwV2VXNHdJX2vSAXdBVV95cUxQbzlKZmlBdGlLek5IOGM5WlNmcllxakF1X1A3ek10SmxtZGxtSk51TVJUeUZ2Q095MzhpSGhaTDJXcnBYUVIydTh3STJhMVMwdmFGSTZrbjBDdk5JYy1WZFNvdDRyZUVYOWlvRFVBWmc3Y1h6RlVKWQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:28:32 GMT"
+  },
+  "HS효성, ‘HS효성체’ 무료 배포…한글날 100주년 기념": {
+   "title": "HS효성, ‘HS효성체’ 무료 배포…한글날 100주년 기념 - 이데일리",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcXVaVnljTlJMY1lDdXFwVlRmMnA0TkNGZUxFYlZRNWk4aVMzMVVqckNrei1CQzFRSlZ5THF2QUdNM1EtQnhaZ294a19WaDJWOVBRYVBUUnZ1TTJjSC1TQ1I4MW9ybVEtWk5GVGhVcnAtaE0yWEVqYjZvNE9TclA4eQ?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:48:19 GMT"
+  },
+  "\"단디 쓰이소\"…부산시, 새 전용서체 7종 무료 배포": {
+   "title": "\"단디 쓰이소\"…부산시, 새 전용서체 7종 무료 배포 - 뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5Jb0h0OEhiamEtX3FXSUlQNEJSTFlCRjc0dzBYZDQ2Y3A4U2phRXNBUWVBRVFOX1gyelJPNjhKUjhZT0xuYnpxTklIS3R1anhGTkhPc2NOUzBhclQ1bnRpZVB3eEdUUUZjQ21oMDJMVEJUdlFoLVBzUNIBeEFVX3lxTE5Jb0h0OEhiamEtX3FXSUlQNEJSTFlCRjc0dzBYZDQ2Y3A4U2phRXNBUWVBRVFOX1gyelJPNjhKUjhZT0xuYnpxTklIS3R1anhGTkhPc2NOUzBhclQ1bnRpZVB3eEdUUUZjQ21oMDJMVEJUdlFoLVBzUA?oc=5",
+   "pubDate": "Sat, 10 Oct 2026 23:19:46 GMT"
+  },
+  "HS효성, 한글날 맞아 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 맞아 'HS효성체' 무료 배포 - 연합뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01S053UEJjZkVmblgyeDhia1pwcGpmM1pKS1hhUHNqQ1pkWDdvd043c0E0RFpJNXMxTGE1cjFGMEhhOVhFSEotYnU0MjNRTzVkaGswTGw5WVBtbTjSAWBBVV95cUxOeUpETEg3LUlXTWtMOU9wcjd6cGxlQ09xYmJ0UnJlTWc3ckIwdzhCdXBxZXV6MXpTMk96SDAtV2VkdzhKejd5MmRXRnFnVmlPeWtqRUdJSy1uUDVZNUJCTS0?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 01:50:43 GMT"
+  },
+  "GS25, 나눔 가치 담은 '혜자로운' 폰트 무료 제공": {
+   "title": "GS25, 나눔 가치 담은 '혜자로운' 폰트 무료 제공 - 뉴스저널리즘",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1lTGk2THREai1pOXoxTVJ0a0RnRE1jS2F3MDBmeEpHTlN4QTF3d2Z4MVFJWEZOd2FDZ3phMDF6N00tUld6amFHNE5MOHNmcWUwRmhVRDNuaDhrYmctVmx3OXpuQkR3TEd6VzVj?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 08:38:07 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 기념 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 제정 100주년 기념 'HS효성체' 무료 배포 - 한국NGO신문",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mSXpETENwa00xQzFBQllIc0xUZnpKUGNxU0EzWTN2dlgxS3RycVR3MmhzUjEzeHB2dTRtWUdNT3BNR19WTmxzUzBZRThhcHFYWGNMOXlaTFV6Skl0cUdUYjg4LWNlSkVY?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 11:19:27 GMT"
+  },
+  "시교육청 'AI 한글 폰트' 2종 무료 배포": {
+   "title": "시교육청 'AI 한글 폰트' 2종 무료 배포 - 부산파이낸셜뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBxanh6QVlZbzJ0aktXbklwT01DUTNCSk95WjVpaDM1Tmx6U2ZzRUY3WHZnVDhSN3FyeDdiTDZtR2dTdXZhREw2QUFYOUxsLXU1TThTM2VobjRHNXkz?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 09:32:00 GMT"
+  },
+  "효성, 창립 100주년 맞아 한글날 'HS효성체' 무료 배포": {
+   "title": "효성, 창립 100주년 맞아 한글날 'HS효성체' 무료 배포 - 국제뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5qaFBDV1dSREJCS0V0bUNVTVFLMGxjNGpnd0tzLU5TX0lxZVJkZWVSNGgtdEpIYXd0ekxSOEQyZGEwcjRmX3NmYVgzWklIRGJMX21pZmdxVndiemxOME5WUnNzTUFvWnA1WHdhVWR3?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:58:03 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 배포 | 프린트 | BIZ 뉴데일리": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 ‘HS효성체’ 무료 배포 | 프린트 | BIZ 뉴데일리 - 뉴데일리",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5fbHdMS0c1SjVPQzhHU3docHNEN0t0STcxOVpoR0ZrTy1TQ3puXzV4UW5uYXZsOXlEamZ6TnExUWFDZ1lmT0FEQkJJMkNCWGtMc3lvOUNMdk9fcjRXWFdHckVfb3E5THVIU19peHFDbnpXLUtz?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 05:20:17 GMT"
+  },
+  "\"한글날 100주년의 의미 담았다\"…빗썸, 전용 서체 '빗썸고딕' 무료 배포": {
+   "title": "\"한글날 100주년의 의미 담았다\"…빗썸, 전용 서체 '빗썸고딕' 무료 배포 - 더페어",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1rb1pnaWFTOU5nSkR6dHQzUEt0ZlpvMTQ2ZUdwd2Y2ZFZocVhFRUVxTFF0QnhZZ041UUZ5bVRiTEJxY2RhM19aaF96clZZZldVcDF2QzFrWUd2d0FFNldlZU94dWxyTWVveDFpNjdkNDE?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:31:53 GMT"
+  },
+  "부산교육청 전국 첫 'AI 한글 폰트' 2종 배포 - 머니투데이": {
+   "title": "부산교육청 전국 첫 'AI 한글 폰트' 2종 배포 - 머니투데이 - 머니투데이",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9pTUdHZWFLNzU1T294QlVUdHh3M1AwTjI2NW9wcG9aN09lQ0lpWjJWVnlKTzBhRVpxeFJ0RVJuRktYdUZXVTMxc2lPS19rZGlBSFBXRUdMTUhLeGdLZF9qc0NQR2dJVThWQ3lyTHNWT2ppR1UxRWlJ0gF8QVVfeXFMUHVBMG5HTVphVTBaVkhYbkZXeWVtc1ctVGpYX3NVMlVaM3pwSUNyQ3ZqcG1HOXZXYlZpeXFnVC1HR0EzTXlmMTZRNG1UZzI1Y2ZOS1VoYnQxRENBbEVPUGVZZDhoUVdNZVBjdkxBSUxKa2N2NWJMZFJqWm9Kbg?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 08:22:17 GMT"
+  },
+  "부산시교육청, 학생과 교사가 만든 'AI 한글폰트' 2종 무료배포": {
+   "title": "부산시교육청, 학생과 교사가 만든 'AI 한글폰트' 2종 무료배포 - 아이뉴스24",
+   "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9sREkyVWRESDBzN1Nnak05X0hXR3BldTZ5Y0ZDY2ZWTUNDcVlEMlc2QWNMYmlHWUpVWW5zXzI4OU50Um00bnVhdkNjWmI?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 06:29:38 GMT"
+  },
+  "빗썸, 한글날 100주년 기념 '빗썸고딕' 폰트 무료 공개": {
+   "title": "빗썸, 한글날 100주년 기념 '빗썸고딕' 폰트 무료 공개 - 메트로신문",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1LMXUxOHg1NkxMYThNMl9RLXdlbG9mbmlFNGszeFBuNE52OEdyQUtvVHJYTHpwYjZhcklQdkoxVDRFQkpqdmFYdEtJU21GWm1wXzAtU3Y4cVhjcFp1RERWTQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 03:12:17 GMT"
+  },
+  "부산교육청, 학생·교사 손글씨 담은 AI 한글 폰트 2종 무료 배포": {
+   "title": "부산교육청, 학생·교사 손글씨 담은 AI 한글 폰트 2종 무료 배포 - 뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Lb3Y4RkI5Y1JtNEViakZmcXozSmJSY2VEWko2bTRvaV9xdy00TEw4RFktcWJGNktaQWk2V2xYWmFmclY2VFprZ05wT3VVQmhXV1JCcTQtQmp0Wmxya3hXbNIBeEFVX3lxTE9aUHFpdTFaOE44NUR6OHJlT1ZzcEdvLXBnaTB4MHRqaVJYUWNJbDBQZVlSczYxMTcxUWw5eXZZdEtUSHNMQzFyYllHNnJyazU2ZENCYUl4Y2g4d1RvaUhpRHFEcUJhb0RlU2tiV0lUbUF0WVhfTTZ5RA?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:30:41 GMT"
+  },
+  "한글날 기념 '혜자로운' 폰트에 한글 사용 굿즈·AI 말모이까지": {
+   "title": "한글날 기념 '혜자로운' 폰트에 한글 사용 굿즈·AI 말모이까지 - 한국일보",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBuS0VvM25uRG1MS19jYW5TVmgxc0k0bUVWakYxenF3RkhzT2ZUckZhMGpsU2xJNGh0VURjMTFPaHJKZlgtck5CU0cwa212cm5qaFN6bFN4MlBCeE41UF91dUFQcVlZMEhXZU9raXln0gFzQVVfeXFMTzdSbUFfaXFhTFJRSTJ2NVd1M2t4Y2kwMjIxei1zcUR2ajFCNkNBRG5ZUDU5Mi1BQkwzWTUwcDhYaHZzRGQ2ajlDcW1GTXBORGlRNVAzNEctRkxKRXN3b2pSdF95NVBabmlBYTdKZ294dFE1NA?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 08:55:00 GMT"
+  },
+  "GS25, 한글날 맞아 전용 폰트 'GS혜자로운체' 무료 배포": {
+   "title": "GS25, 한글날 맞아 전용 폰트 'GS혜자로운체' 무료 배포 - 씨원뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE54ZlFnZ1hWSWUxSHViSUlKbDBnbHVLdFVRU2QtRnZRZFlkTUhOUVl6ZTdWMHVUMnNBUFlLbzJicFl2bTlDaDlydzBmaHp6QVVqZ0NtWkZPLWRkWlNoV1BYXzY3TzI4OEU?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 20:10:31 GMT"
+  },
+  "빗썸, 전용 폰트 ‘빗썸고딕 오리지널·베이직’ 공개...\"한글날 100주년 의미 담아\"": {
+   "title": "빗썸, 전용 폰트 ‘빗썸고딕 오리지널·베이직’ 공개...\"한글날 100주년 의미 담아\" - 매일일보",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB4M3lrUDhSSkpfUnpHblBwYW01TXd0Wk1MVDFiNFBLWDhhckN6LUtTeC05WFh3VURRSDJkVWJNRkZTbU1nLWpXdGMzNnc0NlVEMTFhVWVzd0UzSDhyUUoxSnFMS2k?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:35:49 GMT"
+  },
+  "부산교육청, 전국 교육청 최초 AI 한글 폰트 2종 무료 배포": {
+   "title": "부산교육청, 전국 교육청 최초 AI 한글 폰트 2종 무료 배포 - 웹이코노미",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kT1BtczFoUC01enRCV0tTSVRTUGJBS2NqeHpBei1OdjludmhrdmZPMURLck13eDlxVXp6S19TamNEdzB1RTJucG56WEMzM3d2WVdvY3QyOXFLeEF2TzdQM2ttOU1OeHJDTDlwaDF4bDlUZw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:12:45 GMT"
+  },
+  "[마켓+]잘난체·리아체…한글날 기념 폰트까지": {
+   "title": "[마켓+]잘난체·리아체…한글날 기념 폰트까지 - 비즈니스플러스",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBMZDZIdlZFRGJzS0h0WjF6NGZqeXBrU21aQmE2X3ZhZWNBVGVSWW9KaURSaURyMW1YWUw1TVNZNUFQVnViRTJrVjVDRGR6UzlpR3BlcVA4a2ZEOXIzSEZzNEI4QXNMLURoSkhaLWU5aw?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 05:39:49 GMT"
+  },
+  "K컬처 붐 타고 해외서도 '한글 로고'…\"한글날 100돌\" 들썩 [트렌드+]": {
+   "title": "K컬처 붐 타고 해외서도 '한글 로고'…\"한글날 100돌\" 들썩 [트렌드+] - 한국경제",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5RaHRLQUthZVlQcVYzVnE4NnlQdks1T3dYdnhxX1pCdldmUGlKVVN2TkZzX1RacHoxRElhcGVUVW9YbWgyb09GMW9LNXZ1NUM4YTRZLWtLNUY3UQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:55:48 GMT"
+  },
+  "BGF리테일, 산돌과 CU 공식 폰트 ‘좋은친구’ 공개": {
+   "title": "BGF리테일, 산돌과 CU 공식 폰트 ‘좋은친구’ 공개 - 매일일보",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9vekc2ekNCSmoxY0lQdDc3akk2MEdPVnY5TU1rOEJ0cmpTZkFWekp1NlVEZW9NMGpXQ2QwN1A0LTJEakNYbHRWY3hIQk9XZ0xJaVFhbFRjOVZLNjVLSGVZT1BDM1M?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:15:34 GMT"
+  },
+  "[게시판] 빗썸, 한글날 100주년 기념 글꼴 '빗썸고딕' 배포": {
+   "title": "[게시판] 빗썸, 한글날 100주년 기념 글꼴 '빗썸고딕' 배포 - 연합뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4xclplMXJLOHI5LVZoV0c5RUhXdDFrQkl4NHNoeXoxSGw2RlpQSnVtM0pUbDEzNzdVSTRqYkctTVJSeEFIbHRabUxISWtFUVppQ2sySktNSVhRd03SAWBBVV95cUxOdkxlMHk0U1JRM2ZTenRZMVVyYW9waTZueXA3OVZxU2VhRFFXcXZMa1h1YmJCekdiSE52MEtwOEdUNmdZR1ItT0ZnVGJHU1ZaRFR6QkNvcm1VSlBKZUhCeFc?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:31:24 GMT"
+  },
+  "세종대왕님도 놀랄 ‘혜자로운’ 한글날…폰트부터 드론쇼까지": {
+   "title": "세종대왕님도 놀랄 ‘혜자로운’ 한글날…폰트부터 드론쇼까지 - 디지털데일리",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nc1Jla2Fwb3cyY3V2bl9LREx4WFlZSVJzUkh4V19IRXNSR1ZlNTdHRXFZcnlSMVNJZ09faHNBVlhrSmstTGFQNC1WWm9keDJWYmNnUFdmYXB1LUxKWTdsdnBn?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 21:00:00 GMT"
+  },
+  "빗썸, ‘안정·신뢰’ 담은 전용 서체 ‘빗썸고딕’ 무료 공개": {
+   "title": "빗썸, ‘안정·신뢰’ 담은 전용 서체 ‘빗썸고딕’ 무료 공개 - 뉴스로드",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE84Yy1IVDY3ME05Q2hyMDJ5X25RNU9wVmZpalFkcE5qYWxvMXdxTFZELVpCR0J2U21TTnRlM3d5WTcxdUZIYnNEdDZCVFlxXzBrM2dZQkJZR2Z1MHVGRVlRc1YydjJzRkZQSEU2MTBka9IBb0FVX3lxTE84Yy1IVDY3ME05Q2hyMDJ5X25RNU9wVmZpalFkcE5qYWxvMXdxTFZELVpCR0J2U21TTnRlM3d5WTcxdUZIYnNEdDZCVFlxXzBrM2dZQkJZR2Z1MHVGRVlRc1YydjJzRkZQSEU2MTBkaw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:00:00 GMT"
+  },
+  "부산교육청, 학생·교사 손글씨 AI 폰트 2종 공개": {
+   "title": "부산교육청, 학생·교사 손글씨 AI 폰트 2종 공개 - 전국매일신문",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5UODhPT3B2WkRUdFBzX2Y1eTBpeWZGOU5DYjNIUjFTMzBUN1p2a0puRzdfUmtad05pTVJEWTdFa01GSE5JSkxJaFJzZlV5RUJsZldZR3NRYnNjei05WHVNSjVIR0hjWW01eWFpUkFB?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:00:00 GMT"
+  },
+  "GS25, 한글날 맞아 전용 폰트 'GS혜자로운체' 무료 공개": {
+   "title": "GS25, 한글날 맞아 전용 폰트 'GS혜자로운체' 무료 공개 - 뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0xQjIzam9vcUVYZTZ4cF81aXVxZ0JRU0FsTTd4eTRXZDZ1akhQMTRBemNvR1ZvZ0JmT1BpcThqaVJEU2EyeFA2M0lFNmc3SERvM0Ztd0hlTkt3M05Va20zMNIBeEFVX3lxTFBhcE9sQnpjanB2Ti1MMTU4NFkyY3lPdlc0WU9Cc0twalNObWFqZWEyaGtqNVhiOXFsdWw4Q1k5dmFVN2NtRzZzcGlRUlBBVGZqckhwUld2dXZ2a1ZBS2JMakIzdzJGR0dKUmdYeTJJX0pITHZvYjg0eg?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:54:15 GMT"
+  },
+  "부산교육청, 전국 교육청 최초 'AI 한글 폰트' 2종 배포": {
+   "title": "부산교육청, 전국 교육청 최초 'AI 한글 폰트' 2종 배포 - 국제뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1jbG9SUmZCZXctakpoVEJIWDhkTGdNTEl4b1dTaWJ4cFJ3YU14ZXlZZDNBWVdtQkl2c0J2b0lacjJURHhWWTVLZGs3Y2pSSTBoU0hiT0Jwd1RRRld5VEtRd0VNbl82ODh5U3VFd01n?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 06:35:59 GMT"
+  },
+  "‘한글날’ 제정 100주년…우리 기업들, 폰트 무료나눔부터 캠페인까지": {
+   "title": "‘한글날’ 제정 100주년…우리 기업들, 폰트 무료나눔부터 캠페인까지 - 파이낸셜리뷰",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9rY2JTUWllNl9McXhzV21raDEtZURNS0VLcHdZYmZEekZ6SGNCdktiQjRtMzM0OXM4QVMzSk9EbnFVU211MkJEaHdiZ2tDRjdZc01pbGVaU1BOX3N3S0N6QlJOZ2RoaDV0eTFUVDlCenNhN2wt?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:19:00 GMT"
+  },
+  "GS25, 한글날 맞아 ‘GS혜자로운체’ 폰트 무료 공개": {
+   "title": "GS25, 한글날 맞아 ‘GS혜자로운체’ 폰트 무료 공개 - 파이낸셜포스트",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE12aS1XREJXOVFaY1BaVEhnQmU3ZmplVUp3cHBEelRROUhVT3FrU1NUdFQ1THBqZVVmeU5XRE9HYWtrRmFBZ0hwYVAyTEtpeUcxODdrUkd0NEt1ZTJpVXoxQmc2VTdDUjZrQWR4ejh0VjAtVXd2?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:49:40 GMT"
+  },
+  "식품·유통업계, 한글날 앞두고 한글마케팅·무료폰트 나눔 나서": {
+   "title": "식품·유통업계, 한글날 앞두고 한글마케팅·무료폰트 나눔 나서 - 여성소비자신문",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1UdE44RUI0S3c3Q2EtaTNzU0w0b2xLcFRGLUU2ME9uSWpUSFM5TzJkeHZLTlo4SmlsNXdsYmpQS0ZwVjRNb3BmZjRUTVZGQWJWWW5CeFlkTmJ4X0E2N3ZBRnFxSQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:22:17 GMT"
+  },
+  "학생·교사 손글씨가 AI 폰트로…부산교육청, 전국 교육청 최초 공개": {
+   "title": "학생·교사 손글씨가 AI 폰트로…부산교육청, 전국 교육청 최초 공개 - 미디어인뉴스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE11ZHFCTHV3NGxCdzJBZldyeUdtZDRsbXJIdUxPaThUV01zSmFSbWR3YVlZWnp4VWctT2NTZTBwYzQ4aEI0alRVdC1ON09tZm9QWVZ1dHhGd3RUZXU5dnhvRl9mOHFIN1hENHFfdWZ3?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:30:16 GMT"
+  },
+  "\"마카롱 모양이 ㅋㅋㅋ\"···편의점서 한글날 기념해 만든 폰트, CU '좋은친구' 떴다": {
+   "title": "\"마카롱 모양이 ㅋㅋㅋ\"···편의점서 한글날 기념해 만든 폰트, CU '좋은친구' 떴다 - 캠페인 인사이트",
+   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBDWGY2ZTAzR0F2cVlFOHE1bU91c1hKWEhOOE9CdTZseUh1WmpUZEU5b0pYcVdNWEZuMHFvcWthdlg5UzdlYl82OGNrWDdXek5rQ0QwUEtCci1vMmEzeVBjUEs3cllxRWhVTEJydzRISk5jajgy?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 23:00:00 GMT"
+  },
+  "[똑똑한유통] GS25, 신라면세점, 신세계사이먼, SK스토아, 우아한형제들": {
+   "title": "[똑똑한유통] GS25, 신라면세점, 신세계사이먼, SK스토아, 우아한형제들 - 에너지경제신문",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42Z050ckNFbTZCbGF0MVRKdVQ1TjJMdzRNYXhEUWV3TmF1alhxV0IzTi1WSkNnWnpMZW56RWp1QkVmU0JpYzN4dXF1MTE3cDlPQ2JFY2F1SEowMWM?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:30:00 GMT"
+  },
+  "네이버, 한글날 제정 100주년 맞아 ‘모두의 한글’ 캠페인": {
+   "title": "네이버, 한글날 제정 100주년 맞아 ‘모두의 한글’ 캠페인 - 아시아투데이",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9xZE1tcHBRYk5hekI2MTlXWmFYdUMxVm5QcHZyNTQtaC11OFpmQWVidjI3TDRjckdWWlNPcnlYdFJwVmVIcjV4OHphb3VKV1hzSXdKUXJLeWw5aS0zSlRNOFYwTzhVWTZtTmhlYm5R?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 02:32:19 GMT"
+  },
+  "“누구나 공짜” GS25, 한글날 맞아 ‘혜자로운’ 서체 배포": {
+   "title": "“누구나 공짜” GS25, 한글날 맞아 ‘혜자로운’ 서체 배포 - 헤럴드경제",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9QV196YnRBWFlOa1dzRWZabEt5WnRhbEZveGl6ZWc1VEJMUTNmNGx2SlAzaVptU2dZTHFQa215eG1TbVJ5VlFaSTRNa0w1Ym1LWkxRSVFR?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:23:24 GMT"
+  },
+  "가상 크레딧 체험이 제공되나요? 앱스토어 도박 이용 정보": {
+   "title": "가상 크레딧 체험이 제공되나요? 앱스토어 도박 이용 정보 - Calgary Roughnecks",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNFNwWlRBT0tfX1J1eDhvSkE3UjhYSGZpVHVjMTdEQVRod2dEUEhwNTVOeVRQeXFKQUxfTTIyM093MmxGNUJtNVczOUNqb1JOcDFHQ25lanVSbVpqQl93SjNKUzBkc19Qd0R0QkItcUZSY2JseFlrMm5fZDlfTEZMSmg0UFdPOFpnSjhNb28zZzFKOGFiOTBidW9LcmFDOV8zd05YdDEwNlNrcW1mc3NaNWt0bm14QkQ3TG91QkZCaw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 23:27:33 GMT"
+  },
+  "빗썸, 한글날 맞아 브랜드 전용 폰트 ‘빗썸고딕’ 공개": {
+   "title": "빗썸, 한글날 맞아 브랜드 전용 폰트 ‘빗썸고딕’ 공개 - 경향게임스",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12dFJJaDR2VXNZSm9iVEtrSll0Z1d2Y3RLWjU2dm5Nc0QxNTZ6YnFxazZwLVd5RGRDYko1WlYtQkFHTUVzTWZLRFRldnJUdnpDLVRqUHFlblVBVWozemEzVkxJSEVJMTNPOHpyQg?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:53:30 GMT"
+  },
+  "GS25, 한글날 맞아 '혜자로운' 폰트 무료 공개": {
+   "title": "GS25, 한글날 맞아 '혜자로운' 폰트 무료 공개 - 싱글리스트",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA0M2Q5QXRZZGtmNVdSOU5hU1Y3SEczSXRtb1VUMkxIUEFHWG5NV1lhUFhFTEg3TGxkXy1sZmdkaDZ5bjZZSThxUWh2NHRlQzFMVU54UkJ6M1RtQWlwakk5cTI1N3ZGUQ?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 07:00:00 GMT"
+  },
+  "게임이 시작되지 않을 때 확인할 맥북 피피티 깨짐 이용 조건": {
+   "title": "게임이 시작되지 않을 때 확인할 맥북 피피티 깨짐 이용 조건 - Calgary Roughnecks",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1LRkN2RjZKb3FGWUk3OHFmaUdrWHFXU25qU2g3VERmRzhoOWRCcEYwS2lGcExCUFgtNWp5SUlzT09NNEoyWXNUQ1AwOFJqTm9nYkk0ZzM4UExTdUlpUTVaeGpuN2w1QkFKWXplVU5JamsybjkxNUpqTzhzaw?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 02:03:43 GMT"
+  },
+  "야무진 느낌 나죠?…부산시, 전용 서체 '부산단디체' 배포": {
+   "title": "야무진 느낌 나죠?…부산시, 전용 서체 '부산단디체' 배포 - 연합뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1LdXNOaGQwNVdkaUtZcHhlQ3ZnUUE1ZmJISVgzV2J6U21ZT01IdnVPSFYxaVlwVUdBR0RoMWlhTHNIV25XWGxFanhVMVE0RmYyXzVYU2plX0RxWlVFX29nTtIBYEFVX3lxTE1LdXNOaGQwNVdkaUtZcHhlQ3ZnUUE1ZmJISVgzV2J6U21ZT01IdnVPSFYxaVlwVUdBR0RoMWlhTHNIV25XWGxFanhVMVE0RmYyXzVYU2plX0RxWlVFX29nTg?oc=5",
+   "pubDate": "Sat, 10 Oct 2026 23:22:24 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 'HS효성체' 무료 배포": {
+   "title": "HS효성, 한글날 100주년 맞아 'HS효성체' 무료 배포 - 메트로신문",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IS3NWOVJ5Z1FTYXYzSzIzWHJiN2t0dkc4ajJha19WVFNkcWxyeWUzM1M1cG96a2U0QUF1bDF5SXlBZFZSc3NwbkgwQldDbW9ZbTN6bWMwb3R4YWZNR0pjMw?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 04:53:14 GMT"
+  },
+  "HS효성, 한글날 맞아 전용 서체 ‘HS효성체’ 무료 공개": {
+   "title": "HS효성, 한글날 맞아 전용 서체 ‘HS효성체’ 무료 공개 - 팍스경제TV",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNamJLX2NteGhLVGU0eUhZWU9hNktQanNSeHFMOE9DSTJrRmZSZzROLWJ0Mm1kbGZGWUJlWkxua194TUlrajJSVkg1aXdTckdQN3JqaWpwZ2g5T0FpVHJRNjlrX0NBNVkyQTgyZEk2d2VqNWpob1V3b0hCaWNpUVF1R1NUTlFMTXp4NFdFR0hsZUs?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 03:14:28 GMT"
+  },
+  "HS효성, 한글날 제정 100주년 맞아 전용 서체 ‘HS효성체’ 무료 공개": {
+   "title": "HS효성, 한글날 제정 100주년 맞아 전용 서체 ‘HS효성체’ 무료 공개 - 인더스트리뉴스",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE11RW1LazNMZENoNGx1MUZtZk5ncVRYRS1JTlR0a3gzb3NjR1UtYkNIV3RTMEp6eXkzb3J0a0dteElobWJlYW5aemI2NjdZRzFPT3QwelFnX0FhR3ZGVlNVOEhPU1U5cWJjSm5qM1UzWlNsdw?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 07:22:56 GMT"
+  },
+  "“부산이 좋다” 글씨에도 부산 색깔…16년 만에 새 전용서체 탄생": {
+   "title": "“부산이 좋다” 글씨에도 부산 색깔…16년 만에 새 전용서체 탄생 - 문화일보",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE50UTBSMHZIdkZ5bkFNeGEzS3VEVENnQjlLeTJ4VG1xNkNxa1Q2aTlKVU5EUWpDWFlqQXp1dllzNjZCQVRBM1pJZm5BZmkyRnpy?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 02:33:34 GMT"
+  },
+  "HS효성, 한글날 100주년 맞아 전용 서체 무료로 푼다": {
+   "title": "HS효성, 한글날 100주년 맞아 전용 서체 무료로 푼다 - 이뉴스투데이",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAwUFFhVnVTMzUwY2pCR0FPZVM3aXdfcWNoTlp2Z3h3TEFCdmlsRnBjaXNNQ2paczRRVC0zVFBZTEx2Vi11ZnoyWTl5RVhRRm8wd0Vzd1Y3cUJZa3hJZDQzNm5qOTFJR2hqdUhEcEY4SE7SAXRBVV95cUxQVEZlbjJjVm5OZjhLZjhXc29SMWlaaDVDTHRVMnVzZDkzejV1U1lFWEJQZDhBUTBLYTdka0pFV3Y5UGN2dTN2bkthWGNNdTUtUDNvZWg2R3pJMmU5SHJ2YUIwTTJuQmE2MmFPUlVXTWl5NWxpNA?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 09:45:00 GMT"
+  },
+  "부산 새 전용서체 '부산단디체' 무료 공개…7종 선보여": {
+   "title": "부산 새 전용서체 '부산단디체' 무료 공개…7종 선보여 - 중도일보",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1SdTB2MmMtOWduRmJWSXlXNGRFQnhQMVF1WGlzUF9EZDRlN0xHUE9ManVTTV92MldCc25qcmotSjRfX1BUWi1GeW53RFdKS29iMjg1dWVSdUNfRnZDb2NCcXJhQkI?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 01:15:13 GMT"
+  },
+  "디지털 최적화 '부산단디체' 무료 배포": {
+   "title": "디지털 최적화 '부산단디체' 무료 배포 - 파이낸셜뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE55N2ZDb0cwVHladzAtb04yUFQtUFREYmFYRTBqU3dqVklqMTg4NXBZdFBTdmExeWNoUThfMUVLa2w2LW4za3FDOWdjSWZUYUJaWEZDU3o2Z1Y0dw?oc=5",
+   "pubDate": "Sun, 11 Oct 2026 10:23:36 GMT"
+  },
+  "GS25, 한글날 맞아 'GS혜자로운' 서체 무료 공개": {
+   "title": "GS25, 한글날 맞아 'GS혜자로운' 서체 무료 공개 - 뉴스후플러스",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrVU55XzVTdVNFM050bl9sYmYwdlByRGotV2tTNGE0YVo2VjVNWnJGalJhS3Bfc2dLbUhmRE80eF85OTJVS2FCYjZtbWpWSVQyTF9FZm9BZGlTTGpIQ1ljS09iYmp3bnNCMjlVb1B3?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 22:40:52 GMT"
+  },
+  "29CM, ‘취향’ 중심 BI 강화…전용 서체로 브랜드 경험 통일": {
+   "title": "29CM, ‘취향’ 중심 BI 강화…전용 서체로 브랜드 경험 통일 - 핀포인트뉴스",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1vQktEdUQ5UVJjbThOei1mbHZlRUI2S1c2ZlRMMjRTRnhidGpTRmtXSkNwTlUtc3JYYVc1ZDZ4VDQ1X1RjUmFBS1NzeVJ1bkZ3dXV2YlZvWW92anNjeURHQURsLWotVjU2N2dIVUlVSjRkRjDSAXdBVV95cUxPMDAzRUxkbjRJOXJGMy11VzAybTVTUjloOVJNUWJHYU8xampIcTNidkhsQ0hIci1lbGpwTUlMXzNkclBYYzU3UWMwVVVvTlNGNjMtOGJvczItb2h4TEo0LWp4bE41Rl9KYnBCS01YbkItMFNITEJ6VQ?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 22:57:06 GMT"
+  },
+  "GS25, '혜자로운' 브랜드 담은 글씨체 개발…무료 공개": {
+   "title": "GS25, '혜자로운' 브랜드 담은 글씨체 개발…무료 공개 - 연합뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE92QjA4ekhYc1JJNUdwUHpEQUMwRUZOblgxeS1Sc2ItcWcxTEd0cXZSRHlDMTlBOFhySGZ4MVg0c1FoYkZpYzlWYUYtenh0OVVMdmhDOHk4Z0Y5S2_SAWBBVV95cUxObEJoUXVuT3ZTZi1fOGoyei1MNEd4LTZQbTk2a0xhOTdxS21pQjlkMUFILWVCLXJGWWFtZW55YzRMNjhOZS1CaTRGOU9jdjk2eFRObjZVckFkNUoxMDZCVnE?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:38:37 GMT"
+  },
+  "‘혜자로운’ 나눔 이번엔 글씨체로…GS25, 한글날 맞아 폰트 무료 공개": {
+   "title": "‘혜자로운’ 나눔 이번엔 글씨체로…GS25, 한글날 맞아 폰트 무료 공개 - 매일경제",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ySnZsV3FLVWNHbzd6QlhhemllS0J6ZFlUcmFCc2lMWFN2S3VQMjFadG5EOTMtX2F0UW9KUk1fUUZEM09UV3NnRUNkcENhSk9VRlk2N21n?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:14:05 GMT"
+  },
+  "한글날 100주년에 '빗썸고딕' 무료 공개…\"서체도 브랜드\"": {
+   "title": "한글날 100주년에 '빗썸고딕' 무료 공개…\"서체도 브랜드\" - 파이낸셜뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5hQk0xYk9fbUpRLThNVWFRNVBEY3FEMHpmcWVNQUViOXRXTWxJNDFIeDFVWllSN2pCeVRVOUlTNVI5Q2syVVp0NkhiNnRtbnR4RFllRkJ0aFFIUQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 06:26:19 GMT"
+  },
+  "CU, 한글날 맞아 브랜드 공식 폰트 ‘SD CU 좋은친구’ 무료 공개": {
+   "title": "CU, 한글날 맞아 브랜드 공식 폰트 ‘SD CU 좋은친구’ 무료 공개 - 씨원뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBYQlpUQ1kxdUk2OFFlOC00MzlmZm5JeXg3VS1MUFhzVXlLMEtYOC1HQnFRNlY0UlNSNXEyRVpTOW9ieUxfZzZ3NHRXNVVRejR5eUktbEJ3Tm5CcTFMallEWmVLNUExSnM?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 18:57:13 GMT"
+  },
+  "한글날 맞아 유통업계 '한글 마케팅' 활발...폰트부터 한정판까지": {
+   "title": "한글날 맞아 유통업계 '한글 마케팅' 활발...폰트부터 한정판까지 - 오피니언뉴스",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5md2VZelFWRHItMWtjdmpSd050Q2p4X1VHcEg0cDJpdjdkdjdDcFFyNUtONXQwdHlmTTJqbWZBQ3VmaDA0RkxWaThzMHNLR1VFT3d1bG9DV1EwMS1aZFZVZHQ2Wk1TNmdsS3Fpc2RkX0tudw?oc=5",
+   "pubDate": "Fri, 09 Oct 2026 00:00:00 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 브랜드 전용 ‘빗썸고딕’ 공개": {
+   "title": "빗썸, 한글날 100주년 맞아 브랜드 전용 ‘빗썸고딕’ 공개 - 인더스트리뉴스",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9oTE1nNG5uR19LdkV2M0RZQVhMRUNYeDEwVFhUMHVvOG1RUFRjcndVa0RtaWNOaEZ6SGZsVGM2YVQ0YW8yZHBuYy1RRk9TaUdlRUYtLUxpYXd0eEZERDZHcFBpTWtTX19fb0hVbUJiNHBJUQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:38:11 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 브랜드전용 폰트 '빗썸고딕' 공개": {
+   "title": "빗썸, 한글날 100주년 맞아 브랜드전용 폰트 '빗썸고딕' 공개 - 뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE01ZDJiSXdjS01saUwwVmpnZExwd25feFkzOVotZm5VbzBwbHpxcWl5QkswOEdIdWljU2pFaWwtc2g4MjBydlRGb1Q3OTR2RUlIc3Q2cDZDNFdueVNSRUxJa2xBWERDVWZVVjktdVZLQk5jcEpVTjBIdNIBeEFVX3lxTE01ZDJiSXdjS01saUwwVmpnZExwd25feFkzOVotZm5VbzBwbHpxcWl5QkswOEdIdWljU2pFaWwtc2g4MjBydlRGb1Q3OTR2RUlIc3Q2cDZDNFdueVNSRUxJa2xBWERDVWZVVjktdVZLQk5jcEpVTjBIdA?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:15:02 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 전용 서체 ‘빗썸고딕’ 무료 공개": {
+   "title": "빗썸, 한글날 100주년 맞아 전용 서체 ‘빗썸고딕’ 무료 공개 - 디지털애셋",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFAxMkFwd1VEOGpZcnJCTW54QzJTa2R3ZDJaTWZBMmxTRW9zV1E3Wm50NDJQU2VCeGNETTFYY2V4ZEtFQU11dXpBemdWdzYtLXR1QXp6N1V3V0Foc1RCVDNoZ0ZBREVfNUZkTDRtN2gyRHBQUQ?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:45:00 GMT"
+  },
+  "GS25, 한글날 '혜자로운체' 공개…상업적 사용도 허용": {
+   "title": "GS25, 한글날 '혜자로운체' 공개…상업적 사용도 허용 - 뉴스핌",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBrUFhwY3I1RHBlX1ltRnlJa1FhS2pvRFp6UlhSWlBhUGx2OU15Z181dDFZQXFVTW5lOWRjME1VMTdHS1JQb0pjVFNRRUEtcGlIMmtFNEhlaW5Sb0pY?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 23:19:00 GMT"
+  },
+  "BGF리테일, 한글날 맞아 CU 공식 폰트 ‘좋은친구’ 공개": {
+   "title": "BGF리테일, 한글날 맞아 CU 공식 폰트 ‘좋은친구’ 공개 - 서울경제TV",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBRLXFNYmhnb0E5aF9NMVNpaUp5b1VZcU1pT2hiLUtlQTRlNncweTZMV0FJLVBrZVpINzB2QW1tLXpsSjVjdHpWX2NkemhYUDZmVmRaNzh6MzdvUjFlTHVDX1l6MG0?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 00:12:02 GMT"
+  },
+  "빗썸, 한글날 맞아 브랜드 전용 ‘빗썸고딕’ 2종 무료 공개": {
+   "title": "빗썸, 한글날 맞아 브랜드 전용 ‘빗썸고딕’ 2종 무료 공개 - 한국면세뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBEdm8yZURkZXlEcmpPWjZnOVFHcm5oVklSdVgwekowcEdsWnJGWW56VU9wNVdTZE9uOTdPMldoSnpJazJBRUY2eklSb1M2YVVWbTduTFRMejA0NjFDS3QxN25pTHl4MHVxS2c?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 07:00:47 GMT"
+  },
+  "“혜자롭게 쓰고, 좋은친구처럼 읽고”… 편의점에 내려앉은 한글": {
+   "title": "“혜자롭게 쓰고, 좋은친구처럼 읽고”… 편의점에 내려앉은 한글 - 뉴시안",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrWHZ0YkZOcW5KbElENjJtMXUxclhuc1VFWnAzZnlwdmhQTEw1a1lRRnN5c3pZWFpWQzdGb3pjczBLdzRjbGpoN0k0Y0Zlckl5ODI4WG40ZWZ6azdsUVFyd19Ua2V0ZjMtZWhtaUln0gFuQVVfeXFMUGtYdnRiRk5xbkpsSUQ2Mm0xdTFyWG5zVUVacDNmeXB2aFBMTDVrWVFGc3lzellYWlZDN0ZvemNzMEt3NGNsamg3STRjRmVySXk4MjhYbjRlZnprN2xRUXJ3X1RrZXRmMy1laG1pSWc?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:02:29 GMT"
+  },
+  "편의점 경쟁, 이제 글꼴까지…CU·GS25 \"우리 브랜드를 쓰세요\"": {
+   "title": "편의점 경쟁, 이제 글꼴까지…CU·GS25 \"우리 브랜드를 쓰세요\" - 아이뉴스24",
+   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9kSVRJREVvdG9HR1ZPcWV2SWk0WjhTbXFCYk1MY1oyelFYeXhBYjBoeVh1eWFpdHdELV9SMEFKaE52RV9CckpIdVlFdw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 21:00:01 GMT"
+  },
+  "GS25, ‘혜자로운’ 나눔부터 넷플릭스 10주년까지… 콘텐츠 마케팅 강화": {
+   "title": "GS25, ‘혜자로운’ 나눔부터 넷플릭스 10주년까지… 콘텐츠 마케팅 강화 - 브릿지경제",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BalZfY1M2Wnl6M3p2d2VPTUpQalFhQzduc3pla2gwVWpXaDZUOEhBV2k5d2JzOV91cDN4YWRyTUZFUXM3VFQ4OHRZTGtZNTFEeGtPYmM2QVNlZw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:16:00 GMT"
+  },
+  "한글날 100주년 맞은 유통가…글꼴부터 한정판까지 '우리말 마케팅' 전개": {
+   "title": "한글날 100주년 맞은 유통가…글꼴부터 한정판까지 '우리말 마케팅' 전개 - 미래경제",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1UV0dHV1ZQZGVnak1QLVlQS0RJYUxfdzRncVF2Ny1fblZFUTFQUnU1WS1yVTdCRFR1bUZCQ0dBM01kQ003cWNfcjh2UURjU20wWkFUeHRiaW1MbF85UFNVaGl1eldXanFrX1RUcA?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 02:12:23 GMT"
+  },
+  "[유통갤러리] BGF리테일, 산돌과 한글날 기념 폰트 ‘좋은친구’ 공개 外": {
+   "title": "[유통갤러리] BGF리테일, 산돌과 한글날 기념 폰트 ‘좋은친구’ 공개 外 - 뷰어스",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE53WFpwLVdGUzdVUGs3VW1qUldxLTZlZHhaRlBmWHl3S193LUFtRmFBTkV3R05TbkJpZFdCY0ZUSk9ubEdTNEQxNFo4VDVCTlVNVTBNSDQtRGI?oc=5",
+   "pubDate": "Wed, 07 Oct 2026 02:35:26 GMT"
+  },
+  "빗썸, '한글날' 100주년 맞아 '안정·신뢰' 가치 담은 브랜드 전용 '빗썸고딕' 선봬": {
+   "title": "빗썸, '한글날' 100주년 맞아 '안정·신뢰' 가치 담은 브랜드 전용 '빗썸고딕' 선봬 - 비즈월드",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBMS195RGktT0NuMnN2SHV3eHNlZktxZ3hIWXZBNDB6dlVKazlWeHIzbWJYZFBneEdxWWlZS0tPbEFVUk1uckVTcW83TVRNUGQxYU9Ea0RHMHppc0JabG9ZT3drbHFIZVcyWXlV?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 08:31:00 GMT"
+  },
+  "빗썸, 한글날 100주년 맞아 전용 서체 '빗썸고딕' 무료 공개": {
+   "title": "빗썸, 한글날 100주년 맞아 전용 서체 '빗썸고딕' 무료 공개 - 디지털투데이",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5CU0NZNm9pZVNaZGE3T0w0aF9VQWFNRk5KUW1BOHhWVU9aQUctN2EyOFJHLUo5ZU9Ndnk5aWJQSlRVZ2lnbFJXZ0t0QThoY2FmN0p6LUdYY3RSUXdUX1lOT0RqdnM3eFI4NlhMckRJTXM0Q0k?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:14:04 GMT"
+  },
+  "타임리스, 네 가지 스타일이 담긴 무료 범용 서체": {
+   "title": "타임리스, 네 가지 스타일이 담긴 무료 범용 서체 - 디자인 나침반",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE01ZDl1RE1lSm9yVGlQUWZNY2ctQno1UXF1cm53UGFvLTVZTHdoOVpBM1paMzVqUEVhczBRcXV6V2xFaVlsY0JHY2ZiaXc5QjZ2N21FQzEweUZ0a2NzdFVGWUhpbkZQWFR2WjRnY05FY1NkNDhzdldSVHFIZ1I?oc=5",
+   "pubDate": "Tue, 06 Oct 2026 02:03:12 GMT"
+  },
+  "[유통갤러리] 롯데백화점, 美 LA서 K-뷰티 팝업…국내 브랜드 알린다 外": {
+   "title": "[유통갤러리] 롯데백화점, 美 LA서 K-뷰티 팝업…국내 브랜드 알린다 外 - 뷰어스",
+   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBhMHpBR2RlanUyVEl1ak50dGlyQWRVVGlUSFBiejhNeEpNZnVFZHVWbVNOaDVtY05HSzNucGxYd1I5OHRLRGYwdDAzNTMxQW1WcmdEWHQ5Qlg?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 00:21:16 GMT"
+  },
+  "CU·GS25, 한글날 맞이 브랜드 정체성 담은 폰트 공개": {
+   "title": "CU·GS25, 한글날 맞이 브랜드 정체성 담은 폰트 공개 - 인사이트",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1Ea05jX3FFSzAxWm96S2k0MkxRTmJjUy1wRWJJSk9TaE5NVHJfbDROcl9tSGg4d0pEcEN3Z3ZzZEdPbEVJSng4dHpKa2M2dw?oc=5",
+   "pubDate": "Thu, 08 Oct 2026 01:36:43 GMT"
   }
  }
 }

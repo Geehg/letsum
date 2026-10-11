@@ -4,8 +4,8 @@
 const fs = require("fs"), path = require("path"), vm = require("vm");
 const ROOT = path.join(__dirname, "..", "html");
 const ctx = {}; vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(ROOT, "js", "data.js"), "utf8") + "\nthis.FONTS=FONTS;this.LICENSE_CATS=LICENSE_CATS;", ctx);
-const { FONTS, LICENSE_CATS } = ctx;
+vm.runInContext(fs.readFileSync(path.join(ROOT, "js", "data.js"), "utf8") + "\nthis.FONTS=FONTS;this.LICENSE_CATS=LICENSE_CATS;this.LICENSE_INFO=LICENSE_INFO;", ctx);
+const { FONTS, LICENSE_CATS, LICENSE_INFO } = ctx;
 const SITE = "https://letsum.app";
 const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>');
@@ -21,7 +21,7 @@ function page(f) {
   const desc = `${f.name}(${f.en}) 무료 폰트 다운로드와 라이선스 사용 범위(인쇄·웹·영상·임베딩·BI/CI·포장지). ${f.desc}`;
   const ld = { "@context": "https://schema.org", "@type": "WebPage", name: title, description: desc, url: `${SITE}/font/${f.id}.html`,
     mainEntity: { "@type": "CreativeWork", name: f.name, alternateName: f.en, author: { "@type": "Organization", name: f.designer }, copyrightHolder: { "@type": "Organization", name: f.holder },
-      license: f.license === "OFL" ? "https://openfontlicense.org/open-font-license-official-text/" : dl.page, isAccessibleForFree: true, inLanguage: "ko", keywords: [f.category, ...f.tags, ...f.mood].join(", ") } };
+      license: (LICENSE_INFO[f.license] || {}).url || dl.page, isAccessibleForFree: true, inLanguage: "ko", keywords: [f.category, ...f.tags, ...f.mood].join(", ") } };
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -56,7 +56,7 @@ function page(f) {
   </div>
   <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ZIP 안에 라이선스 원문이 함께 들어 있습니다.${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
   <h2>사용 범위 (라이선스 매트릭스)</h2>
-  <p>${allOk ? "<b>상업용 무료</b> · " : ""}${esc(f.license)}${f.license === "OFL" ? " (SIL Open Font License 1.1) — 상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지" : ""} · 검수 ${f.status === "verified" ? "완료" : "확인 중"} (${f.verified})</p>
+  <p>${allOk ? "<b>상업용 무료</b> · " : ""}${esc((LICENSE_INFO[f.license] || { full: f.license }).full)} — ${esc((LICENSE_INFO[f.license] || { note: "원문 확인 필요" }).note)}${f.attribution ? ` · 출처 표시 예: ${esc(f.attribution)}` : ""} · 검수 ${f.status === "verified" ? "완료" : "확인 중"} (${f.verified})</p>
   <table class="matrix"><tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
   ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${esc(c.desc)}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("\n  ")}</table>
   <h2>사양</h2>
@@ -70,7 +70,7 @@ function page(f) {
   </table>
   ${gf ? `<h2>웹폰트</h2>
   <pre class="code">&lt;link href="https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&amp;display=swap" rel="stylesheet"&gt;
-font-family: ${esc(f.family)};</pre>` : `<h2>웹폰트</h2><p>웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(OFL은 웹 임베딩 허용). 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
+font-family: ${esc(f.family)};</pre>` : `<h2>웹폰트</h2><p>웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(라이선스의 임베딩 허용 여부는 위 표를 따릅니다). 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 한글 폰트 · <a href="../index.html">전체 폰트 보기</a></p></div></footer>

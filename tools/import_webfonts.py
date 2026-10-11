@@ -20,7 +20,8 @@ def guess_cat(name):
 
 def clean(name):
     """표시명에서 끝의 굵기 표기 제거: '학교안심 꼬꼬마 R' → '학교안심 꼬꼬마'"""
-    return re.sub(r"\s+(R|L|B|M|EB|Black|Outline|Regular|Light|Bold|Medium)$", "", name).strip()
+    name = re.sub(r"\s+(R|L|B|M|EB|Black|Outline|Regular|Light|Bold|Medium)$", "", name).strip()
+    return re.sub(r"(체)(R|L|B|M|EB|BL)$", r"\1", name)  # 김해가야체B -> 김해가야체
 
 def entry(fid, m):
     m = dict(m, name=clean(m["name"]))
@@ -29,7 +30,13 @@ def entry(fid, m):
     weights = sorted(int(w) for w in m["weights"])
     wf = ", ".join(f'{w}: "{u}"' for w, u in sorted(((int(k), v) for k, v in m["files"].items())))
     glyphs = f"한글 {m['cov']:,}자" if m["cov"] else "한글 확인 필요"
-    desc = f"{m['author'] or '공공기관·기업'}이(가) 무료 배포한 {cat} 폰트. 공유마당 안심글꼴(OFL)로 제공되며, 상업적 이용·웹 임베딩이 가능합니다."
+    lic = m.get("license", "OFL")
+    if lic == "OFL":
+        desc = f"{m['author'] or '공공기관·기업'}이(가) 무료 배포한 {cat} 폰트. 공유마당 안심글꼴(OFL)로 제공되며, 상업적 이용·웹 임베딩이 가능합니다."
+        attribution = ""
+    else:
+        desc = f"{m['author'] or '공공기관'}이(가) 공공누리 제1유형으로 배포한 {cat} 폰트. 상업적 이용·변경이 가능하며, 사용 시 저작권자 표시가 필요합니다."
+        attribution = f"{m['name']} © {m['author'] or '저작권자'}, 공공누리 제1유형"
     pop = min(80, 40 + int((m.get("downloads") or 0) / 300))
     return (f'  {{ id: "{fid}", name: "{m["name"]}", en: "{m["en"] or m["name"]}", family: "\'{fam}\', {gen}",\n'
             f'    designer: "{m["author"] or "확인 필요"}", holder: "{m["author"] or "확인 필요"}", category: "{cat}",\n'
@@ -37,7 +44,7 @@ def entry(fid, m):
             f'    cov: {m["cov"]}, glyphs: "{glyphs}", old: {str(m["old"]).lower()}, hanja: {str(m["hanja"]).lower()},\n'
             f'    webfont: {{ {wf} }},\n'
             f'    dl: {{ page: "{m["page"]}", srcName: "공유마당" }},\n'
-            f'    license: "OFL", matrix: OFL_ALL_OK, verified: "{TODAY}", status: "checking",\n'
+            f'    license: "{lic}", matrix: OFL_ALL_OK, verified: "{TODAY}", status: "checking",' + (f' attribution: "{attribution}",' if attribution else '') + '\n'
             f'    pair: "{pair}", pop: {pop}, added: "{TODAY}",\n'
             f'    desc: "{desc}" }},')
 

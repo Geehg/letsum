@@ -23,7 +23,8 @@
   "source_files": [
    "KCCDodamdodam.ttf",
    "KCCDodamdodam_OTF.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-yanolja-yache": {
   "name": "야놀자 야체",
@@ -49,7 +50,8 @@
   "source_files": [
    "야놀자 야체 Bold.ttf",
    "야놀자 야체 Regular.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-tlabshinyb": {
   "name": "Tlab신영복체",
@@ -73,7 +75,8 @@
   "source_files": [
    "Tlab신영복체.otf",
    "Tlab신영복체.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-eunyoung": {
   "name": "KCC은영체",
@@ -97,7 +100,8 @@
   "source_files": [
    "KCC은영체.otf",
    "KCC은영체.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-bm-euljiro": {
   "name": "배달의 민족 을지로체",
@@ -121,7 +125,8 @@
   "source_files": [
    "BMEULJIRO.otf",
    "BMEULJIROTTF.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kccahnjunggeun": {
   "name": "KCC 안중근체",
@@ -145,7 +150,8 @@
   "source_files": [
    "KCCAhnjunggeun.otf",
    "KCCAhnjunggeun.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-gabia-solmee": {
   "name": "가비아 솔미체",
@@ -169,7 +175,8 @@
   "source_files": [
    "gabia_solmee.otf",
    "gabia_solmee.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-joongnajoche": {
   "name": "중나좋체 L",
@@ -195,7 +202,8 @@
    "중나좋체 Medium.ttf",
    "중나좋체 OTF Light.otf",
    "중나좋체 OTF Medium.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-unpeople-gothic-ks-otf": {
   "name": "유앤피플",
@@ -221,7 +229,8 @@
    "유앤피플 고딕 KS.ttf",
    "유앤피플 고딕 UNI OTF.otf",
    "유앤피플 고딕 UNI.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-kimhoon": {
   "name": "KCC김훈체",
@@ -245,7 +254,8 @@
   "source_files": [
    "KCC김훈체.otf",
    "KCC김훈체.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-jeongbeom": {
   "name": "KCC정범체",
@@ -269,7 +279,8 @@
   "source_files": [
    "KCC-Jeongbeom.otf",
    "KCC-Jeongbeom.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-kimhwanki": {
   "name": "KCC김환기체",
@@ -293,7 +304,8 @@
   "source_files": [
    "KCC-Kimhwanki.otf",
    "KCC-Kimhwanki.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-ganpan": {
   "name": "KCC간판체",
@@ -317,7 +329,8 @@
   "source_files": [
    "KCC-Ganpan.otf",
    "KCC-Ganpan.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-ownglyph-2022-uwy-jae-seon": {
   "name": "온글잎 의청수 재선체",
@@ -340,7 +353,8 @@
   "catalog_key": "온글잎의청수재선체",
   "source_files": [
    "Ownglyph_2022_UWY_Jae_Seon-Rg.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-ownglyph-2022-uwy-si-woo": {
   "name": "온글잎 의청수 시우체",
@@ -363,7 +377,8 @@
   "catalog_key": "온글잎의청수시우체",
   "source_files": [
    "Ownglyph_2022_UWY_Si_Woo-Rg.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-ownglyph-2022-uwy-da-gyeong": {
   "name": "온글잎 의청수 다경체",
@@ -386,7 +401,8 @@
   "catalog_key": "온글잎의청수다경체",
   "source_files": [
    "Ownglyph_2022_UWY_Da_Gyeong-Rg.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-kkokkoma": {
   "name": "학교안심 꼬꼬마 R",
@@ -409,7 +425,8 @@
   "catalog_key": "학교안심꼬꼬마",
   "source_files": [
    "HakgyoansimKkokkomaR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-kossuyeom": {
   "name": "학교안심 콧수염 R",
@@ -432,7 +449,8 @@
   "catalog_key": "학교안심콧수염",
   "source_files": [
    "HakgyoansimKossuyeomR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-jaemin3-0": {
   "name": "한글재민3.0",
@@ -455,7 +473,8 @@
   "catalog_key": "한글재민30",
   "source_files": [
    "Jaemin3-Regular.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-mulgyeol": {
   "name": "학교안심 물결 B",
@@ -481,7 +500,8 @@
   "source_files": [
    "HakgyoansimMulgyeolB.ttf",
    "HakgyoansimMulgyeolR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-moheomga": {
   "name": "학교안심 모험가 B",
@@ -507,7 +527,8 @@
   "source_files": [
    "HakgyoansimMoheomgaB.ttf",
    "HakgyoansimMoheomgaR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-jaemin2-0": {
   "name": "한글재민2.0",
@@ -530,7 +551,8 @@
   "catalog_key": "한글재민20",
   "source_files": [
    "Jaemin_v2.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-ownglyph-2022-uwy-yoon-yeong": {
   "name": "온글잎 의청수 윤영체",
@@ -553,7 +575,8 @@
   "catalog_key": "온글잎의청수윤영체",
   "source_files": [
    "Ownglyph_2022_UWY_Yoon_Yeong-Rg.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-jiugae": {
   "name": "학교안심 지우개 R",
@@ -576,7 +599,8 @@
   "catalog_key": "학교안심지우개",
   "source_files": [
    "HakgyoansimJiugaeR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-usan": {
   "name": "학교안심 우산 R",
@@ -599,7 +623,8 @@
   "catalog_key": "학교안심우산",
   "source_files": [
    "HakgyoansimUsanR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-rikodeo": {
   "name": "학교안심 리코더 R",
@@ -622,7 +647,8 @@
   "catalog_key": "학교안심리코더",
   "source_files": [
    "HakgyoansimRikodeoR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-eunhasu": {
   "name": "학교안심 은하수 R",
@@ -645,7 +671,8 @@
   "catalog_key": "학교안심은하수",
   "source_files": [
    "HakgyoansimEunhasuR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-kcc-sonkeechung": {
   "name": "KCC손기정체",
@@ -669,7 +696,8 @@
   "source_files": [
    "KCC-Sonkeechung.otf",
    "KCC-Sonkeechung.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-samulham": {
   "name": "학교안심 사물함 R",
@@ -692,7 +720,8 @@
   "catalog_key": "학교안심사물함",
   "source_files": [
    "HakgyoansimSamulhamR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-kkwabaegi": {
   "name": "학교안심 꽈배기 R",
@@ -715,7 +744,8 @@
   "catalog_key": "학교안심꽈배기",
   "source_files": [
    "HakgyoansimKkwabaegiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-yeohaeng": {
   "name": "학교안심 여행 R",
@@ -738,7 +768,8 @@
   "catalog_key": "학교안심여행",
   "source_files": [
    "HakgyoansimYeohaengR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-undongjang": {
   "name": "학교안심 운동장 L",
@@ -761,7 +792,8 @@
   "catalog_key": "학교안심운동장",
   "source_files": [
    "HakgyoansimUndongjangL.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-namu": {
   "name": "학교안심 나무 L",
@@ -787,7 +819,8 @@
   "source_files": [
    "HakgyoansimNamuL.ttf",
    "HakgyoansimNamuR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-gureum": {
   "name": "학교안심 구름 R",
@@ -810,7 +843,8 @@
   "catalog_key": "학교안심구름",
   "source_files": [
    "HakgyoansimGureumR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-sonagi": {
   "name": "학교안심 소나기 R",
@@ -833,7 +867,8 @@
   "catalog_key": "학교안심소나기",
   "source_files": [
    "HakgyoansimSonagiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-dotbogi": {
   "name": "학교안심 돋보기 R",
@@ -856,7 +891,8 @@
   "catalog_key": "학교안심돋보기",
   "source_files": [
    "HakgyoansimDotbogiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-mabeopsa": {
   "name": "학교안심 마법사 R",
@@ -879,7 +915,8 @@
   "catalog_key": "학교안심마법사",
   "source_files": [
    "HakgyoansimMabeopsaR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-ttwimteul": {
   "name": "학교안심 뜀틀 R",
@@ -902,7 +939,8 @@
   "catalog_key": "학교안심뜀틀",
   "source_files": [
    "HakgyoansimTtwimteulR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-ownglyph-2022-uwy-joo-bin": {
   "name": "온글잎 의청수 주빈체",
@@ -925,7 +963,8 @@
   "catalog_key": "온글잎의청수주빈체",
   "source_files": [
    "Ownglyph_2022_UWY_Joo_Bin-Rg.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-tuho": {
   "name": "학교안심 투호 R",
@@ -948,7 +987,8 @@
   "catalog_key": "학교안심투호",
   "source_files": [
    "HakgyoansimTuhoR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-geurimilgi-ttf": {
   "name": "학교안심 그림일기 R",
@@ -971,7 +1011,8 @@
   "catalog_key": "학교안심그림일기",
   "source_files": [
    "Hakgyoansim Geurimilgi TTF R.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-badasseugi-ttf": {
   "name": "학교안심 받아쓰기 L",
@@ -997,7 +1038,8 @@
   "source_files": [
    "Hakgyoansim Badasseugi TTF B.ttf",
    "Hakgyoansim Badasseugi TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-nadeuri-ttf": {
   "name": "학교안심 나들이 L",
@@ -1023,7 +1065,8 @@
   "source_files": [
    "Hakgyoansim Nadeuri TTF B.ttf",
    "Hakgyoansim Nadeuri TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-dunggeunmiso-ttf": {
   "name": "학교안심 둥근미소 R",
@@ -1049,7 +1092,8 @@
   "source_files": [
    "Hakgyoansim Dunggeunmiso TTF B.ttf",
    "Hakgyoansim Dunggeunmiso TTF R.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-byeolbichhaneul-ttf": {
   "name": "학교안심 별빛하늘 L",
@@ -1075,7 +1119,8 @@
   "source_files": [
    "Hakgyoansim Byeolbichhaneul TTF B.ttf",
    "Hakgyoansim Byeolbichhaneul TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-chilpanjiugae-ttf": {
   "name": "학교안심 칠판지우개 L",
@@ -1101,7 +1146,8 @@
   "source_files": [
    "Hakgyoansim Chilpanjiugae TTF B.ttf",
    "Hakgyoansim Chilpanjiugae TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-allimjang-ttf": {
   "name": "학교안심 알림장 R",
@@ -1127,7 +1173,8 @@
   "source_files": [
    "Hakgyoansim Allimjang TTF B.ttf",
    "Hakgyoansim Allimjang TTF R.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-chulseokbu-ttf": {
   "name": "학교안심 출석부 L",
@@ -1153,7 +1200,8 @@
   "source_files": [
    "Hakgyoansim Chulseokbu TTF B.ttf",
    "Hakgyoansim Chulseokbu TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-puzzle-ttf": {
   "name": "학교안심 퍼즐 Black",
@@ -1179,7 +1227,8 @@
   "source_files": [
    "Hakgyoansim Puzzle TTF Black.ttf",
    "Hakgyoansim Puzzle TTF Outline.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-byeoljari-ttf": {
   "name": "학교안심 별자리 L",
@@ -1205,7 +1254,8 @@
   "source_files": [
    "Hakgyoansim Byeoljari TTF B.ttf",
    "Hakgyoansim Byeoljari TTF L.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-poster-b": {
   "name": "학교안심 포스터 B",
@@ -1229,7 +1279,8 @@
   "source_files": [
    "Hakgyoansim_PosterB.ttf",
    "Hakgyoansim_PosterOTFB.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-gongryongal-otf-r": {
   "name": "학교안심 공룡알 R",
@@ -1253,7 +1304,8 @@
   "source_files": [
    "Hakgyoansim_GongryongalOTFR.otf",
    "Hakgyoansim_GongryongalR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-nalgae-otf-r": {
   "name": "학교안심 날개 R",
@@ -1277,7 +1329,8 @@
   "source_files": [
    "Hakgyoansim_NalgaeOTFR.otf",
    "Hakgyoansim_NalgaeR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-manito-otf-r": {
   "name": "학교안심 마니또 R",
@@ -1301,7 +1354,8 @@
   "source_files": [
    "Hakgyoansim_ManitoOTFR.otf",
    "Hakgyoansim_ManitoR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-tteokbokki-b": {
   "name": "학교안심 떡볶이 B",
@@ -1325,7 +1379,8 @@
   "source_files": [
    "Hakgyoansim_TteokbokkiB.ttf",
    "Hakgyoansim_TteokbokkiOTFB.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-eohangkkumigi-b": {
   "name": "학교안심 어항꾸미기 B",
@@ -1349,7 +1404,8 @@
   "source_files": [
    "Hakgyoansim_EohangkkumigiB.ttf",
    "Hakgyoansim_EohangkkumigiOTFB.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-bandal-l": {
   "name": "학교안심 반달 L",
@@ -1373,7 +1429,8 @@
   "source_files": [
    "Hakgyoansim_BandalL.ttf",
    "Hakgyoansim_BandalOTFL.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-mindeulleholssi-otf-r": {
   "name": "학교안심 민들레홀씨 R",
@@ -1397,7 +1454,8 @@
   "source_files": [
    "Hakgyoansim_MindeulleholssiOTFR.otf",
    "Hakgyoansim_MindeulleholssiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-sangjang-otf-r": {
   "name": "학교안심 상장 R",
@@ -1421,7 +1479,8 @@
   "source_files": [
    "Hakgyoansim_SangjangOTFR.otf",
    "Hakgyoansim_SangjangR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-siganpyo-otf-r": {
   "name": "학교안심 시간표 R",
@@ -1445,7 +1504,8 @@
   "source_files": [
    "Hakgyoansim_SiganpyoOTFR.otf",
    "Hakgyoansim_SiganpyoR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-susukkang-l": {
   "name": "학교안심 수수깡 L",
@@ -1469,7 +1529,8 @@
   "source_files": [
    "Hakgyoansim_SusukkangL.ttf",
    "Hakgyoansim_SusukkangOTFL.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-mondangbunfil-otf-r": {
   "name": "학교안심 몽당분필 R",
@@ -1493,7 +1554,8 @@
   "source_files": [
    "Hakgyoansim_MondangbunfilOTFR.otf",
    "Hakgyoansim_MondangbunfilR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-boardmarker-otf-r": {
   "name": "학교안심 보드마카 R",
@@ -1517,7 +1579,8 @@
   "source_files": [
    "Hakgyoansim_BoardmarkerOTFR.otf",
    "Hakgyoansim_BoardmarkerR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-chaekgalpi-otf-r": {
   "name": "학교안심 책갈피 R",
@@ -1541,7 +1604,8 @@
   "source_files": [
    "Hakgyoansim_ChaekgalpiOTFR.otf",
    "Hakgyoansim_ChaekgalpiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-saekyeonpil-otf-r": {
   "name": "학교안심 색연필 R",
@@ -1565,7 +1629,8 @@
   "source_files": [
    "Hakgyoansim_SaekyeonpilOTFR.otf",
    "Hakgyoansim_SaekyeonpilR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-jayusigan-otf-r": {
   "name": "학교안심 자유시간 R",
@@ -1589,7 +1654,8 @@
   "source_files": [
    "Hakgyoansim_JayusiganOTFR.otf",
    "Hakgyoansim_JayusiganR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-sketchbook-otf-r": {
   "name": "학교안심 스케치북 R",
@@ -1613,7 +1679,8 @@
   "source_files": [
    "Hakgyoansim_SketchbookOTFR.otf",
    "Hakgyoansim_SketchbookR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-yieodalligi-l": {
   "name": "학교안심 이어달리기 L",
@@ -1637,7 +1704,8 @@
   "source_files": [
    "Hakgyoansim_YieodalligiL.ttf",
    "Hakgyoansim_YieodalligiOTFL.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-jayeon-otf-r": {
   "name": "학교안심 자연 R",
@@ -1661,7 +1729,8 @@
   "source_files": [
    "Hakgyoansim_JayeonOTFR.otf",
    "Hakgyoansim_JayeonR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-kidaripungseon-l": {
   "name": "학교안심 키다리풍선 L",
@@ -1685,7 +1754,8 @@
   "source_files": [
    "Hakgyoansim_KidaripungseonL.ttf",
    "Hakgyoansim_KidaripungseonOTFL.otf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-bareonbatang": {
   "name": "학교안심 바른바탕 R",
@@ -1711,7 +1781,8 @@
   "source_files": [
    "HakgyoansimBareonbatangB.ttf",
    "HakgyoansimBareonbatangR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-bareondotum": {
   "name": "학교안심 바른돋움 R",
@@ -1737,7 +1808,8 @@
   "source_files": [
    "HakgyoansimBareondotumB.ttf",
    "HakgyoansimBareondotumR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-bombanghak": {
   "name": "학교안심 봄방학 R",
@@ -1760,7 +1832,8 @@
   "catalog_key": "학교안심봄방학",
   "source_files": [
    "HakgyoansimBombanghakR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-bunpil": {
   "name": "학교안심 분필 R",
@@ -1783,7 +1856,8 @@
   "catalog_key": "학교안심분필",
   "source_files": [
    "HakgyoansimBunpilR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-butpen": {
   "name": "학교안심 붓펜 L",
@@ -1812,7 +1886,8 @@
    "HakgyoansimButpenB.ttf",
    "HakgyoansimButpenL.ttf",
    "HakgyoansimButpenM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-doldam": {
   "name": "학교안심 돌담 L",
@@ -1841,7 +1916,8 @@
    "HakgyoansimDoldamB.ttf",
    "HakgyoansimDoldamL.ttf",
    "HakgyoansimDoldamM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-gaeulsopung": {
   "name": "학교안심 가을소풍 L",
@@ -1867,7 +1943,8 @@
   "source_files": [
    "HakgyoansimGaeulsopungB.ttf",
    "HakgyoansimGaeulsopungL.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-ggooreogi": {
   "name": "학교안심 꾸러기 R",
@@ -1890,7 +1967,8 @@
   "catalog_key": "학교안심꾸러기",
   "source_files": [
    "HakgyoansimGgooreogiR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-godeunjemok": {
   "name": "학교안심 곧은제목 M",
@@ -1916,7 +1994,8 @@
   "source_files": [
    "HakgyoansimGodeunjemokB.ttf",
    "HakgyoansimGodeunjemokM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-jeomsimsigan": {
   "name": "학교안심 점심시간 B",
@@ -1939,7 +2018,8 @@
   "catalog_key": "학교안심점심시간",
   "source_files": [
    "HakgyoansimJeomsimsiganB.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-malgeunnal": {
   "name": "학교안심 맑은날 M",
@@ -1965,7 +2045,8 @@
   "source_files": [
    "HakgyoansimMalgeunnalB.ttf",
    "HakgyoansimMalgeunnalM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-monggeulmonggeul": {
   "name": "학교안심 몽글몽글 R",
@@ -1988,7 +2069,8 @@
   "catalog_key": "학교안심몽글몽글",
   "source_files": [
    "HakgyoansimMonggeulmonggeulR.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-santteutbatang": {
   "name": "학교안심 산뜻바탕 L",
@@ -2014,7 +2096,8 @@
   "source_files": [
    "HakgyoansimSantteutbatangL.ttf",
    "HakgyoansimSantteutbatangM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-santteutdotumthic": {
   "name": "학교안심 산뜻돋움 L",
@@ -2040,7 +2123,8 @@
   "source_files": [
    "HakgyoansimSantteutdotumL.ttf",
    "HakgyoansimSantteutdotumM.ttf"
-  ]
+  ],
+  "license": "OFL"
  },
  "k-hakgyoansim-wooju": {
   "name": "학교안심 우주 R",
@@ -2063,6 +2147,2038 @@
   "catalog_key": "학교안심우주",
   "source_files": [
    "HakgyoansimWoojuR.ttf"
+  ],
+  "license": "OFL"
+ },
+ "k-accchildrenskyotf": {
+  "name": "ACC어린이하늘맑은체",
+  "en": "ACCchildrenskyOTF",
+  "ko": "ACC어린이하늘맑은OTF",
+  "author": "국립아시아문화전당",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302263&menuNo=200023",
+  "downloads": 10710,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-accchildrenskyotf/400.woff2"
+  },
+  "bytes": 963356,
+  "catalog_key": "acc어린이하늘맑은체",
+  "source_files": [
+   "ACC어린이하늘맑은체.otf",
+   "ACC어린이하늘맑은체.ttf"
+  ]
+ },
+ "k-mapobackpacking": {
+  "name": "Mapo배낭여행",
+  "en": "MapoBackpacking",
+  "ko": "Mapo배낭여행",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 8275,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapobackpacking/400.woff2"
+  },
+  "bytes": 225304,
+  "catalog_key": "mapo배낭여행",
+  "source_files": [
+   "MapoBackpacking.otf",
+   "MapoBackpacking.ttf"
+  ]
+ },
+ "k-mapoflowerisland": {
+  "name": "Mapo꽃섬",
+  "en": "MapoFlowerIsland",
+  "ko": "Mapo꽃섬",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 7592,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapoflowerisland/400.woff2"
+  },
+  "bytes": 233784,
+  "catalog_key": "mapo꽃섬",
+  "source_files": [
+   "MapoFlowerIsland.otf",
+   "MapoFlowerIsland.ttf"
+  ]
+ },
+ "k-kopubworlddotum": {
+  "name": "Kopub World 돋움체 B",
+  "en": "KoPubWorldDotum",
+  "ko": "KoPubWorld돋움체",
+  "author": "한국출판인회의",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 6866,
+  "weights": [
+   300,
+   500,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": true,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworlddotum/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworlddotum/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworlddotum/700.woff2"
+  },
+  "bytes": 5294088,
+  "catalog_key": "kopubworld돋움체",
+  "source_files": [
+   "KoPubWorld Dotum Bold.ttf",
+   "KoPubWorld Dotum Light.ttf",
+   "KoPubWorld Dotum Medium.ttf"
+  ]
+ },
+ "k-gimhaegaya": {
+  "name": "김해가야체B",
+  "en": "GimhaeGaya",
+  "ko": "김해가야체",
+  "author": "김해시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 6567,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gimhaegaya/400.woff2"
+  },
+  "bytes": 354156,
+  "catalog_key": "김해가야체",
+  "source_files": [
+   "GimhaeGayaB.otf",
+   "GimhaeGayaB.ttf",
+   "GimhaeGayaR.otf",
+   "GimhaeGayaR.ttf"
+  ]
+ },
+ "k-kopubworldbatang": {
+  "name": "Kopub World 바탕체 B",
+  "en": "KoPubWorldBatang",
+  "ko": "KoPubWorld바탕체",
+  "author": "한국출판인회의",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 6310,
+  "weights": [
+   300,
+   500,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": true,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworldbatang/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworldbatang/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kopubworldbatang/700.woff2"
+  },
+  "bytes": 8428452,
+  "catalog_key": "kopubworld바탕체",
+  "source_files": [
+   "KoPubWorld Batang Bold.ttf",
+   "KoPubWorld Batang Light.ttf",
+   "KoPubWorld Batang Medium.ttf"
+  ]
+ },
+ "k-mapogoldenpier": {
+  "name": "Mapo금빛나루",
+  "en": "MapoGoldenPier",
+  "ko": "Mapo금빛나루",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5824,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapogoldenpier/400.woff2"
+  },
+  "bytes": 432468,
+  "catalog_key": "mapo금빛나루",
+  "source_files": [
+   "MapoGoldenPier.otf",
+   "MapoGoldenPier.ttf"
+  ]
+ },
+ "k-seoulnamsan": {
+  "name": "서울남산체L",
+  "en": "SeoulNamsan",
+  "ko": "서울남산체",
+  "author": "서울특별시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5809,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulnamsan/400.woff2"
+  },
+  "bytes": 1130944,
+  "catalog_key": "서울남산체",
+  "source_files": [
+   "SeoulNamsanB.ttf",
+   "SeoulNamsanEB.ttf",
+   "SeoulNamsanL.ttf",
+   "SeoulNamsanM.ttf",
+   "SeoulNamsanvert.ttf"
+  ]
+ },
+ "k-mapopeacefull": {
+  "name": "Mapo한아름",
+  "en": "MapoPeacefull",
+  "ko": "Mapo한아름",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5453,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapopeacefull/400.woff2"
+  },
+  "bytes": 224352,
+  "catalog_key": "mapo한아름",
+  "source_files": [
+   "MapoPeacefull.otf",
+   "MapoPeacefull.ttf"
+  ]
+ },
+ "k-wandohope": {
+  "name": "완도희망체B",
+  "en": "Wandohope",
+  "ko": "완도희망체",
+  "author": "완도군",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5374,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-wandohope/400.woff2"
+  },
+  "bytes": 842960,
+  "catalog_key": "완도희망체",
+  "source_files": [
+   "WandohopeB.ttf",
+   "WandohopeR.ttf"
+  ]
+ },
+ "k-kotra-hope": {
+  "name": "코트라 희망체",
+  "en": "KOTRA HOPE",
+  "ko": "코트라 희망체",
+  "author": "KOTRA",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302259&menuNo=200023",
+  "downloads": 5357,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": true,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kotra-hope/400.woff2"
+  },
+  "bytes": 498584,
+  "catalog_key": "코트라희망체",
+  "source_files": [
+   "KOTRA HOPE.otf",
+   "KOTRA HOPE.ttf"
+  ]
+ },
+ "k-kotra-bold": {
+  "name": "코트라 볼드체",
+  "en": "KOTRA_BOLD",
+  "ko": "코트라 볼드체",
+  "author": "KOTRA",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302258&menuNo=200023",
+  "downloads": 5247,
+  "weights": [
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kotra-bold/700.woff2"
+  },
+  "bytes": 188444,
+  "catalog_key": "코트라볼드체",
+  "source_files": [
+   "KOTRA_BOLD.otf",
+   "KOTRA_BOLD.ttf"
+  ]
+ },
+ "k-seoulhangang": {
+  "name": "서울한강체L",
+  "en": "SeoulHangang",
+  "ko": "서울한강체",
+  "author": "서울특별시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5215,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulhangang/400.woff2"
+  },
+  "bytes": 1476808,
+  "catalog_key": "서울한강체",
+  "source_files": [
+   "SeoulHangangB.ttf",
+   "SeoulHangangEB.ttf",
+   "SeoulHangangL.ttf",
+   "SeoulHangangM.ttf"
+  ]
+ },
+ "k-mapodacapo": {
+  "name": "Mapo다카포",
+  "en": "MapoDacapo",
+  "ko": "Mapo다카포",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 5104,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapodacapo/400.woff2"
+  },
+  "bytes": 310648,
+  "catalog_key": "mapo다카포",
+  "source_files": [
+   "MapoDacapo.otf",
+   "MapoDacapo.ttf"
+  ]
+ },
+ "k-kotra-songeulssi": {
+  "name": "코트라 손글씨체",
+  "en": "KOTRA_SONGEULSSI",
+  "ko": "코트라 손글씨체",
+  "author": "KOTRA",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302260&menuNo=200023",
+  "downloads": 4896,
+  "weights": [
+   500
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-kotra-songeulssi/500.woff2"
+  },
+  "bytes": 352964,
+  "catalog_key": "코트라손글씨체",
+  "source_files": [
+   "KOTRA_SONGEULSSI.otf",
+   "KOTRA_SONGEULSSI.ttf"
+  ]
+ },
+ "k-accchildrenheartotf": {
+  "name": "ACC어린이마음고운체",
+  "en": "ACCchildrenheartOTF",
+  "ko": "ACC어린이마음고운OTF",
+  "author": "국립아시아문화전당",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302262&menuNo=200023",
+  "downloads": 4648,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-accchildrenheartotf/400.woff2"
+  },
+  "bytes": 786184,
+  "catalog_key": "acc어린이마음고운체",
+  "source_files": [
+   "ACC어린이마음고운체.otf",
+   "ACC어린이마음고운체.ttf"
+  ]
+ },
+ "k-sangju-gotgam": {
+  "name": "상주곶감체",
+  "en": "SANGJU Gotgam",
+  "ko": "상주곶감체",
+  "author": "상주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13289687&menuNo=200023",
+  "downloads": 4591,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sangju-gotgam/400.woff2"
+  },
+  "bytes": 456020,
+  "catalog_key": "상주곶감체",
+  "source_files": [
+   "SANGJU Gotgam.otf",
+   "SANGJU Gotgam.ttf"
+  ]
+ },
+ "k-haenamfont": {
+  "name": "해남체",
+  "en": "HaenamFont",
+  "ko": "해남체",
+  "author": "전라남도 해남군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288455&menuNo=200023",
+  "downloads": 4475,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11088,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-haenamfont/400.woff2"
+  },
+  "bytes": 297616,
+  "catalog_key": "해남체",
+  "source_files": [
+   "해남체.otf",
+   "해남체.ttf"
+  ]
+ },
+ "k-3-yangpyeong-b": {
+  "name": "양평군체",
+  "en": "(3) YangPyeong B",
+  "ko": "(3) 양평군체 B",
+  "author": "양평군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288377&menuNo=200023",
+  "downloads": 4442,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-3-yangpyeong-b/400.woff2"
+  },
+  "bytes": 210496,
+  "catalog_key": "양평군체",
+  "source_files": [
+   "yangpyeong_B.ttf",
+   "yangpyeong_L.ttf",
+   "yangpyeong_M.ttf"
+  ]
+ },
+ "k-kotra-gothic": {
+  "name": "코트라 고딕체",
+  "en": "KOTRA_GOTHIC",
+  "ko": "코트라 고딕체",
+  "author": "KOTRA",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302256&menuNo=200023",
+  "downloads": 4198,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kotra-gothic/400.woff2"
+  },
+  "bytes": 205444,
+  "catalog_key": "코트라고딕체",
+  "source_files": [
+   "KOTRA_GOTHIC.otf",
+   "KOTRA_GOTHIC.ttf"
+  ]
+ },
+ "k-mapomaponaru": {
+  "name": "Mapo마포나루",
+  "en": "MapoMaponaru",
+  "ko": "Mapo마포나루",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 4091,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapomaponaru/400.woff2"
+  },
+  "bytes": 189796,
+  "catalog_key": "mapo마포나루",
+  "source_files": [
+   "MapoMaponaru.otf",
+   "MapoMaponaru.ttf"
+  ]
+ },
+ "k-wandocleansea": {
+  "name": "완도청정바다체B",
+  "en": "Wandocleansea",
+  "ko": "완도청정바다체",
+  "author": "완도군",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 4084,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-wandocleansea/400.woff2"
+  },
+  "bytes": 859192,
+  "catalog_key": "완도청정바다체",
+  "source_files": [
+   "WandocleanseaB.ttf",
+   "WandocleanseaR.ttf"
+  ]
+ },
+ "k-mapoagape": {
+  "name": "Mapo애민",
+  "en": "MapoAgape",
+  "ko": "Mapo애민",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 4037,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapoagape/400.woff2"
+  },
+  "bytes": 276980,
+  "catalog_key": "mapo애민",
+  "source_files": [
+   "MapoAgape.otf",
+   "MapoAgape.ttf"
+  ]
+ },
+ "k-mapohongdaefreedom": {
+  "name": "Mapo홍대프리덤",
+  "en": "MapoHongdaeFreedom",
+  "ko": "Mapo홍대프리덤",
+  "author": "서울시 마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3982,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapohongdaefreedom/400.woff2"
+  },
+  "bytes": 177480,
+  "catalog_key": "mapo홍대프리덤",
+  "source_files": [
+   "MapoHongdaeFreedom.otf",
+   "MapoHongdaeFreedom.ttf"
+  ]
+ },
+ "k-seoulnamsanc": {
+  "name": "서울남산장체L",
+  "en": "SeoulNamsanC",
+  "ko": "서울남산 장체",
+  "author": "서울특별시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3945,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulnamsanc/400.woff2"
+  },
+  "bytes": 1127032,
+  "catalog_key": "서울남산장체",
+  "source_files": [
+   "서울남산 장체B.ttf",
+   "서울남산 장체BL.ttf",
+   "서울남산 장체EB.ttf",
+   "서울남산 장체L.ttf",
+   "서울남산 장체M.ttf"
+  ]
+ },
+ "k-sangju-dajungdagam": {
+  "name": "상주다정다감체",
+  "en": "SANGJU Dajungdagam",
+  "ko": "상주다정다감체",
+  "author": "상주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13289688&menuNo=200023",
+  "downloads": 3920,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sangju-dajungdagam/400.woff2"
+  },
+  "bytes": 392652,
+  "catalog_key": "상주다정다감체",
+  "source_files": [
+   "SANGJU Dajungdagam.otf",
+   "SANGJU Dajungdagam.ttf"
+  ]
+ },
+ "k-seoulhangangc": {
+  "name": "서울한강장체L",
+  "en": "SeoulHangangC",
+  "ko": "서울한강 장체",
+  "author": "서울특별시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3552,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulhangangc/400.woff2"
+  },
+  "bytes": 1497560,
+  "catalog_key": "서울한강장체",
+  "source_files": [
+   "서울한강 장체B.ttf",
+   "서울한강 장체BL.ttf",
+   "서울한강 장체EB.ttf",
+   "서울한강 장체L.ttf",
+   "서울한강 장체M.ttf"
+  ]
+ },
+ "k-munhwajaedolbom-bold": {
+  "name": "문화재돌봄체B",
+  "en": "MunhwajaeDolbom Bold",
+  "ko": "문화재돌봄체 Bold",
+  "author": "문화재정",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3450,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-munhwajaedolbom-bold/400.woff2"
+  },
+  "bytes": 177028,
+  "catalog_key": "문화재돌봄체",
+  "source_files": [
+   "문화재돌봄체 Bold.ttf",
+   "문화재돌봄체 Regular.ttf"
+  ]
+ },
+ "k-kotra-leap": {
+  "name": "코트라 도약체",
+  "en": "KOTRA LEAP",
+  "ko": "코트라 도약체 ",
+  "author": "KOTRA",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302257&menuNo=200023",
+  "downloads": 3310,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kotra-leap/400.woff2"
+  },
+  "bytes": 327124,
+  "catalog_key": "코트라도약체",
+  "source_files": [
+   "KOTRA LEAP.otf",
+   "KOTRA LEAP.ttf"
+  ]
+ },
+ "k-dobong": {
+  "name": "도봉옛길체",
+  "en": "dobong",
+  "ko": "도봉옛길체",
+  "author": "도봉문화원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333564&menuNo=200023",
+  "downloads": 3289,
+  "weights": [
+   500
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-dobong/500.woff2"
+  },
+  "bytes": 1283184,
+  "catalog_key": "도봉옛길체",
+  "source_files": [
+   "Dobong_Cultural_Routes(OTF).otf",
+   "Dobong_Cultural_Routes(TTF).ttf"
+  ]
+ },
+ "k-sangju-gyeongcheon-island": {
+  "name": "상주경천섬체",
+  "en": "SANGJU Gyeongcheon Island",
+  "ko": "상주경천섬체",
+  "author": "상주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13289686&menuNo=200023",
+  "downloads": 3070,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sangju-gyeongcheon-island/400.woff2"
+  },
+  "bytes": 543140,
+  "catalog_key": "상주경천섬체",
+  "source_files": [
+   "SANGJU Gyeongcheon Island.otf",
+   "SANGJU Gyeongcheon Island.ttf"
+  ]
+ },
+ "k-sangju-haerye": {
+  "name": "상주해례본체",
+  "en": "SANGJU Haerye",
+  "ko": "상주해례본체",
+  "author": "상주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13289689&menuNo=200023",
+  "downloads": 2972,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sangju-haerye/400.woff2"
+  },
+  "bytes": 353560,
+  "catalog_key": "상주해례본체",
+  "source_files": [
+   "SANGJU Haerye.otf",
+   "SANGJU Haerye.ttf"
+  ]
+ },
+ "k-dalseohealing": {
+  "name": "달서힐링체B",
+  "en": "DalseoHealing",
+  "ko": "달서힐링체",
+  "author": "대구광역시 달서구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304360&menuNo=200023",
+  "downloads": 2943,
+  "weights": [
+   500,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-dalseohealing/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-dalseohealing/700.woff2"
+  },
+  "bytes": 664748,
+  "catalog_key": "달서힐링체",
+  "source_files": [
+   "DalseoHealingBold.ttf",
+   "DalseoHealingMedium.ttf"
+  ]
+ },
+ "k-suseong-batang": {
+  "name": "수성바탕체",
+  "en": "Suseong Batang",
+  "ko": "수성바탕체",
+  "author": "대구광역시 수성구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304310&menuNo=200023",
+  "downloads": 2903,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-suseong-batang/400.woff2"
+  },
+  "bytes": 532204,
+  "catalog_key": "수성바탕체",
+  "source_files": [
+   "SuseongBatang.ttf"
+  ]
+ },
+ "k-suseong-hyejeong": {
+  "name": "수성혜정체",
+  "en": "Suseong Hyejeong",
+  "ko": "수성혜정체",
+  "author": "대구광역시 수성구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304309&menuNo=200023",
+  "downloads": 2666,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-suseong-hyejeong/400.woff2"
+  },
+  "bytes": 772340,
+  "catalog_key": "수성혜정체",
+  "source_files": [
+   "SuseongHyejeong.ttf"
+  ]
+ },
+ "k-gwangyang-touching": {
+  "name": "광양감동체",
+  "en": "Gwangyang Touching",
+  "ko": "광양감동체",
+  "author": "전라남도 광양시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333451&menuNo=200023",
+  "downloads": 2657,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gwangyang-touching/400.woff2"
+  },
+  "bytes": 324000,
+  "catalog_key": "광양감동체",
+  "source_files": [
+   "Gwangyang Touching(TTF용).ttf"
+  ]
+ },
+ "k-chungbuk-national-university-bold": {
+  "name": "충북대70주년체B",
+  "en": "Chungbuk National University Bold",
+  "ko": "충북대70주년체 Bold",
+  "author": "충북대학교",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302265&menuNo=200023",
+  "downloads": 2556,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-chungbuk-national-university-bold/400.woff2"
+  },
+  "bytes": 189520,
+  "catalog_key": "충북대70주년체",
+  "source_files": [
+   "충북대70주년체B.ttf",
+   "충북대70주년체R.ttf"
+  ]
+ },
+ "k-dalseodarling": {
+  "name": "달서달링체",
+  "en": "DalseoDarling",
+  "ko": "달서달링체",
+  "author": "대구광역시 달서구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304359&menuNo=200023",
+  "downloads": 2333,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-dalseodarling/400.woff2"
+  },
+  "bytes": 441164,
+  "catalog_key": "달서달링체",
+  "source_files": [
+   "DalseoDarling.ttf"
+  ]
+ },
+ "k-hoengseong-hanu": {
+  "name": "횡성한우체",
+  "en": "Hoengseong Hanu",
+  "ko": "횡성한우체",
+  "author": "횡성군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302264&menuNo=200023",
+  "downloads": 2320,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hoengseong-hanu/400.woff2"
+  },
+  "bytes": 466672,
+  "catalog_key": "횡성한우체",
+  "source_files": [
+   "Hoengseong Hanu.otf",
+   "Hoengseong Hanu.ttf"
+  ]
+ },
+ "k-cbnu-jikji": {
+  "name": "충북대직지체",
+  "en": "CBNU JIKJI",
+  "ko": "충북대직지체",
+  "author": "충북대학교",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302267&menuNo=200023",
+  "downloads": 2305,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cbnu-jikji/400.woff2"
+  },
+  "bytes": 347928,
+  "catalog_key": "충북대직지체",
+  "source_files": [
+   "충북대직지체.ttf"
+  ]
+ },
+ "k-accchildrenfallotf": {
+  "name": "ACC어린이가을담은체",
+  "en": "ACCchildrenfallOTF",
+  "ko": "ACC어린이가을담은OTF",
+  "author": "국립아시아문화전당",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13302261&menuNo=200023",
+  "downloads": 2302,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-accchildrenfallotf/400.woff2"
+  },
+  "bytes": 833964,
+  "catalog_key": "acc어린이가을담은체",
+  "source_files": [
+   "ACC어린이가을담은체.otf",
+   "ACC어린이가을담은체.ttf"
+  ]
+ },
+ "k-saenggeo-jincheon": {
+  "name": "생거진천체",
+  "en": "Saenggeo Jincheon",
+  "ko": "생거진천체",
+  "author": "충청북도 진천군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304548&menuNo=200023",
+  "downloads": 2171,
+  "weights": [
+   500
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-saenggeo-jincheon/500.woff2"
+  },
+  "bytes": 149744,
+  "catalog_key": "생거진천체",
+  "source_files": [
+   "Saenggeo Jincheon.otf",
+   "Saenggeo Jincheon.ttf"
+  ]
+ },
+ "k-kimm-bold": {
+  "name": "한국기계연구원L",
+  "en": "KIMM_Bold",
+  "ko": "한국기계연구원_Bold",
+  "author": "한국기계연구원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304495&menuNo=200023",
+  "downloads": 2135,
+  "weights": [
+   300,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-kimm-bold/300.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kimm-bold/700.woff2"
+  },
+  "bytes": 413484,
+  "catalog_key": "한국기계연구원",
+  "source_files": [
+   "한국기계연구원_Light.ttf",
+   "한국기계연구원_bold.ttf"
+  ]
+ },
+ "k-kogl-761ece2e": {
+  "name": "기상청달콤기후체",
+  "en": "기상청 달콤기후체",
+  "ko": null,
+  "author": "기상청",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333454&menuNo=200023",
+  "downloads": 2013,
+  "weights": [
+   500
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-kogl-761ece2e/500.woff2"
+  },
+  "bytes": 2090944,
+  "catalog_key": "기상청달콤기후체",
+  "source_files": [
+   "기상청 달콤기후체-SVG.ttf",
+   "기상청 달콤기후체.ttf"
+  ]
+ },
+ "k-suseong-dotum": {
+  "name": "수성돋움체",
+  "en": "Suseong Dotum",
+  "ko": "수성돋움체",
+  "author": "대구광역시 수성구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304311&menuNo=200023",
+  "downloads": 1957,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-suseong-dotum/400.woff2"
+  },
+  "bytes": 325352,
+  "catalog_key": "수성돋움체",
+  "source_files": [
+   "SuseongDotum.ttf"
+  ]
+ },
+ "k-soyo-maple": {
+  "name": "소요단풍체 R",
+  "en": "SOYO Maple",
+  "ko": "소요단풍체",
+  "author": "경기도 동두천시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372612&menuNo=200023",
+  "downloads": 1821,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-soyo-maple/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-soyo-maple/700.woff2"
+  },
+  "bytes": 601776,
+  "catalog_key": "소요단풍체",
+  "source_files": [
+   "SOYO Maple Bold.otf",
+   "SOYO Maple Bold.ttf",
+   "SOYO Maple Regular.otf",
+   "SOYO Maple Regular.ttf"
+  ]
+ },
+ "k-taebaek-milkyway": {
+  "name": "태백은하수체",
+  "en": "TAEBAEK milkyway",
+  "ko": "태백은하수체",
+  "author": "강원특별자치도 태백시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13313376&menuNo=200023",
+  "downloads": 1515,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-taebaek-milkyway/400.woff2"
+  },
+  "bytes": 217240,
+  "catalog_key": "태백은하수체",
+  "source_files": [
+   "TAEBAEK milkyway.otf",
+   "TAEBAEK milkyway.ttf"
+  ]
+ },
+ "k-gwangyang-sunshine": {
+  "name": "광양햇살체R",
+  "en": "Gwangyang Sunshine",
+  "ko": "광양햇살체",
+  "author": "전라남도 광양시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333452&menuNo=200023",
+  "downloads": 1475,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gwangyang-sunshine/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gwangyang-sunshine/700.woff2"
+  },
+  "bytes": 605944,
+  "catalog_key": "광양햇살체",
+  "source_files": [
+   "Gwangyang Sunshine Bold(TTF용).ttf",
+   "Gwangyang Sunshine Regular(TTF용).ttf"
+  ]
+ },
+ "k-goseong-geumgangnuri": {
+  "name": "금강누리체",
+  "en": "GOSEONG GEUMGANGNURI",
+  "ko": "고성 금강누리체",
+  "author": "강원특별자치도 고성군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333593&menuNo=200023",
+  "downloads": 1218,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-goseong-geumgangnuri/400.woff2"
+  },
+  "bytes": 296336,
+  "catalog_key": "금강누리체",
+  "source_files": [
+   "고성 금강누리체(맥용).otf",
+   "고성 금강누리체(윈도우용).ttf"
+  ]
+ },
+ "k-taebaek-font": {
+  "name": "태백체",
+  "en": "TAEBAEK font",
+  "ko": "태백체",
+  "author": "강원특별자치도 태백시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333594&menuNo=200023",
+  "downloads": 1175,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-taebaek-font/400.woff2"
+  },
+  "bytes": 240856,
+  "catalog_key": "태백체",
+  "source_files": [
+   "TAEBAEK font.otf",
+   "TAEBAEK font.ttf"
+  ]
+ },
+ "k-koddiud-ongothic": {
+  "name": "KoddiUD 온고딕 B",
+  "en": "KoddiUD OnGothic",
+  "ko": "KoddiUD 온고딕",
+  "author": "한국장애인개발원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371554&menuNo=200023",
+  "downloads": 1068,
+  "weights": [
+   400,
+   700,
+   800
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-koddiud-ongothic/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-koddiud-ongothic/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-koddiud-ongothic/800.woff2"
+  },
+  "bytes": 1066412,
+  "catalog_key": "koddiud온고딕",
+  "source_files": [
+   "KoddiUDOnGothic-Bold.otf",
+   "KoddiUDOnGothic-Bold.ttf",
+   "KoddiUDOnGothic-ExtraBold.otf",
+   "KoddiUDOnGothic-ExtraBold.ttf",
+   "KoddiUDOnGothic-Regular.otf",
+   "KoddiUDOnGothic-Regular.ttf"
+  ]
+ },
+ "k-electrical-safety": {
+  "name": "전기안전체 B",
+  "en": "Electrical Safety",
+  "ko": "전기안전체",
+  "author": "한국전기안전공사",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371591&menuNo=200023",
+  "downloads": 1025,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-electrical-safety/400.woff2"
+  },
+  "bytes": 248052,
+  "catalog_key": "전기안전체",
+  "source_files": [
+   "전기안전체 Bold.otf",
+   "전기안전체 Bold.ttf",
+   "전기안전체 Regular.otf",
+   "전기안전체 Regular.ttf"
+  ]
+ },
+ "k-high1-wonchuri-body": {
+  "name": "하이원 원추리체 B",
+  "en": "high1 Wonchuri Body",
+  "ko": "하이원 원추리체",
+  "author": "강원랜드",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13373089&menuNo=200023",
+  "downloads": 150,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-high1-wonchuri-body/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-high1-wonchuri-body/700.woff2"
+  },
+  "bytes": 371692,
+  "catalog_key": "하이원원추리체",
+  "source_files": [
+   "high1 Wonchuri Body B.ttf",
+   "high1 Wonchuri Body R.ttf"
+  ]
+ },
+ "k-waguri-ttf": {
+  "name": "와구리체",
+  "en": "WAGURI TTF",
+  "ko": "와구리체 TTF",
+  "author": "경기도 구리시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382157&menuNo=200023",
+  "downloads": 137,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-waguri-ttf/400.woff2"
+  },
+  "bytes": 318960,
+  "catalog_key": "와구리체",
+  "source_files": [
+   "WAGURI TTF.ttf",
+   "WAGURI.otf"
+  ]
+ },
+ "k-eunpyeongsagadogseo": {
+  "name": "은평사가독서체",
+  "en": "EunpyeongSagaDogseo",
+  "ko": "은평사가독서체",
+  "author": "서울특별시 은평구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382162&menuNo=200023",
+  "downloads": 132,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-eunpyeongsagadogseo/400.woff2"
+  },
+  "bytes": 254208,
+  "catalog_key": "은평사가독서체",
+  "source_files": [
+   "EunpyeongSagaDogseoText-Regular.otf",
+   "EunpyeongSagaDogseoText-Regular.ttf",
+   "EunpyeongSagaDogseoTitle-Regular.otf",
+   "EunpyeongSagaDogseoTitle-Regular.ttf"
+  ]
+ },
+ "k-yeongdo": {
+  "name": "영도체B",
+  "en": "Yeongdo",
+  "ko": "영도체",
+  "author": "부산광역시 영도구",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382158&menuNo=200023",
+  "downloads": 112,
+  "weights": [
+   400,
+   700,
+   900
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yeongdo/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-yeongdo/700.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-yeongdo/900.woff2"
+  },
+  "bytes": 514784,
+  "catalog_key": "영도체",
+  "source_files": [
+   "Yeongdo-Bold.ttf",
+   "Yeongdo-Heavy.ttf",
+   "Yeongdo-Regular.ttf",
+   "YeongdoOTF-Bold.otf",
+   "YeongdoOTF-Heavy.otf",
+   "YeongdoOTF-Regular.otf"
+  ]
+ },
+ "k-seoulalrim": {
+  "name": "서울알림체B",
+  "en": "SeoulAlrim",
+  "ko": "서울알림체",
+  "author": "서울특별시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 91,
+  "weights": [
+   500,
+   700,
+   800,
+   900
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/800.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/900.woff2"
+  },
+  "bytes": 2476876,
+  "catalog_key": "서울알림체",
+  "source_files": [
+   "SeoulAlrim-Bold.otf",
+   "SeoulAlrim-ExtraBold.otf",
+   "SeoulAlrim-Heavy.otf",
+   "SeoulAlrim-Medium.otf",
+   "SeoulAlrimTTF-Bold.ttf",
+   "SeoulAlrimTTF-ExtraBold.ttf",
+   "SeoulAlrimTTF-Heavy.ttf",
+   "SeoulAlrimTTF-Medium.ttf"
+  ]
+ },
+ "k-62570": {
+  "name": "62570체",
+  "en": "62570",
+  "ko": "62570체",
+  "author": "서울보훈청",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288429&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-62570/400.woff2"
+  },
+  "bytes": 174720,
+  "catalog_key": "62570체",
+  "source_files": [
+   "62570.ttf"
+  ]
+ },
+ "k-gimpobatang": {
+  "name": "김포평화바탕",
+  "en": "GimpoBatang",
+  "ko": "김포평화바탕",
+  "author": "경기도 김포시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gimpobatang/400.woff2"
+  },
+  "bytes": 476464,
+  "catalog_key": "김포평화바탕",
+  "source_files": [
+   "Batang.ttf"
+  ]
+ },
+ "k-kccchassam": {
+  "name": "KCC차쌤체",
+  "en": "KCCChassam",
+  "ko": "KCC차쌤체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kccchassam/400.woff2"
+  },
+  "bytes": 687940,
+  "catalog_key": "kcc차쌤체",
+  "source_files": [
+   "KCCChassam.otf",
+   "KCCChassam.ttf"
+  ]
+ },
+ "k-kccimkwontaek": {
+  "name": "KCC임권택체",
+  "en": "KCCImkwontaek",
+  "ko": "KCC임권택체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kccimkwontaek/400.woff2"
+  },
+  "bytes": 1921908,
+  "catalog_key": "kcc임권택체",
+  "source_files": [
+   "KCCImkwontaek.otf",
+   "KCCImkwontaek.ttf"
+  ]
+ },
+ "k-knps-bandali": {
+  "name": "국립공원 반달이",
+  "en": "KNPS Bandali",
+  "ko": "국립공원 반달이",
+  "author": "국립공원공단",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288477&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-knps-bandali/400.woff2"
+  },
+  "bytes": 705692,
+  "catalog_key": "국립공원반달이",
+  "source_files": [
+   "KNPSBandali.otf",
+   "KNPSBandali.ttf"
+  ]
+ },
+ "k-knps-kkomi": {
+  "name": "국립공원 꼬미",
+  "en": "KNPS Kkomi",
+  "ko": "국립공원 꼬미",
+  "author": "국립공원공단",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288476&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-knps-kkomi/400.woff2"
+  },
+  "bytes": 544416,
+  "catalog_key": "국립공원꼬미",
+  "source_files": [
+   "KNPSKkomi.otf",
+   "KNPSKkomi.ttf"
+  ]
+ },
+ "k-makgeolli": {
+  "name": "포천막걸리체",
+  "en": "Makgeolli",
+  "ko": "포천 막걸리체",
+  "author": "경기도 포천시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-makgeolli/400.woff2"
+  },
+  "bytes": 963512,
+  "catalog_key": "포천막걸리체",
+  "source_files": [
+   "MAKGEOLLI.ttf"
+  ]
+ },
+ "k-mapodpp": {
+  "name": "Mapo 당인리발전소",
+  "en": "MapoDPP",
+  "ko": "Mapo당인리발전소",
+  "author": "마포구",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mapodpp/400.woff2"
+  },
+  "bytes": 120324,
+  "catalog_key": "mapo당인리발전소",
+  "source_files": [
+   "MapoDPP.otf",
+   "MapoDPP.ttf"
+  ]
+ },
+ "k-sokcho-bada-batang": {
+  "name": "속초바다 바탕",
+  "en": "Sokcho Bada Batang",
+  "ko": "속초바다 바탕",
+  "author": "강원특별자치도 속초시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371558&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sokcho-bada-batang/400.woff2"
+  },
+  "bytes": 249308,
+  "catalog_key": "속초바다바탕",
+  "source_files": [
+   "SokchoBadaBatang.otf",
+   "SokchoBadaBatang.ttf"
+  ]
+ },
+ "k-sokcho-bada-calligraphy": {
+  "name": "속초바다 손글씨",
+  "en": "Sokcho Bada Calligraphy",
+  "ko": "속초바다 손글씨",
+  "author": "강원특별자치도 속초시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371559&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sokcho-bada-calligraphy/400.woff2"
+  },
+  "bytes": 703612,
+  "catalog_key": "속초바다손글씨",
+  "source_files": [
+   "SokchoBadaCalligraphy.otf",
+   "SokchoBadaCalligraphy.ttf"
+  ]
+ },
+ "k-sokcho-bada-dotum": {
+  "name": "속초바다 돋움",
+  "en": "Sokcho Bada Dotum",
+  "ko": "속초바다 돋움",
+  "author": "강원특별자치도 속초시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371557&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   900
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-sokcho-bada-dotum/900.woff2"
+  },
+  "bytes": 205844,
+  "catalog_key": "속초바다돋움",
+  "source_files": [
+   "SokchoBadaDotum.otf",
+   "SokchoBadaDotum.ttf"
+  ]
+ },
+ "k-gimpotitle": {
+  "name": "김포평화제목",
+  "en": "GimpoTitle",
+  "ko": "김포평화제목",
+  "author": "경기도 김포시",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gimpotitle/400.woff2"
+  },
+  "bytes": 388948,
+  "catalog_key": "김포평화제목",
+  "source_files": [
+   "Title.ttf"
+  ]
+ },
+ "k-gyeonggititle": {
+  "name": "경기천년제목",
+  "en": "GyeonggiTitle",
+  "ko": "경기천년제목",
+  "author": "경기도",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   300,
+   500,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-gyeonggititle/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-gyeonggititle/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gyeonggititle/700.woff2"
+  },
+  "bytes": 1502888,
+  "catalog_key": "경기천년제목",
+  "source_files": [
+   "Title_Light.otf",
+   "경기천년제목OTFV_Bold.otf",
+   "경기천년제목OTF_Bold.otf",
+   "경기천년제목OTF_Light.otf",
+   "경기천년제목OTF_Medium.otf",
+   "경기천년제목V_Bold.ttf",
+   "경기천년제목_Bold.ttf",
+   "경기천년제목_Light.ttf",
+   "경기천년제목_Medium.ttf"
+  ]
+ },
+ "k-yeojuceramic-dingbat": {
+  "name": "여주도자체",
+  "en": "YeojuCeramic dingbat",
+  "ko": "여주도자체 딩뱃",
+  "author": "경기도 여주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371586&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yeojuceramic-dingbat/400.woff2"
+  },
+  "bytes": 339292,
+  "catalog_key": "여주도자체",
+  "source_files": [
+   "YeojuCeramic TTF.ttf",
+   "YeojuCeramic dingbat.otf",
+   "YeojuCeramic dingbat.ttf",
+   "YeojuCeramic.otf"
+  ]
+ },
+ "k-yeongjupunggiginseng": {
+  "name": "영주풍기인삼체",
+  "en": "YEONGJUPunggiGinseng",
+  "ko": "영주풍기인삼체",
+  "author": "경상북도 영주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333797&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yeongjupunggiginseng/400.woff2"
+  },
+  "bytes": 354940,
+  "catalog_key": "영주풍기인삼체",
+  "source_files": [
+   "YEONGJUPunggiGinseng.otf",
+   "YEONGJUPunggiGinseng.ttf"
+  ]
+ },
+ "k-yeongjuseonbi": {
+  "name": "영주선비체",
+  "en": "YEONGJUSeonbi",
+  "ko": "영주선비체",
+  "author": "경상북도 영주시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371588&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yeongjuseonbi/400.woff2"
+  },
+  "bytes": 410984,
+  "catalog_key": "영주선비체",
+  "source_files": [
+   "YEONGJUSeonbi.otf",
+   "YEONGJUSeonbi.ttf"
+  ]
+ },
+ "k-gyeonggibatangotf": {
+  "name": "경기천년바탕",
+  "en": "GyeonggiBatangOTF",
+  "ko": "경기천년바탕OTF",
+  "author": "경기도",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gyeonggibatangotf/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gyeonggibatangotf/700.woff2"
+  },
+  "bytes": 4268360,
+  "catalog_key": "경기천년바탕",
+  "source_files": [
+   "경기천년바탕OTF_Bold.otf",
+   "경기천년바탕OTF_Regular.otf",
+   "경기천년바탕_Bold.ttf",
+   "경기천년바탕_Regular.ttf"
+  ]
+ },
+ "k-gimpogothic": {
+  "name": "김포평화고딕체B",
+  "en": "GimpoGothic",
+  "ko": "김포평화고딕",
+  "author": "김포시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288424&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gimpogothic/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gimpogothic/700.woff2"
+  },
+  "bytes": 654104,
+  "catalog_key": "김포평화고딕체",
+  "source_files": [
+   "김포평화고딕체(Bold).ttf",
+   "김포평화고딕체(Regular).ttf"
+  ]
+ },
+ "k-wanjunuriche": {
+  "name": "완주누리체 R",
+  "en": "Wanjunuriche",
+  "ko": "완주누리체",
+  "author": "전라북도 완주군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333583&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-wanjunuriche/400.woff2"
+  },
+  "bytes": 131616,
+  "catalog_key": "완주누리체",
+  "source_files": [
+   "완주누리체 Regular.ttf",
+   "완주누리체OTF Regular.otf"
+  ]
+ },
+ "k-wanjudaedunsanche": {
+  "name": "완주대둔산체 B",
+  "en": "Wanjudaedunsanche",
+  "ko": "완주대둔산체",
+  "author": "전라북도 완주군",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333584&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-wanjudaedunsanche/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-wanjudaedunsanche/700.woff2"
+  },
+  "bytes": 288156,
+  "catalog_key": "완주대둔산체",
+  "source_files": [
+   "완주대둔산체 Bold.ttf",
+   "완주대둔산체 Regular.ttf",
+   "완주대둔산체OTF Bold.otf",
+   "완주대둔산체OTF Regular.otf"
+  ]
+ },
+ "k-changwondangamasac": {
+  "name": "창원단감아삭체",
+  "en": "ChangwonDangamAsac",
+  "ko": "창원단감아삭",
+  "author": "창원시",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288462&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   700
+  ],
+  "license": "공공누리 제1유형",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-changwondangamasac/700.woff2"
+  },
+  "bytes": 147064,
+  "catalog_key": "창원단감아삭체",
+  "source_files": [
+   "창원단감아삭체.otf",
+   "창원단감아삭체.ttf"
   ]
  }
 }
