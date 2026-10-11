@@ -35,6 +35,8 @@ tools/run.sh finish "메시지"  ⑧ 커밋·푸시·잠금 해제 → 운영자
 - 로컬 실행: `cd worker && npm i && npx wrangler d1 migrations apply letsum --local && npx wrangler dev --local` (`.dev.vars`에 ADMIN_KEY·VOTER_SALT — git 제외)
 - 배포: `worker/**`를 main에 푸시하면 GitHub Actions(`deploy-worker.yml`)가 배포. 저장소 비밀 `CLOUDFLARE_API_TOKEN`·`CLOUDFLARE_ACCOUNT_ID` 필요(없으면 건너뜀)
 - 댓글 관리: `admin.html` → 댓글 관리(관리자 키 = Worker 비밀 ADMIN_KEY)
+- 사용 사례 사진: 방문자 업로드(브라우저에서 1280px·700KB 이하로 축소) → D1 `shots`에 pending → `admin.html` '사용 사례 사진 검토'에서 승인해야 공개(거절=삭제). 승인 사진은 피드 카드 두 번째 슬라이드·상세 '사용 사례'에 표시
+- 검토 알림: `.github/workflows/review-queue.yml`이 매일 09:00 KST 대기 건수를 확인해 GitHub 이슈(라벨 review)로 알림. 저장소 비밀 `LETSUM_ADMIN_KEY` 필요
 
 ### 배포 주의
 - `nginx/default.conf`는 컨테이너에 **파일 단위로** 연결돼 있어, 바꾼 뒤 "받아와 재배포"만으로는 반영되지 않는다. 운영자가 컨테이너를 **재시작**(`sudo docker restart letsum-web`)해야 한다.

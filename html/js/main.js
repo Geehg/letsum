@@ -372,7 +372,21 @@
     }
     paintSocial();
   }
+  function paintShots() {
+    $$(".ig[data-id]").forEach((card) => {
+      const s = social[card.dataset.id]; if (!s || !s.shots || !s.shots.length || card.dataset.shots) return;
+      card.dataset.shots = "1";
+      const tr = card.querySelector(".ig-track"); const first = tr.firstElementChild;
+      const html = s.shots.map((x) => `<div class="ig-s ig-shot"><img src="/api/shot/${x.id}" alt="사용 사례" loading="lazy"><span class="ig-cap2">사용 사례 · ${esc(x.name)}</span></div>`).join("");
+      first.insertAdjacentHTML("afterend", html);
+      const n = tr.children.length; const m = card.querySelector(".ig-media");
+      let dots = m.querySelector(".ig-dots");
+      if (!dots) { m.insertAdjacentHTML("beforeend", '<button class="ig-nav prev" aria-label="이전 이미지">‹</button><button class="ig-nav next" aria-label="다음 이미지">›</button><div class="ig-dots"></div>'); dots = m.querySelector(".ig-dots"); bindCarousel(m); }
+      dots.innerHTML = Array.from({ length: n }, (_, k) => `<i class="${k ? "" : "on"}"></i>`).join("");
+    });
+  }
   function paintSocial() {
+    paintShots();
     $$("[data-likes]").forEach((el) => { const s = social[el.dataset.likes]; el.textContent = s && s.likes ? s.likes.toLocaleString() : ""; });
     $$("[data-cmts]").forEach((el) => { const s = social[el.dataset.cmts]; el.textContent = s && s.comments ? s.comments.toLocaleString() : ""; });
   }
@@ -438,14 +452,15 @@
       <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
     </article>`;
   }
+  function bindCarousel(m) {
+    if (m.dataset.bound) return; m.dataset.bound = "1";
+    const tr = m.querySelector(".ig-track");
+    const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
+    m.addEventListener("click", (e) => { const b = e.target.closest(".ig-nav"); if (b) go(b.classList.contains("prev") ? -1 : 1); });
+    tr.addEventListener("scroll", () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
+  }
   function bindFeed(host) {
-    host.querySelectorAll(".ig-media").forEach((m) => {
-      const tr = m.querySelector(".ig-track"), dots = m.querySelectorAll(".ig-dots i");
-      const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
-      m.querySelector(".prev")?.addEventListener("click", () => go(-1));
-      m.querySelector(".next")?.addEventListener("click", () => go(1));
-      tr.addEventListener("scroll", () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); dots.forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
-    });
+    host.querySelectorAll(".ig-media").forEach(bindCarousel);
     host.querySelectorAll("[data-share]").forEach((b) => b.addEventListener("click", async () => {
       const f = FONTS.find((x) => x.id === b.dataset.share);
       const url = `${location.origin}/font/${f.id}.html`;
@@ -708,6 +723,18 @@ import "@fontsource/${f.id}/400.css";</pre>
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           ${f.intro ? "" : `<button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>`}
         </div></div>
+      <div class="m-sec" id="shotSec"><h3>사용 사례 <span class="note" id="shotCount"></span></h3>
+        <div class="shot-grid" id="shotGrid"></div>
+        <details class="shot-up"><summary>이 폰트로 만든 작업 사진 올리기</summary>
+          <form class="cmt-form" id="shotForm" autocomplete="off">
+            <input type="file" name="file" accept="image/jpeg,image/png,image/webp" required aria-label="이미지 파일">
+            <input name="caption" maxlength="100" placeholder="한 줄 설명 (예: 카페 메뉴판 제목에 사용)" aria-label="설명">
+            <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임">
+            <input name="website" class="hp" tabindex="-1" aria-hidden="true">
+            <label class="note shot-agree"><input type="checkbox" name="agree" required> 제가 만든(또는 게시 권한이 있는) 이미지이며, LETSUM에 사용 사례로 게시하는 데 동의합니다. 얼굴·연락처 등 개인정보가 없는지 확인했습니다.</label>
+            <div class="cmt-row"><span class="note">운영자 검토 후 공개됩니다. 하루 3장까지, 긴 변 1280px로 줄여 올라갑니다.</span><button class="btn" type="submit">올리기</button></div>
+            <p class="note cmt-msg" id="shotMsg"></p>
+          </form></details></div>
       <div class="m-sec" id="cmtSec"><h3>댓글 <span class="note" id="cmtCount"></span></h3>
         <form class="cmt-form" id="cmtForm" autocomplete="off">
           <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임">
@@ -722,7 +749,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
     const commonBind = () => {
-      bindComments(f, focus);
+      bindComments(f, focus); bindShots(f);
       $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
       $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
       $("#favBtn").addEventListener("click", () => { toggleLike(f.id); openDetail(f.id); render(); });
@@ -748,6 +775,41 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   const fmtAgo = (t) => { const d = (Date.now() - t) / 1000; return d < 60 ? "방금" : d < 3600 ? `${Math.floor(d / 60)}분 전` : d < 86400 ? `${Math.floor(d / 3600)}시간 전` : new Date(t).toLocaleDateString("ko-KR"); };
   const cmtHTML = (c) => `<div class="cmt" data-cid="${c.id}"><b>${esc(c.name)}</b><span class="note">${fmtAgo(c.created)}</span><p>${esc(c.body).replace(/\n/g, "<br>")}</p><button class="linklike cmt-rep" data-rep="${c.id}">신고</button></div>`;
+  // 사진을 브라우저에서 줄여(긴 변 1280px, WebP→안 되면 JPEG) 700KB 이하로 만든다
+  async function shrink(file) {
+    const url = URL.createObjectURL(file);
+    try {
+      const img = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = url; });
+      const k = Math.min(1, 1280 / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement("canvas"); c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      const x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height); x.drawImage(img, 0, 0, c.width, c.height);
+      for (const q of [0.85, 0.75, 0.6, 0.45]) {
+        let d = c.toDataURL("image/webp", q); if (!d.startsWith("data:image/webp")) d = c.toDataURL("image/jpeg", q);
+        if (d.length * 0.75 < 690 * 1024) return d;
+      }
+      return null;
+    } finally { URL.revokeObjectURL(url); }
+  }
+  async function bindShots(f) {
+    const grid = $("#shotGrid"), form = $("#shotForm"), msg = $("#shotMsg"); if (!grid) return;
+    const j = await api("shots?id=" + f.id);
+    if (!j || j.error) { $("#shotSec").style.display = "none"; return; }
+    $("#shotCount").textContent = j.items.length ? `${j.items.length}장` : "";
+    grid.innerHTML = j.items.length ? j.items.map((x) => `<figure><a href="/api/shot/${x.id}" target="_blank" rel="noopener"><img src="/api/shot/${x.id}" alt="${esc(x.caption || "사용 사례")}" loading="lazy"></a><figcaption>${esc(x.caption)} <span class="note">— ${esc(x.name)}</span></figcaption></figure>`).join("")
+      : '<p class="note">아직 사용 사례가 없습니다. 이 폰트로 만든 작업을 처음으로 공유해 주세요.</p>';
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); const fd = new FormData(form); const btn = form.querySelector("button[type=submit]");
+      const file = fd.get("file"); if (!file || !file.size) return;
+      btn.disabled = true; msg.style.color = ""; msg.textContent = "이미지를 줄이는 중…";
+      let image = null; try { image = await shrink(file); } catch (x) {}
+      if (!image) { btn.disabled = false; msg.textContent = "이미지를 읽지 못했습니다. JPEG·PNG·WebP 파일을 올려 주세요."; return; }
+      msg.textContent = "올리는 중…";
+      const r = await api("shots", { id: f.id, name: fd.get("name"), caption: fd.get("caption"), image, agree: !!fd.get("agree"), website: fd.get("website") });
+      btn.disabled = false;
+      if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
+      form.reset(); msg.style.color = "var(--ink2)"; msg.textContent = "접수됐습니다. 운영자 검토 후 공개됩니다. 감사합니다!";
+    });
+  }
   async function bindComments(f, focus) {
     const list = $("#cmtList"), form = $("#cmtForm"), msg = $("#cmtMsg");
     if (focus === "comments") setTimeout(() => $("#cmtSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);

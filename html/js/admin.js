@@ -111,7 +111,7 @@
     try {
       const j = await call("comments?filter=" + document.getElementById("ckFilter").value);
       try { sessionStorage.setItem("ls_admin_key", key()); } catch (x) {}
-      const name = (id) => { const f = (window.FONTS || []).find((x) => x.id === id); return f ? f.name : id; };
+      const name = (id) => { const f = (typeof FONTS !== "undefined" ? FONTS : []).find((x) => x.id === id); return f ? f.name : id; };
       msg.textContent = `${j.items.length}건`;
       list.innerHTML = j.items.length ? `<table class="spec"><tr><th>폰트</th><th>작성</th><th>내용</th><th>상태</th><th></th></tr>${j.items.map((c) => `<tr>
         <td><a class="linklike" href="index.html#f=${e(c.font_id)}" target="_blank">${e(name(c.font_id))}</a></td>
@@ -128,4 +128,51 @@
   }
   form.addEventListener("submit", (ev) => { ev.preventDefault(); load(); });
   document.getElementById("ckFilter").addEventListener("change", load);
+})();
+
+// ---------- 사용 사례 사진 검토 ----------
+(function () {
+  const list = document.getElementById("shotList"); if (!list) return;
+  const msg = document.getElementById("shotMsgA"), badge = document.getElementById("shotBadge"), keyEl = document.getElementById("ckKey");
+  const e = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+  const auth = () => ({ authorization: "Bearer " + keyEl.value.trim() });
+  const name = (id) => { const f = (typeof FONTS !== "undefined" ? FONTS : []).find((x) => x.id === id); return f ? f.name : id; };
+  let urls = [];
+  async function summary() {
+    try { const r = await fetch("/api/admin/summary", { headers: auth() }); if (!r.ok) return; const j = await r.json();
+      badge.textContent = j.pendingShots ? `— 검토 대기 ${j.pendingShots}장` : "— 대기 없음";
+      const cm = document.getElementById("ckMsg"); if (cm && j.reportedComments) cm.textContent = `신고된 댓글 ${j.reportedComments}건이 있습니다. '신고된 댓글'로 확인하세요.`;
+    } catch (x) {}
+  }
+  async function load() {
+    if (!keyEl.value.trim()) { msg.textContent = "아래 '댓글 관리'에 관리자 키를 먼저 넣어 주세요."; return; }
+    msg.textContent = "불러오는 중…"; urls.forEach(URL.revokeObjectURL); urls = [];
+    const st = document.getElementById("shotFilter").value;
+    try {
+      const r = await fetch("/api/admin/shots?status=" + st, { headers: auth() }); const j = await r.json();
+      if (!r.ok) throw new Error(j.error || "오류");
+      try { sessionStorage.setItem("ls_admin_key", keyEl.value.trim()); } catch (x) {}
+      msg.textContent = `${j.items.length}장`; summary();
+      list.innerHTML = j.items.length ? j.items.map((s) => `<div class="adm-shot" data-sid="${s.id}"><img alt="사진 ${s.id}">
+        <b>${e(name(s.font_id))}</b><span>${e(s.caption || "(설명 없음)")}</span>
+        <span class="note">${e(s.name)} · ${new Date(s.created).toLocaleString("ko-KR")} · ${Math.round(s.bytes / 1024)}KB</span>
+        <div class="acts">${st === "pending" ? `<button class="btn sm" data-a="approve">승인(공개)</button><button class="btn sm ghost" data-a="reject">거절(삭제)</button>`
+          : `<button class="btn sm ghost" data-a="unpublish">비공개로</button><button class="btn sm ghost" data-a="reject">삭제</button>`}</div></div>`).join("") : '<p class="note">해당하는 사진이 없습니다.</p>';
+      list.querySelectorAll(".adm-shot").forEach(async (el) => {
+        const r = await fetch("/api/admin/shot/" + el.dataset.sid, { headers: auth() }); if (!r.ok) return;
+        const u = URL.createObjectURL(await r.blob()); urls.push(u); const img = el.querySelector("img"); img.src = u;
+        img.addEventListener("click", () => window.open(u, "_blank"));
+      });
+      list.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", async () => {
+        const sid = +b.closest(".adm-shot").dataset.sid;
+        if (b.dataset.a === "reject" && !confirm("이 사진을 삭제할까요? 되돌릴 수 없습니다.")) return;
+        const r = await fetch("/api/admin/shot", { method: "POST", headers: Object.assign({ "content-type": "application/json" }, auth()), body: JSON.stringify({ shotId: sid, action: b.dataset.a }) });
+        if (r.ok) load(); else msg.textContent = (await r.json().catch(() => ({}))).error || "오류";
+      }));
+    } catch (x) { msg.textContent = x.message; list.innerHTML = ""; }
+  }
+  document.getElementById("shotLoad").addEventListener("click", load);
+  document.getElementById("shotFilter").addEventListener("change", load);
+  document.getElementById("ckForm").addEventListener("submit", () => setTimeout(load, 50));
+  if (keyEl.value.trim()) summary();
 })();

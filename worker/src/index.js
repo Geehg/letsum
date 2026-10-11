@@ -4,11 +4,18 @@
 //       GET  /api/comments?id=x           → { items: [{ id, name, body, created }] }
 //       POST /api/comments { id, name, body, website(빈칸 함정) } → { ok, item }
 //       POST /api/report   { commentId }    → { ok }
+//       GET  /api/shots?id=x               → { items: [{ id, name, caption, created }] }  (승인된 사용 사례 사진)
+//       GET  /api/shot/<n>                 → 이미지(승인된 것만)
+//       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       관리자(Authorization: Bearer ADMIN_KEY):
+//       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
+//       GET  /api/admin/shots?status=pending|approved, GET /api/admin/shot/<n>
+//       POST /api/admin/shot { shotId, action: approve|reject|unpublish }
 //       GET  /api/admin/comments?filter=all|hidden|reported
 //       POST /api/admin/comment { commentId, action: hide|show|delete }
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
-const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20 };
+const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
+const IMG = [["image/jpeg", [0xff, 0xd8, 0xff]], ["image/png", [0x89, 0x50, 0x4e, 0x47]], ["image/webp", [0x52, 0x49, 0x46, 0x46]]];
 
 const json = (data, status = 200, extra = {}) =>
   new Response(JSON.stringify(data), { status, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", ...extra } });
@@ -36,12 +43,14 @@ async function stats(url, req, env) {
   if (!ids.length) return json({});
   const voter = await voterOf(req, env);
   const q = ids.map(() => "?").join(",");
-  const [likes, comments, mine] = await env.DB.batch([
+  const [likes, comments, mine, shots] = await env.DB.batch([
     env.DB.prepare(`SELECT font_id, COUNT(*) n FROM likes WHERE font_id IN (${q}) GROUP BY font_id`).bind(...ids),
     env.DB.prepare(`SELECT font_id, COUNT(*) n FROM comments WHERE hidden = 0 AND font_id IN (${q}) GROUP BY font_id`).bind(...ids),
     env.DB.prepare(`SELECT font_id FROM likes WHERE voter = ? AND font_id IN (${q})`).bind(voter, ...ids),
+    env.DB.prepare(`SELECT id, font_id, name FROM shots WHERE status = 'approved' AND font_id IN (${q}) ORDER BY id DESC`).bind(...ids),
   ]);
-  const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false }]));
+  const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false, shots: [] }]));
+  shots.results.forEach((r) => { const o = out[r.font_id]; if (o.shots.length < 3) o.shots.push({ id: r.id, name: r.name }); });
   likes.results.forEach((r) => (out[r.font_id].likes = r.n));
   comments.results.forEach((r) => (out[r.font_id].comments = r.n));
   mine.results.forEach((r) => (out[r.font_id].liked = true));
@@ -83,6 +92,46 @@ async function addComment(req, env) {
   return json({ ok: true, item: r });
 }
 
+function sniff(bytes) {
+  for (const [mime, sig] of IMG) if (sig.every((b, i) => bytes[i] === b)) {
+    if (mime === "image/webp" && String.fromCharCode(...bytes.slice(8, 12)) !== "WEBP") return null;
+    return mime;
+  }
+  return null;
+}
+async function addShot(req, env) {
+  const b = await body(req);
+  if (b.website) return json({ ok: true });
+  if (!ID.test(b.id || "")) return bad("잘못된 폰트");
+  if (b.agree !== true) return bad("게시 동의가 필요합니다");
+  const m = /^data:image\/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)$/.exec(b.image || "");
+  if (!m) return bad("JPEG·PNG·WebP 이미지만 올릴 수 있습니다");
+  let bytes; try { bytes = Uint8Array.from(atob(m[2]), (c) => c.charCodeAt(0)); } catch { return bad("이미지를 읽을 수 없습니다"); }
+  if (bytes.length > LIMIT.shotBytes) return bad("이미지가 너무 큽니다(700KB 이하)");
+  const mime = sniff(bytes); if (!mime) return bad("이미지 형식이 올바르지 않습니다");
+  const voter = await voterOf(req, env); const now = Date.now();
+  const [a, d, p] = await env.DB.batch([
+    env.DB.prepare("SELECT COUNT(*) n FROM shots WHERE voter = ? AND created > ?").bind(voter, now - 600000),
+    env.DB.prepare("SELECT COUNT(*) n FROM shots WHERE voter = ? AND created > ?").bind(voter, now - 86400000),
+    env.DB.prepare("SELECT COUNT(*) n FROM shots WHERE status = 'pending'"),
+  ]);
+  if (a.results[0].n >= LIMIT.shotsPer10m || d.results[0].n >= LIMIT.shotsPerDay) return bad("사진은 하루 3장까지, 10분에 1장씩 올릴 수 있습니다", 429);
+  if (p.results[0].n >= LIMIT.pendingMax) return bad("검토 대기 사진이 많아 잠시 접수를 멈췄습니다. 나중에 다시 시도해 주세요", 503);
+  await env.DB.prepare("INSERT INTO shots (font_id, name, caption, mime, bytes, data, voter, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+    .bind(b.id, clean(b.name, LIMIT.name) || "익명", clean(b.caption, LIMIT.caption), mime, bytes.length, bytes, voter, now).run();
+  return json({ ok: true });
+}
+async function listShots(url, env) {
+  const id = url.searchParams.get("id") || ""; if (!ID.test(id)) return bad("잘못된 폰트");
+  const r = await env.DB.prepare("SELECT id, name, caption, created FROM shots WHERE font_id = ? AND status = 'approved' ORDER BY id DESC LIMIT 30").bind(id).all();
+  return json({ items: r.results });
+}
+async function shotImage(n, env, any) {
+  const row = await env.DB.prepare(`SELECT mime, data FROM shots WHERE id = ?${any ? "" : " AND status = 'approved'"}`).bind(n).first();
+  if (!row) return new Response("not found", { status: 404 });
+  return new Response(new Uint8Array(row.data), { headers: { "content-type": row.mime, "cache-control": any ? "private, no-store" : "public, max-age=86400", "x-content-type-options": "nosniff" } });
+}
+
 async function report(req, env) {
   const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
   const voter = await voterOf(req, env);
@@ -98,6 +147,29 @@ async function admin(url, req, env) {
     const where = f === "hidden" ? "WHERE hidden = 1" : f === "reported" ? "WHERE reports > 0" : "";
     const r = await env.DB.prepare(`SELECT id, font_id, name, body, created, hidden, reports FROM comments ${where} ORDER BY created DESC LIMIT 200`).all();
     return json({ items: r.results });
+  }
+  if (req.method === "GET" && url.pathname === "/api/admin/summary") {
+    const [s, r, h] = await env.DB.batch([
+      env.DB.prepare("SELECT COUNT(*) n FROM shots WHERE status = 'pending'"),
+      env.DB.prepare("SELECT COUNT(*) n FROM comments WHERE reports > 0 AND hidden = 0"),
+      env.DB.prepare("SELECT COUNT(*) n FROM comments WHERE hidden = 1"),
+    ]);
+    return json({ pendingShots: s.results[0].n, reportedComments: r.results[0].n, hiddenComments: h.results[0].n });
+  }
+  if (req.method === "GET" && url.pathname === "/api/admin/shots") {
+    const st = url.searchParams.get("status") === "approved" ? "approved" : "pending";
+    const r = await env.DB.prepare("SELECT id, font_id, name, caption, bytes, created, status FROM shots WHERE status = ? ORDER BY created DESC LIMIT 100").bind(st).all();
+    return json({ items: r.results });
+  }
+  const sm = /^\/api\/admin\/shot\/(\d+)$/.exec(url.pathname);
+  if (req.method === "GET" && sm) return shotImage(+sm[1], env, true);
+  if (req.method === "POST" && url.pathname === "/api/admin/shot") {
+    const b = await body(req); const sid = parseInt(b.shotId, 10); if (!sid) return bad("잘못된 사진");
+    if (b.action === "approve") await env.DB.prepare("UPDATE shots SET status = 'approved', approved = ? WHERE id = ?").bind(Date.now(), sid).run();
+    else if (b.action === "unpublish") await env.DB.prepare("UPDATE shots SET status = 'pending', approved = NULL WHERE id = ?").bind(sid).run();
+    else if (b.action === "reject") await env.DB.prepare("DELETE FROM shots WHERE id = ?").bind(sid).run();
+    else return bad("잘못된 동작");
+    return json({ ok: true });
   }
   if (req.method === "POST" && url.pathname === "/api/admin/comment") {
     const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
@@ -126,6 +198,10 @@ export default {
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, env);
       if (req.method === "POST" && p === "/api/comments") return await addComment(req, env);
       if (req.method === "POST" && p === "/api/report") return await report(req, env);
+      if (req.method === "GET" && p === "/api/shots") return await listShots(url, env);
+      if (req.method === "POST" && p === "/api/shots") return await addShot(req, env);
+      const im = /^\/api\/shot\/(\d+)$/.exec(p);
+      if (req.method === "GET" && im) return await shotImage(+im[1], env, false);
       if (p === "/api/health") return json({ ok: true });
       return bad("없는 주소", 404);
     } catch (e) {

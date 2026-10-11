@@ -1,0 +1,29 @@
+# 매일 09:00 KST 검토 대기(사용 사례 사진·신고된 댓글)를 확인해, 있으면 GitHub 이슈로 알린다(→ 메일 알림).
+# 저장소 비밀 LETSUM_ADMIN_KEY(= Worker의 ADMIN_KEY와 같은 값)가 없으면 건너뛴다. 무료.
+name: review-queue
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      KEY: ${{ secrets.LETSUM_ADMIN_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check queue
+        run: |
+          if [ -z "$KEY" ]; then echo "LETSUM_ADMIN_KEY 없음 — 건너뜀"; exit 0; fi
+          j=$(curl -fsS -H "authorization: Bearer $KEY" https://letsum.app/api/admin/summary) || { echo "요약 조회 실패"; exit 1; }
+          shots=$(echo "$j" | jq -r .pendingShots); rep=$(echo "$j" | jq -r .reportedComments)
+          echo "사진 대기 $shots · 신고 댓글 $rep"
+          [ "$shots" = "0" ] && [ "$rep" = "0" ] && exit 0
+          title="LETSUM 검토 대기 — 사진 ${shots}장 · 신고 댓글 ${rep}건"
+          body="관리자 페이지에서 처리해 주세요: https://letsum.app/admin.html (사용 사례 사진 검토 / 댓글 관리)"
+          gh label create review --color fbbf24 -R "$GITHUB_REPOSITORY" 2>/dev/null || true
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --label review --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$(date -u +%F): $title"; gh issue edit "$n" -R "$GITHUB_REPOSITORY" --title "$title";
+          else gh issue create -R "$GITHUB_REPOSITORY" --label review --title "$title" --body "$body"; fi

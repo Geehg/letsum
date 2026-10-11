@@ -7,7 +7,8 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="관리자 — LETSUM(렛섬)"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새에서 비교하고, 글자 지원과 라이선스까지 한 화면에서 확인합니다.">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=8">
+<style>.adm-shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}.adm-shot{border:1px solid var(--rule2);padding:10px;display:flex;flex-direction:column;gap:6px}.adm-shot img{width:100%;max-height:260px;object-fit:contain;background:#eee;cursor:zoom-in}.adm-shot .acts{display:flex;gap:6px;flex-wrap:wrap}</style>
 </head>
 <body>
 <header>
@@ -53,6 +54,12 @@
       <tbody id="fontRows"></tbody>
     </table>
 
+    <h2>사용 사례 사진 검토 <span class="note" id="shotBadge"></span></h2>
+    <p class="note">방문자가 올린 사진은 여기서 승인해야 사이트에 보입니다. 거절하면 바로 삭제됩니다. (아래 '댓글 관리'의 관리자 키를 함께 씁니다)</p>
+    <div style="display:flex;gap:8px;margin:8px 0"><select id="shotFilter" aria-label="보기"><option value="pending">검토 대기</option><option value="approved">공개 중</option></select><button class="btn sm" id="shotLoad" type="button">불러오기</button></div>
+    <p class="note" id="shotMsgA"></p>
+    <div id="shotList" class="adm-shots"></div>
+
     <h2>댓글 관리</h2>
     <p class="note">서버(Cloudflare Worker)에 저장된 댓글입니다. 관리자 키는 Cloudflare에 비밀 값(ADMIN_KEY)으로 등록한 값이며, 이 브라우저 탭을 닫으면 지워집니다.</p>
     <form class="demo" id="ckForm" style="margin-top:8px;flex-direction:row;align-items:flex-end;gap:8px;flex-wrap:wrap">
@@ -96,6 +103,6 @@
 </footer>
 
 <script src="js/data.js?v=6"></script>
-<script src="js/admin.js?v=6"></script>
+<script src="js/admin.js?v=7"></script>
 </body>
 </html>
