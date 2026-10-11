@@ -83,5 +83,29 @@
   "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
   "page": "https://www.seoul.go.kr/seoul/font.do",
   "checked": "2026-10-11"
+ },
+ "k-ownglyph-beomjun": {
+  "license": "부산시교육청 무료 글꼴 이용조건",
+  "evidence": "배포 블로그: 누구나 무료로 자유롭게 사용. 단 폰트 파일 name 테이블: 'Modification of this file requires prior written permission from VoyagerX, inc.' → 웹폰트 변환(형식 변경도 파일 수정) 하지 않고 소개 전용 + 원본 폰트로 렌더링한 견본 이미지만",
+  "page": "https://blog.naver.com/with_pen/224432892423",
+  "checked": "2026-10-12"
+ },
+ "k-gs-hyejaroun": {
+  "license": "GS혜자로운체 이용조건",
+  "evidence": "보도(뉴스핌·비즈니스플러스 등): 상업·비상업 자유 사용, 출처 표기 의무 없음, 파일 유료 판매·임의 수정 재배포 제한, 소프트웨어·서비스 포함 배포는 사전 허가. 배포 사이트 원문 미확인 → status checking, 소개 전용",
+  "page": "https://www.newspim.com/news/view/20261008000088",
+  "checked": "2026-10-12"
+ },
+ "k-leeoksun": {
+  "license": "기증저작물 자유이용(공유마당)",
+  "evidence": "공유마당 저작물 페이지 이용조건 '기증저작물 자유이용'. 기증제도 안내: '저작물·저작자명·출처 및 이용조건 표기 필요, 제한 없이 자유롭게 이용'. 내려받기는 이용 범위 동의 절차 → 자동 통과 금지 규칙에 따라 소개 전용. 상업·변경 세부 조건은 원문(ZIP 내 문서) 미확인 → checking",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13388291&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-gilwonok": {
+  "license": "기증저작물 자유이용(공유마당)",
+  "evidence": "공유마당 저작물 페이지 이용조건 '기증저작물 자유이용'. 기증제도 안내: '저작물·저작자명·출처 및 이용조건 표기 필요, 제한 없이 자유롭게 이용'. 내려받기는 이용 범위 동의 절차 → 자동 통과 금지 규칙에 따라 소개 전용. 상업·변경 세부 조건은 원문(ZIP 내 문서) 미확인 → checking",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13388290&menuNo=200023",
+  "checked": "2026-10-12"
  }
 }

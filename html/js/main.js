@@ -10,13 +10,17 @@
   // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
   // 스타일시트가 도착하기 전에 document.fonts.load를 부르면 폰트가 없는 것으로 판정되므로, 링크 로드를 기다린다
   // 웹폰트 두 종류: Google Fonts(한 번에 CSS 링크) / LETSUM 미리보기 웹폰트(f.webfont — 화면에 보일 때만 @font-face 선언)
-  const isGF = (f) => !f.webfont;
+  const isGF = (f) => !f.webfont && !f.intro;
+  // 소개 전용(intro): 라이선스상 미리보기 웹폰트를 만들 수 없는 폰트 — 견본 이미지(specimen)가 있으면 그것만, 없으면 안내 상자
+  const introBox = (f, cls) => f.specimen
+    ? `<div class="intro-pv${cls ? " " + cls : ""}"><img src="${f.specimen}" alt="${esc(f.name)} 견본" loading="lazy"><span class="i-cap">원본 폰트 견본 이미지 · 입력 문장 미적용</span></div>`
+    : `<div class="intro-pv none${cls ? " " + cls : ""}"><b>${esc(f.name)}</b><span class="i-cap">미리보기 미제공 · 배포처에서 생김새 확인</span></div>`;
   // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
   const fmtRel = (d) => !d ? "" : d.length === 4 ? d + "년" : d.length === 7 ? `${d.slice(0, 4)}년 ${+d.slice(5)}월` : d.replace(/-/g, ".");
   const declared = new Set();
   const faceSheet = document.createElement("style"); document.head.appendChild(faceSheet);
   function ensureFace(f) {
-    if (!f || isGF(f) || declared.has(f.id)) return;
+    if (!f || !f.webfont || declared.has(f.id)) return;
     declared.add(f.id);
     const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
     faceSheet.textContent += Object.entries(f.webfont).map(([w, url]) =>
@@ -29,7 +33,7 @@
   function observeFaces(root) {
     (root || document).querySelectorAll("[data-id]").forEach((el) => {
       const f = FONTS.find((x) => x.id === el.dataset.id);
-      if (!f || isGF(f) || declared.has(f.id)) return;
+      if (!f || !f.webfont || declared.has(f.id)) return;
       faceObs ? faceObs.observe(el) : ensureFace(f);
     });
   }
@@ -96,11 +100,11 @@
     gf.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
     gf.forEach((f) => (metrics[f.id] = measure(f.en)));
     // LETSUM 웹폰트는 빌드 때 폰트 파일(cmap)에서 계산한 값을 그대로 쓴다 — 파일을 미리 받지 않음
-    FONTS.filter((f) => !isGF(f)).forEach((f) => { detect[f.id] = { old: !!f.old, hanja: !!f.hanja }; });
+    FONTS.filter((f) => f.webfont).forEach((f) => { detect[f.id] = { old: !!f.old, hanja: !!f.hanja }; });
   }
   // LETSUM 웹폰트의 형태 측정은 상세를 열 때(파일을 받은 뒤) 한다
   async function measureLazy(f) {
-    if (isGF(f) || metrics[f.id]) return;
+    if (!f.webfont || metrics[f.id]) return;
     ensureFace(f);
     const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
     await document.fonts.load(`400 48px "${fam}"`, "가나다ㅣㅡ").catch(() => {});
@@ -149,7 +153,8 @@
     await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
     gf.forEach((f) => { coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); });
     // LETSUM 웹폰트: 빌드 때 센 완성형 수·옛한글·한자 정보로 판정 (2,350자 폰트는 KS X 1001 집합 대조)
-    FONTS.filter((f) => !isGF(f)).forEach((f) => {
+    FONTS.filter((f) => f.intro).forEach((f) => { coverage[f.id] = []; }); // 소개 전용은 검사 대상 아님
+    FONTS.filter((f) => f.webfont).forEach((f) => {
       coverage[f.id] = chars.filter((ch) => {
         if (ch >= "가" && ch <= "힣") return f.cov < 11172 && KSX.size ? !KSX.has(ch) : false;
         if (/[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF]/.test(ch)) return !f.hanja;
@@ -279,7 +284,7 @@
   // ---------- 렌더 조각 ----------
   const LIC_SHORT = { print: "인쇄", web: "웹", video: "영상", embed: "임베딩", bici: "BI·CI", package: "포장" };
   const pills = (f) => Object.keys(LIC_SHORT).map((k) => `<span class="pill ${f.matrix[k]}">${LIC_SHORT[k]}${f.matrix[k] === "ok" ? " ✓" : f.matrix[k] === "no" ? " ✕" : " △"}</span>`).join("")
-    + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`);
+    + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`) + (f.intro ? `<span class="pill intro" title="${esc(f.introReason || "")}">소개 전용</span>` : "");
   const famOf = (f) => state.pair ? `${LATIN_PAIRS.find((p) => p.id === f.pair).family}, ${f.family}` : f.family;
   const wOf = (f) => { const w = state.weight; if (f.weights.includes(w)) return w; return f.weights.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
   function pvText(f) {
@@ -289,13 +294,14 @@
   }
   const covTags = (f) => {
     const d = detect[f.id];
+    if (!f.cov) return `<span class="cov"><span class="dim">글자수 배포처 확인</span></span>`;
     return `<span class="cov"><span class="${f.cov >= 11172 ? "y" : ""}">${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자</span>`
       + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span><span class="${d.hanja ? "y" : "dim"}">漢</span>` : "") + `</span>`;
   };
   const missPill = (f) => (coverage[f.id] && coverage[f.id].length) ? `<span class="pill miss">누락 ${coverage[f.id].length}자</span>` : "";
   const acts = (f) => `<div class="r-acts">
       <button class="abtn fav${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="즐겨찾기">${favs.has(f.id) ? "♥" : "♡"}</button>
-      <button class="abtn${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}">${cmp.has(f.id) ? "비교 중" : "+ 비교"}</button>
+      ${f.intro ? "" : `<button class="abtn${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}">${cmp.has(f.id) ? "비교 중" : "+ 비교"}</button>`}
       <button class="abtn" data-open="${f.id}">상세</button></div>`;
   const pvStyle = (f) => `font-family:${famOf(f)};font-size:${state.size}px;font-weight:${wOf(f)}`;
 
@@ -304,19 +310,19 @@
       <div class="r-meta">
         <div class="r-name">${esc(f.name)}<span class="en">${esc(f.en)}</span></div>
         <div class="r-by">${esc(f.designer)}</div>
-        <div class="r-spec">굵기 ${f.weights.length}종 · ${f.formats.join("/")}</div>
+        <div class="r-spec">${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${f.formats.join("/")}</div>
         ${covTags(f)}
       </div>
       <div class="r-pvwrap">
-        <div class="r-pv${state.inv ? " inv" : ""}" style="${pvStyle(f)}">${pvText(f)}</div>
-        <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>
+        ${f.intro ? introBox(f) : `<div class="r-pv${state.inv ? " inv" : ""}" style="${pvStyle(f)}">${pvText(f)}</div>
+        <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>`}
       </div>
       <div class="r-side"><div class="pills">${pills(f)}${missPill(f)}</div>${acts(f)}</div>
     </article>`;
   }
   function cardHTML(f) {
     return `<article class="card" data-id="${f.id}" tabindex="0">
-      <div class="r-pv${state.inv ? " inv" : ""}" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>
+      ${f.intro ? introBox(f) : `<div class="r-pv${state.inv ? " inv" : ""}" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>`}
       <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>
       <div class="pills">${pills(f)}${missPill(f)}</div>
       <div class="foot">${covTags(f)}${acts(f)}</div>
@@ -338,7 +344,7 @@
   }
   function ctxHTML(f) {
     return `<article class="ctxcard" data-id="${f.id}" tabindex="0">
-      ${mockHTML(f, state.ctx)}
+      ${f.intro ? introBox(f, "ctx") : mockHTML(f, state.ctx)}
       <div class="lab"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${acts(f)}</div>
       <div class="pills">${pills(f)}${missPill(f)}</div>
     </article>`;
@@ -495,7 +501,7 @@
   function openDetail(id) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
     ensureFace(f);
-    if (!isGF(f) && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
+    if (f.webfont && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
     const gfam = f.en.replace(/ /g, "+");
     const gfont = `https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&display=swap`;
     const specimen = "https://fonts.google.com/specimen/" + gfam;
@@ -509,7 +515,7 @@
       <button class="x" id="mx" aria-label="닫기">×</button>
       <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span><span class="badge free">상업용 무료 · ${esc(licInfo(f).short)}</span>${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
       <p class="m-sub">저작권자 ${esc(f.holder)} · 제작 <button class="linklike" id="dsgBtn">${esc(f.designer)}</button> · ${f.mood.join(" · ")}</p>
-      <div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
+      ${f.intro ? `${introBox(f, "big")}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처 페이지에서 받을 수 있습니다.</div>` : `<div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
       <div class="tester">
         <div class="t-row"><span>크기</span><input type="range" id="tSize" min="12" max="110" value="44"><b id="tSizeV">44px</b>
           <span>굵기</span><select id="tW">${f.weights.map((w) => `<option value="${w}"${w === wOf(f) ? " selected" : ""}>${w}</option>`).join("")}</select>
@@ -525,25 +531,25 @@
         <div class="t-row" style="margin-bottom:0"><span class="k">글자 범위</span>${covTags(f)}
           ${miss.length ? `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>` : `<span class="pill ok">현재 문장 모두 지원</span>`}
           <span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span></div>
-      </div>
+      </div>`}
       <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
 
-      <div class="m-sec"><h3>쓰임새에서 보기</h3>
+      ${f.intro ? "" : `<div class="m-sec"><h3>쓰임새에서 보기</h3>
         <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
         <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
 
       <div class="m-sec"><h3>닮은 폰트</h3>
         <div class="simrow">${similar(f, 3).map((s) => (ensureFace(s), s)).map((s) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span></button>`).join("") || '<span class="note">측정 중…</span>'}</div>
-        <p class="note" style="margin-top:8px">글자 형태를 브라우저에서 직접 측정(굵기 밀도·너비·획 대비)해 가까운 순으로 고릅니다. 외부 서버나 AI를 쓰지 않습니다.</p></div>
+        <p class="note" style="margin-top:8px">글자 형태를 브라우저에서 직접 측정(굵기 밀도·너비·획 대비)해 가까운 순으로 고릅니다. 외부 서버나 AI를 쓰지 않습니다.</p></div>`}
 
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">
-          <tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>
-          <tr><th>굵기</th><td><span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span></td></tr>
+          ${f.intro ? "" : `<tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>`}
+          <tr><th>굵기</th><td>${f.weightsUnknown ? '<span class="note">배포처에서 확인</span>' : f.intro ? f.weights.join(" · ") : `<span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span>`}</td></tr>
           <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
-          <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
-          <tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>
+          <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
+          ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}</td></tr>
           <tr><th>검수</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
@@ -562,7 +568,7 @@
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
           <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
         </div>
-        ${dl.ok ? "" : !isGF(f) ? `<p class="note" style="margin-top:6px">이 폰트는 <b>${esc(dl.srcName)}</b> 페이지에서 이용 범위를 확인한 뒤 내려받습니다. 원 배포처 페이지 버튼을 눌러 주세요.</p>` : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
+        ${dl.ok ? "" : f.intro ? `<p class="note" style="margin-top:6px">파일은 <b>${esc(dl.srcName)}</b>에서만 받을 수 있습니다. 이용 조건을 그곳에서 확인한 뒤 내려받으세요.</p>` : !isGF(f) ? `<p class="note" style="margin-top:6px">이 폰트는 <b>${esc(dl.srcName)}</b> 페이지에서 이용 범위를 확인한 뒤 내려받습니다. 원 배포처 페이지 버튼을 눌러 주세요.</p>` : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
         <p class="note" style="margin-top:8px">${dl.ok ? `파일은 LETSUM이 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
         <details class="howto"><summary>설치 · PPT/한글 적용 안내 (Windows · Mac · 아이폰 · 갤럭시)</summary>
           <div class="howto-body">
@@ -582,12 +588,18 @@ import "@fontsource/${f.id}/400.css";</pre>
         <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>` : `<p class="note" style="margin-top:12px">웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(OFL은 웹 임베딩 허용). LETSUM의 미리보기용 웹폰트는 이 사이트의 미리보기 전용입니다.</p>`}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
-          <button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>
+          ${f.intro ? "" : `<button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>`}
         </div></div>
       <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 사용 범위는 저작권자의 규정에 따라 달라질 수 있습니다.</p>`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
+    const commonBind = () => {
+      $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
+      $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
+      $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
+    };
+    if (f.intro) { commonBind(); return; }
     const LONG = BODY;
     let curPair = state.pair ? f.pair : "";
     const applyFam = () => { const p = LATIN_PAIRS.find((x) => x.id === curPair); pv.style.fontFamily = p ? `${p.family}, ${f.family}` : f.family; };
@@ -603,9 +615,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => { pv.textContent = TEXT_PRESETS.find((p) => p.id === b.dataset.tp).t; }));
     modal.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#" + b.dataset.copy).textContent); } catch (e) {} b.textContent = "복사됨 ✓"; setTimeout(() => (b.textContent = "복사"), 1500); }));
     modal.querySelectorAll(".simcard[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
-    $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
-    $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
-    $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
+    commonBind();
     $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });
   }
   function openDesigner(name) {
@@ -650,9 +660,9 @@ import "@fontsource/${f.id}/400.css";</pre>
     track.innerHTML = list.map((f) => `
       <article class="slide" data-id="${f.id}" tabindex="0">
         <div class="s-top"><span class="s-date" title="출처: ${esc(f.releasedSrc)}">${fmtRel(f.released)} 출시 · ${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span>${week ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
-        <div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>
-        <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)} · 굵기 ${f.weights.length}종</span></div>
-          <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}</div></div>
+        ${f.intro ? introBox(f, "slide") : `<div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>`}
+        <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}${f.weightsUnknown ? "" : ` · 굵기 ${f.weights.length}종`}</span></div>
+          <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}${f.intro ? '<span class="pill intro">소개 전용</span>' : ""}</div></div>
       </article>`).join("");
     observeFaces(track);
     track.querySelectorAll(".slide").forEach((el) => {

@@ -8,7 +8,7 @@
  3. 필수 필드·값의 형식 (분류·분위기·라이선스·매트릭스·굵기·날짜 형식)
  4. 라이선스가 LICENSE_INFO에 정의돼 있는가, 공공누리면 출처 표시(attribution)가 있는가
  5. 출시일(released)은 출처(releasedSrc)·링크(releasedUrl)와 함께 있는가, 미래 날짜가 아닌가
- 6. 웹폰트 주소 형식(GitHub Pages 미러), 다운로드·원 배포처 링크 형식
+ 6. 웹폰트 주소 형식(GitHub Pages 미러), 다운로드·원 배포처 링크 형식, 소개 전용(intro) 항목 규칙
  7. 카탈로그(catalog.json)의 site_id가 실제 data.js id를 가리키는가
  8. 검수 파일(review_*.json)·출시일 덮어쓰기(release_overrides.json)의 id가 data.js에 있는가
 사용: python3 -I tools/validate.py
@@ -69,7 +69,7 @@ for f in FONTS:
     if not f.get("family", "").startswith("'"): err(f"{fid}: family는 따옴표로 시작하는 CSS 값이어야 함")
     # 4) 라이선스
     if f.get("license") not in LIC: err(f"{fid}: 라이선스 '{f.get('license')}'가 LICENSE_INFO에 없음")
-    if str(f.get("license", "")).startswith("공공누리") and not f.get("attribution"): err(f"{fid}: 공공누리는 attribution(출처 표시) 필수")
+    if (str(f.get("license", "")).startswith("공공누리") or str(f.get("license", "")).startswith("기증저작물")) and not f.get("attribution"): err(f"{fid}: 공공누리는 attribution(출처 표시) 필수")
     # 5) 출시일
     r = f.get("released")
     if r:
@@ -86,6 +86,13 @@ for f in FONTS:
     for k in ("zip", "page", "mirror"):
         if k in dl and not str(dl[k]).startswith("https://"): err(f"{fid}: dl.{k}는 https 주소여야 함")
     if f.get("webfont") and not dl.get("page"): err(f"{fid}: 웹폰트 폰트는 원 배포처 페이지(dl.page) 필수")
+    # 소개 전용: 미리보기 웹폰트 없이 정보·배포처만. 이유와 배포처가 필수, 견본 이미지는 html/ 아래 실제 파일
+    if f.get("intro"):
+        if f.get("webfont"): err(f"{fid}: 소개 전용(intro)은 webfont를 가질 수 없음")
+        if not f.get("introReason"): err(f"{fid}: 소개 전용은 introReason(미리보기 미제공 사유) 필수")
+        if not dl.get("page"): err(f"{fid}: 소개 전용은 원 배포처 페이지(dl.page) 필수")
+        if f.get("specimen") and not os.path.exists(os.path.join(ROOT, "html", f["specimen"])): err(f"{fid}: 견본 이미지 없음 {f['specimen']}")
+    elif f.get("specimen") or f.get("weightsUnknown"): err(f"{fid}: specimen·weightsUnknown은 소개 전용(intro)에서만")
 
 # 7) 카탈로그 연결
 cat_path = os.path.join(HERE, "state", "catalog.json")
