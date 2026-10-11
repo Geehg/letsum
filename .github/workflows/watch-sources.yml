@@ -1,0 +1,33 @@
+# 매주 월요일 09:00 KST 배포처 감시 → 변경이 있으면 상태 파일 커밋 + GitHub 이슈 생성(메일 알림).
+# 공개 저장소의 GitHub Actions는 무료. 외부 API 키·AI 없음.
+name: watch-font-sources
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run watcher
+        id: run
+        run: |
+          set +e
+          python3 -I tools/watch_sources.py
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Commit state
+        run: |
+          git config user.name "letsum-watch"
+          git config user.email "watch@letsum.app"
+          git add tools/state
+          git diff --cached --quiet || git commit -m "chore(watch): 배포처 상태 갱신 $(date -u +%F)"
+          git push
+      - name: Open issue when changed
+        if: steps.run.outputs.code == '3'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "폰트 배포처 변경 감지 $(date -u +%F)" --body-file tools/state/report.md --label watch || true

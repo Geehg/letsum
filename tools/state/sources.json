@@ -1,0 +1,1071 @@
+{
+ "checked": "2026-10-11",
+ "google": {
+  "Asta Sans": {
+   "category": "Sans Serif",
+   "weights": [
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800"
+   ],
+   "designers": [
+    "42dot"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Asta+Sans"
+  },
+  "Bagel Fat One": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Kyungwon Kim",
+    "JAMO"
+   ],
+   "lastModified": "2025-05-30",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Bagel+Fat+One"
+  },
+  "Black And White Picture": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "AsiaSoft Inc."
+   ],
+   "lastModified": "2025-09-16",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Black+And+White+Picture"
+  },
+  "Black Han Sans": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Zess Type"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Black+Han+Sans"
+  },
+  "Cute Font": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "TypoDesign Lab. Inc"
+   ],
+   "lastModified": "2025-09-04",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Cute+Font"
+  },
+  "Diphylleia": {
+   "category": "Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Minha Hyung",
+    "JAMO"
+   ],
+   "lastModified": "2025-05-30",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Diphylleia"
+  },
+  "Do Hyeon": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Woowahan Brothers"
+   ],
+   "lastModified": "2025-09-11",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Do+Hyeon"
+  },
+  "Dokdo": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "FONTRIX"
+   ],
+   "lastModified": "2025-09-16",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Dokdo"
+  },
+  "Dongle": {
+   "category": "Sans Serif",
+   "weights": [
+    "300",
+    "400",
+    "700"
+   ],
+   "designers": [
+    "Yanghee Ryu"
+   ],
+   "lastModified": "2025-09-16",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Dongle"
+  },
+  "East Sea Dokdo": {
+   "category": "Handwriting",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "YoonDesign Inc"
+   ],
+   "lastModified": "2025-09-16",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/East+Sea+Dokdo"
+  },
+  "Gaegu": {
+   "category": "Handwriting",
+   "weights": [
+    "300",
+    "400",
+    "700"
+   ],
+   "designers": [
+    "JIKJI SOFT"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gaegu"
+  },
+  "Gamja Flower": {
+   "category": "Handwriting",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "YoonDesign Inc"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gamja+Flower"
+  },
+  "Gasoek One": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Jiashuo Zhang",
+    "JAMO"
+   ],
+   "lastModified": "2026-03-03",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gasoek+One"
+  },
+  "Gothic A1": {
+   "category": "Sans Serif",
+   "weights": [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+   ],
+   "designers": [
+    "HanYang I&C Co"
+   ],
+   "lastModified": "2025-09-11",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gothic+A1"
+  },
+  "Gowun Batang": {
+   "category": "Serif",
+   "weights": [
+    "400",
+    "700"
+   ],
+   "designers": [
+    "Yanghee Ryu"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gowun+Batang"
+  },
+  "Gowun Dodum": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Yanghee Ryu"
+   ],
+   "lastModified": "2025-09-11",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gowun+Dodum"
+  },
+  "Grandiflora One": {
+   "category": "Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Haesung Cho",
+    "JAMO"
+   ],
+   "lastModified": "2026-03-03",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Grandiflora+One"
+  },
+  "Gugi": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "TAE System & Typefaces Co."
+   ],
+   "lastModified": "2025-09-16",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Gugi"
+  },
+  "Hahmlet": {
+   "category": "Serif",
+   "weights": [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+   ],
+   "designers": [
+    "Hypertype"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Hahmlet"
+  },
+  "Hi Melody": {
+   "category": "Handwriting",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "YoonDesign Inc"
+   ],
+   "lastModified": "2025-09-04",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Hi+Melody"
+  },
+  "IBM Plex Sans KR": {
+   "category": "Sans Serif",
+   "weights": [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700"
+   ],
+   "designers": [
+    "Mike Abbink",
+    "Bold Monday"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/IBM+Plex+Sans+KR"
+  },
+  "Jua": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Woowahan Brothers"
+   ],
+   "lastModified": "2025-09-04",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Jua"
+  },
+  "Kirang Haerang": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Woowahan Brothers"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Kirang+Haerang"
+  },
+  "Moirai One": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Jiyeon Park",
+    "JAMO"
+   ],
+   "lastModified": "2026-03-03",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Moirai+One"
+  },
+  "Nanum Brush Script": {
+   "category": "Handwriting",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Sandoll Communication"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Nanum+Brush+Script"
+  },
+  "Nanum Gothic": {
+   "category": "Sans Serif",
+   "weights": [
+    "400",
+    "700",
+    "800"
+   ],
+   "designers": [
+    "Sandoll Communication"
+   ],
+   "lastModified": "2025-05-30",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Nanum+Gothic"
+  },
+  "Nanum Gothic Coding": {
+   "category": "Handwriting",
+   "weights": [
+    "400",
+    "700"
+   ],
+   "designers": [
+    "Sandoll Communication"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Nanum+Gothic+Coding"
+  },
+  "Nanum Myeongjo": {
+   "category": "Serif",
+   "weights": [
+    "400",
+    "700",
+    "800"
+   ],
+   "designers": [
+    "Sandoll Communication"
+   ],
+   "lastModified": "2025-09-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Nanum+Myeongjo"
+  },
+  "Nanum Pen Script": {
+   "category": "Handwriting",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Sandoll Communication"
+   ],
+   "lastModified": "2025-05-30",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Nanum+Pen+Script"
+  },
+  "Noto Sans KR": {
+   "category": "Sans Serif",
+   "weights": [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+   ],
+   "designers": [
+    "Google"
+   ],
+   "lastModified": "2026-10-01",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Noto+Sans+KR"
+  },
+  "Noto Serif KR": {
+   "category": "Serif",
+   "weights": [
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+   ],
+   "designers": [
+    "Google"
+   ],
+   "lastModified": "2026-10-01",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Noto+Serif+KR"
+  },
+  "Orbit": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Sooun Cho",
+    "JAMO"
+   ],
+   "lastModified": "2026-03-03",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Orbit"
+  },
+  "Poor Story": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Yoon Design"
+   ],
+   "lastModified": "2025-09-08",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Poor+Story"
+  },
+  "Single Day": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "DXKorea Inc"
+   ],
+   "lastModified": "2026-08-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Single+Day"
+  },
+  "Song Myung": {
+   "category": "Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "JIKJI"
+   ],
+   "lastModified": "2026-08-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Song+Myung"
+  },
+  "Stylish": {
+   "category": "Sans Serif",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "AsiaSoft Inc"
+   ],
+   "lastModified": "2026-08-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Stylish"
+  },
+  "Sunflower": {
+   "category": "Sans Serif",
+   "weights": [
+    "300",
+    "500",
+    "700"
+   ],
+   "designers": [
+    "JIKJISOFT"
+   ],
+   "lastModified": "2026-08-10",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Sunflower"
+  },
+  "Yeon Sung": {
+   "category": "Display",
+   "weights": [
+    "400"
+   ],
+   "designers": [
+    "Woowahan brothers"
+   ],
+   "lastModified": "2025-09-04",
+   "license": "OFL-1.1",
+   "url": "https://fonts.google.com/specimen/Yeon+Sung"
+  }
+ },
+ "fontsource": {
+  "42dot Sans": {
+   "id": "42dot-sans",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-06-02",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "url": "https://fontsource.org/fonts/42dot-sans"
+  },
+  "Asta Sans": {
+   "id": "asta-sans",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "url": "https://fontsource.org/fonts/asta-sans"
+  },
+  "Bagel Fat One": {
+   "id": "bagel-fat-one",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-05-30",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/bagel-fat-one"
+  },
+  "Black And White Picture": {
+   "id": "black-and-white-picture",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-16",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/black-and-white-picture"
+  },
+  "Black Han Sans": {
+   "id": "black-han-sans",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/black-han-sans"
+  },
+  "Cute Font": {
+   "id": "cute-font",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-05",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/cute-font"
+  },
+  "Diphylleia": {
+   "id": "diphylleia",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-05-30",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/diphylleia"
+  },
+  "Do Hyeon": {
+   "id": "do-hyeon",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-11",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/do-hyeon"
+  },
+  "Dokdo": {
+   "id": "dokdo",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-16",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/dokdo"
+  },
+  "Dongle": {
+   "id": "dongle",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-16",
+   "weights": [
+    300,
+    400,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/dongle"
+  },
+  "East Sea Dokdo": {
+   "id": "east-sea-dokdo",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-16",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/east-sea-dokdo"
+  },
+  "Gaegu": {
+   "id": "gaegu",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    300,
+    400,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/gaegu"
+  },
+  "Gamja Flower": {
+   "id": "gamja-flower",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/gamja-flower"
+  },
+  "Gasoek One": {
+   "id": "gasoek-one",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-03-03",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/gasoek-one"
+  },
+  "Gothic A1": {
+   "id": "gothic-a1",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-11",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "url": "https://fontsource.org/fonts/gothic-a1"
+  },
+  "Gowun Batang": {
+   "id": "gowun-batang",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    400,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/gowun-batang"
+  },
+  "Gowun Dodum": {
+   "id": "gowun-dodum",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-11",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/gowun-dodum"
+  },
+  "Grandiflora One": {
+   "id": "grandiflora-one",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-03-03",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/grandiflora-one"
+  },
+  "Gugi": {
+   "id": "gugi",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-16",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/gugi"
+  },
+  "Hahmlet": {
+   "id": "hahmlet",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "url": "https://fontsource.org/fonts/hahmlet"
+  },
+  "Hi Melody": {
+   "id": "hi-melody",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-05",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/hi-melody"
+  },
+  "IBM Plex Sans KR": {
+   "id": "ibm-plex-sans-kr",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/ibm-plex-sans-kr"
+  },
+  "Jua": {
+   "id": "jua",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-05",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/jua"
+  },
+  "Kirang Haerang": {
+   "id": "kirang-haerang",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/kirang-haerang"
+  },
+  "Moirai One": {
+   "id": "moirai-one",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-03-03",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/moirai-one"
+  },
+  "Nanum Brush Script": {
+   "id": "nanum-brush-script",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/nanum-brush-script"
+  },
+  "Nanum Gothic": {
+   "id": "nanum-gothic",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-05-30",
+   "weights": [
+    400,
+    700,
+    800
+   ],
+   "url": "https://fontsource.org/fonts/nanum-gothic"
+  },
+  "Nanum Gothic Coding": {
+   "id": "nanum-gothic-coding",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    400,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/nanum-gothic-coding"
+  },
+  "Nanum Myeongjo": {
+   "id": "nanum-myeongjo",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-10",
+   "weights": [
+    400,
+    700,
+    800
+   ],
+   "url": "https://fontsource.org/fonts/nanum-myeongjo"
+  },
+  "Nanum Pen Script": {
+   "id": "nanum-pen-script",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-05-30",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/nanum-pen-script"
+  },
+  "Noto Sans KR": {
+   "id": "noto-sans-kr",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-10-01",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "url": "https://fontsource.org/fonts/noto-sans-kr"
+  },
+  "Noto Serif KR": {
+   "id": "noto-serif-kr",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-10-01",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "url": "https://fontsource.org/fonts/noto-serif-kr"
+  },
+  "Orbit": {
+   "id": "orbit",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-03-03",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/orbit"
+  },
+  "Poor Story": {
+   "id": "poor-story",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-08",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/poor-story"
+  },
+  "Single Day": {
+   "id": "single-day",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-08-10",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/single-day"
+  },
+  "Song Myung": {
+   "id": "song-myung",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-08-10",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/song-myung"
+  },
+  "Stylish": {
+   "id": "stylish",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-08-10",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/stylish"
+  },
+  "Sunflower": {
+   "id": "sunflower",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2026-08-10",
+   "weights": [
+    300,
+    500,
+    700
+   ],
+   "url": "https://fontsource.org/fonts/sunflower"
+  },
+  "Yeon Sung": {
+   "id": "yeon-sung",
+   "license": "OFL-1.1",
+   "type": "google",
+   "version": null,
+   "lastModified": "2025-09-05",
+   "weights": [
+    400
+   ],
+   "url": "https://fontsource.org/fonts/yeon-sung"
+  }
+ },
+ "github": {
+  "Pretendard": {
+   "repo": "orioncactus/pretendard",
+   "url": "https://github.com/orioncactus/pretendard/releases/tag/v1.3.9",
+   "tag": "v1.3.9",
+   "published": "2023-11-05T18:21:09Z",
+   "license": "NOASSERTION"
+  },
+  "SUIT": {
+   "repo": "sunn-us/SUIT",
+   "url": "https://github.com/sunn-us/SUIT/commit/45279e6face2b481f0b09b3a0989dfd97d47282f",
+   "tag": null,
+   "published": "2025-09-09T20:07:38Z",
+   "license": null
+  },
+  "Wanted Sans": {
+   "repo": "wanteddev/wanted-sans",
+   "url": "https://github.com/wanteddev/wanted-sans/releases/tag/v1.0.3",
+   "tag": "v1.0.3",
+   "published": "2024-03-05T05:14:49Z",
+   "license": "OFL-1.1"
+  },
+  "Spoqa Han Sans": {
+   "repo": "spoqa/spoqa-han-sans",
+   "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.3.0",
+   "tag": "v3.3.0",
+   "published": "2021-06-07T02:18:00Z",
+   "license": "OFL-1.1"
+  },
+  "Source Han Sans": {
+   "repo": "adobe-fonts/source-han-sans",
+   "url": "https://github.com/adobe-fonts/source-han-sans/releases/tag/2.005R",
+   "tag": "2.005R",
+   "published": "2025-06-18T21:21:40Z",
+   "license": "NOASSERTION"
+  },
+  "Source Han Serif": {
+   "repo": "adobe-fonts/source-han-serif",
+   "url": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
+   "tag": "2.003R",
+   "published": "2024-07-30T18:57:27Z",
+   "license": "NOASSERTION"
+  }
+ },
+ "kogl": {},
+ "pages": {
+  "문체부 안심 글꼴파일 서비스": {
+   "sha": "b6f21320280b2f21",
+   "url": "https://www.mcst.go.kr/site/s_policy/subPolicy/contents/contents09.jsp"
+  },
+  "공유마당 공공 안심글꼴": {
+   "sha": "7808f8a3d9887a30",
+   "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  },
+  "공유마당 민간 안심글꼴": {
+   "sha": "090ac0f68b266687",
+   "url": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  }
+ }
+}

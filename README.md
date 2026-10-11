@@ -17,5 +17,8 @@ LETSUM(렛섬) — 한글 폰트 작업대. 상업용 무료 한글 폰트를 **
 ## 운영 원칙
 - 사용자 대상 AI 기능 없음(유지비 0 원칙). 닮은 폰트·글자 누락·옛한글/한자 판정은 모두 브라우저 캔버스 측정으로 처리. 자세한 대체 기술 표는 `docs/research_v2_global_benchmark.md` 5장.
 
+## 수집 자동화
+- `tools/watch_sources.py`: Google Fonts·Fontsource·GitHub 릴리스·공공데이터 CSV·공공 목록 페이지를 매주 돌며 `tools/state/catalog.json`에 누적(자산). 변경 시 GitHub 이슈로 알림. 라이선스 해석·공개는 사람이 함. 타당성 조사: `docs/automation_feasibility.md`
+
 ## 배포
 GitHub `main`에 푸시 → SynoDockPilot 패널에서 "받아와 재배포". 로컬 확인은 `html/`에서 `python3 -m http.server`.
