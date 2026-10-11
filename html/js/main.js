@@ -142,16 +142,30 @@
         <span class="badge">${f.category}</span>
         ${allOk(f) ? '<span class="badge free">상업용 무료</span>' : ""}
       </div>
-      <p style="color:var(--ink2);font-size:14px;margin-top:4px">저작권자 ${f.holder} · 제작 ${f.designer}</p>
+      <p style="color:var(--ink2);font-size:14px;margin-top:4px">저작권자 ${f.holder} · 제작 <button class="linklike" id="dsgBtn">${f.designer}</button></p>
       <div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:40px">${escapeHtml(state.text || "책을 읽는 시간은 언제나 옳다")}</div>
-      <div class="size-row"><span>미리보기 크기</span><input type="range" id="pvSize" min="16" max="72" value="40"><span id="pvSizeVal">40px</span>
-      <span style="margin-left:auto">굵기 ${f.weights.join(" · ")}</span></div>
+      <div class="tester">
+        <div class="t-row"><span>크기</span><input type="range" id="tSize" min="12" max="96" value="40"><b id="tSizeV">40px</b>
+          <span class="t-w">굵기 ${f.weights.join(" · ")}</span></div>
+        <div class="t-row"><span>자간</span><input type="range" id="tLs" min="-5" max="20" value="0"><b id="tLsV">0px</b></div>
+        <div class="t-row"><span>행간</span><input type="range" id="tLh" min="120" max="240" value="160"><b id="tLhV">160%</b></div>
+        <div class="t-row t-btns">
+          <button class="fbtn" id="tDark">🌙 다크모드</button>
+          <button class="fbtn" id="tVert">↕ 세로쓰기</button>
+          <button class="fbtn" id="tLong">📄 장문</button>
+          <button class="fbtn" id="tOld">옛한글</button>
+          <button class="fbtn" id="tHanja">한자</button>
+        </div>
+        <div class="t-support" id="tSupport"><span class="badge check">글자 지원 확인 중…</span></div>
+      </div>
       <p style="margin-top:14px;color:#333">${f.desc}</p>
       <table class="spec">
         <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
         <tr><th>지원 글자수</th><td>${f.glyphs}</td></tr>
         <tr><th>라이선스</th><td>${f.license} (SIL Open Font License 1.1)</td></tr>
         <tr><th>검수 상태</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
+        <tr><th>옛한글 지원</th><td id="mxOld">확인 중…</td></tr>
+        <tr><th>한자 지원</th><td id="mxHanja">확인 중…</td></tr>
       </table>
       <h3 style="font-size:16px;font-weight:800;margin-top:20px">사용 범위 (라이선스 매트릭스)</h3>
       <table class="matrix">
@@ -172,8 +186,58 @@ font-family: ${f.family};</pre>
       <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 사용 범위는 저작권자의 규정에 따라 달라질 수 있습니다.</p>`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeDetail);
-    $("#pvSize").addEventListener("input", (e) => { $("#pvBig").style.fontSize = e.target.value + "px"; $("#pvSizeVal").textContent = e.target.value + "px"; });
+    // 한글 타입 테스터 (리서치 중기 과제 #5)
+    const pvBig = $("#pvBig");
+    const baseText = state.text || "책을 읽는 시간은 언제나 옳다";
+    const LONG_TXT = "한글 본문 테스트입니다. 이 문장은 실제 책 본문처럼 여러 줄에 걸쳐 렌더링되는 모습을 확인하기 위한 장문 샘플입니다. 자간과 행간을 조절해 가독성을 비교해 보세요. 명조체는 본문에, 고딕체는 제목과 UI에 자주 쓰입니다. 다람쥐 헌 쳇바퀴에 타고파.";
+    const OLDH_TXT = "ᄒᆞᆫ글 옛한글 테스트: ᄂᆞᄅᆞᆺ말ᄊᆞ미";
+    const HANJA_TXT = "韓國 漢字 1234";
+    $("#tSize").addEventListener("input", (e) => { pvBig.style.fontSize = e.target.value + "px"; $("#tSizeV").textContent = e.target.value + "px"; });
+    $("#tLs").addEventListener("input", (e) => { pvBig.style.letterSpacing = e.target.value + "px"; $("#tLsV").textContent = e.target.value + "px"; });
+    $("#tLh").addEventListener("input", (e) => { pvBig.style.lineHeight = e.target.value + "%"; $("#tLhV").textContent = e.target.value + "%"; });
+    const tgl = (id, fn) => $(id).addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); fn(e.currentTarget.classList.contains("on")); });
+    tgl("#tDark", (on) => pvBig.classList.toggle("dark", on));
+    tgl("#tVert", (on) => pvBig.classList.toggle("vert", on));
+    tgl("#tLong", (on) => { pvBig.textContent = on ? LONG_TXT : baseText; });
+    tgl("#tOld", (on) => { pvBig.textContent = on ? OLDH_TXT : baseText; });
+    tgl("#tHanja", (on) => { pvBig.textContent = on ? HANJA_TXT : baseText; });
+    // 옛한글·한자 지원 자동 검출 (리서치 중기 과제 #6 — document.fonts.check)
+    try {
+      const fam = `16px "${f.family}"`;
+      const oh = document.fonts.check(fam, "ᄒᆞᆫ") ? "지원" : "미지원";
+      const hj = document.fonts.check(fam, "韓國漢字") ? "지원" : "미지원";
+      const badge = (v) => `<span class="badge ${v === "지원" ? "free" : ""}">${v}</span>`;
+      $("#tSupport").innerHTML = `<span style="font-size:12.5px;color:var(--ink2)">옛한글</span>${badge(oh)}<span style="font-size:12.5px;color:var(--ink2)">한자</span>${badge(hj)}<span class="t-note">브라우저 자동 검출(참고용)</span>`;
+      $("#mxOld").innerHTML = `${badge(oh)} <span class="t-note">자동 검출</span>`;
+      $("#mxHanja").innerHTML = `${badge(hj)} <span class="t-note">자동 검출</span>`;
+    } catch (err) {
+      $("#tSupport").innerHTML = `<span class="badge">지원 여부 확인 불가</span>`;
+      $("#mxOld").textContent = "확인 불가"; $("#mxHanja").textContent = "확인 불가";
+    }
+    $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
     $("#favBtn").addEventListener("click", () => { favs.has(f.id) ? favs.delete(f.id) : favs.add(f.id); saveFavs(); openDetail(f.id); render(); });
+  }
+  // 제작자 페이지 (리서치 중기 과제 #8 — 제보→입점 사다리)
+  function openDesigner(name) {
+    const list = FONTS.filter((f) => f.designer === name);
+    modal.innerHTML = `
+      <button class="x" id="mx" aria-label="닫기">×</button>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-.02em">${name}</h2>
+      <p style="color:var(--ink2);font-size:14px;margin:6px 0 16px">LETSUM 등록 폰트 ${list.length}종</p>
+      <div class="coll-row">${list.map((f) => `
+        <button class="mini-card" data-id="${f.id}">
+          <span class="mpv" style="font-family:${f.family}">${escapeHtml(f.name)}</span>
+          <span class="mname">${f.name} · 굵기 ${f.weights.length}종</span>
+        </button>`).join("")}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn blue" id="dsgSupport">❤ 제작자 후원하기</button>
+        <a class="btn ghost" href="submit.html">유료 폰트 입점 신청</a>
+      </div>
+      <p class="note" style="margin-top:10px">후원 기능은 준비 중입니다. 입점 신청을 통해 후원 링크를 등록할 수 있습니다.</p>`;
+    overlay.classList.add("open");
+    $("#mx").addEventListener("click", closeDetail);
+    $("#dsgSupport").addEventListener("click", () => alert("후원 기능은 준비 중입니다. 정식 서비스에서 제공될 예정입니다."));
+    modal.querySelectorAll(".mini-card").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.id)));
   }
   function closeDetail() { overlay.classList.remove("open"); }
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeDetail(); });

@@ -13,6 +13,7 @@
     <nav class="main">
       <a href="index.html">폰트 탐색</a>
       <a href="guide.html">라이선스 가이드</a>
+      <a href="subset.html">서브셋 도구</a>
       <a href="submit.html" class="on">폰트 등록 신청</a>
       <a href="admin.html">관리자</a>
     </nav>
@@ -25,6 +26,12 @@
   <p class="lead">폰트 제작자·배포사라면 직접 등록을 신청할 수 있습니다. 접수된 폰트는 라이선스 원문 검수를 거쳐 공개됩니다.</p>
 
   <form class="demo" id="submitForm">
+    <label>신청 유형
+      <select name="reqtype">
+        <option>무료 폰트 등록 신청</option>
+        <option>제작자 입점 신청 (유료 폰트)</option>
+      </select>
+    </label>
     <label>폰트 이름 <input required name="name" placeholder="예: 고요체"></label>
     <label>제작자 / 저작권자 <input required name="designer" placeholder="예: 홍길동"></label>
     <label>공식 배포 페이지 주소 <input required name="dist" type="url" placeholder="https://"></label>
