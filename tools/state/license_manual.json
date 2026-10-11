@@ -92,8 +92,8 @@
  },
  "k-gs-hyejaroun": {
   "license": "GS혜자로운체 이용조건",
-  "evidence": "보도(뉴스핌·비즈니스플러스 등): 상업·비상업 자유 사용, 출처 표기 의무 없음, 파일 유료 판매·임의 수정 재배포 제한, 소프트웨어·서비스 포함 배포는 사전 허가. 배포 사이트 원문 미확인 → status checking, 소개 전용 / 2026-10-12 공식 사이트 hyejaroun.com(하단 'Copyright © 2026 GS Retail Co., Ltd.') 확인: 파일 GSHYEJAROUN-Bold(TTF·OTF) 1종, 한글 2,780자, 라이선스 PDF는 '준비 중'으로 미공개 → status checking 유지",
-  "page": "https://hyejaroun.com/",
+  "evidence": "공식 라이선스 PDF(GS-Hyejaroun-Font-License.pdf, 2026-10-08 작성) 원문: 허용 — 인쇄, 광고·패키지, 웹, 웹폰트(웹사이트 내 웹폰트 형태로 폰트 파일 탑재), 영상 / 비허용 — BI/CI, 임베딩(앱·게임·전자책에 파일 포함), 폰트 파일 판매, 수정·재배포. 출처 표기 불필요. 임베딩 칸은 웹폰트 O·앱/전자책 X라 cond. 교차 확인: typedia.kr/font/gshyejaroun (다운로드 → hyejaroun.com)",
+  "page": "https://hyejaroun.com/public/downloads/gs-hyejaroun/GS-Hyejaroun-Font-License.pdf",
   "checked": "2026-10-12"
  },
  "k-leeoksun": {

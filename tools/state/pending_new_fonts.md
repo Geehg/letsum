@@ -6,7 +6,7 @@
 | 폰트 | 배포 | 발표일 | 원 배포처 | 라이선스 확인 결과 | 상태 |
 |---|---|---|---|---|---|
 | 원주체 | 원주시 | 2026-08-31 | https://www.wonju.go.kr/www/contents.do?key=6554 | 원주시 가이드라인 PDF 28쪽: SIL OFL 1.1 | ✅ 등록(k-wonju) |
-| GS혜자로운체 | GS리테일 | 2026-10-08 | https://hyejaroun.com/ (GS Retail 저작권 표기, Bold 1종) | 보도: 상업 이용 가능, **수정·재배포 금지**, 소프트웨어 포함 시 사전 허가 → 웹폰트 변환 불가 | 📋 소개 전용(k-gs-hyejaroun) — 배포 사이트 원문·굵기 확인 후 상태 갱신 |
+| GS혜자로운체 | GS리테일 | 2026-10-08 | https://hyejaroun.com/ (GS Retail 저작권 표기, Bold 1종) | 보도: 상업 이용 가능, **수정·재배포 금지**, 소프트웨어 포함 시 사전 허가 → 웹폰트 변환 불가 | 📋 소개 전용(k-gs-hyejaroun) — 2026-10-12 라이선스 PDF 확인(웹폰트 탑재 O, 수정·재배포 X). 원본 TTF를 변환 없이 letsum.app 서버에서만 제공하면 미리보기 가능 → 운영자 허락 대기 |
 | HS효성체 | HS효성 | 2026-10-07 | https://www.hshyosung.com/kr/about/ci | 공식 페이지: 상업 이용·웹폰트 서버 등록/표시 허용, 로고(CI·BI)·수정 재배포·단독 판매 금지, 앱 내장은 협의. **'다운로드 시 라이선스 동의 간주'** | ✅ 등록(k-hs-hyosung) — 운영자 허락 후 다운로드. 가이드 PDF상 재배포 금지라 **공개 미러 대신 letsum.app 서버에만** 배치(tools/deploy_hosted_fonts.sh) |
 | 부산단디체(고딕·명조 각 3굵기, 손글씨) | 부산시 | 2026-10-11 | https://www.busan.go.kr/bhbusan/font | 공식 페이지 '부산시 전용서체의 저작권': 누구나 허가 없이 무료 사용, 유료 판매·대가 수수 금지 | ✅ 등록(k-busan-dandi-*) |
 | 빗썸고딕(Original·Basic) | 빗썸 | 2026-10-08 | https://www.bithumbcorp.com/ko/promotion/font.php | 공식 페이지: SIL OFL 1.1 | ✅ 등록(k-bithumb-gothic-*) |
