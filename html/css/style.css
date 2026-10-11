@@ -487,3 +487,34 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 .shot-up form{margin-top:10px}
 .shot-agree{display:flex;gap:8px;align-items:flex-start;line-height:1.5}
 .shot-agree input{width:auto;margin-top:3px}
+
+/* 피드 보기 — 부드러운 카드 스타일(회색 배경 + 흰 카드 + 라운드 + 옅은 그림자) */
+body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,15,.06),0 6px 20px rgba(20,20,15,.07);--card-sh-h:0 2px 4px rgba(20,20,15,.08),0 14px 32px rgba(20,20,15,.12);background:var(--feed-bg)}
+:root[data-theme="dark"] body.feed-mode{--feed-bg:#0d0d0c;--card:#1c1c19;--card-sh:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);--card-sh-h:0 2px 4px rgba(0,0,0,.5),0 14px 32px rgba(0,0,0,.5)}
+.feed-mode .igrid{gap:28px 24px;margin-top:22px}
+.feed-mode .ig{background:var(--card);border:none;border-radius:16px;box-shadow:var(--card-sh);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.feed-mode .ig:hover{border:none;box-shadow:var(--card-sh-h);transform:translateY(-2px)}
+.feed-mode .ig-h{padding:12px 14px}
+.feed-mode .ig-av{border:none;background:var(--lime);color:var(--lime-ink);box-shadow:0 0 0 2px var(--card),0 0 0 3.5px var(--lime)}
+.feed-mode .ig-who b{font-weight:700}
+.feed-mode .ig-follow{border:none;border-radius:999px;background:var(--ink);color:var(--paper);padding:6px 14px}
+.feed-mode .ig-follow:hover{background:var(--lime);color:var(--lime-ink)}
+.feed-mode .ig-media{border:none;margin:0 10px;border-radius:12px}
+.feed-mode .ig-s{border-radius:12px}
+.feed-mode .ig-mock,.feed-mode .ig-weights{background:#f3f2ee}
+:root[data-theme="dark"] .feed-mode .ig-mock,:root[data-theme="dark"] .feed-mode .ig-weights{background:#2a2a26;color:var(--ink)}
+.feed-mode .ig-info{background:var(--card)}
+.feed-mode .ig-intro{background:var(--card)}
+.feed-mode .intro-pv{border-radius:10px}
+.feed-mode .ig-nav{border:none;box-shadow:0 2px 8px rgba(0,0,0,.18);background:rgba(255,255,255,.95);color:#111}
+.feed-mode .ig-dots i{background:#fff;opacity:.6;box-shadow:0 0 2px rgba(0,0,0,.35)}
+.feed-mode .ig-dots i.on{background:#fff;opacity:1}
+.feed-mode .ig-dl{border-radius:0 0 12px 12px;background:rgba(17,17,15,.92);backdrop-filter:blur(4px)}
+.feed-mode .ig-act{padding:8px 10px 2px}
+.feed-mode .ig-cap{padding:2px 14px 0}
+.feed-mode .ig-tags{padding:4px 14px 14px}
+.feed-mode .ig .pill{border-radius:999px}
+.feed-mode .ig-more .btn{border-radius:999px;background:var(--card);box-shadow:var(--card-sh);border:none}
+.feed-mode .ig-shot{background:#fff}
+@media (hover:none){.feed-mode .ig-dl{border-radius:0;background:var(--ink)}.feed-mode .ig:hover{transform:none}}
+.ig .ig-h{position:static;border-bottom:none;background:transparent;z-index:auto}
