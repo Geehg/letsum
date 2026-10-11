@@ -43,13 +43,16 @@ async function stats(url, req, env) {
   if (!ids.length) return json({});
   const voter = await voterOf(req, env);
   const q = ids.map(() => "?").join(",");
-  const [likes, comments, mine, shots] = await env.DB.batch([
+  const [likes, comments, mine, shots, recent] = await env.DB.batch([
     env.DB.prepare(`SELECT font_id, COUNT(*) n FROM likes WHERE font_id IN (${q}) GROUP BY font_id`).bind(...ids),
     env.DB.prepare(`SELECT font_id, COUNT(*) n FROM comments WHERE hidden = 0 AND font_id IN (${q}) GROUP BY font_id`).bind(...ids),
     env.DB.prepare(`SELECT font_id FROM likes WHERE voter = ? AND font_id IN (${q})`).bind(voter, ...ids),
     env.DB.prepare(`SELECT id, font_id, name FROM shots WHERE status = 'approved' AND font_id IN (${q}) ORDER BY id DESC`).bind(...ids),
+    // 피드 카드용 최근 댓글 2개(폰트별)
+    env.DB.prepare(`SELECT font_id, name, substr(body, 1, 120) body FROM (SELECT font_id, name, body, ROW_NUMBER() OVER (PARTITION BY font_id ORDER BY created DESC) rn FROM comments WHERE hidden = 0 AND font_id IN (${q})) WHERE rn <= 2`).bind(...ids),
   ]);
-  const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false, shots: [] }]));
+  const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false, shots: [], recent: [] }]));
+  recent.results.forEach((r) => out[r.font_id].recent.push({ name: r.name, body: r.body }));
   shots.results.forEach((r) => { const o = out[r.font_id]; if (o.shots.length < 3) o.shots.push({ id: r.id, name: r.name }); });
   likes.results.forEach((r) => (out[r.font_id].likes = r.n));
   comments.results.forEach((r) => (out[r.font_id].comments = r.n));

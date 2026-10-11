@@ -538,3 +538,69 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ig-right{gap:4px;flex-shrink:0}
 .ig-pill{font-size:11.5px;padding:5px 8px;gap:3px}
 @media (max-width:380px){.ig .ig-act{flex-wrap:wrap}}
+
+/* ===== 피드 카드 v3: 정사각 영역 폭(cqw) 기준 타이포 + 인스타그램식 본문·댓글 ===== */
+.ig-media{container-type:inline-size}
+.ig-s{padding:9cqw}
+.ig-cap2{left:4cqw;bottom:3.4cqw;font-size:max(10px,2.7cqw)}
+.ig-sample .sm-t{line-height:1.22;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:anywhere}
+/* 적용안 포스터 */
+.fp{justify-content:flex-start;gap:3cqw}
+.fp-thumb{background:#111;color:#fff;justify-content:flex-end;padding:8cqw 8cqw 12cqw}
+.fp-thumb .fp-ch{position:absolute;top:6cqw;left:8cqw;display:flex;gap:2cqw;align-items:center;font:600 max(10px,2.8cqw)/1 var(--mono);opacity:.75}
+.fp-thumb .fp-ch i{width:4.5cqw;height:4.5cqw;border-radius:50%;background:var(--lime)}
+.fp-thumb .fp-t{font-size:11cqw;line-height:1.08;letter-spacing:-.02em;word-break:keep-all;text-shadow:0 .6cqw 0 #000}
+.fp-thumb .fp-t em{font-style:normal;color:var(--lime)}
+.fp-thumb .fp-dur{position:absolute;right:5cqw;bottom:5cqw;background:#000;font:600 max(10px,2.8cqw)/1 var(--mono);padding:1.2cqw 1.8cqw;border-radius:1cqw}
+.fp-book{background:#fbfaf6;color:#1b1b1b;padding:10cqw 10cqw 8cqw}
+.fp-book .fp-k{font-size:max(10px,3cqw);color:#8a8578;letter-spacing:.1em}
+.fp-book .fp-t{font-size:7.4cqw;line-height:1.3;letter-spacing:-.01em;word-break:keep-all}
+.fp-book p{font-size:max(11px,3.7cqw);line-height:1.85;color:#333;text-align:justify;word-break:keep-all;flex:1;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical}
+.fp-book .fp-pg{font:max(10px,2.8cqw) var(--mono);color:#a29d90;text-align:center}
+.fp-note{background:#fff8e7;color:#2b2416;padding:10cqw;justify-content:center;background-image:repeating-linear-gradient(transparent 0 11.6cqw,#efe3c4 11.6cqw 11.8cqw)}
+.fp-note .fp-k{font-size:5cqw;color:#7a6a45}
+.fp-note .fp-t{font-size:9.5cqw;line-height:1.25;word-break:keep-all}
+.fp-note .fp-sign{font-size:5cqw;text-align:right;color:#7a6a45}
+.fp-ui{background:#eef1f5;justify-content:center;padding:8cqw}
+.fp-ui .fp-win{background:#fff;border-radius:4cqw;padding:6cqw;box-shadow:0 1cqw 4cqw rgba(20,30,50,.12);display:flex;flex-direction:column;gap:3cqw;color:#15181d}
+.fp-ui .fp-bar{display:flex;justify-content:space-between;font-size:max(10px,3cqw);color:#7b8494}
+.fp-ui .fp-bar b{color:#2f6db5}
+.fp-ui .fp-t{font-size:7cqw;line-height:1.25;letter-spacing:-.01em;word-break:keep-all}
+.fp-ui p{font-size:max(11px,3.8cqw);line-height:1.6;color:#4b5260;margin:0}
+.fp-ui .fp-btn{align-self:flex-end;background:#15181d;color:#fff;font-size:max(11px,3.4cqw);font-weight:700;padding:2cqw 4.5cqw;border-radius:999px;margin-top:2cqw}
+/* 설명 카드 */
+.ig-info{gap:3cqw;padding:9cqw}
+.ig-info .ii-k{font-size:max(10px,3cqw)}
+.ig-info .ii-n{font-size:11cqw;line-height:1.12}
+.ig-info p{font-size:max(12px,3.9cqw);line-height:1.65;-webkit-line-clamp:5}
+.ig-info .ii-pills{display:flex;flex-wrap:wrap;gap:1.4cqw}
+.ig-info .ii-pills .pill{font-size:max(10px,2.8cqw);padding:.8cqw 2cqw}
+.ig-info .ii-m{font-size:max(10px,3cqw)}
+/* 굵기 */
+.ig-weights{gap:1.2cqw;padding:8cqw 9cqw}
+.ig-weights div{font-size:7.4cqw;line-height:1.3}
+.ig-weights small{font-size:max(10px,2.8cqw)}
+/* 본문(캡션·좋아요·댓글 미리보기) */
+.ig-body{padding:2px 14px 0;display:flex;flex-direction:column;gap:4px}
+.ig-body p{margin:0}
+.ig .ig-likes{font-size:14px;font-weight:700;color:var(--ink)}
+.ig .ig-likes:empty,.ig .ig-allc:empty,.ig .ig-recent:empty{display:none}
+.ig .ig-cap{padding:0;font-size:14px;line-height:1.5;color:var(--ink);-webkit-line-clamp:2}
+.ig .ig-cap b{font-weight:700}
+.ig .ig-tags{padding:0;font-size:13.5px;color:#00376b}
+:root[data-theme="dark"] .ig .ig-tags{color:#e0f1ff}
+.ig-allc{align-self:flex-start;font-size:14px;color:#737373;padding:0;background:none}
+.ig-allc:hover{color:var(--ink)}
+.ig-recent p{font-size:14px;line-height:1.45;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ig-recent b{font-weight:700;margin-right:4px}
+/* 인스타그램식 댓글 입력줄 */
+.ig-cform{display:flex;align-items:center;gap:8px;margin-top:10px;padding:10px 14px 12px;border-top:1px solid #efefef;background:transparent}
+.ig-cform input[name=body]{flex:1;min-width:0;border:none;outline:none;background:transparent;font-size:14px;color:var(--ink);padding:4px 0}
+.ig-cform input[name=body]::placeholder{color:#8e8e8e}
+.ig-cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ig-cform button{font-size:14px;font-weight:700;color:#0095f6;background:none;padding:2px 0}
+.ig-cform button:disabled{color:#b3dbff;cursor:default}
+:root[data-theme="dark"] .ig-cform{border-top-color:#2c2c28}
+/* 프로필 아이콘(배포 주체) */
+.feed-mode .ig-av.img{background:#fff;padding:0;overflow:hidden;box-shadow:0 0 0 1px #e6e6e1}
+.ig-av.img img{width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box}

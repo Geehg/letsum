@@ -389,6 +389,9 @@
     paintShots();
     $$("[data-likes]").forEach((el) => { const s = social[el.dataset.likes]; el.textContent = s && s.likes ? s.likes.toLocaleString() : ""; });
     $$("[data-cmts]").forEach((el) => { const s = social[el.dataset.cmts]; el.textContent = s && s.comments ? s.comments.toLocaleString() : ""; });
+    $$("[data-likeline]").forEach((el) => { const s = social[el.dataset.likeline]; el.textContent = s && s.likes ? `좋아요 ${s.likes.toLocaleString()}개` : ""; });
+    $$("[data-cmtline]").forEach((el) => { const s = social[el.dataset.cmtline]; el.textContent = s && s.comments ? (s.comments > 2 ? `댓글 ${s.comments.toLocaleString()}개 모두 보기` : "댓글 보기") : ""; });
+    $$("[data-recent]").forEach((el) => { const s = social[el.dataset.recent]; el.innerHTML = s && s.recent ? s.recent.map((c) => `<p><b>${esc(c.name)}</b> ${esc(c.body)}</p>`).join("") : ""; });
   }
   // 좋아요 = 즐겨찾기(이 브라우저) + 서버 좋아요 수
   async function toggleLike(id) {
@@ -412,28 +415,40 @@
   // 좋아요는 즐겨찾기(이 브라우저에만 저장), 저장은 비교 담기. 서버가 없어 좋아요 수·댓글은 표시하지 않는다(가짜 숫자 금지).
   const FEED_BG = [["var(--lime)", "var(--lime-ink)"], ["var(--ink)", "var(--paper)"], ["#e9e4d8", "#1b1b1b"], ["#dfe7f3", "#14213d"], ["#f3e1dc", "#3a1a12"]];
   const FEED_CTX = { "디스플레이": "thumb", "명조": "book", "손글씨": "card", "고딕": "ui" };
+  // 피드 카드 슬라이드 — 정사각 영역의 폭(cqw)에 맞춰 글자 크기를 정하므로 카드 크기가 달라도 비율이 같다
+  const FEED_POSTER = {
+    "디스플레이": (f, t, fam) => `<div class="ig-s fp fp-thumb" style="font-family:${fam}"><div class="fp-ch"><i></i>LETSUM 채널 · 조회수 12만회</div><div class="fp-t" style="font-weight:${f.weights[f.weights.length - 1]}">${esc(t).replace(/(\S+)$/, "<em>$1</em>")}</div><span class="fp-dur">12:34</span><span class="ig-cap2">유튜브 썸네일 적용안</span></div>`,
+    "명조": (f, t, fam) => `<div class="ig-s fp fp-book" style="font-family:${fam}"><div class="fp-k">제1장</div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">${BODY}</p><div class="fp-pg">— 27 —</div><span class="ig-cap2">책 본문 적용안</span></div>`,
+    "손글씨": (f, t, fam) => `<div class="ig-s fp fp-note" style="font-family:${fam}"><div class="fp-k">To. 오늘의 나에게</div><div class="fp-t">${esc(t)}</div><div class="fp-sign">— 렛섬 드림</div><span class="ig-cap2">손편지·카드 적용안</span></div>`,
+    "고딕": (f, t, fam) => `<div class="ig-s fp fp-ui" style="font-family:${fam}"><div class="fp-win"><div class="fp-bar"><b>알림</b><span>방금</span></div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">변경 사항은 다음 로그인부터 적용됩니다. 계정 설정에서 언제든지 되돌릴 수 있습니다.</p><div class="fp-btn">확인</div></div><span class="ig-cap2">앱 화면 적용안</span></div>`,
+  };
   function feedSlides(f, i) {
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
     const t = state.text || f.name;
-    const fs = t.length <= 8 ? 56 : t.length <= 16 ? 42 : t.length <= 28 ? 32 : 24;
+    const sz = t.length <= 8 ? 13 : t.length <= 16 ? 10.5 : t.length <= 28 ? 8 : 6;
     const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
-      <p>${esc(f.desc)}</p><div class="pills">${pills(f)}</div><div class="ii-m">${esc(meta)}</div></div>`;
+      <p>${esc(f.desc)}</p><div class="ii-pills">${pills(f)}</div><div class="ii-m">${esc(meta)}</div></div>`;
     if (f.intro) return [`<div class="ig-s ig-intro">${introBox(f, "big")}</div>`, info];
+    const ws = f.weights.length > 6 ? f.weights.filter((_, k) => k % 2 === 0 || k === f.weights.length - 1) : f.weights;
     return [
-      `<div class="ig-s ig-sample" style="background:${bg};color:${fg}"><div style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${fs}px">${esc(t)}</div><span class="ig-cap2">${esc(f.name)}</span></div>`,
-      `<div class="ig-s ig-mock">${mockHTML(f, FEED_CTX[f.category] || "card")}<span class="ig-cap2">디자인 적용안</span></div>`,
+      `<div class="ig-s ig-sample" style="background:${bg};color:${fg}"><div class="sm-t" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${sz}cqw">${esc(t)}</div><span class="ig-cap2">${esc(f.name)}</span></div>`,
+      (FEED_POSTER[f.category] || FEED_POSTER["고딕"])(f, t, famOf(f)),
       info,
-      `<div class="ig-s ig-weights" style="font-family:${f.family}">${f.weights.map((w) => `<div style="font-weight:${w}"><b>가나다 Aa 123</b><small>${w}</small></div>`).join("")}<span class="ig-cap2">굵기 ${f.weights.length}종</span></div>`,
+      `<div class="ig-s ig-weights" style="font-family:${f.family}">${ws.map((w) => `<div style="font-weight:${w}"><b>가나다 Aa 123</b><small>${w}</small></div>`).join("")}<span class="ig-cap2">굵기 ${f.weights.length}종${ws.length < f.weights.length ? " 중 일부" : ""}</span></div>`,
     ];
   }
+  // 배포 주체 아이콘(빌드 때 받은 파비콘·로고) — 없으면 글자 아바타
+  let avatars = {};
+  fetch("data/avatars.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => { avatars = j || {}; if (state.view === "feed") $$(".ig[data-id]").forEach((c) => { const a = avatars[c.dataset.id]; const el = c.querySelector(".ig-av"); if (a && el && !el.querySelector("img")) { el.innerHTML = `<img src="${a.icon}" alt="">`; el.classList.add("img"); const s = c.querySelector(".ig-who small"); if (s) s.textContent = a.label; } }); }).catch(() => {});
+  const avHTML = (f) => { const a = avatars[f.id]; return a ? `<span class="ig-av img" aria-hidden="true"><img src="${a.icon}" alt=""></span>` : `<span class="ig-av" aria-hidden="true">${esc([...(f.holder || f.designer)][0] || "L")}</span>`; };
+  const nick = () => { try { return localStorage.getItem("ls_nick") || ""; } catch (e) { return ""; } };
   function feedHTML(f, i) {
-    const sl = feedSlides(f, i); const dl = dlFor(f);
-    const href = dl.ok ? dl.zip : dl.page;
+    const sl = feedSlides(f, i); const dl = dlFor(f); const av = avatars[f.id];
     return `<article class="ig" data-id="${f.id}" tabindex="0">
-      <header class="ig-h"><span class="ig-av" aria-hidden="true">${esc([...f.designer][0] || "L")}</span>
-        <div class="ig-who"><b>${esc(f.name)}</b><small>${esc(f.designer)}</small></div>
+      <header class="ig-h">${avHTML(f)}
+        <div class="ig-who"><b>${esc(f.name)}</b><small>${esc(av ? av.label : f.designer)}</small></div>
         <button class="ig-follow" data-open="${f.id}">상세</button></header>
       <div class="ig-media">
         <div class="ig-track">${sl.join("")}</div>
@@ -441,8 +456,8 @@
         <div class="ig-dots">${sl.map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div>` : ""}
       </div>
       <div class="ig-act">
-        <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-like="${f.id}" aria-label="좋아요" title="좋아요 — 즐겨찾기에도 저장">${IC.heart}</button><span class="ig-n" data-likes="${f.id}"></span>
-        <button class="ig-ic" data-cmt="${f.id}" aria-label="댓글" title="댓글 보기·쓰기">${IC.cmt}</button><span class="ig-n" data-cmts="${f.id}"></span>
+        <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-like="${f.id}" aria-label="좋아요" title="좋아요 — 즐겨찾기에도 저장">${IC.heart}</button>
+        <button class="ig-ic" data-cmt="${f.id}" aria-label="댓글" title="댓글 모두 보기">${IC.cmt}</button>
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
         <span class="ig-right">
@@ -451,8 +466,18 @@
           <a class="ig-pill" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
         </span>
       </div>
-      <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
-      <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
+      <div class="ig-body">
+        <p class="ig-likes" data-likeline="${f.id}"></p>
+        <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
+        <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
+        <button class="ig-allc" data-cmt="${f.id}" data-cmtline="${f.id}"></button>
+        <div class="ig-recent" data-recent="${f.id}"></div>
+      </div>
+      <form class="ig-cform" data-cform="${f.id}" autocomplete="off">
+        <input name="body" maxlength="500" placeholder="댓글 달기…" aria-label="${esc(f.name)}에 댓글 달기">
+        <input name="website" class="hp" tabindex="-1" aria-hidden="true">
+        <button type="submit" disabled>게시</button>
+      </form>
     </article>`;
   }
   const canHover = matchMedia("(hover:hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -485,6 +510,20 @@
     }));
     host.querySelectorAll("[data-cmt]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.cmt, "comments")));
     host.querySelectorAll("[data-lic-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.licOpen, "license")));
+    host.querySelectorAll("[data-cform]").forEach((form) => {
+      const inp = form.querySelector("input[name=body]"), btn = form.querySelector("button");
+      inp.addEventListener("input", () => { btn.disabled = inp.value.trim().length < 2; });
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); const id = form.dataset.cform; const body = inp.value.trim(); if (body.length < 2) return;
+        btn.disabled = true;
+        const r = await api("comments", { id, name: nick(), body, website: form.querySelector(".hp").value });
+        if (!r || r.error) { inp.value = ""; inp.placeholder = (r && r.error) || "잠시 후 다시 시도해 주세요"; setTimeout(() => (inp.placeholder = "댓글 달기…"), 3000); inp.value = body; btn.disabled = false; return; }
+        inp.value = "";
+        const s = social[id] || (social[id] = { likes: 0, comments: 0, liked: false, shots: [], recent: [] });
+        s.comments++; if (r.item) s.recent = [{ name: r.item.name, body: r.item.body.slice(0, 120) }, ...(s.recent || [])].slice(0, 2);
+        paintSocial();
+      });
+    });
     loadStats([...host.querySelectorAll(".ig[data-id]")].map((el) => el.dataset.id));
     $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
   }
@@ -749,7 +788,7 @@ import "@fontsource/${f.id}/400.css";</pre>
           </form></details></div>
       <div class="m-sec" id="cmtSec"><h3>댓글 <span class="note" id="cmtCount"></span></h3>
         <form class="cmt-form" id="cmtForm" autocomplete="off">
-          <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임">
+          <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임" value="${esc(nick())}">
           <input name="website" class="hp" tabindex="-1" aria-hidden="true" placeholder="비워 두세요">
           <textarea name="body" maxlength="500" rows="2" placeholder="이 폰트를 어디에 써 보셨나요? 사용 후기·팁을 남겨 주세요 (500자)" aria-label="댓글 내용" required></textarea>
           <div class="cmt-row"><span class="note">로그인 없이 남깁니다. 개인정보(연락처 등)는 쓰지 마세요. 부적절한 글은 신고 3회 시 자동 숨김됩니다.</span><button class="btn" type="submit">남기기</button></div>
@@ -840,6 +879,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); const fd = new FormData(form); const btn = form.querySelector("button[type=submit]");
       btn.disabled = true; msg.textContent = "";
+      try { if (fd.get("name")) localStorage.setItem("ls_nick", String(fd.get("name")).slice(0, 20)); } catch (x) {}
       const r = await api("comments", { id: f.id, name: fd.get("name"), body: fd.get("body"), website: fd.get("website") });
       btn.disabled = false;
       if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
