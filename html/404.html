@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>페이지를 찾을 수 없습니다 — LETSUM(렛섬)</title>
+<meta name="robots" content="noindex">
+<script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/style.css?v=4">
+<style>
+.nf{padding:56px 0 72px;max-width:760px}
+.nf .code{font-family:var(--mono);font-size:13px;color:var(--ink3);letter-spacing:.08em}
+.nf h1{font-size:clamp(30px,6vw,52px);line-height:1.15;margin:10px 0 12px;letter-spacing:-.02em}
+.nf p{color:var(--ink2);line-height:1.7}
+.nf-search{display:flex;gap:8px;margin:26px 0 10px}
+.nf-search input{flex:1;min-width:0;font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.nf-search input:focus{outline:3px solid var(--lime);outline-offset:1px}
+.nf-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:14px}
+.nf-list a{display:block;padding:10px 12px;border:1px solid var(--rule2);color:var(--ink);text-decoration:none}
+.nf-list a:hover{border-color:var(--ink);background:var(--lime);color:var(--lime-ink)}
+.nf-list small{display:block;color:var(--ink3);font-size:12px;margin-top:2px}
+.nf-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="/index.html">렛섬 <small>LETSUM</small></a>
+    <nav class="main">
+      <a href="/index.html">홈</a>
+      <a href="/guide.html">라이선스 가이드</a>
+      <a href="/subset.html">서브셋 도구</a>
+    </nav>
+    <div class="sp"></div>
+  </div>
+</header>
+<main class="wrap nf">
+  <div class="code">404 · NOT FOUND</div>
+  <h1>찾으시는 페이지가 없어요</h1>
+  <p>주소가 바뀌었거나 잘못 입력됐을 수 있습니다. 폰트 이름으로 바로 찾아보세요.</p>
+  <form class="nf-search" onsubmit="return false"><input id="nfq" type="search" placeholder="폰트 이름 (예: 본고딕, 마루부리, 손글씨)" autocomplete="off" aria-label="폰트 이름 검색"></form>
+  <p class="note" id="nfHint"></p>
+  <div class="nf-list" id="nfList"></div>
+  <div class="nf-links">
+    <a class="btn" href="/index.html">홈으로</a>
+    <a class="btn ghost" href="/guide.html">라이선스 가이드</a>
+    <a class="btn ghost" href="mailto:interq4@naver.com">문의하기</a>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p class="fine">LETSUM(렛섬) — 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a> · 모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다.<br><a href="/privacy.html">개인정보처리방침</a> · <a href="/terms.html">이용약관</a> · <a href="/admin.html">관리자</a></p>
+  </div>
+</footer>
+<script src="/js/data.js?v=4"></script>
+<script>
+(function () {
+  // 서버·AI 없이 data.js만으로 검색. 잘못 들어온 주소(/font/<id>.html 오타 등)에서 단어를 뽑아 첫 추천으로 쓴다.
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (m) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]; }); };
+  var norm = function (s) { return String(s || "").toLowerCase().replace(/[^0-9a-z가-힣]/g, ""); };
+  var list = document.getElementById("nfList"), hint = document.getElementById("nfHint"), q = document.getElementById("nfq");
+  function show(fs, msg) {
+    hint.textContent = msg;
+    list.innerHTML = fs.slice(0, 12).map(function (f) {
+      return '<a href="/font/' + f.id + '.html">' + esc(f.name) + "<small>" + esc(f.category) + " · " + esc(f.designer) + "</small></a>";
+    }).join("");
+  }
+  function search(t) {
+    var k = norm(t); if (!k) return null;
+    return FONTS.filter(function (f) { return [f.id, f.name, f.en, f.designer, (f.tags || []).join(" "), f.category].some(function (v) { return norm(v).indexOf(k) >= 0; }); });
+  }
+  var recent = FONTS.filter(function (f) { return f.released; }).sort(function (a, b) { return b.released.localeCompare(a.released) || b.pop - a.pop; });
+  // 주소에서 단어 추출: /font/k-seoulnamsan.htm → seoulnamsan
+  var slug = decodeURIComponent(location.pathname.split("/").pop() || "").replace(/\.\w+$/, "").replace(/^k-/, "");
+  var parts = slug.split(/[-_ ]+/).filter(function (p) { return p.length >= 3; });
+  var guess = null;
+  for (var i = 0; i < parts.length && !guess; i++) { var r = search(parts[i]); if (r && r.length) guess = r; }
+  if (guess) show(guess, "주소와 비슷한 폰트");
+  else show(recent, "최근 출시된 폰트");
+  q.addEventListener("input", function () {
+    var r = search(q.value);
+    if (r === null) return guess ? show(guess, "주소와 비슷한 폰트") : show(recent, "최근 출시된 폰트");
+    show(r, r.length ? "검색 결과 " + r.length + "종" + (r.length > 12 ? " (12종까지 표시)" : "") : "맞는 폰트가 없습니다. 다른 이름으로 찾아보세요.");
+  });
+})();
+</script>
+</body>
+</html>
