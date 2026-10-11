@@ -1,268 +1,485 @@
-// LETSUM 시안 — 탐색/미리보기/필터/상세
+// LETSUM — 한글 폰트 작업대
+// 구조: 전역 컨트롤(문장·크기·굵기·반전·영문 짝꿍) → 필터 → 목록/격자/맥락 보기 → 비교 트레이 → 상세 모달
 (function () {
   const $ = (s) => document.querySelector(s);
-  const grid = $("#grid"), count = $("#count");
-  const state = { q: "", cat: "전체", lic: new Set(), sort: "pop", favOnly: false, text: $("#previewText").value };
-  const favs = new Set(JSON.parse(localStorage.getItem("fm_favs") || "[]"));
-  const saveFavs = () => localStorage.setItem("fm_favs", JSON.stringify([...favs]));
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const LS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
+  const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
-  // 분류 버튼
-  const cats = ["전체", ...new Set(FONTS.map((f) => f.category))];
-  $("#catGrp").innerHTML += cats.map((c) => `<button class="fbtn${c === "전체" ? " on" : ""}" data-cat="${c}">${c}</button>`).join("");
-  // 허용 범위 버튼
-  $("#licGrp").innerHTML += LICENSE_CATS.map((c) => `<button class="fbtn" data-lic="${c.key}">${c.label}</button>`).join("");
-  // 빠른 선택 프리셋 (리서치 개선안 #1 — Font Squirrel식 용도 필터)
-  const PRESETS = [
-    { id: "commercial", label: "상업용 OK", keys: ["print", "web", "video", "bici", "package"] },
-    { id: "webfont", label: "웹 임베딩 가능", keys: ["embed"] },
-  ];
-  $("#presetGrp").innerHTML += PRESETS.map((p) => `<button class="fbtn preset" data-preset="${p.id}">${p.label}</button>`).join("");
-  function syncLicButtons() {
-    document.querySelectorAll("[data-lic]").forEach((x) => x.classList.toggle("on", state.lic.has(x.dataset.lic)));
-    document.querySelectorAll("[data-preset]").forEach((x) => {
-      const p = PRESETS.find((y) => y.id === x.dataset.preset);
-      x.classList.toggle("on", p.keys.every((k) => state.lic.has(k)));
-    });
+  // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
+  // 스타일시트가 도착하기 전에 document.fonts.load를 부르면 폰트가 없는 것으로 판정되므로, 링크 로드를 기다린다
+  const fontsCssReady = new Promise((resolve) => {
+    const fam = FONTS.map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?" + fam + "&display=swap";
+    link.onload = link.onerror = () => resolve();
+    setTimeout(resolve, 8000);
+    document.head.appendChild(link);
+  });
+
+  // ---------- 상태 ----------
+  const state = {
+    q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
+    only: null, onlyLabel: "", coll: null,
+    sort: "pop", text: TEXT_PRESETS[0].t, size: 44, weight: 400, inv: false, pair: false,
+    view: "list", ctx: "thumb",
+  };
+  const favs = new Set(LS("fm_favs", []));
+  const cmp = new Set();
+  const detect = {}; // id → { old: bool, hanja: bool } 자동 검출 결과
+  const coverage = {}; // id → 누락 글자 배열 (현재 문장 기준)
+
+  // ---------- 글리프 지원 검출 (한글 특화) ----------
+  // 원리: 대상 폰트로 그린 글자와, 한글이 없는 라틴 폰트(Inter)로 그린 글자를 비교.
+  // 대상 폰트에 글자가 없으면 둘 다 같은 시스템 대체 폰트로 그려져 픽셀이 같다.
+  const probe = (() => {
+    const c = document.createElement("canvas"); c.width = 72; c.height = 72;
+    const x = c.getContext("2d", { willReadFrequently: true });
+    const cache = new Map();
+    function draw(font, ch) {
+      x.clearRect(0, 0, 72, 72); x.font = "44px " + font; x.textBaseline = "top"; x.fillStyle = "#000"; x.fillText(ch, 6, 6);
+      return x.getImageData(0, 0, 72, 72).data;
+    }
+    function same(a, b) { for (let i = 3; i < a.length; i += 4) if (a[i] !== b[i]) return false; return true; }
+    return function has(en, ch) {
+      const k = en + "|" + ch;
+      if (cache.has(k)) return cache.get(k);
+      let r = true;
+      try { r = !same(draw(`"${en}"`, ch), draw(`"Inter"`, ch)); } catch (e) {}
+      cache.set(k, r); return r;
+    };
+  })();
+  const isCJK = (ch) => /[ᄀ-ᇿ㄰-㆏ꥠ-꥿가-퟿㐀-䶿一-鿿豈-﫿]/.test(ch);
+
+  async function detectAll() {
+    await fontsCssReady;
+    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가").catch(() => {})));
+    await document.fonts.load('44px "Inter"', "ᄒᆞᆫ漢가").catch(() => {});
+    FONTS.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
+  }
+  let covTimer = null;
+  function scheduleCoverage() { clearTimeout(covTimer); covTimer = setTimeout(runCoverage, 350); }
+  async function runCoverage() {
+    const chars = [...new Set([...state.text])].filter(isCJK).slice(0, 80);
+    if (!chars.length) { FONTS.forEach((f) => (coverage[f.id] = [])); $("#coverNote").textContent = ""; render(); return; }
+    const txt = chars.join("");
+    await fontsCssReady;
+    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
+    FONTS.forEach((f) => { coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); });
+    const bad = FONTS.filter((f) => coverage[f.id].length).length;
+    $("#coverNote").textContent = bad ? `(${bad}종에서 누락 발견)` : "(모두 지원)";
+    render();
   }
 
-  document.querySelectorAll("[data-cat]").forEach((b) => b.addEventListener("click", () => {
-    state.cat = b.dataset.cat;
-    document.querySelectorAll("[data-cat]").forEach((x) => x.classList.toggle("on", x === b));
-    render();
-  }));
-  document.querySelectorAll("[data-lic]").forEach((b) => b.addEventListener("click", () => {
-    const k = b.dataset.lic;
-    state.lic.has(k) ? state.lic.delete(k) : state.lic.add(k);
-    syncLicButtons();
-    render();
-  }));
-  document.querySelectorAll("[data-preset]").forEach((b) => b.addEventListener("click", () => {
-    const p = PRESETS.find((x) => x.id === b.dataset.preset);
-    const allOn = p.keys.every((k) => state.lic.has(k));
-    if (allOn) p.keys.forEach((k) => state.lic.delete(k));
-    else p.keys.forEach((k) => state.lic.add(k));
-    syncLicButtons();
-    render();
-  }));
-  $("#favOnly").addEventListener("click", (e) => { state.favOnly = !state.favOnly; e.currentTarget.classList.toggle("on", state.favOnly); render(); });
+  // ---------- 초성 검색 ----------
+  const CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+  const choseong = (s) => [...s].map((ch) => { const c = ch.charCodeAt(0); return c >= 0xac00 && c <= 0xd7a3 ? CHO[Math.floor((c - 0xac00) / 588)] : ch; }).join("");
+  const isChoQuery = (q) => q.length > 0 && [...q].every((ch) => CHO.includes(ch) || ch === " ");
+
+  // ---------- 컨트롤 구성 ----------
+  $("#presetSel").innerHTML = `<option value="">프리셋</option>` + TEXT_PRESETS.map((p) => `<option value="${p.id}">${p.label}</option>`).join("");
+  $("#presetSel").addEventListener("change", (e) => {
+    const p = TEXT_PRESETS.find((x) => x.id === e.target.value); if (!p) return;
+    setText(p.t); e.target.value = "";
+  });
+  $("#previewText").addEventListener("input", (e) => setText(e.target.value, true));
+  function setText(t, fromInput) {
+    state.text = t; if (!fromInput) $("#previewText").value = t;
+    renderPreviews(); scheduleCoverage();
+  }
+  $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
+  $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews(); }));
+  $("#invBtn").addEventListener("click", (e) => { state.inv = !state.inv; e.currentTarget.classList.toggle("on", state.inv); e.currentTarget.setAttribute("aria-pressed", state.inv); renderPreviews(); });
+  $("#pairBtn").addEventListener("click", (e) => {
+    state.pair = !state.pair; e.currentTarget.classList.toggle("on", state.pair); e.currentTarget.setAttribute("aria-pressed", state.pair);
+    if (state.pair && !/[A-Za-z0-9]/.test(state.text)) setText(TEXT_PRESETS.find((p) => p.id === "mixed").t);
+    else renderPreviews();
+  });
+  $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
+  function setView(v) {
+    state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
+    $("#ctxChips").style.display = v === "ctx" ? "flex" : "none"; render();
+  }
+  const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
+  $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
+  $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
   $("#qTop").addEventListener("input", (e) => { state.q = e.target.value.trim(); render(); });
-  $("#previewText").addEventListener("input", (e) => { state.text = e.target.value; renderPreviews(); });
-  document.querySelectorAll("#quickChips .chip").forEach((c) => c.addEventListener("click", () => {
-    $("#previewText").value = c.dataset.t; state.text = c.dataset.t; renderPreviews();
+  $("#themeBtn").addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", cur); try { localStorage.setItem("ls_theme", cur); } catch (e) {}
+  });
+
+  // ---------- 필터 구성 ----------
+  const cats = ["전체", ...new Set(FONTS.map((f) => f.category))];
+  $("#catGrp").innerHTML = cats.map((c) => `<button class="fbtn${c === "전체" ? " on" : ""}" data-cat="${c}">${c}<span class="n">${c === "전체" ? FONTS.length : FONTS.filter((f) => f.category === c).length}</span></button>`).join("");
+  $$("[data-cat]").forEach((b) => b.addEventListener("click", () => { state.cat = b.dataset.cat; $$("[data-cat]").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
+  $("#moodGrp").innerHTML = MOODS.map((m) => `<button class="fbtn" data-mood="${m}">${m}</button>`).join("");
+  $$("[data-mood]").forEach((b) => b.addEventListener("click", () => { toggleSet(state.mood, b.dataset.mood); b.classList.toggle("on"); render(); }));
+  $("#moodClear").addEventListener("click", () => { state.mood.clear(); $$("[data-mood]").forEach((x) => x.classList.remove("on")); render(); });
+  const LIC_FILTERS = [{ key: "commercial", label: "상업용 OK", keys: ["print", "web", "video", "bici", "package"] }, ...LICENSE_CATS.filter((c) => c.key !== "ofl").map((c) => ({ key: c.key, label: c.label, keys: [c.key] }))];
+  $("#licGrp").innerHTML = LIC_FILTERS.map((p) => `<button class="fbtn ok" data-lic="${p.key}">${p.label}</button>`).join("");
+  $$("[data-lic]").forEach((b) => b.addEventListener("click", () => {
+    const p = LIC_FILTERS.find((x) => x.key === b.dataset.lic);
+    const on = p.keys.every((k) => state.lic.has(k));
+    p.keys.forEach((k) => (on ? state.lic.delete(k) : state.lic.add(k)));
+    syncLic(); render();
+  }));
+  function syncLic() { $$("[data-lic]").forEach((b) => { const p = LIC_FILTERS.find((x) => x.key === b.dataset.lic); b.classList.toggle("on", p.keys.every((k) => state.lic.has(k))); }); }
+  $("#licClear").addEventListener("click", () => { state.lic.clear(); syncLic(); render(); });
+  $$("[data-cov]").forEach((b) => b.addEventListener("click", () => { toggleSet(state.cov, b.dataset.cov); b.classList.toggle("on"); render(); }));
+  $("#coverOnly").addEventListener("change", (e) => { state.coverOnly = e.target.checked; render(); });
+  $("#favOnly").addEventListener("change", (e) => { state.favOnly = e.target.checked; render(); });
+  function toggleSet(set, k) { set.has(k) ? set.delete(k) : set.add(k); }
+
+  // 상황별 큐레이션: 분류 + 맥락 + 문장을 한 번에
+  $("#collList").innerHTML = COLLECTIONS.map((c) => `<button data-coll="${c.id}"><b>${c.title}</b><span>${c.desc}</span></button>`).join("");
+  $$("[data-coll]").forEach((b) => b.addEventListener("click", () => {
+    const c = COLLECTIONS.find((x) => x.id === b.dataset.coll);
+    if (state.coll === c.id) { state.coll = null; state.cat = "전체"; setView("list"); }
+    else {
+      state.coll = c.id; state.cat = c.cat; state.ctx = c.ctx; setText(c.text);
+      $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x.dataset.ctx === c.ctx));
+      setView("ctx");
+    }
+    $$("[data-cat]").forEach((x) => x.classList.toggle("on", x.dataset.cat === state.cat));
+    $$("[data-coll]").forEach((x) => x.classList.toggle("on", x.dataset.coll === state.coll));
+    window.scrollTo({ top: $(".deck").offsetTop - 56, behavior: "smooth" });
+  }));
+  // 유료 폰트 대안
+  $("#altList").innerHTML = ALTERNATIVES.map((a, i) => `<button data-alt="${i}">${a.for}</button>`).join("");
+  $$("[data-alt]").forEach((b) => b.addEventListener("click", () => {
+    const a = ALTERNATIVES[+b.dataset.alt];
+    if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
+    else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
+    $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel)); render();
   }));
 
+  // ---------- 필터링 ----------
+  function matrixOk(f, keys) { return keys.every((k) => f.matrix[k] === "ok"); }
   function filtered() {
+    const q = state.q.toLowerCase();
     let list = FONTS.filter((f) => {
+      if (state.only && !state.only.has(f.id)) return false;
       if (state.cat !== "전체" && f.category !== state.cat) return false;
+      if (state.mood.size && ![...state.mood].some((m) => f.mood.includes(m))) return false;
+      if (state.lic.size && !matrixOk(f, [...state.lic])) return false;
+      if (state.cov.has("11172") && f.cov < 11172) return false;
+      if (state.cov.has("old") && !(detect[f.id] && detect[f.id].old)) return false;
+      if (state.cov.has("hanja") && !(detect[f.id] && detect[f.id].hanja)) return false;
+      if (state.cov.has("multi") && f.weights.length < 3) return false;
       if (state.favOnly && !favs.has(f.id)) return false;
-      for (const k of state.lic) if (f.matrix[k] !== "ok") return false;
-      if (state.q) {
-        const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ")).toLowerCase();
-        if (!hay.includes(state.q.toLowerCase())) return false;
+      if (state.coverOnly && coverage[f.id] && coverage[f.id].length) return false;
+      if (q) {
+        if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
+        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q)) return false; }
       }
       return true;
     });
-    if (state.sort === "pop") list.sort((a, b) => b.pop - a.pop);
-    if (state.sort === "new") list.sort((a, b) => b.added.localeCompare(a.added));
-    if (state.sort === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    const s = state.sort;
+    if (s === "pop") list.sort((a, b) => b.pop - a.pop);
+    if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added));
+    if (s === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    if (s === "weights") list.sort((a, b) => b.weights.length - a.weights.length || b.pop - a.pop);
     return list;
   }
 
-  function allOk(f) { return LICENSE_CATS.every((c) => f.matrix[c.key] === "ok"); }
-
-  // 카드용 라이선스 미니 배지 (리서치 개선안 #1·#2 — 카드에서 바로 허용 용도 확인)
-  const LIC_SHORT = { print: "인쇄", web: "웹", video: "영상", embed: "임베딩", bici: "BI·CI", package: "포장지" };
-  function licIcons(f) {
-    return Object.keys(LIC_SHORT).map((k) => {
-      const v = f.matrix[k];
-      const mark = v === "ok" ? "✓" : v === "no" ? "✕" : "△";
-      return `<span class="${v === "ok" ? "li-ok" : "li-no"}">${LIC_SHORT[k]}${mark}</span>`;
-    }).join("");
+  // ---------- 렌더 조각 ----------
+  const LIC_SHORT = { print: "인쇄", web: "웹", video: "영상", embed: "임베딩", bici: "BI·CI", package: "포장" };
+  const pills = (f) => Object.keys(LIC_SHORT).map((k) => `<span class="pill ${f.matrix[k]}">${LIC_SHORT[k]}${f.matrix[k] === "ok" ? " ✓" : f.matrix[k] === "no" ? " ✕" : " △"}</span>`).join("")
+    + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`);
+  const famOf = (f) => state.pair ? `${LATIN_PAIRS.find((p) => p.id === f.pair).family}, ${f.family}` : f.family;
+  const wOf = (f) => { const w = state.weight; if (f.weights.includes(w)) return w; return f.weights.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
+  function pvText(f) {
+    const t = state.text || f.name; const miss = coverage[f.id] || [];
+    if (!miss.length) return esc(t);
+    return [...t].map((ch) => miss.includes(ch) ? `<span class="miss" title="이 폰트에 없는 글자(참고)">${esc(ch)}</span>` : esc(ch)).join("");
   }
-  function licSummary(f) {
-    if (f.license === "OFL") return "OFL · 상업 이용·수정·재배포 가능 (폰트 파일 판매 금지)";
-    return f.license + " · 상세 페이지에서 사용 범위 확인";
+  const covTags = (f) => {
+    const d = detect[f.id];
+    return `<span class="cov"><span class="${f.cov >= 11172 ? "y" : ""}">${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자</span>`
+      + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span><span class="${d.hanja ? "y" : "dim"}">漢</span>` : "") + `</span>`;
+  };
+  const missPill = (f) => (coverage[f.id] && coverage[f.id].length) ? `<span class="pill miss">누락 ${coverage[f.id].length}자</span>` : "";
+  const acts = (f) => `<div class="r-acts">
+      <button class="abtn fav${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="즐겨찾기">${favs.has(f.id) ? "♥" : "♡"}</button>
+      <button class="abtn${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}">${cmp.has(f.id) ? "비교 중" : "+ 비교"}</button>
+      <button class="abtn" data-open="${f.id}">상세</button></div>`;
+  const pvStyle = (f) => `font-family:${famOf(f)};font-size:${state.size}px;font-weight:${wOf(f)}`;
+
+  function rowHTML(f) {
+    return `<article class="row" data-id="${f.id}" tabindex="0">
+      <div class="r-meta">
+        <div class="r-name">${esc(f.name)}<span class="en">${esc(f.en)}</span></div>
+        <div class="r-by">${esc(f.designer)}</div>
+        <div class="r-spec">굵기 ${f.weights.length}종 · ${f.formats.join("/")}</div>
+        ${covTags(f)}
+      </div>
+      <div class="r-pvwrap">
+        <div class="r-pv${state.inv ? " inv" : ""}" style="${pvStyle(f)}">${pvText(f)}</div>
+        <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>
+      </div>
+      <div class="r-side"><div class="pills">${pills(f)}${missPill(f)}</div>${acts(f)}</div>
+    </article>`;
+  }
+  function cardHTML(f) {
+    return `<article class="card" data-id="${f.id}" tabindex="0">
+      <div class="r-pv${state.inv ? " inv" : ""}" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>
+      <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>
+      <div class="pills">${pills(f)}${missPill(f)}</div>
+      <div class="foot">${covTags(f)}${acts(f)}</div>
+    </article>`;
+  }
+  const BODY = "한글 본문 테스트입니다. 이 문장은 실제 책 본문처럼 여러 줄에 걸쳐 조판되는 모습을 확인하기 위한 장문 샘플입니다. 자간과 행간, 글줄 길이가 읽기에 알맞은지 살펴보세요. 명조체는 긴 글에, 고딕체는 제목과 화면에 자주 쓰입니다. 다람쥐 헌 쳇바퀴에 타고파.";
+  function mockHTML(f, ctx) {
+    const fam = famOf(f), w = wOf(f), t = esc(state.text || f.name);
+    const fs = `font-family:${fam}`;
+    switch (ctx) {
+      case "thumb": return `<div class="mock thumb" style="${fs}"><div class="ch"><i></i>LETSUM 채널</div><div class="t" style="font-weight:${Math.max(w, f.weights[f.weights.length - 1])}">${t.replace(/(\S+)$/, "<em>$1</em>")}</div><span class="dur">12:34</span></div>`;
+      case "book": return `<div class="mock book" style="${fs}"><div class="h" style="font-weight:${Math.max(w, 700) in f.weights ? 700 : w}">${t}</div><div class="p" style="font-weight:${w}">${BODY} ${BODY} ${BODY} ${BODY}</div><div class="pg">— 27 —</div></div>`;
+      case "sub": return `<div class="mock sub"><div class="bar" style="${fs};font-weight:${w}">${t}</div></div>`;
+      case "menu": return `<div class="mock menu" style="${fs}"><div class="mt" style="font-weight:${w}">${t}</div>${[["아메리카노", "4,500"], ["카페라떼", "5,000"], ["바닐라 크림 콜드브루", "5,800"], ["제주 말차 라떼", "6,200"]].map(([n, p]) => `<div class="mi" style="font-weight:${w}"><span>${n}</span><b>${p}</b></div>`).join("")}</div>`;
+      case "card": return `<div class="mock card" style="${fs}"><div class="cn">01 / 05</div><div class="ct" style="font-weight:${Math.max(w, 700) in f.weights ? 700 : w}">${t}</div><div class="cp" style="font-weight:${w}">${BODY.slice(0, 92)}…</div></div>`;
+      case "ui": return `<div class="mock ui" style="${fs};font-weight:${w}"><div class="tabs"><b>일반</b><span>알림</span><span>보안</span></div><div class="win"><div class="ut">${t}</div><div class="ub">변경 사항은 다음 로그인부터 적용됩니다. 계정 설정에서 언제든지 되돌릴 수 있습니다.</div><div class="ubtn">확인</div></div></div>`;
+    }
+    return "";
+  }
+  function ctxHTML(f) {
+    return `<article class="ctxcard" data-id="${f.id}" tabindex="0">
+      ${mockHTML(f, state.ctx)}
+      <div class="lab"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${acts(f)}</div>
+      <div class="pills">${pills(f)}${missPill(f)}</div>
+    </article>`;
   }
 
+  // ---------- 메인 렌더 ----------
   function render() {
     const list = filtered();
-    count.innerHTML = `총 <b>${list.length}</b>종 표시 · 전체 ${FONTS.length}종 (시안 데이터)`;
-    grid.innerHTML = list.length ? list.map((f) => `
-      <article class="card" data-id="${f.id}" tabindex="0" role="button" aria-label="${f.name} 상세 보기">
-        <div class="pv" style="font-family:${f.family}">${escapeHtml(state.text || f.name)}</div>
-        <div class="meta">
-          <span class="fname">${f.name}</span>
-          <span class="fdes">${f.designer}</span>
-          <button class="fav${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="즐겨찾기">${favs.has(f.id) ? "♥" : "♡"}</button>
-        </div>
-        <div class="meta">
-          <span class="badge">${f.category}</span>
-          ${allOk(f) ? '<span class="badge free">상업용 무료 · OFL</span>' : '<span class="badge">라이선스 확인</span>'}
-          ${f.status === "verified" ? '<span class="badge">검수 완료</span>' : '<span class="badge check">확인 중</span>'}
-          <span class="badge">굵기 ${f.weights.length}종</span>
-        </div>
-        <div class="licicons">${licIcons(f)}</div>
-        <div class="licsum">${licSummary(f)}</div>
-      </article>`).join("")
-      : `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
-    bindCards();
+    $("#count").innerHTML = `<b>${list.length}</b> / ${FONTS.length}종`;
+    const host = $("#results");
+    if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
+    else if (state.view === "list") host.innerHTML = list.map(rowHTML).join("");
+    else if (state.view === "grid") host.innerHTML = `<div class="grid">${list.map(cardHTML).join("")}</div>`;
+    else host.innerHTML = `<div class="ctxgrid">${list.map(ctxHTML).join("")}</div>`;
+    renderActive(); bind(host);
   }
+  function renderActive() {
+    const chips = [];
+    if (state.coll) chips.push(["coll", COLLECTIONS.find((c) => c.id === state.coll).title]);
+    if (state.onlyLabel) chips.push(["only", "대안: " + state.onlyLabel]);
+    if (state.cat !== "전체") chips.push(["cat", state.cat]);
+    state.mood.forEach((m) => chips.push(["mood:" + m, m]));
+    LIC_FILTERS.forEach((p) => { if (p.keys.every((k) => state.lic.has(k)) && (p.key === "commercial" || !LIC_FILTERS[0].keys.every((k) => state.lic.has(k)) || !LIC_FILTERS[0].keys.includes(p.key))) chips.push(["lic:" + p.key, p.label]); });
+    state.cov.forEach((c) => chips.push(["cov:" + c, { "11172": "완성형 11,172자", old: "옛한글", hanja: "한자", multi: "굵기 3종+" }[c]]));
+    if (state.coverOnly) chips.push(["cover", "문장 글자 모두 지원"]);
+    if (state.favOnly) chips.push(["fav", "즐겨찾기"]);
+    const bar = $("#activeBar");
+    bar.innerHTML = chips.length ? `<span class="k">적용 중</span>` + chips.map(([k, l]) => `<button class="fbtn on" data-rm="${k}">${esc(l)} ×</button>`).join("") + `<button class="fbtn" data-rm="all">모두 지우기</button>` : "";
+    bar.querySelectorAll("[data-rm]").forEach((b) => b.addEventListener("click", () => removeFilter(b.dataset.rm)));
+  }
+  function removeFilter(k) {
+    const [t, v] = k.split(":");
+    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
+    else if (t === "coll") { state.coll = null; state.cat = "전체"; }
+    else if (t === "only") { state.only = null; state.onlyLabel = ""; }
+    else if (t === "cat") state.cat = "전체";
+    else if (t === "mood") state.mood.delete(v);
+    else if (t === "lic") LIC_FILTERS.find((p) => p.key === v).keys.forEach((x) => state.lic.delete(x));
+    else if (t === "cov") state.cov.delete(v);
+    else if (t === "cover") { state.coverOnly = false; $("#coverOnly").checked = false; }
+    else if (t === "fav") { state.favOnly = false; $("#favOnly").checked = false; }
+    $$("[data-cat]").forEach((x) => x.classList.toggle("on", x.dataset.cat === state.cat));
+    $$("[data-mood]").forEach((x) => x.classList.toggle("on", state.mood.has(x.dataset.mood)));
+    $$("[data-cov]").forEach((x) => x.classList.toggle("on", state.cov.has(x.dataset.cov)));
+    $$("[data-coll]").forEach((x) => x.classList.toggle("on", x.dataset.coll === state.coll));
+    $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel));
+    syncLic(); render();
+  }
+  // 문장·크기·굵기 변경은 전체 재렌더 없이 미리보기만 갱신
   function renderPreviews() {
-    const t = state.text;
-    document.querySelectorAll(".card .pv").forEach((el) => { el.textContent = t || el.closest(".card").querySelector(".fname").textContent; });
-    document.querySelectorAll(".mini-card .mpv").forEach((el) => { el.textContent = t || el.closest(".mini-card").querySelector(".mname").textContent; });
-  }
-  function bindCards() {
-    grid.querySelectorAll(".card").forEach((card) => {
-      card.addEventListener("click", (e) => {
-        if (e.target.closest("[data-fav]")) return;
-        openDetail(card.dataset.id);
-      });
-      card.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(card.dataset.id); });
+    if (state.view === "ctx") { render(); return; }
+    $$("[data-id]").forEach((el) => {
+      const f = FONTS.find((x) => x.id === el.dataset.id); if (!f) return;
+      const pv = el.querySelector(".r-pv"); if (!pv) return;
+      pv.innerHTML = pvText(f);
+      pv.style.fontFamily = famOf(f); pv.style.fontWeight = wOf(f);
+      pv.style.fontSize = (el.classList.contains("card") ? Math.min(state.size, 40) : state.size) + "px";
+      pv.classList.toggle("inv", state.inv);
     });
-    grid.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => {
-      const id = b.dataset.fav;
-      favs.has(id) ? favs.delete(id) : favs.add(id);
-      saveFavs(); render();
-    }));
+  }
+  function bind(host) {
+    host.querySelectorAll("[data-id]").forEach((el) => {
+      el.addEventListener("click", (e) => { if (e.target.closest("button")) return; openDetail(el.dataset.id); });
+      el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
+    });
+    host.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => { toggleSet(favs, b.dataset.fav); save("fm_favs", [...favs]); render(); }));
+    host.querySelectorAll("[data-cmp]").forEach((b) => b.addEventListener("click", () => toggleCmp(b.dataset.cmp)));
+    host.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
   }
 
-  // 상세 모달
+  // ---------- 비교 트레이 ----------
+  function toggleCmp(id) {
+    if (cmp.has(id)) cmp.delete(id);
+    else { if (cmp.size >= 4) { alert("비교는 최대 4종까지 담을 수 있습니다."); return; } cmp.add(id); }
+    renderTray(); render();
+  }
+  function renderTray() {
+    $("#tray").classList.toggle("open", cmp.size > 0);
+    $("#trayNames").innerHTML = [...cmp].map((id) => { const f = FONTS.find((x) => x.id === id); return `<button data-untray="${id}" title="빼기">${esc(f.name)} ×</button>`; }).join("");
+    $$("[data-untray]").forEach((b) => b.addEventListener("click", () => toggleCmp(b.dataset.untray)));
+    document.body.style.paddingBottom = cmp.size ? "70px" : "";
+  }
+  $("#trayClear").addEventListener("click", () => { cmp.clear(); renderTray(); render(); });
+  $("#cmpOpen").addEventListener("click", openCompare);
   const overlay = $("#overlay"), modal = $("#modalBox");
-  function st(v) { return v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>'; }
+  function openCompare() {
+    const list = [...cmp].map((id) => FONTS.find((x) => x.id === id)); if (!list.length) return;
+    const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: state.inv };
+    modal.className = "modal wide";
+    modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
+      <div class="m-head"><h2>나란히 비교</h2><span class="en">${list.length}종 · 같은 문장, 같은 조건</span></div>
+      <div class="tester" style="border-top:1px solid var(--rule2);margin-top:14px">
+        <div class="t-row"><span>문장</span><input id="cText" type="text" value="${esc(state.text)}" style="flex:1;border:1px solid var(--rule2);padding:6px 9px;font-size:14px"></div>
+        <div class="t-row"><span>크기</span><input type="range" id="cSize" min="14" max="120" value="${t.size}"><b id="cSizeV">${t.size}px</b>
+          <span>자간</span><input type="range" id="cLs" min="-5" max="20" value="0"><b id="cLsV">0px</b>
+          <span>행간</span><input type="range" id="cLh" min="110" max="220" value="140"><b id="cLhV">140%</b>
+          <button class="tbtn${t.inv ? " on" : ""}" id="cInv">■ 반전</button></div>
+      </div>
+      <div class="cmp" style="grid-template-columns:repeat(${Math.min(list.length, 4)},1fr)">${list.map((f) => `
+        <div class="col${t.inv ? " inv" : ""}" data-cid="${f.id}">
+          <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>
+          <div class="pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${t.size}px;line-height:1.4">${pvText(f)}</div>
+          <div class="r-weights" style="font-family:${f.family};opacity:1">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>
+          ${covTags(f)}
+          <div class="pills">${pills(f)}${missPill(f)}</div>
+          <button class="abtn" data-open="${f.id}">상세 보기</button>
+        </div>`).join("")}</div>`;
+    overlay.classList.add("open");
+    $("#mx").addEventListener("click", closeModal);
+    const pvs = $$(".cmp .pv");
+    $("#cText").addEventListener("input", (e) => { const v = e.target.value; pvs.forEach((p) => { p.textContent = v || FONTS.find((x) => x.id === p.closest("[data-cid]").dataset.cid).name; }); });
+    $("#cSize").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.fontSize = e.target.value + "px")); $("#cSizeV").textContent = e.target.value + "px"; });
+    $("#cLs").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.letterSpacing = e.target.value + "px")); $("#cLsV").textContent = e.target.value + "px"; });
+    $("#cLh").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.lineHeight = e.target.value + "%")); $("#cLhV").textContent = e.target.value + "%"; });
+    $("#cInv").addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); $$(".cmp .col").forEach((c) => c.classList.toggle("inv")); });
+    modal.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+  }
+
+  // ---------- 상세 모달 ----------
+  const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
   function openDetail(id) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
-    const gfont = "https://fonts.googleapis.com/css2?family=" + f.en.replace(/ /g, "+") + ":wght@400;700&display=swap";
-    const specimen = "https://fonts.google.com/specimen/" + f.en.replace(/ /g, "+");
+    const gfam = f.en.replace(/ /g, "+");
+    const gfont = `https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&display=swap`;
+    const specimen = "https://fonts.google.com/specimen/" + gfam;
+    const d = detect[f.id] || {};
+    const miss = coverage[f.id] || [];
+    const pairDef = LATIN_PAIRS.find((p) => p.id === f.pair);
+    modal.className = "modal";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="meta" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <h2 style="font-size:26px;font-weight:800">${f.name}</h2><span style="color:var(--ink3)">${f.en}</span>
-        <span class="badge">${f.category}</span>
-        ${allOk(f) ? '<span class="badge free">상업용 무료</span>' : ""}
-      </div>
-      <p style="color:var(--ink2);font-size:14px;margin-top:4px">저작권자 ${f.holder} · 제작 <button class="linklike" id="dsgBtn">${f.designer}</button></p>
-      <div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:40px">${escapeHtml(state.text || "책을 읽는 시간은 언제나 옳다")}</div>
+      <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span><span class="badge free">상업용 무료 · OFL</span>${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
+      <p class="m-sub">저작권자 ${esc(f.holder)} · 제작 <button class="linklike" id="dsgBtn">${esc(f.designer)}</button> · ${f.mood.join(" · ")}</p>
+      <div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
       <div class="tester">
-        <div class="t-row"><span>크기</span><input type="range" id="tSize" min="12" max="96" value="40"><b id="tSizeV">40px</b>
-          <span class="t-w">굵기 ${f.weights.join(" · ")}</span></div>
-        <div class="t-row"><span>자간</span><input type="range" id="tLs" min="-5" max="20" value="0"><b id="tLsV">0px</b></div>
-        <div class="t-row"><span>행간</span><input type="range" id="tLh" min="120" max="240" value="160"><b id="tLhV">160%</b></div>
-        <div class="t-row t-btns">
-          <button class="fbtn" id="tDark">🌙 다크모드</button>
-          <button class="fbtn" id="tVert">↕ 세로쓰기</button>
-          <button class="fbtn" id="tLong">📄 장문</button>
-          <button class="fbtn" id="tOld">옛한글</button>
-          <button class="fbtn" id="tHanja">한자</button>
+        <div class="t-row"><span>크기</span><input type="range" id="tSize" min="12" max="110" value="44"><b id="tSizeV">44px</b>
+          <span>굵기</span><select id="tW">${f.weights.map((w) => `<option value="${w}"${w === wOf(f) ? " selected" : ""}>${w}</option>`).join("")}</select>
+          <span>영문 짝꿍</span><select id="tPair"><option value="">없음 (폰트 자체 영문)</option>${LATIN_PAIRS.map((p) => `<option value="${p.id}"${state.pair && p.id === f.pair ? " selected" : ""}>${p.name}${p.id === f.pair ? " · 추천" : ""}</option>`).join("")}</select></div>
+        <div class="t-row"><span>자간</span><input type="range" id="tLs" min="-5" max="20" value="0"><b id="tLsV">0px</b>
+          <span>행간</span><input type="range" id="tLh" min="110" max="240" value="140"><b id="tLhV">140%</b></div>
+        <div class="t-row">
+          <button class="tbtn" id="tDark">■ 반전</button>
+          <button class="tbtn" id="tVert">↕ 세로쓰기</button>
+          <button class="tbtn" id="tLong">장문</button>
+          ${TEXT_PRESETS.filter((p) => ["pang", "batchim", "mixed", "old", "hanja"].includes(p.id)).map((p) => `<button class="tbtn" data-tp="${p.id}">${p.label}</button>`).join("")}
         </div>
-        <div class="t-support" id="tSupport"><span class="badge check">글자 지원 확인 중…</span></div>
+        <div class="t-row" style="margin-bottom:0"><span class="k">글자 범위</span>${covTags(f)}
+          ${miss.length ? `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>` : `<span class="pill ok">현재 문장 모두 지원</span>`}
+          <span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span></div>
       </div>
-      <p style="margin-top:14px;color:#333">${f.desc}</p>
-      <table class="spec">
-        <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
-        <tr><th>지원 글자수</th><td>${f.glyphs}</td></tr>
-        <tr><th>라이선스</th><td>${f.license} (SIL Open Font License 1.1)</td></tr>
-        <tr><th>검수 상태</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
-        <tr><th>옛한글 지원</th><td id="mxOld">확인 중…</td></tr>
-        <tr><th>한자 지원</th><td id="mxHanja">확인 중…</td></tr>
-      </table>
-      <h3 style="font-size:16px;font-weight:800;margin-top:20px">사용 범위 (라이선스 매트릭스)</h3>
-      <table class="matrix">
-        <tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
-        ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? "폰트 파일의 수정·복제·배포 가능, 단 폰트 파일 자체의 유료 판매는 금지" : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
-      </table>
-      <details class="embed">
-        <summary>🌐 웹폰트로 바로 쓰기 (확장 서비스 미리보기 — F-13 CDN)</summary>
-        <pre>&lt;link href="${gfont}" rel="stylesheet"&gt;
+      <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
 
-font-family: ${f.family};</pre>
-        <p class="note" style="margin-top:8px">시안에서는 Google Fonts CDN으로 연결됩니다. 정식 서비스에서는 자체 CDN으로 임베드 코드를 제공할 계획입니다.</p>
-      </details>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
-        <a class="btn blue" href="${specimen}" target="_blank" rel="noopener">원 배포처에서 다운로드</a>
-        <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
-      </div>
+      <div class="m-sec"><h3>쓰임새에서 보기</h3>
+        <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
+        <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
+
+      <div class="m-sec"><h3>사양</h3>
+        <table class="spec">
+          <tr><th>굵기</th><td><span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span></td></tr>
+          <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
+          <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
+          <tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>
+          <tr><th>라이선스</th><td>${f.license} (SIL Open Font License 1.1)</td></tr>
+          <tr><th>검수</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
+          <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
+        </table></div>
+
+      <div class="m-sec"><h3>사용 범위 (라이선스 매트릭스)</h3>
+        <table class="matrix">
+          <tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
+          ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? "폰트 파일의 수정·복제·배포 가능, 단 폰트 파일 자체의 유료 판매는 금지" : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
+        </table></div>
+
+      <div class="m-sec"><h3>바로 적용</h3>
+        <div class="codehead"><span>웹폰트 (Google Fonts CDN)</span><button class="abtn" data-copy="c1">복사</button></div>
+        <pre class="code" id="c1">&lt;link href="${gfont}" rel="stylesheet"&gt;
+font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰트로: */ font-family: ${esc(pairDef.family)}, ${esc(f.family)};` : ""}</pre>
+        <div class="codehead"><span>개발자용 (Fontsource · npm, 자체 호스팅)</span><button class="abtn" data-copy="c2">복사</button></div>
+        <pre class="code" id="c2">npm i @fontsource/${f.id}
+import "@fontsource/${f.id}/400.css";</pre>
+        <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+          <a class="btn" href="${specimen}" target="_blank" rel="noopener">원 배포처에서 다운로드 ↗</a>
+          <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
+          <button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>
+        </div></div>
       <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 사용 범위는 저작권자의 규정에 따라 달라질 수 있습니다.</p>`;
     overlay.classList.add("open");
-    $("#mx").addEventListener("click", closeDetail);
-    // 한글 타입 테스터 (리서치 중기 과제 #5)
-    const pvBig = $("#pvBig");
-    const baseText = state.text || "책을 읽는 시간은 언제나 옳다";
-    const LONG_TXT = "한글 본문 테스트입니다. 이 문장은 실제 책 본문처럼 여러 줄에 걸쳐 렌더링되는 모습을 확인하기 위한 장문 샘플입니다. 자간과 행간을 조절해 가독성을 비교해 보세요. 명조체는 본문에, 고딕체는 제목과 UI에 자주 쓰입니다. 다람쥐 헌 쳇바퀴에 타고파.";
-    const OLDH_TXT = "ᄒᆞᆫ글 옛한글 테스트: ᄂᆞᄅᆞᆺ말ᄊᆞ미";
-    const HANJA_TXT = "韓國 漢字 1234";
-    $("#tSize").addEventListener("input", (e) => { pvBig.style.fontSize = e.target.value + "px"; $("#tSizeV").textContent = e.target.value + "px"; });
-    $("#tLs").addEventListener("input", (e) => { pvBig.style.letterSpacing = e.target.value + "px"; $("#tLsV").textContent = e.target.value + "px"; });
-    $("#tLh").addEventListener("input", (e) => { pvBig.style.lineHeight = e.target.value + "%"; $("#tLhV").textContent = e.target.value + "%"; });
+    $("#mx").addEventListener("click", closeModal);
+    const pv = $("#pvBig"); const base = state.text || f.name;
+    const LONG = BODY;
+    let curPair = state.pair ? f.pair : "";
+    const applyFam = () => { const p = LATIN_PAIRS.find((x) => x.id === curPair); pv.style.fontFamily = p ? `${p.family}, ${f.family}` : f.family; };
+    $("#tSize").addEventListener("input", (e) => { pv.style.fontSize = e.target.value + "px"; $("#tSizeV").textContent = e.target.value + "px"; });
+    $("#tW").addEventListener("change", (e) => (pv.style.fontWeight = e.target.value));
+    $("#tPair").addEventListener("change", (e) => { curPair = e.target.value; applyFam(); if (curPair && !/[A-Za-z0-9]/.test(pv.textContent)) pv.textContent = TEXT_PRESETS.find((p) => p.id === "mixed").t; });
+    $("#tLs").addEventListener("input", (e) => { pv.style.letterSpacing = e.target.value + "px"; $("#tLsV").textContent = e.target.value + "px"; });
+    $("#tLh").addEventListener("input", (e) => { pv.style.lineHeight = e.target.value + "%"; $("#tLhV").textContent = e.target.value + "%"; });
     const tgl = (id, fn) => $(id).addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); fn(e.currentTarget.classList.contains("on")); });
-    tgl("#tDark", (on) => pvBig.classList.toggle("dark", on));
-    tgl("#tVert", (on) => pvBig.classList.toggle("vert", on));
-    tgl("#tLong", (on) => { pvBig.textContent = on ? LONG_TXT : baseText; });
-    tgl("#tOld", (on) => { pvBig.textContent = on ? OLDH_TXT : baseText; });
-    tgl("#tHanja", (on) => { pvBig.textContent = on ? HANJA_TXT : baseText; });
-    // 옛한글·한자 지원 자동 검출 (리서치 중기 과제 #6 — document.fonts.check)
-    try {
-      const fam = `16px "${f.family}"`;
-      const oh = document.fonts.check(fam, "ᄒᆞᆫ") ? "지원" : "미지원";
-      const hj = document.fonts.check(fam, "韓國漢字") ? "지원" : "미지원";
-      const badge = (v) => `<span class="badge ${v === "지원" ? "free" : ""}">${v}</span>`;
-      $("#tSupport").innerHTML = `<span style="font-size:12.5px;color:var(--ink2)">옛한글</span>${badge(oh)}<span style="font-size:12.5px;color:var(--ink2)">한자</span>${badge(hj)}<span class="t-note">브라우저 자동 검출(참고용)</span>`;
-      $("#mxOld").innerHTML = `${badge(oh)} <span class="t-note">자동 검출</span>`;
-      $("#mxHanja").innerHTML = `${badge(hj)} <span class="t-note">자동 검출</span>`;
-    } catch (err) {
-      $("#tSupport").innerHTML = `<span class="badge">지원 여부 확인 불가</span>`;
-      $("#mxOld").textContent = "확인 불가"; $("#mxHanja").textContent = "확인 불가";
-    }
+    tgl("#tDark", (on) => pv.classList.toggle("dark", on));
+    tgl("#tVert", (on) => pv.classList.toggle("vert", on));
+    tgl("#tLong", (on) => { pv.textContent = on ? LONG : base; });
+    modal.querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => { pv.textContent = TEXT_PRESETS.find((p) => p.id === b.dataset.tp).t; }));
+    modal.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#" + b.dataset.copy).textContent); } catch (e) {} b.textContent = "복사됨 ✓"; setTimeout(() => (b.textContent = "복사"), 1500); }));
     $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
-    $("#favBtn").addEventListener("click", () => { favs.has(f.id) ? favs.delete(f.id) : favs.add(f.id); saveFavs(); openDetail(f.id); render(); });
+    $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
+    $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });
   }
-  // 제작자 페이지 (리서치 중기 과제 #8 — 제보→입점 사다리)
   function openDesigner(name) {
     const list = FONTS.filter((f) => f.designer === name);
-    modal.innerHTML = `
-      <button class="x" id="mx" aria-label="닫기">×</button>
-      <h2 style="font-size:24px;font-weight:800;letter-spacing:-.02em">${name}</h2>
-      <p style="color:var(--ink2);font-size:14px;margin:6px 0 16px">LETSUM 등록 폰트 ${list.length}종</p>
-      <div class="coll-row">${list.map((f) => `
-        <button class="mini-card" data-id="${f.id}">
-          <span class="mpv" style="font-family:${f.family}">${escapeHtml(f.name)}</span>
-          <span class="mname">${f.name} · 굵기 ${f.weights.length}종</span>
-        </button>`).join("")}</div>
+    modal.className = "modal";
+    modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
+      <div class="m-head"><h2>${esc(name)}</h2><span class="en">LETSUM 등록 폰트 ${list.length}종</span></div>
+      <div class="grid" style="margin-top:18px">${list.map((f) => `<article class="card" data-did="${f.id}"><div class="r-pv" style="font-family:${f.family};font-size:30px">${esc(state.text || f.name)}</div><div class="r-name">${esc(f.name)}<span class="en">굵기 ${f.weights.length}종</span></div></article>`).join("")}</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
-        <button class="btn blue" id="dsgSupport">❤ 제작자 후원하기</button>
-        <a class="btn ghost" href="submit.html">유료 폰트 입점 신청</a>
-      </div>
+        <button class="btn" id="dsgSupport">♥ 제작자 후원하기</button>
+        <a class="btn ghost" href="submit.html">유료 폰트 입점 신청</a></div>
       <p class="note" style="margin-top:10px">후원 기능은 준비 중입니다. 입점 신청을 통해 후원 링크를 등록할 수 있습니다.</p>`;
     overlay.classList.add("open");
-    $("#mx").addEventListener("click", closeDetail);
+    $("#mx").addEventListener("click", closeModal);
     $("#dsgSupport").addEventListener("click", () => alert("후원 기능은 준비 중입니다. 정식 서비스에서 제공될 예정입니다."));
-    modal.querySelectorAll(".mini-card").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.id)));
+    modal.querySelectorAll("[data-did]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.did)));
   }
-  function closeDetail() { overlay.classList.remove("open"); }
-  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeDetail(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDetail(); });
+  function closeModal() { overlay.classList.remove("open"); }
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
-  function escapeHtml(s) { return s.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
-
-  // 용도별 큐레이션 렌더링 (리서치 개선안 #3)
-  function renderCollections() {
-    const host = $("#collRows");
-    if (!host || typeof COLLECTIONS === "undefined") return;
-    host.innerHTML = COLLECTIONS.map((c) => {
-      const fonts = FONTS.filter((f) => f.category === c.cat).sort((a, b) => b.pop - a.pop).slice(0, 6);
-      return `<div class="coll-block">
-        <div class="coll-title"><b>${c.title}</b><span>${c.desc}</span></div>
-        <div class="coll-row">${fonts.map((f) => `
-          <button class="mini-card" data-id="${f.id}">
-            <span class="mpv" style="font-family:${f.family}">${escapeHtml(state.text || f.name)}</span>
-            <span class="mname">${f.name}</span>
-          </button>`).join("")}</div>
-      </div>`;
-    }).join("");
-    host.querySelectorAll(".mini-card").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.id)));
-  }
-
+  // ---------- 시작 ----------
+  $("#statN").textContent = FONTS.length + "종";
+  $("#statDate").textContent = FONTS.map((f) => f.verified).sort().pop().replace(/-/g, ".");
   render();
-  renderCollections();
+  renderTray();
+  detectAll().then(() => { render(); runCoverage(); });
 })();

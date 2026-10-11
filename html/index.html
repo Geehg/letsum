@@ -3,74 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LETSUM(렛섬) — 상업용 무료 폰트, 라이선스까지 확인하고 쓰세요</title>
-<meta name="description" content="국내 무료 폰트를 전 장르 수집하고, 폰트별 라이선스를 표로 정리해 제공하는 큐레이션 사이트 시안">
+<title>LETSUM(렛섬) — 한글 폰트 작업대: 고르고, 검증하고, 바로 적용</title>
+<meta name="description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
+<script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Noto+Serif+KR:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;700&family=Gowun+Dodum&family=Gowun+Batang:wght@400;700&family=Hahmlet:wght@400;700&family=Jua&family=Do+Hyeon&family=Black+Han+Sans&family=Dongle:wght@400;700&family=Single+Day&family=Gaegu:wght@400;700&family=Poor+Story&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&family=Playfair+Display:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
   <div class="wrap hd">
-    <a class="logo" href="index.html">LETS<em>UM</em><small>시안</small></a>
+    <a class="logo" href="index.html">렛섬 <small>LETSUM</small></a>
     <nav class="main">
-      <a href="index.html" class="on">폰트 탐색</a>
+      <a href="index.html" class="on">작업대</a>
       <a href="guide.html">라이선스 가이드</a>
       <a href="subset.html">서브셋 도구</a>
-      <a href="submit.html">폰트 등록 신청</a>
-      <a href="admin.html">관리자</a>
+      <a href="submit.html">폰트 등록</a>
     </nav>
     <div class="sp"></div>
-    <label class="hd-search">🔍 <input id="qTop" type="search" placeholder="폰트명·제작자·태그 검색"></label>
+    <label class="hd-search"><span aria-hidden="true">⌕</span><input id="qTop" type="search" placeholder="폰트명·제작자·태그 (초성 ㄱㅇㄷㄷ 가능)" aria-label="폰트 검색"></label>
+    <button class="icon-btn" id="themeBtn" aria-label="밝기 전환" title="밝기 전환">◐</button>
   </div>
 </header>
 
-<section class="hero wrap">
-  <h1>상업용 무료 폰트,<br><span class="u">라이선스까지 확인</span>하고 쓰세요</h1>
-  <p>국내 무료 폰트를 전 장르 모아, 폰트별 사용 범위를 표로 정리했습니다.<br>아래에 문구를 입력하면 모든 폰트에 바로 적용됩니다.</p>
-  <div class="preview-box">
-    <input id="previewText" type="text" value="책을 읽는 시간은 언제나 옳다" maxlength="60" aria-label="미리보기 문구">
+<section class="wrap mast">
+  <div>
+    <h1>한글 폰트를 <mark>고르고, 검증하고,</mark><br>바로 적용하는 작업대</h1>
+    <p>폰트 이름이 아니라 쓰는 자리에서 고르세요. 썸네일·책 본문·자막·메뉴판 프레임에 바로 얹어 보고, 내 문장의 글자가 빠지지 않는지, 어디까지 상업적으로 쓸 수 있는지를 한 화면에서 확인합니다.</p>
   </div>
-  <div class="quick" id="quickChips">
-    <button class="chip" data-t="다람쥐 헌 쳇바퀴에 타고파">자소 커버리지</button>
-    <button class="chip" data-t="책을 읽는 시간은 언제나 옳다">본문</button>
-    <button class="chip" data-t="새해 복 많이 받으세요">제목</button>
-    <button class="chip" data-t="The quick brown fox 1234">영문·숫자</button>
+  <div class="stats">
+    <div><span class="k">검수 폰트</span><b id="statN">—</b></div>
+    <div><span class="k">라이선스</span><b>OFL 100%</b></div>
+    <div><span class="k">최근 검수</span><b id="statDate" style="font-size:18px">—</b></div>
+    <div><span class="k">파일 호스팅</span><b style="font-size:18px">원 배포처 연결</b></div>
   </div>
 </section>
 
-<section class="wrap coll-sec" id="collSec">
-  <div class="coll-head">
-    <h2>용도별 큐레이션</h2>
-    <p>폰트 이름이 아니라 쓰는 곳으로 고르세요</p>
-  </div>
-  <div id="collRows"></div>
-</section>
-
-<div class="filters">
+<!-- 작업대: 모든 행에 동시에 적용되는 전역 컨트롤 -->
+<div class="deck">
   <div class="wrap">
-    <div class="row">
-      <div class="grp" id="catGrp"><span class="lbl">분류</span></div>
-      <div class="grp" id="licGrp"><span class="lbl">허용 범위</span></div>
-      <div class="grp" id="presetGrp"><span class="lbl">빠른 선택</span></div>
+    <div class="d1">
+      <div class="d-text">
+        <span class="k">문장</span>
+        <input id="previewText" type="text" value="책을 읽는 시간은 언제나 옳다" maxlength="80" aria-label="미리보기 문장">
+        <select id="presetSel" aria-label="문장 프리셋"></select>
+      </div>
+      <div class="d-size">
+        <span class="k">크기</span>
+        <input id="sizeRange" type="range" min="18" max="120" value="44" aria-label="미리보기 크기">
+        <b id="sizeV">44px</b>
+      </div>
+      <div class="d-tog">
+        <span class="k">굵기</span>
+        <div class="seg" id="weightSeg">
+          <button data-w="400" class="on">보통</button>
+          <button data-w="700">굵게</button>
+        </div>
+      </div>
+      <div class="d-tog">
+        <button class="tbtn" id="invBtn" aria-pressed="false">■ 반전</button>
+        <button class="tbtn lime" id="pairBtn" aria-pressed="false" title="영문·숫자만 짝꿍 라틴 폰트로 바꿔 렌더링">A가 영문 짝꿍</button>
+      </div>
     </div>
-    <div class="row" style="margin-top:10px">
+    <div class="d2">
+      <div class="seg" id="viewSeg">
+        <button data-v="list" class="on">목록</button>
+        <button data-v="grid">격자</button>
+        <button data-v="ctx">맥락</button>
+      </div>
+      <div class="ctxs" id="ctxChips" style="display:none"></div>
       <span class="count" id="count"></span>
-      <div class="sp" style="flex:1"></div>
-      <button class="fbtn" id="favOnly">♥ 즐겨찾기만</button>
+      <div class="sp"></div>
       <select id="sort" aria-label="정렬">
         <option value="pop">인기순</option>
         <option value="new">최신 등록순</option>
         <option value="name">이름순</option>
+        <option value="weights">굵기 많은 순</option>
       </select>
     </div>
   </div>
 </div>
 
-<main class="wrap">
-  <div class="grid" id="grid"></div>
-</main>
+<div class="wrap body">
+  <aside class="side">
+    <div class="fset">
+      <div class="k"><span>상황별로 시작</span></div>
+      <div class="collist" id="collList"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>분류</span></div>
+      <div class="chips" id="catGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>분위기</span><button id="moodClear">지우기</button></div>
+      <div class="chips" id="moodGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>사용 범위</span><button id="licClear">지우기</button></div>
+      <div class="chips" id="licGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>글자 범위</span></div>
+      <div class="chips" id="covGrp">
+        <button class="fbtn" data-cov="11172">완성형 11,172자</button>
+        <button class="fbtn" data-cov="old">옛한글</button>
+        <button class="fbtn" data-cov="hanja">한자</button>
+        <button class="fbtn" data-cov="multi">굵기 3종 이상</button>
+      </div>
+      <label class="fcheck" style="margin-top:10px"><input type="checkbox" id="coverOnly"> 입력한 문장의 글자를 <b>모두 지원</b>하는 폰트만 <span class="note" id="coverNote"></span></label>
+    </div>
+    <div class="fset">
+      <div class="k"><span>즐겨찾기</span></div>
+      <label class="fcheck"><input type="checkbox" id="favOnly"> 즐겨찾기한 폰트만</label>
+    </div>
+    <div class="fset hide-sm">
+      <div class="k"><span>유료 폰트 대신</span></div>
+      <div class="altlist" id="altList"></div>
+      <p class="fine">인상이 비슷한 무료 대안입니다. 동일한 디자인은 아닙니다.</p>
+    </div>
+  </aside>
+
+  <main class="list">
+    <div class="active-bar" id="activeBar"></div>
+    <div id="results"></div>
+  </main>
+</div>
+
+<!-- 비교 트레이 -->
+<div class="tray" id="tray">
+  <div class="wrap">
+    <span class="k" style="color:var(--paper);opacity:.7">비교</span>
+    <div class="names" id="trayNames"></div>
+    <button class="btn sm" id="cmpOpen">나란히 보기</button>
+    <button class="x" id="trayClear" aria-label="비교 비우기">×</button>
+  </div>
+</div>
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
   <div class="modal" id="modalBox"></div>
@@ -79,11 +148,11 @@
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div><b>LETSUM(렛섬)</b><br>상업용 무료 폰트 큐레이션 — 시안 페이지입니다.<br>실제 폰트 데이터 14종(전부 OFL)으로 동작을 검증합니다.</div>
-      <div><b>안내</b><br><a href="guide.html">라이선스 가이드</a><br><a href="submit.html">폰트 등록 신청</a><br><a href="admin.html">관리자</a></div>
-      <div><b>운영 정보</b><br>공식 도메인: letsum.app<br>운영 주체: TODO<br>문의: TODO<br>사업자 정보: TODO</div>
+      <div><b>LETSUM(렛섬)</b>상업용 무료 한글 폰트 작업대. 폰트를 모아 두는 데서 그치지 않고, 고르고 검증하고 적용하는 흐름을 한 화면에 둡니다.<br>현재 데모 데이터 14종(전부 OFL)으로 동작을 검증하는 시안입니다.</div>
+      <div><b>안내</b><a href="guide.html">라이선스 가이드</a><br><a href="subset.html">서브셋 생성기</a><br><a href="submit.html">폰트 등록 신청</a><br><a href="admin.html">관리자</a></div>
+      <div><b>운영 정보</b>공식 도메인 letsum.app<br>운영 주체: TODO<br>문의: TODO</div>
     </div>
-    <p class="fine">모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다. 이 페이지의 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 폰트 파일은 자체 호스팅하지 않으며, 다운로드는 원 배포처로 연결됩니다.</p>
+    <p class="fine">모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다. 표시된 사용 범위는 참고용이며, 정확한 범위는 이용 전 저작권자의 원문 라이선스로 확인하세요. 폰트 파일은 자체 호스팅하지 않으며 다운로드는 원 배포처로 연결됩니다. 옛한글·한자·글자 지원 여부는 브라우저에서 자동 검출한 참고 정보입니다.</p>
   </div>
 </footer>
 
