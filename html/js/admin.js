@@ -176,3 +176,52 @@
   document.getElementById("ckForm").addEventListener("submit", () => setTimeout(load, 50));
   if (keyEl.value.trim()) summary();
 })();
+
+// ---------- 이용 지표 ----------
+(function () {
+  const out = document.getElementById("mtOut"); if (!out) return;
+  const msg = document.getElementById("mtMsg"), keyEl = document.getElementById("ckKey");
+  const e = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+  const name = (id) => { const f = (typeof FONTS !== "undefined" ? FONTS : []).find((x) => x.id === id); return f ? f.name : id; };
+  const LABEL = { visit: "방문(세션)", detail: "상세 열기", cmp_add: "비교 담기", cmp_open: "비교 창 열기", dl_zip: "파일 바로 받기", dl_page: "배포처 페이지 이동", record: "확인 기록 저장", wiz_open: "용도 추천 열기", wiz_apply: "용도 추천 적용", view: "보기 전환", text_custom: "내 문장 입력", cover_only: "'모두 지원' 필터", comment: "댓글", like: "좋아요", shot_up: "사진 올리기", share: "공유" };
+  async function load() {
+    if (!keyEl.value.trim()) { msg.textContent = "아래 '댓글 관리'에 관리자 키를 먼저 넣어 주세요."; return; }
+    msg.textContent = "불러오는 중…";
+    try {
+      const r = await fetch("/api/admin/metrics?days=" + document.getElementById("mtDays").value, { headers: { authorization: "Bearer " + keyEl.value.trim() } });
+      const j = await r.json(); if (!r.ok) throw new Error(j.error || "오류");
+      const tot = {}, byDay = {}, byFont = {}, byVal = {};
+      j.rows.forEach((x) => {
+        tot[x.name] = (tot[x.name] || 0) + x.n;
+        if (x.name === "visit") byDay[x.day] = (byDay[x.day] || 0) + x.n;
+        if (x.font && ["detail", "cmp_add", "dl_zip", "dl_page", "record", "like"].includes(x.name)) { const k = x.font; byFont[k] = byFont[k] || {}; byFont[k][x.name] = (byFont[k][x.name] || 0) + x.n; }
+        if (x.font && ["view", "wiz_apply"].includes(x.name)) { byVal[x.name] = byVal[x.name] || {}; byVal[x.name][x.font] = (byVal[x.name][x.font] || 0) + x.n; }
+      });
+      const v = tot.visit || 0, pct = (a) => (v ? Math.round((a / v) * 1000) / 10 + "%" : "—");
+      const dl = (tot.dl_zip || 0) + (tot.dl_page || 0);
+      const days = []; for (let d = new Date(j.from + "T00:00:00"); d <= new Date(); d.setDate(d.getDate() + 1)) days.push(d.toISOString().slice(0, 10));
+      const mx = Math.max(1, ...days.map((d) => byDay[d] || 0));
+      const top = (k) => Object.entries(byFont).filter(([, o]) => o[k]).sort((a, b) => b[1][k] - a[1][k]).slice(0, 10);
+      msg.textContent = `${j.from}부터 · 행동 기록 ${j.rows.reduce((s, x) => s + x.n, 0).toLocaleString()}건`;
+      out.innerHTML = `
+        <div class="mt-kpi">
+          <div><b>${v.toLocaleString()}</b><span>방문(세션)</span></div>
+          <div><b>${(tot.detail || 0).toLocaleString()}</b><span>상세 열기</span></div>
+          <div><b>${(tot.cmp_add || 0).toLocaleString()}</b><span>비교 담기 · 방문 대비 ${pct(tot.cmp_add || 0)}</span></div>
+          <div><b>${dl.toLocaleString()}</b><span>배포처 이동·받기 · ${pct(dl)}</span></div>
+          <div><b>${(tot.record || 0).toLocaleString()}</b><span>확인 기록 저장 · ${pct(tot.record || 0)}</span></div>
+          <div><b>${(tot.wiz_apply || 0).toLocaleString()}</b><span>용도 추천 적용 · ${pct(tot.wiz_apply || 0)}</span></div>
+        </div>
+        <p class="note">일별 방문</p><div class="mt-bar" title="일별 방문">${days.map((d) => `<i style="height:${((byDay[d] || 0) / mx) * 100}%" title="${d}: ${byDay[d] || 0}"></i>`).join("")}</div>
+        <div class="mt-cols">
+          <div><b>행동별 합계</b><table class="spec">${Object.keys(LABEL).filter((k) => tot[k]).map((k) => `<tr><th>${LABEL[k]}</th><td>${tot[k].toLocaleString()}</td></tr>`).join("") || "<tr><td>아직 기록이 없습니다</td></tr>"}</table></div>
+          <div><b>많이 연 폰트</b><table class="spec">${top("detail").map(([id, o]) => `<tr><th>${e(name(id))}</th><td>${o.detail}</td></tr>`).join("") || "<tr><td>—</td></tr>"}</table></div>
+          <div><b>배포처로 많이 간 폰트</b><table class="spec">${Object.entries(byFont).map(([id, o]) => [id, (o.dl_zip || 0) + (o.dl_page || 0)]).filter((x) => x[1]).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([id, n]) => `<tr><th>${e(name(id))}</th><td>${n}</td></tr>`).join("") || "<tr><td>—</td></tr>"}</table></div>
+          <div><b>보기 방식 · 용도 추천</b><table class="spec">${[...Object.entries(byVal.view || {}).map(([k, n]) => [`보기: ${k}`, n]), ...Object.entries(byVal.wiz_apply || {}).map(([k, n]) => [`용도: ${k}`, n])].map(([k, n]) => `<tr><th>${e(k)}</th><td>${n}</td></tr>`).join("") || "<tr><td>—</td></tr>"}</table></div>
+        </div>`;
+    } catch (x) { msg.textContent = x.message; out.innerHTML = ""; }
+  }
+  document.getElementById("mtLoad").addEventListener("click", load);
+  document.getElementById("mtDays").addEventListener("change", load);
+  document.getElementById("ckForm").addEventListener("submit", () => setTimeout(load, 80));
+})();

@@ -709,3 +709,37 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 [data-fl="fail"]::before{content:"미리보기를 불러오지 못했습니다 · 상세에서 다시 시도";position:absolute;z-index:3;margin:8px;font:600 11px var(--mono);background:var(--no);color:#fff;padding:3px 7px;border-radius:4px;pointer-events:none}
 .card[data-fl],.row[data-fl],.ig[data-fl],.ctxcard[data-fl]{position:relative}
 .rec-note{flex-basis:100%;margin:6px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.5}
+
+/* ===== 히어로 축소(약 340px): 검색·용도 추천·결과가 첫 화면에 함께 보이도록 ===== */
+.spot-stage{height:clamp(300px,28vw,340px)}
+.sp-in{grid-template-columns:minmax(0,1fr) 270px;gap:28px;padding-top:18px;padding-bottom:54px}
+.sp-main{gap:8px}
+.sp-kick{font-size:11px}
+.sp-title{font-size:clamp(40px,5.4vw,80px);line-height:1.04}
+.sp-title .sp-spec{max-height:clamp(64px,7vw,96px)}
+.sp-type{font-size:clamp(15px,1.45vw,19px);min-height:1.35em}
+.sp-cta{margin-top:2px}
+.sp-btn{font-size:13px;padding:7px 14px}
+.sp-side{gap:9px;font-size:12.5px;padding-left:18px}
+.sp-side dl{grid-template-columns:60px 1fr;gap:4px 8px}
+.sp-side dt{font-size:10.5px}
+.sp-tags{display:none}
+.sp-lic span{font-size:10.5px;padding:2px 7px}
+.sp-wt{gap:12px;padding-bottom:9px}
+.sp-loupe{width:74px;height:74px}
+.sp-loupe span{font-size:58px}
+.sp-wt-name b{font-size:15px}
+.sp-scale{height:22px;margin-top:2px}
+.sp-marquee{bottom:40px;font-size:clamp(56px,7.5vw,110px)}
+.sp-editorial .sp-main{padding:12px 0}
+.sp-note{background-image:repeating-linear-gradient(transparent 0 38px,color-mix(in srgb,var(--fg) 10%,transparent) 38px 39px)}
+.spot-ui{padding-bottom:10px}
+.spot-bars{margin-bottom:7px}
+@media (max-width:860px){
+  .spot-stage{height:auto;min-height:330px}
+  .sp-in{grid-template-columns:1fr;gap:12px;padding-top:18px;padding-bottom:70px}
+  .sp-title{font-size:clamp(36px,11vw,56px)}
+  .sp-side{padding:10px 0 0}
+  .sp-side dl,.sp-wt{display:none}
+  .sp-marquee{bottom:80px}
+}

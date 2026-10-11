@@ -7,7 +7,9 @@
 //       GET  /api/shots?id=x               → { items: [{ id, name, caption, created }] }  (승인된 사용 사례 사진)
 //       GET  /api/shot/<n>                 → 이미지(승인된 것만)
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
+//       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
 //       관리자(Authorization: Bearer ADMIN_KEY):
+//       GET  /api/admin/metrics?days=28    → { days: [...], rows: [{ day, name, font, n }] }
 //       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
 //       GET  /api/admin/shots?status=pending|approved, GET /api/admin/shot/<n>
 //       POST /api/admin/shot { shotId, action: approve|reject|unpublish }
@@ -15,6 +17,8 @@
 //       POST /api/admin/comment { commentId, action: hide|show|delete }
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
+// 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
+const EVENTS = new Set(["visit", "detail", "cmp_add", "cmp_open", "dl_zip", "dl_page", "record", "wiz_open", "wiz_apply", "view", "text_custom", "cover_only", "comment", "like", "shot_up", "share"]);
 const IMG = [["image/jpeg", [0xff, 0xd8, 0xff]], ["image/png", [0x89, 0x50, 0x4e, 0x47]], ["image/webp", [0x52, 0x49, 0x46, 0x46]]];
 
 const json = (data, status = 200, extra = {}) =>
@@ -135,6 +139,19 @@ async function shotImage(n, env, any) {
   return new Response(new Uint8Array(row.data), { headers: { "content-type": row.mime, "cache-control": any ? "private, no-store" : "public, max-age=86400", "x-content-type-options": "nosniff" } });
 }
 
+const kstDay = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+async function track(req, env) {
+  let b = await body(req); if (!Array.isArray(b)) b = [b];
+  const day = kstDay(); const st = [];
+  for (const x of b.slice(0, 20)) {
+    if (!x || !EVENTS.has(x.e)) continue;
+    const v = typeof x.v === "string" && /^[a-z0-9][a-z0-9-]{0,63}$/.test(x.v) ? x.v : "";
+    st.push(env.DB.prepare("INSERT INTO events (day, name, font, n) VALUES (?, ?, ?, 1) ON CONFLICT(day, name, font) DO UPDATE SET n = n + 1").bind(day, x.e, v));
+  }
+  if (st.length) await env.DB.batch(st);
+  return new Response(null, { status: 204 });
+}
+
 async function report(req, env) {
   const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
   const voter = await voterOf(req, env);
@@ -150,6 +167,12 @@ async function admin(url, req, env) {
     const where = f === "hidden" ? "WHERE hidden = 1" : f === "reported" ? "WHERE reports > 0" : "";
     const r = await env.DB.prepare(`SELECT id, font_id, name, body, created, hidden, reports FROM comments ${where} ORDER BY created DESC LIMIT 200`).all();
     return json({ items: r.results });
+  }
+  if (req.method === "GET" && url.pathname === "/api/admin/metrics") {
+    const days = Math.min(90, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
+    const from = new Date(Date.now() + 9 * 3600e3 - (days - 1) * 86400e3).toISOString().slice(0, 10);
+    const r = await env.DB.prepare("SELECT day, name, font, n FROM events WHERE day >= ? ORDER BY day").bind(from).all();
+    return json({ from, rows: r.results });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/summary") {
     const [s, r, h] = await env.DB.batch([
@@ -201,6 +224,7 @@ export default {
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, env);
       if (req.method === "POST" && p === "/api/comments") return await addComment(req, env);
       if (req.method === "POST" && p === "/api/report") return await report(req, env);
+      if (req.method === "POST" && p === "/api/e") return await track(req, env);
       if (req.method === "GET" && p === "/api/shots") return await listShots(url, env);
       if (req.method === "POST" && p === "/api/shots") return await addShot(req, env);
       const im = /^\/api\/shot\/(\d+)$/.exec(p);

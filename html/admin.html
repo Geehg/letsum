@@ -8,7 +8,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="관리자 — LETSUM(렛섬)"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새에서 비교하고, 글자 지원과 라이선스까지 한 화면에서 확인합니다.">
 <link rel="stylesheet" href="css/style.css?v=12">
-<style>.adm-shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}.adm-shot{border:1px solid var(--rule2);padding:10px;display:flex;flex-direction:column;gap:6px}.adm-shot img{width:100%;max-height:260px;object-fit:contain;background:#eee;cursor:zoom-in}.adm-shot .acts{display:flex;gap:6px;flex-wrap:wrap}</style>
+<style>.adm-shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}.adm-shot{border:1px solid var(--rule2);padding:10px;display:flex;flex-direction:column;gap:6px}.adm-shot img{width:100%;max-height:260px;object-fit:contain;background:#eee;cursor:zoom-in}.adm-shot .acts{display:flex;gap:6px;flex-wrap:wrap}.mt-kpi{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:8px 0 14px}.mt-kpi div{border:1px solid var(--rule2);padding:10px 12px}.mt-kpi b{display:block;font-size:22px}.mt-kpi span{font-size:12px;color:var(--ink3)}.mt-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.mt-bar{display:flex;align-items:flex-end;gap:2px;height:70px;margin:6px 0 16px}.mt-bar i{flex:1;background:var(--ink);min-height:1px}
+</style>
 </head>
 <body>
 <header>
@@ -53,6 +54,11 @@
       <thead><tr><th>폰트명</th><th>분류</th><th>제작자</th><th>라이선스</th><th>검수 상태</th><th>최종 검수일</th><th></th></tr></thead>
       <tbody id="fontRows"></tbody>
     </table>
+
+    <h2>이용 지표 <span class="note">— 날짜별 합계(개인 식별 정보 없음)</span></h2>
+    <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap"><select id="mtDays" aria-label="기간"><option value="7">최근 7일</option><option value="28" selected>최근 28일</option><option value="90">최근 90일</option></select><button class="btn sm" id="mtLoad" type="button">불러오기</button></div>
+    <p class="note" id="mtMsg">아래 '댓글 관리'의 관리자 키를 넣은 뒤 불러오세요.</p>
+    <div id="mtOut"></div>
 
     <h2>사용 사례 사진 검토 <span class="note" id="shotBadge"></span></h2>
     <p class="note">방문자가 올린 사진은 여기서 승인해야 사이트에 보입니다. 거절하면 바로 삭제됩니다. (아래 '댓글 관리'의 관리자 키를 함께 씁니다)</p>
@@ -103,6 +109,6 @@
 </footer>
 
 <script src="js/data.js?v=6"></script>
-<script src="js/admin.js?v=7"></script>
+<script src="js/admin.js?v=8"></script>
 </body>
 </html>

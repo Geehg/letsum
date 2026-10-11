@@ -226,8 +226,10 @@
     setText(p.t); e.target.value = "";
   });
   $("#previewText").addEventListener("input", (e) => setText(e.target.value, true));
+  let evTyped = false;
   function setText(t, fromInput) {
     state.text = t; if (!fromInput) $("#previewText").value = t;
+    if (fromInput && !evTyped && t.trim().length >= 2) { evTyped = true; ev("text_custom"); } // 직접 문장을 입력한 방문 수(내용은 보내지 않음)
     renderPreviews(); scheduleCoverage();
   }
   $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
@@ -240,6 +242,7 @@
   });
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
   function setView(v) {
+    if (v !== state.view) ev("view", v);
     state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
     $("#ctxChips").style.display = v === "ctx" ? "flex" : "none";
     document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
@@ -279,7 +282,7 @@
   function syncLic() { $$("[data-lic]").forEach((b) => { const p = LIC_FILTERS.find((x) => x.key === b.dataset.lic); b.classList.toggle("on", p.keys.every((k) => state.lic.has(k))); }); }
   $("#licClear").addEventListener("click", () => { state.lic.clear(); syncLic(); render(); });
   $$("[data-cov]").forEach((b) => b.addEventListener("click", () => { toggleSet(state.cov, b.dataset.cov); b.classList.toggle("on"); render(); }));
-  $("#coverOnly").addEventListener("change", (e) => { state.coverOnly = e.target.checked; render(); });
+  $("#coverOnly").addEventListener("change", (e) => { state.coverOnly = e.target.checked; if (e.target.checked) ev("cover_only"); render(); });
   $("#favOnly").addEventListener("change", (e) => { state.favOnly = e.target.checked; render(); });
   function toggleSet(set, k) { set.has(k) ? set.delete(k) : set.add(k); }
 
@@ -408,6 +411,24 @@
     </article>`;
   }
 
+  // ---------- 이용 지표: 어떤 기능을 하루에 몇 번 썼는지 '합계'만 보낸다 ----------
+  // IP·방문자 식별값·검색어·입력 문장은 보내지 않는다. 브라우저 '추적 안 함'·GPC가 켜져 있으면 보내지 않는다.
+  const evQ = []; let evT = null;
+  const noTrack = navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.globalPrivacyControl === true;
+  function flushEv() {
+    if (!evQ.length) return; const body = JSON.stringify(evQ.splice(0, 20));
+    try { if (!navigator.sendBeacon || !navigator.sendBeacon("/api/e", new Blob([body], { type: "application/json" }))) fetch("/api/e", { method: "POST", headers: { "content-type": "application/json" }, body, keepalive: true }).catch(() => {}); } catch (e) {}
+  }
+  function ev(e, v) {
+    if (noTrack || !/^https:\/\/letsum\.app$/.test(location.origin)) return;
+    evQ.push(v ? { e, v: String(v) } : { e }); clearTimeout(evT); evT = setTimeout(flushEv, 3000);
+    if (evQ.length >= 20) flushEv();
+  }
+  addEventListener("pagehide", flushEv); document.addEventListener("visibilitychange", () => { if (document.hidden) flushEv(); });
+  try { if (!sessionStorage.getItem("ls_v")) { sessionStorage.setItem("ls_v", "1"); ev("visit"); } } catch (e) {}
+  // 다운로드·배포처 링크: data-dl="zip|page" data-fid="<id>"
+  document.addEventListener("click", (e) => { const a = e.target.closest("a[data-dl]"); if (a) ev(a.dataset.dl === "zip" ? "dl_zip" : "dl_page", a.dataset.fid); }, true);
+
   // ---------- 좋아요 수·댓글 (Cloudflare Worker /api — 서버가 없거나 실패하면 조용히 숨김) ----------
   const social = {}; let apiOk = true;
   async function api(path, opt) {
@@ -453,6 +474,7 @@
     const on = !favs.has(id); toggleSet(favs, id); save("fm_favs", [...favs]);
     const s = social[id] || (social[id] = { likes: 0, comments: 0, liked: false });
     s.likes = Math.max(0, s.likes + (on ? 1 : -1)); s.liked = on;
+    if (on) ev("like", id);
     const j = await api("like", { id, on });
     if (j && !j.error) s.likes = j.likes;
     return on;
@@ -516,9 +538,9 @@
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
         <span class="ig-right">
-          ${dl.ok ? `<a class="ig-pill dl" href="${esc(dl.zip)}" target="_blank" rel="noopener" title="${esc(dl.srcName)}에서 파일 바로 받기">${IC.down}다운로드</a>` : ""}
+          ${dl.ok ? `<a class="ig-pill dl" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener" title="${esc(dl.srcName)}에서 파일 바로 받기">${IC.down}다운로드</a>` : ""}
           <button class="ig-pill" data-lic-open="${f.id}" title="${esc(licInfo(f).full)} — 사용 범위 보기">라이선스</button>
-          <a class="ig-pill" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
+          <a class="ig-pill" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
         </span>
       </div>
       <div class="ig-body">
@@ -554,7 +576,7 @@
     host.querySelectorAll(".ig-media").forEach(bindCarousel);
     host.querySelectorAll("[data-share]").forEach((b) => b.addEventListener("click", async () => {
       const f = FONTS.find((x) => x.id === b.dataset.share);
-      const url = `${location.origin}/font/${f.id}.html`;
+      const url = `${location.origin}/font/${f.id}.html`; ev("share", f.id);
       try { if (navigator.share) { await navigator.share({ title: `${f.name} — LETSUM`, text: f.desc, url }); return; } } catch (e) { if (e && e.name === "AbortError") return; }
       try { await navigator.clipboard.writeText(url); b.classList.add("done"); b.title = "링크 복사됨"; setTimeout(() => b.classList.remove("done"), 1500); } catch (e) { prompt("링크를 복사하세요", url); }
     }));
@@ -573,7 +595,7 @@
         btn.disabled = true;
         const r = await api("comments", { id, name: nick(), body, website: form.querySelector(".hp").value });
         if (!r || r.error) { inp.value = ""; inp.placeholder = (r && r.error) || "잠시 후 다시 시도해 주세요"; setTimeout(() => (inp.placeholder = "댓글 달기…"), 3000); inp.value = body; btn.disabled = false; return; }
-        inp.value = "";
+        inp.value = ""; ev("comment", id);
         const s = social[id] || (social[id] = { likes: 0, comments: 0, liked: false, shots: [], recent: [] });
         s.comments++; if (r.item) s.recent = [{ name: r.item.name, body: r.item.body.slice(0, 120) }, ...(s.recent || [])].slice(0, 2);
         paintSocial();
@@ -658,7 +680,7 @@
   // ---------- 비교 트레이 ----------
   function toggleCmp(id) {
     if (cmp.has(id)) cmp.delete(id);
-    else { if (cmp.size >= 4) { alert("비교는 최대 4종까지 담을 수 있습니다."); return; } cmp.add(id); }
+    else { if (cmp.size >= 4) { alert("비교는 최대 4종까지 담을 수 있습니다."); return; } cmp.add(id); ev("cmp_add", id); }
     renderTray(); render();
   }
   function renderTray() {
@@ -672,6 +694,7 @@
   const overlay = $("#overlay"), modal = $("#modalBox");
   function openCompare() {
     const list = [...cmp].map((id) => FONTS.find((x) => x.id === id)); if (!list.length) return;
+    ev("cmp_open");
     list.forEach(ensureFace);
     const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: state.inv };
     modal.className = "modal wide";
@@ -721,7 +744,7 @@
   // 사용 권리를 보증하는 문서가 아니라 '언제 무엇을 확인했는지'의 메모다.
   const stText = (f) => f.status === "verified" ? "원문 대조 완료" : "확인 중(원문 대조 전)";
   function saveProof(f, dl) {
-    const now = new Date(); const L = licInfo(f);
+    const now = new Date(); const L = licInfo(f); ev("record", f.id);
     const lines = [
       "LETSUM 사용 조건 확인 기록", "=".repeat(28), "",
       `폰트: ${f.name} (${f.en})`, `저작권자: ${f.holder} · 제작: ${f.designer}`,
@@ -754,8 +777,10 @@
   }
   // ---------- 상세 모달 ----------
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
+  let evDetail = "";
   function openDetail(id, focus) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
+    if (evDetail !== id || !overlay.classList.contains("open")) { ev("detail", id); evDetail = id; }
     ensureFace(f, true);
     if (f.webfont && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
     const gfam = f.en.replace(/ /g, "+");
@@ -819,8 +844,8 @@
 
       <div class="m-sec"><h3>받기</h3>
         <div class="dlrow">
-          ${dl.ok ? `<a class="btn" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
-          <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
+          ${dl.ok ? `<a class="btn" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
+          <a class="btn ghost" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
           <button class="btn ghost" id="proofBtn" title="이 폰트의 사용 범위·라이선스 원문 링크·출처·LETSUM 확인일을 텍스트 파일로 남깁니다(사용 권리 보증 아님)">📄 사용 조건 확인 기록 저장</button>
         </div>
@@ -930,7 +955,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       const r = await api("shots", { id: f.id, name: fd.get("name"), caption: fd.get("caption"), image, agree: !!fd.get("agree"), website: fd.get("website") });
       btn.disabled = false;
       if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
-      form.reset(); msg.style.color = "var(--ink2)"; msg.textContent = "접수됐습니다. 운영자 검토 후 공개됩니다. 감사합니다!";
+      ev("shot_up", f.id); form.reset(); msg.style.color = "var(--ink2)"; msg.textContent = "접수됐습니다. 운영자 검토 후 공개됩니다. 감사합니다!";
     });
   }
   async function bindComments(f, focus) {
@@ -955,6 +980,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       const r = await api("comments", { id: f.id, name: fd.get("name"), body: fd.get("body"), website: fd.get("website") });
       btn.disabled = false;
       if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
+      ev("comment", f.id);
       if (r.item) { items = [r.item, ...items]; draw(items); form.reset(); const s = social[f.id]; if (s) { s.comments++; paintSocial(); } }
     });
   }
@@ -999,6 +1025,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function wizResults() { return FONTS.map(wizScore).filter(Boolean).sort((a, b) => b.sc - a.sc); }
   function openWizard() {
+    ev("wiz_open");
     modal.className = "modal wide wiz";
     const chip = (grp, id, label, on, sub) => `<button class="fbtn${on ? " on" : ""}" data-w${grp}="${id}">${label}${sub ? `<small>${sub}</small>` : ""}</button>`;
     const draw = () => {
@@ -1030,7 +1057,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       if (ap) ap.addEventListener("click", () => {
         state.only = new Set(res.map((r) => r.f.id)); state.onlyLabel = `용도: ${u.label}`; state.rank = new Map(res.map((r, i) => [r.f.id, i]));
         state.recNote = `필수 조건(${u.lic.map((k) => LICENSE_CATS.find((c) => c.key === k).label).join("·")} 사용 가능${wiz.need.size ? ", " + [...wiz.need].map((n) => WIZARD_NEEDS.find((x) => x.id === n).label).join(", ") : ""})을 충족한 ${res.length}종을 '${u.label}'${wiz.mood.size ? "·" + [...wiz.mood].join("·") : ""}에 가까운 순으로 보여드려요. 분위기는 거르는 조건이 아니라 순위에만 반영됩니다.`;
-        setSort("rec");
+        setSort("rec"); ev("wiz_apply", u.id);
         state.ctx = u.ctx; setText(u.text);
         $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x.dataset.ctx === u.ctx));
         $$("[data-alt]").forEach((x) => x.classList.remove("on"));
@@ -1087,7 +1114,7 @@ import "@fontsource/${f.id}/400.css";</pre>
           <p class="sp-type" style="${f.intro ? "" : `font-family:${f.family}`}" data-line="${esc(f.intro ? f.desc : line)}"></p>
           <div class="sp-cta">
             <button class="sp-btn" data-open="${f.id}">자세히 보기</button>
-            ${dl.ok ? `<a class="sp-btn ac" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 다운로드</a>` : `<a class="sp-btn ac" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
+            ${dl.ok ? `<a class="sp-btn ac" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 다운로드</a>` : `<a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
             ${f.intro ? '<span class="sp-chip">소개 전용 · 미리보기 미제공</span>' : ""}
           </div>
         </div>
