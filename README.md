@@ -1,5 +1,7 @@
 # letsum
 
+> 작업을 이어받는 AI·사람은 먼저 [AGENTS.md](AGENTS.md)와 [docs/HANDOFF.md](docs/HANDOFF.md)를 읽으세요. 작업은 `tools/run.sh start <이름>`으로 시작합니다.
+
 LETSUM(렛섬) — 상업용 무료 한글 폰트. 상업용 무료 한글 폰트를 **고르고, 검증하고, 바로 적용**하는 흐름을 한 화면에 둡니다.
 
 - 사이트: https://letsum.app (NAS 컨테이너 포트 8516, nginx 정적 서빙)

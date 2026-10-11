@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# 커밋 전 자동 검증 — 활성화: git config core.hooksPath tools/hooks
+# data.js·도구·상태 파일이 바뀐 커밋만 검사한다. 오류가 있으면 커밋을 막는다.
+if git diff --cached --name-only | grep -qE '^(html/js/data\.js|tools/)'; then
+  python3 -I tools/validate.py || { echo "✗ 검증 실패 — 위 오류를 고친 뒤 다시 커밋하세요."; exit 1; }
+fi
