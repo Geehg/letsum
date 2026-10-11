@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>폰트 등록 신청 — LETSUM(렛섬)</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="index.html">LETS<em>UM</em><small>시안</small></a>
+    <nav class="main">
+      <a href="index.html">폰트 탐색</a>
+      <a href="guide.html">라이선스 가이드</a>
+      <a href="submit.html" class="on">폰트 등록 신청</a>
+      <a href="admin.html">관리자</a>
+    </nav>
+    <div class="sp"></div>
+  </div>
+</header>
+
+<main class="wrap page">
+  <h1>폰트 등록 신청</h1>
+  <p class="lead">폰트 제작자·배포사라면 직접 등록을 신청할 수 있습니다. 접수된 폰트는 라이선스 원문 검수를 거쳐 공개됩니다.</p>
+
+  <form class="demo" id="submitForm">
+    <label>폰트 이름 <input required name="name" placeholder="예: 고요체"></label>
+    <label>제작자 / 저작권자 <input required name="designer" placeholder="예: 홍길동"></label>
+    <label>공식 배포 페이지 주소 <input required name="dist" type="url" placeholder="https://"></label>
+    <label>라이선스 원문 주소 <input required name="license" type="url" placeholder="https://"></label>
+    <label>라이선스 종류
+      <select name="type">
+        <option>OFL (Open Font License)</option>
+        <option>자체 라이선스 (상업용 무료)</option>
+        <option>기타 — 검수 시 확인</option>
+      </select>
+    </label>
+    <label>연락 이메일 <input required name="email" type="email" placeholder="you@example.com"></label>
+    <label>메모 <textarea name="memo" rows="3" placeholder="굵기 구성, 특징 등을 알려주세요"></textarea></label>
+    <button class="btn blue" type="submit">신청하기</button>
+    <p class="note" id="formMsg">※ 시안 안내: 이 폼은 데모로, 입력 내용은 이 브라우저에만 저장되고 서버로 전송되지 않습니다. 정식 서비스에서는 관리자 검수 큐로 접수됩니다.</p>
+  </form>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fine">LETSUM(렛섬) 시안 — 모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("submitForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(this).entries());
+  const list = JSON.parse(localStorage.getItem("fm_submits") || "[]");
+  list.push({ ...data, at: new Date().toISOString(), status: "검수 대기" });
+  localStorage.setItem("fm_submits", JSON.stringify(list));
+  document.getElementById("formMsg").textContent = "✅ 신청이 접수되었습니다(데모: 이 브라우저에 저장). 관리자 화면에서 신청 내역을 확인할 수 있습니다.";
+  this.reset();
+});
+</script>
+</body>
+</html>
