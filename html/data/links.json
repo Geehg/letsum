@@ -780,9 +780,9 @@
   "checked": "2026-10-11"
  },
  "k-seoulnamsan": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "url": "https://www.seoul.go.kr/seoul/font.do",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-mapopeacefull": {
@@ -810,9 +810,9 @@
   "checked": "2026-10-11"
  },
  "k-seoulhangang": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "url": "https://www.seoul.go.kr/seoul/font.do",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-mapodacapo": {
@@ -882,9 +882,9 @@
   "checked": "2026-10-11"
  },
  "k-seoulnamsanc": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent.html",
-  "ok": true,
-  "code": 206,
+  "url": "https://www.seoul.go.kr/seoul/font.do",
+  "ok": false,
+  "code": "<urlopen error _ssl.c:983: The handshake",
   "checked": "2026-10-11"
  },
  "k-sangju-dajungdagam": {
@@ -894,9 +894,9 @@
   "checked": "2026-10-11"
  },
  "k-seoulhangangc": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "url": "https://www.seoul.go.kr/seoul/font.do",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-munhwajaedolbom-bold": {
@@ -1074,9 +1074,9 @@
   "checked": "2026-10-11"
  },
  "k-seoulalrim": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "url": "https://www.seoul.go.kr/seoul/font.do",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-62570": {
@@ -1226,7 +1226,7 @@
  "k-busan-dandi-gothic": {
   "url": "https://www.busan.go.kr/bhbusan/font",
   "ok": false,
-  "code": "<urlopen error [Errno 54] Connection res",
+  "code": "<urlopen error [Errno 104] Connection re",
   "checked": "2026-10-11"
  },
  "k-busan-dandi-myeongjo": {
@@ -1243,6 +1243,12 @@
  },
  "k-busan-goeun": {
   "url": "https://blog.naver.com/with_pen/224432897441",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "k-hs-hyosung": {
+  "url": "https://www.hshyosung.com/kr/about/ci",
   "ok": true,
   "code": 200,
   "checked": "2026-10-11"
