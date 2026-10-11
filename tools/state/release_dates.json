@@ -194,6 +194,11 @@
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023"
  },
+ "k-yanolja-yache": {
+  "date": "2015-10-08",
+  "src": "야놀자 한글날 무료 배포 발표(언론 보도)",
+  "url": "http://www.asiae.co.kr/news/view.htm?idxno=2015100809272336589"
+ },
  "k-tlabshinyb": {
   "date": "2009",
   "src": "산돌구름 제품 정보(제작 연도)",
@@ -223,6 +228,11 @@
   "date": "2020-01-31",
   "src": "중고나라 무료 배포 발표(언론 보도)",
   "url": "https://www.venturesquare.net/801427/"
+ },
+ "k-unpeople-gothic-ks-otf": {
+  "date": "2018",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/16226/UNPEOPLE-Gothic-KS"
  },
  "k-kcc-kimhoon": {
   "date": "2017-12-19",
@@ -269,6 +279,11 @@
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366505&menuNo=200023"
  },
+ "k-jaemin3-0": {
+  "date": "2022-05",
+  "src": "한글재민체3.0 발표·무료 배포(언론 보도)",
+  "url": "https://mobile.newsis.com/view.html?ar_id=NISX20220523_0001881477"
+ },
  "k-hakgyoansim-mulgyeol": {
   "date": "2024-01-10",
   "src": "공유마당 등록일(제작 기관 배포)",
@@ -278,6 +293,11 @@
   "date": "2024-01-10",
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366492&menuNo=200023"
+ },
+ "k-jaemin2-0": {
+  "date": "2021",
+  "src": "한글재민체 연혁(윤디자인그룹 발표)",
+  "url": "https://yoondesign.com/news/?bmode=view&idx=154776224"
  },
  "k-ownglyph-2022-uwy-yoon-yeong": {
   "date": "2022-12-23",
@@ -884,6 +904,11 @@
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288429&menuNo=200023"
  },
+ "k-gimpobatang": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
  "k-kccchassam": {
   "date": "2021-02-24",
   "src": "공유마당 등록일(제작 기관 배포)",
@@ -895,19 +920,24 @@
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285735&menuNo=200023"
  },
  "k-knps-bandali": {
-  "date": "2021-11-03",
-  "src": "공유마당 등록일(제작 기관 배포)",
-  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288477&menuNo=200023"
+  "date": "2021-10-08",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
  },
  "k-knps-kkomi": {
-  "date": "2021-11-03",
-  "src": "공유마당 등록일(제작 기관 배포)",
-  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288476&menuNo=200023"
+  "date": "2021-10-08",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
  },
  "k-makgeolli": {
   "date": "2021-10-26",
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288372&menuNo=200023"
+ },
+ "k-mapodpp": {
+  "date": "2019",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/15849/MapoDPP"
  },
  "k-sokcho-bada-batang": {
   "date": "2024-02-15",
@@ -924,6 +954,16 @@
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371557&menuNo=200023"
  },
+ "k-gimpotitle": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-gyeonggititle": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
  "k-yeojuceramic-dingbat": {
   "date": "2024-03-26",
   "src": "공유마당 등록일(제작 기관 배포)",
@@ -938,6 +978,11 @@
   "date": "2024-04-08",
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371588&menuNo=200023"
+ },
+ "k-gyeonggibatangotf": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
  },
  "k-gimpogothic": {
   "date": "2021-08-19",
@@ -963,5 +1008,35 @@
   "date": "2026-08-31",
   "src": "원주시 배포 발표(언론 보도)",
   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBoaEx0NjU2LXFfMVIzUllLSzhJVHpWemI2bE9SZmtRTWFGWXBLNGhxTTJJWWNVaWw3ZG00ZlJpUGtaMjROcmtNOWZyVk4ySzBHQlZHeG9BcTgweXJ2MDdGcExZaGRXRVRwNzN4UFR3?oc=5"
+ },
+ "k-bithumb-gothic-original": {
+  "date": "2026-10-08",
+  "src": "빗썸 무료 공개(언론 보도)",
+  "url": "https://www.fnnews.com/news/202610081523415349"
+ },
+ "k-bithumb-gothic-basic": {
+  "date": "2026-10-08",
+  "src": "빗썸 무료 공개(언론 보도)",
+  "url": "https://www.fnnews.com/news/202610081523415349"
+ },
+ "k-busan-dandi-gothic": {
+  "date": "2026-10-11",
+  "src": "부산시 무료 배포 개시(언론 보도)",
+  "url": "https://www.fnnews.com/news/202610111922461473"
+ },
+ "k-busan-dandi-myeongjo": {
+  "date": "2026-10-11",
+  "src": "부산시 무료 배포 개시(언론 보도)",
+  "url": "https://www.fnnews.com/news/202610111922461473"
+ },
+ "k-busan-dandi-handwriting": {
+  "date": "2026-10-11",
+  "src": "부산시 무료 배포 개시(언론 보도)",
+  "url": "https://www.fnnews.com/news/202610111922461473"
+ },
+ "k-busan-goeun": {
+  "date": "2026-10-06",
+  "src": "부산시교육청 공식 블로그 배포 게시",
+  "url": "https://blog.naver.com/with_pen/224432897441"
  }
 }

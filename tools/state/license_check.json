@@ -715,7 +715,7 @@
   "id": "k-gimhaegaya",
   "name": "김해가야체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -739,7 +739,7 @@
   "id": "k-seoulnamsan",
   "name": "서울남산체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -755,7 +755,7 @@
   "id": "k-wandohope",
   "name": "완도희망체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -779,7 +779,7 @@
   "id": "k-seoulhangang",
   "name": "서울한강체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -851,7 +851,7 @@
   "id": "k-wandocleansea",
   "name": "완도청정바다체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -875,7 +875,7 @@
   "id": "k-seoulnamsanc",
   "name": "서울남산장체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -891,7 +891,7 @@
   "id": "k-seoulhangangc",
   "name": "서울한강장체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -899,7 +899,7 @@
   "id": "k-munhwajaedolbom-bold",
   "name": "문화재돌봄체",
   "expected": "공공누리 제1유형",
-  "license": null,
+  "license": "공공누리 제1유형",
   "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
@@ -1132,7 +1132,7 @@
   "name": "서울알림체",
   "expected": "공공누리 제1유형",
   "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
+  "evidence": "안심글꼴 목록 종류: KOGL",
   "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
  },
  {
@@ -1147,25 +1147,25 @@
   "id": "k-gimpobatang",
   "name": "김포평화바탕",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 이용조건: 공공누리 1유형",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288422&menuNo=200023"
  },
  {
   "id": "k-kccchassam",
   "name": "KCC차쌤체",
-  "expected": "공공누리 제1유형",
+  "expected": "OFL",
   "license": "OFL",
-  "evidence": "안심글꼴 목록 종류: OFL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "evidence": "공유마당 이용조건: OFL",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285736&menuNo=200023"
  },
  {
   "id": "k-kccimkwontaek",
   "name": "KCC임권택체",
-  "expected": "공공누리 제1유형",
+  "expected": "OFL",
   "license": "OFL",
-  "evidence": "안심글꼴 목록 종류: OFL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "evidence": "공유마당 이용조건: OFL",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285735&menuNo=200023"
  },
  {
   "id": "k-knps-bandali",
@@ -1187,17 +1187,17 @@
   "id": "k-makgeolli",
   "name": "포천막걸리체",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 이용조건: 공공누리 1유형",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288372&menuNo=200023"
  },
  {
   "id": "k-mapodpp",
   "name": "Mapo 당인리발전소",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "직접 확인: 한국문화정보원 '추천 공공저작물 글꼴' 공공데이터: Mapo 당인리발전소 저작물이용유형코드 1(공공누리 제1유형)",
+  "page": "https://www.data.go.kr/data/15088640/fileData.do"
  },
  {
   "id": "k-sokcho-bada-batang",
@@ -1227,17 +1227,17 @@
   "id": "k-gimpotitle",
   "name": "김포평화제목",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 이용조건: 공공누리 1유형",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288423&menuNo=200023"
  },
  {
   "id": "k-gyeonggititle",
   "name": "경기천년제목",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 이용조건: 공공누리 1유형",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288412&menuNo=200023"
  },
  {
   "id": "k-yeojuceramic-dingbat",
@@ -1267,9 +1267,9 @@
   "id": "k-gyeonggibatangotf",
   "name": "경기천년바탕",
   "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: 없음",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 이용조건: 공공누리 1유형",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288410&menuNo=200023"
  },
  {
   "id": "k-gimpogothic",
@@ -1310,5 +1310,53 @@
   "license": "OFL",
   "evidence": "직접 확인: 원주시 '원주체 가이드라인' PDF 28쪽 라이선스 정책: SIL OFL 1.1, 상업적 이용·임베딩·CI/BI 허용, 단독 판매 금지",
   "page": "https://www.wonju.go.kr/www/contents.do?key=6554"
+ },
+ {
+  "id": "k-bithumb-gothic-original",
+  "name": "빗썸고딕 Original",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가",
+  "page": "https://www.bithumbcorp.com/ko/promotion/font.php"
+ },
+ {
+  "id": "k-bithumb-gothic-basic",
+  "name": "빗썸고딕 Basic",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가",
+  "page": "https://www.bithumbcorp.com/ko/promotion/font.php"
+ },
+ {
+  "id": "k-busan-dandi-gothic",
+  "name": "부산단디고딕",
+  "expected": "부산시 전용서체 이용조건",
+  "license": "부산시 전용서체 이용조건",
+  "evidence": "직접 확인: 부산시 도시브랜드 누리집 '⑥ 부산시 전용서체의 저작권': 영상·인쇄·출판·웹·모바일 등에 개인·단체 누구나 특별한 허가 절차 없이 무료로 자유롭게 사용 / 유료 판매, 수정·편집·복사·배포의 대가로 비용 청구·수령 금지",
+  "page": "https://www.busan.go.kr/bhbusan/font"
+ },
+ {
+  "id": "k-busan-dandi-myeongjo",
+  "name": "부산단디명조",
+  "expected": "부산시 전용서체 이용조건",
+  "license": "부산시 전용서체 이용조건",
+  "evidence": "직접 확인: 부산시 도시브랜드 누리집 '⑥ 부산시 전용서체의 저작권': 영상·인쇄·출판·웹·모바일 등에 개인·단체 누구나 특별한 허가 절차 없이 무료로 자유롭게 사용 / 유료 판매, 수정·편집·복사·배포의 대가로 비용 청구·수령 금지",
+  "page": "https://www.busan.go.kr/bhbusan/font"
+ },
+ {
+  "id": "k-busan-dandi-handwriting",
+  "name": "부산단디손글씨",
+  "expected": "부산시 전용서체 이용조건",
+  "license": "부산시 전용서체 이용조건",
+  "evidence": "직접 확인: 부산시 도시브랜드 누리집 '⑥ 부산시 전용서체의 저작권': 영상·인쇄·출판·웹·모바일 등에 개인·단체 누구나 특별한 허가 절차 없이 무료로 자유롭게 사용 / 유료 판매, 수정·편집·복사·배포의 대가로 비용 청구·수령 금지",
+  "page": "https://www.busan.go.kr/bhbusan/font"
+ },
+ {
+  "id": "k-busan-goeun",
+  "name": "부산교육다함께고은체",
+  "expected": "부산시교육청 무료 글꼴 이용조건",
+  "license": "부산시교육청 무료 글꼴 이용조건",
+  "evidence": "직접 확인: 부산교육 공식블로그(2026-10-06): 누구나 무료로 다운로드해 자유롭게 사용(출처 표기 권장), 영상·인쇄·웹·모바일 CI·BI·판매용 저작물 등, 특별한 허가 절차 없음 / 유료 양도·판매 금지",
+  "page": "https://blog.naver.com/with_pen/224432897441"
  }
 ]

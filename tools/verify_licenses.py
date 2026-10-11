@@ -13,7 +13,9 @@ UA = {"User-Agent": "Mozilla/5.0 (letsum-verify)"}
 TODAY = date.today().isoformat()
 
 def n(s): return re.sub(r"[^0-9a-z가-힣]", "", unicodedata.normalize("NFC", s or "").lower())
-def clean(s): return re.sub(r"\s+(R|L|B|M|EB|Black|Outline|Regular|Light|Bold|Medium)$", "", (s or "").strip())
+def clean(s):
+    s = re.sub(r"\s+(R|L|B|M|EB|BL|Black|Outline|Regular|Light|Bold|Medium)$", "", (s or "").strip())
+    return re.sub(r"(체)(R|L|B|M|EB|BL)$", r"\1", s)  # 서울남산체L → 서울남산체
 
 def gongu_license(url):
     html = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read().decode("utf-8", "ignore")
@@ -36,9 +38,11 @@ kcc_type = {}
 for r in csv.DictReader(open(os.path.join(HERE, "sources", "kcc_free_fonts_20250805.csv"), encoding="utf-8")):
     kcc_type[n(clean(r["저작물명"]))] = LIC_MAP.get(r["라이선스유형"], r["라이선스유형"])
 src = open(DATA, encoding="utf-8").read()
-rows = []
-for m in re.finditer(r'\{ id: "(k-[^"]+)", name: "([^"]*)".*?dl: \{ page: "([^"]+)".*?license: "([^"]+)"', src, re.S):
-    rows.append((m.group(1), m.group(2), m.group(3), m.group(4)))
+# data.js를 node로 실제 실행해 항목을 읽는다(정규식이 다음 항목까지 넘어가 엉뚱한 값을 읽는 일을 막음)
+import subprocess
+_js = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';this.F=FONTS',c);process.stdout.write(JSON.stringify(c.F))"
+_F = json.loads(subprocess.run(["node", "-e", _js, DATA], capture_output=True, text=True, check=True).stdout)
+rows = [(f["id"], f["name"], (f.get("dl") or {}).get("page", ""), f["license"]) for f in _F if f.get("webfont")]
 MANUAL = {k: v for k, v in json.load(open(os.path.join(HERE, "state", "license_manual.json"), encoding="utf-8")).items() if not k.startswith("_")} \
     if os.path.exists(os.path.join(HERE, "state", "license_manual.json")) else {}
 ok, bad, unk, report = [], [], [], []
@@ -61,8 +65,10 @@ for fid, name, page, want in rows:
     (ok if lic == want else bad if lic else unk).append(fid)
     report.append({"id": fid, "name": name, "expected": want, "license": lic, "evidence": why, "page": page})
 for fid in ok:
-    pat = re.compile(r'(\{ id: "' + re.escape(fid) + r'".*?)verified: "[^"]*", status: "[^"]*"', re.S)
-    src = pat.sub(lambda mm: mm.group(1) + f'verified: "{TODAY}", status: "verified"', src, count=1)
+    m = re.search(r'\{ id: "' + re.escape(fid) + r'".*?desc: "[^"]*" \},', src, re.S)  # 이 항목의 블록만
+    if not m: continue
+    blk = re.sub(r'verified: "[^"]*", status: "[^"]*"', f'verified: "{TODAY}", status: "verified"', m.group(0), count=1)
+    src = src[:m.start()] + blk + src[m.end():]
 open(DATA, "w", encoding="utf-8").write(src)
 json.dump(report, open(os.path.join(HERE, "state", "license_check.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"일치 {len(ok)} · 불일치 {len(bad)} · 판정 불가 {len(unk)}")

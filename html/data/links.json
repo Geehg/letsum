@@ -1086,21 +1086,21 @@
   "checked": "2026-10-11"
  },
  "k-gimpobatang": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288422&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-kccchassam": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285736&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-kccimkwontaek": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285735&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-knps-bandali": {
@@ -1116,9 +1116,9 @@
   "checked": "2026-10-11"
  },
  "k-makgeolli": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288372&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-mapodpp": {
@@ -1146,15 +1146,15 @@
   "checked": "2026-10-11"
  },
  "k-gimpotitle": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288423&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-gyeonggititle": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288412&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-yeojuceramic-dingbat": {
@@ -1176,9 +1176,9 @@
   "checked": "2026-10-11"
  },
  "k-gyeonggibatangotf": {
-  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288410&menuNo=200023",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-10-11"
  },
  "k-gimpogothic": {
@@ -1201,6 +1201,48 @@
  },
  "k-changwondangamasac": {
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288462&menuNo=200023",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "k-wonju": {
+  "url": "https://www.wonju.go.kr/www/contents.do?key=6554",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "k-bithumb-gothic-original": {
+  "url": "https://www.bithumbcorp.com/bithumb_gothic_ttf.zip",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-10-11"
+ },
+ "k-bithumb-gothic-basic": {
+  "url": "https://www.bithumbcorp.com/bithumb_gothic_ttf.zip",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-10-11"
+ },
+ "k-busan-dandi-gothic": {
+  "url": "https://www.busan.go.kr/bhbusan/font",
+  "ok": false,
+  "code": "<urlopen error [Errno 54] Connection res",
+  "checked": "2026-10-11"
+ },
+ "k-busan-dandi-myeongjo": {
+  "url": "https://www.busan.go.kr/bhbusan/font",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "k-busan-dandi-handwriting": {
+  "url": "https://www.busan.go.kr/bhbusan/font",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "k-busan-goeun": {
+  "url": "https://blog.naver.com/with_pen/224432897441",
   "ok": true,
   "code": 200,
   "checked": "2026-10-11"

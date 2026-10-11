@@ -31,8 +31,9 @@ fonts = [(m.group(1), m.group(2), m.group(3)) for m in re.finditer(r'\{ id: "([^
 first = {}
 def take(name, date, url=None, author="", label=""):
     if not date: return
-    k = n(clean(name)); cur = first.get(k)
-    if not cur or date < cur[0]: first[k] = (date, url, author or (cur[2] if cur else ""), label)
+    for k in {n(clean(name)), n(clean(name)).removesuffix("체")}:  # '경기천년바탕체' ↔ '경기천년바탕'
+        cur = first.get(k)
+        if not cur or date < cur[0]: first[k] = (date, url, author or (cur[2] if cur else ""), label)
 for r in csv.DictReader(open(os.path.join(HERE, "sources", "kcc_free_fonts_20250805.csv"), encoding="utf-8")):
     take(r["저작물명"], r["등록일자"], f"https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn={r['저작물일련번호']}&menuNo=200023", r["저작자"], "공유마당 등록일(제작 기관 배포)")
 for r in csv.DictReader(open(os.path.join(HERE, "sources", "kcisa_font_table_20260827.csv"), encoding="utf-8")):
@@ -51,7 +52,7 @@ for fid, name, en in fonts:
         if d and d >= GF_FIRST_SINCE:
             out[fid] = {"date": d, "src": "Google Fonts 최초 공개", "url": f"https://fonts.google.com/specimen/{en.replace(' ', '+')}"}
         continue
-    hit = first.get(n(clean(name)))
+    hit = first.get(n(clean(name))) or first.get(n(clean(name)).removesuffix("체"))
     lic = (re.search(r'\{ id: "' + re.escape(fid) + r'".*?license: "([^"]+)"', src, re.S) or [None, ""])[1]
     if hit and lic.startswith("공공누리"):  # 공공누리는 공공기관 저작물 — 기관이 공유마당에 직접 등록한 날 = 배포일
         out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}

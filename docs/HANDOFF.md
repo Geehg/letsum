@@ -3,8 +3,8 @@
 다른 AI(GPT·Codex·muse.ai·Claude)나 사람이 수집 작업을 이어받을 때 보는 문서. 규칙 요약은 루트의 `AGENTS.md`.
 
 ## 0. 지금 상태 (2026-10-11)
-- 사이트 폰트 **202종**: Google Fonts 한글 38 + 공공 안심글꼴 OFL 85 + 공공누리 제1유형 78 + 2026 신규 1(원주체)
-- 출시일 확인 192/201, 라이선스 원문 대조 완료(`verified`) 182/201
+- 사이트 폰트 **208종**: Google Fonts 한글 38 + 공공 안심글꼴 OFL 85 + 공공누리 제1유형 76 + KCC OFL 2 + 2026 신규 7(원주체·빗썸고딕 2·부산단디 3·부산교육 고은체)
+- 출시일 확인 208/208, 라이선스 원문 대조 완료(`verified`) 207/208 (서울알림체만 유형 미확인)
 - 카탈로그(`tools/state/catalog.json`) 약 570건 누적, 검수 대기 목록 `tools/state/review.md`
 - 미리보기 웹폰트: `github.com/Geehg/letsum-mirror` → GitHub Pages `geehg.github.io/letsum-mirror/webfonts/<id>/<굵기>.woff2`
 
@@ -88,8 +88,8 @@ python3 -I tools/import_webfonts.py      # data.js에 '확인 중'으로 추가 
 
 ## 6. 남은 일 (우선순위)
 1. 2026년 신규 배포(뉴스 감지분) — 진행표 `tools/state/pending_new_fonts.md`. 원주체 등록 완료, 나머지는 라이선스 원문 확인 대기. 3장 C 절차.
-2. 라이선스 '확인 중' 19종 원문 대조 (`tools/state/license_check.json`에서 판정 불가 항목)
-3. 출시일 빈 9종 (`release_dates.py` 출력의 '빈 값')
+2. 서울알림체 라이선스 유형 확인 (공식 목록에 'KOGL'만 있고 유형 미표기)
+3. 보류 폰트 재검토: HS효성체(운영자 허락), GS혜자로운체·온글잎 범준필기체(수정·재배포 제한), 이옥선체·길원옥체(기증저작물 조건)
 4. 공공 목록에는 있으나 묶음에 없는 OFL·공공누리 폰트 — 각 배포처에서 원본 확보 후 A
 5. 공공데이터포털 CSV 갱신(연 1회) → `tools/sources/`에 UTF-8로 저장(파일명 규칙 유지)
 
