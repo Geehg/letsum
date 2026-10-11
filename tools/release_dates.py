@@ -16,6 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "html", "js", "data.js")
 OVR = os.path.join(HERE, "state", "release_overrides.json")
 OUT = os.path.join(HERE, "state", "release_dates.json")
+PUBLIC_LICENSES = ("서울서체 이용조건",)  # 공유마당엔 공공누리로 등록됐지만 저작권자 조건을 따로 쓰는 기관 서체
 PUBLIC_MAKERS = ("한국저작권위원회", "한국교육학술정보원", "의왕시청소련수련관", "의왕시청소년수련관")
 GF_FIRST_SINCE = "2021-01-01"
 
@@ -54,7 +55,7 @@ for fid, name, en in fonts:
         continue
     hit = first.get(n(clean(name))) or first.get(n(clean(name)).removesuffix("체"))
     lic = (re.search(r'\{ id: "' + re.escape(fid) + r'".*?license: "([^"]+)"', src, re.S) or [None, ""])[1]
-    if hit and lic.startswith("공공누리"):  # 공공누리는 공공기관 저작물 — 기관이 공유마당에 직접 등록한 날 = 배포일
+    if hit and (lic.startswith("공공누리") or lic in PUBLIC_LICENSES):  # 공공누리·지자체 이용조건은 공공기관 저작물 — 기관이 공유마당에 직접 등록한 날 = 배포일
         out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}
     elif hit and any(p in (hit[2] or "") for p in PUBLIC_MAKERS):
         out[fid] = {"date": hit[0], "src": hit[3], "url": hit[1] or "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"}
