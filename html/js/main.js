@@ -403,6 +403,7 @@
     heart: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.4 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.6 0 5.6 3.5 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     cmt: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     share: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    down: '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     save: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 3.5h12v17l-6-4.6-6 4.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
   };
 
@@ -433,28 +434,38 @@
     return `<article class="ig" data-id="${f.id}" tabindex="0">
       <header class="ig-h"><span class="ig-av" aria-hidden="true">${esc([...f.designer][0] || "L")}</span>
         <div class="ig-who"><b>${esc(f.name)}</b><small>${esc(f.designer)}</small></div>
-        <a class="ig-follow" href="${esc(href)}" target="_blank" rel="noopener">받기</a></header>
+        <button class="ig-follow" data-open="${f.id}">상세</button></header>
       <div class="ig-media">
         <div class="ig-track">${sl.join("")}</div>
         ${sl.length > 1 ? `<button class="ig-nav prev" aria-label="이전 이미지">‹</button><button class="ig-nav next" aria-label="다음 이미지">›</button>
         <div class="ig-dots">${sl.map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div>` : ""}
-        <div class="ig-dl"><a href="${esc(href)}" target="_blank" rel="noopener">⬇ ${dl.ok ? "원 배포처에서 바로 받기" : "원 배포처에서 받기"}</a>
-          <span>${esc(dl.srcName)} · ${esc(licInfo(f).short)}${f.intro ? " · 소개 전용" : ""}</span><button data-open="${f.id}">상세·라이선스 보기</button></div>
       </div>
       <div class="ig-act">
         <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-like="${f.id}" aria-label="좋아요" title="좋아요 — 즐겨찾기에도 저장">${IC.heart}</button><span class="ig-n" data-likes="${f.id}"></span>
         <button class="ig-ic" data-cmt="${f.id}" aria-label="댓글" title="댓글 보기·쓰기">${IC.cmt}</button><span class="ig-n" data-cmts="${f.id}"></span>
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
-        <span class="sp"></span>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
+        <span class="ig-right">
+          ${dl.ok ? `<a class="ig-pill dl" href="${esc(dl.zip)}" target="_blank" rel="noopener" title="${esc(dl.srcName)}에서 파일 바로 받기">${IC.down}다운로드</a>` : ""}
+          <button class="ig-pill" data-lic-open="${f.id}" title="${esc(licInfo(f).full)} — 사용 범위 보기">라이선스</button>
+          <a class="ig-pill" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
+        </span>
       </div>
       <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
       <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
     </article>`;
   }
+  const canHover = matchMedia("(hover:hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
   function bindCarousel(m) {
     if (m.dataset.bound) return; m.dataset.bound = "1";
     const tr = m.querySelector(".ig-track");
+    // 마우스를 올리면 1.6초마다 다음 이미지로, 끝나면 처음으로. 내리면 멈춤
+    if (canHover) {
+      let t = null, t0 = null; const card = m.closest(".ig") || m;
+      const step = () => { const n = tr.children.length; if (n < 2) return; const k = Math.round(tr.scrollLeft / tr.clientWidth); tr.scrollTo({ left: ((k + 1) % n) * tr.clientWidth, behavior: "smooth" }); };
+      card.addEventListener("mouseenter", () => { clearInterval(t); clearTimeout(t0); t = setInterval(step, 1600); t0 = setTimeout(step, 450); });
+      card.addEventListener("mouseleave", () => { clearInterval(t); clearTimeout(t0); t = t0 = null; });
+    }
     const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
     m.addEventListener("click", (e) => { const b = e.target.closest(".ig-nav"); if (b) go(b.classList.contains("prev") ? -1 : 1); });
     tr.addEventListener("scroll", () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
@@ -473,6 +484,7 @@
       const p = toggleLike(id); paintSocial(); await p; paintSocial();
     }));
     host.querySelectorAll("[data-cmt]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.cmt, "comments")));
+    host.querySelectorAll("[data-lic-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.licOpen, "license")));
     loadStats([...host.querySelectorAll(".ig[data-id]")].map((el) => el.dataset.id));
     $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
   }
@@ -688,7 +700,7 @@
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
 
-      <div class="m-sec"><h3>사용 범위 (라이선스 매트릭스)</h3>
+      <div class="m-sec" id="licSec"><h3>사용 범위 (라이선스 매트릭스)</h3>
         <table class="matrix">
           <tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
           ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? esc(licInfo(f).note) : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
@@ -813,6 +825,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   async function bindComments(f, focus) {
     const list = $("#cmtList"), form = $("#cmtForm"), msg = $("#cmtMsg");
     if (focus === "comments") setTimeout(() => $("#cmtSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    if (focus === "license") setTimeout(() => $("#licSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
     const j = await api("comments?id=" + f.id);
     if (!j || j.error) { $("#cmtSec").style.display = apiOk ? "" : "none"; list.innerHTML = '<p class="note">댓글을 불러오지 못했습니다.</p>'; return; }
     const draw = (items) => {

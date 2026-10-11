@@ -518,3 +518,23 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .feed-mode .ig-shot{background:#fff}
 @media (hover:none){.feed-mode .ig-dl{border-radius:0;background:var(--ink)}.feed-mode .ig:hover{transform:none}}
 .ig .ig-h{position:static;border-bottom:none;background:transparent;z-index:auto}
+
+/* 피드 하단: 왼쪽 아이콘 + 오른쪽 다운로드·라이선스·받기 (호버 오버레이 대신) */
+.ig-act{flex-wrap:wrap;row-gap:6px}
+.ig-right{margin-left:auto;display:flex;gap:5px;align-items:center}
+.ig-pill{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink);text-decoration:none;white-space:nowrap;border:none;line-height:1.2}
+.ig-pill:hover{background:var(--ink);color:var(--paper)}
+.ig-pill.dl{background:var(--lime);color:var(--lime-ink)}
+.ig-pill.dl:hover{background:var(--ink);color:var(--lime)}
+.feed-mode .ig-pill{background:#f1f0ec}
+:root[data-theme="dark"] .feed-mode .ig-pill{background:#2a2a26}
+.feed-mode .ig-pill.dl{background:var(--lime);color:var(--lime-ink)}
+.feed-mode .ig-pill:hover{background:var(--ink);color:var(--paper)}
+.feed-mode .ig-follow{font-size:12px}
+.ig .ig-ic{width:32px;height:32px}
+.ig .ig-act{gap:2px;padding:8px 10px 2px 8px;flex-wrap:nowrap}
+.ig .ig-ic{width:30px;height:30px}
+.ig .ig-ic svg{width:22px;height:22px}
+.ig-right{gap:4px;flex-shrink:0}
+.ig-pill{font-size:11.5px;padding:5px 8px;gap:3px}
+@media (max-width:380px){.ig .ig-act{flex-wrap:wrap}}
