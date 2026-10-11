@@ -19,13 +19,15 @@ jobs:
           set +e
           python3 -I tools/watch_sources.py
           echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Release dates (sourced only)
+        run: python3 -I tools/release_dates.py
       - name: Build font pages & sitemap
         run: node tools/build_pages.js
       - name: Commit state
         run: |
           git config user.name "letsum-watch"
           git config user.email "watch@letsum.app"
-          git add tools/state html/data html/font html/sitemap.xml html/robots.txt
+          git add tools/state html/data html/font html/sitemap.xml html/robots.txt html/js/data.js
           git diff --cached --quiet || git commit -m "chore(watch): 배포처 상태 갱신 $(date -u +%F)"
           git push
       - name: Open issue when changed

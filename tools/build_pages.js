@@ -62,6 +62,7 @@ function page(f) {
   <h2>사양</h2>
   <table class="spec">
     <tr><th>굵기</th><td>${f.weights.join(" · ")}</td></tr>
+    <tr><th>출시·배포일</th><td>${f.released ? `${f.released.replace(/-/g, ".")} <span class="note">— 출처: <a href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : "원 출시일 확인 중"}</td></tr>
     <tr><th>형식</th><td>${f.formats.join(", ")}</td></tr>
     <tr><th>한글 글자수</th><td>${esc(f.glyphs)}</td></tr>
     <tr><th>저작권자</th><td>${esc(f.holder)}</td></tr>

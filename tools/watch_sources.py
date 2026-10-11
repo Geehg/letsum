@@ -217,11 +217,26 @@ def merge(catalog, snap):
             r["review"] = "excluded-noncommercial"  # 비영리 조건 — 상업용 무료 사이트 대상 아님(사람이 되돌릴 수 있음)
         if kg and r.get("review") == "pending" and re.search(r"안심글꼴\s*\(|목록|모음|^\d+종", r["name"]):
             r["review"] = "excluded-bundle"  # '안심글꼴(155종)' 같은 묶음 파일 — 개별 폰트가 아님
-    # 사이트 반영 여부
+    # 사이트 반영 여부: ① Fontsource id ② 공공 웹폰트(webfonts.json 이름) ③ 이름 대조표(aliases.json)
     ids = site_ids()
     for r in catalog.values():
         fs = r["sources"].get("fontsource", {}).get("id")
         if fs and fs in ids: r["site_id"] = fs
+    wf_path = os.path.join(STATE_DIR, "webfonts.json")
+    if os.path.exists(wf_path):
+        for wid, w in json.load(open(wf_path, encoding="utf-8")).items():
+            if wid not in ids: continue
+            for k2, r in catalog.items():
+                if "kogl" in r["sources"] and re.sub(r"\s+(R|L|B|M|EB|Black|Outline)$", "", r["name"]) in (w["name"], re.sub(r"\s+(R|L|B|M|EB|Black|Outline)$", "", w["name"])):
+                    r["site_id"] = wid
+    al_path = os.path.join(STATE_DIR, "aliases.json")
+    if os.path.exists(al_path):
+        al = {k: v for k, v in json.load(open(al_path, encoding="utf-8")).items() if not k.startswith("_")}
+        for r in catalog.values():
+            if r["name"] in al and al[r["name"]] in ids and not r.get("site_id"):
+                r["site_id"] = al[r["name"]]; r["duplicate_of"] = al[r["name"]]
+    for r in catalog.values():  # 사이트에 올라간 것은 승인 상태로 (사람이 검수해 올린 것)
+        if r.get("site_id") and r.get("review") == "pending": r["review"] = "approved"
     prev_pages = load_json(SNAPSHOT, {}).get("pages", {})
     for name, v in snap["pages"].items():
         if "error" in v: continue

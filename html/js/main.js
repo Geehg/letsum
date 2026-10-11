@@ -268,6 +268,7 @@
     const s = state.sort;
     if (s === "pop") list.sort((a, b) => b.pop - a.pop);
     if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added));
+    if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
     if (s === "weights") list.sort((a, b) => b.weights.length - a.weights.length || b.pop - a.pop);
     return list;
@@ -537,6 +538,7 @@
         <table class="spec">
           <tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>
           <tr><th>굵기</th><td><span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span></td></tr>
+          <tr><th>출시·배포일</th><td>${f.released ? `${f.released.replace(/-/g, ".")} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           <tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>
@@ -625,22 +627,27 @@ import "@fontsource/${f.id}/400.css";</pre>
 
   // ---------- 신규 폰트 슬라이드 (히어로) ----------
   // 이번 주(월~일) 등록분을 보여주고, 없으면 최근 등록 8종을 "최근 등록" 라벨로 보여준다
+  // 기준: 원 제작사의 출시·배포일(released). 우리 사이트 등록일(added)이 아니다.
+  // 출처가 확인된 날짜만 쓰고(releasedSrc), 날짜가 없는 폰트는 히어로에 넣지 않는다.
   function renderNew() {
     const track = $("#nbTrack"); if (!track) return;
     const now = new Date(); const day = (now.getDay() + 6) % 7; // 월=0
     const mon = new Date(now); mon.setDate(now.getDate() - day); mon.setHours(0, 0, 0, 0);
-    const iso = (d) => d.toISOString().slice(0, 10);
-    const byNew = [...FONTS].sort((a, b) => b.added.localeCompare(a.added));
-    const weekAll = byNew.filter((f) => f.added >= iso(mon)); let week = true;
-    let list = weekAll.slice(0, 12); // 슬라이드는 12장까지(웹폰트를 한 번에 많이 받지 않도록)
-    if (!list.length) { list = byNew.slice(0, 8); week = false; }
-    const latest = byNew[0].added.replace(/-/g, ".");
-    $("#nbLabel").textContent = week ? "이번 주 신규" : "최근 등록";
-    $("#nbTitle").textContent = week ? `이번 주 새로 배포된 한글 무료 폰트 ${weekAll.length}종` : "최근 등록된 한글 무료 폰트";
-    $("#nbMeta").textContent = (week ? `${iso(mon).replace(/-/g, ".")} 주간` : `이번 주 신규 없음 · 최신 갱신 ${latest} 기준`) + ` · 전체 ${FONTS.length}종 · 검수 ${FONTS.map((f) => f.verified).sort().pop().replace(/-/g, ".")}`;
+    const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const dot = (s) => s.replace(/-/g, ".");
+    const dated = FONTS.filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released) || b.pop - a.pop);
+    const weekAll = dated.filter((f) => f.released >= iso(mon) && f.released <= iso(now));
+    const week = weekAll.length > 0;
+    const list = (week ? weekAll : dated).slice(0, 12); // 12장까지(웹폰트를 한 번에 많이 받지 않도록)
+    if (!list.length) { $(".newband").style.display = "none"; return; }
+    const latest = dated[0].released;
+    $("#nbLabel").textContent = week ? "이번 주 출시" : "최근 출시";
+    $("#nbTitle").textContent = week ? `이번 주 출시된 한글 무료 폰트 ${weekAll.length}종` : "가장 최근 출시된 한글 무료 폰트";
+    $("#nbMeta").textContent = (week ? `${dot(iso(mon))} 주간` : `이번 주 출시 없음 · 최신 출시 ${dot(latest)}`)
+      + ` · 원 제작사 출시·배포일 기준 · 출시일 확인 ${dated.length}/${FONTS.length}종`;
     track.innerHTML = list.map((f) => `
       <article class="slide" data-id="${f.id}" tabindex="0">
-        <div class="s-top"><span class="s-date">${f.added.replace(/-/g, ".")} 등록</span>${f.added >= iso(mon) ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
+        <div class="s-top"><span class="s-date" title="출처: ${esc(f.releasedSrc)}">${dot(f.released)} 출시 · ${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span>${week ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
         <div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>
         <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)} · 굵기 ${f.weights.length}종</span></div>
           <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}</div></div>

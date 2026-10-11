@@ -1,0 +1,14 @@
+{
+ "_설명": "같은 폰트가 루트마다 다른 이름으로 실린 경우의 대조표. 값 = 사이트 data.js id. 수집기는 이 이름의 카탈로그 레코드를 사이트 폰트로 연결하고 '중복'으로 표시한다.",
+ "배달의 민족 주아체": "jua",
+ "배달의 민족 도현체": "do-hyeon",
+ "배달의 민족 연성체": "yeon-sung",
+ "배달의 민족 기랑해랑체": "kirang-haerang",
+ "나눔고딕": "nanum-gothic",
+ "나눔명조": "nanum-myeongjo",
+ "나눔손글씨 펜체": "nanum-pen",
+ "나눔손글씨 붓체": "nanum-brush-script",
+ "나눔손글씨": "nanum-pen",
+ "본고딕": "noto-sans-kr",
+ "본명조": "noto-serif-kr"
+}

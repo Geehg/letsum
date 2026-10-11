@@ -1036,21 +1036,19 @@
    "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.3.0",
    "tag": "v3.3.0",
    "published": "2021-06-07T02:18:00Z",
-   "license": "OFL-1.1"
+   "license": null
   },
   "Source Han Sans": {
    "repo": "adobe-fonts/source-han-sans",
-   "url": "https://github.com/adobe-fonts/source-han-sans/releases/tag/2.005R",
-   "tag": "2.005R",
-   "published": "2025-06-18T21:21:40Z",
-   "license": "NOASSERTION"
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   },
   "Source Han Serif": {
    "repo": "adobe-fonts/source-han-serif",
-   "url": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
-   "tag": "2.003R",
-   "published": "2024-07-30T18:57:27Z",
-   "license": "NOASSERTION"
+   "url": "https://github.com/adobe-fonts/source-han-serif",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   }
  },
  "kogl": {

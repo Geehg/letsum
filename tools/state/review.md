@@ -1,140 +1,46 @@
 # 공공 무료폰트 검수 대기 목록
 
-개별 레코드 448건 → 패밀리 311개로 묶음. 다운로드 많은 순.
+개별 레코드 328건 → 패밀리 217개로 묶음. 다운로드 많은 순.
 제외됨: 비영리 조건(공공누리 2·4유형, CC BY-NC), 묶음 파일(안심글꼴 N종 등).
 
-## OFL — 133개
+## OFL — 39개
 
 | 패밀리 | 저작권자 | 굵기/파일 | 다운로드 | 원 배포처 |
 |---|---|---|---|---|
-| KCC도담도담체 | 한국저작권위원회 | 1 | 10103 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023 |
 | KCC무럭무럭체 | 한국저작권위원회 | 1 | 8207 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262151&menuNo=200023 |
 | 가나초콜릿체 | 롯데제과 | 1 | 7806 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262104&menuNo=200023 |
-| 배달의 민족 주아체 | ㈜우아한형제들 | 1 | 7196 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288252&menuNo=200023 |
 | 나눔바른고딕 | (재)네이버문화재단 | 1 | 6767 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288242&menuNo=200023 |
-| 나눔고딕 | (재)네이버문화재단 | 1 | 6706 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288238&menuNo=200023 |
-| 야놀자 야체 | ㈜야놀자 | 3 | 6555 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288257&menuNo=200023 |
 | 배달의 민족 한나는 열한살체 | ㈜우아한형제들 | 1 | 6268 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288261&menuNo=200023 |
-| 배달의 민족 도현체 | ㈜우아한형제들 | 1 | 5789 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288249&menuNo=200023 |
 | 나눔바른펜 | (재)네이버문화재단 | 1 | 5481 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288243&menuNo=200023 |
-| 나눔명조 | (재)네이버문화재단 | 1 | 5317 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288240&menuNo=200023 |
-| Tlab신영복체 | 박윤정앤타이포랩 | 1 | 5288 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13111063&menuNo=200023 |
-| 나눔손글씨 | 붓체 네이버㈜, (재)네이버문화재단 | 1 | 5201 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 60‘S스트라이프체 | greenegg | 1 | 4879 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288263&menuNo=200023 |
 | 나눔스퀘어 | (재)네이버문화재단 | 1 | 4737 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288246&menuNo=200023 |
-| KCC은영체 | 한국저작권위원회 | 1 | 4685 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072022&menuNo=200023 |
-| 배달의 민족 을지로체 | ㈜우아한형제들 | 1 | 4580 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288251&menuNo=200023 |
-| 배달의 민족 연성체 | ㈜우아한형제들 | 1 | 4189 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288250&menuNo=200023 |
 | 나눔고딕에코 | 에코 네이버㈜, (재)네이버문화재단 | 1 | 3968 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 아이엠어플레이어체 | greenegg | 1 | 3965 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288255&menuNo=200023 |
-| KCC 안중근체 | 한국저작권위원회 | 1 | 3925 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 중나좋체 | (주)중고나라 | 2 | 7104 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262134&menuNo=200023 |
 | 크룩트체 | greenegg | 1 | 3746 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288258&menuNo=200023 |
 | 델타유니버스체 | greenegg | 1 | 3491 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288248&menuNo=200023 |
-| 가비아 솔미체 | 가비아 | 1 | 3467 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288266&menuNo=200023 |
-| 배달의 민족 기랑해랑체 | ㈜우아한형제들 | 1 | 3378 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288262&menuNo=200023 |
 | 보케체 | greenegg | 1 | 3286 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288253&menuNo=200023 |
-| 유앤피플 |  (주)유앤피플 | 1 | 3273 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 가비아 봄바람체 | 가비아 | 1 | 3199 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288265&menuNo=200023 |
-| KCC김훈체 | 한국저작권위원회 | 1 | 3074 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072021&menuNo=200023 |
 | 한나 Pro | ㈜우아한형제들 | 1 | 2988 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288268&menuNo=200023 |
 | 가비아 납작블럭체 | 가비아 | 1 | 2896 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288264&menuNo=200023 |
-| KCC정범체 | 한국저작권위원회 | 1 | 2766 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13300206&menuNo=200023 |
 | 한나 Ai | ㈜우아한형제들 | 1 | 2713 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288267&menuNo=200023 |
 | 안경잡이체 | greenegg | 1 | 2632 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200023 |
 | 스포카 한 산스 | ㈜스포카 | 3 | 2719 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288254&menuNo=200023 |
-| KCC김환기체 | 한국저작권위원회 | 1 | 2480 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13300207&menuNo=200023 |
-| KCC간판체 |  | 1 | 2365 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 한글재민체 | 김민 | 1 | 2267 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262491&menuNo=200023 |
-| 온글잎 의청수 재선체 | 의왕시청소련수련관 | 1 | 1816 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329089&menuNo=200023 |
-| 온글잎 의청수 시우체 | 의왕시청소련수련관 | 1 | 1662 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329087&menuNo=200023 |
 | 김정철 고딕체 |  | 3 | 4297 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 온글잎 의청수 다경체 | 의왕시청소련수련관 | 1 | 1431 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329086&menuNo=200023 |
 | 박용준투사회보체 | (사)지역공공정책플랫폼광주로 | 1 | 1394 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023 |
 | 김정철손글씨체 |  | 3 | 3357 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 꼬꼬마 | 한국교육학술정보원 | 1 | 1178 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366484&menuNo=200023 |
-| 학교안심 콧수염 | 한국교육학술정보원 | 1 | 1136 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366505&menuNo=200023 |
 | 김정철 명조체 |  | 3 | 3340 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 한글재민3.0 |  | 1 | 970 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 물결 | 한국교육학술정보원 | 2 | 1843 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366496&menuNo=200023 |
-| 학교안심 모험가 | 한국교육학술정보원 | 2 | 1324 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366493&menuNo=200023 |
-| 한글재민2.0 |  | 1 | 861 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 몽글몽글 | 한국교육학술정보원 | 2 | 779 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366494&menuNo=200023 |
-| 온글잎 의청수 윤영체 | 의왕시청소련수련관 | 1 | 753 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329088&menuNo=200023 |
-| 학교안심 지우개 | 한국교육학술정보원 | 1 | 749 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366504&menuNo=200023 |
-| 학교안심 나무 | 한국교육학술정보원 | 2 | 1249 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366486&menuNo=200023 |
-| 학교안심 우산 | 한국교육학술정보원 | 1 | 684 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366500&menuNo=200023 |
-| 학교안심 리코더 | 한국교육학술정보원 | 1 | 637 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366490&menuNo=200023 |
-| 학교안심 은하수 | 한국교육학술정보원 | 1 | 611 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366502&menuNo=200023 |
-| KCC손기정체 | 한국저작권위원회 | 1 | 590 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13305046&menuNo=200023 |
-| 학교안심 사물함 | 한국교육학술정보원 | 1 | 572 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366497&menuNo=200023 |
-| 학교안심 꽈배기 | 한국교육학술정보원 | 1 | 571 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366485&menuNo=200023 |
-| 학교안심 여행 | 한국교육학술정보원 | 1 | 548 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366499&menuNo=200023 |
-| 학교안심 운동장 | 한국교육학술정보원 | 1 | 528 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366501&menuNo=200023 |
-| 학교안심 점심시간 | 한국교육학술정보원 | 2 | 500 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366503&menuNo=200023 |
-| 학교안심 구름 | 한국교육학술정보원 | 1 | 494 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366483&menuNo=200023 |
-| 학교안심 소나기 | 한국교육학술정보원 | 1 | 480 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366498&menuNo=200023 |
-| 학교안심 돋보기 | 한국교육학술정보원 | 1 | 479 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366488&menuNo=200023 |
-| 학교안심 마법사 | 한국교육학술정보원 | 1 | 472 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366491&menuNo=200023 |
-| 학교안심 뜀틀 | 한국교육학술정보원 | 1 | 456 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366489&menuNo=200023 |
 | KCC안창호체 | 한국저작권위원회 | 1 | 415 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023 |
-| 온글잎 의청수 주빈체 | 의왕시청소련수련관 | 1 | 375 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329090&menuNo=200023 |
-| 학교안심 별빛하늘 | 한국교육학술정보원 | 2 | 545 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372627&menuNo=200023 |
-| 학교안심 투호 | 한국교육학술정보원 | 1 | 322 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366506&menuNo=200023 |
-| 학교안심 그림일기 | 한국교육학술정보원 | 1 | 294 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372620&menuNo=200023 |
-| 학교안심 받아쓰기 | 한국교육학술정보원 | 2 | 475 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372626&menuNo=200023 |
-| 학교안심 나들이 | 한국교육학술정보원 | 2 | 433 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372622&menuNo=200023 |
-| 학교안심 둥근미소 | 한국교육학술정보원 | 2 | 456 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372623&menuNo=200023 |
-| 학교안심 알림장 | 한국교육학술정보원 | 2 | 378 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372631&menuNo=200023 |
-| 학교안심 칠판지우개 | 한국교육학술정보원 | 2 | 389 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372635&menuNo=200023 |
-| 학교안심 출석부 | 한국교육학술정보원 | 2 | 331 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372633&menuNo=200023 |
-| 학교안심 퍼즐 Outline | 한국교육학술정보원 | 1 | 176 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372638&menuNo=200023 |
-| 학교안심 별자리 | 한국교육학술정보원 | 2 | 307 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372629&menuNo=200023 |
-| 학교안심 퍼즐 | 한국교육학술정보원 | 1 | 153 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372637&menuNo=200023 |
-| 학교안심 포스터 | 한국교육학술정보원 | 1 | 68 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 공룡알 | 한국교육학술정보원 | 1 | 62 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 날개 | 한국교육학술정보원 | 1 | 53 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 마니또 | 한국교육학술정보원 | 1 | 51 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 떡볶이 | 한국교육학술정보원 | 1 | 50 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 어항꾸미기 | 한국교육학술정보원 | 1 | 43 | https://gongu.copyright.or.kr/freeFontEvent.html |
+| 야놀자 야체 |  | 2 | 177 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 학교안심 오키라니 | 한국교육학술정보원 | 1 | 43 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 반달 | 한국교육학술정보원 | 1 | 39 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 민들레홀씨 | 한국교육학술정보원 | 1 | 34 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 상장 | 한국교육학술정보원 | 1 | 34 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 시간표 | 한국교육학술정보원 | 1 | 34 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 수수깡 | 한국교육학술정보원 | 1 | 32 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 몽당분필 | 한국교육학술정보원 | 1 | 30 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 보드마카 | 한국교육학술정보원 | 1 | 28 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 색연필 | 한국교육학술정보원 | 1 | 26 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 책갈피 | 한국교육학술정보원 | 1 | 26 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 자유시간 | 한국교육학술정보원 | 1 | 24 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 스케치북 | 한국교육학술정보원 | 1 | 21 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 이어달리기 | 한국교육학술정보원 | 1 | 19 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 자연 | 한국교육학술정보원 | 1 | 18 | https://gongu.copyright.or.kr/freeFontEvent.html |
-| 학교안심 키다리풍선 | 한국교육학술정보원 | 1 | 18 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 유앤피플 고딕체 | ㈜유앤피플 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13210384&menuNo=200023 |
 | 나눔명조 에코 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288241&menuNo=200023 |
-| 나눔손글씨 붓체 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288244&menuNo=200023 |
-| 나눔손글씨 펜체 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288245&menuNo=200023 |
 | 나눔스퀘어 라운드 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288247&menuNo=200023 |
 | 한글재민체 2.0 | 김민 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288473&menuNo=200023 |
 | 한글재민체3.0 | 김민 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304319&menuNo=200023 |
 | 김정철_고딕체 | (주)정림건축종합건축사무소 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304541&menuNo=200023 |
 | 김정철_명조체 | (주)정림건축종합건축사무소 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304542&menuNo=200023 |
 | 김정철_손글씨체 | (주)정림건축종합건축사무소 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13328949&menuNo=200023 |
-| 학교안심 곧은제목 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333600&menuNo=200023 |
-| 학교안심 맑은날 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333602&menuNo=200023 |
-| 학교안심 가을소풍 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333604&menuNo=200023 |
-| 학교안심 바른바탕 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333606&menuNo=200023 |
-| 학교안심 바른돋움 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333608&menuNo=200023 |
-| 학교안심 산뜻바탕 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333610&menuNo=200023 |
-| 학교안심 산뜻돋움 | 한국교육학술정보원 | 2 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333612&menuNo=200023 |
-| 학교안심 꾸러기 | 한국교육학술정보원 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333613&menuNo=200023 |
-| 학교안심 붓펜 | 한국교육학술정보원 | 3 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333616&menuNo=200023 |
-| 학교안심 돌담 | 한국교육학술정보원 | 3 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333619&menuNo=200023 |
-| 학교안심 우주 | 한국교육학술정보원 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333620&menuNo=200023 |
-| 학교안심 분필 | 한국교육학술정보원 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333621&menuNo=200023 |
-| 학교안심 봄방학 | 한국교육학술정보원 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333622&menuNo=200023 |
 | KCC한빛체 | 한국저작권위원회 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371550&menuNo=200023 |
 | KCC방정환체 | 한국저작권위원회 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023 |
 | KCC혜림체 | 한국저작권위원회 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372654&menuNo=200023 |
