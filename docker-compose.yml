@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: letsum-web
+    restart: unless-stopped
+    ports:
+      - "8500:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
