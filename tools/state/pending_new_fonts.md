@@ -18,3 +18,8 @@
 1. 원 배포처 페이지 → 내려받은 ZIP 안의 라이선스 파일·가이드 PDF·약관을 읽는다(기사만으로 판단하지 않는다).
 2. OFL 또는 공공누리 제1유형 → 웹폰트 변환 가능. 그 외 → 등록 보류(미리보기 불가)하고 사유를 이 표에 적는다.
 3. 등록 시: 미러에 WOFF2 업로드 → data.js 항목 추가 → `license_manual.json`에 근거 → `release_overrides.json`에 발표일·출처 → `tools/run.sh all`.
+
+## SD CU 좋은친구 (BGF리테일 × 산돌, 2026-10-09 공개) — 제외
+- 배포: 산돌구름에서만 다운로드, **3개월 한시 무료**(영구 무료 아님) → '상업용 무료 폰트' 기준 미충족
+- 산돌구름은 수집 금지 대상(AGENTS.md 2-6). 근거 기사: https://www.businessplus.kr/news/articleView.html?idxno=117783 , https://www.sentv.co.kr/article/view/sentv202610070022
+- 재검토 조건: BGF리테일이 영구 무료·자체 배포로 바꾸면 다시 확인 (확인 2026-10-11, claude)
