@@ -248,6 +248,7 @@
     const a = ALTERNATIVES[+b.dataset.alt];
     if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
     else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
+    state.rank = null;
     $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel)); render();
   }));
 
@@ -273,6 +274,7 @@
       return true;
     });
     const s = state.sort;
+    if (state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 마법사 추천 순
     if (s === "pop") list.sort((a, b) => b.pop - a.pop);
     if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
@@ -364,7 +366,7 @@
   function renderActive() {
     const chips = [];
     if (state.coll) chips.push(["coll", COLLECTIONS.find((c) => c.id === state.coll).title]);
-    if (state.onlyLabel) chips.push(["only", "대안: " + state.onlyLabel]);
+    if (state.onlyLabel) chips.push(["only", state.onlyLabel.startsWith("용도:") ? state.onlyLabel : "대안: " + state.onlyLabel]);
     if (state.cat !== "전체") chips.push(["cat", state.cat]);
     state.mood.forEach((m) => chips.push(["mood:" + m, m]));
     LIC_FILTERS.forEach((p) => { if (p.keys.every((k) => state.lic.has(k)) && (p.key === "commercial" || !LIC_FILTERS[0].keys.every((k) => state.lic.has(k)) || !LIC_FILTERS[0].keys.includes(p.key))) chips.push(["lic:" + p.key, p.label]); });
@@ -636,6 +638,69 @@ import "@fontsource/${f.id}/400.css";</pre>
   window.addEventListener("hashchange", openFromHash);
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  // ---------- 용도 질문 마법사 (규칙 점수, AI 없음) ----------
+  // 필수: 용도의 라이선스 칸이 모두 '사용 가능'. 점수: 분류 + 분위기 + 필요 조건 + 굵은 굵기 + 검수 완료 + 인기(동점 정리)
+  // 소개 전용 폰트는 생김새를 확인할 수 없어 추천에서 뺀다.
+  const wiz = { use: null, mood: new Set(), need: new Set() };
+  function wizScore(f) {
+    const u = WIZARD_USES.find((x) => x.id === wiz.use); if (!u) return null;
+    if (f.intro || !u.lic.every((k) => f.matrix[k] === "ok")) return null;
+    const why = [`${u.lic.map((k) => LICENSE_CATS.find((c) => c.key === k).label).join("·")} 사용 가능`];
+    let sc = (u.cat[f.category] || 0) * 2; if (u.cat[f.category] >= 2) why.push(`${f.category} — ${u.why}`);
+    const hit = f.mood.filter((m) => wiz.mood.has(m)); sc += hit.length * 4; if (hit.length) why.push(`분위기 ${hit.join("·")}`);
+    const d = detect[f.id] || {};
+    const has = { full: f.cov >= 11172, multi: f.weights.length >= 3, hanja: !!d.hanja, old: !!d.old };
+    for (const n of wiz.need) { if (!has[n]) return null; }
+    [...wiz.need].forEach((n) => why.push(WIZARD_NEEDS.find((x) => x.id === n).label));
+    if (u.full && has.full) sc += u.full; if (u.multi && has.multi) sc += u.multi;
+    const maxW = f.weights[f.weights.length - 1]; if (u.heavy && maxW >= 800) { sc += u.heavy * 2; why.push(`굵기 ${maxW}까지`); }
+    if (f.status === "verified") sc += 1;
+    return { f, sc: sc + f.pop / 100, why };
+  }
+  function wizResults() { return FONTS.map(wizScore).filter(Boolean).sort((a, b) => b.sc - a.sc); }
+  function openWizard() {
+    modal.className = "modal wide wiz";
+    const chip = (grp, id, label, on, sub) => `<button class="fbtn${on ? " on" : ""}" data-w${grp}="${id}">${label}${sub ? `<small>${sub}</small>` : ""}</button>`;
+    const draw = () => {
+      const u = WIZARD_USES.find((x) => x.id === wiz.use);
+      const res = u ? wizResults() : [];
+      const top = res.slice(0, 6); top.forEach((r) => ensureFace(r.f));
+      modal.innerHTML = `
+        <button class="x" id="mx" aria-label="닫기">×</button>
+        <div class="m-head"><h2>용도로 고르기</h2><span class="en">질문 3개 · 규칙으로 계산(서버·AI 없음)</span></div>
+        <div class="wiz-q"><div class="wq-k">1. 어디에 쓰세요? <em>필수</em></div><div class="chips">${WIZARD_USES.map((x) => chip("u", x.id, x.label, wiz.use === x.id)).join("")}</div></div>
+        <div class="wiz-q"><div class="wq-k">2. 어떤 느낌이면 좋을까요? <em>최대 2개 · 선택</em></div><div class="chips">${MOODS.map((m) => chip("m", m, m, wiz.mood.has(m))).join("")}</div></div>
+        <div class="wiz-q"><div class="wq-k">3. 꼭 필요한 조건이 있나요? <em>선택</em></div><div class="chips">${WIZARD_NEEDS.map((n) => chip("n", n.id, n.label, wiz.need.has(n.id), n.note)).join("")}</div></div>
+        <div class="wiz-res">${!u ? `<p class="note">1번에서 용도를 고르면 바로 추천이 나옵니다.</p>`
+          : !res.length ? `<p class="note">조건을 모두 만족하는 폰트가 없습니다. 3번 조건을 줄여 보세요.</p>`
+          : `<div class="wq-k">추천 ${top.length}종 <span class="note">/ 조건에 맞는 ${res.length}종 중 · 라이선스 '${u.lic.map((k) => LICENSE_CATS.find((c) => c.key === k).label).join("·")}' 사용 가능만</span></div>
+            <div class="wiz-grid">${top.map((r, i) => `<button class="wiz-card" data-open="${r.f.id}">
+              <span class="wc-n">${i + 1}</span>
+              <span class="wc-pv" style="font-family:${r.f.family};font-weight:${u.heavy ? r.f.weights[r.f.weights.length - 1] : (r.f.weights.includes(400) ? 400 : r.f.weights[0])}">${esc(u.text)}</span>
+              <span class="r-name">${esc(r.f.name)}<span class="en">${esc(r.f.designer)}</span></span>
+              <span class="wc-why">${r.why.map((w) => `<i>${esc(w)}</i>`).join("")}</span></button>`).join("")}</div>
+            <div class="wiz-acts"><button class="btn" id="wizApply">추천 순으로 ${res.length}종 모두 보기</button><span class="note">사용 범위는 참고용입니다. 상세에서 라이선스 원문을 확인하세요.</span></div>`}</div>`;
+      $("#mx").addEventListener("click", closeModal);
+      modal.querySelectorAll("[data-wu]").forEach((b) => b.addEventListener("click", () => { wiz.use = wiz.use === b.dataset.wu ? null : b.dataset.wu; draw(); }));
+      modal.querySelectorAll("[data-wm]").forEach((b) => b.addEventListener("click", () => {
+        const m = b.dataset.wm; if (wiz.mood.has(m)) wiz.mood.delete(m); else { if (wiz.mood.size >= 2) wiz.mood.delete([...wiz.mood][0]); wiz.mood.add(m); } draw(); }));
+      modal.querySelectorAll("[data-wn]").forEach((b) => b.addEventListener("click", () => { toggleSet(wiz.need, b.dataset.wn); draw(); }));
+      modal.querySelectorAll(".wiz-card[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+      const ap = $("#wizApply");
+      if (ap) ap.addEventListener("click", () => {
+        state.only = new Set(res.map((r) => r.f.id)); state.onlyLabel = `용도: ${u.label}`; state.rank = new Map(res.map((r, i) => [r.f.id, i]));
+        state.ctx = u.ctx; setText(u.text);
+        $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x.dataset.ctx === u.ctx));
+        $$("[data-alt]").forEach((x) => x.classList.remove("on"));
+        closeModal(); setView("ctx");
+        window.scrollTo({ top: $(".deck").offsetTop - 56, behavior: "smooth" });
+      });
+    };
+    draw(); overlay.classList.add("open");
+  }
+  $("#wizBtn")?.addEventListener("click", openWizard);
+  $("#wizSide")?.addEventListener("click", openWizard);
 
   // ---------- 신규 폰트 슬라이드 (히어로) ----------
   // 이번 주(월~일) 등록분을 보여주고, 없으면 최근 등록 8종을 "최근 등록" 라벨로 보여준다

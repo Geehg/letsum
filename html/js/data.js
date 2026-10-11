@@ -2122,6 +2122,24 @@ const COLLECTIONS = [
   { id: "doc",      title: "문서·UI",        desc: "깔끔한 고딕을 화면 밀도로",         cat: "고딕",       ctx: "ui",    text: "설정이 저장되었습니다" },
 ];
 
+// 용도 질문 마법사 — AI 없이 규칙 점수로 고른다. lic: 반드시 '사용 가능'이어야 하는 라이선스 칸, cat: 분류 가산점, need: 추가 가산 규칙
+const WIZARD_USES = [
+  { id: "thumb",   label: "유튜브 썸네일",    lic: ["video", "web"],      cat: { "디스플레이": 3, "고딕": 2 }, heavy: 2, ctx: "thumb", text: "이걸 몰랐다고?",                why: "굵고 눈에 띄는 제목체" },
+  { id: "sub",     label: "영상 자막",        lic: ["video"],             cat: { "고딕": 3, "디스플레이": 1 }, full: 2, multi: 1, ctx: "sub", text: "오늘도 끝까지 봐주셔서 감사합니다", why: "작아도 또렷한 고딕" },
+  { id: "book",    label: "책·인쇄물 본문",   lic: ["print"],             cat: { "명조": 3, "고딕": 1 }, full: 2, multi: 1, ctx: "book", text: "책을 읽는 시간은 언제나 옳다", why: "긴 글에 편한 본문체" },
+  { id: "web",     label: "웹사이트·앱 화면", lic: ["web", "embed"],      cat: { "고딕": 3, "명조": 1 }, full: 2, multi: 2, ctx: "ui", text: "설정이 저장되었습니다",           why: "웹폰트로 탑재 가능한 화면용" },
+  { id: "logo",    label: "로고·간판(BI/CI)", lic: ["bici"],              cat: { "디스플레이": 3, "손글씨": 2, "명조": 1 }, ctx: "card", text: "고요서가",                why: "브랜드 이름에 쓸 수 있는 개성체" },
+  { id: "package", label: "상품 포장·굿즈",   lic: ["package", "print"],  cat: { "디스플레이": 2, "손글씨": 2, "고딕": 1 }, ctx: "menu", text: "오늘의 커피",              why: "판매용 포장에 쓸 수 있는 폰트" },
+  { id: "sns",     label: "카드뉴스·SNS",     lic: ["web"],               cat: { "고딕": 2, "디스플레이": 2, "손글씨": 1 }, heavy: 1, ctx: "card", text: "알아두면 쓸모 있는 한 가지", why: "제목과 본문을 함께 쓰는 카드" },
+  { id: "doc",     label: "PPT·문서",         lic: ["print"],             cat: { "고딕": 3, "명조": 2 }, full: 2, multi: 1, ctx: "ui", text: "2026년 하반기 사업 계획",     why: "발표·보고서에 무난한 글꼴" },
+];
+const WIZARD_NEEDS = [
+  { id: "full",  label: "모든 한글(11,172자)", note: "이름·외래어의 드문 글자까지" },
+  { id: "multi", label: "굵기 3종 이상",       note: "제목·본문을 한 가족으로" },
+  { id: "hanja", label: "한자 포함",           note: "학술·고전 인용" },
+  { id: "old",   label: "옛한글 포함",         note: "훈민정음·고문헌" },
+];
+
 // 유료·기본 폰트 대신 쓸 무료 대안 (인상이 비슷한 폰트 — 동일한 폰트는 아닙니다)
 const ALTERNATIVES = [
   { for: "산돌고딕Neo · Apple SD Gothic 계열 본문 고딕", ids: ["noto-sans-kr", "ibm-plex-sans-kr", "gowun-dodum"] },

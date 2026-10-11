@@ -8,7 +8,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -76,6 +76,7 @@
         <button data-v="ctx">맥락</button>
       </div>
       <div class="ctxs" id="ctxChips" style="display:none"></div>
+      <button class="tbtn lime" id="wizBtn" title="용도·분위기·필요 조건 3가지로 폰트 고르기">용도로 고르기</button>
       <span class="count" id="count"></span>
       <div class="sp"></div>
       <select id="sort" aria-label="정렬">
@@ -92,6 +93,7 @@
 <div class="wrap body">
   <aside class="side">
     <div class="fset">
+      <button class="wiz-cta" id="wizSide"><b>무엇에 쓰세요?</b><span>질문 3개로 맞는 폰트 고르기 →</span></button>
       <div class="k"><span>상황별로 시작</span></div>
       <div class="collist" id="collList"></div>
     </div>
@@ -159,7 +161,7 @@
   </div>
 </footer>
 
-<script src="js/data.js?v=4"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/data.js?v=5"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
