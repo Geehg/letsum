@@ -194,7 +194,8 @@
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
   function setView(v) {
     state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
-    $("#ctxChips").style.display = v === "ctx" ? "flex" : "none"; render();
+    $("#ctxChips").style.display = v === "ctx" ? "flex" : "none";
+    document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
   }
   const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
   $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
@@ -352,6 +353,68 @@
     </article>`;
   }
 
+  // ---------- 피드 보기 (인스타그램식 카드) ----------
+  // 한 폰트 = 한 게시물. 가운데 이미지는 넘겨 보는 슬라이드: ① 문장 샘플 ② 디자인 적용안 ③ 설명 카드 ④ 굵기 가족
+  // 좋아요는 즐겨찾기(이 브라우저에만 저장), 저장은 비교 담기. 서버가 없어 좋아요 수·댓글은 표시하지 않는다(가짜 숫자 금지).
+  const FEED_BG = [["var(--lime)", "var(--lime-ink)"], ["var(--ink)", "var(--paper)"], ["#e9e4d8", "#1b1b1b"], ["#dfe7f3", "#14213d"], ["#f3e1dc", "#3a1a12"]];
+  const FEED_CTX = { "디스플레이": "thumb", "명조": "book", "손글씨": "card", "고딕": "ui" };
+  function feedSlides(f, i) {
+    const [bg, fg] = FEED_BG[i % FEED_BG.length];
+    const t = state.text || f.name;
+    const fs = t.length <= 8 ? 56 : t.length <= 16 ? 42 : t.length <= 28 ? 32 : 24;
+    const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
+    const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
+      <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
+      <p>${esc(f.desc)}</p><div class="pills">${pills(f)}</div><div class="ii-m">${esc(meta)}</div></div>`;
+    if (f.intro) return [`<div class="ig-s ig-intro">${introBox(f, "big")}</div>`, info];
+    return [
+      `<div class="ig-s ig-sample" style="background:${bg};color:${fg}"><div style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${fs}px">${esc(t)}</div><span class="ig-cap2">${esc(f.name)}</span></div>`,
+      `<div class="ig-s ig-mock">${mockHTML(f, FEED_CTX[f.category] || "card")}<span class="ig-cap2">디자인 적용안</span></div>`,
+      info,
+      `<div class="ig-s ig-weights" style="font-family:${f.family}">${f.weights.map((w) => `<div style="font-weight:${w}"><b>가나다 Aa 123</b><small>${w}</small></div>`).join("")}<span class="ig-cap2">굵기 ${f.weights.length}종</span></div>`,
+    ];
+  }
+  function feedHTML(f, i) {
+    const sl = feedSlides(f, i); const dl = dlFor(f);
+    const href = dl.ok ? dl.zip : dl.page;
+    return `<article class="ig" data-id="${f.id}" tabindex="0">
+      <header class="ig-h"><span class="ig-av" aria-hidden="true">${esc([...f.designer][0] || "L")}</span>
+        <div class="ig-who"><b>${esc(f.name)}</b><small>${esc(f.designer)}</small></div>
+        <a class="ig-follow" href="${esc(href)}" target="_blank" rel="noopener">받기</a></header>
+      <div class="ig-media">
+        <div class="ig-track">${sl.join("")}</div>
+        ${sl.length > 1 ? `<button class="ig-nav prev" aria-label="이전 이미지">‹</button><button class="ig-nav next" aria-label="다음 이미지">›</button>
+        <div class="ig-dots">${sl.map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div>` : ""}
+        <div class="ig-dl"><a href="${esc(href)}" target="_blank" rel="noopener">⬇ ${dl.ok ? "원 배포처에서 바로 받기" : "원 배포처에서 받기"}</a>
+          <span>${esc(dl.srcName)} · ${esc(licInfo(f).short)}${f.intro ? " · 소개 전용" : ""}</span><button data-open="${f.id}">상세·라이선스 보기</button></div>
+      </div>
+      <div class="ig-act">
+        <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="좋아요(즐겨찾기)" title="좋아요 — 이 브라우저의 즐겨찾기에 저장">${favs.has(f.id) ? "♥" : "♡"}</button>
+        <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">↗</button>
+        <span class="sp"></span>
+        ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${cmp.has(f.id) ? "■" : "□"}</button>`}
+      </div>
+      <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
+      <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
+    </article>`;
+  }
+  function bindFeed(host) {
+    host.querySelectorAll(".ig-media").forEach((m) => {
+      const tr = m.querySelector(".ig-track"), dots = m.querySelectorAll(".ig-dots i");
+      const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
+      m.querySelector(".prev")?.addEventListener("click", () => go(-1));
+      m.querySelector(".next")?.addEventListener("click", () => go(1));
+      tr.addEventListener("scroll", () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); dots.forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
+    });
+    host.querySelectorAll("[data-share]").forEach((b) => b.addEventListener("click", async () => {
+      const f = FONTS.find((x) => x.id === b.dataset.share);
+      const url = `${location.origin}/font/${f.id}.html`;
+      try { if (navigator.share) { await navigator.share({ title: `${f.name} — LETSUM`, text: f.desc, url }); return; } } catch (e) { if (e && e.name === "AbortError") return; }
+      try { await navigator.clipboard.writeText(url); b.textContent = "✓"; b.title = "링크 복사됨"; setTimeout(() => { b.textContent = "↗"; }, 1500); } catch (e) { prompt("링크를 복사하세요", url); }
+    }));
+    $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
+  }
+
   // ---------- 메인 렌더 ----------
   function render() {
     const list = filtered();
@@ -360,8 +423,14 @@
     if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
     else if (state.view === "list") host.innerHTML = list.map(rowHTML).join("");
     else if (state.view === "grid") host.innerHTML = `<div class="grid">${list.map(cardHTML).join("")}</div>`;
+    else if (state.view === "feed") {
+      const n = state.feedN || 24;
+      host.innerHTML = `<div class="igrid">${list.slice(0, n).map(feedHTML).join("")}</div>`
+        + (list.length > n ? `<div class="ig-more"><button class="btn ghost" id="feedMore">더 보기 <small>${n} / ${list.length}종</small></button></div>` : "");
+    }
     else host.innerHTML = `<div class="ctxgrid">${list.map(ctxHTML).join("")}</div>`;
     renderActive(); bind(host); observeFaces(host);
+    if (state.view === "feed") bindFeed(host);
   }
   function renderActive() {
     const chips = [];
@@ -397,7 +466,7 @@
   }
   // 문장·크기·굵기 변경은 전체 재렌더 없이 미리보기만 갱신
   function renderPreviews() {
-    if (state.view === "ctx") { render(); return; }
+    if (state.view === "ctx" || state.view === "feed") { render(); return; }
     $$("[data-id]").forEach((el) => {
       const f = FONTS.find((x) => x.id === el.dataset.id); if (!f) return;
       const pv = el.querySelector(".r-pv"); if (!pv) return;
@@ -409,7 +478,7 @@
   }
   function bind(host) {
     host.querySelectorAll("[data-id]").forEach((el) => {
-      el.addEventListener("click", (e) => { if (e.target.closest("button")) return; openDetail(el.dataset.id); });
+      el.addEventListener("click", (e) => { if (e.target.closest("button, a")) return; openDetail(el.dataset.id); });
       el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
     });
     host.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => { toggleSet(favs, b.dataset.fav); save("fm_favs", [...favs]); render(); }));
