@@ -1,0 +1,86 @@
+{
+ "noto-sans-kr": {
+  "url": "https://fonts.google.com/download?family=Noto+Sans+KR",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "noto-serif-kr": {
+  "url": "https://fonts.google.com/download?family=Noto+Serif+KR",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "ibm-plex-sans-kr": {
+  "url": "https://fonts.google.com/download?family=IBM+Plex+Sans+KR",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gowun-dodum": {
+  "url": "https://fonts.google.com/download?family=Gowun+Dodum",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gowun-batang": {
+  "url": "https://fonts.google.com/download?family=Gowun+Batang",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "hahmlet": {
+  "url": "https://fonts.google.com/download?family=Hahmlet",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "jua": {
+  "url": "https://fonts.google.com/download?family=Jua",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "do-hyeon": {
+  "url": "https://fonts.google.com/download?family=Do+Hyeon",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "black-han-sans": {
+  "url": "https://fonts.google.com/download?family=Black+Han+Sans",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "dongle": {
+  "url": "https://fonts.google.com/download?family=Dongle",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "single-day": {
+  "url": "https://fonts.google.com/download?family=Single+Day",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "gaegu": {
+  "url": "https://fonts.google.com/download?family=Gaegu",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "poor-story": {
+  "url": "https://fonts.google.com/download?family=Poor+Story",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ },
+ "nanum-pen": {
+  "url": "https://fonts.google.com/download?family=Nanum+Pen+Script",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-10-11"
+ }
+}

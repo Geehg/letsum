@@ -1,7 +1,7 @@
 .env
 .env.*
 !.env.example
-data/
+/data/
 backups/
 *.db
 *.sqlite
@@ -18,3 +18,4 @@ id_ed25519
 # macOS 외장 볼륨 메타파일
 ._*
 tools/archive/
+!html/data/
