@@ -981,7 +981,19 @@ import "@fontsource/${f.id}/400.css";</pre>
     poster: ["이걸 몰랐다고?", "오늘의 한 줄, 크게"], editorial: ["책을 읽는 시간은 언제나 옳다", "고요한 문장 사이로 계절이 지나간다"],
     note: ["오늘도 수고했어, 내일은 더 괜찮을 거야", "마음을 담아 꾹꾹 눌러 쓴 한 줄"], grid: ["정보는 또렷하게, 화면은 가볍게", "설정이 저장되었습니다"],
   };
-  let spotTimer = null, spotTick = null, spotIdx = 0, spotList = [], spotPaused = false;
+  let spotTimer = null, spotTick = null, spotWt = null, spotIdx = 0, spotList = [], spotPaused = false;
+  const WNAME = { 100: "Thin", 200: "ExtraLight", 300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
+  // 세로획 두께: 'ㅣ'를 200px로 그려 잉크가 칠해진 가로 폭을 잰다(브라우저 측정, 글자 크기 대비 %)
+  const stemCache = {};
+  async function stemOf(fam, w) {
+    const k = fam + "|" + w; if (k in stemCache) return stemCache[k];
+    try { await document.fonts.load(`${w} 200px ${fam}`, "ㅣ"); } catch (e) {}
+    const c = document.createElement("canvas"); c.width = 260; c.height = 260; const x = c.getContext("2d", { willReadFrequently: true });
+    x.font = `${w} 200px ${fam}`; x.textBaseline = "top"; x.fillText("ㅣ", 30, 20);
+    const d = x.getImageData(0, 0, 260, 260).data; let best = 0;
+    for (const y of [90, 110, 130, 150]) { let run = 0; for (let i = 0; i < 260; i++) { if (d[(y * 260 + i) * 4 + 3] > 128) { run++; best = Math.max(best, run); } else run = 0; } }
+    return (stemCache[k] = best ? (best / 200) * 100 : null);
+  }
   function spotHTML(f, k, week) {
     const lay = SPOT_LAYOUT[f.category] || "grid";
     const [bg, fg, ac] = SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
@@ -996,7 +1008,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       <div class="wrap sp-in">
         <div class="sp-main">
           <div class="sp-kick">${week ? '<b class="sp-new">NEW</b>' : ""}${fmtRel(f.released)} 출시 · <span title="출처: ${esc(f.releasedSrc)}">${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span></div>
-          <h2 class="sp-title" style="${f.intro ? "" : `font-family:${f.family};font-weight:${heavy}`}" data-weights="${f.intro ? "" : f.weights.join(",")}">${title}</h2>
+          <h2 class="sp-title" style="${f.intro ? "" : `font-family:${f.family};font-weight:${heavy}`}" >${title}</h2>
           <p class="sp-type" style="${f.intro ? "" : `font-family:${f.family}`}" data-line="${esc(f.intro ? f.desc : line)}"></p>
           <div class="sp-cta">
             <button class="sp-btn" data-open="${f.id}">자세히 보기</button>
@@ -1005,9 +1017,15 @@ import "@fontsource/${f.id}/400.css";</pre>
           </div>
         </div>
         <aside class="sp-side">
+          ${!f.intro && f.weights.length > 1 ? `<div class="sp-wt" style="--fam:${esc(f.family).replace(/&#39;/g, "'")}">
+            <div class="sp-loupe" aria-hidden="true">${f.weights.map((w, j) => `<span class="${j === 0 ? "on" : ""}" style="font-family:${f.family};font-weight:${w}">가</span>`).join("")}</div>
+            <div class="sp-wt-info"><div class="sp-wt-name"><b>${WNAME[f.weights[0]] || f.weights[0]}</b> <span>${f.weights[0]}</span></div>
+              <div class="sp-wt-stem">세로획 두께 <b>—</b></div>
+              <div class="sp-scale">${f.weights.map((w, j) => `<i style="left:${f.weights.length > 1 ? (j / (f.weights.length - 1)) * 100 : 0}%"><em>${w}</em></i>`).join("")}<u></u></div></div>
+          </div>` : ""}
           <dl>
             <dt>제작·배포</dt><dd>${esc(f.designer)}</dd>
-            <dt>굵기</dt><dd>${f.weightsUnknown ? "배포처 확인" : f.intro ? f.weights.join(" · ") : `<span class="sp-ladder" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가</i>`).join("")}</span> ${f.weights.length}종`}</dd>
+            <dt>굵기</dt><dd>${f.weightsUnknown ? "배포처 확인" : `${f.weights.length}종 · ${f.weights.map((w) => WNAME[w] || w).join(", ")}`}</dd>
             <dt>글자</dt><dd>${esc(f.glyphs)}</dd>
             <dt>라이선스</dt><dd>${esc(licInfo(f).short)}</dd>
           </dl>
@@ -1019,17 +1037,28 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function spotPlay(el) {
     clearInterval(spotTick);
-    const t = el.querySelector(".sp-title"), p = el.querySelector(".sp-type");
+    const p = el.querySelector(".sp-type");
     // 타자 효과
     const s = p.dataset.line || ""; let n = 0; p.textContent = "";
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) p.textContent = s;
-    // 굵기 순환(3종 이상일 때)
-    const ws = (t.dataset.weights || "").split(",").filter(Boolean).map(Number); let wi = ws.length - 1;
-    spotTick = setInterval(() => {
-      if (!reduce && n <= s.length) { p.textContent = s.slice(0, n++); }
-      if (!reduce && ws.length >= 3 && (n % 14 === 0 || n > s.length)) { wi = (wi + 1) % ws.length; t.style.fontWeight = ws[wi]; }
-    }, 70);
+    spotTick = setInterval(() => { if (!reduce && n <= s.length) p.textContent = s.slice(0, n++); else clearInterval(spotTick); }, 75);
+    // 굵기 돋보기: 2.8초마다 다음 굵기로 천천히 겹쳐 바꾸고, 눈금자 표시를 부드럽게 옮긴다
+    clearInterval(spotWt);
+    const wt = el.querySelector(".sp-wt"); if (!wt) return;
+    const f = FONTS.find((x) => x.id === el.dataset.id); const layers = wt.querySelectorAll(".sp-loupe span");
+    const fam = f.family.split(",")[0];
+    let j = 0;
+    const show = async (k) => {
+      j = k; const w = f.weights[k];
+      layers.forEach((l, q) => l.classList.toggle("on", q === k));
+      wt.querySelector(".sp-wt-name").innerHTML = `<b>${WNAME[w] || w}</b> <span>${w}</span>`;
+      wt.querySelectorAll(".sp-scale i").forEach((t, q) => t.classList.toggle("on", q === k));
+      wt.querySelector(".sp-scale u").style.left = (f.weights.length > 1 ? (k / (f.weights.length - 1)) * 100 : 0) + "%";
+      const st = await stemOf(fam, w); if (j === k) wt.querySelector(".sp-wt-stem b").textContent = st ? `${st.toFixed(1)}%` : "—";
+    };
+    show(0);
+    if (!reduce) spotWt = setInterval(() => show((j + 1) % f.weights.length), 2800);
   }
   function spotGo(i, user) {
     const els = $$("#nbTrack .sp"); if (!els.length) return;
