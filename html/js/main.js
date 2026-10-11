@@ -55,9 +55,42 @@
 
   async function detectAll() {
     await fontsCssReady;
-    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가").catch(() => {})));
+    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가나다ㅣㅡ").catch(() => {})));
     await document.fonts.load('44px "Inter"', "ᄒᆞᆫ漢가").catch(() => {});
     FONTS.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
+    FONTS.forEach((f) => (metrics[f.id] = measure(f.en)));
+  }
+
+  // ---------- 글자 형태 측정 → 닮은 폰트 (AI 없이, 브라우저 캔버스 측정만으로) ----------
+  // 굵기 = '가나다' 잉크 밀도, 너비 = 글자폭/크기, 대비 = 가로획(ㅡ) 두께 / 세로획(ㅣ) 두께
+  const metrics = {};
+  const measure = (() => {
+    const c = document.createElement("canvas"); c.width = 240; c.height = 90;
+    const x = c.getContext("2d", { willReadFrequently: true });
+    function ink(text) {
+      x.clearRect(0, 0, 240, 90); x.font = `400 48px "${arguments[1]}"`; x.textBaseline = "top"; x.fillStyle = "#000"; x.fillText(text, 4, 8);
+      const d = x.getImageData(0, 0, 240, 90).data; const rows = new Set(), cols = new Set(); let n = 0;
+      for (let i = 3, p = 0; i < d.length; i += 4, p++) if (d[i] > 100) { n++; rows.add(Math.floor(p / 240)); cols.add(p % 240); }
+      return { n, rows: rows.size, cols: cols.size, w: x.measureText(text).width };
+    }
+    return function (en) {
+      try {
+        const a = ink("가나다", en), v = ink("ㅣ", en), h = ink("ㅡ", en);
+        return { density: a.n / (a.w * 48 || 1), width: a.w / 48 / 3, contrast: h.rows / (v.cols || 1) };
+      } catch (e) { return null; }
+    };
+  })();
+  function similar(f, k) {
+    const m = metrics[f.id]; if (!m) return [];
+    const all = FONTS.filter((x) => x.id !== f.id && metrics[x.id]);
+    const rng = (key) => { const vs = all.map((x) => metrics[x.id][key]).concat(m[key]); return Math.max(...vs) - Math.min(...vs) || 1; };
+    const rd = rng("density"), rw = rng("width"), rc = rng("contrast");
+    return all.map((x) => {
+      const n = metrics[x.id];
+      let d = Math.hypot((n.density - m.density) / rd, (n.width - m.width) / rw, (n.contrast - m.contrast) / rc);
+      if (x.category !== f.category) d += 0.35; // 분류가 다르면 거리 가산
+      return [x, d];
+    }).sort((a, b) => a[1] - b[1]).slice(0, k).map(([x]) => x);
   }
   let covTimer = null;
   function scheduleCoverage() { clearTimeout(covTimer); covTimer = setTimeout(runCoverage, 350); }
@@ -405,8 +438,13 @@
         <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
         <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
 
+      <div class="m-sec"><h3>닮은 폰트</h3>
+        <div class="simrow">${similar(f, 3).map((s) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span></button>`).join("") || '<span class="note">측정 중…</span>'}</div>
+        <p class="note" style="margin-top:8px">글자 형태를 브라우저에서 직접 측정(굵기 밀도·너비·획 대비)해 가까운 순으로 고릅니다. 외부 서버나 AI를 쓰지 않습니다.</p></div>
+
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">
+          <tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>
           <tr><th>굵기</th><td><span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span></td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
@@ -453,6 +491,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     tgl("#tLong", (on) => { pv.textContent = on ? LONG : base; });
     modal.querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => { pv.textContent = TEXT_PRESETS.find((p) => p.id === b.dataset.tp).t; }));
     modal.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#" + b.dataset.copy).textContent); } catch (e) {} b.textContent = "복사됨 ✓"; setTimeout(() => (b.textContent = "복사"), 1500); }));
+    modal.querySelectorAll(".simcard[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
     $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
     $("#favBtn").addEventListener("click", () => { toggleSet(favs, f.id); save("fm_favs", [...favs]); openDetail(f.id); render(); });
     $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });

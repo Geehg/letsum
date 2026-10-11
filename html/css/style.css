@@ -247,6 +247,13 @@ pre.code{background:var(--ink);color:var(--paper);padding:14px;font-size:12.5px;
 .badge.check{color:var(--cond);border-color:var(--cond)}
 .note{font-size:12.5px;color:var(--ink3)}
 
+/* 닮은 폰트 */
+.simrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.simcard{border:1px solid var(--rule2);padding:14px;text-align:left;display:flex;flex-direction:column;gap:8px;min-width:0}
+.simcard:hover{background:var(--paper2);border-color:var(--ink)}
+.simcard .r-pv{word-break:keep-all;line-height:1.3}
+@media(max-width:760px){.simrow{grid-template-columns:1fr}}
+
 /* 비교 모달 */
 .cmp{display:grid;gap:14px;margin-top:16px}
 .cmp .col{border:1px solid var(--rule2);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
