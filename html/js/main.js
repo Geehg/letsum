@@ -11,6 +11,8 @@
   // 스타일시트가 도착하기 전에 document.fonts.load를 부르면 폰트가 없는 것으로 판정되므로, 링크 로드를 기다린다
   // 웹폰트 두 종류: Google Fonts(한 번에 CSS 링크) / LETSUM 미리보기 웹폰트(f.webfont — 화면에 보일 때만 @font-face 선언)
   const isGF = (f) => !f.webfont;
+  // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
+  const fmtRel = (d) => !d ? "" : d.length === 4 ? d + "년" : d.length === 7 ? `${d.slice(0, 4)}년 ${+d.slice(5)}월` : d.replace(/-/g, ".");
   const declared = new Set();
   const faceSheet = document.createElement("style"); document.head.appendChild(faceSheet);
   function ensureFace(f) {
@@ -538,7 +540,7 @@
         <table class="spec">
           <tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>
           <tr><th>굵기</th><td><span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span></td></tr>
-          <tr><th>출시·배포일</th><td>${f.released ? `${f.released.replace(/-/g, ".")} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
+          <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           <tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>
@@ -647,7 +649,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       + ` · 원 제작사 출시·배포일 기준 · 출시일 확인 ${dated.length}/${FONTS.length}종`;
     track.innerHTML = list.map((f) => `
       <article class="slide" data-id="${f.id}" tabindex="0">
-        <div class="s-top"><span class="s-date" title="출처: ${esc(f.releasedSrc)}">${dot(f.released)} 출시 · ${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span>${week ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
+        <div class="s-top"><span class="s-date" title="출처: ${esc(f.releasedSrc)}">${fmtRel(f.released)} 출시 · ${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span>${week ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
         <div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>
         <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)} · 굵기 ${f.weights.length}종</span></div>
           <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}</div></div>
