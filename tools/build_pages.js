@@ -12,7 +12,7 @@ const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v =
 
 function page(f) {
   const gfam = f.en.replace(/ /g, "+");
-  const dl = Object.assign({ zip: `https://fonts.google.com/download?family=${gfam}`, page: `https://fonts.google.com/specimen/${gfam}` }, f.dl || {});
+  const dl = Object.assign({ zip: `https://fonts.google.com/download?family=${gfam}`, page: `https://fonts.google.com/specimen/${gfam}`, srcName: "Google Fonts" }, f.dl || {}); // 원 배포처 링크 우선
   const allOk = LICENSE_CATS.every((c) => f.matrix[c.key] === "ok");
   const title = `${f.name} 다운로드 — 상업용 무료 ${f.category} 폰트, 사용 범위 표 | LETSUM`;
   const desc = `${f.name}(${f.en}) 무료 폰트 다운로드와 라이선스 사용 범위(인쇄·웹·영상·임베딩·BI/CI·포장지). ${f.desc}`;
@@ -46,11 +46,11 @@ function page(f) {
   <p class="sub">${esc(f.desc)}</p>
   <div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>
   <div class="dlrow">
-    <a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 받기 <small>${f.dl && f.dl.mirror ? "LETSUM 미러 · 즉시 다운로드" : "원 배포처에서 자동 다운로드 시작"} · TTF/OTF 설치용</small></a>
+    <a class="btn" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>
     <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
     <a class="btn ghost" href="../index.html#f=${f.id}">작업대에서 테스트·비교 →</a>
   </div>
-  <p class="note" style="margin-top:8px">${f.dl && f.dl.mirror ? "원 배포처에서 받은 그대로의 파일을 LETSUM 미러(GitHub Releases)에서 내려받습니다. ZIP 안에 폰트 파일·라이선스 원문·출처가 들어 있습니다." : "파일은 원 배포처에서 바로 내려받습니다. ZIP 안에 라이선스 원문이 함께 들어 있습니다."} 설치·PPT 적용 방법은 작업대의 상세 보기에 있습니다.</p>
+  <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ZIP 안에 라이선스 원문이 함께 들어 있습니다.${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 작업대의 상세 보기에 있습니다.</p>
   <h2>사용 범위 (라이선스 매트릭스)</h2>
   <p>${allOk ? "<b>상업용 무료</b> · " : ""}${esc(f.license)}${f.license === "OFL" ? " (SIL Open Font License 1.1) — 상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지" : ""} · 검수 ${f.status === "verified" ? "완료" : "확인 중"} (${f.verified})</p>
   <table class="matrix"><tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
