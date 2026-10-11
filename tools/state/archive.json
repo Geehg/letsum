@@ -1,0 +1,20 @@
+{
+ "jua": {
+  "source": "https://fonts.google.com/download/list?family=Jua",
+  "root": "google",
+  "sha256": "90694bae6468526c3b6270beb10af015561b6c36c42074b4151d8863c814cdda",
+  "bytes": 725923,
+  "archived": "2026-10-11",
+  "mirror": "https://dl.letsum.app/jua.zip",
+  "uploaded": null
+ },
+ "gowun-batang": {
+  "source": "https://fonts.google.com/download/list?family=Gowun+Batang",
+  "root": "google",
+  "sha256": "9248aa1c36a326ab966039741ce2b9f6be3747692cddfd6d581ff91f20ac1b23",
+  "bytes": 3429360,
+  "archived": "2026-10-11",
+  "mirror": "https://dl.letsum.app/gowun-batang.zip",
+  "uploaded": null
+ }
+}

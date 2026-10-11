@@ -46,7 +46,7 @@ function page(f) {
   <p class="sub">${esc(f.desc)}</p>
   <div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>
   <div class="dlrow">
-    <a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 바로 받기 <small>원 배포처 파일 · TTF/OTF 설치용</small></a>
+    <a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 받기 <small>원 배포처에서 자동 다운로드 시작 · TTF/OTF 설치용</small></a>
     <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
     <a class="btn ghost" href="../index.html#f=${f.id}">작업대에서 테스트·비교 →</a>
   </div>

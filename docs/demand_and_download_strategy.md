@@ -39,8 +39,8 @@
 ### 링크 실측 (2026-10-11)
 | 경로 | 결과 | 비고 |
 |---|---|---|
-| `fonts.google.com/download?family=X` | 200, ZIP 즉시(주아 193KB, 0.5s) | 안정. 라이선스 파일 포함. CORS 없음 → 브라우저에서 직접 fetch는 불가, 링크 이동은 가능 |
-| `fonts.google.com/download/list?family=X` | 200, 파일별 URL + OFL.txt 본문 JSON | 굵기별 개별 파일 링크 생성 가능(서버 측/빌드 시) |
+| `fonts.google.com/download?family=X` | 200이지만 **HTML 페이지**(193KB) — 브라우저에서 열면 JS가 ZIP을 묶어 자동 다운로드 시작 | 사용자 링크로는 동작(클릭 1회 + Google Fonts 화면 잠깐). 스크립트로 파일을 받을 수는 없음 |
+| `fonts.google.com/download/list?family=X` | 200, 파일별 gstatic URL + OFL.txt 본문 JSON | **보관용 ZIP은 이 목록으로 직접 묶는다**(`tools/archive_files.py`: TTF + OFL.txt + SOURCE.txt). 고운바탕 3.3MB 확인 |
 | GitHub Releases 자산(Pretendard 등) | 302 → 서명 URL, 200 | 안정. 브라우저 이동으로 바로 저장 |
 | `github.com/google/fonts/raw/...` | 200 | 개별 TTF 직접 |
 | 네이버 한글 캠페인 다운로드 경로 | 404 | 배포처 페이지가 바뀜 → 페이지 링크 + 주간 점검 필요 |
@@ -48,17 +48,17 @@
 ### 3단계 전략
 | 단계 | 대상 | 방법 | 사용자 체감 |
 |---|---|---|---|
-| **A. 자체 미러(최고 속도)** | OFL·Apache·공공누리 1유형처럼 **재배포가 명시적으로 허용**된 폰트 | 승인된 원본 ZIP(라이선스 파일 포함)을 **Cloudflare R2**(무료 10GB, 송신 무료)에 보관해 `dl.letsum.app/…`로 제공. 원본 해시를 카탈로그에 기록 | 클릭 1회, 국내 CDN 속도, 배포처가 사라져도 유지 |
+| **A. 자체 미러(최고 속도)** | OFL·Apache·공공누리 1유형처럼 **재배포가 명시적으로 허용**된 폰트 | 승인된 원본 ZIP(라이선스 파일 포함)을 **GitHub Releases**(공개 저장소 `letsum-mirror`, 무료·카드 불필요·주소 고정)에 올려 제공. 원본 해시를 `tools/state/archive.json`에 기록. ※ Cloudflare R2는 무료 한도(10GB)가 있지만 **계정에 카드 연결 구독을 추가해야 해서** 비용 0원 원칙상 채택하지 않음 | 클릭 1회, 배포처가 사라져도 유지 |
 | **B. 원 배포처 직링크(기본)** | 재배포 조건이 불명확하거나 금지(구 카카오 OTF 등) | 배포처의 ZIP/릴리스 URL로 바로 이동. 주간 상태 점검으로 끊김 감지 | 클릭 1회, 배포처 속도 |
 | **C. 배포처 페이지 안내(대체)** | 로그인·앱 설치가 필요한 곳(산돌구름 즉시사용), 링크 불안정 | 페이지 링크 + "받는 방법" 한 줄 안내 | 클릭 2~3회 |
 
 - 어느 단계든 **라이선스 알약과 요약을 버튼 옆에** 둔다("상업용 OK · 임베딩 ✓ · BI/CI ✓").
 - 재배포 판단 기준: OFL(단독 판매 금지·라이선스 동봉), 공공누리 1유형(출처 표시), 배민·티몬처럼 "수정·재배포 가능, 유료 판매 금지" 명시 원문. 자료가 엇갈리는 폰트(티몬 수정 여부)는 B로.
-- **NAS에서 직접 ZIP을 내보내지 않는다**: Cloudflare 무료 CDN은 자체 원본의 대용량 파일 서빙을 제한(2023 약관). R2는 허용 대상. NAS는 보관·검수용.
+- **NAS에서 직접 ZIP을 내보내지 않는다**: Cloudflare 무료 CDN은 자체 원본의 대용량 파일 서빙을 제한(2023 약관). NAS는 보관·검수용(`tools/archive/`).
 - 설치 가능한 형식(TTF/OTF)을 먼저, 웹용(WOFF2)은 "설치 불가" 표기와 함께 분리.
 
 ### 다음 단계
 1. `tools/watch_sources.py`에 링크 상태 점검 포함(구현) → `html/data/links.json`.
-2. R2 버킷 + `tools/archive_files.py`: 승인 레코드의 원본 ZIP 받기 → 해시 기록 → R2 업로드(rclone). 사이트는 `dl` 필드의 `mirror` URL을 우선.
+2. `tools/archive_files.py`(구현): 승인 레코드의 원본을 받아 ZIP·해시 기록. 업로드 대상은 GitHub Releases(`gh release upload`)로 전환 예정. 사이트는 `dl.mirror` URL을 우선.
 3. 폰트별 페이지 빌드를 배포 전 단계에 포함(`tools/build_pages.py`).
 4. 영문 전용·한자 폰트 섹션 검토(검색 수요 있음, 한글 사이트의 빈 자리).

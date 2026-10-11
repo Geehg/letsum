@@ -17,3 +17,4 @@ id_ed25519
 
 # macOS 외장 볼륨 메타파일
 ._*
+tools/archive/

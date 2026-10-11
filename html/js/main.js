@@ -495,7 +495,7 @@
 
       <div class="m-sec"><h3>받기</h3>
         <div class="dlrow">
-          ${dl.ok ? `<a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 바로 받기 <small>원 배포처 파일 · TTF/OTF 설치용</small></a>` : ""}
+          ${dl.ok ? `<a class="btn" href="${esc(dl.zip)}" rel="noopener">⬇ ZIP 받기 <small>${dl.srcName === "LETSUM 미러" ? "미러 파일 · 즉시 다운로드" : "원 배포처에서 자동 다운로드 시작"} · TTF/OTF 설치용</small></a>` : ""}
           <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
           <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
         </div>
