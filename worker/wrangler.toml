@@ -10,7 +10,7 @@ routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }]
 [[d1_databases]]
 binding = "DB"
 database_name = "letsum"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "8f3f484b-da6e-4e4d-a6d5-7e071d3295c1"
 migrations_dir = "migrations"
 
 # 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT
