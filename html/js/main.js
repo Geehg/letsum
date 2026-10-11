@@ -130,7 +130,7 @@
     gf.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
     gf.forEach((f) => (metrics[f.id] = measure(f.en)));
     // LETSUM 웹폰트는 빌드 때 폰트 파일(cmap)에서 계산한 값을 그대로 쓴다 — 파일을 미리 받지 않음
-    FONTS.filter((f) => f.webfont).forEach((f) => { detect[f.id] = { old: !!f.old, hanja: !!f.hanja }; });
+    FONTS.filter((f) => f.webfont).forEach((f) => { const c = covData && covData[f.id]; detect[f.id] = c ? { old: c.old, hanja: c.hanja } : { old: !!f.old, hanja: !!f.hanja }; });
   }
   // LETSUM 웹폰트의 형태 측정은 상세를 열 때(파일을 받은 뒤) 한다
   async function measureLazy(f) {
@@ -174,26 +174,43 @@
   }
   let covTimer = null;
   function scheduleCoverage() { clearTimeout(covTimer); covTimer = setTimeout(runCoverage, 350); }
+  // 글자 지원 판정 — 상태 4가지: ok(검사한 글자 모두 지원) · miss(누락 있음) · pending(확인 중) · na(확인 불가: 소개 전용)
+  // 검사 범위: 한글 음절·자모, 한자, 옛한글(영문·숫자·기호·이모지는 검사하지 않음). 문장 속 서로 다른 글자 80자까지.
+  // · LETSUM 미리보기 폰트: 빌드 때 폰트 파일에서 '실제로 그려진' 글자 목록(data/coverage.json)으로 판정
+  // · Google Fonts: 폰트를 받은 뒤 브라우저 캔버스로 글자마다 대조
+  const covState = {}; let covData = null; let covChars = [];
+  const covLoad = fetch("data/coverage.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => (covData = j || {})).catch(() => (covData = {}));
+  const covHas = (rec, ch) => { const i = ch.charCodeAt(0) - 0xAC00; return !rec.h || ((covBits[rec.h] || (covBits[rec.h] = Uint8Array.from(atob(rec.h), (c) => c.charCodeAt(0))))[i >> 3] >> (i & 7)) & 1; };
+  const covBits = {};
+  // 실제 글자 데이터가 오면 옛한글·한자 표시와 '완성형 11,172자' 필터를 그 기준으로 다시 그린다
+  covLoad.then(() => { Object.entries(covData).forEach(([id, c]) => { if (detect[id] || FONTS.some((x) => x.id === id)) detect[id] = { old: c.old, hanja: c.hanja }; }); render(); });
   async function runCoverage() {
-    const chars = [...new Set([...state.text])].filter(isCJK).slice(0, 80);
-    if (!chars.length) { FONTS.forEach((f) => (coverage[f.id] = [])); $("#coverNote").textContent = ""; render(); return; }
-    const txt = chars.join("");
-    await fontsCssReady;
-    const gf = FONTS.filter(isGF);
-    await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
-    gf.forEach((f) => { coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); });
-    // LETSUM 웹폰트: 빌드 때 센 완성형 수·옛한글·한자 정보로 판정 (2,350자 폰트는 KS X 1001 집합 대조)
-    FONTS.filter((f) => f.intro).forEach((f) => { coverage[f.id] = []; }); // 소개 전용은 검사 대상 아님
+    const chars = covChars = [...new Set([...state.text])].filter(isCJK).slice(0, 80);
+    const scope = "검사 범위: 한글·한자·옛한글(영문·숫자·기호 제외)";
+    if (!chars.length) { FONTS.forEach((f) => { coverage[f.id] = []; covState[f.id] = f.intro ? "na" : "ok"; }); $("#coverNote").textContent = "· 문장에 검사할 한글·한자가 없습니다"; render(); return; }
+    FONTS.forEach((f) => { covState[f.id] = f.intro ? "na" : "pending"; coverage[f.id] = []; });
+    $("#coverNote").textContent = `· 확인 중… (${scope})`; render();
+    await covLoad;
     FONTS.filter((f) => f.webfont).forEach((f) => {
+      const rec = covData[f.id]; if (!rec) return; // 목록이 없으면 확인 중으로 둔다
       coverage[f.id] = chars.filter((ch) => {
-        if (ch >= "가" && ch <= "힣") return f.cov < 11172 && KSX.size ? !KSX.has(ch) : false;
-        if (/[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF]/.test(ch)) return !f.hanja;
-        if (/[\u1100-\u11FF\uA960-\uA97F\uD7B0-\uD7FF]/.test(ch)) return !f.old;
+        if (ch >= "가" && ch <= "힣") return !covHas(rec, ch);
+        if (/[一-鿿㐀-䶿豈-﫿]/.test(ch)) return !rec.hanja;
+        if (/[ㄱ-ㅣ]/.test(ch)) return rec.jamo === false; // 낱자 ㄱ~ㅣ
+        if (/[ᄀ-ᇿꥠ-꥿ힰ-퟿ㅤ-㆏]/.test(ch)) return !rec.old;
         return false;
       });
+      covState[f.id] = coverage[f.id].length ? "miss" : "ok";
     });
-    const bad = FONTS.filter((f) => coverage[f.id].length).length;
-    $("#coverNote").textContent = bad ? `(${bad}종에서 누락 발견)` : "(모두 지원)";
+    await fontsCssReady;
+    const txt = chars.join(""); const gf = FONTS.filter(isGF);
+    await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
+    gf.forEach((f) => {
+      if (!document.fonts.check(`400 44px "${f.en}"`, "가")) return; // 폰트를 못 받았으면 판정 보류
+      coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); covState[f.id] = coverage[f.id].length ? "miss" : "ok";
+    });
+    const n = (st) => FONTS.filter((f) => covState[f.id] === st).length;
+    $("#coverNote").textContent = `· 누락 ${n("miss")}종${n("pending") ? ` · 확인 중 ${n("pending")}종` : ""}${n("na") ? ` · 확인 불가 ${n("na")}종` : ""} (${scope})`;
     render();
   }
 
@@ -230,6 +247,13 @@
   const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
   $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
   $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
+  // 정렬: 용도 추천을 적용하면 '추천 순'이 생기고, 다른 정렬을 고르면 그 정렬이 그대로 적용된다
+  function setSort(v) {
+    const sel = $("#sort"); let opt = sel.querySelector('option[value="rec"]');
+    if (v === "rec" && !opt) { opt = document.createElement("option"); opt.value = "rec"; opt.textContent = "추천 순"; sel.prepend(opt); }
+    if (v !== "rec" && opt && !state.rank) opt.remove();
+    state.sort = v; sel.value = v;
+  }
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
   $("#qTop").addEventListener("input", (e) => { state.q = e.target.value.trim(); render(); });
   $("#themeBtn").addEventListener("click", () => {
@@ -279,7 +303,7 @@
     const a = ALTERNATIVES[+b.dataset.alt];
     if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
     else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
-    state.rank = null;
+    state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new");
     $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel)); render();
   }));
 
@@ -292,12 +316,12 @@
       if (state.cat !== "전체" && f.category !== state.cat) return false;
       if (state.mood.size && ![...state.mood].some((m) => f.mood.includes(m))) return false;
       if (state.lic.size && !matrixOk(f, [...state.lic])) return false;
-      if (state.cov.has("11172") && f.cov < 11172) return false;
+      if (state.cov.has("11172") && ((covData && covData[f.id]) ? covData[f.id].n : f.cov) < 11172) return false;
       if (state.cov.has("old") && !(detect[f.id] && detect[f.id].old)) return false;
       if (state.cov.has("hanja") && !(detect[f.id] && detect[f.id].hanja)) return false;
       if (state.cov.has("multi") && f.weights.length < 3) return false;
       if (state.favOnly && !favs.has(f.id)) return false;
-      if (state.coverOnly && coverage[f.id] && coverage[f.id].length) return false;
+      if (state.coverOnly && covState[f.id] !== "ok") return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
         else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q)) return false; }
@@ -305,7 +329,7 @@
       return true;
     });
     const s = state.sort;
-    if (state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 마법사 추천 순
+    if (s === "rec" && state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 추천 순
     if (s === "pop") list.sort((a, b) => b.pop - a.pop);
     if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
@@ -331,7 +355,8 @@
     return `<span class="cov"><span class="${f.cov >= 11172 ? "y" : ""}">${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자</span>`
       + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span><span class="${d.hanja ? "y" : "dim"}">漢</span>` : "") + `</span>`;
   };
-  const missPill = (f) => (coverage[f.id] && coverage[f.id].length) ? `<span class="pill miss">누락 ${coverage[f.id].length}자</span>` : "";
+  const missPill = (f) => covState[f.id] === "miss" ? `<span class="pill miss" title="이 폰트에 없는 글자: ${esc(coverage[f.id].join(" "))}">누락 ${coverage[f.id].length}자</span>`
+    : covState[f.id] === "pending" ? `<span class="pill chk">글자 확인 중</span>` : covState[f.id] === "na" && covChars.length ? `<span class="pill">글자 지원 미확인</span>` : "";
   const acts = (f) => `<div class="r-acts">
       <button class="abtn fav${favs.has(f.id) ? " on" : ""}" data-fav="${f.id}" aria-label="즐겨찾기">${favs.has(f.id) ? "♥" : "♡"}</button>
       ${f.intro ? "" : `<button class="abtn${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}">${cmp.has(f.id) ? "비교 중" : "+ 비교"}</button>`}
@@ -587,13 +612,14 @@
     if (state.favOnly) chips.push(["fav", "즐겨찾기"]);
     const bar = $("#activeBar");
     bar.innerHTML = chips.length ? `<span class="k">적용 중</span>` + chips.map(([k, l]) => `<button class="fbtn on" data-rm="${k}">${esc(l)} ×</button>`).join("") + `<button class="fbtn" data-rm="all">모두 지우기</button>` : "";
+    if (state.recNote && state.only) bar.insertAdjacentHTML("beforeend", `<p class="rec-note">${esc(state.recNote)}${state.sort !== "rec" ? " (지금은 선택한 정렬 순서로 표시 중)" : ""}</p>`);
     bar.querySelectorAll("[data-rm]").forEach((b) => b.addEventListener("click", () => removeFilter(b.dataset.rm)));
   }
   function removeFilter(k) {
     const [t, v] = k.split(":");
-    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
+    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
     else if (t === "coll") { state.coll = null; state.cat = "전체"; }
-    else if (t === "only") { state.only = null; state.onlyLabel = ""; }
+    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new"); }
     else if (t === "cat") state.cat = "전체";
     else if (t === "mood") state.mood.delete(v);
     else if (t === "lic") LIC_FILTERS.find((p) => p.key === v).keys.forEach((x) => state.lic.delete(x));
@@ -691,25 +717,41 @@
     const st = links[f.id];
     return { zip, page, ok: !!zip && !(st && st.ok === false), checked: st && st.checked, srcName: o.srcName || (isGF(f) ? "Google Fonts" : "공유마당"), mirror: o.mirror || null };
   }
-  // 라이선스 증빙: 사용 시점의 사용 범위·검수일·출처를 텍스트로 보관 (분쟁 대비)
+  // 사용 조건 확인 기록: 이 폰트를 고를 때 LETSUM에서 확인한 조건·출처·확인일을 텍스트로 남긴다.
+  // 사용 권리를 보증하는 문서가 아니라 '언제 무엇을 확인했는지'의 메모다.
+  const stText = (f) => f.status === "verified" ? "원문 대조 완료" : "확인 중(원문 대조 전)";
   function saveProof(f, dl) {
-    const now = new Date();
+    const now = new Date(); const L = licInfo(f);
     const lines = [
-      "LETSUM 라이선스 확인 기록", "=".repeat(28), "",
+      "LETSUM 사용 조건 확인 기록", "=".repeat(28), "",
       `폰트: ${f.name} (${f.en})`, `저작권자: ${f.holder} · 제작: ${f.designer}`,
-      `라이선스: ${licInfo(f).full} — ${licInfo(f).note}`,
-      `LETSUM 검수: ${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}`, "",
-      "사용 범위:", ...LICENSE_CATS.map((c) => `  - ${c.label}: ${f.matrix[c.key] === "ok" ? "사용 가능" : f.matrix[c.key] === "no" ? "사용 금지" : "조건부"}`), "",
-      `원 배포처: ${dl.page}`, `다운로드: ${dl.zip}`, `LETSUM 페이지: https://letsum.app/#f=${f.id}`, "",
-      `저장 시각: ${now.toLocaleString("ko-KR")} (${now.toISOString()})`, "",
-      "※ 이 기록은 LETSUM이 정리한 참고 정보입니다. 최종 확인은 저작권자의 원문 라이선스를 따릅니다.",
+      `라이선스: ${L.full} — ${L.note}`,
+      ...(L.url ? [`라이선스 원문: ${L.url}`] : []),
+      ...(f.attribution ? [`출처 표시 예: ${f.attribution}`] : []),
+      `검토 상태: ${stText(f)} · LETSUM 최근 확인일 ${f.verified}`, "",
+      "사용 범위(LETSUM 정리):", ...LICENSE_CATS.map((c) => `  - ${c.label}: ${f.matrix[c.key] === "ok" ? "사용 가능" : f.matrix[c.key] === "no" ? "사용 불가" : "조건부 — 원문 확인 필요"}`), "",
+      `원 배포처: ${dl.page}`,
+      dl.zip ? `직접 다운로드: ${dl.zip}` : "직접 다운로드: 제공 안 함 — 원 배포처에서 받으세요",
+      `LETSUM 페이지: https://letsum.app/font/${f.id}.html`, "",
+      `기록 저장 시각: ${now.toLocaleString("ko-KR")} (${now.toISOString()})`, "",
+      "※ 이 기록은 LETSUM이 정리한 참고 정보와 확인 시점을 남긴 메모이며, 사용 권리를 보증하지 않습니다.",
+      "   최종 판단은 저작권자의 라이선스 원문을 따르고, 사용 시점에 원문을 다시 확인해 주세요.",
     ];
     const blob = new Blob(["﻿" + lines.join("\n")], { type: "text/plain;charset=utf-8" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = `LETSUM_라이선스증빙_${f.name}_${now.toISOString().slice(0, 10)}.txt`; a.click();
+    const ymd = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    a.download = `LETSUM_사용조건확인기록_${f.name}_${ymd}.txt`; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   }
 
+  // 웹사이트·앱에 쓸 때의 안내 — 라이선스의 임베딩 칸에 따라 다르게(공통 안내로 잘못 안내하지 않도록)
+  function webUseNote(f) {
+    const m = f.matrix.embed, L = licInfo(f);
+    if (f.intro) return "이 폰트는 소개 전용입니다. 웹·앱 사용 가능 여부는 원 배포처의 라이선스 원문을 확인하세요.";
+    if (m === "ok") return `웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(${esc(L.short)} — 웹 임베딩 허용).`;
+    if (m === "no") return `<b>이 폰트는 웹폰트·앱 임베딩이 허용되지 않습니다.</b> 이미지·인쇄물·영상 등 사용 범위 표에서 허용된 방식으로만 쓰세요.`;
+    return `<b>웹폰트·앱 임베딩은 조건부입니다.</b> ${esc(L.note)} — 직접 호스팅하기 전에 라이선스 원문을 확인하세요.`;
+  }
   // ---------- 상세 모달 ----------
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
   function openDetail(id, focus) {
@@ -743,7 +785,7 @@
           ${TEXT_PRESETS.filter((p) => ["pang", "batchim", "mixed", "old", "hanja"].includes(p.id)).map((p) => `<button class="tbtn" data-tp="${p.id}">${p.label}</button>`).join("")}
         </div>
         <div class="t-row" style="margin-bottom:0"><span class="k">글자 범위</span>${covTags(f)}
-          ${miss.length ? `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>` : `<span class="pill ok">현재 문장 모두 지원</span>`}
+          ${{ miss: `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>`, pending: `<span class="pill chk">글자 지원 확인 중</span>`, na: `<span class="pill">소개 전용 · 글자 지원 미확인</span>` }[covState[f.id]] || (covChars.length ? `<span class="pill ok">현재 문장의 한글·한자 모두 지원</span>` : `<span class="note">문장에 검사할 한글·한자가 없습니다</span>`)}
           <span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span></div>
       </div>`}
       <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
@@ -762,10 +804,10 @@
           <tr><th>굵기</th><td>${f.weightsUnknown ? '<span class="note">배포처에서 확인</span>' : f.intro ? f.weights.join(" · ") : `<span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span>`}</td></tr>
           <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
-          <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
+          <tr><th>한글 글자수</th><td>${f.glyphs}${!f.intro && f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
-          <tr><th>검수</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
+          <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}</td></tr>
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
 
@@ -780,10 +822,10 @@
           ${dl.ok ? `<a class="btn" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
           <a class="btn ghost" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
-          <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
+          <button class="btn ghost" id="proofBtn" title="이 폰트의 사용 범위·라이선스 원문 링크·출처·LETSUM 확인일을 텍스트 파일로 남깁니다(사용 권리 보증 아님)">📄 사용 조건 확인 기록 저장</button>
         </div>
         ${dl.ok ? "" : f.intro ? `<p class="note" style="margin-top:6px">파일은 <b>${esc(dl.srcName)}</b>에서만 받을 수 있습니다. 이용 조건을 그곳에서 확인한 뒤 내려받으세요.</p>` : !isGF(f) ? `<p class="note" style="margin-top:6px">이 폰트는 <b>${esc(dl.srcName)}</b> 페이지에서 이용 범위를 확인한 뒤 내려받습니다. 원 배포처 페이지 버튼을 눌러 주세요.</p>` : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
-        <p class="note" style="margin-top:8px">${dl.ok ? `파일은 LETSUM이 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
+        <p class="note" style="margin-top:8px">${dl.ok ? `파일은 LETSUM이 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 내려받습니다. ${f.license === "OFL" && /\.zip(\?|$)|fonts\.google\.com\/download/.test(dl.zip || "") ? " ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다." : " 라이선스 원문은 배포처에서 함께 확인하세요."}` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
         <details class="howto"><summary>설치 · PPT/한글 적용 안내 (Windows · Mac · 아이폰 · 갤럭시)</summary>
           <div class="howto-body">
             <p><b>Windows</b> — ZIP 압축을 풀고 .ttf/.otf 파일을 우클릭 → <b>모든 사용자용으로 설치</b>. 여러 굵기 파일은 전부 설치합니다.</p>
@@ -799,7 +841,7 @@ font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰�
         <div class="codehead"><span>개발자용 (Fontsource · npm, 자체 호스팅)</span><button class="abtn" data-copy="c2">복사</button></div>
         <pre class="code" id="c2">npm i @fontsource/${f.id}
 import "@fontsource/${f.id}/400.css";</pre>
-        <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>` : `<p class="note" style="margin-top:12px">웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(OFL은 웹 임베딩 허용). LETSUM의 미리보기용 웹폰트는 이 사이트의 미리보기 전용입니다.</p>`}
+        <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>` : `<p class="note" style="margin-top:12px">${webUseNote(f)} LETSUM의 미리보기용 웹폰트는 이 사이트의 미리보기 전용이며 내려받아 쓰는 파일이 아닙니다.</p>`}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           ${f.intro ? "" : `<button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>`}
@@ -946,7 +988,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     let sc = (u.cat[f.category] || 0) * 2; if (u.cat[f.category] >= 2) why.push(`${f.category} — ${u.why}`);
     const hit = f.mood.filter((m) => wiz.mood.has(m)); sc += hit.length * 4; if (hit.length) why.push(`분위기 ${hit.join("·")}`);
     const d = detect[f.id] || {};
-    const has = { full: f.cov >= 11172, multi: f.weights.length >= 3, hanja: !!d.hanja, old: !!d.old };
+    const cd = covData && covData[f.id]; // 미리보기 폰트는 실제 그려진 글자 수 기준
+    const has = { full: (cd ? cd.n : f.cov) >= 11172, multi: f.weights.length >= 3, hanja: cd ? cd.hanja : !!d.hanja, old: cd ? cd.old : !!d.old };
     for (const n of wiz.need) { if (!has[n]) return null; }
     [...wiz.need].forEach((n) => why.push(WIZARD_NEEDS.find((x) => x.id === n).label));
     if (u.full && has.full) sc += u.full; if (u.multi && has.multi) sc += u.multi;
@@ -964,7 +1007,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       const top = res.slice(0, 6); top.forEach((r) => ensureFace(r.f));
       modal.innerHTML = `
         <button class="x" id="mx" aria-label="닫기">×</button>
-        <div class="m-head"><h2>용도로 고르기</h2><span class="en">질문 3개 · 규칙으로 계산(서버·AI 없음)</span></div>
+        <div class="m-head"><h2>용도로 고르기</h2><span class="en">용도와 필요한 조건을 고르면, 맞는 폰트를 추천해 드려요</span></div>
         <div class="wiz-q"><div class="wq-k">1. 어디에 쓰세요? <em>필수</em></div><div class="chips">${WIZARD_USES.map((x) => chip("u", x.id, x.label, wiz.use === x.id)).join("")}</div></div>
         <div class="wiz-q"><div class="wq-k">2. 어떤 느낌이면 좋을까요? <em>최대 2개 · 선택</em></div><div class="chips">${MOODS.map((m) => chip("m", m, m, wiz.mood.has(m))).join("")}</div></div>
         <div class="wiz-q"><div class="wq-k">3. 꼭 필요한 조건이 있나요? <em>선택</em></div><div class="chips">${WIZARD_NEEDS.map((n) => chip("n", n.id, n.label, wiz.need.has(n.id), n.note)).join("")}</div></div>
@@ -986,6 +1029,8 @@ import "@fontsource/${f.id}/400.css";</pre>
       const ap = $("#wizApply");
       if (ap) ap.addEventListener("click", () => {
         state.only = new Set(res.map((r) => r.f.id)); state.onlyLabel = `용도: ${u.label}`; state.rank = new Map(res.map((r, i) => [r.f.id, i]));
+        state.recNote = `필수 조건(${u.lic.map((k) => LICENSE_CATS.find((c) => c.key === k).label).join("·")} 사용 가능${wiz.need.size ? ", " + [...wiz.need].map((n) => WIZARD_NEEDS.find((x) => x.id === n).label).join(", ") : ""})을 충족한 ${res.length}종을 '${u.label}'${wiz.mood.size ? "·" + [...wiz.mood].join("·") : ""}에 가까운 순으로 보여드려요. 분위기는 거르는 조건이 아니라 순위에만 반영됩니다.`;
+        setSort("rec");
         state.ctx = u.ctx; setText(u.text);
         $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x.dataset.ctx === u.ctx));
         $$("[data-alt]").forEach((x) => x.classList.remove("on"));

@@ -40,6 +40,8 @@ tools/run.sh finish "커밋 메시지"    # 검증 통과해야 커밋·푸시, 
 | `tools/state/aliases.json` — 같은 폰트 다른 이름 | `tools/state/catalog.json`, `sources.json`, `report.md` ← watch_sources.py |
 | `tools/state/license_manual.json` — 원문을 직접 읽고 확인한 라이선스 근거 | `tools/state/license_check.json` ← verify_licenses.py |
 | `tools/state/catalog.json`의 `review` 필드만 | `tools/state/webfonts.json` ← build_webfonts.py |
+| `tools/state/holder_domains.json` — 배포 주체 → 공식 사이트(아이콘용) | `html/data/coverage.json`, data.js의 `cov`·`glyphs` 앞부분·`old`·`hanja` ← build_coverage.py (실제 그려진 글자 기준) |
+|  | `html/data/avatars.json`, `html/img/src/` ← fetch_icons.py |
 | `html/js/data.js` — 새 폰트 수동 추가 시 (템플릿: docs/HANDOFF.md) | data.js의 `released*` ← release_dates.py |
 
 data.js를 고칠 때 이미 있는 `id`를 바꾸지 않는다(즐겨찾기·링크·미러 경로가 깨짐).

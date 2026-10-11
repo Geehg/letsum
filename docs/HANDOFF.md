@@ -52,7 +52,12 @@ curl -L -o tools/archive/kogl/safe_fonts_365.zip "https://www.kogl.or.kr/freeFon
 (cd ../letsum-mirror && git add -A && git commit -m "webfonts: ..." && git push)   # Pages 반영 1~2분
 python3 -I tools/import_webfonts.py      # data.js에 '확인 중'으로 추가 (분류는 이름 추정)
 ```
-그다음 **분류 검수**(4장)와 `tools/run.sh dates / verify`.
+그다음 **분류 검수**(4장)와 `tools/run.sh dates / verify`, 그리고 **글자 수 계산**:
+```bash
+.venv/bin/python -I tools/build_coverage.py ../letsum-mirror/webfonts   # cmap에 있어도 비어 있는 글자를 빼고 실제 글자 수·목록 계산 → coverage.json + data.js cov
+```
+- 공공 폰트 상당수가 11,172칸을 다 채워 두고 2,350~2,800자만 실제로 그려 둔다. cmap 개수로 '완성형 전체'라고 쓰지 않는다.
+- 브라우저가 파일을 거부하면(콘솔 `OTS parsing error`) `tools/repair_webfonts.py`로 부속 표만 수리(AGENTS.md 4-3).
 - 매칭이 잘못 섞였는지 `tools/state/webfonts.json`의 `source_files`를 반드시 본다(예: 다른 폰트 파일이 한 패밀리에 섞임).
 - 아이콘·딩뱃 폰트(`cov`가 한 자릿수)는 제외.
 
