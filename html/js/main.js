@@ -17,23 +17,53 @@
     : `<div class="intro-pv none${cls ? " " + cls : ""}"><b>${esc(f.name)}</b><span class="i-cap">미리보기 미제공 · 배포처에서 생김새 확인</span></div>`;
   // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
   const fmtRel = (d) => !d ? "" : d.length === 4 ? d + "년" : d.length === 7 ? `${d.slice(0, 4)}년 ${+d.slice(5)}월` : d.replace(/-/g, ".");
-  const declared = new Set();
-  const faceSheet = document.createElement("style"); document.head.appendChild(faceSheet);
-  function ensureFace(f) {
-    if (!f || !f.webfont || declared.has(f.id)) return;
-    declared.add(f.id);
+  // ---------- LETSUM 미리보기 웹폰트 로더 ----------
+  // 큰 한글 폰트(평균 0.5MB, 최대 4MB)를 한꺼번에 받지 않도록 동시 4개씩 순서대로 받는다.
+  // 상세·히어로처럼 지금 보는 곳은 맨 앞으로(priority). 받는 중엔 data-fl="wait"(흐리게), 실패하면 한 번 다시 시도.
+  const declared = new Set(); const faceState = {}; const faceWait = [];
+  let faceActive = 0; const FACE_MAX = 4;
+  const fmtOf = (u) => /\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : "woff2";
+  function markFace(id, st) {
+    faceState[id] = st;
+    document.querySelectorAll(`[data-id="${id}"]`).forEach((el) => { if (st === "ok") el.removeAttribute("data-fl"); else el.setAttribute("data-fl", st); });
+  }
+  async function loadFace(f, retry) {
     const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
-    faceSheet.textContent += Object.entries(f.webfont).map(([w, url]) =>
-      `@font-face{font-family:"${fam}";src:url("${url}") format("woff2");font-weight:${w};font-display:swap}`).join("\n") + "\n";
+    const faces = Object.entries(f.webfont).map(([w, url]) => new FontFace(fam, `url("${url}${retry ? (url.includes("?") ? "&" : "?") + "r=1" : ""}") format("${fmtOf(url)}")`, { weight: String(w), display: "swap" }));
+    faces.forEach((x) => document.fonts.add(x));
+    const t = setTimeout(() => { if (faceState[f.id] === "wait") markFace(f.id, "slow"); }, 8000);
+    try { await Promise.all(faces.map((x) => x.load())); clearTimeout(t); markFace(f.id, "ok"); }
+    catch (e) {
+      clearTimeout(t); faces.forEach((x) => document.fonts.delete(x));
+      if (!retry) { await new Promise((r) => setTimeout(r, 1500)); return loadFace(f, true); }
+      markFace(f.id, "fail");
+    }
+  }
+  function pumpFaces() {
+    while (faceActive < FACE_MAX && faceWait.length) {
+      const f = faceWait.shift(); faceActive++;
+      loadFace(f).finally(() => { faceActive--; pumpFaces(); });
+    }
+  }
+  function ensureFace(f, priority) {
+    if (!f || !f.webfont) return;
+    if (priority && faceState[f.id] === "fail") declared.delete(f.id); // 상세를 열면 실패한 폰트를 다시 시도
+    if (declared.has(f.id)) { // 대기 중인데 지금 필요해지면 앞으로
+      const k = faceWait.indexOf(f); if (priority && k > 0) { faceWait.splice(k, 1); faceWait.unshift(f); }
+      return;
+    }
+    declared.add(f.id); markFace(f.id, "wait");
+    priority ? faceWait.unshift(f) : faceWait.push(f); pumpFaces();
   }
   const faceObs = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
     if (!e.isIntersecting) return;
     ensureFace(FONTS.find((x) => x.id === e.target.dataset.id)); faceObs.unobserve(e.target);
-  }), { rootMargin: "600px 0px" }) : null;
+  }), { rootMargin: "300px 0px" }) : null;
   function observeFaces(root) {
     (root || document).querySelectorAll("[data-id]").forEach((el) => {
-      const f = FONTS.find((x) => x.id === el.dataset.id);
-      if (!f || !f.webfont || declared.has(f.id)) return;
+      const f = FONTS.find((x) => x.id === el.dataset.id); if (!f || !f.webfont) return;
+      if (faceState[f.id] && faceState[f.id] !== "ok") el.setAttribute("data-fl", faceState[f.id]);
+      if (declared.has(f.id)) return;
       faceObs ? faceObs.observe(el) : ensureFace(f);
     });
   }
@@ -684,7 +714,7 @@
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
   function openDetail(id, focus) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
-    ensureFace(f);
+    ensureFace(f, true);
     if (f.webfont && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
     const gfam = f.en.replace(/ /g, "+");
     const gfont = `https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&display=swap`;
@@ -734,7 +764,7 @@
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>한글 글자수</th><td>${f.glyphs}${f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
-          <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}</td></tr>
+          <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
           <tr><th>검수</th><td>${f.status === "verified" ? "검수 완료" : "확인 중"} · 최종 검수일 ${f.verified}</td></tr>
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
@@ -1064,7 +1094,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     const els = $$("#nbTrack .sp"); if (!els.length) return;
     spotIdx = (i + els.length) % els.length;
     els.forEach((el, k) => { el.classList.toggle("on", k === spotIdx); el.setAttribute("aria-hidden", k === spotIdx ? "false" : "true"); });
-    const cur = els[spotIdx]; ensureFace(FONTS.find((x) => x.id === cur.dataset.id)); ensureFace(FONTS.find((x) => x.id === (els[(spotIdx + 1) % els.length] || cur).dataset.id));
+    const cur = els[spotIdx]; ensureFace(FONTS.find((x) => x.id === cur.dataset.id), true); ensureFace(FONTS.find((x) => x.id === (els[(spotIdx + 1) % els.length] || cur).dataset.id));
     $("#spotCount").textContent = `${spotIdx + 1} / ${els.length}`;
     const spot = $("#spot"); spot.style.setProperty("--spot-ui", cur.style.getPropertyValue("--fg")); spot.style.setProperty("--spot-bg", cur.style.getPropertyValue("--bg"));
     $$("#spotBars i").forEach((b, k) => { b.className = k < spotIdx ? "done" : k === spotIdx ? "run" : ""; });

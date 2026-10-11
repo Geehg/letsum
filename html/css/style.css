@@ -701,3 +701,10 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .sp-scale u{position:absolute;top:2px;width:9px;height:9px;border-radius:50%;background:var(--ac);border:1.5px solid currentColor;transform:translateX(-50%);transition:left 1.1s cubic-bezier(.4,0,.2,1);text-decoration:none}
 @media (max-width:860px){.sp-loupe{width:88px;height:88px}.sp-loupe span{font-size:70px}}
 @media (prefers-reduced-motion: reduce){.sp-loupe span,.sp-scale u{transition:none}}
+/* 미리보기 웹폰트 불러오는 중·실패 표시 */
+[data-fl] .r-pv,[data-fl] .sm-t,[data-fl] .fp-t,[data-fl] .ii-n,[data-fl] .sp-title,[data-fl] .wc-pv,[data-fl] .s-pv{transition:opacity .4s}
+[data-fl="wait"] .r-pv,[data-fl="wait"] .sm-t,[data-fl="wait"] .fp-t,[data-fl="wait"] .sp-title,[data-fl="wait"] .ii-n{opacity:.28}
+[data-fl="slow"] .r-pv,[data-fl="slow"] .sm-t,[data-fl="slow"] .sp-title{opacity:.5}
+[data-fl="slow"]::before{content:"글꼴 파일이 커서 불러오는 중…";position:absolute;z-index:3;margin:8px;font:600 11px var(--mono);background:var(--ink);color:var(--paper);padding:3px 7px;border-radius:4px;pointer-events:none}
+[data-fl="fail"]::before{content:"미리보기를 불러오지 못했습니다 · 상세에서 다시 시도";position:absolute;z-index:3;margin:8px;font:600 11px var(--mono);background:var(--no);color:#fff;padding:3px 7px;border-radius:4px;pointer-events:none}
+.card[data-fl],.row[data-fl],.ig[data-fl],.ctxcard[data-fl]{position:relative}

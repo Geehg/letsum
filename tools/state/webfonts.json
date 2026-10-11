@@ -2439,6 +2439,14 @@
   "source_files": [
    "KOTRA HOPE.otf",
    "KOTRA HOPE.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-kotra-bold": {
@@ -2517,6 +2525,14 @@
   "source_files": [
    "MapoDacapo.otf",
    "MapoDacapo.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-kotra-songeulssi": {
@@ -2542,6 +2558,15 @@
   "source_files": [
    "KOTRA_SONGEULSSI.otf",
    "KOTRA_SONGEULSSI.ttf"
+  ],
+  "repair": [
+   {
+    "file": "500.woff2",
+    "fixes": [
+     "CFF 이름 ['KOTRA_SONGEULSSI-Medium']→['KOTRASONGEULSSI-Medium']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-accchildrenheartotf": {
@@ -2567,6 +2592,14 @@
   "source_files": [
    "ACC어린이마음고운체.otf",
    "ACC어린이마음고운체.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-sangju-gotgam": {
@@ -2617,6 +2650,14 @@
   "source_files": [
    "해남체.otf",
    "해남체.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-3-yangpyeong-b": {
@@ -3124,6 +3165,16 @@
   "catalog_key": "달서달링체",
   "source_files": [
    "DalseoDarling.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "vhea 0x10001→0x11000",
+     "kern 제거(GPOS 있음)",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-hoengseong-hanu": {
@@ -3223,6 +3274,15 @@
   "source_files": [
    "Saenggeo Jincheon.otf",
    "Saenggeo Jincheon.ttf"
+  ],
+  "repair": [
+   {
+    "file": "500.woff2",
+    "fixes": [
+     "CFF 이름 ['Saenggeo Jincheon']→['SaenggeoJincheon']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-kimm-bold": {
@@ -3328,6 +3388,22 @@
    "SOYO Maple Bold.ttf",
    "SOYO Maple Regular.otf",
    "SOYO Maple Regular.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "CFF 이름 ['SOYO Maple Regular']→['SOYOMapleRegular']",
+     "name 정렬·재저장"
+    ]
+   },
+   {
+    "file": "700.woff2",
+    "fixes": [
+     "CFF 이름 ['SOYO Maple Bold']→['SOYOMapleBold']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-taebaek-milkyway": {
@@ -3353,6 +3429,15 @@
   "source_files": [
    "TAEBAEK milkyway.otf",
    "TAEBAEK milkyway.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "CFF 이름 ['TAEBAEK milkyway']→['TAEBAEKmilkyway']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-gwangyang-sunshine": {
@@ -3430,6 +3515,15 @@
   "source_files": [
    "TAEBAEK font.otf",
    "TAEBAEK font.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "CFF 이름 ['TAEBAEK font']→['TAEBAEKfont']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-koddiud-ongothic": {
@@ -3490,6 +3584,15 @@
    "전기안전체 Bold.ttf",
    "전기안전체 Regular.otf",
    "전기안전체 Regular.ttf"
+  ],
+  "repair": [
+   {
+    "file": "400.woff2",
+    "fixes": [
+     "CFF 이름 ['Electrical Safety Bold']→['ElectricalSafetyBold']",
+     "name 정렬·재저장"
+    ]
+   }
   ]
  },
  "k-high1-wonchuri-body": {

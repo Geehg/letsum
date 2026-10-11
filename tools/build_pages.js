@@ -15,7 +15,7 @@ function page(f) {
   const gf = !f.webfont && !f.intro; // Google Fonts 폰트인지, LETSUM 미리보기 웹폰트(공공 안심글꼴)인지
   const dl = Object.assign(gf ? { zip: `https://fonts.google.com/download?family=${gfam}`, page: `https://fonts.google.com/specimen/${gfam}`, srcName: "Google Fonts" } : { zip: null, srcName: "공유마당" }, f.dl || {}); // 원 배포처 링크 우선
   const famName = f.family.split(",")[0].replace(/['"]/g, "").trim();
-  const faceCss = !f.webfont ? "" : Object.entries(f.webfont).map(([w, u]) => `@font-face{font-family:"${famName}";src:url("${u}") format("woff2");font-weight:${w};font-display:swap}`).join("");
+  const faceCss = !f.webfont ? "" : Object.entries(f.webfont).map(([w, u]) => `@font-face{font-family:"${famName}";src:url("${u}") format("${/\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : "woff2"}");font-weight:${w};font-display:swap}`).join("");
   const allOk = LICENSE_CATS.every((c) => f.matrix[c.key] === "ok");
   const title = `${f.name} 다운로드 — 상업용 무료 ${f.category} 폰트, 사용 범위 표 | LETSUM`;
   const desc = `${f.name}(${f.en}) 무료 폰트 다운로드와 라이선스 사용 범위(인쇄·웹·영상·임베딩·BI/CI·포장지). ${f.desc}`;
