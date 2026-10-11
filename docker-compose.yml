@@ -3,7 +3,10 @@ services:
     image: nginx:alpine
     container_name: letsum-web
     restart: unless-stopped
+    # NAS의 Docker 기본 주소 풀이 모두 사용 중이라 새 네트워크 대신 기본 bridge 사용 (지우지 마세요)
+    network_mode: bridge
+    # 8500은 DSM이 쓰는 포트라 8516 사용
     ports:
-      - "8500:80"
+      - "8516:80"
     volumes:
       - ./html:/usr/share/nginx/html:ro

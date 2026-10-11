@@ -14,3 +14,6 @@ __pycache__/
 id_rsa
 id_ed25519
 .DS_Store
+
+# macOS 외장 볼륨 메타파일
+._*
