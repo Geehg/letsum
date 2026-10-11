@@ -34,14 +34,14 @@ function page(f) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="stylesheet" href="../css/style.css?v=2">
+<link rel="stylesheet" href="../css/style.css?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
 <body>
 <header><div class="wrap hd">
   <a class="logo" href="../index.html">렛섬 <small>LETSUM</small></a>
-  <nav class="main"><a href="../index.html">작업대</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">서브셋 도구</a></nav>
+  <nav class="main"><a href="../index.html">홈</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">서브셋 도구</a></nav>
   <div class="sp"></div>
 </div></header>
 <main class="wrap fp">
@@ -52,9 +52,9 @@ function page(f) {
   <div class="dlrow">
     ${dl.zip ? `<a class="btn" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
     <a class="btn${dl.zip ? " ghost" : ""}" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
-    <a class="btn ghost" href="../index.html#f=${f.id}">작업대에서 테스트·비교 →</a>
+    <a class="btn ghost" href="../index.html#f=${f.id}">홈에서 테스트·비교 →</a>
   </div>
-  <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ZIP 안에 라이선스 원문이 함께 들어 있습니다.${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 작업대의 상세 보기에 있습니다.</p>
+  <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ZIP 안에 라이선스 원문이 함께 들어 있습니다.${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
   <h2>사용 범위 (라이선스 매트릭스)</h2>
   <p>${allOk ? "<b>상업용 무료</b> · " : ""}${esc(f.license)}${f.license === "OFL" ? " (SIL Open Font License 1.1) — 상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지" : ""} · 검수 ${f.status === "verified" ? "완료" : "확인 중"} (${f.verified})</p>
   <table class="matrix"><tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
@@ -73,7 +73,7 @@ function page(f) {
 font-family: ${esc(f.family)};</pre>` : `<h2>웹폰트</h2><p>웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(OFL은 웹 임베딩 허용). 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
-<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 한글 폰트 작업대 · <a href="../index.html">전체 폰트 보기</a></p></div></footer>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 한글 폰트 · <a href="../index.html">전체 폰트 보기</a></p></div></footer>
 </body>
 </html>
 `;

@@ -1,4 +1,4 @@
-// LETSUM — 한글 폰트 작업대
+// LETSUM — 상업용 무료 한글 폰트 (홈)
 // 구조: 전역 컨트롤(문장·크기·굵기·반전·영문 짝꿍) → 필터 → 목록/격자/맥락 보기 → 비교 트레이 → 상세 모달
 (function () {
   const $ = (s) => document.querySelector(s);
@@ -58,8 +58,8 @@
   const state = {
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
-    sort: "pop", text: TEXT_PRESETS[0].t, size: 44, weight: 400, inv: false, pair: false,
-    view: "list", ctx: "thumb",
+    sort: "new", text: TEXT_PRESETS[0].t, size: 30, weight: 400, inv: false, pair: false,
+    view: "grid", ctx: "thumb",
   };
   const favs = new Set(LS("fm_favs", []));
   const cmp = new Set();
@@ -269,7 +269,7 @@
     });
     const s = state.sort;
     if (s === "pop") list.sort((a, b) => b.pop - a.pop);
-    if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added));
+    if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
     if (s === "weights") list.sort((a, b) => b.weights.length - a.weights.length || b.pop - a.pop);
