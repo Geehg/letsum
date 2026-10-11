@@ -4180,5 +4180,29 @@
    "창원단감아삭체.otf",
    "창원단감아삭체.ttf"
   ]
+ },
+ "k-wonju": {
+  "name": "원주체",
+  "en": "Wonju",
+  "ko": "원주체",
+  "author": "원주시",
+  "page": "https://www.wonju.go.kr/www/contents.do?key=6554",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "license": "OFL",
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-wonju/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-wonju/700.woff2"
+  },
+  "bytes": 306664,
+  "catalog_key": "원주체",
+  "source": "원주시 공식 배포 파일(cts_6554_file02/03.zip), 라이선스: 원주체 가이드라인 28쪽 OFL 1.1"
  }
 }

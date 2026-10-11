@@ -1,0 +1,4 @@
+{
+ "_설명": "사람·AI가 원문을 직접 읽고 확인한 라이선스 근거. verify_licenses.py는 이 id들을 자동 대조하지 않고 이 기록을 그대로 쓴다.",
+ "k-wonju": {"license": "OFL", "evidence": "원주시 '원주체 가이드라인' PDF 28쪽 라이선스 정책: SIL OFL 1.1, 상업적 이용·임베딩·CI/BI 허용, 단독 판매 금지", "page": "https://www.wonju.go.kr/www/contents.do?key=6554", "checked": "2026-10-11"}
+}

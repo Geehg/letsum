@@ -1,32 +1,157 @@
 {
- "noto-sans-kr": {"date": "2014-07-15", "src": "Adobe·Google 공동 발표(Source Han Sans)", "url": "https://blog.adobe.com/en/publish/2014/07/15/introducing-source-han-sans-an-open-source-pan-cjk-typeface"},
- "noto-serif-kr": {"date": "2017-04-03", "src": "Adobe·Google 공동 발표(Source Han Serif)", "url": "https://ccjktype.fonts.adobe.com/2017/04/source-han-serif-history-development.html"},
- "nanum-gothic": {"date": "2008-10-09", "src": "네이버 보도자료(2008 한글날 무료 배포)", "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"},
- "nanum-myeongjo": {"date": "2008-10-09", "src": "네이버 보도자료(2008 한글날 무료 배포)", "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"},
- "nanum-gothic-coding": {"date": "2009", "src": "네이버 보도자료(2009년 추가 배포)", "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"},
- "nanum-pen": {"date": "2010-10-09", "src": "나눔글꼴 3.0 한글날 배포(언론 보도)", "url": "https://zdnet.co.kr/view/?no=20191009102716"},
- "nanum-brush-script": {"date": "2010-10-09", "src": "나눔글꼴 3.0 한글날 배포(언론 보도)", "url": "https://zdnet.co.kr/view/?no=20191009102716"},
- "jua": {"date": "2014-06-24", "src": "우아한형제들 배포 발표(언론 보도)", "url": "https://www.ajunews.com/view/20140624114159280"},
- "do-hyeon": {"date": "2015", "src": "우아한형제들 서체 연혁(언론 보도)", "url": "https://www.etoday.co.kr/news/view/2192446"},
- "yeon-sung": {"date": "2016-10", "src": "우아한형제들 한글날 배포 발표(언론 보도)", "url": "https://www.venturesquare.net/735384/"},
- "kirang-haerang": {"date": "2017-10-09", "src": "우아한형제들 한글날 배포(언론 보도)", "url": "https://www.foodbank.co.kr/news/articleView.html?idxno=53109"},
- "k-bm-euljiro": {"date": "2019-10-09", "src": "우아한형제들 한글날 배포(언론 보도)", "url": "https://www.etoday.co.kr/news/view/1807034"},
- "gothic-a1": {"date": "2014-10-09", "src": "한양정보통신 한글날 무료 배포(언론 보도)", "url": "https://zdnet.co.kr/view/?no=20141006160835"},
- "single-day": {"date": "2016", "src": "DX코리아 제품 정보(출시년도)", "url": "https://m.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000122"},
- "black-han-sans": {"date": "2017-11", "src": "제작사 GitHub 저장소 공개(zesstype)", "url": "https://github.com/zesstype/Black-Han-Sans"},
- "k-gabia-solmee": {"date": "2015-11-19", "src": "가비아 오픈소스 배포 발표(언론 보도)", "url": "https://www.inews24.com/view/929677"},
- "k-joongnajoche": {"date": "2020-01-31", "src": "중고나라 무료 배포 발표(언론 보도)", "url": "https://www.venturesquare.net/801427/"},
- "k-tlabshinyb": {"date": "2009", "src": "산돌구름 제품 정보(제작 연도)", "url": "https://www.sandollcloud.com/free-font/17887/TlabShinYB"},
- "gaegu": {"date": "2018-02-28", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Gaegu"},
- "sunflower": {"date": "2018-02-27", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Sunflower"},
- "stylish": {"date": "2018-02-27", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Stylish"},
- "black-and-white-picture": {"date": "2018-02-27", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Black+And+White+Picture"},
- "cute-font": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Cute+Font"},
- "gugi": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Gugi"},
- "dokdo": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Dokdo"},
- "east-sea-dokdo": {"date": "2018-03-12", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/East+Sea+Dokdo"},
- "gamja-flower": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Gamja+Flower"},
- "hi-melody": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Hi+Melody"},
- "poor-story": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Poor+Story"},
- "song-myung": {"date": "2018-02-23", "src": "오픈 라이선스판 최초 공개(Google Fonts)", "url": "https://fonts.google.com/specimen/Song+Myung"}
+ "noto-sans-kr": {
+  "date": "2014-07-15",
+  "src": "Adobe·Google 공동 발표(Source Han Sans)",
+  "url": "https://blog.adobe.com/en/publish/2014/07/15/introducing-source-han-sans-an-open-source-pan-cjk-typeface"
+ },
+ "noto-serif-kr": {
+  "date": "2017-04-03",
+  "src": "Adobe·Google 공동 발표(Source Han Serif)",
+  "url": "https://ccjktype.fonts.adobe.com/2017/04/source-han-serif-history-development.html"
+ },
+ "nanum-gothic": {
+  "date": "2008-10-09",
+  "src": "네이버 보도자료(2008 한글날 무료 배포)",
+  "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"
+ },
+ "nanum-myeongjo": {
+  "date": "2008-10-09",
+  "src": "네이버 보도자료(2008 한글날 무료 배포)",
+  "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"
+ },
+ "nanum-gothic-coding": {
+  "date": "2009",
+  "src": "네이버 보도자료(2009년 추가 배포)",
+  "url": "https://navercorp.com/media/pressReleasesDetail?seq=27958"
+ },
+ "nanum-pen": {
+  "date": "2010-10-09",
+  "src": "나눔글꼴 3.0 한글날 배포(언론 보도)",
+  "url": "https://zdnet.co.kr/view/?no=20191009102716"
+ },
+ "nanum-brush-script": {
+  "date": "2010-10-09",
+  "src": "나눔글꼴 3.0 한글날 배포(언론 보도)",
+  "url": "https://zdnet.co.kr/view/?no=20191009102716"
+ },
+ "jua": {
+  "date": "2014-06-24",
+  "src": "우아한형제들 배포 발표(언론 보도)",
+  "url": "https://www.ajunews.com/view/20140624114159280"
+ },
+ "do-hyeon": {
+  "date": "2015",
+  "src": "우아한형제들 서체 연혁(언론 보도)",
+  "url": "https://www.etoday.co.kr/news/view/2192446"
+ },
+ "yeon-sung": {
+  "date": "2016-10",
+  "src": "우아한형제들 한글날 배포 발표(언론 보도)",
+  "url": "https://www.venturesquare.net/735384/"
+ },
+ "kirang-haerang": {
+  "date": "2017-10-09",
+  "src": "우아한형제들 한글날 배포(언론 보도)",
+  "url": "https://www.foodbank.co.kr/news/articleView.html?idxno=53109"
+ },
+ "k-bm-euljiro": {
+  "date": "2019-10-09",
+  "src": "우아한형제들 한글날 배포(언론 보도)",
+  "url": "https://www.etoday.co.kr/news/view/1807034"
+ },
+ "gothic-a1": {
+  "date": "2014-10-09",
+  "src": "한양정보통신 한글날 무료 배포(언론 보도)",
+  "url": "https://zdnet.co.kr/view/?no=20141006160835"
+ },
+ "single-day": {
+  "date": "2016",
+  "src": "DX코리아 제품 정보(출시년도)",
+  "url": "https://m.dxkorea.co.kr/goods/goods_view.php?goodsNo=1000000122"
+ },
+ "black-han-sans": {
+  "date": "2017-11",
+  "src": "제작사 GitHub 저장소 공개(zesstype)",
+  "url": "https://github.com/zesstype/Black-Han-Sans"
+ },
+ "k-gabia-solmee": {
+  "date": "2015-11-19",
+  "src": "가비아 오픈소스 배포 발표(언론 보도)",
+  "url": "https://www.inews24.com/view/929677"
+ },
+ "k-joongnajoche": {
+  "date": "2020-01-31",
+  "src": "중고나라 무료 배포 발표(언론 보도)",
+  "url": "https://www.venturesquare.net/801427/"
+ },
+ "k-tlabshinyb": {
+  "date": "2009",
+  "src": "산돌구름 제품 정보(제작 연도)",
+  "url": "https://www.sandollcloud.com/free-font/17887/TlabShinYB"
+ },
+ "gaegu": {
+  "date": "2018-02-28",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Gaegu"
+ },
+ "sunflower": {
+  "date": "2018-02-27",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Sunflower"
+ },
+ "stylish": {
+  "date": "2018-02-27",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Stylish"
+ },
+ "black-and-white-picture": {
+  "date": "2018-02-27",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Black+And+White+Picture"
+ },
+ "cute-font": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Cute+Font"
+ },
+ "gugi": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Gugi"
+ },
+ "dokdo": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Dokdo"
+ },
+ "east-sea-dokdo": {
+  "date": "2018-03-12",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/East+Sea+Dokdo"
+ },
+ "gamja-flower": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Gamja+Flower"
+ },
+ "hi-melody": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Hi+Melody"
+ },
+ "poor-story": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Poor+Story"
+ },
+ "song-myung": {
+  "date": "2018-02-23",
+  "src": "오픈 라이선스판 최초 공개(Google Fonts)",
+  "url": "https://fonts.google.com/specimen/Song+Myung"
+ },
+ "k-wonju": {
+  "date": "2026-08-31",
+  "src": "원주시 배포 발표(언론 보도)",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBoaEx0NjU2LXFfMVIzUllLSzhJVHpWemI2bE9SZmtRTWFGWXBLNGhxTTJJWWNVaWw3ZG00ZlJpUGtaMjROcmtNOWZyVk4ySzBHQlZHeG9BcTgweXJ2MDdGcExZaGRXRVRwNzN4UFR3?oc=5"
+ }
 }

@@ -1958,6 +1958,16 @@ const FONTS = [
     released: "2021-08-19", releasedSrc: "안심글꼴 목록 등록일(제작 기관 배포)", releasedUrl: "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html",
     pair: "grotesk", pop: 40, added: "2026-10-11",
     desc: "아주 두껍고 각진 장식 제목체. 특산물 홍보·썸네일에 강렬합니다." },
+  { id: "k-wonju", name: "원주체", en: "Wonju", family: "'LS wonju', serif",
+    designer: "원주시 · (주)티랩", holder: "원주시", category: "명조",
+    tags: ["제목","본문","도시브랜드"], mood: ["세련된","단정한"], weights: [400,700], formats: ["TTF","OTF"],
+    cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-wonju/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-wonju/700.woff2" },
+    dl: { page: "https://www.wonju.go.kr/www/contents.do?key=6554", srcName: "원주시" },
+    license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-11", status: "verified",
+    released: "2026-08-31", releasedSrc: "원주시 배포 발표(언론 보도)", releasedUrl: "https://news.google.com/rss/articles/CBMibkFVX3lxTFBoaEx0NjU2LXFfMVIzUllLSzhJVHpWemI2bE9SZmtRTWFGWXBLNGhxTTJJWWNVaWw3ZG00ZlJpUGtaMjROcmtNOWZyVk4ySzBHQlZHeG9BcTgweXJ2MDdGcExZaGRXRVRwNzN4UFR3?oc=5",
+    pair: "playfair", pop: 60, added: "2026-10-11",
+    desc: "원주시 로고 워드마크에서 나온 전용서체. 세로 기둥 끝을 날카롭게 다듬은 부리가 특징이며, Bold는 제목에, Regular는 본문에 맞게 설계됐습니다." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)

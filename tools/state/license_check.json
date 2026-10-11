@@ -1302,5 +1302,13 @@
   "license": "공공누리 제1유형",
   "evidence": "공유마당 이용조건: 공공누리 1유형",
   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288462&menuNo=200023"
+ },
+ {
+  "id": "k-wonju",
+  "name": "원주체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 원주시 '원주체 가이드라인' PDF 28쪽 라이선스 정책: SIL OFL 1.1, 상업적 이용·임베딩·CI/BI 허용, 단독 판매 금지",
+  "page": "https://www.wonju.go.kr/www/contents.do?key=6554"
  }
 ]

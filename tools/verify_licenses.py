@@ -39,8 +39,14 @@ src = open(DATA, encoding="utf-8").read()
 rows = []
 for m in re.finditer(r'\{ id: "(k-[^"]+)", name: "([^"]*)".*?dl: \{ page: "([^"]+)".*?license: "([^"]+)"', src, re.S):
     rows.append((m.group(1), m.group(2), m.group(3), m.group(4)))
+MANUAL = {k: v for k, v in json.load(open(os.path.join(HERE, "state", "license_manual.json"), encoding="utf-8")).items() if not k.startswith("_")} \
+    if os.path.exists(os.path.join(HERE, "state", "license_manual.json")) else {}
 ok, bad, unk, report = [], [], [], []
 for fid, name, page, want in rows:
+    if fid in MANUAL:  # 직접 확인한 근거 — 자동 대조하지 않음
+        v = MANUAL[fid]; lic = v["license"]
+        (ok if lic == want else bad).append(fid)
+        report.append({"id": fid, "name": name, "expected": want, "license": lic, "evidence": "직접 확인: " + v["evidence"], "page": v["page"]}); continue
     if "wrtSn=" in page:
         try: lic, why = gongu_license(page)
         except Exception as e: lic, why = None, f"요청 실패 {e}"

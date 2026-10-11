@@ -33,7 +33,8 @@ tools/run.sh finish "커밋 메시지"    # 검증 통과해야 커밋·푸시, 
 |---|---|
 | `tools/state/review_*.json` — 분류·설명 검수 | `html/font/*.html`, `html/sitemap.xml` ← build_pages.js |
 | `tools/state/release_overrides.json` — 출처 있는 출시일 | `html/data/links.json` ← watch_sources.py |
-| `tools/state/aliases.json` — 같은 폰트 다른 이름 | `tools/state/catalog.json`, `sources.json`, `report.md` |
+| `tools/state/aliases.json` — 같은 폰트 다른 이름 | `tools/state/catalog.json`, `sources.json`, `report.md` ← watch_sources.py |
+| `tools/state/license_manual.json` — 원문을 직접 읽고 확인한 라이선스 근거 | `tools/state/license_check.json` ← verify_licenses.py |
 | `tools/state/catalog.json`의 `review` 필드만 | `tools/state/webfonts.json` ← build_webfonts.py |
 | `html/js/data.js` — 새 폰트 수동 추가 시 (템플릿: docs/HANDOFF.md) | data.js의 `released*` ← release_dates.py |
 
