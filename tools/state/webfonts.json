@@ -1,0 +1,2068 @@
+{
+ "k-kccdodamdodam": {
+  "name": "KCC도담도담체",
+  "en": "KCCDodamdodam",
+  "ko": "KCC도담도담체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023",
+  "downloads": 10103,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kccdodamdodam/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kccdodamdodam/700.woff2"
+  },
+  "bytes": 746896,
+  "catalog_key": "kcc도담도담체",
+  "source_files": [
+   "KCCDodamdodam.ttf",
+   "KCCDodamdodam_OTF.otf"
+  ]
+ },
+ "k-yanolja-yache": {
+  "name": "야놀자 야체",
+  "en": "Yanolja Yache",
+  "ko": "야놀자 야체",
+  "author": "㈜야놀자",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288257&menuNo=200023",
+  "downloads": 6378,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yanolja-yache/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-yanolja-yache/700.woff2"
+  },
+  "bytes": 265496,
+  "catalog_key": "야놀자야체",
+  "source_files": [
+   "야놀자 야체 Bold.ttf",
+   "야놀자 야체 Regular.ttf"
+  ]
+ },
+ "k-tlabshinyb": {
+  "name": "Tlab신영복체",
+  "en": "TlabShinYB",
+  "ko": "Tlab신영복",
+  "author": "박윤정앤타이포랩",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13111063&menuNo=200023",
+  "downloads": 5288,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-tlabshinyb/400.woff2"
+  },
+  "bytes": 1610304,
+  "catalog_key": "tlab신영복체",
+  "source_files": [
+   "Tlab신영복체.otf",
+   "Tlab신영복체.ttf"
+  ]
+ },
+ "k-kcc-eunyoung": {
+  "name": "KCC은영체",
+  "en": "KCC-eunyoung",
+  "ko": "KCC-은영체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072022&menuNo=200023",
+  "downloads": 4685,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-eunyoung/400.woff2"
+  },
+  "bytes": 540332,
+  "catalog_key": "kcc은영체",
+  "source_files": [
+   "KCC은영체.otf",
+   "KCC은영체.ttf"
+  ]
+ },
+ "k-bm-euljiro": {
+  "name": "배달의 민족 을지로체",
+  "en": "BM EULJIRO",
+  "ko": "배달의민족 을지로체",
+  "author": "㈜우아한형제들",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288251&menuNo=200023",
+  "downloads": 4580,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-bm-euljiro/400.woff2"
+  },
+  "bytes": 554108,
+  "catalog_key": "배달의민족을지로체",
+  "source_files": [
+   "BMEULJIRO.otf",
+   "BMEULJIROTTF.ttf"
+  ]
+ },
+ "k-kccahnjunggeun": {
+  "name": "KCC 안중근체",
+  "en": "KCCAhnjunggeun",
+  "ko": "KCC안중근체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3925,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kccahnjunggeun/400.woff2"
+  },
+  "bytes": 323472,
+  "catalog_key": "kcc안중근체",
+  "source_files": [
+   "KCCAhnjunggeun.otf",
+   "KCCAhnjunggeun.ttf"
+  ]
+ },
+ "k-gabia-solmee": {
+  "name": "가비아 솔미체",
+  "en": "Gabia Solmee",
+  "ko": "가비아 솔미체",
+  "author": "가비아",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288266&menuNo=200023",
+  "downloads": 3467,
+  "weights": [
+   400
+  ],
+  "cov": 2355,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gabia-solmee/400.woff2"
+  },
+  "bytes": 82404,
+  "catalog_key": "가비아솔미체",
+  "source_files": [
+   "gabia_solmee.otf",
+   "gabia_solmee.ttf"
+  ]
+ },
+ "k-joongnajoche": {
+  "name": "중나좋체 L",
+  "en": "Joongnajoche",
+  "ko": "중나좋체",
+  "author": "(주)중고나라",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262134&menuNo=200023",
+  "downloads": 3339,
+  "weights": [
+   500
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-joongnajoche/500.woff2"
+  },
+  "bytes": 586112,
+  "catalog_key": "중나좋체",
+  "source_files": [
+   "중나좋체 Light.ttf",
+   "중나좋체 Medium.ttf",
+   "중나좋체 OTF Light.otf",
+   "중나좋체 OTF Medium.otf"
+  ]
+ },
+ "k-unpeople-gothic-ks-otf": {
+  "name": "유앤피플",
+  "en": "UNPEOPLE Gothic KS OTF",
+  "ko": "유앤피플 고딕 KS OTF",
+  "author": " (주)유앤피플",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 3273,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-unpeople-gothic-ks-otf/400.woff2"
+  },
+  "bytes": 170536,
+  "catalog_key": "유앤피플",
+  "source_files": [
+   "유앤피플 고딕 KS OTF.otf",
+   "유앤피플 고딕 KS.ttf",
+   "유앤피플 고딕 UNI OTF.otf",
+   "유앤피플 고딕 UNI.ttf"
+  ]
+ },
+ "k-kcc-kimhoon": {
+  "name": "KCC김훈체",
+  "en": "KCC-Kimhoon",
+  "ko": "KCC-김훈체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072021&menuNo=200023",
+  "downloads": 3074,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-kimhoon/400.woff2"
+  },
+  "bytes": 511836,
+  "catalog_key": "kcc김훈체",
+  "source_files": [
+   "KCC김훈체.otf",
+   "KCC김훈체.ttf"
+  ]
+ },
+ "k-kcc-jeongbeom": {
+  "name": "KCC정범체",
+  "en": "KCC-Jeongbeom",
+  "ko": "KCC정범체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13300206&menuNo=200023",
+  "downloads": 2766,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-jeongbeom/400.woff2"
+  },
+  "bytes": 672004,
+  "catalog_key": "kcc정범체",
+  "source_files": [
+   "KCC-Jeongbeom.otf",
+   "KCC-Jeongbeom.ttf"
+  ]
+ },
+ "k-kcc-kimhwanki": {
+  "name": "KCC김환기체",
+  "en": "KCC-Kimhwanki",
+  "ko": "KCC김환기체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13300207&menuNo=200023",
+  "downloads": 2480,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-kimhwanki/400.woff2"
+  },
+  "bytes": 1008188,
+  "catalog_key": "kcc김환기체",
+  "source_files": [
+   "KCC-Kimhwanki.otf",
+   "KCC-Kimhwanki.ttf"
+  ]
+ },
+ "k-kcc-ganpan": {
+  "name": "KCC간판체",
+  "en": "KCC-Ganpan",
+  "ko": "KCC-간판체",
+  "author": null,
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 2365,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-ganpan/400.woff2"
+  },
+  "bytes": 1251648,
+  "catalog_key": "kcc간판체",
+  "source_files": [
+   "KCC-Ganpan.otf",
+   "KCC-Ganpan.ttf"
+  ]
+ },
+ "k-ownglyph-2022-uwy-jae-seon": {
+  "name": "온글잎 의청수 재선체",
+  "en": "Ownglyph 2022 UWY Jae Seon",
+  "ko": "온글잎 의청수 재선체",
+  "author": "의왕시청소련수련관",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329089&menuNo=200023",
+  "downloads": 1816,
+  "weights": [
+   400
+  ],
+  "cov": 2786,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-jae-seon/400.woff2"
+  },
+  "bytes": 765608,
+  "catalog_key": "온글잎의청수재선체",
+  "source_files": [
+   "Ownglyph_2022_UWY_Jae_Seon-Rg.ttf"
+  ]
+ },
+ "k-ownglyph-2022-uwy-si-woo": {
+  "name": "온글잎 의청수 시우체",
+  "en": "Ownglyph 2022 UWY Si Woo",
+  "ko": "온글잎 의청수 시우체",
+  "author": "의왕시청소련수련관",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329087&menuNo=200023",
+  "downloads": 1662,
+  "weights": [
+   400
+  ],
+  "cov": 2786,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-si-woo/400.woff2"
+  },
+  "bytes": 767068,
+  "catalog_key": "온글잎의청수시우체",
+  "source_files": [
+   "Ownglyph_2022_UWY_Si_Woo-Rg.ttf"
+  ]
+ },
+ "k-ownglyph-2022-uwy-da-gyeong": {
+  "name": "온글잎 의청수 다경체",
+  "en": "Ownglyph 2022 UWY Da Gyeong",
+  "ko": "온글잎 의청수 다경체",
+  "author": "의왕시청소련수련관",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329086&menuNo=200023",
+  "downloads": 1431,
+  "weights": [
+   400
+  ],
+  "cov": 2786,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-da-gyeong/400.woff2"
+  },
+  "bytes": 611452,
+  "catalog_key": "온글잎의청수다경체",
+  "source_files": [
+   "Ownglyph_2022_UWY_Da_Gyeong-Rg.ttf"
+  ]
+ },
+ "k-hakgyoansim-kkokkoma": {
+  "name": "학교안심 꼬꼬마 R",
+  "en": "Hakgyoansim Kkokkoma",
+  "ko": "학교안심 꼬꼬마",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366484&menuNo=200023",
+  "downloads": 1178,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-kkokkoma/400.woff2"
+  },
+  "bytes": 241720,
+  "catalog_key": "학교안심꼬꼬마",
+  "source_files": [
+   "HakgyoansimKkokkomaR.ttf"
+  ]
+ },
+ "k-hakgyoansim-kossuyeom": {
+  "name": "학교안심 콧수염 R",
+  "en": "Hakgyoansim Kossuyeom",
+  "ko": "학교안심 콧수염",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366505&menuNo=200023",
+  "downloads": 1136,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-kossuyeom/400.woff2"
+  },
+  "bytes": 225580,
+  "catalog_key": "학교안심콧수염",
+  "source_files": [
+   "HakgyoansimKossuyeomR.ttf"
+  ]
+ },
+ "k-jaemin3-0": {
+  "name": "한글재민3.0",
+  "en": "Jaemin3.0",
+  "ko": "한글재민3.0",
+  "author": null,
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 970,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jaemin3-0/400.woff2"
+  },
+  "bytes": 4608432,
+  "catalog_key": "한글재민30",
+  "source_files": [
+   "Jaemin3-Regular.otf"
+  ]
+ },
+ "k-hakgyoansim-mulgyeol": {
+  "name": "학교안심 물결 B",
+  "en": "Hakgyoansim Mulgyeol",
+  "ko": "학교안심 물결",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366495&menuNo=200023",
+  "downloads": 942,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mulgyeol/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mulgyeol/700.woff2"
+  },
+  "bytes": 347200,
+  "catalog_key": "학교안심물결",
+  "source_files": [
+   "HakgyoansimMulgyeolB.ttf",
+   "HakgyoansimMulgyeolR.ttf"
+  ]
+ },
+ "k-hakgyoansim-moheomga": {
+  "name": "학교안심 모험가 B",
+  "en": "Hakgyoansim Moheomga",
+  "ko": "학교안심 모험가",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366492&menuNo=200023",
+  "downloads": 901,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-moheomga/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-moheomga/700.woff2"
+  },
+  "bytes": 384000,
+  "catalog_key": "학교안심모험가",
+  "source_files": [
+   "HakgyoansimMoheomgaB.ttf",
+   "HakgyoansimMoheomgaR.ttf"
+  ]
+ },
+ "k-jaemin2-0": {
+  "name": "한글재민2.0",
+  "en": "Jaemin2.0",
+  "ko": "한글재민2.0",
+  "author": null,
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 861,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jaemin2-0/400.woff2"
+  },
+  "bytes": 2328600,
+  "catalog_key": "한글재민20",
+  "source_files": [
+   "Jaemin_v2.otf"
+  ]
+ },
+ "k-ownglyph-2022-uwy-yoon-yeong": {
+  "name": "온글잎 의청수 윤영체",
+  "en": "Ownglyph 2022 UWY Yoon Yeong",
+  "ko": "온글잎 의청수 윤영체",
+  "author": "의왕시청소련수련관",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329088&menuNo=200023",
+  "downloads": 753,
+  "weights": [
+   400
+  ],
+  "cov": 2786,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-yoon-yeong/400.woff2"
+  },
+  "bytes": 661316,
+  "catalog_key": "온글잎의청수윤영체",
+  "source_files": [
+   "Ownglyph_2022_UWY_Yoon_Yeong-Rg.ttf"
+  ]
+ },
+ "k-hakgyoansim-jiugae": {
+  "name": "학교안심 지우개 R",
+  "en": "Hakgyoansim Jiugae",
+  "ko": "학교안심 지우개",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366504&menuNo=200023",
+  "downloads": 749,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jiugae/400.woff2"
+  },
+  "bytes": 207944,
+  "catalog_key": "학교안심지우개",
+  "source_files": [
+   "HakgyoansimJiugaeR.ttf"
+  ]
+ },
+ "k-hakgyoansim-usan": {
+  "name": "학교안심 우산 R",
+  "en": "Hakgyoansim Usan",
+  "ko": "학교안심 우산",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366500&menuNo=200023",
+  "downloads": 684,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-usan/400.woff2"
+  },
+  "bytes": 175920,
+  "catalog_key": "학교안심우산",
+  "source_files": [
+   "HakgyoansimUsanR.ttf"
+  ]
+ },
+ "k-hakgyoansim-rikodeo": {
+  "name": "학교안심 리코더 R",
+  "en": "Hakgyoansim Rikodeo",
+  "ko": "학교안심 리코더",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366490&menuNo=200023",
+  "downloads": 637,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-rikodeo/400.woff2"
+  },
+  "bytes": 178856,
+  "catalog_key": "학교안심리코더",
+  "source_files": [
+   "HakgyoansimRikodeoR.ttf"
+  ]
+ },
+ "k-hakgyoansim-eunhasu": {
+  "name": "학교안심 은하수 R",
+  "en": "Hakgyoansim Eunhasu",
+  "ko": "학교안심 은하수",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366502&menuNo=200023",
+  "downloads": 611,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-eunhasu/400.woff2"
+  },
+  "bytes": 210360,
+  "catalog_key": "학교안심은하수",
+  "source_files": [
+   "HakgyoansimEunhasuR.ttf"
+  ]
+ },
+ "k-kcc-sonkeechung": {
+  "name": "KCC손기정체",
+  "en": "KCC-Sonkeechung",
+  "ko": "KCC-손기정체",
+  "author": "한국저작권위원회",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13305046&menuNo=200023",
+  "downloads": 590,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-sonkeechung/400.woff2"
+  },
+  "bytes": 1520660,
+  "catalog_key": "kcc손기정체",
+  "source_files": [
+   "KCC-Sonkeechung.otf",
+   "KCC-Sonkeechung.ttf"
+  ]
+ },
+ "k-hakgyoansim-samulham": {
+  "name": "학교안심 사물함 R",
+  "en": "Hakgyoansim Samulham",
+  "ko": "학교안심 사물함",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366497&menuNo=200023",
+  "downloads": 572,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-samulham/400.woff2"
+  },
+  "bytes": 202076,
+  "catalog_key": "학교안심사물함",
+  "source_files": [
+   "HakgyoansimSamulhamR.ttf"
+  ]
+ },
+ "k-hakgyoansim-kkwabaegi": {
+  "name": "학교안심 꽈배기 R",
+  "en": "Hakgyoansim Kkwabaegi",
+  "ko": "학교안심 꽈배기",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366485&menuNo=200023",
+  "downloads": 571,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-kkwabaegi/400.woff2"
+  },
+  "bytes": 239444,
+  "catalog_key": "학교안심꽈배기",
+  "source_files": [
+   "HakgyoansimKkwabaegiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-yeohaeng": {
+  "name": "학교안심 여행 R",
+  "en": "Hakgyoansim Yeohaeng",
+  "ko": "학교안심 여행",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366499&menuNo=200023",
+  "downloads": 548,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-yeohaeng/400.woff2"
+  },
+  "bytes": 170832,
+  "catalog_key": "학교안심여행",
+  "source_files": [
+   "HakgyoansimYeohaengR.ttf"
+  ]
+ },
+ "k-hakgyoansim-undongjang": {
+  "name": "학교안심 운동장 L",
+  "en": "Hakgyoansim Undongjang",
+  "ko": "학교안심 운동장",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366501&menuNo=200023",
+  "downloads": 528,
+  "weights": [
+   300
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-undongjang/300.woff2"
+  },
+  "bytes": 169836,
+  "catalog_key": "학교안심운동장",
+  "source_files": [
+   "HakgyoansimUndongjangL.ttf"
+  ]
+ },
+ "k-hakgyoansim-namu": {
+  "name": "학교안심 나무 L",
+  "en": "Hakgyoansim Namu",
+  "ko": "학교안심 나무",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366486&menuNo=200023",
+  "downloads": 515,
+  "weights": [
+   300,
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-namu/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-namu/400.woff2"
+  },
+  "bytes": 397984,
+  "catalog_key": "학교안심나무",
+  "source_files": [
+   "HakgyoansimNamuL.ttf",
+   "HakgyoansimNamuR.ttf"
+  ]
+ },
+ "k-hakgyoansim-gureum": {
+  "name": "학교안심 구름 R",
+  "en": "Hakgyoansim Gureum",
+  "ko": "학교안심 구름",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366483&menuNo=200023",
+  "downloads": 494,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gureum/400.woff2"
+  },
+  "bytes": 202780,
+  "catalog_key": "학교안심구름",
+  "source_files": [
+   "HakgyoansimGureumR.ttf"
+  ]
+ },
+ "k-hakgyoansim-sonagi": {
+  "name": "학교안심 소나기 R",
+  "en": "Hakgyoansim Sonagi",
+  "ko": "학교안심 소나기",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366498&menuNo=200023",
+  "downloads": 480,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-sonagi/400.woff2"
+  },
+  "bytes": 173688,
+  "catalog_key": "학교안심소나기",
+  "source_files": [
+   "HakgyoansimSonagiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-dotbogi": {
+  "name": "학교안심 돋보기 R",
+  "en": "Hakgyoansim Dotbogi",
+  "ko": "학교안심 돋보기",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366488&menuNo=200023",
+  "downloads": 479,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-dotbogi/400.woff2"
+  },
+  "bytes": 185620,
+  "catalog_key": "학교안심돋보기",
+  "source_files": [
+   "HakgyoansimDotbogiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-mabeopsa": {
+  "name": "학교안심 마법사 R",
+  "en": "Hakgyoansim Mabeopsa",
+  "ko": "학교안심 마법사",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366491&menuNo=200023",
+  "downloads": 472,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mabeopsa/400.woff2"
+  },
+  "bytes": 232184,
+  "catalog_key": "학교안심마법사",
+  "source_files": [
+   "HakgyoansimMabeopsaR.ttf"
+  ]
+ },
+ "k-hakgyoansim-ttwimteul": {
+  "name": "학교안심 뜀틀 R",
+  "en": "Hakgyoansim Ttwimteul",
+  "ko": "학교안심 뜀틀",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366489&menuNo=200023",
+  "downloads": 456,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ttwimteul/400.woff2"
+  },
+  "bytes": 214880,
+  "catalog_key": "학교안심뜀틀",
+  "source_files": [
+   "HakgyoansimTtwimteulR.ttf"
+  ]
+ },
+ "k-ownglyph-2022-uwy-joo-bin": {
+  "name": "온글잎 의청수 주빈체",
+  "en": "Ownglyph 2022 UWY Joo Bin",
+  "ko": "온글잎 의청수 주빈체",
+  "author": "의왕시청소련수련관",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329090&menuNo=200023",
+  "downloads": 375,
+  "weights": [
+   400
+  ],
+  "cov": 2786,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-joo-bin/400.woff2"
+  },
+  "bytes": 748616,
+  "catalog_key": "온글잎의청수주빈체",
+  "source_files": [
+   "Ownglyph_2022_UWY_Joo_Bin-Rg.ttf"
+  ]
+ },
+ "k-hakgyoansim-tuho": {
+  "name": "학교안심 투호 R",
+  "en": "Hakgyoansim Tuho",
+  "ko": "학교안심 투호",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366506&menuNo=200023",
+  "downloads": 322,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tuho/400.woff2"
+  },
+  "bytes": 216488,
+  "catalog_key": "학교안심투호",
+  "source_files": [
+   "HakgyoansimTuhoR.ttf"
+  ]
+ },
+ "k-hakgyoansim-geurimilgi-ttf": {
+  "name": "학교안심 그림일기 R",
+  "en": "Hakgyoansim Geurimilgi TTF",
+  "ko": "학교안심 그림일기 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372620&menuNo=200023",
+  "downloads": 294,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-geurimilgi-ttf/400.woff2"
+  },
+  "bytes": 344464,
+  "catalog_key": "학교안심그림일기",
+  "source_files": [
+   "Hakgyoansim Geurimilgi TTF R.ttf"
+  ]
+ },
+ "k-hakgyoansim-badasseugi-ttf": {
+  "name": "학교안심 받아쓰기 L",
+  "en": "Hakgyoansim Badasseugi TTF",
+  "ko": "학교안심 받아쓰기 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372625&menuNo=200023",
+  "downloads": 263,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-badasseugi-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-badasseugi-ttf/600.woff2"
+  },
+  "bytes": 820676,
+  "catalog_key": "학교안심받아쓰기",
+  "source_files": [
+   "Hakgyoansim Badasseugi TTF B.ttf",
+   "Hakgyoansim Badasseugi TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-nadeuri-ttf": {
+  "name": "학교안심 나들이 L",
+  "en": "Hakgyoansim Nadeuri TTF",
+  "ko": "학교안심 나들이 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372621&menuNo=200023",
+  "downloads": 255,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nadeuri-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nadeuri-ttf/600.woff2"
+  },
+  "bytes": 355464,
+  "catalog_key": "학교안심나들이",
+  "source_files": [
+   "Hakgyoansim Nadeuri TTF B.ttf",
+   "Hakgyoansim Nadeuri TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-dunggeunmiso-ttf": {
+  "name": "학교안심 둥근미소 R",
+  "en": "Hakgyoansim Dunggeunmiso TTF",
+  "ko": "학교안심 둥근미소 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372623&menuNo=200023",
+  "downloads": 214,
+  "weights": [
+   400,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-dunggeunmiso-ttf/400.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-dunggeunmiso-ttf/600.woff2"
+  },
+  "bytes": 433952,
+  "catalog_key": "학교안심둥근미소",
+  "source_files": [
+   "Hakgyoansim Dunggeunmiso TTF B.ttf",
+   "Hakgyoansim Dunggeunmiso TTF R.ttf"
+  ]
+ },
+ "k-hakgyoansim-byeolbichhaneul-ttf": {
+  "name": "학교안심 별빛하늘 L",
+  "en": "Hakgyoansim Byeolbichhaneul TTF",
+  "ko": "학교안심 별빛하늘 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372627&menuNo=200023",
+  "downloads": 212,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeolbichhaneul-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeolbichhaneul-ttf/600.woff2"
+  },
+  "bytes": 533392,
+  "catalog_key": "학교안심별빛하늘",
+  "source_files": [
+   "Hakgyoansim Byeolbichhaneul TTF B.ttf",
+   "Hakgyoansim Byeolbichhaneul TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-chilpanjiugae-ttf": {
+  "name": "학교안심 칠판지우개 L",
+  "en": "Hakgyoansim Chilpanjiugae TTF",
+  "ko": "학교안심 칠판지우개 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372635&menuNo=200023",
+  "downloads": 190,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chilpanjiugae-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chilpanjiugae-ttf/600.woff2"
+  },
+  "bytes": 447040,
+  "catalog_key": "학교안심칠판지우개",
+  "source_files": [
+   "Hakgyoansim Chilpanjiugae TTF B.ttf",
+   "Hakgyoansim Chilpanjiugae TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-allimjang-ttf": {
+  "name": "학교안심 알림장 R",
+  "en": "Hakgyoansim Allimjang TTF",
+  "ko": "학교안심 알림장 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372631&menuNo=200023",
+  "downloads": 163,
+  "weights": [
+   400,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-allimjang-ttf/400.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-allimjang-ttf/600.woff2"
+  },
+  "bytes": 629488,
+  "catalog_key": "학교안심알림장",
+  "source_files": [
+   "Hakgyoansim Allimjang TTF B.ttf",
+   "Hakgyoansim Allimjang TTF R.ttf"
+  ]
+ },
+ "k-hakgyoansim-chulseokbu-ttf": {
+  "name": "학교안심 출석부 L",
+  "en": "Hakgyoansim Chulseokbu TTF",
+  "ko": "학교안심 출석부 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372633&menuNo=200023",
+  "downloads": 155,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chulseokbu-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chulseokbu-ttf/600.woff2"
+  },
+  "bytes": 351396,
+  "catalog_key": "학교안심출석부",
+  "source_files": [
+   "Hakgyoansim Chulseokbu TTF B.ttf",
+   "Hakgyoansim Chulseokbu TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-puzzle-ttf": {
+  "name": "학교안심 퍼즐 Black",
+  "en": "Hakgyoansim Puzzle TTF",
+  "ko": "학교안심 퍼즐 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372637&menuNo=200023",
+  "downloads": 153,
+  "weights": [
+   400,
+   900
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-puzzle-ttf/400.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-puzzle-ttf/900.woff2"
+  },
+  "bytes": 927360,
+  "catalog_key": "학교안심퍼즐",
+  "source_files": [
+   "Hakgyoansim Puzzle TTF Black.ttf",
+   "Hakgyoansim Puzzle TTF Outline.ttf"
+  ]
+ },
+ "k-hakgyoansim-byeoljari-ttf": {
+  "name": "학교안심 별자리 L",
+  "en": "Hakgyoansim Byeoljari TTF",
+  "ko": "학교안심 별자리 TTF",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372629&menuNo=200023",
+  "downloads": 151,
+  "weights": [
+   300,
+   600
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeoljari-ttf/300.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeoljari-ttf/600.woff2"
+  },
+  "bytes": 331700,
+  "catalog_key": "학교안심별자리",
+  "source_files": [
+   "Hakgyoansim Byeoljari TTF B.ttf",
+   "Hakgyoansim Byeoljari TTF L.ttf"
+  ]
+ },
+ "k-hakgyoansim-poster-b": {
+  "name": "학교안심 포스터 B",
+  "en": "Hakgyoansim Poster B",
+  "ko": "학교안심 포스터 B",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 68,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-poster-b/400.woff2"
+  },
+  "bytes": 204244,
+  "catalog_key": "학교안심포스터",
+  "source_files": [
+   "Hakgyoansim_PosterB.ttf",
+   "Hakgyoansim_PosterOTFB.otf"
+  ]
+ },
+ "k-hakgyoansim-gongryongal-otf-r": {
+  "name": "학교안심 공룡알 R",
+  "en": "Hakgyoansim Gongryongal OTF R",
+  "ko": "학교안심 공룡알 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 62,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gongryongal-otf-r/400.woff2"
+  },
+  "bytes": 216468,
+  "catalog_key": "학교안심공룡알",
+  "source_files": [
+   "Hakgyoansim_GongryongalOTFR.otf",
+   "Hakgyoansim_GongryongalR.ttf"
+  ]
+ },
+ "k-hakgyoansim-nalgae-otf-r": {
+  "name": "학교안심 날개 R",
+  "en": "Hakgyoansim Nalgae OTF R",
+  "ko": "학교안심 날개 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 53,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nalgae-otf-r/400.woff2"
+  },
+  "bytes": 259344,
+  "catalog_key": "학교안심날개",
+  "source_files": [
+   "Hakgyoansim_NalgaeOTFR.otf",
+   "Hakgyoansim_NalgaeR.ttf"
+  ]
+ },
+ "k-hakgyoansim-manito-otf-r": {
+  "name": "학교안심 마니또 R",
+  "en": "Hakgyoansim Manito OTF R",
+  "ko": "학교안심 마니또 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 51,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-manito-otf-r/400.woff2"
+  },
+  "bytes": 243108,
+  "catalog_key": "학교안심마니또",
+  "source_files": [
+   "Hakgyoansim_ManitoOTFR.otf",
+   "Hakgyoansim_ManitoR.ttf"
+  ]
+ },
+ "k-hakgyoansim-tteokbokki-b": {
+  "name": "학교안심 떡볶이 B",
+  "en": "Hakgyoansim TTeokbokki B",
+  "ko": "학교안심 떡볶이 B",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 50,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tteokbokki-b/400.woff2"
+  },
+  "bytes": 198756,
+  "catalog_key": "학교안심떡볶이",
+  "source_files": [
+   "Hakgyoansim_TteokbokkiB.ttf",
+   "Hakgyoansim_TteokbokkiOTFB.otf"
+  ]
+ },
+ "k-hakgyoansim-eohangkkumigi-b": {
+  "name": "학교안심 어항꾸미기 B",
+  "en": "Hakgyoansim Eohangkkumigi B",
+  "ko": "학교안심 어항꾸미기 B",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 43,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-eohangkkumigi-b/400.woff2"
+  },
+  "bytes": 183032,
+  "catalog_key": "학교안심어항꾸미기",
+  "source_files": [
+   "Hakgyoansim_EohangkkumigiB.ttf",
+   "Hakgyoansim_EohangkkumigiOTFB.otf"
+  ]
+ },
+ "k-hakgyoansim-bandal-l": {
+  "name": "학교안심 반달 L",
+  "en": "Hakgyoansim Bandal L",
+  "ko": "학교안심 반달 L",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 39,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bandal-l/400.woff2"
+  },
+  "bytes": 169884,
+  "catalog_key": "학교안심반달",
+  "source_files": [
+   "Hakgyoansim_BandalL.ttf",
+   "Hakgyoansim_BandalOTFL.otf"
+  ]
+ },
+ "k-hakgyoansim-mindeulleholssi-otf-r": {
+  "name": "학교안심 민들레홀씨 R",
+  "en": "Hakgyoansim Mindeulleholssi OTF R",
+  "ko": "학교안심 민들레홀씨 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 34,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mindeulleholssi-otf-r/400.woff2"
+  },
+  "bytes": 295128,
+  "catalog_key": "학교안심민들레홀씨",
+  "source_files": [
+   "Hakgyoansim_MindeulleholssiOTFR.otf",
+   "Hakgyoansim_MindeulleholssiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-sangjang-otf-r": {
+  "name": "학교안심 상장 R",
+  "en": "Hakgyoansim Sangjang OTF R",
+  "ko": "학교안심 상장 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 34,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-sangjang-otf-r/400.woff2"
+  },
+  "bytes": 284056,
+  "catalog_key": "학교안심상장",
+  "source_files": [
+   "Hakgyoansim_SangjangOTFR.otf",
+   "Hakgyoansim_SangjangR.ttf"
+  ]
+ },
+ "k-hakgyoansim-siganpyo-otf-r": {
+  "name": "학교안심 시간표 R",
+  "en": "Hakgyoansim Siganpyo OTF R",
+  "ko": "학교안심 시간표 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 34,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-siganpyo-otf-r/400.woff2"
+  },
+  "bytes": 272400,
+  "catalog_key": "학교안심시간표",
+  "source_files": [
+   "Hakgyoansim_SiganpyoOTFR.otf",
+   "Hakgyoansim_SiganpyoR.ttf"
+  ]
+ },
+ "k-hakgyoansim-susukkang-l": {
+  "name": "학교안심 수수깡 L",
+  "en": "Hakgyoansim Susukkang L",
+  "ko": "학교안심 수수깡 L",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 32,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-susukkang-l/400.woff2"
+  },
+  "bytes": 230484,
+  "catalog_key": "학교안심수수깡",
+  "source_files": [
+   "Hakgyoansim_SusukkangL.ttf",
+   "Hakgyoansim_SusukkangOTFL.otf"
+  ]
+ },
+ "k-hakgyoansim-mondangbunfil-otf-r": {
+  "name": "학교안심 몽당분필 R",
+  "en": "Hakgyoansim Mondangbunfil OTF R",
+  "ko": "학교안심 몽당분필 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 30,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mondangbunfil-otf-r/400.woff2"
+  },
+  "bytes": 502604,
+  "catalog_key": "학교안심몽당분필",
+  "source_files": [
+   "Hakgyoansim_MondangbunfilOTFR.otf",
+   "Hakgyoansim_MondangbunfilR.ttf"
+  ]
+ },
+ "k-hakgyoansim-boardmarker-otf-r": {
+  "name": "학교안심 보드마카 R",
+  "en": "Hakgyoansim Boardmarker OTF R",
+  "ko": "학교안심 보드마카 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 28,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-boardmarker-otf-r/400.woff2"
+  },
+  "bytes": 208624,
+  "catalog_key": "학교안심보드마카",
+  "source_files": [
+   "Hakgyoansim_BoardmarkerOTFR.otf",
+   "Hakgyoansim_BoardmarkerR.ttf"
+  ]
+ },
+ "k-hakgyoansim-chaekgalpi-otf-r": {
+  "name": "학교안심 책갈피 R",
+  "en": "Hakgyoansim Chaekgalpi OTF R",
+  "ko": "학교안심 책갈피 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 26,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chaekgalpi-otf-r/400.woff2"
+  },
+  "bytes": 379332,
+  "catalog_key": "학교안심책갈피",
+  "source_files": [
+   "Hakgyoansim_ChaekgalpiOTFR.otf",
+   "Hakgyoansim_ChaekgalpiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-saekyeonpil-otf-r": {
+  "name": "학교안심 색연필 R",
+  "en": "Hakgyoansim Saekyeonpil OTF R",
+  "ko": "학교안심 색연필 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 26,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-saekyeonpil-otf-r/400.woff2"
+  },
+  "bytes": 4221676,
+  "catalog_key": "학교안심색연필",
+  "source_files": [
+   "Hakgyoansim_SaekyeonpilOTFR.otf",
+   "Hakgyoansim_SaekyeonpilR.ttf"
+  ]
+ },
+ "k-hakgyoansim-jayusigan-otf-r": {
+  "name": "학교안심 자유시간 R",
+  "en": "Hakgyoansim Jayusigan OTF R",
+  "ko": "학교안심 자유시간 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 24,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayusigan-otf-r/400.woff2"
+  },
+  "bytes": 227324,
+  "catalog_key": "학교안심자유시간",
+  "source_files": [
+   "Hakgyoansim_JayusiganOTFR.otf",
+   "Hakgyoansim_JayusiganR.ttf"
+  ]
+ },
+ "k-hakgyoansim-sketchbook-otf-r": {
+  "name": "학교안심 스케치북 R",
+  "en": "Hakgyoansim Sketchbook OTF R",
+  "ko": "학교안심 스케치북 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 21,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-sketchbook-otf-r/400.woff2"
+  },
+  "bytes": 204048,
+  "catalog_key": "학교안심스케치북",
+  "source_files": [
+   "Hakgyoansim_SketchbookOTFR.otf",
+   "Hakgyoansim_SketchbookR.ttf"
+  ]
+ },
+ "k-hakgyoansim-yieodalligi-l": {
+  "name": "학교안심 이어달리기 L",
+  "en": "Hakgyoansim Yieodalligi L",
+  "ko": "학교안심 이어달리기 L",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 19,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-yieodalligi-l/400.woff2"
+  },
+  "bytes": 137008,
+  "catalog_key": "학교안심이어달리기",
+  "source_files": [
+   "Hakgyoansim_YieodalligiL.ttf",
+   "Hakgyoansim_YieodalligiOTFL.otf"
+  ]
+ },
+ "k-hakgyoansim-jayeon-otf-r": {
+  "name": "학교안심 자연 R",
+  "en": "Hakgyoansim Jayeon OTF R",
+  "ko": "학교안심 자연 OTF R",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 18,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayeon-otf-r/400.woff2"
+  },
+  "bytes": 169320,
+  "catalog_key": "학교안심자연",
+  "source_files": [
+   "Hakgyoansim_JayeonOTFR.otf",
+   "Hakgyoansim_JayeonR.ttf"
+  ]
+ },
+ "k-hakgyoansim-kidaripungseon-l": {
+  "name": "학교안심 키다리풍선 L",
+  "en": "Hakgyoansim Kidaripungseon L",
+  "ko": "학교안심 키다리풍선 L",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "downloads": 18,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-kidaripungseon-l/400.woff2"
+  },
+  "bytes": 159632,
+  "catalog_key": "학교안심키다리풍선",
+  "source_files": [
+   "Hakgyoansim_KidaripungseonL.ttf",
+   "Hakgyoansim_KidaripungseonOTFL.otf"
+  ]
+ },
+ "k-hakgyoansim-bareonbatang": {
+  "name": "학교안심 바른바탕 R",
+  "en": "Hakgyoansim Bareonbatang",
+  "ko": "학교안심 바른바탕",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333605&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareonbatang/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareonbatang/700.woff2"
+  },
+  "bytes": 638720,
+  "catalog_key": "학교안심바른바탕",
+  "source_files": [
+   "HakgyoansimBareonbatangB.ttf",
+   "HakgyoansimBareonbatangR.ttf"
+  ]
+ },
+ "k-hakgyoansim-bareondotum": {
+  "name": "학교안심 바른돋움 R",
+  "en": "Hakgyoansim Bareondotum",
+  "ko": "학교안심 바른돋움",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333607&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareondotum/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareondotum/700.woff2"
+  },
+  "bytes": 515072,
+  "catalog_key": "학교안심바른돋움",
+  "source_files": [
+   "HakgyoansimBareondotumB.ttf",
+   "HakgyoansimBareondotumR.ttf"
+  ]
+ },
+ "k-hakgyoansim-bombanghak": {
+  "name": "학교안심 봄방학 R",
+  "en": "Hakgyoansim Bombanghak",
+  "ko": "학교안심 봄방학",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333622&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bombanghak/400.woff2"
+  },
+  "bytes": 219936,
+  "catalog_key": "학교안심봄방학",
+  "source_files": [
+   "HakgyoansimBombanghakR.ttf"
+  ]
+ },
+ "k-hakgyoansim-bunpil": {
+  "name": "학교안심 분필 R",
+  "en": "Hakgyoansim Bunpil",
+  "ko": "학교안심 분필",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333621&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bunpil/400.woff2"
+  },
+  "bytes": 320296,
+  "catalog_key": "학교안심분필",
+  "source_files": [
+   "HakgyoansimBunpilR.ttf"
+  ]
+ },
+ "k-hakgyoansim-butpen": {
+  "name": "학교안심 붓펜 L",
+  "en": "Hakgyoansim Butpen",
+  "ko": "학교안심 붓펜",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333614&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   300,
+   500,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/700.woff2"
+  },
+  "bytes": 1033208,
+  "catalog_key": "학교안심붓펜",
+  "source_files": [
+   "HakgyoansimButpenB.ttf",
+   "HakgyoansimButpenL.ttf",
+   "HakgyoansimButpenM.ttf"
+  ]
+ },
+ "k-hakgyoansim-doldam": {
+  "name": "학교안심 돌담 L",
+  "en": "Hakgyoansim Doldam",
+  "ko": "학교안심 돌담",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333617&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   300,
+   500,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/700.woff2"
+  },
+  "bytes": 791040,
+  "catalog_key": "학교안심돌담",
+  "source_files": [
+   "HakgyoansimDoldamB.ttf",
+   "HakgyoansimDoldamL.ttf",
+   "HakgyoansimDoldamM.ttf"
+  ]
+ },
+ "k-hakgyoansim-gaeulsopung": {
+  "name": "학교안심 가을소풍 L",
+  "en": "Hakgyoansim Gaeulsopung",
+  "ko": "학교안심 가을소풍",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333603&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   300,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gaeulsopung/300.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gaeulsopung/700.woff2"
+  },
+  "bytes": 1018960,
+  "catalog_key": "학교안심가을소풍",
+  "source_files": [
+   "HakgyoansimGaeulsopungB.ttf",
+   "HakgyoansimGaeulsopungL.ttf"
+  ]
+ },
+ "k-hakgyoansim-ggooreogi": {
+  "name": "학교안심 꾸러기 R",
+  "en": "Hakgyoansim Ggooreogi",
+  "ko": "학교안심 꾸러기",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333613&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ggooreogi/400.woff2"
+  },
+  "bytes": 252152,
+  "catalog_key": "학교안심꾸러기",
+  "source_files": [
+   "HakgyoansimGgooreogiR.ttf"
+  ]
+ },
+ "k-hakgyoansim-godeunjemok": {
+  "name": "학교안심 곧은제목 M",
+  "en": "Hakgyoansim Godeunjemok",
+  "ko": "학교안심 곧은제목",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333599&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   500,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-godeunjemok/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-godeunjemok/700.woff2"
+  },
+  "bytes": 488960,
+  "catalog_key": "학교안심곧은제목",
+  "source_files": [
+   "HakgyoansimGodeunjemokB.ttf",
+   "HakgyoansimGodeunjemokM.ttf"
+  ]
+ },
+ "k-hakgyoansim-jeomsimsigan": {
+  "name": "학교안심 점심시간 B",
+  "en": "Hakgyoansim Jeomsimsigan",
+  "ko": "학교안심 점심시간",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366503&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jeomsimsigan/700.woff2"
+  },
+  "bytes": 205856,
+  "catalog_key": "학교안심점심시간",
+  "source_files": [
+   "HakgyoansimJeomsimsiganB.ttf"
+  ]
+ },
+ "k-hakgyoansim-malgeunnal": {
+  "name": "학교안심 맑은날 M",
+  "en": "Hakgyoansim Malgeunnal",
+  "ko": "학교안심 맑은날",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333601&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   500,
+   700
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-malgeunnal/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-malgeunnal/700.woff2"
+  },
+  "bytes": 396728,
+  "catalog_key": "학교안심맑은날",
+  "source_files": [
+   "HakgyoansimMalgeunnalB.ttf",
+   "HakgyoansimMalgeunnalM.ttf"
+  ]
+ },
+ "k-hakgyoansim-monggeulmonggeul": {
+  "name": "학교안심 몽글몽글 R",
+  "en": "Hakgyoansim Monggeulmonggeul",
+  "ko": "학교안심 몽글몽글",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366494&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-monggeulmonggeul/400.woff2"
+  },
+  "bytes": 189168,
+  "catalog_key": "학교안심몽글몽글",
+  "source_files": [
+   "HakgyoansimMonggeulmonggeulR.ttf"
+  ]
+ },
+ "k-hakgyoansim-santteutbatang": {
+  "name": "학교안심 산뜻바탕 L",
+  "en": "Hakgyoansim Santteutbatang",
+  "ko": "학교안심 산뜻바탕",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333609&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   300,
+   500
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutbatang/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutbatang/500.woff2"
+  },
+  "bytes": 582516,
+  "catalog_key": "학교안심산뜻바탕",
+  "source_files": [
+   "HakgyoansimSantteutbatangL.ttf",
+   "HakgyoansimSantteutbatangM.ttf"
+  ]
+ },
+ "k-hakgyoansim-santteutdotumthic": {
+  "name": "학교안심 산뜻돋움 L",
+  "en": "Hakgyoansim Santteutdotumthic",
+  "ko": "학교안심 산뜻돋움",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333611&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   300,
+   500
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutdotumthic/300.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutdotumthic/500.woff2"
+  },
+  "bytes": 400560,
+  "catalog_key": "학교안심산뜻돋움",
+  "source_files": [
+   "HakgyoansimSantteutdotumL.ttf",
+   "HakgyoansimSantteutdotumM.ttf"
+  ]
+ },
+ "k-hakgyoansim-wooju": {
+  "name": "학교안심 우주 R",
+  "en": "Hakgyoansim Wooju",
+  "ko": "학교안심 우주",
+  "author": "한국교육학술정보원",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333620&menuNo=200023",
+  "downloads": null,
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-wooju/400.woff2"
+  },
+  "bytes": 199480,
+  "catalog_key": "학교안심우주",
+  "source_files": [
+   "HakgyoansimWoojuR.ttf"
+  ]
+ }
+}

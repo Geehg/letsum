@@ -4,7 +4,7 @@ LETSUM(렛섬) — 한글 폰트 작업대. 상업용 무료 한글 폰트를 **
 
 - 사이트: https://letsum.app (NAS 컨테이너 포트 8516, nginx 정적 서빙)
 - 소스: `html/` — `index.html`(작업대) · `guide.html`(라이선스 가이드) · `subset.html`(서브셋 생성기) · `submit.html`(폰트 등록) · `admin.html`(관리자, 브라우저 저장 데모) · `privacy.html` · `terms.html`
-- 데이터: `html/js/data.js` — 폰트 38종(Google Fonts 한글 전체, 전부 OFL), 문장 프리셋, 상황별 큐레이션, 유료 폰트 대안, 라틴 짝꿍
+- 데이터: `html/js/data.js` — 폰트 123종(Google Fonts 한글 38 + 공공 안심글꼴 OFL 85, 전부 OFL), 문장 프리셋, 상황별 큐레이션, 유료 폰트 대안, 라틴 짝꿍
 - 리서치: `docs/research_v2_global_benchmark.md`, `docs/demand_and_download_strategy.md`(실수요·다운로드 전략), `docs/automation_feasibility.md` — 국내·해외 벤치마크와 리디자인 근거
 
 ## 주요 기능
@@ -22,6 +22,11 @@ LETSUM(렛섬) — 한글 폰트 작업대. 상업용 무료 한글 폰트를 **
 
 ## 수집 자동화
 - `tools/watch_sources.py`: Google Fonts·Fontsource·GitHub 릴리스·공공데이터 CSV·공공 목록 페이지를 매주 돌며 `tools/state/catalog.json`에 누적(자산). 변경 시 GitHub 이슈로 알림. 라이선스 해석·공개는 사람이 함. 타당성 조사: `docs/automation_feasibility.md`
+
+## 공공 안심글꼴 미리보기 웹폰트
+- 원본: 문체부 안심 글꼴파일 서비스 '안심글꼴(365종) 한번에 내려받기'(tools/archive/kogl, git 제외)
+- `tools/build_webfonts.py --mirror <letsum-mirror>`: 카탈로그 OFL과 매칭 → 굵기별 WOFF2(글리프 무변경) → `Geehg/letsum-mirror` GitHub Pages
+- `tools/import_webfonts.py`: data.js에 추가(status 확인 중, 분류는 이름 추정 → 검수 필요). 사이트는 화면에 보일 때만 @font-face 선언(지연 로딩)
 
 ## 배포
 GitHub `main`에 푸시 → SynoDockPilot 패널에서 "받아와 재배포". 로컬 확인은 `html/`에서 `python3 -m http.server`.

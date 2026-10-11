@@ -9,8 +9,41 @@
 
   // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
   // 스타일시트가 도착하기 전에 document.fonts.load를 부르면 폰트가 없는 것으로 판정되므로, 링크 로드를 기다린다
+  // 웹폰트 두 종류: Google Fonts(한 번에 CSS 링크) / LETSUM 미리보기 웹폰트(f.webfont — 화면에 보일 때만 @font-face 선언)
+  const isGF = (f) => !f.webfont;
+  const declared = new Set();
+  const faceSheet = document.createElement("style"); document.head.appendChild(faceSheet);
+  function ensureFace(f) {
+    if (!f || isGF(f) || declared.has(f.id)) return;
+    declared.add(f.id);
+    const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
+    faceSheet.textContent += Object.entries(f.webfont).map(([w, url]) =>
+      `@font-face{font-family:"${fam}";src:url("${url}") format("woff2");font-weight:${w};font-display:swap}`).join("\n") + "\n";
+  }
+  const faceObs = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
+    if (!e.isIntersecting) return;
+    ensureFace(FONTS.find((x) => x.id === e.target.dataset.id)); faceObs.unobserve(e.target);
+  }), { rootMargin: "600px 0px" }) : null;
+  function observeFaces(root) {
+    (root || document).querySelectorAll("[data-id]").forEach((el) => {
+      const f = FONTS.find((x) => x.id === el.dataset.id);
+      if (!f || isGF(f) || declared.has(f.id)) return;
+      faceObs ? faceObs.observe(el) : ensureFace(f);
+    });
+  }
+  // KS X 1001 완성형 2,350자 집합 — 2,350자 폰트의 누락 글자를 폰트를 받지 않고도 판정
+  const KSX = (() => {
+    const s = new Set();
+    try {
+      const dec = new TextDecoder("euc-kr"); const buf = [];
+      for (let a = 0xb0; a <= 0xc8; a++) for (let b = 0xa1; b <= 0xfe; b++) buf.push(a, b);
+      for (const ch of dec.decode(new Uint8Array(buf))) if (ch >= "가" && ch <= "힣") s.add(ch);
+    } catch (e) {}
+    return s;
+  })();
+
   const fontsCssReady = new Promise((resolve) => {
-    const fam = FONTS.map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
+    const fam = FONTS.filter(isGF).map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://fonts.googleapis.com/css2?" + fam + "&display=swap";
@@ -55,10 +88,21 @@
 
   async function detectAll() {
     await fontsCssReady;
-    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가나다ㅣㅡ").catch(() => {})));
+    const gf = FONTS.filter(isGF);
+    await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가나다ㅣㅡ").catch(() => {})));
     await document.fonts.load('44px "Inter"', "ᄒᆞᆫ漢가").catch(() => {});
-    FONTS.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
-    FONTS.forEach((f) => (metrics[f.id] = measure(f.en)));
+    gf.forEach((f) => { detect[f.id] = { old: probe(f.en, "ᆞ") && probe(f.en, "ᄒ"), hanja: probe(f.en, "漢") && probe(f.en, "國") }; });
+    gf.forEach((f) => (metrics[f.id] = measure(f.en)));
+    // LETSUM 웹폰트는 빌드 때 폰트 파일(cmap)에서 계산한 값을 그대로 쓴다 — 파일을 미리 받지 않음
+    FONTS.filter((f) => !isGF(f)).forEach((f) => { detect[f.id] = { old: !!f.old, hanja: !!f.hanja }; });
+  }
+  // LETSUM 웹폰트의 형태 측정은 상세를 열 때(파일을 받은 뒤) 한다
+  async function measureLazy(f) {
+    if (isGF(f) || metrics[f.id]) return;
+    ensureFace(f);
+    const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
+    await document.fonts.load(`400 48px "${fam}"`, "가나다ㅣㅡ").catch(() => {});
+    metrics[f.id] = measure(fam);
   }
 
   // ---------- 글자 형태 측정 → 닮은 폰트 (AI 없이, 브라우저 캔버스 측정만으로) ----------
@@ -99,8 +143,18 @@
     if (!chars.length) { FONTS.forEach((f) => (coverage[f.id] = [])); $("#coverNote").textContent = ""; render(); return; }
     const txt = chars.join("");
     await fontsCssReady;
-    await Promise.all(FONTS.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
-    FONTS.forEach((f) => { coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); });
+    const gf = FONTS.filter(isGF);
+    await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
+    gf.forEach((f) => { coverage[f.id] = chars.filter((ch) => !probe(f.en, ch)); });
+    // LETSUM 웹폰트: 빌드 때 센 완성형 수·옛한글·한자 정보로 판정 (2,350자 폰트는 KS X 1001 집합 대조)
+    FONTS.filter((f) => !isGF(f)).forEach((f) => {
+      coverage[f.id] = chars.filter((ch) => {
+        if (ch >= "가" && ch <= "힣") return f.cov < 11172 && KSX.size ? !KSX.has(ch) : false;
+        if (/[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF]/.test(ch)) return !f.hanja;
+        if (/[\u1100-\u11FF\uA960-\uA97F\uD7B0-\uD7FF]/.test(ch)) return !f.old;
+        return false;
+      });
+    });
     const bad = FONTS.filter((f) => coverage[f.id].length).length;
     $("#coverNote").textContent = bad ? `(${bad}종에서 누락 발견)` : "(모두 지원)";
     render();
@@ -296,7 +350,7 @@
     else if (state.view === "list") host.innerHTML = list.map(rowHTML).join("");
     else if (state.view === "grid") host.innerHTML = `<div class="grid">${list.map(cardHTML).join("")}</div>`;
     else host.innerHTML = `<div class="ctxgrid">${list.map(ctxHTML).join("")}</div>`;
-    renderActive(); bind(host);
+    renderActive(); bind(host); observeFaces(host);
   }
   function renderActive() {
     const chips = [];
@@ -369,6 +423,7 @@
   const overlay = $("#overlay"), modal = $("#modalBox");
   function openCompare() {
     const list = [...cmp].map((id) => FONTS.find((x) => x.id === id)); if (!list.length) return;
+    list.forEach(ensureFace);
     const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: state.inv };
     modal.className = "modal wide";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
@@ -408,10 +463,10 @@
   function dlFor(f) {
     const gfam = f.en.replace(/ /g, "+");
     const o = f.dl || {};
-    const zip = o.zip || `https://fonts.google.com/download?family=${gfam}`;
+    const zip = o.zip || (isGF(f) ? `https://fonts.google.com/download?family=${gfam}` : null);
     const page = o.page || `https://fonts.google.com/specimen/${gfam}`;
     const st = links[f.id];
-    return { zip, page, ok: !(st && st.ok === false), checked: st && st.checked, srcName: o.srcName || "Google Fonts", mirror: o.mirror || null };
+    return { zip, page, ok: !!zip && !(st && st.ok === false), checked: st && st.checked, srcName: o.srcName || (isGF(f) ? "Google Fonts" : "공유마당"), mirror: o.mirror || null };
   }
   // 라이선스 증빙: 사용 시점의 사용 범위·검수일·출처를 텍스트로 보관 (분쟁 대비)
   function saveProof(f, dl) {
@@ -436,6 +491,8 @@
   const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
   function openDetail(id) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
+    ensureFace(f);
+    if (!isGF(f) && !metrics[f.id]) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
     const gfam = f.en.replace(/ /g, "+");
     const gfont = `https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&display=swap`;
     const specimen = "https://fonts.google.com/specimen/" + gfam;
@@ -473,7 +530,7 @@
         <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
 
       <div class="m-sec"><h3>닮은 폰트</h3>
-        <div class="simrow">${similar(f, 3).map((s) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span></button>`).join("") || '<span class="note">측정 중…</span>'}</div>
+        <div class="simrow">${similar(f, 3).map((s) => (ensureFace(s), s)).map((s) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span></button>`).join("") || '<span class="note">측정 중…</span>'}</div>
         <p class="note" style="margin-top:8px">글자 형태를 브라우저에서 직접 측정(굵기 밀도·너비·획 대비)해 가까운 순으로 고릅니다. 외부 서버나 AI를 쓰지 않습니다.</p></div>
 
       <div class="m-sec"><h3>사양</h3>
@@ -501,7 +558,7 @@
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
           <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
         </div>
-        ${dl.ok ? "" : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
+        ${dl.ok ? "" : !isGF(f) ? `<p class="note" style="margin-top:6px">이 폰트는 <b>${esc(dl.srcName)}</b> 페이지에서 이용 범위를 확인한 뒤 내려받습니다. 원 배포처 페이지 버튼을 눌러 주세요.</p>` : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
         <p class="note" style="margin-top:8px">${dl.ok ? `파일은 LETSUM이 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
         <details class="howto"><summary>설치 · PPT/한글 적용 안내 (Windows · Mac · 아이폰 · 갤럭시)</summary>
           <div class="howto-body">
@@ -512,13 +569,13 @@
             <p><b>영상·디자인 프로그램</b> — 프리미어·애프터이펙트·피그마는 설치 후 재실행하면 바로 나타납니다. 캔바(무료)는 자체 폰트만 쓸 수 있고, 유료 플랜에서 업로드가 됩니다.</p>
           </div>
         </details>
-        <div class="codehead"><span>웹폰트 (Google Fonts CDN)</span><button class="abtn" data-copy="c1">복사</button></div>
+        ${isGF(f) ? `<div class="codehead"><span>웹폰트 (Google Fonts CDN)</span><button class="abtn" data-copy="c1">복사</button></div>
         <pre class="code" id="c1">&lt;link href="${gfont}" rel="stylesheet"&gt;
 font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰트로: */ font-family: ${esc(pairDef.family)}, ${esc(f.family)};` : ""}</pre>
         <div class="codehead"><span>개발자용 (Fontsource · npm, 자체 호스팅)</span><button class="abtn" data-copy="c2">복사</button></div>
         <pre class="code" id="c2">npm i @fontsource/${f.id}
 import "@fontsource/${f.id}/400.css";</pre>
-        <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>
+        <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>` : `<p class="note" style="margin-top:12px">웹사이트에 쓰려면 원 배포처에서 받은 파일을 직접 호스팅하세요(OFL은 웹 임베딩 허용). LETSUM의 미리보기용 웹폰트는 이 사이트의 미리보기 전용입니다.</p>`}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           <button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>
@@ -549,6 +606,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function openDesigner(name) {
     const list = FONTS.filter((f) => f.designer === name);
+    list.forEach(ensureFace);
     modal.className = "modal";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
       <div class="m-head"><h2>${esc(name)}</h2><span class="en">LETSUM 등록 폰트 ${list.length}종</span></div>
@@ -573,11 +631,12 @@ import "@fontsource/${f.id}/400.css";</pre>
     const mon = new Date(now); mon.setDate(now.getDate() - day); mon.setHours(0, 0, 0, 0);
     const iso = (d) => d.toISOString().slice(0, 10);
     const byNew = [...FONTS].sort((a, b) => b.added.localeCompare(a.added));
-    let list = byNew.filter((f) => f.added >= iso(mon)); let week = true;
+    const weekAll = byNew.filter((f) => f.added >= iso(mon)); let week = true;
+    let list = weekAll.slice(0, 12); // 슬라이드는 12장까지(웹폰트를 한 번에 많이 받지 않도록)
     if (!list.length) { list = byNew.slice(0, 8); week = false; }
     const latest = byNew[0].added.replace(/-/g, ".");
     $("#nbLabel").textContent = week ? "이번 주 신규" : "최근 등록";
-    $("#nbTitle").textContent = week ? `이번 주 새로 배포된 한글 무료 폰트 ${list.length}종` : "최근 등록된 한글 무료 폰트";
+    $("#nbTitle").textContent = week ? `이번 주 새로 배포된 한글 무료 폰트 ${weekAll.length}종` : "최근 등록된 한글 무료 폰트";
     $("#nbMeta").textContent = (week ? `${iso(mon).replace(/-/g, ".")} 주간` : `이번 주 신규 없음 · 최신 갱신 ${latest} 기준`) + ` · 전체 ${FONTS.length}종 · 검수 ${FONTS.map((f) => f.verified).sort().pop().replace(/-/g, ".")}`;
     track.innerHTML = list.map((f) => `
       <article class="slide" data-id="${f.id}" tabindex="0">
@@ -586,6 +645,7 @@ import "@fontsource/${f.id}/400.css";</pre>
         <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)} · 굵기 ${f.weights.length}종</span></div>
           <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}</div></div>
       </article>`).join("");
+    observeFaces(track);
     track.querySelectorAll(".slide").forEach((el) => {
       el.addEventListener("click", () => openDetail(el.dataset.id));
       el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });

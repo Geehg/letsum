@@ -257,7 +257,10 @@ def check_links():
     for m in re.finditer(r'\{ id: "([^"]+)", name: "[^"]*", en: "([^"]+)"(.*?)verified:', src, re.S):
         fid, en, body = m.group(1), m.group(2), m.group(3)
         mz = re.search(r'\bzip: "([^"]+)"', body)  # 사이트가 기본으로 거는 것은 원 배포처 링크. 보관본(mirror)은 끊겼을 때만 대체
-        url = mz.group(1) if mz else f"https://fonts.google.com/download?family={en.replace(' ', '+')}"
+        mp = re.search(r'\bpage: "([^"]+)"', body)
+        if mz: url = mz.group(1)
+        elif "webfont:" in body and mp: url = mp.group(1)  # 공공 안심글꼴: 공유마당 페이지가 원 배포처
+        else: url = f"https://fonts.google.com/download?family={en.replace(' ', '+')}"
         try:
             req = urllib.request.Request(url, headers=dict(UA, Range="bytes=0-0"))
             with urllib.request.urlopen(req, timeout=25) as r:

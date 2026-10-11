@@ -2,7 +2,7 @@
 (function () {
   const $ = (s) => document.querySelector(s);
   const sel = $("#fSel");
-  sel.innerHTML = FONTS.map((f) => `<option value="${f.id}">${f.name}</option>`).join("");
+  sel.innerHTML = FONTS.filter((f) => !f.webfont).map((f) => `<option value="${f.id}">${f.name}</option>`).join("");
 
   $("#go").addEventListener("click", async () => {
     const f = FONTS.find((x) => x.id === sel.value);
