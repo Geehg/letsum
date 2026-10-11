@@ -38,7 +38,7 @@ function page(f) {
 <body>
 <header><div class="wrap hd">
   <a class="logo" href="../index.html">렛섬 <small>LETSUM</small></a>
-  <nav class="main"><a href="../index.html">작업대</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">서브셋 도구</a><a href="../submit.html">폰트 등록</a></nav>
+  <nav class="main"><a href="../index.html">작업대</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">서브셋 도구</a></nav>
   <div class="sp"></div>
 </div></header>
 <main class="wrap fp">
@@ -78,7 +78,7 @@ font-family: ${esc(f.family)};</pre>
 const out = path.join(ROOT, "font"); fs.mkdirSync(out, { recursive: true });
 FONTS.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f)));
 const today = new Date().toISOString().slice(0, 10);
-const urls = [`${SITE}/`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/submit.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/guide.html`, `${SITE}/subset.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /admin.html\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log(`font pages ${FONTS.length}, sitemap ${urls.length} urls`);

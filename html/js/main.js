@@ -553,13 +553,9 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
       <div class="m-head"><h2>${esc(name)}</h2><span class="en">LETSUM 등록 폰트 ${list.length}종</span></div>
       <div class="grid" style="margin-top:18px">${list.map((f) => `<article class="card" data-did="${f.id}"><div class="r-pv" style="font-family:${f.family};font-size:30px">${esc(state.text || f.name)}</div><div class="r-name">${esc(f.name)}<span class="en">굵기 ${f.weights.length}종</span></div></article>`).join("")}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
-        <button class="btn" id="dsgSupport">♥ 제작자 후원하기</button>
-        <a class="btn ghost" href="submit.html">유료 폰트 입점 신청</a></div>
-      <p class="note" style="margin-top:10px">후원 기능은 준비 중입니다. 입점 신청을 통해 후원 링크를 등록할 수 있습니다.</p>`;
+`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
-    $("#dsgSupport").addEventListener("click", () => alert("후원 기능은 준비 중입니다. 정식 서비스에서 제공될 예정입니다."));
     modal.querySelectorAll("[data-did]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.did)));
   }
   function closeModal() { overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
