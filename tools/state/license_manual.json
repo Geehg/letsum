@@ -53,5 +53,35 @@
   "evidence": "HS효성 서체 사용 가이드 PDF(TERMS OF USE·USAGE SCOPE): 개인·기업 상업적·비상업적 무료 사용, 웹폰트 웹사이트 화면 표시 허용 / 서체 판매·재배포, 로고·상표 금지, 소프트웨어 임베딩 사전 협의 → 공개 미러에 올리지 않고 letsum.app 서버에서 화면 표시용으로만 제공(배포처 WOFF2 원본 그대로)",
   "page": "https://www.hshyosung.com/resources/front/ebook/kr/HS_HYOSUNG_LICENSE_GUIDE_KR.pdf",
   "checked": "2026-10-11"
+ },
+ "k-seoulnamsan": {
+  "license": "서울서체 이용조건",
+  "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do",
+  "checked": "2026-10-11"
+ },
+ "k-seoulhangang": {
+  "license": "서울서체 이용조건",
+  "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do",
+  "checked": "2026-10-11"
+ },
+ "k-seoulnamsanc": {
+  "license": "서울서체 이용조건",
+  "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do",
+  "checked": "2026-10-11"
+ },
+ "k-seoulhangangc": {
+  "license": "서울서체 이용조건",
+  "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do",
+  "checked": "2026-10-11"
+ },
+ "k-seoulalrim": {
+  "license": "서울서체 이용조건",
+  "evidence": "서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do",
+  "checked": "2026-10-11"
  }
 }

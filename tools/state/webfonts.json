@@ -2347,13 +2347,13 @@
   "weights": [
    400
   ],
-  "license": "공공누리 제1유형",
+  "license": "서울서체 이용조건",
   "cov": 11172,
   "old": false,
   "hanja": true,
   "rfn": false,
   "files": {
-   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulnamsan/400.woff2"
+   "400": "https://letsum.app/fonts-hosted/seoulnamsan/400.woff2"
   },
   "bytes": 1130944,
   "catalog_key": "서울남산체",
@@ -2363,7 +2363,8 @@
    "SeoulNamsanL.ttf",
    "SeoulNamsanM.ttf",
    "SeoulNamsanvert.ttf"
-  ]
+  ],
+  "hosted": "server-only"
  },
  "k-mapopeacefull": {
   "name": "Mapo한아름",
@@ -2475,13 +2476,13 @@
   "weights": [
    400
   ],
-  "license": "공공누리 제1유형",
+  "license": "서울서체 이용조건",
   "cov": 11172,
   "old": false,
   "hanja": true,
   "rfn": false,
   "files": {
-   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulhangang/400.woff2"
+   "400": "https://letsum.app/fonts-hosted/seoulhangang/400.woff2"
   },
   "bytes": 1476808,
   "catalog_key": "서울한강체",
@@ -2490,7 +2491,8 @@
    "SeoulHangangEB.ttf",
    "SeoulHangangL.ttf",
    "SeoulHangangM.ttf"
-  ]
+  ],
+  "hosted": "server-only"
  },
  "k-mapodacapo": {
   "name": "Mapo다카포",
@@ -2778,13 +2780,13 @@
   "weights": [
    400
   ],
-  "license": "공공누리 제1유형",
+  "license": "서울서체 이용조건",
   "cov": 11172,
   "old": false,
   "hanja": true,
   "rfn": false,
   "files": {
-   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulnamsanc/400.woff2"
+   "400": "https://letsum.app/fonts-hosted/seoulnamsanc/400.woff2"
   },
   "bytes": 1127032,
   "catalog_key": "서울남산장체",
@@ -2794,7 +2796,8 @@
    "서울남산 장체EB.ttf",
    "서울남산 장체L.ttf",
    "서울남산 장체M.ttf"
-  ]
+  ],
+  "hosted": "server-only"
  },
  "k-sangju-dajungdagam": {
   "name": "상주다정다감체",
@@ -2831,13 +2834,13 @@
   "weights": [
    400
   ],
-  "license": "공공누리 제1유형",
+  "license": "서울서체 이용조건",
   "cov": 11172,
   "old": false,
   "hanja": true,
   "rfn": false,
   "files": {
-   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulhangangc/400.woff2"
+   "400": "https://letsum.app/fonts-hosted/seoulhangangc/400.woff2"
   },
   "bytes": 1497560,
   "catalog_key": "서울한강장체",
@@ -2847,7 +2850,8 @@
    "서울한강 장체EB.ttf",
    "서울한강 장체L.ttf",
    "서울한강 장체M.ttf"
-  ]
+  ],
+  "hosted": "server-only"
  },
  "k-munhwajaedolbom-bold": {
   "name": "문화재돌봄체B",
@@ -3613,16 +3617,16 @@
    800,
    900
   ],
-  "license": "공공누리 제1유형",
+  "license": "서울서체 이용조건",
   "cov": 11172,
   "old": false,
   "hanja": false,
   "rfn": false,
   "files": {
-   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/500.woff2",
-   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/700.woff2",
-   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/800.woff2",
-   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-seoulalrim/900.woff2"
+   "500": "https://letsum.app/fonts-hosted/seoulalrim/500.woff2",
+   "700": "https://letsum.app/fonts-hosted/seoulalrim/700.woff2",
+   "800": "https://letsum.app/fonts-hosted/seoulalrim/800.woff2",
+   "900": "https://letsum.app/fonts-hosted/seoulalrim/900.woff2"
   },
   "bytes": 2476876,
   "catalog_key": "서울알림체",
@@ -3635,7 +3639,8 @@
    "SeoulAlrimTTF-ExtraBold.ttf",
    "SeoulAlrimTTF-Heavy.ttf",
    "SeoulAlrimTTF-Medium.ttf"
-  ]
+  ],
+  "hosted": "server-only"
  },
  "k-62570": {
   "name": "62570체",

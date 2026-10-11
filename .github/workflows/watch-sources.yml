@@ -13,17 +13,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Skip while someone holds the lock
+        id: lock
+        run: |
+          if [ -f tools/state/LOCK ]; then echo "잠금 중 — 이번 주 자동 수집 건너뜀"; cat tools/state/LOCK; echo "held=1" >> "$GITHUB_OUTPUT"; fi
       - name: Run watcher
+        if: steps.lock.outputs.held != '1'
         id: run
         run: |
           set +e
           python3 -I tools/watch_sources.py
           echo "code=$?" >> "$GITHUB_OUTPUT"
       - name: Release dates (sourced only)
+        if: steps.lock.outputs.held != '1'
         run: python3 -I tools/release_dates.py
       - name: Build font pages & sitemap
+        if: steps.lock.outputs.held != '1'
         run: node tools/build_pages.js
       - name: Commit state
+        if: steps.lock.outputs.held != '1'
         run: |
           git config user.name "letsum-watch"
           git config user.email "watch@letsum.app"
@@ -31,7 +39,7 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(watch): 배포처 상태 갱신 $(date -u +%F)"
           git push
       - name: Open issue when changed
-        if: steps.run.outputs.code == '3'
+        if: steps.lock.outputs.held != '1' && steps.run.outputs.code == '3'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh issue create --title "폰트 배포처 변경 감지 $(date -u +%F)" --body-file tools/state/report.md --label watch || true

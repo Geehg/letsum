@@ -738,10 +738,10 @@
  {
   "id": "k-seoulnamsan",
   "name": "서울남산체",
-  "expected": "공공누리 제1유형",
-  "license": "공공누리 제1유형",
-  "evidence": "안심글꼴 목록 종류: KOGL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  "expected": "서울서체 이용조건",
+  "license": "서울서체 이용조건",
+  "evidence": "직접 확인: 서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do"
  },
  {
   "id": "k-mapopeacefull",
@@ -778,10 +778,10 @@
  {
   "id": "k-seoulhangang",
   "name": "서울한강체",
-  "expected": "공공누리 제1유형",
-  "license": "공공누리 제1유형",
-  "evidence": "안심글꼴 목록 종류: KOGL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  "expected": "서울서체 이용조건",
+  "license": "서울서체 이용조건",
+  "evidence": "직접 확인: 서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do"
  },
  {
   "id": "k-mapodacapo",
@@ -874,10 +874,10 @@
  {
   "id": "k-seoulnamsanc",
   "name": "서울남산장체",
-  "expected": "공공누리 제1유형",
-  "license": "공공누리 제1유형",
-  "evidence": "안심글꼴 목록 종류: KOGL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  "expected": "서울서체 이용조건",
+  "license": "서울서체 이용조건",
+  "evidence": "직접 확인: 서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do"
  },
  {
   "id": "k-sangju-dajungdagam",
@@ -890,10 +890,10 @@
  {
   "id": "k-seoulhangangc",
   "name": "서울한강장체",
-  "expected": "공공누리 제1유형",
-  "license": "공공누리 제1유형",
-  "evidence": "안심글꼴 목록 종류: KOGL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  "expected": "서울서체 이용조건",
+  "license": "서울서체 이용조건",
+  "evidence": "직접 확인: 서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do"
  },
  {
   "id": "k-munhwajaedolbom-bold",
@@ -1130,10 +1130,10 @@
  {
   "id": "k-seoulalrim",
   "name": "서울알림체",
-  "expected": "공공누리 제1유형",
-  "license": null,
-  "evidence": "안심글꼴 목록 종류: KOGL",
-  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  "expected": "서울서체 이용조건",
+  "license": "서울서체 이용조건",
+  "evidence": "직접 확인: 서울시 서울서체 페이지 '저작권 안내': 누구나 무료로 다운로드해 자유롭게 사용 가능, 단 판매·유상양도·무단배포 금지(공유마당 목록의 공공누리 1유형 표기보다 저작권자 안내를 우선) → 공개 미러 대신 letsum.app 서버에서 화면 표시용으로만 제공",
+  "page": "https://www.seoul.go.kr/seoul/font.do"
  },
  {
   "id": "k-62570",
