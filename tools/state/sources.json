@@ -1012,44 +1012,38 @@
  "github": {
   "Pretendard": {
    "repo": "orioncactus/pretendard",
-   "url": "https://github.com/orioncactus/pretendard/releases/tag/v1.3.9",
-   "tag": "v1.3.9",
-   "published": "2023-11-05T18:21:09Z",
-   "license": "NOASSERTION"
+   "url": "https://github.com/orioncactus/pretendard",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   },
   "SUIT": {
    "repo": "sunn-us/SUIT",
-   "url": "https://github.com/sunn-us/SUIT/commit/45279e6face2b481f0b09b3a0989dfd97d47282f",
-   "tag": null,
-   "published": "2025-09-09T20:07:38Z",
+   "url": "https://github.com/sunn-us/SUIT",
+   "error": "HTTP Error 403: rate limit exceeded",
    "license": null
   },
   "Wanted Sans": {
    "repo": "wanteddev/wanted-sans",
-   "url": "https://github.com/wanteddev/wanted-sans/releases/tag/v1.0.3",
-   "tag": "v1.0.3",
-   "published": "2024-03-05T05:14:49Z",
-   "license": "OFL-1.1"
+   "url": "https://github.com/wanteddev/wanted-sans",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   },
   "Spoqa Han Sans": {
    "repo": "spoqa/spoqa-han-sans",
-   "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.3.0",
-   "tag": "v3.3.0",
-   "published": "2021-06-07T02:18:00Z",
-   "license": "OFL-1.1"
+   "url": "https://github.com/spoqa/spoqa-han-sans",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   },
   "Source Han Sans": {
    "repo": "adobe-fonts/source-han-sans",
-   "url": "https://github.com/adobe-fonts/source-han-sans/releases/tag/2.005R",
-   "tag": "2.005R",
-   "published": "2025-06-18T21:21:40Z",
-   "license": "NOASSERTION"
+   "url": "https://github.com/adobe-fonts/source-han-sans",
+   "error": "HTTP Error 403: rate limit exceeded",
+   "license": null
   },
   "Source Han Serif": {
    "repo": "adobe-fonts/source-han-serif",
-   "url": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
-   "tag": "2.003R",
-   "published": "2024-07-30T18:57:27Z",
+   "url": "https://github.com/adobe-fonts/source-han-serif",
+   "error": "HTTP Error 403: rate limit exceeded",
    "license": null
   }
  },

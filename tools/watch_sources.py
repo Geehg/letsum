@@ -211,9 +211,10 @@ def check_links():
     except Exception:
         return {}
     out = {}
-    for m in re.finditer(r'\{ id: "([^"]+)", name: "[^"]*", en: "([^"]+)"', src):
-        fid, en = m.group(1), m.group(2)
-        url = f"https://fonts.google.com/download?family={en.replace(' ', '+')}"
+    for m in re.finditer(r'\{ id: "([^"]+)", name: "[^"]*", en: "([^"]+)"(.*?)verified:', src, re.S):
+        fid, en, body = m.group(1), m.group(2), m.group(3)
+        mm = re.search(r'mirror: "([^"]+)"', body)  # 미러가 있으면 미러 링크를 점검(사이트가 우선 쓰는 링크)
+        url = mm.group(1) if mm else f"https://fonts.google.com/download?family={en.replace(' ', '+')}"
         try:
             req = urllib.request.Request(url, headers=dict(UA, Range="bytes=0-0"))
             with urllib.request.urlopen(req, timeout=25) as r:

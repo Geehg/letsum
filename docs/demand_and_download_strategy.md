@@ -59,6 +59,6 @@
 
 ### 다음 단계
 1. `tools/watch_sources.py`에 링크 상태 점검 포함(구현) → `html/data/links.json`.
-2. `tools/archive_files.py`(구현): 승인 레코드의 원본을 받아 ZIP·해시 기록. 업로드 대상은 GitHub Releases(`gh release upload`)로 전환 예정. 사이트는 `dl.mirror` URL을 우선.
+2. `tools/archive_files.py`(구현·적용 완료 2026-10-11): 사이트 OFL 14종을 `github.com/Geehg/letsum-mirror` 릴리스 자산으로 업로드하고 `data.js`의 `dl.mirror`에 기록. 사이트·폰트별 페이지의 "ZIP 받기"는 미러를 우선 사용, 주간 점검(`links.json`)은 미러 링크를 검사. 재실행: `python3 -I tools/archive_files.py --all-site --write-data`
 3. 폰트별 페이지 빌드를 배포 전 단계에 포함(`tools/build_pages.py`).
 4. 영문 전용·한자 폰트 섹션 검토(검색 수요 있음, 한글 사이트의 빈 자리).

@@ -410,7 +410,7 @@
     const zip = o.mirror || o.zip || `https://fonts.google.com/download?family=${gfam}`;
     const page = o.page || `https://fonts.google.com/specimen/${gfam}`;
     const st = links[f.id];
-    return { zip, page, ok: !(st && st.ok === false), checked: st && st.checked, srcName: o.mirror ? "LETSUM 미러" : (o.srcName || "Google Fonts") };
+    return { zip, page, ok: !(st && st.ok === false), checked: st && st.checked, srcName: o.mirror ? "LETSUM 미러" : (o.srcName || "Google Fonts"), mirror: !!o.mirror };
   }
   // 라이선스 증빙: 사용 시점의 사용 범위·검수일·출처를 텍스트로 보관 (분쟁 대비)
   function saveProof(f, dl) {
@@ -500,7 +500,7 @@
           <button class="btn ghost" id="proofBtn" title="폰트명·라이선스·사용 범위·검수일·출처를 텍스트로 저장">📄 라이선스 증빙 저장</button>
         </div>
         ${dl.ok ? "" : `<p class="note" style="margin-top:6px">⚠ 직접 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않아 배포처 페이지로 안내합니다.</p>`}
-        <p class="note" style="margin-top:8px">${dl.ok ? `파일은 저희 서버가 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 바로 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
+        <p class="note" style="margin-top:8px">${dl.ok ? (dl.mirror ? `원 배포처에서 받은 그대로의 파일을 <b>LETSUM 미러(GitHub Releases)</b>에서 즉시 내려받습니다. ZIP 안에 폰트 파일·라이선스 원문(OFL.txt)·출처(SOURCE.txt)가 들어 있습니다.` : `파일은 저희 서버가 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 바로 내려받습니다. ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다.`) : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
         <details class="howto"><summary>설치 · PPT/한글 적용 안내 (Windows · Mac · 아이폰 · 갤럭시)</summary>
           <div class="howto-body">
             <p><b>Windows</b> — ZIP 압축을 풀고 .ttf/.otf 파일을 우클릭 → <b>모든 사용자용으로 설치</b>. 여러 굵기 파일은 전부 설치합니다.</p>

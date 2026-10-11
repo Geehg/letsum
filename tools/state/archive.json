@@ -1,20 +1,128 @@
 {
- "jua": {
-  "source": "https://fonts.google.com/download/list?family=Jua",
+ "noto-sans-kr": {
+  "source": "https://fonts.google.com/download/list?family=Noto+Sans+KR",
   "root": "google",
-  "sha256": "90694bae6468526c3b6270beb10af015561b6c36c42074b4151d8863c814cdda",
-  "bytes": 725923,
+  "sha256": "601d899521e6b8d483b838edd8427ec30caf780b7dcc3139ad2816acf0e466e8",
+  "bytes": 31987669,
   "archived": "2026-10-11",
-  "mirror": "https://dl.letsum.app/jua.zip",
-  "uploaded": null
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/noto-sans-kr/noto-sans-kr.zip",
+  "uploaded": "2026-10-11"
+ },
+ "noto-serif-kr": {
+  "source": "https://fonts.google.com/download/list?family=Noto+Serif+KR",
+  "root": "google",
+  "sha256": "96d58c4ad19b4ddf44e60c689f34316475b322057d0b942b1fdb49789dda57e7",
+  "bytes": 52067745,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/noto-serif-kr/noto-serif-kr.zip",
+  "uploaded": "2026-10-11"
+ },
+ "ibm-plex-sans-kr": {
+  "source": "https://fonts.google.com/download/list?family=IBM+Plex+Sans+KR",
+  "root": "google",
+  "sha256": "612da6cf83e12b7686eeb4a8768d41a32f9f45a9466e9a95df6d3bc9120e440d",
+  "bytes": 6827731,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/ibm-plex-sans-kr/ibm-plex-sans-kr.zip",
+  "uploaded": "2026-10-11"
+ },
+ "gowun-dodum": {
+  "source": "https://fonts.google.com/download/list?family=Gowun+Dodum",
+  "root": "google",
+  "sha256": "b8f436de72e5db55cd4d3a47ad32d789b3cbefe784f3d855d4bed90ef89f79ee",
+  "bytes": 1444737,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/gowun-dodum/gowun-dodum.zip",
+  "uploaded": "2026-10-11"
  },
  "gowun-batang": {
   "source": "https://fonts.google.com/download/list?family=Gowun+Batang",
   "root": "google",
-  "sha256": "9248aa1c36a326ab966039741ce2b9f6be3747692cddfd6d581ff91f20ac1b23",
+  "sha256": "73fef5d717eb0d329f5442d821732f6f4c9f75296d9388457d2215753d73bb79",
   "bytes": 3429360,
   "archived": "2026-10-11",
-  "mirror": "https://dl.letsum.app/gowun-batang.zip",
-  "uploaded": null
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/gowun-batang/gowun-batang.zip",
+  "uploaded": "2026-10-11"
+ },
+ "hahmlet": {
+  "source": "https://fonts.google.com/download/list?family=Hahmlet",
+  "root": "google",
+  "sha256": "f15d3251a6c548141f6966fb54de47677edc403cd950eee960d152633e21584d",
+  "bytes": 5604667,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/hahmlet/hahmlet.zip",
+  "uploaded": "2026-10-11"
+ },
+ "jua": {
+  "source": "https://fonts.google.com/download/list?family=Jua",
+  "root": "google",
+  "sha256": "6db8a4667d3e24bd3cde8d4546b43aed3de2f610b3a0c30b43fc99a2a8fb48f7",
+  "bytes": 725923,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/jua/jua.zip",
+  "uploaded": "2026-10-11"
+ },
+ "do-hyeon": {
+  "source": "https://fonts.google.com/download/list?family=Do+Hyeon",
+  "root": "google",
+  "sha256": "e7b6a1a7c2412075fd9479896c05e236e50c07749f3cf29f7b3260d336e734b0",
+  "bytes": 333829,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/do-hyeon/do-hyeon.zip",
+  "uploaded": "2026-10-11"
+ },
+ "black-han-sans": {
+  "source": "https://fonts.google.com/download/list?family=Black+Han+Sans",
+  "root": "google",
+  "sha256": "c7cbb32194c06c99b30b0282f9ceb1a2bffe55ee6097a735131f2ed826731e10",
+  "bytes": 310528,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/black-han-sans/black-han-sans.zip",
+  "uploaded": "2026-10-11"
+ },
+ "dongle": {
+  "source": "https://fonts.google.com/download/list?family=Dongle",
+  "root": "google",
+  "sha256": "82fae3662e37abd52945d79d060894564fd41f85dbedac7c39d44e2528a71b57",
+  "bytes": 1790448,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/dongle/dongle.zip",
+  "uploaded": "2026-10-11"
+ },
+ "single-day": {
+  "source": "https://fonts.google.com/download/list?family=Single+Day",
+  "root": "google",
+  "sha256": "7011b32e6be7e54e52f24c98b2559353665bd278aa7c0ce0c366ae939e05f9f0",
+  "bytes": 218084,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/single-day/single-day.zip",
+  "uploaded": "2026-10-11"
+ },
+ "gaegu": {
+  "source": "https://fonts.google.com/download/list?family=Gaegu",
+  "root": "google",
+  "sha256": "e81dff4a0f34422b331ceac5a9de9701cb2ef72760bfaff8a07b7138fbc3db4b",
+  "bytes": 2929456,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/gaegu/gaegu.zip",
+  "uploaded": "2026-10-11"
+ },
+ "poor-story": {
+  "source": "https://fonts.google.com/download/list?family=Poor+Story",
+  "root": "google",
+  "sha256": "03b5bd365d9123fe58881663b8507953eff1ed71866ec422f29ec8fc54e64bef",
+  "bytes": 1007190,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/poor-story/poor-story.zip",
+  "uploaded": "2026-10-11"
+ },
+ "nanum-pen": {
+  "source": "https://fonts.google.com/download/list?family=Nanum+Pen+Script",
+  "root": "google",
+  "sha256": "b81192b0780c71ef30f2534c12e3d5866177c8ac0006538f036e9129fc0f99c8",
+  "bytes": 1290413,
+  "archived": "2026-10-11",
+  "mirror": "https://github.com/Geehg/letsum-mirror/releases/download/nanum-pen/nanum-pen.zip",
+  "uploaded": "2026-10-11"
  }
 }

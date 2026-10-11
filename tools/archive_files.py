@@ -20,8 +20,8 @@ ARCHIVE_DIR = os.environ.get("LETSUM_ARCHIVE_DIR", os.path.join(HERE, "archive")
 STATE = os.path.join(HERE, "state", "archive.json")
 CATALOG = os.path.join(HERE, "state", "catalog.json")
 SITE_DATA = os.path.join(HERE, "..", "html", "js", "data.js")
-BUCKET = os.environ.get("LETSUM_R2_BUCKET", "letsum-fonts")
-MIRROR_BASE = os.environ.get("LETSUM_MIRROR_BASE", "https://dl.letsum.app")
+MIRROR_REPO = os.environ.get("LETSUM_MIRROR_REPO", "Geehg/letsum-mirror")  # 공개 저장소 릴리스 자산 = 미러 (무료, 카드 불필요)
+MIRROR_BASE = f"https://github.com/{MIRROR_REPO}/releases/download"
 REDISTRIBUTABLE = {"OFL", "Apache", "UFL", "MIT"}
 UA = {"User-Agent": "letsum-archive/1.0 (+https://letsum.app)"}
 
@@ -73,21 +73,43 @@ def download(url, dest):
             fp.write(chunk); h.update(chunk); n += len(chunk)
     return h.hexdigest(), n
 
-def upload(path, key):
-    cmd = ["npx", "-y", "wrangler@4", "r2", "object", "put", f"{BUCKET}/{key}", "--file", path, "--content-type", "application/zip", "--remote"]
-    r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode != 0:
-        raise RuntimeError((r.stderr or r.stdout)[-400:])
+def upload(path, fid, title, source):
+    """GitHub Releases: 태그 <id> 릴리스 1개 = 폰트 1종. 자산 <id>.zip 을 덮어쓴다. 인증은 gh CLI 로그인(토큰을 코드에 두지 않음)."""
+    def run(*args):
+        r = subprocess.run(["gh", *args], capture_output=True, text=True)
+        return r.returncode, (r.stderr or r.stdout)[-400:]
+    code, _ = run("release", "view", fid, "--repo", MIRROR_REPO)
+    if code != 0:
+        notes = f"{title} — 원 배포처에서 받은 그대로의 폰트 파일과 라이선스 원문(OFL.txt), 출처(SOURCE.txt)를 묶었습니다.\n\n출처: {source}\n미러 운영: https://letsum.app"
+        code, err = run("release", "create", fid, "--repo", MIRROR_REPO, "--title", title, "--notes", notes)
+        if code != 0: raise RuntimeError(err)
+    code, err = run("release", "upload", fid, path, "--repo", MIRROR_REPO, "--clobber")
+    if code != 0: raise RuntimeError(err)
+
+def write_data(mirrors):
+    """data.js의 각 폰트에 dl: { mirror: ... } 를 넣거나 갱신한다(verified: 앞에 삽입)."""
+    src = open(SITE_DATA, encoding="utf-8").read(); n = 0
+    for fid, url in mirrors.items():
+        pat = re.compile(r'(\{ id: "' + re.escape(fid) + r'".*?)(\n\s*dl: \{[^}]*\},)?(\n(\s*)[^\n]*verified:)', re.S)
+        m = pat.search(src)
+        if not m: continue
+        indent = m.group(4)
+        src = src[:m.start()] + m.group(1) + f'\n{indent}dl: {{ mirror: "{url}" }},' + m.group(3) + src[m.end():]; n += 1
+    open(SITE_DATA, "w", encoding="utf-8").write(src)
+    return n
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ids", nargs="*", default=[]); ap.add_argument("--approved", action="store_true"); ap.add_argument("--no-upload", action="store_true")
+    ap.add_argument("--all-site", action="store_true", help="data.js의 재배포 허용 폰트 전부")
+    ap.add_argument("--write-data", action="store_true", help="업로드된 미러 URL을 data.js의 dl.mirror에 기록")
     a = ap.parse_args()
     os.makedirs(ARCHIVE_DIR, exist_ok=True); os.makedirs(os.path.dirname(STATE), exist_ok=True)
     state = json.load(open(STATE, encoding="utf-8")) if os.path.exists(STATE) else {}
     catalog = json.load(open(CATALOG, encoding="utf-8")) if os.path.exists(CATALOG) else {}
     fonts = site_fonts()
     targets = []  # (id, record-like)
+    if a.all_site: a.ids = [k for k, f in fonts.items() if f["license"] in REDISTRIBUTABLE]
     for fid in a.ids:
         if fid not in fonts: print(f"! data.js에 없는 id: {fid}"); continue
         f = fonts[fid]
@@ -110,18 +132,21 @@ def main():
         prev = state.get(fid, {})
         changed = prev.get("sha256") != sha
         state[fid] = {"source": url, "root": src, "sha256": sha, "bytes": size, "archived": date.today().isoformat(),
-                      "mirror": f"{MIRROR_BASE}/{fid}.zip", "uploaded": prev.get("uploaded")}
+                      "mirror": f"{MIRROR_BASE}/{fid}/{fid}.zip", "uploaded": prev.get("uploaded")}
         print(f"{'●' if changed else '○'} {fid}: {size/1024:.0f}KB sha256 {sha[:12]} ({'변경' if changed else '동일'})")
         if not a.no_upload and (changed or not prev.get("uploaded")):
             try:
-                upload(dest, f"{fid}.zip"); state[fid]["uploaded"] = date.today().isoformat(); print(f"  ↑ R2 {BUCKET}/{fid}.zip")
+                title = f"{fonts.get(fid, {}).get('name') or rec['name']} ({rec['name']})"
+                upload(dest, fid, title, url); state[fid]["uploaded"] = date.today().isoformat(); print(f"  ↑ {MIRROR_BASE}/{fid}/{fid}.zip")
             except Exception as e:
                 print(f"  ! 업로드 실패: {e}")
         if state[fid].get("uploaded"):
-            suggestions.append(f'{fid}: dl: {{ mirror: "{state[fid]["mirror"]}", page: "{"https://fonts.google.com/specimen/" + rec["name"].replace(" ", "+") if src == "google" else url}" }}')
+            suggestions.append((fid, state[fid]["mirror"]))
     json.dump(state, open(STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    if suggestions:
-        print("\ndata.js에 넣을 미러 필드 제안:"); [print("  " + s) for s in suggestions]
+    if suggestions and a.write_data:
+        print(f"\ndata.js 갱신: {write_data(dict(suggestions))}종에 dl.mirror 기록")
+    elif suggestions:
+        print("\ndata.js에 넣을 미러 필드 (--write-data 로 자동 기록):"); [print(f'  {fid}: dl: {{ mirror: "{u}" }}') for fid, u in suggestions]
 
 if __name__ == "__main__":
     main()
