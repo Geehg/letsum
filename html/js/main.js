@@ -11,6 +11,19 @@
   $("#catGrp").innerHTML += cats.map((c) => `<button class="fbtn${c === "전체" ? " on" : ""}" data-cat="${c}">${c}</button>`).join("");
   // 허용 범위 버튼
   $("#licGrp").innerHTML += LICENSE_CATS.map((c) => `<button class="fbtn" data-lic="${c.key}">${c.label}</button>`).join("");
+  // 빠른 선택 프리셋 (리서치 개선안 #1 — Font Squirrel식 용도 필터)
+  const PRESETS = [
+    { id: "commercial", label: "상업용 OK", keys: ["print", "web", "video", "bici", "package"] },
+    { id: "webfont", label: "웹 임베딩 가능", keys: ["embed"] },
+  ];
+  $("#presetGrp").innerHTML += PRESETS.map((p) => `<button class="fbtn preset" data-preset="${p.id}">${p.label}</button>`).join("");
+  function syncLicButtons() {
+    document.querySelectorAll("[data-lic]").forEach((x) => x.classList.toggle("on", state.lic.has(x.dataset.lic)));
+    document.querySelectorAll("[data-preset]").forEach((x) => {
+      const p = PRESETS.find((y) => y.id === x.dataset.preset);
+      x.classList.toggle("on", p.keys.every((k) => state.lic.has(k)));
+    });
+  }
 
   document.querySelectorAll("[data-cat]").forEach((b) => b.addEventListener("click", () => {
     state.cat = b.dataset.cat;
@@ -20,7 +33,15 @@
   document.querySelectorAll("[data-lic]").forEach((b) => b.addEventListener("click", () => {
     const k = b.dataset.lic;
     state.lic.has(k) ? state.lic.delete(k) : state.lic.add(k);
-    b.classList.toggle("on");
+    syncLicButtons();
+    render();
+  }));
+  document.querySelectorAll("[data-preset]").forEach((b) => b.addEventListener("click", () => {
+    const p = PRESETS.find((x) => x.id === b.dataset.preset);
+    const allOn = p.keys.every((k) => state.lic.has(k));
+    if (allOn) p.keys.forEach((k) => state.lic.delete(k));
+    else p.keys.forEach((k) => state.lic.add(k));
+    syncLicButtons();
     render();
   }));
   $("#favOnly").addEventListener("click", (e) => { state.favOnly = !state.favOnly; e.currentTarget.classList.toggle("on", state.favOnly); render(); });
@@ -50,6 +71,20 @@
 
   function allOk(f) { return LICENSE_CATS.every((c) => f.matrix[c.key] === "ok"); }
 
+  // 카드용 라이선스 미니 배지 (리서치 개선안 #1·#2 — 카드에서 바로 허용 용도 확인)
+  const LIC_SHORT = { print: "인쇄", web: "웹", video: "영상", embed: "임베딩", bici: "BI·CI", package: "포장지" };
+  function licIcons(f) {
+    return Object.keys(LIC_SHORT).map((k) => {
+      const v = f.matrix[k];
+      const mark = v === "ok" ? "✓" : v === "no" ? "✕" : "△";
+      return `<span class="${v === "ok" ? "li-ok" : "li-no"}">${LIC_SHORT[k]}${mark}</span>`;
+    }).join("");
+  }
+  function licSummary(f) {
+    if (f.license === "OFL") return "OFL · 상업 이용·수정·재배포 가능 (폰트 파일 판매 금지)";
+    return f.license + " · 상세 페이지에서 사용 범위 확인";
+  }
+
   function render() {
     const list = filtered();
     count.innerHTML = `총 <b>${list.length}</b>종 표시 · 전체 ${FONTS.length}종 (시안 데이터)`;
@@ -67,12 +102,16 @@
           ${f.status === "verified" ? '<span class="badge">검수 완료</span>' : '<span class="badge check">확인 중</span>'}
           <span class="badge">굵기 ${f.weights.length}종</span>
         </div>
+        <div class="licicons">${licIcons(f)}</div>
+        <div class="licsum">${licSummary(f)}</div>
       </article>`).join("")
       : `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
     bindCards();
   }
   function renderPreviews() {
-    document.querySelectorAll(".card .pv").forEach((el) => { el.textContent = state.text || el.closest(".card").querySelector(".fname").textContent; });
+    const t = state.text;
+    document.querySelectorAll(".card .pv").forEach((el) => { el.textContent = t || el.closest(".card").querySelector(".fname").textContent; });
+    document.querySelectorAll(".mini-card .mpv").forEach((el) => { el.textContent = t || el.closest(".mini-card").querySelector(".mname").textContent; });
   }
   function bindCards() {
     grid.querySelectorAll(".card").forEach((card) => {
@@ -142,5 +181,24 @@ font-family: ${f.family};</pre>
 
   function escapeHtml(s) { return s.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
 
+  // 용도별 큐레이션 렌더링 (리서치 개선안 #3)
+  function renderCollections() {
+    const host = $("#collRows");
+    if (!host || typeof COLLECTIONS === "undefined") return;
+    host.innerHTML = COLLECTIONS.map((c) => {
+      const fonts = FONTS.filter((f) => f.category === c.cat).sort((a, b) => b.pop - a.pop).slice(0, 6);
+      return `<div class="coll-block">
+        <div class="coll-title"><b>${c.title}</b><span>${c.desc}</span></div>
+        <div class="coll-row">${fonts.map((f) => `
+          <button class="mini-card" data-id="${f.id}">
+            <span class="mpv" style="font-family:${f.family}">${escapeHtml(state.text || f.name)}</span>
+            <span class="mname">${f.name}</span>
+          </button>`).join("")}</div>
+      </div>`;
+    }).join("");
+    host.querySelectorAll(".mini-card").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.id)));
+  }
+
   render();
+  renderCollections();
 })();

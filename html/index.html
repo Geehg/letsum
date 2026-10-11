@@ -32,11 +32,19 @@
     <input id="previewText" type="text" value="책을 읽는 시간은 언제나 옳다" maxlength="60" aria-label="미리보기 문구">
   </div>
   <div class="quick" id="quickChips">
-    <button class="chip" data-t="책을 읽는 시간은 언제나 옳다">예시: 본문</button>
-    <button class="chip" data-t="새해 복 많이 받으세요">예시: 제목</button>
-    <button class="chip" data-t="오늘의 추천 도서 30% 할인">예시: 썸네일</button>
+    <button class="chip" data-t="다람쥐 헌 쳇바퀴에 타고파">자소 커버리지</button>
+    <button class="chip" data-t="책을 읽는 시간은 언제나 옳다">본문</button>
+    <button class="chip" data-t="새해 복 많이 받으세요">제목</button>
     <button class="chip" data-t="The quick brown fox 1234">영문·숫자</button>
   </div>
+</section>
+
+<section class="wrap coll-sec" id="collSec">
+  <div class="coll-head">
+    <h2>용도별 큐레이션</h2>
+    <p>폰트 이름이 아니라 쓰는 곳으로 고르세요</p>
+  </div>
+  <div id="collRows"></div>
 </section>
 
 <div class="filters">
@@ -44,6 +52,7 @@
     <div class="row">
       <div class="grp" id="catGrp"><span class="lbl">분류</span></div>
       <div class="grp" id="licGrp"><span class="lbl">허용 범위</span></div>
+      <div class="grp" id="presetGrp"><span class="lbl">빠른 선택</span></div>
     </div>
     <div class="row" style="margin-top:10px">
       <span class="count" id="count"></span>

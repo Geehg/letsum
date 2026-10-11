@@ -103,3 +103,11 @@ const FONTS = [
 
 // 데모 관리자 계정 (시안용 — 실제 운영 시 교체)
 const ADMIN_ACCOUNT = { id: "admin", pw: "font1234" };
+
+// 용도별 큐레이션 (리서치 개선안 #3 — 폰트명이 아니라 쓰는 곳으로 탐색)
+const COLLECTIONS = [
+  { id: "thumbnail",   title: "유튜브 썸네일용", desc: "한눈에 들어오는 굵은 제목체", cat: "디스플레이" },
+  { id: "book-serif",  title: "책 본문용 명조", desc: "장문 가독성에 강한 명조",     cat: "명조" },
+  { id: "clean-gothic",title: "깔끔한 고딕",   desc: "문서·UI에 무난한 고딕",       cat: "고딕" },
+  { id: "handwriting", title: "손글씨 감성",   desc: "다이어리·브이로그 자막용",     cat: "손글씨" },
+];
