@@ -604,3 +604,80 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 /* 프로필 아이콘(배포 주체) */
 .feed-mode .ig-av.img{background:#fff;padding:0;overflow:hidden;box-shadow:0 0 0 1px #e6e6e1}
 .ig-av.img img{width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box}
+
+/* ===== 히어로 스포트라이트: 한 장에 한 폰트 ===== */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.newband.spot{position:relative;padding:0;background:var(--paper2);overflow:hidden}
+.spot-stage{position:relative;height:clamp(440px,52vw,520px)}
+.sp{position:absolute;inset:0;background:var(--bg);color:var(--fg);opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s;overflow:hidden}
+.sp.on{opacity:1;visibility:visible;transition:opacity .6s ease}
+.sp-in{position:relative;height:100%;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center;padding-top:28px;padding-bottom:64px}
+.sp-main{min-width:0;display:flex;flex-direction:column;gap:14px}
+.sp-kick{font-family:var(--mono);font-size:12px;opacity:.75;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sp-new{background:var(--ac);color:var(--bg);padding:2px 7px;font-weight:800;border-radius:3px}
+.sp-title{font-size:clamp(52px,8.6vw,128px);line-height:1.02;letter-spacing:-.025em;word-break:keep-all;margin:0;transition:font-weight .25s}
+.sp-title .sp-spec{max-height:clamp(90px,12vw,150px);max-width:100%;display:block}
+.sp-noprev{font-size:.7em;font-weight:800;opacity:.9}
+.sp-type{font-size:clamp(18px,2.2vw,28px);line-height:1.35;min-height:1.4em;margin:0;opacity:.9;word-break:keep-all}
+.sp-type::after{content:"";display:inline-block;width:.08em;height:1em;background:currentColor;margin-left:3px;vertical-align:-.12em;animation:spCaret 1s steps(1) infinite}
+@keyframes spCaret{50%{opacity:0}}
+.sp-cta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.sp-btn{font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px;border:1.5px solid currentColor;color:var(--fg);background:transparent;text-decoration:none;cursor:pointer}
+.sp-btn:hover{background:var(--fg);color:var(--bg)}
+.sp-btn.ac{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+.sp-btn.ac:hover{filter:brightness(1.08)}
+.sp-chip{font-size:12px;padding:4px 10px;border:1px dashed currentColor;border-radius:999px;opacity:.8}
+.sp-side{align-self:center;border-left:1.5px solid currentColor;padding-left:22px;display:flex;flex-direction:column;gap:14px;font-size:13.5px}
+.sp-side dl{display:grid;grid-template-columns:72px 1fr;gap:8px 10px;margin:0}
+.sp-side dt{font-family:var(--mono);font-size:11px;opacity:.6;padding-top:2px}
+.sp-side dd{margin:0;line-height:1.45}
+.sp-ladder i{font-style:normal;font-size:20px;margin-right:4px}
+.sp-lic{display:flex;flex-wrap:wrap;gap:5px}
+.sp-lic span{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;border:1px solid currentColor;opacity:.9}
+.sp-lic span.ok{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.sp-lic span.no{text-decoration:line-through;opacity:.55}
+.sp-tags{font-size:12.5px;opacity:.7}
+/* 레이아웃: 포스터(디스플레이) — 이름이 흐르는 띠 */
+.sp-poster .sp-title{color:var(--ac)}
+.sp-marquee{position:absolute;left:0;right:0;bottom:56px;white-space:nowrap;font-size:clamp(70px,11vw,160px);line-height:1;opacity:.09;display:flex;pointer-events:none}
+.sp-marquee span{padding-right:.3em;animation:spMarq 38s linear infinite}
+@keyframes spMarq{to{transform:translateX(-100%)}}
+/* 레이아웃: 지면(명조) — 가운데 정렬, 위아래 괘선 */
+.sp-editorial .sp-main{align-items:flex-start;border-top:3px double currentColor;border-bottom:1px solid currentColor;padding:22px 0}
+.sp-editorial .sp-title{letter-spacing:-.01em}
+.sp-editorial .sp-kick{text-transform:none}
+/* 레이아웃: 노트(손글씨) — 줄 노트, 살짝 기운 제목 */
+.sp-note{background-image:repeating-linear-gradient(transparent 0 46px,color-mix(in srgb,var(--fg) 10%,transparent) 46px 47px)}
+.sp-note .sp-title{transform:rotate(-2deg);transform-origin:left center}
+.sp-note .sp-title::after{content:"";display:block;width:min(60%,420px);height:10px;margin-top:8px;border-bottom:4px solid var(--ac);border-radius:0 0 60% 40%}
+/* 레이아웃: 그리드(고딕) — 스위스식 큰 숫자·굵기 사다리 */
+.sp-grid .sp-in::before{content:"";position:absolute;inset:20px 24px 50px;border:1px solid color-mix(in srgb,var(--fg) 14%,transparent);pointer-events:none}
+.sp-grid .sp-main{padding-left:18px;border-left:6px solid var(--ac)}
+/* 하단 컨트롤: 스토리식 진행 막대 */
+.spot-ui{position:absolute;left:0;right:0;bottom:0;padding-bottom:14px;z-index:2;pointer-events:none}
+.spot-ui *{pointer-events:auto}
+.spot-bars{display:flex;gap:4px;margin-bottom:10px}
+.spot-bars i{flex:1;height:3px;border-radius:3px;background:color-mix(in srgb,currentColor 22%,transparent);position:relative;overflow:hidden}
+.spot-bars i::after{content:"";position:absolute;inset:0;background:currentColor;transform:scaleX(0);transform-origin:left}
+.spot-bars i.done::after{transform:scaleX(1)}
+.spot-bars i.run::after{animation:spBar 7s linear forwards}
+.spot.paused .spot-bars i.run::after{animation-play-state:paused}
+@keyframes spBar{to{transform:scaleX(1)}}
+.spot-row{display:flex;align-items:center;gap:12px;font-size:12px}
+.spot-row .k{font-weight:800}
+.spot-meta{flex:1;font-family:var(--mono);font-size:11px;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spot-count{font-family:var(--mono);font-size:11.5px}
+.spot .nb-nav button{width:34px;height:34px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;font-size:13px}
+.spot .nb-nav button:hover{background:currentColor}
+.spot .nb-nav button:hover{color:var(--spot-bg,#fff)}
+.spot-ui{color:var(--spot-ui,#111)}
+@media (max-width:860px){
+  .spot-stage{height:auto;min-height:560px}
+  .sp{position:absolute}
+  .sp-in{grid-template-columns:1fr;gap:18px;align-content:start;padding-top:24px;padding-bottom:84px}
+  .sp-side{border-left:none;border-top:1.5px solid currentColor;padding:14px 0 0}
+  .sp-title{font-size:clamp(44px,13vw,72px)}
+  .spot-meta{display:none}
+}
+@media (prefers-reduced-motion: reduce){.sp-marquee span{animation:none}.sp-type::after{animation:none}}
+@media (max-width:860px){.sp-grid .sp-in::before{display:none}.sp-marquee{bottom:96px}}

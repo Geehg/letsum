@@ -968,10 +968,81 @@ import "@fontsource/${f.id}/400.css";</pre>
   $("#wizBtn")?.addEventListener("click", openWizard);
   $("#wizSide")?.addEventListener("click", openWizard);
 
-  // ---------- 신규 폰트 슬라이드 (히어로) ----------
-  // 이번 주(월~일) 등록분을 보여주고, 없으면 최근 등록 8종을 "최근 등록" 라벨로 보여준다
-  // 기준: 원 제작사의 출시·배포일(released). 우리 사이트 등록일(added)이 아니다.
-  // 출처가 확인된 날짜만 쓰고(releasedSrc), 날짜가 없는 폰트는 히어로에 넣지 않는다.
+  // ---------- 히어로: 최근 출시 폰트 스포트라이트 (한 장에 한 폰트) ----------
+  // 기준: 원 제작사의 출시·배포일(released, 출처 있는 날짜만). 이번 주(월~오늘) 출시분, 없으면 최근 출시 12종.
+  // 디자인 규칙: 분류 → 레이아웃(포스터·지면·노트·그리드), 분위기 → 단색 배색. 움직임: 굵기 순환·타자 효과·이름 띠.
+  const SPOT_PAL = {
+    "강렬한": ["#111111", "#f4f1e8", "#d8ff4a"], "세련된": ["#16171b", "#f2f2ee", "#c9b98a"], "발랄한": ["#ffe14d", "#1b1b1b", "#ff5a36"],
+    "귀여운": ["#ffd6e0", "#3a1a26", "#ff4f8b"], "따뜻한": ["#f6e3cf", "#3a2414", "#d9632b"], "차분한": ["#dfe7f1", "#14213d", "#2f6db5"],
+    "단정한": ["#f4f4f1", "#15151a", "#2f6db5"], "고전적": ["#f1eadb", "#2a2015", "#8b2e1f"],
+  };
+  const SPOT_LAYOUT = { "디스플레이": "poster", "명조": "editorial", "손글씨": "note", "고딕": "grid" };
+  const SPOT_LINES = {
+    poster: ["이걸 몰랐다고?", "오늘의 한 줄, 크게"], editorial: ["책을 읽는 시간은 언제나 옳다", "고요한 문장 사이로 계절이 지나간다"],
+    note: ["오늘도 수고했어, 내일은 더 괜찮을 거야", "마음을 담아 꾹꾹 눌러 쓴 한 줄"], grid: ["정보는 또렷하게, 화면은 가볍게", "설정이 저장되었습니다"],
+  };
+  let spotTimer = null, spotTick = null, spotIdx = 0, spotList = [], spotPaused = false;
+  function spotHTML(f, k, week) {
+    const lay = SPOT_LAYOUT[f.category] || "grid";
+    const [bg, fg, ac] = SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
+    const dl = dlFor(f); const L = LICENSE_CATS.filter((c) => c.key !== "ofl");
+    const heavy = f.weights[f.weights.length - 1];
+    const title = f.intro
+      ? (f.specimen ? `<img class="sp-spec" src="${f.specimen}" alt="${esc(f.name)} 견본">` : `<span class="sp-noprev">${esc(f.name)}</span>`)
+      : esc(f.name);
+    const line = SPOT_LINES[lay][k % 2];
+    return `<article class="sp sp-${lay}${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:${bg};--fg:${fg};--ac:${ac}" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
+      ${lay === "poster" && !f.intro ? `<div class="sp-marquee" aria-hidden="true" style="font-family:${f.family};font-weight:${heavy}"><span>${esc((f.name + " · ").repeat(8))}</span><span>${esc((f.name + " · ").repeat(8))}</span></div>` : ""}
+      <div class="wrap sp-in">
+        <div class="sp-main">
+          <div class="sp-kick">${week ? '<b class="sp-new">NEW</b>' : ""}${fmtRel(f.released)} 출시 · <span title="출처: ${esc(f.releasedSrc)}">${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span></div>
+          <h2 class="sp-title" style="${f.intro ? "" : `font-family:${f.family};font-weight:${heavy}`}" data-weights="${f.intro ? "" : f.weights.join(",")}">${title}</h2>
+          <p class="sp-type" style="${f.intro ? "" : `font-family:${f.family}`}" data-line="${esc(f.intro ? f.desc : line)}"></p>
+          <div class="sp-cta">
+            <button class="sp-btn" data-open="${f.id}">자세히 보기</button>
+            ${dl.ok ? `<a class="sp-btn ac" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 다운로드</a>` : `<a class="sp-btn ac" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
+            ${f.intro ? '<span class="sp-chip">소개 전용 · 미리보기 미제공</span>' : ""}
+          </div>
+        </div>
+        <aside class="sp-side">
+          <dl>
+            <dt>제작·배포</dt><dd>${esc(f.designer)}</dd>
+            <dt>굵기</dt><dd>${f.weightsUnknown ? "배포처 확인" : f.intro ? f.weights.join(" · ") : `<span class="sp-ladder" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가</i>`).join("")}</span> ${f.weights.length}종`}</dd>
+            <dt>글자</dt><dd>${esc(f.glyphs)}</dd>
+            <dt>라이선스</dt><dd>${esc(licInfo(f).short)}</dd>
+          </dl>
+          <div class="sp-lic">${L.map((c) => `<span class="${f.matrix[c.key]}">${c.label}${f.matrix[c.key] === "ok" ? " ✓" : f.matrix[c.key] === "no" ? " ✕" : " △"}</span>`).join("")}</div>
+          <div class="sp-tags">${f.mood.map((m) => `#${esc(m)}`).join(" ")} · #${esc(f.category)}</div>
+        </aside>
+      </div>
+    </article>`;
+  }
+  function spotPlay(el) {
+    clearInterval(spotTick);
+    const t = el.querySelector(".sp-title"), p = el.querySelector(".sp-type");
+    // 타자 효과
+    const s = p.dataset.line || ""; let n = 0; p.textContent = "";
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) p.textContent = s;
+    // 굵기 순환(3종 이상일 때)
+    const ws = (t.dataset.weights || "").split(",").filter(Boolean).map(Number); let wi = ws.length - 1;
+    spotTick = setInterval(() => {
+      if (!reduce && n <= s.length) { p.textContent = s.slice(0, n++); }
+      if (!reduce && ws.length >= 3 && (n % 14 === 0 || n > s.length)) { wi = (wi + 1) % ws.length; t.style.fontWeight = ws[wi]; }
+    }, 70);
+  }
+  function spotGo(i, user) {
+    const els = $$("#nbTrack .sp"); if (!els.length) return;
+    spotIdx = (i + els.length) % els.length;
+    els.forEach((el, k) => { el.classList.toggle("on", k === spotIdx); el.setAttribute("aria-hidden", k === spotIdx ? "false" : "true"); });
+    const cur = els[spotIdx]; ensureFace(FONTS.find((x) => x.id === cur.dataset.id)); ensureFace(FONTS.find((x) => x.id === (els[(spotIdx + 1) % els.length] || cur).dataset.id));
+    $("#spotCount").textContent = `${spotIdx + 1} / ${els.length}`;
+    const spot = $("#spot"); spot.style.setProperty("--spot-ui", cur.style.getPropertyValue("--fg")); spot.style.setProperty("--spot-bg", cur.style.getPropertyValue("--bg"));
+    $$("#spotBars i").forEach((b, k) => { b.className = k < spotIdx ? "done" : k === spotIdx ? "run" : ""; });
+    spotPlay(cur);
+    clearTimeout(spotTimer); if (!spotPaused) spotTimer = setTimeout(() => spotGo(spotIdx + 1), 7000);
+    if (user) { const bar = $$("#spotBars i")[spotIdx]; if (bar) { bar.className = ""; void bar.offsetWidth; bar.className = spotPaused ? "hold" : "run"; } }
+  }
   function renderNew() {
     const track = $("#nbTrack"); if (!track) return;
     const now = new Date(); const day = (now.getDay() + 6) % 7; // 월=0
@@ -981,28 +1052,29 @@ import "@fontsource/${f.id}/400.css";</pre>
     const dated = FONTS.filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released) || b.pop - a.pop);
     const weekAll = dated.filter((f) => f.released >= iso(mon) && f.released <= iso(now));
     const week = weekAll.length > 0;
-    const list = (week ? weekAll : dated).slice(0, 12); // 12장까지(웹폰트를 한 번에 많이 받지 않도록)
-    if (!list.length) { $(".newband").style.display = "none"; return; }
-    const latest = dated[0].released;
-    $("#nbLabel").textContent = week ? "이번 주 출시" : "최근 출시";
+    spotList = (week ? weekAll : dated).slice(0, 12);
+    if (!spotList.length) { $(".newband").style.display = "none"; return; }
+    $("#nbLabel").textContent = week ? `이번 주 출시 ${weekAll.length}종` : "최근 출시";
     $("#nbTitle").textContent = week ? `이번 주 출시된 한글 무료 폰트 ${weekAll.length}종` : "가장 최근 출시된 한글 무료 폰트";
-    $("#nbMeta").textContent = (week ? `${dot(iso(mon))} 주간` : `이번 주 출시 없음 · 최신 출시 ${dot(latest)}`)
-      + ` · 원 제작사 출시·배포일 기준 · 출시일 확인 ${dated.length}/${FONTS.length}종`;
-    track.innerHTML = list.map((f) => `
-      <article class="slide" data-id="${f.id}" tabindex="0">
-        <div class="s-top"><span class="s-date" title="출처: ${esc(f.releasedSrc)}">${fmtRel(f.released)} 출시 · ${esc(f.releasedSrc.replace(/\(.*\)/, ""))}</span>${week ? '<span class="s-new">NEW</span>' : ""}<span class="badge">${f.category}</span></div>
-        ${f.intro ? introBox(f, "slide") : `<div class="s-pv" style="font-family:${f.family}">${esc(f.name)}<small>다람쥐 헌 쳇바퀴에 타고파</small></div>`}
-        <div class="s-foot"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}${f.weightsUnknown ? "" : ` · 굵기 ${f.weights.length}종`}</span></div>
-          <div class="pills"><span class="pill ok">상업용 OK</span>${f.matrix.embed === "ok" ? '<span class="pill ok">임베딩 ✓</span>' : ""}${f.intro ? '<span class="pill intro">소개 전용</span>' : ""}</div></div>
-      </article>`).join("");
-    observeFaces(track);
-    track.querySelectorAll(".slide").forEach((el) => {
-      el.addEventListener("click", () => openDetail(el.dataset.id));
-      el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
-    });
-    const step = () => (track.querySelector(".slide")?.getBoundingClientRect().width || 420) + 14;
-    $("#nbPrev").addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-    $("#nbNext").addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+    $("#nbMeta").textContent = (week ? `${dot(iso(mon))} 주간` : `이번 주 출시 없음 · 최신 출시 ${dot(dated[0].released)}`) + " · 원 제작사 출시·배포일 기준";
+    track.innerHTML = spotList.map((f, k) => spotHTML(f, k, week)).join("");
+    $("#spotBars").innerHTML = spotList.map(() => "<i></i>").join("");
+    track.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+    const spot = $("#spot");
+    const pause = (on) => { spotPaused = on; spot.classList.toggle("paused", on); $("#spotPause").textContent = on ? "▶" : "❚❚"; $("#spotPause").setAttribute("aria-label", on ? "자동 넘김 재생" : "자동 넘김 멈춤"); if (on) clearTimeout(spotTimer); else spotGo(spotIdx, true); };
+    let hoverPause = false;
+    spot.addEventListener("mouseenter", () => { if (!spotPaused) { hoverPause = true; pause(true); } });
+    spot.addEventListener("mouseleave", () => { if (hoverPause) { hoverPause = false; pause(false); } });
+    $("#spotPause").addEventListener("click", () => { hoverPause = false; pause(!spotPaused); });
+    $("#nbPrev").addEventListener("click", () => spotGo(spotIdx - 1, true));
+    $("#nbNext").addEventListener("click", () => spotGo(spotIdx + 1, true));
+    spot.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") spotGo(spotIdx - 1, true); if (e.key === "ArrowRight") spotGo(spotIdx + 1, true); });
+    let x0 = null; // 휴대폰: 좌우로 밀어 넘기기
+    track.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener("touchend", (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) spotGo(spotIdx + (dx < 0 ? 1 : -1), true); x0 = null; });
+    document.addEventListener("visibilitychange", () => { if (document.hidden) clearTimeout(spotTimer); else if (!spotPaused) spotGo(spotIdx); });
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) pause(true);
+    spotGo(0);
   }
 
   // ---------- 시작 ----------

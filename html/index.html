@@ -8,7 +8,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -29,17 +29,17 @@
   </div>
 </header>
 
-<section class="newband">
-  <div class="wrap">
-    <div class="nb-head">
-      <div>
-        <span class="k" id="nbLabel">최근 출시</span>
-        <h1 id="nbTitle">최근 출시된 한글 무료 폰트</h1>
-      </div>
-      <div class="nb-meta" id="nbMeta"></div>
-      <div class="nb-nav"><button id="nbPrev" aria-label="이전">←</button><button id="nbNext" aria-label="다음">→</button></div>
+<section class="newband spot" id="spot" aria-roledescription="carousel" aria-label="최근 출시된 한글 무료 폰트">
+  <div class="spot-stage" id="nbTrack"></div>
+  <div class="wrap spot-ui">
+    <div class="spot-bars" id="spotBars"></div>
+    <div class="spot-row">
+      <span class="k" id="nbLabel">최근 출시</span>
+      <span class="spot-meta" id="nbMeta"></span>
+      <h1 class="sr-only" id="nbTitle">최근 출시된 한글 무료 폰트</h1>
+      <span class="spot-count" id="spotCount"></span>
+      <div class="nb-nav"><button id="nbPrev" aria-label="이전 폰트">←</button><button id="spotPause" aria-label="자동 넘김 멈춤">❚❚</button><button id="nbNext" aria-label="다음 폰트">→</button></div>
     </div>
-    <div class="nb-track" id="nbTrack" tabindex="0" aria-label="신규 폰트 슬라이드"></div>
   </div>
 </section>
 
@@ -163,6 +163,6 @@
 </footer>
 
 <script src="js/data.js?v=8"></script>
-<script src="js/main.js?v=10"></script>
+<script src="js/main.js?v=11"></script>
 </body>
 </html>
