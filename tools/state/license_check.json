@@ -1358,5 +1358,13 @@
   "license": "부산시교육청 무료 글꼴 이용조건",
   "evidence": "직접 확인: 부산교육 공식블로그(2026-10-06): 누구나 무료로 다운로드해 자유롭게 사용(출처 표기 권장), 영상·인쇄·웹·모바일 CI·BI·판매용 저작물 등, 특별한 허가 절차 없음 / 유료 양도·판매 금지",
   "page": "https://blog.naver.com/with_pen/224432897441"
+ },
+ {
+  "id": "k-hs-hyosung",
+  "name": "HS효성체",
+  "expected": "HS효성체 라이선스",
+  "license": "HS효성체 라이선스",
+  "evidence": "직접 확인: HS효성 서체 사용 가이드 PDF(TERMS OF USE·USAGE SCOPE): 개인·기업 상업적·비상업적 무료 사용, 웹폰트 웹사이트 화면 표시 허용 / 서체 판매·재배포, 로고·상표 금지, 소프트웨어 임베딩 사전 협의 → 공개 미러에 올리지 않고 letsum.app 서버에서 화면 표시용으로만 제공(배포처 WOFF2 원본 그대로)",
+  "page": "https://www.hshyosung.com/resources/front/ebook/kr/HS_HYOSUNG_LICENSE_GUIDE_KR.pdf"
  }
 ]

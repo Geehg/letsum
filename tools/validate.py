@@ -78,7 +78,9 @@ for f in FONTS:
         if not f.get("releasedSrc") or not str(f.get("releasedUrl", "")).startswith("http"): err(f"{fid}: released에는 releasedSrc·releasedUrl 필수")
     # 6) 링크
     for wv, url in (f.get("webfont") or {}).items():
-        if not re.fullmatch(r"https://geehg\.github\.io/letsum-mirror/webfonts/[a-z0-9-]+/\d{3}\.woff2", url): err(f"{fid}: 웹폰트 주소 형식 오류 {url}")
+        if not re.fullmatch(r"https://(geehg\.github\.io/letsum-mirror/webfonts|letsum\.app/fonts-hosted)/[a-z0-9-]+/\d{3}\.woff2", url): err(f"{fid}: 웹폰트 주소 형식 오류 {url}")
+        if "/fonts-hosted/" in url and not os.path.exists(os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])):
+            warn(f"{fid}: 서버 전용 웹폰트 원본이 tools/archive/hosted에 없음(다른 컴퓨터에서 작업 중이면 정상)")
         if int(wv) not in w: err(f"{fid}: 웹폰트 굵기 {wv}가 weights에 없음")
     dl = f.get("dl") or {}
     for k in ("zip", "page", "mirror"):

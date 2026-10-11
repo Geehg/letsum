@@ -47,5 +47,11 @@
   "evidence": "한국문화정보원 '추천 공공저작물 글꼴' 공공데이터: Mapo 당인리발전소 저작물이용유형코드 1(공공누리 제1유형)",
   "page": "https://www.data.go.kr/data/15088640/fileData.do",
   "checked": "2026-10-11"
+ },
+ "k-hs-hyosung": {
+  "license": "HS효성체 라이선스",
+  "evidence": "HS효성 서체 사용 가이드 PDF(TERMS OF USE·USAGE SCOPE): 개인·기업 상업적·비상업적 무료 사용, 웹폰트 웹사이트 화면 표시 허용 / 서체 판매·재배포, 로고·상표 금지, 소프트웨어 임베딩 사전 협의 → 공개 미러에 올리지 않고 letsum.app 서버에서 화면 표시용으로만 제공(배포처 WOFF2 원본 그대로)",
+  "page": "https://www.hshyosung.com/resources/front/ebook/kr/HS_HYOSUNG_LICENSE_GUIDE_KR.pdf",
+  "checked": "2026-10-11"
  }
 }

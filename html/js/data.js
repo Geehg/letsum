@@ -16,6 +16,7 @@ const LICENSE_INFO = {
   "OFL": { full: "SIL Open Font License 1.1", short: "OFL", note: "상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지", url: "https://openfontlicense.org/open-font-license-official-text/" },
   "부산시 전용서체 이용조건": { full: "부산시 전용서체 이용조건", short: "부산시 무료 이용", note: "영상·인쇄·출판·웹·모바일에 누구나 허가 없이 무료 사용, 유료 판매·대가 수수 금지", url: "https://www.busan.go.kr/bhbusan/font" },
   "부산시교육청 무료 글꼴 이용조건": { full: "부산시교육청 무료 글꼴 이용조건", short: "교육청 무료 이용", note: "누구나 무료로 자유롭게 사용(CI·BI·판매용 저작물 포함), 출처 표기 권장, 유료 양도·판매 금지", url: "https://blog.naver.com/with_pen/224432897441" },
+  "HS효성체 라이선스": { full: "HS효성체 서체 사용 가이드", short: "HS효성 무료 이용", note: "개인·기업 상업적 사용 가능(인쇄·광고·상품 패키지·영상·웹사이트 표시), 로고(CI·BI)·상표 제작 금지, 판매·수정 후 재배포 금지, 앱·기기 내장은 사전 협의", url: "https://www.hshyosung.com/kr/about/ci" },
   "공공누리 제1유형": { full: "공공누리 제1유형(출처표시)", short: "공공누리 1유형", note: "상업 이용·변경 가능, 사용 시 저작권자(출처) 표시 필요", url: "https://www.kogl.or.kr/info/licenseType1.do" },
 };
 const licInfo = (f) => LICENSE_INFO[f.license] || { full: f.license, short: f.license, note: "원문 라이선스 확인 필요", url: "" };
@@ -2039,6 +2040,16 @@ const FONTS = [
     released: "2026-10-06", releasedSrc: "부산시교육청 공식 블로그 배포 게시", releasedUrl: "https://blog.naver.com/with_pen/224432897441",
     pair: "inter", pop: 60, added: "2026-10-11",
     desc: "학생 손글씨 공모전 최우수작을 AI로 폰트화한 가는 손글씨. 수업 자료·SNS 콘텐츠에 다정합니다. 한글 2,792자." },
+  { id: "k-hs-hyosung", name: "HS효성체", en: "HS HYOSUNG", family: "'LS hs-hyosung', sans-serif",
+    designer: "(주)HS효성", holder: "(주)HS효성", category: "고딕",
+    tags: ["본문","기하학","3굵기"], mood: ["단정한","세련된"], weights: [300,500,700], formats: ["TTF","OTF","WOFF2"],
+    cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
+    webfont: { 300: "https://letsum.app/fonts-hosted/hs-hyosung/300.woff2", 500: "https://letsum.app/fonts-hosted/hs-hyosung/500.woff2", 700: "https://letsum.app/fonts-hosted/hs-hyosung/700.woff2" },
+    dl: { page: "https://www.hshyosung.com/kr/about/ci", srcName: "HS효성" },
+    license: "HS효성체 라이선스", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "no", package: "ok", ofl: "no" }, verified: "2026-10-11", status: "verified", attribution: "본 콘텐츠에는 ㈜HS효성의 HS HYOSUNG 서체가 사용되었습니다. (권장)",
+    released: "2026-10-07", releasedSrc: "HS효성 서체 사용 가이드(2026.10.7 RELEASED)", releasedUrl: "https://www.hshyosung.com/resources/front/ebook/kr/HS_HYOSUNG_LICENSE_GUIDE_KR.pdf",
+    pair: "inter", pop: 60, added: "2026-10-11",
+    desc: "원과 직선으로 설계한 기하학적 산세리프. 균일한 획과 부드럽게 다듬은 모서리로 보고서·웹 본문에 단정하게 읽힙니다." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)
