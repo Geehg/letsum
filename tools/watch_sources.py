@@ -91,17 +91,56 @@ def root_github():
         out[w["family"]] = rec
     return out
 
+# 공공 라이선스 표기 → (정규 라이선스, 상업 이용, 변경 허용)
+#   KOGL(출처)=공공누리 1유형, KOGL(출처/변경)=3유형(변경금지), CCL BY-NC=비영리, BY-ND=변경금지
+PUBLIC_LIC = {
+    "OFL": ("OFL", True, True),
+    "KOGL(출처)": ("공공누리 제1유형", True, True),
+    "KOGL(출처/변경)": ("공공누리 제3유형", True, False),
+    "KOGL(출처/상업)": ("공공누리 제2유형", False, True),
+    "KOGL(출처/상업/변경)": ("공공누리 제4유형", False, False),
+    "CCL(BY-NC)": ("CC BY-NC", False, True),
+    "CCL(BY-ND)": ("CC BY-ND", True, False),
+}
+
 def root_kogl():
-    """공공데이터포털 CSV(한국저작권위원회 무료폰트 목록 등)를 tools/sources/ 에 두면 읽는다. 열 이름은 파일마다 달라 느슨하게 찾는다."""
+    """tools/sources/ 의 공공데이터포털 CSV(UTF-8로 저장) 3종을 읽어 정규화한다.
+      kcc_free_fonts_*.csv      한국저작권위원회 공유마당 무료폰트 목록 (저작물명·저작자·라이선스유형·저작물일련번호)
+      kcisa_font_table_*.csv    한국문화정보원 글꼴테이블 (제목·종류·저작권자·다운로드횟수)
+      kcisa_recommended_*.csv   추천 공공저작물 글꼴 (저작물명·소장기관명·저작물이용유형코드)
+    원 배포처 링크는 공유마당 저작물 페이지(일련번호가 있을 때) 또는 공유마당 안심글꼴 목록 페이지."""
     out = {}
-    for path in glob.glob(os.path.join(HERE, "sources", "*.csv")):
+    def add(name, **kw):
+        name = re.sub(r"\s+", " ", (name or "").strip())
+        if not name: return
+        r = out.setdefault(name, {"name": name, "files": []})
+        for k, v in kw.items():
+            if v and not r.get(k): r[k] = v
+        if kw.get("file") and kw["file"] not in r["files"]: r["files"].append(kw["file"])
+    for path in sorted(glob.glob(os.path.join(HERE, "sources", "*.csv"))):
+        fn = os.path.basename(path)
         with open(path, encoding="utf-8-sig", newline="") as fp:
-            for row in csv.DictReader(fp):
-                name = next((row[k] for k in row if k and ("저작물명" in k or "제목" in k or "글꼴" in k and "명" in k)), None)
-                if not name: continue
-                lic = next((row[k] for k in row if k and "라이선스" in k), "")
-                author = next((row[k] for k in row if k and ("저작자" in k or "저작권자" in k)), "")
-                out[name.strip()] = {"author": author, "license": lic, "file": os.path.basename(path)}
+            rows = list(csv.DictReader(fp))
+        for row in rows:
+            if fn.startswith("kcc_free_fonts"):
+                lic = (row.get("라이선스유형") or "").strip()
+                sn = (row.get("저작물일련번호") or "").strip()
+                add(row.get("저작물명"), author=row.get("저작자"), license_raw=lic, registered=row.get("등록일자"),
+                    page=f"https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn={sn}&menuNo=200023" if sn else None, file=fn)
+            elif fn.startswith("kcisa_font_table"):
+                kind = (row.get("종류") or "").strip()
+                lic = "OFL" if kind == "OFL" else ("KOGL(출처)" if kind == "KOGL" else "")
+                add(row.get("제목"), author=row.get("저작권자"), license_raw=lic, registered=row.get("등록일자"),
+                    downloads=int(row.get("다운로드횟수") or 0), page="https://gongu.copyright.or.kr/freeFontEvent.html", file=fn)
+            elif fn.startswith("kcisa_recommended"):
+                if (row.get("삭제여부") or "N") != "N": continue
+                t = (row.get("저작물이용유형코드") or "").strip()
+                lic = {"1": "KOGL(출처)", "2": "KOGL(출처/상업)", "3": "KOGL(출처/변경)", "4": "KOGL(출처/상업/변경)"}.get(t, "")
+                add(row.get("저작물명"), author=row.get("소장기관명") or row.get("촬영기관명"), license_raw=lic,
+                    page="https://gongu.copyright.or.kr/freeFontEvent_KOGL.html", file=fn)
+    for r in out.values():
+        lic, com, mod = PUBLIC_LIC.get(r.get("license_raw", ""), (r.get("license_raw") or "확인 필요", None, None))
+        r.update(license=lic, commercial=com, modify=mod)
     return out
 
 def root_pages():
@@ -171,9 +210,13 @@ def merge(catalog, snap):
         for root in ("google", "github", "fontsource"):
             s = r["sources"].get(root, {})
             if s.get("license") in TRUSTED: lic = TRUSTED[s["license"]]; break
-        kg = r["sources"].get("kogl", {}).get("license", "")
-        if not lic and "공공누리" in kg: lic = kg.strip()
+        kg = r["sources"].get("kogl", {})
+        if not lic and kg.get("license") and kg.get("license") != "확인 필요": lic = kg["license"]
         r["license_auto"] = lic
+        if kg and kg.get("commercial") is False and r.get("review") == "pending":
+            r["review"] = "excluded-noncommercial"  # 비영리 조건 — 상업용 무료 사이트 대상 아님(사람이 되돌릴 수 있음)
+        if kg and r.get("review") == "pending" and re.search(r"안심글꼴\s*\(|목록|모음|^\d+종", r["name"]):
+            r["review"] = "excluded-bundle"  # '안심글꼴(155종)' 같은 묶음 파일 — 개별 폰트가 아님
     # 사이트 반영 여부
     ids = site_ids()
     for r in catalog.values():
