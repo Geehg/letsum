@@ -1360,6 +1360,70 @@
   "page": "https://blog.naver.com/with_pen/224432897441"
  },
  {
+  "id": "k-nanum-square",
+  "name": "나눔스퀘어",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288246) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288246&menuNo=200023"
+ },
+ {
+  "id": "k-nanum-square-round",
+  "name": "나눔스퀘어 라운드",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288247) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288247&menuNo=200023"
+ },
+ {
+  "id": "k-nanum-barun-gothic",
+  "name": "나눔바른고딕",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288242) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288242&menuNo=200023"
+ },
+ {
+  "id": "k-nanum-barun-pen",
+  "name": "나눔바른펜",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288243) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288243&menuNo=200023"
+ },
+ {
+  "id": "k-nanum-gothic-eco",
+  "name": "나눔고딕 에코",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 문체부·한국문화정보원 안심글꼴 목록(공유마당 무료폰트) OFL 표기, 같은 시리즈 나눔명조 에코(wrtSn=13288241) 개별 페이지 OFL · 미리보기는 네이버 공식 웹폰트 그대로 사용",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html"
+ },
+ {
+  "id": "k-nanum-myeongjo-eco",
+  "name": "나눔명조 에코",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288241) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288241&menuNo=200023"
+ },
+ {
+  "id": "k-spoqa-han-sans-neo",
+  "name": "스포카 한 산스 네오",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288254) 이용조건 OFL 표시 + 공식 GitHub LICENSE: SIL OFL 1.1, Reserved Font Name 'Spoqa Han Sans Neo' — LETSUM은 변환하지 않고 스포카 공식 npm 패키지의 웹폰트(Subset)를 그대로 사용",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288254&menuNo=200023"
+ },
+ {
+  "id": "k-gs-hyejaroun",
+  "name": "GS혜자로운체",
+  "expected": "GS혜자로운체 이용조건",
+  "license": "GS혜자로운체 이용조건",
+  "evidence": "직접 확인: 공식 라이선스 PDF(GS-Hyejaroun-Font-License.pdf, 2026-10-08 작성) 원문: 허용 — 인쇄, 광고·패키지, 웹, 웹폰트(웹사이트 내 웹폰트 형태로 폰트 파일 탑재), 영상 / 비허용 — BI/CI, 임베딩(앱·게임·전자책에 파일 포함), 폰트 파일 판매, 수정·재배포. 출처 표기 불필요. 임베딩 칸은 웹폰트 O·앱/전자책 X라 cond. 교차 확인: typedia.kr/font/gshyejaroun (다운로드 → hyejaroun.com)",
+  "page": "https://hyejaroun.com/public/downloads/gs-hyejaroun/GS-Hyejaroun-Font-License.pdf"
+ },
+ {
   "id": "k-hs-hyosung",
   "name": "HS효성체",
   "expected": "HS효성체 라이선스",

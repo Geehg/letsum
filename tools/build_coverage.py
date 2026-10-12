@@ -24,7 +24,9 @@ for f in FONTS:
     wf = f.get("webfont")
     if not wf: continue
     w = "400" if "400" in wf else sorted(wf)[0]; url = wf[w]
-    if "/fonts-hosted/" in url: p = os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])
+    if not url.startswith("https://geehg.github.io/") and "/fonts-hosted/" not in url:  # 배포처 공식 CDN → 내려받아 둔 캐시
+        p = os.path.join(HERE, "archive", "cdn", f["id"], next(w for w, u in f["webfont"].items() if u == url) + "." + url.rsplit(".", 1)[1])
+    elif "/fonts-hosted/" in url: p = os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])
     else: p = os.path.join(mirror, f["id"], url.rsplit("/", 1)[1])
     if not os.path.exists(p): print("파일 없음:", f["id"], p); continue
     font = TTFont(p, lazy=True); cmap = font.getBestCmap() or {}; gs = font.getGlyphSet()

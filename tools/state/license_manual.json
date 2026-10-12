@@ -107,5 +107,47 @@
   "evidence": "공유마당 저작물 페이지 이용조건 '기증저작물 자유이용'. 기증제도 안내: '저작물·저작자명·출처 및 이용조건 표기 필요, 제한 없이 자유롭게 이용'. 내려받기는 이용 범위 동의 절차 → 자동 통과 금지 규칙에 따라 소개 전용. 상업·변경 세부 조건은 원문(ZIP 내 문서) 미확인 → checking",
   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13388290&menuNo=200023",
   "checked": "2026-10-12"
+ },
+ "k-nanum-square": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288246) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288246&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-nanum-square-round": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288247) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288247&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-nanum-barun-gothic": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288242) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288242&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-nanum-barun-pen": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288243) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288243&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-nanum-myeongjo-eco": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288241) 이용조건 OFL 표시 · 미리보기는 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용, LETSUM 변환·재배포 없음",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288241&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-spoqa-han-sans-neo": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288254) 이용조건 OFL 표시 + 공식 GitHub LICENSE: SIL OFL 1.1, Reserved Font Name 'Spoqa Han Sans Neo' — LETSUM은 변환하지 않고 스포카 공식 npm 패키지의 웹폰트(Subset)를 그대로 사용",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288254&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-nanum-gothic-eco": {
+  "license": "OFL",
+  "evidence": "문체부·한국문화정보원 안심글꼴 목록(공유마당 무료폰트) OFL 표기, 같은 시리즈 나눔명조 에코(wrtSn=13288241) 개별 페이지 OFL · 미리보기는 네이버 공식 웹폰트 그대로 사용",
+  "page": "https://gongu.copyright.or.kr/freeFontEvent.html",
+  "checked": "2026-10-12"
  }
 }

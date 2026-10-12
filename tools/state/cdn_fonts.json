@@ -1,0 +1,70 @@
+{
+ "_": "배포처가 직접 운영하는 공식 웹폰트(CDN) — LETSUM은 변환·재배포하지 않고 이 주소를 그대로 미리보기에 쓴다. 사람이 확인해 추가. tools/build_coverage.py·build_evidence.py가 읽는다.",
+ "k-nanum-square": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css",
+  "files": {
+   "300": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquare/NanumSquareL.woff",
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquare/NanumSquareR.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquare/NanumSquareB.woff",
+   "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquare/NanumSquareEB.woff"
+  }
+ },
+ "k-nanum-square-round": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css",
+  "files": {
+   "300": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff",
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff",
+   "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff"
+  }
+ },
+ "k-nanum-barun-gothic": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css",
+  "files": {
+   "200": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunGothicL/NanumBarunGothicWebUltraLight.woff",
+   "300": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunGothicL/NanumBarunGothicWebLight.woff",
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunGothic/NanumBarunGothicWeb.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunGothic/NanumBarunGothicWebBold.woff"
+  }
+ },
+ "k-nanum-barun-pen": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-pen.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunpen/NanumBarunpenR.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunpen/NanumBarunpenB.woff"
+  }
+ },
+ "k-nanum-gothic-eco": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-eco.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumGothicEco/NanumGothicEco.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumGothicEco/NanumGothicEcoBold.woff",
+   "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumGothicEco/NanumGothicEcoExtraBold.woff"
+  }
+ },
+ "k-nanum-myeongjo-eco": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.pstatic.net/hangeul_static/css/nanum-myeongjo-eco.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumMyeongjoEco/NanumMyeongjoEco.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumMyeongjoEco/NanumMyeongjoEcoBold.woff",
+   "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumEco/NanumMyeongjoEco/NanumMyeongjoEcoExtraBold.woff"
+  }
+ },
+ "k-spoqa-han-sans-neo": {
+  "page": "https://spoqa.github.io/spoqa-han-sans/",
+  "zip": "https://github.com/spoqa/spoqa-han-sans/releases/download/v3.3.0/SpoqaHanSansNeo_all.zip",
+  "files": {
+   "100": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2",
+   "300": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2",
+   "400": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2",
+   "500": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2",
+   "700": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2"
+  }
+ }
+}

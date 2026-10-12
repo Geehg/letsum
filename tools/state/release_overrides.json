@@ -223,5 +223,10 @@
   "date": "2026-10-09",
   "src": "GS리테일 발표(한글날 공개, 뉴스핌 보도)",
   "url": "https://www.newspim.com/news/view/20261008000088"
+ },
+ "k-spoqa-han-sans-neo": {
+  "date": "2020-11-30",
+  "src": "스포카 공식 GitHub 릴리스 v3.0.0(스포카 한 산스 네오 첫 배포)",
+  "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.0.0"
  }
 }

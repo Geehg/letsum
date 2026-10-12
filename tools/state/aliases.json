@@ -10,5 +10,12 @@
  "나눔손글씨 붓체": "nanum-brush-script",
  "나눔손글씨": "nanum-pen",
  "본고딕": "noto-sans-kr",
- "본명조": "noto-serif-kr"
+ "본명조": "noto-serif-kr",
+ "나눔스퀘어": "k-nanum-square",
+ "나눔스퀘어 라운드": "k-nanum-square-round",
+ "나눔바른고딕": "k-nanum-barun-gothic",
+ "나눔바른펜": "k-nanum-barun-pen",
+ "나눔고딕에코": "k-nanum-gothic-eco",
+ "나눔명조 에코": "k-nanum-myeongjo-eco",
+ "스포카 한 산스": "k-spoqa-han-sans-neo"
 }

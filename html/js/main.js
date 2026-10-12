@@ -22,7 +22,7 @@
   // 상세·히어로처럼 지금 보는 곳은 맨 앞으로(priority). 받는 중엔 data-fl="wait"(흐리게), 실패하면 한 번 다시 시도.
   const declared = new Set(); const faceState = {}; const faceWait = [];
   let faceActive = 0; const FACE_MAX = 4;
-  const fmtOf = (u) => /\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : "woff2";
+  const fmtOf = (u) => /\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : /\.woff$/.test(u) ? "woff" : "woff2";
   function markFace(id, st) {
     faceState[id] = st;
     document.querySelectorAll(`[data-id="${id}"]`).forEach((el) => { if (st === "ok") el.removeAttribute("data-fl"); else el.setAttribute("data-fl", st); });

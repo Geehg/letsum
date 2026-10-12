@@ -14,6 +14,7 @@ letsum.app = 상업용 무료 한글 폰트 사이트. 정적 사이트(`html/`,
 4. **웹폰트(미리보기) 변환은 원문이 무상 재배포를 허용하는 라이선스만**: OFL, 공공누리 제1유형, 그리고 원문에 '무료로 자유롭게 사용·배포'가 명시되고 수정 금지 조항이 없는 기관 이용조건(예: 부산시 전용서체). 이런 경우 `license_manual.json`에 원문 근거를 남기고 `LICENSE_INFO`에 항목을 추가한다. 공공누리 2·3·4유형·CC BY-NC/ND·수정/재배포 금지·'다운로드 시 약관 동의 간주' 라이선스는 운영자 확인 없이 변환·업로드 금지.
 4-1. **화면 표시만 허용되고 재배포가 금지된 웹폰트**(예: HS효성체, 서울서체 — 공유마당에 공공누리로 올라 있어도 저작권자 페이지가 '무단배포 금지'면 이쪽)는 공개 저장소·미러에 올리지 않는다. 배포처가 준 WOFF2를 그대로 `tools/archive/hosted/<폴더>/`(git 제외)에 두고 `tools/deploy_hosted_fonts.sh`로 letsum.app 서버에만 올린다(운영 서버 작업이므로 운영자 허락 후). 주소는 `https://letsum.app/fonts-hosted/<폴더>/<굵기>.woff2`.
 4-2. **소개 전용(`intro: true`)** — 위 조건 때문에 미리보기 웹폰트를 만들 수 없지만 소개할 가치가 있는 폰트(수정·재배포 금지, 동의 절차가 있는 배포처 등)는 정보·라이선스·원 배포처 링크만 올린다. `introReason`(미리보기 미제공 사유)·`dl.page` 필수, `webfont` 금지. 원본 파일을 정당하게 받아 둔 경우에만 그 폰트로 렌더링한 견본 이미지(`specimen: "img/specimen/<id>.png"`)를 둘 수 있다. 굵기를 확인하지 못했으면 `weightsUnknown: true`, 글자수를 모르면 `cov: 0`. 나중에 웹폰트가 허용되면 `intro`·`introReason`·`specimen`을 지우고 `webfont`를 넣어 일반 항목으로 전환한다.
+4-4. **배포처 공식 웹폰트(CDN)** — 제작사가 직접 운영하는 웹폰트 주소가 있고 다른 사이트에서 불러오기를 허용(CORS)하면, 변환하지 말고 그 주소를 그대로 쓴다(예: 네이버 hangeul.pstatic.net, 스포카 공식 npm 패키지). `tools/state/cdn_fonts.json`에 등록해야 검증을 통과한다. 공식 웹폰트가 경량판(글자 축소)이면 `glyphs`에 "공식 웹폰트 기준"을 밝힌다. 예약 글꼴 이름(RFN)이 있는 OFL 폰트는 이 방식이 가장 안전하다.
 4-3. **기술 수리 예외**: 브라우저가 미리보기 웹폰트를 거부(OTS 오류)하면 `tools/repair_webfonts.py`로 부속 표만 고친다(CFF 내부 이름·vhea 버전·깨진 kern·name 정렬). 글리프·cmap·자간은 건드리지 않으며, 변경이 허용된 공공누리 제1유형과 예약 이름(RFN)이 없는 OFL만 대상. 수리 내역은 `webfonts.json`의 `repair`에 남는다. 4-1의 서버 전용 폰트(원본 그대로 제공)는 수리하지 않는다.
 5. **글리프를 바꾸지 않는다** — 서브셋 금지(OFL 예약 글꼴 이름 조항). 압축 형식(WOFF2) 변환만.
 6. **수집 금지 대상**: 눈누·산돌구름·폰코 등 상업·편집 서비스의 데이터. 공유마당 개별 다운로드의 '이용 범위 동의' 절차를 자동으로 통과시키지 않는다.
@@ -40,7 +41,7 @@ tools/run.sh finish "커밋 메시지"    # 검증 통과해야 커밋·푸시, 
 | `tools/state/aliases.json` — 같은 폰트 다른 이름 | `tools/state/catalog.json`, `sources.json`, `report.md` ← watch_sources.py |
 | `tools/state/license_manual.json` — 원문을 직접 읽고 확인한 라이선스 근거 | `tools/state/license_check.json` ← verify_licenses.py |
 | `tools/state/catalog.json`의 `review` 필드만 | `tools/state/webfonts.json` ← build_webfonts.py |
-| `tools/state/holder_domains.json` — 배포 주체 → 공식 사이트(아이콘용) | `html/data/coverage.json`, data.js의 `cov`·`glyphs` 앞부분·`old`·`hanja` ← build_coverage.py (실제 그려진 글자 기준) |
+| `tools/state/holder_domains.json` — 배포 주체 → 공식 사이트(아이콘용), `tools/state/cdn_fonts.json` — 배포처 공식 웹폰트 주소 | `html/data/coverage.json`, data.js의 `cov`·`glyphs` 앞부분·`old`·`hanja` ← build_coverage.py (실제 그려진 글자 기준) |
 |  | `html/data/avatars.json`, `html/img/src/` ← fetch_icons.py |
 |  | `html/data/evidence.json`(확인 근거·원본 출처·폰트 버전) ← build_evidence.py — license_check·license_manual·webfonts를 바꾸면 다시 실행 |
 | `html/js/data.js` — 새 폰트 수동 추가 시 (템플릿: docs/HANDOFF.md) | data.js의 `released*` ← release_dates.py |

@@ -64,6 +64,12 @@ python3 -I tools/import_webfonts.py      # data.js에 '확인 중'으로 추가 
 ### B. Google Fonts·GitHub 폰트 — 수동 추가
 `tools/state/report.md`에 '🆕 Google Fonts 새 한글 패밀리'가 뜨면 data.js에 아래 템플릿으로 추가(웹폰트는 Google CDN이 맡으므로 `webfont` 없음).
 
+### B-2. 배포처가 공식 웹폰트를 운영하는 폰트 (네이버 나눔·스포카 등)
+1. 공식 웹폰트 CSS·파일 주소를 찾고 `curl -I -H 'Origin: https://letsum.app'`로 `access-control-allow-origin`을 확인한다(없으면 이 방식 불가).
+2. `tools/state/cdn_fonts.json`에 굵기별 주소 등록 → 파일을 `tools/archive/cdn/<id>/<굵기>.<확장자>`에 받아 둔다(글자 수 계산용, git 제외).
+3. data.js에 항목 추가(`webfont`에 공식 주소 그대로) → 라이선스 근거(공유마당 개별 페이지 OFL 표시·저장소 LICENSE)를 `license_manual.json`에 → `aliases.json`에 카탈로그 이름 연결.
+4. `build_coverage.py`·`build_evidence.py`·`fetch_icons.py`·`build_pages.js`·`validate.py`.
+
 ### C. 기업·지자체 신규 전용서체(뉴스로 감지) — 사람 판단 필수
 `report.md`의 '📰 새 배포 소식'에서 시작한다.
 1. 기사에서 폰트명·배포 기관·배포 페이지를 찾는다. **원 배포처 페이지**를 직접 연다.
