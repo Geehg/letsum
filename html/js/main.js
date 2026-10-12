@@ -534,6 +534,18 @@
     "손글씨": (f, t, fam) => `<div class="ig-s fp fp-note" style="font-family:${fam}"><div class="fp-k">To. 오늘의 나에게</div><div class="fp-t">${esc(t)}</div><div class="fp-sign">— 렛섬 드림</div><span class="ig-cap2">손편지·카드 적용안</span></div>`,
     "고딕": (f, t, fam) => `<div class="ig-s fp fp-ui" style="font-family:${fam}"><div class="fp-win"><div class="fp-bar"><b>알림</b><span>방금</span></div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">변경 사항은 다음 로그인부터 적용됩니다. 계정 설정에서 언제든지 되돌릴 수 있습니다.</p><div class="fp-btn">확인</div></div><span class="ig-cap2">앱 화면 적용안</span></div>`,
   };
+  // 글자 효과 적용안(CSS만으로 그림) — 분류로 효과 4가지를, 분위기로 그라데이션 색을 고른다
+  const FX_LABEL = { outline: "외곽선", extrude: "3D 입체", retro: "레트로 오프셋", glitch: "글리치", grad: "그라데이션", shadow: "드롭섀도", neon: "네온 사인", press: "레터프레스", chalk: "칠판", thin: "가는 외곽선" };
+  const FX_BY_CAT = { "디스플레이": ["outline", "extrude", "retro", "glitch"], "고딕": ["shadow", "grad", "neon", "outline"], "명조": ["press", "grad", "shadow", "thin"], "손글씨": ["neon", "chalk", "grad", "shadow"] };
+  const GRAD_BY_MOOD = { "강렬한": "metal", "세련된": "metal", "귀여운": "candy", "발랄한": "candy", "따뜻한": "sunset", "고전적": "gold", "차분한": "ocean", "단정한": "ocean" };
+  function fxSlide(f, t) {
+    let fx = (FX_BY_CAT[f.category] || FX_BY_CAT["고딕"]).slice();
+    if (f.category === "디스플레이" && !(f.mood || []).includes("강렬한")) fx[3] = "grad";
+    const grad = GRAD_BY_MOOD[(f.mood || []).find((m) => GRAD_BY_MOOD[m])] || (f.category === "명조" ? "gold" : "ocean");
+    const w = f.weights[f.weights.length - 1];
+    const word = [...(t.split(/\s+/).find(Boolean) || f.name)].slice(0, 5).join("");
+    return `<div class="ig-s ig-fx">${fx.map((k) => `<div class="fx fx-${k}${k === "grad" ? " g-" + grad : ""}"><span style="font-family:${famOf(f)};font-weight:${w}" data-t="${esc(word)}">${esc(word)}</span><i>${FX_LABEL[k]}</i></div>`).join("")}<span class="ig-cap2">효과 적용안</span></div>`;
+  }
   function feedSlides(f, i) {
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
     const t = state.text || f.name;
@@ -547,6 +559,7 @@
     return [
       `<div class="ig-s ig-sample" style="background:${bg};color:${fg}"><div class="sm-t" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${sz}cqw">${esc(t)}</div><span class="ig-cap2">${esc(f.name)}</span></div>`,
       (FEED_POSTER[f.category] || FEED_POSTER["고딕"])(f, t, famOf(f)),
+      fxSlide(f, t),
       info,
       `<div class="ig-s ig-weights" style="font-family:${f.family}">${ws.map((w) => `<div style="font-weight:${w}"><b>가나다 Aa 123</b><small>${w}</small></div>`).join("")}<span class="ig-cap2">굵기 ${f.weights.length}종${ws.length < f.weights.length ? " 중 일부" : ""}</span></div>`,
     ];

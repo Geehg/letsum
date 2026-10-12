@@ -861,3 +861,34 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ig-info{justify-content:flex-start}
 .ig-info .ii-m{margin-top:auto}
 .ig-lics{display:contents}
+
+/* ===== 피드: 글자 효과 적용안(폰트 견본용 — 사이트 UI의 '그라데이션 없음' 원칙의 예외) ===== */
+.ig-fx{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;padding:0}
+.ig-fx .fx{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ig-fx .fx span{font-size:9.5cqw;line-height:1.1;white-space:nowrap;letter-spacing:-.01em}
+.ig-fx .fx i{position:absolute;left:2.6cqw;bottom:2.2cqw;font-style:normal;font:600 max(9px,2.5cqw)/1 var(--mono);opacity:.75}
+.ig-fx .ig-cap2{display:none}
+/* 외곽선 */
+.fx-outline{background:#f4f2ec}.fx-outline span{color:transparent;-webkit-text-stroke:.55cqw #15140f}.fx-outline i{color:#15140f}
+.fx-thin{background:#fbfaf6}.fx-thin span{color:transparent;-webkit-text-stroke:.25cqw #2a2015}.fx-thin i{color:#2a2015}
+/* 3D 입체 */
+.fx-extrude{background:#1e1b4b}.fx-extrude span{color:#ffd23f;text-shadow:.25cqw .25cqw 0 #f59e0b,.5cqw .5cqw 0 #ea7a0c,.75cqw .75cqw 0 #c2410c,1cqw 1cqw 0 #9a3412,1.25cqw 1.25cqw 0 #7c2d12,1.6cqw 1.8cqw 1.2cqw rgba(0,0,0,.5)}.fx-extrude i{color:#fff}
+/* 레트로 오프셋 */
+.fx-retro{background:#ffe14d}.fx-retro span{color:#fff;-webkit-text-stroke:.3cqw #15140f;text-shadow:.8cqw .8cqw 0 #ff5a36}.fx-retro i{color:#15140f}
+/* 글리치 */
+.fx-glitch{background:#0f0f12}.fx-glitch span{color:#fff;text-shadow:-.55cqw 0 #00e5ff,.55cqw 0 #ff2a6d}.fx-glitch i{color:#9aa}
+/* 드롭섀도(어두운 배경) */
+.fx-shadow{background:#23262f}.fx-shadow span{color:#fff;text-shadow:0 .5cqw 0 rgba(0,0,0,.35),0 1.2cqw 2.4cqw rgba(0,0,0,.65)}.fx-shadow i{color:#bbb}
+/* 네온 사인 */
+.fx-neon{background:#120a1f}.fx-neon span{color:#fff;text-shadow:0 0 .4cqw #fff,0 0 1.2cqw #ff3cac,0 0 2.6cqw #ff3cac,0 0 4.5cqw #b0247a}.fx-neon i{color:#f7a6d6}
+/* 레터프레스(엠보싱) */
+.fx-press{background:#d9d3c5}.fx-press span{color:#cbc4b3;text-shadow:0 .18cqw 0 rgba(255,255,255,.85),0 -.14cqw 0 rgba(0,0,0,.35)}.fx-press i{color:#5a5345}
+/* 칠판 */
+.fx-chalk{background:#2f4f3a}.fx-chalk span{color:rgba(255,255,255,.92);text-shadow:0 0 .35cqw rgba(255,255,255,.55),.1cqw .1cqw 0 rgba(255,255,255,.25)}.fx-chalk i{color:#cfe3d4}
+/* 그라데이션(분위기별) */
+.fx-grad span{color:transparent;-webkit-background-clip:text;background-clip:text}
+.fx-grad.g-metal{background:#14161a}.fx-grad.g-metal span{background-image:linear-gradient(180deg,#ffffff 0%,#c9ced6 45%,#6b727d 55%,#e3e6ea 100%)}.fx-grad.g-metal i{color:#aaa}
+.fx-grad.g-candy{background:#fff4fa}.fx-grad.g-candy span{background-image:linear-gradient(90deg,#ff5fa2,#a15cff,#4cc9ff)}.fx-grad.g-candy i{color:#a15cff}
+.fx-grad.g-sunset{background:#2a1408}.fx-grad.g-sunset span{background-image:linear-gradient(180deg,#ffd166,#ff7a59 60%,#e04e39)}.fx-grad.g-sunset i{color:#ffb38a}
+.fx-grad.g-gold{background:#1a1510}.fx-grad.g-gold span{background-image:linear-gradient(180deg,#fff1c1 0%,#e2b85c 45%,#a8741a 55%,#f5d98b 100%)}.fx-grad.g-gold i{color:#d9b56a}
+.fx-grad.g-ocean{background:#eef5ff}.fx-grad.g-ocean span{background-image:linear-gradient(90deg,#1b3cff,#2fa4ff,#20c997)}.fx-grad.g-ocean i{color:#1b3cff}
