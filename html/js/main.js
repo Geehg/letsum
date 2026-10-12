@@ -949,11 +949,30 @@
     a.download = name; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   }
-  async function saveProof(f, dl) {
-    const now = new Date(); ev("record", f.id);
-    const E = (await evidenceLoad())[f.id] || {};
-    downloadText(`LETSUM_사용조건확인기록_${f.name}_${ymdOf(now)}.txt`, ["LETSUM 사용 조건 확인 기록", "=".repeat(28), "", ...proofLines(f, dl, E), ...PROOF_TAIL(now)]);
+  // 라이선스 확인서(PDF, js/report.js) — 폰트 1개면 PDF, 여러 개면 ZIP
+  function reportData(f, E, note) {
+    const L = licInfo(f), dl = dlFor(f), n = NAMES[f.id];
+    const hv = f.weights[f.weights.length - 1];
+    return {
+      id: f.id, name: f.name, en: f.en, category: f.category, designer: f.designer, holder: f.holder, intro: !!f.intro,
+      family: f.family, weight: f.weights.includes(700) ? 700 : hv,
+      licFull: L.full, licNote: L.note, licUrl: L.url || "", attribution: f.attribution || "",
+      verified: f.status === "verified", checked: f.verified, ev: E.ev || "", pg: E.pg || "", ver: E.ver || "",
+      matrix: LICENSE_CATS.map((c) => ({ key: c.key, label: c.label, desc: c.desc, v: f.matrix[c.key] })),
+      page: dl.page, zip: dl.zip || "", letsum: `https://letsum.app/font/${f.id}.html`, note: note || "",
+      names: n ? { fam: n.fam, famEn: n.famEn, file: n.file || "", rows: Object.entries(n.w || {}).map(([w, v]) => ({ label: WN[w] || w, win: v.win, ps: v.ps })) } : null,
+    };
   }
+  async function saveReport(items, zipName, btn) {
+    const E = await evidenceLoad();
+    const list = items.map(([f, note]) => reportData(f, E[f.id] || {}, note));
+    const label = btn && btn.querySelector("b") ? btn.querySelector("b") : btn; const old = label ? label.textContent : "";
+    if (btn) btn.disabled = true;
+    try { await window.LSReport.download(list, zipName, (i, n) => { if (label) label.textContent = n > 1 ? `만드는 중… ${i}/${n}` : "만드는 중…"; }); }
+    catch (e) { alert("확인서를 만들지 못했습니다. 잠시 후 다시 시도해 주세요."); }
+    finally { if (btn) { btn.disabled = false; if (label) label.textContent = old; } }
+  }
+  async function saveProof(f, dl, btn) { ev("record", f.id); await saveReport([[f, ""]], f.name, btn); }
 
   // 웹사이트·앱에 쓸 때의 안내 — 라이선스의 임베딩 칸에 따라 다르게(공통 안내로 잘못 안내하지 않도록)
   function webUseNote(f) {
@@ -1043,7 +1062,7 @@
           ${dl.ok ? `<a class="btn" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
           <a class="btn ghost" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
-          <button class="btn ghost" id="proofBtn" title="이 폰트의 사용 범위·라이선스 원문 링크·출처·LETSUM 확인일을 텍스트 파일로 남깁니다(사용 권리 보증 아님)">📄 사용 조건 확인 기록 저장</button>
+          <button class="btn ghost" id="proofBtn" title="이 폰트의 라이선스·사용 범위·출처·LETSUM 확인일을 A4 확인서(PDF)로 받습니다">📑 라이선스 확인서 (PDF)</button>
         </div>
         ${dl.ok ? "" : f.intro ? `<p class="note" style="margin-top:6px">파일은 <b>${esc(dl.srcName)}</b>에서만 받을 수 있습니다. 이용 조건을 그곳에서 확인한 뒤 내려받으세요.</p>` : !isGF(f) ? `<p class="note" style="margin-top:6px">이 폰트는 <b>${esc(dl.srcName)}</b> 페이지에서 이용 범위를 확인한 뒤 내려받습니다. 원 배포처 페이지 버튼을 눌러 주세요.</p>` : `<p class="note" style="margin-top:6px">⚠ 배포처 다운로드 링크가 최근 점검(${esc(dl.checked || "—")})에서 응답하지 않습니다. 배포처 페이지에서 받아 주세요.${dl.mirror ? " 급하면 LETSUM이 보관한 원본 그대로의 ZIP(폰트 파일·라이선스 원문·출처 포함)을 받을 수 있습니다." : ""}</p>`}
         <p class="note" style="margin-top:8px">${dl.ok ? `파일은 LETSUM이 아니라 <b>원 배포처(${esc(dl.srcName)})</b>에서 내려받습니다. ${f.license === "OFL" && /\.zip(\?|$)|fonts\.google\.com\/download/.test(dl.zip || "") ? " ZIP 안에 라이선스 원문(OFL.txt)이 함께 들어 있습니다." : " 라이선스 원문은 배포처에서 함께 확인하세요."}` : ""} 받은 뒤가 막히면 아래 설치 안내를 펼쳐 보세요.</p>
@@ -1099,7 +1118,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       box.innerHTML = `<details><summary>확인 근거 보기</summary>${x.ev ? `<p>${esc(x.ev)}</p>` : ""}${x.pg ? `<p><a class="linklike" href="${esc(x.pg)}" target="_blank" rel="noopener">근거 자료 ↗</a></p>` : ""}${x.src ? `<p class="note">원본 파일: ${esc(x.src)}</p>` : ""}${x.ver ? `<p class="note">폰트 버전: ${esc(x.ver)}</p>` : ""}</details>`; });
     const commonBind = () => {
       bindComments(f, focus); bindShots(f);
-      $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
+      $("#proofBtn").addEventListener("click", (e) => saveProof(f, dl, e.currentTarget));
       $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
       $("#favBtn").addEventListener("click", () => { toggleLike(f.id); openDetail(f.id); render(); });
       $("#projAdd")?.addEventListener("click", () => openProjects({ addIds: [f.id] }));
@@ -1461,12 +1480,12 @@ import "@fontsource/${f.id}/400.css";</pre>
       <ol class="pj-flow">
         <li><b>1</b><strong>폴더 만들기</strong><span>아래 '첫 폴더 만들기'에 작업 이름 입력</span></li>
         <li><b>2</b><strong>폰트 담기</strong><span>폰트 상세의 '＋ 보관함에 담기'</span></li>
-        <li><b>3</b><strong>확인·공유</strong><span>확인 기록 저장, 링크로 공유</span></li>
+        <li><b>3</b><strong>확인·공유</strong><span>라이선스 확인서(PDF), 링크로 공유</span></li>
       </ol>
       <p class="pj-sub">이런 게 편해져요</p>
       <div class="pj-cards">
         <div><b>🔔 조건 바뀜 알림</b><span>담아 둔 폰트의 라이선스·사용 범위가 바뀌면 헤더의 '폰트 보관함'에 표시해 드려요.</span></div>
-        <div><b>📄 확인 기록 한 번에</b><span>폴더 속 폰트들의 사용 조건 확인 기록을 문서로 저장해 클라이언트·회사에 근거로 낼 수 있어요.</span></div>
+        <div><b>📑 라이선스 확인서 한 번에</b><span>폴더 속 폰트들의 라이선스 확인서(A4 PDF)를 ZIP으로 받아 클라이언트·회사에 근거로 낼 수 있어요.</span></div>
         <div><b>🔗 링크로 공유</b><span>폰트 목록과 고른 이유를 링크 하나로 동료에게 넘기고, 받은 쪽은 바로 가져와요.</span></div>
       </div>
     </div>`;
@@ -1497,7 +1516,7 @@ import "@fontsource/${f.id}/400.css";</pre>
         </button>`; }).join("")}
       </div>
       <div class="pj-io"><label class="linklike">📂 파일에서 가져오기<input type="file" id="pjImport" accept="application/json,.json" hidden></label>
-        <span class="note">보관함은 이 브라우저에 저장돼 방문 기록을 지우면 사라집니다. 중요하면 폴더 안의 '파일로 내보내기'로 보관하세요.</span></div>`;
+        <span class="note">보관함은 이 브라우저에 저장돼 방문 기록을 지우면 사라집니다. 다른 기기로 옮기려면 폴더 안의 '링크 복사'를 쓰세요.</span></div>`;
     const draw = () => {
       modal.innerHTML = list(); $("#mx").addEventListener("click", closeModal);
       $("#pjNew").addEventListener("submit", (e) => { e.preventDefault(); const p = newProject(String(new FormData(e.target).get("n") || "").trim()); if (addIds) addToProject(p, addIds); openProject(p.id); });
@@ -1536,9 +1555,8 @@ import "@fontsource/${f.id}/400.css";</pre>
       <div class="m-head pj-head"><span class="pj-ico" aria-hidden="true">📁</span><input class="pj-name" id="pjName" value="${esc(p.name)}" maxlength="40" aria-label="폴더 이름" title="눌러서 이름 바꾸기"><span class="en">${p.items.length}종 · 만든 날 ${new Date(p.created).toLocaleDateString("ko-KR")}</span></div>
       <div class="pj-tools">
         <button class="pj-tool" id="pjCmp"${dis}><b>⇆ 나란히 비교</b><span>최대 4종을 비교 창에서</span></button>
-        <button class="pj-tool" id="pjProof"${dis}><b>📄 확인 기록 저장</b><span>사용 조건 확인 문서(txt)</span></button>
+        <button class="pj-tool" id="pjProof"${dis}><b>📑 라이선스 확인서 받기</b><span>${p.items.length > 1 ? `${p.items.length}종 PDF 묶음(ZIP)` : "A4 확인서(PDF)"}</span></button>
         <button class="pj-tool" id="pjShare"${dis}><b>🔗 링크 복사</b><span>동료에게 목록·이유 공유</span></button>
-        <button class="pj-tool" id="pjExport"><b>⬇ 파일로 내보내기</b><span>백업·다른 컴퓨터로</span></button>
       </div>
       ${nChg ? `<p class="pj-banner">⚠ 담은 뒤 사용 조건이 바뀐 폰트가 <b>${nChg}종</b> 있습니다. 아래 표시를 확인하세요.</p>` : ""}
       ${p.text ? `<p class="note">이 폴더의 미리보기 문장: “${esc(p.text)}” <button class="linklike" id="pjUseText">이 문장으로 보기</button></p>` : ""}
@@ -1556,14 +1574,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#pjUseText")?.addEventListener("click", () => { setText(p.text); closeModal(); });
     $("#pjBrowse")?.addEventListener("click", closeModal);
     $("#pjCmp").addEventListener("click", () => { cmp.clear(); p.items.slice(0, 4).forEach((x) => cmp.add(x.id)); if (p.text) setText(p.text); renderTray(); render(); openCompare(); });
-    $("#pjProof").addEventListener("click", async () => {
-      const E = await evidenceLoad(); const now = new Date();
-      const body = p.items.flatMap((it, k) => { const f = FONTS.find((x) => x.id === it.id); if (!f) return []; return ["", `[${k + 1}] ` + "-".repeat(26), ...proofLines(f, dlFor(f), E[f.id] || {}, it.note)]; });
-      downloadText(`LETSUM_사용조건확인기록_${p.name}_${ymdOf(now)}.txt`, ["LETSUM 사용 조건 확인 기록 — 폰트 보관함", "=".repeat(28), `폴더: ${p.name}`, `폰트 ${p.items.length}종${p.text ? ` · 미리보기 문장: ${p.text}` : ""}`, ...body, ...PROOF_TAIL(now)]);
-      ev("record", "project");
-    });
+    $("#pjProof").addEventListener("click", (e) => { ev("record", "project"); saveReport(p.items.map((it) => [FONTS.find((x) => x.id === it.id), it.note]).filter(([f]) => f), p.name, e.currentTarget); });
     $("#pjShare").addEventListener("click", async (e) => { const u = shareUrl(p); ev("proj_share"); try { await navigator.clipboard.writeText(u); const t = e.currentTarget.querySelector("b"); t.textContent = "✓ 복사됨"; setTimeout(() => (t.textContent = "🔗 링크 복사"), 1500); } catch (x) { prompt("이 링크를 복사하세요", u); } });
-    $("#pjExport").addEventListener("click", () => { ev("proj_export"); const blob = new Blob([JSON.stringify({ letsum: 1, projects: [p] }, null, 1)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `LETSUM_보관함_${p.name}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); });
     $("#pjDel").addEventListener("click", () => { if (!confirm(`'${p.name}' 폴더를 삭제할까요? 되돌릴 수 없습니다.`)) return; projects = projects.filter((x) => x.id !== pid); saveProjects(); updateProjBtn(); openProjects(); });
   }
   // 공유 링크(#p=...)로 들어오면 미리 보고 가져오기
