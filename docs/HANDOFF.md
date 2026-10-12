@@ -40,7 +40,7 @@ tools/run.sh finish "메시지"  ⑧ 커밋·푸시·잠금 해제 → 운영자
 
 ### 운영 감시·백업
 - 가동 감시: `.github/workflows/uptime.yml`이 10분마다 사이트·API·미러를 확인 → 실패하면 이슈(라벨 outage) + 메일, 복구되면 자동 종료
-- D1 백업: `tools/backup_d1.sh`를 NAS 작업 스케줄러에서 주 1회 실행 → `/volume1/docker/letsum-backup/`에 12주 보관(공개 저장소에 올리지 말 것 — IP 해시·닉네임·사진 포함). Cloudflare D1 자체 복구(무료 7일)도 있음
+- D1 백업: **운영자 결정으로 보류(2026-10-12)** — 댓글·사진이 실제로 쌓이기 전까지는 Cloudflare D1 자체 복구(7일)만 사용. 다시 권할 때는 실제 데이터 양을 근거로. 준비된 도구: `tools/backup_d1.sh`를 NAS 작업 스케줄러에서 주 1회 실행 → `/volume1/docker/letsum-backup/`에 12주 보관(공개 저장소에 올리지 말 것 — IP 해시·닉네임·사진 포함). Cloudflare D1 자체 복구(무료 7일)도 있음
 - 복구: 백업 JSON을 읽어 `wrangler d1 execute letsum --remote`로 INSERT(필요할 때 스크립트 작성)
 
 ### 배포 주의
