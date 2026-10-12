@@ -388,7 +388,15 @@
   // 사용 범위 배지: 지금 고른 용도(용도 추천·상황별 시작·사용 범위 필터)에 관련된 칸만 강조하고 나머지는 한 줄로 요약
   const COLL_LIC = { thumb: ["video", "web"], book: ["print"], subtitle: ["video"], menu: ["print", "package"], card: ["web"], doc: ["print"] };
   const focusKeys = () => { const k = new Set(state.useLic || []); (COLL_LIC[state.coll] || []).forEach((x) => k.add(x)); state.lic.forEach((x) => { if (LIC_SHORT[x]) k.add(x); }); return [...k]; };
-  const pillOf = (f, k, key) => `<span class="pill ${f.matrix[k]}${key ? " key" : ""}">${LIC_SHORT[k]}${f.matrix[k] === "ok" ? " ✓" : f.matrix[k] === "no" ? " ✕" : " △"}</span>`;
+  // 사용 범위 아이콘(Lucide check · triangle-alert · x, ISC) — 굵은 선으로 통일, 배지·히어로·상세 표에 공통 사용
+  const LIC_IC = {
+    ok: '<svg class="lic-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>',
+    cond: '<svg class="lic-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>',
+    no: '<svg class="lic-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  };
+  const LIC_WORD = { ok: "가능", cond: "조건부", no: "불가" };
+  const licIc = (v) => LIC_IC[v] || LIC_IC.cond;
+  const pillOf = (f, k, key) => `<span class="pill ${f.matrix[k]}${key ? " key" : ""}" title="${LIC_SHORT[k]} ${LIC_WORD[f.matrix[k]] || ""}">${LIC_SHORT[k]}${licIc(f.matrix[k])}</span>`;
   const pills = (f) => {
     const keys = focusKeys(); const all = Object.keys(LIC_SHORT);
     let h;
@@ -616,7 +624,7 @@
       </div>
       <div class="ig-body">
         <p class="ig-likes" data-likeline="${f.id}"></p>
-        <div class="ig-titlerow"><b>${esc(f.name)}</b><span class="ig-lics">${pills(f)}</span></div>
+        <div class="ig-titlerow"><span class="ig-lics">${pills(f)}</span></div>
         <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
         <button class="ig-allc" data-cmt="${f.id}" data-cmtline="${f.id}"></button>
         <div class="ig-recent" data-recent="${f.id}"></div>
@@ -905,7 +913,7 @@
     return `<b>웹폰트·앱 임베딩은 조건부입니다.</b> ${esc(L.note)} — 직접 호스팅하기 전에 라이선스 원문을 확인하세요.`;
   }
   // ---------- 상세 모달 ----------
-  const st = (v) => v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>';
+  const st = (v) => v === "ok" ? `<span class="st-ok">${licIc("ok")}사용 가능</span>` : v === "no" ? `<span class="st-no">${licIc("no")}사용 금지</span>` : `<span class="st-cond">${licIc("cond")}조건부</span>`;
   let evDetail = "";
   function openDetail(id, focus) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
@@ -1285,7 +1293,7 @@ import "@fontsource/${f.id}/400.css";</pre>
             <dt>글자</dt><dd>${esc(f.glyphs)}</dd>
             <dt>라이선스</dt><dd>${esc(licInfo(f).short)}</dd>
           </dl>
-          <div class="sp-lic">${L.map((c) => `<span class="${f.matrix[c.key]}">${c.label}${f.matrix[c.key] === "ok" ? " ✓" : f.matrix[c.key] === "no" ? " ✕" : " △"}</span>`).join("")}</div>
+          <div class="sp-lic">${L.map((c) => `<span class="${f.matrix[c.key]}">${c.label}${licIc(f.matrix[c.key])}</span>`).join("")}</div>
           <div class="sp-tags">${f.mood.map((m) => `#${esc(m)}`).join(" ")} · #${esc(f.category)}</div>
         </aside>
       </div>

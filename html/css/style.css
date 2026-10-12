@@ -971,3 +971,15 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ctxcard:nth-child(4n+2) .mock.sub,.ctxcard:nth-child(4n+3) .mock.sub{background-image:url(../img/ctx/sub-m.webp)}
 .mock.sub .bar{background:rgba(0,0,0,.7)}
 @media(max-width:760px){.ctxcard:nth-child(n) .mock.sub{background-image:url(../img/ctx/sub-w.webp)}.ctxcard:nth-child(even) .mock.sub{background-image:url(../img/ctx/sub-m.webp)}}
+
+/* 사용 범위 아이콘: 굵은 선 SVG(체크·세모·엑스) — 글자와 같은 색 */
+.lic-ic{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.14em;margin-left:.22em}
+.pill{display:inline-flex;align-items:center;white-space:nowrap}
+.st-ok .lic-ic,.st-no .lic-ic,.st-cond .lic-ic{margin:0 .3em 0 0}
+.pill.no .lic-ic{stroke-width:3.4}
+/* 피드 카드: 폰트명은 헤더와 중복이라 빼고, 사용 범위는 한 줄로 */
+.ig-titlerow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.ig-titlerow::-webkit-scrollbar{display:none}
+.ig .ig-lics{display:flex;flex-wrap:nowrap;gap:3px}
+.ig .ig-lics .pill{font-size:10px;padding:2px 6px}
+.ig .ig-tags{font-size:12.2px}
