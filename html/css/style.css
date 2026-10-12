@@ -743,3 +743,20 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
   .sp-side dl,.sp-wt{display:none}
   .sp-marquee{bottom:80px}
 }
+/* 보기 설명 · 미리보기 가능만 · 내 원고 패널 */
+.view-hint{font-size:11.5px;color:var(--ink3);margin-left:4px;white-space:nowrap}
+.live-only{font-size:12px;margin:0 6px;white-space:nowrap}
+.body-panel{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;align-items:start;padding:10px 0 4px;border-bottom:1px dashed var(--rule2);margin-bottom:6px}
+.body-panel[hidden]{display:none}
+.bp-k{font-size:12px;font-weight:700;padding-top:6px}
+.body-panel textarea{width:100%;font:inherit;font-size:13.5px;line-height:1.5;padding:8px 10px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);resize:vertical;min-height:58px;box-sizing:border-box}
+.bp-ctl{grid-column:2;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}
+.bp-ctl input[type=range]{width:110px}
+.bp-ctl b{font-family:var(--mono);font-size:11.5px;min-width:42px}
+@media (max-width:760px){.view-hint{display:none}.body-panel{grid-template-columns:1fr}.bp-ctl{grid-column:1}}
+.ev-box details{margin-top:6px}.ev-box summary{cursor:pointer;font-size:12.5px;color:var(--ink2)}.ev-box p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink2)}
+/* 데크 둘째 줄: 항목이 늘어 좁은 화면에서도 줄바꿈되도록 */
+.deck .d2{height:auto;min-height:44px;flex-wrap:wrap;row-gap:6px;padding:5px 0}
+.seg button{white-space:nowrap}
+.d2 .ctxs{order:10;flex-basis:100%}
+@media (max-width:1180px){.view-hint{display:none}}

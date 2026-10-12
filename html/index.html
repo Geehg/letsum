@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=19">
+<link rel="stylesheet" href="css/style.css?v=21">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -47,6 +47,16 @@
 <!-- 컨트롤 데크: 모든 폰트에 동시에 적용되는 문장·크기·굵기 -->
 <div class="deck">
   <div class="wrap">
+    <div class="body-panel" id="bodyPanel" hidden>
+      <label class="bp-k" for="bodyText">내 원고(본문)</label>
+      <textarea id="bodyText" rows="3" maxlength="3000" placeholder="책·학습지 본문을 붙여 넣으면 책 본문 맥락의 긴 글에 그대로 적용됩니다 (최대 3,000자 · 이 브라우저에만 저장)"></textarea>
+      <div class="bp-ctl">
+        <span>본문 크기</span><input type="range" id="bodySize" min="9" max="16" step="0.5" value="11.5"><b id="bodySizeV">11.5px</b>
+        <span>행간</span><input type="range" id="bodyLh" min="130" max="230" step="5" value="185"><b id="bodyLhV">185%</b>
+        <span>자간</span><input type="range" id="bodyLs" min="-5" max="10" step="1" value="0"><b id="bodyLsV">0</b>
+        <button class="tbtn" id="bodyReset" type="button">기본 예문으로</button>
+      </div>
+    </div>
     <div class="d1">
       <div class="d-text">
         <span class="k">문장</span>
@@ -72,12 +82,14 @@
     </div>
     <div class="d2">
       <div class="seg" id="viewSeg">
-        <button data-v="list">목록</button>
-        <button data-v="grid" class="on">격자</button>
-        <button data-v="ctx">맥락</button>
-        <button data-v="feed" title="인스타그램처럼 카드를 넘겨 보기">피드</button>
+        <button data-v="list" title="많은 후보를 빠르게 훑기">목록</button>
+        <button data-v="grid" class="on" title="같은 문장으로 여러 폰트 비교">격자</button>
+        <button data-v="ctx" title="책·썸네일·자막 등 쓰임새에 적용해 보기">맥락</button>
+        <button data-v="feed" title="적용 예시를 넘겨 보며 새 폰트 발견">피드</button>
       </div>
+      <span class="view-hint" id="viewHint">같은 문장으로 여러 폰트 비교</span>
       <div class="ctxs" id="ctxChips" style="display:none"></div>
+      <label class="fcheck live-only" title="소개 전용(미리보기 미제공) 폰트를 빼고 내 문장이 실제 글꼴로 보이는 폰트만"><input type="checkbox" id="liveOnly"> 내 문장 미리보기 가능만</label>
       <button class="tbtn lime" id="wizBtn" title="용도·분위기·필요 조건 3가지로 폰트 고르기">용도로 고르기</button>
       <span class="count" id="count"></span>
       <div class="sp"></div>
@@ -164,6 +176,6 @@
 </footer>
 
 <script src="js/data.js?v=9"></script>
-<script src="js/main.js?v=15"></script>
+<script src="js/main.js?v=16"></script>
 </body>
 </html>

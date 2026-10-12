@@ -90,6 +90,7 @@
 
   // ---------- 상태 ----------
   const state = {
+    liveOnly: false, body: (() => { try { return localStorage.getItem("ls_body") || ""; } catch (e) { return ""; } })(), bodySize: 11.5, bodyLh: 185, bodyLs: 0,
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
     sort: "new", text: TEXT_PRESETS[0].t, size: 30, weight: 400, inv: false, pair: false,
@@ -245,11 +246,21 @@
     if (v !== state.view) ev("view", v);
     state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
     $("#ctxChips").style.display = v === "ctx" ? "flex" : "none";
+    $("#viewHint").textContent = { list: "많은 후보를 빠르게 훑기", grid: "같은 문장으로 여러 폰트 비교", ctx: "쓰임새에 적용해 보기", feed: "적용 예시를 넘겨 보며 발견" }[v] || "";
+    syncBodyPanel();
     document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
   }
   const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
   $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
-  $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
+  $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); syncBodyPanel(); render(); }));
+  // 책 본문 맥락: 내 원고를 붙여 넣어 긴 글로 비교(이 브라우저에만 저장, 서버로 보내지 않음)
+  function syncBodyPanel() { $("#bodyPanel").hidden = !(state.view === "ctx" && state.ctx === "book"); }
+  $("#bodyText").value = state.body;
+  let bodyT = null;
+  $("#bodyText").addEventListener("input", (e) => { state.body = e.target.value; clearTimeout(bodyT); bodyT = setTimeout(() => { try { localStorage.setItem("ls_body", state.body); } catch (x) {} render(); }, 250); });
+  [["bodySize", "px"], ["bodyLh", "%"], ["bodyLs", ""]].forEach(([k, u]) => $("#" + k).addEventListener("input", (e) => { state[k] = +e.target.value; $("#" + k + "V").textContent = e.target.value + u; render(); }));
+  $("#bodyReset").addEventListener("click", () => { state.body = ""; $("#bodyText").value = ""; try { localStorage.removeItem("ls_body"); } catch (x) {} render(); });
+  $("#liveOnly").addEventListener("change", (e) => { state.liveOnly = e.target.checked; render(); });
   // 정렬: 용도 추천을 적용하면 '추천 순'이 생기고, 다른 정렬을 고르면 그 정렬이 그대로 적용된다
   function setSort(v) {
     const sel = $("#sort"); let opt = sel.querySelector('option[value="rec"]');
@@ -324,7 +335,8 @@
       if (state.cov.has("hanja") && !(detect[f.id] && detect[f.id].hanja)) return false;
       if (state.cov.has("multi") && f.weights.length < 3) return false;
       if (state.favOnly && !favs.has(f.id)) return false;
-      if (state.coverOnly && covState[f.id] !== "ok") return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
+      if (state.coverOnly && covState[f.id] !== "ok") return false;
+      if (state.liveOnly && f.intro) return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
         else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q)) return false; }
@@ -333,11 +345,12 @@
     });
     const s = state.sort;
     if (s === "rec" && state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 추천 순
-    if (s === "pop") list.sort((a, b) => b.pop - a.pop);
-    if (s === "new") list.sort((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
+    const introLast = (cmp) => (a, b) => (a.intro ? 1 : 0) - (b.intro ? 1 : 0) || cmp(a, b); // 미리보기가 되는 폰트 먼저
+    if (s === "pop") list.sort(introLast((a, b) => b.pop - a.pop));
+    if (s === "new") list.sort(introLast((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop));
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
-    if (s === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
-    if (s === "weights") list.sort((a, b) => b.weights.length - a.weights.length || b.pop - a.pop);
+    if (s === "name") list.sort(introLast((a, b) => a.name.localeCompare(b.name, "ko")));
+    if (s === "weights") list.sort(introLast((a, b) => b.weights.length - a.weights.length || b.pop - a.pop));
     return list;
   }
 
@@ -395,7 +408,7 @@
     const fs = `font-family:${fam}`;
     switch (ctx) {
       case "thumb": return `<div class="mock thumb" style="${fs}"><div class="ch"><i></i>LETSUM 채널</div><div class="t" style="font-weight:${Math.max(w, f.weights[f.weights.length - 1])}">${t.replace(/(\S+)$/, "<em>$1</em>")}</div><span class="dur">12:34</span></div>`;
-      case "book": return `<div class="mock book" style="${fs}"><div class="h" style="font-weight:${Math.max(w, 700) in f.weights ? 700 : w}">${t}</div><div class="p" style="font-weight:${w}">${BODY} ${BODY} ${BODY} ${BODY}</div><div class="pg">— 27 —</div></div>`;
+      case "book": return `<div class="mock book" style="${fs}"><div class="h" style="font-weight:${f.weights.includes(700) ? 700 : Math.max(w, f.weights[f.weights.length - 1])}">${t}</div><div class="p" style="font-weight:${w};font-size:${state.bodySize}px;line-height:${state.bodyLh}%;letter-spacing:${state.bodyLs / 100}em">${state.body.trim() ? esc(state.body).replace(/\n/g, "<br>") : `${BODY} ${BODY} ${BODY} ${BODY}`}</div><div class="pg">— 27 —</div></div>`;
       case "sub": return `<div class="mock sub"><div class="bar" style="${fs};font-weight:${w}">${t}</div></div>`;
       case "menu": return `<div class="mock menu" style="${fs}"><div class="mt" style="font-weight:${w}">${t}</div>${[["아메리카노", "4,500"], ["카페라떼", "5,000"], ["바닐라 크림 콜드브루", "5,800"], ["제주 말차 라떼", "6,200"]].map(([n, p]) => `<div class="mi" style="font-weight:${w}"><span>${n}</span><b>${p}</b></div>`).join("")}</div>`;
       case "card": return `<div class="mock card" style="${fs}"><div class="cn">01 / 05</div><div class="ct" style="font-weight:${Math.max(w, 700) in f.weights ? 700 : w}">${t}</div><div class="cp" style="font-weight:${w}">${BODY.slice(0, 92)}…</div></div>`;
@@ -495,7 +508,7 @@
   // 피드 카드 슬라이드 — 정사각 영역의 폭(cqw)에 맞춰 글자 크기를 정하므로 카드 크기가 달라도 비율이 같다
   const FEED_POSTER = {
     "디스플레이": (f, t, fam) => `<div class="ig-s fp fp-thumb" style="font-family:${fam}"><div class="fp-ch"><i></i>LETSUM 채널 · 조회수 12만회</div><div class="fp-t" style="font-weight:${f.weights[f.weights.length - 1]}">${esc(t).replace(/(\S+)$/, "<em>$1</em>")}</div><span class="fp-dur">12:34</span><span class="ig-cap2">유튜브 썸네일 적용안</span></div>`,
-    "명조": (f, t, fam) => `<div class="ig-s fp fp-book" style="font-family:${fam}"><div class="fp-k">제1장</div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">${BODY}</p><div class="fp-pg">— 27 —</div><span class="ig-cap2">책 본문 적용안</span></div>`,
+    "명조": (f, t, fam) => `<div class="ig-s fp fp-book" style="font-family:${fam}"><div class="fp-k">제1장</div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">${state.body.trim() ? esc(state.body) : BODY}</p><div class="fp-pg">— 27 —</div><span class="ig-cap2">책 본문 적용안</span></div>`,
     "손글씨": (f, t, fam) => `<div class="ig-s fp fp-note" style="font-family:${fam}"><div class="fp-k">To. 오늘의 나에게</div><div class="fp-t">${esc(t)}</div><div class="fp-sign">— 렛섬 드림</div><span class="ig-cap2">손편지·카드 적용안</span></div>`,
     "고딕": (f, t, fam) => `<div class="ig-s fp fp-ui" style="font-family:${fam}"><div class="fp-win"><div class="fp-bar"><b>알림</b><span>방금</span></div><div class="fp-t" style="font-weight:${f.weights.includes(700) ? 700 : f.weights[f.weights.length - 1]}">${esc(t)}</div><p style="font-weight:${f.weights.includes(400) ? 400 : f.weights[0]}">변경 사항은 다음 로그인부터 적용됩니다. 계정 설정에서 언제든지 되돌릴 수 있습니다.</p><div class="fp-btn">확인</div></div><span class="ig-cap2">앱 화면 적용안</span></div>`,
   };
@@ -742,16 +755,22 @@
   }
   // 사용 조건 확인 기록: 이 폰트를 고를 때 LETSUM에서 확인한 조건·출처·확인일을 텍스트로 남긴다.
   // 사용 권리를 보증하는 문서가 아니라 '언제 무엇을 확인했는지'의 메모다.
+  // 확인 근거(원문 대조 요약·근거 페이지·원본 출처·폰트 버전) — 필요할 때 한 번만 받는다
+  let evidence = null;
+  const evidenceLoad = () => evidence ? Promise.resolve(evidence) : fetch("data/evidence.json?v=1").then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => (evidence = j));
   const stText = (f) => f.status === "verified" ? "원문 대조 완료" : "확인 중(원문 대조 전)";
-  function saveProof(f, dl) {
+  async function saveProof(f, dl) {
     const now = new Date(); const L = licInfo(f); ev("record", f.id);
+    const E = (await evidenceLoad())[f.id] || {};
     const lines = [
       "LETSUM 사용 조건 확인 기록", "=".repeat(28), "",
       `폰트: ${f.name} (${f.en})`, `저작권자: ${f.holder} · 제작: ${f.designer}`,
       `라이선스: ${L.full} — ${L.note}`,
       ...(L.url ? [`라이선스 원문: ${L.url}`] : []),
       ...(f.attribution ? [`출처 표시 예: ${f.attribution}`] : []),
-      `검토 상태: ${stText(f)} · LETSUM 최근 확인일 ${f.verified}`, "",
+      `검토 상태: ${stText(f)} · LETSUM 최근 확인일 ${f.verified}`,
+      ...(E.ev ? [`확인 근거: ${E.ev}`] : []), ...(E.pg ? [`근거 자료: ${E.pg}`] : []),
+      ...(E.src ? [`원본 파일 출처: ${E.src}`] : []), ...(E.ver ? [`폰트 버전(LETSUM 확인 파일 기준): ${E.ver}`] : []), "",
       "사용 범위(LETSUM 정리):", ...LICENSE_CATS.map((c) => `  - ${c.label}: ${f.matrix[c.key] === "ok" ? "사용 가능" : f.matrix[c.key] === "no" ? "사용 불가" : "조건부 — 원문 확인 필요"}`), "",
       `원 배포처: ${dl.page}`,
       dl.zip ? `직접 다운로드: ${dl.zip}` : "직접 다운로드: 제공 안 함 — 원 배포처에서 받으세요",
@@ -832,7 +851,7 @@
           <tr><th>한글 글자수</th><td>${f.glyphs}${!f.intro && f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
           ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
-          <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}</td></tr>
+          <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}<div class="ev-box" id="evBox"></div></td></tr>
           <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
 
@@ -896,6 +915,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
+    evidenceLoad().then((E) => { const x = E[f.id]; const box = $("#evBox"); if (!x || !box) return;
+      box.innerHTML = `<details><summary>확인 근거 보기</summary>${x.ev ? `<p>${esc(x.ev)}</p>` : ""}${x.pg ? `<p><a class="linklike" href="${esc(x.pg)}" target="_blank" rel="noopener">근거 자료 ↗</a></p>` : ""}${x.src ? `<p class="note">원본 파일: ${esc(x.src)}</p>` : ""}${x.ver ? `<p class="note">폰트 버전: ${esc(x.ver)}</p>` : ""}</details>`; });
     const commonBind = () => {
       bindComments(f, focus); bindShots(f);
       $("#proofBtn").addEventListener("click", () => saveProof(f, dl));
