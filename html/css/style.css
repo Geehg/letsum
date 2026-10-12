@@ -5,7 +5,7 @@
 
 :root{
   --paper:#f4f2ec; --paper2:#ebe8e0; --paper3:#e1ded4;
-  --ink:#15140f; --ink2:#5a584f; --ink3:#8c8a80;
+  --ink:#15140f; --ink2:#5a584f; --ink3:#6b695f;
   --rule:rgba(21,20,15,.14); --rule2:rgba(21,20,15,.38);
   --lime:#d8ff4a; --lime-ink:#243300;
   --ok:#1a7f3c; --no:#c8321e; --cond:#9a6a00;
@@ -15,7 +15,7 @@
 }
 :root[data-theme="dark"]{
   --paper:#131311; --paper2:#1c1c19; --paper3:#262621;
-  --ink:#f1efe8; --ink2:#b7b4a9; --ink3:#7f7d74;
+  --ink:#f1efe8; --ink2:#b7b4a9; --ink3:#8f8d84;
   --rule:rgba(241,239,232,.16); --rule2:rgba(241,239,232,.4);
   --ok:#5fcf84; --no:#ff7a66; --cond:#e0b24a;
 }
@@ -814,3 +814,41 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .why-box[hidden]{display:none}
 .why-box b{display:block;font-size:12.5px;margin-bottom:4px}
 .why-box p{margin:0}.why-box p.note{margin-top:6px;font-size:12.5px}
+
+/* ===== 휴대폰·태블릿 사용성 ===== */
+.deck-more,.filter-btn,.side-head,.side-backdrop{display:none}
+.filter-btn span{font-family:var(--mono);font-size:11px;margin-left:4px}
+/* 1060px 이하: 사이드바는 '필터' 버튼으로 여는 아래 시트 */
+@media(max-width:1060px){
+  .filter-btn{display:inline-flex}
+  aside.side{display:none}
+  body.side-open aside.side{display:block;position:fixed;left:0;right:0;bottom:0;top:auto;max-height:82vh;overflow:auto;z-index:95;background:var(--paper);
+    padding:0 16px 28px;border-top:2px solid var(--ink);border-radius:14px 14px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.18);border-right:none;border-bottom:none}
+  body.side-open aside.side .fset{width:auto;min-width:0;flex:none}
+  body.side-open aside.side .wiz-cta{width:100%}
+  body.side-open .side-head{display:flex;position:sticky;top:0;justify-content:space-between;align-items:center;background:var(--paper);padding:12px 0;margin-bottom:6px;border-bottom:1px solid var(--rule);z-index:1}
+  body.side-open .side-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:94}
+  body.side-open{overflow:hidden}
+}
+@media(max-width:760px){
+  /* 메뉴: 헤더 아래 줄에 가로로 넘겨 보기(모든 페이지 공통) */
+  header .hd{flex-wrap:wrap;height:auto;row-gap:0;padding-top:6px}
+  nav.main{display:flex;order:10;width:100%;gap:18px;overflow-x:auto;scrollbar-width:none;padding:6px 0 8px;font-size:13.5px;white-space:nowrap}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main .nav-proj{margin-left:auto;flex:none}
+  .deck{position:static}
+  /* 조절 바: 문장만 보이고 크기·굵기·반전은 '조절'로 펼침 */
+  .deck-more{display:inline-flex;margin:6px 0}
+  .deck .d1>.d-size,.deck .d1>.d-tog{display:none}
+  .deck.more .d1>.d-size,.deck.more .d1>.d-tog{display:flex}
+  /* 터치 영역 넓히기 */
+  .abtn{min-height:38px;padding:6px 11px}
+  .fbtn,.tbtn,.seg button{min-height:36px}
+  .ig .ig-ic{width:40px;height:40px}
+  .ig-pill{min-height:34px}
+}
+.more-sentinel{text-align:center;margin:24px 0}
+@media(max-width:760px){.deck .d1{flex-wrap:nowrap;align-items:center;gap:0 8px}.deck .d1 .d-text{width:auto;flex:1 1 0;min-width:0;border-bottom:none}.deck .d1 .d-text input{min-width:0;width:100%}.deck-more{flex:none}.deck.more .d1{flex-wrap:wrap}.deck.more .d1 .d-text{flex-basis:100%}}
+.deck-more{min-width:72px;justify-content:center;white-space:nowrap}
+.deck .d1 .deck-more{display:none}
+@media(max-width:760px){.deck .d1 .deck-more{display:inline-flex}}

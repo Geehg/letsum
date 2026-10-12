@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=26">
+<link rel="stylesheet" href="css/style.css?v=30">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -53,9 +53,9 @@
       <label class="bp-k" for="bodyText">내 원고(본문)</label>
       <textarea id="bodyText" rows="3" maxlength="3000" placeholder="책·학습지 본문을 붙여 넣으면 책 본문 맥락의 긴 글에 그대로 적용됩니다 (최대 3,000자 · 이 브라우저에만 저장)"></textarea>
       <div class="bp-ctl">
-        <span>본문 크기</span><input type="range" id="bodySize" min="9" max="16" step="0.5" value="11.5"><b id="bodySizeV">11.5px</b>
-        <span>행간</span><input type="range" id="bodyLh" min="130" max="230" step="5" value="185"><b id="bodyLhV">185%</b>
-        <span>자간</span><input type="range" id="bodyLs" min="-5" max="10" step="1" value="0"><b id="bodyLsV">0</b>
+        <span>본문 크기</span><input type="range" id="bodySize" aria-label="본문 크기" min="9" max="16" step="0.5" value="11.5"><b id="bodySizeV">11.5px</b>
+        <span>행간</span><input type="range" id="bodyLh" aria-label="본문 행간" min="130" max="230" step="5" value="185"><b id="bodyLhV">185%</b>
+        <span>자간</span><input type="range" id="bodyLs" aria-label="본문 자간" min="-5" max="10" step="1" value="0"><b id="bodyLsV">0</b>
         <button class="tbtn" id="bodyReset" type="button">기본 예문으로</button>
       </div>
     </div>
@@ -65,6 +65,7 @@
         <input id="previewText" placeholder="여기에 내 문장을 입력해 보세요" type="text" value="책을 읽는 시간은 언제나 옳다" maxlength="80" aria-label="미리보기 문장">
         <select id="presetSel" aria-label="문장 프리셋"></select>
       </div>
+      <button class="tbtn deck-more" id="deckMore" type="button" aria-expanded="false">조절 ▾</button>
       <div class="d-size">
         <span class="k">크기</span>
         <input id="sizeRange" type="range" min="18" max="120" value="30" aria-label="미리보기 크기">
@@ -92,6 +93,7 @@
       <span class="view-hint" id="viewHint">같은 문장으로 여러 폰트 비교</span>
       <div class="ctxs" id="ctxChips" style="display:none"></div>
       <label class="fcheck live-only" title="소개 전용(미리보기 미제공) 폰트를 빼고 내 문장이 실제 글꼴로 보이는 폰트만"><input type="checkbox" id="liveOnly"> 내 문장 미리보기 가능만</label>
+      <button class="tbtn filter-btn" id="filterBtn" type="button" aria-expanded="false">필터<span id="filterN"></span></button>
       <button class="tbtn lime" id="wizBtn" title="용도·분위기·필요 조건 3가지로 폰트 고르기">용도로 고르기</button>
       <span class="count" id="count"></span>
       <div class="sp"></div>
@@ -107,7 +109,9 @@
 </div>
 
 <div class="wrap body">
-  <aside class="side">
+  <div class="side-backdrop" id="sideBackdrop" hidden></div>
+  <aside class="side" id="side" aria-label="필터와 상황별 시작">
+    <div class="side-head"><b>필터</b><button class="tbtn" id="sideClose" type="button">닫기</button></div>
     <div class="fset">
       <button class="wiz-cta" id="wizSide"><b>무엇에 쓰세요?</b><span>질문 3개로 맞는 폰트 고르기 →</span></button>
       <div class="k"><span>상황별로 시작</span></div>
@@ -179,6 +183,6 @@
 </footer>
 
 <script src="js/data.js?v=9"></script>
-<script src="js/main.js?v=22"></script>
+<script src="js/main.js?v=23"></script>
 </body>
 </html>

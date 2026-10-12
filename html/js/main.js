@@ -260,6 +260,15 @@
   $("#bodyText").addEventListener("input", (e) => { state.body = e.target.value; clearTimeout(bodyT); bodyT = setTimeout(() => { try { localStorage.setItem("ls_body", state.body); } catch (x) {} render(); }, 250); });
   [["bodySize", "px"], ["bodyLh", "%"], ["bodyLs", ""]].forEach(([k, u]) => $("#" + k).addEventListener("input", (e) => { state[k] = +e.target.value; $("#" + k + "V").textContent = e.target.value + u; render(); }));
   $("#bodyReset").addEventListener("click", () => { state.body = ""; $("#bodyText").value = ""; try { localStorage.removeItem("ls_body"); } catch (x) {} render(); });
+  // 휴대폰: '조절'로 크기·굵기·반전 펼치기 / 1060px 이하: '필터' 시트
+  $("#deckMore")?.addEventListener("click", (e) => { const on = $(".deck").classList.toggle("more"); e.currentTarget.setAttribute("aria-expanded", on); e.currentTarget.textContent = on ? "조절 ▴" : "조절 ▾"; });
+  const sideOpen = (on) => { document.body.classList.toggle("side-open", on); $("#filterBtn")?.setAttribute("aria-expanded", on); $("#sideBackdrop").hidden = !on; };
+  $("#filterBtn")?.addEventListener("click", () => sideOpen(true));
+  $("#sideClose")?.addEventListener("click", () => sideOpen(false));
+  $("#sideBackdrop")?.addEventListener("click", () => sideOpen(false));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && document.body.classList.contains("side-open")) sideOpen(false); });
+  // 상황별 시작·용도 추천을 누르면 시트를 닫고 결과로
+  document.addEventListener("click", (e) => { if (document.body.classList.contains("side-open") && e.target.closest("#side [data-coll], #side .wiz-cta")) sideOpen(false); });
   $("#liveOnly").addEventListener("change", (e) => { state.liveOnly = e.target.checked; render(); });
   // 정렬: 용도 추천을 적용하면 '추천 순'이 생기고, 다른 정렬을 고르면 그 정렬이 그대로 적용된다
   function setSort(v) {
@@ -632,21 +641,33 @@
   }
 
   // ---------- 메인 렌더 ----------
+  let renderSig = "", shownN = 60;
   function render() {
     const list = filtered();
     $("#count").innerHTML = `<b>${list.length}</b> / ${FONTS.length}종`;
     const host = $("#results");
+    // 한 번에 다 그리지 않고 60개씩: 끝에 닿으면 이어서 그린다(DOM을 가볍게)
+    const sig = state.view + "|" + list.length + "|" + (list[0] || {}).id;
+    if (sig !== renderSig) { renderSig = sig; shownN = 60; }
+    const part = list.slice(0, shownN);
+    const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button></div>` : "";
     if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
-    else if (state.view === "list") host.innerHTML = list.map(rowHTML).join("");
-    else if (state.view === "grid") host.innerHTML = `<div class="grid">${list.map(cardHTML).join("")}</div>`;
+    else if (state.view === "list") host.innerHTML = part.map(rowHTML).join("") + more;
+    else if (state.view === "grid") host.innerHTML = `<div class="grid">${part.map(cardHTML).join("")}</div>` + more;
     else if (state.view === "feed") {
       const n = state.feedN || 24;
       host.innerHTML = `<div class="igrid">${list.slice(0, n).map(feedHTML).join("")}</div>`
         + (list.length > n ? `<div class="ig-more"><button class="btn ghost" id="feedMore">더 보기 <small>${n} / ${list.length}종</small></button></div>` : "");
     }
-    else host.innerHTML = `<div class="ctxgrid">${list.map(ctxHTML).join("")}</div>`;
+    else host.innerHTML = `<div class="ctxgrid">${part.map(ctxHTML).join("")}</div>` + more;
     renderActive(); bind(host); observeFaces(host);
     if (state.view === "feed") bindFeed(host);
+    const sen = $("#moreSentinel");
+    if (sen) {
+      const grow = () => { const y = scrollY; shownN += 60; render(); scrollTo(0, y); };
+      $("#moreBtn").addEventListener("click", grow);
+      if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { io.disconnect(); grow(); } }, { rootMargin: "800px 0px" }); io.observe(sen); }
+    }
   }
   function renderActive() {
     const chips = [];
@@ -658,6 +679,7 @@
     state.cov.forEach((c) => chips.push(["cov:" + c, { "11172": "완성형 11,172자", old: "옛한글", hanja: "한자", multi: "굵기 3종+" }[c]]));
     if (state.coverOnly) chips.push(["cover", "문장 글자 모두 지원"]);
     if (state.favOnly) chips.push(["fav", "즐겨찾기"]);
+    const fn = $("#filterN"); if (fn) fn.textContent = chips.length ? chips.length : "";
     const bar = $("#activeBar");
     bar.innerHTML = chips.length ? `<span class="k">적용 중</span>` + chips.map(([k, l]) => `<button class="fbtn on" data-rm="${k}">${esc(l)} ×</button>`).join("") + `<button class="fbtn" data-rm="all">모두 지우기</button>` : "";
     if (state.recNote && state.only) bar.insertAdjacentHTML("beforeend", `<p class="rec-note">${esc(state.recNote)}${state.sort !== "rec" ? " (지금은 선택한 정렬 순서로 표시 중)" : ""}</p>`);
