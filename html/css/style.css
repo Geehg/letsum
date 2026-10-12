@@ -869,8 +869,8 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ig-fx .fx i{position:absolute;left:2.6cqw;bottom:2.2cqw;font-style:normal;font:600 max(9px,2.5cqw)/1 var(--mono);opacity:.75}
 .ig-fx .ig-cap2{display:none}
 /* 외곽선 */
-.fx-outline{background:#f4f2ec}.fx-outline span{color:transparent;-webkit-text-stroke:.55cqw #15140f}.fx-outline i{color:#15140f}
-.fx-thin{background:#fbfaf6}.fx-thin span{color:transparent;-webkit-text-stroke:.25cqw #2a2015}.fx-thin i{color:#2a2015}
+.fx-outline{background:#f4f2ec}.fx-outline span{color:transparent;-webkit-text-stroke:.035em #15140f;paint-order:stroke}.fx-outline i{color:#15140f}
+.fx-thin{background:#fbfaf6}.fx-thin span{color:transparent;-webkit-text-stroke:.018em #2a2015}.fx-thin i{color:#2a2015}
 /* 3D 입체 */
 .fx-extrude{background:#1e1b4b}.fx-extrude span{color:#ffd23f;text-shadow:.25cqw .25cqw 0 #f59e0b,.5cqw .5cqw 0 #ea7a0c,.75cqw .75cqw 0 #c2410c,1cqw 1cqw 0 #9a3412,1.25cqw 1.25cqw 0 #7c2d12,1.6cqw 1.8cqw 1.2cqw rgba(0,0,0,.5)}.fx-extrude i{color:#fff}
 /* 레트로 오프셋 */
