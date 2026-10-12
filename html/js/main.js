@@ -633,23 +633,34 @@
   function bindCarousel(m) {
     if (m.dataset.bound) return; m.dataset.bound = "1";
     const tr = m.querySelector(".ig-track");
-    // 마우스를 올리면 1.6초마다 다음 이미지로, 끝나면 처음으로. 내리면 멈춤
-    if (canHover) {
+    // 마우스를 올리면 1.6초마다 다음 이미지로 — 마지막 뒤에 첫 장 복제를 붙여 계속 왼쪽으로 넘어가는 무한 반복(되감기 없음)
+    const real = tr.children.length;
+    const kOf = () => Math.round(tr.scrollLeft / tr.clientWidth);
+    // 진행 중인 부드러운 넘김·스냅을 끊고 첫 장으로 순간 이동
+    const jump0 = () => { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; requestAnimationFrame(() => { tr.scrollLeft = 0; tr.style.scrollSnapType = ""; }); };
+    if (canHover && real > 1) {
+      const cl = tr.children[0].cloneNode(true); cl.setAttribute("aria-hidden", "true"); cl.classList.add("ig-clone"); tr.appendChild(cl);
       let t = null, t0 = null; const card = m.closest(".ig") || m;
-      const step = () => { const n = tr.children.length; if (n < 2) return; const k = Math.round(tr.scrollLeft / tr.clientWidth); tr.scrollTo({ left: ((k + 1) % n) * tr.clientWidth, behavior: "smooth" }); };
-      // 0.7초 이상 머물 때만 시작(스크롤하며 스치는 것은 무시), 떠나면 첫 장으로 돌아간다
+      const step = () => { let k = kOf(); if (k >= real) { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; k = 0; } tr.scrollTo({ left: (k + 1) * tr.clientWidth, behavior: "smooth" }); };
+      // 복제 장(=첫 장과 같은 그림)에 도착하면 보이지 않게 진짜 첫 장으로 순간 이동
+      let se = null; const snap = () => { if (kOf() >= real) jump0(); };
+      tr.addEventListener("scroll", () => { clearTimeout(se); se = setTimeout(snap, 140); }, { passive: true });
+      // 0.7초 이상 머물 때만 시작(스크롤하며 스치는 것은 무시)
       card.addEventListener("mouseenter", () => {
         clearInterval(t); clearTimeout(t0);
         t0 = setTimeout(() => { if (Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, 1600); }, 700);
       });
+      // 떠나면 멈추고, 뒤로 감기는 움직임 없이 살짝 사라졌다 첫 장으로 나타남
       card.addEventListener("mouseleave", () => {
         clearInterval(t); clearTimeout(t0); t = t0 = null;
-        tr.scrollTo({ left: 0, behavior: "smooth" }); // 진행 중인 넘김도 취소하고 첫 장으로
+        if (tr.scrollLeft < 2) return;
+        tr.classList.add("ig-fade");
+        setTimeout(() => { jump0(); requestAnimationFrame(() => requestAnimationFrame(() => tr.classList.remove("ig-fade"))); }, 180);
       });
     }
     const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
     m.addEventListener("click", (e) => { const b = e.target.closest(".ig-nav"); if (b) go(b.classList.contains("prev") ? -1 : 1); });
-    tr.addEventListener("scroll", () => { const k = Math.round(tr.scrollLeft / tr.clientWidth); m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
+    tr.addEventListener("scroll", () => { const k = kOf() % real; m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
   }
   function bindFeed(host) {
     host.querySelectorAll(".ig-media").forEach(bindCarousel);
