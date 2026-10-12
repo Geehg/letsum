@@ -1,0 +1,32 @@
+# 10분마다 letsum.app 가동 확인 — 실패하면 이슈(라벨 outage)를 열어 메일로 알리고, 복구되면 자동으로 닫는다. 무료.
+name: uptime
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check site and API
+        id: c
+        run: |
+          fail=""
+          for u in https://letsum.app/index.html https://letsum.app/api/health https://geehg.github.io/letsum-mirror/webfonts/k-wonju/400.woff2; do
+            ok=0
+            for i in 1 2 3; do code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$u" || echo 000); [ "$code" = "200" ] && { ok=1; break; }; sleep 20; done
+            [ $ok = 1 ] || fail="$fail\n- $u (마지막 응답 $code)"
+          done
+          printf 'fail<<EOF\n%b\nEOF\n' "$fail" >> "$GITHUB_OUTPUT"
+      - name: Open or close outage issue
+        run: |
+          gh label create outage --color d73a4a -R "$GITHUB_REPOSITORY" 2>/dev/null || true
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --label outage --state open --json number -q '.[0].number')
+          if [ -n "${{ steps.c.outputs.fail }}" ]; then
+            body=$(printf '응답하지 않는 주소(3회 재시도):\n%s\n\nNAS 컨테이너(letsum-web)·Cloudflare 터널·Worker 상태를 확인하세요.' "${{ steps.c.outputs.fail }}")
+            if [ -z "$n" ]; then gh issue create -R "$GITHUB_REPOSITORY" --label outage --title "letsum.app 장애 감지 $(date -u +'%F %H:%M') UTC" --body "$body"; else gh issue comment "$n" -R "$GITHUB_REPOSITORY" --body "$(date -u +'%F %H:%M') UTC 여전히 실패"; fi
+          elif [ -n "$n" ]; then gh issue close "$n" -R "$GITHUB_REPOSITORY" --comment "$(date -u +'%F %H:%M') UTC 복구 확인"; fi

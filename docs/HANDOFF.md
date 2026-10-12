@@ -38,6 +38,11 @@ tools/run.sh finish "메시지"  ⑧ 커밋·푸시·잠금 해제 → 운영자
 - 사용 사례 사진: 방문자 업로드(브라우저에서 1280px·700KB 이하로 축소) → D1 `shots`에 pending → `admin.html` '사용 사례 사진 검토'에서 승인해야 공개(거절=삭제). 승인 사진은 피드 카드 두 번째 슬라이드·상세 '사용 사례'에 표시
 - 검토 알림: `.github/workflows/review-queue.yml`이 매일 09:00 KST 대기 건수를 확인해 GitHub 이슈(라벨 review)로 알림. 저장소 비밀 `LETSUM_ADMIN_KEY` 필요
 
+### 운영 감시·백업
+- 가동 감시: `.github/workflows/uptime.yml`이 10분마다 사이트·API·미러를 확인 → 실패하면 이슈(라벨 outage) + 메일, 복구되면 자동 종료
+- D1 백업: `tools/backup_d1.sh`를 NAS 작업 스케줄러에서 주 1회 실행 → `/volume1/docker/letsum-backup/`에 12주 보관(공개 저장소에 올리지 말 것 — IP 해시·닉네임·사진 포함). Cloudflare D1 자체 복구(무료 7일)도 있음
+- 복구: 백업 JSON을 읽어 `wrangler d1 execute letsum --remote`로 INSERT(필요할 때 스크립트 작성)
+
 ### 배포 주의
 - `nginx/default.conf`는 컨테이너에 **파일 단위로** 연결돼 있어, 바꾼 뒤 "받아와 재배포"만으로는 반영되지 않는다. 운영자가 컨테이너를 **재시작**(`sudo docker restart letsum-web`)해야 한다.
 - html·css·js·data는 재배포만으로 반영된다(nginx no-cache + `?v=` 버전). css/js를 바꾸면 HTML의 `?v=` 숫자를 올린다.

@@ -26,3 +26,7 @@ html/fonts-hosted/
 worker/node_modules/
 worker/.wrangler/
 worker/.dev.vars
+
+# 백업용 관리자 키(절대 커밋 금지)
+tools/.letsum_admin_key
+.letsum_admin_key

@@ -10,6 +10,7 @@
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
 //       관리자(Authorization: Bearer ADMIN_KEY):
 //       GET  /api/admin/metrics?days=28    → { days: [...], rows: [{ day, name, font, n }] }
+//       GET  /api/admin/export             → 백업용 전체 데이터(JSON, 사진은 base64) — NAS가 주 1회 받아 보관
 //       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
 //       GET  /api/admin/shots?status=pending|approved, GET /api/admin/shot/<n>
 //       POST /api/admin/shot { shotId, action: approve|reject|unpublish }
@@ -167,6 +168,16 @@ async function admin(url, req, env) {
     const where = f === "hidden" ? "WHERE hidden = 1" : f === "reported" ? "WHERE reports > 0" : "";
     const r = await env.DB.prepare(`SELECT id, font_id, name, body, created, hidden, reports FROM comments ${where} ORDER BY created DESC LIMIT 200`).all();
     return json({ items: r.results });
+  }
+  if (req.method === "GET" && url.pathname === "/api/admin/export") {
+    const [c, l, r, sh, e] = await env.DB.batch([
+      env.DB.prepare("SELECT * FROM comments ORDER BY id"), env.DB.prepare("SELECT * FROM likes"), env.DB.prepare("SELECT * FROM reports"),
+      env.DB.prepare("SELECT id, font_id, name, caption, mime, bytes, data, voter, created, status, approved FROM shots ORDER BY id"), env.DB.prepare("SELECT * FROM events ORDER BY day"),
+    ]);
+    const b64 = (d) => { const u = new Uint8Array(d); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s); };
+    const shots = sh.results.map((x) => ({ ...x, data: b64(x.data) }));
+    return json({ exported: new Date().toISOString(), schema: 3, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results },
+      200, { "content-disposition": `attachment; filename="letsum-d1-${new Date().toISOString().slice(0, 10)}.json"` });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/metrics") {
     const days = Math.min(90, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
