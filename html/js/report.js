@@ -8,6 +8,9 @@
   const C = { ink: "#15151a", ink2: "#3d3d45", ink3: "#77767c", rule: "#d9d6cc", paper: "#ffffff", band: "#f4f2ec", lime: "#d8ff4a", limeInk: "#243300",
     ok: "#1f7a3d", okBg: "#e3f4e8", cond: "#8a5a00", condBg: "#fdf1d8", no: "#b42318", noBg: "#fde4e1" };
   const WORD = { ok: "가능", cond: "조건부", no: "불가" };
+  const LOGO = new Image(); LOGO.src = "img/logo.png"; // 투명 배경 로고
+  // decode()는 화면이 가려진 탭 등에서 끝나지 않을 수 있어 load 이벤트 + 2초 제한으로 기다린다(못 받으면 글자 로고)
+  const logoReady = () => LOGO.complete ? Promise.resolve() : Promise.race([new Promise((r) => { LOGO.onload = LOGO.onerror = r; }), new Promise((r) => setTimeout(r, 2000))]);
   const pad2 = (n) => String(n).padStart(2, "0");
   const ymd = (d, s = "-") => `${d.getFullYear()}${s}${pad2(d.getMonth() + 1)}${s}${pad2(d.getDate())}`;
 
@@ -25,8 +28,10 @@
       need(h) { if (y + h > H - 190) { self.add(); self.header(true); } },
       header(cont) {
         x.fillStyle = C.ink; x.fillRect(0, 0, W, 14);
-        font(x, 700, 26, UI); x.fillStyle = C.ink; x.fillText("LETSUM", M, 74);
-        font(x, 500, 22, UI); x.fillStyle = C.ink3; x.fillText(cont ? "폰트 라이선스 확인서 (계속)" : "폰트 라이선스 확인서 · Font License Verification Report", M + 128, 74);
+        let tx = M + 128;
+        if (LOGO.complete && LOGO.naturalWidth) { const lh = 46, lw = lh * LOGO.naturalWidth / LOGO.naturalHeight; x.drawImage(LOGO, M, 40, lw, lh); tx = M + lw + 24; }
+        else { font(x, 700, 26, UI); x.fillStyle = C.ink; x.fillText("LETSUM", M, 74); }
+        font(x, 500, 22, UI); x.fillStyle = C.ink3; x.fillText(cont ? "폰트 라이선스 확인서 (계속)" : "폰트 라이선스 확인서 · Font License Verification Report", tx, 74);
         font(x, 500, 21, MONO); x.textAlign = "right"; x.fillText(docNo, W - M, 74); x.textAlign = "left";
         line(x, M, 98, W - M, 98, C.rule, 2); y = 150;
       },
@@ -81,6 +86,7 @@
   function rrect(x, a, b, w, h, r) { x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); }
 
   async function loadFonts(d) {
+    await logoReady();
     const want = [`700 40px ${UI}`, `400 26px ${UI}`, `500 22px ${MONO}`];
     if (!d.intro) want.push(`${d.weight} 120px ${d.family}`);
     await Promise.race([Promise.all(want.map((w) => document.fonts.load(w, d.name + "가나다ABC123").catch(() => {}))), new Promise((r) => setTimeout(r, 5000))]);
@@ -144,6 +150,7 @@
     x.lineWidth = 3; x.strokeStyle = C.ink; rrect(x, M, by, W - 2 * M, boxH, 6); x.stroke();
     font(x, 800, 26, UI); x.fillStyle = C.ink; x.fillText("확인 사항", M + 40, by + 56);
     font(x, 500, 28, UI); x.fillStyle = C.ink; cl.forEach((l, i) => x.fillText(l, M + 40, by + 104 + i * 46));
+    if (LOGO.complete && LOGO.naturalWidth) { const lh = 34, lw = lh * LOGO.naturalWidth / LOGO.naturalHeight; x.drawImage(LOGO, W - M - 40 - lw - 250, by + 26, lw, lh); }
     font(x, 500, 22, UI); x.fillStyle = C.ink3; x.fillText(`발행 LETSUM(렛섬) · letsum.app · 발행일 ${ymd(now, ".")} · 문서번호 ${docNo}`, M + 40, by + boxH - 30);
     // 확인 도장(LETSUM 자체 표시)
     const sx = W - M - 130, sy = by + boxH / 2; x.save(); x.translate(sx, sy); x.rotate(-0.18);

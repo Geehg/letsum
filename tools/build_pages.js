@@ -44,14 +44,14 @@ function page(f) {
 <meta property="og:title" content="${esc(f.name)} — 상업용 무료 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/og-letsum.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <link rel="stylesheet" href="../css/style.css?v=12">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
 <body>
 <header><div class="wrap hd">
-  <a class="logo" href="../index.html">렛섬 <small>LETSUM</small></a>
+  <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
   <nav class="main"><a href="../index.html">홈</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a></nav>
   <div class="sp"></div>
 </div></header>
