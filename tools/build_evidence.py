@@ -24,7 +24,7 @@ for f in FONTS:
     if url and mirror:
         if "/fonts-hosted/" in url: p = os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])
         elif url.startswith("https://geehg.github.io/"): p = os.path.join(mirror, fid, url.rsplit("/", 1)[1])
-        else: p = os.path.join(HERE, "archive", "cdn", fid, next(w for w, u in f["webfont"].items() if u == url) + "." + url.rsplit(".", 1)[1])  # 배포처 공식 CDN 캐시
+        else: p = os.path.join(HERE, "archive", "cdn", fid, next(w for w, u in f["webfont"].items() if u == url) + "." + url.split("?")[0].rsplit(".", 1)[1])  # 배포처 공식 CDN 캐시
         try:
             v = TTFont(p, lazy=True)["name"].getDebugName(5)
             if v: r["ver"] = v.strip()[:80]

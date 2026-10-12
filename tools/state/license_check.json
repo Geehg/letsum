@@ -36,8 +36,8 @@
   "name": "배달의 민족 을지로체",
   "expected": "OFL",
   "license": "OFL",
-  "evidence": "공유마당 이용조건: OFL",
-  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288251&menuNo=200023"
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
  },
  {
   "id": "k-kccahnjunggeun",
@@ -1316,7 +1316,7 @@
   "name": "빗썸고딕 Original",
   "expected": "OFL",
   "license": "OFL",
-  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가",
+  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가 / 폰트 파일 name 테이블: Reserved Font Name \"Bithumb Gothic\" → 2026-10-12부터 WOFF2 변환본 대신 공식 배포 원본 TTF를 무변환으로 미러에 두고 사용(OFL 원본 재배포, 파일 안 라이선스 고지 포함)",
   "page": "https://www.bithumbcorp.com/ko/promotion/font.php"
  },
  {
@@ -1324,7 +1324,7 @@
   "name": "빗썸고딕 Basic",
   "expected": "OFL",
   "license": "OFL",
-  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가",
+  "evidence": "직접 확인: 빗썸 브랜드 서체 페이지 License: SIL OFL 1.1 — 개인·상업 무료, 모든 매체, 수정·재배포(동일 라이선스) 가능 / 단독 판매·수정본에 '빗썸고딕' 명칭 사용 불가 / 폰트 파일 name 테이블: Reserved Font Name \"Bithumb Gothic\" → 2026-10-12부터 WOFF2 변환본 대신 공식 배포 원본 TTF를 무변환으로 미러에 두고 사용(OFL 원본 재배포, 파일 안 라이선스 고지 포함)",
   "page": "https://www.bithumbcorp.com/ko/promotion/font.php"
  },
  {
@@ -1414,6 +1414,54 @@
   "license": "OFL",
   "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288254) 이용조건 OFL 표시 + 공식 GitHub LICENSE: SIL OFL 1.1, Reserved Font Name 'Spoqa Han Sans Neo' — LETSUM은 변환하지 않고 스포카 공식 npm 패키지의 웹폰트(Subset)를 그대로 사용",
   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288254&menuNo=200023"
+ },
+ {
+  "id": "k-bm-hanna-11yrs",
+  "name": "배민 한나는열한살체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
+ },
+ {
+  "id": "k-bm-hanna-pro",
+  "name": "배민 한나체 Pro",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
+ },
+ {
+  "id": "k-bm-hanna-air",
+  "name": "배민 한나체 Air",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
+ },
+ {
+  "id": "k-bm-kkubulim",
+  "name": "배민 꾸불림체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
+ },
+ {
+  "id": "k-bm-euljiro-10years",
+  "name": "배민 을지로10년후체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
+ },
+ {
+  "id": "k-bm-euljiro-oraeorae",
+  "name": "배민 을지로오래오래체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
+  "page": "https://www.woowahan.com/fonts/license"
  },
  {
   "id": "k-gs-hyejaroun",

@@ -118,7 +118,7 @@
   "hanja": true,
   "rfn": true,
   "files": {
-   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-bm-euljiro/400.woff2"
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMEULJIROTTF.ttf?2e60d3cf"
   },
   "bytes": 554108,
   "catalog_key": "배달의민족을지로체",
@@ -126,7 +126,8 @@
    "BMEULJIRO.otf",
    "BMEULJIROTTF.ttf"
   ],
-  "license": "OFL"
+  "license": "OFL",
+  "note": "RFN — 우아한형제들 공식 원본 사용, 미러 삭제"
  },
  "k-kccahnjunggeun": {
   "name": "KCC 안중근체",

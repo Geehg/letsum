@@ -80,7 +80,7 @@ for f in FONTS:
         if not f.get("releasedSrc") or not str(f.get("releasedUrl", "")).startswith("http"): err(f"{fid}: released에는 releasedSrc·releasedUrl 필수")
     # 6) 링크
     for wv, url in (f.get("webfont") or {}).items():
-        if not re.fullmatch(r"https://(geehg\.github\.io/letsum-mirror/webfonts|letsum\.app/fonts-hosted)/[a-z0-9-]+/\d{3}\.woff2", url) and not re.fullmatch(r"https://letsum\.app/fonts-hosted/[a-z0-9-]+/\d{3}\.(ttf|otf)", url) \
+        if not re.fullmatch(r"https://(geehg\.github\.io/letsum-mirror/webfonts|letsum\.app/fonts-hosted)/[a-z0-9-]+/\d{3}\.(woff2|ttf|otf)", url) and not re.fullmatch(r"https://letsum\.app/fonts-hosted/[a-z0-9-]+/\d{3}\.(ttf|otf)", url) \
            and url not in CDN.get(fid, {}).get("files", {}).values(): err(f"{fid}: 웹폰트 주소 형식 오류(미러·서버 전용·cdn_fonts.json 등록 주소만) {url}")
         if "/fonts-hosted/" in url and not os.path.exists(os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])):
             warn(f"{fid}: 서버 전용 웹폰트 원본이 tools/archive/hosted에 없음(다른 컴퓨터에서 작업 중이면 정상)")

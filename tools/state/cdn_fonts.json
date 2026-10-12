@@ -66,5 +66,54 @@
    "500": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2",
    "700": "https://cdn.jsdelivr.net/npm/spoqa-han-sans@3.3.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2"
   }
+ },
+ "k-bm-euljiro": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMEULJIROTTF.ttf?2e60d3cf"
+  }
+ },
+ "k-bm-hanna-11yrs": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMHANNA_11yrs_ttf.ttf?c064e459"
+  }
+ },
+ "k-bm-hanna-pro": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMHANNAPro.ttf?ad793ad8"
+  }
+ },
+ "k-bm-hanna-air": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMHANNAAir_ttf.ttf?e08a8dee"
+  }
+ },
+ "k-bm-kkubulim": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMKkubulimTTF.ttf?b0943a50"
+  }
+ },
+ "k-bm-euljiro-10years": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMEuljiro10yearslater.ttf?aadbb96f"
+  }
+ },
+ "k-bm-euljiro-oraeorae": {
+  "page": "https://www.woowahan.com/fonts",
+  "license_page": "https://www.woowahan.com/fonts/license",
+  "files": {
+   "400": "https://woowahan-cdn.woowahan.com/static/fonts/BMEuljirooraeorae.ttf?fd5e1689"
+  }
  }
 }

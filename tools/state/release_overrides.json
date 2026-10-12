@@ -55,9 +55,9 @@
   "url": "https://www.foodbank.co.kr/news/articleView.html?idxno=53109"
  },
  "k-bm-euljiro": {
-  "date": "2019-10-09",
-  "src": "우아한형제들 한글날 배포(언론 보도)",
-  "url": "https://www.etoday.co.kr/news/view/1807034"
+  "date": "2019",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
  },
  "gothic-a1": {
   "date": "2014-10-09",
@@ -228,5 +228,35 @@
   "date": "2020-11-30",
   "src": "스포카 공식 GitHub 릴리스 v3.0.0(스포카 한 산스 네오 첫 배포)",
   "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.0.0"
+ },
+ "k-bm-hanna-11yrs": {
+  "date": "2015",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
+ },
+ "k-bm-hanna-pro": {
+  "date": "2018",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
+ },
+ "k-bm-hanna-air": {
+  "date": "2018",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
+ },
+ "k-bm-kkubulim": {
+  "date": "2024",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
+ },
+ "k-bm-euljiro-10years": {
+  "date": "2020",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
+ },
+ "k-bm-euljiro-oraeorae": {
+  "date": "2021",
+  "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
+  "url": "https://www.woowahan.com/fonts"
  }
 }

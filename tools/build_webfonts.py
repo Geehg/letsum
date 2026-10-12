@@ -155,6 +155,12 @@ def main():
             open(os.path.join(d, "LICENSE.txt"), "w", encoding="utf-8").write(
                 f"{name}\n저작권자: {e['rec']['sources']['kogl'].get('author') or ''}\n이용조건: {rlic} — 출처(저작권자) 표시 조건으로 상업 이용·변경 가능\n원 배포처: {e['rec']['sources']['kogl'].get('page')}\n공공누리: https://www.kogl.or.kr/info/licenseType1.do\n이 파일은 letsum.app 미리보기 전용 WOFF2이며, 원본 글리프를 변경하지 않았습니다.\n")
         rfn = "reserved font name" in ((lic or b"").decode("utf-8", "ignore").lower() + first["license"].lower())
+        try:  # 파일 안(name 테이블 0·13)에 예약 글꼴 이름이 적힌 경우도 잡는다(예: 빗썸고딕)
+            nt = TTFont(io.BytesIO(first["bytes"]), lazy=True)["name"]
+            rfn = rfn or "reserved font name" in " ".join((nt.getDebugName(i) or "") for i in (0, 13)).lower()
+        except Exception: pass
+        if rfn:  # OFL 정의상 형식 변환도 '수정본' → 예약 이름 폰트는 변환하지 않는다(AGENTS.md 4-5: 원본 무변환으로 따로 추가)
+            print(f"  ! {name}: 예약 글꼴 이름(RFN) — WOFF2 변환 건너뜀. 원본 파일 그대로 쓰는 방식으로 추가할 것"); shutil.rmtree(d, ignore_errors=True); failed.append(f"{name} RFN"); continue
         syl, old, hanja = stat
         meta[fid] = {"name": name, "en": first["en"], "ko": first["ko"], "author": e["rec"]["sources"]["kogl"].get("author"),
                      "page": e["rec"]["sources"]["kogl"].get("page"), "downloads": e["rec"]["sources"]["kogl"].get("downloads"),
