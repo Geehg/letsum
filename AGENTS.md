@@ -37,7 +37,7 @@ tools/run.sh finish "커밋 메시지"    # 검증 통과해야 커밋·푸시, 
 ## 4. 파일 소유권 — 손으로 고치는 것 vs 생성되는 것
 | 손으로 고침 (사람·AI가 판단해 작성) | 도구가 생성 (직접 고치지 말 것) |
 |---|---|
-| `tools/state/review_*.json` — 분류·설명 검수 | `html/font/*.html`, `html/sitemap.xml` ← build_pages.js |
+| `tools/state/review_*.json` — 분류·설명 검수, `tools/state/reasons.json` — 추천 이유(견본을 직접 보고 작성, 과장 금지) | `html/font/*.html`, `html/sitemap.xml` ← build_pages.js |
 | `tools/state/release_overrides.json` — 출처 있는 출시일 | `html/data/links.json` ← watch_sources.py |
 | `tools/state/aliases.json` — 같은 폰트 다른 이름 | `tools/state/catalog.json`, `sources.json`, `report.md` ← watch_sources.py |
 | `tools/state/license_manual.json` — 원문을 직접 읽고 확인한 라이선스 근거 | `tools/state/license_check.json` ← verify_licenses.py |

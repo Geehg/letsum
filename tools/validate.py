@@ -103,7 +103,7 @@ if os.path.exists(cat_path):
     for k, r in json.load(open(cat_path, encoding="utf-8")).items():
         if r.get("site_id") and r["site_id"] not in ids: err(f"카탈로그 {k}: site_id '{r['site_id']}'가 data.js에 없음")
 # 8) 검수·덮어쓰기 파일
-for p in glob.glob(os.path.join(HERE, "state", "review_*.json")) + [os.path.join(HERE, "state", "release_overrides.json")]:
+for p in glob.glob(os.path.join(HERE, "state", "review_*.json")) + [os.path.join(HERE, "state", "release_overrides.json"), os.path.join(HERE, "state", "reasons.json")]:
     if not os.path.exists(p): continue
     for k in json.load(open(p, encoding="utf-8")):
         if not k.startswith("_") and k not in ids: err(f"{os.path.basename(p)}: id '{k}'가 data.js에 없음")

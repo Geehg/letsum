@@ -782,6 +782,7 @@
   // 사용 조건 확인 기록: 이 폰트를 고를 때 LETSUM에서 확인한 조건·출처·확인일을 텍스트로 남긴다.
   // 사용 권리를 보증하는 문서가 아니라 '언제 무엇을 확인했는지'의 메모다.
   // 확인 근거(원문 대조 요약·근거 페이지·원본 출처·폰트 버전) — 필요할 때 한 번만 받는다
+  const reasonsLoad = fetch("data/reasons.json?v=1").then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
   let evidence = null;
   const evidenceLoad = () => evidence ? Promise.resolve(evidence) : fetch("data/evidence.json?v=1").then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => (evidence = j));
   const stText = (f) => f.status === "verified" ? "원문 대조 완료" : "확인 중(원문 대조 전)";
@@ -865,6 +866,7 @@
           <span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span></div>
       </div>`}
       <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
+      <div class="why-box" id="whyBox" hidden></div>
 
       ${f.intro ? "" : `<div class="m-sec"><h3>쓰임새에서 보기</h3>
         <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
@@ -948,6 +950,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
+    reasonsLoad.then((Rz) => { const r = Rz[f.id]; const b = $("#whyBox"); if (!r || !b) return; b.hidden = false;
+      b.innerHTML = `<b>추천 이유</b><p>${esc(r.why)}</p><p class="note">잘 맞는 곳: ${r.good.map(esc).join(" · ")}${r.caution ? `<br>주의: ${esc(r.caution)}` : ""}</p>`; });
     evidenceLoad().then((E) => { const x = E[f.id]; const box = $("#evBox"); if (!x || !box) return;
       box.innerHTML = `<details><summary>확인 근거 보기</summary>${x.ev ? `<p>${esc(x.ev)}</p>` : ""}${x.pg ? `<p><a class="linklike" href="${esc(x.pg)}" target="_blank" rel="noopener">근거 자료 ↗</a></p>` : ""}${x.src ? `<p class="note">원본 파일: ${esc(x.src)}</p>` : ""}${x.ver ? `<p class="note">폰트 버전: ${esc(x.ver)}</p>` : ""}</details>`; });
     const commonBind = () => {
