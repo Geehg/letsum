@@ -956,5 +956,46 @@
   "files": {
    "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYuNiDdingDdangDdingDdang.woff"
   }
+ },
+ "k-paperlogy": {
+  "page": "https://github.com/Freesentation/paperlogy",
+  "files": {
+   "100": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-1Thin.woff2",
+   "200": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-2ExtraLight.woff2",
+   "300": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-3Light.woff2",
+   "400": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-4Regular.woff2",
+   "500": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-5Medium.woff2",
+   "600": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-6SemiBold.woff2",
+   "700": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-7Bold.woff2",
+   "800": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-8ExtraBold.woff2",
+   "900": "https://cdn.jsdelivr.net/gh/Freesentation/paperlogy@8ef35f53b318c7ca914c52b1b382b9a8bad07a61/woff2/Paperlogy-9Black.woff2"
+  }
+ },
+ "k-freesentation": {
+  "page": "https://github.com/Freesentation/freesentation",
+  "files": {
+   "100": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-1Thin.woff2",
+   "200": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-2ExtraLight.woff2",
+   "300": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-3Light.woff2",
+   "400": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-4Regular.woff2",
+   "500": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-5Medium.woff2",
+   "600": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-6SemiBold.woff2",
+   "700": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-7Bold.woff2",
+   "800": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-8ExtraBold.woff2",
+   "900": "https://cdn.jsdelivr.net/gh/Freesentation/freesentation@98f6b841fca55a23fbb0f9eb91acda0e16a676ea/woff2/Freesentation-9Black.woff2"
+  }
+ },
+ "k-d2coding": {
+  "page": "https://github.com/naver/d2-coding-font",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/naver/d2-coding-font@VER1.4.0/site/fonts/D2Coding-Regular.woff2",
+   "700": "https://cdn.jsdelivr.net/gh/naver/d2-coding-font@VER1.4.0/site/fonts/D2Coding-Bold.woff2"
+  }
+ },
+ "k-iropke-batang": {
+  "page": "https://github.com/iropke/font-iropke-batang",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/iropke/font-iropke-batang@24e6a14cd95c903b6584bc947406773c2e0f164f/IropkeBatangM.woff"
+  }
  }
 }
