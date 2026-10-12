@@ -1404,7 +1404,6 @@ import "@fontsource/${f.id}/400.css";</pre>
     spotIdx = (i + els.length) % els.length;
     els.forEach((el, k) => { el.classList.toggle("on", k === spotIdx); el.setAttribute("aria-hidden", k === spotIdx ? "false" : "true"); });
     const cur = els[spotIdx]; ensureFace(FONTS.find((x) => x.id === cur.dataset.id), true); ensureFace(FONTS.find((x) => x.id === (els[(spotIdx + 1) % els.length] || cur).dataset.id));
-    $("#spotCount").textContent = `${spotIdx + 1} / ${els.length}`;
     const spot = $("#spot"); spot.style.setProperty("--spot-ui", cur.style.getPropertyValue("--fg")); spot.style.setProperty("--spot-bg", cur.style.getPropertyValue("--bg"));
     $$("#spotBars i").forEach((b, k) => { b.className = k < spotIdx ? "done" : k === spotIdx ? "run" : ""; });
     spotPlay(cur);
@@ -1429,11 +1428,10 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#spotBars").innerHTML = spotList.map(() => "<i></i>").join("");
     track.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
     const spot = $("#spot");
-    const pause = (on) => { spotPaused = on; spot.classList.toggle("paused", on); $("#spotPause").textContent = on ? "▶" : "❚❚"; $("#spotPause").setAttribute("aria-label", on ? "자동 넘김 재생" : "자동 넘김 멈춤"); if (on) clearTimeout(spotTimer); else spotGo(spotIdx, true); };
+    const pause = (on) => { spotPaused = on; spot.classList.toggle("paused", on); if (on) clearTimeout(spotTimer); else spotGo(spotIdx, true); };
     let hoverPause = false;
     spot.addEventListener("mouseenter", () => { if (!spotPaused) { hoverPause = true; pause(true); } });
     spot.addEventListener("mouseleave", () => { if (hoverPause) { hoverPause = false; pause(false); } });
-    $("#spotPause").addEventListener("click", () => { hoverPause = false; pause(!spotPaused); });
     $("#nbPrev").addEventListener("click", () => spotGo(spotIdx - 1, true));
     $("#nbNext").addEventListener("click", () => spotGo(spotIdx + 1, true));
     spot.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") spotGo(spotIdx - 1, true); if (e.key === "ArrowRight") spotGo(spotIdx + 1, true); });

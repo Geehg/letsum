@@ -1095,3 +1095,20 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ft-logo{display:block;margin-bottom:10px}
 .ft-logo img{height:28px;width:auto}
 @media(max-width:640px){.logo img{height:26px}}
+
+/* 히어로: 하단 표시줄 없애고, 좌우 끝 중앙 화살표(마우스를 올리면 보임) · 세로폭 축소 */
+.spot-ui[hidden]{display:none}
+.spot-stage{height:clamp(270px,24vw,310px)}
+.sp-in{padding-top:18px;padding-bottom:22px}
+.sp-arrow{position:absolute;top:50%;z-index:3;width:44px;height:44px;margin-top:-22px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.18);cursor:pointer;
+  opacity:0;transition:opacity .2s ease,transform .2s ease,background .15s,color .15s}
+.sp-arrow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.sp-arrow.prev{left:10px;transform:translateX(-6px)}
+.sp-arrow.next{right:10px;transform:translateX(6px)}
+.spot:hover .sp-arrow,.sp-arrow:focus-visible{opacity:1;transform:none}
+.sp-arrow:hover{background:var(--ink);color:var(--paper)}
+.sp-arrow:active{transform:scale(.92)}
+.sp-arrow:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+@media (hover:none){.sp-arrow{display:none}} /* 휴대폰은 좌우로 밀어 넘기기 */
+@media(max-width:860px){.spot-stage{min-height:280px}.sp-in{padding-bottom:20px}}
