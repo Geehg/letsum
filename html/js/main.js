@@ -1011,7 +1011,7 @@ font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰�
 import "@fontsource/${f.id}/400.css";</pre>
         <p class="note" style="margin-top:8px">필요한 글자만 내려받는 CSS는 <a href="subset.html" class="linklike">서브셋 생성기</a>에서 만들 수 있습니다. 임베딩 허용 여부는 위 매트릭스를 따릅니다.</p>` : `<p class="note" style="margin-top:12px">${webUseNote(f)} LETSUM의 미리보기용 웹폰트는 이 사이트의 미리보기 전용이며 내려받아 쓰는 파일이 아닙니다.</p>`}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
-          <button class="btn ghost" id="projAdd">＋ 프로젝트에 담기</button>
+          <button class="btn ghost" id="projAdd">＋ 보관함에 담기</button>
           <button class="btn ghost" id="favBtn">${favs.has(f.id) ? "♥ 즐겨찾기 해제" : "♡ 즐겨찾기"}</button>
           ${f.intro ? "" : `<button class="btn ghost" id="cmpBtn">${cmp.has(f.id) ? "비교에서 빼기" : "+ 비교에 담기"}</button>`}
         </div></div>
@@ -1388,32 +1388,61 @@ import "@fontsource/${f.id}/400.css";</pre>
   const PK = "ls_projects";
   let projects = LS(PK, []);
   const saveProjects = () => save(PK, projects);
-  const newProject = (name) => { const p = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), name: name || `새 프로젝트 ${projects.length + 1}`, created: Date.now(), updated: Date.now(), text: state.text, items: [] }; projects.unshift(p); saveProjects(); return p; };
+  const newProject = (name) => { const p = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), name: name || `새 폴더 ${projects.length + 1}`, created: Date.now(), updated: Date.now(), text: state.text, items: [] }; projects.unshift(p); saveProjects(); return p; };
   function addToProject(p, ids) {
     let n = 0;
     ids.forEach((id) => { const f = FONTS.find((x) => x.id === id); if (!f || p.items.some((x) => x.id === id)) return; p.items.push({ id, note: "", added: Date.now(), snap: snap(f) }); n++; });
     p.updated = Date.now(); if (!p.text) p.text = state.text; saveProjects(); if (n) ev("proj_add"); updateProjBtn(); return n;
   }
   const changedIn = (p) => p.items.filter((it) => { const f = FONTS.find((x) => x.id === it.id); return f && diffSnap(f, it.snap).length; }).length;
-  function updateProjBtn() { const b = $("#projBtn"); if (!b) return; const ch = projects.reduce((a, p) => a + changedIn(p), 0); b.innerHTML = `내 프로젝트${projects.length ? ` <small>${projects.length}</small>` : ""}${ch ? ` <em title="사용 조건이 바뀐 폰트">${ch}</em>` : ""}`; }
+  function updateProjBtn() { const b = $("#projBtn"); if (!b) return; const ch = projects.reduce((a, p) => a + changedIn(p), 0); b.innerHTML = `폰트 보관함${projects.length ? ` <small>${projects.length}</small>` : ""}${ch ? ` <em title="사용 조건이 바뀐 폰트">${ch}</em>` : ""}`; }
   // 링크 공유: 이름·폰트·메모·문장만 주소에 담는다(서버 저장 없음)
   const b64u = (str) => btoa(String.fromCharCode(...new TextEncoder().encode(str))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   const unb64u = (str) => new TextDecoder().decode(Uint8Array.from(atob(str.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0)));
   const shareUrl = (p) => `${location.origin}${location.pathname}#p=${b64u(JSON.stringify({ n: p.name, t: p.text || "", i: p.items.map((x) => [x.id, x.note || ""]) }))}`;
+  // 보관함을 처음 열었을 때(폴더 없음) 무엇을 하는 곳인지 보여 주는 안내
+  const PJ_INTRO = `<div class="pj-intro">
+      <p class="pj-lead">작업 이름으로 폴더를 만들고, 쓸 폰트를 모아 두세요. 로그인 없이 이 브라우저에 저장됩니다.</p>
+      <ol class="pj-flow">
+        <li><b>1</b><strong>폴더 만들기</strong><span>아래 '첫 폴더 만들기'에 작업 이름 입력</span></li>
+        <li><b>2</b><strong>폰트 담기</strong><span>폰트 상세의 '＋ 보관함에 담기'</span></li>
+        <li><b>3</b><strong>확인·공유</strong><span>확인 기록 저장, 링크로 공유</span></li>
+      </ol>
+      <p class="pj-sub">이런 게 편해져요</p>
+      <div class="pj-cards">
+        <div><b>🔔 조건 바뀜 알림</b><span>담아 둔 폰트의 라이선스·사용 범위가 바뀌면 헤더의 '폰트 보관함'에 표시해 드려요.</span></div>
+        <div><b>📄 확인 기록 한 번에</b><span>폴더 속 폰트들의 사용 조건 확인 기록을 문서로 저장해 클라이언트·회사에 근거로 낼 수 있어요.</span></div>
+        <div><b>🔗 링크로 공유</b><span>폰트 목록과 고른 이유를 링크 하나로 동료에게 넘기고, 받은 쪽은 바로 가져와요.</span></div>
+      </div>
+    </div>`;
   function openProjects(opt) {
     opt = opt || {};
     modal.className = "modal proj";
     const addIds = opt.addIds || null;
+    const chips = (p) => p.items.slice(0, 4).map((it) => { const f = FONTS.find((x) => x.id === it.id); return f ? `<i style="font-family:${f.family}">${esc(f.name)}</i>` : ""; }).join("") + (p.items.length > 4 ? `<i class="more">+${p.items.length - 4}</i>` : "");
     const list = () => `
       <button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="m-head"><h2>내 프로젝트</h2><span class="en">이 브라우저에만 저장 · 파일이나 링크로 옮길 수 있어요</span></div>
-      ${addIds ? `<p class="pj-add-note"><b>${addIds.length}종</b>을 담을 프로젝트를 고르거나 새로 만드세요: ${addIds.map((id) => esc((FONTS.find((x) => x.id === id) || {}).name || id)).join(", ")}</p>` : ""}
-      <form class="pj-new" id="pjNew"><input name="n" maxlength="40" placeholder="새 프로젝트 이름 (예: 2027 국어 교재 본문)"><button class="btn sm" type="submit">${addIds ? "새로 만들어 담기" : "만들기"}</button></form>
-      <div class="pj-list">${projects.length ? projects.map((p) => { const ch = changedIn(p); return `<div class="pj-row">
-          <button class="pj-open" data-pjopen="${p.id}"><b>${esc(p.name)}</b><span>${p.items.length}종 · ${new Date(p.updated).toLocaleDateString("ko-KR")}${ch ? ` · <em>조건 바뀜 ${ch}</em>` : ""}</span></button>
-          ${addIds ? `<button class="btn sm" data-pjadd="${p.id}">여기에 담기</button>` : ""}</div>`; }).join("") : '<p class="note">아직 프로젝트가 없습니다. 작업 이름으로 하나 만들어 보세요.</p>'}</div>
-      <div class="pj-io"><label class="btn sm ghost">파일에서 가져오기<input type="file" id="pjImport" accept="application/json,.json" hidden></label>
-        <span class="note">프로젝트는 이 브라우저 저장소에 있어 방문 기록을 지우면 사라집니다. 중요하면 '파일로 내보내기'로 보관하세요.</span></div>`;
+      <div class="m-head"><h2>폰트 보관함</h2><span class="en">작업별 폴더로 폰트 모으기 · 이 브라우저에 저장</span></div>
+      ${addIds ? `<div class="pj-adding"><span>담을 폰트</span><div>${addIds.map((id) => { const f = FONTS.find((x) => x.id === id); return f ? `<b style="font-family:${f.family}">${esc(f.name)}</b>` : ""; }).join("")}</div><p>어느 폴더에 담을까요? 폴더를 누르거나 새로 만드세요.</p></div>` : ""}
+      ${!projects.length && !addIds ? PJ_INTRO : ""}
+      <div class="pj-grid">
+        <form class="pj-card pj-newcard" id="pjNew">
+          <span class="pj-plus" aria-hidden="true">＋</span>
+          <label for="pjNewName">${projects.length ? "새 폴더" : "첫 폴더 만들기"}</label>
+          <input id="pjNewName" name="n" maxlength="40" placeholder="작업 이름 (예: 2027 국어 교재)" autocomplete="off">
+          <button class="btn sm" type="submit">${addIds ? "만들고 담기" : "만들기"}</button>
+        </form>
+        ${projects.map((p) => { const ch = changedIn(p); return `<button class="pj-card${addIds ? " pick" : ""}" ${addIds ? `data-pjadd="${p.id}"` : `data-pjopen="${p.id}"`}>
+          <span class="pj-ico" aria-hidden="true">📁</span>
+          <b class="pj-t">${esc(p.name)}</b>
+          <span class="pj-m">${p.items.length}종 · ${new Date(p.updated).toLocaleDateString("ko-KR")}</span>
+          ${ch ? `<span class="pj-alert">조건 바뀜 ${ch}</span>` : ""}
+          <span class="pj-chips">${chips(p) || '<i class="more">비어 있음</i>'}</span>
+          ${addIds ? '<span class="pj-go">여기에 담기 →</span>' : '<span class="pj-go">열기 →</span>'}
+        </button>`; }).join("")}
+      </div>
+      <div class="pj-io"><label class="linklike">📂 파일에서 가져오기<input type="file" id="pjImport" accept="application/json,.json" hidden></label>
+        <span class="note">보관함은 이 브라우저에 저장돼 방문 기록을 지우면 사라집니다. 중요하면 폴더 안의 '파일로 내보내기'로 보관하세요.</span></div>`;
     const draw = () => {
       modal.innerHTML = list(); $("#mx").addEventListener("click", closeModal);
       $("#pjNew").addEventListener("submit", (e) => { e.preventDefault(); const p = newProject(String(new FormData(e.target).get("n") || "").trim()); if (addIds) addToProject(p, addIds); openProject(p.id); });
@@ -1423,9 +1452,9 @@ import "@fontsource/${f.id}/400.css";</pre>
         const file = e.target.files[0]; if (!file) return;
         try {
           const j = JSON.parse(await file.text()); const arr = Array.isArray(j.projects) ? j.projects : [j];
-          arr.forEach((q) => { if (!q || !Array.isArray(q.items)) return; const p = newProject(String(q.name || "가져온 프로젝트").slice(0, 40)); p.text = String(q.text || "").slice(0, 80); p.items = q.items.filter((x) => x && FONTS.some((f) => f.id === x.id)).map((x) => ({ id: x.id, note: String(x.note || "").slice(0, 300), added: x.added || Date.now(), snap: x.snap && typeof x.snap === "object" ? x.snap : null })); });
+          arr.forEach((q) => { if (!q || !Array.isArray(q.items)) return; const p = newProject(String(q.name || "가져온 폴더").slice(0, 40)); p.text = String(q.text || "").slice(0, 80); p.items = q.items.filter((x) => x && FONTS.some((f) => f.id === x.id)).map((x) => ({ id: x.id, note: String(x.note || "").slice(0, 300), added: x.added || Date.now(), snap: x.snap && typeof x.snap === "object" ? x.snap : null })); });
           saveProjects(); updateProjBtn(); draw();
-        } catch (x) { alert("LETSUM 프로젝트 파일이 아닙니다."); }
+        } catch (x) { alert("LETSUM 보관함 파일이 아닙니다."); }
       });
     };
     draw(); overlay.classList.add("open");
@@ -1433,31 +1462,33 @@ import "@fontsource/${f.id}/400.css";</pre>
   function openProject(pid) {
     const p = projects.find((x) => x.id === pid); if (!p) return openProjects();
     modal.className = "modal proj wide";
+    const nChg = p.items.filter((it) => { const f = FONTS.find((x) => x.id === it.id); return f && diffSnap(f, it.snap).length; }).length;
     const rows = p.items.map((it, k) => {
       const f = FONTS.find((x) => x.id === it.id); if (!f) return "";
       const d = diffSnap(f, it.snap);
-      return `<tr>
-        <td><button class="linklike pj-fname" data-open="${f.id}" style="font-family:${f.family}">${esc(f.name)}</button><div class="note">${esc(f.category)} · ${esc(f.designer)}</div></td>
-        <td><span class="pj-lic">${esc(licInfo(f).short)}</span><div class="note">${stText(f)} · ${f.verified}</div>
-          ${d.length ? `<div class="pj-chg"><b>조건 바뀜</b> ${esc(d.join(" · "))} <button class="linklike" data-ack="${k}">확인함</button></div>` : ""}</td>
-        <td><textarea data-note="${k}" maxlength="300" rows="2" placeholder="선택 이유 (예: 본문 12pt 가독성 좋음, 인쇄 OK)">${esc(it.note || "")}</textarea></td>
-        <td><button class="abtn" data-rmv="${k}">빼기</button></td></tr>`;
+      return `<div class="pj-item${d.length ? " chg" : ""}">
+        <div class="pj-i-font"><button class="linklike pj-fname" data-open="${f.id}" style="font-family:${f.family}">${esc(f.name)}</button><span class="note">${esc(f.category)} · ${esc(f.designer)}</span></div>
+        <div class="pj-i-lic"><span class="pj-lic">${esc(licInfo(f).short)}</span><span class="note">${stText(f)} · ${f.verified} 확인</span>
+          ${d.length ? `<div class="pj-chg"><b>조건 바뀜</b> ${esc(d.join(" · "))} <button class="linklike" data-ack="${k}">확인했어요</button></div>` : ""}</div>
+        <label class="pj-i-note"><span>고른 이유</span><textarea data-note="${k}" maxlength="300" rows="2" placeholder="예: 본문 12pt 가독성 좋음, 인쇄 OK">${esc(it.note || "")}</textarea></label>
+        <button class="pj-rmv" data-rmv="${k}" aria-label="${esc(f.name)} 빼기" title="폴더에서 빼기">빼기</button>
+      </div>`;
     }).join("");
+    const dis = p.items.length ? "" : " disabled";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="m-head"><input class="pj-name" id="pjName" value="${esc(p.name)}" maxlength="40" aria-label="프로젝트 이름"><span class="en">${p.items.length}종 · 만든 날 ${new Date(p.created).toLocaleDateString("ko-KR")}</span></div>
-      <div class="pj-acts">
-        <button class="btn sm" id="pjCmp"${p.items.length ? "" : " disabled"}>비교로 열기</button>
-        <button class="btn sm ghost" id="pjProof"${p.items.length ? "" : " disabled"}>📄 확인 기록 한 번에 저장</button>
-        <button class="btn sm ghost" id="pjShare">링크 복사</button>
-        <button class="btn sm ghost" id="pjExport">파일로 내보내기</button>
-        <span class="sp"></span>
-        <button class="linklike" id="pjBack">← 프로젝트 목록</button>
-        <button class="linklike pj-del" id="pjDel">삭제</button>
+      <button class="linklike pj-back" id="pjBack">← 폰트 보관함</button>
+      <div class="m-head pj-head"><span class="pj-ico" aria-hidden="true">📁</span><input class="pj-name" id="pjName" value="${esc(p.name)}" maxlength="40" aria-label="폴더 이름" title="눌러서 이름 바꾸기"><span class="en">${p.items.length}종 · 만든 날 ${new Date(p.created).toLocaleDateString("ko-KR")}</span></div>
+      <div class="pj-tools">
+        <button class="pj-tool" id="pjCmp"${dis}><b>⇆ 나란히 비교</b><span>최대 4종을 비교 창에서</span></button>
+        <button class="pj-tool" id="pjProof"${dis}><b>📄 확인 기록 저장</b><span>사용 조건 확인 문서(txt)</span></button>
+        <button class="pj-tool" id="pjShare"${dis}><b>🔗 링크 복사</b><span>동료에게 목록·이유 공유</span></button>
+        <button class="pj-tool" id="pjExport"><b>⬇ 파일로 내보내기</b><span>백업·다른 컴퓨터로</span></button>
       </div>
-      ${p.text ? `<p class="note">미리보기 문장: “${esc(p.text)}” <button class="linklike" id="pjUseText">이 문장으로 보기</button></p>` : ""}
-      ${p.items.length ? `<table class="spec pj-table"><tr><th>폰트</th><th>사용 조건</th><th>선택 이유</th><th></th></tr>${rows}</table>` : '<p class="note">아직 담은 폰트가 없습니다. 폰트 상세의 "프로젝트에 담기"나 비교 트레이의 "프로젝트로 저장"으로 담으세요.</p>'}
-      <p class="disclaimer">‘조건 바뀜’은 폰트를 담을 때 LETSUM에 표시돼 있던 사용 조건과 지금을 비교한 결과입니다. 최종 판단은 라이선스 원문으로 하세요.</p>`;
+      ${nChg ? `<p class="pj-banner">⚠ 담은 뒤 사용 조건이 바뀐 폰트가 <b>${nChg}종</b> 있습니다. 아래 표시를 확인하세요.</p>` : ""}
+      ${p.text ? `<p class="note">이 폴더의 미리보기 문장: “${esc(p.text)}” <button class="linklike" id="pjUseText">이 문장으로 보기</button></p>` : ""}
+      ${p.items.length ? `<div class="pj-items">${rows}</div>` : `<div class="pj-empty"><b>아직 담은 폰트가 없어요</b><p>폰트 상세에서 <b>＋ 보관함에 담기</b>, 또는 비교함에서 <b>보관함에 저장</b>을 누르면 이 폴더에 들어옵니다.</p><button class="btn sm" id="pjBrowse">폰트 둘러보기</button></div>`}
+      <div class="pj-foot"><p class="disclaimer">‘조건 바뀜’은 폰트를 담을 때 LETSUM에 표시돼 있던 사용 조건과 지금을 비교한 결과입니다. 최종 판단은 라이선스 원문으로 하세요.</p><button class="linklike pj-del" id="pjDel">폴더 삭제</button></div>`;
     overlay.classList.add("open");
     const touch = () => { p.updated = Date.now(); saveProjects(); };
     $("#mx").addEventListener("click", closeModal);
@@ -1468,16 +1499,17 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll("[data-ack]").forEach((b) => b.addEventListener("click", () => { const it = p.items[+b.dataset.ack]; it.snap = snap(FONTS.find((x) => x.id === it.id)); touch(); updateProjBtn(); openProject(pid); }));
     modal.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
     $("#pjUseText")?.addEventListener("click", () => { setText(p.text); closeModal(); });
+    $("#pjBrowse")?.addEventListener("click", closeModal);
     $("#pjCmp").addEventListener("click", () => { cmp.clear(); p.items.slice(0, 4).forEach((x) => cmp.add(x.id)); if (p.text) setText(p.text); renderTray(); render(); openCompare(); });
     $("#pjProof").addEventListener("click", async () => {
       const E = await evidenceLoad(); const now = new Date();
       const body = p.items.flatMap((it, k) => { const f = FONTS.find((x) => x.id === it.id); if (!f) return []; return ["", `[${k + 1}] ` + "-".repeat(26), ...proofLines(f, dlFor(f), E[f.id] || {}, it.note)]; });
-      downloadText(`LETSUM_사용조건확인기록_${p.name}_${ymdOf(now)}.txt`, ["LETSUM 사용 조건 확인 기록 — 프로젝트", "=".repeat(28), `프로젝트: ${p.name}`, `폰트 ${p.items.length}종${p.text ? ` · 미리보기 문장: ${p.text}` : ""}`, ...body, ...PROOF_TAIL(now)]);
+      downloadText(`LETSUM_사용조건확인기록_${p.name}_${ymdOf(now)}.txt`, ["LETSUM 사용 조건 확인 기록 — 폰트 보관함", "=".repeat(28), `폴더: ${p.name}`, `폰트 ${p.items.length}종${p.text ? ` · 미리보기 문장: ${p.text}` : ""}`, ...body, ...PROOF_TAIL(now)]);
       ev("record", "project");
     });
-    $("#pjShare").addEventListener("click", async (e) => { const u = shareUrl(p); ev("proj_share"); try { await navigator.clipboard.writeText(u); e.target.textContent = "복사됨 ✓"; setTimeout(() => (e.target.textContent = "링크 복사"), 1500); } catch (x) { prompt("이 링크를 복사하세요", u); } });
-    $("#pjExport").addEventListener("click", () => { ev("proj_export"); const blob = new Blob([JSON.stringify({ letsum: 1, projects: [p] }, null, 1)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `LETSUM_프로젝트_${p.name}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); });
-    $("#pjDel").addEventListener("click", () => { if (!confirm(`'${p.name}' 프로젝트를 삭제할까요? 되돌릴 수 없습니다.`)) return; projects = projects.filter((x) => x.id !== pid); saveProjects(); updateProjBtn(); openProjects(); });
+    $("#pjShare").addEventListener("click", async (e) => { const u = shareUrl(p); ev("proj_share"); try { await navigator.clipboard.writeText(u); const t = e.currentTarget.querySelector("b"); t.textContent = "✓ 복사됨"; setTimeout(() => (t.textContent = "🔗 링크 복사"), 1500); } catch (x) { prompt("이 링크를 복사하세요", u); } });
+    $("#pjExport").addEventListener("click", () => { ev("proj_export"); const blob = new Blob([JSON.stringify({ letsum: 1, projects: [p] }, null, 1)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `LETSUM_보관함_${p.name}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); });
+    $("#pjDel").addEventListener("click", () => { if (!confirm(`'${p.name}' 폴더를 삭제할까요? 되돌릴 수 없습니다.`)) return; projects = projects.filter((x) => x.id !== pid); saveProjects(); updateProjBtn(); openProjects(); });
   }
   // 공유 링크(#p=...)로 들어오면 미리 보고 가져오기
   function openSharedFromHash() {
@@ -1486,12 +1518,12 @@ import "@fontsource/${f.id}/400.css";</pre>
     const ids = (Array.isArray(j.i) ? j.i : []).filter((x) => Array.isArray(x) && FONTS.some((f) => f.id === x[0])).slice(0, 60);
     modal.className = "modal proj";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="m-head"><h2>공유받은 프로젝트</h2><span class="en">${esc(String(j.n || "").slice(0, 40))}</span></div>
+      <div class="m-head"><h2>공유받은 폰트 모음</h2><span class="en">${esc(String(j.n || "").slice(0, 40))}</span></div>
       <ul class="pj-shared">${ids.map(([id, note]) => { const f = FONTS.find((x) => x.id === id); return `<li><b style="font-family:${f.family}">${esc(f.name)}</b> <span class="note">${esc(licInfo(f).short)}</span>${note ? `<div class="note">메모: ${esc(String(note).slice(0, 300))}</div>` : ""}</li>`; }).join("")}</ul>
-      <div class="pj-acts"><button class="btn sm" id="pjTake">내 프로젝트로 가져오기</button><button class="btn sm ghost" id="pjPeek">비교로 보기</button></div>`;
+      <div class="pj-acts"><button class="btn sm" id="pjTake">내 보관함으로 가져오기</button><button class="btn sm ghost" id="pjPeek">비교로 보기</button></div>`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
-    $("#pjTake").addEventListener("click", () => { const p = newProject(String(j.n || "공유받은 프로젝트").slice(0, 40)); p.text = String(j.t || "").slice(0, 80); addToProject(p, ids.map((x) => x[0])); ids.forEach(([id, note]) => { const it = p.items.find((x) => x.id === id); if (it) it.note = String(note || "").slice(0, 300); }); saveProjects(); try { history.replaceState(null, "", location.pathname); } catch (e) {} openProject(p.id); });
+    $("#pjTake").addEventListener("click", () => { const p = newProject(String(j.n || "공유받은 모음").slice(0, 40)); p.text = String(j.t || "").slice(0, 80); addToProject(p, ids.map((x) => x[0])); ids.forEach(([id, note]) => { const it = p.items.find((x) => x.id === id); if (it) it.note = String(note || "").slice(0, 300); }); saveProjects(); try { history.replaceState(null, "", location.pathname); } catch (e) {} openProject(p.id); });
     $("#pjPeek").addEventListener("click", () => { cmp.clear(); ids.slice(0, 4).forEach(([id]) => cmp.add(id)); if (j.t) setText(String(j.t).slice(0, 80)); renderTray(); render(); openCompare(); });
   }
   // 즐겨찾기: 담을 때의 조건을 기억해 두고, 재방문 때 바뀐 폰트를 알린다

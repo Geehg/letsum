@@ -309,7 +309,7 @@
   $("#ckFilter").addEventListener("change", () => loaders.cmts());
 
   // ================= 이용 지표 =================
-  const LABEL = { visit: "방문(세션)", detail: "상세 열기", cmp_add: "비교 담기", cmp_open: "비교 창 열기", dl_zip: "파일 바로 받기", dl_page: "배포처 페이지 이동", record: "확인 기록 저장", wiz_open: "용도 추천 열기", wiz_apply: "용도 추천 적용", view: "보기 전환", text_custom: "내 문장 입력", cover_only: "'모두 지원' 필터", comment: "댓글", like: "좋아요", shot_up: "사진 올리기", share: "공유", proj_add: "프로젝트에 담기", proj_share: "프로젝트 링크 공유", proj_export: "프로젝트 내보내기" };
+  const LABEL = { visit: "방문(세션)", detail: "상세 열기", cmp_add: "비교 담기", cmp_open: "비교 창 열기", dl_zip: "파일 바로 받기", dl_page: "배포처 페이지 이동", record: "확인 기록 저장", wiz_open: "용도 추천 열기", wiz_apply: "용도 추천 적용", view: "보기 전환", text_custom: "내 문장 입력", cover_only: "'모두 지원' 필터", comment: "댓글", like: "좋아요", shot_up: "사진 올리기", share: "공유", proj_add: "보관함에 담기", proj_share: "보관함 링크 공유", proj_export: "보관함 내보내기" };
   loaders.metrics = async function () {
     const out = $("#mtOut"), msg = $("#mtMsg");
     msg.textContent = "불러오는 중…";
