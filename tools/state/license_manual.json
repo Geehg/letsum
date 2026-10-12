@@ -203,5 +203,23 @@
   "evidence": "공유마당 저작물 페이지(wrtSn=13288264) 이용조건 OFL 표시. 가비아 공식 다운로드 페이지 '가비아 무료 글꼴을 자유롭게 사용하세요'. 폰트 파일에 예약 글꼴 이름 없음 → WOFF2 형식 변환만(글리프 무변경)",
   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288264&menuNo=200023",
   "checked": "2026-10-12"
+ },
+ "k-pretendard": {
+  "license": "OFL",
+  "evidence": "공식 GitHub LICENSE: SIL OFL 1.1 (Reserved Font Name 'Pretendard' 외) — LETSUM은 변환하지 않고 공식 README가 안내하는 jsDelivr 웹폰트를 그대로 사용",
+  "page": "https://github.com/orioncactus/pretendard/blob/main/LICENSE",
+  "checked": "2026-10-13"
+ },
+ "k-suit": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 라이선스 OFL-1.1 + README '자유롭게 사용하고 수정 및 재배포' — LETSUM은 공식 jsDelivr 웹폰트를 그대로 사용",
+  "page": "https://github.com/sun-typeface/SUIT",
+  "checked": "2026-10-13"
+ },
+ "k-nanum-square-neo": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' + 나눔 글꼴 라이선스 전문(SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
  }
 }
