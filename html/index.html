@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=21">
+<link rel="stylesheet" href="css/style.css?v=22">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -23,6 +23,7 @@
       <a href="index.html" class="on">홈</a>
       <a href="guide.html">라이선스 가이드</a>
       <a href="subset.html">서브셋 도구</a>
+      <button class="nav-proj" id="projBtn" type="button">내 프로젝트</button>
     </nav>
     <div class="sp"></div>
     <label class="hd-search"><span aria-hidden="true">⌕</span><input id="qTop" type="search" placeholder="폰트명·제작자·태그 (초성 ㄱㅇㄷㄷ 가능)" aria-label="폰트 검색"></label>
@@ -45,6 +46,7 @@
 </section>
 
 <!-- 컨트롤 데크: 모든 폰트에 동시에 적용되는 문장·크기·굵기 -->
+<div class="chg-bar" id="chgBar" hidden></div>
 <div class="deck">
   <div class="wrap">
     <div class="body-panel" id="bodyPanel" hidden>
@@ -156,6 +158,7 @@
     <span class="k" style="color:var(--paper);opacity:.7">비교</span>
     <div class="names" id="trayNames"></div>
     <button class="btn sm" id="cmpOpen">나란히 보기</button>
+    <button class="btn sm ghost tray-proj" id="trayProj">프로젝트로 저장</button>
     <button class="x" id="trayClear" aria-label="비교 비우기">×</button>
   </div>
 </div>
@@ -176,6 +179,6 @@
 </footer>
 
 <script src="js/data.js?v=9"></script>
-<script src="js/main.js?v=16"></script>
+<script src="js/main.js?v=17"></script>
 </body>
 </html>

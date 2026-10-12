@@ -18,7 +18,7 @@
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
 // 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
-const EVENTS = new Set(["visit", "detail", "cmp_add", "cmp_open", "dl_zip", "dl_page", "record", "wiz_open", "wiz_apply", "view", "text_custom", "cover_only", "comment", "like", "shot_up", "share"]);
+const EVENTS = new Set(["visit", "detail", "cmp_add", "cmp_open", "dl_zip", "dl_page", "record", "wiz_open", "wiz_apply", "view", "text_custom", "cover_only", "comment", "like", "shot_up", "share", "proj_add", "proj_share", "proj_export"]);
 const IMG = [["image/jpeg", [0xff, 0xd8, 0xff]], ["image/png", [0x89, 0x50, 0x4e, 0x47]], ["image/webp", [0x52, 0x49, 0x46, 0x46]]];
 
 const json = (data, status = 200, extra = {}) =>
