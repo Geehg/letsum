@@ -226,6 +226,34 @@
   const choseong = (s) => [...s].map((ch) => { const c = ch.charCodeAt(0); return c >= 0xac00 && c <= 0xd7a3 ? CHO[Math.floor((c - 0xac00) / 588)] : ch; }).join("");
   const isChoQuery = (q) => q.length > 0 && [...q].every((ch) => CHO.includes(ch) || ch === " ");
 
+  // ---------- 설치 후 이름(폰트 파일 속 이름표 · data/names.json, tools/build_names.py) ----------
+  // Windows 글꼴 목록 · Mac 서체 관리자/Adobe · 포토샵 '글꼴 누락'(PostScript) 이름으로도 찾고, 상세·카드·확인 기록에 표시
+  let NAMES = {}; const nameIdx = {};
+  const WN = { 100: "Thin", 200: "ExtraLight", 300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
+  const nk = (s) => String(s || "").toLowerCase().replace(/[\s\-_.·,()]/g, "");
+  const namesLoad = fetch("data/names.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
+    NAMES = j || {};
+    Object.entries(NAMES).forEach(([id, n]) => {
+      const parts = [n.fam, n.famEn, n.file]; Object.values(n.w || {}).forEach((v) => parts.push(v.win, v.winEn, v.ps, v.fam + v.sty, v.famEn + v.sty));
+      nameIdx[id] = parts.filter(Boolean).map(nk).join("|");
+    });
+  });
+  // 설치 후 대표 이름이 LETSUM 표기와 다르면 알려 줄 이름(아니면 "")
+  // 띄어쓰기만 무시하고 비교 — 'TTF'·'체'·영문 이름처럼 작은 차이도 글꼴 목록에서 찾기 어렵게 만들므로 알려 준다
+  function instName(f) {
+    const n = NAMES[f.id]; if (!n || !n.fam) return "";
+    const sp = (x) => String(x || "").toLowerCase().replace(/\s/g, "");
+    return sp(n.fam) === sp(f.name) ? "" : n.fam;
+  }
+  const instHTML = (f) => { const t = instName(f); return t ? `<span class="inst" title="설치하면 프로그램 글꼴 목록에 이 이름으로 보여요">설치 후 이름 <b>${esc(t)}</b></span>` : ""; };
+  // 검색어가 '설치 후 이름'으로만 맞은 경우: 어떤 굵기의 어떤 이름인지
+  function nameHit(f, q) {
+    const n = NAMES[f.id]; if (!n || !q) return null; const k = nk(q); if (k.length < 3) return null;
+    for (const [w, v] of Object.entries(n.w || {})) for (const [lab, val] of [["포토샵 '글꼴 누락'·PostScript", v.ps], ["Windows 글꼴 목록", v.win], ["Windows(영문)", v.winEn], ["Mac 서체 관리자·Adobe", v.fam + " " + v.sty]]) if (val && nk(val).includes(k)) return { w, lab, val };
+    if (n.file && nk(n.file).includes(k)) return { w: "", lab: "받은 파일 이름", val: n.file };
+    return null;
+  }
+
   // ---------- 컨트롤 구성 ----------
   $("#presetSel").innerHTML = `<option value="">프리셋</option>` + TEXT_PRESETS.map((p) => `<option value="${p.id}">${p.label}</option>`).join("");
   $("#presetSel").addEventListener("change", (e) => {
@@ -368,7 +396,7 @@
       if (state.liveOnly && f.intro) return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
-        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q)) return false; }
+        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q))))) return false; }
       }
       return true;
     });
@@ -432,7 +460,7 @@
     return `<article class="row" data-id="${f.id}" tabindex="0">
       <div class="r-meta">
         <div class="r-name">${esc(f.name)}<span class="en">${esc(f.en)}</span></div>
-        <div class="r-by">${esc(f.designer)}</div>
+        <div class="r-by">${esc(f.designer)}</div>${instHTML(f)}
         <div class="r-spec">${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${f.formats.join("/")}</div>
         ${covTags(f)}
       </div>
@@ -446,7 +474,7 @@
   function cardHTML(f) {
     return `<article class="card" data-id="${f.id}" tabindex="0">
       ${f.intro ? introBox(f) : `<div class="r-pv${state.inv ? " inv" : ""}" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>`}
-      <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>
+      <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${instHTML(f)}
       <div class="pills">${pills(f)}${missPill(f)}</div>
       <div class="foot">${covTags(f)}${acts(f)}</div>
     </article>`;
@@ -468,7 +496,7 @@
   function ctxHTML(f) {
     return `<article class="ctxcard" data-id="${f.id}" tabindex="0">
       ${f.intro ? introBox(f, "ctx") : mockHTML(f, state.ctx)}
-      <div class="lab"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${acts(f)}</div>
+      <div class="lab"><div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span>${instHTML(f)}</div>${acts(f)}</div>
       <div class="pills">${pills(f)}${missPill(f)}</div>
     </article>`;
   }
@@ -714,7 +742,9 @@
     if (sig !== renderSig) { renderSig = sig; shownN = 60; }
     const part = list.slice(0, shownN);
     const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button></div>` : "";
-    if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.</div>`;
+    const hits = state.q && !isChoQuery(state.q) ? list.slice(0, 3).map((f) => [f, nameHit(f, state.q)]).filter(([f, h]) => h && !(f.name + f.en).toLowerCase().includes(state.q.toLowerCase())) : [];
+    const hitBar = hits.length ? `<div class="name-hit">${hits.map(([f, h]) => `<p><span class="nh-k">${esc(h.lab)}</span> <code>${esc(h.val)}</code> → <button class="linklike" data-open="${f.id}"><b>${esc(f.name)}</b>${h.w ? ` ${WN[h.w] || h.w}(${h.w})` : ""}</button></p>`).join("")}<small>프로그램에 보이는 이름이 LETSUM 표기와 달라도 찾아 드려요.</small></div>` : "";
+    if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? "<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요.</small>" : ""}</div>`;
     else if (state.view === "list") host.innerHTML = part.map(rowHTML).join("") + more;
     else if (state.view === "grid") host.innerHTML = `<div class="grid">${part.map(cardHTML).join("")}</div>` + more;
     else if (state.view === "feed") {
@@ -723,6 +753,7 @@
         + (list.length > n ? `<div class="ig-more"><button class="btn ghost" id="feedMore">더 보기 <small>${n} / ${list.length}종</small></button></div>` : "");
     }
     else host.innerHTML = `<div class="ctxgrid">${part.map(ctxHTML).join("")}</div>` + more;
+    if (hitBar) host.insertAdjacentHTML("afterbegin", hitBar);
     renderActive(); bind(host); observeFaces(host);
     if (state.view === "feed") bindFeed(host);
     const sen = $("#moreSentinel");
@@ -871,6 +902,25 @@
   let evidence = null;
   const evidenceLoad = () => evidence ? Promise.resolve(evidence) : fetch("data/evidence.json?v=1").then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => (evidence = j));
   const stText = (f) => f.status === "verified" ? "원문 대조 완료" : "확인 중(원문 대조 전)";
+  function namesSec(f) {
+    const n = NAMES[f.id];
+    if (!n) return `<div class="m-sec" id="nameSec"><h3>설치 후 보이는 이름</h3><p class="note">${Object.keys(NAMES).length ? "이 폰트는 파일 속 이름을 아직 읽지 못했습니다." : "불러오는 중…"}</p></div>`;
+    const W = Object.entries(n.w || {});
+    const cp = (v) => v ? `<button class="nm-cp" data-cp="${esc(v)}" title="눌러서 복사">${esc(v)}</button>` : "—";
+    const gf = !f.webfont && !f.intro;
+    const diff = instName(f);
+    return `<div class="m-sec" id="nameSec"><h3>설치 후 보이는 이름 <span class="note">— 프로그램마다 달라요</span></h3>
+      ${diff ? `<p class="nm-diff">LETSUM 표기 <b>${esc(f.name)}</b> ≠ 설치 후 이름 <b>${esc(diff)}</b> — 글꼴 목록에서는 오른쪽 이름으로 찾으세요.</p>` : ""}
+      <div class="adm-scroll"><table class="spec nm-table"><tr><th>굵기</th><th>Windows 앱 글꼴 목록<small>워드·한글·파워포인트</small></th><th>Mac 서체 관리자 · 포토샵<small>글꼴 / 스타일</small></th><th>포토샵 '글꼴 누락' 창<small>PostScript 이름 · 인쇄소 납품</small></th></tr>
+        ${W.map(([w, v]) => `<tr><td><b>${WN[w] || w}</b> <span class="note">${w}</span></td><td>${cp(v.win)}${v.winEn && v.winEn !== v.win ? `<div class="note">영문 Windows: ${esc(v.winEn)}</div>` : ""}</td><td>${cp(v.fam)} <span class="note">/ ${esc(v.sty)}</span>${v.famEn && v.famEn !== v.fam ? `<div class="note">영문 표시: ${esc(v.famEn)}</div>` : ""}</td><td>${cp(v.ps)}</td></tr>`).join("")}
+      </table></div>
+      <ul class="nm-notes">
+        ${n.noKoWin ? `<li>이 파일에는 Windows용 한국어 이름이 없어, 한국어 Windows에서도 <b>${esc(n.famEn)}</b>(영문)으로 보입니다.</li>` : ""}
+        ${n.file ? `<li>배포처에서 받은 파일 이름: <code>${esc(n.file)}</code></li>` : ""}
+        <li>웹(CSS)에서 설치된 글꼴을 쓸 때: <code>font-family: '${esc(n.famEn)}'</code> · 포토샵 영문 표시 설정('글꼴 이름을 영어로 표시')을 켜면 영문 이름으로 보입니다.</li>
+        <li class="note">${gf ? "Google Fonts에서 받은 파일 기준입니다. 같은 폰트라도 다른 배포처 파일은 이름이 다를 수 있습니다. " : ""}폰트 파일 속 이름표에서 읽은 값입니다. Mac 이름은 macOS(한국어)로 확인했고, Windows·Adobe 표시는 일반적인 규칙 기준입니다.</li>
+      </ul></div>`;
+  }
   function proofLines(f, dl, E, note) {
     const L = licInfo(f);
     return [
@@ -885,6 +935,7 @@
       `원 배포처: ${dl.page}`,
       dl.zip ? `직접 다운로드: ${dl.zip}` : "직접 다운로드: 제공 안 함 — 원 배포처에서 받으세요",
       `LETSUM 페이지: https://letsum.app/font/${f.id}.html`,
+      ...(NAMES[f.id] ? ["", "설치 후 보이는 이름(폰트 파일 기준):", `  - Mac 서체 관리자·포토샵: ${NAMES[f.id].fam}${NAMES[f.id].famEn !== NAMES[f.id].fam ? ` (영문 ${NAMES[f.id].famEn})` : ""}`, ...Object.entries(NAMES[f.id].w || {}).map(([w, v]) => `  - ${WN[w] || w}: Windows 목록 '${v.win}' · PostScript '${v.ps}'`), ...(NAMES[f.id].file ? [`  - 받은 파일 이름: ${NAMES[f.id].file}`] : [])] : []),
       ...(note ? [`선택 이유(메모): ${note}`] : []),
     ];
   }
@@ -964,6 +1015,8 @@
       <div class="m-sec"><h3>비슷한 분위기</h3>
         <div class="simrow">${similar(f, 3).map((r) => (ensureFace(r.x), r)).map(({ x: s, why }) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-weight:${wOf(s)};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span><span class="sim-why">${why.slice(0, 4).map((w) => `<i>${esc(w)}</i>`).join("")}</span></button>`).join("") || '<span class="note">겹치는 태그가 충분한 폰트가 없습니다.</span>'}</div>
         <p class="note" style="margin-top:8px">LETSUM이 정리한 분류·모양·분위기·용도 태그가 많이 겹치는 순입니다(같은 제작사는 1종만). 글자 모양이 똑같다는 뜻은 아닙니다.</p></div>`}
+
+      ${f.intro ? "" : namesSec(f)}
 
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">
@@ -1067,6 +1120,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll("[data-tp]").forEach((b) => b.addEventListener("click", () => { pv.textContent = TEXT_PRESETS.find((p) => p.id === b.dataset.tp).t; }));
     modal.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#" + b.dataset.copy).textContent); } catch (e) {} b.textContent = "복사됨 ✓"; setTimeout(() => (b.textContent = "복사"), 1500); }));
     modal.querySelectorAll(".simcard[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+    modal.querySelectorAll("[data-cp]").forEach((b) => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText(b.dataset.cp); b.classList.add("done"); setTimeout(() => b.classList.remove("done"), 1200); } catch (e) {} }));
     commonBind();
     $("#cmpBtn").addEventListener("click", () => { toggleCmp(f.id); openDetail(f.id); });
   }
@@ -1293,6 +1347,7 @@ import "@fontsource/${f.id}/400.css";</pre>
             <dt>굵기</dt><dd>${f.weightsUnknown ? "배포처 확인" : `${f.weights.length}종 · ${f.weights.map((w) => WNAME[w] || w).join(", ")}`}</dd>
             <dt>글자</dt><dd>${esc(f.glyphs)}</dd>
             <dt>라이선스</dt><dd>${esc(licInfo(f).short)}</dd>
+            ${instName(f) ? `<dt>설치 후 이름</dt><dd>${esc(instName(f))}</dd>` : ""}
           </dl>
           <div class="sp-lic">${L.map((c) => `<span class="${f.matrix[c.key]}">${c.label}${licIc(f.matrix[c.key])}</span>`).join("")}</div>
           <div class="sp-tags">${f.mood.map((m) => `#${esc(m)}`).join(" ")} · #${esc(f.category)}</div>
@@ -1546,7 +1601,9 @@ import "@fontsource/${f.id}/400.css";</pre>
   // 브랜드 테마를 먼저 받아(최대 0.8초) 히어로를 그린다 — 늦거나 실패하면 기본 색으로
   const getJSON = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok && (r.headers.get("content-type") || "").includes("json") ? r.json() : {})).catch(() => ({}));
   const brandLoad = Promise.all([getJSON("data/brand_auto.json"), getJSON("/api/brand")]).then(([a, b]) => { BRAND_AUTO = a || {}; BRAND_ADMIN = b || {}; });
-  Promise.race([brandLoad, new Promise((r) => setTimeout(r, 800))]).then(renderNew);
+  Promise.race([Promise.all([brandLoad, namesLoad]), new Promise((r) => setTimeout(r, 800))]).then(renderNew);
+  // 이름표가 늦게 오면 카드·열린 상세를 다시 그림
+  namesLoad.then(() => { render(); const m = location.hash.match(/^#f=([\w-]+)/); if (m && overlay.classList.contains("open") && $("#nameSec")) openDetail(m[1]); });
   render();
   renderTray();
   openFromHash(); openSharedFromHash(); checkFavChanges();

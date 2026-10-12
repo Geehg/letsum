@@ -14,7 +14,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=46">
+<link rel="stylesheet" href="css/style.css?v=47">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -31,7 +31,8 @@
       <button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button>
     </nav>
     <div class="sp"></div>
-    <label class="hd-search"><span aria-hidden="true">⌕</span><input id="qTop" type="search" placeholder="폰트명·제작자·태그 (초성 ㄱㅇㄷㄷ 가능)" aria-label="폰트 검색"></label>
+    <label class="hd-search"><span aria-hidden="true">⌕</span><input id="qTop" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
+      <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></label>
     <button class="icon-btn" id="themeBtn" aria-label="밝기 전환" title="밝기 전환">◐</button>
   </div>
 </header>
@@ -198,6 +199,6 @@
 </footer>
 
 <script src="js/data.js?v=9"></script>
-<script src="js/main.js?v=35"></script>
+<script src="js/main.js?v=36"></script>
 </body>
 </html>

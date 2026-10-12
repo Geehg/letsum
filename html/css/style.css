@@ -1059,3 +1059,29 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .pj-newcard:only-child input{flex:1;width:auto;min-width:200px}
 .pj-newcard:only-child .btn{margin-top:0}
 @media(max-width:760px){.pj-head{flex-wrap:wrap}.pj-head .pj-name{flex:1 1 calc(100% - 40px);font-size:20px}.pj-head .en{width:100%}}
+
+/* 설치 후 이름: 검색 안내 · 결과 위 안내 · 카드 · 상세 표 */
+.hd-search{position:relative}
+.hd-search input{width:250px}
+.q-hint{display:none;position:absolute;z-index:60;top:calc(100% + 6px);left:-1px;width:min(360px,86vw);background:var(--paper);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:11px 13px;font-size:12.5px;line-height:1.75;color:var(--ink2)}
+.q-hint b{display:block;color:var(--ink);font-size:13px;margin-bottom:2px}
+.q-hint code{font:600 11.5px var(--mono);background:var(--paper2);border:1px solid var(--rule2);padding:0 4px;white-space:nowrap}
+.hd-search:focus-within:has(input:placeholder-shown) .q-hint{display:block}
+@media(max-width:1060px){.hd-search input{width:150px}}
+.name-hit{border:1.5px solid var(--ink);background:var(--lime);color:var(--lime-ink);padding:10px 14px;margin:0 0 14px;display:flex;flex-direction:column;gap:4px}
+.name-hit p{margin:0;font-size:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.name-hit .nh-k{font-size:11.5px;font-weight:700;opacity:.75}
+.name-hit code{font:700 13px var(--mono);background:rgba(255,255,255,.55);padding:1px 6px}
+.name-hit .linklike{color:inherit}
+.name-hit small{font-size:11.5px;opacity:.75}
+.inst{display:block;font-size:11.5px;color:var(--ink3);margin-top:3px;font-weight:400}
+.inst b{color:var(--ink2);font-weight:700}
+.nm-diff{background:#fdf6e3;border-left:3px solid #e2b85c;padding:8px 12px;font-size:13.5px;margin:0 0 10px;color:#6b4a00}
+.nm-table th{font-size:12.5px;vertical-align:bottom}
+.nm-table th small{display:block;font-weight:400;color:var(--ink3);font-size:11px}
+.nm-table td{vertical-align:top;font-size:13.5px}
+.nm-cp{font:inherit;font-size:13.5px;text-align:left;border-bottom:1px dashed var(--ink3);padding:0;color:var(--ink);cursor:copy;word-break:break-all}
+.nm-cp:hover{background:var(--lime);color:var(--lime-ink)}
+.nm-cp.done::after{content:" 복사됨";font-size:11px;color:#1f6b36}
+.nm-notes{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink2)}
+.nm-notes code{font:12px var(--mono);background:var(--paper2);padding:0 4px}

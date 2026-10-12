@@ -134,3 +134,8 @@ img.save("sample.png")
 - 우선순위: 관리자 저장(D1 `brand_themes`, `/api/brand`, off 가능) > main.js `BRAND` 기본 등록 > 자동 추천(`html/data/brand_auto.json`, 확인 전에도 게시) > 분위기 팔레트.
 - 자동 추천: `tools/extract_brand.py` (AI 없음 — theme-color·CSS 변수·CSS 빈도·og:image 색, 대비 계산). 매주 watch-sources에서 실행. 여러 제작사가 쓰는 배포 플랫폼 도메인(공유마당 등)과 robots.txt 차단 사이트는 건너뜀 — 필요하면 data.js에 `brandPage`로 제작사 페이지 지정.
 - 관리자 화면 `admin.html` → '히어로 테마' 탭에서 색·표현(기본/스티커/그림자)·문구·강조 글자 수 저장. admin.js의 SPOT_PAL/LAYOUT/LINES/BUILTIN은 main.js와 같게 유지할 것.
+
+## 설치 후 보이는 이름 (2026-10-13)
+- `tools/build_names.py`(fontTools) — 미리보기·공식 웹폰트 파일, Google Fonts는 google/fonts 원본 TTF의 name 테이블을 읽어 `html/data/names.json` 생성. 캐시 `tools/state/names_cache.json`(주소별). 매주 watch-sources에서 실행.
+- 규칙: Windows 앱 목록 = Windows 기록 nameID1(한국어 우선) · Mac 서체 관리자/Adobe = nameID16→1 + 17→2 · 포토샵 '글꼴 누락' = PostScript(nameID6). Mac 규칙은 CoreText(macOS 한국어)로 표본 검증함.
+- 사이트: 검색이 모든 이름으로 찾음(결과 위 라임 안내), 카드·히어로 '설치 후 이름'(LETSUM 표기와 다를 때만), 상세 '설치 후 보이는 이름' 표(복사), 확인 기록 txt, 정적 font/*.html.
