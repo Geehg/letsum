@@ -731,11 +731,12 @@
         <div class="t-row"><span>크기</span><input type="range" id="cSize" min="14" max="120" value="${t.size}"><b id="cSizeV">${t.size}px</b>
           <span>자간</span><input type="range" id="cLs" min="-5" max="20" value="0"><b id="cLsV">0px</b>
           <span>행간</span><input type="range" id="cLh" min="110" max="220" value="140"><b id="cLhV">140%</b>
-          <button class="tbtn${t.inv ? " on" : ""}" id="cInv">■ 반전</button></div>
+          <button class="tbtn${t.inv ? " on" : ""}" id="cInv">■ 반전</button>
+          <button class="tbtn" id="cNorm" title="폰트마다 같은 크기 값이라도 실제로 보이는 글자 높이가 다릅니다. 한글 글자 높이를 재서 눈에 보이는 크기를 맞춥니다.">눈에 보이는 크기 맞춤</button></div>
       </div>
       <div class="cmp" style="grid-template-columns:repeat(${Math.min(list.length, 4)},1fr)">${list.map((f) => `
         <div class="col${t.inv ? " inv" : ""}" data-cid="${f.id}">
-          <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>
+          <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span><span class="norm-k" data-normk></span></div>
           <div class="pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${t.size}px;line-height:1.4">${pvText(f)}</div>
           <div class="r-weights" style="font-family:${f.family};opacity:1">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>
           ${covTags(f)}
@@ -746,7 +747,19 @@
     $("#mx").addEventListener("click", closeModal);
     const pvs = $$(".cmp .pv");
     $("#cText").addEventListener("input", (e) => { const v = e.target.value; pvs.forEach((p) => { p.textContent = v || FONTS.find((x) => x.id === p.closest("[data-cid]").dataset.cid).name; }); });
-    $("#cSize").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.fontSize = e.target.value + "px")); $("#cSizeV").textContent = e.target.value + "px"; });
+    // 눈에 보이는 크기 맞춤: 각 폰트로 '가나다라'를 그려 잉크 높이를 재고, 가운데값에 맞춰 글자 크기를 비례 조정(브라우저 측정)
+    let norm = false, ratio = {};
+    const inkH = (fam, w) => { const c = document.createElement("canvas"); c.width = 520; c.height = 200; const x = c.getContext("2d", { willReadFrequently: true });
+      x.font = `${w} 120px ${fam}`; x.textBaseline = "top"; x.fillText("가나다라", 10, 30); const d = x.getImageData(0, 0, 520, 200).data;
+      let top = -1, bot = -1; for (let y = 0; y < 200; y++) { for (let i = 0; i < 520; i++) if (d[(y * 520 + i) * 4 + 3] > 100) { if (top < 0) top = y; bot = y; break; } } return top < 0 ? 0 : bot - top + 1; };
+    async function measureNorm() {
+      await Promise.all(list.map((f) => Promise.race([document.fonts.load(`${wOf(f)} 120px ${f.family.split(",")[0]}`, "가나다라").catch(() => {}), new Promise((r) => setTimeout(r, 3000))])));
+      const hs = list.map((f) => inkH(f.family.split(",")[0], wOf(f))); const ok = hs.filter(Boolean).sort((a, b) => a - b); const mid = ok[Math.floor(ok.length / 2)] || 1;
+      list.forEach((f, i) => (ratio[f.id] = hs[i] ? mid / hs[i] : 1));
+    }
+    const applySize = () => { const v = +$("#cSize").value; pvs.forEach((p) => { const id = p.closest("[data-cid]").dataset.cid; const k = norm ? ratio[id] || 1 : 1; p.style.fontSize = (v * k).toFixed(1) + "px"; const lab = p.closest("[data-cid]").querySelector("[data-normk]"); if (lab) lab.textContent = norm && Math.abs(k - 1) > 0.01 ? `크기 ×${k.toFixed(2)}` : ""; }); $("#cSizeV").textContent = v + "px"; };
+    $("#cSize").addEventListener("input", applySize);
+    $("#cNorm").addEventListener("click", async (e) => { const btn = e.currentTarget; norm = !norm; btn.classList.toggle("on", norm); if (norm && !Object.keys(ratio).length) { btn.textContent = "재는 중…"; await measureNorm(); btn.textContent = "눈에 보이는 크기 맞춤"; } applySize(); });
     $("#cLs").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.letterSpacing = e.target.value + "px")); $("#cLsV").textContent = e.target.value + "px"; });
     $("#cLh").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.lineHeight = e.target.value + "%")); $("#cLhV").textContent = e.target.value + "%"; });
     $("#cInv").addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); $$(".cmp .col").forEach((c) => c.classList.toggle("inv")); });
