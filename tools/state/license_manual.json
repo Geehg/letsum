@@ -191,5 +191,17 @@
   "evidence": "우아한형제들 공식 '배달의민족 글꼴 라이센스 정책'(woowahan.com/fonts/license): SIL OFL 1.1, Reserved Font Name 지정(BM HANNA·BMEULJIRO 등), 수정·영리 사용 허용, 파일 유료 판매 금지. 예약 이름 때문에 LETSUM은 변환하지 않고 공식 서버의 원본 TTF를 그대로 미리보기에 사용",
   "page": "https://www.woowahan.com/fonts/license",
   "checked": "2026-10-12"
+ },
+ "k-gabia-bombaram": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288265) 이용조건 OFL 표시. 가비아 공식 다운로드 페이지 '가비아 무료 글꼴을 자유롭게 사용하세요'. 폰트 파일에 예약 글꼴 이름 없음 → WOFF2 형식 변환만(글리프 무변경)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288265&menuNo=200023",
+  "checked": "2026-10-12"
+ },
+ "k-gabia-napjakblock": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지(wrtSn=13288264) 이용조건 OFL 표시. 가비아 공식 다운로드 페이지 '가비아 무료 글꼴을 자유롭게 사용하세요'. 폰트 파일에 예약 글꼴 이름 없음 → WOFF2 형식 변환만(글리프 무변경)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288264&menuNo=200023",
+  "checked": "2026-10-12"
  }
 }

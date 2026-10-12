@@ -1464,6 +1464,22 @@
   "page": "https://www.woowahan.com/fonts/license"
  },
  {
+  "id": "k-gabia-bombaram",
+  "name": "가비아 봄바람체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288265) 이용조건 OFL 표시. 가비아 공식 다운로드 페이지 '가비아 무료 글꼴을 자유롭게 사용하세요'. 폰트 파일에 예약 글꼴 이름 없음 → WOFF2 형식 변환만(글리프 무변경)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288265&menuNo=200023"
+ },
+ {
+  "id": "k-gabia-napjakblock",
+  "name": "가비아 납작블럭체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공유마당 저작물 페이지(wrtSn=13288264) 이용조건 OFL 표시. 가비아 공식 다운로드 페이지 '가비아 무료 글꼴을 자유롭게 사용하세요'. 폰트 파일에 예약 글꼴 이름 없음 → WOFF2 형식 변환만(글리프 무변경)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288264&menuNo=200023"
+ },
+ {
   "id": "k-gs-hyejaroun",
   "name": "GS혜자로운체",
   "expected": "GS혜자로운체 이용조건",

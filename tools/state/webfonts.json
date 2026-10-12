@@ -4313,5 +4313,31 @@
   "bytes": 306664,
   "catalog_key": "원주체",
   "source": "원주시 공식 배포 파일(cts_6554_file02/03.zip), 라이선스: 원주체 가이드라인 28쪽 OFL 1.1"
+ },
+ "k-gabia-bombaram": {
+  "name": "가비아 봄바람체",
+  "en": "Gabia Bombaram",
+  "license": "OFL",
+  "weights": [
+   400
+  ],
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gabia-bombaram/400.woff2"
+  },
+  "source": "가비아 공식 다운로드(static.gabia.com) OTF → WOFF2 형식 변환"
+ },
+ "k-gabia-napjakblock": {
+  "name": "가비아 납작블럭체",
+  "en": "Gabia NapjakBlock",
+  "license": "OFL",
+  "weights": [
+   400
+  ],
+  "rfn": false,
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gabia-napjakblock/400.woff2"
+  },
+  "source": "가비아 공식 다운로드(static.gabia.com) OTF → WOFF2 형식 변환"
  }
 }
