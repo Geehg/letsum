@@ -965,3 +965,9 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 /* 브랜드 테마 스타일: 그림자(강조색으로 밀린 그림자) */
 .sp-st-shadow .sp-title{text-shadow:.055em .055em 0 var(--ac)}
 .sp-st-shadow .sp-ac{color:var(--fg)}
+
+/* 맥락 · 영상 자막: 인터뷰 장면 배경(여성·남성 번갈아, 원본보다 10% 어둡게 저장) + 반투명 자막 박스 */
+.mock.sub{background:#555 url(../img/ctx/sub-w.webp) center 30%/cover no-repeat}
+.ctxcard:nth-child(4n+2) .mock.sub,.ctxcard:nth-child(4n+3) .mock.sub{background-image:url(../img/ctx/sub-m.webp)}
+.mock.sub .bar{background:rgba(0,0,0,.7)}
+@media(max-width:760px){.ctxcard:nth-child(n) .mock.sub{background-image:url(../img/ctx/sub-w.webp)}.ctxcard:nth-child(even) .mock.sub{background-image:url(../img/ctx/sub-m.webp)}}
