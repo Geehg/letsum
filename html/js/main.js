@@ -982,7 +982,8 @@
         <table class="matrix">
           <tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>
           ${LICENSE_CATS.map((c) => `<tr><td><b>${c.label}</b></td><td>${c.key === "ofl" ? esc(licInfo(f).note) : c.desc}</td><td>${st(f.matrix[c.key])}</td></tr>`).join("")}
-        </table></div>
+        </table>
+        <p class="note" style="margin-top:8px"><a class="linklike" href="subset.html?f=${f.id}">이 폰트를 내 웹사이트에 넣는 코드 만들기 →</a></p></div>
 
       <div class="m-sec"><h3>받기</h3>
         <div class="dlrow">

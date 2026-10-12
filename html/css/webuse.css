@@ -1,0 +1,59 @@
+/* 웹폰트 코드 만들기 */
+.wu{max-width:880px}
+.wu .lead{margin-bottom:26px}
+.wu-step{border:1.5px solid var(--ink);background:var(--paper);padding:20px 22px 22px;margin:0 0 18px}
+.wu-step h2{display:flex;align-items:center;gap:10px;margin:0 0 16px;padding:0;border:0;font-size:18px}
+.wu-n{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);display:inline-flex;align-items:center;justify-content:center;font:700 14px/1 var(--mono);flex:none}
+.wu-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.wu-field>label{font-size:13.5px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:8px}
+.wu-field select,.wu-field textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15px;color:var(--ink);background:var(--paper2);border:1.5px solid var(--rule2);padding:11px 12px;border-radius:0}
+.wu-field select:focus,.wu-field textarea:focus{outline:none;border-color:var(--ink);background:var(--paper);box-shadow:0 0 0 3px color-mix(in srgb,var(--lime) 70%,transparent)}
+.wu-field textarea{resize:vertical;line-height:1.55;min-height:84px}
+.wu-hint{font-size:12.5px !important;color:var(--ink3) !important;margin:0 !important;line-height:1.55 !important}
+.wu-cnt{font:500 12px var(--mono);color:var(--ink3)}
+.wu-pv{border:1px dashed var(--rule2);background:var(--paper2);padding:18px;font-size:clamp(26px,4vw,40px);line-height:1.25;word-break:keep-all;min-height:56px;margin-bottom:14px;overflow:hidden}
+.wu-noprev{font-size:14px;color:var(--ink3)}
+.wu-lic{border-top:1px solid var(--rule2);padding-top:12px;display:flex;flex-direction:column;gap:6px}
+.wu-lic-h{font-size:14px;margin-bottom:4px}
+.wu-li{display:grid;grid-template-columns:96px 92px 1fr;gap:10px;align-items:center;font-size:13.5px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.wu-li-k{font-weight:700}
+.wu-li-v{display:inline-flex;align-items:center;gap:4px;font-weight:700;padding:2px 9px;border-radius:999px;justify-self:start;font-size:12.5px}
+.wu-li-v .lic-ic{margin:0}
+.wu-li.ok .wu-li-v{background:#e3f4e8;color:#1f6b36}
+.wu-li.cond .wu-li-v{background:#fdf1d8;color:#8a5a00}
+.wu-li.no .wu-li-v{background:#fde4e1;color:#a5281b}
+.wu-li-d{color:var(--ink3);font-size:12.5px}
+.wu-warn,.wu-stop,.wu-warn-li{display:flex;gap:8px;align-items:flex-start;font-size:13.5px !important;line-height:1.55;padding:10px 12px;margin:6px 0 0 !important;background:#fdf6e3;color:#6b4a00 !important;border-left:3px solid #e2b85c}
+.wu-stop,.wu-warn-li{background:#fdecea;color:#8a1f12 !important;border-left-color:#d9534f}
+.wu-warn .lic-ic,.wu-stop .lic-ic,.wu-warn-li .lic-ic{margin:2px 0 0;flex:none}
+.wu-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.wu-mode{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 14px 14px 42px;border:1.5px solid var(--rule2);cursor:pointer;background:var(--paper2)}
+.wu-mode input{position:absolute;left:14px;top:16px;width:18px;height:18px;accent-color:var(--ink);margin:0}
+.wu-mode b{font-size:15px}
+.wu-mode span{font-size:12.5px;color:var(--ink3);line-height:1.5}
+.wu-mode.on{border-color:var(--ink);background:var(--paper);box-shadow:inset 0 0 0 1px var(--ink)}
+.wu-mode:hover{border-color:var(--ink)}
+.wu-row{display:grid;grid-template-columns:1fr 140px;gap:14px;align-items:start}
+.wu-go{min-width:180px;font-size:15px;padding:12px 20px}
+.wu-go:disabled{opacity:.4;cursor:not-allowed}
+.wu-code{border:1.5px solid var(--ink);margin:0 0 14px;background:var(--paper)}
+.wu-code-h{display:flex;justify-content:space-between;align-items:center;padding:8px 10px 8px 14px;border-bottom:1px solid var(--rule2);font-size:13.5px}
+.wu-code pre{margin:0;background:#15151a;color:#e9e9e2;padding:14px 16px;font:12.5px/1.65 var(--mono);white-space:pre-wrap;word-break:break-all;max-height:320px;overflow:auto}
+.wu-code>.wu-hint{padding:8px 14px 10px}
+.wu-code code{font:inherit;background:none;color:inherit}
+.wu-size{border:1px solid var(--rule2);padding:14px;margin-top:4px}
+.wu-bars{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.wu-bars>div{display:grid;grid-template-columns:96px 1fr 64px 64px;gap:10px;align-items:center;font-size:13px}
+.wu-bars i{display:block;height:14px;background:var(--rule2)}
+.wu-bars .on i{background:var(--lime);outline:1px solid var(--lime-ink)}
+.wu-bars b{font-family:var(--mono);text-align:right}
+.wu-bars small{color:var(--ink3);font-size:11.5px}
+.wu-sub{font-size:15px;margin:22px 0 6px}
+.wu-lead2{font-size:14.5px !important;margin:0 0 10px !important}
+.wu-steps{display:flex;flex-direction:column;gap:12px;padding-left:20px !important;margin:6px 0 0 !important}
+.wu-steps>li{font-size:14px}
+.wu-steps .wu-warn-li{margin-left:-20px !important}
+.wu-faq{border-top:1px solid var(--rule2);padding:12px 0}
+.wu-faq summary{cursor:pointer;font-weight:700;font-size:14.5px}
+.wu-faq p{margin:8px 0 0}
+@media(max-width:640px){.wu-step{padding:16px}.wu-modes,.wu-row{grid-template-columns:1fr}.wu-li{grid-template-columns:80px 1fr;}.wu-li-d{grid-column:1/-1}.wu-bars>div{grid-template-columns:76px 1fr 54px}.wu-bars small{display:none}}
