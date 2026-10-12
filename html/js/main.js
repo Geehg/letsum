@@ -605,6 +605,7 @@
       </form>
     </article>`;
   }
+  let lastScroll = 0; addEventListener("scroll", () => { lastScroll = Date.now(); }, { passive: true });
   const canHover = matchMedia("(hover:hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
   function bindCarousel(m) {
     if (m.dataset.bound) return; m.dataset.bound = "1";
@@ -613,8 +614,15 @@
     if (canHover) {
       let t = null, t0 = null; const card = m.closest(".ig") || m;
       const step = () => { const n = tr.children.length; if (n < 2) return; const k = Math.round(tr.scrollLeft / tr.clientWidth); tr.scrollTo({ left: ((k + 1) % n) * tr.clientWidth, behavior: "smooth" }); };
-      card.addEventListener("mouseenter", () => { clearInterval(t); clearTimeout(t0); t = setInterval(step, 1600); t0 = setTimeout(step, 450); });
-      card.addEventListener("mouseleave", () => { clearInterval(t); clearTimeout(t0); t = t0 = null; });
+      // 0.7초 이상 머물 때만 시작(스크롤하며 스치는 것은 무시), 떠나면 첫 장으로 돌아간다
+      card.addEventListener("mouseenter", () => {
+        clearInterval(t); clearTimeout(t0);
+        t0 = setTimeout(() => { if (Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, 1600); }, 700);
+      });
+      card.addEventListener("mouseleave", () => {
+        clearInterval(t); clearTimeout(t0); t = t0 = null;
+        tr.scrollTo({ left: 0, behavior: "smooth" }); // 진행 중인 넘김도 취소하고 첫 장으로
+      });
     }
     const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
     m.addEventListener("click", (e) => { const b = e.target.closest(".ig-nav"); if (b) go(b.classList.contains("prev") ? -1 : 1); });
