@@ -995,5 +995,65 @@
   "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
   "page": "https://hangeul.naver.com/font",
   "checked": "2026-10-13"
+ },
+ "k-nexon-lv1-gothic": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-lv2-gothic": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-bazzi": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-football-gothic": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-maplestory": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-dnf-bitbit-v2": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-dnf-forged-blade": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-warhaven": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-nexon-kart-gothic": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
+ },
+ "k-mabinogi-classic": {
+  "license": "넥슨 서체 이용조건",
+  "evidence": "넥슨 브랜드 가이드 Typeface FAQ: '서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다(상업적인 용도로 사용 가능). 단, 임의로 폰트 파일을 수정 편집하여 재배포할 수 없습니다' · '다른 소프트웨어와 번들하거나 임베디드 폰트로 사용' 가능, 글꼴 유료 판매 금지 — LETSUM은 공식 OTF를 변경 없이 미리보기에만 사용(유료 서체 KlavikaNX 제외)",
+  "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+  "checked": "2026-10-13"
  }
 }

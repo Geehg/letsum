@@ -1134,8 +1134,12 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .bk-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
 .bk-dots button{width:7px;height:7px;border-radius:50%;background:var(--rule2);padding:0}
 .bk-dots button.on{background:var(--ink);width:18px;border-radius:4px}
-/* 넓은 화면: 콘텐츠 오른쪽 바깥에 떠 있는 배너 / 좁으면 왼쪽 필터 맨 아래 */
-#bookRail{position:fixed;z-index:30;bottom:24px;right:max(12px,calc((100vw - 1280px) / 2 - 204px))}
-@media(max-width:1679px){#bookRail{position:static;margin:18px 0 0}#bookRail .bk{width:auto}}
-@media(max-width:1060px){#bookRail{display:none}}
+/* 오른쪽 세로 배너: 본문 오른쪽 전용 칸(스크롤해도 따라옴) · 좁은 화면에서는 숨김 */
+#bookRail{display:none}
+@media(min-width:1200px){
+  .body{grid-template-columns:232px minmax(0,1fr) 200px}
+  #bookRail{display:block;position:sticky;top:calc(var(--hd) + 113px);align-self:start;padding:22px 0 0 18px}
+  #bookRail .bk{width:auto}
+}
 body.feed-mode #bookRail{display:none}
+body.feed-mode .body{grid-template-columns:minmax(0,1fr)}
