@@ -1218,6 +1218,11 @@ import "@fontsource/${f.id}/400.css";</pre>
     "귀여운": ["#ffd6e0", "#3a1a26", "#ff4f8b"], "따뜻한": ["#f6e3cf", "#3a2414", "#d9632b"], "차분한": ["#dfe7f1", "#14213d", "#2f6db5"],
     "단정한": ["#f4f4f1", "#15151a", "#2f6db5"], "고전적": ["#f1eadb", "#2a2015", "#8b2e1f"],
   };
+  // 브랜드 테마: 제작사 공식 소개 페이지의 색·표현을 따른 폰트별 히어로(사람이 확인 후 등록). 없으면 분위기 팔레트
+  // split: 제목 앞부분 글자 수만큼 강조색 · style: sticker(흰 외곽선 스티커) | plain
+  const BRAND = {
+    "k-gs-hyejaroun": { bg: "#b4e3fa", fg: "#0b2c8a", ac: "#1769f0", acInk: "#ffffff", split: 2, style: "sticker", line: ["어제의 혜자보다 오늘 더 혜자롭게", "혜자로운 이야기"], src: "hyejaroun.com" },
+  };
   const SPOT_LAYOUT = { "디스플레이": "poster", "명조": "editorial", "손글씨": "note", "고딕": "grid" };
   const SPOT_LINES = {
     poster: ["이걸 몰랐다고?", "오늘의 한 줄, 크게"], editorial: ["책을 읽는 시간은 언제나 옳다", "고요한 문장 사이로 계절이 지나간다"],
@@ -1238,14 +1243,16 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function spotHTML(f, k, week) {
     const lay = SPOT_LAYOUT[f.category] || "grid";
-    const [bg, fg, ac] = SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
+    const B = BRAND[f.id];
+    const [bg, fg, ac] = B ? [B.bg, B.fg, B.ac] : SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
     const dl = dlFor(f); const L = LICENSE_CATS.filter((c) => c.key !== "ofl");
     const heavy = f.weights[f.weights.length - 1];
+    const nm = [...f.name];
     const title = f.intro
       ? (f.specimen ? `<img class="sp-spec" src="${f.specimen}" alt="${esc(f.name)} 견본">` : `<span class="sp-noprev">${esc(f.name)}</span>`)
-      : esc(f.name);
-    const line = SPOT_LINES[lay][k % 2];
-    return `<article class="sp sp-${lay}${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:${bg};--fg:${fg};--ac:${ac}" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
+      : B && B.split ? `<span class="sp-ac">${esc(nm.slice(0, B.split).join(""))}</span>${esc(nm.slice(B.split).join(""))}` : esc(f.name);
+    const line = B && B.line ? B.line[k % B.line.length] : SPOT_LINES[lay][k % 2];
+    return `<article class="sp sp-${lay}${B ? " sp-brand sp-st-" + (B.style || "plain") : ""}${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:${bg};--fg:${fg};--ac:${ac}${B && B.acInk ? ";--ac-ink:" + B.acInk : ""}" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
       ${lay === "poster" && !f.intro ? `<div class="sp-marquee" aria-hidden="true" style="font-family:${f.family};font-weight:${heavy}"><span>${esc((f.name + " · ").repeat(8))}</span><span>${esc((f.name + " · ").repeat(8))}</span></div>` : ""}
       <div class="wrap sp-in">
         <div class="sp-main">

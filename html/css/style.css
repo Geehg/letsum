@@ -624,7 +624,7 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .sp-cta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
 .sp-btn{font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px;border:1.5px solid currentColor;color:var(--fg);background:transparent;text-decoration:none;cursor:pointer}
 .sp-btn:hover{background:var(--fg);color:var(--bg)}
-.sp-btn.ac{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+.sp-btn.ac{background:var(--ac);border-color:var(--ac);color:var(--ac-ink,var(--bg))}
 .sp-btn.ac:hover{filter:brightness(1.08)}
 .sp-chip{font-size:12px;padding:4px 10px;border:1px dashed currentColor;border-radius:999px;opacity:.8}
 .sp-side{align-self:center;border-left:1.5px solid currentColor;padding-left:22px;display:flex;flex-direction:column;gap:14px;font-size:13.5px}
@@ -954,3 +954,10 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 /* 피드 카드: 떠날 때 되감기 대신 살짝 사라졌다 첫 장으로 */
 .ig-track{transition:opacity .18s ease}
 .ig-track.ig-fade{opacity:0}
+
+/* 브랜드 테마(제작사 소개 페이지 스타일) — 스티커: 굵은 흰 외곽선 + 옅은 그림자, 제목 앞부분 강조색 */
+.sp-brand .sp-title{color:var(--fg)}
+.sp-brand .sp-ac{color:var(--ac)}
+.sp-st-sticker .sp-title{-webkit-text-stroke:.16em #fff;paint-order:stroke fill;filter:drop-shadow(0 .05em .06em rgba(11,44,138,.18));padding:.06em .04em}
+.sp-st-sticker .sp-marquee{color:#fff;opacity:.4}
+.sp-st-sticker .sp-type{font-weight:700}
