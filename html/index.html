@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=49">
+<link rel="stylesheet" href="css/style.css?v=50">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 라틴 짝꿍 + 제목용 세리프 -->
@@ -54,7 +54,7 @@
   <div class="wrap">
     <div class="body-panel" id="bodyPanel" hidden>
       <label class="bp-k" for="bodyText">내 원고(본문)</label>
-      <textarea id="bodyText" rows="3" maxlength="3000" placeholder="책·학습지 본문을 붙여 넣으면 책 본문 맥락의 긴 글에 그대로 적용됩니다 (최대 3,000자 · 이 브라우저에만 저장)"></textarea>
+      <textarea id="bodyText" rows="3" maxlength="3000" placeholder="책·학습지 본문을 붙여 넣으면 책 본문 예시의 긴 글에 그대로 적용됩니다 (최대 3,000자 · 이 브라우저에만 저장)"></textarea>
       <div class="bp-ctl">
         <span>본문 크기</span><input type="range" id="bodySize" aria-label="본문 크기" min="9" max="16" step="0.5" value="11.5"><b id="bodySizeV">11.5px</b>
         <span>행간</span><input type="range" id="bodyLh" aria-label="본문 행간" min="130" max="230" step="5" value="185"><b id="bodyLhV">185%</b>
@@ -90,7 +90,7 @@
       <div class="seg" id="viewSeg">
         <button data-v="list" title="많은 후보를 빠르게 훑기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12M2 8h12M2 13h12"/></svg>목록</button>
         <button data-v="grid" class="on" title="같은 문장으로 여러 폰트 비교"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg>격자</button>
-        <button data-v="ctx" title="책·썸네일·자막 등 쓰임새에 적용해 보기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10"/><path d="M4.5 10.5h7"/></svg>맥락</button>
+        <button data-v="ctx" title="책·썸네일·자막 등 쓰임새에 적용해 보기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10"/><path d="M4.5 10.5h7"/></svg>용도</button>
         <button data-v="feed" title="적용 예시를 넘겨 보며 새 폰트 발견"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.5"/><path d="M6 11.5h4"/></svg>피드</button>
       </div>
       <button class="view-help" id="viewHelp" type="button" aria-label="보기 방식 안내" title="보기 방식 안내">?</button>
@@ -158,10 +158,10 @@
     <section class="vtour" id="vtour" hidden aria-label="보기 방식 안내">
       <div class="vt-head"><b>같은 폰트, 네 가지로 보기</b><span>목적에 맞는 보기를 고르세요. 위 탭에서 언제든 바꿀 수 있어요.</span><button class="vt-x" id="vtourX" type="button" aria-label="안내 닫기">✕</button></div>
       <div class="vt-row">
-        <button class="vt" data-tour="list" type="button"><span class="vt-pic p-list"><i><b>가나다 고딕</b><u></u></i><i><b>바다 명조</b><u></u></i><i><b>봄날 손글씨</b><u></u></i></span><b class="vt-t">목록</b><span class="vt-d">이름·라이선스·굵기를 한 줄씩. 많은 후보를 빠르게 훑고 걸러낼 때</span></button>
-        <button class="vt" data-tour="grid" type="button"><span class="vt-pic p-grid"><i>가</i><i style="font-family:serif">가</i><i style="font-weight:800">가</i><i style="font-style:italic;font-weight:300">가</i></span><b class="vt-t">격자</b><span class="vt-d">내 문장 하나를 여러 폰트로 나란히. 인상을 직접 비교할 때</span></button>
-        <button class="vt" data-tour="ctx" type="button"><span class="vt-pic p-ctx"><i class="c1"><b>오늘의 영상</b></i><i class="c2"><u></u><u></u><u></u></i></span><b class="vt-t">맥락</b><span class="vt-d">썸네일·책 본문·자막·메뉴판에 바로 앉혀 보기. 실제 쓰임새를 확인할 때</span></button>
-        <button class="vt" data-tour="feed" type="button"><span class="vt-pic p-feed"><i><b>새 폰트</b><u></u></i><em>♡ 💬 ↗</em></span><b class="vt-t">피드</b><span class="vt-d">효과 예시·굵기를 넘겨 보며 둘러보기. 마음에 드는 폰트를 발견할 때</span></button>
+        <button class="vt" data-tour="list" type="button"><span class="vt-pic shot"><img src="img/views/list.webp?v=2" alt="목록 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">목록</b><span class="vt-d">이름·라이선스·굵기를 한 줄씩. 많은 후보를 빠르게 훑고 걸러낼 때</span></button>
+        <button class="vt" data-tour="grid" type="button"><span class="vt-pic shot"><img src="img/views/grid.webp?v=2" alt="격자 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">격자</b><span class="vt-d">내 문장 하나를 여러 폰트로 나란히. 인상을 직접 비교할 때</span></button>
+        <button class="vt" data-tour="ctx" type="button"><span class="vt-pic shot"><img src="img/views/ctx.webp?v=2" alt="용도 보기 실제 화면(영상 자막)" loading="lazy" width="480" height="288"></span><b class="vt-t">용도</b><span class="vt-d">썸네일·책 본문·자막·메뉴판에 바로 앉혀 보기. 실제 쓰임새를 확인할 때</span></button>
+        <button class="vt" data-tour="feed" type="button"><span class="vt-pic shot"><img src="img/views/feed.webp?v=2" alt="피드 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">피드</b><span class="vt-d">효과 예시·굵기를 넘겨 보며 둘러보기. 마음에 드는 폰트를 발견할 때</span></button>
       </div>
     </section>
     <div class="active-bar" id="activeBar"></div>
@@ -197,6 +197,6 @@
 
 <script src="js/data.js?v=9"></script>
 <script src="js/report.js?v=6" defer></script>
-<script src="js/main.js?v=39"></script>
+<script src="js/main.js?v=40"></script>
 </body>
 </html>

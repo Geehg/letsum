@@ -1025,7 +1025,7 @@
 
       ${f.intro ? "" : `<div class="m-sec"><h3>쓰임새에서 보기</h3>
         <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
-        <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
+        <p class="note" style="margin-top:8px">목록의 '용도' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
 
       <div class="m-sec"><h3>효과 적용 예시</h3>
         <div class="m-fx">${fxTiles(f, state.text || f.name, 5)}</div>
@@ -1618,6 +1618,8 @@ import "@fontsource/${f.id}/400.css";</pre>
   renderTray();
   openFromHash(); openSharedFromHash(); checkFavChanges();
   // 다른 페이지 헤더에서 온 검색(?q=)·보관함(#vault)
+  const v0 = new URLSearchParams(location.search).get("view"); // 보기 링크: ?view=list|grid|ctx|feed
+  if (["list", "grid", "ctx", "feed"].includes(v0)) setView(v0);
   const q0 = new URLSearchParams(location.search).get("q");
   if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
   if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }
