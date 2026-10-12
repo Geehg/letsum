@@ -852,3 +852,12 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .deck-more{min-width:72px;justify-content:center;white-space:nowrap}
 .deck .d1 .deck-more{display:none}
 @media(max-width:760px){.deck .d1 .deck-more{display:inline-flex}}
+/* 피드 카드: 이름 옆에 사용 범위 배지(항상 보임), 설명 슬라이드에는 소개 문장 전체 */
+.ig-titlerow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;font-size:14px;line-height:1.4}
+.ig-titlerow>b{font-weight:700;color:var(--ink);margin-right:2px}
+.ig-lics{display:flex;flex-wrap:wrap;gap:4px}
+.ig-lics .pill{font-size:10.5px;padding:2px 7px;border-radius:999px}
+.ig-info p{-webkit-line-clamp:unset;display:block;overflow:visible;font-size:max(13px,4.2cqw);line-height:1.7}
+.ig-info{justify-content:flex-start}
+.ig-info .ii-m{margin-top:auto}
+.ig-lics{display:contents}

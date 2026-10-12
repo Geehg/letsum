@@ -541,7 +541,7 @@
     const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
-      <p>${esc(f.desc)}</p><div class="ii-pills">${pills(f)}</div><div class="ii-m">${esc(meta)}</div></div>`;
+      <p>${esc(f.desc)}</p><div class="ii-m">${esc(meta)}</div></div>`;
     if (f.intro) return [`<div class="ig-s ig-intro">${introBox(f, "big")}</div>`, info];
     const ws = f.weights.length > 6 ? f.weights.filter((_, k) => k % 2 === 0 || k === f.weights.length - 1) : f.weights;
     return [
@@ -580,7 +580,7 @@
       </div>
       <div class="ig-body">
         <p class="ig-likes" data-likeline="${f.id}"></p>
-        <p class="ig-cap"><b>${esc(f.name)}</b> ${esc(f.desc)}</p>
+        <div class="ig-titlerow"><b>${esc(f.name)}</b><span class="ig-lics">${pills(f)}</span></div>
         <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
         <button class="ig-allc" data-cmt="${f.id}" data-cmtline="${f.id}"></button>
         <div class="ig-recent" data-recent="${f.id}"></div>
