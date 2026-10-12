@@ -81,8 +81,8 @@ def variable_instances(t):
     return out
 
 
-def read(url):
-    data = get(url)
+def read(url, local=None):
+    data = open(local, "rb").read() if local and Path(local).exists() else get(url)
     t = TTFont(io.BytesIO(data), fontNumber=0, lazy=True)
     if "fvar" in t: return {"var": variable_instances(t)}
     return {"one": names_of(t)}
@@ -113,7 +113,8 @@ def main():
         per = {}
         for w, u in files:
             if u not in cache:
-                try: cache[u] = read(u); time.sleep(0.3)
+                loc = ROOT / "tools/archive/cdn" / f["id"] / (f"{w}." + u.split("?")[0].rsplit(".", 1)[-1])  # 이미 받아 둔 공식 파일이 있으면 그것을 읽음
+                try: cache[u] = read(u, loc); time.sleep(0 if loc.exists() else 0.3)
                 except Exception as e: cache[u] = {"err": str(e)[:100]}
             c = cache[u]
             if "one" in c: per[str(w)] = c["one"]

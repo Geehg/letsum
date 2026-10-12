@@ -404,7 +404,7 @@
     if (s === "rec" && state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 추천 순
     const introLast = (cmp) => (a, b) => (a.intro ? 1 : 0) - (b.intro ? 1 : 0) || cmp(a, b); // 미리보기가 되는 폰트 먼저
     if (s === "pop") list.sort(introLast((a, b) => b.pop - a.pop));
-    if (s === "new") list.sort(introLast((a, b) => b.added.localeCompare(a.added) || (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop));
+    if (s === "new") list.sort(introLast((a, b) => b.added.localeCompare(a.added) || b.pop - a.pop || (b.released || "0").localeCompare(a.released || "0")));
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "name") list.sort(introLast((a, b) => a.name.localeCompare(b.name, "ko")));
     if (s === "weights") list.sort(introLast((a, b) => b.weights.length - a.weights.length || b.pop - a.pop));

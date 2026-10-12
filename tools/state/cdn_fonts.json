@@ -156,5 +156,805 @@
    "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff",
    "900": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff"
   }
+ },
+ "k-maruburi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "200": "https://hangeul.pstatic.net/0/hangeul/2023/fonts/MaruBuri-ExtraLight.woff2",
+   "300": "https://hangeul.pstatic.net/0/hangeul/2023/fonts/MaruBuri-Light.woff2",
+   "400": "https://hangeul.pstatic.net/0/hangeul/2023/fonts/MaruBuri-Regular.woff2",
+   "600": "https://hangeul.pstatic.net/0/hangeul/2023/fonts/MaruBuri-SemiBold.woff2",
+   "700": "https://hangeul.pstatic.net/0/hangeul/2023/fonts/MaruBuri-Bold.woff2"
+  }
+ },
+ "k-nanum-human": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "200": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanEL.woff",
+   "300": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanLight.woff",
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanRegular.woff",
+   "700": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanBold.woff",
+   "800": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanEB.woff",
+   "900": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumHuman/NanumHumanHeavy.woff"
+  }
+ },
+ "k-nanum-barun-gothic-yethangul": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunGothicYetHangul/NanumBarunGothic-YetHangul.woff2"
+  }
+ },
+ "k-nanum-myeongjo-yethangul": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjoYetHangul/NanumMyeongjo-YetHangul.woff2"
+  }
+ },
+ "k-clova-abbaeuiyeonaepyeonji": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumABbaEuiYeonAePyeonJi.woff"
+  }
+ },
+ "k-clova-abbageurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumABbaGeurSsi.woff"
+  }
+ },
+ "k-clova-agisarangce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAGiSaRangCe.woff"
+  }
+ },
+ "k-clova-ainmamsongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAInMamSonGeurSsi.woff"
+  }
+ },
+ "k-clova-ajummajayu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAJumMaJaYu.woff"
+  }
+ },
+ "k-clova-amseutereudam": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAmSeuTeReuDam.woff"
+  }
+ },
+ "k-clova-anssangce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAnSsangCe.woff"
+  }
+ },
+ "k-clova-areumdeuriggocnamu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumAReumDeuRiGgocNaMu.woff"
+  }
+ },
+ "k-clova-baeeunhyece": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBaeEunHyeCe.woff"
+  }
+ },
+ "k-clova-baegeuieuiceonsa": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBaegEuiEuiCeonSa.woff"
+  }
+ },
+ "k-clova-banjjagbanjjagbyeor": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBanJjagBanJjagByeor.woff"
+  }
+ },
+ "k-clova-bareunhipi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBaReunHiPi.woff"
+  }
+ },
+ "k-clova-bareunjeongsin": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBaReunJeongSin.woff"
+  }
+ },
+ "k-clova-bbanggunimamsongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBbangGuNiMamSonGeurSsi.woff"
+  }
+ },
+ "k-clova-beodeunamu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBeoDeuNaMu.woff"
+  }
+ },
+ "k-clova-beomsomce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBeomSomCe.woff"
+  }
+ },
+ "k-clova-bisangce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBiSangCe.woff"
+  }
+ },
+ "k-clova-buggeugseong": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBugGeugSeong.woff"
+  }
+ },
+ "k-clova-bujangnimnuncice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumBuJangNimNunCiCe.woff"
+  }
+ },
+ "k-clova-ceorpirgeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumCeorPirGeurSsi.woff"
+  }
+ },
+ "k-clova-codingheuimang": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumCoDingHeuiMang.woff"
+  }
+ },
+ "k-clova-dacaesarang": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaCaeSaRang.woff"
+  }
+ },
+ "k-clova-daegwangyuri": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaeGwangYuRi.woff"
+  }
+ },
+ "k-clova-daehanmingugyeorsace": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaeHanMinGugYeorSaCe.woff"
+  }
+ },
+ "k-clova-dahaengce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaHaengCe.woff"
+  }
+ },
+ "k-clova-dajince": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaJinCe.woff"
+  }
+ },
+ "k-clova-dareuigwedo": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDarEuiGweDo.woff"
+  }
+ },
+ "k-clova-dasisijaghae": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDaSiSiJagHae.woff"
+  }
+ },
+ "k-clova-ddaagdandan": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDdaAgDanDan.woff"
+  }
+ },
+ "k-clova-ddaddeushanjagbyeor": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDdaDdeusHanJagByeor.woff"
+  }
+ },
+ "k-clova-ddaregeeommaga": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDdarEGeEomMaGa.woff"
+  }
+ },
+ "k-clova-ddobagddobag": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDdoBagDdoBag.woff"
+  }
+ },
+ "k-clova-donghwaddobag": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDongHwaDdoBag.woff"
+  }
+ },
+ "k-clova-dunggeuninyeon": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDungGeunInYeon.woff"
+  }
+ },
+ "k-clova-eommasarang": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumEomMaSaRang.woff"
+  }
+ },
+ "k-clova-eonggeongkwice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumEongGeongKwiCe.woff"
+  }
+ },
+ "k-clova-euimiissneunhangeur": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumEuiMiIssNeunHanGeur.woff"
+  }
+ },
+ "k-clova-gangbujangnimce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGangBuJangNimCe.woff"
+  }
+ },
+ "k-clova-ganginhanwiro": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGangInHanWiRo.ttf"
+  }
+ },
+ "k-clova-garamyeonggoc": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGaRamYeonGgoc.woff"
+  }
+ },
+ "k-clova-garmaesgeur": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGarMaesGeur.woff"
+  }
+ },
+ "k-clova-geumeunbohwa": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGeumEunBoHwa.woff"
+  }
+ },
+ "k-clova-ggeuteumeorice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGgeuTeuMeoRiCe.woff"
+  }
+ },
+ "k-clova-ggocnaeeum": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGgocNaeEum.woff"
+  }
+ },
+ "k-clova-gibbeumbarkeum": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGiBbeumBarkEum.woff"
+  }
+ },
+ "k-clova-gimyuice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGimYuICe.woff"
+  }
+ },
+ "k-clova-godiganigogoding": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGoDigANiGoGoDing.woff"
+  }
+ },
+ "k-clova-gomsince": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGomSinCe.woff"
+  }
+ },
+ "k-clova-goryeogeurggor": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGoRyeoGeurGgor.woff"
+  }
+ },
+ "k-clova-gyurieuiirgi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumGyuRiEuiIrGi.woff"
+  }
+ },
+ "k-clova-haengboghandobi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHaengBogHanDoBi.woff"
+  }
+ },
+ "k-clova-hanadoeeosongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHaNaDoeEoSonGeurSsi.woff"
+  }
+ },
+ "k-clova-hanasongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHaNaSonGeurSsi.woff"
+  }
+ },
+ "k-clova-hanyunce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHanYunCe.woff"
+  }
+ },
+ "k-clova-harabeojieuinanum": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHarABeoJiEuiNaNum.woff"
+  }
+ },
+ "k-clova-haramce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHaRamCe.woff"
+  }
+ },
+ "k-clova-heuimangnuri": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHeuiMangNuRi.woff"
+  }
+ },
+ "k-clova-heuinggorisuri": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHeuinGgoRiSuRi.woff"
+  }
+ },
+ "k-clova-himnaeraneunmarbodan": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHimNaeRaNeunMarBoDan.woff"
+  }
+ },
+ "k-clova-hyejunce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHyeJunCe.woff"
+  }
+ },
+ "k-clova-hyeogice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHyeogICe.woff"
+  }
+ },
+ "k-clova-hyonamneurhwaiting": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumHyoNamNeurHwaITing.woff"
+  }
+ },
+ "k-clova-jabusimjiu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJaBuSimJiU.woff"
+  }
+ },
+ "k-clova-jangmice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJangMiCe.woff"
+  }
+ },
+ "k-clova-jarhagoisseo": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJarHaGoIssEo.woff"
+  }
+ },
+ "k-clova-jeomggorce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJeomGgorCe.woff"
+  }
+ },
+ "k-clova-jeongeunce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJeongEunCe.woff"
+  }
+ },
+ "k-clova-jinjubaggyeongace": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJinJuBagGyeongACe.woff"
+  }
+ },
+ "k-clova-junghagsaeng": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumJungHagSaeng.woff"
+  }
+ },
+ "k-clova-kargugsu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumKarGugSu.woff"
+  }
+ },
+ "k-clova-kokoce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumKoKoCe.woff"
+  }
+ },
+ "k-clova-magoce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMaGoCe.woff"
+  }
+ },
+ "k-clova-masissneunce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMasIssNeunCe.woff"
+  }
+ },
+ "k-clova-minisongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMiNiSonGeurSsi.woff"
+  }
+ },
+ "k-clova-miraenamu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMiRaeNaMu.woff"
+  }
+ },
+ "k-clova-mongdor": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMongDor.woff"
+  }
+ },
+ "k-clova-mugunghwa": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMuGungHwa.woff"
+  }
+ },
+ "k-clova-mujinjangce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumMuJinJangCe.woff"
+  }
+ },
+ "k-clova-naeuianaesongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumNaEuiANaeSonGeurSsi.woff"
+  }
+ },
+ "k-clova-namujeongweon": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumNaMuJeongWeon.woff"
+  }
+ },
+ "k-clova-naneunigyeonaenda": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumNaNeunIGyeoNaenDa.woff"
+  }
+ },
+ "k-clova-neurisneurisce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumNeuRisNeuRisCe.woff"
+  }
+ },
+ "k-clova-noryeoghaneundongheui": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumNoRyeogHaNeunDongHeui.woff"
+  }
+ },
+ "k-clova-oeharmeonigeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumOeHarMeoNiGeurSsi.woff"
+  }
+ },
+ "k-clova-oensonjabidoyebbeo": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumOenSonJabIDoYeBbeo.woff"
+  }
+ },
+ "k-clova-ogbice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumOgBiCe.woff"
+  }
+ },
+ "k-clova-sanghaecanmice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSangHaeCanMiCe.woff"
+  }
+ },
+ "k-clova-saranghaeadeur": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSaRangHaeADeur.woff"
+  }
+ },
+ "k-clova-seace": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSeACe.woff"
+  }
+ },
+ "k-clova-segyejeoginhangeur": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSeGyeJeogInHanGeur.woff"
+  }
+ },
+ "k-clova-sehwace": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSeHwaCe.woff"
+  }
+ },
+ "k-clova-seongsirce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSeongSirCe.woff"
+  }
+ },
+ "k-clova-sinhonbubu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSinHonBuBu.woff"
+  }
+ },
+ "k-clova-siugwiyeoweo": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSiUGwiYeoWeo.woff"
+  }
+ },
+ "k-clova-sobanggwaneuigido": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSoBangGwanEuiGiDo.woff"
+  }
+ },
+ "k-clova-somice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSoMiCe.woff"
+  }
+ },
+ "k-clova-sonpyeonjice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSonPyeonJiCe.woff"
+  }
+ },
+ "k-clova-sujubeundaehagsaeng": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumSuJubEunDaeHagSaeng.woff"
+  }
+ },
+ "k-clova-uriddarsongeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumURiDdarSonGeurSsi.woff"
+  }
+ },
+ "k-clova-wairdeu": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumWaIrDeu.woff"
+  }
+ },
+ "k-clova-yacaejangsubaeggeumrye": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYaCaeJangSuBaegGeumRye.woff"
+  }
+ },
+ "k-clova-yageunhaneungimjuim": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYaGeunHaNeunGimJuIm.woff"
+  }
+ },
+ "k-clova-yebbeunmingyeongce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeBbeunMinGyeongCe.woff"
+  }
+ },
+ "k-clova-yedangce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeDangCe.woff"
+  }
+ },
+ "k-clova-yeonjice": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeonJiCe.woff"
+  }
+ },
+ "k-clova-yeorahobeuibanjjagim": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeorAHobEuiBanJjagIm.woff"
+  }
+ },
+ "k-clova-yeoreumgeurssi": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeoReumGeurSsi.woff"
+  }
+ },
+ "k-clova-yeorirce": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYeorIrCe.woff"
+  }
+ },
+ "k-clova-yuniddingddangddingddang": {
+  "page": "https://hangeul.naver.com/font",
+  "css": "https://hangeul.naver.com/css/fonts.css",
+  "files": {
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumYuNiDdingDdangDdingDdang.woff"
+  }
  }
 }

@@ -317,5 +317,683 @@
   "evidence": "G마켓 공식 페이지: 'Gmarket Sans는 SIL Open Font License에 따라 개인 또는 기업이 영리적, 비영리적 목적으로 자유롭게 사용' + 폰트 파일 라이선스 표기: SIL OFL 1.1, Reserved Font Name <Gmarket Sans Font> — 예약 이름 때문에 LETSUM은 공식 원본 TTF를 변환 없이 사용",
   "page": "https://corp.gmarket.com/fonts/",
   "checked": "2026-10-13"
+ },
+ "k-maruburi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-nanum-human": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-nanum-barun-gothic-yethangul": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-nanum-myeongjo-yethangul": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-abbaeuiyeonaepyeonji": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-abbageurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-agisarangce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ainmamsongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ajummajayu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-amseutereudam": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-anssangce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-areumdeuriggocnamu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-baeeunhyece": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-baegeuieuiceonsa": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-banjjagbanjjagbyeor": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-bareunhipi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-bareunjeongsin": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-bbanggunimamsongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-beodeunamu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-beomsomce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-bisangce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-buggeugseong": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-bujangnimnuncice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ceorpirgeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-codingheuimang": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dacaesarang": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-daegwangyuri": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-daehanmingugyeorsace": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dahaengce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dajince": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dareuigwedo": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dasisijaghae": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ddaagdandan": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ddaddeushanjagbyeor": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ddaregeeommaga": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ddobagddobag": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-donghwaddobag": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-dunggeuninyeon": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-eommasarang": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-eonggeongkwice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-euimiissneunhangeur": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-gangbujangnimce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ganginhanwiro": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-garamyeonggoc": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-garmaesgeur": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-geumeunbohwa": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ggeuteumeorice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ggocnaeeum": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-gibbeumbarkeum": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-gimyuice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-godiganigogoding": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-gomsince": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-goryeogeurggor": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-gyurieuiirgi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-haengboghandobi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hanadoeeosongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hanasongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hanyunce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-harabeojieuinanum": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-haramce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-heuimangnuri": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-heuinggorisuri": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-himnaeraneunmarbodan": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hyejunce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hyeogice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-hyonamneurhwaiting": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jabusimjiu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jangmice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jarhagoisseo": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jeomggorce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jeongeunce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-jinjubaggyeongace": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-junghagsaeng": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-kargugsu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-kokoce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-magoce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-masissneunce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-minisongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-miraenamu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-mongdor": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-mugunghwa": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-mujinjangce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-naeuianaesongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-namujeongweon": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-naneunigyeonaenda": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-neurisneurisce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-noryeoghaneundongheui": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-oeharmeonigeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-oensonjabidoyebbeo": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-ogbice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sanghaecanmice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-saranghaeadeur": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-seace": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-segyejeoginhangeur": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sehwace": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-seongsirce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sinhonbubu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-siugwiyeoweo": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sobanggwaneuigido": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-somice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sonpyeonjice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-sujubeundaehagsaeng": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-uriddarsongeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-wairdeu": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yacaejangsubaeggeumrye": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yageunhaneungimjuim": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yebbeunmingyeongce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yedangce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yeonjice": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yeorahobeuibanjjagim": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yeoreumgeurssi": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yeorirce": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
+ },
+ "k-clova-yuniddingddangddingddang": {
+  "license": "OFL",
+  "evidence": "네이버 한글한글 아름답게(hangeul.naver.com/font) 저작권 안내: '네이버 글꼴은 … 재배포 또는 판매가 가능하고 자유롭게 수정, 재배포' · '네이버 마루 부리 글꼴과 클로바 나눔손글씨도 나눔 글꼴과 같은 오픈 라이선스 글꼴로 동일한 저작권 규정' (나눔 글꼴 라이선스 SIL OFL 1.1) — LETSUM은 네이버 공식 웹폰트(hangeul.pstatic.net)를 그대로 사용",
+  "page": "https://hangeul.naver.com/font",
+  "checked": "2026-10-13"
  }
 }
