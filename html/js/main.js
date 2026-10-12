@@ -142,7 +142,7 @@
     metrics[f.id] = measure(fam);
   }
 
-  // ---------- 글자 형태 측정 → 닮은 폰트 (AI 없이, 브라우저 캔버스 측정만으로) ----------
+  // ---------- 글자 형태 측정 (AI 없이, 브라우저 캔버스 측정만으로) — 상세 측정값 표시·비슷한 분위기 동점 정렬에 사용 ----------
   // 굵기 = '가나다' 잉크 밀도, 너비 = 글자폭/크기, 대비 = 가로획(ㅡ) 두께 / 세로획(ㅣ) 두께
   const metrics = {};
   const measure = (() => {
@@ -161,17 +161,23 @@
       } catch (e) { return null; }
     };
   })();
+  // 비슷한 분위기: 사람이 정리한 분류·모양 태그·분위기·용도 태그가 겹치는 정도로 고름(모양 측정값은 동점일 때만 참고)
+  const LOOK_TAGS = new Set(["레트로", "붓", "붓펜", "붓글씨", "캘리", "둥근", "가는", "굵은", "초강조", "좁은", "장식", "기하학", "손글씨", "펜글씨", "분필", "육필", "귀여운", "전통", "부드러운", "개성", "간판"]);
   function similar(f, k) {
-    const m = metrics[f.id]; if (!m) return [];
-    const all = FONTS.filter((x) => x.id !== f.id && metrics[x.id]);
-    const rng = (key) => { const vs = all.map((x) => metrics[x.id][key]).concat(m[key]); return Math.max(...vs) - Math.min(...vs) || 1; };
-    const rd = rng("density"), rw = rng("width"), rc = rng("contrast");
-    return all.map((x) => {
+    const tg = new Set(f.tags || []), md = new Set(f.mood || []), byHolder = {};
+    const m = metrics[f.id];
+    return FONTS.filter((x) => x.id !== f.id && !x.intro).map((x) => {
+      const why = [];
+      let sc = x.category === f.category ? 3 : 0;
+      (x.tags || []).forEach((t) => { if (tg.has(t)) { sc += LOOK_TAGS.has(t) ? 2 : 1; why.push((LOOK_TAGS.has(t) ? 0 : 1) + "#" + t); } });
+      (x.mood || []).forEach((t) => { if (md.has(t)) { sc += 1.5; why.push("2" + t); } });
       const n = metrics[x.id];
-      let d = Math.hypot((n.density - m.density) / rd, (n.width - m.width) / rw, (n.contrast - m.contrast) / rc);
-      if (x.category !== f.category) d += 0.35; // 분류가 다르면 거리 가산
-      return [x, d];
-    }).sort((a, b) => a[1] - b[1]).slice(0, k).map(([x]) => x);
+      const tie = m && n ? Math.hypot(n.density - m.density, (n.width - m.width) / 2) : 1;
+      return { x, sc, tie, why: why.sort().map((w) => w.slice(1)) };
+    }).filter((r) => r.why.length >= 2)
+      .sort((p, q) => q.sc - p.sc || p.tie - q.tie || (q.x.pop || 0) - (p.x.pop || 0))
+      .filter((r) => { const h = r.x.holder || r.x.designer; byHolder[h] = (byHolder[h] || 0) + 1; return byHolder[h] <= 1; })
+      .slice(0, k);
   }
   let covTimer = null;
   function scheduleCoverage() { clearTimeout(covTimer); covTimer = setTimeout(runCoverage, 350); }
@@ -552,13 +558,16 @@
   const FX_LABEL = { outline: "외곽선", extrude: "3D 입체", retro: "레트로 오프셋", glitch: "글리치", grad: "그라데이션", shadow: "드롭섀도", neon: "네온 사인", press: "레터프레스", chalk: "칠판", thin: "가는 외곽선" };
   const FX_BY_CAT = { "디스플레이": ["outline", "extrude", "retro", "glitch"], "고딕": ["shadow", "grad", "neon", "outline"], "명조": ["press", "grad", "shadow", "thin"], "손글씨": ["neon", "chalk", "grad", "shadow"] };
   const GRAD_BY_MOOD = { "강렬한": "metal", "세련된": "metal", "귀여운": "candy", "발랄한": "candy", "따뜻한": "sunset", "고전적": "gold", "차분한": "ocean", "단정한": "ocean" };
-  function fxSlide(f, t) {
+  function fxTiles(f, t, n) {
     let fx = (FX_BY_CAT[f.category] || FX_BY_CAT["고딕"]).slice();
     if (f.category === "디스플레이" && !(f.mood || []).includes("강렬한")) fx[3] = "grad";
     const grad = GRAD_BY_MOOD[(f.mood || []).find((m) => GRAD_BY_MOOD[m])] || (f.category === "명조" ? "gold" : "ocean");
     const w = f.weights[f.weights.length - 1];
-    const word = [...(t.split(/\s+/).find(Boolean) || f.name)].slice(0, 5).join("");
-    return `<div class="ig-s ig-fx">${fx.map((k) => `<div class="fx fx-${k}${k === "grad" ? " g-" + grad : ""}"><span style="font-family:${famOf(f)};font-weight:${w}" data-t="${esc(word)}">${esc(word)}</span><i>${FX_LABEL[k]}</i></div>`).join("")}<span class="ig-cap2">효과 적용안</span></div>`;
+    const word = [...(t.split(/\s+/).find(Boolean) || f.name)].slice(0, n).join("");
+    return fx.map((k) => `<div class="fx fx-${k}${k === "grad" ? " g-" + grad : ""}"><span style="font-family:${famOf(f)};font-weight:${w}" data-t="${esc(word)}">${esc(word)}</span><i>${FX_LABEL[k]}</i></div>`).join("");
+  }
+  function fxSlide(f, t) {
+    return `<div class="ig-s ig-fx">${fxTiles(f, t, 5)}<span class="ig-cap2">효과 적용안</span></div>`;
   }
   function feedSlides(f, i) {
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
@@ -929,9 +938,13 @@
         <div class="m-ctx">${["thumb", "book", "sub"].map((c) => mockHTML(f, c)).join("")}</div>
         <p class="note" style="margin-top:8px">목록의 '맥락' 보기에서 메뉴판·카드뉴스·UI 프레임도 확인할 수 있습니다.</p></div>
 
-      <div class="m-sec"><h3>닮은 폰트</h3>
-        <div class="simrow">${similar(f, 3).map((s) => (ensureFace(s), s)).map((s) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span></button>`).join("") || '<span class="note">측정 중…</span>'}</div>
-        <p class="note" style="margin-top:8px">글자 형태를 브라우저에서 직접 측정(굵기 밀도·너비·획 대비)해 가까운 순으로 고릅니다. 외부 서버나 AI를 쓰지 않습니다.</p></div>`}
+      <div class="m-sec"><h3>효과 적용 예시</h3>
+        <div class="m-fx">${fxTiles(f, state.text || f.name, 5)}</div>
+        <p class="note" style="margin-top:8px">${esc(f.category)}·분위기에 어울리는 효과를 골라 이 글꼴로 바로 그렸습니다. 포토샵·피그마·캔바의 외곽선·그림자·그라데이션 설정으로 비슷하게 만들 수 있습니다.</p></div>
+
+      <div class="m-sec"><h3>비슷한 분위기</h3>
+        <div class="simrow">${similar(f, 3).map((r) => (ensureFace(r.x), r)).map(({ x: s, why }) => `<button class="simcard" data-open="${s.id}"><span class="r-pv" style="font-family:${s.family};font-weight:${wOf(s)};font-size:26px">${esc(state.text || s.name)}</span><span class="r-name">${esc(s.name)}<span class="en">${s.category}</span></span><span class="sim-why">${why.slice(0, 4).map((w) => `<i>${esc(w)}</i>`).join("")}</span></button>`).join("") || '<span class="note">겹치는 태그가 충분한 폰트가 없습니다.</span>'}</div>
+        <p class="note" style="margin-top:8px">LETSUM이 정리한 분류·모양·분위기·용도 태그가 많이 겹치는 순입니다(같은 제작사는 1종만). 글자 모양이 똑같다는 뜻은 아닙니다.</p></div>`}
 
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">

@@ -940,3 +940,11 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .sp-note{background-image:none}
 .spot-bars,#nbLabel,#nbMeta{display:none}
 .spot-row{justify-content:flex-end}
+
+/* 상세: 효과 적용 예시(피드와 같은 효과, 2×2) · 비슷한 분위기 이유 태그 */
+.m-fx{container-type:inline-size;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule2)}
+.m-fx .fx{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;aspect-ratio:5/2}
+.m-fx .fx span{font-size:8cqw;line-height:1.1;white-space:nowrap;letter-spacing:-.01em}
+.m-fx .fx i{position:absolute;left:1.6cqw;bottom:1.4cqw;font:600 11px/1 var(--mono);font-style:normal;opacity:.75}
+.sim-why{display:flex;flex-wrap:wrap;gap:4px}
+.sim-why i{font-style:normal;font-size:11px;padding:2px 7px;border:1px solid var(--rule2);border-radius:999px;color:var(--ink2)}
