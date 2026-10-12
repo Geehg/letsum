@@ -129,3 +129,8 @@ d.text((10, 30), "책을 읽는 시간은 언제나 옳다 가나다 ABC 123", f
        font=ImageFont.truetype("../letsum-mirror/webfonts/<id>/400.woff2", 40))
 img.save("sample.png")
 ```
+
+## 히어로 브랜드 테마 (2026-10-12)
+- 우선순위: 관리자 저장(D1 `brand_themes`, `/api/brand`, off 가능) > main.js `BRAND` 기본 등록 > 자동 추천(`html/data/brand_auto.json`, 확인 전에도 게시) > 분위기 팔레트.
+- 자동 추천: `tools/extract_brand.py` (AI 없음 — theme-color·CSS 변수·CSS 빈도·og:image 색, 대비 계산). 매주 watch-sources에서 실행. 여러 제작사가 쓰는 배포 플랫폼 도메인(공유마당 등)과 robots.txt 차단 사이트는 건너뜀 — 필요하면 data.js에 `brandPage`로 제작사 페이지 지정.
+- 관리자 화면 `admin.html` → '히어로 테마' 탭에서 색·표현(기본/스티커/그림자)·문구·강조 글자 수 저장. admin.js의 SPOT_PAL/LAYOUT/LINES/BUILTIN은 main.js와 같게 유지할 것.

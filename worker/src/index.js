@@ -8,7 +8,9 @@
 //       GET  /api/shot/<n>                 → 이미지(승인된 것만)
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
+//       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
 //       관리자(Authorization: Bearer ADMIN_KEY):
+//       POST /api/admin/brand { id, theme | null } → 저장(검증) / null이면 삭제
 //       GET  /api/admin/metrics?days=28    → { days: [...], rows: [{ day, name, font, n }] }
 //       GET  /api/admin/export             → 백업용 전체 데이터(JSON, 사진은 base64) — NAS가 주 1회 받아 보관
 //       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
@@ -153,6 +155,28 @@ async function track(req, env) {
   return new Response(null, { status: 204 });
 }
 
+// ---------- 히어로 브랜드 테마 ----------
+const HEX = /^#[0-9a-f]{6}$/i;
+const STYLES = new Set(["plain", "sticker", "shadow"]);
+function cleanTheme(t) {
+  if (!t || typeof t !== "object") return null;
+  if (t.off === true) return { off: true }; // 자동 추천도 쓰지 않고 분위기 기본색으로
+  const out = {};
+  for (const k of ["bg", "fg", "ac", "acInk"]) { if (t[k] == null || t[k] === "") continue; if (!HEX.test(t[k])) return null; out[k] = t[k].toLowerCase(); }
+  if (!out.bg || !out.fg || !out.ac) return null;
+  out.style = STYLES.has(t.style) ? t.style : "plain";
+  const sp = parseInt(t.split, 10); if (sp > 0 && sp <= 12) out.split = sp;
+  const line = (Array.isArray(t.line) ? t.line : []).map((x) => clean(x, 40)).filter(Boolean).slice(0, 2);
+  if (line.length) out.line = line;
+  const src = clean(t.src, 120); if (src) out.src = src;
+  return out;
+}
+async function brandList(env) {
+  const r = await env.DB.prepare("SELECT font_id, data FROM brand_themes").all();
+  const out = {}; r.results.forEach((x) => { try { out[x.font_id] = JSON.parse(x.data); } catch {} });
+  return json(out, 200, { "cache-control": "public, max-age=300" });
+}
+
 async function report(req, env) {
   const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
   const voter = await voterOf(req, env);
@@ -170,13 +194,14 @@ async function admin(url, req, env) {
     return json({ items: r.results });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/export") {
-    const [c, l, r, sh, e] = await env.DB.batch([
+    const [c, l, r, sh, e, bt] = await env.DB.batch([
       env.DB.prepare("SELECT * FROM comments ORDER BY id"), env.DB.prepare("SELECT * FROM likes"), env.DB.prepare("SELECT * FROM reports"),
       env.DB.prepare("SELECT id, font_id, name, caption, mime, bytes, data, voter, created, status, approved FROM shots ORDER BY id"), env.DB.prepare("SELECT * FROM events ORDER BY day"),
+      env.DB.prepare("SELECT * FROM brand_themes"),
     ]);
     const b64 = (d) => { const u = new Uint8Array(d); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s); };
     const shots = sh.results.map((x) => ({ ...x, data: b64(x.data) }));
-    return json({ exported: new Date().toISOString(), schema: 3, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results },
+    return json({ exported: new Date().toISOString(), schema: 4, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results, brand: bt.results },
       200, { "content-disposition": `attachment; filename="letsum-d1-${new Date().toISOString().slice(0, 10)}.json"` });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/metrics") {
@@ -208,6 +233,13 @@ async function admin(url, req, env) {
     else return bad("잘못된 동작");
     return json({ ok: true });
   }
+  if (req.method === "POST" && url.pathname === "/api/admin/brand") {
+    const b = await body(req); if (!ID.test(b.id || "")) return bad("잘못된 폰트");
+    if (b.theme === null) { await env.DB.prepare("DELETE FROM brand_themes WHERE font_id = ?").bind(b.id).run(); return json({ ok: true, deleted: true }); }
+    const t = cleanTheme(b.theme); if (!t) return bad("색(배경·글자·강조)은 #RRGGBB 형식이어야 합니다");
+    await env.DB.prepare("INSERT INTO brand_themes (font_id, data, updated) VALUES (?, ?, ?) ON CONFLICT(font_id) DO UPDATE SET data = excluded.data, updated = excluded.updated").bind(b.id, JSON.stringify(t), Date.now()).run();
+    return json({ ok: true, theme: t });
+  }
   if (req.method === "POST" && url.pathname === "/api/admin/comment") {
     const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
     if (b.action === "delete") { await env.DB.batch([env.DB.prepare("DELETE FROM comments WHERE id = ?").bind(cid), env.DB.prepare("DELETE FROM reports WHERE comment_id = ?").bind(cid)]); }
@@ -231,6 +263,7 @@ export default {
       const p = url.pathname;
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
+      if (req.method === "GET" && p === "/api/brand") return await brandList(env);
       if (req.method === "POST" && p === "/api/like") return await like(req, env);
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, env);
       if (req.method === "POST" && p === "/api/comments") return await addComment(req, env);

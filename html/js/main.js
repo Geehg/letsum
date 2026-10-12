@@ -1223,6 +1223,13 @@ import "@fontsource/${f.id}/400.css";</pre>
   const BRAND = {
     "k-gs-hyejaroun": { bg: "#b4e3fa", fg: "#0b2c8a", ac: "#1769f0", acInk: "#ffffff", split: 2, style: "sticker", line: ["어제의 혜자보다 오늘 더 혜자롭게", "혜자로운 이야기"], src: "hyejaroun.com" },
   };
+  // 우선순위: 관리자 저장(서버 /api/brand, off면 끔) > 위 기본 등록 > 자동 추출 추천색(data/brand_auto.json, 확인 전에도 게시) > 분위기 팔레트
+  let BRAND_AUTO = {}, BRAND_ADMIN = {};
+  const themeOf = (f) => {
+    const a = BRAND_ADMIN[f.id]; if (a) return a.off ? null : a;
+    if (BRAND[f.id]) return BRAND[f.id];
+    const s = BRAND_AUTO[f.id]; return s && s.bg ? { ...s, style: "plain" } : null;
+  };
   const SPOT_LAYOUT = { "디스플레이": "poster", "명조": "editorial", "손글씨": "note", "고딕": "grid" };
   const SPOT_LINES = {
     poster: ["이걸 몰랐다고?", "오늘의 한 줄, 크게"], editorial: ["책을 읽는 시간은 언제나 옳다", "고요한 문장 사이로 계절이 지나간다"],
@@ -1243,7 +1250,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function spotHTML(f, k, week) {
     const lay = SPOT_LAYOUT[f.category] || "grid";
-    const B = BRAND[f.id];
+    const B = themeOf(f);
     const [bg, fg, ac] = B ? [B.bg, B.fg, B.ac] : SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
     const dl = dlFor(f); const L = LICENSE_CATS.filter((c) => c.key !== "ofl");
     const heavy = f.weights[f.weights.length - 1];
@@ -1495,7 +1502,10 @@ import "@fontsource/${f.id}/400.css";</pre>
   updateProjBtn();
 
   // ---------- 시작 ----------
-  renderNew();
+  // 브랜드 테마를 먼저 받아(최대 0.8초) 히어로를 그린다 — 늦거나 실패하면 기본 색으로
+  const getJSON = (u) => fetch(u, { cache: "no-cache" }).then((r) => (r.ok && (r.headers.get("content-type") || "").includes("json") ? r.json() : {})).catch(() => ({}));
+  const brandLoad = Promise.all([getJSON("data/brand_auto.json"), getJSON("/api/brand")]).then(([a, b]) => { BRAND_AUTO = a || {}; BRAND_ADMIN = b || {}; });
+  Promise.race([brandLoad, new Promise((r) => setTimeout(r, 800))]).then(renderNew);
   render();
   renderTray();
   openFromHash(); openSharedFromHash(); checkFavChanges();

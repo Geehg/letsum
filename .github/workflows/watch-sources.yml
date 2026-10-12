@@ -27,6 +27,14 @@ jobs:
       - name: Release dates (sourced only)
         if: steps.lock.outputs.held != '1'
         run: python3 -I tools/release_dates.py
+      - uses: actions/setup-python@v5
+        if: steps.lock.outputs.held != '1'
+        with: { python-version: "3.12" }
+      - name: Brand colors from maker pages (no AI; auto-published, admin can override)
+        if: steps.lock.outputs.held != '1'
+        run: |
+          pip install --quiet pillow || true
+          python tools/extract_brand.py || echo "브랜드 색 추출 실패 — 지난 결과 유지"
       - name: Build font pages & sitemap
         if: steps.lock.outputs.held != '1'
         run: node tools/build_pages.js

@@ -3,23 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>관리자 — LETSUM(렛섬)</title>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="관리자 — LETSUM(렛섬)"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새에서 비교하고, 글자 지원과 라이선스까지 한 화면에서 확인합니다.">
-<link rel="stylesheet" href="css/style.css?v=12">
-<style>.adm-shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}.adm-shot{border:1px solid var(--rule2);padding:10px;display:flex;flex-direction:column;gap:6px}.adm-shot img{width:100%;max-height:260px;object-fit:contain;background:#eee;cursor:zoom-in}.adm-shot .acts{display:flex;gap:6px;flex-wrap:wrap}.mt-kpi{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:8px 0 14px}.mt-kpi div{border:1px solid var(--rule2);padding:10px 12px}.mt-kpi b{display:block;font-size:22px}.mt-kpi span{font-size:12px;color:var(--ink3)}.mt-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.mt-bar{display:flex;align-items:flex-end;gap:2px;height:70px;margin:6px 0 16px}.mt-bar i{flex:1;background:var(--ink);min-height:1px}
-</style>
+<link rel="stylesheet" href="css/style.css?v=41">
+<link rel="stylesheet" href="css/admin.css?v=2">
 </head>
-<body>
+<body class="adm">
 <header>
   <div class="wrap hd">
     <a class="logo" href="index.html">렛섬 <small>LETSUM</small></a>
-    <nav class="main">
-      <a href="index.html">홈</a>
-      <a href="guide.html">라이선스 가이드</a>
-      <a href="subset.html">서브셋 도구</a>
-    </nav>
+    <nav class="main"><a href="index.html">사이트 보기</a></nav>
     <div class="sp"></div>
   </div>
 </header>
@@ -38,77 +33,93 @@
     </div>
   </div>
 
-  <!-- 대시보드 -->
-  <div id="dashView" style="display:none">
-    <h1>관리자</h1>
-    <p class="lead" id="statLine"></p>
-    <div class="toolbar">
-      <button class="btn sm blue" id="addBtn">+ 폰트 추가</button>
-      <button class="btn sm ghost" id="resetBtn">데모 데이터 초기화</button>
-      <button class="btn sm ghost" id="logoutBtn">로그아웃</button>
-      <span class="note">이 화면의 변경은 이 브라우저에만 저장됩니다. 사이트 데이터는 저장소(data.js)에서 관리합니다.</span>
+  <div id="dashView" hidden>
+    <div class="adm-top">
+      <h1>관리자</h1>
+      <form class="adm-key" id="keyForm">
+        <label>서버 관리자 키 <input id="ckKey" type="password" autocomplete="off" placeholder="Cloudflare ADMIN_KEY"></label>
+        <button class="btn sm" type="submit">연결</button>
+        <span class="adm-conn" id="keyState">연결 안 됨</span>
+      </form>
+      <button class="btn sm ghost" id="logoutBtn" type="button">로그아웃</button>
     </div>
+    <p class="note">관리자 키는 이 탭에만 기억되고, 탭을 닫으면 지워집니다. 사진·댓글·지표·테마 저장에 쓰입니다.</p>
 
-    <h2>폰트 목록</h2>
-    <table class="admin">
-      <thead><tr><th>폰트명</th><th>분류</th><th>제작자</th><th>라이선스</th><th>검수 상태</th><th>최종 검수일</th><th></th></tr></thead>
-      <tbody id="fontRows"></tbody>
-    </table>
+    <nav class="adm-tabs" id="tabs" role="tablist">
+      <button data-tab="home" class="on" role="tab">개요</button>
+      <button data-tab="brand" role="tab">히어로 테마</button>
+      <button data-tab="shots" role="tab">사진 검토 <i id="tbShots"></i></button>
+      <button data-tab="cmts" role="tab">댓글 <i id="tbCmts"></i></button>
+      <button data-tab="metrics" role="tab">이용 지표</button>
+      <button data-tab="fonts" role="tab">폰트 목록</button>
+    </nav>
 
-    <h2>이용 지표 <span class="note">— 날짜별 합계(개인 식별 정보 없음)</span></h2>
-    <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap"><select id="mtDays" aria-label="기간"><option value="7">최근 7일</option><option value="28" selected>최근 28일</option><option value="90">최근 90일</option></select><button class="btn sm" id="mtLoad" type="button">불러오기</button></div>
-    <p class="note" id="mtMsg">아래 '댓글 관리'의 관리자 키를 넣은 뒤 불러오세요.</p>
-    <div id="mtOut"></div>
+    <!-- 개요 -->
+    <section class="adm-pane" data-pane="home">
+      <div class="mt-kpi" id="homeKpi"></div>
+      <h2>할 일</h2>
+      <ul class="adm-todo" id="homeTodo"></ul>
+      <h2>운영 메모</h2>
+      <ul class="adm-todo">
+        <li>폰트 데이터·라이선스는 저장소(<code>html/js/data.js</code>)에서 관리합니다. 매주 월요일 자동 감시가 배포처 변화를 확인해 GitHub 이슈로 알립니다.</li>
+        <li>히어로 색은 매주 제작사 소개 페이지에서 자동 추출되어 <b>확인 전에도 바로 게시</b>됩니다. '히어로 테마'에서 고치거나 끌 수 있습니다.</li>
+        <li>사이트 파일이 바뀌면 NAS 패널에서 '받아와 재배포'를 눌러야 반영됩니다. 이 화면에서 저장하는 테마·사진·댓글은 서버에 바로 반영됩니다.</li>
+      </ul>
+    </section>
 
-    <h2>사용 사례 사진 검토 <span class="note" id="shotBadge"></span></h2>
-    <p class="note">방문자가 올린 사진은 여기서 승인해야 사이트에 보입니다. 거절하면 바로 삭제됩니다. (아래 '댓글 관리'의 관리자 키를 함께 씁니다)</p>
-    <div style="display:flex;gap:8px;margin:8px 0"><select id="shotFilter" aria-label="보기"><option value="pending">검토 대기</option><option value="approved">공개 중</option></select><button class="btn sm" id="shotLoad" type="button">불러오기</button></div>
-    <p class="note" id="shotMsgA"></p>
-    <div id="shotList" class="adm-shots"></div>
+    <!-- 히어로 테마 -->
+    <section class="adm-pane" data-pane="brand" hidden>
+      <p class="note" id="brMeta"></p>
+      <div class="br-wrap">
+        <aside class="br-list">
+          <input id="brSearch" type="search" placeholder="폰트 이름 검색" aria-label="폰트 검색">
+          <div class="br-filter" id="brFilter">
+            <button data-f="hero" class="on">히어로 노출</button><button data-f="admin">저장됨</button><button data-f="auto">자동 추천</button><button data-f="all">전체</button>
+          </div>
+          <div id="brItems"></div>
+        </aside>
+        <div class="br-edit" id="brEdit"><p class="note">왼쪽에서 폰트를 고르세요.</p></div>
+      </div>
+    </section>
 
-    <h2>댓글 관리</h2>
-    <p class="note">서버(Cloudflare Worker)에 저장된 댓글입니다. 관리자 키는 Cloudflare에 비밀 값(ADMIN_KEY)으로 등록한 값이며, 이 브라우저 탭을 닫으면 지워집니다.</p>
-    <form class="demo" id="ckForm" style="margin-top:8px;flex-direction:row;align-items:flex-end;gap:8px;flex-wrap:wrap">
-      <label style="flex:1;min-width:220px">관리자 키 <input id="ckKey" type="password" autocomplete="off"></label>
-      <select id="ckFilter" aria-label="보기"><option value="all">전체</option><option value="reported">신고된 댓글</option><option value="hidden">숨김</option></select>
-      <button class="btn sm" type="submit">불러오기</button>
-    </form>
-    <p class="note" id="ckMsg"></p>
-    <div id="ckList"></div>
+    <!-- 사진 -->
+    <section class="adm-pane" data-pane="shots" hidden>
+      <p class="note">방문자가 올린 사진은 여기서 승인해야 사이트에 보입니다. 거절하면 바로 삭제됩니다.</p>
+      <div style="display:flex;gap:8px;margin:8px 0"><select id="shotFilter" aria-label="보기"><option value="pending">검토 대기</option><option value="approved">공개 중</option></select><button class="btn sm" id="shotLoad" type="button">새로고침</button></div>
+      <p class="note" id="shotMsgA"></p>
+      <div id="shotList" class="adm-shots"></div>
+    </section>
 
-    <h2>등록 신청 내역</h2>
-    <div id="submitList"><p class="note">접수된 신청이 없습니다.</p></div>
+    <!-- 댓글 -->
+    <section class="adm-pane" data-pane="cmts" hidden>
+      <div style="display:flex;gap:8px;margin:8px 0"><select id="ckFilter" aria-label="보기"><option value="all">전체</option><option value="reported">신고된 댓글</option><option value="hidden">숨김</option></select><button class="btn sm" id="ckLoad" type="button">새로고침</button></div>
+      <p class="note" id="ckMsg"></p>
+      <div id="ckList"></div>
+    </section>
+
+    <!-- 지표 -->
+    <section class="adm-pane" data-pane="metrics" hidden>
+      <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap"><select id="mtDays" aria-label="기간"><option value="7">최근 7일</option><option value="28" selected>최근 28일</option><option value="90">최근 90일</option></select><button class="btn sm" id="mtLoad" type="button">새로고침</button></div>
+      <p class="note" id="mtMsg"></p>
+      <div id="mtOut"></div>
+    </section>
+
+    <!-- 폰트 목록 -->
+    <section class="adm-pane" data-pane="fonts" hidden>
+      <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;align-items:center">
+        <input id="fSearch" type="search" placeholder="이름·제작사 검색" aria-label="폰트 검색" style="min-width:240px">
+        <select id="fSort" aria-label="정렬"><option value="added">최근 등록순</option><option value="released">최근 출시순</option><option value="name">이름순</option></select>
+        <span class="note" id="fCount"></span>
+      </div>
+      <p class="note">읽기 전용입니다. 수정은 저장소의 data.js에서 하고 검증(tools/validate.py)을 거칩니다.</p>
+      <div class="adm-scroll"><table class="admin"><thead><tr><th>폰트</th><th>분류</th><th>제작·배포</th><th>라이선스</th><th>출시</th><th>등록</th><th>미리보기</th><th></th></tr></thead><tbody id="fontRows"></tbody></table></div>
+    </section>
   </div>
 </main>
 
-<!-- 폰트 편집 모달 -->
-<div class="overlay" id="editOverlay">
-  <div class="modal" style="max-width:520px">
-    <button class="x" id="editX" aria-label="닫기">×</button>
-    <h2 style="font-size:20px;font-weight:800" id="editTitle">폰트 추가</h2>
-    <form class="demo" id="editForm">
-      <input type="hidden" id="ef-id">
-      <label>폰트명 <input id="ef-name" required></label>
-      <label>영문명 <input id="ef-en" required placeholder="예: New Font"></label>
-      <label>분류
-        <select id="ef-cat"><option>고딕</option><option>명조</option><option>손글씨</option><option>디스플레이</option></select>
-      </label>
-      <label>제작자 <input id="ef-designer" required></label>
-      <label>검수 상태
-        <select id="ef-status"><option value="verified">검수 완료</option><option value="checking">확인 중</option></select>
-      </label>
-      <label>소개 <textarea id="ef-desc" rows="3"></textarea></label>
-      <button class="btn blue" type="submit">저장</button>
-      <p class="note">미리보기는 기본 폰트 패밀리로 표시됩니다.</p>
-    </form>
-  </div>
-</div>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) 관리자</p></div></footer>
 
-<footer>
-  <div class="wrap"><p class="fine">LETSUM(렛섬) 관리자</p></div>
-</footer>
-
-<script src="js/data.js?v=6"></script>
-<script src="js/admin.js?v=9"></script>
+<script src="js/data.js?v=9"></script>
+<script src="js/admin.js?v=11"></script>
 </body>
 </html>
