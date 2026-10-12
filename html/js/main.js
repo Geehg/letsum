@@ -1617,5 +1617,9 @@ import "@fontsource/${f.id}/400.css";</pre>
   render();
   renderTray();
   openFromHash(); openSharedFromHash(); checkFavChanges();
+  // 다른 페이지 헤더에서 온 검색(?q=)·보관함(#vault)
+  const q0 = new URLSearchParams(location.search).get("q");
+  if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
+  if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }
   detectAll().then(() => { render(); runCoverage(); });
 })();
