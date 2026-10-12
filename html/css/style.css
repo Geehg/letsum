@@ -947,3 +947,6 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .m-fx .fx i{position:absolute;left:1.6cqw;bottom:1.4cqw;font:600 11px/1 var(--mono);font-style:normal;opacity:.75}
 .sim-why{display:flex;flex-wrap:wrap;gap:4px}
 .sim-why i{font-style:normal;font-size:11px;padding:2px 7px;border:1px solid var(--rule2);border-radius:999px;color:var(--ink2)}
+
+/* 히어로 배경 질감: 분류별 종이 이미지를 슬라이드 색(--bg) 위에 곱하기로 얹음 → 색은 유지, 결만 보임 */
+.sp-grid{background-image:url(../img/tex/paper-gothic.webp);background-size:cover;background-position:center;background-blend-mode:multiply}
