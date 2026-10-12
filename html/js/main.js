@@ -250,6 +250,20 @@
     syncBodyPanel();
     document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
   }
+  // 보기 방식 안내: 첫 방문에만 결과 위에 펼치고, 하나를 고르거나 닫으면 다시 띄우지 않음(? 버튼으로 다시 보기)
+  const tourSeen = () => { try { return localStorage.getItem("ls_vtour") === "1"; } catch (e) { return true; } };
+  const tourDone = () => { try { localStorage.setItem("ls_vtour", "1"); } catch (e) {} };
+  function showTour(on) {
+    $("#vtour").hidden = !on;
+    $$("#vtour [data-tour]").forEach((b) => b.classList.toggle("on", b.dataset.tour === state.view));
+  }
+  $$("#vtour [data-tour]").forEach((b) => b.addEventListener("click", () => {
+    tourDone(); showTour(false); setView(b.dataset.tour);
+    $("#viewSeg").scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }));
+  $("#vtourX").addEventListener("click", () => { tourDone(); showTour(false); });
+  $("#viewHelp").addEventListener("click", () => { const on = $("#vtour").hidden; showTour(on); if (on) $("#vtour").scrollIntoView({ block: "nearest", behavior: "smooth" }); });
+  if (!tourSeen()) showTour(true);
   const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
   $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
   $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); syncBodyPanel(); render(); }));
