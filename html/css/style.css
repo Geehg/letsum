@@ -791,3 +791,21 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .pj-chg{margin-top:4px;font-size:12px;color:#7a2a12;background:#fff1ea;padding:4px 6px;border-radius:4px}
 .pj-shared{list-style:none;padding:0;margin:12px 0;display:flex;flex-direction:column;gap:8px}
 .pj-shared b{font-size:18px}
+
+/* ===== 색 역할 정리: 라임 = 핵심 행동, 검정 = 선택 상태, 사용 범위 = 중립 ===== */
+.pill.ok{background:transparent;color:var(--ink);border-color:var(--rule2)}
+.pill.cond{color:#9a6400;border-color:#e2b85c;background:#fff8e6}
+.pill.no{color:var(--ink3);border-color:var(--rule);text-decoration:line-through}
+.pill.key{font-weight:800;border-color:var(--ink)}
+.pill.key.ok{background:var(--ink);color:var(--paper)}
+.pill.key.cond{border-color:#c98a00}
+.pill.key.no{color:var(--no);border-color:var(--no);text-decoration:none}
+.pill.rest{color:var(--ink3);border-style:dashed}
+:root[data-theme="dark"] .pill.cond{background:transparent;color:#e0b24a;border-color:#8a6a1e}
+.fbtn.ok.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.collist button.on b{background:var(--ink);color:var(--paper)}
+.badge.free{background:transparent;color:var(--ink);border-color:var(--ink)}
+.ig-follow:hover,.feed-mode .ig-follow:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.feed-mode .ig-av{background:var(--paper2);color:var(--ink);box-shadow:0 0 0 2px var(--card),0 0 0 3px var(--rule2)}
+.ig-info .ii-pills .pill.ok{background:transparent}
+@media(max-width:1060px){aside.side .fset{flex:0 0 auto;width:250px;min-width:0}aside.side .fset .fcheck{white-space:normal}aside.side .wiz-cta{width:220px}}

@@ -317,7 +317,7 @@
     const a = ALTERNATIVES[+b.dataset.alt];
     if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
     else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
-    state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new");
+    state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new");
     $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel)); render();
   }));
 
@@ -356,8 +356,20 @@
 
   // ---------- 렌더 조각 ----------
   const LIC_SHORT = { print: "인쇄", web: "웹", video: "영상", embed: "임베딩", bici: "BI·CI", package: "포장" };
-  const pills = (f) => Object.keys(LIC_SHORT).map((k) => `<span class="pill ${f.matrix[k]}">${LIC_SHORT[k]}${f.matrix[k] === "ok" ? " ✓" : f.matrix[k] === "no" ? " ✕" : " △"}</span>`).join("")
-    + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`) + (f.intro ? `<span class="pill intro" title="${esc(f.introReason || "")}">소개 전용</span>` : "");
+  // 사용 범위 배지: 지금 고른 용도(용도 추천·상황별 시작·사용 범위 필터)에 관련된 칸만 강조하고 나머지는 한 줄로 요약
+  const COLL_LIC = { thumb: ["video", "web"], book: ["print"], subtitle: ["video"], menu: ["print", "package"], card: ["web"], doc: ["print"] };
+  const focusKeys = () => { const k = new Set(state.useLic || []); (COLL_LIC[state.coll] || []).forEach((x) => k.add(x)); state.lic.forEach((x) => { if (LIC_SHORT[x]) k.add(x); }); return [...k]; };
+  const pillOf = (f, k, key) => `<span class="pill ${f.matrix[k]}${key ? " key" : ""}">${LIC_SHORT[k]}${f.matrix[k] === "ok" ? " ✓" : f.matrix[k] === "no" ? " ✕" : " △"}</span>`;
+  const pills = (f) => {
+    const keys = focusKeys(); const all = Object.keys(LIC_SHORT);
+    let h;
+    if (!keys.length) h = all.map((k) => pillOf(f, k)).join("");
+    else {
+      const rest = all.filter((k) => !keys.includes(k)); const no = rest.filter((k) => f.matrix[k] === "no").length, cond = rest.filter((k) => f.matrix[k] === "cond").length;
+      h = keys.map((k) => pillOf(f, k, true)).join("") + (rest.length ? `<span class="pill rest" title="${rest.map((k) => LIC_SHORT[k] + " " + ({ ok: "가능", no: "불가", cond: "조건부" }[f.matrix[k]])).join(" · ")}">그 외 ${no || cond ? [cond ? `조건부 ${cond}` : "", no ? `불가 ${no}` : ""].filter(Boolean).join("·") : "모두 가능"}</span>` : "");
+    }
+    return h + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`) + (f.intro ? `<span class="pill intro" title="${esc(f.introReason || "")}">소개 전용</span>` : "");
+  };
   const famOf = (f) => state.pair ? `${LATIN_PAIRS.find((p) => p.id === f.pair).family}, ${f.family}` : f.family;
   const wOf = (f) => { const w = state.weight; if (f.weights.includes(w)) return w; return f.weights.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
   function pvText(f) {
@@ -653,9 +665,9 @@
   }
   function removeFilter(k) {
     const [t, v] = k.split(":");
-    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
+    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
     else if (t === "coll") { state.coll = null; state.cat = "전체"; }
-    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; if (state.sort === "rec") setSort("new"); }
+    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); }
     else if (t === "cat") state.cat = "전체";
     else if (t === "mood") state.mood.delete(v);
     else if (t === "lic") LIC_FILTERS.find((p) => p.key === v).keys.forEach((x) => state.lic.delete(x));
@@ -1087,7 +1099,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       if (ap) ap.addEventListener("click", () => {
         state.only = new Set(res.map((r) => r.f.id)); state.onlyLabel = `용도: ${u.label}`; state.rank = new Map(res.map((r, i) => [r.f.id, i]));
         state.recNote = `필수 조건(${u.lic.map((k) => LICENSE_CATS.find((c) => c.key === k).label).join("·")} 사용 가능${wiz.need.size ? ", " + [...wiz.need].map((n) => WIZARD_NEEDS.find((x) => x.id === n).label).join(", ") : ""})을 충족한 ${res.length}종을 '${u.label}'${wiz.mood.size ? "·" + [...wiz.mood].join("·") : ""}에 가까운 순으로 보여드려요. 분위기는 거르는 조건이 아니라 순위에만 반영됩니다.`;
-        setSort("rec"); ev("wiz_apply", u.id);
+        state.useLic = u.lic; setSort("rec"); ev("wiz_apply", u.id);
         state.ctx = u.ctx; setText(u.text);
         $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x.dataset.ctx === u.ctx));
         $$("[data-alt]").forEach((x) => x.classList.remove("on"));
