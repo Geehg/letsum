@@ -14,13 +14,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 한글 폰트"><meta property="og:description" content="상업용 무료 한글 폰트를 실제 쓰임새(썸네일·책 본문·자막·메뉴판)에서 바로 비교하고, 내 문장의 글자 지원 여부와 라이선스까지 한 화면에서 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=63">
+<link rel="stylesheet" href="css/style.css?v=64">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 UI·제목용 라틴 폰트 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&family=Playfair+Display:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="feed-mode">
 <header>
   <div class="wrap hd">
     <a class="logo" href="index.html"><img class="lg-l" src="img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
@@ -85,12 +85,12 @@
     <div class="d2">
       <div class="seg" id="viewSeg">
         <button data-v="list" title="많은 후보를 빠르게 훑기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12M2 8h12M2 13h12"/></svg>목록</button>
-        <button data-v="grid" class="on" title="같은 문장으로 여러 폰트 비교"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg>격자</button>
+        <button data-v="grid" title="같은 문장으로 여러 폰트 비교"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg>격자</button>
         <button data-v="ctx" title="책·썸네일·자막 등 쓰임새에 적용해 보기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10"/><path d="M4.5 10.5h7"/></svg>용도</button>
-        <button data-v="feed" title="적용 예시를 넘겨 보며 새 폰트 발견"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.5"/><path d="M6 11.5h4"/></svg>피드</button>
+        <button data-v="feed" class="on" title="적용 예시를 넘겨 보며 새 폰트 발견"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.5"/><path d="M6 11.5h4"/></svg>피드</button>
       </div>
       <button class="view-help" id="viewHelp" type="button" aria-label="보기 방식 안내" title="보기 방식 안내">?</button>
-      <span class="view-hint" id="viewHint">같은 문장으로 여러 폰트 비교</span>
+      <span class="view-hint" id="viewHint">적용 예시를 넘겨 보며 발견</span>
       <div class="ctxs" id="ctxChips" style="display:none"></div>
       <label class="fcheck live-only" title="소개 전용(미리보기 미제공) 폰트를 빼고 내 문장이 실제 글꼴로 보이는 폰트만"><input type="checkbox" id="liveOnly"> 내 문장 미리보기 가능만</label>
       <button class="tbtn filter-btn" id="filterBtn" type="button" aria-expanded="false">필터<span id="filterN"></span></button>
@@ -196,6 +196,6 @@
 <div id="bookRail"></div>
 <script src="js/books.js?v=5" defer></script>
 <script src="js/reviews.js?v=2"></script>
-<script src="js/main.js?v=49"></script>
+<script src="js/main.js?v=50"></script>
 </body>
 </html>

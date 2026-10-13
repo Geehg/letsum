@@ -413,7 +413,7 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 .ig-who small{font-size:11.5px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ig-follow{font-size:12px;font-weight:700;padding:4px 12px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;flex:none}
 .ig-follow:hover{background:var(--lime);color:var(--lime-ink);border-color:var(--lime)}
-.ig-media{position:relative;aspect-ratio:1/1;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ig-media{position:relative;aspect-ratio:4/3;overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .ig-track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .ig-track::-webkit-scrollbar{display:none}
 .ig-s{flex:0 0 100%;height:100%;scroll-snap-align:start;position:relative;display:flex;flex-direction:column;justify-content:center;padding:9%;overflow:hidden}
@@ -460,7 +460,7 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 .ig-cap b{color:var(--ink);margin-right:4px}
 .ig-tags{font-size:12.5px;color:#2f6db5;padding:4px 12px 12px;margin:0}
 .ig-more{text-align:center;margin:28px 0}
-@media (hover:none){.ig-dl{transform:none;position:static;padding:10px 12px}.ig-media{aspect-ratio:auto}.ig-track{aspect-ratio:1/1}.ig-nav{opacity:.85}}
+@media (hover:none){.ig-dl{transform:none;position:static;padding:10px 12px}.ig-media{aspect-ratio:auto}.ig-track{aspect-ratio:4/3}.ig-nav{opacity:.85}}
 :root[data-theme="dark"] .ig-tags{color:#8db8ee}
 @media (max-width:760px){.feed-mode .deck{position:static}}
 
@@ -580,6 +580,18 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .ig-info .ii-pills{display:flex;flex-wrap:wrap;gap:1.4cqw}
 .ig-info .ii-pills .pill{font-size:max(10px,2.8cqw);padding:.8cqw 2cqw}
 .ig-info .ii-m{font-size:max(10px,3cqw)}
+/* 4:3 영역(높이 75cqw)에 맞춘 세로 여백·줄 수 */
+.fp-ui{padding:5cqw 8cqw}
+.fp-ui .fp-win{padding:4.5cqw 6cqw;gap:2cqw}
+.fp-ui .fp-t{font-size:6.4cqw}
+.fp-ui p{line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.fp-ui .fp-btn{margin-top:1cqw}
+.fp-book{padding:7cqw 10cqw 5cqw}
+.fp-book p{-webkit-line-clamp:4}
+.fp-note{padding:7cqw 10cqw}
+.ig-info{gap:2.2cqw;padding:7cqw 9cqw}
+.ig-info .ii-n{font-size:9.5cqw}
+.ig-info p{-webkit-line-clamp:3}
 /* 굵기 */
 .ig-weights{gap:1.2cqw;padding:8cqw 9cqw}
 .ig-weights div{font-size:7.4cqw;line-height:1.3}

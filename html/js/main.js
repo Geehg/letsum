@@ -94,7 +94,7 @@
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
     sort: "new", text: TEXT_PRESETS[0].t, size: 30, weight: 400, inv: false, pair: false,
-    view: "grid", ctx: "thumb",
+    view: "feed", ctx: "thumb",
   };
   const favs = new Set(LS("fm_favs", []));
   const cmp = new Set();
@@ -1619,7 +1619,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   openFromHash(); openSharedFromHash(); checkFavChanges();
   // 다른 페이지 헤더에서 온 검색(?q=)·보관함(#vault)
   const v0 = new URLSearchParams(location.search).get("view"); // 보기 링크: ?view=list|grid|ctx|feed
-  if (["list", "grid", "ctx", "feed"].includes(v0)) setView(v0);
+  setView(["list", "grid", "ctx", "feed"].includes(v0) ? v0 : state.view); // 기본은 피드
   const q0 = new URLSearchParams(location.search).get("q");
   if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
   if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }
