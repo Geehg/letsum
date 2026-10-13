@@ -56,11 +56,13 @@ async function stats(url, req, env) {
     env.DB.prepare(`SELECT font_id, COUNT(*) n FROM comments WHERE hidden = 0 AND font_id IN (${q}) GROUP BY font_id`).bind(...ids),
     env.DB.prepare(`SELECT font_id FROM likes WHERE voter = ? AND font_id IN (${q})`).bind(voter, ...ids),
     env.DB.prepare(`SELECT id, font_id, name FROM shots WHERE status = 'approved' AND font_id IN (${q}) ORDER BY id DESC`).bind(...ids),
-    // 피드 카드용 최근 댓글 2개(폰트별)
-    env.DB.prepare(`SELECT font_id, name, substr(body, 1, 120) body FROM (SELECT font_id, name, body, ROW_NUMBER() OVER (PARTITION BY font_id ORDER BY created DESC) rn FROM comments WHERE hidden = 0 AND parent_id IS NULL AND font_id IN (${q})) WHERE rn <= 2`).bind(...ids),
+    // 피드 카드용 대표 댓글 1개(폰트별): 좋아요가 가장 많은 원 댓글, 없으면 가장 먼저 달린 원 댓글
+    env.DB.prepare(`SELECT font_id, name, body, likes FROM (SELECT c.font_id, c.name, substr(c.body, 1, 160) body, (SELECT COUNT(*) FROM comment_likes l WHERE l.comment_id = c.id) likes, c.created,
+        ROW_NUMBER() OVER (PARTITION BY c.font_id ORDER BY (SELECT COUNT(*) FROM comment_likes l WHERE l.comment_id = c.id) DESC, c.created ASC) rn
+        FROM comments c WHERE c.hidden = 0 AND c.parent_id IS NULL AND c.font_id IN (${q})) WHERE rn = 1`).bind(...ids),
   ]);
   const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false, shots: [], recent: [] }]));
-  recent.results.forEach((r) => out[r.font_id].recent.push({ name: r.name, body: r.body }));
+  recent.results.forEach((r) => out[r.font_id].recent.push({ name: r.name, body: r.body, likes: r.likes }));
   shots.results.forEach((r) => { const o = out[r.font_id]; if (o.shots.length < 3) o.shots.push({ id: r.id, name: r.name }); });
   likes.results.forEach((r) => (out[r.font_id].likes = r.n));
   comments.results.forEach((r) => (out[r.font_id].comments = r.n));

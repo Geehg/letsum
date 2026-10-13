@@ -524,7 +524,7 @@
     } catch (e) { return null; }
   }
   async function loadStats(ids) {
-    ids = ids.filter((id) => !social[id]); if (!ids.length) return;
+    ids = ids.filter((id) => !social[id]); if (!ids.length) { paintSocial(); return; }  // 이미 받은 폰트도 다시 그린 카드에 칠함
     for (let i = 0; i < ids.length; i += 60) {
       const j = await api("stats?ids=" + ids.slice(i, i + 60).join(","));
       if (!j || j.error) return;
@@ -550,8 +550,9 @@
     $$("[data-likes]").forEach((el) => { const s = social[el.dataset.likes]; el.textContent = s && s.likes ? s.likes.toLocaleString() : ""; });
     $$("[data-cmts]").forEach((el) => { const s = social[el.dataset.cmts]; el.textContent = s && s.comments ? s.comments.toLocaleString() : ""; });
     $$("[data-likeline]").forEach((el) => { const s = social[el.dataset.likeline]; el.textContent = s && s.likes ? `좋아요 ${s.likes.toLocaleString()}개` : ""; });
-    $$("[data-cmtline]").forEach((el) => { const s = social[el.dataset.cmtline]; el.textContent = s && s.comments ? (s.comments > 2 ? `댓글 ${s.comments.toLocaleString()}개 모두 보기` : "댓글 보기") : ""; });
-    $$("[data-recent]").forEach((el) => { const s = social[el.dataset.recent]; el.innerHTML = s && s.recent ? s.recent.map((c) => `<p><b>${esc(c.name)}</b> ${esc(c.body)}</p>`).join("") : ""; });
+    // 카드엔 대표 댓글 1개만(서버가 좋아요 가장 많은 댓글, 없으면 첫 댓글을 줌) — 이름 대신 원형 사람 아이콘, 닉네임은 '익명'이 아닐 때만
+    $$("[data-recent]").forEach((el) => { const s = social[el.dataset.recent]; const c = s && s.recent && s.recent[0];
+      el.innerHTML = c ? `<span class="ig-rav" aria-hidden="true">${IC.person}</span><span class="ig-rtx">${c.name && c.name !== "익명" ? `<b>${esc(c.name)}</b> ` : ""}${esc(c.body)}</span>` : ""; });
   }
   // 좋아요 = 즐겨찾기(이 브라우저) + 서버 좋아요 수
   async function toggleLike(id) {
@@ -566,6 +567,7 @@
   }
   const IC = {
     heart: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.4 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.6 0 5.6 3.5 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    person: '<svg viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="9" r="4" fill="currentColor"/><path d="M4 21c.8-4 4-6 8-6s7.2 2 8 6z" fill="currentColor"/></svg>',
     cmt: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     share: '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     down: '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -621,7 +623,6 @@
   let avatars = {};
   fetch("data/avatars.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => { avatars = j || {}; if (state.view === "feed") $$(".ig[data-id]").forEach((c) => { const a = avatars[c.dataset.id]; const el = c.querySelector(".ig-av"); if (a && el && !el.querySelector("img")) { el.innerHTML = `<img src="${a.icon}" alt="">`; el.classList.add("img"); const s = c.querySelector(".ig-who small"); if (s) s.textContent = a.label; } }); }).catch(() => {});
   const avHTML = (f) => { const a = avatars[f.id]; return a ? `<span class="ig-av img" aria-hidden="true"><img src="${a.icon}" alt=""></span>` : `<span class="ig-av" aria-hidden="true">${esc([...(f.holder || f.designer)][0] || "L")}</span>`; };
-  const nick = () => { try { return localStorage.getItem("ls_nick") || ""; } catch (e) { return ""; } };
   function feedHTML(f, i) {
     const sl = feedSlides(f, i); const dl = dlFor(f); const av = avatars[f.id];
     return `<article class="ig" data-id="${f.id}" tabindex="0">
@@ -648,14 +649,8 @@
         <p class="ig-likes" data-likeline="${f.id}"></p>
         <div class="ig-titlerow"><span class="ig-lics">${pills(f)}</span></div>
         <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
-        <button class="ig-allc" data-cmt="${f.id}" data-cmtline="${f.id}"></button>
-        <div class="ig-recent" data-recent="${f.id}"></div>
+        <button type="button" class="ig-recent" data-cmt="${f.id}" data-recent="${f.id}" title="리뷰 모두 보기"></button>
       </div>
-      <form class="ig-cform" data-cform="${f.id}" autocomplete="off">
-        <input name="body" maxlength="500" placeholder="댓글 달기…" aria-label="${esc(f.name)}에 댓글 달기">
-        <input name="website" class="hp" tabindex="-1" aria-hidden="true">
-        <button type="submit" disabled>게시</button>
-      </form>
     </article>`;
   }
   let lastScroll = 0; addEventListener("scroll", () => { lastScroll = Date.now(); }, { passive: true });
@@ -707,20 +702,6 @@
     }));
     host.querySelectorAll("[data-cmt]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.cmt, "comments")));
     host.querySelectorAll("[data-lic-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.licOpen, "license")));
-    host.querySelectorAll("[data-cform]").forEach((form) => {
-      const inp = form.querySelector("input[name=body]"), btn = form.querySelector("button");
-      inp.addEventListener("input", () => { btn.disabled = inp.value.trim().length < 2; });
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault(); const id = form.dataset.cform; const body = inp.value.trim(); if (body.length < 2) return;
-        btn.disabled = true;
-        const r = await api("comments", { id, name: nick(), body, website: form.querySelector(".hp").value });
-        if (!r || r.error) { inp.value = ""; inp.placeholder = (r && r.error) || "잠시 후 다시 시도해 주세요"; setTimeout(() => (inp.placeholder = "댓글 달기…"), 3000); inp.value = body; btn.disabled = false; return; }
-        inp.value = ""; ev("comment", id);
-        const s = social[id] || (social[id] = { likes: 0, comments: 0, liked: false, shots: [], recent: [] });
-        s.comments++; if (r.item) s.recent = [{ name: r.item.name, body: r.item.body.slice(0, 120) }, ...(s.recent || [])].slice(0, 2);
-        paintSocial();
-      });
-    });
     loadStats([...host.querySelectorAll(".ig[data-id]")].map((el) => el.dataset.id));
     $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
   }
