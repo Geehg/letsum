@@ -531,7 +531,15 @@
 
   // ---------- 좋아요 수·댓글 (Cloudflare Worker /api — 서버가 없거나 실패하면 조용히 숨김) ----------
   const social = {}; let apiOk = true;
-  async function api(path, opt) {
+  // 같은 GET 요청이 동시에 여러 번 나가지 않게(서버의 과다 요청 차단에 걸리지 않도록) 진행 중인 요청을 같이 씀
+  const inflight = new Map();
+  function api(path, opt) {
+    if (!opt && inflight.has(path)) return inflight.get(path);
+    const p = apiRaw(path, opt);
+    if (!opt) { inflight.set(path, p); p.finally(() => inflight.delete(path)); }
+    return p;
+  }
+  async function apiRaw(path, opt) {
     if (!apiOk) return null;
     try {
       const r = await fetch("/api/" + path, opt && { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(opt) });
@@ -539,13 +547,18 @@
       const j = await r.json(); return r.ok ? j : { error: j.error || "오류" };
     } catch (e) { return null; }
   }
+  const statsWait = new Set(); // 받는 중인 폰트(같은 폰트를 또 요청하지 않음)
   async function loadStats(ids) {
-    ids = ids.filter((id) => !social[id]); if (!ids.length) { paintSocial(); return; }  // 이미 받은 폰트도 다시 그린 카드에 칠함
-    for (let i = 0; i < ids.length; i += 60) {
-      const j = await api("stats?ids=" + ids.slice(i, i + 60).join(","));
-      if (!j || j.error) return;
-      Object.assign(social, j);
-    }
+    ids = ids.filter((id) => !social[id] && !statsWait.has(id));
+    if (!ids.length) { paintSocial(); return; } // 이미 받은 폰트도 다시 그린 카드에 칠함
+    ids.forEach((id) => statsWait.add(id));
+    try {
+      for (let i = 0; i < ids.length; i += 60) {
+        const j = await api("stats?ids=" + ids.slice(i, i + 60).join(","));
+        if (!j || j.error) return;
+        Object.assign(social, j);
+      }
+    } finally { ids.forEach((id) => statsWait.delete(id)); }
     paintSocial();
   }
   function paintShots() {

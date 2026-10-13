@@ -14,3 +14,15 @@ database_id = "8f3f484b-da6e-4e4d-a6d5-7e071d3295c1"
 migrations_dir = "migrations"
 
 # 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT
+
+# 과다 요청 차단(무료): IP별 10초 한도(40회). 넘으면 429. 화면 사용(피드 스크롤·상세 열기)은 1분 10~30회 정도라 닿지 않음. Cloudflare 계산이 근사라 실제로는 한도보다 조금 더 허용됨.
+[[ratelimits]]
+name = "API_RL"
+namespace_id = "1001"
+simple = { limit = 40, period = 10 }
+
+# 관리자 주소는 비밀번호 대입 방지로 더 좁게
+[[ratelimits]]
+name = "ADMIN_RL"
+namespace_id = "1002"
+simple = { limit = 30, period = 60 }

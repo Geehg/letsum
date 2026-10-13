@@ -282,6 +282,10 @@ async function admin(url, req, env) {
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    // IP별 과다 요청 차단(대량 수집·비밀번호 대입 방지). 바인딩이 없으면(로컬 등) 건너뜀
+    const rip = req.headers.get("cf-connecting-ip") || "0.0.0.0";
+    const rl = url.pathname.startsWith("/api/admin/") ? env.ADMIN_RL : env.API_RL;
+    if (rl) { try { const { success } = await rl.limit({ key: rip }); if (!success) return bad("요청이 너무 많습니다. 잠시 후 다시 시도해 주세요", 429); } catch (e) {} }
     // 같은 주소(letsum.app)에서만 쓰기 허용 — 다른 사이트가 대신 요청하지 못하게
     if (req.method === "POST") {
       const origin = req.headers.get("origin");
