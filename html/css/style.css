@@ -1156,3 +1156,56 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 #moreBtn{min-width:220px;padding:10px 20px}
 .bk-kb{display:block;margin-top:6px;padding:5px 8px;border:1px solid var(--rule2);border-radius:999px;background:#fff}
 .bk-kb img{display:block;width:100%;height:auto}
+
+/* ===== 리뷰(대화형 댓글) ===== */
+.overlay.has-rv{padding-right:392px}
+.rv-side{position:fixed;z-index:101;top:30px;bottom:30px;width:360px;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.rv-side[hidden]{display:none}
+.rv-inline{border:1px solid var(--rule2);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;max-height:640px}
+.rv-inline:empty,.rv-side-note[hidden]{display:none}
+.rv-h{display:flex;align-items:baseline;gap:8px;padding:14px 16px 12px;border-bottom:1px solid var(--rule2);flex:none}
+.rv-h b{font-size:16px}
+.rv-n{font:700 13px var(--mono);color:var(--ink3)}
+.rv-sub{font-size:12px;color:var(--ink3);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rv-x{font-size:20px;color:var(--ink3);line-height:1}
+.rv-list{flex:1;overflow-y:auto;padding:6px 16px 10px;overscroll-behavior:contain}
+.rv-empty{color:var(--ink3);font-size:13.5px;text-align:center;line-height:1.7;padding:36px 8px}
+.rv-best{background:color-mix(in srgb,var(--lime) 22%,var(--paper));border-radius:10px;padding:6px 10px 2px;margin:8px -6px 6px}
+.rv-pin{font-size:11.5px;font-weight:800;color:var(--ink2)}
+.rv-t{border-bottom:1px solid var(--rule);padding:4px 0}
+.rv-t:last-child{border-bottom:none}
+.rv-c{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:9px 0}
+.rv-av{width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;background:hsl(var(--h,200) 45% 46%);flex:none}
+.rv-av.sm{width:24px;height:24px;font-size:11px}
+.rv-av.me{width:28px;height:28px;font-size:12px;background:var(--ink)}
+.rv-b{min-width:0}
+.rv-b p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink);word-break:break-word;white-space:pre-wrap}
+.rv-b p b{font-weight:800;margin-right:2px}
+.rv-meta{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:4px;font-size:12px;color:var(--ink3)}
+.rv-meta button{font-size:12px;font-weight:700;color:var(--ink3);padding:0}
+.rv-meta button:hover{color:var(--ink)}
+.rv-heart{font-size:15px;line-height:1;color:var(--ink3);padding:4px 2px;transition:transform .15s}
+.rv-heart.on{color:#ed4956}
+.rv-heart:active{transform:scale(1.3)}
+.rv-replies{margin-left:42px}
+.rv-c.rp{padding:6px 0}
+.rv-more{font-size:12px;font-weight:700;color:var(--ink3);padding:2px 0 8px}
+.rv-compose{flex:none;border-top:1px solid var(--rule2);padding:8px 12px 10px;background:var(--paper);display:flex;flex-direction:column;gap:6px;position:relative}
+.rv-emo{display:flex;justify-content:space-between;padding:2px 2px 4px}
+.rv-emo button{font-size:20px;line-height:1;padding:2px;border-radius:8px;transition:transform .12s}
+.rv-emo button:hover{transform:scale(1.2)}
+.rv-in{display:flex;align-items:center;gap:8px;border:1px solid var(--rule2);border-radius:22px;padding:4px 6px 4px 6px;background:var(--paper2)}
+.rv-in:focus-within{border-color:var(--ink);background:var(--paper)}
+.rv-in textarea{flex:1;min-width:0;border:none;background:transparent;font:inherit;font-size:14px;line-height:1.4;resize:none;padding:6px 2px;color:var(--ink);outline:none;max-height:120px}
+.rv-post{font-weight:800;font-size:13.5px;color:#0095f6;padding:4px 8px}
+.rv-post:disabled{opacity:.35;cursor:default}
+.rv-in2{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink3)}
+.rv-in2 input{width:110px;font:inherit;font-size:12px;padding:4px 8px;border:1px solid var(--rule2);border-radius:8px;background:var(--paper);color:var(--ink)}
+.rv-in2 span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rv-replying{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink2);background:var(--paper2);border-radius:8px;padding:5px 10px}
+.rv-replying[hidden]{display:none}
+.rv-replying button{font-size:16px;color:var(--ink3);line-height:1}
+.rv-msg{margin:0;font-size:12px;color:var(--no)}
+.rv-msg:empty{display:none}
+.rv-compose .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+:root[data-theme="dark"] .rv-post{color:#5ab8ff}

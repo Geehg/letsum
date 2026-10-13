@@ -1115,15 +1115,9 @@ import "@fontsource/${f.id}/400.css";</pre>
             <div class="cmt-row"><span class="note">운영자 검토 후 공개됩니다. 하루 3장까지, 긴 변 1280px로 줄여 올라갑니다.</span><button class="btn" type="submit">올리기</button></div>
             <p class="note cmt-msg" id="shotMsg"></p>
           </form></details></div>
-      <div class="m-sec" id="cmtSec"><h3>댓글 <span class="note" id="cmtCount"></span></h3>
-        <form class="cmt-form" id="cmtForm" autocomplete="off">
-          <input name="name" maxlength="20" placeholder="닉네임 (선택)" aria-label="닉네임" value="${esc(nick())}">
-          <input name="website" class="hp" tabindex="-1" aria-hidden="true" placeholder="비워 두세요">
-          <textarea name="body" maxlength="500" rows="2" placeholder="이 폰트를 어디에 써 보셨나요? 사용 후기·팁을 남겨 주세요 (500자)" aria-label="댓글 내용" required></textarea>
-          <div class="cmt-row"><span class="note">로그인 없이 남깁니다. 개인정보(연락처 등)는 쓰지 마세요. 부적절한 글은 신고 3회 시 자동 숨김됩니다.</span><button class="btn" type="submit">남기기</button></div>
-          <p class="note cmt-msg" id="cmtMsg"></p>
-        </form>
-        <div class="cmt-list" id="cmtList"><p class="note">불러오는 중…</p></div></div>
+      <div class="m-sec" id="cmtSec"><h3>리뷰 <span class="note" id="cmtCount"></span></h3>
+        <p class="note rv-side-note" id="rvSideNote">리뷰는 오른쪽 창에서 보고 남길 수 있어요.</p>
+        <div class="rv-inline" id="rvInline"></div></div>
       <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 사용 범위는 저작권자의 규정에 따라 달라질 수 있습니다.</p>`;
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
@@ -1196,31 +1190,42 @@ import "@fontsource/${f.id}/400.css";</pre>
       ev("shot_up", f.id); form.reset(); msg.style.color = "var(--ink2)"; msg.textContent = "접수됐습니다. 운영자 검토 후 공개됩니다. 감사합니다!";
     });
   }
-  async function bindComments(f, focus) {
-    const list = $("#cmtList"), form = $("#cmtForm"), msg = $("#cmtMsg");
-    if (focus === "comments") setTimeout(() => $("#cmtSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
-    if (focus === "license") setTimeout(() => $("#licSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
-    const j = await api("comments?id=" + f.id);
-    if (!j || j.error) { $("#cmtSec").style.display = apiOk ? "" : "none"; list.innerHTML = '<p class="note">댓글을 불러오지 못했습니다.</p>'; return; }
-    const draw = (items) => {
-      $("#cmtCount").textContent = items.length ? `${items.length}개` : "";
-      list.innerHTML = items.length ? items.map(cmtHTML).join("") : '<p class="note">아직 댓글이 없습니다. 첫 사용 후기를 남겨 주세요.</p>';
-      list.querySelectorAll("[data-rep]").forEach((b) => b.addEventListener("click", async () => {
-        if (!confirm("이 댓글을 신고할까요? 신고가 3회 쌓이면 자동으로 숨겨집니다.")) return;
-        await api("report", { commentId: +b.dataset.rep }); b.textContent = "신고됨"; b.disabled = true;
-      }));
-    };
-    let items = j.items || []; draw(items);
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault(); const fd = new FormData(form); const btn = form.querySelector("button[type=submit]");
-      btn.disabled = true; msg.textContent = "";
-      try { if (fd.get("name")) localStorage.setItem("ls_nick", String(fd.get("name")).slice(0, 20)); } catch (x) {}
-      const r = await api("comments", { id: f.id, name: fd.get("name"), body: fd.get("body"), website: fd.get("website") });
-      btn.disabled = false;
-      if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; return; }
-      ev("comment", f.id);
-      if (r.item) { items = [r.item, ...items]; draw(items); form.reset(); const s = social[f.id]; if (s) { s.comments++; paintSocial(); } }
+  // 리뷰: 넓은 화면(상세 창 + 360px가 들어가면)은 상세 창 오른쪽 고정 패널, 아니면 상세 창 안
+  const RV_W = 360, RV_GAP = 16;
+  let rvMounted = null, rvFont = null, rvMode = "", rvHost = null;
+  const rvSide = (() => { const el = document.createElement("aside"); el.className = "rv-side"; el.id = "rvSide"; el.hidden = true; el.setAttribute("aria-label", "폰트 리뷰"); overlay.appendChild(el); return el; })();
+  const rvWide = () => innerWidth >= 900 + RV_W + RV_GAP * 3 + 32; // 상세 창(900) + 패널 + 여백
+  function rvPlace() {
+    if (rvMode !== "side") return;
+    const r = modal.getBoundingClientRect();
+    rvSide.style.left = Math.round(r.right + RV_GAP) + "px";
+  }
+  function rvMount(f) {
+    const wide = rvWide(); const mode = wide ? "side" : "inline";
+    const host = wide ? rvSide : $("#rvInline");
+    // 상세 창이 다시 그려지면(이름표·측정값 도착 등) 안쪽 칸이 새로 생기므로 그때는 다시 붙임
+    if (rvMounted && rvFont === f.id && rvMode === mode && rvHost === host) return;
+    if (rvMounted) rvMounted.destroy();
+    rvFont = f.id; rvMode = mode;
+    overlay.classList.toggle("has-rv", wide); rvSide.hidden = !wide;
+    const note = $("#rvSideNote"); if (note) note.hidden = !wide;
+    rvHost = host;
+    rvMounted = window.LSReviews.mount(host, f, {
+      onCount: (n) => { const c = $("#cmtCount"); if (c) c.textContent = n ? `${n}개` : ""; },
+      onPosted: () => { ev("comment", f.id); const s = social[f.id]; if (s) { s.comments++; paintSocial(); } },
     });
+    rvPlace();
+  }
+  function rvUnmount() { if (rvMounted) rvMounted.destroy(); rvMounted = null; rvFont = null; rvMode = ""; rvHost = null; rvSide.hidden = true; overlay.classList.remove("has-rv"); }
+  addEventListener("resize", () => { if (!rvFont) return; const f = FONTS.find((x) => x.id === rvFont); if (f && $("#cmtSec")) { rvMounted && rvMounted.destroy(); rvMounted = null; rvMount(f); } });
+  // 상세가 아닌 다른 창(보관함 등)으로 바뀌면 리뷰 패널을 닫음
+  new MutationObserver(() => { if (!$("#cmtSec") && rvFont) rvUnmount(); }).observe(modal, { childList: true });
+  async function bindComments(f, focus) {
+    if (focus === "license") setTimeout(() => $("#licSec")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    if (!apiOk) { $("#cmtSec").style.display = "none"; return; }
+    rvMounted && rvFont !== f.id && rvUnmount();
+    rvMount(f);
+    if (focus === "comments") setTimeout(() => { if (rvMode === "side") rvSide.querySelector("textarea")?.focus(); else $("#cmtSec")?.scrollIntoView({ behavior: "smooth", block: "start" }); }, 80);
   }
   function openDesigner(name) {
     const list = FONTS.filter((f) => f.designer === name);
@@ -1234,7 +1239,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#mx").addEventListener("click", closeModal);
     modal.querySelectorAll("[data-did]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.did)));
   }
-  function closeModal() { overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
+  function closeModal() { rvUnmount && rvUnmount(); overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
   // 폰트별 정적 페이지(font/<id>.html)와 공유 링크에서 #f=<id>로 들어오면 바로 상세를 연다
   function openFromHash() { const m = location.hash.match(/^#f=([\w-]+)/); if (m && FONTS.some((x) => x.id === m[1])) openDetail(m[1]); }
   window.addEventListener("hashchange", openFromHash);

@@ -1,8 +1,9 @@
 // LETSUM API — 좋아요 수·댓글. 로그인 없음, 개인정보 최소화(IP는 해시로만), AI 없음.
 // 경로: GET  /api/stats?ids=a,b,c        → { a: { likes, comments, liked } }
 //       POST /api/like     { id, on }      → { likes, liked }
-//       GET  /api/comments?id=x           → { items: [{ id, name, body, created }] }
-//       POST /api/comments { id, name, body, website(빈칸 함정) } → { ok, item }
+//       GET  /api/comments?id=x           → { items: [{ id, name, body, created, parent_id, likes, liked }] }  (오래된 순, 답글은 parent_id)
+//       POST /api/comments { id, name, body, parent?, website(빈칸 함정) } → { ok, item }  (답글은 한 단계만)
+//       POST /api/comment-like { commentId, on } → { likes, liked }
 //       POST /api/report   { commentId }    → { ok }
 //       GET  /api/shots?id=x               → { items: [{ id, name, caption, created }] }  (승인된 사용 사례 사진)
 //       GET  /api/shot/<n>                 → 이미지(승인된 것만)
@@ -56,7 +57,7 @@ async function stats(url, req, env) {
     env.DB.prepare(`SELECT font_id FROM likes WHERE voter = ? AND font_id IN (${q})`).bind(voter, ...ids),
     env.DB.prepare(`SELECT id, font_id, name FROM shots WHERE status = 'approved' AND font_id IN (${q}) ORDER BY id DESC`).bind(...ids),
     // 피드 카드용 최근 댓글 2개(폰트별)
-    env.DB.prepare(`SELECT font_id, name, substr(body, 1, 120) body FROM (SELECT font_id, name, body, ROW_NUMBER() OVER (PARTITION BY font_id ORDER BY created DESC) rn FROM comments WHERE hidden = 0 AND font_id IN (${q})) WHERE rn <= 2`).bind(...ids),
+    env.DB.prepare(`SELECT font_id, name, substr(body, 1, 120) body FROM (SELECT font_id, name, body, ROW_NUMBER() OVER (PARTITION BY font_id ORDER BY created DESC) rn FROM comments WHERE hidden = 0 AND parent_id IS NULL AND font_id IN (${q})) WHERE rn <= 2`).bind(...ids),
   ]);
   const out = Object.fromEntries(ids.map((id) => [id, { likes: 0, comments: 0, liked: false, shots: [], recent: [] }]));
   recent.results.forEach((r) => out[r.font_id].recent.push({ name: r.name, body: r.body }));
@@ -78,10 +79,27 @@ async function like(req, env) {
   return json({ likes: n.n, liked: b.on !== false });
 }
 
-async function listComments(url, env) {
+async function listComments(url, req, env) {
   const id = url.searchParams.get("id") || ""; if (!ID.test(id)) return bad("잘못된 폰트");
-  const r = await env.DB.prepare("SELECT id, name, body, created FROM comments WHERE font_id = ? AND hidden = 0 ORDER BY created DESC LIMIT 100").bind(id).all();
-  return json({ items: r.results });
+  const voter = await voterOf(req, env);
+  const r = await env.DB.prepare(`SELECT c.id, c.name, c.body, c.created, c.parent_id,
+      (SELECT COUNT(*) FROM comment_likes l WHERE l.comment_id = c.id) AS likes,
+      EXISTS(SELECT 1 FROM comment_likes l WHERE l.comment_id = c.id AND l.voter = ?) AS liked
+    FROM comments c WHERE c.font_id = ? AND c.hidden = 0 ORDER BY c.created ASC LIMIT 300`).bind(voter, id).all();
+  return json({ items: r.results.map((x) => ({ ...x, liked: !!x.liked })) });
+}
+async function likeComment(req, env) {
+  const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
+  const c = await env.DB.prepare("SELECT id FROM comments WHERE id = ? AND hidden = 0").bind(cid).first(); if (!c) return bad("없는 댓글", 404);
+  const voter = await voterOf(req, env); const now = Date.now();
+  if (b.on === false) await env.DB.prepare("DELETE FROM comment_likes WHERE comment_id = ? AND voter = ?").bind(cid, voter).run();
+  else {
+    const recent = await env.DB.prepare("SELECT COUNT(*) n FROM comment_likes WHERE voter = ? AND created > ?").bind(voter, now - 60000).first();
+    if (recent.n >= LIMIT.likesPerMin) return bad("잠시 후 다시 시도해 주세요", 429);
+    await env.DB.prepare("INSERT OR IGNORE INTO comment_likes (comment_id, voter, created) VALUES (?, ?, ?)").bind(cid, voter, now).run();
+  }
+  const n = await env.DB.prepare("SELECT COUNT(*) n FROM comment_likes WHERE comment_id = ?").bind(cid).first();
+  return json({ likes: n.n, liked: b.on !== false });
 }
 
 async function addComment(req, env) {
@@ -98,7 +116,15 @@ async function addComment(req, env) {
     env.DB.prepare("SELECT COUNT(*) n FROM comments WHERE voter = ? AND created > ?").bind(voter, now - 86400000),
   ]);
   if (a.results[0].n >= LIMIT.commentsPer10m || d.results[0].n >= LIMIT.commentsPerDay) return bad("댓글을 너무 자주 남겼습니다. 잠시 후 다시 시도해 주세요", 429);
-  const r = await env.DB.prepare("INSERT INTO comments (font_id, name, body, voter, created) VALUES (?, ?, ?, ?, ?) RETURNING id, name, body, created").bind(b.id, name, text, voter, now).first();
+  // 답글: 같은 폰트의 댓글에만, 답글의 답글은 원래 댓글 아래로(한 단계)
+  let parent = null;
+  if (b.parent) {
+    const p = await env.DB.prepare("SELECT id, font_id, parent_id FROM comments WHERE id = ? AND hidden = 0").bind(parseInt(b.parent, 10) || 0).first();
+    if (!p || p.font_id !== b.id) return bad("답글을 달 댓글을 찾지 못했습니다");
+    parent = p.parent_id || p.id;
+  }
+  const r = await env.DB.prepare("INSERT INTO comments (font_id, name, body, voter, created, parent_id) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, name, body, created, parent_id").bind(b.id, name, text, voter, now, parent).first();
+  r.likes = 0; r.liked = false;
   return json({ ok: true, item: r });
 }
 
@@ -194,14 +220,15 @@ async function admin(url, req, env) {
     return json({ items: r.results });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/export") {
-    const [c, l, r, sh, e, bt] = await env.DB.batch([
+    const [c, l, r, sh, e, bt, cl] = await env.DB.batch([
       env.DB.prepare("SELECT * FROM comments ORDER BY id"), env.DB.prepare("SELECT * FROM likes"), env.DB.prepare("SELECT * FROM reports"),
       env.DB.prepare("SELECT id, font_id, name, caption, mime, bytes, data, voter, created, status, approved FROM shots ORDER BY id"), env.DB.prepare("SELECT * FROM events ORDER BY day"),
       env.DB.prepare("SELECT * FROM brand_themes"),
+      env.DB.prepare("SELECT * FROM comment_likes"),
     ]);
     const b64 = (d) => { const u = new Uint8Array(d); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s); };
     const shots = sh.results.map((x) => ({ ...x, data: b64(x.data) }));
-    return json({ exported: new Date().toISOString(), schema: 4, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results, brand: bt.results },
+    return json({ exported: new Date().toISOString(), schema: 5, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results, brand: bt.results, comment_likes: cl.results },
       200, { "content-disposition": `attachment; filename="letsum-d1-${new Date().toISOString().slice(0, 10)}.json"` });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/metrics") {
@@ -242,7 +269,7 @@ async function admin(url, req, env) {
   }
   if (req.method === "POST" && url.pathname === "/api/admin/comment") {
     const b = await body(req); const cid = parseInt(b.commentId, 10); if (!cid) return bad("잘못된 댓글");
-    if (b.action === "delete") { await env.DB.batch([env.DB.prepare("DELETE FROM comments WHERE id = ?").bind(cid), env.DB.prepare("DELETE FROM reports WHERE comment_id = ?").bind(cid)]); }
+    if (b.action === "delete") { await env.DB.batch([env.DB.prepare("DELETE FROM comment_likes WHERE comment_id IN (SELECT id FROM comments WHERE id = ? OR parent_id = ?)").bind(cid, cid), env.DB.prepare("DELETE FROM reports WHERE comment_id IN (SELECT id FROM comments WHERE id = ? OR parent_id = ?)").bind(cid, cid), env.DB.prepare("DELETE FROM comments WHERE id = ? OR parent_id = ?").bind(cid, cid)]); }
     else if (b.action === "hide" || b.action === "show") await env.DB.prepare("UPDATE comments SET hidden = ? WHERE id = ?").bind(b.action === "hide" ? 1 : 0, cid).run();
     else return bad("잘못된 동작");
     return json({ ok: true });
@@ -265,7 +292,8 @@ export default {
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
       if (req.method === "GET" && p === "/api/brand") return await brandList(env);
       if (req.method === "POST" && p === "/api/like") return await like(req, env);
-      if (req.method === "GET" && p === "/api/comments") return await listComments(url, env);
+      if (req.method === "GET" && p === "/api/comments") return await listComments(url, req, env);
+      if (req.method === "POST" && p === "/api/comment-like") return await likeComment(req, env);
       if (req.method === "POST" && p === "/api/comments") return await addComment(req, env);
       if (req.method === "POST" && p === "/api/report") return await report(req, env);
       if (req.method === "POST" && p === "/api/e") return await track(req, env);
