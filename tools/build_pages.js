@@ -41,7 +41,7 @@ function page(f) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${SITE}/font/${f.id}.html">
-<meta property="og:title" content="${esc(f.name)} — 상업용 무료 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/og-letsum.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="${esc(f.name)} — 상업용 무료 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/${fs.existsSync(path.join(ROOT, "img/og", f.id + ".png")) ? "og/" + f.id : "og-main"}.png"><meta property="og:image:alt" content="${esc(f.name)} 글꼴 미리보기"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">

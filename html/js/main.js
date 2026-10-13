@@ -637,7 +637,7 @@
   }
   // 배포 주체 아이콘(빌드 때 받은 파비콘·로고) — 없으면 글자 아바타
   let avatars = {};
-  fetch("data/avatars.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => { avatars = j || {}; if (state.view === "feed") $$(".ig[data-id]").forEach((c) => { const a = avatars[c.dataset.id]; const el = c.querySelector(".ig-av"); if (a && el && !el.querySelector("img")) { el.innerHTML = `<img src="${a.icon}" alt="">`; el.classList.add("img"); const s = c.querySelector(".ig-who small"); if (s) s.textContent = a.label; } }); }).catch(() => {});
+  fetch("data/avatars.json?v=2").then((r) => (r.ok ? r.json() : {})).then((j) => { avatars = j || {}; if (state.view === "feed") $$(".ig[data-id]").forEach((c) => { const a = avatars[c.dataset.id]; const el = c.querySelector(".ig-av"); if (a && el && !el.querySelector("img")) { el.innerHTML = `<img src="${a.icon}" alt="">`; el.classList.add("img"); const s = c.querySelector(".ig-who small"); if (s) s.textContent = a.label; } }); }).catch(() => {});
   const avHTML = (f) => { const a = avatars[f.id]; return a ? `<span class="ig-av img" aria-hidden="true"><img src="${a.icon}" alt=""></span>` : `<span class="ig-av" aria-hidden="true">${esc([...(f.holder || f.designer)][0] || "L")}</span>`; };
   function feedHTML(f, i) {
     const sl = feedSlides(f, i); const dl = dlFor(f); const av = avatars[f.id];

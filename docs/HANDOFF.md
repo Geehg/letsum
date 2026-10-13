@@ -73,7 +73,7 @@ python3 -I tools/import_webfonts.py      # data.js에 '확인 중'으로 추가 
 1. 공식 웹폰트 CSS·파일 주소를 찾고 `curl -I -H 'Origin: https://letsum.app'`로 `access-control-allow-origin`을 확인한다(없으면 이 방식 불가).
 2. `tools/state/cdn_fonts.json`에 굵기별 주소 등록 → 파일을 `tools/archive/cdn/<id>/<굵기>.<확장자>`에 받아 둔다(글자 수 계산용, git 제외).
 3. data.js에 항목 추가(`webfont`에 공식 주소 그대로) → 라이선스 근거(공유마당 개별 페이지 OFL 표시·저장소 LICENSE)를 `license_manual.json`에 → `aliases.json`에 카탈로그 이름 연결.
-4. `build_coverage.py`·`build_evidence.py`·`fetch_icons.py`·`build_pages.js`·`validate.py`.
+4. `build_coverage.py`·`build_evidence.py`·`fetch_icons.py`(피드 카드 로고 — 빠뜨리면 카드에 첫 글자만 나옴)·`build_og.py`(카톡·SNS 미리보기 카드 `img/og/<id>.png`)·`build_pages.js`·`validate.py`.
 
 ### C. 기업·지자체 신규 전용서체(뉴스로 감지) — 사람 판단 필수
 `report.md`의 '📰 새 배포 소식'에서 시작한다.
