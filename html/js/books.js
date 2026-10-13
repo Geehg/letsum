@@ -10,6 +10,7 @@
     <div class="bk-view"><div class="bk-track">${BOOKS.map((b, i) => `<a class="bk-s" href="${esc(b.url)}" target="_blank" rel="noopener" aria-label="${esc(b.t)} — 교보문고 전자책 바로가기"${i ? ' tabindex="-1"' : ""}>
       <img src="${esc(b.img)}" alt="${esc(b.t)} 표지" width="360" height="511" loading="lazy">
       <b class="bk-t">${esc(b.t)}</b><span class="bk-s2">${esc(b.s)}</span><span class="bk-d">${esc(b.d)}</span>
+      <span class="bk-kb"><img src="img/books/kyobo.png" alt="교보문고" width="356" height="106"></span>
       <span class="bk-go">바로가기 →</span></a>`).join("")}</div></div>
     <div class="bk-dots">${BOOKS.map((_, i) => `<button type="button" data-bk="${i}" aria-label="${i + 1}번째 책"${i ? "" : ' class="on"'}></button>`).join("")}</div>
   </aside>
@@ -19,7 +20,9 @@
   const tr = host.querySelector(".bk-track"), dots = [...host.querySelectorAll(".bk-dots button")], slides = [...host.querySelectorAll(".bk-s")];
   let i = 0, t = null;
   const go = (k) => { i = (k + BOOKS.length) % BOOKS.length; tr.style.transform = `translateX(-${i * 100}%)`; dots.forEach((d, j) => d.classList.toggle("on", j === i)); slides.forEach((s, j) => s.tabIndex = j === i ? 0 : -1); };
-  const play = () => { clearInterval(t); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) t = setInterval(() => go(i + 1), 5000); };
+  // 3초마다 다음 책(마우스를 올린 동안만 멈춤). '동작 줄이기' 설정이면 미끄러짐 없이 바로 바뀜
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) tr.style.transition = "none";
+  const play = () => { clearInterval(t); t = setInterval(() => go(i + 1), 3000); };
   dots.forEach((d) => d.addEventListener("click", () => { go(+d.dataset.bk); play(); }));
   host.addEventListener("mouseenter", () => clearInterval(t)); host.addEventListener("mouseleave", play);
   play();
