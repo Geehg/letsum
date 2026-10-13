@@ -91,7 +91,7 @@ function page(f) {
 font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p>${f.matrix.embed === "ok" ? "원 배포처에서 받은 파일을 직접 호스팅하세요(라이선스상 웹 임베딩 허용)." : f.matrix.embed === "no" ? "<b>이 폰트는 웹폰트·앱 임베딩이 허용되지 않습니다.</b> 이미지·인쇄물·영상 등 위 표에서 허용된 방식으로만 쓰세요." : "<b>웹폰트·앱 임베딩은 조건부입니다.</b> " + esc((LICENSE_INFO[f.license] || {}).note || "") + " — 직접 호스팅하기 전에 라이선스 원문을 확인하세요."} 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
-<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 한글 폰트 · <a href="../index.html">전체 폰트 보기</a></p></div></footer>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 한글 폰트 · <a href="../index.html">전체 폰트 보기</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script src="../js/common.js?v=1" data-base="../"></script>
 </body>
 </html>
@@ -101,7 +101,7 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
 const out = path.join(ROOT, "font"); fs.mkdirSync(out, { recursive: true });
 FONTS.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f)));
 const today = new Date().toISOString().slice(0, 10);
-const urls = [`${SITE}/`, `${SITE}/guide.html`, `${SITE}/subset.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /admin.html\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log(`font pages ${FONTS.length}, sitemap ${urls.length} urls`);
