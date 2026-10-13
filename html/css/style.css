@@ -1134,12 +1134,20 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .bk-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
 .bk-dots button{width:7px;height:7px;border-radius:50%;background:var(--rule2);padding:0}
 .bk-dots button.on{background:var(--ink);width:18px;border-radius:4px}
-/* 오른쪽 세로 배너: 본문 오른쪽 전용 칸(스크롤해도 따라옴) · 좁은 화면에서는 숨김 */
-#bookRail{display:none}
-@media(min-width:1200px){
-  .body{grid-template-columns:232px minmax(0,1fr) 200px}
-  #bookRail{display:block;position:sticky;top:calc(var(--hd) + 113px);align-self:start;padding:22px 0 0 18px}
-  #bookRail .bk{width:auto}
-}
-body.feed-mode #bookRail{display:none}
-body.feed-mode .body{grid-template-columns:minmax(0,1fr)}
+/* 오른쪽 세로 배너: 본문(1280px) 바깥 오른쪽 여백에만 떠 있음 — 본문 폭은 그대로, 여백이 모자라면 숨김 */
+#bookRail{display:none;position:fixed;z-index:30;top:50%;transform:translateY(-50%);width:136px;right:max(10px,calc((100vw - 1280px) / 2 - 156px))}
+@media(min-width:1600px){#bookRail{display:block}}
+#bookRail .bk{width:auto;padding:10px 10px 8px;border-radius:10px}
+#bookRail .bk-s img{width:94%;align-self:center}
+#bookRail .bk-t{font-size:13.5px}
+#bookRail .bk-s2{font-size:10px}
+#bookRail .bk-d{font-size:11px;line-height:1.45}
+#bookRail .bk-go{font-size:11.5px;padding:6px 0}
+.bk-home{display:inline-flex;align-items:center;gap:4px;color:var(--ink);text-decoration:none}
+.bk-home svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.bk-home:hover{color:var(--ink);text-decoration:underline}
+.bk-h{flex-wrap:wrap;row-gap:2px}
+.bk-nav{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.bk-nav button{font:700 11px/1 var(--mono);letter-spacing:.04em;padding:8px 0;border:1.5px solid var(--rule2);border-radius:8px;background:var(--paper);color:var(--ink2)}
+.bk-nav button:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
