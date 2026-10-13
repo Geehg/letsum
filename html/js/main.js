@@ -733,15 +733,24 @@
 
   // ---------- 메인 렌더 ----------
   let renderSig = "", shownN = 60;
+  // 목록 불러오기: 120종까지만 화면 끝에서 자동으로 이어 붙이고, 그 뒤는 '더 보기' 버튼으로(푸터에 늘 닿도록)
+  const AUTO_MAX = 120, STEP = 60;
+  // 다른 페이지에 갔다가 돌아오면 불러온 개수·위치를 되살림(이 탭에서만)
+  let restore = null; try { restore = JSON.parse(sessionStorage.getItem("ls_listpos") || "null"); } catch (e) {}
+  const savePos = () => { try { sessionStorage.setItem("ls_listpos", JSON.stringify({ sig: renderSig, n: shownN, y: scrollY })); } catch (e) {} };
+  addEventListener("pagehide", savePos); document.addEventListener("visibilitychange", () => { if (document.hidden) savePos(); });
   function render() {
     const list = filtered();
     $("#count").innerHTML = `<b>${list.length}</b> / ${FONTS.length}종`;
     const host = $("#results");
     // 한 번에 다 그리지 않고 60개씩: 끝에 닿으면 이어서 그린다(DOM을 가볍게)
     const sig = state.view + "|" + list.length + "|" + (list[0] || {}).id;
-    if (sig !== renderSig) { renderSig = sig; shownN = 60; }
+    if (sig !== renderSig) {
+      renderSig = sig; shownN = STEP;
+      if (restore && restore.sig === sig) { shownN = Math.max(STEP, restore.n | 0); const y = restore.y; restore = null; setTimeout(() => scrollTo(0, y), 60); }
+    }
     const part = list.slice(0, shownN);
-    const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button></div>` : "";
+    const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button>${shownN >= AUTO_MAX ? `<p class="more-help">찾는 폰트가 따로 있나요? <button class="linklike" data-more="wiz">용도로 고르기</button> · <button class="linklike" data-more="filter">필터로 좁히기</button> · <button class="linklike" data-more="search">이름으로 검색</button></p>` : ""}</div>` : "";
     const hits = state.q && !isChoQuery(state.q) ? list.slice(0, 3).map((f) => [f, nameHit(f, state.q)]).filter(([f, h]) => h && !(f.name + f.en).toLowerCase().includes(state.q.toLowerCase())) : [];
     const hitBar = hits.length ? `<div class="name-hit">${hits.map(([f, h]) => `<p><span class="nh-k">${esc(h.lab)}</span> <code>${esc(h.val)}</code> → <button class="linklike" data-open="${f.id}"><b>${esc(f.name)}</b>${h.w ? ` ${WN[h.w] || h.w}(${h.w})` : ""}</button></p>`).join("")}<small>프로그램에 보이는 이름이 LETSUM 표기와 달라도 찾아 드려요.</small></div>` : "";
     if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? "<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요.</small>" : ""}</div>`;
@@ -758,9 +767,16 @@
     if (state.view === "feed") bindFeed(host);
     const sen = $("#moreSentinel");
     if (sen) {
-      const grow = () => { const y = scrollY; shownN += 60; render(); scrollTo(0, y); };
+      const grow = () => { const y = scrollY; shownN += STEP; render(); scrollTo(0, y); };
       $("#moreBtn").addEventListener("click", grow);
-      if ("IntersectionObserver" in window) { const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { io.disconnect(); grow(); } }, { rootMargin: "800px 0px" }); io.observe(sen); }
+      sen.querySelectorAll("[data-more]").forEach((b) => b.addEventListener("click", () => {
+        const k = b.dataset.more;
+        if (k === "wiz") $("#wizBtn").click();
+        else if (k === "search") { scrollTo({ top: 0, behavior: "smooth" }); setTimeout(() => $("#qTop").focus(), 300); }
+        else { const fb = $("#filterBtn"); if (fb && fb.offsetParent) fb.click(); else { scrollTo({ top: 0, behavior: "smooth" }); $("#side")?.scrollTo({ top: 0 }); } }
+      }));
+      // 자동 이어 붙이기는 AUTO_MAX까지만
+      if (shownN < AUTO_MAX && "IntersectionObserver" in window) { const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { io.disconnect(); grow(); } }, { rootMargin: "800px 0px" }); io.observe(sen); }
     }
   }
   function renderActive() {

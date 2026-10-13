@@ -23,5 +23,19 @@
   dots.forEach((d) => d.addEventListener("click", () => { go(+d.dataset.bk); play(); }));
   host.addEventListener("mouseenter", () => clearInterval(t)); host.addEventListener("mouseleave", play);
   play();
+  // 위치: 히어로·상단 조작 막대 아래에서 시작하고, 푸터와도 겹치지 않게(화면이 넓어 배너가 보일 때만 계산)
+  const place = () => {
+    if (getComputedStyle(host).display === "none") return;
+    const gap = 16, h = host.offsetHeight;
+    const hero = document.getElementById("spot"), deck = document.querySelector(".deck"), foot = document.querySelector("footer");
+    const minTop = Math.max(hero ? hero.getBoundingClientRect().bottom : 0, deck ? deck.getBoundingClientRect().bottom : 0) + gap;
+    const maxTop = foot ? foot.getBoundingClientRect().top - h - gap : Infinity;
+    // 히어로·조작 막대 아래와 푸터 위 사이에 들어갈 자리가 없으면(낮은 화면에서 맨 아래) 겹치지 않게 잠시 숨김
+    const fits = maxTop >= minTop;
+    host.style.top = Math.round(minTop) + "px";
+    host.style.visibility = fits ? "visible" : "hidden";
+  };
+  addEventListener("scroll", place, { passive: true }); addEventListener("resize", place);
+  new ResizeObserver(place).observe(document.body); place();
   host.querySelectorAll("[data-go]").forEach((b) => b.addEventListener("click", () => window.scrollTo({ top: b.dataset.go === "top" ? 0 : document.documentElement.scrollHeight, behavior: "smooth" })));
 })();

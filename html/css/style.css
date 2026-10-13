@@ -1135,7 +1135,7 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .bk-dots button{width:7px;height:7px;border-radius:50%;background:var(--rule2);padding:0}
 .bk-dots button.on{background:var(--ink);width:18px;border-radius:4px}
 /* 오른쪽 세로 배너: 본문(1280px) 바깥 오른쪽 여백에만 떠 있음 — 본문 폭은 그대로, 여백이 모자라면 숨김 */
-#bookRail{display:none;position:fixed;z-index:30;top:50%;transform:translateY(-50%);width:136px;right:max(10px,calc((100vw - 1280px) / 2 - 156px))}
+#bookRail{display:none;position:fixed;z-index:30;top:0;width:136px;right:max(10px,calc((100vw - 1280px) / 2 - 156px))}
 @media(min-width:1600px){#bookRail{display:block}}
 #bookRail .bk{width:auto;padding:10px 10px 8px;border-radius:10px}
 #bookRail .bk-s img{width:94%;align-self:center}
@@ -1151,3 +1151,6 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .bk-nav button{font:700 11px/1 var(--mono);letter-spacing:.04em;padding:8px 0;border:1.5px solid var(--rule2);border-radius:8px;background:var(--paper);color:var(--ink2)}
 .bk-nav button:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
 
+.more-help{margin:10px 0 0;font-size:13px;color:var(--ink3)}
+.more-help .linklike{font-size:13px}
+#moreBtn{min-width:220px;padding:10px 20px}
