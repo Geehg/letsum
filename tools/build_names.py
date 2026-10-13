@@ -34,7 +34,8 @@ console.log(JSON.stringify(F.map(f=>({id:f.id,name:f.name,en:f.en,intro:!!f.intr
 
 
 def get(url, limit=40_000_000):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    # letsum.app/fonts-hosted는 사이트 화면에서 부를 때만 내주므로(nginx) 사이트 주소를 Referer로 붙임
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Referer": "https://letsum.app/"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read(limit)
 
