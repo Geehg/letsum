@@ -636,7 +636,7 @@
       </div>
       <div class="ig-act">
         <button class="ig-ic${favs.has(f.id) ? " on" : ""}" data-like="${f.id}" aria-label="좋아요" title="좋아요 — 즐겨찾기에도 저장">${IC.heart}</button>
-        <button class="ig-ic" data-cmt="${f.id}" aria-label="댓글" title="댓글 모두 보기">${IC.cmt}</button>
+        <button class="ig-ic ig-cn" data-cmt="${f.id}" aria-label="댓글" title="댓글 모두 보기">${IC.cmt}<span class="ig-n" data-cmts="${f.id}"></span></button>
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
         <span class="ig-right">
