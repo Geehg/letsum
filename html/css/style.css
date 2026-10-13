@@ -1209,3 +1209,7 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 .rv-msg:empty{display:none}
 .rv-compose .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 :root[data-theme="dark"] .rv-post{color:#5ab8ff}
+.rv-root{display:flex;flex-direction:column;flex:1;min-height:0}
+html.modal-open,html.modal-open body{overflow:hidden}
+html.modal-open body{padding-right:var(--sbw,0)}
+.overlay{overscroll-behavior:contain}

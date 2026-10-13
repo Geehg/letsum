@@ -1203,12 +1203,12 @@ import "@fontsource/${f.id}/400.css";</pre>
   function rvMount(f) {
     const wide = rvWide(); const mode = wide ? "side" : "inline";
     const host = wide ? rvSide : $("#rvInline");
-    // 상세 창이 다시 그려지면(이름표·측정값 도착 등) 안쪽 칸이 새로 생기므로 그때는 다시 붙임
-    if (rvMounted && rvFont === f.id && rvMode === mode && rvHost === host) return;
-    if (rvMounted) rvMounted.destroy();
-    rvFont = f.id; rvMode = mode;
     overlay.classList.toggle("has-rv", wide); rvSide.hidden = !wide;
     const note = $("#rvSideNote"); if (note) note.hidden = !wide;
+    // 같은 폰트면 다시 만들지 않고 옮기기만 함(상세 창이 다시 그려지거나 화면 폭이 바뀌어도 쓰던 글 유지)
+    if (rvMounted && rvFont === f.id) { rvMounted.moveTo(host); rvHost = host; rvMode = mode; rvPlace(); return; }
+    if (rvMounted) rvMounted.destroy();
+    rvFont = f.id; rvMode = mode;
     rvHost = host;
     rvMounted = window.LSReviews.mount(host, f, {
       onCount: (n) => { const c = $("#cmtCount"); if (c) c.textContent = n ? `${n}개` : ""; },
@@ -1217,7 +1217,12 @@ import "@fontsource/${f.id}/400.css";</pre>
     rvPlace();
   }
   function rvUnmount() { if (rvMounted) rvMounted.destroy(); rvMounted = null; rvFont = null; rvMode = ""; rvHost = null; rvSide.hidden = true; overlay.classList.remove("has-rv"); }
-  addEventListener("resize", () => { if (!rvFont) return; const f = FONTS.find((x) => x.id === rvFont); if (f && $("#cmtSec")) { rvMounted && rvMounted.destroy(); rvMounted = null; rvMount(f); } });
+  // 폭이 바뀌어 넓은/좁은 배치가 달라질 때만 자리 옮김(키보드·작은 크기 변화로는 아무 일도 안 함)
+  let rvRT = null;
+  addEventListener("resize", () => { if (!rvFont) return; clearTimeout(rvRT); rvRT = setTimeout(() => {
+    const f = FONTS.find((x) => x.id === rvFont); if (!f || !$("#cmtSec")) return;
+    if ((rvWide() ? "side" : "inline") !== rvMode) rvMount(f); else rvPlace();
+  }, 150); });
   // 상세가 아닌 다른 창(보관함 등)으로 바뀌면 리뷰 패널을 닫음
   new MutationObserver(() => { if (!$("#cmtSec") && rvFont) rvUnmount(); }).observe(modal, { childList: true });
   async function bindComments(f, focus) {
@@ -1239,6 +1244,12 @@ import "@fontsource/${f.id}/400.css";</pre>
     $("#mx").addEventListener("click", closeModal);
     modal.querySelectorAll("[data-did]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.did)));
   }
+  // 팝업이 열려 있는 동안 뒤 페이지는 스크롤되지 않게 고정(스크롤바 폭만큼 보정해 화면이 출렁이지 않게)
+  new MutationObserver(() => {
+    const on = overlay.classList.contains("open"), html = document.documentElement;
+    if (on && !html.classList.contains("modal-open")) { html.style.setProperty("--sbw", (innerWidth - html.clientWidth) + "px"); html.classList.add("modal-open"); }
+    else if (!on && html.classList.contains("modal-open")) html.classList.remove("modal-open");
+  }).observe(overlay, { attributes: true, attributeFilter: ["class"] });
   function closeModal() { rvUnmount && rvUnmount(); overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
   // 폰트별 정적 페이지(font/<id>.html)와 공유 링크에서 #f=<id>로 들어오면 바로 상세를 연다
   function openFromHash() { const m = location.hash.match(/^#f=([\w-]+)/); if (m && FONTS.some((x) => x.id === m[1])) openDetail(m[1]); }

@@ -16,12 +16,18 @@
     } catch (e) { return null; }
   }
 
-  // mount(host, font, opts) → { destroy }
+  // 작성 중인 글은 폰트별로 이 탭에 보관(창이 다시 만들어져도 이어 쓰기)
+  const DK = "ls_rv_draft";
+  const drafts = (() => { try { return JSON.parse(sessionStorage.getItem(DK) || "{}"); } catch (e) { return {}; } })();
+  const saveDraft = () => { try { sessionStorage.setItem(DK, JSON.stringify(drafts)); } catch (e) {} };
+  // mount(host, font, opts) → { root, moveTo(newHost), destroy }
+  // 화면에 붙는 내용은 root 하나에 담아, 자리를 옮길 때 다시 만들지 않고 root만 옮긴다(입력 중인 글·포커스 유지)
   window.LSReviews = {
     mount(host, f, opts) {
       opts = opts || {};
       let items = [], replyTo = null, open = new Set(), alive = true;
-      host.innerHTML = `
+      const root = document.createElement("div"); root.className = "rv-root"; host.innerHTML = ""; host.appendChild(root);
+      root.innerHTML = `
         <div class="rv-h"><b>리뷰</b><span class="rv-n" data-n></span><span class="rv-sub">${esc(f.name)}를 써 본 이야기</span>${opts.closable ? '<button class="rv-x" data-close aria-label="리뷰 닫기">×</button>' : ""}</div>
         <div class="rv-list" data-list><p class="rv-empty">불러오는 중…</p></div>
         <form class="rv-compose" autocomplete="off">
@@ -32,12 +38,14 @@
           <input name="website" class="hp" tabindex="-1" aria-hidden="true" placeholder="비워 두세요">
           <p class="rv-msg" data-msg></p>
         </form>`;
-      const $ = (s) => host.querySelector(s);
+      const $ = (s) => root.querySelector(s);
       const list = $("[data-list]"), form = $("form"), ta = form.elements.body, post = $(".rv-post"), msg = $("[data-msg]");
       const fit = () => { ta.style.height = "auto"; ta.style.height = Math.min(ta.scrollHeight, 120) + "px"; post.disabled = ta.value.trim().length < 2; };
-      ta.addEventListener("input", fit);
+      const keep = () => { if (ta.value.trim()) drafts[f.id] = ta.value; else delete drafts[f.id]; saveDraft(); };
+      if (drafts[f.id]) { ta.value = drafts[f.id]; requestAnimationFrame(fit); }
+      ta.addEventListener("input", () => { fit(); keep(); });
       ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); if (!post.disabled) form.requestSubmit(); } });
-      host.querySelectorAll("[data-emo]").forEach((b) => b.addEventListener("click", () => { ta.value += b.dataset.emo; fit(); ta.focus(); }));
+      root.querySelectorAll("[data-emo]").forEach((b) => b.addEventListener("click", () => { ta.value += b.dataset.emo; fit(); keep(); ta.focus(); }));
       const close = $("[data-close]"); if (close) close.addEventListener("click", () => opts.onClose && opts.onClose());
 
       const cHTML = (c, reply) => `<div class="rv-c${reply ? " rp" : ""}" data-cid="${c.id}">
@@ -88,7 +96,7 @@
         const r = await call("comments", { id: f.id, name, body: ta.value.trim(), parent: replyTo ? replyTo.id : undefined, website: form.elements.website.value });
         if (!r || r.error) { msg.textContent = (r && r.error) || "잠시 후 다시 시도해 주세요."; post.disabled = false; return; }
         if (r.item) { items.push(r.item); if (r.item.parent_id) open.add(r.item.parent_id); }
-        ta.value = ""; replyTo = null; $("[data-replying]").hidden = true; fit(); draw();
+        ta.value = ""; delete drafts[f.id]; saveDraft(); replyTo = null; $("[data-replying]").hidden = true; fit(); draw();
         opts.onPosted && opts.onPosted(r.item);
         const el = list.querySelector(`[data-cid="${r.item && r.item.id}"]`); if (el) el.scrollIntoView({ block: "nearest", behavior: "smooth" });
       });
@@ -97,7 +105,11 @@
         if (!j || j.error) { list.innerHTML = '<p class="rv-empty">리뷰를 불러오지 못했습니다.</p>'; return; }
         items = j.items || []; draw();
       });
-      return { destroy() { alive = false; host.innerHTML = ""; } };
+      return {
+        root,
+        moveTo(h) { if (h && root.parentNode !== h) { const a = document.activeElement, sel = a === ta ? [ta.selectionStart, ta.selectionEnd] : null; h.innerHTML = ""; h.appendChild(root); if (sel) { ta.focus(); ta.setSelectionRange(sel[0], sel[1]); } } },
+        destroy() { alive = false; root.remove(); },
+      };
     },
   };
 })();
