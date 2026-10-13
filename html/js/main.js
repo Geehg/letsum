@@ -1,5 +1,5 @@
 // LETSUM — 상업용 무료 한글 폰트 (홈)
-// 구조: 전역 컨트롤(문장·크기·굵기·반전·영문 짝꿍) → 필터 → 목록/격자/맥락 보기 → 비교 트레이 → 상세 모달
+// 구조: 전역 컨트롤(문장·크기·굵기) → 필터 → 목록/격자/맥락 보기 → 비교 트레이 → 상세 모달
 (function () {
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
@@ -269,12 +269,6 @@
   }
   $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
   $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews(); }));
-  $("#invBtn").addEventListener("click", (e) => { state.inv = !state.inv; e.currentTarget.classList.toggle("on", state.inv); e.currentTarget.setAttribute("aria-pressed", state.inv); renderPreviews(); });
-  $("#pairBtn").addEventListener("click", (e) => {
-    state.pair = !state.pair; e.currentTarget.classList.toggle("on", state.pair); e.currentTarget.setAttribute("aria-pressed", state.pair);
-    if (state.pair && !/[A-Za-z0-9]/.test(state.text)) setText(TEXT_PRESETS.find((p) => p.id === "mixed").t);
-    else renderPreviews();
-  });
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
   function setView(v) {
     if (v !== state.view) ev("view", v);
@@ -435,7 +429,7 @@
     }
     return h + (f.status === "verified" ? "" : `<span class="pill chk">확인 중</span>`) + (f.intro ? `<span class="pill intro" title="${esc(f.introReason || "")}">소개 전용</span>` : "");
   };
-  const famOf = (f) => state.pair ? `${LATIN_PAIRS.find((p) => p.id === f.pair).family}, ${f.family}` : f.family;
+  const famOf = (f) => f.family;
   const wOf = (f) => { const w = state.weight; if (f.weights.includes(w)) return w; return f.weights.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
   function pvText(f) {
     const t = state.text || f.name; const miss = coverage[f.id] || [];
@@ -465,7 +459,7 @@
         ${covTags(f)}
       </div>
       <div class="r-pvwrap">
-        ${f.intro ? introBox(f) : `<div class="r-pv${state.inv ? " inv" : ""}" style="${pvStyle(f)}">${pvText(f)}</div>
+        ${f.intro ? introBox(f) : `<div class="r-pv" style="${pvStyle(f)}">${pvText(f)}</div>
         <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>`}
       </div>
       <div class="r-side"><div class="pills">${pills(f)}${missPill(f)}</div>${acts(f)}</div>
@@ -473,7 +467,7 @@
   }
   function cardHTML(f) {
     return `<article class="card" data-id="${f.id}" tabindex="0">
-      ${f.intro ? introBox(f) : `<div class="r-pv${state.inv ? " inv" : ""}" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>`}
+      ${f.intro ? introBox(f) : `<div class="r-pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>`}
       <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${instHTML(f)}
       <div class="pills">${pills(f)}${missPill(f)}</div>
       <div class="foot">${covTags(f)}${acts(f)}</div>
@@ -822,7 +816,6 @@
       pv.innerHTML = pvText(f);
       pv.style.fontFamily = famOf(f); pv.style.fontWeight = wOf(f);
       pv.style.fontSize = (el.classList.contains("card") ? Math.min(state.size, 40) : state.size) + "px";
-      pv.classList.toggle("inv", state.inv);
     });
   }
   function bind(host) {
@@ -854,7 +847,7 @@
     const list = [...cmp].map((id) => FONTS.find((x) => x.id === id)); if (!list.length) return;
     ev("cmp_open");
     list.forEach(ensureFace);
-    const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: state.inv };
+    const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: false };
     modal.className = "modal wide";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
       <div class="m-head"><h2>나란히 비교</h2><span class="en">${list.length}종 · 같은 문장, 같은 조건</span></div>
@@ -1011,7 +1004,6 @@
     const specimen = "https://fonts.google.com/specimen/" + gfam;
     const d = detect[f.id] || {};
     const miss = coverage[f.id] || [];
-    const pairDef = LATIN_PAIRS.find((p) => p.id === f.pair);
     const dl = dlFor(f);
     try { history.replaceState(null, "", "#f=" + f.id); } catch (e) {}
     modal.className = "modal";
@@ -1022,8 +1014,7 @@
       ${f.intro ? `${introBox(f, "big")}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처 페이지에서 받을 수 있습니다.</div>` : `<div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
       <div class="tester">
         <div class="t-row"><span>크기</span><input type="range" id="tSize" min="12" max="110" value="44"><b id="tSizeV">44px</b>
-          <span>굵기</span><select id="tW">${f.weights.map((w) => `<option value="${w}"${w === wOf(f) ? " selected" : ""}>${w}</option>`).join("")}</select>
-          <span>영문 짝꿍</span><select id="tPair"><option value="">없음 (폰트 자체 영문)</option>${LATIN_PAIRS.map((p) => `<option value="${p.id}"${state.pair && p.id === f.pair ? " selected" : ""}>${p.name}${p.id === f.pair ? " · 추천" : ""}</option>`).join("")}</select></div>
+          <span>굵기</span><select id="tW">${f.weights.map((w) => `<option value="${w}"${w === wOf(f) ? " selected" : ""}>${w}</option>`).join("")}</select></div>
         <div class="t-row"><span>자간</span><input type="range" id="tLs" min="-5" max="20" value="0"><b id="tLsV">0px</b>
           <span>행간</span><input type="range" id="tLh" min="110" max="240" value="140"><b id="tLhV">140%</b></div>
         <div class="t-row">
@@ -1063,7 +1054,6 @@
           ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
           <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}<div class="ev-box" id="evBox"></div></td></tr>
-          <tr><th>영문 짝꿍 추천</th><td>${pairDef.name} <span class="note">— ${pairDef.note}. 한글 폰트의 영문·숫자가 아쉬울 때 영문만 이 폰트로 조합합니다.</span></td></tr>
         </table></div>
 
       <div class="m-sec" id="licSec"><h3>사용 범위 (라이선스 매트릭스)</h3>
@@ -1093,7 +1083,7 @@
         </details>
         ${isGF(f) ? `<div class="codehead"><span>웹폰트 (Google Fonts CDN)</span><button class="abtn" data-copy="c1">복사</button></div>
         <pre class="code" id="c1">&lt;link href="${gfont}" rel="stylesheet"&gt;
-font-family: ${esc(f.family)};${state.pair || true ? `\n/* 영문만 짝꿍 폰트로: */ font-family: ${esc(pairDef.family)}, ${esc(f.family)};` : ""}</pre>
+font-family: ${esc(f.family)};</pre>
         <div class="codehead"><span>개발자용 (Fontsource · npm, 자체 호스팅)</span><button class="abtn" data-copy="c2">복사</button></div>
         <pre class="code" id="c2">npm i @fontsource/${f.id}
 import "@fontsource/${f.id}/400.css";</pre>
@@ -1135,11 +1125,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     };
     if (f.intro) { commonBind(); return; }
     const LONG = BODY;
-    let curPair = state.pair ? f.pair : "";
-    const applyFam = () => { const p = LATIN_PAIRS.find((x) => x.id === curPair); pv.style.fontFamily = p ? `${p.family}, ${f.family}` : f.family; };
     $("#tSize").addEventListener("input", (e) => { pv.style.fontSize = e.target.value + "px"; $("#tSizeV").textContent = e.target.value + "px"; });
     $("#tW").addEventListener("change", (e) => (pv.style.fontWeight = e.target.value));
-    $("#tPair").addEventListener("change", (e) => { curPair = e.target.value; applyFam(); if (curPair && !/[A-Za-z0-9]/.test(pv.textContent)) pv.textContent = TEXT_PRESETS.find((p) => p.id === "mixed").t; });
     $("#tLs").addEventListener("input", (e) => { pv.style.letterSpacing = e.target.value + "px"; $("#tLsV").textContent = e.target.value + "px"; });
     $("#tLh").addEventListener("input", (e) => { pv.style.lineHeight = e.target.value + "%"; $("#tLhV").textContent = e.target.value + "%"; });
     const tgl = (id, fn) => $(id).addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); fn(e.currentTarget.classList.contains("on")); });
