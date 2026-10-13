@@ -278,20 +278,36 @@
     syncBodyPanel();
     document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
   }
-  // 보기 방식 안내: 첫 방문에만 결과 위에 펼치고, 하나를 고르거나 닫으면 다시 띄우지 않음(? 버튼으로 다시 보기)
-  const tourSeen = () => { try { return localStorage.getItem("ls_vtour") === "1"; } catch (e) { return true; } };
-  const tourDone = () => { try { localStorage.setItem("ls_vtour", "1"); } catch (e) {} };
-  function showTour(on) {
-    $("#vtour").hidden = !on;
-    $$("#vtour [data-tour]").forEach((b) => b.classList.toggle("on", b.dataset.tour === state.view));
+  // 보기 방식 안내: 기본으로는 숨기고, ? 버튼에 마우스를 올리거나 누를 때만 버튼 아래에 띄움
+  let tourPinned = false, tourT = 0;
+  const tourEl = $("#vtour"), helpBtn = $("#viewHelp");
+  function placeTour() {
+    const r = helpBtn.getBoundingClientRect(), w = Math.min(980, innerWidth - 32);
+    tourEl.style.width = w + "px";
+    tourEl.style.left = Math.max(16, Math.min(r.left + r.width / 2 - w / 2, innerWidth - 16 - w)) + "px";
+    tourEl.style.top = r.bottom + 10 + "px";
   }
-  $$("#vtour [data-tour]").forEach((b) => b.addEventListener("click", () => {
-    tourDone(); showTour(false); setView(b.dataset.tour);
-    $("#viewSeg").scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }));
-  $("#vtourX").addEventListener("click", () => { tourDone(); showTour(false); });
-  $("#viewHelp").addEventListener("click", () => { const on = $("#vtour").hidden; showTour(on); if (on) $("#vtour").scrollIntoView({ block: "nearest", behavior: "smooth" }); });
-  if (!tourSeen()) showTour(true);
+  function showTour(on) {
+    clearTimeout(tourT);
+    tourEl.hidden = !on; helpBtn.setAttribute("aria-expanded", on);
+    if (!on) { tourPinned = false; return; }
+    $$("#vtour [data-tour]").forEach((b) => b.classList.toggle("on", b.dataset.tour === state.view));
+    placeTour();
+  }
+  const tourLater = (on, ms) => { clearTimeout(tourT); tourT = setTimeout(() => showTour(on), ms); };
+  $$("#vtour [data-tour]").forEach((b) => b.addEventListener("click", () => { showTour(false); setView(b.dataset.tour); }));
+  $("#vtourX").addEventListener("click", () => showTour(false));
+  helpBtn.addEventListener("click", (e) => { e.stopPropagation(); if (tourPinned) showTour(false); else { showTour(true); tourPinned = true; } });
+  if (matchMedia("(hover:hover)").matches) {
+    helpBtn.addEventListener("mouseenter", () => { if (tourEl.hidden) tourLater(true, 150); else clearTimeout(tourT); });
+    helpBtn.addEventListener("mouseleave", () => { if (!tourPinned) tourLater(false, 250); });
+    tourEl.addEventListener("mouseenter", () => clearTimeout(tourT));
+    tourEl.addEventListener("mouseleave", () => { if (!tourPinned) tourLater(false, 250); });
+  }
+  document.addEventListener("click", (e) => { if (!tourEl.hidden && !e.target.closest("#vtour, #viewHelp")) showTour(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !tourEl.hidden) showTour(false); });
+  addEventListener("scroll", () => { if (!tourEl.hidden) placeTour(); }, { passive: true });
+  addEventListener("resize", () => { if (!tourEl.hidden) placeTour(); });
   const CTX = [["thumb", "유튜브 썸네일"], ["book", "책 본문"], ["sub", "영상 자막"], ["menu", "카페 메뉴판"], ["card", "카드뉴스"], ["ui", "문서·UI"]];
   $("#ctxChips").innerHTML = CTX.map(([k, l]) => `<button class="tbtn${k === state.ctx ? " on" : ""}" data-ctx="${k}">${l}</button>`).join("");
   $$("[data-ctx]").forEach((b) => b.addEventListener("click", () => { state.ctx = b.dataset.ctx; $$("[data-ctx]").forEach((x) => x.classList.toggle("on", x === b)); syncBodyPanel(); render(); }));
