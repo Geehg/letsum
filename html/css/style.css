@@ -1224,3 +1224,12 @@ body.feed-mode{--feed-bg:#eeeeeb;--card:#ffffff;--card-sh:0 1px 2px rgba(20,20,1
 html.modal-open,html.modal-open body{overflow:hidden}
 html.modal-open body{padding-right:var(--sbw,0)}
 .overlay{overscroll-behavior:contain}
+/* 넓은 화면 피드: 사이드바 대신 '필터' 버튼 → 왼쪽에서 열리는 필터 창 */
+@media(min-width:1061px){
+  .feed-mode .filter-btn{display:inline-flex}
+  body.feed-mode.side-open aside.side{display:block;position:fixed;top:0;left:0;bottom:0;width:340px;max-height:none;overflow:auto;z-index:95;background:var(--paper);
+    padding:0 22px 28px;border-right:2px solid var(--ink);box-shadow:10px 0 30px rgba(0,0,0,.18)}
+  body.feed-mode.side-open .side-head{display:flex;position:sticky;top:0;justify-content:space-between;align-items:center;background:var(--paper);padding:14px 0;margin-bottom:6px;border-bottom:1px solid var(--rule);z-index:1}
+  body.feed-mode.side-open .side-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:94}
+  body.feed-mode.side-open{overflow:hidden}
+}
