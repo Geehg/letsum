@@ -28,7 +28,8 @@ function page(f) {
   const famName = f.family.split(",")[0].replace(/['"]/g, "").trim();
   const faceCss = !f.webfont ? "" : Object.entries(f.webfont).map(([w, u]) => `@font-face{font-family:"${famName}";src:url("${u}") format("${((v) => /\.otf$/.test(v) ? "opentype" : /\.ttf$/.test(v) ? "truetype" : /\.woff$/.test(v) ? "woff" : "woff2")(u.split("?")[0])}");font-weight:${w};font-display:swap}`).join("");
   const allOk = LICENSE_CATS.every((c) => f.matrix[c.key] === "ok");
-  const title = `${f.name} 다운로드 — 상업용 무료 ${f.category} 폰트, 사용 범위 표 | LETSUM`;
+  const commercial = (f.matrix || {}).print === "ok" || (f.matrix || {}).web === "ok"; // 상업 이용이 원문으로 확인된 폰트만 '상업용 무료'
+  const title = `${f.name} 다운로드 — ${commercial ? "상업용 무료" : "무료 배포"} ${f.category} 폰트, 사용 범위 표 | LETSUM`;
   const desc = `${f.name}(${f.en}) 무료 폰트 다운로드와 라이선스 사용 범위(인쇄·웹·영상·임베딩·BI/CI·포장지). ${f.desc}`;
   const ld = { "@context": "https://schema.org", "@type": "WebPage", name: title, description: desc, url: `${SITE}/font/${f.id}.html`,
     mainEntity: { "@type": "CreativeWork", name: f.name, alternateName: f.en, author: { "@type": "Organization", name: f.designer }, copyrightHolder: { "@type": "Organization", name: f.holder },
@@ -41,7 +42,7 @@ function page(f) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${SITE}/font/${f.id}.html">
-<meta property="og:title" content="${esc(f.name)} — 상업용 무료 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/${fs.existsSync(path.join(ROOT, "img/og", f.id + ".png")) ? "og/" + f.id : "og-main"}.png"><meta property="og:image:alt" content="${esc(f.name)} 글꼴 미리보기"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="${esc(f.name)} — ${commercial ? "상업용 무료" : "무료 배포"} 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/${fs.existsSync(path.join(ROOT, "img/og", f.id + ".png")) ? "og/" + f.id : "og-main"}.png"><meta property="og:image:alt" content="${esc(f.name)} 글꼴 미리보기"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">

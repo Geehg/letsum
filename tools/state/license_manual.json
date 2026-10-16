@@ -1189,5 +1189,17 @@
   "page": "https://github.com/quiple/x10y12pxDenkiChipHangul",
   "checked": "2026-10-16",
   "auto": true
+ },
+ "k-arita-dotum": {
+  "license": "아리따 글꼴 배포 안내",
+  "evidence": "apgroup.com 아리따 글꼴 페이지: '누구나 무료로 사용할 수 있도록 배포하는 나눔 글꼴'. 공식 ZIP에 라이선스 문서 없음, 파일 name 테이블 'All rights reserved'·'Arita is a registered trademark of AmorePacific', fsType 4 → 상업·재배포 조건 미명시라 사용 범위는 조건부, 웹폰트 없이 소개 전용 + 원본으로 렌더링한 견본 이미지",
+  "page": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+  "checked": "2026-10-16"
+ },
+ "k-arita-buri": {
+  "license": "아리따 글꼴 배포 안내",
+  "evidence": "apgroup.com 아리따 글꼴 페이지: '누구나 무료로 사용할 수 있도록 배포하는 나눔 글꼴'. 공식 ZIP에 라이선스 문서 없음, 파일 name 테이블 'All rights reserved'·'Arita is a registered trademark of AmorePacific', fsType 4 → 상업·재배포 조건 미명시라 사용 범위는 조건부, 웹폰트 없이 소개 전용 + 원본으로 렌더링한 견본 이미지",
+  "page": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+  "checked": "2026-10-16"
  }
 }

@@ -683,7 +683,9 @@
     </article>`;
   }
   let lastScroll = 0; addEventListener("scroll", () => { lastScroll = Date.now(); }, { passive: true });
-  const canHover = matchMedia("(hover:hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // '동작 줄이기'(윈도우 '애니메이션 효과' 끔) 설정이어도 넘김은 유지하고, 미끄러지는 대신 바로 바꾼다
+  const canHover = matchMedia("(hover:hover)").matches;
+  const lessMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function bindCarousel(m) {
     if (m.dataset.bound) return; m.dataset.bound = "1";
     const tr = m.querySelector(".ig-track");
@@ -695,14 +697,14 @@
     if (canHover && real > 1) {
       const cl = tr.children[0].cloneNode(true); cl.setAttribute("aria-hidden", "true"); cl.classList.add("ig-clone"); tr.appendChild(cl);
       let t = null, t0 = null; const card = m.closest(".ig") || m;
-      const step = () => { let k = kOf(); if (k >= real) { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; k = 0; } tr.scrollTo({ left: (k + 1) * tr.clientWidth, behavior: "smooth" }); };
+      const step = () => { let k = kOf(); if (k >= real) { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; k = 0; } tr.scrollTo({ left: (k + 1) * tr.clientWidth, behavior: lessMotion ? "auto" : "smooth" }); };
       // 복제 장(=첫 장과 같은 그림)에 도착하면 보이지 않게 진짜 첫 장으로 순간 이동
       let se = null; const snap = () => { if (kOf() >= real) jump0(); };
       tr.addEventListener("scroll", () => { clearTimeout(se); se = setTimeout(snap, 140); }, { passive: true });
       // 0.7초 이상 머물 때만 시작(스크롤하며 스치는 것은 무시)
       card.addEventListener("mouseenter", () => {
         clearInterval(t); clearTimeout(t0);
-        t0 = setTimeout(() => { if (Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, 1600); }, 700);
+        t0 = setTimeout(() => { if (Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, lessMotion ? 2200 : 1600); }, 700);
       });
       // 떠나면 멈추고, 뒤로 감기는 움직임 없이 살짝 사라졌다 첫 장으로 나타남
       card.addEventListener("mouseleave", () => {
@@ -1019,7 +1021,7 @@
     modal.className = "modal";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
-      <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span><span class="badge free">상업용 무료 · ${esc(licInfo(f).short)}</span>${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
+      <div class="m-head"><h2>${esc(f.name)}</h2><span class="en">${esc(f.en)}</span><span class="badge">${f.category}</span>${(f.matrix || {}).print === "ok" || (f.matrix || {}).web === "ok" ? `<span class="badge free">상업용 무료 · ${esc(licInfo(f).short)}</span>` : `<span class="badge check">무료 배포 · 상업 이용은 원문 확인 필요</span>`}${f.status !== "verified" ? '<span class="badge check">확인 중</span>' : ""}</div>
       <p class="m-sub">저작권자 ${esc(f.holder)} · 제작 <button class="linklike" id="dsgBtn">${esc(f.designer)}</button> · ${f.mood.join(" · ")}</p>
       ${f.intro ? `${introBox(f, "big")}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처 페이지에서 받을 수 있습니다.</div>` : `<div class="pv-big" id="pvBig" style="font-family:${f.family};font-size:44px;font-weight:${wOf(f)}">${pvText(f)}</div>
       <div class="tester">
@@ -1468,7 +1470,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     track.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
     track.addEventListener("touchend", (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) spotGo(spotIdx + (dx < 0 ? 1 : -1), true); x0 = null; });
     document.addEventListener("visibilitychange", () => { if (document.hidden) clearTimeout(spotTimer); else if (!spotPaused) spotGo(spotIdx); });
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) pause(true);
+    // '동작 줄이기' 설정이어도 자동 넘김은 유지(슬라이드는 원래 부드러운 페이드). 타자 효과만 문장을 한 번에 보여 준다.
     spotGo(0);
   }
 

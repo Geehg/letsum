@@ -23,6 +23,7 @@ const LICENSE_INFO = {
   "넥슨 서체 이용조건": { full: "넥슨 서체 이용 조건(넥슨코리아)", short: "넥슨 무료 이용", note: "개인·기업 누구나 무료로 상업적 사용·배포 가능, 다른 소프트웨어 번들·임베디드 폰트 사용 가능 / 폰트 파일을 수정·편집해 재배포 금지, 글꼴 자체 유료 판매 금지, 출처 표기 권장 · BI/CI(로고) 사용은 원문에 명시 없음 — 로고·상표에 쓰려면 넥슨에 확인 권장 · 넥슨 안내: 서체를 사용한 인쇄물·광고물은 넥슨 프로모션에 활용될 수 있음", url: "https://brand.nexon.com/ko/ci-brand-guidelines/typeface" },
   "여기어때 잘난체 라이선스": { full: "여기어때 잘난체 라이선스 가이드(㈜여기어때컴퍼니)", short: "여기어때 무료 이용", note: "누구나 무료로 인쇄·광고·상품·CI/BI 등 상업적 사용 가능(CI/BI 상표권 등록 불가), 라이선스 포함 시 임베딩·번들·재배포 가능 / 글꼴 파일 유료 판매·임의 수정 후 재배포 금지", url: "https://drive.google.com/file/d/1TFGKe-QLRnx2IHpJO3ZH3pVUYjQwMx7L/view" },
   "KBL 전용서체 이용조건": { full: "KBL 전용서체 이용 안내(한국프로농구연맹)", short: "KBL 무료 이용", note: "개인·기업 누구나 자유롭게 배포·상업적 이용 가능 / 글꼴 자체 유료 판매 금지, 서체의 왜곡 변형 비권장 · BI/CI(로고) 사용은 원문에 명시 없음 — 로고·상표에 쓰려면 KBL에 확인 권장", url: "https://www.kbl.or.kr/intro/font" },
+  "아리따 글꼴 배포 안내": { full: "아리따 글꼴 배포 안내(아모레퍼시픽)", short: "아리따 무료 배포", note: "아모레퍼시픽이 '누구나 무료로 사용할 수 있도록 배포'한다고 안내 / 상업 이용·재배포·로고(BI·CI) 사용 조건은 공식 원문에 명시 없음 — 상업 프로젝트·로고는 아모레퍼시픽에 확인 권장. 아리따는 아모레퍼시픽의 등록 상표", url: "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html" },
   "공공누리 제1유형": { full: "공공누리 제1유형(출처표시)", short: "공공누리 1유형", note: "상업 이용·변경 가능, 사용 시 저작권자(출처) 표시 필요", url: "https://www.kogl.or.kr/info/licenseType1.do" },
 };
 const licInfo = (f) => LICENSE_INFO[f.license] || { full: f.license, short: f.license, note: "원문 라이선스 확인 필요", url: "" };
@@ -3752,6 +3753,28 @@ const FONTS = [
     released: "2026-08-13", releasedSrc: "공식 GitHub 첫 릴리스", releasedUrl: "https://github.com/quiple/x10y12pxDenkiChipHangul/releases",
     pair: "grotesk", pop: 30, added: "2026-10-16",
     desc: "GitHub 저장소(quiple/x10y12pxDenkiChipHangul)로 공개된 오픈 폰트 라이선스(OFL) 제목용 폰트. 굵기 1종, 한글 4,361자를 지원합니다." },
+  { id: "k-arita-dotum", name: "아리따 돋움", en: "Arita Dotum KR", family: "'Arita Dotum KR', sans-serif",
+    designer: "아모레퍼시픽 · 안상수·한재준·류양희", holder: "아모레퍼시픽", category: "고딕",
+    tags: ["본문", "제목", "브랜드"], mood: ["단정한", "세련된"], weights: [100, 300, 500, 600, 700], formats: ["TTF"],
+    cov: 11172, glyphs: "한글 11,172자 · 영문 94자",
+    intro: true, specimen: "img/specimen/k-arita-dotum.png",
+    introReason: "공식 페이지는 '누구나 무료로 사용할 수 있도록 배포'라고만 안내하고, 내려받은 파일에도 이용 조건 문서가 없습니다(파일 표기: All rights reserved). 재배포 허락이 없어 웹폰트를 만들지 않고, 원본 폰트로 만든 견본 이미지만 보여 드립니다.",
+    dl: { page: "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html", zip: "https://www.apgroup.com/int/ko/resource/attach/dam/about-us/visual-identity/Arita_Dotum_KR.zip", srcName: "아모레퍼시픽(공식)" },
+    license: "아리따 글꼴 배포 안내", matrix: { print: "cond", web: "cond", video: "cond", embed: "cond", bici: "cond", package: "cond", ofl: "no" }, verified: "2026-10-16", status: "verified",
+    released: "2005", releasedSrc: "아모레퍼시픽 공식 페이지(2005년 처음 시도한 본문용 글꼴)", releasedUrl: "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+    pair: "inter", pop: 45, added: "2026-10-16",
+    desc: "아모레퍼시픽이 2005년 처음 내놓은 본문용 돋움. 딱딱한 직선 대신 부드러운 곡선을 살려 단정하면서도 온화한 인상을 줍니다." },
+  { id: "k-arita-buri", name: "아리따 부리", en: "Arita Buri KR", family: "'Arita Buri KR', sans-serif",
+    designer: "아모레퍼시픽 · 안상수·한재준·류양희", holder: "아모레퍼시픽", category: "명조",
+    tags: ["본문", "책", "제목"], mood: ["고전적", "세련된"], weights: [100, 300, 500, 600, 700], formats: ["TTF"],
+    cov: 11172, glyphs: "한글 11,172자 · 영문 94자",
+    intro: true, specimen: "img/specimen/k-arita-buri.png",
+    introReason: "공식 페이지는 '누구나 무료로 사용할 수 있도록 배포'라고만 안내하고, 내려받은 파일에도 이용 조건 문서가 없습니다(파일 표기: All rights reserved). 재배포 허락이 없어 웹폰트를 만들지 않고, 원본 폰트로 만든 견본 이미지만 보여 드립니다.",
+    dl: { page: "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html", zip: "https://www.apgroup.com/int/ko/resource/attach/dam/about-us/visual-identity/Arita_Buri_KR.zip", srcName: "아모레퍼시픽(공식)" },
+    license: "아리따 글꼴 배포 안내", matrix: { print: "cond", web: "cond", video: "cond", embed: "cond", bici: "cond", package: "cond", ofl: "no" }, verified: "2026-10-16", status: "verified",
+    released: "2014", releasedSrc: "아모레퍼시픽 공식 페이지(2014년 완성)", releasedUrl: "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+    pair: "playfair", pop: 45, added: "2026-10-16",
+    desc: "2014년 완성된 아리따의 부리(명조) 글꼴. 머리카락처럼 가는 헤어라인부터 굵게까지 있어 긴 본문과 우아한 제목에 어울립니다." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)
