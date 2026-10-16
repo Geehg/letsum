@@ -168,7 +168,7 @@ def check_repo(r, existing):
         if norm(en) in existing or norm(fam["ko"]) in existing: continue
         have = real_hangul(fam["t"])
         if len(have) < MIN_HANGUL: continue
-        fam["have"] = have
+        fam["have"] = have; fam["rec"] = coverage_rec(fam["t"], have)
         out.append(fam)
     if not out: return None, "한글 2,350자 미만이거나 이미 등록된 이름"
     return {"repo": r, "ref": ref, "rel": rel, "fams": out}, None
@@ -200,7 +200,7 @@ def entry(info, fam, fid):
     return f'''  {{ id: "{fid}", name: "{esc(name)}", en: "{esc(fam['en'])}", family: "'LS {fid}', sans-serif",
     designer: "{esc(fam['designer'] or r['owner']['login'])}", holder: "{esc(r['owner']['login'])}", category: "{cat}",
     tags: {q(tags)}, mood: {q(mood)}, weights: [{", ".join(map(str, ws))}], formats: {q(fmts)},
-    cov: {n}, glyphs: "한글 {n:,}자", old: false, hanja: false,
+    cov: {n}, glyphs: "한글 {n:,}자", old: {"true" if fam["rec"]["old"] else "false"}, hanja: {"true" if fam["rec"]["hanja"] else "false"},
     webfont: {wf}, webfontSrc: "배포처 공식 저장소 파일(jsDelivr 버전 고정, 자동 등록)",
     dl: {{ page: "{page}", zip: "{zipu}", srcName: "{esc(fam['en'])} 공식(GitHub)" }},
     license: "OFL", matrix: OFL_ALL_OK, verified: "{TODAY}", status: "verified", autoReg: true,
@@ -251,7 +251,7 @@ def main():
         cdn[fid] = {"page": info["repo"]["html_url"], "files": fam["files"], "auto": TODAY}
         lm[fid] = {"license": "OFL", "evidence": f"자동 확인: GitHub 저장소 라이선스 OFL-1.1 + LICENSE 본문 'SIL Open Font License' — 저장소 공식 파일을 jsDelivr로 버전({info['ref']}) 고정해 그대로 사용",
                    "page": info["repo"]["html_url"], "checked": TODAY, "auto": True}
-        cov[fid] = coverage_rec(fam["t"], fam["have"])
+        cov[fid] = fam["rec"]
         ev[fid] = {"ev": lm[fid]["evidence"], "pg": info["repo"]["html_url"], "src": f"https://github.com/{full} (@{info['ref']})", **({"ver": fam["ver"]} if fam["ver"] else {})}
         d = os.path.join(HERE, "archive", "cdn", fid); os.makedirs(d, exist_ok=True)
         for w, (data, ext) in fam["data"].items(): open(os.path.join(d, f"{w}.{ext}"), "wb").write(data)

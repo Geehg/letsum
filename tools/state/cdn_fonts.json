@@ -1062,5 +1062,26 @@
    "400": "https://cdn.jsdelivr.net/gh/quiple/x10y12pxDenkiChipHangul@v1.213/fonts/webfonts/x10y12pxDenkiChipHangul.woff2"
   },
   "auto": "2026-10-16"
+ },
+ "k-galmuri-mono7": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/GalmuriMono7.woff2"
+  }
+ },
+ "k-galmuri-mono9": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/GalmuriMono9.woff2"
+  }
+ },
+ "k-galmuri-mono11": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/GalmuriMono11.woff2"
+  }
  }
 }
