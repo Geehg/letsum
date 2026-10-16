@@ -1,0 +1,278 @@
+{
+ "orioncactus/pretendard": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-07-23T07:46:00Z",
+  "checked": "2026-10-16"
+ },
+ "sunn-us/SUIT": {
+  "result": "skip",
+  "why": "라이선스 None",
+  "pushed": "2025-09-09T20:24:15Z",
+  "checked": "2026-10-16"
+ },
+ "wanteddev/wanted-sans": {
+  "result": "skip",
+  "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
+  "pushed": "2024-05-27T12:07:41Z",
+  "checked": "2026-10-16"
+ },
+ "spoqa/spoqa-han-sans": {
+  "result": "skip",
+  "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
+  "pushed": "2022-06-15T08:19:05Z",
+  "checked": "2026-10-16"
+ },
+ "adobe-fonts/source-han-sans": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2025-06-25T03:30:03Z",
+  "checked": "2026-10-16"
+ },
+ "adobe-fonts/source-han-serif": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2024-07-30T18:57:27Z",
+  "checked": "2026-10-16"
+ },
+ "mushsooni/mulmaru": {
+  "result": "skip",
+  "why": "고정 굵기 폰트 파일 없음",
+  "pushed": "2026-01-08T08:37:24Z",
+  "checked": "2026-10-16"
+ },
+ "hada0127/hada-type": {
+  "result": "skip",
+  "why": "별 1개(기준 15)",
+  "pushed": "2026-10-15T07:50:22Z",
+  "checked": "2026-10-16"
+ },
+ "Tzetachi/Oesol-Serif-deprecated": {
+  "result": "skip",
+  "why": "별 4개(기준 15)",
+  "pushed": "2020-05-26T10:19:24Z",
+  "checked": "2026-10-16"
+ },
+ "yangheeryu/Gowun-Dodum": {
+  "result": "skip",
+  "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
+  "pushed": "2021-06-10T15:34:29Z",
+  "checked": "2026-10-16"
+ },
+ "yangheeryu/Gowun-Batang": {
+  "result": "skip",
+  "why": "한글 2,350자 미만이거나 이미 등록된 이름",
+  "pushed": "2021-06-10T15:53:28Z",
+  "checked": "2026-10-16"
+ },
+ "yangheeryu/Dongle": {
+  "result": "skip",
+  "why": "한글 2,350자 미만이거나 이미 등록된 이름",
+  "pushed": "2021-06-14T18:48:36Z",
+  "checked": "2026-10-16"
+ },
+ "taevel02/yeomil-mono": {
+  "result": "added",
+  "why": null,
+  "pushed": "2026-07-10T00:07:29Z",
+  "checked": "2026-10-16"
+ },
+ "akngs/noto-kr-vf-distilled": {
+  "result": "skip",
+  "why": "고정 굵기 폰트 파일 없음",
+  "pushed": "2022-09-17T11:30:27Z",
+  "checked": "2026-10-16"
+ },
+ "lxgw/LxgwWenkaiKR": {
+  "result": "skip",
+  "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
+  "pushed": "2026-10-13T08:12:56Z",
+  "checked": "2026-10-16"
+ },
+ "quiple/x10y12pxDenkiChipHangul": {
+  "result": "added",
+  "why": null,
+  "pushed": "2026-08-24T03:28:47Z",
+  "checked": "2026-10-16"
+ },
+ "velvetyne/Hangul": {
+  "result": "skip",
+  "why": "별 10개(기준 15)",
+  "pushed": "2017-08-19T17:11:18Z",
+  "checked": "2026-10-16"
+ },
+ "neodgm/neodgm-webfont": {
+  "result": "skip",
+  "why": "별 10개(기준 15)",
+  "pushed": "2026-03-18T14:46:39Z",
+  "checked": "2026-10-16"
+ },
+ "sawalk/MapleSaemmul": {
+  "result": "skip",
+  "why": "별 4개(기준 15)",
+  "pushed": "2026-08-28T16:35:35Z",
+  "checked": "2026-10-16"
+ },
+ "trueroad/HaranoAjiFontsKR": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2025-08-12T06:03:14Z",
+  "checked": "2026-10-16"
+ },
+ "trueroad/HaranoAjiFontsK1": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2025-08-12T06:03:26Z",
+  "checked": "2026-10-16"
+ },
+ "cueaz/fonts-mono-kr": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2025-08-05T03:10:01Z",
+  "checked": "2026-10-16"
+ },
+ "mabyko/MabykoMono": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2026-10-07T17:22:54Z",
+  "checked": "2026-10-16"
+ },
+ "BinRecycle/ThinMulmaru": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2026-09-09T16:12:23Z",
+  "checked": "2026-10-16"
+ },
+ "nwah/korean-msx-font": {
+  "result": "skip",
+  "why": "별 1개(기준 15)",
+  "pushed": "2023-02-04T06:34:56Z",
+  "checked": "2026-10-16"
+ },
+ "vriefcase/d2coding": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2026-08-25T04:45:41Z",
+  "checked": "2026-10-16"
+ },
+ "1020tj/Gugi": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2017-11-24T08:29:03Z",
+  "checked": "2026-10-16"
+ },
+ "rladnwls122/JetBrainsMonoD2-Nerd-Font": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2026-08-15T03:32:14Z",
+  "checked": "2026-10-16"
+ },
+ "Tzetachi/Computer-Modern-Unicode-Oesol": {
+  "result": "skip",
+  "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
+  "pushed": "2024-05-26T13:51:03Z",
+  "checked": "2026-10-16"
+ },
+ "zhongshukeji/Noto-Sans-SC": {
+  "result": "skip",
+  "why": "별 7개(기준 15)",
+  "pushed": "2023-11-02T15:19:44Z",
+  "checked": "2026-10-16"
+ },
+ "philocalyst/Hangul": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2025-08-06T16:23:57Z",
+  "checked": "2026-10-16"
+ },
+ "mitradranirban/ayuta": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2024-10-08T19:29:13Z",
+  "checked": "2026-10-16"
+ },
+ "kyh0703/jetbatang": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-10-12T09:12:11Z",
+  "checked": "2026-10-16"
+ },
+ "beomjungil/NotoSerifKR-Web": {
+  "result": "skip",
+  "why": "라이선스 None",
+  "pushed": "2017-05-03T13:38:32Z",
+  "checked": "2026-10-16"
+ },
+ "younjungpark/Monatendard": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-10-11T10:43:11Z",
+  "checked": "2026-10-16"
+ },
+ "wudys/0xProtoD2": {
+  "result": "skip",
+  "why": "별 3개(기준 15)",
+  "pushed": "2026-06-03T11:52:56Z",
+  "checked": "2026-10-16"
+ },
+ "hunterhogan/Integrated_code_fire_font": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-10-13T07:26:31Z",
+  "checked": "2026-10-16"
+ },
+ "xkho/presevka": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-09-20T13:07:29Z",
+  "checked": "2026-10-16"
+ },
+ "bepyan/arita": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-07-29T16:19:18Z",
+  "checked": "2026-10-16"
+ },
+ "ddarkr/spoqa-han-sans-web": {
+  "result": "skip",
+  "why": "포크·보관 저장소",
+  "pushed": "2020-02-02T06:54:41Z",
+  "checked": "2026-10-16"
+ },
+ "neodgm/neodgm-pro-webfont": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2022-05-29T08:39:11Z",
+  "checked": "2026-10-16"
+ },
+ "wudys/LythD2": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2026-06-03T11:52:51Z",
+  "checked": "2026-10-16"
+ },
+ "harena-hq/harena-term-font": {
+  "result": "skip",
+  "why": "라이선스 Apache-2.0",
+  "pushed": "2026-09-24T07:20:07Z",
+  "checked": "2026-10-16"
+ },
+ "Lingenics/lingenic-compose-character": {
+  "result": "skip",
+  "why": "라이선스 Apache-2.0",
+  "pushed": "2026-02-15T05:20:25Z",
+  "checked": "2026-10-16"
+ },
+ "CrabAI/image_text_editor_agent": {
+  "result": "skip",
+  "why": "라이선스 MIT",
+  "pushed": "2026-04-30T13:27:03Z",
+  "checked": "2026-10-16"
+ },
+ "DaewwDass/lingenic-compose-character": {
+  "result": "skip",
+  "why": "라이선스 Apache-2.0",
+  "pushed": "2026-10-13T06:55:10Z",
+  "checked": "2026-10-16"
+ }
+}

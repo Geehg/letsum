@@ -1046,5 +1046,21 @@
   "files": {
    "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri11-Condensed.woff2"
   }
+ },
+ "k-yeomil-mono": {
+  "page": "https://github.com/taevel02/yeomil-mono",
+  "files": {
+   "700": "https://cdn.jsdelivr.net/gh/taevel02/yeomil-mono@v1.1.2/fonts/webfont/YeomilMono-Bold.woff2",
+   "300": "https://cdn.jsdelivr.net/gh/taevel02/yeomil-mono@v1.1.2/fonts/webfont/YeomilMono-Light.woff2",
+   "400": "https://cdn.jsdelivr.net/gh/taevel02/yeomil-mono@v1.1.2/fonts/webfont/YeomilMono-Regular.woff2"
+  },
+  "auto": "2026-10-16"
+ },
+ "k-x10y12pxdenkichiphangul": {
+  "page": "https://github.com/quiple/x10y12pxDenkiChipHangul",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/quiple/x10y12pxDenkiChipHangul@v1.213/fonts/webfonts/x10y12pxDenkiChipHangul.woff2"
+  },
+  "auto": "2026-10-16"
  }
 }

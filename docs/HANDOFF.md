@@ -139,3 +139,11 @@ img.save("sample.png")
 - `tools/build_names.py`(fontTools) — 미리보기·공식 웹폰트 파일, Google Fonts는 google/fonts 원본 TTF의 name 테이블을 읽어 `html/data/names.json` 생성. 캐시 `tools/state/names_cache.json`(주소별). 매주 watch-sources에서 실행.
 - 규칙: Windows 앱 목록 = Windows 기록 nameID1(한국어 우선) · Mac 서체 관리자/Adobe = nameID16→1 + 17→2 · 포토샵 '글꼴 누락' = PostScript(nameID6). Mac 규칙은 CoreText(macOS 한국어)로 표본 검증함.
 - 사이트: 검색이 모든 이름으로 찾음(결과 위 라임 안내), 카드·히어로 '설치 후 이름'(LETSUM 표기와 다를 때만), 상세 '설치 후 보이는 이름' 표(복사), 확인 기록 txt, 정적 font/*.html.
+
+## OFL 한글 폰트 자동 등록 (2026-10-16~)
+- `tools/auto_register.py` — 매주 월요일 `watch-font-sources` 워크플로에서 실행. GitHub 검색·감시 목록에서 OFL 한글 폰트를 찾아 **조건을 모두 만족하면 바로 등록**(data.js·cdn_fonts·근거·글자 수·이름·로고·카톡 카드·상세 페이지), 등록되면 `auto-register` 라벨 이슈로 알림.
+- 조건: 저장소 라이선스 OFL-1.1 + LICENSE 본문 확인, 포크·보관·사본 계정 제외, 별 15개 이상, 저장소 파일을 jsDelivr로 버전 고정해 그대로 사용(미러·변환 없음), 실제 한글 2,350자 이상, 기존 이름과 중복 없음. 한 번에 최대 5종.
+- 자동 항목은 `autoReg: true`. 설명·태그·분류는 기본 틀(분류는 이름·설명 키워드로 추정) → 필요하면 사람이 다듬는다.
+- 기록: `tools/state/auto_register.json`(본 저장소·결과·사유, 바뀌지 않은 저장소는 다시 보지 않음). 수동 점검: `python tools/auto_register.py --dry`.
+- 기업·지자체 자체 라이선스·공유마당(동의 절차)·산돌구름 전용은 자동 대상이 아니다 — 이슈 알림 후 운영자가 "등록해"라고 하면 원문 대조로 처리.
+- 사이트 반영은 여전히 NAS '받아와 재배포'.

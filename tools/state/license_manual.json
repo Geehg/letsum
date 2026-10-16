@@ -1175,5 +1175,19 @@
   "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
   "page": "https://github.com/quiple/galmuri",
   "checked": "2026-10-16"
+ },
+ "k-yeomil-mono": {
+  "license": "OFL",
+  "evidence": "자동 확인: GitHub 저장소 라이선스 OFL-1.1 + LICENSE 본문 'SIL Open Font License' — 저장소 공식 파일을 jsDelivr로 버전(v1.1.2) 고정해 그대로 사용",
+  "page": "https://github.com/taevel02/yeomil-mono",
+  "checked": "2026-10-16",
+  "auto": true
+ },
+ "k-x10y12pxdenkichiphangul": {
+  "license": "OFL",
+  "evidence": "자동 확인: GitHub 저장소 라이선스 OFL-1.1 + LICENSE 본문 'SIL Open Font License' — 저장소 공식 파일을 jsDelivr로 버전(v1.213) 고정해 그대로 사용",
+  "page": "https://github.com/quiple/x10y12pxDenkiChipHangul",
+  "checked": "2026-10-16",
+  "auto": true
  }
 }

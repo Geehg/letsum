@@ -1,4 +1,5 @@
-# 매주 월요일 09:00 KST 배포처 감시 → 변경이 있으면 상태 파일 커밋 + GitHub 이슈 생성(메일 알림).
+# 매주 월요일 09:00 KST 배포처 감시 → OFL 한글 폰트는 조건 확인 후 자동 등록 → 변경이 있으면 커밋 + GitHub 이슈(메일 알림).
+# 기업·지자체 자체 라이선스는 자동 등록하지 않고 이슈로만 알린다(원문 해석은 사람 확인).
 # 공개 저장소의 GitHub Actions는 무료. 외부 API 키·AI 없음.
 name: watch-font-sources
 on:
@@ -35,22 +36,46 @@ jobs:
         run: |
           pip install --quiet pillow || true
           python tools/extract_brand.py || echo "브랜드 색 추출 실패 — 지난 결과 유지"
+      - name: Auto-register OFL Korean fonts from GitHub (no AI, conditions in tools/auto_register.py)
+        if: steps.lock.outputs.held != '1'
+        id: auto
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pip install --quiet fonttools brotli pillow
+          python tools/auto_register.py || echo "자동 등록 실패 — 이번 주 건너뜀"
       - name: Installed font names from font files (no AI)
         if: steps.lock.outputs.held != '1'
         run: |
           pip install --quiet fonttools brotli
           python tools/build_names.py || echo "이름 추출 실패 — 지난 결과 유지"
+      - name: Logos & link-preview cards for newly registered fonts
+        if: steps.lock.outputs.held != '1' && steps.auto.outputs.added != '' && steps.auto.outputs.added != '0'
+        run: |
+          python3 -I tools/fetch_icons.py || true
+          for id in $(cat tools/state/auto_added.txt); do python tools/build_og.py --id "$id" || echo "카드 실패: $id"; done
       - name: Build font pages & sitemap
         if: steps.lock.outputs.held != '1'
         run: node tools/build_pages.js
+      - name: Validate (errors stop the commit)
+        if: steps.lock.outputs.held != '1'
+        run: python3 -I tools/validate.py
       - name: Commit state
         if: steps.lock.outputs.held != '1'
         run: |
           git config user.name "letsum-watch"
           git config user.email "watch@letsum.app"
-          git add tools/state html/data html/font html/sitemap.xml html/robots.txt html/js/data.js
+          git add tools/state html/data html/font html/sitemap.xml html/robots.txt html/js/data.js html/img/og html/img/src
           git diff --cached --quiet || git commit -m "chore(watch): 배포처 상태 갱신 $(date -u +%F)"
           git push
+      - name: Open issue for auto-registered fonts
+        if: steps.lock.outputs.held != '1' && steps.auto.outputs.added != '' && steps.auto.outputs.added != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create auto-register --color 84cc16 -R "$GITHUB_REPOSITORY" 2>/dev/null || true
+          { echo "OFL 한글 폰트 ${{ steps.auto.outputs.added }}종을 자동 등록했습니다. NAS에서 '받아와 재배포'를 누르면 사이트에 반영됩니다."; echo; sed -n '/🤖 OFL 자동 등록/,$p' tools/state/report.md; } > /tmp/auto.md
+          gh issue create --title "새 폰트 자동 등록 ${{ steps.auto.outputs.added }}종 $(date -u +%F)" --body-file /tmp/auto.md --label auto-register || true
       - name: Open issue when changed
         if: steps.lock.outputs.held != '1' && steps.run.outputs.code == '3'
         env:

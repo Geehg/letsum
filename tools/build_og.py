@@ -93,7 +93,9 @@ def ui(w, size):
     """화면 글자: 프리텐다드(사이트와 같은 글꼴)."""
     key = (w, size)
     if key not in UI:
-        p, _ = font_file({"id": "k-pretendard", "weights": [400, 500, 700, 800], "webfont": None, "en": "Pretendard"}, w)
+        pw = "https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/woff2/Pretendard-{}.woff2"  # 캐시가 없을 때(GitHub Actions) 공식 웹폰트
+        p, _ = font_file({"id": "k-pretendard", "weights": [400, 500, 700, 800], "en": "Pretendard",
+                          "webfont": {"400": pw.format("Regular"), "500": pw.format("Medium"), "700": pw.format("Bold"), "800": pw.format("ExtraBold")}}, w)
         UI[key] = ImageFont.truetype(str(p), size)
     return UI[key]
 

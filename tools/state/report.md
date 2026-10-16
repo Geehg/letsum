@@ -19,3 +19,48 @@
 - 🔗 다운로드 직링크 끊김: **k-busan-dandi-gothic** (<urlopen error [Errno 104] Connection re) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
 
 > 라이선스 해석·사이트 공개는 자동화하지 않습니다. 카탈로그(tools/state/catalog.json)의 review 필드는 사람이 바꿉니다.
+
+## 🤖 OFL 자동 등록 (2026-10-16)
+등록 2종 · 건너뜀 44개 저장소
+- ✅ Yeomil Mono (`k-yeomil-mono`) — https://github.com/taevel02/yeomil-mono @ v1.1.2 · 굵기 3 · 한글 11,172자
+- ✅ x10y12pxDenkiChipHangul (`k-x10y12pxdenkichiphangul`) — https://github.com/quiple/x10y12pxDenkiChipHangul @ v1.213 · 굵기 1 · 한글 4,361자
+- ⏭ orioncactus/pretendard: 라이선스 NOASSERTION
+- ⏭ sunn-us/SUIT: 라이선스 None
+- ⏭ wanteddev/wanted-sans: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
+- ⏭ spoqa/spoqa-han-sans: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
+- ⏭ adobe-fonts/source-han-sans: 라이선스 NOASSERTION
+- ⏭ adobe-fonts/source-han-serif: 라이선스 NOASSERTION
+- ⏭ mushsooni/mulmaru: 고정 굵기 폰트 파일 없음
+- ⏭ hada0127/hada-type: 별 1개(기준 15)
+- ⏭ Tzetachi/Oesol-Serif-deprecated: 별 4개(기준 15)
+- ⏭ yangheeryu/Gowun-Dodum: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
+- ⏭ yangheeryu/Gowun-Batang: 한글 2,350자 미만이거나 이미 등록된 이름
+- ⏭ yangheeryu/Dongle: 한글 2,350자 미만이거나 이미 등록된 이름
+- ⏭ akngs/noto-kr-vf-distilled: 고정 굵기 폰트 파일 없음
+- ⏭ lxgw/LxgwWenkaiKR: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
+- ⏭ velvetyne/Hangul: 별 10개(기준 15)
+- ⏭ neodgm/neodgm-webfont: 별 10개(기준 15)
+- ⏭ sawalk/MapleSaemmul: 별 4개(기준 15)
+- ⏭ trueroad/HaranoAjiFontsKR: 별 2개(기준 15)
+- ⏭ trueroad/HaranoAjiFontsK1: 별 2개(기준 15)
+- ⏭ cueaz/fonts-mono-kr: 별 2개(기준 15)
+- ⏭ mabyko/MabykoMono: 별 2개(기준 15)
+- ⏭ BinRecycle/ThinMulmaru: 별 2개(기준 15)
+- ⏭ nwah/korean-msx-font: 별 1개(기준 15)
+- ⏭ vriefcase/d2coding: 별 0개(기준 15)
+- ⏭ 1020tj/Gugi: 별 0개(기준 15)
+- ⏭ rladnwls122/JetBrainsMonoD2-Nerd-Font: 별 0개(기준 15)
+- ⏭ Tzetachi/Computer-Modern-Unicode-Oesol: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
+- ⏭ zhongshukeji/Noto-Sans-SC: 별 7개(기준 15)
+- ⏭ philocalyst/Hangul: 별 0개(기준 15)
+- ⏭ mitradranirban/ayuta: 별 0개(기준 15)
+- ⏭ kyh0703/jetbatang: 라이선스 NOASSERTION
+- ⏭ beomjungil/NotoSerifKR-Web: 라이선스 None
+- ⏭ younjungpark/Monatendard: 라이선스 NOASSERTION
+- ⏭ wudys/0xProtoD2: 별 3개(기준 15)
+- ⏭ hunterhogan/Integrated_code_fire_font: 라이선스 NOASSERTION
+- ⏭ xkho/presevka: 라이선스 NOASSERTION
+- ⏭ bepyan/arita: 라이선스 NOASSERTION
+- ⏭ ddarkr/spoqa-han-sans-web: 포크·보관 저장소
+- ⏭ neodgm/neodgm-pro-webfont: 라이선스 NOASSERTION
+- ⏭ wudys/LythD2: 별 0개(기준 15)
