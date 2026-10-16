@@ -997,5 +997,54 @@
   "files": {
    "400": "https://cdn.jsdelivr.net/gh/iropke/font-iropke-batang@24e6a14cd95c903b6584bc947406773c2e0f164f/IropkeBatangM.woff"
   }
+ },
+ "k-sun-suite": {
+  "page": "https://github.com/sun-typeface/SUITE",
+  "css": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/static/woff2/SUITE.css",
+  "files": {
+   "300": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-Light.woff2",
+   "400": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-Regular.woff2",
+   "500": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-Medium.woff2",
+   "600": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-SemiBold.woff2",
+   "700": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-Bold.woff2",
+   "800": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-ExtraBold.woff2",
+   "900": "https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2.0.4/fonts/static/woff2/SUITE-Heavy.woff2"
+  }
+ },
+ "k-galmuri11": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri11.woff2",
+   "700": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri11-Bold.woff2"
+  }
+ },
+ "k-galmuri9": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri9.woff2"
+  }
+ },
+ "k-galmuri7": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri7.woff2"
+  }
+ },
+ "k-galmuri14": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri14.woff2"
+  }
+ },
+ "k-galmuri11-condensed": {
+  "page": "https://github.com/quiple/galmuri",
+  "css": "https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/Galmuri11-Condensed.woff2"
+  }
  }
 }

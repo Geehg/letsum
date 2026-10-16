@@ -1109,5 +1109,71 @@
   "evidence": "KBL 공식 폰트 페이지: '모든 사용자에게 자유롭게 배포할 수 있고 상업적 이용이 가능', 글꼴 유료 판매 불가, 왜곡 변형 비권장 — 공식 WOFF2 무변환",
   "page": "https://www.kbl.or.kr/intro/font",
   "checked": "2026-10-13"
+ },
+ "k-wanted-sans": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(배포 묶음 OFL.txt) — LETSUM은 공식 배포 묶음의 WOFF2를 변경 없이 미리보기에 사용",
+  "page": "https://github.com/wanteddev/wanted-sans",
+  "checked": "2026-10-16"
+ },
+ "k-sun-suite": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1 — 공식 README의 jsDelivr 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/sun-typeface/SUITE",
+  "checked": "2026-10-16"
+ },
+ "k-neodgm": {
+  "license": "OFL",
+  "evidence": "공식 README '글꼴 파일과 소스 코드는 SIL OFL 1.1' + LICENSE.txt(RFN Neo둥근모) — 공식 릴리스 WOFF2 무변환",
+  "page": "https://github.com/neodgm/neodgm",
+  "checked": "2026-10-16"
+ },
+ "k-neodgm-code": {
+  "license": "OFL",
+  "evidence": "공식 README SIL OFL 1.1 + LICENSE.txt(RFN Neo둥근모 Code) — 공식 릴리스 WOFF2 무변환",
+  "page": "https://github.com/neodgm/neodgm",
+  "checked": "2026-10-16"
+ },
+ "k-mulmaru": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(배포 묶음 LICENSE.txt) — 공식 WOFF2 무변환",
+  "page": "https://github.com/mushsooni/mulmaru",
+  "checked": "2026-10-16"
+ },
+ "k-mulmaru-mono": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(배포 묶음 LICENSE.txt) — 공식 WOFF2 무변환",
+  "page": "https://github.com/mushsooni/mulmaru",
+  "checked": "2026-10-16"
+ },
+ "k-galmuri11": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/quiple/galmuri",
+  "checked": "2026-10-16"
+ },
+ "k-galmuri9": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/quiple/galmuri",
+  "checked": "2026-10-16"
+ },
+ "k-galmuri7": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/quiple/galmuri",
+  "checked": "2026-10-16"
+ },
+ "k-galmuri14": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/quiple/galmuri",
+  "checked": "2026-10-16"
+ },
+ "k-galmuri11-condensed": {
+  "license": "OFL",
+  "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
+  "page": "https://github.com/quiple/galmuri",
+  "checked": "2026-10-16"
  }
 }
