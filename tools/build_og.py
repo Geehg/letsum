@@ -32,6 +32,8 @@ def ttf_bytes(data, dehint=False):
     """woff/woff2도 PIL이 읽을 수 있는 TTF/OTF로 바꿈. dehint: 힌팅 명령을 지움(FreeType이 못 읽는 폰트용)."""
     t = TTFont(io.BytesIO(data))
     t.flavor = None
+    for k in ("EBDT", "EBLC", "EBSC", "bdat", "bloc", "CBDT", "CBLC"):  # 일부만 든 내장 비트맵은 FreeType 오류('Bitmap missing') → 윤곽선으로 그림
+        if k in t: del t[k]
     if dehint and "glyf" in t:
         for k in ("fpgm", "prep", "cvt ", "hdmx", "LTSH", "VDMX"):
             if k in t: del t[k]
@@ -130,11 +132,16 @@ def card_font(f, fonts_by_id):
     # 폰트 이름(그 폰트로) — 글자가 빠진 폰트는 프리텐다드로
     name_font = fit(path, f["name"], W - 128, 150, wght) if covers(path, f["name"]) else ui(800, 120)
     bb = name_font.getbbox(f["name"])
-    d.text((64, 150 - bb[1] + max(0, (150 - (bb[3] - bb[1])) // 2)), f["name"], font=name_font, fill=INK)
+    try: d.text((64, 150 - bb[1] + max(0, (150 - (bb[3] - bb[1])) // 2)), f["name"], font=name_font, fill=INK)
+    except OSError:  # 일부 글리프를 FreeType가 못 그리는 폰트 — 이 줄만 프리텐다드로
+        name_font = ui(800, 120); bb = name_font.getbbox(f["name"]); d.rectangle([0, 120, W, 320], fill=PAPER)
+        d.text((64, 150 - bb[1]), f["name"], font=name_font, fill=INK)
     sample = SAMPLE if covers(path, SAMPLE) else f["en"]
     sf = fit(path, sample, W - 128, 56, wght, 28)
     sb = sf.getbbox(sample)
-    d.text((64, 345 - sb[1]), sample, font=sf, fill=INK2)
+    try: d.text((64, 345 - sb[1]), sample, font=sf, fill=INK2)
+    except OSError:
+        sf = ui(500, 48); sb = sf.getbbox(sample); d.rectangle([0, 330, W, 430], fill=PAPER); d.text((64, 345 - sb[1]), sample, font=sf, fill=INK2)
     # 아래 띠: 사용 범위 + 주소
     d.rectangle([0, H - 150, W, H], fill=INK)
     d.text((64, H - 124), "상업용 무료 · " + f["glyphs"], font=ui(500, 24), fill="#b7b4a9")
@@ -194,7 +201,7 @@ def main():
         try:
             try: r = card_font(f, None)
             except OSError as e:  # FreeType가 힌팅을 못 읽는 폰트 → 힌팅 지운 사본으로 다시
-                if "function definitions" not in str(e) and "invalid" not in str(e).lower(): raise
+                if not any(k in str(e) for k in ("function definitions", "Bitmap missing")) and "invalid" not in str(e).lower(): raise
                 for p in CACHE.glob(f"{f['id']}-*.ttf"): p.write_bytes(ttf_bytes(p.read_bytes(), dehint=True))
                 r = card_font(f, None)
             if r: ok += 1

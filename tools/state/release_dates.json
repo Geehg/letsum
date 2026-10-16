@@ -1263,5 +1263,250 @@
   "date": "2026-08-13",
   "src": "공식 GitHub 첫 릴리스",
   "url": "https://github.com/quiple/x10y12pxDenkiChipHangul/releases"
+ },
+ "k-arita-dotum": {
+  "date": "2005",
+  "src": "아모레퍼시픽 공식 페이지(2005년 처음 시도한 본문용 글꼴)",
+  "url": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html"
+ },
+ "k-arita-buri": {
+  "date": "2014",
+  "src": "아모레퍼시픽 공식 페이지(2014년 완성)",
+  "url": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html"
+ },
+ "k-galmuri-mono7": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri-mono9": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri-mono11": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-sumunjang-title": {
+  "date": "2025-08-13",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-sumunjang-body": {
+  "date": "2025-08-13",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-gangwon-state": {
+  "date": "2025-01-20",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381787&menuNo=200023"
+ },
+ "k-high1-wonchuri-title": {
+  "date": "2024-11-28",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-kcchyerim": {
+  "date": "2024-11-12",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372654&menuNo=200023"
+ },
+ "k-kccbangjeonghwan": {
+  "date": "2024-11-08",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023"
+ },
+ "k-yangju-byeolsan": {
+  "date": "2024-04-08",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371587&menuNo=200023"
+ },
+ "k-gamtanroad-tantan": {
+  "date": "2024-03-26",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371585&menuNo=200023"
+ },
+ "k-gamtanroad-batang": {
+  "date": "2024-03-26",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371582&menuNo=200023"
+ },
+ "k-gamtanroad-dotum": {
+  "date": "2024-03-26",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371579&menuNo=200023"
+ },
+ "k-gamtanroad-gamtan": {
+  "date": "2024-03-26",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371578&menuNo=200023"
+ },
+ "k-kcc-hanbit": {
+  "date": "2024-01-24",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371550&menuNo=200023"
+ },
+ "k-pyeongchang-peace": {
+  "date": "2023-05-24",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333588&menuNo=200023"
+ },
+ "k-pyeongchang": {
+  "date": "2023-05-24",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333586&menuNo=200023"
+ },
+ "k-hanamdaum-body": {
+  "date": "2023-03-15",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-hanamdaum": {
+  "date": "2023-03-15",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-chusalove": {
+  "date": "2021-10-08",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-andante": {
+  "date": "2021-03-29",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-yisunshin": {
+  "date": "2020-10-05",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-yisunshin-dotum": {
+  "date": "2020-10-05",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-yydimibang": {
+  "date": "2020-11-12",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-goyangdeogyang": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-goyangilsan": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-busan-font": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-bitgoeul": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-sunbatang": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-suncheon": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-andongkaturi": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-andongwolyeonggyo": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-js-dongkang": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-js-arirang-ppuri": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-js-arirang-hon": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-js-arirang": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-jejugothic": {
+  "date": "2013-08-12",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=419035&menuNo=200023"
+ },
+ "k-jejumyeongjo": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-jejuhallasan": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-oseong-and-haneum": {
+  "date": "2021-10-26",
+  "src": "공유마당 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288378&menuNo=200023"
+ },
+ "k-pureunjeonnam": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-khnphandotum": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-happy-goheung": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-khnphanuoolim": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-keco-hwangyeong": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-lh": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
+ },
+ "k-kccmurukmuruk": {
+  "date": "2020-04-20",
+  "src": "안심글꼴 목록 등록일(제작 기관 배포)",
+  "url": "https://gongu.copyright.or.kr/freeFontEvent_KOGL.html"
  }
 }

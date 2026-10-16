@@ -1219,5 +1219,371 @@
   "evidence": "공식 GitHub 저장소 OFL-1.1(OFL.md) — 공식 README의 jsDelivr npm 웹폰트 경로 그대로(버전 고정)",
   "page": "https://github.com/quiple/galmuri",
   "checked": "2026-10-16"
+ },
+ "k-hakgyoansim-ocarina": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13383114)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13383114&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-songam-leehyungsik": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13382879)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382879&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-sumunjang-title": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13382192, 13382191, 13382190)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382192&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-sumunjang-body": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13382189, 13382188, 13382187)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382189&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-hangeuljaemin6": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13382163)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382163&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-griun-kimjungwon": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13381808)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381808&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-gangwon-state": {
+  "license": "공공누리 제3유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제3유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13381787)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381787&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-high1-wonchuri-title": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13373093, 13373092, 13373091)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13373093&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kcchyerim": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13372654)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372654&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kccbangjeonghwan": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13372653)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-yangju-byeolsan": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371587)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371587&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-gamtanroad-tantan": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371585)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371585&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-gamtanroad-batang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371584, 13371583, 13371582)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371584&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-gamtanroad-dotum": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371581, 13371580, 13371579)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371581&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-gamtanroad-gamtan": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371578)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371578&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kcc-hanbit": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13371550)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371550&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-pyeongchang-peace": {
+  "license": "공공누리 제3유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제3유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13333589, 13333588)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333589&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-pyeongchang": {
+  "license": "공공누리 제3유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제3유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13333587, 13333586)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333587&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-hanamdaum-body": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13333563)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333563&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-hanamdaum": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13333562)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333562&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kim-jung-chul-script": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13328949)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13328949&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kim-jung-chul-gothic": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13304541)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304541&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kim-jung-chul-myungjo": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13304542)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304542&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-pak-yong-jun": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13304318)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chusalove": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288475, 13288474)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288475&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-solmoe-kimdaegeon": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288333)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288333&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-andante": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288469)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288469&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chilgok-cye": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288467)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288467&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chilgok-ljh": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288466)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288466&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chilgok-lws": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288465)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288465&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chilgok-kyb": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288464)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288464&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-chilgok-kaj": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288463)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288463&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-yisunshin": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288449, 13288450)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288449&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-yisunshin-dotum": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288451, 13288452, 13288453)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288451&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-yydimibang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288454)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288454&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-goyangdeogyang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288416, 13288415)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288416&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-goyangilsan": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288418, 13288417)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288418&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-busan-font": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288428)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288428&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-bitgoeul": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288419, 13288420, 13288421)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288419&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-sunbatang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288468)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288468&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-suncheon": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288373, 13288374)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288373&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-andongkaturi": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288375)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288375&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-andongwolyeonggyo": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288376)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288376&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-jeonju-wanpanbon-gak": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288456, 13288458, 13288457)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288456&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-jeonju-wanpanbon-sun": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288461, 13288459, 13288460)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288461&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-js-dongkang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288383)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288383&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-js-arirang-ppuri": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288384)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288384&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-js-arirang-hon": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288385)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288385&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-js-arirang": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288386)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288386&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-jejugothic": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(419035)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=419035&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-jejumyeongjo": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13287188)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13287188&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-jejuhallasan": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13287189)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13287189&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-oseong-and-haneum": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288378, 13288379)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288378&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-pureunjeonnam": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288387, 13288389)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288387&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-khnphandotum": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288390, 13288391)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288390&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-happy-goheung": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288395, 13288394, 13288393)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288395&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-khnphanuoolim": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288392)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288392&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-keco-hwangyeong": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288470, 13288471)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288470&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-lh": {
+  "license": "공공누리 제1유형",
+  "evidence": "공유마당 저작물 페이지 이용조건 '공공누리 제1유형' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13288396)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288396&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-ghanachocolate": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13262104)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262104&menuNo=200023",
+  "checked": "2026-10-17"
+ },
+ "k-kccmurukmuruk": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13262151)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262151&menuNo=200023",
+  "checked": "2026-10-17"
  }
 }
