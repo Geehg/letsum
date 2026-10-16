@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-16",
  "items": {
   "k-kccdodamdodam": {
    "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023",
@@ -818,49 +818,8 @@
   },
   "k-wonju": {
    "page": "https://www.wonju.go.kr/www/contents.do?key=6554",
-   "palette": [
-    {
-     "hex": "#033074",
-     "score": 7,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#d0dcea",
-     "score": 6,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#1e1e1e",
-     "score": 4,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#ffffff",
-     "score": 3,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#4486d4",
-     "score": 1,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#2d69c2",
-     "score": 1,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#72a5f5",
-     "score": 1,
-     "src": "CSS 빈도"
-    }
-   ],
-   "suggest": {
-    "bg": "#d0dcea",
-    "fg": "#033074",
-    "ac": "#033074",
-    "acInk": "#ffffff"
-   }
+   "palette": [],
+   "error": "<urlopen error timed out>"
   },
   "k-bithumb-gothic-original": {
    "page": "https://www.bithumbcorp.com/ko/promotion/font.php",
@@ -1695,6 +1654,10383 @@
     "ac": "#06038d",
     "acInk": "#ffffff"
    }
+  },
+  "k-pretendard": {
+   "page": "https://github.com/orioncactus/pretendard",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-suit": {
+   "page": "https://sun.fo/suit/",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-nanum-square-neo": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-maruburi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nanum-human": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nanum-barun-gothic-yethangul": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nanum-myeongjo-yethangul": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-abbaeuiyeonaepyeonji": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-abbageurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-agisarangce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ainmamsongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ajummajayu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-amseutereudam": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-anssangce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-areumdeuriggocnamu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-baeeunhyece": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-baegeuieuiceonsa": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-banjjagbanjjagbyeor": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-bareunhipi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-bareunjeongsin": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-bbanggunimamsongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-beodeunamu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-beomsomce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-bisangce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-buggeugseong": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-bujangnimnuncice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ceorpirgeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-codingheuimang": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dacaesarang": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-daegwangyuri": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-daehanmingugyeorsace": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dahaengce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dajince": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dareuigwedo": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dasisijaghae": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ddaagdandan": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ddaddeushanjagbyeor": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ddaregeeommaga": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ddobagddobag": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-donghwaddobag": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-dunggeuninyeon": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-eommasarang": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-eonggeongkwice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-euimiissneunhangeur": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-gangbujangnimce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ganginhanwiro": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-garamyeonggoc": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-garmaesgeur": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-geumeunbohwa": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ggeuteumeorice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ggocnaeeum": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-gibbeumbarkeum": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-gimyuice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-godiganigogoding": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-gomsince": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-goryeogeurggor": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-gyurieuiirgi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-haengboghandobi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hanadoeeosongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hanasongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hanyunce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-harabeojieuinanum": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-haramce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-heuimangnuri": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-heuinggorisuri": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-himnaeraneunmarbodan": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hyejunce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hyeogice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-hyonamneurhwaiting": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jabusimjiu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jangmice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jarhagoisseo": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jeomggorce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jeongeunce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-jinjubaggyeongace": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-junghagsaeng": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-kargugsu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-kokoce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-magoce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-masissneunce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-minisongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-miraenamu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-mongdor": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-mugunghwa": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-mujinjangce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-naeuianaesongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-namujeongweon": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-naneunigyeonaenda": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-neurisneurisce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-noryeoghaneundongheui": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-oeharmeonigeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-oensonjabidoyebbeo": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-ogbice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sanghaecanmice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-saranghaeadeur": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-seace": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-segyejeoginhangeur": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sehwace": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-seongsirce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sinhonbubu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-siugwiyeoweo": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sobanggwaneuigido": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-somice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sonpyeonjice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-sujubeundaehagsaeng": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-uriddarsongeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-wairdeu": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yacaejangsubaeggeumrye": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yageunhaneungimjuim": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yebbeunmingyeongce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yedangce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yeonjice": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yeorahobeuibanjjagim": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yeoreumgeurssi": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yeorirce": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-clova-yuniddingddangddingddang": {
+   "page": "https://hangeul.naver.com/font",
+   "palette": [
+    {
+     "hex": "#00c73c",
+     "score": 43.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#040404",
+     "score": 29,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e1e1e1",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cecece",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#181818",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4c4c4c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#969696",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#43d56e",
+     "score": 2.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#6fe779",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7f3d4",
+    "fg": "#040404",
+    "ac": "#008127",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-gmarket-sans": {
+   "page": "https://corp.gmarket.com/fonts/",
+   "palette": []
+  },
+  "k-nexon-lv1-gothic": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-lv2-gothic": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-bazzi": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-football-gothic": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-maplestory": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-dnf-bitbit-v2": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-dnf-forged-blade": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-warhaven": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nexon-kart-gothic": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-mabinogi-classic": {
+   "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 153.6,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e9ecef",
+     "score": 82.2,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 43,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#424242",
+     "score": 36,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f08c00",
+     "score": 27,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c9c9c9",
+     "score": 26,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 25.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#828282",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#b8b8b8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffc9c9",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffa8a8",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f03e3e",
+     "score": 18,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc9c9",
+    "fg": "#2e2e2e",
+    "ac": "#9c5b00",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-paperlogy": {
+   "page": "https://freesentation.blog/paperlogyfont",
+   "palette": [
+    {
+     "hex": "#000000",
+     "score": 1515,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f6f7fa",
+     "score": 1383,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2957e2",
+     "score": 756,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0099ff",
+     "score": 694,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#e6e6e6",
+     "score": 162,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#121212",
+     "score": 64,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#657082",
+     "score": 9,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffeeaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#303030",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cff245",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#9bc200",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#caf76f",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f6f7fa",
+    "fg": "#000000",
+    "ac": "#2957e2",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-freesentation": {
+   "page": "https://freesentation.blog/",
+   "palette": [
+    {
+     "hex": "#000000",
+     "score": 243,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 74,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#2957e2",
+     "score": 56,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0099ff",
+     "score": 55,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#cff245",
+     "score": 28,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#9bc200",
+     "score": 19,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#cad1db",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebeef2",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#303030",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#111111",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#caf76f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#59ffe8",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ebeef2",
+    "fg": "#000000",
+    "ac": "#2957e2",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-d2coding": {
+   "page": "https://github.com/naver/d2-coding-font",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-line-seed-kr": {
+   "page": "https://seed.line.me/index_kr.html",
+   "palette": [
+    {
+     "hex": "#000000",
+     "score": 76.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 16.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#06c755",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 5.1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eeeeee",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#272727",
+     "score": 2.2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 2.1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#b2b2b2",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4b4b4b",
+     "score": 0.2,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#777777",
+     "score": 0.2,
+     "src": "대표 이미지"
+    }
+   ],
+   "suggest": {
+    "bg": "#c8f3da",
+    "fg": "#000000",
+    "ac": "#048137",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-iropke-batang": {
+   "page": "https://font.iropke.com/batang/",
+   "palette": [
+    {
+     "hex": "#3a3b3c",
+     "score": 34.6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#c3c7c4",
+     "score": 9.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#a8a9aa",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 7.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1a1a1f",
+     "score": 5.3,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#5c8692",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 4.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fa7c73",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff00ff",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fee2e0",
+    "fg": "#3a3b3c",
+    "ac": "#c8635c",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ygot-jalnan2": {
+   "page": "https://gccompany.co.kr/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 473,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#222222",
+     "score": 449,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#666666",
+     "score": 307,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#999999",
+     "score": 300,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#777777",
+     "score": 250,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 240,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 219,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0099ff",
+     "score": 207,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f4313f",
+     "score": 135,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 84,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#3b3b3b",
+     "score": 38,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c4c4c4",
+     "score": 34,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e9ff",
+    "fg": "#222222",
+    "ac": "#007acc",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ygot-jalnan-gothic": {
+   "page": "https://gccompany.co.kr/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 473,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#222222",
+     "score": 449,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#666666",
+     "score": 307,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#999999",
+     "score": 300,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#777777",
+     "score": 250,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 240,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 219,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0099ff",
+     "score": 207,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#f4313f",
+     "score": 135,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 84,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#3b3b3b",
+     "score": 38,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#c4c4c4",
+     "score": 34,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e9ff",
+    "fg": "#222222",
+    "ac": "#007acc",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kbl-jump": {
+   "page": "https://www.kbl.or.kr/intro/font",
+   "palette": []
+  },
+  "k-kbl-court": {
+   "page": "https://www.kbl.or.kr/intro/font",
+   "palette": []
+  },
+  "k-cafe24-classictype": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-dangdanghae": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-danjunghae": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-dongdong": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-moyamoya": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-ohsquare": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-oneprettynight": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-pro-slim": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-pro-up": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-shiningstar": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-simplehae": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-ssukssuk": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-ssurround": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-supermagic": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-cafe24-syongsyong": {
+   "page": "https://fonts.cafe24.com/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 100.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 74,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 45.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 27.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 21,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#bbbbbb",
+     "score": 16.3,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#555555",
+     "score": 13.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#808080",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7fabff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#aaaaaa",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#e3edff",
+    "fg": "#333333",
+    "ac": "#536fa6",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-wanted-sans": {
+   "page": "https://github.com/wanteddev/wanted-sans",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-sun-suite": {
+   "page": "https://github.com/sun-typeface/SUITE",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri11": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri9": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri7": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri14": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri11-condensed": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-neodgm": {
+   "page": "https://neodgm.dalgona.dev/",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-neodgm-code": {
+   "page": "https://neodgm.dalgona.dev/",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-mulmaru": {
+   "page": "https://github.com/mushsooni/mulmaru",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-mulmaru-mono": {
+   "page": "https://github.com/mushsooni/mulmaru",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yeomil-mono": {
+   "page": "https://github.com/taevel02/yeomil-mono",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-x10y12pxdenkichiphangul": {
+   "page": "https://quiple.dev/font/denkichip-hangul",
+   "palette": [],
+   "error": "robots.txt 차단"
   }
  }
 }

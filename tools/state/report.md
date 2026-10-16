@@ -1,66 +1,72 @@
-# 배포처 수집 보고 — 2026-10-12
+# 배포처 수집 보고 — 2026-10-16
 
-카탈로그 573종 · 루트 수집 google 38, fontsource 39, github 6, kogl 634, pages 3, news 130 · 사이트 반영 245종 · 검수 대기 248종 · 다운로드 링크 212/213 정상
+카탈로그 573종 · 루트 수집 google 38, fontsource 39, github 6, kogl 634, pages 3, news 93 · 사이트 반영 259종 · 검수 대기 234종 · 다운로드 링크 347/392 정상
 
 - 📄 페이지 변경 감지: **문체부 안심 글꼴파일 서비스** — 사람이 확인 → https://www.mcst.go.kr/site/s_policy/subPolicy/contents/contents09.jsp
-- 📰 새 배포 소식: 부산시, 도시 브랜드 전용 서체 ‘부산단디체’ 무료 배포 - 메트로신문 → https://news.google.com/rss/articles/CBMiYEFVX3lxTFBqNUpaSlpRMHc3S0d0bHJ1YkJCeXJJcGUzaDNlRWR1WjQxdjF0b1ZXRjE2RkZZUnpMY05lZmhRSnN0azU3YURiUFZXLUlaUk1EMVBhN1ppN3hGTWpWbGNEWA?oc=5
-- 📰 새 배포 소식: 빗썸, 한글날 100주년 맞아 브랜드 전용 ‘빗썸고딕’ 무료 배포 - 오늘경제 → https://news.google.com/rss/articles/CBMic0FVX3lxTE5GYXJ2TWEtTmVZcDVmYWQtWE9KMGc1RkR1d3RMQkV5bXh2R1MtRGhuRnBJbkIydTFKQ1JzaHZBdEpKY3lrdFAzcVBBUzNEWUVzSEU5ckNjTkxBMDZvUGtOQ3pnVTlGRmNNMVdNTGdQLURJZ1U?oc=5
-- 📰 새 배포 소식: 부산시, 새 도시브랜드 전용서체 ‘부산단디체’ 무료 배포 - 부산경제 → https://news.google.com/rss/articles/CBMic0FVX3lxTFA0VERJMWR2ekNpaVV2Rkd0ZzdBd2pPd29ONUMzSUhNZHJMQlM3dVhQTGRCNXUxT2xtdzBuaEJHWGMwSFEzdE5yWC1zZGxYQXZseDN2YTJ5TFFnVVAyYmcyVkllRWI0dTNnSlV5RXNheFRMNHM?oc=5
-- 📰 새 배포 소식: GS25, 한글날 맞아 전용 서체 ‘GS혜자로운체’ 무료 배포 - 팝콘뉴스 → https://news.google.com/rss/articles/CBMibkFVX3lxTE1lZnNzb2hwMkUyaXpYbkdVNGtDOGJyMVVYR09ZX04tMGd6ajZOUWRxdi1EOHE4ZFNJdlhlUGwxemJ5MGRXdlBaS3BTTVZjOEZ2cXNwckhPTHpYZXgzaTV2TEQ4WWY5Y2pHX3NWRVZB0gFyQVVfeXFMT2RZZ0pEcHdjaEV5LWtuaTFoM2RXWERwMndQdHQ4Qy1UUUVPNGZsYnpyajJVLU43VXBudno2dElKWThGTG1zeWpnZVpyYllaTDBtLXhDbEp6N2pjcElnQS1jdjBTbTZLaWhudGJiQnFGRFFR?oc=5
-- 📰 새 배포 소식: 부산시, 도시브랜드 전용서체 '부산단디체' 무료 배포 - 한국뉴스통신 → https://news.google.com/rss/articles/CBMiaEFVX3lxTE8wN2RuZ0lfYWJRNFBTZ2dHS0dRNUM4dC1lbmdTSXdkbmxTZ1pnSzhWZnNGOUg1QWJfZHRKaE5sQXBZQzJyWFB4d0RKLTIwX1ZMRWdmQ1lPWHB6SGNUa01jLUhxa0Nad0VW?oc=5
-- 📰 새 배포 소식: 시교육청 'AI 한글 폰트' 2종 무료 배포 - 부산파이낸셜뉴스 → https://news.google.com/rss/articles/CBMiXEFVX3lxTFBxanh6QVlZbzJ0aktXbklwT01DUTNCSk95WjVpaDM1Tmx6U2ZzRUY3WHZnVDhSN3FyeDdiTDZtR2dTdXZhREw2QUFYOUxsLXU1TThTM2VobjRHNXkz?oc=5
-- 📰 새 배포 소식: [게시판] 빗썸, 한글날 100주년 기념 글꼴 '빗썸고딕' 배포 - 연합뉴스 → https://news.google.com/rss/articles/CBMiW0FVX3lxTE4xclplMXJLOHI5LVZoV0c5RUhXdDFrQkl4NHNoeXoxSGw2RlpQSnVtM0pUbDEzNzdVSTRqYkctTVJSeEFIbHRabUxISWtFUVppQ2sySktNSVhRd03SAWBBVV95cUxOdkxlMHk0U1JRM2ZTenRZMVVyYW9waTZueXA3OVZxU2VhRFFXcXZMa1h1YmJCekdiSE52MEtwOEdUNmdZR1ItT0ZnVGJHU1ZaRFR6QkNvcm1VSlBKZUhCeFc?oc=5
-- 📰 새 배포 소식: 네이버, 한글날 제정 100주년 맞아 ‘모두의 한글’ 캠페인 - 아시아투데이 → https://news.google.com/rss/articles/CBMibkFVX3lxTE9xZE1tcHBRYk5hekI2MTlXWmFYdUMxVm5QcHZyNTQtaC11OFpmQWVidjI3TDRjckdWWlNPcnlYdFJwVmVIcjV4OHphb3VKV1hzSXdKUXJLeWw5aS0zSlRNOFYwTzhVWTZtTmhlYm5R?oc=5
-- 📰 새 배포 소식: 빗썸, 브랜드 전용 서체 ‘빗썸고딕’ 2종 무료 공개 - 인더스트리뉴스 → https://news.google.com/rss/articles/CBMickFVX3lxTE1WRTM3WWp0UG5UTGVLdENFUzB1bmc1Wk1KcHdqaGVTWWMxTUI3QTF6TU9VUVY0cG1kUEtRVVRxVmlOVnZEVS13clFDamJPMzVhV0N5UHMzdTNmamdqUFJYbU9fM3AweElwZ0VoVVJnYXVMQQ?oc=5
-- 📰 새 배포 소식: BGF리테일-산돌, 한글날 맞아 공식폰트 '좋은친구' 선보여 - 연합뉴스 → https://news.google.com/rss/articles/CBMiW0FVX3lxTE5lMS1rbFEwa0pvV3JQXzVFUmktNnhHQ1lrZlZDYzhCZFpsQjhaM09NVTlNOXlmOWNMU0FWdjZhQnJrWEswdUdyM1gzNEZSaHdoZVlobElkV01sclXSAWBBVV95cUxQdXlFbmRCb0dhNHFXSVlhZmN4MFBGb3dOOWNsU2hGN0hrUHdYSHJQdUdIQU9lWmtXd0tGYk9KMUIxOFNmb3JwaXFORjBjbk1JTWwyUzJpa0dMd2FUQTJha2M?oc=5
-- 📰 새 배포 소식: [유통갤러리] BGF리테일, 산돌과 한글날 기념 폰트 ‘좋은친구’ 공개 外 - 뷰어스 → https://news.google.com/rss/articles/CBMiWEFVX3lxTE53WFpwLVdGUzdVUGs3VW1qUldxLTZlZHhaRlBmWHl3S193LUFtRmFBTkV3R05TbkJpZFdCY0ZUSk9ubEdTNEQxNFo4VDVCTlVNVTBNSDQtRGI?oc=5
-- 📰 새 배포 소식: GS25, '혜자로운' 마음을 글씨에 담다 - 우먼스토리뉴스 → https://news.google.com/rss/articles/CBMib0FVX3lxTE9zTkVyVXQzbUNOSG85X3Yzc09VQ3FMWDlMX0Vzb1VvOVQ2SHRBbE5Rbl9mVFljMW9iRUozMjNGYjI0Zjd1a0Zld2ROUmYzTFRyYzlyRnNuT3BYLVNsOWtOdDZ4SGZhR0o0S1dHVk5nbw?oc=5
-- 📰 새 배포 소식: 빗썸, 한글날 100주년 맞아 전용 서체 '빗썸고딕' 공개 … 브랜드 경험 강화 - 워크투데이 → https://news.google.com/rss/articles/CBMibEFVX3lxTE11OXU0SjZnQ3ByM3pyU21mSjhqaW9xeXp0MmVxcWdIRnlPVnYzZmVHNjNQcmx6T0psRWRVb3lQZ3NfT2VUMDVsT3NFLXBlYTJyR2REWGdPOEMtOTh3d1NTcXllSGV1c0ZydUd1Rw?oc=5
+- 📰 새 배포 소식: 부산시, 전용 서체 ‘부산단디체’ 무료 배포 - KBS 뉴스 → https://news.google.com/rss/articles/CBMiZkFVX3lxTE9BUjh6UUtkUFExX21zb1lEVk92SnNuXzdDUmRzeVJ4RzI3OS1mV2FZOF9fUnZrTnNuN2MwaWtBaFhha1EtcmlGbUtLTDVWc2hnZFdCd0ludS1WU0x3UmpSR3dJUDY5dw?oc=5
+- 📰 새 배포 소식: 부산교육청 전국 첫 'AI 한글 폰트' 2종 배포 - 머니투데이 → https://news.google.com/rss/articles/CBMid0FVX3lxTE9pTUdHZWFLNzU1T294QlVUdHh3M1AwTjI2NW9wcG9aN09lQ0lpWjJWVnlKTzBhRVpxeFJ0RVJuRktYdUZXVTMxc2lPS19rZGlBSFBXRUdMTUhLeGdLZF9qc0NQR2dJVThWQ3lyTHNWT2ppR1UxRWlJ?oc=5
+- 📰 새 배포 소식: 부산 글씨, 이제 '단디' 쓴다…市, 전용서체 무료 배포 - 노컷뉴스 → https://news.google.com/rss/articles/CBMiUkFVX3lxTFBXTGlsa2JSUlFrMnBKRjZjQ2lEejVBYzJUalk4ci00WU1zVUJNSHNLUWlDTV9aWFNySHplMmdBVGVTMFNtX0hxOXNIb0h0UjkyRGc?oc=5
+- 📰 새 배포 소식: [기업] HS효성, 한글날 제정 100주년 맞아 'HS효성체' 무료 배포 - YTN → https://news.google.com/rss/articles/CBMiXkFVX3lxTE9oMnR0dWgwUWJaYWlNVmFfZEZPWVc0U01EeVhnOGVpUnEtY2FVQjVITG5wOHp0N1Q4Z05JR2pGeTYwUENqTDdlN3FJM0ZpSmZ6c3Z4ck1VTU51dkx6alE?oc=5
+- 📰 새 배포 소식: ABC 말고 에이비씨···초콜릿·포켓몬 고·미디어아트까지 뜻깊은 ‘한글날 100돌 잔치’ - 경향신문 → https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wLUNOam9pTXpZWjI4MFZ1U0FwSzl1YUxKSVNqT1V1WHBQanl4bnFsd2VCYjdNMEg3N21XdENhNDZ5N0pRZXN5NjlFQTdwdFZ5SEdGM2JCRUFuZ9IBX0FVX3lxTE9IenJBN1pma0RRTjNGRmxQenVXNTlKZGxaUnRBNTY3eURNTFQxSVhGNFh0bUx4RjQ0UmZSN2J5OTY3SHM1SmZubUk0YzE3amdoVGtGWElvT0hKS2ZZUkYw?oc=5
+- 📰 새 배포 소식: "단디 쓰세요"…부산 새 서체 '부산단디체' 무료로 풀렸다 - 뉴스1 → https://news.google.com/rss/articles/CBMiX0FVX3lxTE5zMW5FdHlnU1lfdWlBeDlzbGNlUm1sYTRhaXdqMUwwajNkZHdwZE56SzRQcmFVUnQ1cndqYjV3RVZrSEdITERBTnUzb2JnZmlnaDdyOGIzQmI4T0xVQmhJ?oc=5
+- 📰 새 배포 소식: 부산교육청, 전국 교육청 최초 'AI 한글 폰트' 2종 배포 - 국제뉴스 → https://news.google.com/rss/articles/CBMibkFVX3lxTE1jbG9SUmZCZXctakpoVEJIWDhkTGdNTEl4b1dTaWJ4cFJ3YU14ZXlZZDNBWVdtQkl2c0J2b0lacjJURHhWWTVLZGs3Y2pSSTBoU0hiT0Jwd1RRRld5VEtRd0VNbl82ODh5U3VFd01n?oc=5
+- 📰 새 배포 소식: 초콜릿에 잠옷까지…‘우리말’ 입은 유통가 - 서울경제 → https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qS1p2ODVfaWpFYk93N0l2dFJ4NjdaR0htRWxHbzNoR0xWbExWSUdSbXkyYVRXV2IzN0pld0pVUGNKRnR5WkhlN3ZwY01OMHVrM3fSAVNBVV95cUxQenEyZklJeTJLUVNOa3lMMDdRVFMxRDRuUXBEVVowUUdwRmRsN0h0TW9EOGdNSUY0cGJsWEV4MDNSbU8wUDBBLW9KWEt4aXdHR1ZZZw?oc=5
+- 📰 새 배포 소식: 29CM, 새 태그라인 공개…전용 서체 9일부터 적용 - 뉴스핌 → https://news.google.com/rss/articles/CBMiXEFVX3lxTE9MS1BEY2Fva2k1ckdyc0Npc0RORHQ2RWFlRmF6YlZBcDdmaGd3OXhTd3A0WUx0MjVrcVN3N2VvSURtTkN4Q1EzaHgwZlE5QmJnNnpMMzhoNDVud2tj?oc=5
+- 📰 새 배포 소식: [똑똑한유통] GS25, 신라면세점, 신세계사이먼, SK스토아, 우아한형제들 - 에너지경제신문 → https://news.google.com/rss/articles/CBMiW0FVX3lxTE42Z050ckNFbTZCbGF0MVRKdVQ1TjJMdzRNYXhEUWV3TmF1alhxV0IzTi1WSkNnWnpMZW56RWp1QkVmU0JpYzN4dXF1MTE3cDlPQ2JFY2F1SEowMWM?oc=5
+- 📰 새 배포 소식: 윤디자인, 부산시 도시서체 ‘부산단디체’ 공개 | - 한스경제 → https://news.google.com/rss/articles/CBMib0FVX3lxTFB1TGExUjVoSnI5aWdDM2cxMi1wbWIyWWxFbmF4R1pWLTJnNjE3UnQyUmxlQmZjNWpjbGVnQ2YtZHhHNEpXa0lTWTJfRVg4ZjVsNFJyb3ltTnVRX1RxQVZvUXRLbVE1SnFhdWVUVjRDNA?oc=5
+- 📰 새 배포 소식: 29CM, 굵기에 따라 표정이 달라지는 첫 브랜드 서체 공개 - 디자인 나침반 → https://news.google.com/rss/articles/CBMibkFVX3lxTFB4MUZSUFEtVEQ4Qjh5MGtDWndRby1iZThlekUzekxiUmpOaE15aFFMRzlqNEFBZWNLVWozNGp1UzhEZ1JiYzl4SEtEN1JxQmRaamhVcGtoT0pDQzRhcjhzRHZxMXJ0R3lYd2Y0TnZ3?oc=5
+- 📰 새 배포 소식: 가장 위대한 디자이너는? 세종대왕 아닐까 - 브런치 → https://news.google.com/rss/articles/CBMiSkFVX3lxTE1jeVI4Q1lpR3F1LTlxcWpqdXNXZERQcUhXT210M1FzRUZnN2h6YmJwdFRPREc1blA1WEMzZzN0N211OHhBcWR1clRn?oc=5
+- 📰 새 배포 소식: GS25, 한글날 맞아 'GS혜자로운체' 무료 공개 - 뉴스1 → https://news.google.com/rss/articles/CBMiX0FVX3lxTE56OGpBT1p2QTVSREdNXzRRRjU0WDlUYUF6cXZZblFtQVR0dm5ZY2V2SkJQY1RIUlNlc0locFJnOXZRU1NBVTZGTm44cVd3U2tCMVJ1RUFSRTkyVWExR3Vz?oc=5
+- 📰 새 배포 소식: 빗썸, 한글날 기념 ‘빗썸고딕’ 선보여…안정·신뢰 가치 담아 - 팍스경제TV → https://news.google.com/rss/articles/CBMiaEFVX3lxTE5rdVN4SDM5bldidVJnQVV3RngyT3hOQmZBRmxqVzFqSElWTjhLYjc2VDBzLVR2QTF3aHdRYnVYLXgxX1ktSV85UTE1TWhqNHF4S1BwMVBtRjFCLXR0SU14NGliSEdrSEdj?oc=5
+- 📰 새 배포 소식: 빗썸, 한글날 100주년 맞아 '빗썸고딕' 2종 공개…'브랜드 경험 제공' - 데일리한국 → https://news.google.com/rss/articles/CBMib0FVX3lxTE9XMjN2QXZqN1JlZ2JvOHQ0RGIxdU8zeDZBeHlYN1N0NEZ2YzFfcGRBM1RJRlhGeUNKWUhMd2h6bF9RX1Q2ZWV1NEUyOHQ3dlhOb3Rld1lBd09JTzZqc0xlcFFSeXQyZ1U5bmRqZEtGc9IBc0FVX3lxTE5nNi1sQllLUGxhVWh2Y19BTTNzUDM4TThBeXJ3eUxfblJ1Q2psSmI0MVBvQW1MUWdtby11QXFjS2x1OElMRnVkMGE4eHBMdHBQMkpfdDRHdXE3VV9DNnl0MV94TzlpQ0lOY1VTMm1reFFYMk0?oc=5
+- 📰 새 배포 소식: GS25, 한글날 맞이 '혜자로운' 전용 서체 공개 - 전자신문 → https://news.google.com/rss/articles/CBMiTkFVX3lxTFA2Y2NGUENLa3dlNElHd0dhNzI3MnRjdWRLLWxhMUYyU0N6QlZwUU0tenh3eVJLcjd3UG1DaDc5bDMyZ09ZMV9WTmVtYndzQQ?oc=5
+- 📰 새 배포 소식: 한글 조형미 알리고 새로운 서체 공개…유통·식음료 업계, 한글날 기념 이벤트 풍성 - 스포츠조선 → https://news.google.com/rss/articles/CBMieEFVX3lxTE9XLURKQlZQUzRmTkNrd3I0VUlZRC01SnpRNHMxZHlNN01ZQmVITlo5ZlB1TE5NdmtQcDVIRFlfY3ZyeS1wOGZ0YmZHMnZNdzRmYUZ2Z3RZSFBFb3g1WWRWSDI5eWZ3d2pPYTVlem9fXzRYLXMyNldDSw?oc=5
+- 📰 새 배포 소식: 규칙에 나오는 방향 표시를 읽는 구글게임 무료 플레이 기초 안내 - Calgary Roughnecks → https://news.google.com/rss/articles/CBMitAFBVV95cUxNbHBNSVMwVzh0dmxCemJlRFZXNFFvTlRTOHNyME8wdmxpd3BpNjhuWUxHMFcwR0RKbmU0UFAxMEYxajFSNS04XzRmWHIyYlJDcmd2ZjIzSmgwYm8yczE5MzcyeVFDMEhCZEdQY1I2b2dudjZ1QnBNN3YtTXZaU1J1UkJQV2g1RXJuY1lLWTNFSnI0dVVDZ0s4dzRIR2lQZ3hSWVF6b2xwWjJTcmxyNHZIZDdLSnM?oc=5
+- 📰 새 배포 소식: 조작 설명이 간결한 게임인지 살펴보는 해외송금 수수료 무료 - Calgary Roughnecks → https://news.google.com/rss/articles/CBMisAFBVV95cUxOZTUzVnB5dEZqTXlKbkJXZW5aZWxnRzA5aGpFdURhSXpKS2dHX1RHUC04SjhtT0RzSXVZUmRqcThZS3FpdVJ6enQxblU4RmwyZkRIb2ptdl8zOVB2TzFnYkZVM21nM1RPcWxrdnhhT3FGYlYxOEt5OGN5S1ZZSVdSTWxMZF9RVUJDZThfQy1OYmI5VEwzZVg5RWVFaU1fOTdGVEZLa09FTHl3UXRkSTYyNg?oc=5
+- 🔗 다운로드 직링크 끊김: **k-kccdodamdodam** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-yanolja-yache** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kcc-kimhwanki** (The read operation timed out) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kcc-ganpan** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-ownglyph-2022-uwy-jae-seon** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-ownglyph-2022-uwy-si-woo** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-ownglyph-2022-uwy-da-gyeong** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-hakgyoansim-kkokkoma** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-hakgyoansim-kossuyeom** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-jaemin3-0** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-hakgyoansim-mulgyeol** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-hakgyoansim-moheomga** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-jaemin2-0** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-ownglyph-2022-uwy-yoon-yeong** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-sangju-dajungdagam** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-munhwajaedolbom-bold** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kotra-leap** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-dobong** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-sangju-gyeongcheon-island** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-cbnu-jikji** (The read operation timed out) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-accchildrenfallotf** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-saenggeo-jincheon** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kimm-bold** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kogl-761ece2e** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-suseong-dotum** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-soyo-maple** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-taebaek-milkyway** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-gwangyang-sunshine** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-goseong-geumgangnuri** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-taebaek-font** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-koddiud-ongothic** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-gimpobatang** (The read operation timed out) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kccchassam** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-kccimkwontaek** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-knps-bandali** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-knps-kkomi** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-makgeolli** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-mapodpp** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-sokcho-bada-batang** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-gyeonggititle** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-yeojuceramic-dingbat** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-yeongjupunggiginseng** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-yeongjuseonbi** (503) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
 - 🔗 다운로드 직링크 끊김: **k-busan-dandi-gothic** (<urlopen error [Errno 104] Connection re) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
+- 🔗 다운로드 직링크 끊김: **k-suit** (404) — 사이트는 배포처 페이지로 자동 안내 중, 링크 갱신 필요
 
 > 라이선스 해석·사이트 공개는 자동화하지 않습니다. 카탈로그(tools/state/catalog.json)의 review 필드는 사람이 바꿉니다.
-
-## 🤖 OFL 자동 등록 (2026-10-16)
-등록 2종 · 건너뜀 44개 저장소
-- ✅ Yeomil Mono (`k-yeomil-mono`) — https://github.com/taevel02/yeomil-mono @ v1.1.2 · 굵기 3 · 한글 11,172자
-- ✅ x10y12pxDenkiChipHangul (`k-x10y12pxdenkichiphangul`) — https://github.com/quiple/x10y12pxDenkiChipHangul @ v1.213 · 굵기 1 · 한글 4,361자
-- ⏭ orioncactus/pretendard: 라이선스 NOASSERTION
-- ⏭ sunn-us/SUIT: 라이선스 None
-- ⏭ wanteddev/wanted-sans: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
-- ⏭ spoqa/spoqa-han-sans: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
-- ⏭ adobe-fonts/source-han-sans: 라이선스 NOASSERTION
-- ⏭ adobe-fonts/source-han-serif: 라이선스 NOASSERTION
-- ⏭ mushsooni/mulmaru: 고정 굵기 폰트 파일 없음
-- ⏭ hada0127/hada-type: 별 1개(기준 15)
-- ⏭ Tzetachi/Oesol-Serif-deprecated: 별 4개(기준 15)
-- ⏭ yangheeryu/Gowun-Dodum: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
-- ⏭ yangheeryu/Gowun-Batang: 한글 2,350자 미만이거나 이미 등록된 이름
-- ⏭ yangheeryu/Dongle: 한글 2,350자 미만이거나 이미 등록된 이름
-- ⏭ akngs/noto-kr-vf-distilled: 고정 굵기 폰트 파일 없음
-- ⏭ lxgw/LxgwWenkaiKR: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
-- ⏭ velvetyne/Hangul: 별 10개(기준 15)
-- ⏭ neodgm/neodgm-webfont: 별 10개(기준 15)
-- ⏭ sawalk/MapleSaemmul: 별 4개(기준 15)
-- ⏭ trueroad/HaranoAjiFontsKR: 별 2개(기준 15)
-- ⏭ trueroad/HaranoAjiFontsK1: 별 2개(기준 15)
-- ⏭ cueaz/fonts-mono-kr: 별 2개(기준 15)
-- ⏭ mabyko/MabykoMono: 별 2개(기준 15)
-- ⏭ BinRecycle/ThinMulmaru: 별 2개(기준 15)
-- ⏭ nwah/korean-msx-font: 별 1개(기준 15)
-- ⏭ vriefcase/d2coding: 별 0개(기준 15)
-- ⏭ 1020tj/Gugi: 별 0개(기준 15)
-- ⏭ rladnwls122/JetBrainsMonoD2-Nerd-Font: 별 0개(기준 15)
-- ⏭ Tzetachi/Computer-Modern-Unicode-Oesol: jsDelivr 목록 실패(HTTP Error 403: Forbidden)
-- ⏭ zhongshukeji/Noto-Sans-SC: 별 7개(기준 15)
-- ⏭ philocalyst/Hangul: 별 0개(기준 15)
-- ⏭ mitradranirban/ayuta: 별 0개(기준 15)
-- ⏭ kyh0703/jetbatang: 라이선스 NOASSERTION
-- ⏭ beomjungil/NotoSerifKR-Web: 라이선스 None
-- ⏭ younjungpark/Monatendard: 라이선스 NOASSERTION
-- ⏭ wudys/0xProtoD2: 별 3개(기준 15)
-- ⏭ hunterhogan/Integrated_code_fire_font: 라이선스 NOASSERTION
-- ⏭ xkho/presevka: 라이선스 NOASSERTION
-- ⏭ bepyan/arita: 라이선스 NOASSERTION
-- ⏭ ddarkr/spoqa-han-sans-web: 포크·보관 저장소
-- ⏭ neodgm/neodgm-pro-webfont: 라이선스 NOASSERTION
-- ⏭ wudys/LythD2: 별 0개(기준 15)
