@@ -87,7 +87,8 @@ for f in FONTS:
         if int(wv) not in w: err(f"{fid}: 웹폰트 굵기 {wv}가 weights에 없음")
     dl = f.get("dl") or {}
     for k in ("zip", "page", "mirror"):
-        if k in dl and not str(dl[k]).startswith("https://"): err(f"{fid}: dl.{k}는 https 주소여야 함")
+        if k in dl and str(dl[k]).startswith("http://"): warn(f"{fid}: dl.{k}가 http 주소(배포처가 https를 제공하지 않음)")
+        elif k in dl and not str(dl[k]).startswith("https://"): err(f"{fid}: dl.{k}는 https 주소여야 함")
     if f.get("webfont") and not dl.get("page"): err(f"{fid}: 웹폰트 폰트는 원 배포처 페이지(dl.page) 필수")
     # 소개 전용: 미리보기 웹폰트 없이 정보·배포처만. 이유와 배포처가 필수, 견본 이미지는 html/ 아래 실제 파일
     if f.get("intro"):

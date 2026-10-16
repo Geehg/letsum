@@ -1585,5 +1585,185 @@
   "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13262151)",
   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262151&menuNo=200023",
   "checked": "2026-10-17"
+ },
+ "k-kakao-big-sans": {
+  "license": "OFL",
+  "evidence": "카카오 공식 페이지: '오픈 폰트 라이선스(OFL)를 적용하여 별도의 라이선스 없이 개인 및 상업적 용도로 자유롭게 사용' — 공식 ZIP의 WOFF2 사용",
+  "page": "https://www.kakaocorp.com/page/detail/11571",
+  "checked": "2026-10-17"
+ },
+ "k-kakao-small-sans": {
+  "license": "OFL",
+  "evidence": "카카오 공식 페이지: OFL, 개인·상업 용도 자유 사용 — 공식 ZIP의 WOFF2 사용",
+  "page": "https://www.kakaocorp.com/page/detail/11571",
+  "checked": "2026-10-17"
+ },
+ "k-ebs-hunmin-saeron": {
+  "license": "EBS 서체 이용조건",
+  "evidence": "EBS 서체 페이지 사용안내: 누구나 무료, 매체·용도 제한 없이 상업 사용 가능 / 사전 서면승인 없는 수정·개작·개명 재배포 금지 → 원본 그대로 서버 전용",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunminsaeron",
+  "checked": "2026-10-17"
+ },
+ "k-ebs-hunmin": {
+  "license": "EBS 서체 이용조건",
+  "evidence": "EBS 서체 페이지 사용안내(동일 조건) → 원본 그대로 서버 전용",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunmin",
+  "checked": "2026-10-17"
+ },
+ "k-ebs-jusigyeong": {
+  "license": "EBS 서체 이용조건",
+  "evidence": "EBS 서체 페이지 사용안내(동일 조건) → 원본 그대로 서버 전용",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=jusigyeong",
+  "checked": "2026-10-17"
+ },
+ "k-nl-library": {
+  "license": "공공누리 제1유형",
+  "evidence": "국립중앙도서관 도서관체 페이지 저작권: 공공누리 제1유형(출처표시, 상업적 이용, 변형 등 2차적 저작물 작성 가능)",
+  "page": "https://www.nl.go.kr/NL/contents/N50104020000.do",
+  "checked": "2026-10-17"
+ },
+ "k-yes24-title": {
+  "license": "예스24 서체 이용조건",
+  "evidence": "예스24 서체 LICENSE: 무료, 인쇄·광고·온라인 상업 사용 가능 / 변형·재배포 금지, CI·BI 제작 금지 → 원본 그대로 서버 전용",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "checked": "2026-10-17"
+ },
+ "k-yes24-gothic": {
+  "license": "예스24 서체 이용조건",
+  "evidence": "예스24 서체 LICENSE(동일) → 서버 전용",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "checked": "2026-10-17"
+ },
+ "k-yes24-myeongjo": {
+  "license": "예스24 서체 이용조건",
+  "evidence": "예스24 서체 LICENSE(동일) → 서버 전용",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "checked": "2026-10-17"
+ },
+ "k-gumi-dotum": {
+  "license": "구미시 전용서체 이용조건",
+  "evidence": "구미시 전용서체 페이지: 누구나 무료·상업 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "checked": "2026-10-17"
+ },
+ "k-gumi-cheomdan": {
+  "license": "구미시 전용서체 이용조건",
+  "evidence": "구미시 전용서체 페이지(동일) → 서버 전용",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "checked": "2026-10-17"
+ },
+ "k-gumi-romantic": {
+  "license": "구미시 전용서체 이용조건",
+  "evidence": "구미시 전용서체 페이지(동일) → 서버 전용",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "checked": "2026-10-17"
+ },
+ "k-jne-ttobak": {
+  "license": "전남교육 서체 이용조건",
+  "evidence": "전남교육 서체 저작권 안내: 누구나 무료, CI·BI·판매용 저작물 가능, 프로그램 탑재 배포 가능 / 유료 양도·판매 금지 → 원본 그대로 미러",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "checked": "2026-10-17"
+ },
+ "k-jne-bareun": {
+  "license": "전남교육 서체 이용조건",
+  "evidence": "전남교육 서체 저작권 안내(동일) → 원본 그대로 미러",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "checked": "2026-10-17"
+ },
+ "k-jne-yuna": {
+  "license": "전남교육 서체 이용조건",
+  "evidence": "전남교육 서체 저작권 안내(동일) → 원본 그대로 미러",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "checked": "2026-10-17"
+ },
+ "k-inje-haneulnaerin": {
+  "license": "인제군 전용서체 이용조건",
+  "evidence": "인제군 사용방법: 누구나 무료·매체 제한 없이 사용 / 유료 양도·판매·불법 변형 금지, 재배포 조항 없음 → 서버 전용",
+  "page": "https://www.inje.go.kr/portal/inje-news/inje/inje-font",
+  "checked": "2026-10-17"
+ },
+ "k-andong-264": {
+  "license": "공공누리 제1유형",
+  "evidence": "안동시 전용서체 페이지: 누구나 무료로 다양한 매체에 자유롭게 사용 + '공공누리 출처표시 조건에 따라 이용'",
+  "page": "https://www.andong.go.kr/portal/contents.do?mId=0301030500",
+  "checked": "2026-10-17"
+ },
+ "k-yeongam-wolchulsan": {
+  "license": "영암군 전용서체 이용조건",
+  "evidence": "영암군 전용서체 저작권: 누구나 무료로 자유 사용 / 유료 판매·왜곡·변형 금지, 재배포 조항 없음 → 서버 전용",
+  "page": "https://www.yeongam.go.kr/home/www/new_plus/introduce/introduce_11/introduce_11_05",
+  "checked": "2026-10-17"
+ },
+ "k-thecircle": {
+  "license": "동그라미재단 서체 이용조건",
+  "evidence": "동그라미 서체 사용 안내: 누구나 무료, 자유롭게 수정·재배포 가능 / 유료 판매 금지 → WOFF2 변환 미러",
+  "page": "http://www.thecircle.or.kr/kor/data-room/circle-font.html",
+  "checked": "2026-10-17"
+ },
+ "k-healthset-gothic": {
+  "license": "한그리아 헬스셋 이용조건",
+  "evidence": "한그리아 무료폰트 페이지: 회사·개인 누구나 용도 제한 없이 상업 사용 가능 / 재배포 조항 없음 → 서버 전용",
+  "page": "http://shop2.hangria.cafe24.com/surl/P/98/",
+  "checked": "2026-10-17"
+ },
+ "k-healthset-joritdae": {
+  "license": "한그리아 헬스셋 이용조건",
+  "evidence": "한그리아 무료폰트 페이지(동일) → 서버 전용",
+  "page": "http://shop2.hangria.cafe24.com/surl/P/98/",
+  "checked": "2026-10-17"
+ },
+ "k-healthset-bokjori": {
+  "license": "한그리아 헬스셋 이용조건",
+  "evidence": "한그리아 무료폰트 페이지(동일) → 서버 전용",
+  "page": "http://shop2.hangria.cafe24.com/surl/P/98/",
+  "checked": "2026-10-17"
+ },
+ "k-reko": {
+  "license": "레코체 이용조건",
+  "evidence": "레시피코리아 레코체 안내: 개인·상업 사용 가능, 게임·유료 소프트웨어는 출처 표기 / 폰트 판매·거래·원본 수정·상표 등록 금지 → 서버 전용",
+  "page": "https://www.recipekorea.com/bbs/board.php?bo_table=ld_0308&wr_id=2479",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2025lyb": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2025): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2024psw": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2024): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2023wsa": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2023): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2022khn": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2022): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2021sjy": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2021): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2020pdy": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2020): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
+ },
+ "k-kyobo-handwriting-2019": {
+  "license": "교보 손글씨 이용조건",
+  "evidence": "교보문고 손글씨폰트 라이선스(2019): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "checked": "2026-10-17"
  }
 }

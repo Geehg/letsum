@@ -1,0 +1,454 @@
+{
+ "kakao-big": {
+  "fam": "카카오 큰글씨",
+  "org": "카카오",
+  "lic": "OFL",
+  "page": "https://www.kakaocorp.com/page/detail/11571",
+  "srcName": "카카오(공식)",
+  "evidence": "카카오 공식 페이지: '오픈 폰트 라이선스(OFL)를 적용하여 별도의 라이선스 없이 개인 및 상업적 용도로 자유롭게 사용' — 공식 ZIP의 WOFF2 사용",
+  "id": "kakao-big-sans"
+ },
+ "kakao-small": {
+  "fam": "카카오 작은글씨",
+  "org": "카카오",
+  "lic": "OFL",
+  "page": "https://www.kakaocorp.com/page/detail/11571",
+  "srcName": "카카오(공식)",
+  "evidence": "카카오 공식 페이지: OFL, 개인·상업 용도 자유 사용 — 공식 ZIP의 WOFF2 사용",
+  "id": "kakao-small-sans"
+ },
+ "ebs-saeron": {
+  "fam": "EBS 훈민정음 새론체",
+  "org": "EBS 한국교육방송공사",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunminsaeron",
+  "srcName": "EBS(공식)",
+  "evidence": "EBS 서체 페이지 사용안내: 누구나 무료, 매체·용도 제한 없이 상업 사용 가능 / 사전 서면승인 없는 수정·개작·개명 재배포 금지 → 원본 그대로 서버 전용",
+  "id": "ebs-hunmin-saeron",
+  "lic": "CUSTOM",
+  "license": "EBS 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ebs-hunmin": {
+  "fam": "EBS 훈민정음",
+  "org": "EBS 한국교육방송공사",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunmin",
+  "srcName": "EBS(공식)",
+  "evidence": "EBS 서체 페이지 사용안내(동일 조건) → 원본 그대로 서버 전용",
+  "id": "ebs-hunmin",
+  "lic": "CUSTOM",
+  "license": "EBS 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ebs-jusigyeong": {
+  "fam": "EBS 주시경체",
+  "org": "EBS 한국교육방송공사",
+  "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=jusigyeong",
+  "srcName": "EBS(공식)",
+  "evidence": "EBS 서체 페이지 사용안내(동일 조건) → 원본 그대로 서버 전용",
+  "id": "ebs-jusigyeong",
+  "lic": "CUSTOM",
+  "license": "EBS 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "gimpo-gothic": {
+  "fam": "김포고딕체",
+  "org": "김포시",
+  "lic": "KOGL1",
+  "page": "https://www.gimpo.go.kr/portal/contents.do?key=6503",
+  "srcName": "김포시(공식)",
+  "evidence": "김포시 공식 페이지: 누구나 무료로 자유롭게 사용, 상업적 재판매만 제한 + 게시물 '공공누리 제1유형(출처표시)'",
+  "id": "gimpo-gothic"
+ },
+ "gimpo-batang": {
+  "fam": "김포바탕체",
+  "org": "김포시",
+  "lic": "KOGL1",
+  "page": "https://www.gimpo.go.kr/portal/contents.do?key=6502",
+  "srcName": "김포시(공식)",
+  "evidence": "김포시 공식 페이지(동일 조건, 공공누리 제1유형)",
+  "id": "gimpo-batang"
+ },
+ "gimpo-title": {
+  "fam": "김포제목체",
+  "org": "김포시",
+  "lic": "KOGL1",
+  "page": "https://www.gimpo.go.kr/portal/contents.do?key=6501",
+  "srcName": "김포시(공식)",
+  "evidence": "김포시 공식 페이지(동일 조건, 공공누리 제1유형)",
+  "id": "gimpo-title"
+ },
+ "nl-library": {
+  "fam": "도서관체",
+  "org": "국립중앙도서관",
+  "lic": "KOGL1",
+  "page": "https://www.nl.go.kr/NL/contents/N50104020000.do",
+  "srcName": "국립중앙도서관(공식)",
+  "evidence": "국립중앙도서관 도서관체 페이지 저작권: 공공누리 제1유형(출처표시, 상업적 이용, 변형 등 2차적 저작물 작성 가능)",
+  "id": "nl-library"
+ },
+ "yes-title": {
+  "fam": "예스체",
+  "org": "예스24",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "srcName": "예스24(공식)",
+  "evidence": "예스24 서체 LICENSE: 무료, 인쇄·광고·온라인 상업 사용 가능 / 변형·재배포 금지, CI·BI 제작 금지 → 원본 그대로 서버 전용",
+  "id": "yes24-title",
+  "lic": "CUSTOM",
+  "license": "예스24 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"no\", package: \"cond\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "yes-gothic": {
+  "fam": "예스 고딕",
+  "org": "예스24",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "srcName": "예스24(공식)",
+  "evidence": "예스24 서체 LICENSE(동일) → 서버 전용",
+  "id": "yes24-gothic",
+  "lic": "CUSTOM",
+  "license": "예스24 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"no\", package: \"cond\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "yes-myeongjo": {
+  "fam": "예스 명조",
+  "org": "예스24",
+  "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+  "srcName": "예스24(공식)",
+  "evidence": "예스24 서체 LICENSE(동일) → 서버 전용",
+  "id": "yes24-myeongjo",
+  "lic": "CUSTOM",
+  "license": "예스24 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"no\", package: \"cond\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "gumi-dotum": {
+  "fam": "구미돋움체",
+  "org": "구미시",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "srcName": "구미시(공식)",
+  "evidence": "구미시 전용서체 페이지: 누구나 무료·상업 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "gumi-dotum",
+  "lic": "CUSTOM",
+  "license": "구미시 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "gumi-cheomdan": {
+  "fam": "구미첨단산업체",
+  "org": "구미시",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "srcName": "구미시(공식)",
+  "evidence": "구미시 전용서체 페이지(동일) → 서버 전용",
+  "id": "gumi-cheomdan",
+  "lic": "CUSTOM",
+  "license": "구미시 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "gumi-romantic": {
+  "fam": "낭만있구미체",
+  "org": "구미시",
+  "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+  "srcName": "구미시(공식)",
+  "evidence": "구미시 전용서체 페이지(동일) → 서버 전용",
+  "id": "gumi-romantic",
+  "lic": "CUSTOM",
+  "license": "구미시 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "jne-ttobak": {
+  "fam": "전남교육또박체",
+  "org": "전라남도교육청",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "srcName": "전라남도교육청(공식)",
+  "evidence": "전남교육 서체 저작권 안내: 누구나 무료, CI·BI·판매용 저작물 가능, 프로그램 탑재 배포 가능 / 유료 양도·판매 금지 → 원본 그대로 미러",
+  "id": "jne-ttobak",
+  "lic": "CUSTOM",
+  "license": "전남교육 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"cond\" }",
+  "mode": "keep"
+ },
+ "jne-bareun": {
+  "fam": "전남교육바른체",
+  "org": "전라남도교육청",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "srcName": "전라남도교육청(공식)",
+  "evidence": "전남교육 서체 저작권 안내(동일) → 원본 그대로 미러",
+  "id": "jne-bareun",
+  "lic": "CUSTOM",
+  "license": "전남교육 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"cond\" }",
+  "mode": "keep"
+ },
+ "jne-yuna": {
+  "fam": "전남교육유나체",
+  "org": "전라남도교육청",
+  "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+  "srcName": "전라남도교육청(공식)",
+  "evidence": "전남교육 서체 저작권 안내(동일) → 원본 그대로 미러",
+  "id": "jne-yuna",
+  "lic": "CUSTOM",
+  "license": "전남교육 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"cond\" }",
+  "mode": "keep"
+ },
+ "inje": {
+  "fam": "하늘내린 인제체",
+  "org": "인제군",
+  "page": "https://www.inje.go.kr/portal/inje-news/inje/inje-font",
+  "srcName": "인제군(공식)",
+  "evidence": "인제군 사용방법: 누구나 무료·매체 제한 없이 사용 / 유료 양도·판매·불법 변형 금지, 재배포 조항 없음 → 서버 전용",
+  "id": "inje-haneulnaerin",
+  "lic": "CUSTOM",
+  "license": "인제군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"cond\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "andong-264": {
+  "fam": "이육사체",
+  "org": "안동시",
+  "lic": "KOGL1",
+  "page": "https://www.andong.go.kr/portal/contents.do?mId=0301030500",
+  "srcName": "안동시(공식)",
+  "evidence": "안동시 전용서체 페이지: 누구나 무료로 다양한 매체에 자유롭게 사용 + '공공누리 출처표시 조건에 따라 이용'",
+  "id": "andong-264"
+ },
+ "yeongam": {
+  "fam": "영암월출산체",
+  "org": "영암군",
+  "page": "https://www.yeongam.go.kr/home/www/new_plus/introduce/introduce_11/introduce_11_05",
+  "srcName": "영암군(공식)",
+  "evidence": "영암군 전용서체 저작권: 누구나 무료로 자유 사용 / 유료 판매·왜곡·변형 금지, 재배포 조항 없음 → 서버 전용",
+  "id": "yeongam-wolchulsan",
+  "lic": "CUSTOM",
+  "license": "영암군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"cond\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "thecircle": {
+  "fam": "동그라미재단체",
+  "org": "동그라미재단",
+  "page": "http://www.thecircle.or.kr/kor/data-room/circle-font.html",
+  "srcName": "동그라미재단(공식)",
+  "evidence": "동그라미 서체 사용 안내: 누구나 무료, 자유롭게 수정·재배포 가능 / 유료 판매 금지 → WOFF2 변환 미러",
+  "id": "thecircle",
+  "lic": "CUSTOM",
+  "license": "동그라미재단 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"cond\", package: \"ok\", ofl: \"ok\" }",
+  "mode": "convert"
+ },
+ "healthset-gothic": {
+  "fam": "헬스셋고딕",
+  "org": "한그리아",
+  "page": "https://hangria.com",
+  "srcName": "한그리아(공식)",
+  "evidence": "한그리아 무료폰트 페이지: 회사·개인 누구나 용도 제한 없이 상업 사용 가능 / 재배포 조항 없음 → 서버 전용",
+  "id": "healthset-gothic",
+  "lic": "CUSTOM",
+  "license": "한그리아 헬스셋 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "healthset-joritdae": {
+  "fam": "헬스셋조릿대",
+  "org": "한그리아",
+  "page": "https://hangria.com",
+  "srcName": "한그리아(공식)",
+  "evidence": "한그리아 무료폰트 페이지(동일) → 서버 전용",
+  "id": "healthset-joritdae",
+  "lic": "CUSTOM",
+  "license": "한그리아 헬스셋 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "healthset-bokjori": {
+  "fam": "헬스셋복조리",
+  "org": "한그리아",
+  "page": "https://hangria.com",
+  "srcName": "한그리아(공식)",
+  "evidence": "한그리아 무료폰트 페이지(동일) → 서버 전용",
+  "id": "healthset-bokjori",
+  "lic": "CUSTOM",
+  "license": "한그리아 헬스셋 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "reko": {
+  "fam": "레코체",
+  "org": "레시피코리아",
+  "page": "https://www.recipekorea.com/bbs/board.php?bo_table=ld_0308&wr_id=2479",
+  "srcName": "레시피코리아(공식)",
+  "evidence": "레시피코리아 레코체 안내: 개인·상업 사용 가능, 게임·유료 소프트웨어는 출처 표기 / 폰트 판매·거래·원본 수정·상표 등록 금지 → 서버 전용",
+  "id": "reko",
+  "lic": "CUSTOM",
+  "license": "레코체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"no\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "kyobo-2025lyb": {
+  "fam": "교보 손글씨 2025 이유빈",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2025lyb",
+  "evidence": "교보문고 손글씨폰트 라이선스(2025): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2024psw": {
+  "fam": "교보 손글씨 2024 박서우",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2024psw",
+  "evidence": "교보문고 손글씨폰트 라이선스(2024): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2023wsa": {
+  "fam": "교보 손글씨 2023 우선아",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2023wsa",
+  "evidence": "교보문고 손글씨폰트 라이선스(2023): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2022khn": {
+  "fam": "교보 손글씨 2022 김혜남",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2022khn",
+  "evidence": "교보문고 손글씨폰트 라이선스(2022): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2021sjy": {
+  "fam": "교보 손글씨 2021 성지영",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2021sjy",
+  "evidence": "교보문고 손글씨폰트 라이선스(2021): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2020pdy": {
+  "fam": "교보 손글씨 2020 박도연",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2020pdy",
+  "evidence": "교보문고 손글씨폰트 라이선스(2020): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ },
+ "kyobo-2019": {
+  "fam": "교보 손글씨 2019",
+  "org": "교보문고",
+  "lic": "CUSTOM",
+  "license": "교보 손글씨 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "page": "https://store.kyobobook.co.kr/handwriting/font",
+  "srcName": "교보문고(공식)",
+  "id": "kyobo-handwriting-2019",
+  "evidence": "교보문고 손글씨폰트 라이선스(2019): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
+  "category": "손글씨",
+  "tags": [
+   "손글씨",
+   "손편지",
+   "감성"
+  ],
+  "mood": [
+   "따뜻한",
+   "차분한"
+  ],
+  "pair": "inter"
+ }
+}

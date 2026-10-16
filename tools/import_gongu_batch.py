@@ -96,14 +96,24 @@ WTOK = [(r"(?i)(extra ?bold|\bEB\b|EB(?=\.|\)|_|$))", 800), (r"(?i)(semi ?bold|\
         (r"(?i)(regular|\bR\b|[^A-Z]R(?=\.|\)|_|\s|$))", 400)]
 
 
-def weight_of(t, path):
-    """굵기: 스타일 이름(17·2) → 파일 이름의 B/L/M/R 표기 → usWeightClass 순(파일마다 usWeightClass가 같게 들어간 폰트가 많음)."""
-    sty = (nm(t, 17, 0x409) or nm(t, 2, 0x409) or "").strip()
-    for src in (sty if sty.lower() not in ("regular", "") else "", os.path.basename(path).rsplit(".", 1)[0]):
-        for pat, w in WTOK:
-            if src and re.search(pat, src): return w
-    return min(900, max(100, int(round(t["OS/2"].usWeightClass / 100.0)) * 100))
+WORDS = [("extrabold", 800), ("ultrabold", 800), ("semibold", 600), ("demibold", 600), ("extralight", 200), ("ultralight", 200), ("hairline", 100),
+         ("bold", 700), ("medium", 500), ("thin", 100), ("light", 300), ("regular", 400), ("black", 900), ("heavy", 900)]
+CODES = [("EB", 800), ("SB", 600), ("EL", 200), ("BL", 900), ("B", 700), ("M", 500), ("T", 100), ("L", 300), ("R", 400), ("H", 900)]
 
+
+def weight_of(t, path):
+    """굵기: 스타일 이름(17·2)의 단어 → 파일 이름 끝의 단어·약어(B/L/M/R 등, 대소문자 구분) → usWeightClass."""
+    sty = (nm(t, 17, 0x409) or nm(t, 2, 0x409) or "").strip().lower().replace(" ", "")
+    if sty and sty != "regular":
+        for wd, w in WORDS:
+            if wd in sty: return w
+    stem = re.sub(r"\s*\(.*?\)\s*$", "", os.path.basename(path).rsplit(".", 1)[0]).strip()
+    low = stem.lower().replace(" ", "")
+    for wd, w in WORDS:
+        if low.endswith(wd): return w
+    for code, w in CODES:  # 'TheCircleB'의 B처럼 소문자·한글·구분자 뒤에 오는 대문자 약어만
+        if re.search(r"(?:^|[a-z가-힣0-9_\- ])" + code + r"$", stem): return w
+    return min(900, max(100, int(round(t["OS/2"].usWeightClass / 100.0)) * 100))
 
 def slug(s):
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
