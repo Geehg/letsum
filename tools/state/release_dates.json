@@ -1044,6 +1044,106 @@
   "src": "스포카 공식 GitHub 릴리스 v3.0.0(스포카 한 산스 네오 첫 배포)",
   "url": "https://github.com/spoqa/spoqa-han-sans/releases/tag/v3.0.0"
  },
+ "k-pretendard": {
+  "date": "2021-07-12",
+  "src": "공식 GitHub 릴리스 v1.0",
+  "url": "https://github.com/orioncactus/pretendard/releases/tag/v1.0"
+ },
+ "k-suit": {
+  "date": "2022-01-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/sun-typeface/SUIT/releases"
+ },
+ "k-gmarket-sans": {
+  "date": "2019",
+  "src": "폰트 파일 저작권 표기(Copyright 2019 eBay Korea)",
+  "url": "https://corp.gmarket.com/fonts/"
+ },
+ "k-paperlogy": {
+  "date": "2024",
+  "src": "공식 GitHub 저장소 첫 공개(2024)",
+  "url": "https://github.com/Freesentation/paperlogy"
+ },
+ "k-freesentation": {
+  "date": "2024",
+  "src": "공식 GitHub 저장소 첫 공개(2024)",
+  "url": "https://github.com/Freesentation/freesentation"
+ },
+ "k-cafe24-classictype": {
+  "date": "2022-04-07",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-dangdanghae": {
+  "date": "2018-10-05",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-danjunghae": {
+  "date": "2018-10-05",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-dongdong": {
+  "date": "2019-06-26",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-moyamoya": {
+  "date": "2023-10-09",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-ohsquare": {
+  "date": "2020-01-15",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-oneprettynight": {
+  "date": "2019-06-26",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-pro-slim": {
+  "date": "2025-11-04",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-pro-up": {
+  "date": "2025-06-19",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-shiningstar": {
+  "date": "2019-08-28",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-simplehae": {
+  "date": "2019-06-26",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-ssukssuk": {
+  "date": "2018-10-05",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-ssurround": {
+  "date": "2020-08-05",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-supermagic": {
+  "date": "2023-05-10",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
+ "k-cafe24-syongsyong": {
+  "date": "2018-10-05",
+  "src": "카페24 무료폰트 공식 목록 데이터(created)",
+  "url": "https://fonts.cafe24.com/"
+ },
  "k-bm-hanna-11yrs": {
   "date": "2015",
   "src": "우아한형제들 공식 글꼴 페이지 출시 연도",
@@ -1098,5 +1198,70 @@
   "date": "2026-10-07",
   "src": "HS효성 서체 사용 가이드(2026.10.7 RELEASED)",
   "url": "https://www.hshyosung.com/resources/front/ebook/kr/HS_HYOSUNG_LICENSE_GUIDE_KR.pdf"
+ },
+ "k-wanted-sans": {
+  "date": "2023-11-26",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/wanteddev/wanted-sans/releases"
+ },
+ "k-sun-suite": {
+  "date": "2023-01-09",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/sun-typeface/SUITE/releases"
+ },
+ "k-galmuri11": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri9": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri7": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri14": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-galmuri11-condensed": {
+  "date": "2022-05-11",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/galmuri/releases"
+ },
+ "k-neodgm": {
+  "date": "2017-02-21",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/neodgm/neodgm/releases"
+ },
+ "k-neodgm-code": {
+  "date": "2017-02-21",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/neodgm/neodgm/releases"
+ },
+ "k-mulmaru": {
+  "date": "2025-11-22",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/mushsooni/mulmaru/releases"
+ },
+ "k-mulmaru-mono": {
+  "date": "2025-11-22",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/mushsooni/mulmaru/releases"
+ },
+ "k-yeomil-mono": {
+  "date": "2026-06-05",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/taevel02/yeomil-mono/releases"
+ },
+ "k-x10y12pxdenkichiphangul": {
+  "date": "2026-08-13",
+  "src": "공식 GitHub 첫 릴리스",
+  "url": "https://github.com/quiple/x10y12pxDenkiChipHangul/releases"
  }
 }

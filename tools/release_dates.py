@@ -44,6 +44,10 @@ raw = urllib.request.urlopen(urllib.request.Request("https://fonts.google.com/me
 gf = {f["family"]: f.get("dateAdded") for f in json.loads(raw[raw.index("{"):])["familyMetadataList"]}
 
 ovr = json.load(open(OVR, encoding="utf-8")) if os.path.exists(OVR) else {}
+# 등록할 때 출처와 함께 직접 적어 둔 출시일(공식 저장소 첫 릴리스 등)은 이 규칙으로 못 찾아도 지우지 않는다
+for blk in re.finditer(r'\{ id: "([^"]+)".*?desc: "[^"]*"[^}]*\},', src, re.S):
+    m = re.search(r'released: "([^"]+)", releasedSrc: "([^"]+)", releasedUrl: "([^"]*)",', blk.group(0))
+    if m and blk.group(1) not in ovr: ovr[blk.group(1)] = {"date": m.group(1), "src": m.group(2), "url": m.group(3)}
 out = {}
 for fid, name, en in fonts:
     if fid in ovr:
