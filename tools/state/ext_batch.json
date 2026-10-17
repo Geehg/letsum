@@ -450,5 +450,205 @@
    "차분한"
   ],
   "pair": "inter"
+ },
+ "keris-a2z": {
+  "fam": "에이투지체",
+  "org": "오토노머스에이투지",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "a2z",
+  "mode": "keep"
+ },
+ "keris-hada-sans": {
+  "fam": "하다 산스",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hada-sans",
+  "mode": "keep"
+ },
+ "keris-hada-batang": {
+  "fam": "하다 바탕",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hada-batang",
+  "mode": "keep"
+ },
+ "keris-hada-round": {
+  "fam": "하다 라운드",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hada-round",
+  "mode": "keep"
+ },
+ "keris-hada-mono": {
+  "fam": "하다 모노",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hada-mono",
+  "mode": "keep"
+ },
+ "keris-hada-condensed": {
+  "fam": "하다 콘덴스드",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hada-condensed",
+  "mode": "keep"
+ },
+ "keris-dancing-peoples": {
+  "fam": "춤추는사람들",
+  "org": "Hada Type Foundry",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "dancing-peoples",
+  "mode": "keep"
+ },
+ "keris-goshin": {
+  "fam": "고신고딕",
+  "org": "고대신문사",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "goshin",
+  "mode": "keep"
+ },
+ "keris-jayeon-sans": {
+  "fam": "자연산스",
+  "org": "서지환(엔파피)",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "jayeon-sans",
+  "mode": "keep"
+ },
+ "keris-pyeojin": {
+  "fam": "펴진고딕",
+  "org": "서지환(엔파피)",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "pyeojin",
+  "mode": "keep"
+ },
+ "keris-min-sans": {
+  "fam": "Min Sans",
+  "org": "김진성",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "min-sans",
+  "mode": "keep"
+ },
+ "keris-lxgw-wenkai-kr": {
+  "fam": "LXGW 문해 KR",
+  "org": "LXGW",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "lxgw-wenkai-kr",
+  "mode": "keep"
+ },
+ "keris-lxgw-wenkai-mono-kr": {
+  "fam": "LXGW 문해 Mono KR",
+  "org": "LXGW",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "lxgw-wenkai-mono-kr",
+  "mode": "keep"
+ },
+ "keris-hangulim": {
+  "fam": "한굴림체",
+  "org": "AIollcut",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hangulim",
+  "mode": "keep"
+ },
+ "keris-neujoh": {
+  "fam": "느좋체",
+  "org": "AIollcut",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "neujoh",
+  "mode": "keep"
+ },
+ "keris-hippie": {
+  "fam": "히피체",
+  "org": "AIollcut",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "hippie",
+  "mode": "keep"
+ },
+ "keris-casquare-code": {
+  "fam": "카스퀘어 코드",
+  "org": "Cywohoy",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "casquare-code",
+  "mode": "keep"
+ },
+ "keris-interop": {
+  "fam": "Interop",
+  "org": "장해민",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "폰트 파일 name 테이블(라이선스 설명): 'This Font Software is licensed under the SIL Open Font License, Version 1.1' — 교육부·KERIS 학교 안심폰트(OFL)로 배포",
+  "id": "interop",
+  "mode": "keep"
+ },
+ "keris-baeum": {
+  "fam": "케리스 배움체",
+  "org": "한국교육학술정보원(KERIS)",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "KERIS 학교 안심폰트 라이선스 안내: KERIS 공모폰트는 OFL — 문서·인쇄·출판·광고·영상·CI/BI·웹·임베딩·수정·재배포·상업 이용 가능, 폰트 파일 자체 유료 판매 금지",
+  "id": "keris-baeum",
+  "mode": "keep"
+ },
+ "keris-kedu": {
+  "fam": "케리스 케듀체",
+  "org": "한국교육학술정보원(KERIS)",
+  "lic": "OFL",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+  "srcName": "학교 안심폰트(KERIS)",
+  "evidence": "KERIS 학교 안심폰트 라이선스 안내: KERIS 공모폰트는 OFL — 문서·인쇄·출판·광고·영상·CI/BI·웹·임베딩·수정·재배포·상업 이용 가능, 폰트 파일 자체 유료 판매 금지",
+  "id": "keris-kedu",
+  "mode": "keep"
  }
 }
