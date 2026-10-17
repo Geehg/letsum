@@ -1891,5 +1891,29 @@
   "evidence": "KERIS 학교 안심폰트 라이선스 안내: KERIS 공모폰트는 OFL — 문서·인쇄·출판·광고·영상·CI/BI·웹·임베딩·수정·재배포·상업 이용 가능, 폰트 파일 자체 유료 판매 금지",
   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
   "checked": "2026-10-18"
+ },
+ "k-yeongdeok-snow-crab": {
+  "license": "영덕군 전용서체 이용조건",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "checked": "2026-10-18"
+ },
+ "k-yeongdeok-haeparang": {
+  "license": "영덕군 전용서체 이용조건",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "checked": "2026-10-18"
+ },
+ "k-yeongdeok-blueroad": {
+  "license": "영덕군 전용서체 이용조건",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "checked": "2026-10-18"
+ },
+ "k-yeongdeok-sea": {
+  "license": "영덕군 전용서체 이용조건",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "checked": "2026-10-18"
  }
 }

@@ -650,5 +650,53 @@
   "evidence": "KERIS 학교 안심폰트 라이선스 안내: KERIS 공모폰트는 OFL — 문서·인쇄·출판·광고·영상·CI/BI·웹·임베딩·수정·재배포·상업 이용 가능, 폰트 파일 자체 유료 판매 금지",
   "id": "keris-kedu",
   "mode": "keep"
+ },
+ "yeongdeok-snow-crab": {
+  "fam": "영덕대게체",
+  "org": "영덕군",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "srcName": "영덕군(공식)",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "yeongdeok-snow-crab",
+  "lic": "CUSTOM",
+  "license": "영덕군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "yeongdeok-haeparang": {
+  "fam": "영덕해파랑체",
+  "org": "영덕군",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "srcName": "영덕군(공식)",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "yeongdeok-haeparang",
+  "lic": "CUSTOM",
+  "license": "영덕군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "yeongdeok-blueroad": {
+  "fam": "영덕블루로드체",
+  "org": "영덕군",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "srcName": "영덕군(공식)",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "yeongdeok-blueroad",
+  "lic": "CUSTOM",
+  "license": "영덕군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "yeongdeok-sea": {
+  "fam": "영덕바다체",
+  "org": "영덕군",
+  "page": "https://www.yd.go.kr/?page_id=120264",
+  "srcName": "영덕군(공식)",
+  "evidence": "영덕군 전용 서체 페이지: 개인·기업 무료, 상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "yeongdeok-sea",
+  "lic": "CUSTOM",
+  "license": "영덕군 전용서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
  }
 }

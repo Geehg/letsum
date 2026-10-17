@@ -114,7 +114,9 @@ def main():
         per = {}
         for w, u in files:
             if u not in cache:
-                loc = ROOT / "tools/archive/cdn" / f["id"] / (f"{w}." + u.split("?")[0].rsplit(".", 1)[-1])  # 이미 받아 둔 공식 파일이 있으면 그것을 읽음
+                fn = f"{w}." + u.split("?")[0].rsplit(".", 1)[-1]
+                loc = ROOT / "tools/archive/cdn" / f["id"] / fn  # 이미 받아 둔 공식 파일이 있으면 그것을 읽음
+                if "/fonts-hosted/" in u: loc = ROOT / "tools/archive/hosted" / f["id"] / fn  # 서버 전용 폰트는 올리기 전 원본
                 try: cache[u] = read(u, loc); time.sleep(0 if loc.exists() else 0.3)
                 except Exception as e: cache[u] = {"err": str(e)[:100]}
             c = cache[u]

@@ -51,7 +51,7 @@ def font_file(f, prefer=700):
     if dst.exists(): return dst, w
     url = (f["webfont"] or {}).get(str(w))
     data = None
-    for d in (MIRROR / f["id"], ROOT / "tools/archive/cdn" / f["id"]):
+    for d in (MIRROR / f["id"], ROOT / "tools/archive/cdn" / f["id"], ROOT / "tools/archive/hosted" / f["id"]):
         for p in sorted(d.glob(f"{w}.*")) if d.exists() else []:
             if p.suffix.lower() in (".woff2", ".woff", ".ttf", ".otf"): data = p.read_bytes(); break
         if data: break
