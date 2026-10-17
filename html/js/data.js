@@ -4709,6 +4709,16 @@ const FONTS = [
     
     pair: "inter", pop: 40, added: "2026-10-17",
     desc: "교보문고 손글쓰기 캠페인으로 처음 공개된 교보 손글씨. 반듯한 펜글씨라 책 문구 필사·안내 문구에 두루 쓰입니다." },
+  { id: "k-kcc-ahnchangho", name: "KCC안창호체", en: "KCC-Ahnchangho", family: "'LS k-kcc-ahnchangho', cursive",
+    designer: "한국저작권위원회", holder: "한국저작권위원회", category: "손글씨",
+    tags: ["손글씨", "역사", "펜글씨"], mood: ["고전적", "차분한"], weights: [400], formats: ["WOFF2"],
+    cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-ahnchangho/400.woff2" }, webfontSrc: "공유마당 원본 · WOFF2 형식 변환(글리프 그대로)",
+    dl: { page: "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023", srcName: "공유마당(한국저작권위원회)" },
+    license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-17", status: "verified",
+    released: "2023-11-07", releasedSrc: "공유마당 등록일(제작 기관 배포)", releasedUrl: "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023",
+    pair: "grotesk", pop: 35, added: "2026-10-17",
+    desc: "한국저작권위원회가 도산 안창호 선생의 손글씨를 바탕으로 만든 KCC 서체. 꾹꾹 눌러 쓴 펜글씨라 기념 자료·역사 콘텐츠의 인용문에 어울립니다." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)

@@ -1765,5 +1765,11 @@
   "evidence": "교보문고 손글씨폰트 라이선스(2019): 인쇄·CI/BI(원형 그대로)·웹사이트·웹서버용 폰트·영상·디바이스·서버·eBook·임베딩 모두 O / 수정·변경(디지털 포맷 변경)·개작·개명·재배포·유료양도·재판매 금지 → 원본 TTF 그대로 서버 전용",
   "page": "https://store.kyobobook.co.kr/handwriting/font",
   "checked": "2026-10-17"
+ },
+ "k-kcc-ahnchangho": {
+  "license": "OFL",
+  "evidence": "공유마당 저작물 페이지 이용조건 'OFL' — 2026-10-16 운영자 승인으로 '이용범위 동의' 후 다운로드(13366248)",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023",
+  "checked": "2026-10-17"
  }
 }
