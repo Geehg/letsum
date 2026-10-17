@@ -191,7 +191,7 @@
   "page": "https://hangeul.naver.com/font",
   "css": "https://hangeul.naver.com/css/fonts.css",
   "files": {
-   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjoYetHangul/NanumMyeongjo-YetHangul.woff2"
+   "400": "https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjoYetHangul/NanumMyeongjo-YetHangul.ttf"
   }
  },
  "k-clova-abbaeuiyeonaepyeonji": {

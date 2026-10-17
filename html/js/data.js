@@ -2183,7 +2183,7 @@ const FONTS = [
     designer: "네이버", holder: "네이버", category: "명조",
     tags: ["옛한글", "교육", "고전"], mood: ["고전적", "차분한"], weights: [400], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: true, hanja: true,
-    webfont: { 400: "https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjoYetHangul/NanumMyeongjo-YetHangul.woff2" }, webfontSrc: "배포처 공식 웹폰트(네이버 한글한글 아름답게)",
+    webfont: { 400: "https://hangeul.pstatic.net/hangeul_static/webfont/NanumMyeongjoYetHangul/NanumMyeongjo-YetHangul.ttf" }, webfontSrc: "배포처 공식 웹폰트(네이버 한글한글 아름답게)",
     dl: { page: "https://hangeul.naver.com/font", srcName: "네이버 한글한글 아름답게" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-13", status: "verified",
     pair: "playfair", pop: 35, added: "2026-10-13",
@@ -4453,7 +4453,8 @@ const FONTS = [
     designer: "EBS 한국교육방송공사", holder: "EBS 한국교육방송공사", category: "손글씨",
     tags: ["붓글씨", "제목", "교육"], mood: ["강렬한", "고전적"], weights: [300, 500, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 300: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/300.ttf", 500: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/500.ttf", 700: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로, letsum.app 서버에서 화면 표시용으로만", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
+    intro: true, specimen: "img/specimen/k-ebs-jusigyeong.png",
+    introReason: "배포처가 준 원본 파일(TTF·OTF)을 브라우저가 열지 못하고(파일 내부 표 손상), 라이선스상 사전 승인 없는 수정이 금지돼 고칠 수 없습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.",
     dl: { page: "https://about.ebs.co.kr/kor/organization/font?tabVal=jusigyeong", srcName: "EBS(공식)" },
     license: "EBS 서체 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "cond", package: "ok", ofl: "no" }, verified: "2026-10-17", status: "verified",
     
@@ -4603,7 +4604,8 @@ const FONTS = [
     designer: "한그리아", holder: "한그리아", category: "고딕",
     tags: ["본문", "제목", "UI"], mood: ["단정한"], weights: [300, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 300: "https://letsum.app/fonts-hosted/k-healthset-gothic/300.ttf", 700: "https://letsum.app/fonts-hosted/k-healthset-gothic/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로, letsum.app 서버에서 화면 표시용으로만", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
+    intro: true, specimen: "img/specimen/k-healthset-gothic.png",
+    introReason: "배포처가 준 원본 파일(TTF·OTF)을 브라우저가 열지 못하고(파일 내부 표 손상), 수정 허용 여부가 원문에 없어 고치지 않았습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.",
     dl: { page: "https://hangria.com", srcName: "한그리아(공식)" },
     license: "한그리아 헬스셋 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "cond", package: "ok", ofl: "no" }, verified: "2026-10-17", status: "verified",
     
