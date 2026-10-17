@@ -1464,7 +1464,8 @@ import "@fontsource/${f.id}/400.css";</pre>
     const dated = FONTS.filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released) || b.pop - a.pop);
     const weekAll = dated.filter((f) => f.released >= iso(mon) && f.released <= iso(now));
     const week = weekAll.length > 0;
-    spotList = (week ? weekAll : dated).slice(0, 12);
+    // 원 제작사 출시일이 가장 최근인 10종만(새 폰트가 출시되면 가장 오래된 것부터 빠짐). 접속할 때마다 가장 최신 폰트부터 보여 줌.
+    spotList = (week ? weekAll : dated).slice(0, 10);
     if (!spotList.length) { $(".newband").style.display = "none"; return; }
     $("#nbLabel").textContent = week ? `이번 주 출시 ${weekAll.length}종` : "최근 출시";
     $("#nbTitle").textContent = week ? `이번 주 출시된 한글 무료 폰트 ${weekAll.length}종` : "가장 최근 출시된 한글 무료 폰트";
