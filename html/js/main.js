@@ -18,53 +18,66 @@
   // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
   const fmtRel = (d) => !d ? "" : d.length === 4 ? d + "년" : d.length === 7 ? `${d.slice(0, 4)}년 ${+d.slice(5)}월` : d.replace(/-/g, ".");
   // ---------- LETSUM 미리보기 웹폰트 로더 ----------
-  // 큰 한글 폰트(평균 0.5MB, 최대 4MB)를 한꺼번에 받지 않도록 동시 4개씩 순서대로 받는다.
-  // 상세·히어로처럼 지금 보는 곳은 맨 앞으로(priority). 받는 중엔 data-fl="wait"(흐리게), 실패하면 한 번 다시 시도.
-  const declared = new Set(); const faceState = {}; const faceWait = [];
-  let faceActive = 0; const FACE_MAX = 4;
+  // 1) 카드에 실제로 보이는 굵기 1개를 먼저 받는다(한 폰트의 굵기 9개를 다 받을 때까지 기다리지 않음) → 나머지 굵기는 한가할 때.
+  // 2) 화면 1.5장 앞에서 미리 줄을 세우고, 지금 화면에 들어온 카드는 줄 맨 앞으로(지나간 카드가 앞을 막지 않게).
+  // 3) 동시에 6개까지. 받는 중엔 data-fl="wait"(흐리게), 실패하면 한 번 다시 시도.
+  const declared = new Set(); const faceState = {}; const faceWait = []; const faceLater = []; const gotW = {};
+  let faceActive = 0; const FACE_MAX = 6;
   const fmtOf = (u) => { u = u.split("?")[0]; return /\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : /\.woff$/.test(u) ? "woff" : "woff2"; };
+  const shownW = (f) => { const ws = Object.keys(f.webfont).map(Number); const w = state.weight; return ws.includes(w) ? w : ws.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
   function markFace(id, st) {
     faceState[id] = st;
     document.querySelectorAll(`[data-id="${id}"]`).forEach((el) => { if (st === "ok") el.removeAttribute("data-fl"); else el.setAttribute("data-fl", st); });
   }
-  async function loadFace(f, retry) {
-    const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
-    const faces = Object.entries(f.webfont).map(([w, url]) => new FontFace(fam, `url("${url}${retry ? (url.includes("?") ? "&" : "?") + "r=1" : ""}") format("${fmtOf(url)}")`, { weight: String(w), display: "swap" }));
+  async function loadFace(job, retry) {
+    const { f, ws, main } = job; const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
+    const todo = ws.filter((w) => !(gotW[f.id] || new Set()).has(w)); if (!todo.length) { if (main) markFace(f.id, "ok"); return; }
+    const faces = todo.map((w) => { const url = f.webfont[w]; return new FontFace(fam, `url("${url}${retry ? (url.includes("?") ? "&" : "?") + "r=1" : ""}") format("${fmtOf(url)}")`, { weight: String(w), display: "swap" }); });
     faces.forEach((x) => document.fonts.add(x));
-    const t = setTimeout(() => { if (faceState[f.id] === "wait") markFace(f.id, "slow"); }, 8000);
-    try { await Promise.all(faces.map((x) => x.load())); clearTimeout(t); markFace(f.id, "ok"); }
-    catch (e) {
+    const t = main ? setTimeout(() => { if (faceState[f.id] === "wait") markFace(f.id, "slow"); }, 8000) : 0;
+    try {
+      await Promise.all(faces.map((x) => x.load())); clearTimeout(t);
+      (gotW[f.id] = gotW[f.id] || new Set()); todo.forEach((w) => gotW[f.id].add(w));
+      if (main) { markFace(f.id, "ok"); const rest = Object.keys(f.webfont).map(Number).filter((w) => !gotW[f.id].has(w)); if (rest.length) { faceLater.push({ f, ws: rest, main: false }); } }
+    } catch (e) {
       clearTimeout(t); faces.forEach((x) => document.fonts.delete(x));
-      if (!retry) { await new Promise((r) => setTimeout(r, 1500)); return loadFace(f, true); }
-      markFace(f.id, "fail");
+      if (!retry) { await new Promise((r) => setTimeout(r, 1500)); return loadFace(job, true); }
+      if (main) markFace(f.id, "fail");
     }
   }
   function pumpFaces() {
-    while (faceActive < FACE_MAX && faceWait.length) {
-      const f = faceWait.shift(); faceActive++;
-      loadFace(f).finally(() => { faceActive--; pumpFaces(); });
+    while (faceActive < FACE_MAX && (faceWait.length || (faceLater.length && faceActive < 2))) {  // 나머지 굵기는 2개까지만(화면 카드가 늘 우선)
+      const job = faceWait.length ? faceWait.shift() : faceLater.shift(); faceActive++;
+      loadFace(job).finally(() => { faceActive--; pumpFaces(); });
     }
   }
   function ensureFace(f, priority) {
     if (!f || !f.webfont) return;
     if (priority && faceState[f.id] === "fail") declared.delete(f.id); // 상세를 열면 실패한 폰트를 다시 시도
     if (declared.has(f.id)) { // 대기 중인데 지금 필요해지면 앞으로
-      const k = faceWait.indexOf(f); if (priority && k > 0) { faceWait.splice(k, 1); faceWait.unshift(f); }
+      const k = faceWait.findIndex((j) => j.f === f); if (priority && k > 0) { faceWait.unshift(faceWait.splice(k, 1)[0]); }
+      if (priority) { const l = faceLater.findIndex((j) => j.f === f); if (l >= 0) faceWait.unshift(faceLater.splice(l, 1)[0]); pumpFaces(); } // 상세처럼 모든 굵기가 필요할 때
+      const w = shownW(f); if (faceState[f.id] === "ok" && !(gotW[f.id] || new Set()).has(w)) { faceWait.unshift({ f, ws: [w], main: false }); pumpFaces(); } // 굵기 전환 직후
       return;
     }
     declared.add(f.id); markFace(f.id, "wait");
-    priority ? faceWait.unshift(f) : faceWait.push(f); pumpFaces();
+    const job = { f, ws: [shownW(f)], main: true };
+    priority ? faceWait.unshift(job) : faceWait.push(job); pumpFaces();
   }
-  const faceObs = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
-    if (!e.isIntersecting) return;
-    ensureFace(FONTS.find((x) => x.id === e.target.dataset.id)); faceObs.unobserve(e.target);
-  }), { rootMargin: "300px 0px" }) : null;
+  // 멀리(화면 1.5장 앞) 들어오면 줄을 세우고, 화면에 실제로 보이면 맨 앞으로
+  const idOf = (el) => FONTS.find((x) => x.id === el.dataset.id);
+  const faceNear = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
+    if (!e.isIntersecting) return; ensureFace(idOf(e.target)); faceNear.unobserve(e.target);
+  }), { rootMargin: "150% 0px" }) : null;
+  const faceSeen = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
+    if (!e.isIntersecting) return; const f = idOf(e.target); if (faceState[f && f.id] !== "ok") ensureFace(f, true); else faceSeen.unobserve(e.target);
+  }), { rootMargin: "0px" }) : null;
   function observeFaces(root) {
     (root || document).querySelectorAll("[data-id]").forEach((el) => {
-      const f = FONTS.find((x) => x.id === el.dataset.id); if (!f || !f.webfont) return;
+      const f = idOf(el); if (!f || !f.webfont) return;
       if (faceState[f.id] && faceState[f.id] !== "ok") el.setAttribute("data-fl", faceState[f.id]);
-      if (declared.has(f.id)) return;
-      faceObs ? faceObs.observe(el) : ensureFace(f);
+      if (faceState[f.id] === "ok") return;
+      if (faceNear) { faceNear.observe(el); faceSeen.observe(el); } else ensureFace(f);
     });
   }
   // KS X 1001 완성형 2,350자 집합 — 2,350자 폰트의 누락 글자를 폰트를 받지 않고도 판정
@@ -268,7 +281,8 @@
     renderPreviews(); scheduleCoverage();
   }
   $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
-  $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews(); }));
+  $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews();
+    $$("[data-id]").forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight * 2) ensureFace(idOf(el)); }); })); // 화면 근처 카드의 새 굵기를 바로 받기
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
   function setView(v) {
     if (v !== state.view) ev("view", v);
