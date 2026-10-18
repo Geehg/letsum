@@ -2023,5 +2023,65 @@
   "evidence": "한겨레 CI/FONT 페이지 사용규칙: 개인·기업 무료, 다른 이에게 자유롭게 배포 가능(대가 금지) / 수정·판매 금지(배포 형태 그대로), 출판물에 글꼴 출처 표시 → 원본 그대로 미러",
   "page": "https://company.hani.co.kr/cifont.html",
   "checked": "2026-10-18"
+ },
+ "k-ice-simin": {
+  "license": "인천교육서체 저작권 안내",
+  "evidence": "인천광역시교육청 '교육청상징/교육비전/서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+  "checked": "2026-10-19"
+ },
+ "k-ice-sotong": {
+  "license": "인천교육서체 저작권 안내",
+  "evidence": "인천광역시교육청 '교육청상징/교육비전/서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+  "checked": "2026-10-19"
+ },
+ "k-ice-himchan": {
+  "license": "인천교육서체 저작권 안내",
+  "evidence": "인천광역시교육청 '교육청상징/교육비전/서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+  "checked": "2026-10-19"
+ },
+ "k-ice-jaram": {
+  "license": "인천교육서체 저작권 안내",
+  "evidence": "인천광역시교육청 '교육청상징/교육비전/서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+  "checked": "2026-10-19"
+ },
+ "k-gwe-modu": {
+  "license": "강원교육서체 저작권 안내",
+  "evidence": "강원특별자치도교육청 '강원교육 서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+  "checked": "2026-10-19"
+ },
+ "k-gwe-saeeum": {
+  "license": "강원교육서체 저작권 안내",
+  "evidence": "강원특별자치도교육청 '강원교육 서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+  "checked": "2026-10-19"
+ },
+ "k-gwe-teunteun": {
+  "license": "강원교육서체 저작권 안내",
+  "evidence": "강원특별자치도교육청 '강원교육 서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+  "checked": "2026-10-19"
+ },
+ "k-gwe-hyeonok": {
+  "license": "강원교육서체 저작권 안내",
+  "evidence": "강원특별자치도교육청 '강원교육 서체' 페이지: 누구나 무료, 영상·인쇄·웹·CI·BI·판매용 저작물에 허가 없이 사용 / 유료 양도·판매 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+  "checked": "2026-10-19"
+ },
+ "k-rokaf-sans": {
+  "license": "대한민국공군 전용서체 이용조건",
+  "evidence": "공군 홈페이지 자료실 '공군서체' 설치파일 속 매뉴얼: 개인·기업 무료, 자유롭게 사용·상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://rokaf.airforce.mil.kr/airforce/4151/subview.do",
+  "checked": "2026-10-19"
+ },
+ "k-rokaf-slab": {
+  "license": "대한민국공군 전용서체 이용조건",
+  "evidence": "공군 홈페이지 자료실 '공군서체' 설치파일 속 매뉴얼: 개인·기업 무료, 자유롭게 사용·상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://rokaf.airforce.mil.kr/airforce/4151/subview.do",
+  "checked": "2026-10-19"
  }
 }
