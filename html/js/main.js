@@ -669,16 +669,13 @@
   // 좋아요는 즐겨찾기(이 브라우저에만 저장), 저장은 비교 담기. 서버가 없어 좋아요 수·댓글은 표시하지 않는다(가짜 숫자 금지).
   const FEED_BG = [["var(--lime)", "var(--lime-ink)"], ["var(--ink)", "var(--paper)"], ["#e9e4d8", "#1b1b1b"], ["#dfe7f3", "#14213d"], ["#f3e1dc", "#3a1a12"]];
   const FEED_CTX = { "디스플레이": "thumb", "명조": "book", "손글씨": "card", "고딕": "ui" };
-  // 영문 피드 글자 크기: 단어 단위로 줄을 나눠 '줄 수 × 줄 높이'가 카드 안(높이 약 58cqw)에 들어가는 가장 큰 크기(최대 22cqw)
+  // 영문 피드 글자 크기: 기본 15cqw(짧으면 20), 가장 긴 단어가 한 줄에 들어가지 않으면 그만큼만 줄인다(넘치는 줄은 CSS가 3줄로 자름)
   function enFit(t) {
-    const words = String(t).split(/\s+/);
-    for (let sz = 22; sz > 7; sz -= 0.5) {
-      const per = 84 / (sz * 0.62); let lines = 1, cur = 0; // 한 줄에 들어가는 글자 수(넓은 라틴 폰트 기준 평균 폭 ≈ 0.62em)
-      for (const w of words) { const L = w.length + (cur ? 1 : 0); if (w.length > per) { lines = 99; break; } if (cur + L > per) { lines++; cur = w.length; } else cur += L; }
-      if (lines * 1.22 * sz <= 58) return sz;
-    }
-    return 7;
+    const longest = Math.max(1, ...String(t).split(/\s+/).map((w) => w.length));
+    const base = String(t).length <= 12 ? 20 : 15;
+    return Math.max(10, Math.min(base, Math.floor(84 / (longest * 0.62) * 2) / 2)); // 가장 긴 단어가 한 줄(폭 84cqw)에 들어가는 크기까지만
   }
+
   // 피드 카드 슬라이드 — 정사각 영역의 폭(cqw)에 맞춰 글자 크기를 정하므로 카드 크기가 달라도 비율이 같다
   const FEED_POSTER = {
     "디스플레이": (f, t, fam) => `<div class="ig-s fp fp-thumb" style="font-family:${fam}"><div class="fp-ch"><i></i>LETSUM 채널 · 조회수 12만회</div><div class="fp-t" style="font-weight:${f.weights[f.weights.length - 1]}">${esc(t).replace(/(\S+)$/, "<em>$1</em>")}</div><span class="fp-dur">12:34</span><span class="ig-cap2">유튜브 썸네일 적용안</span></div>`,
@@ -705,7 +702,8 @@
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
     const t = state.text || f.name;
     // 라틴 글자는 한글보다 폭이 절반 정도라 같은 크기면 작아 보인다 → 영문은 약 2배
-    const sz = EN ? enFit(t) : t.length <= 8 ? 13 : t.length <= 16 ? 10.5 : t.length <= 28 ? 8 : 6;
+    // 크기는 거의 고정(문장 길이에 따라 들쑥날쑥하지 않게) — 넘치면 줄 수를 잘라 '…'(한글 4줄 · 영문 3줄)
+    const sz = EN ? enFit(t) : [...t].length <= 6 ? 16 : 12;
     const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
@@ -1525,8 +1523,11 @@ import "@fontsource/${f.id}/400.css";</pre>
     const dated = FONTS.filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released) || b.pop - a.pop);
     const weekAll = dated.filter((f) => f.released >= iso(mon) && f.released <= iso(now));
     const week = weekAll.length > 0;
-    // 원 제작사 출시일이 가장 최근인 10종만(새 폰트가 출시되면 가장 오래된 것부터 빠짐). 접속할 때마다 가장 최신 폰트부터 보여 줌.
+    // 원 제작사 출시일이 가장 최근인 10종만(새 폰트가 출시되면 가장 오래된 것부터 빠짐).
+    // 보여 주는 순서는 접속·새로고침마다 무작위 — 지난번 첫 폰트가 또 첫 번째로 오지 않게(이 브라우저에만 기억)
     spotList = (week ? weekAll : dated).slice(0, 10);
+    for (let i = spotList.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [spotList[i], spotList[j]] = [spotList[j], spotList[i]]; }
+    try { const k = EN ? "ls_spot0_en" : "ls_spot0"; if (spotList.length > 1 && spotList[0].id === localStorage.getItem(k)) spotList.push(spotList.shift()); localStorage.setItem(k, spotList[0].id); } catch (e) {}
     if (!spotList.length) { $(".newband").style.display = "none"; return; }
     $("#nbLabel").textContent = week ? `이번 주 출시 ${weekAll.length}종` : "최근 출시";
     $("#nbTitle").textContent = week ? `이번 주 출시된 ${EN ? "영문" : "한글"} 무료 폰트 ${weekAll.length}종` : `가장 최근 출시된 ${EN ? "영문" : "한글"} 무료 폰트`;
