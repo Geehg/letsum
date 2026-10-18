@@ -85,7 +85,8 @@
     const cnt = (k) => hero.filter((id) => st(id) === k).length;
     const s = summary;
     $("#homeKpi").innerHTML = `
-      <div><b>${FONTS.length}</b><span>등록 폰트</span></div>
+      <div><b>${FONTS.length}</b><span>한글 폰트</span></div>
+      <div><b>${typeof FONTS_EN !== "undefined" ? FONTS_EN.length : 0}</b><span>영문 폰트</span></div>
       <div><b>${FONTS.filter((f) => !f.intro).length}</b><span>미리보기 제공</span></div>
       <div><b>${s ? s.pendingShots : "—"}</b><span>사진 검토 대기</span></div>
       <div><b>${s ? s.reportedComments : "—"}</b><span>신고된 댓글(공개 중)</span></div>
@@ -563,18 +564,19 @@
 
   // ================= 폰트 목록(읽기 전용) =================
   loaders.fonts = function () {
-    const q = $("#fSearch").value.trim().toLowerCase(), so = $("#fSort").value;
-    let L = FONTS.filter((f) => !q || f.name.toLowerCase().includes(q) || (f.designer || "").toLowerCase().includes(q) || (f.en || "").toLowerCase().includes(q));
+    const q = $("#fSearch").value.trim().toLowerCase(), so = $("#fSort").value, en = $("#fLang").value === "en", ALL = en ? FONTS_EN : FONTS;
+    let L = ALL.filter((f) => !q || f.name.toLowerCase().includes(q) || (f.designer || "").toLowerCase().includes(q) || (f.en || "").toLowerCase().includes(q));
     L.sort(so === "name" ? (a, b) => a.name.localeCompare(b.name) : so === "released" ? (a, b) => (b.released || "").localeCompare(a.released || "") : (a, b) => (b.added || "").localeCompare(a.added || ""));
-    $("#fCount").textContent = `${L.length} / ${FONTS.length}종`;
+    $("#fCount").textContent = `${L.length} / ${ALL.length}종`;
     $("#fontRows").innerHTML = L.map((f) => `<tr>
       <td><b>${esc(f.name)}</b><br><span class="note">${esc(f.en || "")}</span></td>
       <td>${esc(f.category)}</td><td>${esc(f.designer)}</td><td>${esc(f.license)}</td>
       <td>${esc(f.released || "—")}</td><td>${esc(f.added || "—")}</td>
       <td>${f.intro ? "소개 전용" : "제공"}</td>
-      <td style="white-space:nowrap"><a class="btn sm ghost" href="index.html#f=${f.id}" target="_blank" rel="noopener">상세</a> <button class="btn sm ghost" data-br="${f.id}" type="button">히어로 테마</button></td></tr>`).join("");
+      <td style="white-space:nowrap"><a class="btn sm ghost" href="${en ? "en/" : "index.html"}#f=${f.id}" target="_blank" rel="noopener">상세</a>${en ? "" : ` <button class="btn sm ghost" data-br="${f.id}" type="button">히어로 테마</button>`}</td></tr>`).join("");
     $$("[data-br]").forEach((b) => b.addEventListener("click", () => { brFilter = "all"; $$("#brFilter button").forEach((x) => x.classList.toggle("on", x.dataset.f === "all")); sel = null; tab("brand"); openBrand(b.dataset.br); }));
   };
   $("#fSearch").addEventListener("input", () => loaders.fonts());
   $("#fSort").addEventListener("change", () => loaders.fonts());
+  $("#fLang").addEventListener("change", () => loaders.fonts());
 })();

@@ -7,7 +7,7 @@
 <title>관리자 — LETSUM(렛섬)</title>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=68">
+<link rel="stylesheet" href="css/style.css?v=69">
 <link rel="stylesheet" href="css/admin.css?v=5">
 </head>
 <body class="adm">
@@ -151,6 +151,7 @@
     <!-- 폰트 목록 -->
     <section class="adm-pane" data-pane="fonts" hidden>
       <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;align-items:center">
+        <select id="fLang" aria-label="목록"><option value="ko">한글 폰트</option><option value="en">영문 폰트</option></select>
         <input id="fSearch" type="search" placeholder="이름·제작사 검색" aria-label="폰트 검색" style="min-width:240px">
         <select id="fSort" aria-label="정렬"><option value="added">최근 등록순</option><option value="released">최근 출시순</option><option value="name">이름순</option></select>
         <span class="note" id="fCount"></span>
@@ -165,6 +166,6 @@
 
 <script src="js/data.js?v=13"></script>
 <script src="js/data_en.js?v=1"></script>
-<script src="js/admin.js?v=17"></script>
+<script src="js/admin.js?v=18"></script>
 </body>
 </html>

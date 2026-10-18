@@ -1238,3 +1238,13 @@ html.modal-open body{padding-right:var(--sbw,0)}
 
 /* 고지·약관 페이지의 핵심 문장: 굵게 + 형광펜(단색 배경) */
 .page mark.hl{background:var(--lime);color:var(--lime-ink);font-weight:700;padding:.05em .25em;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* 받은 뒤 설치 안내(운영체제별) */
+.inst-tip{position:fixed;right:16px;bottom:16px;z-index:90;width:min(340px,calc(100vw - 32px));background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:14px 16px 12px;font-size:13.5px;line-height:1.55}
+.inst-tip[hidden]{display:none}
+.inst-tip .it-k{font-weight:800;margin:0 24px 6px 0}
+.inst-tip ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.inst-tip .it-name{margin:10px 0 0;padding:8px 10px;background:var(--lime);color:var(--lime-ink);font-size:12.5px}
+.inst-tip .it-name b{font-size:15px}.inst-tip .it-name small{display:block;opacity:.8}
+.inst-tip .it-x{position:absolute;top:6px;right:8px;font-size:20px;line-height:1;padding:4px 6px}
+.inst-tip .it-no{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12px;color:var(--ink3)}

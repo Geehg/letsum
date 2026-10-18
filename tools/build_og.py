@@ -7,7 +7,7 @@
 폰트 파일: 사이트 미리보기·배포처 공식 웹폰트(data.js webfont), Google Fonts는 google/fonts 원본.
 로컬에 받아 둔 파일(../letsum-mirror/webfonts, tools/archive/cdn)이 있으면 그것을 먼저 쓴다.
 받은 파일은 tools/state/og_fonts/ 에 TTF로 캐시(저장소에 올리지 않음).
-사용: python tools/build_og.py [--id 폰트ID] [--main]
+사용: python tools/build_og.py [--id 폰트ID] [--main] [--en (영문 폰트 전체 또는 --id와 함께)]
 필요: Pillow, fontTools, brotli
 """
 import io, json, sys
@@ -188,16 +188,31 @@ def card_main(fonts):
     save(im, ROOT / "html/img/og-main.png")
 
 
+def load_en():
+    """영문 폰트(data_en.js) — data.js의 상수(OFL_ALL_OK 등)를 먼저 읽는다"""
+    js = r"""const fs=require('fs');const s=fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8');
+const F=new Function('var window={};'+s+';return FONTS_EN')();
+console.log(JSON.stringify(F.map(f=>({id:f.id,name:f.name,en:f.en,intro:!!f.intro,weights:f.weights,webfont:f.webfont||null,zip:'',category:(f.tags&&f.tags[0])||f.category,glyphs:f.glyphs,matrix:f.matrix}))));"""
+    return json.loads(__import__("subprocess").run(["node", "-e", js, str(ROOT / "html/js/data.js"), str(ROOT / "html/js/data_en.js")], capture_output=True, text=True, check=True).stdout)
+
+
 def main():
-    fonts = load_fonts()
-    full = {f["id"]: f for f in json.loads(__import__("subprocess").run(["node", "-e", "const fs=require('fs');const F=new Function(fs.readFileSync(process.argv[1],'utf8')+';return FONTS')();console.log(JSON.stringify(F))", str(ROOT / "html/js/data.js")], capture_output=True, text=True, check=True).stdout)}
-    for f in fonts: f.update({k: full[f["id"]].get(k) for k in ("category", "glyphs", "matrix")})
-    if "--main" in sys.argv or "--id" not in sys.argv: card_main(fonts); print("→ html/img/og-main.png")
+    global SAMPLE
+    if "--en" in sys.argv:  # 영문 폰트 카드: 분류는 산세리프·세리프처럼 영문 기준 태그, 예문은 영문
+        fonts = load_en(); SAMPLE = "The quick brown fox jumps over the lazy dog"
+        if "--id" not in sys.argv and "--all" not in sys.argv: sys.argv += ["--all"]
+    else:
+        fonts = load_fonts()
+    if "--en" not in sys.argv:
+        full = {f["id"]: f for f in json.loads(__import__("subprocess").run(["node", "-e", "const fs=require('fs');const F=new Function(fs.readFileSync(process.argv[1],'utf8')+';return FONTS')();console.log(JSON.stringify(F))", str(ROOT / "html/js/data.js")], capture_output=True, text=True, check=True).stdout)}
+        for f in fonts: f.update({k: full[f["id"]].get(k) for k in ("category", "glyphs", "matrix")})
+    if "--en" not in sys.argv and ("--main" in sys.argv or "--id" not in sys.argv): card_main(fonts); print("→ html/img/og-main.png")
     if "--main" in sys.argv: return
     only = sys.argv[sys.argv.index("--id") + 1] if "--id" in sys.argv else None
     ok = bad = 0
     for f in fonts:
         if f["intro"] or (only and f["id"] != only): continue
+        if "--missing" in sys.argv and (OUT / f"{f['id']}.png").exists(): continue  # 카드가 이미 있는 폰트는 건너뜀(주간 자동 갱신용)
         try:
             try: r = card_font(f, None)
             except OSError as e:  # FreeType가 힌팅을 못 읽는 폰트 → 힌팅 지운 사본으로 다시

@@ -44,6 +44,14 @@ jobs:
         run: |
           pip install --quiet fonttools brotli pillow
           python tools/auto_register.py || echo "자동 등록 실패 — 이번 주 건너뜀"
+      - name: English fonts — Google Fonts top 300 (official metadata, no AI)
+        if: steps.lock.outputs.held != '1'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pip install --quiet fonttools brotli pillow
+          python tools/build_en_data.py --top 300 || echo "영문 데이터 갱신 실패 — 지난 결과 유지"
+          python tools/build_og.py --en --missing || echo "영문 카드 실패"
       - name: Installed font names from font files (no AI)
         if: steps.lock.outputs.held != '1'
         run: |
@@ -65,7 +73,7 @@ jobs:
         run: |
           git config user.name "letsum-watch"
           git config user.email "watch@letsum.app"
-          git add tools/state html/data html/font html/sitemap.xml html/robots.txt html/js/data.js html/img/og html/img/src
+          git add tools/state html/data html/font html/sitemap.xml html/robots.txt html/js/data.js html/js/data_en.js html/en html/img/og html/img/src
           git diff --cached --quiet || git commit -m "chore(watch): 배포처 상태 갱신 $(date -u +%F)"
           git push
       - name: Open issue for auto-registered fonts

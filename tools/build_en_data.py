@@ -30,7 +30,9 @@ LIC = {"ofl": "OFL", "apache": "Apache 2.0", "ufl": "Ubuntu Font License"}
 
 
 def get(url, data=None):
-    req = urllib.request.Request(url, data=data, headers={"User-Agent": UA})
+    h = {"User-Agent": UA}
+    if "api.github.com" in url and os.environ.get("GITHUB_TOKEN"): h["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]  # Actions 공용 IP 한도 대비
+    req = urllib.request.Request(url, data=data, headers=h)
     for i in range(3):
         try:
             with urllib.request.urlopen(req, timeout=60) as r: return r.read()

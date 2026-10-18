@@ -560,7 +560,34 @@
   addEventListener("pagehide", flushEv); document.addEventListener("visibilitychange", () => { if (document.hidden) flushEv(); });
   try { if (!sessionStorage.getItem("ls_v")) { sessionStorage.setItem("ls_v", "1"); ev("visit"); } } catch (e) {}
   // 다운로드·배포처 링크: data-dl="zip|page" data-fid="<id>"
-  document.addEventListener("click", (e) => { const a = e.target.closest("a[data-dl]"); if (a) ev(a.dataset.dl === "zip" ? "dl_zip" : "dl_page", a.dataset.fid); }, true);
+  document.addEventListener("click", (e) => { const a = e.target.closest("a[data-dl]"); if (a) { ev(a.dataset.dl === "zip" ? "dl_zip" : "dl_page", a.dataset.fid); installTip(a.dataset.fid, a.dataset.dl); } }, true);
+
+  // ---------- 받은 뒤 설치 안내(운영체제별) ----------
+  // 브라우저는 보안상 사이트가 글꼴을 대신 설치할 수 없다 → 받기를 누르면 내 컴퓨터에 맞는 설치 순서와 '설치 후 보이는 이름'을 오른쪽 아래에 알려 준다
+  const OS = (() => { const u = navigator.userAgent; return /iPhone|iPad|iPod/.test(u) || (/Macintosh/.test(u) && navigator.maxTouchPoints > 1) ? "ios" : /Android/.test(u) ? "android" : /Mac/.test(u) ? "mac" : /Windows/.test(u) ? "win" : "etc"; })();
+  function installTip(id, kind) {
+    try { if (localStorage.getItem("ls_noTip") === "1") return; } catch (e) {}
+    const f = FONTS.find((x) => x.id === id); if (!f) return;
+    const n = NAMES[f.id] || {}; const w4 = (n.w || {})[400] || Object.values(n.w || {})[0] || {};
+    const gfPage = !EN ? false : /fonts\.google\.com/.test((f.dl || {}).page || "");
+    const steps = {
+      win: ["받은 zip 파일을 <b>오른쪽 클릭 → 압축 풀기</b>", "글꼴 파일(.ttf·.otf)을 <b>오른쪽 클릭 → 모든 사용자용으로 설치</b>", "쓰던 프로그램(파워포인트·포토샵 등)을 <b>껐다 켜면</b> 목록에 보입니다"],
+      mac: ["받은 zip 파일을 <b>더블클릭</b>하면 폴더가 풀립니다", "글꼴 파일(.ttf·.otf)을 <b>더블클릭 → 서체 설치</b>", "쓰던 프로그램을 <b>껐다 켜면</b> 목록에 보입니다"],
+      ios: ["아이폰·아이패드는 글꼴 설치를 지원하는 앱에서만 쓸 수 있어요", "PC나 Mac에서 설치해 작업하는 것을 권합니다"],
+      android: ["안드로이드는 앱마다 글꼴 추가 방법이 다릅니다", "PC나 Mac에서 설치해 작업하는 것을 권합니다"],
+    }[OS] || ["받은 파일의 압축을 풀고 글꼴 파일(.ttf·.otf)을 운영체제 글꼴 폴더에 설치하세요"];
+    const pre = kind === "page" ? [gfPage ? "열린 Google Fonts 페이지 오른쪽 위 <b>Get font → Download all</b>" : "열린 배포처 페이지에서 이용 조건을 확인하고 파일을 받으세요"] : [];
+    const nameRow = n.fam || w4.win ? `<p class="it-name">설치 후 프로그램에서 찾을 이름<br><b>${esc(OS === "mac" ? (n.fam || w4.win) : (w4.win || n.fam))}</b>${w4.ps ? ` <small>포토샵 PostScript: ${esc(w4.ps)}</small>` : ""}</p>` : "";
+    let el = document.getElementById("instTip");
+    if (!el) { el = document.createElement("aside"); el.id = "instTip"; el.className = "inst-tip"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+    el.innerHTML = `<button class="it-x" type="button" aria-label="닫기">×</button>
+      <p class="it-k">${esc(f.name)} 설치 방법 · ${{ win: "Windows", mac: "Mac", ios: "iPhone·iPad", android: "Android" }[OS] || "PC"}</p>
+      <ol>${[...pre, ...steps].map((x) => `<li>${x}</li>`).join("")}</ol>${nameRow}
+      <label class="it-no"><input type="checkbox"> 다시 보지 않기</label>`;
+    el.hidden = false;
+    el.querySelector(".it-x").onclick = () => { el.hidden = true; };
+    el.querySelector(".it-no input").onchange = (e) => { try { localStorage.setItem("ls_noTip", e.target.checked ? "1" : "0"); } catch (x) {} if (e.target.checked) el.hidden = true; };
+  }
 
   // ---------- 좋아요 수·댓글 (Cloudflare Worker /api — 서버가 없거나 실패하면 조용히 숨김) ----------
   const social = {}; let apiOk = true;
