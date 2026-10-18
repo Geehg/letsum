@@ -4726,7 +4726,7 @@ const FONTS = [
     designer: "오토노머스에이투지", holder: "오토노머스에이투지", category: "고딕",
     tags: ["UI", "본문", "제목", "9굵기"], mood: ["단정한", "세련된"], weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], formats: ["TTF"],
     cov: 2780, glyphs: "한글 2,780자", old: true, hanja: false,
-    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/100.ttf", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/200.ttf", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/500.ttf", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/600.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/800.ttf", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/900.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/100.woff2", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/200.woff2", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/500.woff2", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/600.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/800.woff2", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-a2z/900.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4736,7 +4736,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "고딕",
     tags: ["본문", "UI", "9굵기"], mood: ["단정한"], weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/100.ttf", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/200.ttf", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/500.ttf", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/600.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/800.ttf", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/900.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/100.woff2", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/200.woff2", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/500.woff2", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/600.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/800.woff2", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-sans/900.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4746,7 +4746,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "명조",
     tags: ["본문", "책"], mood: ["차분한", "고전적"], weights: [400], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-batang/400.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-batang/400.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4756,7 +4756,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "고딕",
     tags: ["둥근", "본문", "제목"], mood: ["따뜻한", "귀여운"], weights: [300, 400, 500, 700, 900], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/500.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/700.ttf", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/900.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/500.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/700.woff2", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-round/900.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4766,7 +4766,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "고딕",
     tags: ["고정폭", "코딩", "UI"], mood: ["단정한"], weights: [400, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: true,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-mono/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-mono/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-mono/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-mono/700.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4776,7 +4776,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "고딕",
     tags: ["좁은", "제목", "UI"], mood: ["단정한", "강렬한"], weights: [300, 400, 500, 700, 800], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/500.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/800.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/500.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-hada-condensed/800.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4786,7 +4786,7 @@ const FONTS = [
     designer: "Hada Type Foundry", holder: "Hada Type Foundry", category: "디스플레이",
     tags: ["제목", "개성", "가변"], mood: ["발랄한", "강렬한"], weights: [800], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 800: "https://geehg.github.io/letsum-mirror/webfonts/k-dancing-peoples/800.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 800: "https://geehg.github.io/letsum-mirror/webfonts/k-dancing-peoples/800.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4806,7 +4806,7 @@ const FONTS = [
     designer: "서지환(엔파피)", holder: "서지환(엔파피)", category: "고딕",
     tags: ["본문", "UI"], mood: ["단정한", "따뜻한"], weights: [400, 500], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-jayeon-sans/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-jayeon-sans/500.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-jayeon-sans/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-jayeon-sans/500.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4816,7 +4816,7 @@ const FONTS = [
     designer: "서지환(엔파피)", holder: "서지환(엔파피)", category: "고딕",
     tags: ["제목", "본문"], mood: ["단정한", "강렬한"], weights: [300, 400, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/700.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4826,7 +4826,7 @@ const FONTS = [
     designer: "김진성", holder: "김진성", category: "고딕",
     tags: ["본문", "UI", "9굵기"], mood: ["단정한", "세련된"], weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: true,
-    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/100.ttf", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/200.ttf", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/500.ttf", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/600.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/800.ttf", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/900.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/100.woff2", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/200.woff2", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/500.woff2", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/600.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/800.woff2", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-min-sans/900.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4836,7 +4836,7 @@ const FONTS = [
     designer: "LXGW", holder: "LXGW", category: "손글씨",
     tags: ["손글씨", "본문", "가는"], mood: ["따뜻한", "차분한"], weights: [300, 400, 500], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: true,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/500.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-kr/500.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4846,7 +4846,7 @@ const FONTS = [
     designer: "LXGW", holder: "LXGW", category: "손글씨",
     tags: ["손글씨", "고정폭", "코딩"], mood: ["따뜻한", "차분한"], weights: [300, 400, 500], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: true,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/500.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-wenkai-mono-kr/500.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4856,7 +4856,7 @@ const FONTS = [
     designer: "AIollcut", holder: "AIollcut", category: "디스플레이",
     tags: ["제목", "둥근", "굵은"], mood: ["발랄한", "강렬한"], weights: [400, 700], formats: ["TTF"],
     cov: 7800, glyphs: "한글 7,800자", old: false, hanja: false,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hangulim/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hangulim/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-hangulim/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-hangulim/700.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4866,7 +4866,7 @@ const FONTS = [
     designer: "AIollcut", holder: "AIollcut", category: "디스플레이",
     tags: ["제목", "좁은", "굵은"], mood: ["강렬한", "세련된"], weights: [400, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-neujoh/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-neujoh/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-neujoh/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-neujoh/700.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4896,7 +4896,7 @@ const FONTS = [
     designer: "장해민", holder: "장해민", category: "고딕",
     tags: ["UI", "본문", "9굵기"], mood: ["단정한", "세련된"], weights: [100, 200, 300, 400, 500, 600, 700, 800], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: true, hanja: false,
-    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/100.ttf", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/200.ttf", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/400.ttf", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/500.ttf", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/600.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/800.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 100: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/100.woff2", 200: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/200.woff2", 300: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/400.woff2", 500: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/500.woff2", 600: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/600.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-interop/800.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4906,7 +4906,7 @@ const FONTS = [
     designer: "한국교육학술정보원(KERIS)", holder: "한국교육학술정보원(KERIS)", category: "고딕",
     tags: ["제목", "교육", "굵은"], mood: ["단정한", "강렬한"], weights: [300, 400, 700, 800], formats: ["TTF"],
     cov: 2780, glyphs: "한글 2,780자", old: false, hanja: false,
-    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/300.ttf", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/700.ttf", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/800.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 300: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/300.woff2", 400: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/700.woff2", 800: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/800.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
@@ -4916,7 +4916,7 @@ const FONTS = [
     designer: "한국교육학술정보원(KERIS)", holder: "한국교육학술정보원(KERIS)", category: "디스플레이",
     tags: ["제목", "교육", "굵은"], mood: ["발랄한", "강렬한"], weights: [400, 700], formats: ["TTF"],
     cov: 2780, glyphs: "한글 2,780자", old: false, hanja: false,
-    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-kedu/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-kedu/700.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-kedu/400.woff2", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-keris-kedu/700.woff2" }, webfontSrc: "배포처 공식 파일 · WOFF2 형식 변환(글리프 그대로)",
     dl: { page: "https://copyright.keris.or.kr/wft/fntDwnld", srcName: "학교 안심폰트(KERIS)" },
     license: "OFL", matrix: OFL_ALL_OK, verified: "2026-10-18", status: "verified",
     
