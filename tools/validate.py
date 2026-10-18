@@ -109,6 +109,37 @@ for p in glob.glob(os.path.join(HERE, "state", "review_*.json")) + [os.path.join
     for k in json.load(open(p, encoding="utf-8")):
         if not k.startswith("_") and k not in ids: err(f"{os.path.basename(p)}: id '{k}'가 data.js에 없음")
 
+# 영문 폰트(data_en.js) — /en/ 페이지
+EN_DATA = os.path.join(ROOT, "html", "js", "data_en.js")
+if os.path.exists(EN_DATA):
+    jse = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);" \
+          "vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';'+fs.readFileSync(process.argv[2],'utf8')+';this.out={FONTS_EN,LICENSE_INFO,SAMPLE_LINES_EN,TEXT_PRESETS_EN}',c);" \
+          "process.stdout.write(JSON.stringify(c.out))"
+    try:
+        E = json.loads(subprocess.run(["node", "-e", jse, DATA, EN_DATA], capture_output=True, text=True, check=True).stdout)
+        seen_en = set(); kr = set(ids)
+        for f in E["FONTS_EN"]:
+            i = f.get("id", "")
+            if not re.fullmatch(r"e-[a-z0-9][a-z0-9-]*", i): err(f"영문 {i}: id는 e- 접두사 소문자·숫자·하이픈")
+            if i in seen_en or i in kr: err(f"영문 {i}: id 중복")
+            seen_en.add(i)
+            if f.get("category") not in CATS: err(f"영문 {i}: category '{f.get('category')}'")
+            for m in f.get("mood") or []:
+                if m not in MOODS: err(f"영문 {i}: mood '{m}'")
+            if f.get("license") not in E["LICENSE_INFO"]: err(f"영문 {i}: license '{f.get('license')}'가 LICENSE_INFO에 없음")
+            if not f.get("intro"):
+                wf = f.get("webfont") or {}
+                if not wf: err(f"영문 {i}: webfont 없음")
+                for u in wf.values():
+                    if not u.startswith("https://"): err(f"영문 {i}: webfont 주소 '{u[:40]}'")
+            if not (f.get("dl") or {}).get("page"): err(f"영문 {i}: dl.page 없음")
+            if f.get("released") and not re.fullmatch(r"\d{4}(-\d{2}(-\d{2})?)?", f["released"]): err(f"영문 {i}: released 형식")
+            if not f.get("desc"): err(f"영문 {i}: desc 없음")
+        if not E["SAMPLE_LINES_EN"] or not E["TEXT_PRESETS_EN"]: err("영문 예시 문장·프리셋이 비어 있음")
+        print(f"영문 폰트 {len(E['FONTS_EN'])}종 확인")
+    except subprocess.CalledProcessError as ex:
+        err("data_en.js 해석 실패: " + ex.stderr[-300:])
+
 # 경고(통과는 함)
 for f in FONTS:
     if not f.get("released"): warn(f"{f['id']} 출시일 없음")

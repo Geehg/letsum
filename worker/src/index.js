@@ -10,7 +10,7 @@
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
 //       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "err", m } → 204  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
-//       GET  /api/samples                  → { items: [{ cat, t, src }], updated }  (예시 문장, 관리자가 고친 목록. 없으면 items: null → 사이트 기본값)
+//       GET  /api/samples[?lang=en]        → { items: [{ cat, t, src }], updated }  (예시 문장, 관리자가 고친 목록. 없으면 items: null → 사이트 기본값)
 //       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
 //       POST /api/admin/login { id, pw }   → { token, exp }  (관리자 로그인 → 12시간 통행증. 이후 Authorization: Bearer <token>)
 //       관리자(Authorization: Bearer ADMIN_KEY 또는 로그인 통행증):
@@ -331,16 +331,18 @@ function cleanSamples(list) {
   const out = list.map((x) => ({ cat: clean(x && x.cat, 12), t: clean(x && x.t, 80).replace(/\n/g, " "), src: clean(x && x.src, 40) })).filter((x) => x.t);
   return out.length && out.length <= 100 ? out : null;
 }
-async function samplesGet(env) {
-  const r = await env.DB.prepare("SELECT data, updated FROM settings WHERE key = 'samples'").first();
+const sampleKey = (lang) => (lang === "en" ? "samples_en" : "samples"); // 한글·영문 페이지 목록을 따로 보관
+async function samplesGet(url, env) {
+  const r = await env.DB.prepare("SELECT data, updated FROM settings WHERE key = ?").bind(sampleKey(url.searchParams.get("lang"))).first();
   let items = null; try { items = r ? JSON.parse(r.data) : null; } catch {}
   return json({ items, updated: r ? r.updated : null }, 200, { "cache-control": "public, max-age=300" });
 }
 async function samplesSave(req, env) {
   const b = await body(req);
-  if (b.items === null) { await env.DB.prepare("DELETE FROM settings WHERE key = 'samples'").run(); return json({ ok: true, reset: true }); }
+  const key = sampleKey(b.lang);
+  if (b.items === null) { await env.DB.prepare("DELETE FROM settings WHERE key = ?").bind(key).run(); return json({ ok: true, reset: true }); }
   const items = cleanSamples(b.items); if (!items) return bad("문장은 1~100개, 각 80자 이내여야 합니다");
-  await env.DB.prepare("INSERT INTO settings (key, data, updated) VALUES ('samples', ?, ?) ON CONFLICT(key) DO UPDATE SET data = excluded.data, updated = excluded.updated").bind(JSON.stringify(items), Date.now()).run();
+  await env.DB.prepare("INSERT INTO settings (key, data, updated) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET data = excluded.data, updated = excluded.updated").bind(key, JSON.stringify(items), Date.now()).run();
   return json({ ok: true, items });
 }
 
@@ -464,7 +466,7 @@ export default {
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
       if (req.method === "GET" && p === "/api/brand") return await brandList(env);
-      if (req.method === "GET" && p === "/api/samples") return await samplesGet(env);
+      if (req.method === "GET" && p === "/api/samples") return await samplesGet(url, env);
       if (req.method === "POST" && p === "/api/like") return await like(req, env);
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, req, env);
       if (req.method === "POST" && p === "/api/comment-like") return await likeComment(req, env);

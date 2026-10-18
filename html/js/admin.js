@@ -273,6 +273,7 @@
 
   // ================= 예시 문장 =================
   let smList = [], smSaved = "";
+  const smLang = () => $("#smLang").value; const smDefault = () => (smLang() === "en" ? SAMPLE_LINES_EN : SAMPLE_LINES);
   const smRow = (x, i) => `<tr data-i="${i}"><td class="n">${i + 1}</td>
     <td class="c"><input data-k="cat" maxlength="12" value="${esc(x.cat)}" placeholder="분야" list="smCats"></td>
     <td><input data-k="t" maxlength="80" value="${esc(x.t)}" placeholder="미리보기에 쓸 문장"></td>
@@ -280,7 +281,7 @@
     <td class="pv">${esc(x.t)}</td>
     <td style="white-space:nowrap"><button class="btn sm ghost" data-up="${i}" type="button" title="위로">↑</button> <button class="btn sm ghost" data-del="${i}" type="button">삭제</button></td></tr>`;
   function smRender() {
-    const cats = [...new Set([...SAMPLE_LINES, ...smList].map((x) => x.cat).filter(Boolean))];
+    const cats = [...new Set([...smDefault(), ...smList].map((x) => x.cat).filter(Boolean))];
     $("#smRows").innerHTML = smList.map(smRow).join("") + `<datalist id="smCats">${cats.map((c) => `<option value="${esc(c)}">`).join("")}</datalist>`;
     const dirty = JSON.stringify(smList) !== smSaved;
     $("#smMsg").textContent = `${smList.length}개${dirty ? " · 저장하지 않은 변경 있음" : ""}`;
@@ -295,23 +296,25 @@
   loaders.samples = async function () {
     $("#smMsg").textContent = "불러오는 중…";
     try {
-      const j = await fetch("/api/samples", { cache: "no-store" }).then((r) => r.json());
-      smList = (j.items && j.items.length ? j.items : SAMPLE_LINES).map((x) => ({ cat: x.cat || "", t: x.t || "", src: x.src || "" }));
+      const j = await fetch("/api/samples" + (smLang() === "en" ? "?lang=en" : ""), { cache: "no-store" }).then((r) => r.json());
+      smList = (j.items && j.items.length ? j.items : smDefault()).map((x) => ({ cat: x.cat || "", t: x.t || "", src: x.src || "" }));
       smSaved = JSON.stringify(smList); smRender();
       if (!j.items) $("#smMsg").textContent += " · 지금은 기본 목록을 쓰는 중";
-    } catch (x) { smList = SAMPLE_LINES.map((x) => ({ ...x })); smSaved = JSON.stringify(smList); smRender(); }
+    } catch (x) { smList = smDefault().map((x) => ({ ...x })); smSaved = JSON.stringify(smList); smRender(); }
   };
+  let smPrev = "ko";
+  $("#smLang").addEventListener("change", (e) => { if (JSON.stringify(smList) !== smSaved && !confirm("저장하지 않은 변경이 있습니다. 버리고 바꿀까요?")) { e.target.value = smPrev; return; } smPrev = e.target.value; loaders.samples(); });
   $("#smAdd").addEventListener("click", () => { smList.push({ cat: "", t: "", src: "" }); smRender(); const ins = $$("#smRows tr:last-child input"); if (ins[1]) ins[1].focus(); });
   $("#smSave").addEventListener("click", async () => {
     const items = smList.map((x) => ({ cat: x.cat.trim(), t: x.t.trim(), src: x.src.trim() })).filter((x) => x.t);
     if (!items.length) { $("#smMsg").textContent = "문장이 하나 이상 있어야 합니다."; return; }
     $("#smMsg").textContent = "저장 중…";
-    try { const j = await call("samples", { items }); smList = j.items; smSaved = JSON.stringify(smList); smRender(); $("#smMsg").textContent = `${smList.length}개 저장했습니다. 방문자 화면에는 최대 5분 뒤 반영됩니다.`; }
+    try { const j = await call("samples", { items, lang: smLang() }); smList = j.items; smSaved = JSON.stringify(smList); smRender(); $("#smMsg").textContent = `${smList.length}개 저장했습니다. 방문자 화면에는 최대 5분 뒤 반영됩니다.`; }
     catch (x) { $("#smMsg").textContent = x.message; }
   });
   $("#smReset").addEventListener("click", async () => {
     if (!confirm("관리자가 고친 목록을 지우고 기본 30개로 되돌릴까요?")) return;
-    try { await call("samples", { items: null }); await loaders.samples(); $("#smMsg").textContent = "기본 30개로 되돌렸습니다."; } catch (x) { $("#smMsg").textContent = x.message; }
+    try { await call("samples", { items: null, lang: smLang() }); await loaders.samples(); $("#smMsg").textContent = "기본 30개로 되돌렸습니다."; } catch (x) { $("#smMsg").textContent = x.message; }
   });
   addEventListener("beforeunload", (e) => { if (smList.length && JSON.stringify(smList) !== smSaved) { e.preventDefault(); e.returnValue = ""; } });
 

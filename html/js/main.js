@@ -5,6 +5,7 @@
   const $$ = (s) => [...document.querySelectorAll(s)];
   const LS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  const EN = window.LS_LANG === "en"; const G1 = EN ? "Aa" : "가"; // /en/ — 영문 폰트 모드(한글 전용 기능: 한글 글자 검사·옛한글·한자 끔)
   const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
   // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
@@ -93,6 +94,7 @@
 
   const fontsCssReady = new Promise((resolve) => {
     const fam = FONTS.filter(isGF).map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
+    if (!fam) { resolve(); return; }
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://fonts.googleapis.com/css2?" + fam + "&display=swap";
@@ -104,7 +106,7 @@
   // ---------- 예시 문장 ----------
   // 접속·새로고침마다 무작위. 관리자가 고친 목록(/api/samples)을 지난 방문에 받아 둔 것이 있으면 그것을, 없으면 data.js 기본 30개
   let SAMPLES = SAMPLE_LINES;
-  try { const c = JSON.parse(localStorage.getItem("ls_samples") || "null"); if (c && Array.isArray(c) && c.length) SAMPLES = c; } catch (e) {}
+  try { const c = JSON.parse(localStorage.getItem(EN ? "ls_samples_en" : "ls_samples") || "null"); if (c && Array.isArray(c) && c.length) SAMPLES = c; } catch (e) {}
   const pickSample = (not) => { const L = SAMPLES.length > 1 && not ? SAMPLES.filter((x) => x.t !== not) : SAMPLES; return L[Math.floor(Math.random() * L.length)]; };
   let curSample = pickSample();
   const srcLabel = (x) => [x.cat, x.src && x.src !== x.cat ? x.src : ""].filter(Boolean).join(" · ");
@@ -207,12 +209,13 @@
   // · LETSUM 미리보기 폰트: 빌드 때 폰트 파일에서 '실제로 그려진' 글자 목록(data/coverage.json)으로 판정
   // · Google Fonts: 폰트를 받은 뒤 브라우저 캔버스로 글자마다 대조
   const covState = {}; let covData = null; let covChars = [];
-  const covLoad = fetch("data/coverage.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => (covData = j || {})).catch(() => (covData = {}));
+  const covLoad = EN ? Promise.resolve((covData = {})) : fetch("data/coverage.json?v=1").then((r) => (r.ok ? r.json() : {})).then((j) => (covData = j || {})).catch(() => (covData = {}));
   const covHas = (rec, ch) => { const i = ch.charCodeAt(0) - 0xAC00; return !rec.h || ((covBits[rec.h] || (covBits[rec.h] = Uint8Array.from(atob(rec.h), (c) => c.charCodeAt(0))))[i >> 3] >> (i & 7)) & 1; };
   const covBits = {};
   // 실제 글자 데이터가 오면 옛한글·한자 표시와 '완성형 11,172자' 필터를 그 기준으로 다시 그린다
   covLoad.then(() => { Object.entries(covData).forEach(([id, c]) => { if (detect[id] || FONTS.some((x) => x.id === id)) detect[id] = { old: c.old, hanja: c.hanja }; }); render(); });
   async function runCoverage() {
+    if (EN) { FONTS.forEach((f) => { coverage[f.id] = []; covState[f.id] = "ok"; }); return; }
     const chars = covChars = [...new Set([...state.text])].filter(isCJK).slice(0, 80);
     const scope = "검사 범위: 한글·한자·옛한글(영문·숫자·기호 제외)";
     if (!chars.length) { FONTS.forEach((f) => { coverage[f.id] = []; covState[f.id] = f.intro ? "na" : "ok"; }); $("#coverNote").textContent = "· 문장에 검사할 한글·한자가 없습니다"; render(); return; }
@@ -483,6 +486,7 @@
   }
   const covTags = (f) => {
     const d = detect[f.id];
+    if (EN) return `<span class="cov"><span class="y">${esc(f.glyphs || "라틴")}</span></span>`;
     if (!f.cov) return `<span class="cov"><span class="dim">글자수 배포처 확인</span></span>`;
     return `<span class="cov"><span class="${f.cov >= 11172 ? "y" : ""}">${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자</span>`
       + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span><span class="${d.hanja ? "y" : "dim"}">漢</span>` : "") + `</span>`;
@@ -505,7 +509,7 @@
       </div>
       <div class="r-pvwrap">
         ${f.intro ? introBox(f) : `<div class="r-pv" style="${pvStyle(f)}">${pvText(f)}</div>
-        <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>`}
+        <div class="r-weights" style="font-family:${f.family}">${f.weights.map((w) => `<i style="font-weight:${w}">${G1}<small>${w}</small></i>`).join("")}</div>`}
       </div>
       <div class="r-side"><div class="pills">${pills(f)}${missPill(f)}</div>${acts(f)}</div>
     </article>`;
@@ -518,7 +522,7 @@
       <div class="foot">${covTags(f)}${acts(f)}</div>
     </article>`;
   }
-  const BODY = "한글 본문 테스트입니다. 이 문장은 실제 책 본문처럼 여러 줄에 걸쳐 조판되는 모습을 확인하기 위한 장문 샘플입니다. 자간과 행간, 글줄 길이가 읽기에 알맞은지 살펴보세요. 명조체는 긴 글에, 고딕체는 제목과 화면에 자주 쓰입니다. 다람쥐 헌 쳇바퀴에 타고파.";
+  const BODY = EN ? "This paragraph shows how the typeface sets as running text across several lines, the way a page of a book or a long article would. Good body type keeps an even color on the page, with comfortable spacing between letters and words, so the eye can move along each line without effort. Numbers like 1,234 and 56.7% and punctuation (quotes, dashes — and commas) should sit naturally beside the letters." : "한글 본문 테스트입니다. 이 문장은 실제 책 본문처럼 여러 줄에 걸쳐 조판되는 모습을 확인하기 위한 장문 샘플입니다. 자간과 행간, 글줄 길이가 읽기에 알맞은지 살펴보세요. 명조체는 긴 글에, 고딕체는 제목과 화면에 자주 쓰입니다. 다람쥐 헌 쳇바퀴에 타고파.";
   function mockHTML(f, ctx) {
     const fam = famOf(f), w = wOf(f), t = esc(state.text || f.name);
     const fs = `font-family:${fam}`;
@@ -663,7 +667,7 @@
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
     const t = state.text || f.name;
     const sz = t.length <= 8 ? 13 : t.length <= 16 ? 10.5 : t.length <= 28 ? 8 : 6;
-    const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
+    const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
       <p>${esc(f.desc)}</p><div class="ii-m">${esc(meta)}</div></div>`;
@@ -904,7 +908,7 @@
         <div class="col${t.inv ? " inv" : ""}" data-cid="${f.id}">
           <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span><span class="norm-k" data-normk></span></div>
           <div class="pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${t.size}px;line-height:1.4">${pvText(f)}</div>
-          <div class="r-weights" style="font-family:${f.family};opacity:1">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</div>
+          <div class="r-weights" style="font-family:${f.family};opacity:1">${f.weights.map((w) => `<i style="font-weight:${w}">${G1}<small>${w}</small></i>`).join("")}</div>
           ${covTags(f)}
           <div class="pills">${pills(f)}${missPill(f)}</div>
           <button class="abtn" data-open="${f.id}">상세 보기</button>
@@ -1046,7 +1050,7 @@
     const d = detect[f.id] || {};
     const miss = coverage[f.id] || [];
     const dl = dlFor(f);
-    try { history.replaceState(null, "", "#f=" + f.id); } catch (e) {}
+    try { history.replaceState(null, "", location.pathname + location.search + "#f=" + f.id); } catch (e) {}
     modal.className = "modal";
     modal.innerHTML = `
       <button class="x" id="mx" aria-label="닫기">×</button>
@@ -1065,8 +1069,8 @@
           ${TEXT_PRESETS.filter((p) => ["pang", "batchim", "mixed", "old", "hanja"].includes(p.id)).map((p) => `<button class="tbtn" data-tp="${p.id}">${p.label}</button>`).join("")}
         </div>
         <div class="t-row" style="margin-bottom:0"><span class="k">글자 범위</span>${covTags(f)}
-          ${{ miss: `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>`, pending: `<span class="pill chk">글자 지원 확인 중</span>`, na: `<span class="pill">소개 전용 · 글자 지원 미확인</span>` }[covState[f.id]] || (covChars.length ? `<span class="pill ok">현재 문장의 한글·한자 모두 지원</span>` : `<span class="note">문장에 검사할 한글·한자가 없습니다</span>`)}
-          <span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span></div>
+          ${EN ? "" : ({ miss: `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>`, pending: `<span class="pill chk">글자 지원 확인 중</span>`, na: `<span class="pill">소개 전용 · 글자 지원 미확인</span>` }[covState[f.id]] || (covChars.length ? `<span class="pill ok">현재 문장의 한글·한자 모두 지원</span>` : `<span class="note">문장에 검사할 한글·한자가 없습니다</span>`))}
+          ${EN ? "" : '<span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span>'}</div>
       </div>`}
       <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
       <div class="why-box" id="whyBox" hidden></div>
@@ -1088,11 +1092,11 @@
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">
           ${f.intro ? "" : `<tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>`}
-          <tr><th>굵기</th><td>${f.weightsUnknown ? '<span class="note">배포처에서 확인</span>' : f.intro ? f.weights.join(" · ") : `<span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">가<small>${w}</small></i>`).join("")}</span>`}</td></tr>
+          <tr><th>굵기</th><td>${f.weightsUnknown ? '<span class="note">배포처에서 확인</span>' : f.intro ? f.weights.join(" · ") : `<span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">${G1}<small>${w}</small></i>`).join("")}</span>`}</td></tr>
           <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
-          <tr><th>한글 글자수</th><td>${f.glyphs}${!f.intro && f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
-          ${f.intro ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
+          <tr><th>${EN ? "지원 문자" : "한글 글자수"}</th><td>${f.glyphs}${!f.intro && f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
+          ${f.intro || EN ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
           <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}<div class="ev-box" id="evBox"></div></td></tr>
         </table></div>
@@ -1373,7 +1377,10 @@ import "@fontsource/${f.id}/400.css";</pre>
     const s = BRAND_AUTO[f.id]; return s && s.bg ? { ...s, style: "plain" } : null;
   };
   const SPOT_LAYOUT = { "디스플레이": "poster", "명조": "editorial", "손글씨": "note", "고딕": "grid" };
-  const SPOT_LINES = {
+  const SPOT_LINES = EN ? {
+    poster: ["Big Ideas Start Here", "Say It Loud"], editorial: ["Reading is always time well spent", "Seasons pass between quiet sentences"],
+    note: ["You did great today, tomorrow will be even better", "Written by hand, sent with love"], grid: ["Clear information, light interface", "Your changes have been saved"],
+  } : {
     poster: ["이걸 몰랐다고?", "오늘의 한 줄, 크게"], editorial: ["책을 읽는 시간은 언제나 옳다", "고요한 문장 사이로 계절이 지나간다"],
     note: ["오늘도 수고했어, 내일은 더 괜찮을 거야", "마음을 담아 꾹꾹 눌러 쓴 한 줄"], grid: ["정보는 또렷하게, 화면은 가볍게", "설정이 저장되었습니다"],
   };
@@ -1416,7 +1423,7 @@ import "@fontsource/${f.id}/400.css";</pre>
         </div>
         <aside class="sp-side">
           ${!f.intro && f.weights.length > 1 ? `<div class="sp-wt" style="--fam:${esc(f.family).replace(/&#39;/g, "'")}">
-            <div class="sp-loupe" aria-hidden="true">${f.weights.map((w, j) => `<span class="${j === 0 ? "on" : ""}" style="font-family:${f.family};font-weight:${w}">가</span>`).join("")}</div>
+            <div class="sp-loupe" aria-hidden="true">${f.weights.map((w, j) => `<span class="${j === 0 ? "on" : ""}" style="font-family:${f.family};font-weight:${w}">${G1}</span>`).join("")}</div>
             <div class="sp-wt-info"><div class="sp-wt-name"><b>${WNAME[f.weights[0]] || f.weights[0]}</b> <span>${f.weights[0]}</span></div>
               <div class="sp-wt-stem">세로획 두께 <b>—</b></div>
               <div class="sp-scale">${f.weights.map((w, j) => `<i style="left:${f.weights.length > 1 ? (j / (f.weights.length - 1)) * 100 : 0}%"><em>${w}</em></i>`).join("")}<u></u></div></div>
@@ -1483,7 +1490,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     spotList = (week ? weekAll : dated).slice(0, 10);
     if (!spotList.length) { $(".newband").style.display = "none"; return; }
     $("#nbLabel").textContent = week ? `이번 주 출시 ${weekAll.length}종` : "최근 출시";
-    $("#nbTitle").textContent = week ? `이번 주 출시된 한글 무료 폰트 ${weekAll.length}종` : "가장 최근 출시된 한글 무료 폰트";
+    $("#nbTitle").textContent = week ? `이번 주 출시된 ${EN ? "영문" : "한글"} 무료 폰트 ${weekAll.length}종` : `가장 최근 출시된 ${EN ? "영문" : "한글"} 무료 폰트`;
     $("#nbMeta").textContent = (week ? `${dot(iso(mon))} 주간` : `이번 주 출시 없음 · 최신 출시 ${dot(dated[0].released)}`) + " · 원 제작사 출시·배포일 기준";
     track.innerHTML = spotList.map((f, k) => spotHTML(f, k, week)).join("");
     $("#spotBars").innerHTML = spotList.map(() => "<i></i>").join("");
@@ -1677,9 +1684,10 @@ import "@fontsource/${f.id}/400.css";</pre>
   namesLoad.then(() => { render(); const m = location.hash.match(/^#f=([\w-]+)/); if (m && overlay.classList.contains("open") && $("#nameSec")) openDetail(m[1]); });
   $("#previewText").value = state.text; { const src = $("#textSrc"); if (src) src.textContent = srcLabel(curSample); }
   // 관리자가 고친 예시 문장 목록을 받아 두고(다음 방문용), 이번 방문 문장이 그 목록에 없으면 목록에서 다시 고른다(직접 입력 전일 때만)
-  getJSON("/api/samples").then((j) => {
+  getJSON("/api/samples" + (EN ? "?lang=en" : "")).then((j) => {
     const L = j && Array.isArray(j.items) && j.items.length ? j.items : null;
-    try { if (L) localStorage.setItem("ls_samples", JSON.stringify(L)); else localStorage.removeItem("ls_samples"); } catch (e) {}
+    const SK = EN ? "ls_samples_en" : "ls_samples";
+    try { if (L) localStorage.setItem(SK, JSON.stringify(L)); else localStorage.removeItem(SK); } catch (e) {}
     const next = L || SAMPLE_LINES; const same = JSON.stringify(next) === JSON.stringify(SAMPLES); SAMPLES = next;
     if (!same && state.text === curSample.t && !SAMPLES.some((x) => x.t === state.text)) { curSample = pickSample(); setText(curSample.t); }
   });
