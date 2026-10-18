@@ -67,7 +67,7 @@ def js(v): return json.dumps(v, ensure_ascii=False)
 
 def entry_js(e):
     ks = ["id", "name", "en", "family", "designer", "holder", "category", "tags", "mood", "weights", "formats", "cov", "glyphs", "subsets", "variable",
-          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "desc"]
+          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "desc", "manual"]
     parts = []
     for k in ks:
         if k not in e: continue
@@ -81,8 +81,8 @@ def entry_js(e):
 def load_existing():
     if not os.path.exists(OUT): return {}
     import subprocess
-    code = "const fs=require('fs');const src=fs.readFileSync(process.argv[1],'utf8');const F=new Function('const OFL_ALL_OK=1;'+src+';return FONTS_EN')();console.log(JSON.stringify(F))"
-    try: return {f["id"]: f for f in json.loads(subprocess.run(["node", "-e", code, OUT], capture_output=True, text=True, check=True).stdout)}
+    code = "const fs=require('fs');const src=fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8');const F=new Function('var window={};'+src+';return FONTS_EN')();console.log(JSON.stringify(F))"
+    try: return {f["id"]: f for f in json.loads(subprocess.run(["node", "-e", code, os.path.join(ROOT, "html", "js", "data.js"), OUT], capture_output=True, text=True, check=True).stdout)}
     except Exception: return {}
 
 
