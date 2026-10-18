@@ -167,7 +167,7 @@ img.save("sample.png")
 1. Google Cloud 콘솔 → 프로젝트 하나 → 'Google Search Console API' 사용 설정.
 2. IAM → 서비스 계정 만들기(역할 없음) → 키 → JSON 키 받기.
 3. Search Console(letsum.app 속성) → 설정 → 사용자 및 권한 → 서비스 계정 이메일을 **제한됨** 권한으로 추가.
-4. `cd worker && npx wrangler secret put GSC_SA < 받은키.json` (속성이 URL 접두어 방식이면 `GSC_SITE`에 `https://letsum.app/`도 등록). 받은 키 파일은 지운다.
+4. `cd worker && npx wrangler secret put GSC_SA < 받은키.json` (letsum.app 속성은 URL 접두어 방식 `https://letsum.app/` — 코드 기본값과 같아 따로 등록할 필요 없음). 받은 키 파일은 지운다.
 
 ### Cloudflare 통계를 관리자 화면에서 보기(선택)
 1. Cloudflare → Web Analytics → letsum.app 추가(자동 설정) — 켜면 바로 대시보드에서 볼 수 있음.

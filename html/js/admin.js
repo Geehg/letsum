@@ -435,7 +435,7 @@
     const gEl = $("#gscOut"), kEl = $("#kwOut"), sEl = $("#sqOut");
     gEl.innerHTML = kEl.innerHTML = sEl.innerHTML = '<p class="note">불러오는 중…</p>';
     call("gsc?days=" + days).then((j) => {
-      if (!j.configured) { gEl.innerHTML = `<div class="mt-wait">구글 검색어를 여기서 보려면 Search Console 연결이 한 번 필요합니다(운영 문서 docs/HANDOFF.md '방문 통계 → 구글 검색어'). 그 전에는 <a class="linklike" href="https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Aletsum.app" target="_blank" rel="noopener noreferrer">Search Console ↗</a>에서 직접 볼 수 있습니다.${j.error ? `<br><span class="note">${esc(j.error)}</span>` : ""}</div>`; return; }
+      if (!j.configured) { gEl.innerHTML = `<div class="mt-wait">구글 검색어를 여기서 보려면 Search Console 연결이 한 번 필요합니다(운영 문서 docs/HANDOFF.md '방문 통계 → 구글 검색어'). 그 전에는 <a class="linklike" href="https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fletsum.app%2F" target="_blank" rel="noopener noreferrer">Search Console ↗</a>에서 직접 볼 수 있습니다.${j.error ? `<br><span class="note">${esc(j.error)}</span>` : ""}</div>`; return; }
       if (j.error) { gEl.innerHTML = `<p class="note">구글 검색어를 불러오지 못했습니다: ${esc(j.error)}<br>연결 계정 ${esc(j.account || "")} 이 Search Console 속성 ${esc(j.site || "")} 의 사용자로 추가돼 있는지 확인하세요.</p>`; return; }
       const clicks = j.queries.reduce((s, r) => s + r.clicks, 0), imps = j.queries.reduce((s, r) => s + r.impressions, 0);
       const dTot = j.dates.reduce((a, r) => ({ c: a.c + r.clicks, i: a.i + r.impressions }), { c: 0, i: 0 });

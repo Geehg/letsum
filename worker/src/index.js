@@ -283,7 +283,7 @@ async function gscReport(url, env) {
   if (!env.GSC_SA) return json({ configured: false });
   let sa; try { sa = JSON.parse(env.GSC_SA); } catch { return json({ configured: false, error: "GSC_SA 값이 JSON이 아닙니다" }); }
   const days = Math.min(480, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
-  const site = env.GSC_SITE || "sc-domain:letsum.app";
+  const site = env.GSC_SITE || "https://letsum.app/"; // Search Console 속성: URL 접두어 방식으로 등록돼 있음
   try {
     const tok = await googleToken(sa, "https://www.googleapis.com/auth/webmasters.readonly");
     const q = (dimensions, rowLimit) => fetch(`https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`, { method: "POST", headers: { authorization: "Bearer " + tok, "content-type": "application/json" }, body: JSON.stringify({ startDate: daysAgo(days - 1), endDate: daysAgo(0), dimensions, rowLimit }) }).then(async (r) => { const j = await r.json(); if (!r.ok) throw new Error((j.error && j.error.message) || "Search Console 오류 " + r.status); return j.rows || []; });
