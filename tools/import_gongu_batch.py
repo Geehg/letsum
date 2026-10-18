@@ -35,7 +35,7 @@ LIC = {"KOGL1": ("공공누리 제1유형", "OFL_ALL_OK"),
 
 
 def norm(s):
-    s = unicodedata.normalize("NFC", s or "").lower()
+    s = unicodedata.normalize("NFKC", s or "").lower()  # NFKC: Ⅱ→ii 같은 기호도 글자로(빙그레체Ⅱ ≠ 빙그레체)
     s = re.sub(r"(otf|ttf)$", "", re.sub(r"[^0-9a-z가-힣]", "", s))
     return s
 

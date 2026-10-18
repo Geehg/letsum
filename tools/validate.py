@@ -26,7 +26,7 @@ PAIRS = {"inter", "grotesk", "playfair", "plexmono"}
 errors, warns = [], []
 err = errors.append; warn = warns.append
 
-def n(s): return re.sub(r"[^0-9a-z가-힣]", "", unicodedata.normalize("NFC", s or "").lower())
+def n(s): return re.sub(r"[^0-9a-z가-힣]", "", unicodedata.normalize("NFKC", s or "").lower())  # NFKC: Ⅱ→ii(빙그레체Ⅱ ≠ 빙그레체)
 
 # 1) node로 data.js를 실제로 실행해 JSON으로 꺼낸다 (정규식 파싱의 오판을 피함)
 js = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);" \

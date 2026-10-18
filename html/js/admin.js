@@ -45,7 +45,7 @@
       try { sessionStorage.setItem("ls_admin_key", key()); } catch (x) {}
       st.textContent = "연결됨"; st.className = "adm-conn ok";
       $("#tbShots").textContent = summary.pendingShots || ""; $("#tbCmts").textContent = summary.reportedComments || "";
-      renderHome(); return true;
+      renderHome(); loadZeroQ(); return true;
     } catch (x) { st.textContent = x.message.includes("키") ? "키가 맞지 않음" : "연결 실패"; st.className = "adm-conn bad"; summary = null; renderHome(); return false; }
   }
   $("#keyForm").addEventListener("submit", async (e) => { e.preventDefault(); if (await connect()) loaders[curTab] && loaders[curTab](); });
@@ -76,6 +76,9 @@
   })();
 
   // ---------- 개요 ----------
+  // 방문자가 찾았는데 결과가 없던 검색어(최근 28일) — 새로 등록할 폰트 후보
+  let zeroQ = null;
+  async function loadZeroQ() { try { const j = await call("traffic?days=28"); zeroQ = { list: (j.dims.sq0 || []).slice(0, 8), started: !!j.first, from: j.startFrom }; } catch (x) { zeroQ = null; } renderHome(); }
   function renderHome() {
     const hero = [...heroIds];
     const st = (id) => (brandAdmin[id] ? (brandAdmin[id].off ? "off" : "admin") : BUILTIN[id] ? "builtin" : brandAuto[id] ? "auto" : "none");
@@ -94,6 +97,8 @@
     if (s && s.reportedComments) todo.push(`<a class="linklike" href="#cmts" data-go="cmts">신고된 댓글 ${s.reportedComments}건</a>을 확인하세요.`);
     if (cnt("auto")) todo.push(`히어로 폰트 중 <a class="linklike" href="#brand" data-go="brand">${cnt("auto")}종이 자동 추출 색</a>으로 게시 중입니다. 확인하고 표현 방식·문구를 고르면 더 좋아집니다.`);
     if (cnt("none")) todo.push(`히어로 폰트 중 ${cnt("none")}종은 제작사 색을 찾지 못해 분위기 기본색으로 나갑니다. 필요하면 직접 지정하세요.`);
+    if (zeroQ && zeroQ.list.length) todo.push(`방문자가 찾았는데 <b>결과가 없던 검색어</b>(28일): ${zeroQ.list.map(([k, n]) => `<code>${esc(k)}</code> ${n}회`).join(" · ")} — <a class="linklike" href="#keywords" data-go="keywords">등록 후보 보기</a>`);
+    else if (zeroQ && !zeroQ.started) todo.push(`'결과 없는 검색어'(새로 등록할 폰트 후보)는 ${esc(zeroQ.from)}부터 모입니다.`);
     if (!todo.length) todo.push("처리할 일이 없습니다.");
     $("#homeTodo").innerHTML = todo.map((t) => `<li>${t}</li>`).join("");
     $$("#homeTodo [data-go]").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); tab(a.dataset.go); }));
