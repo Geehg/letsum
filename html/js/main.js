@@ -451,7 +451,28 @@
     if (s === "released") list.sort((a, b) => (b.released || "0").localeCompare(a.released || "0") || b.pop - a.pop);
     if (s === "name") list.sort(introLast((a, b) => a.name.localeCompare(b.name, "ko")));
     if (s === "weights") list.sort(introLast((a, b) => b.weights.length - a.weights.length || b.pop - a.pop));
+    if (s === "new") return mixNeighbors(list); // 기본 정렬: 같은 분류·같은 제작사가 연달아 나오지 않게
     return list;
+  }
+  // 이웃 섞기 — 순서는 거의 유지하면서(앞쪽 30장 안에서 당겨 오고, 12칸 넘게 밀린 카드는 바로 보냄) 바로 앞 카드와 분류가 같거나, 앞 두 장과 제작사가 같은 카드를 피한다.
+  // 소개 전용(맨 뒤) 묶음은 따로 섞는다. 조건을 만족하는 카드가 없으면 원래 순서대로.
+  function mixNeighbors(list) {
+    const maker = (f) => String(f.holder || f.designer || "").split(/[,·(]/)[0].trim();
+    const run = (src) => {
+      const rest = src.slice(), out = [], at = new Map(src.map((f, i) => [f, i]));
+      while (rest.length) {
+        if (out.length - at.get(rest[0]) >= 12) { out.push(rest.shift()); continue; } // 12칸 넘게 밀린 카드는 바로(뒤로 계속 밀리지 않게)
+        const p1 = out[out.length - 1], p2 = out[out.length - 2]; const win = Math.min(rest.length, 30);
+        const ok = (f, strict) => !p1 || ((f.category !== p1.category) && (!strict || (maker(f) !== maker(p1) && (!p2 || maker(f) !== maker(p2)))));
+        let k = -1;
+        for (let i = 0; i < win && k < 0; i++) if (ok(rest[i], true)) k = i;
+        for (let i = 0; i < win && k < 0; i++) if (ok(rest[i], false)) k = i;
+        for (let i = 0; i < win && k < 0; i++) if (!p1 || maker(rest[i]) !== maker(p1)) k = i;
+        out.push(rest.splice(k < 0 ? 0 : k, 1)[0]);
+      }
+      return out;
+    };
+    return [...run(list.filter((f) => !f.intro)), ...run(list.filter((f) => f.intro))];
   }
 
   // ---------- 렌더 조각 ----------
