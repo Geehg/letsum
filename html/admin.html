@@ -8,7 +8,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css?v=67">
-<link rel="stylesheet" href="css/admin.css?v=3">
+<link rel="stylesheet" href="css/admin.css?v=4">
 </head>
 <body class="adm">
 <header>
@@ -37,13 +37,12 @@
     <div class="adm-top">
       <h1>관리자</h1>
       <form class="adm-key" id="keyForm">
-        <label>서버 관리자 키 <input id="ckKey" type="password" autocomplete="off" placeholder="Cloudflare ADMIN_KEY"></label>
-        <button class="btn sm" type="submit">연결</button>
+        <input id="ckKey" type="hidden"><!-- 로그인 통행증(자동) -->
         <span class="adm-conn" id="keyState">연결 안 됨</span>
       </form>
       <button class="btn sm ghost" id="logoutBtn" type="button">로그아웃</button>
     </div>
-    <p class="note">관리자 키는 이 탭에만 기억되고, 탭을 닫으면 지워집니다. 사진·댓글·지표·테마 저장에 쓰입니다.</p>
+    <p class="note">로그인은 이 탭에서 12시간 유지되고, 탭을 닫으면 끝납니다.</p>
 
     <nav class="adm-tabs" id="tabs" role="tablist">
       <button data-tab="home" class="on" role="tab">개요</button>
@@ -151,6 +150,6 @@
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) 관리자</p></div></footer>
 
 <script src="js/data.js?v=12"></script>
-<script src="js/admin.js?v=13"></script>
+<script src="js/admin.js?v=14"></script>
 </body>
 </html>

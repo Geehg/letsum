@@ -78,7 +78,9 @@
 .br-acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .br-msg{font-size:13px}
 @media(max-width:900px){.br-wrap{grid-template-columns:1fr}.br-list{position:static;max-height:none}#brItems{max-height:260px}.adm-key{margin-left:0}}
-.adm .wrap{max-width:1320px}.adm .page{max-width:none}
+.adm .wrap{max-width:1320px}
+.adm main.page{max-width:1320px;margin:0 auto;padding:32px 24px 80px} /* .page의 좌우 여백 0·폭 제한 해제가 .wrap을 덮어 양끝에 붙던 문제 */
+@media (max-width:720px){.adm main.page{padding:24px 16px 64px}}
 .br-prev .sp-title{font-size:clamp(44px,5.4vw,88px);margin:0;line-height:1.02;border:0;padding-top:0}
 .br-prev .sp-type{margin:10px 0 16px;font-size:18px}
 .br-prev p{color:inherit}

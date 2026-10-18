@@ -11,7 +11,8 @@
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
 //       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "err", m } → 204  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
 //       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
-//       관리자(Authorization: Bearer ADMIN_KEY):
+//       POST /api/admin/login { id, pw }   → { token, exp }  (관리자 로그인 → 12시간 통행증. 이후 Authorization: Bearer <token>)
+//       관리자(Authorization: Bearer ADMIN_KEY 또는 로그인 통행증):
 //       POST /api/admin/brand { id, theme | null } → 저장(검증) / null이면 삭제
 //       GET  /api/admin/metrics?days=28    → { days: [...], rows: [{ day, name, font, n }] }
 //       GET  /api/admin/traffic?days=28    → 방문 통계(유입 채널·사이트·검색어·페이지·시간대·기기·국가)
@@ -42,12 +43,27 @@ async function voterOf(req, env) {
 async function body(req) { try { return await req.json(); } catch { return {}; } }
 const clean = (s, max) => String(s || "").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "").replace(/\r\n?/g, "\n").replace(/\n{3,}/g, "\n\n").trim().slice(0, max);
 
-function isAdmin(req, env) {
+const same = (a, b) => { if (a.length !== b.length) return false; let d = 0; for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i); return d === 0; };
+const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+async function hmac(env, msg) {
+  const k = await crypto.subtle.importKey("raw", new TextEncoder().encode(env.ADMIN_KEY), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  return hex(await crypto.subtle.sign("HMAC", k, new TextEncoder().encode(msg)));
+}
+// 관리자 확인: 서버 관리자 키 그대로, 또는 로그인으로 받은 통행증("adm.<만료ms>.<서명>")
+async function isAdmin(req, env) {
   const key = env.ADMIN_KEY; if (!key || key.length < 12) return false;
   const got = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "");
-  if (got.length !== key.length) return false;
-  let diff = 0; for (let i = 0; i < key.length; i++) diff |= key.charCodeAt(i) ^ got.charCodeAt(i);
-  return diff === 0;
+  if (same(got, key)) return true;
+  const m = /^adm\.(\d{13})\.([0-9a-f]{64})$/.exec(got);
+  return !!m && +m[1] > Date.now() && same(m[2], await hmac(env, "adm." + m[1]));
+}
+// 관리자 로그인: 아이디·비밀번호(SHA-256 비교, 값은 wrangler.toml vars) → 12시간 통행증
+async function adminLogin(req, env) {
+  const b = await body(req);
+  const pw = hex(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(String(b.pw || ""))));
+  if (!env.ADMIN_KEY || !env.ADMIN_PW_HASH || b.id !== env.ADMIN_ID || !same(pw, env.ADMIN_PW_HASH)) return bad("아이디 또는 비밀번호가 다릅니다", 401);
+  const exp = Date.now() + 12 * 3600e3;
+  return json({ token: `adm.${exp}.${await hmac(env, "adm." + exp)}`, exp });
 }
 
 async function stats(url, req, env) {
@@ -338,7 +354,7 @@ async function report(req, env) {
 }
 
 async function admin(url, req, env) {
-  if (!isAdmin(req, env)) return bad("관리자 키가 필요합니다", 401);
+  if (!(await isAdmin(req, env))) return bad("관리자 로그인이 필요합니다", 401);
   if (req.method === "GET" && url.pathname === "/api/admin/comments") {
     const f = url.searchParams.get("filter") || "all";
     const where = f === "hidden" ? "WHERE hidden = 1" : f === "reported" ? "WHERE reports > 0" : "";
@@ -422,6 +438,7 @@ export default {
     }
     try {
       const p = url.pathname;
+      if (req.method === "POST" && p === "/api/admin/login") return await adminLogin(req, env);
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
       if (req.method === "GET" && p === "/api/brand") return await brandList(env);

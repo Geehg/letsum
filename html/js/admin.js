@@ -9,24 +9,31 @@
 
   // ---------- 로그인 ----------
   async function sha256(t) { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""); }
+  // 로그인: 서버(/api/admin/login)가 확인하고 12시간 통행증을 준다 → 이후 모든 관리자 기능은 키 입력 없이 이 통행증으로
   $("#loginForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if ($("#aid").value === ADMIN_ACCOUNT.id && (await sha256($("#apw").value)) === ADMIN_ACCOUNT.pwHash) { sessionStorage.setItem("fm_admin", "1"); start(); }
-    else $("#loginMsg").textContent = "아이디 또는 비밀번호가 다릅니다.";
+    e.preventDefault(); const msg = $("#loginMsg"); msg.textContent = "확인 중…";
+    try {
+      const r = await fetch("/api/admin/login", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ id: $("#aid").value, pw: $("#apw").value }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.token) { msg.textContent = j.error || "로그인하지 못했습니다."; return; }
+      sessionStorage.setItem("fm_admin", "1"); sessionStorage.setItem("ls_admin_key", j.token); keyEl.value = j.token; $("#apw").value = ""; msg.textContent = ""; start();
+    } catch (x) { msg.textContent = "서버에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요."; }
   });
   $("#logoutBtn").addEventListener("click", () => { sessionStorage.removeItem("fm_admin"); sessionStorage.removeItem("ls_admin_key"); location.reload(); });
-  if (sessionStorage.getItem("fm_admin") === "1") start();
 
   // ---------- 서버 호출 ----------
   const keyEl = $("#ckKey");
   try { keyEl.value = sessionStorage.getItem("ls_admin_key") || ""; } catch (x) {}
   const key = () => keyEl.value.trim();
+  if (sessionStorage.getItem("fm_admin") === "1" && keyEl.value) start();
   async function call(path, bodyObj) {
-    if (!key()) throw new Error("위쪽 '서버 관리자 키'를 먼저 넣고 연결하세요.");
+    if (!key()) throw new Error("다시 로그인해 주세요.");
     const r = await fetch("/api/admin/" + path, { method: bodyObj ? "POST" : "GET", headers: Object.assign({ authorization: "Bearer " + key() }, bodyObj ? { "content-type": "application/json" } : {}), body: bodyObj ? JSON.stringify(bodyObj) : undefined });
     const ct = r.headers.get("content-type") || "";
     if (!ct.includes("json")) { if (r.ok) return r; throw new Error("서버 응답 없음"); }
-    const j = await r.json(); if (!r.ok) throw new Error(j.error || "오류"); return j;
+    const j = await r.json();
+    if (r.status === 401) { sessionStorage.removeItem("fm_admin"); sessionStorage.removeItem("ls_admin_key"); alert("로그인 시간이 지났습니다. 다시 로그인해 주세요."); location.reload(); throw new Error("로그인 필요"); }
+    if (!r.ok) throw new Error(j.error || "오류"); return j;
   }
   let summary = null;
   async function connect() {
@@ -82,7 +89,7 @@
       <div><b>${cnt("admin") + cnt("builtin")} / ${hero.length}</b><span>히어로 테마 확정</span></div>
       <div><b>${cnt("auto")}</b><span>히어로 자동 색(확인 전 게시 중)</span></div>`;
     const todo = [];
-    if (!s) todo.push(`서버 관리자 키를 넣고 <b>연결</b>하면 사진·댓글 현황이 보입니다.`);
+    if (!s) todo.push(`서버에서 현황을 불러오는 중이거나 연결하지 못했습니다. 잠시 뒤 새로고침해 보세요.`);
     if (s && s.pendingShots) todo.push(`<a class="linklike" href="#shots" data-go="shots">사진 ${s.pendingShots}장</a>이 승인을 기다립니다.`);
     if (s && s.reportedComments) todo.push(`<a class="linklike" href="#cmts" data-go="cmts">신고된 댓글 ${s.reportedComments}건</a>을 확인하세요.`);
     if (cnt("auto")) todo.push(`히어로 폰트 중 <a class="linklike" href="#brand" data-go="brand">${cnt("auto")}종이 자동 추출 색</a>으로 게시 중입니다. 확인하고 표현 방식·문구를 고르면 더 좋아집니다.`);
@@ -492,7 +499,7 @@
     const outage = iss instanceof Error ? `<p class="note">${esc(iss.message)}</p>` : `<table class="spec mt-tbl">${iss.map((i) => `<tr><th><span class="st ${i.state === "open" ? "bad" : "ok"}">${i.state === "open" ? "장애 중" : "복구"}</span>${esc(i.title)}</th><td class="n">${fmt(i.created_at)}${i.closed_at ? ` → ${fmt(i.closed_at)}` : ""}</td></tr>`).join("") || '<tr><td class="note">장애 기록이 없습니다</td></tr>'}</table>`;
     let jobs = ""; if (runs instanceof Error) jobs = `<p class="note">${esc(runs.message)}</p>`; else { const last = {}; runs.workflow_runs.forEach((r) => { if (!last[r.name]) last[r.name] = r; }); jobs = `<table class="spec mt-tbl">${Object.values(last).map((r) => { const lv = r.status !== "completed" ? "warn" : r.conclusion === "success" ? "ok" : "bad"; return `<tr><th><span class="st ${lv}">${lv === "ok" ? "성공" : lv === "warn" ? "진행 중" : "실패"}</span><a class="linklike" href="${esc(r.html_url)}" target="_blank" rel="noopener noreferrer">${esc(r.name)}</a></th><td class="n">${fmt(r.run_started_at)}</td></tr>`; }).join("")}</table>`; }
     const ffail = {}; if (met && !(met instanceof Error)) met.rows.filter((x) => x.name === "ffail").forEach((x) => { ffail[x.font] = (ffail[x.font] || 0) + x.n; });
-    const needKey = '<p class="note">서버 관리자 키를 연결하면 보입니다.</p>';
+    const needKey = '<p class="note">로그인하면 보입니다.</p>';
     cols.innerHTML = `
       <div><p class="mt-sub">가동 감시 기록 <span class="note">(10분마다 · 최근 10건)</span></p>${outage}</div>
       <div><p class="mt-sub">자동 작업 최근 실행</p>${jobs}</div>
