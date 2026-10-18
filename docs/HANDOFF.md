@@ -176,7 +176,7 @@ img.save("sample.png")
 
 ## 영문 폰트 섹션 `/en/` (2026-10-18~)
 - 헤더 메뉴: **한글 폰트**(기본, `/`) | **영문 폰트**(`/en/`) — 모든 페이지·상세 페이지 공통.
-- 데이터: `html/js/data_en.js`(`FONTS_EN`, id `e-…`) ← `tools/build_en_data.py --top 300`(Google Fonts 공식 메타데이터 인기순, 라이선스는 google/fonts 폴더 ofl·apache·ufl로 확인). 미리보기는 Google Fonts 공식 웹폰트 주소(latin 구간, 평균 20KB)를 굵기별로 그대로 사용 — 변환·보관 없음. 출시일은 'Google Fonts 등록일'(원 출시일과 다를 수 있음).
+- 데이터: `html/js/data_en.js`(`FONTS_EN`, id `e-…`, 2026-10-18 기준 324종) ← `tools/build_en_data.py --top 300`(인기 300 + 이미 등록된 것 유지 + Fontshare OFL 중 GF에 없는 것)(Google Fonts 공식 메타데이터 인기순, 라이선스는 google/fonts 폴더 ofl·apache·ufl로 확인). 미리보기는 Google Fonts 공식 웹폰트 주소(latin 구간, 평균 20KB)를 굵기별로 그대로 사용 — 변환·보관 없음. 출시일은 'Google Fonts 등록일'(원 출시일과 다를 수 있음).
 - `/en/index.html`은 `tools/build_pages.js`가 `index.html`로 **자동 생성**(`<base href="/">` + `LS_LANG="en"`) — 직접 고치지 말고 index.html을 고친다. 상세 페이지는 같은 `font/` 폴더에 `e-…html`.
 - main.js `EN` 분기: 한글 글자 검사·옛한글·한자·완성형 필터 끔, 견본 글자 'Aa', 영문 히어로 문구·장문 샘플. 예시 문장은 `/api/samples?lang=en`(관리자 '예시 문장' 탭에서 페이지 선택).
 - Fontshare: ITF Free Font License v2.0(2026-08)이 '제3자가 고를 수 있는 글꼴로 제공' 금지·형식 변환 금지 → 직접 입력 미리보기 불가. OFL 36종은 개별 확인 후 추가 가능, ITF 64종은 소개 전용(견본 이미지) 후보.

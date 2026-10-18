@@ -76,5 +76,6 @@ node tools/build_pages.js; python3 -I tools/validate.py
 ## 영문 폰트(`/en/`) 차이
 - 데이터 `html/js/data_en.js`(`FONTS_EN`), id 접두사 `e-`. 한글 전용 항목(한글 글자 수·옛한글·한자·초성 검색)은 쓰지 않고, 지원 문자권(`subsets`: latin·latin-ext·cyrillic·greek·vietnamese)을 적는다.
 - Google Fonts: 메타데이터(`fonts.google.com/metadata/fonts`)의 인기순·분류·굵기·라이선스(OFL/Apache/UFL)를 쓰고, 미리보기는 Google Fonts CSS 주소 그대로.
-- Fontshare: `api.fontshare.com` 메타데이터, 라이선스 'ITF Free Font License'(상업 무료, 재판매 금지), 미리보기는 Fontshare CSS 주소 그대로.
+- 선정 규칙(`tools/build_en_data.py`): 라틴 지원 + 인기순. 데바나가리·태국 문자 등이 주인 폰트도 확장 라틴까지 있으면 포함(Poppins·Kanit·Hind), 아랍 문자 중심·이름에 문자권이 붙은 전용판(… Arabic, … Thai, Hind Siliguri)은 제외. **한 번 등록된 id는 순위 밖으로 밀려도 유지**. 손질한 항목은 `manual: true`.
+- Fontshare: ITF Free Font License v2.0은 '방문자가 고르는 글꼴로 제공'·형식 변환 금지 → 넣지 않는다. Fontshare의 OFL 폰트는 대부분 Google Fonts에도 있으니 Google Fonts 기준으로, 없는 것만(`FONTSHARE_OFL`, 예: Roundo) Fontshare 공식 웹폰트 주소로.
 - 분류: sans-serif→고딕(산세리프), serif→명조(세리프), handwriting→손글씨, display→디스플레이, monospace→고딕+`고정폭` 태그.
