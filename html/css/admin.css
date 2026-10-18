@@ -25,6 +25,21 @@
 .mt-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .mt-bar{display:flex;align-items:flex-end;gap:2px;height:70px;margin:6px 0 16px}
 .mt-bar i{flex:1;background:var(--ink);min-height:1px}
+.mt-bar i.pv{background:var(--rule2)}
+.mt-bar i.now{background:var(--lime);box-shadow:inset 0 0 0 1px var(--ink)}
+.mt-axis{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);margin:-12px 0 16px}
+.mt-tools{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;align-items:center}
+.mt-sub{font-size:13px;font-weight:700;margin:4px 0}
+.mt-tbl td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mt-tbl td.n small{color:var(--ink3);margin-left:6px}
+.mt-tbl th{width:auto!important;word-break:break-all}
+.mt-wait{border:1px dashed var(--rule2);padding:14px 16px;font-size:14px;line-height:1.7}
+.mt-wait ol{margin:6px 0 0;padding-left:20px}
+.mo-live{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:10px 0 18px}
+.mo-live div{border:1px solid var(--rule2);padding:10px 12px;font-size:13px}
+.mo-live b{display:block;font-size:15px;margin-bottom:2px}
+.st{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;margin-right:6px}
+.st.ok{background:var(--ok,#1f7a3d);color:#fff}.st.warn{background:var(--lime);color:var(--lime-ink)}.st.bad{background:var(--no,#b42318);color:#fff}
 
 /* 히어로 테마 */
 .br-wrap{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:start}

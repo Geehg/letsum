@@ -1,4 +1,4 @@
-// LETSUM 관리자 — 로그인(해시 비교) 후 탭: 개요 · 히어로 테마 · 사진 · 댓글 · 지표 · 폰트 목록
+// LETSUM 관리자 — 로그인(해시 비교) 후 탭: 개요 · 히어로 테마 · 사진 · 댓글 · 방문 통계 · 검색 키워드 · 모니터링 · 기능 이용 · 폰트 목록
 // 서버(Cloudflare Worker /api/admin/*)는 관리자 키(ADMIN_KEY)로만 접근. 키는 이 탭(sessionStorage)에만 기억.
 (function () {
   const $ = (s, r) => (r || document).querySelector(s);
@@ -59,7 +59,7 @@
     $("#loginView").hidden = true; $("#loginView").style.display = "none"; $("#dashView").hidden = false;
     await loadBrandData();
     renderHome(); connect();
-    const h = location.hash.slice(1); tab(["home", "brand", "shots", "cmts", "metrics", "fonts"].includes(h) ? h : "home");
+    const h = location.hash.slice(1); tab(["home", "brand", "shots", "cmts", "traffic", "keywords", "monitor", "metrics", "fonts"].includes(h) ? h : "home");
   }
 
   // ---------- 히어로 노출 목록(사이트와 같은 규칙) ----------
@@ -309,7 +309,7 @@
   $("#ckFilter").addEventListener("change", () => loaders.cmts());
 
   // ================= 이용 지표 =================
-  const LABEL = { visit: "방문(세션)", detail: "상세 열기", cmp_add: "비교 담기", cmp_open: "비교 창 열기", dl_zip: "파일 바로 받기", dl_page: "배포처 페이지 이동", record: "확인 기록 저장", wiz_open: "용도 추천 열기", wiz_apply: "용도 추천 적용", view: "보기 전환", text_custom: "내 문장 입력", cover_only: "'모두 지원' 필터", comment: "댓글", like: "좋아요", shot_up: "사진 올리기", share: "공유", proj_add: "보관함에 담기", proj_share: "보관함 링크 공유", proj_export: "보관함 내보내기" };
+  const LABEL = { visit: "방문(세션)", detail: "상세 열기", cmp_add: "비교 담기", cmp_open: "비교 창 열기", dl_zip: "파일 바로 받기", dl_page: "배포처 페이지 이동", record: "확인 기록 저장", wiz_open: "용도 추천 열기", wiz_apply: "용도 추천 적용", view: "보기 전환", text_custom: "내 문장 입력", cover_only: "'모두 지원' 필터", comment: "댓글", like: "좋아요", shot_up: "사진 올리기", share: "공유", proj_add: "보관함에 담기", proj_share: "보관함 링크 공유", proj_export: "보관함 내보내기", ffail: "미리보기 실패" };
   loaders.metrics = async function () {
     const out = $("#mtOut"), msg = $("#mtMsg");
     msg.textContent = "불러오는 중…";
@@ -348,6 +348,159 @@
   };
   $("#mtLoad").addEventListener("click", () => loaders.metrics());
   $("#mtDays").addEventListener("change", () => loaders.metrics());
+
+  // ================= 방문 통계 · 검색 키워드 · 모니터링 =================
+  const nf = (n) => (n || 0).toLocaleString("ko-KR");
+  const pctOf = (a, b) => (b ? Math.round((a / b) * 1000) / 10 : 0);
+  let regionName = (c) => c; try { const dn = new Intl.DisplayNames(["ko"], { type: "region" }); regionName = (c) => (c && c !== "??" && c !== "XX" ? dn.of(c) || c : "알 수 없음"); } catch (x) {}
+  const pageLabel = (p) => { const m = /^\/font\/([a-z0-9-]+)\.html$/.exec(p); if (m) return `폰트 상세 · ${fname(m[1])}`; return { "/": "홈", "/notice.html": "저작권·라이선스 고지", "/privacy.html": "개인정보처리방침", "/terms.html": "이용약관", "/guide.html": "가이드", "/submit.html": "폰트 제보", "/subset.html": "서브셋 도구" }[p] || p; };
+  function table(title, rows, opt) {
+    opt = opt || {}; const tot = opt.total || rows.reduce((s, r) => s + r[1], 0); const L = rows.slice(0, opt.max || 15);
+    return `<div><p class="mt-sub">${title}</p><table class="spec mt-tbl">${L.map(([k, n]) => `<tr><th>${opt.html ? opt.label(k) : esc(opt.label ? opt.label(k) : k)}</th><td class="n">${nf(n)}${opt.noPct ? "" : `<small>${pctOf(n, tot)}%</small>`}</td></tr>`).join("") || '<tr><td class="note">아직 기록이 없습니다</td></tr>'}</table></div>`;
+  }
+  function bars(items, cls) { // items: [{ v, t, k }]
+    const mx = Math.max(1, ...items.map((x) => x.v));
+    return `<div class="mt-bar">${items.map((x) => `<i class="${x.k || cls || ""}" style="height:${(x.v / mx) * 100}%" title="${esc(x.t)}"></i>`).join("")}</div>`;
+  }
+  const dayList = (from) => { const out = []; const end = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10); for (let d = new Date(from + "T00:00:00Z"); d.toISOString().slice(0, 10) <= end; d.setUTCDate(d.getUTCDate() + 1)) out.push(d.toISOString().slice(0, 10)); return out; };
+  const WD = ["일", "월", "화", "수", "목", "금", "토"];
+
+  loaders.traffic = async function () {
+    const out = $("#tfOut"), msg = $("#tfMsg"); msg.textContent = "불러오는 중…";
+    try {
+      const j = await call("traffic?days=" + $("#tfDays").value); const D = j.dims; const g = (k) => D[k] || [];
+      const sum = (k) => g(k).reduce((s, r) => s + r[1], 0);
+      const v = sum("visit"), pv = sum("pv"), pvPrev = j.prev.pv || 0, vPrev = j.prev.visit || 0;
+      const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+      if (!j.first) {
+        msg.textContent = "";
+        out.innerHTML = `<div class="mt-wait"><b>${esc(j.startFrom)}부터 집계를 시작합니다.</b> 개인정보처리방침 변경(2026-10-18 공지)이 시행되는 날부터 모읍니다.<br>그 전까지는 아래 Cloudflare Web Analytics에서 방문 수·유입 경로를 볼 수 있습니다.</div>`;
+      } else {
+        const days = dayList(j.from); const by = {}; j.daily.forEach((x) => { (by[x.day] = by[x.day] || {})[x.dim] = x.n; });
+        const wd = Array(7).fill(0); days.forEach((d) => { wd[new Date(d + "T00:00:00Z").getUTCDay()] += (by[d] || {}).visit || 0; });
+        const hours = Object.fromEntries(g("vhour")); const hourPv = Object.fromEntries(g("hour"));
+        const src = Object.fromEntries(g("src")); const mob = (Object.fromEntries(g("dev"))["모바일"] || 0);
+        const delta = (a, b) => (b ? `${a >= b ? "▲" : "▼"} ${Math.abs(Math.round(((a - b) / b) * 100))}%` : "직전 기간 기록 없음");
+        msg.textContent = `${j.from} ~ ${today} · 날짜별 합계(개인 식별 정보 없음) · 집계 시작 ${j.first}`;
+        out.innerHTML = `
+          <div class="mt-kpi">
+            <div><b>${nf(v)}</b><span>방문 · ${delta(v, vPrev)}</span></div>
+            <div><b>${nf(pv)}</b><span>페이지뷰 · ${delta(pv, pvPrev)}</span></div>
+            <div><b>${v ? (pv / v).toFixed(1) : "—"}</b><span>방문당 페이지</span></div>
+            <div><b>${pctOf(src["검색"] || 0, v)}%</b><span>검색 유입</span></div>
+            <div><b>${pctOf((src["SNS"] || 0) + (src["블로그·커뮤니티"] || 0), v)}%</b><span>SNS·커뮤니티 유입</span></div>
+            <div><b>${pctOf(mob, v)}%</b><span>모바일</span></div>
+          </div>
+          <p class="mt-sub">일별 방문 <span class="note">(검은 막대 = 방문, 막대에 마우스를 올리면 수치)</span></p>
+          ${bars(days.map((d) => ({ v: (by[d] || {}).visit || 0, t: `${d}(${WD[new Date(d + "T00:00:00Z").getUTCDay()]}) 방문 ${(by[d] || {}).visit || 0} · 페이지뷰 ${(by[d] || {}).pv || 0}`, k: d === today ? "now" : "" })))}
+          <div class="mt-axis"><span>${days[0]}</span><span>${days[days.length - 1]}</span></div>
+          <div class="mt-cols">
+            <div><p class="mt-sub">시간대별 방문 <span class="note">(한국 시간)</span></p>${bars([...Array(24)].map((_, h) => { const k = String(h).padStart(2, "0"); return { v: hours[k] || 0, t: `${h}시 방문 ${hours[k] || 0} · 페이지뷰 ${hourPv[k] || 0}` }; }))}<div class="mt-axis"><span>0시</span><span>6시</span><span>12시</span><span>18시</span><span>23시</span></div></div>
+            <div><p class="mt-sub">요일별 방문</p>${bars(wd.map((n, i) => ({ v: n, t: `${WD[i]}요일 ${n}` })))}<div class="mt-axis">${WD.map((w) => `<span>${w}</span>`).join("")}</div></div>
+          </div>
+          <div class="mt-cols">
+            ${table("유입 채널", g("src"), { total: v })}
+            ${table("유입 사이트", g("ref"), { total: v })}
+            ${table("첫 페이지(들어온 곳)", g("land"), { total: v, label: pageLabel })}
+            ${table("많이 본 페이지", g("path"), { total: pv, label: pageLabel })}
+            ${table("국가", g("country"), { total: v, label: regionName })}
+            ${table("기기", g("dev"), { total: v })}
+            ${table("브라우저·앱", g("br"), { total: v })}
+            ${table("운영체제", g("os"), { total: v })}
+            ${table("화면 폭(px)", g("vw"), { total: v })}
+            ${table("캠페인(utm_source / medium / campaign)", g("utm"), { total: v })}
+          </div>`;
+      }
+    } catch (x) { msg.textContent = x.message; out.innerHTML = ""; }
+    loadCf();
+  };
+  async function loadCf() {
+    const el = $("#cfOut");
+    try {
+      const j = await call("cfwa?days=7");
+      if (!j.configured) { el.innerHTML = `<div class="mt-wait">Cloudflare 통계를 여기서 보려면 서버에 읽기 전용 토큰을 한 번 등록해야 합니다(운영 문서 docs/HANDOFF.md '방문 통계' 참고). 그 전에는 <a class="linklike" href="https://dash.cloudflare.com/?to=/:account/web-analytics" target="_blank" rel="noopener noreferrer">Cloudflare 대시보드 → Web Analytics ↗</a>에서 바로 볼 수 있습니다.</div>`; return; }
+      if (j.error) { el.innerHTML = `<p class="note">Cloudflare 통계를 불러오지 못했습니다: ${esc(j.error)}</p>`; return; }
+      const d = j.data, tot = (d.total && d.total[0]) || { count: 0, sum: { visits: 0 } };
+      const rows = (arr, k, lab) => (arr || []).map((x) => [lab ? lab(x.dimensions[k]) : x.dimensions[k] || "(없음)", x.sum.visits]);
+      el.innerHTML = `<div class="mt-kpi"><div><b>${nf(tot.sum.visits)}</b><span>방문(Cloudflare)</span></div><div><b>${nf(tot.count)}</b><span>페이지뷰(Cloudflare)</span></div></div>
+        ${bars((d.byDate || []).map((x) => ({ v: x.sum.visits, t: `${x.dimensions.date} 방문 ${x.sum.visits} · 페이지뷰 ${x.count}` })))}
+        <div class="mt-cols">${table("유입 사이트", rows(d.byRef, "refererHost", (h) => h || "직접 방문"))}${table("페이지", rows(d.byPath, "requestPath", pageLabel))}${table("국가", rows(d.byCountry, "countryName"))}${table("기기", rows(d.byDevice, "deviceType"))}${table("브라우저", rows(d.byBrowser, "userAgentBrowser"))}${table("운영체제", rows(d.byOS, "userAgentOS"))}</div>`;
+    } catch (x) { el.innerHTML = `<p class="note">${esc(x.message)}</p>`; }
+  }
+  $("#tfLoad").addEventListener("click", () => loaders.traffic());
+  $("#tfDays").addEventListener("change", () => loaders.traffic());
+
+  loaders.keywords = async function () {
+    const days = $("#kwDays").value;
+    const gEl = $("#gscOut"), kEl = $("#kwOut"), sEl = $("#sqOut");
+    gEl.innerHTML = kEl.innerHTML = sEl.innerHTML = '<p class="note">불러오는 중…</p>';
+    call("gsc?days=" + days).then((j) => {
+      if (!j.configured) { gEl.innerHTML = `<div class="mt-wait">구글 검색어를 여기서 보려면 Search Console 연결이 한 번 필요합니다(운영 문서 docs/HANDOFF.md '방문 통계 → 구글 검색어'). 그 전에는 <a class="linklike" href="https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Aletsum.app" target="_blank" rel="noopener noreferrer">Search Console ↗</a>에서 직접 볼 수 있습니다.${j.error ? `<br><span class="note">${esc(j.error)}</span>` : ""}</div>`; return; }
+      if (j.error) { gEl.innerHTML = `<p class="note">구글 검색어를 불러오지 못했습니다: ${esc(j.error)}<br>연결 계정 ${esc(j.account || "")} 이 Search Console 속성 ${esc(j.site || "")} 의 사용자로 추가돼 있는지 확인하세요.</p>`; return; }
+      const clicks = j.queries.reduce((s, r) => s + r.clicks, 0), imps = j.queries.reduce((s, r) => s + r.impressions, 0);
+      const dTot = j.dates.reduce((a, r) => ({ c: a.c + r.clicks, i: a.i + r.impressions }), { c: 0, i: 0 });
+      gEl.innerHTML = `<div class="mt-kpi"><div><b>${nf(dTot.c)}</b><span>구글 검색 클릭</span></div><div><b>${nf(dTot.i)}</b><span>구글 검색 노출</span></div><div><b>${dTot.i ? ((dTot.c / dTot.i) * 100).toFixed(1) : "—"}%</b><span>클릭률</span></div></div>
+        ${bars(j.dates.map((r) => ({ v: r.clicks, t: `${r.keys[0]} 클릭 ${r.clicks} · 노출 ${r.impressions}` })))}
+        <div class="adm-scroll"><table class="spec mt-tbl"><tr><th>검색어</th><td class="n">클릭</td><td class="n">노출</td><td class="n">클릭률</td><td class="n">평균 순위</td></tr>${j.queries.slice(0, 60).map((r) => `<tr><th>${esc(r.keys[0])}</th><td class="n">${nf(r.clicks)}</td><td class="n">${nf(r.impressions)}</td><td class="n">${(r.ctr * 100).toFixed(1)}%</td><td class="n">${r.position.toFixed(1)}</td></tr>`).join("") || '<tr><td class="note">아직 검색 기록이 없습니다(새 사이트는 며칠~몇 주 걸립니다)</td></tr>'}</table></div>
+        <div class="mt-cols">${table("구글 검색에서 들어온 페이지(클릭)", j.pages.map((r) => [r.keys[0].replace(/^https:\/\/letsum\.app/, ""), r.clicks]), { label: pageLabel })}${table("기기(클릭)", j.devices.map((r) => [{ MOBILE: "모바일", DESKTOP: "데스크톱", TABLET: "태블릿" }[r.keys[0]] || r.keys[0], r.clicks]))}</div>
+        <p class="note">표시된 검색어 클릭 합계 ${nf(clicks)} · 노출 ${nf(imps)} (구글은 개인정보 보호를 위해 드문 검색어를 빼고 보여줍니다)</p>`;
+    }).catch((x) => { gEl.innerHTML = `<p class="note">${esc(x.message)}</p>`; });
+    call("traffic?days=" + days).then((j) => {
+      const g = (k) => j.dims[k] || [];
+      if (!j.first) { const w = `<p class="note">${esc(j.startFrom)}부터 집계합니다(개인정보처리방침 변경 시행일).</p>`; kEl.innerHTML = sEl.innerHTML = w; return; }
+      const kw = g("kw"); const byEng = {}; kw.forEach(([k, n]) => { const [e] = k.split("|"); byEng[e] = (byEng[e] || 0) + n; });
+      kEl.innerHTML = `<div class="mt-cols">${table("검색어 (엔진 · 검색어)", kw.map(([k, n]) => [k.replace("|", " · "), n]), { max: 40, noPct: true })}${table("엔진별", Object.entries(byEng).sort((a, b) => b[1] - a[1]), {})}</div>`;
+      sEl.innerHTML = `<div class="mt-cols">${table("많이 찾은 검색어", g("sq"), { max: 40, noPct: true })}${table("결과가 없었던 검색어 — 등록 후보", g("sq0"), { max: 40, noPct: true })}</div>`;
+    }).catch((x) => { kEl.innerHTML = sEl.innerHTML = `<p class="note">${esc(x.message)}</p>`; });
+  };
+  $("#kwLoad").addEventListener("click", () => loaders.keywords());
+  $("#kwDays").addEventListener("change", () => loaders.keywords());
+
+  // 모니터링: 이 브라우저에서 바로 각 서버를 불러 보고 걸린 시간을 잰다 + 가동 감시 기록 + 자동 작업 + 오류 집계
+  const sample = FONTS.find((f) => f.webfont && Object.values(f.webfont).some((u) => u.includes("letsum-mirror")));
+  const hostedF = FONTS.find((f) => f.webfont && Object.values(f.webfont).some((u) => u.includes("/fonts-hosted/")));
+  const CHECKS = [
+    ["사이트(홈)", "/index.html"], ["API 서버", "/api/health"],
+    ["웹폰트 미러(GitHub Pages)", sample ? Object.values(sample.webfont).find((u) => u.includes("letsum-mirror")) : ""],
+    ["서버 전용 폰트(NAS)", hostedF ? Object.values(hostedF.webfont).find((u) => u.includes("/fonts-hosted/")) : ""],
+    ["Google Fonts", "https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"],
+  ].filter((c) => c[1]);
+  async function probe(url) {
+    const t0 = performance.now(); const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 15000);
+    try { const r = await fetch(url + (url.includes("?") ? "&" : "?") + "_mo=" + Date.now(), { cache: "no-store", signal: ctl.signal }); const b = await r.arrayBuffer(); return { ok: r.ok, code: r.status, ms: Math.round(performance.now() - t0), kb: Math.round(b.byteLength / 1024) }; }
+    catch (e) { return { ok: false, code: e.name === "AbortError" ? "시간 초과" : "연결 실패", ms: Math.round(performance.now() - t0), kb: 0 }; }
+    finally { clearTimeout(to); }
+  }
+  async function runChecks() {
+    $("#moMsg").textContent = "점검 중…";
+    $("#moLive").innerHTML = `<div class="mo-live">${CHECKS.map(([n], i) => `<div id="mo${i}"><b>${esc(n)}</b><span class="note">확인 중…</span></div>`).join("")}</div>`;
+    await Promise.all(CHECKS.map(async ([n, u], i) => {
+      const r = await probe(u); const lv = !r.ok ? "bad" : r.ms > 3000 ? "warn" : "ok";
+      $("#mo" + i).innerHTML = `<b>${esc(n)}</b><span class="st ${lv}">${lv === "ok" ? "정상" : lv === "warn" ? "느림" : "문제"}</span>${r.ok ? `${nf(r.ms)}ms · ${nf(r.kb)}KB` : esc(String(r.code))}`;
+    }));
+    $("#moMsg").textContent = `마지막 점검 ${new Date().toLocaleTimeString("ko-KR")} · 3초 넘으면 '느림'`;
+  }
+  loaders.monitor = async function () {
+    runChecks();
+    const cols = $("#moCols"); cols.innerHTML = '<p class="note">기록 불러오는 중…</p>';
+    const gh = (p) => fetch("https://api.github.com/repos/Geehg/letsum/" + p, { headers: { accept: "application/vnd.github+json" } }).then((r) => (r.ok ? r.json() : Promise.reject(new Error("GitHub " + r.status))));
+    const fmt = (s) => (s ? new Date(s).toLocaleString("ko-KR", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }) : "");
+    const [iss, runs, met, tr] = await Promise.all([
+      gh("issues?labels=outage&state=all&per_page=10").catch((e) => e), gh("actions/runs?per_page=30").catch((e) => e),
+      key() ? call("metrics?days=7").catch((e) => e) : Promise.resolve(null), key() ? call("traffic?days=7").catch((e) => e) : Promise.resolve(null),
+    ]);
+    const outage = iss instanceof Error ? `<p class="note">${esc(iss.message)}</p>` : `<table class="spec mt-tbl">${iss.map((i) => `<tr><th><span class="st ${i.state === "open" ? "bad" : "ok"}">${i.state === "open" ? "장애 중" : "복구"}</span>${esc(i.title)}</th><td class="n">${fmt(i.created_at)}${i.closed_at ? ` → ${fmt(i.closed_at)}` : ""}</td></tr>`).join("") || '<tr><td class="note">장애 기록이 없습니다</td></tr>'}</table>`;
+    let jobs = ""; if (runs instanceof Error) jobs = `<p class="note">${esc(runs.message)}</p>`; else { const last = {}; runs.workflow_runs.forEach((r) => { if (!last[r.name]) last[r.name] = r; }); jobs = `<table class="spec mt-tbl">${Object.values(last).map((r) => { const lv = r.status !== "completed" ? "warn" : r.conclusion === "success" ? "ok" : "bad"; return `<tr><th><span class="st ${lv}">${lv === "ok" ? "성공" : lv === "warn" ? "진행 중" : "실패"}</span><a class="linklike" href="${esc(r.html_url)}" target="_blank" rel="noopener noreferrer">${esc(r.name)}</a></th><td class="n">${fmt(r.run_started_at)}</td></tr>`; }).join("")}</table>`; }
+    const ffail = {}; if (met && !(met instanceof Error)) met.rows.filter((x) => x.name === "ffail").forEach((x) => { ffail[x.font] = (ffail[x.font] || 0) + x.n; });
+    const needKey = '<p class="note">서버 관리자 키를 연결하면 보입니다.</p>';
+    cols.innerHTML = `
+      <div><p class="mt-sub">가동 감시 기록 <span class="note">(10분마다 · 최근 10건)</span></p>${outage}</div>
+      <div><p class="mt-sub">자동 작업 최근 실행</p>${jobs}</div>
+      ${met === null ? `<div><p class="mt-sub">미리보기 실패 폰트 (7일)</p>${needKey}</div>` : met instanceof Error ? "" : table("미리보기 실패 폰트 (7일, 방문자 화면 기준)", Object.entries(ffail).sort((a, b) => b[1] - a[1]), { label: fname, noPct: true })}
+      ${tr === null ? `<div><p class="mt-sub">스크립트 오류 (7일)</p>${needKey}</div>` : tr instanceof Error ? "" : table("스크립트 오류 (7일)", tr.dims.err || [], { noPct: true, max: 20 })}
+      ${tr && !(tr instanceof Error) ? table("검색 로봇 방문 (7일)", tr.dims.bot || [], { noPct: true }) : ""}`;
+  };
+  $("#moRun").addEventListener("click", runChecks);
 
   // ================= 폰트 목록(읽기 전용) =================
   loaders.fonts = function () {

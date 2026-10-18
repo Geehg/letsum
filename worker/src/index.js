@@ -9,10 +9,14 @@
 //       GET  /api/shot/<n>                 → 이미지(승인된 것만)
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
+//       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "err", m } → 204  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
 //       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
 //       관리자(Authorization: Bearer ADMIN_KEY):
 //       POST /api/admin/brand { id, theme | null } → 저장(검증) / null이면 삭제
 //       GET  /api/admin/metrics?days=28    → { days: [...], rows: [{ day, name, font, n }] }
+//       GET  /api/admin/traffic?days=28    → 방문 통계(유입 채널·사이트·검색어·페이지·시간대·기기·국가)
+//       GET  /api/admin/gsc?days=28        → 구글 Search Console 검색어(비밀값 GSC_SA가 있을 때)
+//       GET  /api/admin/cfwa?days=7        → Cloudflare Web Analytics 요약(비밀값 CF_API_TOKEN·CF_ACCOUNT_ID·CF_WA_SITE_TAG가 있을 때)
 //       GET  /api/admin/export             → 백업용 전체 데이터(JSON, 사진은 base64) — NAS가 주 1회 받아 보관
 //       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
 //       GET  /api/admin/shots?status=pending|approved, GET /api/admin/shot/<n>
@@ -22,7 +26,7 @@
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
 // 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
-const EVENTS = new Set(["visit", "detail", "cmp_add", "cmp_open", "dl_zip", "dl_page", "record", "wiz_open", "wiz_apply", "view", "text_custom", "cover_only", "comment", "like", "shot_up", "share", "proj_add", "proj_share", "proj_export"]);
+const EVENTS = new Set(["visit", "detail", "cmp_add", "cmp_open", "dl_zip", "dl_page", "record", "wiz_open", "wiz_apply", "view", "text_custom", "cover_only", "comment", "like", "shot_up", "share", "proj_add", "proj_share", "proj_export", "ffail"]);
 const IMG = [["image/jpeg", [0xff, 0xd8, 0xff]], ["image/png", [0x89, 0x50, 0x4e, 0x47]], ["image/webp", [0x52, 0x49, 0x46, 0x46]]];
 
 const json = (data, status = 200, extra = {}) =>
@@ -183,6 +187,126 @@ async function track(req, env) {
   return new Response(null, { status: 204 });
 }
 
+// ---------- 방문 통계(자체 집계) ----------
+// 날짜·항목·값별 '합계'만 쌓는다. IP·쿠키·방문자 식별값은 저장하지 않고, 유입 주소는 호스트와 검색어만 남기고 버린다.
+// 개인정보처리방침 변경(2026-10-18 공지) 시행일 전에는 받지 않는다.
+const TRAFFIC_FROM = "2026-10-25";
+const TRAFFIC_KEEP_DAYS = 400; // 약 13개월 보관 후 삭제
+const kstHour = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 13);
+const SEARCH = [[/(^|\.)google\.[a-z.]+$/, "구글", "q"], [/^(m\.)?search\.naver\.com$/, "네이버", "query"], [/^(m\.)?search\.daum\.net$/, "다음", "q"],
+  [/(^|\.)bing\.com$/, "빙", "q"], [/^(m\.)?search\.zum\.com$/, "줌", "query"], [/(^|\.)search\.yahoo\./, "야후", "p"], [/(^|\.)duckduckgo\.com$/, "덕덕고", "q"],
+  [/(^|\.)baidu\.com$/, "바이두", "wd"], [/(^|\.)ecosia\.org$/, "에코시아", "q"], [/(^|\.)yandex\./, "얀덱스", "text"], [/(^|\.)perplexity\.ai$/, "퍼플렉시티", "q"],
+  [/(^|\.)chatgpt\.com$|(^|\.)openai\.com$/, "챗GPT", ""], [/(^|\.)naver\.com$/, "네이버", "query"]];
+const SOCIAL = /(^|\.)(facebook\.com|fb\.me|instagram\.com|threads\.net|threads\.com|t\.co|x\.com|twitter\.com|youtube\.com|youtu\.be|pinterest\.[a-z.]+|reddit\.com|linkedin\.com|lnkd\.in|kakao\.com|kakaocdn\.net|band\.us|tiktok\.com|discord\.com|telegram\.org|t\.me|line\.me)$/;
+const COMMUNITY = /(^|\.)(blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|kin\.naver\.com|tistory\.com|brunch\.co\.kr|velog\.io|cafe\.daum\.net|dcinside\.com|clien\.net|ruliweb\.com|fmkorea\.com|theqoo\.net|ppomppu\.co\.kr|instiz\.net|okky\.kr|github\.com|notion\.site|medium\.com|everytime\.kr|disquiet\.io|surfit\.io|behance\.net|dribbble\.com)$/;
+function uaInfo(ua) {
+  const dev = /iPad|Tablet|SM-T|Tab(?!le)/i.test(ua) ? "태블릿" : /Mobi|Android|iPhone|iPod/i.test(ua) ? "모바일" : "데스크톱";
+  const br = /KAKAOTALK/i.test(ua) ? "카카오톡 앱" : /NAVER\(inapp|NAVER\//i.test(ua) ? "네이버 앱" : /Instagram/i.test(ua) ? "인스타그램 앱"
+    : /FBAN|FBAV/i.test(ua) ? "페이스북 앱" : /Threads/i.test(ua) ? "스레드 앱" : /DaumApps/i.test(ua) ? "다음 앱" : /SamsungBrowser/i.test(ua) ? "삼성 인터넷" : /Whale/i.test(ua) ? "웨일"
+    : /Edg\//i.test(ua) ? "엣지" : /OPR\/|Opera/i.test(ua) ? "오페라" : /Firefox|FxiOS/i.test(ua) ? "파이어폭스" : /Chrome|CriOS/i.test(ua) ? "크롬" : /Safari/i.test(ua) ? "사파리" : "기타";
+  const os = /iPhone|iPad|iPod/i.test(ua) ? "iOS" : /Android/i.test(ua) ? "안드로이드" : /Windows/i.test(ua) ? "윈도우" : /CrOS/i.test(ua) ? "크롬OS" : /Mac OS X|Macintosh/i.test(ua) ? "macOS" : /Linux/i.test(ua) ? "리눅스" : "기타";
+  return { dev, br, os };
+}
+const BOT = /bot|crawl|spider|slurp|facebookexternalhit|kakaotalk-scrap|yeti|daumoa|bingpreview|headless|lighthouse|pingdom|uptime|monitor|curl|wget|python|axios|node-fetch|go-http/i;
+const cleanKw = (k) => { k = String(k || "").replace(/\s+/g, " ").trim().toLowerCase().slice(0, 40); return !k || /@|\d{6,}|https?:/.test(k) ? "" : k; };
+const cleanPath = (p) => { p = String(p || "/").split(/[?#]/)[0].replace(/\/index\.html$/, "/").replace(/[^a-zA-Z0-9/._-]/g, "").slice(0, 80); return p.startsWith("/") ? p : "/" + p; };
+function source(ref, host, ua, utm) {
+  if (utm && utm.source) return { src: "캠페인(utm)", ref: "", kw: "" };
+  if (/KAKAOTALK/i.test(ua) && !ref) return { src: "SNS", ref: "카카오톡(앱)", kw: "" };
+  if (/Instagram/i.test(ua) && !ref) return { src: "SNS", ref: "인스타그램(앱)", kw: "" };
+  if (/FBAN|FBAV/i.test(ua) && !ref) return { src: "SNS", ref: "페이스북(앱)", kw: "" };
+  if (!ref) return { src: "직접 방문", ref: "", kw: "" };
+  let u; try { u = new URL(ref); } catch { return { src: "직접 방문", ref: "", kw: "" }; }
+  const h = u.hostname.replace(/^www\./, "").toLowerCase();
+  if (h === host || h.endsWith("." + host)) return { src: "직접 방문", ref: "", kw: "" }; // 사이트 안에서 새 탭으로 연 경우
+  if (COMMUNITY.test(h)) return { src: "블로그·커뮤니티", ref: h, kw: "" };
+  for (const [re, name, param] of SEARCH) if (re.test(h)) {
+    if (!param) return { src: "AI 검색", ref: h, kw: "" };
+    const kw = cleanKw(u.searchParams.get(param)); return { src: name === "퍼플렉시티" ? "AI 검색" : "검색", ref: h, kw: kw ? `${name}|${kw}` : "" };
+  }
+  if (SOCIAL.test(h)) return { src: "SNS", ref: h, kw: "" };
+  return { src: "다른 사이트", ref: h, kw: "" };
+}
+async function pageview(req, env) {
+  const day = kstDay(); if (day < (env.TRAFFIC_FROM || TRAFFIC_FROM)) return new Response(null, { status: 204 }); // TRAFFIC_FROM 덮어쓰기는 로컬 시험용
+  const ua = req.headers.get("user-agent") || ""; const b = await body(req);
+  const add = []; const inc = (dim, key) => add.push(env.DB.prepare("INSERT INTO traffic (day, dim, key, n) VALUES (?, ?, ?, 1) ON CONFLICT(day, dim, key) DO UPDATE SET n = n + 1").bind(day, dim, String(key).slice(0, 80)));
+  if (BOT.test(ua)) { inc("bot", (ua.match(/[a-z-]*(bot|crawl|spider|yeti)[a-z-]*/i) || ["기타"])[0].toLowerCase()); }
+  else if (b.t === "sq") { const q = cleanKw(b.q); if (q) { inc("sq", q); if (b.n === 0) inc("sq0", q); } }
+  else if (b.t === "err") { const m = clean(b.m, 80).replace(/https?:\/\/\S+/g, "").trim(); if (m) inc("err", m); }
+  else {
+    const p = cleanPath(b.p); const host = new URL(req.url).hostname.replace(/^www\./, "");
+    inc("pv", ""); inc("hour", kstHour()); inc("path", p);
+    if (b.s) {
+      const utm = b.u && typeof b.u === "object" ? { source: clean(b.u.source, 30), medium: clean(b.u.medium, 30), campaign: clean(b.u.campaign, 30) } : null;
+      const s = source(typeof b.r === "string" ? b.r.slice(0, 500) : "", host, ua, utm);
+      {
+        const { dev, br, os } = uaInfo(ua);
+        inc("visit", ""); inc("vhour", kstHour()); inc("land", p); inc("src", s.src); if (s.ref) inc("ref", s.ref); if (s.kw) inc("kw", s.kw);
+        if (utm && utm.source) inc("utm", [utm.source, utm.medium, utm.campaign].filter(Boolean).join(" / "));
+        inc("country", (req.cf && req.cf.country) || "??"); inc("dev", dev); inc("br", br); inc("os", os);
+        const w = parseInt(b.w, 10); if (w > 0) inc("vw", w < 480 ? "~479" : w < 768 ? "480~767" : w < 1024 ? "768~1023" : w < 1440 ? "1024~1439" : "1440~");
+      }
+    }
+  }
+  if (Math.random() < 0.01) add.push(env.DB.prepare("DELETE FROM traffic WHERE day < ?").bind(new Date(Date.now() + 9 * 3600e3 - TRAFFIC_KEEP_DAYS * 86400e3).toISOString().slice(0, 10)));
+  if (add.length) await env.DB.batch(add.slice(0, 20));
+  return new Response(null, { status: 204 });
+}
+
+// ---------- 관리자: 방문 통계 · 구글 검색어 · Cloudflare 통계 ----------
+const daysAgo = (n) => new Date(Date.now() + 9 * 3600e3 - n * 86400e3).toISOString().slice(0, 10);
+async function trafficReport(url, env) {
+  const days = Math.min(400, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
+  const from = daysAgo(days - 1), prevFrom = daysAgo(days * 2 - 1);
+  const [all, daily, prev, first] = await env.DB.batch([
+    env.DB.prepare("SELECT dim, key, SUM(n) n FROM traffic WHERE day >= ? GROUP BY dim, key ORDER BY n DESC").bind(from),
+    env.DB.prepare("SELECT day, dim, SUM(n) n FROM traffic WHERE day >= ? AND dim IN ('pv', 'visit') GROUP BY day, dim ORDER BY day").bind(from),
+    env.DB.prepare("SELECT dim, SUM(n) n FROM traffic WHERE day >= ? AND day < ? AND dim IN ('pv', 'visit') GROUP BY dim").bind(prevFrom, from),
+    env.DB.prepare("SELECT MIN(day) d FROM traffic"),
+  ]);
+  const dims = {}; all.results.forEach((x) => { const a = (dims[x.dim] = dims[x.dim] || []); if (a.length < 60) a.push([x.key, x.n]); });
+  return json({ from, prevFrom, days, startFrom: env.TRAFFIC_FROM || TRAFFIC_FROM, first: first.results[0].d, dims, daily: daily.results, prev: Object.fromEntries(prev.results.map((x) => [x.dim, x.n])) });
+}
+const b64u = (bytes) => btoa(String.fromCharCode(...new Uint8Array(bytes))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+async function googleToken(sa, scope) {
+  const now = Math.floor(Date.now() / 1000), te = new TextEncoder();
+  const head = b64u(te.encode(JSON.stringify({ alg: "RS256", typ: "JWT" })));
+  const claim = b64u(te.encode(JSON.stringify({ iss: sa.client_email, scope, aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600 })));
+  const der = Uint8Array.from(atob(sa.private_key.replace(/-----[^-]+-----|\s/g, "")), (c) => c.charCodeAt(0));
+  const k = await crypto.subtle.importKey("pkcs8", der, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("RSASSA-PKCS1-v1_5", k, te.encode(head + "." + claim));
+  const r = await fetch("https://oauth2.googleapis.com/token", { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body: "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=" + head + "." + claim + "." + b64u(sig) });
+  const j = await r.json(); if (!j.access_token) throw new Error("구글 인증 실패: " + (j.error_description || j.error || r.status)); return j.access_token;
+}
+async function gscReport(url, env) {
+  if (!env.GSC_SA) return json({ configured: false });
+  let sa; try { sa = JSON.parse(env.GSC_SA); } catch { return json({ configured: false, error: "GSC_SA 값이 JSON이 아닙니다" }); }
+  const days = Math.min(480, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
+  const site = env.GSC_SITE || "sc-domain:letsum.app";
+  try {
+    const tok = await googleToken(sa, "https://www.googleapis.com/auth/webmasters.readonly");
+    const q = (dimensions, rowLimit) => fetch(`https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`, { method: "POST", headers: { authorization: "Bearer " + tok, "content-type": "application/json" }, body: JSON.stringify({ startDate: daysAgo(days - 1), endDate: daysAgo(0), dimensions, rowLimit }) }).then(async (r) => { const j = await r.json(); if (!r.ok) throw new Error((j.error && j.error.message) || "Search Console 오류 " + r.status); return j.rows || []; });
+    const [queries, pages, dates, devices] = await Promise.all([q(["query"], 100), q(["page"], 30), q(["date"], 500), q(["device"], 5)]);
+    return json({ configured: true, site, account: sa.client_email, from: daysAgo(days - 1), queries, pages, dates, devices });
+  } catch (e) { return json({ configured: true, site, account: sa.client_email, error: String(e.message || e).slice(0, 300) }); }
+}
+async function cfwaReport(url, env) {
+  if (!env.CF_API_TOKEN || !env.CF_ACCOUNT_ID || !env.CF_WA_SITE_TAG) return json({ configured: false });
+  const days = Math.min(31, Math.max(1, parseInt(url.searchParams.get("days") || "7", 10)));
+  const filter = { AND: [{ datetime_geq: new Date(Date.now() - days * 86400e3).toISOString() }, { datetime_leq: new Date().toISOString() }, { siteTag: env.CF_WA_SITE_TAG }] };
+  const g = (alias, dim, n) => `${alias}: rumPageloadEventsAdaptiveGroups(limit: ${n}, filter: $filter, orderBy: [sum_visits_DESC]) { count sum { visits } dimensions { ${dim} } }`;
+  const query = `query($acct: String!, $filter: AccountRumPageloadEventsAdaptiveGroupsFilter_InputObject) { viewer { accounts(filter: { accountTag: $acct }) {
+    total: rumPageloadEventsAdaptiveGroups(limit: 1, filter: $filter) { count sum { visits } }
+    byDate: rumPageloadEventsAdaptiveGroups(limit: 100, filter: $filter, orderBy: [date_ASC]) { count sum { visits } dimensions { date } }
+    ${g("byRef", "refererHost", 30)} ${g("byPath", "requestPath", 30)} ${g("byCountry", "countryName", 20)} ${g("byDevice", "deviceType", 5)} ${g("byBrowser", "userAgentBrowser", 10)} ${g("byOS", "userAgentOS", 10)} } } }`;
+  try {
+    const r = await fetch("https://api.cloudflare.com/client/v4/graphql", { method: "POST", headers: { authorization: "Bearer " + env.CF_API_TOKEN, "content-type": "application/json" }, body: JSON.stringify({ query, variables: { acct: env.CF_ACCOUNT_ID, filter } }) });
+    const j = await r.json(); if (j.errors && j.errors.length) throw new Error(j.errors[0].message);
+    return json({ configured: true, days, data: j.data.viewer.accounts[0] || {} });
+  } catch (e) { return json({ configured: true, error: String(e.message || e).slice(0, 300) }); }
+}
+
 // ---------- 히어로 브랜드 테마 ----------
 const HEX = /^#[0-9a-f]{6}$/i;
 const STYLES = new Set(["plain", "sticker", "shadow"]);
@@ -222,15 +346,16 @@ async function admin(url, req, env) {
     return json({ items: r.results });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/export") {
-    const [c, l, r, sh, e, bt, cl] = await env.DB.batch([
+    const [c, l, r, sh, e, bt, cl, tf] = await env.DB.batch([
       env.DB.prepare("SELECT * FROM comments ORDER BY id"), env.DB.prepare("SELECT * FROM likes"), env.DB.prepare("SELECT * FROM reports"),
       env.DB.prepare("SELECT id, font_id, name, caption, mime, bytes, data, voter, created, status, approved FROM shots ORDER BY id"), env.DB.prepare("SELECT * FROM events ORDER BY day"),
       env.DB.prepare("SELECT * FROM brand_themes"),
       env.DB.prepare("SELECT * FROM comment_likes"),
+      env.DB.prepare("SELECT * FROM traffic ORDER BY day"),
     ]);
     const b64 = (d) => { const u = new Uint8Array(d); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s); };
     const shots = sh.results.map((x) => ({ ...x, data: b64(x.data) }));
-    return json({ exported: new Date().toISOString(), schema: 5, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results, brand: bt.results, comment_likes: cl.results },
+    return json({ exported: new Date().toISOString(), schema: 6, comments: c.results, likes: l.results, reports: r.results, shots, events: e.results, brand: bt.results, comment_likes: cl.results, traffic: tf.results },
       200, { "content-disposition": `attachment; filename="letsum-d1-${new Date().toISOString().slice(0, 10)}.json"` });
   }
   if (req.method === "GET" && url.pathname === "/api/admin/metrics") {
@@ -239,6 +364,9 @@ async function admin(url, req, env) {
     const r = await env.DB.prepare("SELECT day, name, font, n FROM events WHERE day >= ? ORDER BY day").bind(from).all();
     return json({ from, rows: r.results });
   }
+  if (req.method === "GET" && url.pathname === "/api/admin/traffic") return trafficReport(url, env);
+  if (req.method === "GET" && url.pathname === "/api/admin/gsc") return gscReport(url, env);
+  if (req.method === "GET" && url.pathname === "/api/admin/cfwa") return cfwaReport(url, env);
   if (req.method === "GET" && url.pathname === "/api/admin/summary") {
     const [s, r, h] = await env.DB.batch([
       env.DB.prepare("SELECT COUNT(*) n FROM shots WHERE status = 'pending'"),
@@ -303,6 +431,7 @@ export default {
       if (req.method === "POST" && p === "/api/comments") return await addComment(req, env);
       if (req.method === "POST" && p === "/api/report") return await report(req, env);
       if (req.method === "POST" && p === "/api/e") return await track(req, env);
+      if (req.method === "POST" && p === "/api/pv") return await pageview(req, env);
       if (req.method === "GET" && p === "/api/shots") return await listShots(url, env);
       if (req.method === "POST" && p === "/api/shots") return await addShot(req, env);
       const im = /^\/api\/shot\/(\d+)$/.exec(p);

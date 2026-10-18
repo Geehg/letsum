@@ -42,7 +42,7 @@
     } catch (e) {
       clearTimeout(t); faces.forEach((x) => document.fonts.delete(x));
       if (!retry) { await new Promise((r) => setTimeout(r, 1500)); return loadFace(job, true); }
-      if (main) markFace(f.id, "fail");
+      if (main) { markFace(f.id, "fail"); ev("ffail", f.id); } // 모니터링: 미리보기 실패 폰트(폰트별 합계)
     }
   }
   function pumpFaces() {
@@ -350,7 +350,12 @@
     state.sort = v; sel.value = v;
   }
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
-  $("#qTop").addEventListener("input", (e) => { state.q = e.target.value.trim(); render(); });
+  let sqT = null, sqLast = "";
+  $("#qTop").addEventListener("input", (e) => {
+    state.q = e.target.value.trim(); render();
+    // 방문 통계: 입력을 1.5초 멈춘 검색어만(합계). 결과 수가 0이면 '찾는데 없는 폰트'로도 집계
+    clearTimeout(sqT); sqT = setTimeout(() => { const v = state.q; if (v && v !== sqLast && window.lsSearch) { sqLast = v; window.lsSearch(v, filtered().length); } }, 1500);
+  });
   $("#themeBtn").addEventListener("click", () => {
     const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", cur); try { localStorage.setItem("ls_theme", cur); } catch (e) {}
@@ -1667,7 +1672,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   const v0 = new URLSearchParams(location.search).get("view"); // 보기 링크: ?view=list|grid|ctx|feed
   setView(["list", "grid", "ctx", "feed"].includes(v0) ? v0 : state.view); // 기본은 피드
   const q0 = new URLSearchParams(location.search).get("q");
-  if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
+  if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); if (window.lsSearch) window.lsSearch(state.q, filtered().length); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
   if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }
   detectAll().then(() => { render(); runCoverage(); });
 })();

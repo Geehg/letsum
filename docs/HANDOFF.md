@@ -154,3 +154,22 @@ img.save("sample.png")
 - 처리: 수정 허용 라이선스(OFL·공공누리 1유형·수정 허용 자체 라이선스)는 손상 부가 표(kern·DSIG·hdmx·VDMX·LTSH·PCLT, 필요 시 hinting·post 3)를 빼고 다시 저장, LICENSE.txt에 기록.
   수정 금지·불명확 → 배포처의 다른 공식 형식(TTF/WOFF) 시도 → 그래도 안 되면 `intro: true` + 원본으로 그린 견본 이미지.
 - 2026-10-17 결과: 헬스셋고딕·EBS 주시경체 → 견본 이미지(소개 전용), 동그라미재단체 700 → 표 정리, 나눔명조 옛한글 → 네이버 공식 TTF 주소로.
+
+## 방문 통계·검색 키워드·모니터링 (2026-10-18~)
+- 관리자(`admin.html`) 탭: **방문 통계**(방문·페이지뷰·일별·시간대·요일·유입 채널·유입 사이트·첫 페이지·인기 페이지·국가·기기·브라우저·OS·화면 폭·utm) · **검색 키워드**(구글 Search Console · 검색엔진이 넘긴 검색어 · 사이트 안 검색어 · 결과 없는 검색어) · **모니터링**(지금 점검: 사이트·API·미러·NAS 폰트·Google Fonts 응답 시간 / 가동 감시 이슈 / 자동 작업 결과 / 미리보기 실패 폰트 / 스크립트 오류 / 검색 로봇) · **기능 이용**(기존 지표).
+- 수집: `html/js/pv.js`(모든 공개 페이지, 관리자 제외) → `POST /api/pv` → D1 `traffic(day, dim, key, n)` **날짜별 합계만**. IP·쿠키·식별값·유입 주소 전체는 저장 안 함(호스트·검색어만 추출). 이메일·6자리 이상 숫자 든 검색어는 버림. '추적 안 함'·GPC면 안 보냄. 약 13개월(400일) 지나면 자동 삭제.
+- **시작일 2026-10-25**: 개인정보처리방침 변경(2026-10-18 공지)의 시행일. 그 전에는 `/api/pv`가 받기만 하고 버린다(`TRAFFIC_FROM`). 로컬 시험은 `worker/.dev.vars`에 `TRAFFIC_FROM=2026-01-01`.
+- 미리보기 실패(`ffail`)는 기존 기능 집계(`/api/e`)로 바로 쌓인다(폰트별 합계).
+- D1 쓰기량: 방문 1회 ≈ 13행 + 페이지뷰마다 3행. 무료 한도(하루 10만 행)면 하루 약 5,000방문까지 여유.
+
+### 구글 검색어 연결(선택, 한 번만) — 운영자가 직접
+비밀 키를 다루는 작업이라 운영자가 직접 한다(에이전트는 키를 입력하지 않음).
+1. Google Cloud 콘솔 → 프로젝트 하나 → 'Google Search Console API' 사용 설정.
+2. IAM → 서비스 계정 만들기(역할 없음) → 키 → JSON 키 받기.
+3. Search Console(letsum.app 속성) → 설정 → 사용자 및 권한 → 서비스 계정 이메일을 **제한됨** 권한으로 추가.
+4. `cd worker && npx wrangler secret put GSC_SA < 받은키.json` (속성이 URL 접두어 방식이면 `GSC_SITE`에 `https://letsum.app/`도 등록). 받은 키 파일은 지운다.
+
+### Cloudflare 통계를 관리자 화면에서 보기(선택)
+1. Cloudflare → Web Analytics → letsum.app 추가(자동 설정) — 켜면 바로 대시보드에서 볼 수 있음.
+2. 관리자 화면에도 띄우려면: My Profile → API 토큰 → 'Account Analytics 읽기' 토큰 생성 →
+   `npx wrangler secret put CF_API_TOKEN`, `CF_ACCOUNT_ID`(계정 ID), `CF_WA_SITE_TAG`(Web Analytics 사이트 태그).
