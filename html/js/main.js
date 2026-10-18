@@ -5,7 +5,7 @@
   const $$ = (s) => [...document.querySelectorAll(s)];
   const LS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
-  const EN = window.LS_LANG === "en"; const G1 = EN ? "Aa" : "가"; // /en/ — 영문 폰트 모드(한글 전용 기능: 한글 글자 검사·옛한글·한자 끔)
+  const EN = window.LS_LANG === "en"; if (EN) document.documentElement.classList.add("lang-en"); const G1 = EN ? "Aa" : "가"; // /en/ — 영문 폰트 모드(한글 전용 기능: 한글 글자 검사·옛한글·한자 끔)
   const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
   // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
@@ -116,7 +116,7 @@
     liveOnly: false, body: (() => { try { return localStorage.getItem("ls_body") || ""; } catch (e) { return ""; } })(), bodySize: 11.5, bodyLh: 185, bodyLs: 0,
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
-    sort: "new", text: curSample.t, size: 30, weight: 400, inv: false, pair: false,
+    sort: "new", text: curSample.t, size: EN ? 60 : 30, weight: 400, inv: false, pair: false,
     view: "feed", ctx: "thumb",
   };
   const favs = new Set(LS("fm_favs", []));
@@ -293,6 +293,7 @@
     if (fromInput && !evTyped && t.trim().length >= 2) { evTyped = true; ev("text_custom"); } // 직접 문장을 입력한 방문 수(내용은 보내지 않음)
     renderPreviews(); scheduleCoverage();
   }
+  if (EN) { const r = $("#sizeRange"); r.max = 200; r.value = state.size; $("#sizeV").textContent = state.size + "px"; }
   $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
   $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews();
     $$("[data-id]").forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight * 2) ensureFace(idOf(el)); }); })); // 화면 근처 카드의 새 굵기를 바로 받기
@@ -516,7 +517,7 @@
   }
   function cardHTML(f) {
     return `<article class="card" data-id="${f.id}" tabindex="0">
-      ${f.intro ? introBox(f) : `<div class="r-pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, 40)}px">${pvText(f)}</div>`}
+      ${f.intro ? introBox(f) : `<div class="r-pv" style="font-family:${famOf(f)};font-weight:${wOf(f)};font-size:${Math.min(state.size, EN ? 80 : 40)}px">${pvText(f)}</div>`}
       <div class="r-name">${esc(f.name)}<span class="en">${esc(f.designer)}</span></div>${instHTML(f)}
       <div class="pills">${pills(f)}${missPill(f)}</div>
       <div class="foot">${covTags(f)}${acts(f)}</div>
@@ -668,6 +669,16 @@
   // 좋아요는 즐겨찾기(이 브라우저에만 저장), 저장은 비교 담기. 서버가 없어 좋아요 수·댓글은 표시하지 않는다(가짜 숫자 금지).
   const FEED_BG = [["var(--lime)", "var(--lime-ink)"], ["var(--ink)", "var(--paper)"], ["#e9e4d8", "#1b1b1b"], ["#dfe7f3", "#14213d"], ["#f3e1dc", "#3a1a12"]];
   const FEED_CTX = { "디스플레이": "thumb", "명조": "book", "손글씨": "card", "고딕": "ui" };
+  // 영문 피드 글자 크기: 단어 단위로 줄을 나눠 '줄 수 × 줄 높이'가 카드 안(높이 약 58cqw)에 들어가는 가장 큰 크기(최대 22cqw)
+  function enFit(t) {
+    const words = String(t).split(/\s+/);
+    for (let sz = 22; sz > 7; sz -= 0.5) {
+      const per = 84 / (sz * 0.62); let lines = 1, cur = 0; // 한 줄에 들어가는 글자 수(넓은 라틴 폰트 기준 평균 폭 ≈ 0.62em)
+      for (const w of words) { const L = w.length + (cur ? 1 : 0); if (w.length > per) { lines = 99; break; } if (cur + L > per) { lines++; cur = w.length; } else cur += L; }
+      if (lines * 1.22 * sz <= 58) return sz;
+    }
+    return 7;
+  }
   // 피드 카드 슬라이드 — 정사각 영역의 폭(cqw)에 맞춰 글자 크기를 정하므로 카드 크기가 달라도 비율이 같다
   const FEED_POSTER = {
     "디스플레이": (f, t, fam) => `<div class="ig-s fp fp-thumb" style="font-family:${fam}"><div class="fp-ch"><i></i>LETSUM 채널 · 조회수 12만회</div><div class="fp-t" style="font-weight:${f.weights[f.weights.length - 1]}">${esc(t).replace(/(\S+)$/, "<em>$1</em>")}</div><span class="fp-dur">12:34</span><span class="ig-cap2">유튜브 썸네일 적용안</span></div>`,
@@ -693,7 +704,8 @@
   function feedSlides(f, i) {
     const [bg, fg] = FEED_BG[i % FEED_BG.length];
     const t = state.text || f.name;
-    const sz = t.length <= 8 ? 13 : t.length <= 16 ? 10.5 : t.length <= 28 ? 8 : 6;
+    // 라틴 글자는 한글보다 폭이 절반 정도라 같은 크기면 작아 보인다 → 영문은 약 2배
+    const sz = EN ? enFit(t) : t.length <= 8 ? 13 : t.length <= 16 ? 10.5 : t.length <= 28 ? 8 : 6;
     const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
@@ -887,7 +899,7 @@
       const pv = el.querySelector(".r-pv"); if (!pv) return;
       pv.innerHTML = pvText(f);
       pv.style.fontFamily = famOf(f); pv.style.fontWeight = wOf(f);
-      pv.style.fontSize = (el.classList.contains("card") ? Math.min(state.size, 40) : state.size) + "px";
+      pv.style.fontSize = (el.classList.contains("card") ? Math.min(state.size, EN ? 80 : 40) : state.size) + "px";
     });
   }
   function bind(host) {
