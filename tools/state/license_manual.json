@@ -2083,5 +2083,29 @@
   "evidence": "공군 홈페이지 자료실 '공군서체' 설치파일 속 매뉴얼: 개인·기업 무료, 자유롭게 사용·상업적 이용 가능 / 유료 판매·왜곡 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
   "page": "https://rokaf.airforce.mil.kr/airforce/4151/subview.do",
   "checked": "2026-10-19"
+ },
+ "k-syu-font": {
+  "license": "삼육대체 사용규정",
+  "evidence": "삼육대학교 서체 페이지 사용규정: 오픈라이센스 폰트, 개인·기업 누구나 자유롭게 사용 / 유료 판매·변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.syu.ac.kr/about-sahmyook/symbols-ui/syu-font/",
+  "checked": "2026-10-19"
+ },
+ "k-elice-baeum": {
+  "license": "OFL",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "checked": "2026-10-19"
+ },
+ "k-elice-coding": {
+  "license": "OFL",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "checked": "2026-10-19"
+ },
+ "k-elice-dx-neolli": {
+  "license": "OFL",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "checked": "2026-10-19"
  }
 }

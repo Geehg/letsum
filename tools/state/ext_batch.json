@@ -1034,5 +1034,47 @@
   "license": "대한민국공군 전용서체 이용조건",
   "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
   "mode": "hosted"
+ },
+ "syu-font": {
+  "fam": "삼육대체",
+  "org": "삼육대학교",
+  "page": "https://www.syu.ac.kr/about-sahmyook/symbols-ui/syu-font/",
+  "srcName": "삼육대학교(공식)",
+  "evidence": "삼육대학교 서체 페이지 사용규정: 오픈라이센스 폰트, 개인·기업 누구나 자유롭게 사용 / 유료 판매·변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "syu-font",
+  "lic": "CUSTOM",
+  "license": "삼육대체 사용규정",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "elice-baeum": {
+  "fam": "엘리스 디지털배움체",
+  "org": "(주)엘리스",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "srcName": "엘리스(공식)",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "id": "elice-baeum",
+  "lic": "OFL",
+  "mode": "keep"
+ },
+ "elice-coding": {
+  "fam": "엘리스 디지털코딩체",
+  "org": "(주)엘리스",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "srcName": "엘리스(공식)",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "id": "elice-coding",
+  "lic": "OFL",
+  "mode": "keep"
+ },
+ "elice-dx-neolli": {
+  "fam": "엘리스 DX널리체",
+  "org": "(주)엘리스",
+  "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+  "srcName": "엘리스(공식)",
+  "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
+  "id": "elice-dx-neolli",
+  "lic": "OFL",
+  "mode": "keep"
  }
 }
