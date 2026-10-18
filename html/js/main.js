@@ -101,12 +101,20 @@
     document.head.appendChild(link);
   });
 
+  // ---------- 예시 문장 ----------
+  // 접속·새로고침마다 무작위. 관리자가 고친 목록(/api/samples)을 지난 방문에 받아 둔 것이 있으면 그것을, 없으면 data.js 기본 30개
+  let SAMPLES = SAMPLE_LINES;
+  try { const c = JSON.parse(localStorage.getItem("ls_samples") || "null"); if (c && Array.isArray(c) && c.length) SAMPLES = c; } catch (e) {}
+  const pickSample = (not) => { const L = SAMPLES.length > 1 && not ? SAMPLES.filter((x) => x.t !== not) : SAMPLES; return L[Math.floor(Math.random() * L.length)]; };
+  let curSample = pickSample();
+  const srcLabel = (x) => [x.cat, x.src && x.src !== x.cat ? x.src : ""].filter(Boolean).join(" · ");
+
   // ---------- 상태 ----------
   const state = {
     liveOnly: false, body: (() => { try { return localStorage.getItem("ls_body") || ""; } catch (e) { return ""; } })(), bodySize: 11.5, bodyLh: 185, bodyLs: 0,
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
-    sort: "new", text: TEXT_PRESETS[0].t, size: 30, weight: 400, inv: false, pair: false,
+    sort: "new", text: curSample.t, size: 30, weight: 400, inv: false, pair: false,
     view: "feed", ctx: "thumb",
   };
   const favs = new Set(LS("fm_favs", []));
@@ -268,8 +276,9 @@
   }
 
   // ---------- 컨트롤 구성 ----------
-  $("#presetSel").innerHTML = `<option value="">프리셋</option>` + TEXT_PRESETS.map((p) => `<option value="${p.id}">${p.label}</option>`).join("");
+  $("#presetSel").innerHTML = `<option value="">프리셋</option><option value="rnd">다른 예시 문장 ↻</option>` + TEXT_PRESETS.map((p) => `<option value="${p.id}">${p.label}</option>`).join("");
   $("#presetSel").addEventListener("change", (e) => {
+    if (e.target.value === "rnd") { curSample = pickSample(state.text); setText(curSample.t); e.target.value = ""; return; }
     const p = TEXT_PRESETS.find((x) => x.id === e.target.value); if (!p) return;
     setText(p.t); e.target.value = "";
   });
@@ -277,6 +286,7 @@
   let evTyped = false;
   function setText(t, fromInput) {
     state.text = t; if (!fromInput) $("#previewText").value = t;
+    const src = $("#textSrc"); if (src) { const sm = SAMPLES.find((x) => x.t === t); src.textContent = sm ? srcLabel(sm) : ""; }
     if (fromInput && !evTyped && t.trim().length >= 2) { evTyped = true; ev("text_custom"); } // 직접 문장을 입력한 방문 수(내용은 보내지 않음)
     renderPreviews(); scheduleCoverage();
   }
@@ -1665,6 +1675,14 @@ import "@fontsource/${f.id}/400.css";</pre>
   Promise.race([Promise.all([brandLoad, namesLoad]), new Promise((r) => setTimeout(r, 800))]).then(renderNew);
   // 이름표가 늦게 오면 카드·열린 상세를 다시 그림
   namesLoad.then(() => { render(); const m = location.hash.match(/^#f=([\w-]+)/); if (m && overlay.classList.contains("open") && $("#nameSec")) openDetail(m[1]); });
+  $("#previewText").value = state.text; { const src = $("#textSrc"); if (src) src.textContent = srcLabel(curSample); }
+  // 관리자가 고친 예시 문장 목록을 받아 두고(다음 방문용), 이번 방문 문장이 그 목록에 없으면 목록에서 다시 고른다(직접 입력 전일 때만)
+  getJSON("/api/samples").then((j) => {
+    const L = j && Array.isArray(j.items) && j.items.length ? j.items : null;
+    try { if (L) localStorage.setItem("ls_samples", JSON.stringify(L)); else localStorage.removeItem("ls_samples"); } catch (e) {}
+    const next = L || SAMPLE_LINES; const same = JSON.stringify(next) === JSON.stringify(SAMPLES); SAMPLES = next;
+    if (!same && state.text === curSample.t && !SAMPLES.some((x) => x.t === state.text)) { curSample = pickSample(); setText(curSample.t); }
+  });
   render();
   renderTray();
   openFromHash(); openSharedFromHash(); checkFavChanges();

@@ -7,8 +7,8 @@
 <title>관리자 — LETSUM(렛섬)</title>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=67">
-<link rel="stylesheet" href="css/admin.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=68">
+<link rel="stylesheet" href="css/admin.css?v=5">
 </head>
 <body class="adm">
 <header>
@@ -47,6 +47,7 @@
     <nav class="adm-tabs" id="tabs" role="tablist">
       <button data-tab="home" class="on" role="tab">개요</button>
       <button data-tab="brand" role="tab">히어로 테마</button>
+      <button data-tab="samples" role="tab">예시 문장</button>
       <button data-tab="shots" role="tab">사진 검토 <i id="tbShots"></i></button>
       <button data-tab="cmts" role="tab">댓글 <i id="tbCmts"></i></button>
       <button data-tab="traffic" role="tab">방문 통계</button>
@@ -82,6 +83,18 @@
         </aside>
         <div class="br-edit" id="brEdit"><p class="note">왼쪽에서 폰트를 고르세요.</p></div>
       </div>
+    </section>
+
+    <!-- 예시 문장 -->
+    <section class="adm-pane" data-pane="samples" hidden>
+      <p class="note">사이트 미리보기 문장이 접속·새로고침마다 이 목록에서 무작위로 바뀝니다. 저장하면 서버에 바로 반영됩니다(방문자 화면은 최대 5분 뒤). 시·노랫말은 <b>저작권이 끝난 작품이나 직접 쓴 문장</b>만 넣어 주세요.</p>
+      <div class="mt-tools">
+        <button class="btn sm" id="smAdd" type="button">+ 문장 추가</button>
+        <button class="btn sm blue" id="smSave" type="button">저장 — 사이트에 반영</button>
+        <button class="btn sm ghost" id="smReset" type="button">기본 30개로 되돌리기</button>
+        <span class="note" id="smMsg"></span>
+      </div>
+      <div class="adm-scroll"><table class="spec sm-tbl"><thead><tr><th>#</th><th>분야</th><th>문장 (80자)</th><th>출처</th><th>미리보기</th><th></th></tr></thead><tbody id="smRows"></tbody></table></div>
     </section>
 
     <!-- 사진 -->
@@ -149,7 +162,7 @@
 
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) 관리자</p></div></footer>
 
-<script src="js/data.js?v=12"></script>
-<script src="js/admin.js?v=15"></script>
+<script src="js/data.js?v=13"></script>
+<script src="js/admin.js?v=16"></script>
 </body>
 </html>

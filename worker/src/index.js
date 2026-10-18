@@ -10,6 +10,7 @@
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
 //       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "err", m } → 204  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
+//       GET  /api/samples                  → { items: [{ cat, t, src }], updated }  (예시 문장, 관리자가 고친 목록. 없으면 items: null → 사이트 기본값)
 //       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
 //       POST /api/admin/login { id, pw }   → { token, exp }  (관리자 로그인 → 12시간 통행증. 이후 Authorization: Bearer <token>)
 //       관리자(Authorization: Bearer ADMIN_KEY 또는 로그인 통행증):
@@ -18,6 +19,7 @@
 //       GET  /api/admin/traffic?days=28    → 방문 통계(유입 채널·사이트·검색어·페이지·시간대·기기·국가)
 //       GET  /api/admin/gsc?days=28        → 구글 Search Console 검색어(비밀값 GSC_SA가 있을 때)
 //       GET  /api/admin/cfwa?days=7        → Cloudflare Web Analytics 요약(비밀값 CF_API_TOKEN·CF_ACCOUNT_ID·CF_WA_SITE_TAG가 있을 때)
+//       POST /api/admin/samples { items }   → 예시 문장 저장(1~100개, 문장 80자) / { items: null }이면 기본값으로 되돌림
 //       GET  /api/admin/export             → 백업용 전체 데이터(JSON, 사진은 base64) — NAS가 주 1회 받아 보관
 //       GET  /api/admin/summary            → { pendingShots, reportedComments, hiddenComments }
 //       GET  /api/admin/shots?status=pending|approved, GET /api/admin/shot/<n>
@@ -323,6 +325,25 @@ async function cfwaReport(url, env) {
   } catch (e) { return json({ configured: true, error: String(e.message || e).slice(0, 300) }); }
 }
 
+// ---------- 예시 문장(관리자 편집) ----------
+function cleanSamples(list) {
+  if (!Array.isArray(list)) return null;
+  const out = list.map((x) => ({ cat: clean(x && x.cat, 12), t: clean(x && x.t, 80).replace(/\n/g, " "), src: clean(x && x.src, 40) })).filter((x) => x.t);
+  return out.length && out.length <= 100 ? out : null;
+}
+async function samplesGet(env) {
+  const r = await env.DB.prepare("SELECT data, updated FROM settings WHERE key = 'samples'").first();
+  let items = null; try { items = r ? JSON.parse(r.data) : null; } catch {}
+  return json({ items, updated: r ? r.updated : null }, 200, { "cache-control": "public, max-age=300" });
+}
+async function samplesSave(req, env) {
+  const b = await body(req);
+  if (b.items === null) { await env.DB.prepare("DELETE FROM settings WHERE key = 'samples'").run(); return json({ ok: true, reset: true }); }
+  const items = cleanSamples(b.items); if (!items) return bad("문장은 1~100개, 각 80자 이내여야 합니다");
+  await env.DB.prepare("INSERT INTO settings (key, data, updated) VALUES ('samples', ?, ?) ON CONFLICT(key) DO UPDATE SET data = excluded.data, updated = excluded.updated").bind(JSON.stringify(items), Date.now()).run();
+  return json({ ok: true, items });
+}
+
 // ---------- 히어로 브랜드 테마 ----------
 const HEX = /^#[0-9a-f]{6}$/i;
 const STYLES = new Set(["plain", "sticker", "shadow"]);
@@ -380,6 +401,7 @@ async function admin(url, req, env) {
     const r = await env.DB.prepare("SELECT day, name, font, n FROM events WHERE day >= ? ORDER BY day").bind(from).all();
     return json({ from, rows: r.results });
   }
+  if (req.method === "POST" && url.pathname === "/api/admin/samples") return samplesSave(req, env);
   if (req.method === "GET" && url.pathname === "/api/admin/traffic") return trafficReport(url, env);
   if (req.method === "GET" && url.pathname === "/api/admin/gsc") return gscReport(url, env);
   if (req.method === "GET" && url.pathname === "/api/admin/cfwa") return cfwaReport(url, env);
@@ -442,6 +464,7 @@ export default {
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
       if (req.method === "GET" && p === "/api/brand") return await brandList(env);
+      if (req.method === "GET" && p === "/api/samples") return await samplesGet(env);
       if (req.method === "POST" && p === "/api/like") return await like(req, env);
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, req, env);
       if (req.method === "POST" && p === "/api/comment-like") return await likeComment(req, env);

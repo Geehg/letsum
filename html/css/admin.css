@@ -85,3 +85,11 @@
 .br-prev .sp-type{margin:10px 0 16px;font-size:18px}
 .br-prev p{color:inherit}
 .br-acts h2{border:0;padding:0}
+
+/* 예시 문장 편집 */
+.sm-tbl th{width:auto!important}
+.sm-tbl td{vertical-align:middle;padding:6px 6px}
+.sm-tbl input{width:100%;border:1px solid var(--rule2);padding:6px 8px;font-size:14px;background:var(--paper)}
+.sm-tbl td.c{width:110px}.sm-tbl td.s{width:200px}.sm-tbl td.n{width:34px;color:var(--ink3);font-size:12px}
+.sm-tbl td.pv{font-family:'Noto Serif KR',serif;font-size:15px;color:var(--ink2);max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sm-tbl tr.dirty td{background:var(--paper2)}

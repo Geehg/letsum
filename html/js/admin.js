@@ -66,7 +66,7 @@
     $("#loginView").hidden = true; $("#loginView").style.display = "none"; $("#dashView").hidden = false;
     await loadBrandData();
     renderHome(); connect();
-    const h = location.hash.slice(1); tab(["home", "brand", "shots", "cmts", "traffic", "keywords", "monitor", "metrics", "fonts"].includes(h) ? h : "home");
+    const h = location.hash.slice(1); tab(["home", "brand", "samples", "shots", "cmts", "traffic", "keywords", "monitor", "metrics", "fonts"].includes(h) ? h : "home");
   }
 
   // ---------- 히어로 노출 목록(사이트와 같은 규칙) ----------
@@ -270,6 +270,50 @@
     const del = $("#brDel"); if (del) del.addEventListener("click", () => save(null, "저장을 지웠습니다. 자동 추천(또는 기본색)으로 돌아갑니다."));
     const off = $("#brOff"); if (off) off.addEventListener("click", () => save({ off: true }, "브랜드 색을 껐습니다. 분위기 기본색으로 나갑니다."));
   }
+
+  // ================= 예시 문장 =================
+  let smList = [], smSaved = "";
+  const smRow = (x, i) => `<tr data-i="${i}"><td class="n">${i + 1}</td>
+    <td class="c"><input data-k="cat" maxlength="12" value="${esc(x.cat)}" placeholder="분야" list="smCats"></td>
+    <td><input data-k="t" maxlength="80" value="${esc(x.t)}" placeholder="미리보기에 쓸 문장"></td>
+    <td class="s"><input data-k="src" maxlength="40" value="${esc(x.src)}" placeholder="출처(예: 윤동주 「서시」, 창작 예시)"></td>
+    <td class="pv">${esc(x.t)}</td>
+    <td style="white-space:nowrap"><button class="btn sm ghost" data-up="${i}" type="button" title="위로">↑</button> <button class="btn sm ghost" data-del="${i}" type="button">삭제</button></td></tr>`;
+  function smRender() {
+    const cats = [...new Set([...SAMPLE_LINES, ...smList].map((x) => x.cat).filter(Boolean))];
+    $("#smRows").innerHTML = smList.map(smRow).join("") + `<datalist id="smCats">${cats.map((c) => `<option value="${esc(c)}">`).join("")}</datalist>`;
+    const dirty = JSON.stringify(smList) !== smSaved;
+    $("#smMsg").textContent = `${smList.length}개${dirty ? " · 저장하지 않은 변경 있음" : ""}`;
+    $$("#smRows input").forEach((inp) => inp.addEventListener("input", () => {
+      const tr = inp.closest("tr"), i = +tr.dataset.i; smList[i][inp.dataset.k] = inp.value;
+      if (inp.dataset.k === "t") $(".pv", tr).textContent = inp.value;
+      tr.classList.add("dirty"); $("#smMsg").textContent = `${smList.length}개 · 저장하지 않은 변경 있음`;
+    }));
+    $$("#smRows [data-del]").forEach((b) => b.addEventListener("click", () => { smList.splice(+b.dataset.del, 1); smRender(); }));
+    $$("#smRows [data-up]").forEach((b) => b.addEventListener("click", () => { const i = +b.dataset.up; if (i > 0) { [smList[i - 1], smList[i]] = [smList[i], smList[i - 1]]; smRender(); } }));
+  }
+  loaders.samples = async function () {
+    $("#smMsg").textContent = "불러오는 중…";
+    try {
+      const j = await fetch("/api/samples", { cache: "no-store" }).then((r) => r.json());
+      smList = (j.items && j.items.length ? j.items : SAMPLE_LINES).map((x) => ({ cat: x.cat || "", t: x.t || "", src: x.src || "" }));
+      smSaved = JSON.stringify(smList); smRender();
+      if (!j.items) $("#smMsg").textContent += " · 지금은 기본 목록을 쓰는 중";
+    } catch (x) { smList = SAMPLE_LINES.map((x) => ({ ...x })); smSaved = JSON.stringify(smList); smRender(); }
+  };
+  $("#smAdd").addEventListener("click", () => { smList.push({ cat: "", t: "", src: "" }); smRender(); const ins = $$("#smRows tr:last-child input"); if (ins[1]) ins[1].focus(); });
+  $("#smSave").addEventListener("click", async () => {
+    const items = smList.map((x) => ({ cat: x.cat.trim(), t: x.t.trim(), src: x.src.trim() })).filter((x) => x.t);
+    if (!items.length) { $("#smMsg").textContent = "문장이 하나 이상 있어야 합니다."; return; }
+    $("#smMsg").textContent = "저장 중…";
+    try { const j = await call("samples", { items }); smList = j.items; smSaved = JSON.stringify(smList); smRender(); $("#smMsg").textContent = `${smList.length}개 저장했습니다. 방문자 화면에는 최대 5분 뒤 반영됩니다.`; }
+    catch (x) { $("#smMsg").textContent = x.message; }
+  });
+  $("#smReset").addEventListener("click", async () => {
+    if (!confirm("관리자가 고친 목록을 지우고 기본 30개로 되돌릴까요?")) return;
+    try { await call("samples", { items: null }); await loaders.samples(); $("#smMsg").textContent = "기본 30개로 되돌렸습니다."; } catch (x) { $("#smMsg").textContent = x.message; }
+  });
+  addEventListener("beforeunload", (e) => { if (smList.length && JSON.stringify(smList) !== smSaved) { e.preventDefault(); e.returnValue = ""; } });
 
   // ================= 사진 =================
   let urls = [];

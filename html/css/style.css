@@ -89,6 +89,8 @@ nav.main a.on{color:var(--ink);border-bottom-color:var(--ink)}
 .deck .d1>*:last-child{border-right:none}
 .d-text{flex:1;min-width:220px;gap:10px;padding-left:0!important}
 .d-text .k{white-space:nowrap}
+.d-text .t-src{font-size:11px;color:var(--ink3);white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:720px){.d-text .t-src{display:none}}
 .d-text input{flex:1;outline:none;font-size:17px;font-weight:600;min-width:120px;background:var(--paper);border:2px solid var(--ink);padding:9px 12px;height:42px}
 .d-text input:focus{box-shadow:0 0 0 3px var(--lime)}
 .d-text input::placeholder{color:var(--ink3);font-weight:500}
