@@ -48,7 +48,7 @@ function page(f, en) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=12">
+<link rel="stylesheet" href="../css/style.css?v=69">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -70,8 +70,8 @@ function page(f, en) {
   ${REASONS[f.id] ? `<div class="why-box"><b>추천 이유</b><p>${esc(REASONS[f.id].why)}</p><p class="note">잘 맞는 곳: ${REASONS[f.id].good.map(esc).join(" · ")}${REASONS[f.id].caution ? `<br>주의: ${esc(REASONS[f.id].caution)}` : ""}</p></div>` : ""}
   ${f.intro ? `${f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>`}
   <div class="dlrow">
-    ${dl.zip ? `<a class="btn" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
-    <a class="btn${dl.zip ? " ghost" : ""}" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
+    ${dl.zip ? `<a class="btn" data-dl="zip" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
+    <a class="btn${dl.zip ? " ghost" : ""}" data-dl="page" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
     <a class="btn ghost" href="${home}#f=${f.id}">${f.intro ? "홈에서 보기 →" : "홈에서 테스트·비교 →"}</a>
   </div>
   <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ${f.intro ? "이용 조건은 배포처 원문을 따릅니다." : "ZIP 안에 라이선스 원문이 함께 들어 있습니다."}${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
@@ -95,7 +95,8 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
-<script src="../js/common.js?v=1" data-base="../"></script>
+<script type="application/json" id="instData">${JSON.stringify((() => { const n = NAMES[f.id] || {}; const w = (n.w || {})[400] || Object.values(n.w || {})[0] || {}; return { name: f.name, fam: n.fam || "", win: w.win || "", ps: w.ps || "", gf: /fonts\.google\.com/.test(dl.page || "") }; })()).replace(/</g, "\\u003c")}</script>
+<script src="../js/common.js?v=2" data-base="../"></script>
 <script src="../js/pv.js?v=1" defer></script>
 </body>
 </html>
