@@ -65,9 +65,46 @@ def css_urls(family, weights):
 def js(v): return json.dumps(v, ensure_ascii=False)
 
 
+# Fontshare(ITF 공식)에서 OFL로 배포하는데 Google Fonts에는 없는 폰트 — 제작사 공식 웹폰트 주소를 그대로.
+# ITF 자체 라이선스(ITF FFL)는 '방문자가 고르는 글꼴로 제공' 금지라 넣지 않는다(OFL만).
+FONTSHARE_OFL = ["roundo"]
+FS_CAT = {"Sans": "Sans Serif", "Serif": "Serif", "Display": "Display", "Script": "Handwriting", "Handwritten": "Handwriting"}
+def fontshare_ofl(old):
+    out = []
+    try: meta = {f["slug"]: f for f in json.loads(get("https://api.fontshare.com/v2/fonts?limit=200"))["fonts"]}
+    except Exception as ex: print("Fontshare 메타데이터 실패:", ex); return [dict(o) for o in old.values() if o.get("fontshare")]
+    for slug in FONTSHARE_OFL:
+        m = meta.get(slug)
+        if not m or m.get("license_type") != "sil_ofl": print("Fontshare OFL 아님/없음:", slug); continue
+        ws = sorted({int(x["weight"]["number"]) for x in m.get("styles", []) if not x.get("is_italic") and str(x.get("weight", {}).get("number", "")).isdigit()}) or [400]
+        css = get(f"https://api.fontshare.com/v2/css?f[]={slug}@{','.join(map(str, ws))}&display=swap").decode("utf-8")
+        urls = {}
+        for body in re.findall(r"@font-face\s*\{([^}]*)\}", css):
+            w = re.search(r"font-weight:\s*(\d+)", body); u = re.search(r"url\(['\"]?(//[^'\")]+\.woff2)", body) or re.search(r"url\(['\"]?(https://[^'\")]+\.woff2)", body)
+            if w and u and "italic" not in body: urls[int(w.group(1))] = ("https:" + u.group(1)) if u.group(1).startswith("//") else u.group(1)
+        ws = [w for w in ws if w in urls]
+        if not ws: print("Fontshare 웹폰트 없음:", slug); continue
+        catk = FS_CAT.get((m.get("category") or "Sans").split(",")[0].strip(), "Sans Serif"); cat = CAT[catk]; fid = "e-" + slug
+        designers = ", ".join(d.get("name", "") for d in (m.get("designers") or [])) or "Indian Type Foundry"
+        e = {"id": fid, "name": m["name"], "en": m["name"], "family": f"'LS {fid}', {GEN[cat]}", "designer": designers, "holder": "Indian Type Foundry",
+             "category": cat, "tags": [CAT_EN[catk]] + ([f"{len(ws)}굵기"] if len(ws) >= 5 else []), "mood": MOOD[catk], "weights": ws, "formats": ["OTF", "TTF", "WOFF2"],
+             "cov": 0, "glyphs": "라틴·확장 라틴", "subsets": ["latin", "latin-ext"], "variable": False,
+             "webfont": {w: urls[w] for w in ws}, "webfontSrc": "Fontshare(ITF) 공식 웹폰트",
+             "dl": {"page": f"https://www.fontshare.com/fonts/{slug}", "srcName": "Fontshare(ITF)"},
+             "license": "OFL", "matrix": "OFL_ALL_OK", "verified": TODAY, "status": "verified",
+             "pair": PAIR[catk], "pop": 40, "added": old.get(fid, {}).get("added", TODAY), "fontshare": True,
+             "desc": f"인도 타입 파운드리(ITF)가 Fontshare에서 OFL로 공개한 {CAT_EN[catk]} 서체. {len(ws)}가지 굵기로, {USE[catk]}"}
+        if (m.get("inserted_at") or "")[:10]: e.update({"released": m["inserted_at"][:10], "releasedSrc": "Fontshare 등록일", "releasedUrl": e["dl"]["page"]})
+        o = old.get(fid)
+        if o and o.get("manual"):
+            for k in ("desc", "tags", "mood", "category", "pair", "manual"): e[k] = o[k]
+        out.append(e)
+    return out
+
+
 def entry_js(e):
     ks = ["id", "name", "en", "family", "designer", "holder", "category", "tags", "mood", "weights", "formats", "cov", "glyphs", "subsets", "variable",
-          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "desc", "manual"]
+          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "fontshare", "desc", "manual"]
     parts = []
     for k in ks:
         if k not in e: continue
@@ -94,7 +131,10 @@ def main():
     cand = []
     for m in meta:
         fam = m["family"]; subs = m.get("subsets") or []
-        if "latin" not in subs or m.get("primaryScript") not in ("", "Latn", None): continue
+        ps = m.get("primaryScript") or ""
+        if "latin" not in subs or (ps not in ("", "Latn") and "latin-ext" not in subs): continue
+        # 다른 문자권 폰트라도 라틴을 온전히 지원하면 포함(Poppins·Hind·Kanit 등). 단 아랍 문자 중심이거나 이름에 문자권이 붙은 전용판은 제외
+        if ps == "Arab" or re.search(r"\b(Arabic|Thai|Telugu|Siliguri|Madurai|Bangla|Bengali|Tamil|Kannada|Gujarati|Gurmukhi|Malayalam|Hebrew|Devanagari|Sinhala|Lao|Khmer|Myanmar|Georgian|Armenian|Ethiopic|Odia|Oriya|Tibetan|Mongolian)\b", fam): continue
         if any(s in subs for s in ("korean", "japanese", "chinese-simplified", "chinese-traditional", "chinese-hongkong")): continue
         if re.search(r"Icons|Symbols|Emoji|Barcode|Flag|Libre Barcode|Redacted|Linefont|Wavefont|Blank|Adobe Blank", fam): continue
         if m.get("isNoto") and fam not in ("Noto Sans", "Noto Serif", "Noto Sans Mono", "Noto Sans Display", "Noto Serif Display"): continue
@@ -103,7 +143,8 @@ def main():
         if not d: continue
         cand.append((m, d))
     cand.sort(key=lambda x: x[0].get("popularity") or 9999)
-    cand = cand[: a.top]
+    keep = {i for i in old if not old[i].get("fontshare")}  # 한 번 등록된 폰트는 순위가 떨어져도 유지(링크·즐겨찾기 보존)
+    cand = cand[: a.top] + [c for c in cand[a.top:] if "e-" + re.sub(r"[^a-z0-9]+", "-", c[0]["family"].lower()).strip("-") in keep]
     out = []
     for i, (m, d) in enumerate(cand):
         fam = m["family"]; slug = re.sub(r"[^a-z0-9]+", "-", fam.lower()).strip("-"); fid = "e-" + slug
@@ -133,6 +174,7 @@ def main():
             for k in ("desc", "tags", "mood", "category", "pair", "manual"): e[k] = o[k]
         out.append(e)
         if (i + 1) % 50 == 0: print(f"… {i + 1}/{len(cand)}")
+    out += fontshare_ofl(old)
     body = ",\n".join(entry_js(e) for e in out)
     hdr = ("// LETSUM 영문 폰트 데이터 — tools/build_en_data.py가 Google Fonts 공식 메타데이터로 생성(손으로 고친 항목은 manual: true).\n"
            "// /en/ 페이지에서만 쓴다: data.js 다음에 불러오고, LS_LANG === \"en\"이면 FONTS를 이 목록으로 바꾼다.\n")
