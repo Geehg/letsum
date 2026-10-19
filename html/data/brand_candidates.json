@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16",
+ "generated": "2026-10-19",
  "items": {
   "k-kccdodamdodam": {
    "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023",
@@ -818,8 +818,34 @@
   },
   "k-wonju": {
    "page": "https://www.wonju.go.kr/www/contents.do?key=6554",
-   "palette": [],
-   "error": "<urlopen error timed out>"
+   "palette": [
+    {
+     "hex": "#033074",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d0dcea",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1e1e1e",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d0dcea",
+    "fg": "#033074",
+    "ac": "#033074",
+    "acInk": "#ffffff"
+   }
   },
   "k-bithumb-gothic-original": {
    "page": "https://www.bithumbcorp.com/ko/promotion/font.php",
@@ -12029,6 +12055,3756 @@
   },
   "k-x10y12pxdenkichiphangul": {
    "page": "https://quiple.dev/font/denkichip-hangul",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-arita-dotum": {
+   "page": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 360.8,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#707070",
+     "score": 216,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e0e0e0",
+     "score": 182.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 161,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 114,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#005295",
+     "score": 111,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#444444",
+     "score": 108,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0464b3",
+     "score": 45,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 36,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 33,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#062c5e",
+     "score": 20,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d92c12",
+     "score": 10,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7d9e8",
+    "fg": "#222222",
+    "ac": "#005295",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-arita-buri": {
+   "page": "https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 360.8,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#707070",
+     "score": 216,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e0e0e0",
+     "score": 182.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 161,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 114,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#005295",
+     "score": 111,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#444444",
+     "score": 108,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0464b3",
+     "score": 45,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 36,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 33,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#062c5e",
+     "score": 20,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d92c12",
+     "score": 10,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7d9e8",
+    "fg": "#222222",
+    "ac": "#005295",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-galmuri-mono7": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri-mono9": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-galmuri-mono11": {
+   "page": "https://github.com/quiple/galmuri",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hakgyoansim-ocarina": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13383114&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-songam-leehyungsik": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382879&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-sumunjang-title": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382192&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-sumunjang-body": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382189&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hangeuljaemin6": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382163&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-griun-kimjungwon": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381808&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-gangwon-state": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381787&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-high1-wonchuri-title": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13373093&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kcchyerim": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372654&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kccbangjeonghwan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372653&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yangju-byeolsan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371587&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-gamtanroad-tantan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371585&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-gamtanroad-batang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371584&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-gamtanroad-dotum": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371581&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-gamtanroad-gamtan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371578&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kcc-hanbit": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371550&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-pyeongchang-peace": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333589&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-pyeongchang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333587&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hanamdaum-body": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333563&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hanamdaum": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333562&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kim-jung-chul-script": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13328949&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kim-jung-chul-gothic": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304541&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kim-jung-chul-myungjo": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304542&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-pak-yong-jun": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chusalove": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288475&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-solmoe-kimdaegeon": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288333&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-andante": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288469&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chilgok-cye": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288467&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chilgok-ljh": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288466&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chilgok-lws": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288465&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chilgok-kyb": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288464&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chilgok-kaj": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288463&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yisunshin": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288449&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yisunshin-dotum": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288451&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yydimibang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288454&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-goyangdeogyang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288416&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-goyangilsan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288418&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-busan-font": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288428&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-bitgoeul": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288419&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-sunbatang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288468&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-suncheon": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288373&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-andongkaturi": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288375&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-andongwolyeonggyo": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288376&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jeonju-wanpanbon-gak": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288456&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jeonju-wanpanbon-sun": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288461&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-js-dongkang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288383&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-js-arirang-ppuri": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288384&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-js-arirang-hon": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288385&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-js-arirang": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288386&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jejugothic": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=419035&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jejumyeongjo": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13287188&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jejuhallasan": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13287189&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-oseong-and-haneum": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288378&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-pureunjeonnam": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288387&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-khnphandotum": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288390&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-happy-goheung": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288395&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-khnphanuoolim": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288392&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-keco-hwangyeong": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288470&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-lh": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288396&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-ghanachocolate": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262104&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kccmurukmuruk": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262151&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-kakao-big-sans": {
+   "page": "https://www.kakaocorp.com/page/detail/11571",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 58.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 37,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e5e5e5",
+     "score": 20,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffec7b",
+     "score": 15.7,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#666666",
+     "score": 15.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fae100",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#111111",
+     "score": 7,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0919",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dfd7b4",
+     "score": 2.6,
+     "src": "대표 이미지"
+    }
+   ],
+   "suggest": {
+    "bg": "#fffbe2",
+    "fg": "#000000",
+    "ac": "#80763e",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kakao-small-sans": {
+   "page": "https://www.kakaocorp.com/page/detail/11571",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 58.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 37,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e5e5e5",
+     "score": 20,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffec7b",
+     "score": 15.7,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#666666",
+     "score": 15.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fae100",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#111111",
+     "score": 7,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a8a8a8",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0919",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dfd7b4",
+     "score": 2.6,
+     "src": "대표 이미지"
+    }
+   ],
+   "suggest": {
+    "bg": "#fffbe2",
+    "fg": "#000000",
+    "ac": "#80763e",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ebs-hunmin-saeron": {
+   "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunminsaeron",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 312,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e7e7e7",
+     "score": 241,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1f3469",
+     "score": 137,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 110,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 62,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 61,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 44,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 43,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#337ab7",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 28,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 26,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ced2de",
+    "fg": "#1f3469",
+    "ac": "#1f3469",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ebs-hunmin": {
+   "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=hunmin",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 312,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e7e7e7",
+     "score": 241,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1f3469",
+     "score": 137,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 110,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 62,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 61,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 44,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 43,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#337ab7",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 28,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 26,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ced2de",
+    "fg": "#1f3469",
+    "ac": "#1f3469",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ebs-jusigyeong": {
+   "page": "https://about.ebs.co.kr/kor/organization/font?tabVal=jusigyeong",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 312,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e7e7e7",
+     "score": 241,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1f3469",
+     "score": 137,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 110,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 62,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 61,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 44,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 43,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#337ab7",
+     "score": 32,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 28,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 26,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ced2de",
+    "fg": "#1f3469",
+    "ac": "#1f3469",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-nl-library": {
+   "page": "https://www.nl.go.kr/NL/contents/N50104020000.do",
+   "palette": [
+    {
+     "hex": "#000000",
+     "score": 17.5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#003964",
+     "score": 13.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#e2eaff",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ed193a",
+     "score": 4.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#fdfde4",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#636363",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#c5c5c5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dfdfdf",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#246beb",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ec6941",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5a2d54",
+     "score": 0.1,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#bc2043",
+     "score": 0.1,
+     "src": "대표 이미지"
+    }
+   ],
+   "suggest": {
+    "bg": "#e2eaff",
+    "fg": "#000000",
+    "ac": "#003964",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-yes24-title": {
+   "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-yes24-gothic": {
+   "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-yes24-myeongjo": {
+   "page": "https://www.yes24.com/campaign/00_corp/2019/0930Yesfont.aspx",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-gumi-dotum": {
+   "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 7,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f3f3f",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#003eff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dad55e",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fffa90",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777620",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e2ff",
+    "fg": "#333333",
+    "ac": "#007aff",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-gumi-cheomdan": {
+   "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 7,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f3f3f",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#003eff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dad55e",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fffa90",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777620",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e2ff",
+    "fg": "#333333",
+    "ac": "#007aff",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-gumi-romantic": {
+   "page": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 7,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f3f3f",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007aff",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#003eff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dad55e",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fffa90",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777620",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e2ff",
+    "fg": "#333333",
+    "ac": "#007aff",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-jne-ttobak": {
+   "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+   "palette": [],
+   "error": "<urlopen error timed out>"
+  },
+  "k-jne-bareun": {
+   "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+   "palette": [],
+   "error": "<urlopen error timed out>"
+  },
+  "k-jne-yuna": {
+   "page": "https://www.jne.go.kr/main/cm/cntnts/cntntsView.do?mi=1778&cntntsId=620",
+   "palette": [],
+   "error": "<urlopen error timed out>"
+  },
+  "k-inje-haneulnaerin": {
+   "page": "https://www.inje.go.kr/portal/inje-news/inje/inje-font",
+   "palette": [],
+   "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl."
+  },
+  "k-andong-264": {
+   "page": "https://www.andong.go.kr/portal/contents.do?mId=0301030500",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 139,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 83,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#838e95",
+     "score": 22,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0567ad",
+     "score": 22,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 16,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 16,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#117fc3",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#444444",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0c4d83",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#2d5cb2",
+     "score": 8,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c8deed",
+    "fg": "#000000",
+    "ac": "#0567ad",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-yeongam-wolchulsan": {
+   "page": "https://www.yeongam.go.kr/home/www/new_plus/introduce/introduce_11/introduce_11_05",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 55,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 38,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 19,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3c82c8",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#c7c7c7",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0000",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007cc2",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#b3b3b3",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 3,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d4e4f3",
+    "fg": "#333333",
+    "ac": "#3c82c8",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-thecircle": {
+   "page": "http://www.thecircle.or.kr/kor/data-room/circle-font.html",
+   "palette": []
+  },
+  "k-healthset-gothic": {
+   "page": "https://hangria.com",
+   "palette": [
+    {
+     "hex": "#555555",
+     "score": 88,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e6e6e6",
+     "score": 72,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 58,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 56,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#757575",
+     "score": 30,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#008bcc",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d7d5d5",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#959ea9",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#569ff7",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3971ff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e5f4",
+    "fg": "#2e2e2e",
+    "ac": "#006fa3",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-healthset-joritdae": {
+   "page": "https://hangria.com",
+   "palette": [
+    {
+     "hex": "#555555",
+     "score": 88,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e6e6e6",
+     "score": 72,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 58,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 56,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#757575",
+     "score": 30,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#008bcc",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d7d5d5",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#959ea9",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#569ff7",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3971ff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e5f4",
+    "fg": "#2e2e2e",
+    "ac": "#006fa3",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-healthset-bokjori": {
+   "page": "https://hangria.com",
+   "palette": [
+    {
+     "hex": "#555555",
+     "score": 88,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e6e6e6",
+     "score": 72,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 58,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#2e2e2e",
+     "score": 56,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#757575",
+     "score": 30,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#008bcc",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d7d5d5",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#959ea9",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#569ff7",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3971ff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e5f4",
+    "fg": "#2e2e2e",
+    "ac": "#006fa3",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-reko": {
+   "page": "https://www.recipekorea.com/bbs/board.php?bo_table=ld_0308&wr_id=2479",
+   "palette": [
+    {
+     "hex": "#dddddd",
+     "score": 337,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 94.1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#888888",
+     "score": 45,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 21,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 18.4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0000",
+     "score": 14,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff6600",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3d5b7a",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#444444",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#696969",
+     "score": 9,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffc7c7",
+    "fg": "#000000",
+    "ac": "#cc0000",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2025lyb": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2024psw": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2023wsa": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2022khn": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2021sjy": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2020pdy": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kyobo-handwriting-2019": {
+   "page": "https://store.kyobobook.co.kr/handwriting/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 23,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 10,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#767676",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5055b1",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4dac27",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3f5ed5",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1ea5a8",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8422f",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#292929",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6bcb45",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#eaeaea",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#d8daee",
+    "fg": "#000000",
+    "ac": "#5055b1",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-kcc-ahnchangho": {
+   "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-a2z": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hada-sans": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hada-batang": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hada-round": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hada-mono": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hada-condensed": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-dancing-peoples": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-goshin": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-jayeon-sans": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-pyeojin": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-min-sans": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-lxgw-wenkai-kr": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-lxgw-wenkai-mono-kr": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hangulim": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-neujoh": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-hippie": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-casquare-code": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-interop": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-keris-baeum": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-keris-kedu": {
+   "page": "https://copyright.keris.or.kr/wft/fntDwnld",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-yeongdeok-snow-crab": {
+   "page": "https://www.yd.go.kr/?page_id=120264",
+   "palette": []
+  },
+  "k-yeongdeok-haeparang": {
+   "page": "https://www.yd.go.kr/?page_id=120264",
+   "palette": []
+  },
+  "k-yeongdeok-blueroad": {
+   "page": "https://www.yd.go.kr/?page_id=120264",
+   "palette": []
+  },
+  "k-yeongdeok-sea": {
+   "page": "https://www.yd.go.kr/?page_id=120264",
+   "palette": []
+  },
+  "k-s-core-dream": {
+   "page": "https://s-core.co.kr/company/font/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 139.7,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 68,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#066aab",
+     "score": 29,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#cf2e2e",
+     "score": 24,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#ff6900",
+     "score": 15,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0693e3",
+     "score": 11.5,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#00d084",
+     "score": 11,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#fcb900",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#9b51e0",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#abb8c3",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#7bdcb5",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#eeeeee",
+     "score": 9.2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c8deed",
+    "fg": "#000000",
+    "ac": "#066aab",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-binggrae": {
+   "page": "https://www.bing.co.kr/news/media_font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e3e3e3",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e51f19",
+     "score": 31,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f5f5f",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cdcdcd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#858585",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1c1c1c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#434343",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f9cecc",
+    "fg": "#000000",
+    "ac": "#e51f19",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-binggrae-taom": {
+   "page": "https://www.bing.co.kr/news/media_font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e3e3e3",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e51f19",
+     "score": 31,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f5f5f",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cdcdcd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#858585",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1c1c1c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#434343",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f9cecc",
+    "fg": "#000000",
+    "ac": "#e51f19",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-binggrae-melona": {
+   "page": "https://www.bing.co.kr/news/media_font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e3e3e3",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e51f19",
+     "score": 31,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f5f5f",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cdcdcd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#858585",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1c1c1c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#434343",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f9cecc",
+    "fg": "#000000",
+    "ac": "#e51f19",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-binggrae-samanco": {
+   "page": "https://www.bing.co.kr/news/media_font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e3e3e3",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e51f19",
+     "score": 31,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f5f5f",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cdcdcd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#858585",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1c1c1c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#434343",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f9cecc",
+    "fg": "#000000",
+    "ac": "#e51f19",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-binggrae2": {
+   "page": "https://www.bing.co.kr/news/media_font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 50,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e3e3e3",
+     "score": 33,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e51f19",
+     "score": 31,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#5f5f5f",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cdcdcd",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#858585",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#1c1c1c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#434343",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f9cecc",
+    "fg": "#000000",
+    "ac": "#e51f19",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-100": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-sinmyeongjo": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gulmyeongjo": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gagothic": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gulim": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gungseo": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-logo": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-ilbo-myeongjo": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gulgothic": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chosun-gyeongothic": {
+   "page": "https://event.chosun.com/100/100font.html",
+   "palette": [
+    {
+     "hex": "#ddd8d4",
+     "score": 27.6,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 6,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ffffff",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff4847",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#a39488",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ada9a7",
+     "score": 2.4,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#007aff",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ebebeb",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#ffd7d7",
+    "fg": "#000000",
+    "ac": "#cc3a39",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-hankyoreh-gyeol": {
+   "page": "https://company.hani.co.kr/cifont.html",
+   "palette": [
+    {
+     "hex": "#00ada7",
+     "score": 47,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#f18b00",
+     "score": 38,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#231815",
+     "score": 36,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0069b6",
+     "score": 26,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3476c5",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0000",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9d18",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7edec",
+    "fg": "#231815",
+    "ac": "#008a86",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-hankyoreh-title": {
+   "page": "https://company.hani.co.kr/cifont.html",
+   "palette": [
+    {
+     "hex": "#00ada7",
+     "score": 47,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#f18b00",
+     "score": 38,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#231815",
+     "score": 36,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#0069b6",
+     "score": 26,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3476c5",
+     "score": 13,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff0000",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9d18",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7edec",
+    "fg": "#231815",
+    "ac": "#008a86",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-ice-simin": {
+   "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+   "palette": []
+  },
+  "k-ice-sotong": {
+   "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+   "palette": []
+  },
+  "k-ice-himchan": {
+   "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+   "palette": []
+  },
+  "k-ice-jaram": {
+   "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+   "palette": []
+  },
+  "k-gwe-modu": {
+   "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 84.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cfd0d7",
+     "score": 83.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 53.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 25,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3094d8",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 17,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#032f85",
+     "score": 12.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fef4d9",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9500",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#df8200",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007d83",
+     "score": 8,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fef4d9",
+    "fg": "#000000",
+    "ac": "#3094d8",
+    "acInk": "#000000"
+   }
+  },
+  "k-gwe-saeeum": {
+   "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 84.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cfd0d7",
+     "score": 83.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 53.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 25,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3094d8",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 17,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#032f85",
+     "score": 12.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fef4d9",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9500",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#df8200",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007d83",
+     "score": 8,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fef4d9",
+    "fg": "#000000",
+    "ac": "#3094d8",
+    "acInk": "#000000"
+   }
+  },
+  "k-gwe-teunteun": {
+   "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 84.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cfd0d7",
+     "score": 83.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 53.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 25,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3094d8",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 17,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#032f85",
+     "score": 12.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fef4d9",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9500",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#df8200",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007d83",
+     "score": 8,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fef4d9",
+    "fg": "#000000",
+    "ac": "#3094d8",
+    "acInk": "#000000"
+   }
+  },
+  "k-gwe-hyeonok": {
+   "page": "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 84.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cfd0d7",
+     "score": 83.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 53.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#666666",
+     "score": 25,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#3094d8",
+     "score": 24,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 17,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#032f85",
+     "score": 12.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#222222",
+     "score": 12,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#fef4d9",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff9500",
+     "score": 9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#df8200",
+     "score": 8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007d83",
+     "score": 8,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fef4d9",
+    "fg": "#000000",
+    "ac": "#3094d8",
+    "acInk": "#000000"
+   }
+  },
+  "k-rokaf-sans": {
+   "page": "https://rokaf.airforce.mil.kr/airforce/4151/subview.do",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 20.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#f2c01d",
+     "score": 3.0,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#d6af3e",
+     "score": 2.5,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#e7d39b",
+     "score": 2.2,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dcbe66",
+     "score": 1.8,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#f8f2e0",
+     "score": 1.5,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#eee1ba",
+     "score": 1.0,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d84a38",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f8f2e0",
+    "fg": "#000000",
+    "ac": "#9d7d13",
+    "acInk": "#000000"
+   }
+  },
+  "k-rokaf-slab": {
+   "page": "https://rokaf.airforce.mil.kr/airforce/4151/subview.do",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 20.8,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#f2c01d",
+     "score": 3.0,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#d6af3e",
+     "score": 2.5,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#e7d39b",
+     "score": 2.2,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#000000",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#dcbe66",
+     "score": 1.8,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#f8f2e0",
+     "score": 1.5,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#eee1ba",
+     "score": 1.0,
+     "src": "대표 이미지"
+    },
+    {
+     "hex": "#dddddd",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d84a38",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#f8f2e0",
+    "fg": "#000000",
+    "ac": "#9d7d13",
+    "acInk": "#000000"
+   }
+  },
+  "k-syu-font": {
+   "page": "https://www.syu.ac.kr/about-sahmyook/symbols-ui/syu-font/",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 43.4,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#007cba",
+     "score": 18,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#000000",
+     "score": 17.0,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#cf2e2e",
+     "score": 13,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#333333",
+     "score": 13.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff6900",
+     "score": 11,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#0693e3",
+     "score": 11,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#00d084",
+     "score": 11,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#abb8c3",
+     "score": 10.9,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#fcb900",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#9b51e0",
+     "score": 10,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#7bdcb5",
+     "score": 10,
+     "src": "CSS 변수"
+    }
+   ],
+   "suggest": {
+    "bg": "#c7e2f0",
+    "fg": "#000000",
+    "ac": "#007cba",
+    "acInk": "#000000"
+   }
+  },
+  "k-elice-baeum": {
+   "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-elice-coding": {
+   "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
+   "palette": [],
+   "error": "robots.txt 차단"
+  },
+  "k-elice-dx-neolli": {
+   "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
    "palette": [],
    "error": "robots.txt 차단"
   }

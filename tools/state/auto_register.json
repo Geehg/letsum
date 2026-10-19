@@ -44,8 +44,8 @@
  "hada0127/hada-type": {
   "result": "skip",
   "why": "별 1개(기준 15)",
-  "pushed": "2026-10-15T07:50:22Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-17T00:07:16Z",
+  "checked": "2026-10-19"
  },
  "Tzetachi/Oesol-Serif-deprecated": {
   "result": "skip",
@@ -86,8 +86,8 @@
  "lxgw/LxgwWenkaiKR": {
   "result": "skip",
   "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
-  "pushed": "2026-10-13T08:12:56Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-17T18:52:28Z",
+  "checked": "2026-10-19"
  },
  "quiple/x10y12pxDenkiChipHangul": {
   "result": "added",
@@ -224,8 +224,8 @@
  "xkho/presevka": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-09-20T13:07:29Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-18T14:38:51Z",
+  "checked": "2026-10-19"
  },
  "bepyan/arita": {
   "result": "skip",
