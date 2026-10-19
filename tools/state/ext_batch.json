@@ -1159,5 +1159,77 @@
   "license": "스스로넷 서체 이용조건",
   "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
   "mode": "hosted"
+ },
+ "ssro-establish": {
+  "fam": "스스로넷 설립체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=520735",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2021 서체 게시물 이미지 속 라이선스: 개인·기업 무료, 모든 용도의 상업적 사용 가능 / 글꼴 유료 판매·수정·재배포 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-establish",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-room703": {
+  "fam": "스스로넷 칠백삼체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=520737",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2021 서체 게시물 이미지 속 라이선스: 개인·기업 무료, 모든 용도의 상업적 사용 가능 / 글꼴 유료 판매·수정·재배포 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-room703",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-notcliche": {
+  "fam": "스스로넷 NotCliche체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=520738",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2021 서체 게시물 이미지 속 라이선스: 개인·기업 무료, 모든 용도의 상업적 사용 가능 / 글꼴 유료 판매·수정·재배포 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-notcliche",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-haeginsa": {
+  "fam": "스스로넷 나는야핵인싸체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=520739",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2021 서체 게시물 이미지 속 라이선스: 개인·기업 무료, 모든 용도의 상업적 사용 가능 / 글꼴 유료 판매·수정·재배포 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-haeginsa",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-handwritten": {
+  "fam": "스스로넷 손글씨체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=522259",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2023 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-handwritten",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-waterdrop": {
+  "fam": "스스로넷 물방울체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=522910",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 2024 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-waterdrop",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
  }
 }
