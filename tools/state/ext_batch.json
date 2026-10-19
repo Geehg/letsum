@@ -1076,5 +1076,88 @@
   "id": "elice-dx-neolli",
   "lic": "OFL",
   "mode": "keep"
+ },
+ "hangeul-nuri": {
+  "fam": "한글누리체",
+  "org": "국립한글박물관·윤디자인그룹",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/hangeulnuri.do",
+  "srcName": "국립한글박물관(공식)",
+  "evidence": "국립한글박물관 한글꼴큰사전 페이지: 공공누리 제3유형(출처표시·변경금지), 별도 승인 없이 상업적 목적으로도 자유롭게 사용 / 글꼴 유료 판매·대여·변형 금지, 유해매체 사용 금지 → 원본 그대로 미러",
+  "id": "hangeul-nuri",
+  "lic": "KOGL3",
+  "attribution": "한글누리체(국립한글박물관, 공공누리 제3유형)",
+  "mode": "keep"
+ },
+ "ksif": {
+  "fam": "세종학당체",
+  "org": "세종학당재단·한컴그룹·윤디자인그룹",
+  "page": "https://www.ksif.or.kr/com/cmm/EgovContentView.do?menuNo=10101062",
+  "srcName": "세종학당재단(공식)",
+  "evidence": "세종학당재단 '세종학당체' 페이지: 개발 취지를 훼손하지 않는 범위에서 상업적·비상업적 용도로 자유롭게 사용 / 유료 판매·유통, 임의 수정·디자인 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "id": "ksif",
+  "lic": "CUSTOM",
+  "license": "세종학당체 이용 안내",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "sjcf-jaeumi-bold": {
+  "fam": "세종자으미모으미체 볼드",
+  "org": "세종시문화관광재단",
+  "page": "https://www.sjcf.or.kr/hangeul/www/content.do?key=2504150011",
+  "srcName": "세종시문화관광재단(공식)",
+  "evidence": "세종시문화관광재단 '한글문화도시 폰트' 페이지 + 공식 사용 지침 PDF 5쪽: 공공누리 제1유형(상업적·비상업적 이용 가능, 출처 표시), 개인·기업 무료 / 페이지 문구: 유료 양도·판매, 변형 재배포 금지 → 보수적으로 공식 WOFF2 원본 그대로 미러",
+  "id": "sjcf-jaeumi-bold",
+  "lic": "KOGL1",
+  "attribution": "세종자으미모으미체(세종시문화관광재단, 공공누리 제1유형)",
+  "mode": "keep"
+ },
+ "sjcf-jaeumi-color": {
+  "fam": "세종자으미모으미체 컬러",
+  "org": "세종시문화관광재단",
+  "page": "https://www.sjcf.or.kr/hangeul/www/content.do?key=2504150011",
+  "srcName": "세종시문화관광재단(공식)",
+  "evidence": "세종시문화관광재단 '한글문화도시 폰트' 페이지 + 공식 사용 지침 PDF 5쪽: 공공누리 제1유형(상업적·비상업적 이용 가능, 출처 표시), 개인·기업 무료 / 페이지 문구: 유료 양도·판매, 변형 재배포 금지 → 보수적으로 공식 WOFF2 원본 그대로 미러",
+  "id": "sjcf-jaeumi-color",
+  "lic": "KOGL1",
+  "attribution": "세종자으미모으미체(세종시문화관광재단, 공공누리 제1유형)",
+  "mode": "keep",
+  "allowDup": true,
+  "en": "SejongJaeumiMoeumi Color"
+ },
+ "ssro-round": {
+  "fam": "스스로넷 둥글둥글체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523378",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-round",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-flowertree": {
+  "fam": "스스로넷 오뉴월의 꽃나무 v2.0",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523377",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-flowertree",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "ssro-highteen": {
+  "fam": "스스로넷 하이틴체",
+  "org": "서울시립청소년미디어센터(스스로넷)",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523376",
+  "srcName": "스스로넷(공식)",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "id": "ssro-highteen",
+  "lic": "CUSTOM",
+  "license": "스스로넷 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
  }
 }

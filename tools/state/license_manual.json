@@ -2107,5 +2107,47 @@
   "evidence": "(주)엘리스 공식 라이선스 문서(cdn-front-door.elice.io): SIL Open Font License, 개인·기업 영리·비영리 사용 가능 / 단독 판매·수정본 재배포 시 원래 이름 사용 금지 → 원본 그대로 미러(변환 안 함)",
   "page": "https://cdn-front-door.elice.io/font/static/downloads/EliceDigitalBaeum_License.pdf",
   "checked": "2026-10-19"
+ },
+ "k-hangeul-nuri": {
+  "license": "공공누리 제3유형",
+  "evidence": "국립한글박물관 한글꼴큰사전 페이지: 공공누리 제3유형(출처표시·변경금지), 별도 승인 없이 상업적 목적으로도 자유롭게 사용 / 글꼴 유료 판매·대여·변형 금지, 유해매체 사용 금지 → 원본 그대로 미러",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/hangeulnuri.do",
+  "checked": "2026-10-20"
+ },
+ "k-ksif": {
+  "license": "세종학당체 이용 안내",
+  "evidence": "세종학당재단 '세종학당체' 페이지: 개발 취지를 훼손하지 않는 범위에서 상업적·비상업적 용도로 자유롭게 사용 / 유료 판매·유통, 임의 수정·디자인 변형 금지, 재배포 조항 없음 → 원본 그대로 서버 전용",
+  "page": "https://www.ksif.or.kr/com/cmm/EgovContentView.do?menuNo=10101062",
+  "checked": "2026-10-20"
+ },
+ "k-sjcf-jaeumi-bold": {
+  "license": "공공누리 제1유형",
+  "evidence": "세종시문화관광재단 '한글문화도시 폰트' 페이지 + 공식 사용 지침 PDF 5쪽: 공공누리 제1유형(상업적·비상업적 이용 가능, 출처 표시), 개인·기업 무료 / 페이지 문구: 유료 양도·판매, 변형 재배포 금지 → 보수적으로 공식 WOFF2 원본 그대로 미러",
+  "page": "https://www.sjcf.or.kr/hangeul/www/content.do?key=2504150011",
+  "checked": "2026-10-20"
+ },
+ "k-sjcf-jaeumi-color": {
+  "license": "공공누리 제1유형",
+  "evidence": "세종시문화관광재단 '한글문화도시 폰트' 페이지 + 공식 사용 지침 PDF 5쪽: 공공누리 제1유형(상업적·비상업적 이용 가능, 출처 표시), 개인·기업 무료 / 페이지 문구: 유료 양도·판매, 변형 재배포 금지 → 보수적으로 공식 WOFF2 원본 그대로 미러",
+  "page": "https://www.sjcf.or.kr/hangeul/www/content.do?key=2504150011",
+  "checked": "2026-10-20"
+ },
+ "k-ssro-round": {
+  "license": "스스로넷 서체 이용조건",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523378",
+  "checked": "2026-10-20"
+ },
+ "k-ssro-flowertree": {
+  "license": "스스로넷 서체 이용조건",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523377",
+  "checked": "2026-10-20"
+ },
+ "k-ssro-highteen": {
+  "license": "스스로넷 서체 이용조건",
+  "evidence": "스스로넷 서체 게시물 라이선스 표: 인쇄·웹·영상·포장지·임베딩·BI/CI 모두 O, OFL X / 폰트파일 수정·복제·재배포·유료판매 금지 → 원본 그대로 서버 전용",
+  "page": "https://www.ssro.net/media/media_view.jsp?bcate=fontdown&no=523376",
+  "checked": "2026-10-20"
  }
 }

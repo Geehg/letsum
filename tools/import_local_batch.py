@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """제작사 공식 사이트에서 받아 둔 폰트 묶음을 일괄 등록한다 (공유마당 일괄 등록 도구의 일반판).
 
-입력  tools/state/ext_batch.json  { "<폴더>": { fam, org, lic, page, srcName, license?, matrix?, mode?, evidence, id?, released?, releasedSrc? } }
+입력  tools/state/ext_batch.json  { "<폴더>": { fam, org, lic, page, srcName, license?, matrix?, mode?, evidence, id?, released?, releasedSrc?, allowDup?, en? } }
         lic   : OFL | KOGL1 | KOGL3 | CUSTOM(license에 LICENSE_INFO 이름, matrix에 JS 표현)
         mode  : convert(WOFF2 변환) | keep(원본 그대로, 미러) | hosted(원본 그대로, letsum.app 서버 전용 — 재배포 금지 라이선스)
               생략 시 OFL·KOGL1 → convert(OFL RFN이면 keep), KOGL3·CUSTOM → keep
@@ -62,8 +62,9 @@ def main():
             if not cur or (hk(f), -f["rank"]) > (hk(cur), -cur["rank"]): files[f["w"]] = f  # 같은 굵기면 한글이 많은 파일(영문 전용 파일 제외), 그다음 형식 순
         base = files.get(400) or files[sorted(files)[0]]; t = base["t"]
         en = re.sub(r"(?i)\s*(otf|ttf)$", "", nm(t, 16, 0x409) or nm(t, 1, 0x409) or b["fam"]).strip()
+        if b.get("en"): en = b["en"]  # 같은 가족의 다른 판이면 영문명을 따로 지정
         ko = nm(t, 16, 0x412) or nm(t, 1, 0x412)
-        if norm(en) in have or norm(b["fam"]) in have:
+        if not b.get("allowDup") and (norm(en) in have or norm(b["fam"]) in have):  # allowDup: 같은 가족의 다른 판(예: 컬러판)을 따로 등록할 때만
             print("이미 등록:", b["fam"], "/", en, "/", ko); continue
         hv = real_hangul(t)
         if len(hv) < 2000: print("한글 부족:", b["fam"], len(hv)); continue
