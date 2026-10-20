@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="특수기호 복사 — LETSUM(렛섬)"><meta property="og:description" content="누르면 바로 복사. 한글 이름 검색, 모아 복사, 자음+한자 표, 글자 꾸미기, 이모티콘·꾸밈선.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=76">
+<link rel="stylesheet" href="css/style.css?v=77">
 </head>
 <body class="sym-page">
 <header>
@@ -25,12 +25,27 @@
   </div>
 </header>
 
+<section class="sym-hero" id="symHero" aria-label="많이 복사되는 기호">
+  <div class="wrap sh-in">
+    <div class="sh-main">
+      <p class="sh-kick" id="shKick">자주 쓰는 기호</p>
+      <h1>특수기호</h1>
+      <p class="sh-lead">누르면 바로 복사. 한글 이름으로 찾고, 여러 개를 모아 한 번에.</p>
+      <button class="sh-big" id="shBig" type="button" title="눌러서 복사"><span id="shBigC">♥</span></button>
+      <div class="sh-name" id="shName"></div>
+    </div>
+    <div class="sh-side">
+      <div class="sh-h"><b id="shTopT">자주 쓰는 기호</b><small id="shNote"></small></div>
+      <div class="sh-top" id="shTop"></div>
+      <div class="sh-h"><b id="shKaoT">자주 쓰는 이모티콘</b></div>
+      <div class="sh-kao" id="shKao"></div>
+    </div>
+  </div>
+  <div class="sh-marquee" aria-hidden="true"><div class="sh-track" id="shTrack"></div></div>
+</section>
+
 <main class="wrap sym">
   <div class="sym-head">
-    <div>
-      <h1>특수기호</h1>
-      <p class="lead">누르면 바로 복사됩니다. 한글 이름으로 찾고, 여러 개를 모아 한 번에 복사하세요.</p>
-    </div>
     <label class="sym-search"><span aria-hidden="true">⌕</span><input id="symQ" type="search" placeholder="하트 · 화살표 · 섭씨 · U+2665 · ♥ 붙여넣기" aria-label="특수기호 검색 — 한글 이름, 영문 이름, 코드, 글자" autocomplete="off"></label>
   </div>
 
@@ -92,7 +107,7 @@
   </div>
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
-<script src="js/symbols.js?v=3"></script>
+<script src="js/symbols.js?v=4"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

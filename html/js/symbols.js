@@ -17,7 +17,16 @@
     catch (e) { const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (x) {} ta.remove(); }
     toast(`${label || text} 복사됨`);
   }
-  function pushRecent(c) { recent = [c, ...recent.filter((x) => x !== c)].slice(0, 48); SV("ls_sym_recent", recent); if (cat === "recent") drawGrid(); }
+  // 인기 기호 집계: 사이트 목록(기호표·자음+한자·이모티콘)에서 복사한 항목만, 기호별 '합계'로. 직접 입력한 글(꾸미기·모은 기호)은 보내지 않는다.
+  // 브라우저 '추적 안 함'·GPC가 켜져 있으면 보내지 않는다(pv.js와 같은 원칙).
+  const noTrack = navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.globalPrivacyControl === true;
+  let sent = 0;
+  function track(k) {
+    if (noTrack || sent++ > 60 || !/^https:\/\/letsum\.app$/.test(location.origin)) return;
+    const b = JSON.stringify({ t: "sym", k });
+    try { if (!(navigator.sendBeacon && navigator.sendBeacon("/api/pv", new Blob([b], { type: "application/json" })))) fetch("/api/pv", { method: "POST", headers: { "content-type": "application/json" }, body: b, keepalive: true }).catch(() => {}); } catch (e) {}
+  }
+  function pushRecent(c) { track(c); recent = [c, ...recent.filter((x) => x !== c)].slice(0, 48); SV("ls_sym_recent", recent); if (cat === "recent") drawGrid(); }
 
   // ---------- 모은 기호 ----------
   const bk = $("#bkText");
@@ -94,14 +103,14 @@
     if (b.dataset.cp) return copy(b.dataset.cp);
     const a = b.dataset.act;
     if (a === "copy") { copy(sel); pushRecent(sel); }
-    else if (a === "add") addBk(sel);
+    else if (a === "add") { addBk(sel); track(sel); }
     else if (a === "fav") { favs = favs.includes(sel) ? favs.filter((x) => x !== sel) : [sel, ...favs]; SV("ls_sym_fav", favs); info(sel); drawCats(); if (cat === "favs") drawGrid(); }
     else if (a === "link") copy(location.origin + location.pathname + "#c=" + hex(sel), "링크");
   });
   $("#symGrid").addEventListener("click", (e) => {
     const b = e.target.closest(".sc"); if (!b) return; const c = b.dataset.c;
     info(c);
-    if (mode === "add") addBk(c); else { copy(c); pushRecent(c); }
+    if (mode === "add") { addBk(c); track(c); } else { copy(c); pushRecent(c); }
   });
   $("#symCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; cat = b.dataset.cat; $("#symQ").value = ""; drawGrid(); $("#symGrid").scrollTop = 0; });
   let qT = 0; $("#symQ").addEventListener("input", () => { clearTimeout(qT); qT = setTimeout(() => { showTab("table"); drawGrid(); }, 120); });
@@ -180,14 +189,14 @@
     if ($("#kaoList").childElementCount) return;
     $("#kaoList").innerHTML = KAO.map(([n, L]) => `<div class="kao-g"><h3>${esc(n)}</h3><div class="kao-items">${L.map((x) => `<button class="kz" data-t="${esc(x)}">${esc(x)}</button>`).join("")}</div></div>`).join("");
   }
-  $("#kaoList").addEventListener("click", (e) => { const b = e.target.closest(".kz"); if (!b) return; if (mode === "add") addBk(b.dataset.t); else copy(b.dataset.t); });
+  $("#kaoList").addEventListener("click", (e) => { const b = e.target.closest(".kz"); if (!b) return; if (mode === "add") addBk(b.dataset.t); else copy(b.dataset.t); track(b.dataset.t); });
 
   // ---------- 자음 + 한자 표 ----------
   function drawHan() {
     if ($("#hanList").childElementCount) return;
     $("#hanList").innerHTML = D.han.map((h) => `<div class="han-r"><div class="han-k"><kbd>${h.k}</kbd><span>+ 한자</span><b>${esc(h.name)}</b><small>${[...h.chars].length}자</small></div><div class="han-c">${[...h.chars].map((c) => `<button class="sc" data-c="${esc(c)}" title="U+${hex(c)}">${esc(c)}</button>`).join("")}</div></div>`).join("");
   }
-  $("#hanList").addEventListener("click", (e) => { const b = e.target.closest(".sc"); if (!b) return; const c = b.dataset.c; if (mode === "add") addBk(c); else { copy(c); pushRecent(c); } });
+  $("#hanList").addEventListener("click", (e) => { const b = e.target.closest(".sc"); if (!b) return; const c = b.dataset.c; if (mode === "add") { addBk(c); track(c); } else { copy(c); pushRecent(c); } });
 
   // ---------- 기호 알아보기 ----------
   function kind(c) {
@@ -215,9 +224,46 @@
   $("#whatIn").addEventListener("input", drawWhat);
   $("#whatList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.c) { if (mode === "add") addBk(b.dataset.c); else copy(b.dataset.c); } if (b.dataset.go) { showTab("table"); $("#symQ").value = b.dataset.go; drawGrid(); info(b.dataset.go); } });
 
+  // ---------- 히어로: 최근 30일 많이 복사된 기호·이모티콘(서버 합계) — 집계 전이면 '자주 쓰는' 목록 ----------
+  const KAO_ALL = KAO.flatMap((g) => g[1]);
+  let heroList = [], heroI = 0, heroT = 0;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function heroShow(k) {
+    const c = heroList[k % heroList.length]; if (!c) return;
+    const el = $("#shBigC"); el.classList.remove("pop"); void el.offsetWidth; el.textContent = c; el.classList.add("pop");
+    $("#shBig").dataset.c = c;
+    $("#shName").innerHTML = `${esc(nameKo(c) || "")} <code>U+${hex(c)}</code>`;
+  }
+  async function hero() {
+    let top = [], from = "", start = "";
+    try { const j = await fetch("/api/symtop").then((r) => (r.ok ? r.json() : {})); top = j.items || []; start = j.startFrom || ""; from = j.from || ""; } catch (e) {}
+    const symCnt = top.filter(([k]) => D.info[k]), kaoCnt = top.filter(([k]) => KAO_ALL.includes(k)); // 사이트 목록에 있는 것만 다시 보여 줌
+    const fav = [...(D.cats.find((x) => x.id === "fav") || { chars: "" }).chars];
+    const syms = [...symCnt.map((x) => x[0]), ...fav.filter((c) => !symCnt.some((x) => x[0] === c))].slice(0, 12);
+    const kaos = [...kaoCnt.map((x) => x[0]), ...KAO_ALL.filter((k) => !kaoCnt.some((x) => x[0] === k))].slice(0, 8);
+    const live = symCnt.length > 0;
+    $("#shKick").textContent = live ? `최근 30일 많이 복사된 기호` : "자주 쓰는 기호";
+    $("#shTopT").textContent = live ? "많이 복사된 기호" : "자주 쓰는 기호";
+    $("#shKaoT").textContent = kaoCnt.length ? "많이 복사된 이모티콘" : "자주 쓰는 이모티콘";
+    $("#shNote").textContent = live ? `${from.replace(/-/g, ".")}부터 · 기호별 복사 합계` : start ? `복사 순위는 ${start.slice(5).replace("-", "월 ")}일부터 집계해 보여 드립니다` : "";
+    const cnt = Object.fromEntries(top);
+    $("#shTop").innerHTML = syms.map((c, i) => `<button class="sh-c" data-c="${esc(c)}" title="${esc((nameKo(c) || "") + " · U+" + hex(c))}">${cnt[c] ? `<i>${i + 1}</i>` : ""}${esc(c)}</button>`).join("");
+    $("#shKao").innerHTML = kaos.map((k) => `<button class="sh-k" data-t="${esc(k)}">${esc(k)}</button>`).join("");
+    heroList = syms;
+    const strip = [...new Set([...syms, ...fav, ...[..."✦✧❀✿☀☁☂☃♪♬☎✈✉✂☞♠♣♦♤♧◆◇■□▲△●○★☆♥♡"]])].map((c) => `<span>${esc(c)}</span>`).join("");
+    $("#shTrack").innerHTML = strip + strip;
+    heroShow(0); clearInterval(heroT);
+    if (!reduce) heroT = setInterval(() => { if (!document.hidden && !$("#symHero").matches(":hover")) heroShow(++heroI); }, 2200);
+  }
+  $("#symHero").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-c],[data-t]"); if (!b) return; const k = b.dataset.c || b.dataset.t;
+    if (mode === "add") addBk(k); else { copy(k); if (b.dataset.c) { pushRecent(k); info(k); } }
+    if (!b.dataset.c || mode === "add") track(k);
+  });
+
   // ---------- 시작 ----------
   fetch("data/symbols.json?v=1").then((r) => r.json()).then((j) => {
-    D = j;
+    D = j; hero();
     const h = location.hash.slice(1);
     const mc = h.match(/^c=([0-9A-Fa-f]{4,6})$/);
     drawGrid();

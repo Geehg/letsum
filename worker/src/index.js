@@ -9,7 +9,8 @@
 //       GET  /api/shot/<n>                 → 이미지(승인된 것만)
 //       POST /api/shots { id, name, caption, image(dataURL), agree, website } → { ok }  (검토 대기)
 //       POST /api/e { e, v? } | [ ... ]         → 204  (이용 지표: 날짜·행동·값별 합계만, 식별 정보 없음)
-//       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "err", m } → 204  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
+//       POST /api/pv { p, r, s, u?, w? } | { t: "sq", q, n } | { t: "sym", k } | { t: "err", m } → 204
+//       GET  /api/symtop → 최근 30일 많이 복사된 특수기호(합계)  (방문 통계: 날짜·항목별 합계만, 식별 정보 없음)
 //       GET  /api/samples[?lang=en]        → { items: [{ cat, t, src }], updated }  (예시 문장, 관리자가 고친 목록. 없으면 items: null → 사이트 기본값)
 //       GET  /api/brand                    → { id: { bg, fg, ac, acInk, style, split, line, src } }  (승인된 히어로 브랜드 테마, 5분 캐시)
 //       POST /api/admin/login { id, pw }   → { token, exp }  (관리자 로그인 → 12시간 통행증. 이후 Authorization: Bearer <token>)
@@ -209,6 +210,7 @@ async function track(req, env) {
 // 날짜·항목·값별 '합계'만 쌓는다. IP·쿠키·방문자 식별값은 저장하지 않고, 유입 주소는 호스트와 검색어만 남기고 버린다.
 // 개인정보처리방침 변경(2026-10-18 공지) 시행일 전에는 받지 않는다.
 const TRAFFIC_FROM = "2026-10-25";
+const SYM_FROM = "2026-10-27"; // 특수기호 복사 합계: 2026-10-20 개인정보처리방침 추가 공지 후 7일 뒤부터
 const TRAFFIC_KEEP_DAYS = 400; // 약 13개월 보관 후 삭제
 const kstHour = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(11, 13);
 const SEARCH = [[/(^|\.)google\.[a-z.]+$/, "구글", "q"], [/^(m\.)?search\.naver\.com$/, "네이버", "query"], [/^(m\.)?search\.daum\.net$/, "다음", "q"],
@@ -227,6 +229,8 @@ function uaInfo(ua) {
 }
 const BOT = /bot|crawl|spider|slurp|facebookexternalhit|kakaotalk-scrap|yeti|daumoa|bingpreview|headless|lighthouse|pingdom|uptime|monitor|curl|wget|python|axios|node-fetch|go-http/i;
 const cleanKw = (k) => { k = String(k || "").replace(/\s+/g, " ").trim().toLowerCase().slice(0, 40); return !k || /@|\d{6,}|https?:/.test(k) ? "" : k; };
+// 특수기호 복사 집계용: 짧은 기호·이모티콘만(주소·이메일·긴 숫자·여러 줄은 버림). 화면에는 사이트 목록에 있는 것만 다시 보여 준다.
+const cleanSym = (k) => { k = String(k || ""); return !k || [...k].length > 24 || /[\r\n]|@|https?:|\d{4,}/.test(k) ? "" : k; };
 const cleanPath = (p) => { p = String(p || "/").split(/[?#]/)[0].replace(/\/index\.html$/, "/").replace(/[^a-zA-Z0-9/._-]/g, "").slice(0, 80); return p.startsWith("/") ? p : "/" + p; };
 function source(ref, host, ua, utm) {
   if (utm && utm.source) return { src: "캠페인(utm)", ref: "", kw: "" };
@@ -251,6 +255,7 @@ async function pageview(req, env) {
   const add = []; const inc = (dim, key) => add.push(env.DB.prepare("INSERT INTO traffic (day, dim, key, n) VALUES (?, ?, ?, 1) ON CONFLICT(day, dim, key) DO UPDATE SET n = n + 1").bind(day, dim, String(key).slice(0, 80)));
   if (BOT.test(ua)) { inc("bot", (ua.match(/[a-z-]*(bot|crawl|spider|yeti)[a-z-]*/i) || ["기타"])[0].toLowerCase()); }
   else if (b.t === "sq") { const q = cleanKw(b.q); if (q) { inc("sq", q); if (b.n === 0) inc("sq0", q); } }
+  else if (b.t === "sym") { const k = cleanSym(b.k); if (k && day >= (env.TRAFFIC_FROM || SYM_FROM)) inc("sym", k); } // 특수기호 페이지에서 목록의 기호·이모티콘을 복사한 횟수(기호별 합계만)
   else if (b.t === "err") { const m = clean(b.m, 80).replace(/https?:\/\/\S+/g, "").trim(); if (m) inc("err", m); }
   else {
     const p = cleanPath(b.p); const host = new URL(req.url).hostname.replace(/^www\./, "");
@@ -270,6 +275,12 @@ async function pageview(req, env) {
   if (Math.random() < 0.01) add.push(env.DB.prepare("DELETE FROM traffic WHERE day < ?").bind(new Date(Date.now() + 9 * 3600e3 - TRAFFIC_KEEP_DAYS * 86400e3).toISOString().slice(0, 10)));
   if (add.length) await env.DB.batch(add.slice(0, 20));
   return new Response(null, { status: 204 });
+}
+
+// 공개: 최근 30일 많이 복사된 특수기호(합계 상위 60개, 1시간 캐시) — 특수기호 페이지 히어로
+async function symTop(env) {
+  const r = await env.DB.prepare("SELECT key, SUM(n) n FROM traffic WHERE dim = 'sym' AND day >= ? GROUP BY key HAVING n >= 2 ORDER BY n DESC LIMIT 60").bind(daysAgo(29)).all();
+  return json({ from: daysAgo(29), startFrom: env.TRAFFIC_FROM || SYM_FROM, items: r.results.map((x) => [x.key, x.n]) }, 200, { "cache-control": "public, max-age=3600" });
 }
 
 // ---------- 관리자: 방문 통계 · 구글 검색어 · Cloudflare 통계 ----------
@@ -474,6 +485,7 @@ export default {
       if (req.method === "POST" && p === "/api/report") return await report(req, env);
       if (req.method === "POST" && p === "/api/e") return await track(req, env);
       if (req.method === "POST" && p === "/api/pv") return await pageview(req, env);
+      if (req.method === "GET" && p === "/api/symtop") return await symTop(env);
       if (req.method === "GET" && p === "/api/shots") return await listShots(url, env);
       if (req.method === "POST" && p === "/api/shots") return await addShot(req, env);
       const im = /^\/api\/shot\/(\d+)$/.exec(p);
