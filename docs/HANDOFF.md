@@ -189,3 +189,8 @@ img.save("sample.png")
 - 데이터 `html/js/data_db.js` ← `tools/build_db_data.py`(Google Fonts 공식 + 제작사 공식 npm/GitHub 아이콘 폰트, 2026-10-20 기준 48종). 매주 자동 갱신(`watch-sources.yml`)에서 다시 만들고 카드(`build_og.py --db --missing`)도 채운다.
 - 검증: `validate.py`가 d- 접두사·분류·라이선스·견본 기호·웹폰트 주소를 검사.
 - 수집 절차는 `.claude/skills/font-collect/SKILL.md`의 '딩벳 폰트' 절.
+
+## 특수기호(/symbols.html) — 2026-10-20
+- 헤더 메뉴 "… 딩벳 폰트 | 특수기호". 정적 페이지 `html/symbols.html` + `html/js/symbols.js`(손으로 고침) + 데이터 `html/data/symbols.json` ← `python3 -I tools/build_symbols.py`(파이썬 내장 unicodedata만, 2,891자·14분류).
+- 기능: 누르면 복사 / 모으기(여러 개 모아 복사) / 한글 이름·영문 이름·U+코드·글자 붙여넣기 검색 / 최근·즐겨찾기(localStorage) / 코드(HTML·CSS·JS·URL) / 한글 입력기 '자음 + 한자' 표(KS X 1001 특수문자 영역을 행·유니코드 성질로 분류한 참고표) / 글자 꾸미기(유니코드 수학 영숫자·원문자·전각·결합 문자) / 이모티콘·꾸밈선 / 기호 알아보기. 서버로 보내는 것 없음.
+- 한국어 검색어: `KO`(기호 고유 이름) > `TR`(영문 이름 단어 번역) > 분류 검색어(앞에서 결과가 없을 때만).

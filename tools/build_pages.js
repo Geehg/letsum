@@ -49,7 +49,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=73">
+<link rel="stylesheet" href="../css/style.css?v=74">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -57,7 +57,7 @@ function page(f, en, db) {
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
       <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></form>
@@ -152,7 +152,7 @@ FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f,
   fs.writeFileSync(path.join(ROOT, "dingbat", "index.html"), h);
 }
 const today = new Date().toISOString().slice(0, 10);
-const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.

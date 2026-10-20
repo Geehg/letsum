@@ -1284,3 +1284,98 @@ html[data-cols="4"] .igrid,html[data-cols="5"] .igrid{column-gap:18px;--cg:18px}
 .fp .sample.db-sample .l{grid-column:1/-1;text-align:left}
 .fp .sample.db-sample i{font-style:normal}
 .lang-db .sp-type{font-size:clamp(34px,4.4vw,64px);line-height:1.25;word-spacing:.25em;min-height:1.3em}
+
+/* ===== 특수기호(symbols.html) ===== */
+.sym{padding-top:28px;padding-bottom:120px}
+.sym-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+.sym-head h1{margin:0 0 6px}
+.sym-head .lead{margin:0;color:var(--ink2)}
+.sym-search{display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink);padding:8px 12px;min-width:min(420px,100%);background:var(--paper)}
+.sym-search input{border:0;outline:0;background:transparent;font-size:16px;flex:1;min-width:0;color:var(--ink)}
+.sym-tabs{display:flex;gap:4px;border-bottom:1px solid var(--ink);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
+.sym-tabs::-webkit-scrollbar{display:none}
+.sym-tabs button{padding:10px 14px;font-size:14px;font-weight:600;color:var(--ink2);border-bottom:3px solid transparent;white-space:nowrap}
+.sym-tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
+.sym-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.sym-bar .col-l{font-size:12px;color:var(--ink3);padding:0 8px;border-right:1px solid var(--rule2);display:flex;align-items:center}
+.sym-bar .seg{align-items:stretch}
+.sym-count{font-size:12.5px;color:var(--ink3);margin-left:auto}
+.sym-body{display:grid;grid-template-columns:180px 1fr 300px;gap:18px;align-items:start}
+.sym-cats{display:flex;flex-direction:column;gap:2px;position:sticky;top:76px}
+.sym-cats button{display:flex;justify-content:space-between;gap:8px;text-align:left;padding:7px 10px;font-size:13.5px;color:var(--ink2);border-left:3px solid transparent}
+.sym-cats button span{font-size:11px;color:var(--ink3);font-family:var(--mono)}
+.sym-cats button:hover{color:var(--ink);background:var(--rule)}
+.sym-cats button.on{color:var(--ink);font-weight:700;border-left-color:var(--ink);background:var(--rule)}
+.sym-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);align-content:start;min-height:300px}
+.sc{aspect-ratio:1;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-size:24px;line-height:1;cursor:copy;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI Symbol","Noto Sans Symbols 2","Noto Sans Symbols","Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.sym-serif .sc,.sym-serif .si-big{font-family:"Times New Roman","AppleMyungjo","Batang",serif}
+.sc:hover{background:var(--lime);color:var(--lime-ink)}
+.sc.on{outline:2px solid var(--ink);outline-offset:-2px;z-index:1}
+.sym-empty{grid-column:1/-1;background:var(--paper);padding:30px;margin:0}
+.sym-info{position:sticky;top:76px;border:1px solid var(--ink);background:var(--paper);padding:16px;min-height:200px}
+.si-big{font-size:96px;line-height:1.1;text-align:center;padding:12px 0 6px;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI Symbol",sans-serif;word-break:break-all}
+.si-name{font-weight:700;font-size:16px;text-align:center;margin-bottom:12px}
+.si-name small{display:block;font-weight:400;font-size:11.5px;color:var(--ink3);font-family:var(--mono);margin-top:3px}
+.si-acts{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px}
+.si-acts .tbtn.on{background:var(--ink);color:var(--paper)}
+.si-han{font-size:13px;margin:0 0 10px;text-align:center}
+.si-codes{width:100%;border-collapse:collapse;font-size:12.5px}
+.si-codes th{text-align:left;color:var(--ink3);font-weight:500;padding:5px 6px 5px 0;white-space:nowrap}
+.si-codes td{padding:5px 0;border-top:1px solid var(--rule)}
+.si-codes th{border-top:1px solid var(--rule)}
+.si-codes code{font-family:var(--mono);word-break:break-all}
+.si-codes td:last-child{text-align:right;white-space:nowrap}
+kbd{display:inline-block;padding:1px 7px;border:1px solid var(--ink);border-bottom-width:2px;font:600 12px/1.5 var(--mono);background:var(--paper)}
+.sym-in{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sym-in span{font-size:13px;font-weight:700;white-space:nowrap}
+.sym-in input,.sym-in textarea{flex:1;font-size:18px;padding:10px 12px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);min-width:0;font-family:inherit}
+.fancy-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px;margin-top:12px}
+.fz{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;text-align:left;border:1px solid var(--rule2);background:var(--paper);color:var(--ink);padding:10px 12px;gap:2px 10px;cursor:copy}
+.fz small{grid-column:1/-1;font-size:11.5px;color:var(--ink3)}
+.fz span{font-size:20px;line-height:1.35;word-break:break-all;font-family:system-ui,-apple-system,"Segoe UI Symbol","Noto Sans Math","Cambria Math",sans-serif}
+.fz i{font-style:normal;font-size:12px;color:var(--ink3);align-self:center}
+.fz:hover{border-color:var(--ink)}.fz:hover i{color:var(--ink)}
+.kao-g{margin-bottom:22px}
+.kao-g h3{font-size:14px;margin:0 0 8px}
+.kao-items{display:flex;flex-wrap:wrap;gap:6px}
+.kz{border:1px solid var(--rule2);background:var(--paper);color:var(--ink);padding:9px 12px;font-size:16px;cursor:copy;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.kz:hover{background:var(--lime);color:var(--lime-ink);border-color:var(--lime)}
+.lead2{font-size:15px;margin:0 0 6px}
+.han-list{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.han-r{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:start;border-top:1px solid var(--rule);padding-top:12px}
+.han-k{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.han-k kbd{font-size:18px;padding:2px 10px}
+.han-k span{font-size:12px;color:var(--ink3)}
+.han-k b{width:100%;font-size:13.5px}
+.han-k small{font-size:11px;color:var(--ink3)}
+.han-c{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.han-c .sc{font-size:19px}
+.what-list{margin-top:12px}
+.what-t{width:100%;border-collapse:collapse;font-size:13.5px}
+.what-t th{text-align:left;font-size:12px;color:var(--ink3);font-weight:500;padding:6px 8px;border-bottom:1px solid var(--ink)}
+.what-t td{padding:8px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.what-t .w-c{font-size:32px;width:60px;text-align:center}
+.what-t small{color:var(--ink3);font-family:var(--mono);font-size:11.5px}
+.sym-basket{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);width:min(860px,calc(100% - 32px));display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);padding:8px 10px;z-index:30;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.sym-basket .bk-k{font-size:12px;font-weight:700;white-space:nowrap;padding:0 4px}
+.sym-basket input{flex:1;min-width:0;font-size:18px;padding:6px 10px;border:0;background:var(--paper);color:var(--ink)}
+.sym-basket .tbtn{white-space:nowrap}
+.sym-basket:not(.has) #bkCopy,.sym-basket:not(.has) #bkClear{opacity:.5}
+.sym-toast{position:fixed;left:50%;bottom:78px;transform:translate(-50%,8px);background:var(--lime);color:var(--lime-ink);font-weight:700;padding:8px 16px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:31}
+.sym-toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1000px){
+  .sym-body{grid-template-columns:1fr}
+  .sym-cats{position:static;flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:4px}
+  .sym-cats button{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;padding:6px 10px}
+  .sym-cats button.on{border-bottom-color:var(--ink)}
+  .sym-info{position:static;order:-1}
+  .si-big{font-size:64px;padding:4px 0}
+  .sym-info:has(> p.note){display:none}
+}
+@media(max-width:760px){
+  .sym-grid{grid-template-columns:repeat(auto-fill,minmax(44px,1fr))}
+  .sc{font-size:21px}
+  .han-r{grid-template-columns:1fr}
+  .sym-basket .bk-k{display:none}
+  .fancy-list{grid-template-columns:1fr}
+}
