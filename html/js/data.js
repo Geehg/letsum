@@ -42,6 +42,7 @@ const LICENSE_INFO = {
   "스스로넷 서체 이용조건": { full: "스스로넷 청소년 서체 라이선스(서울시립청소년미디어센터)", short: "스스로넷 무료 이용", note: "인쇄·웹·영상·포장지·임베딩·BI/CI 사용 가능(OFL 아님) / 폰트 파일 수정·복제·재배포·유료 판매 금지, 반사회적 제작물 사용 금지", url: "https://www.ssro.net/media/media_list.jsp?bcate=fontdown" },
   "샌드박스 어그로체 이용조건": { full: "샌드박스 어그로체 라이선스((주)샌드박스네트워크)", short: "어그로체 무료 이용", note: "개인·기업 모두 영리·비영리 사용 가능, 인쇄·웹·영상·BI/CI·임베딩·포장지 허용 / 폰트 파일 수정·복제·배포·유료 판매 불가 · 회사 안내: 어그로체를 쓴 인쇄물·광고물은 마케팅 자료로 활용될 수 있음(원치 않으면 aggro-font@sandboxnetwork.net으로 요청)", url: "https://www.sandbox.co.kr/company-ci" },
   "토스 머니그라피 서체 이용조건": { full: "토스 머니그라피 서체 사용 안내((주)비바리퍼블리카)", short: "머니그라피 무료 이용", note: "개인·기업 누구나 무료로 자유롭게 사용 / 저작권은 비바리퍼블리카 소유, 서체 수정·재배포 금지", url: "https://toss.im/moneygraphy-font" },
+  "쿠키런 글꼴 이용조건": { full: "쿠키런 글꼴 라이선스(데브시스터즈, 2024.05)", short: "쿠키런 무료 이용(게임 업계 제외)", note: "개인·기업 무료, 온/오프라인·상품·광고 등 상업적 사용 가능 / ⚠ 게임 산업군은 상업·비상업 모든 사용 금지(마케팅물·게임 관련 굿즈 포함) / 수정·유료 판매 금지, 원본 그대로 사용 / 캐릭터 딩벳 10자(U+E000~E009)는 비상업 용도만", url: "https://www.cookierunfont.com/" },
   "영덕군 전용서체 이용조건": { full: "영덕군 전용 서체 안내", short: "영덕군 무료 이용", note: "개인·기업 누구나 무료, 자유롭게 상업적 이용 가능 / 글꼴 유료 판매·왜곡 변형 금지", url: "https://www.yd.go.kr/?page_id=120264" },
   "영암군 전용서체 이용조건": { full: "영암군 전용서체 저작권 안내", short: "영암군 무료 이용", note: "누구나 무료로 영상·인쇄·웹 등에 자유롭게 사용 / 유료 판매·왜곡·변형 금지", url: "https://www.yeongam.go.kr/home/www/new_plus/introduce/introduce_11/introduce_11_05" },
   "동그라미재단 서체 이용조건": { full: "동그라미 서체 사용 안내(동그라미재단)", short: "동그라미 무료 이용", note: "개인·기업 누구나 무료, 자유롭게 수정·재배포 가능, 출처 표기 권장 / 글꼴 유료 판매 금지 · 재단 안내: 서체를 쓴 인쇄물·광고물은 재단 홍보에 활용될 수 있음(원치 않으면 요청 가능)", url: "http://www.thecircle.or.kr/kor/data-room/circle-font.html" },
@@ -5458,6 +5459,16 @@ const FONTS = [
     
     pair: "grotesk", pop: 40, added: "2026-10-20",
     desc: "머니그라피 라운디드와 같은 뼈대에 계단 모양 픽셀 외곽선을 입힌 서체. 크게 쓸수록 도트 느낌이 살아나 게임·레트로 콘셉트의 포스터·썸네일 제목에 어울립니다." },
+  { id: "k-cookierun", name: "쿠키런", en: "CookieRun", family: "'LS k-cookierun', sans-serif",
+    designer: "데브시스터즈(주)", holder: "데브시스터즈(주)", category: "디스플레이",
+    tags: ["제목", "둥근", "게임 업계 사용 금지"], mood: ["귀여운", "발랄한"], weights: [400, 700, 900], formats: ["TTF"],
+    cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
+    webfont: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-cookierun/400.ttf", 700: "https://geehg.github.io/letsum-mirror/webfonts/k-cookierun/700.ttf", 900: "https://geehg.github.io/letsum-mirror/webfonts/k-cookierun/900.ttf" }, webfontSrc: "배포처 공식 파일 · 원본 파일 그대로(변환 없음)",
+    dl: { page: "https://www.cookierunfont.com/", srcName: "쿠키런 폰트(데브시스터즈 공식)" },
+    license: "쿠키런 글꼴 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "ok", bici: "cond", package: "ok", ofl: "no" }, verified: "2026-10-20", status: "verified",
+    
+    pair: "grotesk", pop: 40, added: "2026-10-20",
+    desc: "데브시스터즈가 쿠키런 게임의 말랑하고 쫀득한 느낌을 담아 만든 서체. 획 끝이 둥글고 속공간이 작아 통통한 인상이며, Regular·Bold·Black 3가지 굵기로 제목·패키지·SNS 카드에 잘 어울립니다. ⚠ 게임 산업군에서는 상업·비상업 모두 사용할 수 없습니다(2020-11 정책)." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)

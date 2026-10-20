@@ -298,13 +298,23 @@
   $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews();
     $$("[data-id]").forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight * 2) ensureFace(idOf(el)); }); })); // 화면 근처 카드의 새 굵기를 바로 받기
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
+  // 열 수 조절(피드·격자 보기): 0 = 자동. 고른 값은 이 브라우저에만 저장
+  function setCols(c, quiet) {
+    c = [0, 2, 3, 4, 5].includes(+c) ? +c : 0;
+    if (c) { document.documentElement.setAttribute("data-cols", c); document.documentElement.style.setProperty("--cols", c); }
+    else { document.documentElement.removeAttribute("data-cols"); document.documentElement.style.removeProperty("--cols"); }
+    $$("#colSeg button").forEach((x) => x.classList.toggle("on", +x.dataset.c === c));
+    if (!quiet) { try { localStorage.setItem("ls_cols", String(c)); } catch (e) {} }
+  }
+  $$("#colSeg button").forEach((b) => b.addEventListener("click", () => setCols(b.dataset.c)));
+  try { setCols(localStorage.getItem("ls_cols") || 0, true); } catch (e) {}
   function setView(v) {
     if (v !== state.view) ev("view", v);
     state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
     $("#ctxChips").style.display = v === "ctx" ? "flex" : "none";
     $("#viewHint").textContent = { list: "많은 후보를 빠르게 훑기", grid: "같은 문장으로 여러 폰트 비교", ctx: "쓰임새에 적용해 보기", feed: "적용 예시를 넘겨 보며 발견" }[v] || "";
     syncBodyPanel();
-    document.body.classList.toggle("feed-mode", v === "feed"); state.feedN = 24; render();
+    document.body.classList.toggle("feed-mode", v === "feed"); document.body.classList.toggle("show-cols", v === "feed" || v === "grid"); state.feedN = 24; render();
   }
   // 보기 방식 안내: 기본으로는 숨기고, ? 버튼에 마우스를 올리거나 누를 때만 버튼 아래에 띄움
   let tourPinned = false, tourT = 0;

@@ -16,13 +16,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 영문 폰트"><meta property="og:description" content="상업용 무료 영문 폰트를 내 문장으로 바로 비교하고 라이선스 사용 범위까지 확인합니다.">
 <link rel="preconnect" href="https://geehg.github.io" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://hangeul.pstatic.net" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=71">
+<link rel="stylesheet" href="css/style.css?v=72">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 UI·제목용 라틴 폰트 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&family=Playfair+Display:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="feed-mode">
+<body class="feed-mode show-cols">
 <header>
   <div class="wrap hd">
     <a class="logo" href="en/"><img class="lg-l" src="img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
@@ -99,6 +99,7 @@
       <button class="tbtn filter-btn" id="filterBtn" type="button" aria-expanded="false">필터<span id="filterN"></span></button>
       <button class="tbtn lime" id="wizBtn" title="용도·분위기·필요 조건 3가지로 폰트 고르기">용도로 고르기</button>
       <span class="count" id="count"></span>
+      <div class="seg col-seg" id="colSeg" role="group" aria-label="한 줄에 보일 카드 수" title="한 줄에 보일 카드 수"><span class="col-l">열</span><button data-c="0" class="on">자동</button><button data-c="2">2</button><button data-c="3">3</button><button data-c="4">4</button><button data-c="5">5</button></div>
       <div class="sp"></div>
       <select id="sort" aria-label="정렬">
         <option value="new" selected>최신 등록순</option>
@@ -199,6 +200,6 @@
 <div id="bookRail"></div>
 <script src="js/books.js?v=5" defer></script>
 <script src="js/reviews.js?v=2"></script>
-<script src="js/main.js?v=66"></script>
+<script src="js/main.js?v=67"></script>
 </body>
 </html>

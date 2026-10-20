@@ -1250,3 +1250,13 @@ html.modal-open body{padding-right:var(--sbw,0)}
 .inst-tip .it-name b{font-size:15px}.inst-tip .it-name small{display:block;opacity:.8}
 .inst-tip .it-x{position:absolute;top:6px;right:8px;font-size:20px;line-height:1;padding:4px 6px}
 .inst-tip .it-no{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12px;color:var(--ink3)}
+
+/* 열 수 조절(피드·격자): 고른 열 수를 넘지 않게, 카드가 너무 좁아지면(220px 미만) 자동으로 줄인다 */
+.col-seg{display:none;align-items:center}
+.col-seg .col-l{font-size:12px;color:var(--ink3);padding:0 8px;border-right:1px solid var(--rule2)}
+.show-cols .col-seg{display:inline-flex}
+html[data-cols] .igrid{--cg:24px}
+html[data-cols] .grid{--cg:1px}
+html[data-cols] .igrid,html[data-cols] .grid{grid-template-columns:repeat(auto-fill,minmax(max(220px,calc((100% - (var(--cols) - 1) * var(--cg)) / var(--cols) - .5px)),1fr))}
+html[data-cols="4"] .igrid,html[data-cols="5"] .igrid{column-gap:18px;--cg:18px}
+@media(max-width:760px){.show-cols .col-seg{display:none}}
