@@ -106,13 +106,14 @@
   $("#symCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; cat = b.dataset.cat; $("#symQ").value = ""; drawGrid(); $("#symGrid").scrollTop = 0; });
   let qT = 0; $("#symQ").addEventListener("input", () => { clearTimeout(qT); qT = setTimeout(() => { showTab("table"); drawGrid(); }, 120); });
   $("#symQ").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); const f = list()[0]; if (f) { info(f); copy(f); pushRecent(f); } } });
-  $$("#clickMode button").forEach((b) => { b.classList.toggle("on", b.dataset.m === mode); b.addEventListener("click", () => { mode = b.dataset.m; SV("ls_sym_mode", mode); $$("#clickMode button").forEach((x) => x.classList.toggle("on", x === b)); }); });
+  $$("#clickMode button").forEach((b) => { b.classList.toggle("on", b.dataset.m === mode); b.addEventListener("click", () => { mode = b.dataset.m; SV("ls_sym_mode", mode); $$("#clickMode button").forEach((x) => x.classList.toggle("on", x === b)); if (!$("#pane-fancy").hidden) drawFancy(); if (!$("#pane-what").hidden) drawWhat(); toast(mode === "add" ? "이제 누르면 아래 줄에 모읍니다" : "이제 누르면 바로 복사합니다"); }); });
   $$("#symFont button").forEach((b) => b.addEventListener("click", () => { $$("#symFont button").forEach((x) => x.classList.toggle("on", x === b)); document.body.classList.toggle("sym-serif", b.dataset.f === "serif"); }));
 
   // ---------- 탭 ----------
   function showTab(t) {
     $$("#symTabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === t));
     $$(".sym-pane").forEach((p) => (p.hidden = p.id !== "pane-" + t));
+    $("#symCount").hidden = t !== "table"; // 개수는 기호표에서만
     if (t === "fancy") drawFancy(); if (t === "kao") drawKao(); if (t === "han") drawHan(); if (t === "what") drawWhat();
   }
   $$("#symTabs button").forEach((b) => b.addEventListener("click", () => { showTab(b.dataset.tab); try { history.replaceState(null, "", "#" + b.dataset.tab); } catch (e) {} }));
@@ -159,10 +160,10 @@
   ];
   function drawFancy() {
     const t = $("#fancyIn").value || "Letsum";
-    $("#fancyList").innerHTML = FANCY.map(([n, f], k) => { const r = f(t); return `<button class="fz" data-k="${k}"><small>${esc(n)}</small><span>${esc(r)}</span><i>복사</i></button>`; }).join("");
+    $("#fancyList").innerHTML = FANCY.map(([n, f], k) => { const r = f(t); return `<button class="fz" data-k="${k}"><small>${esc(n)}</small><span>${esc(r)}</span><i>${mode === "add" ? "모으기 +" : "복사"}</i></button>`; }).join("");
   }
   $("#fancyIn").addEventListener("input", drawFancy);
-  $("#fancyList").addEventListener("click", (e) => { const b = e.target.closest(".fz"); if (b) copy(FANCY[+b.dataset.k][1]($("#fancyIn").value || "Letsum"), FANCY[+b.dataset.k][0]); });
+  $("#fancyList").addEventListener("click", (e) => { const b = e.target.closest(".fz"); if (!b) return; const r = FANCY[+b.dataset.k][1]($("#fancyIn").value || "Letsum"); if (mode === "add") addBk(r); else copy(r, FANCY[+b.dataset.k][0]); });
 
   // ---------- 이모티콘·꾸밈선 ----------
   const KAO = [
@@ -208,11 +209,11 @@
     const cs = [...new Set([...t])].slice(0, 60);
     $("#whatList").innerHTML = !cs.length ? `<p class="note">붙여 넣으면 글자마다 이름·코드·입력 방법을 알려 드립니다.</p>` : `<table class="what-t"><tr><th>글자</th><th>이름</th><th>코드</th><th>입력</th><th></th></tr>${cs.map((c) => {
       const i = D.info[c]; const h = i && i.h;
-      return `<tr><td class="w-c">${/\s/.test(c) ? "␣" : esc(c)}</td><td>${i ? `<b>${esc(nameKo(c) || kind(c))}</b><br><small>${esc(i.n)}</small>` : `<b>${kind(c)}</b>`}</td><td><code>U+${hex(c)}</code></td><td>${h ? `<kbd>${h}</kbd> + <kbd>한자</kbd>` : ""}</td><td><button class="linklike" data-c="${esc(c)}">복사</button>${i ? ` · <button class="linklike" data-go="${esc(c)}">기호표에서 보기</button>` : ""}</td></tr>`;
+      return `<tr><td class="w-c">${/\s/.test(c) ? "␣" : esc(c)}</td><td>${i ? `<b>${esc(nameKo(c) || kind(c))}</b><br><small>${esc(i.n)}</small>` : `<b>${kind(c)}</b>`}</td><td><code>U+${hex(c)}</code></td><td>${h ? `<kbd>${h}</kbd> + <kbd>한자</kbd>` : ""}</td><td><button class="linklike" data-c="${esc(c)}">${mode === "add" ? "모으기 +" : "복사"}</button>${i ? ` · <button class="linklike" data-go="${esc(c)}">기호표에서 보기</button>` : ""}</td></tr>`;
     }).join("")}</table>`;
   }
   $("#whatIn").addEventListener("input", drawWhat);
-  $("#whatList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.c) copy(b.dataset.c); if (b.dataset.go) { showTab("table"); $("#symQ").value = b.dataset.go; drawGrid(); info(b.dataset.go); } });
+  $("#whatList").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.c) { if (mode === "add") addBk(b.dataset.c); else copy(b.dataset.c); } if (b.dataset.go) { showTab("table"); $("#symQ").value = b.dataset.go; drawGrid(); info(b.dataset.go); } });
 
   // ---------- 시작 ----------
   fetch("data/symbols.json?v=1").then((r) => r.json()).then((j) => {

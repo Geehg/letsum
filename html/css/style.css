@@ -1308,7 +1308,7 @@ html[data-cols="4"] .igrid,html[data-cols="5"] .igrid{column-gap:18px;--cg:18px}
 .sym-cats button.on{color:var(--ink);font-weight:700;border-left-color:var(--ink);background:var(--rule)}
 .sym-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);align-content:start;min-height:300px}
 .sc{aspect-ratio:1;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-size:24px;line-height:1;cursor:copy;font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI Symbol","Noto Sans Symbols 2","Noto Sans Symbols","Apple Color Emoji","Segoe UI Emoji",sans-serif}
-.sym-serif .sc,.sym-serif .si-big{font-family:"Times New Roman","AppleMyungjo","Batang",serif}
+.sym-serif .sc,.sym-serif .si-big,.sym-serif .kz,.sym-serif .w-c{font-family:"Times New Roman","AppleMyungjo","Batang",serif}
 .sc:hover{background:var(--lime);color:var(--lime-ink)}
 .sc.on{outline:2px solid var(--ink);outline-offset:-2px;z-index:1}
 .sym-empty{grid-column:1/-1;background:var(--paper);padding:30px;margin:0}

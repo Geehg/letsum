@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="특수기호 복사 — LETSUM(렛섬)"><meta property="og:description" content="누르면 바로 복사. 한글 이름 검색, 모아 복사, 자음+한자 표, 글자 꾸미기, 이모티콘·꾸밈선.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=75">
+<link rel="stylesheet" href="css/style.css?v=76">
 </head>
 <body class="sym-page">
 <header>
@@ -42,12 +42,13 @@
     <button role="tab" data-tab="what">기호 알아보기</button>
   </div>
 
+  <div class="sym-bar">
+    <div class="seg" id="clickMode" role="group" aria-label="누르면"><span class="col-l">누르면</span><button data-m="copy" class="on">바로 복사</button><button data-m="add">모으기</button></div>
+    <div class="seg" id="symFont" role="group" aria-label="글꼴"><span class="col-l">글꼴</span><button data-f="sans" class="on">고딕</button><button data-f="serif">명조</button></div>
+    <span class="sym-count" id="symCount"></span>
+  </div>
+
   <section class="sym-pane" id="pane-table">
-    <div class="sym-bar">
-      <div class="seg" id="clickMode" role="group" aria-label="누르면"><span class="col-l">누르면</span><button data-m="copy" class="on">바로 복사</button><button data-m="add">모으기</button></div>
-      <div class="seg" id="symFont" role="group" aria-label="글꼴"><span class="col-l">글꼴</span><button data-f="sans" class="on">고딕</button><button data-f="serif">명조</button></div>
-      <span class="sym-count" id="symCount"></span>
-    </div>
     <div class="sym-body">
       <nav class="sym-cats" id="symCats" aria-label="분류"></nav>
       <div class="sym-grid" id="symGrid" role="list"></div>
@@ -91,7 +92,7 @@
   </div>
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
-<script src="js/symbols.js?v=2"></script>
+<script src="js/symbols.js?v=3"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>
