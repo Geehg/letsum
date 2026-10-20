@@ -5,8 +5,9 @@ const fs = require("fs"), path = require("path"), vm = require("vm");
 const ROOT = path.join(__dirname, "..", "html");
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "js", "data.js"), "utf8") + "\n" + (fs.existsSync(path.join(ROOT, "js", "data_en.js")) ? fs.readFileSync(path.join(ROOT, "js", "data_en.js"), "utf8") : "const FONTS_EN=[];")
-  + "\nthis.FONTS=FONTS;this.FONTS_EN=FONTS_EN;this.LICENSE_CATS=LICENSE_CATS;this.LICENSE_INFO=LICENSE_INFO;", ctx);
-const { FONTS, FONTS_EN, LICENSE_CATS, LICENSE_INFO } = ctx; // FONTS_EN: 영문 폰트(/en/) — 상세 페이지는 같은 font/ 폴더에 e- 접두사로
+  + "\n" + (fs.existsSync(path.join(ROOT, "js", "data_db.js")) ? fs.readFileSync(path.join(ROOT, "js", "data_db.js"), "utf8") : "const FONTS_DB=[];")
+  + "\nthis.FONTS=FONTS;this.FONTS_EN=FONTS_EN;this.FONTS_DB=FONTS_DB;this.LICENSE_CATS=LICENSE_CATS;this.LICENSE_INFO=LICENSE_INFO;", ctx);
+const { FONTS, FONTS_EN, FONTS_DB, LICENSE_CATS, LICENSE_INFO } = ctx; // FONTS_DB: 딩벳 폰트(/dingbat/) — 상세 페이지는 d- 접두사 // FONTS_EN: 영문 폰트(/en/) — 상세 페이지는 같은 font/ 폴더에 e- 접두사로
 // 추천 이유(사람이 견본을 보고 쓴 문장) — tools/state/reasons.json → html/data/reasons.json
 // 설치 후 보이는 이름(폰트 파일 이름표) — tools/build_names.py → html/data/names.json
 const NAMES = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "data", "names.json"), "utf8")); } catch (e) { return {}; } })();
@@ -22,20 +23,20 @@ const SITE = "https://letsum.app";
 const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>');
 
-function page(f, en) {
+function page(f, en, db) {
   const gfam = f.en.replace(/ /g, "+");
-  const home = en ? "../en/" : "../index.html", kind = en ? "영문" : "한글";
+  const home = db ? "../dingbat/" : en ? "../en/" : "../index.html", kind = db ? "딩벳" : en ? "영문" : "한글";
   const gf = !f.webfont && !f.intro; // Google Fonts 폰트인지, LETSUM 미리보기 웹폰트(공공 안심글꼴)인지
   const dl = Object.assign(gf ? { zip: `https://fonts.google.com/download?family=${gfam}`, page: `https://fonts.google.com/specimen/${gfam}`, srcName: "Google Fonts" } : { zip: null, srcName: "공유마당" }, f.dl || {}); // 원 배포처 링크 우선
   const famName = f.family.split(",")[0].replace(/['"]/g, "").trim();
   const faceCss = !f.webfont ? "" : Object.entries(f.webfont).map(([w, u]) => `@font-face{font-family:"${famName}";src:url("${u}") format("${((v) => /\.otf$/.test(v) ? "opentype" : /\.ttf$/.test(v) ? "truetype" : /\.woff$/.test(v) ? "woff" : "woff2")(u.split("?")[0])}");font-weight:${w};font-display:swap}`).join("");
   const allOk = LICENSE_CATS.every((c) => f.matrix[c.key] === "ok");
   const commercial = (f.matrix || {}).print === "ok" || (f.matrix || {}).web === "ok"; // 상업 이용이 원문으로 확인된 폰트만 '상업용 무료'
-  const title = `${f.name} 다운로드 — ${commercial ? "상업용 무료" : "무료 배포"} ${en ? "영문 " + (f.tags[0] || f.category) : f.category} 폰트, 사용 범위 표 | LETSUM`;
+  const title = `${f.name} 다운로드 — ${commercial ? "상업용 무료" : "무료 배포"} ${db ? "딩벳 " + f.category : en ? "영문 " + (f.tags[0] || f.category) : f.category} 폰트, 사용 범위 표 | LETSUM`;
   const desc = `${f.name}(${f.en}) 무료 폰트 다운로드와 라이선스 사용 범위(인쇄·웹·영상·임베딩·BI/CI·포장지). ${f.desc}`;
   const ld = { "@context": "https://schema.org", "@type": "WebPage", name: title, description: desc, url: `${SITE}/font/${f.id}.html`,
     mainEntity: { "@type": "CreativeWork", name: f.name, alternateName: f.en, author: { "@type": "Organization", name: f.designer }, copyrightHolder: { "@type": "Organization", name: f.holder },
-      license: (LICENSE_INFO[f.license] || {}).url || dl.page, isAccessibleForFree: true, inLanguage: en ? "en" : "ko", keywords: [f.category, ...f.tags, ...f.mood].join(", ") } };
+      license: (LICENSE_INFO[f.license] || {}).url || dl.page, isAccessibleForFree: true, inLanguage: en || db ? "en" : "ko", keywords: [f.category, ...f.tags, ...f.mood].join(", ") } };
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -48,7 +49,7 @@ function page(f, en) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=72">
+<link rel="stylesheet" href="../css/style.css?v=73">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -56,7 +57,7 @@ function page(f, en) {
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
       <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></form>
@@ -68,7 +69,9 @@ function page(f, en) {
   <h1>${esc(f.name)} <span style="font-family:var(--mono);font-size:16px;font-weight:500;color:var(--ink3)">${esc(f.en)}</span></h1>
   <p class="sub">${esc(f.desc)}</p>
   ${REASONS[f.id] ? `<div class="why-box"><b>추천 이유</b><p>${esc(REASONS[f.id].why)}</p><p class="note">잘 맞는 곳: ${REASONS[f.id].good.map(esc).join(" · ")}${REASONS[f.id].caution ? `<br>주의: ${esc(REASONS[f.id].caution)}` : ""}</p></div>` : ""}
-  ${f.intro ? `${f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>`}
+  ${f.intro ? `${f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : db ? (f.typeable ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>${esc(f.sample)}</div>` : `<div class="sample db-sample" style="font-family:${esc(f.family)}"><span class="l">견본 기호 · ${esc(f.glyphs)}</span>${(f.icons || []).map((x) => `<i title="${esc(x[1])}">${esc(x[0])}</i>`).join("")}</div>`)
+    : en ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>The quick brown fox jumps over the lazy dog<br>Reading is always time well spent<br><span style="font-size:28px">ABC abc 0123456789 · $4.50</span></div>`
+    : `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>`}
   <div class="dlrow">
     ${dl.zip ? `<a class="btn" data-dl="zip" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
     <a class="btn${dl.zip ? " ghost" : ""}" data-dl="page" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
@@ -85,7 +88,7 @@ function page(f, en) {
     <tr><th>굵기</th><td>${f.weightsUnknown ? "배포처 확인" : f.weights.join(" · ")}</td></tr>
     <tr><th>출시·배포일</th><td>${f.released ? `${f.released.length === 4 ? f.released + "년" : f.released.length === 7 ? f.released.slice(0, 4) + "년 " + (+f.released.slice(5)) + "월" : f.released.replace(/-/g, ".")} <span class="note">— 출처: <a href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : "원 출시일 확인 중"}</td></tr>
     <tr><th>형식</th><td>${f.formats.join(", ")}</td></tr>
-    <tr><th>${en ? "지원 문자" : "한글 글자수"}</th><td>${esc(f.glyphs)}</td></tr>
+    <tr><th>${db ? "수록 기호" : en ? "지원 문자" : "한글 글자수"}</th><td>${esc(f.glyphs)}</td></tr>
     <tr><th>저작권자</th><td>${esc(f.holder)}</td></tr>
     <tr><th>태그</th><td>${[...f.tags, ...f.mood].map(esc).join(", ")}</td></tr>
   </table>
@@ -106,6 +109,7 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
 const out = path.join(ROOT, "font"); fs.mkdirSync(out, { recursive: true });
 FONTS.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f)));
 FONTS_EN.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f, true)));
+FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f, false, true)));
 
 // 영문 폰트 홈(/en/index.html) — 한글 홈(index.html)을 바탕으로 만든다(손으로 고치지 말 것).
 // <base href="/">로 모든 상대 주소를 사이트 루트 기준으로 두고, LS_LANG="en"이면 data_en.js가 FONTS를 영문 목록으로 바꾼다.
@@ -128,8 +132,27 @@ FONTS_EN.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f,
   fs.mkdirSync(path.join(ROOT, "en"), { recursive: true });
   fs.writeFileSync(path.join(ROOT, "en", "index.html"), h);
 }
+// 딩벳 폰트 홈(/dingbat/index.html) — 영문 홈과 같은 방식. LS_LANG="db"이면 data_db.js가 FONTS를 딩벳 목록으로 바꾼다.
+{
+  let h = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const R = (a, b) => { if (!h.includes(a)) throw new Error("딩벳 홈 생성: 찾지 못함 " + a.slice(0, 60)); h = h.split(a).join(b); };
+  R('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<base href="/">\n<!-- 자동 생성: tools/build_pages.js가 index.html로 만든다. 직접 고치지 말 것 -->');
+  R("상업용 무료 한글 폰트", "상업용 무료 딩벳 폰트");
+  R("최근 출시된 한글 무료 폰트", "최근 출시된 딩벳 무료 폰트");
+  h = h.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="상업용 무료 딩벳·아이콘·기호 폰트(Google Fonts·제작사 공식 배포)를 견본 기호로 비교하고, 수록 아이콘 수·라이선스 사용 범위를 한 화면에서 확인합니다.">');
+  h = h.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="상업용 무료 딩벳·아이콘·기호 폰트를 견본 기호로 비교하고 라이선스 사용 범위까지 확인합니다.">');
+  R('<link rel="canonical" href="https://letsum.app/">', '<link rel="canonical" href="https://letsum.app/dingbat/">');
+  R('<meta property="og:url" content="https://letsum.app/">', '<meta property="og:url" content="https://letsum.app/dingbat/">');
+  R('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/">딩벳 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/" class="on">딩벳 폰트</a>');
+  R('<a class="logo" href="index.html">', '<a class="logo" href="dingbat/">');
+  h = h.replace(/<script src="js\/data\.js\?v=(\d+)"><\/script>/, (m) => '<script>window.LS_LANG="db"</script>\n' + m + '\n<script src="js/data_db.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_db.js"))).digest("hex").slice(0, 8) + '"></script>');
+  h = h.replace(/\s*<button class="fbtn" data-cov="(11172|old|hanja)">[^<]*<\/button>/g, "");
+  h = h.replace(/<label class="fcheck"[^>]*><input type="checkbox" id="coverOnly">[\s\S]*?<\/label>/, '<input type="checkbox" id="coverOnly" hidden>');
+  fs.mkdirSync(path.join(ROOT, "dingbat"), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, "dingbat", "index.html"), h);
+}
 const today = new Date().toISOString().slice(0, 10);
-const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`)];
+const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.
@@ -208,4 +231,4 @@ Disallow: /api/
 
 Sitemap: ${SITE}/sitemap.xml
 `);
-console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length}, sitemap ${urls.length} urls`);
+console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length}, sitemap ${urls.length} urls`);

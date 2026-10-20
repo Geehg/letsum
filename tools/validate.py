@@ -140,6 +140,39 @@ if os.path.exists(EN_DATA):
     except subprocess.CalledProcessError as ex:
         err("data_en.js 해석 실패: " + ex.stderr[-300:])
 
+# 딩벳 폰트(data_db.js) — /dingbat/ 페이지
+DB_DATA = os.path.join(ROOT, "html", "js", "data_db.js")
+DB_CATS = {"아이콘", "이모지·기호", "바코드", "장식·데이터"}
+if os.path.exists(DB_DATA):
+    jsd = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);" \
+          "vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';'+fs.readFileSync(process.argv[2],'utf8')+';this.out={FONTS_DB,LICENSE_INFO}',c);" \
+          "process.stdout.write(JSON.stringify(c.out))"
+    try:
+        D = json.loads(subprocess.run(["node", "-e", jsd, DATA, DB_DATA], capture_output=True, text=True, check=True).stdout)
+        seen_db = set()
+        for f in D["FONTS_DB"]:
+            i = f.get("id", "")
+            if not re.fullmatch(r"d-[a-z0-9][a-z0-9-]*", i): err(f"딩벳 {i}: id는 d- 접두사 소문자·숫자·하이픈")
+            if i in seen_db or i in ids: err(f"딩벳 {i}: id 중복")
+            seen_db.add(i)
+            if f.get("category") not in DB_CATS: err(f"딩벳 {i}: category '{f.get('category')}' (허용 {sorted(DB_CATS)})")
+            for m in f.get("mood") or []:
+                if m not in MOODS: err(f"딩벳 {i}: mood '{m}'")
+            if f.get("license") not in D["LICENSE_INFO"]: err(f"딩벳 {i}: license '{f.get('license')}'가 LICENSE_INFO에 없음")
+            for k in LICENSE_KEYS if "LICENSE_KEYS" in globals() else ("print", "web", "video", "embed", "bici", "package", "ofl"):
+                if (f.get("matrix") or {}).get(k) not in ("ok", "cond", "no"): err(f"딩벳 {i}: matrix.{k} 값")
+            wf = f.get("webfont") or {}
+            if not wf: err(f"딩벳 {i}: webfont 없음")
+            for u in wf.values():
+                if not u.startswith("https://"): err(f"딩벳 {i}: webfont 주소 '{u[:40]}'")
+            if not f.get("icons") or not f.get("sample"): err(f"딩벳 {i}: 견본 기호(icons·sample) 없음")
+            if not (f.get("dl") or {}).get("page"): err(f"딩벳 {i}: dl.page 없음")
+            if f.get("released") and not re.fullmatch(r"\d{4}(-\d{2}(-\d{2})?)?", f["released"]): err(f"딩벳 {i}: released 형식")
+            if not f.get("desc"): err(f"딩벳 {i}: desc 없음")
+        print(f"딩벳 폰트 {len(D['FONTS_DB'])}종 확인")
+    except subprocess.CalledProcessError as ex:
+        err("data_db.js 해석 실패: " + ex.stderr[-300:])
+
 # 경고(통과는 함)
 for f in FONTS:
     if not f.get("released"): warn(f"{f['id']} 출시일 없음")

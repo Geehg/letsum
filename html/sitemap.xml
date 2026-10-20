@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://letsum.app/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/en/</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/dingbat/</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/guide.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/subset.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/notice.html</loc><lastmod>2026-10-20</lastmod></url>
@@ -1168,4 +1169,39 @@
   <url><loc>https://letsum.app/font/e-overlock.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/font/e-calligraffitti.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://letsum.app/font/e-roundo.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-noto-emoji.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-noto-color-emoji.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-noto-sans-symbols.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-noto-sans-symbols-2.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-noto-music.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-libre-barcode-39-text.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-libre-barcode-39-extended-text.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-libre-barcode-128-text.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-libre-barcode-ean13-text.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-redacted.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-redacted-script.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-flow-block.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-flow-circular.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-flow-rounded.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-linefont.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-wavefont.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-symbols-outlined.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-symbols-rounded.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-symbols-sharp.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-icons.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-icons-outlined.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-icons-round.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-icons-sharp.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-material-icons-two-tone.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-bootstrap-icons.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-tabler-icons.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-phosphor.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-font-awesome.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-mdi.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-lucide.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-remixicon.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-line-awesome.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-boxicons.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-typicons.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://letsum.app/font/d-weather-icons.html</loc><lastmod>2026-10-20</lastmod></url>
 </urlset>

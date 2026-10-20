@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<base href="/">
+<!-- 자동 생성: tools/build_pages.js가 index.html로 만든다. 직접 고치지 말 것 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LETSUM(렛섬) — 상업용 무료 딩벳 폰트</title>
+<meta name="google-site-verification" content="LOXw0NofDa1UaL73FnZT_I4EjDmk5VrLoPbuL6rKBFU">
+<meta name="naver-site-verification" content="0ae4a7ac641663fd398454729789ea4b9d8d7e8c">
+<link rel="canonical" href="https://letsum.app/dingbat/">
+<meta property="og:url" content="https://letsum.app/dingbat/">
+<meta property="og:image" content="https://letsum.app/img/og-main.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="렛섬 — 상업용 무료 딩벳 폰트"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="상업용 무료 딩벳·아이콘·기호 폰트(Google Fonts·제작사 공식 배포)를 견본 기호로 비교하고, 수록 아이콘 수·라이선스 사용 범위를 한 화면에서 확인합니다.">
+<script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:type" content="website"><meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 딩벳 폰트"><meta property="og:description" content="상업용 무료 딩벳·아이콘·기호 폰트를 견본 기호로 비교하고 라이선스 사용 범위까지 확인합니다.">
+<link rel="preconnect" href="https://geehg.github.io" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://hangeul.pstatic.net" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=73">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 한글 폰트 링크는 data.js의 굵기 정보로 main.js가 생성합니다. 아래는 UI·제목용 라틴 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&family=Playfair+Display:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="feed-mode show-cols">
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="dingbat/"><img class="lg-l" src="img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
+    <nav class="main">
+      <a href="index.html">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/" class="on">딩벳 폰트</a>
+      <a href="guide.html">라이선스 가이드</a>
+      <a href="subset.html">웹폰트 코드</a>
+      <button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button>
+    </nav>
+    <div class="sp"></div>
+    <label class="hd-search"><span aria-hidden="true">⌕</span><input id="qTop" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
+      <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></label>
+    <button class="icon-btn" id="themeBtn" aria-label="밝기 전환" title="밝기 전환">◐</button>
+  </div>
+</header>
+
+<section class="newband spot" id="spot" aria-roledescription="carousel" aria-label="최근 출시된 딩벳 무료 폰트">
+  <div class="spot-stage" id="nbTrack"></div>
+  <div class="spot-ui" hidden>
+    <div class="spot-bars" id="spotBars"></div>
+    <span class="k" id="nbLabel">최근 출시</span><span class="spot-meta" id="nbMeta"></span>
+  </div>
+  <h1 class="sr-only" id="nbTitle">최근 출시된 딩벳 무료 폰트</h1>
+  <button class="sp-arrow prev" id="nbPrev" type="button" aria-label="이전 폰트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="sp-arrow next" id="nbNext" type="button" aria-label="다음 폰트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+</section>
+
+<!-- 컨트롤 데크: 모든 폰트에 동시에 적용되는 문장·크기·굵기 -->
+<div class="chg-bar" id="chgBar" hidden></div>
+<div class="deck">
+  <div class="wrap">
+    <div class="body-panel" id="bodyPanel" hidden>
+      <label class="bp-k" for="bodyText">내 원고(본문)</label>
+      <textarea id="bodyText" rows="3" maxlength="3000" placeholder="책·학습지 본문을 붙여 넣으면 책 본문 예시의 긴 글에 그대로 적용됩니다 (최대 3,000자 · 이 브라우저에만 저장)"></textarea>
+      <div class="bp-ctl">
+        <span>본문 크기</span><input type="range" id="bodySize" aria-label="본문 크기" min="9" max="16" step="0.5" value="11.5"><b id="bodySizeV">11.5px</b>
+        <span>행간</span><input type="range" id="bodyLh" aria-label="본문 행간" min="130" max="230" step="5" value="185"><b id="bodyLhV">185%</b>
+        <span>자간</span><input type="range" id="bodyLs" aria-label="본문 자간" min="-5" max="10" step="1" value="0"><b id="bodyLsV">0</b>
+        <button class="tbtn" id="bodyReset" type="button">기본 예문으로</button>
+      </div>
+    </div>
+    <div class="d1">
+      <div class="d-text">
+        <span class="k">문장</span>
+        <input id="previewText" placeholder="여기에 내 문장을 입력해 보세요" type="text" value="" maxlength="80" aria-label="미리보기 문장">
+        <span class="t-src" id="textSrc" aria-live="polite"></span>
+        <select id="presetSel" aria-label="문장 프리셋"></select>
+      </div>
+      <button class="tbtn deck-more" id="deckMore" type="button" aria-expanded="false">조절 ▾</button>
+      <div class="d-size">
+        <span class="k">크기</span>
+        <input id="sizeRange" type="range" min="18" max="120" value="30" aria-label="미리보기 크기">
+        <b id="sizeV">30px</b>
+      </div>
+      <div class="d-tog">
+        <span class="k">굵기</span>
+        <div class="seg" id="weightSeg">
+          <button data-w="400" class="on">보통</button>
+          <button data-w="700">굵게</button>
+        </div>
+      </div>
+    </div>
+    <div class="d2">
+      <div class="seg" id="viewSeg">
+        <button data-v="list" title="많은 후보를 빠르게 훑기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12M2 8h12M2 13h12"/></svg>목록</button>
+        <button data-v="grid" title="같은 문장으로 여러 폰트 비교"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg>격자</button>
+        <button data-v="ctx" title="책·썸네일·자막 등 쓰임새에 적용해 보기"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="10"/><path d="M4.5 10.5h7"/></svg>용도</button>
+        <button data-v="feed" class="on" title="적용 예시를 넘겨 보며 새 폰트 발견"><svg class="vi" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.5"/><path d="M6 11.5h4"/></svg>피드</button>
+      </div>
+      <button class="view-help" id="viewHelp" type="button" aria-label="보기 방식 안내" title="보기 방식 안내">?</button>
+      <span class="view-hint" id="viewHint">적용 예시를 넘겨 보며 발견</span>
+      <div class="ctxs" id="ctxChips" style="display:none"></div>
+      <label class="fcheck live-only" title="소개 전용(미리보기 미제공) 폰트를 빼고 내 문장이 실제 글꼴로 보이는 폰트만"><input type="checkbox" id="liveOnly"> 내 문장 미리보기 가능만</label>
+      <button class="tbtn filter-btn" id="filterBtn" type="button" aria-expanded="false">필터<span id="filterN"></span></button>
+      <button class="tbtn lime" id="wizBtn" title="용도·분위기·필요 조건 3가지로 폰트 고르기">용도로 고르기</button>
+      <span class="count" id="count"></span>
+      <div class="seg col-seg" id="colSeg" role="group" aria-label="한 줄에 보일 카드 수" title="한 줄에 보일 카드 수"><span class="col-l">열</span><button data-c="0">자동</button><button data-c="2">2</button><button data-c="3">3</button><button data-c="4" class="on">4</button><button data-c="5">5</button></div>
+      <div class="sp"></div>
+      <select id="sort" aria-label="정렬">
+        <option value="new" selected>최신 등록순</option>
+        <option value="released">최신 출시순</option>
+        <option value="pop">인기순</option>
+        <option value="name">이름순</option>
+        <option value="weights">굵기 많은 순</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="wrap body">
+  <div class="side-backdrop" id="sideBackdrop" hidden></div>
+  <aside class="side" id="side" aria-label="필터와 상황별 시작">
+    <div class="side-head"><b>필터</b><button class="tbtn" id="sideClose" type="button">닫기</button></div>
+    <div class="fset fset-use">
+      <button class="wiz-cta" id="wizSide"><b>무엇에 쓰세요?</b><span>질문 3개로 맞는 폰트 고르기 →</span></button>
+      <div class="k"><span>상황별로 시작</span></div>
+      <div class="collist" id="collList"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>분류</span></div>
+      <div class="chips" id="catGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>분위기</span><button id="moodClear">지우기</button></div>
+      <div class="chips" id="moodGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>사용 범위</span><button id="licClear">지우기</button></div>
+      <div class="chips" id="licGrp"></div>
+    </div>
+    <div class="fset">
+      <div class="k"><span>글자 범위</span></div>
+      <div class="chips" id="covGrp">
+        <button class="fbtn" data-cov="multi">굵기 3종 이상</button>
+      </div>
+      <input type="checkbox" id="coverOnly" hidden>
+    </div>
+    <div class="fset">
+      <div class="k"><span>즐겨찾기</span></div>
+      <label class="fcheck"><input type="checkbox" id="favOnly"> 즐겨찾기한 폰트만</label>
+    </div>
+    <div class="fset hide-sm">
+      <div class="k"><span>유료 폰트 대신</span></div>
+      <div class="altlist" id="altList"></div>
+      <p class="fine">인상이 비슷한 무료 대안입니다. 동일한 디자인은 아닙니다.</p>
+    </div>
+  </aside>
+
+  <main class="list">
+    <section class="vtour" id="vtour" hidden aria-label="보기 방식 안내">
+      <div class="vt-head"><b>같은 폰트, 네 가지로 보기</b><span>목적에 맞는 보기를 고르세요. 위 탭에서 언제든 바꿀 수 있어요.</span><button class="vt-x" id="vtourX" type="button" aria-label="안내 닫기">✕</button></div>
+      <div class="vt-row">
+        <button class="vt" data-tour="list" type="button"><span class="vt-pic shot"><img src="img/views/list.webp?v=2" alt="목록 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">목록</b><span class="vt-d">이름·라이선스·굵기를 한 줄씩. 많은 후보를 빠르게 훑고 걸러낼 때</span></button>
+        <button class="vt" data-tour="grid" type="button"><span class="vt-pic shot"><img src="img/views/grid.webp?v=2" alt="격자 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">격자</b><span class="vt-d">내 문장 하나를 여러 폰트로 나란히. 인상을 직접 비교할 때</span></button>
+        <button class="vt" data-tour="ctx" type="button"><span class="vt-pic shot"><img src="img/views/ctx.webp?v=2" alt="용도 보기 실제 화면(영상 자막)" loading="lazy" width="480" height="288"></span><b class="vt-t">용도</b><span class="vt-d">썸네일·책 본문·자막·메뉴판에 바로 앉혀 보기. 실제 쓰임새를 확인할 때</span></button>
+        <button class="vt" data-tour="feed" type="button"><span class="vt-pic shot"><img src="img/views/feed.webp?v=2" alt="피드 보기 실제 화면" loading="lazy" width="480" height="288"></span><b class="vt-t">피드</b><span class="vt-d">효과 예시·굵기를 넘겨 보며 둘러보기. 마음에 드는 폰트를 발견할 때</span></button>
+      </div>
+    </section>
+    <div class="active-bar" id="activeBar"></div>
+    <div id="results"></div>
+  </main>
+</div>
+
+<!-- 비교 트레이 -->
+<div class="tray" id="tray">
+  <div class="wrap">
+    <span class="k" style="color:var(--paper);opacity:.7">비교</span>
+    <div class="names" id="trayNames"></div>
+    <button class="btn sm" id="cmpOpen">나란히 보기</button>
+    <button class="btn sm ghost tray-proj" id="trayProj">보관함에 저장</button>
+    <button class="x" id="trayClear" aria-label="비교 비우기">×</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><span class="ft-logo"><img class="lg-l" src="img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></span><b>LETSUM(렛섬)</b>상업용 무료 딩벳 폰트를 고르고, 내 문장으로 써 보고, 사용 범위까지 확인하는 곳.</div>
+      <div><b>안내</b><a href="guide.html">라이선스 가이드</a><br><a href="subset.html">웹폰트 코드 만들기</a><br><a href="notice.html">저작권·라이선스 고지</a></div>
+      <div><b>운영 정보</b>공식 도메인 letsum.app<br>운영 주체: 고요서가 출판사<br>문의: <a href="mailto:interq4@naver.com">interq4@naver.com</a></div>
+    </div>
+    <p class="fine">모든 폰트의 저작권은 각 폰트의 저작권자에게 있습니다. 표시된 사용 범위는 참고용이며, 정확한 범위는 이용 전 저작권자의 원문 라이선스로 확인하세요. 다운로드는 원 배포처로 연결하며, 미리보기용 웹폰트는 배포처 공식 주소이거나 재배포가 허용된 공식 파일만 글자 모양을 바꾸지 않고 씁니다. LETSUM은 각 폰트의 저작권자·배포처와 제휴 관계가 없습니다. 옛한글·한자·글자 지원 여부는 브라우저에서 자동 검출한 참고 정보입니다.<br><a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a> · <a href="notice.html">저작권·라이선스 고지</a> · <a href="admin.html">관리자</a></p>
+  </div>
+</footer>
+
+<script src="js/pv.js?v=1"></script>
+<script>window.LS_LANG="db"</script>
+<script src="js/data.js?v=13"></script>
+<script src="js/data_db.js?v=b99116dc"></script>
+<script src="js/report.js?v=6" defer></script>
+<div id="bookRail"></div>
+<script src="js/books.js?v=5" defer></script>
+<script src="js/reviews.js?v=2"></script>
+<script src="js/main.js?v=69"></script>
+</body>
+</html>

@@ -79,3 +79,11 @@ node tools/build_pages.js; python3 -I tools/validate.py
 - 선정 규칙(`tools/build_en_data.py`): 라틴 지원 + 인기순. 데바나가리·태국 문자 등이 주인 폰트도 확장 라틴까지 있으면 포함(Poppins·Kanit·Hind), 아랍 문자 중심·이름에 문자권이 붙은 전용판(… Arabic, … Thai, Hind Siliguri)은 제외. **한 번 등록된 id는 순위 밖으로 밀려도 유지**. 손질한 항목은 `manual: true`.
 - Fontshare: ITF Free Font License v2.0은 '방문자가 고르는 글꼴로 제공'·형식 변환 금지 → 넣지 않는다. Fontshare의 OFL 폰트는 대부분 Google Fonts에도 있으니 Google Fonts 기준으로, 없는 것만(`FONTSHARE_OFL`, 예: Roundo) Fontshare 공식 웹폰트 주소로.
 - 분류: sans-serif→고딕(산세리프), serif→명조(세리프), handwriting→손글씨, display→디스플레이, monospace→고딕+`고정폭` 태그.
+
+## 딩벳 폰트(`/dingbat/`) 차이
+- 데이터 `html/js/data_db.js`(`FONTS_DB`), id 접두사 `d-`, 생성 `tools/build_db_data.py`(손으로 고친 항목은 `manual: true`). 분류는 `아이콘 | 이모지·기호 | 바코드 | 장식·데이터`.
+- 출처: Google Fonts(이모지·기호·바코드·Redacted·Flow·Linefont·Wavefont, Material Icons·Symbols)와 **제작사 공식 npm 패키지/GitHub 저장소**(jsDelivr)만. 모아 둔 아이콘 사이트는 쓰지 않는다.
+- 미리보기: 변환·보관 없이 공식 웹폰트 주소. Google Fonts는 견본 글자만 담은 공식 CSS(`text=`, Material Symbols는 `icon_names=`), npm은 패키지의 woff2. 견본 아이콘은 패키지 CSS의 이름→코드포인트에서 `CONCEPTS`(집·하트·별…) 순서로 고른다.
+- 필드: `icons`([글자, 설명, 원래 이름]) · `sample` · `typeable`(입력 글자가 바코드·막대로 바뀜) · `liga`(아이콘 이름을 입력하면 아이콘) · `nIcons`.
+- 라이선스는 저장소 원문을 읽고 `LIC`·`LICENSE_INFO_DB`에 적는다. 예: Remix Icon License v1.0(2026-01)은 로고·BI 사용 금지 → `bici: "no"`. Font Awesome Free는 글꼴 OFL(예약 이름) · 아이콘 CC BY 4.0. 브랜드 로고 아이콘 묶음(fa-brands 등)은 상표 문제로 넣지 않는다.
+- 카드: `python tools/build_og.py --db [--missing]`(컬러 이모지 COLR은 PIL이 못 그려 기본 카드). 화면은 main.js의 `DB` 분기(문장 입력·용도 보기·용도로 고르기 숨김).

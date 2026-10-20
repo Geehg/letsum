@@ -87,6 +87,7 @@
     $("#homeKpi").innerHTML = `
       <div><b>${FONTS.length}</b><span>한글 폰트</span></div>
       <div><b>${typeof FONTS_EN !== "undefined" ? FONTS_EN.length : 0}</b><span>영문 폰트</span></div>
+      <div><b>${typeof FONTS_DB !== "undefined" ? FONTS_DB.length : 0}</b><span>딩벳 폰트</span></div>
       <div><b>${FONTS.filter((f) => !f.intro).length}</b><span>미리보기 제공</span></div>
       <div><b>${s ? s.pendingShots : "—"}</b><span>사진 검토 대기</span></div>
       <div><b>${s ? s.reportedComments : "—"}</b><span>신고된 댓글(공개 중)</span></div>

@@ -1260,3 +1260,27 @@ html[data-cols] .grid{--cg:1px}
 html[data-cols] .igrid,html[data-cols] .grid{grid-template-columns:repeat(auto-fill,minmax(max(220px,calc((100% - (var(--cols) - 1) * var(--cg)) / var(--cols) - .5px)),1fr))}
 html[data-cols="4"] .igrid,html[data-cols="5"] .igrid{column-gap:18px;--cg:18px}
 @media(max-width:760px){.show-cols .col-seg{display:none}}
+
+/* ===== 딩벳(/dingbat/): 문장 대신 견본 기호 — 문장 입력·용도 보기·용도로 고르기는 숨김 ===== */
+.lang-db .d-text,.lang-db #viewSeg [data-v="ctx"],.lang-db #wizBtn,.lang-db .fset-use,.lang-db #bodyPanel,.lang-db .live-only{display:none!important}
+.lang-db .r-pv{overflow-wrap:anywhere;word-spacing:.3em;line-height:1.35;letter-spacing:0}
+.db-big{display:grid;grid-template-columns:repeat(3,1fr);gap:4cqw;font-size:17cqw;line-height:1;text-align:center;width:100%}
+.db-big i,.db-cells i,.db-cell i,.dbg{font-style:normal;letter-spacing:0}
+.dbg{display:inline-block;margin:0 .12em .12em 0}
+.lang-db .ig-sample.db-s{align-items:center}
+.db-sheet{background:var(--paper);color:var(--ink);padding:7cqw 6cqw}
+.db-cells{display:grid;grid-template-columns:repeat(4,1fr);gap:3.4cqw 2cqw;height:100%;align-content:center}
+.db-cells div{display:flex;flex-direction:column;align-items:center;gap:1.4cqw;min-width:0}
+.db-cells i{font-size:9cqw;line-height:1}
+.db-cells small{font-size:max(9px,2.6cqw);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.db-table{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.db-cell{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 6px;border:1px solid var(--rule2);background:var(--paper);color:var(--ink);cursor:copy;min-width:0}
+.db-cell i{font-size:34px;line-height:1.15}
+.db-cell b{font-size:12px;font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.db-cell code{font-size:10.5px;color:var(--ink3);font-family:var(--mono);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.db-cell:hover{border-color:var(--ink)}
+.db-cell.done{background:var(--lime);color:var(--lime-ink);border-color:var(--lime)}
+.fp .sample.db-sample{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:14px;font-size:40px;line-height:1.1;text-align:center}
+.fp .sample.db-sample .l{grid-column:1/-1;text-align:left}
+.fp .sample.db-sample i{font-style:normal}
+.lang-db .sp-type{font-size:clamp(34px,4.4vw,64px);line-height:1.25;word-spacing:.25em;min-height:1.3em}

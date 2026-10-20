@@ -7,7 +7,7 @@
 폰트 파일: 사이트 미리보기·배포처 공식 웹폰트(data.js webfont), Google Fonts는 google/fonts 원본.
 로컬에 받아 둔 파일(../letsum-mirror/webfonts, tools/archive/cdn)이 있으면 그것을 먼저 쓴다.
 받은 파일은 tools/state/og_fonts/ 에 TTF로 캐시(저장소에 올리지 않음).
-사용: python tools/build_og.py [--id 폰트ID] [--main] [--en (영문 폰트 전체 또는 --id와 함께)]
+사용: python tools/build_og.py [--id 폰트ID] [--main] [--en (영문 폰트 전체 또는 --id와 함께)] [--db (딩벳 폰트)]
 필요: Pillow, fontTools, brotli
 """
 import io, json, sys
@@ -156,6 +156,65 @@ def card_font(f, fonts_by_id):
     return True
 
 
+def liga_chars(path, words):
+    """합자로 아이콘을 만드는 글꼴(Material): 단어 → 합자 글리프 → 그 글리프의 코드포인트(PUA). PIL에 합자 처리(raqm)가 없어 직접 찾는다."""
+    t = TTFont(str(path)); cmap = t.getBestCmap(); rev = {g: c for c, g in cmap.items()}; out = []
+    ligs = {}
+    if "GSUB" in t:
+        for lk in t["GSUB"].table.LookupList.Lookup:
+            for st in lk.SubTable:
+                st = getattr(st, "ExtSubTable", st)
+                for first, L in (getattr(st, "ligatures", None) or {}).items():
+                    for lg in L: ligs[(first, *lg.Component)] = lg.LigGlyph
+    for w in words:
+        key = tuple(cmap.get(ord(c)) for c in w); g = ligs.get(key)
+        if g and g in rev: out.append(chr(rev[g]))
+    return out
+
+
+def card_db(f):
+    """딩벳 카드: 이름은 사이트 글꼴(프리텐다드), 그 아래에 실제 견본 기호를 그 글꼴로"""
+    path, w = font_file(f)
+    if not path: return False
+    if "COLR" in TTFont(str(path), lazy=True): print(f"{f['id']}: 컬러 글리프(COLR)는 PIL이 못 그려 기본 카드 사용"); return True
+    wght = w if "fvar" in TTFont(str(path), lazy=True) else None
+    im = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(im)
+    lg = logo(46); im.paste(lg, (64, 52), lg)
+    cat = f["category"]; tw = d.textlength(cat, font=ui(700, 24)) + 32
+    pill(d, W - 64 - tw, 56, cat, ui(700, 24), INK, PAPER, outline=INK)
+    nf = ui(800, 96)
+    while d.textlength(f["name"], font=nf) > W - 128 and nf.size > 56: nf = ui(800, nf.size - 6)
+    bb = nf.getbbox(f["name"]); d.text((64, 140 - bb[1]), f["name"], font=nf, fill=INK)
+    if f.get("typeable"):
+        sf = fit(path, f["sample"], W - 128, 120, wght, 40); sb = sf.getbbox(f["sample"]); d.text((64, 290 - sb[1]), f["sample"], font=sf, fill=INK)
+    else:
+        chars = liga_chars(path, [x[0] for x in f["icons"]]) if f.get("liga") else [x[0] for x in f["icons"]]
+        cm = TTFont(str(path), lazy=True).getBestCmap() or {}; chars = [c for c in chars if ord(c) in cm][:9]
+        if not chars: return False
+        ft = load(path, 92, wght); step = (W - 128) / 9
+        for i, c in enumerate(chars):
+            b = ft.getbbox(c); cx = 64 + step * i + (step - (b[2] - b[0])) / 2 - b[0]
+            d.text((cx, 300 - b[1] + (92 - (b[3] - b[1])) / 2), c, font=ft, fill=INK)
+    d.rectangle([0, H - 150, W, H], fill=INK)
+    d.text((64, H - 124), "상업용 무료 딩벳 · " + f["glyphs"], font=ui(500, 24), fill="#b7b4a9")
+    x = 64; y = H - 78
+    for k, label in LIC.items():
+        st = (f.get("matrix") or {}).get(k)
+        if st == "ok": x = pill(d, x, y, label + " ✓", ui(700, 24), LIME_INK, LIME) + 10
+        elif st == "cond": x = pill(d, x, y, label + " 조건부", ui(700, 24), "#f1efe8", INK, outline="#8f8d84") + 10
+        elif st == "no": x = pill(d, x, y, label + " ✕", ui(700, 24), "#8f8d84", INK, outline="#3a3a34") + 10
+    t = "letsum.app"; d.text((W - 64 - d.textlength(t, font=ui(700, 30)), H - 98), t, font=ui(700, 30), fill=LIME)
+    save(im, OUT / f"{f['id']}.png")
+    return True
+
+
+def load_db():
+    js = r"""const fs=require('fs');const s=fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8');
+const F=new Function('var window={};'+s+';return FONTS_DB')();
+console.log(JSON.stringify(F.map(f=>({id:f.id,name:f.name,en:f.en,intro:false,weights:f.weights,webfont:f.webfont,category:f.category,glyphs:f.glyphs,matrix:f.matrix,icons:f.icons,sample:f.sample,typeable:!!f.typeable,liga:!!f.liga}))));"""
+    return json.loads(__import__("subprocess").run(["node", "-e", js, str(ROOT / "html/js/data.js"), str(ROOT / "html/js/data_db.js")], capture_output=True, text=True, check=True).stdout)
+
+
 def card_main(fonts):
     n = len(fonts)
     im = Image.new("RGB", (W, H), PAPER); d = ImageDraw.Draw(im)
@@ -198,7 +257,10 @@ console.log(JSON.stringify(F.map(f=>({id:f.id,name:f.name,en:f.en,intro:!!f.intr
 
 def main():
     global SAMPLE
-    if "--en" in sys.argv:  # 영문 폰트 카드: 분류는 산세리프·세리프처럼 영문 기준 태그, 예문은 영문
+    if "--db" in sys.argv:  # 딩벳 카드(컬러 이모지처럼 PIL이 못 그리는 글꼴은 건너뛰고 기본 카드)
+        fonts = load_db(); sys.argv += ["--en"] if "--en" not in sys.argv else []
+        if "--id" not in sys.argv and "--all" not in sys.argv: sys.argv += ["--all"]
+    elif "--en" in sys.argv:  # 영문 폰트 카드: 분류는 산세리프·세리프처럼 영문 기준 태그, 예문은 영문
         fonts = load_en(); SAMPLE = "The quick brown fox jumps over the lazy dog"
         if "--id" not in sys.argv and "--all" not in sys.argv: sys.argv += ["--all"]
     else:
@@ -214,11 +276,11 @@ def main():
         if f["intro"] or (only and f["id"] != only): continue
         if "--missing" in sys.argv and (OUT / f"{f['id']}.png").exists(): continue  # 카드가 이미 있는 폰트는 건너뜀(주간 자동 갱신용)
         try:
-            try: r = card_font(f, None)
+            try: r = card_db(f) if "--db" in sys.argv else card_font(f, None)
             except OSError as e:  # FreeType가 힌팅을 못 읽는 폰트 → 힌팅 지운 사본으로 다시
                 if not any(k in str(e) for k in ("function definitions", "Bitmap missing")) and "invalid" not in str(e).lower(): raise
                 for p in CACHE.glob(f"{f['id']}-*.ttf"): p.write_bytes(ttf_bytes(p.read_bytes(), dehint=True))
-                r = card_font(f, None)
+                r = card_db(f) if "--db" in sys.argv else card_font(f, None)
             if r: ok += 1
             else: bad += 1; print(f"{f['id']}: 파일 없음")
         except Exception as e:
