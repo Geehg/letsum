@@ -144,7 +144,9 @@
       return `<button class="pr-rec" data-i="${i}"><div class="pr-rec-t" style="font-family:'${esc(famName(e))}','${esc(famName(f))}',${gen(f)};font-weight:700">한글과 Latin 2026</div>
         <div class="pr-rec-n"><b>${esc(f.name)}</b> + <b>${esc(e.name)}</b></div><div class="pr-rec-w">${esc(f.category)} ↔ ${esc((e.tags || [])[0] || e.category)} · 둘 다 인쇄·웹 상업 이용 가능</div></button>`; }).join("");
     $("#recs").onclick = (ev) => { const b = ev.target.closest(".pr-rec"); if (!b) return; const [f, e] = picks[+b.dataset.i]; const bd = body(f.category) || f;
-      S.t = { ko: f.id, en: e.id, w: 700, adj: 100 }; S.b = { ko: bd.id, en: recFor(bd, new Set([e.id]))?.id || "", w: 400, adj: 100 }; // 본문 영문은 제목과 다른 폰트로 sync(); draw(); scrollTo({ top: 0, behavior: "smooth" }); toast(`${f.name} + ${e.name} 적용`); };
+      // 본문 영문은 제목과 다른 폰트로
+      S.t = { ko: f.id, en: e.id, w: 700, adj: 100 }; S.b = { ko: bd.id, en: recFor(bd, new Set([e.id]))?.id || "", w: 400, adj: 100 };
+      sync(); draw(); scrollTo({ top: 0, behavior: "smooth" }); toast(`${f.name} + ${e.name} 적용`); };
   }
 
   // ---------- 입력 ----------
@@ -167,6 +169,20 @@
   });
   $$("#layoutSeg button").forEach((b) => b.addEventListener("click", () => { layout = b.dataset.l; sync(); draw(); }));
   $("#shareBtn").addEventListener("click", () => { const p = (r) => [S[r].ko, S[r].en, S[r].w, S[r].adj].join(","); copy(`${location.origin}${location.pathname}?t=${p("t")}&b=${p("b")}&l=${layout}`, "조합 링크 복사됨"); });
+  // 이미지로 저장·공유: 지금 조합을 4:5 이미지로(제목·본문은 실제 조합 폰트로 그림)
+  $("#shotBtn").addEventListener("click", () => {
+    const worst = (k) => used().map((f) => (f.matrix || {})[k] || "cond").reduce((p, v) => (RANK[v] > RANK[p] ? v : p), "ok");
+    const nm = (r) => `${byId[S[r].ko].name}${S[r].en ? " + " + byId[S[r].en].name : ""}`;
+    LSShot.open({ title: "LETSUM 폰트 조합", file: "letsum-pairing", w: 1080, h: 1350, badge: "폰트 조합",
+      blocks: [{ t: "gap", h: 30 },
+        { t: "text", text: S.tt || "제목", family: stack("t"), weight: S.t.w, size: 92, min: 44, maxLines: 4, lh: 1.18, after: 34 },
+        { t: "text", text: S.bt || "본문", family: stack("b"), weight: S.b.w, size: 34, min: 22, maxLines: 8, lh: 1.65, after: 10 },
+        { t: "rule" },
+        { t: "meta", text: "제목  " + nm("t"), size: 28, weight: 600, color: "#141413", after: 6 },
+        { t: "meta", text: "본문  " + nm("b"), size: 28, weight: 600, color: "#141413", after: 24 },
+        { t: "pills", items: LICENSE_CATS.filter((c) => c.key !== "ofl" && c.key !== "package").map((c) => [c.label, worst(c.key)]) }],
+      footer: "폰트 조합 — 한글·영문 혼용 견본", url: "letsum.app/pairing", shareText: `${nm("t")} / ${nm("b")} — LETSUM 폰트 조합` });
+  });
   $("#cssCopy").addEventListener("click", () => copy($("#cssBox").textContent, "CSS 복사됨"));
 
   sync(); draw(); drawRecs();

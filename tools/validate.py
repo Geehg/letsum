@@ -173,6 +173,15 @@ if os.path.exists(DB_DATA):
     except subprocess.CalledProcessError as ex:
         err("data_db.js 해석 실패: " + ex.stderr[-300:])
 
+# 사이트 스크립트 문법 검사(html/js/*.js) — 문법 오류가 있으면 그 페이지 전체가 멈추므로 커밋을 막는다
+JSDIR = os.path.join(ROOT, "html", "js")
+jsc = "const fs=require('fs');const bad=[];for(const f of process.argv.slice(1)){try{new Function(fs.readFileSync(f,'utf8'))}catch(e){bad.push(require('path').basename(f)+': '+e.message)}}process.stdout.write(JSON.stringify(bad))"
+try:
+    for b in json.loads(subprocess.run(["node", "-e", jsc] + sorted(os.path.join(JSDIR, f) for f in os.listdir(JSDIR) if f.endswith(".js")), capture_output=True, text=True, check=True).stdout):
+        err("스크립트 문법 오류 — " + b)
+except subprocess.CalledProcessError as ex:
+    err("스크립트 문법 검사 실패: " + ex.stderr[-200:])
+
 # 경고(통과는 함)
 for f in FONTS:
     if not f.get("released"): warn(f"{f['id']} 출시일 없음")

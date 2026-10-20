@@ -990,6 +990,7 @@
           <span>자간</span><input type="range" id="cLs" min="-5" max="20" value="0"><b id="cLsV">0px</b>
           <span>행간</span><input type="range" id="cLh" min="110" max="220" value="140"><b id="cLhV">140%</b>
           <button class="tbtn${t.inv ? " on" : ""}" id="cInv">■ 반전</button>
+          <button class="tbtn" id="cShot" type="button" title="지금 비교 화면을 이미지로">이미지로 저장·공유</button>
           <button class="tbtn" id="cNorm" title="폰트마다 같은 크기 값이라도 실제로 보이는 글자 높이가 다릅니다. 한글 글자 높이를 재서 눈에 보이는 크기를 맞춥니다.">눈에 보이는 크기 맞춤</button></div>
       </div>
       <div class="cmp" style="grid-template-columns:repeat(${Math.min(list.length, 4)},1fr)">${list.map((f) => `
@@ -1004,6 +1005,12 @@
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pvs = $$(".cmp .pv");
+    $("#cShot").addEventListener("click", () => {
+      const txt = $("#cText").value; const blocks = [{ t: "kicker", text: `나란히 비교 · ${list.length}종 · 같은 문장, 같은 조건`, size: 24, after: 26 }];
+      list.slice(0, 8).forEach((f) => { blocks.push({ t: "meta", text: f.name + (f.en && f.en !== f.name ? "  " + f.en : ""), size: 24, weight: 700, color: "#141413", after: 4 },
+        { t: "text", text: DB ? (f.icons || []).slice(0, 10).map((x) => x[0]).join(f.liga ? " " : "") : txt || f.name, family: f.family, weight: wOf(f), size: 66, min: 30, maxLines: 2, lh: 1.25, after: 30 }); });
+      LSShot.open({ title: "LETSUM 폰트 비교", file: "letsum-compare", w: 1080, h: "auto", blocks, footer: "같은 문장으로 폰트 비교", url: "letsum.app", shareText: list.map((f) => f.name).join(" vs ") + " — LETSUM" });
+    });
     $("#cText").addEventListener("input", (e) => { const v = e.target.value; pvs.forEach((p) => { p.textContent = v || FONTS.find((x) => x.id === p.closest("[data-cid]").dataset.cid).name; }); });
     // 눈에 보이는 크기 맞춤: 각 폰트로 '가나다라'를 그려 잉크 높이를 재고, 가운데값에 맞춰 글자 크기를 비례 조정(브라우저 측정)
     let norm = false, ratio = {};
@@ -1127,6 +1134,18 @@
   // ---------- 상세 모달 ----------
   const st = (v) => v === "ok" ? `<span class="st-ok">${licIc("ok")}사용 가능</span>` : v === "no" ? `<span class="st-no">${licIc("no")}사용 금지</span>` : `<span class="st-cond">${licIc("cond")}조건부</span>`;
   let evDetail = "";
+  // 폰트 한 종 견본 이미지(이미지로 저장·공유) — 정사각형, 견본은 그 폰트로 직접 그림
+  function shotFont(f) {
+    const sample = DB ? (f.typeable ? f.sample : (f.icons || []).slice(0, 12).map((x) => x[0]).join(f.liga ? " " : "")) : state.text || f.name;
+    const ws = f.weights.length > 7 ? f.weights.filter((_, k) => k % 2 === 0 || k === f.weights.length - 1) : f.weights;
+    const blocks = [{ t: "gap", h: 24 }, { t: "text", text: f.name + (f.en && f.en !== f.name ? "  " + f.en : ""), size: 40, weight: 800, maxLines: 1, min: 26, after: 26 },
+      { t: "text", text: sample, family: f.family, weight: wOf(f), size: DB ? 96 : 104, min: 40, maxLines: 3, lh: DB ? 1.3 : 1.22, after: 30 }];
+    if (f.weights.length > 1 && !f.weightsUnknown && !(DB && f.typeable)) blocks.push({ t: "row", family: f.family, size: 60, items: ws.map((w) => ({ weight: w, text: g1(f), label: w })) });
+    blocks.push({ t: "meta", text: [f.designer, f.glyphs, licInfo(f).short].filter(Boolean).join(" · "), size: 24, maxLines: 2, after: 20 },
+      { t: "pills", items: LICENSE_CATS.filter((c) => c.key !== "ofl" && c.key !== "package").map((c) => [c.label, (f.matrix || {})[c.key] || "cond"]) });
+    LSShot.open({ title: f.name + " — LETSUM", file: "letsum-" + f.id, w: 1080, h: 1080, badge: f.category, blocks,
+      footer: DB ? "상업용 무료 딩벳 폰트" : EN ? "상업용 무료 영문 폰트" : "상업용 무료 한글 폰트", url: "letsum.app/font/" + f.id, shareText: `${f.name} — ${location.origin}/font/${f.id}.html`, onAction: (a) => ev("share", f.id) });
+  }
   // 딩벳 상세: 견본 기호표(누르면 글자·아이콘 이름을 복사)
   function dbTable(f) {
     if (f.typeable) return `<div class="m-sec"><h3>입력 방법</h3><p class="note">${esc(f.glyphs)} — 예: <code>${esc(f.sample)}</code></p></div>`;
@@ -1169,6 +1188,7 @@
           ${LAT ? "" : '<span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span>'}</div>
       </div>`}
       <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
+      ${f.intro ? "" : `<button class="tbtn" id="shotBtn" type="button" title="이 폰트 견본을 이미지로 — 카톡·메신저로 보내 의견 묻기">이미지로 저장·공유</button>`}
       <div class="why-box" id="whyBox" hidden></div>
 
       ${DB ? dbTable(f) : ""}
@@ -1262,6 +1282,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       bindComments(f, focus); bindShots(f);
       $("#proofBtn").addEventListener("click", (e) => saveProof(f, dl, e.currentTarget));
       $("#dsgBtn").addEventListener("click", () => openDesigner(f.designer));
+      $("#shotBtn")?.addEventListener("click", () => shotFont(f));
       $("#favBtn").addEventListener("click", () => { toggleLike(f.id); openDetail(f.id); render(); });
       $("#projAdd")?.addEventListener("click", () => openProjects({ addIds: [f.id] }));
     };
