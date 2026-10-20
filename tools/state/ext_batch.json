@@ -1231,5 +1231,53 @@
   "license": "스스로넷 서체 이용조건",
   "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
   "mode": "hosted"
+ },
+ "sb-aggro": {
+  "fam": "샌드박스 어그로체",
+  "org": "(주)샌드박스네트워크",
+  "page": "https://www.sandbox.co.kr/company-ci",
+  "srcName": "샌드박스네트워크(공식)",
+  "evidence": "공식 CI 페이지 배포 묶음(SBX_AGGRO_FONT_2026.zip) 속 라이선스 PDF: 개인·기업 모두 영리·비영리 사용 가능, 인쇄·웹사이트·영상·BI/CI·임베딩·포장지 O, OFL(폰트 파일 수정·복제·배포) X → 원본 그대로 서버 전용",
+  "id": "sb-aggro",
+  "lic": "CUSTOM",
+  "license": "샌드박스 어그로체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"ok\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "mg-rounded": {
+  "fam": "머니그라피 라운디드",
+  "org": "(주)비바리퍼블리카(토스)",
+  "page": "https://toss.im/moneygraphy-font",
+  "srcName": "토스(공식)",
+  "evidence": "토스 공식 페이지: '개인, 기업 사용자 모두 무료로 자유롭게 사용할 수 있습니다. 단, 저작권을 포함한 모든 권리는 (주)비바리퍼블리카에 있으며 서체를 수정하거나 재배포할 수 없습니다.' → 변환·재배포 없이 토스 공식 웹폰트 주소(static.toss.im, CORS 허용)를 그대로 미리보기에 사용",
+  "id": "moneygraphy-rounded",
+  "lic": "CUSTOM",
+  "license": "토스 머니그라피 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted"
+ },
+ "mg-pixel": {
+  "fam": "머니그라피 픽셀",
+  "org": "(주)비바리퍼블리카(토스)",
+  "page": "https://toss.im/moneygraphy-font",
+  "srcName": "토스(공식)",
+  "evidence": "토스 공식 페이지: '개인, 기업 사용자 모두 무료로 자유롭게 사용할 수 있습니다. 단, 저작권을 포함한 모든 권리는 (주)비바리퍼블리카에 있으며 서체를 수정하거나 재배포할 수 없습니다.' → 변환·재배포 없이 토스 공식 웹폰트 주소(static.toss.im, CORS 허용)를 그대로 미리보기에 사용",
+  "id": "moneygraphy-pixel",
+  "lic": "CUSTOM",
+  "license": "토스 머니그라피 서체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"cond\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
+  "mode": "hosted",
+  "allowDup": true
+ },
+ "ridi-batang": {
+  "fam": "리디바탕",
+  "org": "리디주식회사",
+  "page": "https://ridicorp.com/ridibatang/",
+  "srcName": "리디(공식)",
+  "evidence": "리디 공식 페이지 라이선스 안내: 개인·기업 모든 사용자 무료, 자유롭게 수정·재배포 가능, 글꼴 자체 유료 판매 금지 / 'This Font Software is licensed under the SIL Open Font License, Version 1.1.' 예약 이름 표기가 없지만 확인 전이라 변환하지 않고 공식 OTF 원본 그대로 미러",
+  "id": "ridi-batang",
+  "lic": "OFL",
+  "license": "OFL",
+  "mode": "keep"
  }
 }

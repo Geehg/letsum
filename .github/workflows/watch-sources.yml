@@ -50,7 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           pip install --quiet fonttools brotli pillow
-          python tools/build_en_data.py --top 300 || echo "영문 데이터 갱신 실패 — 지난 결과 유지"
+          python tools/build_en_data.py --top 600 || echo "영문 데이터 갱신 실패 — 지난 결과 유지"
           python tools/build_og.py --en --missing || echo "영문 카드 실패"
       - name: Installed font names from font files (no AI)
         if: steps.lock.outputs.held != '1'

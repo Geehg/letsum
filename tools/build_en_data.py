@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """영문 폰트 데이터(html/js/data_en.js) 생성 — Google Fonts 공식 메타데이터 기준.
 
-선정: 라틴 문자를 지원하는 Google Fonts 패밀리 중 인기순 상위 N종(기본 300).
+선정: 라틴 문자를 지원하는 Google Fonts 패밀리 중 인기순 상위 N종(기본 600).
       한글·한자·일본어 전용 폰트, 아이콘·기호 폰트, 언어별 Noto(본 Noto Sans·Serif 제외)는 뺀다.
 라이선스: google/fonts 저장소의 폴더(ofl·apache·ufl)로 확인 — 셋 다 상업 사용·웹 사용 허용.
 미리보기: Google Fonts CSS API가 알려 주는 공식 웹폰트 주소(fonts.gstatic.com, latin 구간)를 굵기별로 그대로 쓴다(변환·보관 없음).
 이미 있는 항목의 손으로 고친 설명·분류(desc·tags·mood·category·pair)는 덮어쓰지 않는다.
 
-사용: python tools/build_en_data.py [--top 300]
+사용: python tools/build_en_data.py [--top 600]
 """
 import argparse, json, os, re, sys, time, urllib.request
 from datetime import date
@@ -124,7 +124,7 @@ def load_existing():
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--top", type=int, default=300); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--top", type=int, default=600); a = ap.parse_args()
     meta = json.loads(get("https://fonts.google.com/metadata/fonts"))["familyMetadataList"]
     lic = gf_license_dirs()
     old = load_existing()

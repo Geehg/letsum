@@ -1083,5 +1083,17 @@
   "files": {
    "400": "https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/GalmuriMono11.woff2"
   }
+ },
+ "k-moneygraphy-rounded": {
+  "page": "https://toss.im/moneygraphy-font",
+  "files": {
+   "400": "https://static.toss.im/assets/homepage/moneygraphy-font/font/Moneygraphy-Rounded-1.1.woff2"
+  }
+ },
+ "k-moneygraphy-pixel": {
+  "page": "https://toss.im/moneygraphy-font",
+  "files": {
+   "400": "https://static.toss.im/assets/homepage/moneygraphy-font/font/Moneygraphy-Pixel_1.1.woff2"
+  }
  }
 }
