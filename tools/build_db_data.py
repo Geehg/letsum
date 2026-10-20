@@ -43,25 +43,29 @@ LIC = {
     "ISC": dict(OK),
     "Font Awesome Free License": dict(OK),
     "Remix Icon License": dict(OK, bici="no", ofl="cond"),
+    "CC BY 4.0": dict(OK, ofl="cond"),
+    "CoreUI Icons Free License": dict(OK),
 }
 LICENSE_INFO_DB = {
     "Apache 2.0": {"full": "Apache License 2.0", "short": "Apache 2.0", "note": "상업 사용·수정·재배포 가능 / 저작권·라이선스 고지 유지", "url": "https://www.apache.org/licenses/LICENSE-2.0"},
     "MIT": {"full": "MIT License", "short": "MIT", "note": "상업 사용·수정·재배포 가능 / 저작권·허가 고지 유지", "url": "https://opensource.org/license/mit"},
     "ISC": {"full": "ISC License", "short": "ISC", "note": "상업 사용·수정·재배포 가능 / 저작권·허가 고지 유지", "url": "https://opensource.org/license/isc-license-txt"},
     "Font Awesome Free License": {"full": "Font Awesome Free License(글꼴 SIL OFL 1.1 · 아이콘 CC BY 4.0 · 코드 MIT)", "short": "Font Awesome Free", "note": "상업 사용 가능 / 글꼴 파일은 OFL 1.1(예약 이름 'Font Awesome'), SVG·JS 아이콘은 CC BY 4.0(출처 표시) · 브랜드 로고 아이콘은 각 상표권자 소유", "url": "https://fontawesome.com/license/free"},
+    "CC BY 4.0": {"full": "Creative Commons 저작자표시 4.0 국제(CC BY 4.0)", "short": "CC BY 4.0", "note": "상업 사용·수정·재배포 가능 / 저작자 표시 필수", "url": "https://creativecommons.org/licenses/by/4.0/deed.ko"},
+    "CoreUI Icons Free License": {"full": "CoreUI Icons Free License(글꼴 SIL OFL 1.1 · 아이콘 CC BY 4.0 · 코드 MIT)", "short": "CoreUI Icons Free", "note": "상업 사용 가능 / 글꼴 파일은 OFL 1.1, SVG 아이콘은 CC BY 4.0(출처 표시)", "url": "https://coreui.io/icons/license/"},
     "Remix Icon License": {"full": "Remix Icon License v1.0 (2026-01)", "short": "Remix Icon License", "note": "개인·상업 프로젝트 사용·수정 가능, 출처 표시 선택 / 아이콘만 따로 파는 것·경쟁 아이콘 세트 제작 금지, 로고·상표·브랜드 아이덴티티로 사용 금지", "url": "https://github.com/Remix-Design/RemixIcon/blob/master/License"},
 }
 
 # ---------- 견본 아이콘: 개념별 이름 후보(제작사마다 이름이 달라 차례로 찾는다) ----------
 CONCEPTS = [
-    ("집", ["house", "home", "home-alt", "house-door"]), ("하트", ["heart", "favorite", "suit-heart"]), ("별", ["star"]),
-    ("검색", ["search", "magnifying-glass", "magnify", "zoom"]), ("사람", ["user", "person", "account", "user-alt"]),
+    ("집", ["house", "home", "home-alt", "house-door", "home-1"]), ("하트", ["heart", "favorite", "suit-heart"]), ("별", ["star"]),
+    ("검색", ["search", "magnifying-glass", "magnify", "magnifier", "zoom"]), ("사람", ["user", "person", "account", "user-alt", "user-2"]),
     ("설정", ["gear", "settings", "cog", "gear-six"]), ("카메라", ["camera", "photo-camera"]), ("알림", ["bell", "notifications", "notification"]),
-    ("장바구니", ["cart", "shopping-cart", "cart-shopping", "basket", "shopping-cart-simple"]), ("메일", ["envelope", "mail", "email", "envelope-simple"]),
+    ("장바구니", ["cart", "shopping-cart", "cart-shopping", "basket", "shopping-cart-simple", "shopping-bag", "bag"]), ("메일", ["envelope", "mail", "email", "envelope-simple"]),
     ("전화", ["telephone", "phone", "call"]), ("달력", ["calendar", "calendar-event", "calendar-blank", "calendar-days"]), ("구름", ["cloud"]),
-    ("자물쇠", ["lock", "lock-simple", "lock-closed"]), ("음악", ["music", "music-note", "music-notes", "musical-note"]),
-    ("위치", ["map-pin", "geo-alt", "location", "map-marker", "map-marker-alt", "location-dot", "pin"]), ("이미지", ["image", "photo", "picture"]),
-    ("대화", ["chat", "chat-dots", "message", "comment", "chat-circle", "message-circle"]), ("다운로드", ["download"]), ("체크", ["check", "checkmark"]),
+    ("자물쇠", ["lock", "lock-simple", "lock-closed"]), ("음악", ["music", "music-note", "music-notes", "musical-note", "music-tone", "music-2"]),
+    ("위치", ["map-pin", "geo-alt", "location", "location-pin", "map-marker", "map-marker-alt", "location-dot", "pin", "map"]), ("이미지", ["image", "photo", "picture", "file-media"]),
+    ("대화", ["chat", "chat-dots", "message", "comment", "chat-circle", "message-circle", "bubble", "comment-discussion", "chat-1"]), ("다운로드", ["download", "cloud-download", "arrow-download"]), ("체크", ["check", "checkmark"]),
 ]
 WEATHER = [("맑음", "day-sunny"), ("구름", "cloudy"), ("비", "rain"), ("눈", "snow"), ("뇌우", "thunderstorm"), ("안개", "fog"), ("바람", "strong-wind"),
            ("맑은 밤", "night-clear"), ("우산", "umbrella"), ("온도계", "thermometer"), ("일출", "sunrise"), ("일몰", "sunset"), ("우박", "hail"),
@@ -80,12 +84,20 @@ def css_icons(css, prefix):
     return out
 
 
-def pick(icons, concepts, suffixes=("", "-line", "-outline", "-alt", "-simple")):
+def pick(icons, concepts, suffixes=("", "-line", "-outline", "-alt", "-simple", "-o", "-1-line", "_24_regular", "_20_regular")):
+    """이름 후보를 차례로 — 제작사마다 '-'/'_' 구분과 접미사(-line, _24_regular 등)가 달라 둘 다 시도"""
     got = []
     for label, names in concepts:
+        hit = None
         for n in names:
-            hit = next((n + s for s in suffixes if n + s in icons), None)
-            if hit: got.append([chr(icons[hit]), label, hit]); break
+            for base_ in (n, n.replace("-", "_")):
+                for sfx in suffixes:
+                    for cand in (base_ + sfx, base_ + sfx.replace("-", "_")):
+                        if cand in icons: hit = cand; break
+                    if hit: break
+                if hit: break
+            if hit: break
+        if hit: got.append([chr(icons[hit]), label, hit])
     return got
 
 
@@ -122,10 +134,42 @@ NPM = [
          files={400: "src/font/typicons.woff2"}, lic="OFL", designer="Stephen Hutchings", page="https://www.s-ings.com/typicons/",
          desc="2012년부터 이어진 개성 있는 아이콘 세트. 획 끝이 살짝 둥글고 면과 선이 섞여 있어 손맛 있는 화면에 어울립니다."),
 ]
+NPM += [  # 2026-10-20 추가(저장소 라이선스 원문 확인)
+    dict(id="d-eva-icons", name="Eva Icons", pkg="eva-icons", css="style/eva-icons.css", prefix="eva-",
+         files={400: "style/fonts/Eva-Icons.woff2"}, lic="MIT", designer="Akveo", page="https://akveo.github.io/eva-icons/",
+         desc="선(outline)·면(fill) 두 벌로 짝을 이룬 480여 개 아이콘. 모서리가 둥글고 획이 고른 편이라 대시보드·관리 화면에 잘 어울립니다."),
+    dict(id="d-simple-line-icons", name="Simple Line Icons", pkg="simple-line-icons", css="css/simple-line-icons.css", prefix="icon-",
+         files={400: "dist/fonts/Simple-Line-Icons.woff2"}, lic="MIT", designer="Sabbir Ahmed, Jamal Jama", page="https://simplelineicons.github.io/",
+         desc="아주 가는 한 줄 선으로 그린 189개 아이콘. 여백이 많은 미니멀 포트폴리오·랜딩 페이지에 잘 맞습니다."),
+    dict(id="d-fork-awesome", name="Fork Awesome", pkg="fork-awesome", css="css/fork-awesome.min.css", prefix="fa-",
+         files={400: "fonts/forkawesome-webfont.woff2"}, lic="OFL", designer="Fork Awesome 커뮤니티", page="https://forkaweso.me/Fork-Awesome/",
+         desc="Font Awesome 4.7을 이어받아 커뮤니티가 키운 아이콘 글꼴. 4.7과 같은 이름(fa-home)을 그대로 쓸 수 있습니다."),
+    dict(id="d-open-iconic", name="Open Iconic", pkg="open-iconic", css="font/css/open-iconic-bootstrap.css", prefix="oi-",
+         files={400: "font/fonts/open-iconic.woff"}, lic="OFL", designer="Waybury(Iconic)", page="https://github.com/iconic/open-iconic",
+         desc="8px 격자에 맞춘 223개 소형 아이콘. 아주 작은 크기에서도 형태가 뭉개지지 않도록 단순하게 그렸습니다."),
+    dict(id="d-coreui-icons", name="CoreUI Icons Free", pkg="@coreui/icons", css="css/free.css", prefix="cil-",
+         files={400: "fonts/CoreUI-Icons-Free.woff2"}, lic="CoreUI Icons Free License", designer="creativeLabs(CoreUI)", page="https://coreui.io/icons/",
+         desc="CoreUI 관리자 템플릿용 선 아이콘 무료판. 업무용 화면에 필요한 문서·차트·설정 아이콘이 고루 있습니다."),
+    dict(id="d-pixelarticons", name="Pixelarticons", pkg="pixelarticons", css="fonts/pixelart-icons-font.css", prefix="pixelart-icons-font-",
+         files={400: "fonts/pixelart-icons-font.woff2"}, lic="MIT", designer="Gerrit Halfmann", page="https://pixelarticons.com/",
+         desc="24px 도트로 찍은 픽셀 아트 아이콘. 레트로 게임·8비트 콘셉트의 화면과 포스터에 어울립니다."),
+    dict(id="d-mingcute", name="MingCute", pkg="mingcute_icon", css="font/Mingcute.css", prefix="mgc_",
+         files={400: "font/MingCute.woff"}, lic="Apache 2.0", designer="MingCute Design", page="https://www.mingcute.com/", prefer={"집": "home_3_line", "설정": "settings_5_line"},
+         desc="둥글고 귀여운 인상의 선·면 아이콘. 모바일 앱·소비자 서비스 화면에 부드럽게 어울립니다."),
+    dict(id="d-codicons", name="Codicons", pkg="@vscode/codicons", css="dist/codicon.css", prefix="codicon-",
+         files={400: "dist/codicon.ttf"}, lic="CC BY 4.0", designer="Microsoft(Visual Studio Code)", page="https://microsoft.github.io/vscode-codicons/",
+         desc="VS Code 화면에 쓰이는 개발 도구 아이콘. 파일·브랜치·디버그·터미널처럼 개발 문서와 도구 화면에 필요한 기호가 많습니다. 쓸 때 출처 표시가 필요합니다."),
+    dict(id="d-uiw-icons", name="uiw Icons", pkg="@uiw/icons", css="fonts/w-icon.css", prefix="w-icon-",
+         files={400: "fonts/w-icon.woff2"}, lic="MIT", designer="uiw", page="https://uiwjs.github.io/icons/",
+         desc="React 컴포넌트 모음 uiw의 기본 아이콘. 굵기가 일정한 면 아이콘이라 버튼·입력창 안에 넣기 좋습니다."),
+]
 GH = [  # npm에 공식 패키지가 없어 GitHub 공식 저장소(jsDelivr gh)를 쓰는 것
     dict(id="d-weather-icons", name="Weather Icons", gh="erikflowers/weather-icons@2.0.12", css="css/weather-icons.min.css", prefix="wi-",
          files={400: "font/weathericons-regular-webfont.woff2"}, lic="OFL", designer="Erik Flowers", page="https://erikflowers.github.io/weather-icons/",
          desc="날씨 표현만 220여 개 모은 아이콘 글꼴. 맑음·비·눈·바람·일출처럼 예보 화면에 필요한 기호가 한 벌로 갖춰져 있습니다.", concepts="weather"),
+    dict(id="d-fluent-system-icons", name="Fluent System Icons", gh="microsoft/fluentui-system-icons@1.1.344", css="fonts/FluentSystemIcons-Regular.css", prefix="icon-ic_fluent_",
+         files={400: "fonts/FluentSystemIcons-Regular.woff2"}, lic="MIT", designer="Microsoft", page="https://github.com/microsoft/fluentui-system-icons",
+         desc="윈도우·오피스와 같은 마이크로소프트 Fluent 디자인 아이콘. 둥근 모서리와 일정한 선 굵기로 업무용 앱 화면에 잘 어울립니다."),
 ]
 
 # ---------- Google Fonts ----------
@@ -140,6 +184,9 @@ GF_TYPE = [  # 글자를 입력하면 바코드·가림 막대·그래프로 바
     ("Libre Barcode 39 Text", "바코드", "*LETSUM-2026*", "Code 39 바코드를 글자로 입력하는 글꼴(아래에 사람이 읽는 글자 포함). 앞뒤에 *를 붙이면 스캐너로 읽힙니다.", ["단정한"]),
     ("Libre Barcode 39 Extended Text", "바코드", "*Letsum 2026*", "소문자·기호까지 넣을 수 있는 Code 39 확장판(글자 포함). 앞뒤에 *를 붙여 씁니다.", ["단정한"]),
     ("Libre Barcode 128 Text", "바코드", "LETSUM 2026", "Code 128 바코드 모양을 내는 글꼴(글자 포함). 실제로 스캔하려면 체크섬 인코딩 도구를 함께 써야 합니다.", ["단정한"]),
+    ("Libre Barcode 39", "바코드", "*LETSUM-2026*", "Code 39 바코드만 그리는 글꼴(아래 글자 없음). 앞뒤에 *를 붙이면 스캐너로 읽힙니다.", ["단정한"]),
+    ("Libre Barcode 39 Extended", "바코드", "*Letsum 2026*", "소문자·기호까지 넣을 수 있는 Code 39 확장판(아래 글자 없음).", ["단정한"]),
+    ("Libre Barcode 128", "바코드", "LETSUM 2026", "Code 128 바코드 모양만 그리는 글꼴(아래 글자 없음). 실제 스캔용은 체크섬 인코딩 도구와 함께 씁니다.", ["단정한"]),
     ("Libre Barcode EAN13 Text", "바코드", "9791163030010", "상품 바코드(EAN-13) 글꼴. 숫자 12~13자리를 그대로 입력하면 바코드와 숫자가 함께 그려집니다.", ["단정한"]),
     ("Redacted", "장식·데이터", "Lorem ipsum dolor sit amet", "글자를 검은 막대로 가리는 와이어프레임용 글꼴. 시안에서 아직 정해지지 않은 문장 자리를 표시할 때 씁니다.", ["단정한"]),
     ("Redacted Script", "장식·데이터", "Lorem ipsum dolor sit amet", "글자를 손으로 휘갈긴 선처럼 가리는 시안용 글꼴. 손글씨 자리나 서명 자리를 표시할 때 씁니다.", ["따뜻한"]),
@@ -191,7 +238,7 @@ TAGS = {"아이콘": ["웹·앱 UI", "아이콘 글꼴"], "이모지·기호": [
 
 def base(fid, name, cat, designer, holder, ws, urls, src, page, srcname, lic, desc, mood, icons, sample, typeable, nicons, glyphs):
     return {"id": fid, "name": name, "en": name, "family": f"'LS {fid}', sans-serif", "designer": designer, "holder": holder,
-            "category": cat, "tags": TAGS.get(cat, []), "mood": mood, "weights": ws, "formats": ["WOFF2"], "cov": 0, "glyphs": glyphs,
+            "category": cat, "tags": TAGS.get(cat, []), "mood": mood, "weights": ws, "formats": sorted({u.split("?")[0].rsplit(".", 1)[-1].upper() if "." in u.split("/")[-1] else "WOFF2" for u in urls.values()}), "cov": 0, "glyphs": glyphs,
             "icons": icons, "sample": sample, "typeable": typeable, "nIcons": nicons, "variable": False,
             "webfont": {w: urls[w] for w in ws}, "webfontSrc": src, "dl": {"page": page, "srcName": srcname},
             "license": lic, "matrix": LIC[lic], "verified": TODAY, "status": "verified", "pair": "inter", "pop": 50, "added": TODAY, "desc": desc}
@@ -244,6 +291,7 @@ def main():
         else: root = f"https://cdn.jsdelivr.net/gh/{c['gh']}/"; created = ""; src = f"제작사 공식 GitHub 저장소({c['gh']})"
         icons = css_icons(get(root + c["css"]).decode("utf-8", "ignore"), c["prefix"])
         conc = [(l, [n]) for l, n in WEATHER] if c.get("concepts") == "weather" else CONCEPTS
+        conc = [(l, [c["prefer"][l]] + n) if l in c.get("prefer", {}) else (l, n) for l, n in conc]  # 이름이 같아도 모양이 다른 경우(견본을 그려 보고 고름)
         got = pick(icons, conc)
         urls = {w: root + p for w, p in c["files"].items()}; ws = sorted(urls)
         e = base(c["id"], c["name"], "아이콘", c["designer"], c["designer"], ws, urls, src, c["page"], c["name"] + "(공식)", c["lic"], c["desc"], ["단정한"],

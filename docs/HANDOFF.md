@@ -186,6 +186,6 @@ img.save("sample.png")
 
 ## 딩벳 폰트 섹션(/dingbat/) — 2026-10-20
 - 헤더 메뉴 "한글 폰트 | 영문 폰트 | 딩벳 폰트". `/dingbat/index.html`은 `build_pages.js`가 `index.html`로 생성(LS_LANG="db", 직접 고치지 말 것). 상세 페이지 `font/d-*.html`.
-- 데이터 `html/js/data_db.js` ← `tools/build_db_data.py`(Google Fonts 공식 + 제작사 공식 npm/GitHub 아이콘 폰트, 2026-10-20 기준 35종). 매주 자동 갱신(`watch-sources.yml`)에서 다시 만들고 카드(`build_og.py --db --missing`)도 채운다.
+- 데이터 `html/js/data_db.js` ← `tools/build_db_data.py`(Google Fonts 공식 + 제작사 공식 npm/GitHub 아이콘 폰트, 2026-10-20 기준 48종). 매주 자동 갱신(`watch-sources.yml`)에서 다시 만들고 카드(`build_og.py --db --missing`)도 채운다.
 - 검증: `validate.py`가 d- 접두사·분류·라이선스·견본 기호·웹폰트 주소를 검사.
 - 수집 절차는 `.claude/skills/font-collect/SKILL.md`의 '딩벳 폰트' 절.

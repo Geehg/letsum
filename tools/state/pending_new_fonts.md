@@ -146,3 +146,8 @@
 ## 2026-10-20 쿠키런 추가 (561→562) · 넥슨·여기어때·제주 재확인
 - 쿠키런 Regular·Bold·Black (k-cookierun): cookierunfont.com 공식 라이선스 PDF(2024.05) — 상업 사용 가능, 원본 그대로·라이선스 전문 포함 조건으로 재배포 가능, 수정·유료 판매 금지. **게임 산업군은 상업·비상업 모두 금지**, 딩벳 10자(U+E000~E009)는 비상업만 → 원본 TTF 미러(라이선스 PDF 동봉), 설명·태그에 게임 업계 금지 표시.
 - 넥슨(brand.nexon.com 무료 10종)·여기어때(gccompany.co.kr/font 2종)·제주(3종)는 이미 공식 배포처 기준으로 등록돼 있었음(위 ⏸ 기록은 옛 정보). 넥슨 클라비카 NX는 유료 전용이라 제외.
+
+## 2026-10-20 딩벳 추가 조사 (35→48)
+- 추가(저장소 라이선스 원문 확인, 공식 npm/GitHub 웹폰트 그대로): Eva Icons(MIT) · Simple Line Icons(MIT) · Fork Awesome(OFL) · Open Iconic(OFL) · CoreUI Icons Free(글꼴 OFL) · Pixelarticons(MIT) · MingCute(Apache 2.0) · Codicons(CC BY 4.0, 출처 표시) · uiw Icons(MIT) · Fluent System Icons(MIT, Microsoft) + Libre Barcode 39·39 Extended·128(글자 없는 판, OFL).
+- 제외: Flaticon UIcons(Flaticon License — 취소 가능·재판매물 사용 제한·출처 표시), Unicons(IconScout Simple License — 수집·편집 권리 제외), Themify Icons(npm이 제작사 공식 아님), Simple Icons(브랜드 로고 — 상표 문제), Cookie Run 딩벳(비상업), 고양체(공공누리 4유형).
+- 보류: IM Fell Flowers(Igino Marini, OFL 장식 딩벳) — 공식 CDN 없음 → 미러 보관 방식 지원 후 검토. 한글 딩벳은 상업 이용 가능한 원 배포처를 찾지 못함.
