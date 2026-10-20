@@ -150,4 +150,4 @@
 ## 2026-10-20 딩벳 추가 조사 (35→48)
 - 추가(저장소 라이선스 원문 확인, 공식 npm/GitHub 웹폰트 그대로): Eva Icons(MIT) · Simple Line Icons(MIT) · Fork Awesome(OFL) · Open Iconic(OFL) · CoreUI Icons Free(글꼴 OFL) · Pixelarticons(MIT) · MingCute(Apache 2.0) · Codicons(CC BY 4.0, 출처 표시) · uiw Icons(MIT) · Fluent System Icons(MIT, Microsoft) + Libre Barcode 39·39 Extended·128(글자 없는 판, OFL).
 - 제외: Flaticon UIcons(Flaticon License — 취소 가능·재판매물 사용 제한·출처 표시), Unicons(IconScout Simple License — 수집·편집 권리 제외), Themify Icons(npm이 제작사 공식 아님), Simple Icons(브랜드 로고 — 상표 문제), Cookie Run 딩벳(비상업), 고양체(공공누리 4유형).
-- 보류: IM Fell Flowers(Igino Marini, OFL 장식 딩벳) — 공식 CDN 없음 → 미러 보관 방식 지원 후 검토. 한글 딩벳은 상업 이용 가능한 원 배포처를 찾지 못함.
+- 제외(2026-10-20 확인): IM Fell Flowers(Igino Marini) — 제작자 공식 페이지(iginomarini.com/fell)가 사라져 iKern 회사 소개로 바뀜, 현재 받을 수 있는 곳은 모아 둔 사이트(Font Squirrel·dafont 등)뿐이고 그 사이트들의 라이선스 표기도 OFL·'거의 무료(이름 변경·판매 금지, 출처 표시)'·개인용으로 서로 다름 → 원 배포처·원문 확인 불가. 한글 딩벳은 상업 이용 가능한 원 배포처를 찾지 못함.
