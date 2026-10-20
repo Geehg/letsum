@@ -307,7 +307,8 @@
     if (!quiet) { try { localStorage.setItem("ls_cols", String(c)); } catch (e) {} }
   }
   $$("#colSeg button").forEach((b) => b.addEventListener("click", () => setCols(b.dataset.c)));
-  try { setCols(localStorage.getItem("ls_cols") || 0, true); } catch (e) {}
+  let c0 = null; try { c0 = localStorage.getItem("ls_cols"); } catch (e) {}
+  setCols(c0 === null ? 4 : c0, true); // 기본 4열(직접 고른 값이 있으면 그 값)
   function setView(v) {
     if (v !== state.view) ev("view", v);
     state.view = v; $$("#viewSeg button").forEach((x) => x.classList.toggle("on", x.dataset.v === v));
