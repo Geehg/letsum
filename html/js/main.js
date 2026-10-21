@@ -284,15 +284,17 @@
   // ---------- 컨트롤 구성 ----------
   $("#presetSel").innerHTML = `<option value="">프리셋</option><option value="rnd">다른 예시 문장 ↻</option>` + TEXT_PRESETS.map((p) => `<option value="${p.id}">${p.label}</option>`).join("");
   $("#presetSel").addEventListener("change", (e) => {
-    if (e.target.value === "rnd") { curSample = pickSample(state.text); setText(curSample.t); e.target.value = ""; return; }
+    if (e.target.value === "rnd") { if (topicLines) { const L = topicLines.lines.filter((x) => x !== state.text); setText(L[Math.floor(Math.random() * L.length)] || topicLines.lines[0]); } else { curSample = pickSample(state.text); setText(curSample.t); } e.target.value = ""; return; }
     const p = TEXT_PRESETS.find((x) => x.id === e.target.value); if (!p) return;
     setText(p.t); e.target.value = "";
   });
   $("#previewText").addEventListener("input", (e) => setText(e.target.value, true));
   let evTyped = false;
+  // 주제 예시 문장: 주제 칩을 누르면 그 주제 문장 중 하나로 바뀐다(직접 입력한 문장은 건드리지 않음). 주제를 해제하면 원래 문장으로.
+  let topicLines = null, beforeTopic = null, typedOwn = false;
   function setText(t, fromInput) {
-    state.text = t; if (!fromInput) $("#previewText").value = t;
-    const src = $("#textSrc"); if (src) { const sm = SAMPLES.find((x) => x.t === t); src.textContent = sm ? srcLabel(sm) : ""; }
+    state.text = t; if (!fromInput) $("#previewText").value = t; typedOwn = !!fromInput && !!t.trim();
+    const src = $("#textSrc"); if (src) { const sm = SAMPLES.find((x) => x.t === t); src.textContent = topicLines && topicLines.lines.includes(t) ? "주제 예시 · " + topicLines.name : sm ? srcLabel(sm) : ""; }
     if (fromInput && !evTyped && t.trim().length >= 2) { evTyped = true; ev("text_custom"); } // 직접 문장을 입력한 방문 수(내용은 보내지 않음)
     renderPreviews(); scheduleCoverage();
   }
@@ -926,15 +928,25 @@
   // 칩의 href(/topics/…)는 검색엔진용 소개 페이지 그대로 둔다(스크립트가 클릭만 가로챔).
   let TOPIC_DATA = null;
   const topicLoad = () => TOPIC_DATA ? Promise.resolve(TOPIC_DATA) : fetch("data/topics.json?v=" + Date.now().toString(36).slice(0, 5)).then((r) => (r.ok ? r.json() : {})).then((j) => (TOPIC_DATA = j)).catch(() => ({}));
+  function topicTextBack() { // 주제를 해제하면, 주제 문장을 그대로 쓰고 있을 때만 원래 문장으로 되돌린다
+    if (topicLines && topicLines.lines.includes(state.text) && beforeTopic != null) { const b = beforeTopic; topicLines = null; beforeTopic = null; setText(b); }
+    topicLines = null; beforeTopic = null;
+  }
   function topicUrl(slug) {
+    if (!slug) topicTextBack();
     try { const u = new URL(location.href); if (slug) u.searchParams.set("topic", slug); else u.searchParams.delete("topic"); history.replaceState(null, "", u.pathname + u.search + u.hash); } catch (e) {}
     $$(".seo-topics a").forEach((a) => a.classList.toggle("on", !!slug && a.getAttribute("href").includes("/" + slug + ".html")));
   }
   async function applyTopic(slug, scroll) {
     const T = await topicLoad(); const t = T[slug]; if (!t) return;
-    if (!t.ids.some((id) => FONTS.some((f) => f.id === id))) { location.href = "/?topic=" + slug; return; } // 영문·딩벳 홈에서 한글 주제를 누르면 한글 홈으로
+    if (!t.ids.some((id) => FONTS.some((f) => f.id === id))) { location.href = (t.home || "/") + "?topic=" + slug; return; } // 다른 섹션의 주제 주소로 들어온 경우 그 섹션 홈으로
     if (state.onlyLabel === "주제: " + t.name) { removeFilter("only"); return; } // 같은 칩을 다시 누르면 해제
     state.only = new Set(t.ids); state.onlyLabel = "주제: " + t.name; state.rank = null; state.recNote = "";
+    if ((t.lines || []).length && !typedOwn) { // 주제에 맞는 문장으로(누를 때마다 무작위)
+      if (beforeTopic == null) beforeTopic = state.text;
+      topicLines = { name: t.name, lines: t.lines }; const L = t.lines.filter((x) => x !== state.text);
+      setText(L[Math.floor(Math.random() * L.length)] || t.lines[0]);
+    }
     topicUrl(slug); render();
     if (scroll) { const el = $("#activeBar") || $("#results"); scrollTo({ top: el.getBoundingClientRect().top + scrollY - 140, behavior: "smooth" }); }
   }

@@ -127,7 +127,8 @@ function seoIntro(kind) {
   const p = kind === "db" ? "아이콘·이모지·기호·바코드를 글자처럼 쓰는 상업용 무료 딩벳 폰트를 제작사 공식 배포본으로 모았습니다. 견본 기호를 보고, 사용 범위를 확인한 뒤 원 배포처에서 받으세요."
     : kind === "en" ? "상업적으로 쓸 수 있는 Google Fonts 공식 영문 폰트를 모았습니다. 내 문장으로 미리보고 산세리프·세리프·손글씨·디스플레이를 비교한 뒤 무료로 다운로드하세요."
     : "상업적 이용이 가능한 무료 한글 폰트(무료 글꼴)를 라이선스 원문으로 확인해 모았습니다. 인쇄·웹·영상·로고(BI/CI) 사용 범위를 보고 원 배포처에서 TTF·OTF를 다운로드하세요.";
-  const T = kind === "ko" ? KO_TOPICS : TOPIC_LISTS.filter(([t]) => (kind === "db" ? t.db : TOPICS_EN.includes(t) && !t.db)).concat(KO_TOPICS.slice(0, 4));
+  // 각 홈에는 그 섹션의 주제만(영문 홈 = 영문 주제, 딩벳 홈 = 딩벳 주제) — 누르면 그 홈 안에서 걸러짐
+  const T = kind === "ko" ? KO_TOPICS : TOPIC_LISTS.filter(([t]) => (kind === "db" ? t.db : TOPICS_EN.includes(t) && !t.db));
   return `<section class="seo-intro"><div class="wrap"><h1>${h}</h1><p>${p}</p><nav class="seo-topics" aria-label="주제별 무료 폰트">${T.map(([t, l]) => `<a href="topics/${t.slug}.html">${esc(t.short)}<span>${l.length}</span></a>`).join("")}</nav></div></section>`;
 }
 function seoDir(kind) {
@@ -243,7 +244,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 `;
 }
 // 홈의 주제 바로가기가 페이지 이동 없이 목록만 거르도록: 주제 → 폰트 id 목록
-fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.fromEntries(TOPIC_LISTS.map(([t, l]) => [t.slug, { name: t.short, ids: l.map((f) => f.id) }]))));
+fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.fromEntries(TOPIC_LISTS.map(([t, l]) => [t.slug, { name: t.short, ids: l.map((f) => f.id), lines: t.lines || [], home: t.db ? "/dingbat/" : TOPICS_EN.includes(t) ? "/en/" : "/" }]))));
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
 const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];

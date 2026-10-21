@@ -4,7 +4,7 @@ cmap에 있어도 윤곽선이 비어 있으면(빈 글자) 지원하지 않는 
 결과: html/data/coverage.json  { "<id>": { "n": 한글 수, "h": "<11,172비트 base64 — 없으면 한글 완성형 전체>", "hanja": bool, "old": bool, "jamo": 낱자 ㄱ~ㅣ 51자 모두 } }
 사용: python -I tools/build_coverage.py <미러 webfonts 폴더>   (서버 전용 폰트는 tools/archive/hosted에서 읽음)
 """
-import sys, os, json, base64, subprocess
+import sys, os, io, json, base64, subprocess
 from fontTools.ttLib import TTFont
 from fontTools.pens.boundsPen import ControlBoundsPen
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
@@ -20,6 +20,19 @@ def real(font, gs, names):
             p = ControlBoundsPen(gs); gs[name].draw(p)
             if p.bounds: ok.add(name)
     return ok
+OLD_TESTS = ["\u110a\u119e", "\u1112\u119e\u11ab", "\u1100\u119e\u11b7", "\u1140\u1161", "\u114c\u1173\u11bc"]  # ᄊᆞ ᄒᆞᆫ ᄀᆞᆷ ᅀᅡ ᅌᅳᆼ
+def old_composes(path, font):
+    """첫가끝 옛한글 5글자를 셰이핑해 3글자 이상이 한 글리프로 합쳐지면 조합 가능(HarfBuzz). uharfbuzz가 없으면 ljmo·vjmo 기능 유무로 대신 판단."""
+    try:
+        import uharfbuzz as hb
+        t = TTFont(path); t.flavor = None; b = io.BytesIO(); t.save(b); hf = hb.Font(hb.Face(b.getvalue())); ok = 0
+        for s_ in OLD_TESTS:
+            buf = hb.Buffer(); buf.add_str(s_); buf.guess_segment_properties(); hb.shape(hf, buf)
+            g = [x.codepoint for x in buf.glyph_infos]; ok += len(g) == 1 and g[0] != 0
+        return ok >= 3
+    except ImportError:
+        feats = {fr.FeatureTag for fr in font["GSUB"].table.FeatureList.FeatureRecord} if "GSUB" in font and font["GSUB"].table.FeatureList else set()
+        return {"ljmo", "vjmo"} <= feats
 for f in FONTS:
     wf = f.get("webfont")
     if not wf: continue
@@ -36,7 +49,8 @@ for f in FONTS:
     jm = [k for k in range(0x3131, 0x3164) if k in cmap]  # 호환 자모 ㄱ~ㅣ 51자
     good = real(font, gs, [cmap[k] for k in hk + hj + od + jm])
     have = [k for k in hk if cmap[k] in good]
-    rec = {"n": len(have), "hanja": sum(1 for k in hj if cmap[k] in good) >= 50, "old": sum(1 for k in od if cmap[k] in good) >= 50, "jamo": sum(1 for k in jm if cmap[k] in good) == 51}
+    # 옛한글: 옛 자모 글리프가 있어도 첫가끝 조합이 안 되면 '나랏말ᄊᆞ미'가 낱자로 풀려 보인다 → 실제로 한 글자로 조합되는 폰트만 '옛한글 지원'
+    rec = {"n": len(have), "hanja": sum(1 for k in hj if cmap[k] in good) >= 50, "old": sum(1 for k in od if cmap[k] in good) >= 50 and old_composes(p, font), "jamo": sum(1 for k in jm if cmap[k] in good) == 51}
     if len(have) < 11172:
         bits = bytearray(1397)
         for k in have: i = k - 0xAC00; bits[i >> 3] |= 1 << (i & 7)

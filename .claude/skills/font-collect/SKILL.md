@@ -54,6 +54,7 @@ fontTools가 읽어도 브라우저(OTS)가 거부하는 파일이 있다. letsu
 ```bash
 P=/Volumes/Works/LETSUM/.venv/bin/python
 $P -I tools/build_coverage.py ../letsum-mirror/webfonts     # 실제 글자 수 (느림, 백그라운드)
+# ↑ 옛한글은 첫가끝 조합이 실제로 되는 폰트만(uharfbuzz로 셰이핑 검사 — .venv에 설치됨, 없으면 ljmo·vjmo 기능 유무로 대신)
 $P tools/build_evidence.py ../letsum-mirror/webfonts        # ⚠ 경로를 꼭 줄 것(빠지면 폰트 버전이 지워짐)
 $P tools/fetch_icons.py; $P tools/build_names.py; $P tools/release_dates.py
 $P tools/build_og.py --id <id>                              # 카톡 카드(소개 전용은 건너뜀)
