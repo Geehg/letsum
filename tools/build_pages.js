@@ -55,7 +55,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=80">
+<link rel="stylesheet" href="../css/style.css?v=81">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -71,6 +71,7 @@ function page(f, en, db) {
   </div>
 </header>
 <main class="wrap fp">
+  <nav class="crumb" aria-label="현재 위치"><a href="${home}">홈</a>${topicsOf(f)[0] ? ` › <a href="${home}?topic=${topicsOf(f)[0].slug}">${esc(topicsOf(f)[0].short)}</a>` : ""} › <span>${esc(f.name)}</span></nav>
   <p class="k">${esc(f.category)} · ${esc(f.designer)} · ${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${esc(f.glyphs)}</p>
   <h1>${esc(f.name)} <span style="font-family:var(--mono);font-size:16px;font-weight:500;color:var(--ink3)">${esc(f.en)}</span></h1>
   <p class="sub">${esc(f.desc)}</p>
@@ -209,7 +210,7 @@ function topicPage(t, list) {
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=80">
+<link rel="stylesheet" href="../css/style.css?v=81">
 </head>
 <body>
 <header>
@@ -224,6 +225,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 <main class="wrap tp">
   <nav class="crumb" aria-label="현재 위치"><a href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : "index.html"}">홈</a> › <span>${esc(t.short)}</span></nav>
   <h1>${esc(t.h1)} <span class="tp-n">${n}종</span></h1>
+  <p class="tp-go"><a class="btn" href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : ""}?topic=${t.slug}">메인 화면에서 이 목록 보기 →</a><span class="note">내 문장으로 미리보기·비교·필터를 함께 쓸 수 있습니다</span></p>
   <p class="lead">${esc(t.lead)}</p>
   <p class="note">라이선스 원문 대조 · 다운로드는 원 배포처로 연결 · 목록 갱신 ${today} · 견본 이미지를 누르면 상세 정보와 내 문장 미리보기로 갑니다.</p>
   <div class="tp-grid">${list.map(card).join("")}</div>
@@ -240,6 +242,8 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 </html>
 `;
 }
+// 홈의 주제 바로가기가 페이지 이동 없이 목록만 거르도록: 주제 → 폰트 id 목록
+fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.fromEntries(TOPIC_LISTS.map(([t, l]) => [t.slug, { name: t.short, ids: l.map((f) => f.id) }]))));
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
 const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];

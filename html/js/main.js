@@ -909,7 +909,7 @@
   function renderActive() {
     const chips = [];
     if (state.coll) chips.push(["coll", COLLECTIONS.find((c) => c.id === state.coll).title]);
-    if (state.onlyLabel) chips.push(["only", state.onlyLabel.startsWith("용도:") ? state.onlyLabel : "대안: " + state.onlyLabel]);
+    if (state.onlyLabel) chips.push(["only", /^(용도|주제):/.test(state.onlyLabel) ? state.onlyLabel : "대안: " + state.onlyLabel]);
     if (state.cat !== "전체") chips.push(["cat", state.cat]);
     state.mood.forEach((m) => chips.push(["mood:" + m, m]));
     LIC_FILTERS.forEach((p) => { if (p.keys.every((k) => state.lic.has(k)) && (p.key === "commercial" || !LIC_FILTERS[0].keys.every((k) => state.lic.has(k)) || !LIC_FILTERS[0].keys.includes(p.key))) chips.push(["lic:" + p.key, p.label]); });
@@ -922,11 +922,32 @@
     if (state.recNote && state.only) bar.insertAdjacentHTML("beforeend", `<p class="rec-note">${esc(state.recNote)}${state.sort !== "rec" ? " (지금은 선택한 정렬 순서로 표시 중)" : ""}</p>`);
     bar.querySelectorAll("[data-rm]").forEach((b) => b.addEventListener("click", () => removeFilter(b.dataset.rm)));
   }
+  // 주제 바로가기(홈 소개 아래 칩): 다른 페이지로 가지 않고 이 화면에서 그 주제 목록만 거른다. 주소 ?topic=<slug>로 새로고침·공유해도 유지.
+  // 칩의 href(/topics/…)는 검색엔진용 소개 페이지 그대로 둔다(스크립트가 클릭만 가로챔).
+  let TOPIC_DATA = null;
+  const topicLoad = () => TOPIC_DATA ? Promise.resolve(TOPIC_DATA) : fetch("data/topics.json?v=" + Date.now().toString(36).slice(0, 5)).then((r) => (r.ok ? r.json() : {})).then((j) => (TOPIC_DATA = j)).catch(() => ({}));
+  function topicUrl(slug) {
+    try { const u = new URL(location.href); if (slug) u.searchParams.set("topic", slug); else u.searchParams.delete("topic"); history.replaceState(null, "", u.pathname + u.search + u.hash); } catch (e) {}
+    $$(".seo-topics a").forEach((a) => a.classList.toggle("on", !!slug && a.getAttribute("href").includes("/" + slug + ".html")));
+  }
+  async function applyTopic(slug, scroll) {
+    const T = await topicLoad(); const t = T[slug]; if (!t) return;
+    if (!t.ids.some((id) => FONTS.some((f) => f.id === id))) { location.href = "/?topic=" + slug; return; } // 영문·딩벳 홈에서 한글 주제를 누르면 한글 홈으로
+    if (state.onlyLabel === "주제: " + t.name) { removeFilter("only"); return; } // 같은 칩을 다시 누르면 해제
+    state.only = new Set(t.ids); state.onlyLabel = "주제: " + t.name; state.rank = null; state.recNote = "";
+    topicUrl(slug); render();
+    if (scroll) { const el = $("#activeBar") || $("#results"); scrollTo({ top: el.getBoundingClientRect().top + scrollY - 140, behavior: "smooth" }); }
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest(".seo-topics a"); if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const m = (a.getAttribute("href") || "").match(/topics\/([\w-]+)\.html/); if (!m) return;
+    e.preventDefault(); applyTopic(m[1], true);
+  });
   function removeFilter(k) {
     const [t, v] = k.split(":");
-    if (k === "all") { state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
+    if (k === "all") { topicUrl(""); state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
     else if (t === "coll") { state.coll = null; state.cat = "전체"; }
-    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); }
+    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); topicUrl(""); }
     else if (t === "cat") state.cat = "전체";
     else if (t === "mood") state.mood.delete(v);
     else if (t === "lic") LIC_FILTERS.find((p) => p.key === v).keys.forEach((x) => state.lic.delete(x));
@@ -1818,6 +1839,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   // 다른 페이지 헤더에서 온 검색(?q=)·보관함(#vault)
   const v0 = new URLSearchParams(location.search).get("view"); // 보기 링크: ?view=list|grid|ctx|feed
   setView(["list", "grid", "ctx", "feed"].includes(v0) && !(DB && v0 === "ctx") ? v0 : state.view); // 기본은 피드(딩벳은 '용도' 보기 없음)
+  { const tp = new URLSearchParams(location.search).get("topic"); if (tp) applyTopic(tp, false); } // 주제 소개 페이지의 '메인 화면에서 이 목록 보기'
   const q0 = new URLSearchParams(location.search).get("q");
   if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); if (window.lsSearch) window.lsSearch(state.q, filtered().length); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
   if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }

@@ -1522,3 +1522,8 @@ kbd{display:inline-block;padding:1px 7px;border:1px solid var(--ink);border-bott
 .tp-faq div{border-top:2px solid var(--ink);padding-top:10px}
 .tp-faq h3{font-size:15px;margin:0 0 6px}.tp-faq p{margin:0;font-size:14px;color:var(--ink2);line-height:1.7}
 .tp-links{display:flex;flex-wrap:wrap;gap:6px}
+
+.seo-topics a.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.seo-topics a.on span{color:var(--lime)}
+.tp-go{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px 0 14px}
+.fp .crumb{margin-bottom:8px}

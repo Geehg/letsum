@@ -212,3 +212,4 @@ img.save("sample.png")
 - 홈: 보이는 h1('무료 한글 폰트 · 상업용 무료 폰트 N종')·소개·주제 바로가기(`<!--SEO:INTRO-->`), 하단 전체 폰트 이름 목록(`<!--SEO:DIR-->`) — build_pages.js가 채움(영문·딩벳 홈은 각자 내용). 제목·설명의 종수는 자동 갱신. WebSite+SearchAction 구조화 데이터.
 - 상세 페이지: BreadcrumbList + '이 폰트가 포함된 목록' 링크.
 - 키워드 근거: `tools/state/seo_keywords.md`(구글·네이버 자동완성 조사).
+- 2026-10-22: 홈의 주제 칩은 페이지 이동 없이 메인 화면에서 걸러 보기(`?topic=<slug>`, `html/data/topics.json`, main.js `applyTopic`). 주제 페이지에 '메인 화면에서 이 목록 보기', 상세 페이지에 보이는 경로(홈 › 주제 › 폰트). 주제 21개(한자 지원·옛한글 지원 추가).
