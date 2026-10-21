@@ -206,3 +206,9 @@ img.save("sample.png")
 - `html/js/shot.js`(`LSShot.open(spec)`): 이미 불러온 웹폰트로 캔버스에 그려 미리보기 창 → PNG 저장 / 이미지 복사 / 공유(휴대폰 공유 시트). 외부 라이브러리·서버 없음.
 - 쓰는 곳: 폰트 조합(4:5, 실제 조합 폰트로), 폰트 상세 창(정사각, 한글·영문·딩벳), 나란히 비교(세로 길이 자동). 하단에 letsum.app 주소.
 - `validate.py`가 `html/js/*.js` 문법을 검사(오류 있으면 커밋 차단) — 2026-10-21 pairing.js 한 줄 주석 사고 이후 추가.
+
+## 검색 노출(SEO) — 2026-10-21
+- 주제별 소개 페이지 19개 `/topics/<slug>.html` ← `tools/seo_topics.js`(주제·문구·자주 묻는 질문) + `build_pages.js`(생성·사이트맵). 목록은 data.js 실제 값으로만 거르고, 견본은 기존 OG 카드 이미지(lazy).
+- 홈: 보이는 h1('무료 한글 폰트 · 상업용 무료 폰트 N종')·소개·주제 바로가기(`<!--SEO:INTRO-->`), 하단 전체 폰트 이름 목록(`<!--SEO:DIR-->`) — build_pages.js가 채움(영문·딩벳 홈은 각자 내용). 제목·설명의 종수는 자동 갱신. WebSite+SearchAction 구조화 데이터.
+- 상세 페이지: BreadcrumbList + '이 폰트가 포함된 목록' 링크.
+- 키워드 근거: `tools/state/seo_keywords.md`(구글·네이버 자동완성 조사).

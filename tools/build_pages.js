@@ -20,6 +20,11 @@ const namesHTML = (f) => { const n = NAMES[f.id]; if (!n) return ""; return `<h2
 const REASONS = (() => { try { const j = JSON.parse(fs.readFileSync(path.join(__dirname, "state", "reasons.json"), "utf8")); delete j._; return j; } catch (e) { return {}; } })();
 fs.writeFileSync(path.join(ROOT, "data", "reasons.json"), JSON.stringify(REASONS));
 const SITE = "https://letsum.app";
+// 주제별 소개 페이지(검색어 맞춤 목록) — tools/seo_topics.js. 3종 미만인 주제는 만들지 않는다.
+const { TOPICS, TOPICS_EN, Q } = require("./seo_topics");
+const byPop = (a, b) => (b.pop || 0) - (a.pop || 0) || String(a.name).localeCompare(String(b.name), "ko");
+const TOPIC_LISTS = [...TOPICS.map((t) => [t, FONTS.filter(t.filter).sort(byPop)]), ...TOPICS_EN.map((t) => [t, (t.db ? FONTS_DB : FONTS_EN).filter(t.filter).sort(byPop)])].filter(([, l]) => l.length >= 3);
+const topicsOf = (f) => TOPIC_LISTS.filter(([, l]) => l.includes(f)).map(([t]) => t);
 const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>');
 
@@ -47,9 +52,10 @@ function page(f, en, db) {
 <link rel="canonical" href="${SITE}/font/${f.id}.html">
 <meta property="og:title" content="${esc(f.name)} — ${commercial ? "상업용 무료" : "무료 배포"} 폰트 | LETSUM"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${SITE}/font/${f.id}.html"><meta property="og:type" content="article"><meta property="og:image" content="${SITE}/img/${fs.existsSync(path.join(ROOT, "img/og", f.id + ".png")) ? "og/" + f.id : "og-main"}.png"><meta property="og:image:alt" content="${esc(f.name)} 글꼴 미리보기"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
+<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=79">
+<link rel="stylesheet" href="../css/style.css?v=80">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -95,6 +101,7 @@ function page(f, en, db) {
   ${f.intro ? "" : gf || (en && f.dl && f.dl.srcName === "Google Fonts") ? `<h2>웹폰트</h2>
   <pre class="code">&lt;link href="https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&amp;display=swap" rel="stylesheet"&gt;
 font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p>${f.matrix.embed === "ok" ? "원 배포처에서 받은 파일을 직접 호스팅하세요(라이선스상 웹 임베딩 허용)." : f.matrix.embed === "no" ? "<b>이 폰트는 웹폰트·앱 임베딩이 허용되지 않습니다.</b> 이미지·인쇄물·영상 등 위 표에서 허용된 방식으로만 쓰세요." : "<b>웹폰트·앱 임베딩은 조건부입니다.</b> " + esc((LICENSE_INFO[f.license] || {}).note || "") + " — 직접 호스팅하기 전에 라이선스 원문을 확인하세요."} 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
+  ${topicsOf(f).length ? `<h2>이 폰트가 포함된 목록</h2>\n  <p class="tp-links">${topicsOf(f).map((t) => `<a href="../topics/${t.slug}.html">${esc(t.short)}</a>`).join("")}</p>` : ""}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
@@ -111,12 +118,34 @@ FONTS.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f)));
 FONTS_EN.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f, true)));
 FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f, false, true)));
 
+// 홈 소개(h1·설명·주제 바로가기)와 전체 폰트 이름 목록 — 검색엔진과 처음 온 사람용. index.html의 SEO 표시 사이를 채운다.
+const KO_TOPICS = TOPIC_LISTS.filter(([t]) => TOPICS.includes(t));
+function seoIntro(kind) {
+  const n = kind === "db" ? FONTS_DB.length : kind === "en" ? FONTS_EN.length : FONTS.length;
+  const h = kind === "db" ? `무료 딩벳 폰트 · 아이콘 폰트 <b>${n}</b>종` : kind === "en" ? `무료 영문 폰트 · 상업용 무료 영어 폰트 <b>${n}</b>종` : `무료 한글 폰트 · 상업용 무료 폰트 <b>${n}</b>종`;
+  const p = kind === "db" ? "아이콘·이모지·기호·바코드를 글자처럼 쓰는 상업용 무료 딩벳 폰트를 제작사 공식 배포본으로 모았습니다. 견본 기호를 보고, 사용 범위를 확인한 뒤 원 배포처에서 받으세요."
+    : kind === "en" ? "상업적으로 쓸 수 있는 Google Fonts 공식 영문 폰트를 모았습니다. 내 문장으로 미리보고 산세리프·세리프·손글씨·디스플레이를 비교한 뒤 무료로 다운로드하세요."
+    : "상업적 이용이 가능한 무료 한글 폰트(무료 글꼴)를 라이선스 원문으로 확인해 모았습니다. 인쇄·웹·영상·로고(BI/CI) 사용 범위를 보고 원 배포처에서 TTF·OTF를 다운로드하세요.";
+  const T = kind === "ko" ? KO_TOPICS : TOPIC_LISTS.filter(([t]) => (kind === "db" ? t.db : TOPICS_EN.includes(t) && !t.db)).concat(KO_TOPICS.slice(0, 4));
+  return `<section class="seo-intro"><div class="wrap"><h1>${h}</h1><p>${p}</p><nav class="seo-topics" aria-label="주제별 무료 폰트">${T.map(([t, l]) => `<a href="topics/${t.slug}.html">${esc(t.short)}<span>${l.length}</span></a>`).join("")}</nav></div></section>`;
+}
+function seoDir(kind) {
+  const L = (kind === "db" ? FONTS_DB : kind === "en" ? FONTS_EN : FONTS).slice().sort((a, b) => String(a.name).localeCompare(String(b.name), "ko"));
+  return `<section class="seo-dir"><div class="wrap"><details><summary>전체 ${kind === "db" ? "딩벳" : kind === "en" ? "영문" : "한글"} 폰트 이름으로 찾기 (${L.length}종)</summary><ul>${L.map((f) => `<li><a href="font/${f.id}.html">${esc(f.name)}</a></li>`).join("")}</ul></details></div></section>`;
+}
+const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-->/, `<!--SEO:INTRO-->${seoIntro(kind)}<!--/SEO:INTRO-->`).replace(/<!--SEO:DIR-->[\s\S]*?<!--\/SEO:DIR-->/, `<!--SEO:DIR-->${seoDir(kind)}<!--/SEO:DIR-->`);
+{
+  const ip = path.join(ROOT, "index.html"); let h = fs.readFileSync(ip, "utf8");
+  h = fillSeo(h, "ko").replace(/(<title>무료 한글 폰트 · 상업용 무료 폰트 )\d+(종)/, `$1${FONTS.length}$2`).replace(/(무료 한글 폰트\(무료 글꼴\) )\d+(종)/, `$1${FONTS.length}$2`).replace(/(상업용 무료 한글 폰트 )\d+(종">)/, `$1${FONTS.length}$2`);
+  fs.writeFileSync(ip, h);
+}
 // 영문 폰트 홈(/en/index.html) — 한글 홈(index.html)을 바탕으로 만든다(손으로 고치지 말 것).
 // <base href="/">로 모든 상대 주소를 사이트 루트 기준으로 두고, LS_LANG="en"이면 data_en.js가 FONTS를 영문 목록으로 바꾼다.
 {
   let h = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
   const R = (a, b) => { if (!h.includes(a)) throw new Error("영문 홈 생성: 찾지 못함 " + a.slice(0, 60)); h = h.split(a).join(b); };
   R('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<base href="/">\n<!-- 자동 생성: tools/build_pages.js가 index.html로 만든다. 직접 고치지 말 것 -->');
+  h = fillSeo(h, "en").replace(/<title>[^<]*<\/title>/, `<title>무료 영문 폰트 · 상업용 무료 영어 폰트 ${FONTS_EN.length}종 다운로드 | LETSUM(렛섬)</title>`).replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="LETSUM(렛섬) — 상업용 무료 영문 폰트 ${FONTS_EN.length}종">`);
   R("상업용 무료 한글 폰트", "상업용 무료 영문 폰트");
   R("최근 출시된 한글 무료 폰트", "최근 출시된 영문 무료 폰트");
   h = h.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="상업용 무료 영문 폰트(Google Fonts 공식 OFL·Apache)를 내 문장으로 바로 비교하고, 굵기·지원 문자·라이선스 사용 범위를 한 화면에서 확인합니다.">');
@@ -137,6 +166,7 @@ FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f,
   let h = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
   const R = (a, b) => { if (!h.includes(a)) throw new Error("딩벳 홈 생성: 찾지 못함 " + a.slice(0, 60)); h = h.split(a).join(b); };
   R('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<base href="/">\n<!-- 자동 생성: tools/build_pages.js가 index.html로 만든다. 직접 고치지 말 것 -->');
+  h = fillSeo(h, "db").replace(/<title>[^<]*<\/title>/, `<title>무료 딩벳 폰트 · 아이콘 폰트 ${FONTS_DB.length}종 — 상업용 무료 | LETSUM(렛섬)</title>`).replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="LETSUM(렛섬) — 무료 딩벳·아이콘 폰트 ${FONTS_DB.length}종">`);
   R("상업용 무료 한글 폰트", "상업용 무료 딩벳 폰트");
   R("최근 출시된 한글 무료 폰트", "최근 출시된 딩벳 무료 폰트");
   h = h.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="상업용 무료 딩벳·아이콘·기호 폰트(Google Fonts·제작사 공식 배포)를 견본 기호로 비교하고, 수록 아이콘 수·라이선스 사용 범위를 한 화면에서 확인합니다.">');
@@ -158,7 +188,61 @@ FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f,
   if (fs.existsSync(pp)) fs.writeFileSync(pp, fs.readFileSync(pp, "utf8").replace(/js\/data\.js\?v=[\w]+/, "js/data.js?v=" + md5("data.js")).replace(/js\/data_en\.js\?v=[\w]+/, "js/data_en.js?v=" + md5("data_en.js")));
 }
 const today = new Date().toISOString().slice(0, 10);
-const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`)];
+function topicPage(t, list) {
+  const n = list.length, url = `${SITE}/topics/${t.slug}.html`, title = `${t.title(n)} | LETSUM`;
+  const others = TOPIC_LISTS.filter(([o]) => o !== t);
+  const okTxt = (f) => [["print", "인쇄"], ["web", "웹"], ["video", "영상"], ["bici", "BI/CI"]].filter(([k]) => (f.matrix || {})[k] === "ok").map(([, l]) => l).join("·");
+  const card = (f) => { const og = fs.existsSync(path.join(ROOT, "img/og", f.id + ".png"));
+    return `<a class="tp-card" href="../font/${f.id}.html">${og ? `<img src="../img/og/${f.id}.png" alt="${esc(f.name)} 글꼴 견본" loading="lazy" width="600" height="315">` : `<span class="tp-noimg">${esc(f.name)}</span>`}<b>${esc(f.name)}</b><span>${esc(f.category)} · ${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${esc(f.glyphs || "")}</span><span class="tp-lic">${esc(((LICENSE_INFO[f.license] || {}).short) || f.license)}${okTxt(f) ? ` · ${okTxt(f)} 가능` : ""}</span></a>`; };
+  const ld = [{ "@context": "https://schema.org", "@type": "CollectionPage", name: t.title(n), description: t.desc(n), url, inLanguage: "ko",
+      mainEntity: { "@type": "ItemList", numberOfItems: n, itemListElement: list.slice(0, 100).map((f, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/font/${f.id}.html`, name: f.name })) } },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" }, { "@type": "ListItem", position: 2, name: t.short, item: url }] }];
+  return `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(t.desc(n))}">
+<link rel="canonical" href="${url}">
+<meta property="og:title" content="${esc(t.title(n))}"><meta property="og:description" content="${esc(t.desc(n))}"><meta property="og:url" content="${url}"><meta property="og:type" content="website"><meta property="og:image" content="${SITE}/img/og-main.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
+${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
+<script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css?v=80">
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <div class="sp"></div>
+    <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색" autocomplete="off"></form>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
+  </div>
+</header>
+<main class="wrap tp">
+  <nav class="crumb" aria-label="현재 위치"><a href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : "index.html"}">홈</a> › <span>${esc(t.short)}</span></nav>
+  <h1>${esc(t.h1)} <span class="tp-n">${n}종</span></h1>
+  <p class="lead">${esc(t.lead)}</p>
+  <p class="note">라이선스 원문 대조 · 다운로드는 원 배포처로 연결 · 목록 갱신 ${today} · 견본 이미지를 누르면 상세 정보와 내 문장 미리보기로 갑니다.</p>
+  <div class="tp-grid">${list.map(card).join("")}</div>
+  <h2>자주 묻는 질문</h2>
+  <div class="tp-faq">${t.faq.map((k) => `<div><h3>${esc(Q[k][0])}</h3><p>${esc(Q[k][1])}</p></div>`).join("")}</div>
+  <h2>다른 무료 폰트 목록</h2>
+  <p class="tp-links">${others.map(([o, l]) => `<a href="${o.slug}.html">${esc(o.short)} <span>${l.length}</span></a>`).join("")}</p>
+  <p class="disclaimer">※ 사용 범위는 참고용이며, 정확한 범위는 이용 전 저작권자의 원문 라이선스로 확인하세요. 모든 폰트의 저작권은 각 저작권자에게 있습니다.</p>
+</main>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 폰트 · <a href="../index.html">전체 한글 폰트</a> · <a href="../en/">영문 폰트</a> · <a href="../dingbat/">딩벳 폰트</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
+<script src="../js/common.js?v=2" data-base="../"></script>
+<script src="../js/pv.js?v=1" defer></script>
+</body>
+</html>
+`;
+}
+fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
+TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
+const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.
@@ -237,4 +321,4 @@ Disallow: /api/
 
 Sitemap: ${SITE}/sitemap.xml
 `);
-console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length}, sitemap ${urls.length} urls`);
+console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);
