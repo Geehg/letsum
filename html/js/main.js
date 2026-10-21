@@ -950,6 +950,9 @@
     topicUrl(slug); render();
     if (scroll) { const el = $("#activeBar") || $("#results"); scrollTo({ top: el.getBoundingClientRect().top + scrollY - 140, behavior: "smooth" }); }
   }
+  // 소개의 '주제로 보기'(기본 펼침): 접으면 이 브라우저에 기억
+  { const d = $(".si-d"); if (d) { try { if (localStorage.getItem("ls_intro_closed") === "1") d.open = false; } catch (e) {}
+      d.addEventListener("toggle", () => { try { localStorage.setItem("ls_intro_closed", d.open ? "0" : "1"); } catch (e) {} }); } }
   document.addEventListener("click", (e) => {
     const a = e.target.closest(".seo-topics a"); if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
     const m = (a.getAttribute("href") || "").match(/topics\/([\w-]+)\.html/); if (!m) return;

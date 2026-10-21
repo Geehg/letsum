@@ -214,3 +214,4 @@ img.save("sample.png")
 - 키워드 근거: `tools/state/seo_keywords.md`(구글·네이버 자동완성 조사).
 - 2026-10-22: 홈의 주제 칩은 페이지 이동 없이 메인 화면에서 걸러 보기(`?topic=<slug>`, `html/data/topics.json`, main.js `applyTopic`). 주제 페이지에 '메인 화면에서 이 목록 보기', 상세 페이지에 보이는 경로(홈 › 주제 › 폰트). 주제 21개(한자 지원·옛한글 지원 추가).
 - 2026-10-22: 주제 칩을 누르면 미리보기 문장이 그 주제 문장(seo_topics.js `lines`, 3~4개 중 무작위)으로 바뀜(직접 입력한 문장은 유지, 해제하면 원래 문장). 영문·딩벳 홈은 각자 주제만(영문 7·딩벳 4 추가, 총 32). 옛한글 판정을 '실제 조합되는 폰트'로 정정(37→4종: Kopub 돋움·바탕, 나눔바른고딕·나눔명조 옛한글) — build_coverage.py `old_composes`.
+- 2026-10-22: 홈 소개를 안 3으로 — 한 줄 h1('무료 한글 폰트 N종' + 한 줄 설명) + '주제로 보기'(details, 기본 펼침, 접으면 localStorage `ls_intro_closed`) + 묶음별 글자 목록(`INTRO_GROUPS` in build_pages.js: 한글 4묶음·영문 2·딩벳 1). 소개 문단·네모 칩은 없앰.

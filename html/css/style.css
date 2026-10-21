@@ -1527,3 +1527,30 @@ kbd{display:inline-block;padding:1px 7px;border:1px solid var(--ink);border-bott
 .seo-topics a.on span{color:var(--lime)}
 .tp-go{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px 0 14px}
 .fp .crumb{margin-bottom:8px}
+
+/* 홈 소개(안 3): 한 줄 제목 + '주제로 보기'(기본 펼침) + 묶음별 주제 목록 */
+.seo-intro .wrap{padding-top:12px;padding-bottom:12px}
+.si-d summary{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;list-style:none;cursor:pointer;flex-wrap:wrap}
+.si-d summary::-webkit-details-marker{display:none}
+.si-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;min-width:0}
+.seo-intro .si-h h1{font-size:20px;margin:0}
+.seo-intro .si-h h1 b{background:none;color:inherit;padding:0}
+.si-sub{font-size:13px;color:var(--ink3)}
+.si-btn{font-size:13px;font-weight:600;border:1px solid var(--ink);padding:6px 12px;white-space:nowrap;margin-left:auto}
+.si-btn::after{content:" ▾"}
+.si-d[open] .si-btn{background:var(--ink);color:var(--paper)}
+.si-d[open] .si-btn::after{content:" ▴"}
+.si-idx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 28px;margin-top:12px;padding-top:12px;border-top:1px solid var(--rule2)}
+.si-g b{display:block;font:600 11px var(--mono);color:var(--ink3);margin-bottom:3px}
+.si-g p{margin:0;font-size:14px;line-height:1.75}
+.si-g i{font-style:normal;color:var(--ink3);margin:0 6px}
+.seo-topics.si-idx a{border:0;background:none;padding:0;display:inline;color:var(--ink);font-size:14px;white-space:nowrap}
+.seo-topics.si-idx a span{display:none}
+.seo-topics.si-idx a:hover{background:none;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.seo-topics.si-idx a.on{background:var(--ink);color:var(--paper);padding:1px 6px;text-decoration:none}
+@media(max-width:760px){
+  .si-sub{display:none}
+  .si-idx{grid-template-columns:1fr;gap:6px}
+  .si-g{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:baseline}
+  .si-g b{margin:0}
+}

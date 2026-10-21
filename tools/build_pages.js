@@ -55,7 +55,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=81">
+<link rel="stylesheet" href="../css/style.css?v=83">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -121,15 +121,24 @@ FONTS_DB.forEach((f) => fs.writeFileSync(path.join(out, f.id + ".html"), page(f,
 
 // 홈 소개(h1·설명·주제 바로가기)와 전체 폰트 이름 목록 — 검색엔진과 처음 온 사람용. index.html의 SEO 표시 사이를 채운다.
 const KO_TOPICS = TOPIC_LISTS.filter(([t]) => TOPICS.includes(t));
+// 소개(안 3): 한 줄 제목 + '주제로 보기' 버튼, 아래에 묶음별 주제 목록(기본 펼침 — 접으면 이 브라우저에 기억, main.js)
+const INTRO_GROUPS = {
+  ko: [["분류", [["free-gothic-fonts", "고딕"], ["free-myeongjo-fonts", "명조"], ["free-handwriting-fonts", "손글씨"], ["free-display-title-fonts", "제목용"]]],
+    ["분위기", [["cute-fonts", "귀여운"], ["pretty-aesthetic-fonts", "예쁜 감성"], ["retro-pixel-fonts", "레트로·픽셀"], ["calligraphy-brush-fonts", "캘리그라피"]]],
+    ["용도", [["youtube-thumbnail-fonts", "유튜브 썸네일"], ["presentation-ppt-fonts", "PPT"], ["logo-bi-ci-fonts", "로고(BI/CI)"], ["free-korean-webfonts", "웹폰트"]]],
+    ["글자·라이선스", [["full-hangul-11172-fonts", "11,172자"], ["hanja-support-fonts", "한자"], ["old-hangul-fonts", "옛한글"], ["coding-monospace-fonts", "코딩"], ["ofl-korean-fonts", "OFL"], ["kogl-public-fonts", "공공누리"]]]],
+  en: [["분류", [["english-sans-serif-fonts", "산세리프"], ["english-serif-fonts", "세리프"], ["english-script-handwriting-fonts", "필기체·손글씨"], ["english-display-logo-fonts", "제목·로고"]]],
+    ["특징", [["english-variable-fonts", "가변 폰트"], ["english-monospace-coding-fonts", "코딩(고정폭)"], ["english-multilingual-fonts", "다국어 지원"]]]],
+  db: [["종류", [["free-icon-fonts", "아이콘"], ["free-barcode-fonts", "바코드"], ["emoji-symbol-fonts", "이모지·기호"], ["placeholder-data-fonts", "시안·데이터"]]]],
+};
 function seoIntro(kind) {
   const n = kind === "db" ? FONTS_DB.length : kind === "en" ? FONTS_EN.length : FONTS.length;
-  const h = kind === "db" ? `무료 딩벳 폰트 · 아이콘 폰트 <b>${n}</b>종` : kind === "en" ? `무료 영문 폰트 · 상업용 무료 영어 폰트 <b>${n}</b>종` : `무료 한글 폰트 · 상업용 무료 폰트 <b>${n}</b>종`;
-  const p = kind === "db" ? "아이콘·이모지·기호·바코드를 글자처럼 쓰는 상업용 무료 딩벳 폰트를 제작사 공식 배포본으로 모았습니다. 견본 기호를 보고, 사용 범위를 확인한 뒤 원 배포처에서 받으세요."
-    : kind === "en" ? "상업적으로 쓸 수 있는 Google Fonts 공식 영문 폰트를 모았습니다. 내 문장으로 미리보고 산세리프·세리프·손글씨·디스플레이를 비교한 뒤 무료로 다운로드하세요."
-    : "상업적 이용이 가능한 무료 한글 폰트(무료 글꼴)를 라이선스 원문으로 확인해 모았습니다. 인쇄·웹·영상·로고(BI/CI) 사용 범위를 보고 원 배포처에서 TTF·OTF를 다운로드하세요.";
-  // 각 홈에는 그 섹션의 주제만(영문 홈 = 영문 주제, 딩벳 홈 = 딩벳 주제) — 누르면 그 홈 안에서 걸러짐
-  const T = kind === "ko" ? KO_TOPICS : TOPIC_LISTS.filter(([t]) => (kind === "db" ? t.db : TOPICS_EN.includes(t) && !t.db));
-  return `<section class="seo-intro"><div class="wrap"><h1>${h}</h1><p>${p}</p><nav class="seo-topics" aria-label="주제별 무료 폰트">${T.map(([t, l]) => `<a href="topics/${t.slug}.html">${esc(t.short)}<span>${l.length}</span></a>`).join("")}</nav></div></section>`;
+  const h = kind === "db" ? `무료 딩벳 폰트 <b>${n}</b>종` : kind === "en" ? `무료 영문 폰트 <b>${n}</b>종` : `무료 한글 폰트 <b>${n}</b>종`;
+  const sub = kind === "db" ? "아이콘·이모지·기호·바코드 · 상업용 무료 · 제작사 공식 배포본" : kind === "en" ? "상업적 이용 가능 · Google Fonts 공식 OFL·Apache · 무료 다운로드" : "상업적 이용 가능 · 라이선스 원문 확인 · 원 배포처 다운로드";
+  const has = new Set(TOPIC_LISTS.map(([t]) => t.slug));
+  const groups = INTRO_GROUPS[kind].map(([g, L]) => [g, L.filter(([sl]) => has.has(sl))]).filter(([, L]) => L.length);
+  return `<section class="seo-intro"><div class="wrap"><details class="si-d" open><summary><span class="si-h"><h1>${h}</h1><span class="si-sub">${sub}</span></span><span class="si-btn">주제로 보기</span></summary>`
+    + `<nav class="seo-topics si-idx" aria-label="주제별 무료 폰트">${groups.map(([g, L]) => `<div class="si-g"><b>${g}</b><p>${L.map(([sl, l]) => `<a href="topics/${sl}.html">${esc(l)}</a>`).join('<i aria-hidden="true">·</i>')}</p></div>`).join("")}</nav></details></div></section>`;
 }
 function seoDir(kind) {
   const L = (kind === "db" ? FONTS_DB : kind === "en" ? FONTS_EN : FONTS).slice().sort((a, b) => String(a.name).localeCompare(String(b.name), "ko"));
@@ -211,7 +220,7 @@ function topicPage(t, list) {
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="stylesheet" href="../css/style.css?v=81">
+<link rel="stylesheet" href="../css/style.css?v=83">
 </head>
 <body>
 <header>
