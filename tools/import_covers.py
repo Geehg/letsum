@@ -39,7 +39,7 @@ def spine_color(path):
     im = Image.open(path).convert("RGB"); w, h = im.size
     r, g, b = im.crop((int(w * .08), int(h * .38), int(w * .92), int(h * .95))).resize((1, 1), Image.BOX).getpixel((0, 0))
     r, g, b = (int(c * .82) for c in (r, g, b))
-    ink = "#1d1b18" if 0.299 * r + 0.587 * g + 0.114 * b > 150 else "#f6f1e7"
+    ink = "#1d1b18" if 0.299 * r + 0.587 * g + 0.114 * b > 150 else "#ffffff"  # 어두운 책등은 흰 글자
     return "#%02x%02x%02x" % (r, g, b), ink
 
 

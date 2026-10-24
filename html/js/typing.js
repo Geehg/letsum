@@ -186,7 +186,7 @@
     if (!b.cover) return `<a class="tb-card" href="${href}" aria-label="${label}">${cover(b)}${meta}</a>`;
     // 생성 표지: 입체 책(앞표지 + 책등). 마우스를 올리면 돌아가며 책등이 보이고, 제목·저자·분량이 나타난다. 두께는 분량에 따라
     const th = Math.round(Math.min(34, Math.max(16, 6 + 5 * Math.log10(Math.max(100, b.chars || 0)))));
-    return `<a class="tb-card cov" href="${href}" aria-label="${label}"><span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3" aria-hidden="true"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span>${done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}${meta}</span></a>`;
+    return `<a class="tb-card tb-cov" href="${href}" aria-label="${label}"><span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3" aria-hidden="true"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span>${done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}${meta}</span></a>`;
   }
   function renderShelf() {
     const themes = state.index.themes.map((t) => `<section class="tb-theme"><div class="tb-th-h"><div><p class="tb-kick">${esc(t.kicker)}</p><h2>${esc(t.title)}</h2><p class="note">${esc(t.desc)}</p></div><span class="tb-th-n">${t.books.length}편</span></div>
