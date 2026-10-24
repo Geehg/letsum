@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=84">
+<link rel="stylesheet" href="css/style.css?v=85">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -25,22 +25,29 @@
   </div>
 </header>
 
-<main class="tb">
+<main class="tb" id="tbMain" data-skin="book">
+  <div class="tb-topw"><div class="wrap tb-top">
+    <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
+    <div class="tb-top-r">
+      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button><button type="button" data-skin="focus" title="몰입 — 어두운 한 단 화면">몰입</button></div>
+      <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
+      <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
+    </div>
+  </div></div>
+
   <!-- 서가 -->
   <section id="tbShelf" aria-label="필사 서가">
-    <div class="tb-hero">
-      <div class="wrap tb-hero-in">
-        <div class="tb-hero-l">
-          <p class="tb-kick">READ · TYPE · REMEMBER</p>
-          <h1>읽는 것을 넘어, <em>쓰는 독서.</em></h1>
-          <p class="tb-lead">명작의 문장을 따라 한 글자씩 타이핑하세요. 틀린 글자는 바로 보이고, 한 쪽을 완성할 때마다 나만의 완독 기록이 쌓입니다.</p>
-          <div class="tb-cta"><button class="tbtn lime tb-big" id="tbContinue" type="button" hidden>이어서 쓰기 →</button><button class="tbtn tb-big" id="tbStart" type="button">오늘의 한 편 쓰기 →</button><button class="tbtn tb-big" id="tbImportOpen" type="button">내 글 가져오기</button></div>
-        </div>
-        <div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div>
+    <div class="wrap tb-hero">
+      <div class="tb-hero-l">
+        <p class="tb-kick">READ · TYPE · REMEMBER</p>
+        <h1>읽는 것을 넘어, <em>쓰는 독서.</em></h1>
+        <p class="tb-lead">명작의 문장을 따라 한 글자씩 타이핑하세요. 틀린 글자는 바로 보이고, 한 쪽을 완성할 때마다 나만의 완독 기록이 쌓입니다.</p>
+        <div class="tb-cta"><button class="tb-btn pri" id="tbContinue" type="button" hidden>이어서 쓰기 →</button><button class="tb-btn" id="tbStart" type="button">오늘의 한 편 쓰기 →</button><button class="tb-btn" id="tbImportOpen" type="button">＋ 내 글 가져오기</button></div>
       </div>
+      <div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div>
     </div>
     <div class="wrap" id="tbThemes"><p class="note">서가를 불러오는 중…</p></div>
-    <div class="wrap tb-notes">
+    <div class="wrap"><div class="tb-notes">
       <h2>필사독서 안내</h2>
       <ul>
         <li><b>저작권</b> — 서가의 작품은 저작자 사망 후 70년이 지나 저작권 보호기간이 끝난 글이며, 위키문헌 원문을 가져왔습니다(각 작품의 '출처'에서 원문 확인). 한자 병기는 빼고 한자는 한글 독음으로 바꿨으며 옛 맞춤법은 그대로 두었습니다. '님의 침묵'은 위키문헌의 현대어 대조본(CC BY-SA 4.0)입니다.</li>
@@ -48,92 +55,112 @@
         <li><b>기록</b> — 진행·타수·정확도·연속 필사일은 이 브라우저에만 저장되고 서버로 보내지 않습니다. 브라우저 데이터를 지우면 기록도 사라집니다.</li>
         <li><b>내 글 가져오기</b> — TXT·MD·EPUB(DRM 없는 파일, 10MB 이하) 또는 직접 붙여 넣은 글로 필사할 수 있습니다. 파일은 내 브라우저 안에서만 읽고 어디에도 올리지 않습니다. 내가 이용 권한을 가진 글만 가져오세요.</li>
       </ul>
-    </div>
+    </div></div>
   </section>
 
   <!-- 필사 -->
   <section id="tbRead" hidden aria-label="필사">
-    <div class="wrap tb-bar">
-      <a class="tb-back" href="#/" aria-label="서가로">← 서가</a>
-      <div class="tb-title"><b id="tbTitle"></b><span id="tbAuthor"></span><a id="tbSource" class="linklike" target="_blank" rel="noopener">출처</a></div>
-      <div class="tb-tools">
-        <label class="tb-sel"><span>원문 글꼴</span><select id="tbFontO" aria-label="원문 글꼴"></select></label>
-        <label class="tb-sel"><span>필사 글꼴</span><select id="tbFontW" aria-label="필사 글꼴"></select></label>
-        <div class="seg"><button id="tbMinus" type="button" aria-label="글자 작게">A−</button><button id="tbPlus" type="button" aria-label="글자 크게">A+</button></div>
-        <button class="tbtn" id="tbReset" type="button" title="이 쪽 입력 지우기">↺ 다시 쓰기</button>
-        <button class="tbtn" id="tbHelpOpen" type="button" aria-label="도움말">?</button>
+    <div class="wrap tb-app">
+      <aside class="tb-side" aria-label="나의 서재">
+        <p class="tb-side-h"><span>MY READING ROOM</span><span id="tbSideN">00</span></p>
+        <div class="tb-side-list" id="tbSideList"></div>
+        <button class="tb-side-add" id="tbSideAdd" type="button"><b>＋</b> 내 글 추가하기</button>
+        <div class="tb-side-foot"><p class="tb-quote">“어떤 문장은 읽을 때보다<br>직접 쓸 때 오래 남는다.”</p><p class="tb-side-v">LETSUM 필사독서<br>브라우저 저장 · 로그인 불필요</p></div>
+      </aside>
+      <div class="tb-main">
+        <div class="tb-intro">
+          <div><p class="tb-kick">READ · TYPE · REMEMBER</p><h2 class="tb-h">읽는 것을 넘어, <em>쓰는 독서.</em></h2><p class="tb-sub">책의 문장을 따라 타이핑하세요. 한 쪽씩, 나만의 완독 기록이 쌓입니다.</p></div>
+          <div class="tb-streak"><i aria-hidden="true">✦</i><div><b id="tbDoneN">0</b><small>완료한 쪽</small></div><div><b id="tbStreakN">0</b><small>연속 필사일</small></div></div>
+        </div>
+        <div class="tb-stats">
+          <div><span>읽기 진행률</span><b id="stProg">0<small>%</small></b><i class="tb-track"><i id="stTrack"></i></i></div>
+          <div><span>분당 타수</span><b id="stCpm">0</b><small>CPM · 실시간</small></div>
+          <div><span>입력 정확도</span><b id="stAcc">100<small>%</small></b><small id="stErr">오타 0회</small></div>
+          <div><span>필사 시간</span><b id="stTime">00:00</b><small>이 쪽 기준</small></div>
+        </div>
+        <div class="tb-reading">
+          <div class="tb-rh">
+            <div class="tb-rt"><p class="tb-rk">NOW READING<span class="sep">/</span><span id="tbAuthor"></span><a id="tbSource" target="_blank" rel="noopener">출처</a></p><h2 id="tbTitle"></h2></div>
+            <div class="tb-tools">
+              <label class="tb-sel"><span>원문</span><select id="tbFontO" aria-label="원문 글꼴"></select></label>
+              <label class="tb-sel"><span>필사</span><select id="tbFontW" aria-label="필사 글꼴"></select></label>
+              <button class="tb-chip" id="tbMinus" type="button" aria-label="글자 작게">A−</button><button class="tb-chip" id="tbPlus" type="button" aria-label="글자 크게">A+</button>
+              <button class="tb-chip" id="tbReset" type="button" title="이 쪽 입력 지우기">↺ 다시 쓰기</button>
+            </div>
+          </div>
+          <div class="tb-book">
+            <i class="tb-spine" aria-hidden="true"></i>
+            <article class="tb-pg tb-o">
+              <div class="tb-pg-h"><span><i class="dot"></i>ORIGINAL TEXT</span><span class="tb-tag">읽기</span></div>
+              <div class="tb-text" id="tbOrig" aria-label="원문"></div>
+              <div class="tb-pg-f"><span id="tbPageNoO">01</span><span id="tbPoemHint"></span><span>한 글자씩 천천히</span></div>
+            </article>
+            <article class="tb-pg tb-w">
+              <div class="tb-pg-h"><span><i class="dot acc"></i>YOUR TRANSCRIPTION</span><span class="tb-tag acc">필사하기</span></div>
+              <textarea id="tbInput" class="tb-text" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" aria-label="필사 입력" placeholder="원문의 첫 문장을 여기에 적어 보세요…"></textarea>
+              <p class="tb-wnote">한글 입력기를 켜고 원문을 그대로 입력하세요. ↵ 자리는 Enter입니다.</p>
+              <div class="tb-pg-f"><span id="tbCount">0 / 0자</span><i class="tb-track"><i id="tbCountBar"></i></i><span id="tbPageNoW">01</span></div>
+            </article>
+          </div>
+          <div class="tb-pager">
+            <button class="tb-nav" id="tbPrev" type="button">← 이전 쪽</button>
+            <span class="tb-pno"><b id="tbCur">1</b><span class="sep">/</span><span id="tbTot">1</span><span class="tb-dots" id="tbDots"></span></span>
+            <button class="tb-nav next" id="tbNext" type="button">다음 쪽 →</button>
+          </div>
+        </div>
+        <div class="tb-kb" id="tbKb">
+          <div class="tb-kb-h"><p><i class="tb-kb-ic" aria-hidden="true">⌨</i><b>가상 키보드</b><small>표준 <span id="tbKbLang">두벌식</span> · 물리 키 입력 표시</small></p>
+            <p><button class="tb-tg" id="tbFinger" type="button" aria-pressed="false">손가락 가이드<span>OFF</span></button><button class="tb-tg" id="tbKbToggle" type="button" aria-pressed="true">키보드<span>ON</span></button></p></div>
+          <div class="tb-keys" id="tbKeys" aria-hidden="true"></div>
+          <p class="tb-kb-note">실제 키보드로 입력하세요 · 다음에 누를 글쇠를 표시합니다 · 한/영 전환은 운영체제에서 합니다</p>
+        </div>
       </div>
-    </div>
-    <div class="wrap tb-stats">
-      <div><span>읽기 진행률</span><b id="stProg">0<small>%</small></b><i class="tb-track"><i id="stTrack"></i></i></div>
-      <div><span>분당 타수</span><b id="stCpm">0</b><small>CPM · 실시간</small></div>
-      <div><span>입력 정확도</span><b id="stAcc">100<small>%</small></b><small id="stErr">오타 0회</small></div>
-      <div><span>필사 시간</span><b id="stTime">00:00</b><small>이 쪽 기준</small></div>
-    </div>
-    <div class="wrap tb-book">
-      <article class="tb-pg tb-o">
-        <div class="tb-pg-h"><span><i class="dot"></i>원문</span><span id="tbPageNoO">01</span></div>
-        <div class="tb-text" id="tbOrig" aria-label="원문"></div>
-        <div class="tb-pg-f"><span id="tbPoemHint"></span><span>한 글자씩 천천히</span></div>
-      </article>
-      <article class="tb-pg tb-w">
-        <div class="tb-pg-h"><span><i class="dot lime"></i>나의 필사</span><span id="tbPageNoW">01</span></div>
-        <textarea id="tbInput" class="tb-text" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" aria-label="필사 입력" placeholder="왼쪽 원문을 보고 여기에 그대로 입력하세요…"></textarea>
-        <div class="tb-pg-f"><span id="tbCount">0 / 0자</span><i class="tb-track"><i id="tbCountBar"></i></i></div>
-      </article>
-    </div>
-    <div class="wrap tb-pager">
-      <button class="tbtn" id="tbPrev" type="button">← 이전 쪽</button>
-      <span class="tb-pno"><b id="tbCur">1</b> / <span id="tbTot">1</span><span class="tb-dots" id="tbDots"></span></span>
-      <button class="tbtn" id="tbNext" type="button">다음 쪽 →</button>
-    </div>
-    <div class="wrap tb-kb" id="tbKb">
-      <div class="tb-kb-h"><b>가상 키보드 · <span id="tbKbLang">두벌식</span></b>
-        <span><button class="tbtn" id="tbFinger" type="button" aria-pressed="false">손가락 가이드 <span>OFF</span></button>
-        <button class="tbtn" id="tbKbToggle" type="button" aria-pressed="true">키보드 <span>ON</span></button></span></div>
-      <div class="tb-keys" id="tbKeys" aria-hidden="true"></div>
-      <p class="note">실제 키보드로 입력하세요. 다음에 누를 글쇠는 라임색으로, 지금 누른 글쇠는 진하게 표시됩니다. 한/영 전환은 운영체제에서 합니다.</p>
     </div>
   </section>
 
   <!-- 가져오기 -->
   <div class="tb-ov" id="tbImport" hidden><div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbImportH">
     <button class="x" data-close aria-label="닫기">×</button>
+    <p class="tb-kick">ADD TO LIBRARY</p>
     <h3 id="tbImportH">내 글 가져오기</h3>
-    <div class="seg tb-tabs"><button class="on" data-tab="file" type="button">파일</button><button data-tab="paste" type="button">직접 붙여 넣기</button></div>
-    <div data-pane="file"><label class="tb-drop"><input type="file" id="tbFile" accept=".txt,.md,.markdown,.epub"><b>TXT · MD · EPUB 파일 고르기</b><small>10MB 이하 · DRM 없는 EPUB · 내 브라우저 안에서만 읽음</small></label><p class="note" id="tbFileNote"></p></div>
+    <p class="tb-mdesc">파일은 이 브라우저 안에서만 읽고 어디에도 올리지 않습니다. 이용 권한이 있는 글만 가져오세요.</p>
+    <div class="tb-tabs"><button class="on" data-tab="file" type="button">파일</button><button data-tab="paste" type="button">직접 붙여 넣기</button></div>
+    <div data-pane="file"><label class="tb-drop"><input type="file" id="tbFile" accept=".txt,.md,.markdown,.epub"><i aria-hidden="true">⇪</i><b>TXT · MD · EPUB 파일 고르기</b><small>10MB 이하 · DRM 없는 EPUB</small></label><p class="tb-mdesc" id="tbFileNote"></p></div>
     <div data-pane="paste" hidden>
       <label class="tb-f"><span>제목</span><input id="tbPTitle" maxlength="60" placeholder="나의 필사 노트"></label>
       <label class="tb-f"><span>지은이</span><input id="tbPAuthor" maxlength="40" placeholder="직접 입력"></label>
       <label class="tb-f"><span>본문</span><textarea id="tbPText" rows="7" placeholder="필사할 글을 붙여 넣으세요(10자 이상)"></textarea></label>
       <label class="tb-chk"><input type="checkbox" id="tbPPoem"> 시처럼 줄바꿈을 그대로 살려 필사</label>
-      <button class="tbtn lime" id="tbPCreate" type="button">필사 시작</button>
+      <button class="tb-btn pri tb-full" id="tbPCreate" type="button">필사 시작</button>
     </div>
   </div></div>
 
   <!-- 도움말 -->
   <div class="tb-ov" id="tbHelp" hidden><div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbHelpH">
     <button class="x" data-close aria-label="닫기">×</button>
+    <p class="tb-kick">HOW TO</p>
     <h3 id="tbHelpH">필사하는 법</h3>
     <ol class="tb-help">
-      <li>왼쪽 원문을 보고 오른쪽 칸에 똑같이 입력합니다. 맞은 글자는 초록, 틀린 글자는 빨강, 다음 글자는 라임색 밑줄로 보입니다.</li>
+      <li>왼쪽 원문을 보고 오른쪽 칸에 똑같이 입력합니다. 맞은 글자·틀린 글자·다음 글자가 원문에 바로 표시됩니다.</li>
       <li>틀리면 Backspace로 지우고 다시 쓰면 됩니다. 한 쪽 전체가 원문과 같아지는 순간 완성됩니다.</li>
       <li>↵ 표시가 있는 곳에서 Enter를 칩니다. 산문은 문단이 바뀔 때 한 번, 시는 줄 끝마다 치고 연이 바뀌는 곳(빈 줄)에서 한 번 더 칩니다.</li>
       <li>“ ” ‘ ’ 「 」 · ― 는 키보드의 " ' . - 로 쳐도 맞습니다. 붙여 넣기는 막혀 있습니다.</li>
       <li>원문·필사 글꼴은 위쪽에서 바꿀 수 있습니다. 손글씨 글꼴로 쓰면 손으로 쓴 느낌을 볼 수 있어요.</li>
+      <li>화면 디자인은 오른쪽 위 '책상 · 잉크 · 몰입'에서 고릅니다.</li>
       <li>분당 타수는 이 쪽에서 누른 글쇠 수 기준, 정확도는 확정된 글자 기준의 참고값입니다(공인 타자 검정 수치가 아님).</li>
     </ol>
   </div></div>
 
   <!-- 완성 -->
   <div class="tb-ov" id="tbFinish" hidden><div class="tb-modal tb-done" role="dialog" aria-modal="true" aria-labelledby="tbFinishH">
+    <p class="tb-done-g" aria-hidden="true">✦</p>
     <p class="tb-kick">PAGE COMPLETE</p>
     <h3 id="tbFinishH">한 쪽을 완성했어요!</h3>
-    <p id="tbFinishD" class="note"></p>
-    <div class="tb-fin"><div><span>분당 타수</span><b id="fnCpm">0</b></div><div><span>정확도</span><b id="fnAcc">100%</b></div><div><span>포인트</span><b id="fnPt">+0</b></div></div>
-    <div class="tb-fin-acts"><button class="tbtn" id="fnShot" type="button">이 쪽을 이미지로 저장·공유</button><button class="tbtn" id="fnClose" type="button">닫기</button><button class="tbtn lime" id="fnNext" type="button">다음 쪽 →</button></div>
+    <p id="tbFinishD" class="tb-mdesc"></p>
+    <div class="tb-fin"><div><b id="fnCpm">0</b><span>분당 타수</span></div><div><b id="fnAcc">100%</b><span>정확도</span></div><div><b id="fnPt">+0</b><span>포인트</span></div></div>
+    <div class="tb-fin-acts"><button class="tb-btn" id="fnShot" type="button">이미지로 저장·공유</button><button class="tb-btn" id="fnClose" type="button">닫기</button><button class="tb-btn pri" id="fnNext" type="button">다음 쪽 →</button></div>
   </div></div>
-  <div class="sym-toast" id="tbToast" role="status" aria-live="polite"></div>
+  <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
 
 <footer>
@@ -143,7 +170,7 @@
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
-<script src="js/typing.js?v=1"></script>
+<script src="js/typing.js?v=2"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

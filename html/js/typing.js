@@ -42,7 +42,7 @@
   }
 
   // ---------- 상태 ----------
-  const state = { index: null, books: [], book: null, page: 0, draft: "", completed: new Set(), drafts: {}, metrics: {}, elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false, lastActivity: 0, composing: false, fontSize: 20, fonts: { ko: [], en: [] }, fontO: "", fontW: "", finger: false, kb: true };
+  const state = { index: null, books: [], book: null, page: 0, draft: "", completed: new Set(), drafts: {}, metrics: {}, elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false, lastActivity: 0, composing: false, fontSize: 18, fonts: { ko: [], en: [] }, fontO: "", fontW: "", finger: false, kb: true };
 
   // ---------- 글꼴(LETSUM 폰트) 불러오기 ----------
   const fontLoaded = {};
@@ -91,6 +91,33 @@
     $("tbContinue").hidden = !lb; if (lb) $("tbContinue").textContent = `이어서 쓰기 — ${lb.title} →`;
   }
 
+  // ---------- 화면 디자인(책상·잉크·몰입) ----------
+  const SKINS = ["book", "ink", "focus"];
+  function applySkin(k) {
+    if (!SKINS.includes(k)) k = "book";
+    $("tbMain").dataset.skin = k; writeJSON("skin", k);
+    document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
+  }
+
+  // ---------- 필사 화면 왼쪽 '나의 서재'와 요약 ----------
+  function renderSide() {
+    const cur = state.book; if (!cur) return;
+    const theme = state.index.themes.find((t) => t.books.some((b) => b.id === cur.id));
+    const ids = new Set([cur.id, ...(theme ? theme.books.map((b) => b.id) : [])]);
+    state.books.forEach((b) => { if (b.imported || (progressOf(b.id).completed || []).length) ids.add(b.id); });
+    const list = [...ids].map((id) => state.books.find((b) => b.id === id)).filter(Boolean);
+    $("tbSideN").textContent = fmt(list.length);
+    $("tbSideList").innerHTML = list.map((b) => {
+      const done = (progressOf(b.id).completed || []).length, n = b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330));
+      loadFont(fontById(b.font), b.title + b.author);
+      return `<a class="tb-sb${b.id === cur.id ? " on" : ""}" href="#/read/${encodeURIComponent(b.id)}"${b.id === cur.id ? ' aria-current="page"' : ""}><span class="tb-sb-c" style="--c:${esc(b.color || "#5f6f6e")};--ci:${esc(b.ink || "#fff")};font-family:${esc(stackOf(b.font))}">${esc(Array.from(b.title)[0] || "·")}</span><span><b>${esc(b.title)}</b><small>${done}/${n}쪽 · ${b.lang === "en" ? "English" : "한국어"}</small></span></a>`;
+    }).join("");
+  }
+  function renderMini() {
+    $("tbDoneN").textContent = state.books.reduce((n, b) => n + ((progressOf(b.id).completed || []).length), 0);
+    $("tbStreakN").textContent = streak();
+  }
+
   // ---------- 서가 ----------
   function cover(b, big) {
     const f = fontById(b.font);
@@ -133,11 +160,12 @@
     $("tbSource").hidden = !b.source; if (b.source) { $("tbSource").href = b.source; $("tbSource").title = b.license || ""; }
     $("tbKbLang").textContent = b.lang === "en" ? "영문 QWERTY" : "두벌식";
     fillFontSelects(); applyFonts(); renderKeys(b.lang === "en");
-    $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — LETSUM 필사독서`;
+    $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — LETSUM 필사독서`; $("tbCrumb").textContent = b.title;
     loadPage(Math.max(0, Math.min(b.pages.length - 1, Number(p.index) || 0)), false);
+    renderSide(); renderMini();
     scrollTo(0, 0); $("tbInput").focus({ preventScroll: true });
   }
-  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; document.title = "필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM(렛섬)"; renderShelf(); }
+  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; $("tbCrumb").textContent = "서가"; document.title = "필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM(렛섬)"; renderShelf(); }
 
   // ---------- 글꼴 고르기 ----------
   function fillFontSelects() {
@@ -226,7 +254,7 @@
     if (!pageDone(state.draft, b.pages[state.page]) || state.completed.has(state.page)) return;
     state.completed.add(state.page); state.started = false;
     const bonus = 40 + Math.floor(acc() / 10); writeJSON("points", (readJSON("points", 0) || 0) + bonus);
-    storeProgress(); refresh();
+    storeProgress(); refresh(); renderSide(); renderMini();
     const last = state.page >= b.pages.length - 1, all = state.completed.size >= b.pages.length;
     $("fnCpm").textContent = cpm(); $("fnAcc").textContent = acc() + "%"; $("fnPt").textContent = "+" + bonus;
     $("tbFinishH").textContent = all ? `「${b.title}」${eul(b.title)} 완필했어요!` : "한 쪽을 완성했어요!";
@@ -323,7 +351,7 @@
   }
 
   // ---------- 창 ----------
-  function open(id) { $(id).hidden = false; const f = $(id).querySelector("input,textarea,button.lime,button"); f?.focus(); }
+  function open(id) { $(id).hidden = false; const f = id === "tbFinish" ? $("fnNext") : $(id).querySelector(".tb-modal button:not(.x), .tb-modal input"); f?.focus(); }
   function close(id) { $(id).hidden = true; if (id === "tbFinish" && state.book) $("tbInput").focus({ preventScroll: true }); }
   function shotPage() {
     const b = state.book; const text = b.pages[state.page]; const f = fontById(state.fontW);
@@ -364,7 +392,8 @@
     $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.focus(); });
     $("tbFinger").addEventListener("click", () => { state.finger = !state.finger; $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").setAttribute("aria-pressed", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF"; writeJSON("finger", state.finger); });
     $("tbKbToggle").addEventListener("click", () => { state.kb = !state.kb; $("tbKeys").hidden = !state.kb; $("tbKbToggle").setAttribute("aria-pressed", state.kb); $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF"; writeJSON("kb", state.kb); });
-    $("tbImportOpen").addEventListener("click", () => open("tbImport"));
+    ["tbImportOpen", "tbImportTop", "tbSideAdd"].forEach((id) => $(id).addEventListener("click", () => open("tbImport")));
+    document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => b.addEventListener("click", () => applySkin(b.dataset.skin)));
     $("tbHelpOpen").addEventListener("click", () => open("tbHelp"));
     $("tbStart").addEventListener("click", () => { const L = state.index.themes.find((t) => t.id === "poems").books; const pick = L.find((b) => !(progressOf(b.id).completed || []).length) || L[Math.floor(Math.random() * L.length)]; location.hash = "#/read/" + pick.id; });
     $("tbContinue").addEventListener("click", () => { const l = readJSON("last", ""); if (l) location.hash = "#/read/" + encodeURIComponent(l); });
@@ -386,11 +415,12 @@
 
   // ---------- 시작 ----------
   async function init() {
+    applySkin(new URLSearchParams(location.search).get("skin") || readJSON("skin", "book")); // ?skin=ink 처럼 주소로도 고름
     const [idx, fonts] = await Promise.all([fetch("data/typing/index.json?v=1").then((r) => r.json()), fetch("data/typing/fonts.json?v=1").then((r) => r.json()).catch(() => ({ ko: [], en: [] }))]);
     state.index = idx; state.fonts = fonts;
     state.books = idx.themes.flatMap((t) => t.books.map((b) => ({ ...b, pageCount: readJSON(`pc:${b.id}`, null) })));
     for (const b of readJSON("imports", [])) if (b && b.id && b.text && !state.books.some((x) => x.id === b.id)) { const p = paginate(b.text, b.poem); state.books.push({ ...b, imported: true, chars: chars(b.text).length, pages: p, pageCount: p.length }); }
-    state.fontSize = Math.max(14, Math.min(34, +readJSON("font", 20) || 20)); state.finger = readJSON("finger", false) === true; state.kb = readJSON("kb", true) !== false;
+    state.fontSize = Math.max(14, Math.min(34, +readJSON("font", 18) || 18)); state.finger = readJSON("finger", false) === true; state.kb = readJSON("kb", true) !== false;
     renderKeys(); $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF";
     $("tbKeys").hidden = !state.kb; $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF";
     bind(); route();
