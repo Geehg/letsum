@@ -215,3 +215,13 @@ img.save("sample.png")
 - 2026-10-22: 홈의 주제 칩은 페이지 이동 없이 메인 화면에서 걸러 보기(`?topic=<slug>`, `html/data/topics.json`, main.js `applyTopic`). 주제 페이지에 '메인 화면에서 이 목록 보기', 상세 페이지에 보이는 경로(홈 › 주제 › 폰트). 주제 21개(한자 지원·옛한글 지원 추가).
 - 2026-10-22: 주제 칩을 누르면 미리보기 문장이 그 주제 문장(seo_topics.js `lines`, 3~4개 중 무작위)으로 바뀜(직접 입력한 문장은 유지, 해제하면 원래 문장). 영문·딩벳 홈은 각자 주제만(영문 7·딩벳 4 추가, 총 32). 옛한글 판정을 '실제 조합되는 폰트'로 정정(37→4종: Kopub 돋움·바탕, 나눔바른고딕·나눔명조 옛한글) — build_coverage.py `old_composes`.
 - 2026-10-22: 홈 소개를 안 3으로 — 한 줄 h1('무료 한글 폰트 N종' + 한 줄 설명) + '주제로 보기'(details, 기본 펼침, 접으면 localStorage `ls_intro_closed`) + 묶음별 글자 목록(`INTRO_GROUPS` in build_pages.js: 한글 4묶음·영문 2·딩벳 1). 소개 문단·네모 칩은 없앰.
+
+## 필사독서(/typing.html) — 2026-10-24
+- 헤더 메뉴 "… 특수기호 | 필사독서". 운영자가 준 TYPEBOOK v1.0.0(명세 `TYPEBOOK_PRODUCT_SPEC_v1.0.0.md`) 엔진을 LETSUM에 맞게 옮김: `html/typing.html` + `html/js/typing.js`(손으로 고침) + CSS `.tb-*`.
+- 서가 데이터 `html/data/typing/index.json`·`<id>.json` ← `.venv/bin/python -I tools/build_typing_books.py [id …]`(위키문헌 parse API, 저작권 만료작만 + 자체 예문 2편, 한자 병기 제거·한자→독음 `hanja` 패키지). 4주제 22편(처음 필사·시·소설·영어 고전). 새 작품은 스크립트 `BOOKS`에 추가.
+- 글꼴 목록 `html/data/typing/fonts.json` ← build_pages.js(LETSUM 등록 폰트 중 본문용 한글 41·영문 22).
+- 판정: NFC 정규화 + 완전 일치, 한글 IME 조합 중엔 판정 보류(compositionstart/end), “”‘’「」·― 는 키보드 기호와 같게 봄(`EQ`), 시·문단 끝은 ↵(Enter). 붙여 넣기·끌어 놓기 막음. 완성한 쪽 다음 쪽까지만 이동(명세 FR-07).
+- 기록은 localStorage `typebook-v1:*`(진행·초안·포인트·날짜별 글자 수→연속 필사일)만 — 서버 전송 없음. **랭킹은 만들지 않음**(가짜 순위 금지; 진짜 랭킹은 계정·서버 검증·부정 입력 방지가 필요 → 명세 7단계).
+- 내 글 가져오기: TXT·MD(UTF-8, 깨지면 EUC-KR)·EPUB(JSZip 3.10.1 `html/js/jszip.min.js`, 필요할 때만 불러옴, textContent만 읽음). 12만 자 이하만 브라우저에 본문 보관.
+- 완성 창에서 이 쪽을 이미지로(shot.js, 1080×1350, 필사 글꼴로).
+- 헤더 메뉴가 8개라 761~960px에선 메뉴를 둘째 줄로(`--hd:88px`), 961~1200px는 간격을 줄임.
