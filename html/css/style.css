@@ -1805,18 +1805,18 @@ main.tb[data-skin="ink"] .tb-dots i{border-radius:0;width:8px;height:8px}
 main.tb[data-skin="ink"] .tb-dots i.on{outline:1px solid var(--ink)}
 /* 넓은 화면: 소개·기록·진행 수치를 왼쪽 세로 칸으로(몰입 디자인은 한 단 그대로) */
 @media(min-width:1061px){
-  main.tb:not([data-skin="focus"]) .tb-app{grid-template-columns:272px minmax(0,1fr)}
-  main.tb:not([data-skin="focus"]) .tb-left{position:sticky;top:calc(var(--hd) + 16px);max-height:calc(100vh - var(--hd) - 32px);overflow:auto;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;padding-bottom:4px}
-  main.tb:not([data-skin="focus"]) .tb-intro{flex-direction:column;align-items:stretch;gap:14px;margin:0;padding:0 4px}
-  main.tb:not([data-skin="focus"]) .tb-h{font-size:23px;line-height:1.3}
-  main.tb:not([data-skin="focus"]) .tb-sub{font-size:12.5px}
-  main.tb:not([data-skin="focus"]) .tb-streak{justify-content:flex-start;margin:0 -4px}
-  main.tb:not([data-skin="focus"]) .tb-stats{grid-template-columns:1fr;padding:4px 0;margin:0}
-  main.tb:not([data-skin="focus"]) .tb-stats>div{border-left:0;border-top:1px solid var(--t-line);padding:13px 20px}
+  main.tb:not([data-layout="focus"]) .tb-app{grid-template-columns:272px minmax(0,1fr)}
+  main.tb:not([data-layout="focus"]) .tb-left{position:sticky;top:calc(var(--hd) + 16px);max-height:calc(100vh - var(--hd) - 32px);overflow:auto;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;padding-bottom:4px}
+  main.tb:not([data-layout="focus"]) .tb-intro{flex-direction:column;align-items:stretch;gap:14px;margin:0;padding:0 4px}
+  main.tb:not([data-layout="focus"]) .tb-h{font-size:23px;line-height:1.3}
+  main.tb:not([data-layout="focus"]) .tb-sub{font-size:12.5px}
+  main.tb:not([data-layout="focus"]) .tb-streak{justify-content:flex-start;margin:0 -4px}
+  main.tb:not([data-layout="focus"]) .tb-stats{grid-template-columns:1fr;padding:4px 0;margin:0}
+  main.tb:not([data-layout="focus"]) .tb-stats>div{border-left:0;border-top:1px solid var(--t-line);padding:13px 20px}
   main.tb[data-skin="ink"] .tb-stats>div{border-top-color:var(--rule)}
-  main.tb:not([data-skin="focus"]) .tb-stats>div:first-child{border-top:0;padding-left:20px}
-  main.tb:not([data-skin="focus"]) .tb-stats b{font-size:24px}
-  main.tb:not([data-skin="focus"]) .tb-side-list{max-height:36vh}
+  main.tb:not([data-layout="focus"]) .tb-stats>div:first-child{border-top:0;padding-left:20px}
+  main.tb:not([data-layout="focus"]) .tb-stats b{font-size:24px}
+  main.tb:not([data-layout="focus"]) .tb-side-list{max-height:36vh}
 }
 /* 가상 키보드 */
 .tb-kb{margin-top:20px;padding:18px 22px 14px}
@@ -1885,17 +1885,20 @@ main.tb[data-skin="ink"] .tb-fin div+div{border-left-color:var(--rule)}
 .tb-toast.on{opacity:1;transform:translate(-50%,0)}
 /* 몰입: 어두운 한 단 — 원문 위, 필사 아래 */
 main.tb[data-skin="focus"] .tb-topw{background:var(--t-bg)}
-main.tb[data-skin="focus"] .tb-app{grid-template-columns:minmax(0,1fr);max-width:920px}
-main.tb[data-skin="focus"] .tb-side,main.tb[data-skin="focus"] .tb-intro{display:none}
-main.tb[data-skin="focus"] .tb-stats{background:none;border:0;border-bottom:1px solid var(--t-line);border-radius:0;padding:4px 0 16px;margin-bottom:22px}
-main.tb[data-skin="focus"] .tb-stats>div:first-child{padding-left:0}
-main.tb[data-skin="focus"] .tb-reading{background:none;border:0;padding:0}
-main.tb[data-skin="focus"] .tb-book{grid-template-columns:1fr;border:0;background:none;border-radius:0}
+main.tb[data-layout="focus"] .tb-app{grid-template-columns:minmax(0,1fr);max-width:920px}
+main.tb[data-layout="focus"] .tb-side,main.tb[data-layout="focus"] .tb-intro{display:none}
+main.tb[data-layout="focus"] .tb-stats{background:none;border:0;box-shadow:none;border-bottom:1px solid var(--t-line);border-radius:0;padding:4px 0 16px;margin-bottom:22px}
+main.tb[data-layout="focus"] .tb-stats>div:first-child{padding-left:0}
+main.tb[data-layout="focus"] .tb-reading{background:none;border:0;padding:0}
+main.tb[data-layout="focus"] .tb-book{grid-template-columns:1fr}
+main.tb[data-skin="focus"] .tb-book{border:0;background:none;border-radius:0}
+main.tb[data-layout="focus"] .tb-spine{display:none!important}
+main.tb[data-skin="retro"] .tb-pg.tb-o{border-bottom:1px dashed var(--t-pline)}
 main.tb[data-skin="focus"] .tb-pg{padding:6px 0 14px}
-main.tb[data-skin="focus"] .tb-pg.tb-o{border-right:0}
+main.tb[data-layout="focus"] .tb-pg.tb-o{border-right:0}
 main.tb[data-skin="focus"] .tb-pg.tb-w{background:var(--t-panel);border:1px solid var(--t-line);border-radius:var(--t-r);padding:18px 24px 14px;margin-top:10px}
-main.tb[data-skin="focus"] #tbOrig{height:clamp(200px,36vh,420px);font-size:calc(var(--tb-size,20px) + 3px);line-height:2}
-main.tb[data-skin="focus"] #tbInput{height:clamp(150px,24vh,300px);font-size:calc(var(--tb-size,20px) + 1px)}
+main.tb[data-layout="focus"] #tbOrig{height:clamp(200px,36vh,420px);font-size:calc(var(--tb-size,20px) + 3px);line-height:2}
+main.tb[data-layout="focus"] #tbInput{height:clamp(150px,24vh,300px);font-size:calc(var(--tb-size,20px) + 1px)}
 main.tb[data-skin="focus"] .tb-kb{background:none;border:0;border-top:1px solid var(--t-line);border-radius:0;padding:18px 0 0}
 main.tb[data-skin="focus"] .tb-hero-l,main.tb[data-skin="focus"] .tb-me,main.tb[data-skin="focus"] .tb-notes,main.tb[data-skin="focus"] .tb-card{background:var(--t-panel)}
 @media(max-width:1060px){
@@ -1919,7 +1922,7 @@ main.tb[data-skin="focus"] .tb-hero-l,main.tb[data-skin="focus"] .tb-me,main.tb[
   .tb-skin::-webkit-scrollbar{display:none}
   .tb-skin button{flex:1 1 auto;white-space:nowrap;padding:6px 6px;font-size:12px}
   .tb-plain{margin-left:auto}
-  main.tb[data-skin="focus"] .tb-stats>div:nth-child(3){padding-left:0}
+  main.tb[data-layout="focus"] .tb-stats>div:nth-child(3){padding-left:0}
   .tb-hero{padding-top:18px}
   .tb-hero-l{padding:22px 20px}
   .tb-me div{padding:14px 12px}
@@ -1950,8 +1953,8 @@ main.tb[data-skin="focus"] .tb-hero-l,main.tb[data-skin="focus"] .tb-me,main.tb[
   .tb-book{grid-template-columns:1fr}
   .tb-pg{padding:14px 16px}
   .tb-pg.tb-o{border-right:0;border-bottom:1px solid var(--t-pline)}
-  .tb-text,main.tb[data-skin="focus"] #tbOrig{height:auto;min-height:120px;max-height:32vh}
-  #tbInput,main.tb[data-skin="focus"] #tbInput{height:30vh;min-height:140px}
+  .tb-text,main.tb[data-layout="focus"] #tbOrig{height:auto;min-height:120px;max-height:32vh}
+  #tbInput,main.tb[data-layout="focus"] #tbInput{height:30vh;min-height:140px}
   .tb-wnote{display:none}
   .tb-dots{display:none}
   .tb-kb{padding:14px 10px}

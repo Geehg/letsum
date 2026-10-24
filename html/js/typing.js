@@ -97,7 +97,7 @@
   function applySkin(k) {
     if (k === "focus") k = "focus-dark"; // 예전 '몰입'(어두움)
     if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
-    $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark";
+    $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark"; $("tbMain").dataset.layout = k.startsWith("focus") || k === "retro" ? "focus" : "wide"; // 몰입·레트로 = 한 단
     writeJSON("skin2", k);
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
   }
