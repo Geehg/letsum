@@ -225,6 +225,7 @@ img.save("sample.png")
 - 내 글 가져오기: TXT·MD(UTF-8, 깨지면 EUC-KR)·EPUB(JSZip 3.10.1 `html/js/jszip.min.js`, 필요할 때만 불러옴, textContent만 읽음). 12만 자 이하만 브라우저에 본문 보관.
 - 완성 창에서 이 쪽을 이미지로(shot.js, 1080×1350, 필사 글꼴로).
 - 헤더 메뉴가 8개라 761~960px에선 메뉴를 둘째 줄로(`--hd:88px`), 961~1200px는 간격을 줄임.
+- 2026-10-24(추가): 기본 디자인 = 몰입. 몰입은 밝게(data-tone="light")·어둡게 두 가지, 버튼 순서 몰입 밝게·몰입 어둡게·책상·잉크. 저장 키 `typebook-v1:skin2`(처음엔 사이트 밝기 따라 밝게/어둡게).
 - 2026-10-24: 화면 디자인 3종(위쪽 '디자인' 전환, localStorage `typebook-v1:skin`, 주소 `?skin=` 도 가능) — **책상**(기본, 운영자가 준 TYPEBOOK 화면 그대로: 흰 카드·코럴·왼쪽 '나의 서재'·펼친 책), **잉크**(LETSUM 평면 잉크·라임), **몰입**(어두운 한 단). CSS는 `main.tb[data-skin]`의 `--t-*` 변수로 갈아 끼움(사이트 다크 모드는 책상 스킨에도 반영).
 - 2026-10-24: **전체 서가 456권**(한국 412·영어 44, 본문 약 3,700만 자, `html/data/typing/` 약 63MB) — `build_typing_books.py`가 위키문헌 작가 32명(사망 1955년 이전)의 작가 문서를 갈래별로 따라가 수집, 영어는 Project Gutenberg 44권(저자 사망 1955년 이전, 번역본 제외). 긴 책은 장(parts) 단위 JSON `{parts:[{t,x}]}` → 화면에 '목차' 선택, 새 장 첫 쪽은 언제든 이동. 서가에 검색·갈래·작가 필터와 '더 보기'. 옛한글·국한문·일본어 위주 글 약 60편은 뺌(목록은 빌드 로그). 목록 `docs/typing_library.md`.
 - 2026-10-24: 기본 글꼴 = 원문 KoPub World 바탕체(k-kopubworldbatang)·필사 프리텐다드(k-pretendard), 운영자 지정. 직접 바꾼 글꼴은 책마다 localStorage `fonts:<id>`.

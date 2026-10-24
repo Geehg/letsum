@@ -93,10 +93,12 @@
   }
 
   // ---------- 화면 디자인(책상·잉크·몰입) ----------
-  const SKINS = ["book", "ink", "focus"];
+  const SKINS = ["focus-light", "focus-dark", "book", "ink"];
   function applySkin(k) {
-    if (!SKINS.includes(k)) k = "book";
-    $("tbMain").dataset.skin = k; writeJSON("skin", k);
+    if (k === "focus") k = "focus-dark"; // 예전 '몰입'(어두움)
+    if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
+    $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark";
+    writeJSON("skin2", k);
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
   }
 
@@ -475,7 +477,7 @@
 
   // ---------- 시작 ----------
   async function init() {
-    applySkin(new URLSearchParams(location.search).get("skin") || readJSON("skin", "book")); // ?skin=ink 처럼 주소로도 고름
+    applySkin(new URLSearchParams(location.search).get("skin") || readJSON("skin2", "")); // ?skin=ink 처럼 주소로도 고름
     const [idx, fonts] = await Promise.all([fetch("data/typing/index.json?v=2").then((r) => r.json()), fetch("data/typing/fonts.json?v=1").then((r) => r.json()).catch(() => ({ ko: [], en: [] }))]);
     state.index = idx; state.fonts = fonts;
     const seen = new Set();

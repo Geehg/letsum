@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=88">
+<link rel="stylesheet" href="css/style.css?v=90">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -25,11 +25,11 @@
   </div>
 </header>
 
-<main class="tb" id="tbMain" data-skin="book">
+<main class="tb" id="tbMain" data-skin="focus" data-tone="light">
   <div class="tb-topw"><div class="wrap tb-top">
     <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
     <div class="tb-top-r">
-      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button><button type="button" data-skin="focus" title="몰입 — 어두운 한 단 화면">몰입</button></div>
+      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
     </div>
@@ -158,7 +158,7 @@
       <li>↵ 표시가 있는 곳에서 Enter를 칩니다. 산문은 문단이 바뀔 때 한 번, 시는 줄 끝마다 치고 연이 바뀌는 곳(빈 줄)에서 한 번 더 칩니다.</li>
       <li>“ ” ‘ ’ 「 」 · ― 는 키보드의 " ' . - 로 쳐도 맞습니다. 붙여 넣기는 막혀 있습니다.</li>
       <li>원문·필사 글꼴은 위쪽에서 바꿀 수 있습니다. 손글씨 글꼴로 쓰면 손으로 쓴 느낌을 볼 수 있어요.</li>
-      <li>화면 디자인은 오른쪽 위 '책상 · 잉크 · 몰입'에서 고릅니다.</li>
+      <li>화면 디자인은 오른쪽 위에서 고릅니다 — 몰입(밝게·어둡게: 원문과 필사만 크게), 책상(서재 목록과 펼친 책), 잉크(평면 활자 견본).</li>
       <li>분당 타수는 이 쪽에서 누른 글쇠 수 기준, 정확도는 확정된 글자 기준의 참고값입니다(공인 타자 검정 수치가 아님).</li>
     </ol>
   </div></div>
@@ -182,7 +182,7 @@
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
-<script src="js/typing.js?v=5"></script>
+<script src="js/typing.js?v=6"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>
