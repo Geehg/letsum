@@ -227,5 +227,6 @@ img.save("sample.png")
 - 헤더 메뉴가 8개라 761~960px에선 메뉴를 둘째 줄로(`--hd:88px`), 961~1200px는 간격을 줄임.
 - 2026-10-24: 화면 디자인 3종(위쪽 '디자인' 전환, localStorage `typebook-v1:skin`, 주소 `?skin=` 도 가능) — **책상**(기본, 운영자가 준 TYPEBOOK 화면 그대로: 흰 카드·코럴·왼쪽 '나의 서재'·펼친 책), **잉크**(LETSUM 평면 잉크·라임), **몰입**(어두운 한 단). CSS는 `main.tb[data-skin]`의 `--t-*` 변수로 갈아 끼움(사이트 다크 모드는 책상 스킨에도 반영).
 - 2026-10-24: **전체 서가 456권**(한국 412·영어 44, 본문 약 3,700만 자, `html/data/typing/` 약 63MB) — `build_typing_books.py`가 위키문헌 작가 32명(사망 1955년 이전)의 작가 문서를 갈래별로 따라가 수집, 영어는 Project Gutenberg 44권(저자 사망 1955년 이전, 번역본 제외). 긴 책은 장(parts) 단위 JSON `{parts:[{t,x}]}` → 화면에 '목차' 선택, 새 장 첫 쪽은 언제든 이동. 서가에 검색·갈래·작가 필터와 '더 보기'. 옛한글·국한문·일본어 위주 글 약 60편은 뺌(목록은 빌드 로그). 목록 `docs/typing_library.md`.
+- 2026-10-24: 기본 글꼴 = 원문 KoPub World 바탕체(k-kopubworldbatang)·필사 프리텐다드(k-pretendard), 운영자 지정. 직접 바꾼 글꼴은 책마다 localStorage `fonts:<id>`.
 - 2026-10-24: 생성 표지 자리 마련 — 운영자가 GPT로 만든 표지(A5 세로, `docs/typing_cover_prompts.*`)를 폴더에 모아 `.venv/bin/python tools/import_covers.py <폴더>` → `html/img/typing/<id>.webp`(600×848) + index.json `cover` 표시 → 서가·서재 목록이 그림 표지로 바뀜(없으면 CSS 표지). 파일 이름은 <id>.png 또는 작품 제목. 표지 칸은 A5 비율(1:1.414)로 통일.
 - 사이트 반영을 운영자 대신 할 때: `ssh interq4@192.168.219.103` 후 `docker run --rm -v /volume1/docker/letsum:/git -w /git alpine/git -c safe.directory=/git pull --ff-only origin main`(패널 '받아와 재배포'와 같은 결과, html은 디렉터리 연결이라 재시작 불필요).

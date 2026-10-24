@@ -197,9 +197,9 @@
     state.completed = new Set((p.completed || []).filter((i) => Number.isInteger(i) && i >= 0 && i < b.pages.length));
     state.drafts = p.drafts && typeof p.drafts === "object" ? p.drafts : {}; state.metrics = p.metrics && typeof p.metrics === "object" ? p.metrics : {};
     const fs = readJSON(`fonts:${b.id}`, null);
-    const bf = fontById(b.font); // 원문은 읽기 쉬운 본문 글꼴로(표지가 손글씨·제목용이면 바탕체)
-    state.fontO = (fs && fontById(fs.o) && fs.o) || (bf && (bf.cat === "명조" || bf.cat === "고딕") ? b.font : b.lang === "en" ? "e-lora" : "gowun-batang");
-    state.fontW = (fs && fontById(fs.w) && fs.w) || (b.lang === "en" ? b.font : "nanum-pen");
+    // 기본: 원문 KoPub World 바탕체, 필사 프리텐다드(운영자 지정). 직접 고른 글꼴은 책마다 기억
+    state.fontO = (fs && fontById(fs.o) && fs.o) || (fontById("k-kopubworldbatang") ? "k-kopubworldbatang" : "gowun-batang");
+    state.fontW = (fs && fontById(fs.w) && fs.w) || (fontById("k-pretendard") ? "k-pretendard" : "noto-sans-kr");
     $("tbTitle").textContent = b.title; $("tbAuthor").textContent = b.author + (b.year && b.year < 2000 ? ` · ${b.year}` : "");
     $("tbSource").hidden = !b.source; if (b.source) { $("tbSource").href = b.source; $("tbSource").title = b.license || ""; }
     $("tbKbLang").textContent = b.lang === "en" ? "영문 QWERTY" : "두벌식";
