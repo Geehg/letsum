@@ -12,8 +12,9 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — 명작을 따라 쓰는 타이핑 독서"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="/css/style.css?v=94">
+<link rel="stylesheet" href="/css/style.css?v=95">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
 </head>
 <body class="tb-page">
 <header>
@@ -37,15 +38,28 @@
 
   <!-- 서가 -->
   <section id="tbShelf" aria-label="필사 서가">
-    <div class="wrap tb-hero">
-      <div class="tb-hero-l">
-        <p class="tb-kick">READ · TYPE · REMEMBER</p>
-        <h1>읽는 것을 넘어, <em>쓰는 독서.</em></h1>
-        <p class="tb-lead">명작의 문장을 따라 한 글자씩 타이핑하세요. 틀린 글자는 바로 보이고, 한 쪽을 완성할 때마다 나만의 완독 기록이 쌓입니다.</p>
-        <div class="tb-cta"><button class="tb-btn pri" id="tbContinue" type="button" hidden>이어서 쓰기 →</button><button class="tb-btn" id="tbStart" type="button">오늘의 한 편 쓰기 →</button><button class="tb-btn" id="tbImportOpen" type="button">＋ 내 글 가져오기</button></div>
+    <div class="th-stage">
+      <div class="wrap th-top">
+        <div class="th-copy">
+          <p class="th-kick">READ · TYPE · REMEMBER</p>
+          <h1>읽는 것을 넘어,<br>쓰는 독서.</h1>
+          <p class="th-lead">저작권이 끝난 명작을 한 글자씩 따라 쓰는 필사독서. 틀린 글자는 바로 보이고, 한 쪽을 완성할 때마다 나만의 완독 기록이 쌓입니다.</p>
+          <form class="th-search" id="thSearch" role="search"><span aria-hidden="true">⌕</span><input id="thQ" type="search" placeholder="작품명, 작가로 찾기" aria-label="작품 찾기" autocomplete="off"></form>
+          <div class="th-cta"><button class="th-btn pri" id="tbContinue" type="button" hidden>이어서 쓰기 →</button><button class="th-btn" id="tbStart" type="button">오늘의 한 편 쓰기</button><button class="th-btn ghost" id="tbImportOpen" type="button">＋ 내 글 가져오기</button></div>
+        </div>
+        <div class="th-feature" id="thFeature" aria-label="오늘의 한 편"></div>
+        <div class="th-side">
+          <div class="th-card th-author" id="thAuthor" aria-label="이 주의 작가"></div>
+          <div class="th-card th-resume" id="thResume" aria-label="이어 쓰기"></div>
+        </div>
       </div>
-      <div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div>
+      <div class="th-ledge" aria-hidden="true"></div>
+      <div class="wrap th-best">
+        <p class="th-vlabel">오늘의 추천</p>
+        <div class="th-best-row" id="thBest"></div>
+      </div>
     </div>
+    <div class="wrap th-me-wrap"><div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div></div>
     <div class="wrap" id="tbThemes"><p class="note">서가를 불러오는 중…</p></div>
     <section class="wrap tb-lib" id="tbLib" aria-label="전체 서가">
       <div class="tb-th-h"><div><p class="tb-kick">FULL LIBRARY</p><h2>전체 서가 <span id="tbLibN"></span></h2><p class="note">저작권 보호기간이 끝난 한국 근대 문학과 영어 고전 — 시집·소설 전권을 장(목차) 단위로 필사할 수 있습니다</p></div></div>
@@ -187,13 +201,22 @@
   <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p class="fine">LETSUM(렛섬) 필사독서 — 서가의 작품은 저작권 보호기간이 끝난 글(위키문헌·Project Gutenberg 공개 원문)이며, 필사 기록은 이 브라우저에만 저장됩니다. 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a><br><a href="https://letsum.app/privacy.html">개인정보처리방침</a> · <a href="https://letsum.app/terms.html">이용약관</a> · <a href="https://letsum.app/notice.html">저작권·라이선스 고지</a> · <a href="/js/JSZip-LICENSE.md">JSZip 라이선스</a></p>
+<footer class="tf">
+  <svg class="tf-tear" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 H1200 V32 L1200,32 L1197,40.6 L1181,30.5 L1174,33.9 L1155,18.7 L1147,18.5 L1136,34.0 L1129,54.4 L1122,30.7 L1103,26.8 L1087,41.6 L1076,42.6 L1066,44.6 L1046,41.4 L1038,26.9 L1026,42.6 L1007,42.1 L990,27.2 L977,36.5 L969,23.7 L958,18.3 L937,35.2 L920,24.4 L904,18.8 L897,41.5 L882,38.6 L864,42.6 L848,20.2 L832,28.7 L817,42.2 L805,42.4 L788,27.9 L769,37.7 L748,38.6 L741,46.0 L724,31.5 L717,45.0 L697,30.5 L688,34.4 L672,45.5 L660,21.7 L648,34.9 L635,37.5 L626,43.7 L610,41.9 L600,19.9 L592,26.2 L572,25.2 L563,57.0 L555,29.8 L535,56.6 L514,50.7 L504,40.9 L495,23.1 L480,31.5 L467,28.4 L457,46.3 L450,26.3 L431,37.2 L410,20.8 L390,41.0 L370,26.5 L348,37.6 L335,21.3 L327,50.5 L314,45.7 L295,31.7 L286,21.3 L264,39.3 L254,39.8 L247,29.1 L233,55.5 L227,41.7 L215,41.7 L197,20.0 L187,26.8 L168,45.9 L157,30.8 L143,35.9 L124,30.3 L117,36.8 L110,44.8 L102,35.2 L80,57.5 L63,52.7 L52,20.6 L36,44.3 L21,32.2 L0,33.7 Z"/></svg>
+  <div class="tf-band" aria-hidden="true"><i></i><i></i><i></i><i></i><b>MANUAL&nbsp;&nbsp;TYPE</b><i></i><i></i><i></i><i></i></div>
+  <div class="wrap tf-in">
+    <div class="tf-brand"><b>LETSUM 필사독서</b><p>읽는 것을 넘어, 쓰는 독서.<br>저작권이 끝난 명작을 한 글자씩 따라 씁니다.</p></div>
+    <nav class="tf-cols" aria-label="바닥글">
+      <div><h4>필사독서</h4><a href="#/">서가</a><a href="#tbLib">전체 서가</a><button type="button" class="linkish" data-open-import>내 글 가져오기</button><button type="button" class="linkish" data-open-help>필사하는 법</button></div>
+      <div><h4>LETSUM</h4><a href="https://letsum.app/">무료 한글 폰트</a><a href="https://letsum.app/en/">영문 폰트</a><a href="https://letsum.app/symbols.html">특수기호</a><a href="https://letsum.app/guide.html">라이선스 가이드</a></div>
+      <div><h4>안내</h4><a href="https://letsum.app/privacy.html">개인정보처리방침</a><a href="https://letsum.app/terms.html">이용약관</a><a href="https://letsum.app/notice.html">저작권·라이선스 고지</a><a href="/js/JSZip-LICENSE.md">JSZip 라이선스</a></div>
+    </nav>
   </div>
+  <div class="tf-keys" aria-hidden="true"><span>L</span><span>E</span><span>T</span><span>S</span><span>U</span><span>M</span><span class="sp"></span><span>T</span><span>Y</span><span>P</span><span>E</span></div>
+  <p class="tf-fine">서가의 작품은 저작권 보호기간이 끝난 글(위키문헌·Project Gutenberg 공개 원문)이며, 필사 기록은 이 브라우저에만 저장됩니다. 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a></p>
 </footer>
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
-<script src="/js/typing.js?v=9"></script>
+<script src="/js/typing.js?v=10"></script>
 </body>
 </html>

@@ -99,6 +99,7 @@
     if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
     $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark"; $("tbMain").dataset.layout = k.startsWith("focus") || k === "retro" ? "focus" : "wide"; // 몰입·레트로 = 한 단
     writeJSON("skin2", k);
+    document.documentElement.style.setProperty("--tb-page", getComputedStyle($("tbMain")).getPropertyValue("--t-bg").trim() || "#f7f6f2"); // 바닥글 종이 가장자리·바탕을 디자인 색에 맞춤
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
   }
 
@@ -191,9 +192,57 @@
     const going = state.books.filter((b) => !b.imported && (progressOf(b.id).completed || []).length && (progressOf(b.id).completed || []).length < (b.pageCount || 1e9));
     if (going.length) themes.unshift(`<section class="tb-theme"><div class="tb-th-h"><div><p class="tb-kick">CONTINUE</p><h2>이어 쓰는 중</h2><p class="note">쓰다 만 작품을 이어서</p></div><span class="tb-th-n">${going.length}편</span></div><div class="tb-row">${going.map(bookCard).join("")}</div></section>`);
     $("tbThemes").innerHTML = themes.join("");
-    renderLib();
+    renderLib(); renderHome();
     state.index.themes.forEach((t) => t.books.forEach((b) => loadFont(fontById(b.font), b.title + b.author))); // 표지 글자만
     renderMe();
+  }
+
+  // ---------- 첫 화면(type.letsum.app): 오늘의 한 편·이 주의 작가·이어 쓰기·오늘의 추천 ----------
+  // 고르는 기준은 날짜뿐(무작위·인기 순위를 지어내지 않음): 같은 날엔 누구에게나 같은 책.
+  const dayNo = () => Math.floor((Date.now() + 9 * 3600e3) / 864e5);
+  const estMin = (b) => Math.max(1, Math.round((b.chars || 0) / 200)); // 분당 200자 기준 어림
+  const estPg = (b) => b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330));
+  const fmtMin = (m) => (m >= 60 ? `${Math.floor(m / 60)}시간${m % 60 ? ` ${m % 60}분` : ""}` : `${m}분`);
+  function bookFace(b, cls) {
+    loadFont(fontById(b.font), b.title + b.author);
+    if (b.cover) return `<span class="${cls} has-img" style="--c:${esc(b.color || "#444")}"><img src="${coverImg(b)}" alt="" loading="lazy"></span>`;
+    return `<span class="${cls}" style="--c:${esc(b.color || "#444")};--ci:${esc(b.ink || "#fff")}"><b style="font-family:${esc(stackOf(b.font))}">${esc(b.title)}</b><small>${esc(b.author)}</small></span>`;
+  }
+  function renderHome() {
+    if (!$("thFeature")) return;
+    const d = dayNo(), lit = state.books.filter((b) => !b.imported && b.author !== "필사독서 예문");
+    const picks = state.index.themes.flatMap((t) => t.books).map((x) => state.books.find((b) => b.id === x.id)).filter((b) => b && b.author !== "필사독서 예문");
+    const f = picks[d % picks.length];
+    const pf = (progressOf(f.id).completed || []).length;
+    $("thFeature").innerHTML = `<a class="th-book" href="#/read/${encodeURIComponent(f.id)}" aria-label="${esc(f.title)} 필사하기">${bookFace(f, "th-book-f")}<i class="th-book-s" style="--c:${esc(f.color || "#444")}"></i></a>
+      <p class="th-feat-cap"><span>오늘의 한 편</span><b>${esc(f.title)}</b> · ${esc(f.author)}<br><small>약 ${estPg(f)}쪽 · 약 ${fmtMin(estMin(f))}${pf ? ` · ${pf}쪽 썼음` : ""}</small></p>`;
+    // 이 주의 작가: 작품이 3권 이상인 작가를 주마다 차례로
+    const by = {}; lit.forEach((b) => (by[b.author] = by[b.author] || []).push(b));
+    const authors = Object.keys(by).filter((a) => by[a].length >= 3).sort((a, b) => a.localeCompare(b, "ko"));
+    if (authors.length) {
+      const a = authors[Math.floor(d / 7) % authors.length], L = by[a], died = L[0].died;
+      const sample = L.slice().sort((x, y) => (y.pick ? 1 : 0) - (x.pick ? 1 : 0) || (y.chars || 0) - (x.chars || 0)).slice(0, 3);
+      $("thAuthor").innerHTML = `<p class="th-vlab">이 주의 작가</p><div class="th-au-body"><b class="th-au-mark">${esc(Array.from(a)[0])}</b><h3>${esc(a)}</h3><p>${L.length}편${died ? ` · ~${died}` : ""}</p>
+        <ul>${sample.map((b) => `<li><a href="#/read/${encodeURIComponent(b.id)}">${esc(b.title)}</a></li>`).join("")}</ul><button type="button" class="th-mini" data-author="${esc(a)}">작품 모두 보기 →</button></div>`;
+    }
+    // 이어 쓰기(마지막으로 쓴 책)
+    const last = state.books.find((b) => b.id === readJSON("last", ""));
+    if (last) {
+      const done = (progressOf(last.id).completed || []).length, n = estPg(last), pct = Math.min(100, Math.round(done / n * 100));
+      $("thResume").innerHTML = `<p class="th-vlab">이어 쓰기</p><div class="th-rs-body"><a class="th-rs-cv" href="#/read/${encodeURIComponent(last.id)}">${bookFace(last, "th-mini-cv")}</a><h3>${esc(last.title)}</h3><p>${esc(last.author)}</p>
+        <i class="th-rs-bar"><i style="width:${pct}%"></i></i><p class="th-rs-n">${done} / ${n.toLocaleString()}쪽 · ${pct}%</p>
+        <a class="th-play" href="#/read/${encodeURIComponent(last.id)}" aria-label="${esc(last.title)} 이어 쓰기">▶</a></div>`;
+    } else {
+      $("thResume").innerHTML = `<p class="th-vlab">이어 쓰기</p><div class="th-rs-body th-rs-empty"><h3>아직 쓰던 작품이 없어요</h3><p>오늘의 한 편으로 첫 쪽을 시작해 보세요. 기록은 이 브라우저에 남습니다.</p><a class="th-play" href="#/read/${encodeURIComponent(f.id)}" aria-label="오늘의 한 편 시작">▶</a></div>`;
+    }
+    // 오늘의 추천: 전체 서가에서 날짜로 4권
+    const pool = lit.filter((b) => b.id !== f.id && (b.chars || 0) > 1500);
+    const best = []; for (let k = 0; best.length < 4 && k < 40; k++) { const b = pool[(d * 37 + k * 101) % pool.length]; if (b && !best.includes(b)) best.push(b); }
+    $("thBest").innerHTML = best.map((b) => `<div class="th-bi"><a class="th-bi-cv" href="#/read/${encodeURIComponent(b.id)}" tabindex="-1">${bookFace(b, "th-mini-cv")}</a><div><b>${esc(b.title)}</b><small>${esc(b.author)}</small><small>약 ${estPg(b).toLocaleString()}쪽 · 약 ${fmtMin(estMin(b))}</small><a class="th-bi-go" href="#/read/${encodeURIComponent(b.id)}">필사하기</a></div></div>`).join("");
+  }
+  function libSearch(q, author) {
+    $("tbQ").value = q || ""; lib.q = q || ""; lib.author = author || ""; $("tbAuthorSel").value = lib.author; lib.shown = 24; renderLib();
+    $("tbLib").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   // ---------- 전체 서가(검색·갈래·작가) ----------
@@ -511,6 +560,10 @@
     $("tbCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; lib.cat = b.dataset.cat; lib.shown = 24; $("tbCats").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); renderLib(); });
     $("tbAuthorSel").addEventListener("change", (e) => { lib.author = e.target.value; lib.shown = 24; renderLib(); });
     $("tbMore").addEventListener("click", () => { lib.shown += 48; renderLib(); });
+    $("thSearch")?.addEventListener("submit", (e) => { e.preventDefault(); libSearch($("thQ").value.trim()); });
+    $("thAuthor")?.addEventListener("click", (e) => { const b = e.target.closest("[data-author]"); if (b) libSearch("", b.dataset.author); });
+    document.querySelectorAll("[data-open-import]").forEach((b) => b.addEventListener("click", () => open("tbImport")));
+    document.querySelectorAll("[data-open-help]").forEach((b) => b.addEventListener("click", () => open("tbHelp")));
     $("tbSound").addEventListener("change", (e) => { retro.sound = e.target.checked; writeJSON("retro", retro); });
     $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); });
     $("tbVolume").addEventListener("change", () => clack("x"));
@@ -527,7 +580,7 @@
   }
   function route() {
     const m = location.hash.match(/^#\/read\/(.+)$/);
-    if (m) openBook(decodeURIComponent(m[1])); else showShelf();
+    if (m) openBook(decodeURIComponent(m[1])); else { showShelf(); if (location.hash === "#tbLib") $("tbLib").scrollIntoView(); }
   }
 
   // ---------- 시작 ----------
