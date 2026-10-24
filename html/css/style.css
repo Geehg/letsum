@@ -2063,3 +2063,8 @@ main.tb[data-skin="retro"] .tb-pager .tb-nav.next:not(:disabled){color:#a8563f}
   .tb-print .by{font-size:9pt;color:#666;margin:0 0 16pt;font-family:'Pretendard Variable',sans-serif}
   .tb-print .pp{white-space:pre-wrap;font-size:12pt;line-height:2;margin:0 0 14pt;word-break:keep-all;overflow-wrap:anywhere}
 }
+
+/* type.letsum.app 머리글: 로고 + '필사독서' */
+.tb-logo{display:flex;align-items:center;gap:10px}
+.tb-brand{font:800 16px/1 'Pretendard Variable',Pretendard,sans-serif;letter-spacing:-.02em;color:var(--ink);padding-left:10px;border-left:1.5px solid var(--ink)}
+@media(max-width:640px){.tb-brand{font-size:14px;padding-left:8px}}

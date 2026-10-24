@@ -63,7 +63,7 @@ function page(f, en, db) {
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="https://type.letsum.app/">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
       <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></form>
@@ -226,7 +226,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img class="lg-l" src="../img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="../img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="https://type.letsum.app/">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색" autocomplete="off"></form>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
@@ -267,9 +267,38 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
     fs.writeFileSync(path.join(ROOT, "data", "typing", "fonts.json"), JSON.stringify({ ko: ko.map(row), en: en.map(row) }));
   }
 }
+// 필사독서 별도 사이트(type.letsum.app): html/typing.html을 바탕으로 html/type/index.html을 만든다.
+// nginx가 type.letsum.app/ 에 이 파일을 내주고, css·js·data/typing·img는 letsum.app과 같은 파일을 쓴다(데이터 중복 없음).
+{
+  const TS = "https://type.letsum.app";
+  let t = fs.readFileSync(path.join(ROOT, "typing.html"), "utf8");
+  const head = t.slice(0, t.indexOf("<header>")), body = t.slice(t.indexOf("</header>") + 9);
+  let h = head
+    .replace(/<title>[^<]*<\/title>/, "<title>필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM</title>")
+    .replace(/https:\/\/letsum\.app\/typing\.html/g, TS + "/")
+    .replace('content="필사독서 — LETSUM(렛섬)"', 'content="필사독서 — 명작을 따라 쓰는 타이핑 독서"')
+    .replace('<meta property="og:site_name" content="LETSUM(렛섬)">', '<meta property="og:site_name" content="LETSUM 필사독서">')
+    .replace(/(href|src)="(?!https?:|\/|#|mailto:)/g, '$1="/');
+  const hdr = `<header>
+  <div class="wrap hd">
+    <a class="logo tb-logo" href="/" aria-label="LETSUM 필사독서 처음으로"><img class="lg-l" src="/img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="/img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"><span class="tb-brand">필사독서</span></a>
+    <nav class="main"><a href="/" class="on">서가</a><a href="https://letsum.app/">무료 폰트</a><a href="https://letsum.app/symbols.html">특수기호</a></nav>
+    <div class="sp"></div>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
+  </div>
+</header>`;
+  let b = body
+    .replace(/<a href="(privacy|terms|notice)\.html">/g, '<a href="https://letsum.app/$1.html">')
+    .replace(/\s*<script src="js\/pv\.js[^"]*" defer><\/script>/, "")
+    .replace('data-base=""', 'data-base="https://letsum.app/"')
+    .replace(/(href|src)="(?!https?:|\/|#|mailto:)/g, '$1="/');
+  fs.mkdirSync(path.join(ROOT, "type"), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, "type", "index.html"), (h + hdr + b).replace("<html lang=\"ko\">", "<html lang=\"ko\">\n<!-- 자동 생성(tools/build_pages.js) — html/typing.html을 고칠 것 -->"));
+  fs.writeFileSync(path.join(ROOT, "type", "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${TS}/</loc><lastmod>${today}</lastmod></url>\n</urlset>\n`);
+}
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
-const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/typing.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
+const urls = [`${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.
@@ -348,4 +377,6 @@ Disallow: /api/
 
 Sitemap: ${SITE}/sitemap.xml
 `);
+// type.letsum.app 도 같은 규칙, 사이트맵만 자기 것
+fs.writeFileSync(path.join(ROOT, "type", "robots.txt"), fs.readFileSync(path.join(ROOT, "robots.txt"), "utf8").replace("# LETSUM(렛섬)", "# LETSUM 필사독서(type.letsum.app)").replace(`Sitemap: ${SITE}/sitemap.xml`, "Sitemap: https://type.letsum.app/sitemap.xml"));
 console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);

@@ -466,7 +466,7 @@
         { t: "text", text: excerpt, family: stackOf(state.fontW), size: 54, min: 30, maxLines: 12, lh: 1.55, after: 20 },
         { t: "rule" }, { t: "meta", text: [`${state.page + 1} / ${b.pages.length}쪽`, `정확도 ${acc()}%`, cpm() ? `분당 ${cpm()}타` : "", `연속 ${streak()}일째`].filter(Boolean).join(" · "), size: 26, weight: 600, color: "#141413", after: 6 },
         { t: "meta", text: `필사 글꼴 ${f ? f.name : "기본"} — LETSUM 무료 폰트`, size: 24, after: 6 }],
-      footer: "읽는 것을 넘어, 쓰는 독서 — LETSUM 필사독서", url: "letsum.app/typing", shareText: `「${b.title}」 ${state.page + 1}쪽 필사 완료 — LETSUM 필사독서` });
+      footer: "읽는 것을 넘어, 쓰는 독서 — LETSUM 필사독서", url: "type.letsum.app", shareText: `「${b.title}」 ${state.page + 1}쪽 필사 완료 — LETSUM 필사독서` });
   }
 
   // ---------- 이벤트 ----------
