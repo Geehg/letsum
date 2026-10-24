@@ -460,6 +460,8 @@ def main():
         byid = {m["id"]: m for m in index["library"]}
         for th in index["themes"]: th["books"] = [byid[b["ref"]] if b.get("ref") else b for b in th["books"] if not b.get("ref") or b["ref"] in byid]
         print(f"전체 서가 {len(index['library'])}권 · {sum(m['chars'] for m in index['library']):,}자")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import import_covers; import_covers.mark(index)  # 생성 표지(html/img/typing/<id>.webp)가 있으면 표시 유지
     json.dump(index, open(os.path.join(OUT, "index.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     print("→", OUT)
 

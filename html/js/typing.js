@@ -112,7 +112,7 @@
     $("tbSideList").innerHTML = list.map((b) => {
       const done = (progressOf(b.id).completed || []).length, n = b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330));
       loadFont(fontById(b.font), b.title + b.author);
-      return `<a class="tb-sb${b.id === cur.id ? " on" : ""}" href="#/read/${encodeURIComponent(b.id)}"${b.id === cur.id ? ' aria-current="page"' : ""}><span class="tb-sb-c" style="--c:${esc(b.color || "#5f6f6e")};--ci:${esc(b.ink || "#fff")};font-family:${esc(stackOf(b.font))}">${esc(Array.from(b.title)[0] || "·")}</span><span><b>${esc(b.title)}</b><small>${done}/${n}쪽 · ${b.lang === "en" ? "English" : "한국어"}</small></span></a>`;
+      return `<a class="tb-sb${b.id === cur.id ? " on" : ""}" href="#/read/${encodeURIComponent(b.id)}"${b.id === cur.id ? ' aria-current="page"' : ""}><span class="tb-sb-c${b.cover ? " has-img" : ""}" style="--c:${esc(b.color || "#5f6f6e")};--ci:${esc(b.ink || "#fff")};font-family:${esc(stackOf(b.font))}">${b.cover ? `<img src="${coverImg(b)}" alt="" loading="lazy">` : esc(Array.from(b.title)[0] || "·")}</span><span><b>${esc(b.title)}</b><small>${done}/${n}쪽 · ${b.lang === "en" ? "English" : "한국어"}</small></span></a>`;
     }).join("");
   }
   function renderMini() {
@@ -121,8 +121,10 @@
   }
 
   // ---------- 서가 ----------
+  const coverImg = (b) => (b.cover ? `img/typing/${encodeURIComponent(b.id)}.webp?v=${esc(String(b.cover))}` : ""); // 생성 표지가 있으면 그림으로
   function cover(b, big) {
     const f = fontById(b.font);
+    if (b.cover) return `<span class="tb-cv has-img${big ? " big" : ""}" style="--c:${esc(b.color || "#444")}"><img src="${coverImg(b)}" alt="${esc(b.title)} 표지" loading="lazy" decoding="async"></span>`;
     return `<span class="tb-cv${big ? " big" : ""}" style="--c:${esc(b.color || "#444")};--ci:${esc(b.ink || "#fff")}"><span class="tb-cv-t" style="font-family:${f ? esc(stackOf(b.font)) : "inherit"}">${esc(b.title)}</span><span class="tb-cv-a">${esc(b.author)}</span>${b.year && b.year < 2000 ? `<i>${b.year}</i>` : ""}</span>`;
   }
   function bookCard(b) {
