@@ -23,11 +23,24 @@ def norm(s):
 def mark(index):
     """html/img/typing 에 있는 표지를 index.json 항목에 cover=수정 시각으로 표시(브라우저 캐시 갱신용)."""
     have = {f[:-5]: int(os.path.getmtime(os.path.join(OUT, f))) for f in os.listdir(OUT) if f.endswith(".webp")} if os.path.isdir(OUT) else {}
-    n = 0
+    n, spine = 0, {}
     for b in [b for t in index["themes"] for b in t["books"]] + index.get("library", []):
-        if b["id"] in have: b["cover"] = have[b["id"]]; n += 1
-        else: b.pop("cover", None)
+        if b["id"] in have:
+            b["cover"] = have[b["id"]]; n += 1
+            if b["id"] not in spine: spine[b["id"]] = spine_color(os.path.join(OUT, b["id"] + ".webp"))
+            b["sc"], b["si"] = spine[b["id"]]
+        else:
+            for k in ("cover", "sc", "si"): b.pop(k, None)
     return n
+
+
+def spine_color(path):
+    """책등 색 = 표지 그림(아래 60%)의 평균 색을 조금 어둡게. 글자색은 밝기에 따라 흰색/검정."""
+    im = Image.open(path).convert("RGB"); w, h = im.size
+    r, g, b = im.crop((int(w * .08), int(h * .38), int(w * .92), int(h * .95))).resize((1, 1), Image.BOX).getpixel((0, 0))
+    r, g, b = (int(c * .82) for c in (r, g, b))
+    ink = "#1d1b18" if 0.299 * r + 0.587 * g + 0.114 * b > 150 else "#f6f1e7"
+    return "#%02x%02x%02x" % (r, g, b), ink
 
 
 def main():

@@ -180,8 +180,13 @@
   function bookCard(b) {
     const p = progressOf(b.id); const done = (p.completed || []).length; const n = b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330)); // 열기 전에는 글자 수로 어림
     const pct = b.pageCount ? Math.round(done / b.pageCount * 100) : 0;
-    return `<a class="tb-card${b.cover ? " cov" : ""}" href="#/read/${encodeURIComponent(b.id)}" aria-label="${esc(b.title)} — ${esc(b.author)}">${cover(b)}${b.cover && done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}<span class="tb-cm"><b>${esc(b.title)}</b><small>${esc(b.author)} · ${b.nparts > 1 ? `${b.nparts}${b.poem ? "편" : "장"} · ` : ""}${(b.chars || 0) >= 10000 ? `${Math.round(b.chars / 10000).toLocaleString()}만` : (b.chars || 0).toLocaleString()}자 · ${b.pageCount ? "" : "약 "}${n.toLocaleString()}쪽</small>
-      <span class="tb-cprog"><i style="width:${pct}%"></i></span><span class="tb-cgo">${done ? (pct >= 100 ? "완필 ✓ 다시 쓰기" : `이어 쓰기 · ${done}/${n}쪽`) : "필사 시작"}<em>→</em></span></span></a>`;
+    const meta = `<span class="tb-cm"><b>${esc(b.title)}</b><small>${esc(b.author)} · ${b.nparts > 1 ? `${b.nparts}${b.poem ? "편" : "장"} · ` : ""}${(b.chars || 0) >= 10000 ? `${Math.round(b.chars / 10000).toLocaleString()}만` : (b.chars || 0).toLocaleString()}자 · ${b.pageCount ? "" : "약 "}${n.toLocaleString()}쪽</small>
+      <span class="tb-cprog"><i style="width:${pct}%"></i></span><span class="tb-cgo">${done ? (pct >= 100 ? "완필 ✓ 다시 쓰기" : `이어 쓰기 · ${done}/${n}쪽`) : "필사 시작"}<em>→</em></span></span>`;
+    const href = `#/read/${encodeURIComponent(b.id)}`, label = `${esc(b.title)} — ${esc(b.author)}`;
+    if (!b.cover) return `<a class="tb-card" href="${href}" aria-label="${label}">${cover(b)}${meta}</a>`;
+    // 생성 표지: 입체 책(앞표지 + 책등). 마우스를 올리면 돌아가며 책등이 보이고, 제목·저자·분량이 나타난다. 두께는 분량에 따라
+    const th = Math.round(Math.min(34, Math.max(16, 6 + 5 * Math.log10(Math.max(100, b.chars || 0)))));
+    return `<a class="tb-card cov" href="${href}" aria-label="${label}"><span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3" aria-hidden="true"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span>${done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}${meta}</span></a>`;
   }
   function renderShelf() {
     const themes = state.index.themes.map((t) => `<section class="tb-theme"><div class="tb-th-h"><div><p class="tb-kick">${esc(t.kicker)}</p><h2>${esc(t.title)}</h2><p class="note">${esc(t.desc)}</p></div><span class="tb-th-n">${t.books.length}편</span></div>

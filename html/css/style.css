@@ -2137,3 +2137,30 @@ main.tb[data-skin="ink"] .tb-card.cov .tb-cv{border-radius:0;box-shadow:none;out
 .ti-book.has-img img{width:100%;height:100%;object-fit:cover;display:block}
 .ti-book.has-img .ti-hv{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:14px;background:rgba(18,18,16,.86);color:#f4f2ec;opacity:0;transition:opacity .18s}
 .ti-book.has-img:hover .ti-hv,.ti-book.has-img:focus-visible .ti-hv{opacity:1}
+
+/* 입체 책: 앞표지 + 책등(표지 색에서 뽑은 색, 세로 제목). 마우스를 올리면 돌아가며 책등이 보인다 */
+.tb-card.cov{perspective:1100px}
+.tb-b3{position:relative;display:block;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.tb-card.cov:hover .tb-b3,.tb-card.cov:focus-visible .tb-b3{transform:translateX(calc(var(--th) * .7)) rotateY(34deg)}
+.tb-sp3{position:absolute;top:0;left:calc(var(--th) * -1);width:var(--th);height:100%;transform-origin:right center;transform:rotateY(-90deg);
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px;padding:14px 0 12px;overflow:hidden;
+  background:var(--sc);color:var(--si);writing-mode:vertical-rl;border-radius:3px 0 0 3px;
+  box-shadow:inset -2px 0 3px rgba(0,0,0,.25),inset 2px 0 0 rgba(255,255,255,.12)}
+.tb-sp3 b{font:700 clamp(9px,calc(var(--th) * .5),13px)/1 'Gowun Batang','Noto Serif KR',serif;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:72%}
+.tb-sp3 i{font:500 clamp(7px,calc(var(--th) * .36),10px)/1 'Pretendard Variable',Pretendard,sans-serif;font-style:normal;opacity:.8;white-space:nowrap;overflow:hidden}
+.tb-card.cov:hover{transform:none}
+.tb-card.cov .tb-cm{transform:translateZ(.5px)}
+.tb-card.cov:hover .tb-cv{box-shadow:14px 16px 26px rgba(40,30,20,.3)}
+@media(prefers-reduced-motion:reduce){.tb-b3{transition:none}}
+.tb-card.cov{perspective:900px}
+.tb-card.cov:hover .tb-b3,.tb-card.cov:focus-visible .tb-b3{transform:translateX(calc(var(--th) * .8)) rotateY(38deg)}
+.tb-card.cov .tb-cm{top:auto;bottom:0;padding:12px 14px 12px;gap:3px;border-radius:0 0 7px 3px;background:rgba(18,18,16,.84)}
+.tb-card.cov .tb-cm .tb-cprog{margin:5px 0 2px}
+.tb-card.cov .tb-cgo{margin-top:2px}
+.tb-card.cov{perspective:800px}
+.tb-card.cov:hover .tb-b3,.tb-card.cov:focus-visible .tb-b3{transform:translateX(calc(var(--th) * .9)) rotateY(44deg)}
+.tb-sp3 b{font-size:clamp(10px,calc(var(--th) * .48),14px)}
+main.tb .tb-card.cov{background:none!important;border:0!important;box-shadow:none!important}
+.tb-sp3{flex-direction:row}  /* 세로쓰기에서는 row가 위→아래 방향 */
+.tb-sp3 b{max-height:none;max-width:none;max-block-size:none;max-inline-size:70%}
+.tb-sp3 i{max-inline-size:26%}
