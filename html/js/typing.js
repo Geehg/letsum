@@ -93,13 +93,61 @@
   }
 
   // ---------- 화면 디자인(책상·잉크·몰입) ----------
-  const SKINS = ["focus-light", "focus-dark", "book", "ink"];
+  const SKINS = ["focus-light", "focus-dark", "retro", "book", "ink"];
   function applySkin(k) {
     if (k === "focus") k = "focus-dark"; // 예전 '몰입'(어두움)
     if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
     $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark";
     writeJSON("skin2", k);
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
+  }
+
+  // ---------- 레트로 타자기: 합성 타건음(외부 음원 없음)·캐리지·용지·인쇄 ----------
+  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory" }, readJSON("retro", {}));
+  const isRetro = () => $("tbMain").dataset.skin === "retro";
+  let actx = null, strikeT = 0;
+  function applyRetro() {
+    $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
+    $("tbSound").checked = !!retro.sound; $("tbVolume").value = retro.volume; $("tbPaper").value = $("tbMain").dataset.paper;
+  }
+  function tone(f, d, a, type = "triangle", delay = 0) {
+    const t = actx.currentTime + delay, o = actx.createOscillator(), g = actx.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(Math.max(65, f * 0.63), t + d);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(0.00011, a), t + 0.003); g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    o.connect(g).connect(actx.destination); o.start(t); o.stop(t + d + 0.02);
+  }
+  function noise(d, a, delay = 0) {
+    const r = actx.sampleRate, b = actx.createBuffer(1, Math.ceil(r * d), r), x = b.getChannelData(0);
+    for (let i = 0; i < x.length; i++) x[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / x.length, 2);
+    const src = actx.createBufferSource(), fl = actx.createBiquadFilter(), g = actx.createGain();
+    src.buffer = b; fl.type = "bandpass"; fl.frequency.value = 1180; fl.Q.value = 0.78; g.gain.value = a;
+    src.connect(fl).connect(g).connect(actx.destination); src.start(actx.currentTime + delay);
+  }
+  function clack(key) {
+    if (!retro.sound || !retro.volume) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === "suspended") actx.resume();
+      const v = Math.min(0.65, Math.max(0, retro.volume / 100));
+      if (key === "Enter") { noise(0.095, v * 0.14); tone(840, 0.16, v * 0.12, "sine"); tone(1180, 0.21, v * 0.075, "sine", 0.06); } // 캐리지 복귀 + 벨
+      else if (key === "Backspace") { noise(0.038, v * 0.12); tone(170, 0.05, v * 0.06, "square"); }
+      else if (key === " ") { noise(0.065, v * 0.19); tone(150, 0.035, v * 0.08); }
+      else { noise(0.028, v * 0.19); tone(240 + Math.random() * 55, 0.035, v * 0.075, "square"); tone(580, 0.018, v * 0.025, "triangle", 0.012); }
+    } catch (e) { /* 오디오를 못 쓰는 브라우저는 소리 없이 */ }
+  }
+  function strike() { const m = $("tbMachine"); m.classList.add("strike"); clearTimeout(strikeT); strikeT = setTimeout(() => m.classList.remove("strike"), 90); }
+  function carriage() { // 줄 안에서 친 글자 수만큼 캐리지가 왼쪽으로, Enter면 처음으로
+    if (!isRetro()) return;
+    const inp = $("tbInput"), before = inp.value.slice(0, inp.selectionStart), col = chars(before.slice(before.lastIndexOf("\n") + 1)).length;
+    $("tbMachine").style.setProperty("--col", String(col % 56));
+    $("tbStatus").textContent = state.book && state.completed.has(state.page) ? "PAGE COMPLETE" : state.draft ? "TYPING" : "READY";
+  }
+  function printPages() {
+    const b = state.book; if (!b) return;
+    const out = []; b.pages.forEach((pg, i) => { const t = i === state.page ? state.draft : state.completed.has(i) ? pg : state.drafts[i] || ""; if (t.trim()) out.push(t); });
+    if (!out.length) { toast("아직 쓴 쪽이 없습니다."); return; }
+    const a = $("tbPrintArea"); a.style.fontFamily = stackOf(state.fontW);
+    a.innerHTML = `<h1>${esc(b.title)}</h1><p class="by">${esc(b.author)} · 나의 필사 ${out.length}쪽 · LETSUM 필사독서</p>` + out.map((t) => `<div class="pp">${esc(t)}</div>`).join("");
+    loadFont(fontById(state.fontW)).then(() => window.print());
   }
 
   // ---------- 필사 화면 왼쪽 '나의 서재'와 요약 ----------
@@ -243,7 +291,7 @@
     state.elapsed = +m.elapsed || 0; state.keystrokes = +m.keystrokes || 0; state.attempts = +m.attempts || 0; state.errors = +m.errors || 0;
     state.started = false; state.lastActivity = 0; state.composing = false;
     state.draft = state.drafts[i] ?? (state.completed.has(i) ? b.pages[i] : "");
-    $("tbInput").value = state.draft; refresh(); storeProgress();
+    $("tbInput").value = state.draft; refresh(); storeProgress(); carriage();
     if (b.partStart.length > 1) { $("tbToc").value = String(partOf(i)); }
     $("tbPartName").textContent = b.partStart.length > 1 ? b.partTitles[partOf(i)] : "읽기";
   }
@@ -304,7 +352,7 @@
     if (state.draft && !state.started && !state.completed.has(state.page)) state.started = true;
     const lim = chars(state.book.pages[state.page]).length + 200;
     if (chars(state.draft).length > lim) { state.draft = chars(state.draft).slice(0, lim).join(""); $("tbInput").value = state.draft; toast("원문보다 너무 길게 입력해 일부를 잘랐습니다."); }
-    refresh(); storeProgress(); if (!state.composing) finishCheck();
+    refresh(); storeProgress(); carriage(); if (!state.composing) finishCheck();
   }
   function finishCheck() {
     const b = state.book; if (!b || state.composing) return;
@@ -435,7 +483,8 @@
     inp.addEventListener("input", onInput);
     inp.addEventListener("paste", (e) => { e.preventDefault(); toast("필사에서는 붙여 넣기를 쓸 수 없어요. 직접 입력해 주세요."); });
     inp.addEventListener("drop", (e) => e.preventDefault());
-    inp.addEventListener("keydown", (e) => { if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
+    inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { clack(e.key === "Process" || e.key === "Unidentified" ? "x" : e.key); strike(); }
+      if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
     document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish"].forEach((id) => { if (!$(id).hidden) close(id); }); });
     document.addEventListener("keyup", (e) => press(e.code, false));
     addEventListener("blur", () => document.querySelectorAll(".tb-k.down").forEach((k) => k.classList.remove("down")));
@@ -462,6 +511,12 @@
     $("tbCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; lib.cat = b.dataset.cat; lib.shown = 24; $("tbCats").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); renderLib(); });
     $("tbAuthorSel").addEventListener("change", (e) => { lib.author = e.target.value; lib.shown = 24; renderLib(); });
     $("tbMore").addEventListener("click", () => { lib.shown += 48; renderLib(); });
+    $("tbSound").addEventListener("change", (e) => { retro.sound = e.target.checked; writeJSON("retro", retro); });
+    $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); });
+    $("tbVolume").addEventListener("change", () => clack("x"));
+    $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });
+    $("tbPrint").addEventListener("click", printPages);
+    inp.addEventListener("click", carriage); inp.addEventListener("keyup", carriage);
     $("tbFile").addEventListener("change", async (e) => { const f = e.target.files[0]; if (!f) return; $("tbFileNote").textContent = "파일을 읽는 중…"; try { await importFile(f); $("tbFileNote").textContent = ""; } catch (err) { $("tbFileNote").textContent = err.message; toast(err.message); } finally { e.target.value = ""; } });
     $("fnClose").addEventListener("click", () => close("tbFinish"));
     $("fnNext").addEventListener("click", () => { close("tbFinish"); if (state.page < state.book.pages.length - 1) loadPage(state.page + 1); else location.hash = "#/"; });
@@ -477,6 +532,7 @@
 
   // ---------- 시작 ----------
   async function init() {
+    applyRetro();
     applySkin(new URLSearchParams(location.search).get("skin") || readJSON("skin2", "")); // ?skin=ink 처럼 주소로도 고름
     const [idx, fonts] = await Promise.all([fetch("data/typing/index.json?v=2").then((r) => r.json()), fetch("data/typing/fonts.json?v=1").then((r) => r.json()).catch(() => ({ ko: [], en: [] }))]);
     state.index = idx; state.fonts = fonts;

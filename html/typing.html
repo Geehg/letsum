@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=90">
+<link rel="stylesheet" href="css/style.css?v=91">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -29,7 +29,7 @@
   <div class="tb-topw"><div class="wrap tb-top">
     <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
     <div class="tb-top-r">
-      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
+      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
     </div>
@@ -100,6 +100,8 @@
               <button class="tb-chip" id="tbReset" type="button" title="이 쪽 입력 지우기">↺ 다시 쓰기</button>
             </div>
           </div>
+          <div class="tb-machine" id="tbMachine">
+          <div class="tb-carriage" aria-hidden="true"><i class="tb-lever"></i><div class="tb-rail" id="tbRail"><span class="tb-roller"></span><span class="tb-platen"></span><span class="tb-roller"></span></div></div>
           <div class="tb-book">
             <i class="tb-spine" aria-hidden="true"></i>
             <article class="tb-pg tb-o">
@@ -113,6 +115,15 @@
               <p class="tb-wnote">한글 입력기를 켜고 원문을 그대로 입력하세요. ↵ 자리는 Enter입니다.</p>
               <div class="tb-pg-f"><span id="tbCount">0 / 0자</span><i class="tb-track"><i id="tbCountBar"></i></i><span id="tbPageNoW">01</span></div>
             </article>
+          </div>
+          <div class="tb-ribbon" aria-hidden="true"><span></span><i></i><span></span></div>
+          <div class="tb-face" aria-hidden="true"><b class="tb-plaque">LETSUM<small>FILSA · TYPEWRITER</small></b><span class="tb-status"><i class="tb-lamp"></i><span id="tbStatus">READY</span></span></div>
+          </div>
+          <div class="tb-retro-set" id="tbRetroSet">
+            <label class="tb-rs"><span>타건음</span><input type="checkbox" id="tbSound" checked></label>
+            <label class="tb-rs"><span>음량</span><input type="range" id="tbVolume" min="0" max="100" value="38" aria-label="타건음 음량"></label>
+            <label class="tb-rs"><span>용지</span><select id="tbPaper" aria-label="용지"><option value="ivory">아이보리</option><option value="white">백색</option><option value="parchment">양피지</option></select></label>
+            <button class="tb-chip" id="tbPrint" type="button" title="이 책에서 쓴 쪽을 A4로 인쇄·PDF 저장">🖨 필사 인쇄</button>
           </div>
           <div class="tb-pager">
             <button class="tb-nav" id="tbPrev" type="button">← 이전 쪽</button>
@@ -158,7 +169,7 @@
       <li>↵ 표시가 있는 곳에서 Enter를 칩니다. 산문은 문단이 바뀔 때 한 번, 시는 줄 끝마다 치고 연이 바뀌는 곳(빈 줄)에서 한 번 더 칩니다.</li>
       <li>“ ” ‘ ’ 「 」 · ― 는 키보드의 " ' . - 로 쳐도 맞습니다. 붙여 넣기는 막혀 있습니다.</li>
       <li>원문·필사 글꼴은 위쪽에서 바꿀 수 있습니다. 손글씨 글꼴로 쓰면 손으로 쓴 느낌을 볼 수 있어요.</li>
-      <li>화면 디자인은 오른쪽 위에서 고릅니다 — 몰입(밝게·어둡게: 원문과 필사만 크게), 책상(서재 목록과 펼친 책), 잉크(평면 활자 견본).</li>
+      <li>화면 디자인은 오른쪽 위에서 고릅니다 — 몰입(밝게·어둡게: 원문과 필사만 크게), 레트로(타자기 본체·타건음·용지 선택·필사 인쇄), 책상(서재 목록과 펼친 책), 잉크(평면 활자 견본).</li>
       <li>분당 타수는 이 쪽에서 누른 글쇠 수 기준, 정확도는 확정된 글자 기준의 참고값입니다(공인 타자 검정 수치가 아님).</li>
     </ol>
   </div></div>
@@ -172,6 +183,7 @@
     <div class="tb-fin"><div><b id="fnCpm">0</b><span>분당 타수</span></div><div><b id="fnAcc">100%</b><span>정확도</span></div><div><b id="fnPt">+0</b><span>포인트</span></div></div>
     <div class="tb-fin-acts"><button class="tb-btn" id="fnShot" type="button">이미지로 저장·공유</button><button class="tb-btn" id="fnClose" type="button">닫기</button><button class="tb-btn pri" id="fnNext" type="button">다음 쪽 →</button></div>
   </div></div>
+  <div class="tb-print" id="tbPrintArea" aria-hidden="true"></div>
   <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
 
@@ -182,7 +194,7 @@
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
-<script src="js/typing.js?v=6"></script>
+<script src="js/typing.js?v=7"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

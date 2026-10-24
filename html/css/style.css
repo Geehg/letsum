@@ -1915,7 +1915,8 @@ main.tb[data-skin="focus"] .tb-hero-l,main.tb[data-skin="focus"] .tb-me,main.tb[
   .tb-top-r{flex:1 1 100%;justify-content:space-between}
   .tb-skin>span{display:none}
   .tb-top-r{flex-wrap:wrap;gap:6px 8px}
-  .tb-skin{flex:1 1 100%;display:flex}
+  .tb-skin{flex:1 1 100%;display:flex;overflow-x:auto;scrollbar-width:none}
+  .tb-skin::-webkit-scrollbar{display:none}
   .tb-skin button{flex:1 1 auto;white-space:nowrap;padding:6px 6px;font-size:12px}
   .tb-plain{margin-left:auto}
   main.tb[data-skin="focus"] .tb-stats>div:nth-child(3){padding-left:0}
@@ -1962,3 +1963,100 @@ main.tb[data-skin="focus"] .tb-hero-l,main.tb[data-skin="focus"] .tb-me,main.tb[
   .tb-modal{padding:24px 20px}
 }
 @media(max-width:760px){header .hd{gap:10px}header .hd .sp{display:none}header .hd-search{flex:1 1 0;min-width:0}header .hd-search input{width:100%;min-width:0}}
+/* ===== 필사독서 레트로 타자기(data-skin="retro") — TYPEBOOK RETRO v1.1.0 디자인을 옮김. 캐리지·리본·명판은 CSS, 타건음은 Web Audio 합성 ===== */
+.tb-carriage,.tb-ribbon,.tb-face,.tb-retro-set{display:none}
+.tb-print{display:none}
+main.tb[data-skin="retro"]{--t-bg:#ddd7cc;--t-panel:#eeeae1;--t-alt:#e8e3d8;--t-ink:#292d29;--t-ink2:#5a5247;--t-mute:#81796e;--t-line:#d2c8ba;--t-line2:#c3b8a8;
+  --t-acc:#ad563c;--t-acc2:#91432e;--t-acc-text:#9a4a33;--t-acc-soft:#f1e2d4;--t-acc-line:#d9b9a3;--t-on-acc:#fff;
+  --t-page:#f6eedb;--t-page2:#f9f1df;--t-pline:#cabb9b;--t-pline2:#c9bfa9;--t-bookshadow:0 1px 0 #fff inset,0 2px 3px rgba(0,0,0,.18),0 15px 25px rgba(0,0,0,.2);
+  --t-r:10px;--t-r2:4px;--t-r3:6px;--t-shadow:0 4px 16px rgba(70,59,46,.06);--t-lab:700 10px/1.3 Georgia,'Noto Serif KR',serif;--t-lab-ls:.16em;
+  --t-untyped:#322f2a;--t-ok:#526a51;--t-ok-bg:rgba(209,223,194,.45);--t-bad:#a33e2d;--t-bad-bg:rgba(236,196,180,.6);--t-cur:#eed7a9;--t-cur-line:#9f5542;
+  --t-bar:#ad563c;--t-trk:#d8cfbf;--t-dot-past:#8a7a62;--t-cv-sh:3px 5px 14px rgba(40,30,20,.2);--t-toast-bg:#3a332b;--t-toast-ink:#f6eedb}
+main.tb[data-skin="retro"][data-paper="white"]{--t-page:#f9f9f5;--t-page2:#fbfbf8}
+main.tb[data-skin="retro"][data-paper="parchment"]{--t-page:#e2d0ab;--t-page2:#ead8b4;--t-pline:#b9a37a}
+main.tb[data-skin="retro"] .tb-h{font-family:Georgia,'Noto Serif KR',serif;font-weight:600}
+main.tb[data-skin="retro"] .tb-h em{font-style:italic;color:#91523d}
+main.tb[data-skin="retro"] .tb-stats b,main.tb[data-skin="retro"] .tb-me b{font-family:Georgia,serif;font-weight:700;font-variant-numeric:lining-nums tabular-nums}
+main.tb[data-skin="retro"] .tb-rh h2{font-family:'Noto Serif KR',Georgia,serif;font-weight:600;color:#4d4338}
+main.tb[data-skin="retro"] .tb-reading{background:none;border:0;box-shadow:none;padding:6px 0 0}
+/* 타자기 몸체 */
+main.tb[data-skin="retro"] .tb-machine{position:relative;padding:46px 34px 0;max-width:1060px;margin:0 auto;filter:drop-shadow(0 18px 18px rgba(48,44,38,.33))}
+main.tb[data-skin="retro"] .tb-carriage{display:block;position:absolute;z-index:0;top:4px;left:3%;right:3%;height:90px;pointer-events:none}
+main.tb[data-skin="retro"] .tb-rail{position:absolute;left:4%;right:4%;top:24px;height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 4px;border-radius:20px;
+  background:linear-gradient(#8b918b 0 12%,#2f3835 16% 32%,#65716a 37% 48%,#161c1b 51% 75%,#80867c 83%,#343c37);box-shadow:0 7px 14px rgba(34,34,34,.4);
+  transform:translateX(calc(var(--col,0) * -3px));transition:transform .12s cubic-bezier(.2,.8,.3,1)}
+main.tb[data-skin="retro"] .tb-roller{width:60px;height:46px;border-radius:11px;background:repeating-linear-gradient(90deg,#1b211f 0 4px,#38413c 5px 7px);border:2px solid #6e786d}
+main.tb[data-skin="retro"] .tb-platen{flex:1;height:13px;margin:0 3px;border-radius:8px;background:linear-gradient(#c2b9a4,#504c40,#9c927d);box-shadow:inset 0 2px 4px rgba(0,0,0,.45)}
+main.tb[data-skin="retro"] .tb-lever{position:absolute;left:-1%;top:16px;width:75px;height:8px;transform:rotate(-20deg);transform-origin:right center;border-radius:8px;background:linear-gradient(#d0c1a6,#5b5d55,#ded0b4)}
+main.tb[data-skin="retro"] .tb-lever::before{content:"";position:absolute;width:24px;height:24px;left:-15px;top:-8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e8e0ce,#6f756c 65%,#292e2b)}
+main.tb[data-skin="retro"] .tb-book{position:relative;z-index:1;border-radius:3px;transition:transform .09s}
+main.tb[data-skin="retro"] .tb-machine.strike .tb-book{transform:translateY(1px)}
+main.tb[data-skin="retro"] .tb-pg.tb-o{background:#f7f0df}
+main.tb[data-skin="retro"][data-paper="parchment"] .tb-pg.tb-o{background:#e6d5b0}
+main.tb[data-skin="retro"] .tb-pg.tb-w{position:relative;background:var(--t-page2)}
+main.tb[data-skin="retro"] .tb-pg-h{border-bottom:1px solid #c8baa0;padding-bottom:12px}
+main.tb[data-skin="retro"] #tbInput{color:#322f2a;caret-color:#99412a;text-shadow:.15px .2px .3px rgba(64,52,38,.7)}
+main.tb[data-skin="retro"] #tbInput::placeholder{color:#b2a58f}
+main.tb[data-skin="retro"] .tb-spine{display:block;box-shadow:inset 7px 0 9px -7px rgba(78,67,49,.3),inset -7px 0 9px -7px rgba(82,67,47,.25)}
+main.tb[data-skin="retro"] .tb-ribbon{display:flex;align-items:center;justify-content:center;gap:13px;position:relative;z-index:2;height:26px;margin:-7px 35px 0}
+main.tb[data-skin="retro"] .tb-ribbon i{display:block;width:54%;height:16px;border-radius:40%;background:linear-gradient(#141c1c 0 48%,#7c2422 50%,#3c1719);box-shadow:0 2px 7px rgba(17,17,17,.5);transform:perspective(120px) rotateX(25deg)}
+main.tb[data-skin="retro"] .tb-ribbon span{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at center,#aa9c85 0 4px,#333e3b 5px 10px,#b5a081 11px);box-shadow:0 3px 5px rgba(0,0,0,.25)}
+main.tb[data-skin="retro"] .tb-face{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;height:84px;padding:14px 45px;border:3px solid #242b29;border-radius:8px 8px 38px 38px;color:#c6bb9c;
+  background:linear-gradient(160deg,#67706a,#36413e 36%,#242e2c 75%,#171d1c);box-shadow:inset 0 2px 2px rgba(196,210,188,.36),inset 0 -6px 8px #101817,0 9px 5px rgba(30,37,35,.4)}
+main.tb[data-skin="retro"] .tb-plaque{border:1px solid #af9f73;border-radius:4px;padding:6px 14px;font:700 21px Georgia,serif;letter-spacing:3px;color:#dacda9;text-shadow:0 1px #000}
+main.tb[data-skin="retro"] .tb-plaque small{display:block;text-align:center;font-size:7px;letter-spacing:2.5px;margin-top:4px;font-weight:700}
+main.tb[data-skin="retro"] .tb-status{font:700 9px Georgia,serif;letter-spacing:2px;color:#bcbaa3}
+main.tb[data-skin="retro"] .tb-lamp{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:8px;background:#e1b65a;box-shadow:0 0 9px #e2ac55;vertical-align:1px}
+main.tb[data-skin="retro"] .tb-machine.strike .tb-lamp{background:#f2edb6;box-shadow:0 0 13px #ffeaa0}
+/* 설정 줄 */
+main.tb[data-skin="retro"] .tb-retro-set{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;margin:18px 0 0;padding:12px 20px;border:1px solid #c7bba8;border-radius:8px;background:#e7dece;font-size:12px;color:#51493c}
+.tb-rs{display:flex;align-items:center;gap:8px;font:700 11px Georgia,'Noto Serif KR',serif;letter-spacing:.06em}
+.tb-rs input[type=range]{width:96px;accent-color:#78573d}
+.tb-rs input[type=checkbox]{accent-color:#7b5942;width:16px;height:16px}
+.tb-rs select{border:1px solid #b8a994;border-radius:4px;background:#f2e8d6;color:#4d4235;padding:6px 8px;font-size:12px}
+main.tb[data-skin="retro"] .tb-retro-set .tb-chip{margin-left:auto;background:#f2e8d6;border-color:#b8a994;color:#4d4235}
+/* 키보드 = 타자기 아랫몸 + 둥근 키캡 */
+main.tb[data-skin="retro"] .tb-kb{background:linear-gradient(150deg,#515d57,#27332f 55%,#1e2624);border:3px solid #26332e;border-radius:24px 24px 55px 55px;padding:20px 35px 27px;box-shadow:inset 0 4px 4px rgba(255,255,255,.15),inset 0 -8px 7px rgba(20,28,25,.5),0 13px 17px rgba(49,45,40,.33)}
+main.tb[data-skin="retro"] .tb-kb-h b,main.tb[data-skin="retro"] .tb-kb-ic{color:#e5d4b2}
+main.tb[data-skin="retro"] .tb-kb-h small,main.tb[data-skin="retro"] .tb-kb-note{color:#aeb4a4}
+main.tb[data-skin="retro"] .tb-tg{color:#c9cebb}
+main.tb[data-skin="retro"] .tb-tg span{color:#e7b98d}
+main.tb[data-skin="retro"] .tb-keys{max-width:865px;gap:7px}
+main.tb[data-skin="retro"] .tb-kr{gap:7px}
+main.tb[data-skin="retro"] .tb-k{height:43px;border-radius:50%/34%;border:2px solid #b3a68b;border-bottom:5px solid #8d8778;background:radial-gradient(ellipse at 34% 25%,#fff8e7,#d5cfbe 75%);box-shadow:inset 0 2px 2px #fff,0 5px 1px #192522,0 6px 4px rgba(16,21,19,.8)}
+main.tb[data-skin="retro"] .tb-k b{color:#32352f;font-family:Georgia,'Noto Serif KR',serif}
+main.tb[data-skin="retro"] .tb-k small{color:#6c726d}
+main.tb[data-skin="retro"] .tb-k.fn{background:radial-gradient(at 35% 23%,#75847a,#45554d);border-color:#8d9184}
+main.tb[data-skin="retro"] .tb-k.fn b{color:#faf0d7}
+main.tb[data-skin="retro"] .tb-k.next{background:radial-gradient(ellipse at 34% 25%,#fff3d6,#e7b98d 80%);border-color:#c98f62}
+main.tb[data-skin="retro"] .tb-k.down{background:#e7b98d;transform:translateY(4px);box-shadow:inset 0 2px 5px #8b593a,0 1px #192522}
+main.tb[data-skin="retro"] .tb-k.down b,main.tb[data-skin="retro"] .tb-k.down small{color:#32352f}
+main.tb[data-skin="retro"] .tb-pager .tb-nav.next:not(:disabled){color:#a8563f}
+@media(max-width:1000px){main.tb[data-skin="retro"] .tb-machine{padding:38px 16px 0}main.tb[data-skin="retro"] .tb-face{padding:14px 26px}main.tb[data-skin="retro"] .tb-plaque{font-size:15px}}
+@media(max-width:760px){
+  main.tb[data-skin="retro"] .tb-machine{padding:30px 6px 0}
+  main.tb[data-skin="retro"] .tb-spine{display:none}
+  main.tb[data-skin="retro"] .tb-carriage{top:0}
+  main.tb[data-skin="retro"] .tb-rail{height:24px;transform:translateX(calc(var(--col,0) * -1px))}
+  main.tb[data-skin="retro"] .tb-roller{width:22px;height:32px}
+  main.tb[data-skin="retro"] .tb-lever{width:35px}
+  main.tb[data-skin="retro"] .tb-face{height:58px;padding:8px 16px;border-radius:5px 5px 20px 20px}
+  main.tb[data-skin="retro"] .tb-plaque{font-size:11px;letter-spacing:1px;padding:4px 8px}
+  main.tb[data-skin="retro"] .tb-status{font-size:7px;letter-spacing:.5px}
+  main.tb[data-skin="retro"] .tb-ribbon{margin:-7px 12px 0}
+  main.tb[data-skin="retro"] .tb-retro-set{gap:10px 16px;padding:12px}
+  main.tb[data-skin="retro"] .tb-kb{padding:16px 8px 14px;border-radius:18px 18px 32px 32px}
+  main.tb[data-skin="retro"] .tb-keys,main.tb[data-skin="retro"] .tb-kr{gap:3px}
+  main.tb[data-skin="retro"] .tb-k{height:34px;border-width:1px;border-bottom-width:3px}
+}
+@media(prefers-reduced-motion:reduce){main.tb[data-skin="retro"] .tb-rail,main.tb[data-skin="retro"] .tb-book{transition:none}}
+/* 필사 인쇄: 이 책에서 쓴 쪽만 A4로 */
+@media print{
+  @page{size:A4;margin:22mm 20mm}
+  body>header,body>footer,.tb-topw,#tbShelf,#tbRead,.tb-ov,.tb-toast{display:none!important}
+  body,main.tb{background:#fff!important;padding:0!important;min-height:0!important}
+  .tb-print{display:block!important;color:#111}
+  .tb-print h1{font-size:20pt;margin:0 0 4pt}
+  .tb-print .by{font-size:9pt;color:#666;margin:0 0 16pt;font-family:'Pretendard Variable',sans-serif}
+  .tb-print .pp{white-space:pre-wrap;font-size:12pt;line-height:2;margin:0 0 14pt;word-break:keep-all;overflow-wrap:anywhere}
+}
