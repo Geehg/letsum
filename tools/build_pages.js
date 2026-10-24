@@ -304,7 +304,9 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
     const stats = [[all.length.toLocaleString(), "권", "서가의 작품"], [Math.round(chars / 1e4).toLocaleString(), "만 자", "필사할 수 있는 본문"], [authors, "명", "작가"], [`${ko.length}·${en.length}`, "", "한국 근대문학 · 영어 고전"]]
       .map(([v, u, k]) => `<div><b>${v}<small>${u}</small></b><span>${k}</span></div>`).join("");
     const picks = idx.themes.flatMap((x) => x.books).filter((x) => x.author !== "필사독서 예문")
-      .map((x) => `<a class="ti-book" href="${TS}/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color};--ci:${x.ink || "#fff"}"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></a>`).join("");
+      .map((x) => x.cover
+        ? `<a class="ti-book has-img" href="${TS}/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color}" aria-label="${esc(x.title)} — ${esc(x.author)}"><img src="img/typing/${encodeURIComponent(x.id)}.webp?v=${x.cover}" alt="" loading="lazy"><span class="ti-hv"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></span></a>`
+        : `<a class="ti-book" href="${TS}/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color};--ci:${x.ink || "#fff"}"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></a>`).join("");
     let page = fs.readFileSync(ip, "utf8");
     page = page.replace(/<!--TI:STATS-->[\s\S]*?<!--\/TI:STATS-->/, `<!--TI:STATS-->${stats}<!--/TI:STATS-->`).replace(/<!--TI:PICKS-->[\s\S]*?<!--\/TI:PICKS-->/, `<!--TI:PICKS-->${picks}<!--/TI:PICKS-->`);
     fs.writeFileSync(ip, page);

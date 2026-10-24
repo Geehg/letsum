@@ -180,7 +180,7 @@
   function bookCard(b) {
     const p = progressOf(b.id); const done = (p.completed || []).length; const n = b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330)); // 열기 전에는 글자 수로 어림
     const pct = b.pageCount ? Math.round(done / b.pageCount * 100) : 0;
-    return `<a class="tb-card" href="#/read/${encodeURIComponent(b.id)}">${cover(b)}<span class="tb-cm"><b>${esc(b.title)}</b><small>${esc(b.author)} · ${b.nparts > 1 ? `${b.nparts}${b.poem ? "편" : "장"} · ` : ""}${(b.chars || 0) >= 10000 ? `${Math.round(b.chars / 10000).toLocaleString()}만` : (b.chars || 0).toLocaleString()}자 · ${b.pageCount ? "" : "약 "}${n.toLocaleString()}쪽</small>
+    return `<a class="tb-card${b.cover ? " cov" : ""}" href="#/read/${encodeURIComponent(b.id)}" aria-label="${esc(b.title)} — ${esc(b.author)}">${cover(b)}${b.cover && done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}<span class="tb-cm"><b>${esc(b.title)}</b><small>${esc(b.author)} · ${b.nparts > 1 ? `${b.nparts}${b.poem ? "편" : "장"} · ` : ""}${(b.chars || 0) >= 10000 ? `${Math.round(b.chars / 10000).toLocaleString()}만` : (b.chars || 0).toLocaleString()}자 · ${b.pageCount ? "" : "약 "}${n.toLocaleString()}쪽</small>
       <span class="tb-cprog"><i style="width:${pct}%"></i></span><span class="tb-cgo">${done ? (pct >= 100 ? "완필 ✓ 다시 쓰기" : `이어 쓰기 · ${done}/${n}쪽`) : "필사 시작"}<em>→</em></span></span></a>`;
   }
   function renderShelf() {

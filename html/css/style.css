@@ -2115,3 +2115,25 @@ main.tb[data-skin="retro"] .tb-pager .tb-nav.next:not(:disabled){color:#a8563f}
 @media(max-width:860px){.ti-hero-in{grid-template-columns:1fr;gap:28px;padding-top:34px;padding-bottom:34px}.ti-feats{grid-template-columns:1fr 1fr}.ti-stats{grid-template-columns:1fr 1fr}.ti-stats>div:nth-child(3){border-left:0;padding-left:0}.ti-stats>div:nth-child(n+3){border-top:1px solid var(--rule)}}
 @media(max-width:560px){.ti-feats{grid-template-columns:1fr}.ti-demo{padding:18px}.ti-demo-o{font-size:18px}.ti-demo-w{font-size:17px}.ti-books{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.ti-demo-w i{animation:none}}
+
+/* 생성 표지가 있는 책: 표지만 보이고 제목·저자·분량은 마우스를 올리거나 키보드로 고를 때만 */
+.tb-card.cov{position:relative;background:none;border:0;box-shadow:none;overflow:visible;border-radius:0}
+.tb-card.cov:hover{transform:translateY(-4px)}
+.tb-card.cov .tb-cv{margin:0;border-radius:3px 7px 7px 3px;box-shadow:6px 10px 20px rgba(40,30,20,.22)}
+main.tb[data-skin="ink"] .tb-card.cov .tb-cv{border-radius:0;box-shadow:none;outline:1px solid var(--ink)}
+.tb-card.cov .tb-cm{position:absolute;inset:0;z-index:2;justify-content:flex-end;gap:5px;padding:18px 16px 16px;border-radius:3px 7px 7px 3px;background:rgba(18,18,16,.86);color:#f4f2ec;opacity:0;transition:opacity .18s}
+.tb-card.cov:hover .tb-cm,.tb-card.cov:focus-visible .tb-cm{opacity:1}
+.tb-card.cov .tb-cm b{font-size:16px;color:#fff}
+.tb-card.cov .tb-cm small{color:rgba(244,242,236,.75)}
+.tb-card.cov .tb-cprog{background:rgba(255,255,255,.22)}
+.tb-card.cov .tb-cprog i{background:#d7f34b}
+.tb-card.cov .tb-cgo,.tb-card.cov:hover .tb-cgo{color:#d7f34b;margin-top:6px}
+.tb-card.cov .tb-cgo em{color:#d7f34b;background:none!important}
+.tb-cbar{position:absolute;left:0;right:0;bottom:0;z-index:1;height:4px;background:rgba(0,0,0,.25);border-radius:0 0 7px 3px;overflow:hidden}
+.tb-cbar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p);background:#d7f34b}
+.tb-grid .tb-card.cov .tb-cm b{font-size:14.5px}
+/* letsum.app 소개 페이지의 대표 작품 */
+.ti-book.has-img{position:relative;padding:0;background:var(--c);overflow:hidden}
+.ti-book.has-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ti-book.has-img .ti-hv{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:14px;background:rgba(18,18,16,.86);color:#f4f2ec;opacity:0;transition:opacity .18s}
+.ti-book.has-img:hover .ti-hv,.ti-book.has-img:focus-visible .ti-hv{opacity:1}
