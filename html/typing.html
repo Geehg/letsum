@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=87">
+<link rel="stylesheet" href="css/style.css?v=88">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -71,13 +71,7 @@
   <!-- 필사 -->
   <section id="tbRead" hidden aria-label="필사">
     <div class="wrap tb-app">
-      <aside class="tb-side" aria-label="나의 서재">
-        <p class="tb-side-h"><span>MY READING ROOM</span><span id="tbSideN">00</span></p>
-        <div class="tb-side-list" id="tbSideList"></div>
-        <button class="tb-side-add" id="tbSideAdd" type="button"><b>＋</b> 내 글 추가하기</button>
-        <div class="tb-side-foot"><p class="tb-quote">“어떤 문장은 읽을 때보다<br>직접 쓸 때 오래 남는다.”</p><p class="tb-side-v">LETSUM 필사독서<br>브라우저 저장 · 로그인 불필요</p></div>
-      </aside>
-      <div class="tb-main">
+      <div class="tb-left">
         <div class="tb-intro">
           <div><p class="tb-kick">READ · TYPE · REMEMBER</p><h2 class="tb-h">읽는 것을 넘어, <em>쓰는 독서.</em></h2><p class="tb-sub">책의 문장을 따라 타이핑하세요. 한 쪽씩, 나만의 완독 기록이 쌓입니다.</p></div>
           <div class="tb-streak"><i aria-hidden="true">✦</i><div><b id="tbDoneN">0</b><small>완료한 쪽</small></div><div><b id="tbStreakN">0</b><small>연속 필사일</small></div></div>
@@ -88,6 +82,14 @@
           <div><span>입력 정확도</span><b id="stAcc">100<small>%</small></b><small id="stErr">오타 0회</small></div>
           <div><span>필사 시간</span><b id="stTime">00:00</b><small>이 쪽 기준</small></div>
         </div>
+        <aside class="tb-side" aria-label="나의 서재">
+          <p class="tb-side-h"><span>MY READING ROOM</span><span id="tbSideN">00</span></p>
+          <div class="tb-side-list" id="tbSideList"></div>
+          <button class="tb-side-add" id="tbSideAdd" type="button"><b>＋</b> 내 글 추가하기</button>
+          <div class="tb-side-foot"><p class="tb-quote">“어떤 문장은 읽을 때보다<br>직접 쓸 때 오래 남는다.”</p><p class="tb-side-v">LETSUM 필사독서<br>브라우저 저장 · 로그인 불필요</p></div>
+        </aside>
+      </div>
+      <div class="tb-main">
         <div class="tb-reading">
           <div class="tb-rh">
             <div class="tb-rt"><p class="tb-rk">NOW READING<span class="sep">/</span><span id="tbAuthor"></span><a id="tbSource" target="_blank" rel="noopener">출처</a></p><h2 id="tbTitle"></h2><label class="tb-toc" id="tbTocWrap" hidden><span>목차</span><select id="tbToc" aria-label="목차"></select></label></div>
