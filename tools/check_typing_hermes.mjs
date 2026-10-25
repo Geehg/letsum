@@ -35,7 +35,7 @@ function assertClosed(name){
  for(let i=0;i<idx.length;i+=3){const ids=[welded[idx[i]],welded[idx[i+1]],welded[idx[i+2]]];if(new Set(ids).size<3)continue;for(let j=0;j<3;j++){const e=[ids[j],ids[(j+1)%3]].sort().join('|');edges.set(e,(edges.get(e)||0)+1);}}
  assert([...edges.values()].every(n=>n===2),name+' has no open or multiply joined edges');
 }
-for(const name of ['Cast_Perimeter','Bottom_Tray','Black_Keyboard_Well','Cap_Space','Cap_KeyA','Cap_Enter'])assertClosed(name);
+for(const name of ['Ribbon_Hood','Cast_Perimeter','Bottom_Tray','Black_Keyboard_Well','Cap_Space','Cap_KeyA','Cap_Enter'])assertClosed(name);
 const shellBounds=new T.Box3().setFromObject(nodes.Cast_Perimeter),trayBounds=new T.Box3().setFromObject(nodes.Bottom_Tray);
 assert(trayBounds.min.x>shellBounds.min.x&&trayBounds.max.x<shellBounds.max.x&&trayBounds.min.z>shellBounds.min.z&&trayBounds.max.z<shellBounds.max.z,'bottom tray is inset within enclosure');
 

@@ -36,7 +36,7 @@
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=5');
+   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.

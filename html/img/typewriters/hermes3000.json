@@ -22,7 +22,7 @@
     "fan segment, individual bars and two-row slug faces",
     "return lever"
   ],
-  "revision": 11,
+  "revision": 12,
   "width_m": 0.468,
   "layout": "61-key typing block, function row and navigation cluster removed; remaining keys uniformly enlarged 28%, centered in five rows",
   "lighting": "Runtime studio reflection environment, coated enamel, fine surface grain, VSM shadows and contact shadow",
@@ -67,5 +67,6 @@
     "Groove/slot tessellation and PBR numeric values are rendering choices, not measured parts specifications.",
     "No internal escapement, ratchet or spring transmission is asserted as reconstructed."
   ],
-  "finish_revision": "Rebuilt closed enclosure and keyboard bed, inset bottom tray, lowered decorative linkage, shared cap corner radii and surface-conforming legends. All clearances are authored, not factory measurements."
+  "finish_revision": "Rebuilt closed enclosure and keyboard bed, inset bottom tray, lowered decorative linkage, shared cap corner radii and surface-conforming legends. All clearances are authored, not factory measurements.",
+  "hood_revision": "Photo-proportioned taller convex crown, inward shoulders and extended front apron, transformed normals and relocated front controls. Authored visual adaptation, not measured CAD. Reproduce from v11 GLB with tools/refine_hermes_hood.py."
 }
