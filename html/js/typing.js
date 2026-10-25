@@ -120,7 +120,7 @@
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
     updateSoundControls(); $("tbPaper").value = $("tbMain").dataset.paper;
-    $("tbMain").dataset.table = ["gingham", "floral", "check", "linen"].includes(retro.table) ? retro.table : "gingham";
+    $("tbMain").dataset.table = ["gingham", "floral", "check", "linen", "wood"].includes(retro.table) ? retro.table : "gingham";
     $("tbTable").value = $("tbMain").dataset.table;
     window.LSTypewriterAudio?.configure(retro);
   }

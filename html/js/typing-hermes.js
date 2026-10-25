@@ -130,6 +130,16 @@
    const clothCache=new Map();let clothTexture,clothRepeat=12;
    function fabric(style){
     if(clothCache.has(style))return clothCache.get(style);
+    if(style==='wood'){
+     // User-provided wood photograph, unchanged. Mirror wrapping meets every
+     // tile edge continuously without stretching the grain across the viewport.
+     const texture=new T.TextureLoader().load('/img/typewriters/table-light-wood.png?v=1',()=>{if(!disposed)wake();});
+     texture.encoding=T.sRGBEncoding;texture.wrapS=texture.wrapT=T.MirroredRepeatWrapping;
+     texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;
+     texture.anisotropy=Math.min(8,renderer.capabilities?.getMaxAnisotropy?.()||1);
+     clothCache.set(style,texture);return texture;
+    }
+
     const size=512,pixels=new Uint8Array(size*size*4);let seed=73;
     const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
     // Two woven repeats per tile. Broad yarn bands, darker intersections and
@@ -190,13 +200,20 @@
     clothPositions.setZ(i,drape*(Math.sin(x*23+depth*5)*.0016+Math.sin(x*9-depth*12)*.001));
    }
    clothGeometry.computeVertexNormals();
+   const clothRestPositions=clothPositions.array.slice();
    const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:null,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
    ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
    function applyTablecloth(){
-    const style=['gingham','floral','check','linen'].includes(main.dataset.table)?main.dataset.table:'gingham';
-    clothTexture=fabric(style);clothRepeat=style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
+    const style=['gingham','floral','check','linen','wood'].includes(main.dataset.table)?main.dataset.table:'gingham';
+    clothTexture=fabric(style);clothRepeat=style==='wood'?4:style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
     clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2);
-    ground.material.map=clothTexture;ground.material.needsUpdate=true;ground.userData.fabric=style;
+    ground.material.map=clothTexture;ground.material.roughness=style==='wood'?.64:.96;
+    // Compensate the room/ACES desaturation against the supplied photograph.
+    ground.material.color.setRGB(style==='wood'?1.25:1,style==='wood'?.74:1,style==='wood'?.60:1);
+    ground.material.bumpMap=style==='wood'?null:grain;ground.material.envMapIntensity=style==='wood'?.18:.12;
+    for(let i=0;i<clothPositions.count;i++)clothPositions.setZ(i,style==='wood'?0:clothRestPositions[i*3+2]);
+    clothPositions.needsUpdate=true;clothGeometry.computeVertexNormals();
+    ground.material.needsUpdate=true;ground.userData.fabric=style;
    }
    applyTablecloth();
    observe(MutationObserver,()=>{applyTablecloth();wake();},main,{attributes:true,attributeFilter:['data-table']});
