@@ -117,7 +117,8 @@
      const i=(y*size+x)*4,gridX=x%128<6,gridY=y%128<6;
      const ink=style==='check'?(gridX&&gridY?.68:gridX||gridY?.54:0):0;
      const weave=((x%2?1:-1)+(y%2?1:-1))*.55+(rand()-.5)*2.6;
-     const base=style==='check'?[170,187,177]:style==='linen'?[218,204,181]:[239,231,209];
+     // Floral albedo compensates for the warm key light/ACES washout; compare rendered colors, not raw pixels.
+     const base=style==='check'?[170,187,177]:style==='linen'?[218,204,181]:[226,200,132];
      for(let c=0;c<3;c++)pixels[i+c]=Math.round(base[c]*(1-ink)+[91,121,128][c]*ink+weave);
      pixels[i+3]=255;
     }
@@ -132,19 +133,19 @@
     if(style==='floral'){
      for(let row=0;row<7;row++)for(let col=0;col<8;col++){
       const cx=(col+.5+(rand()-.5)*.75)*size/8,cy=(row+.5+(rand()-.5)*.72)*size/7;
-      const angle=rand()*Math.PI*2,scale=.75+rand()*.5,co=Math.cos(angle),si=Math.sin(angle);
+      const angle=rand()*Math.PI*2,scale=1.9+rand()*1.0,co=Math.cos(angle),si=Math.sin(angle);
       const stamp=(x,y,rx,ry,a,color,opacity)=>oval(cx+(x*co-y*si)*scale,cy+(x*si+y*co)*scale,rx*scale,ry*scale,a+angle,color,opacity);
       // Slender botanical sprigs and irregular, softly printed golden petals.
-      stamp(0,4,.6,8,-.10,[144,150,100],.6);
-      stamp(-2,6,3.2,1.3,-.55,[160,166,109],.7);stamp(2.3,9,3.6,1.4,.65,[157,164,108],.65);
+      stamp(0,4,.6,8,-.10,[117,126,64],.78);
+      stamp(-2,6,3.2,1.3,-.55,[129,140,71],.86);stamp(2.3,9,3.6,1.4,.65,[126,139,70],.83);
       for(let k=0;k<5;k++){
        const a=k*Math.PI*2/5+rand()*.35,x=Math.cos(a)*2.1,y=Math.sin(a)*2.1-3;
-       stamp(x,y,1.9+rand(),3.3+rand()*.8,a-Math.PI/2,[229,180+Math.floor(rand()*24),104],.88);
+       stamp(x,y,1.9+rand(),3.3+rand()*.8,a-Math.PI/2,[202,112+Math.floor(rand()*24),42],.95);
       }
-      stamp(0,-3,1.35,1.35,0,[184,126,59],.82);
-      stamp(3.6,1.8,1.7,2.7,-.4,[225,163,82],.8);
+      stamp(0,-3,1.35,1.35,0,[171,99,28],.9);
+      stamp(3.6,1.8,1.7,2.7,-.4,[204,120,35],.9);
       // A few tiny detached buds break up the repeat without a rigid grid.
-      if(rand()>.4)stamp(-12,20,1.3,2.2,.5,[222,169,92],.7);
+      if(rand()>.4)stamp(-12,20,1.3,2.2,.5,[204,130,48],.88);
      }
     }
     const texture=new T.DataTexture(pixels,size,size,T.RGBAFormat);
@@ -163,7 +164,7 @@
    ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
    function applyTablecloth(){
     const style=['floral','check','linen'].includes(main.dataset.table)?main.dataset.table:'floral';
-    clothTexture=fabric(style);clothRepeat=style==='check'?45:12;
+    clothTexture=fabric(style);clothRepeat=style==='check'?45:style==='floral'?18:12;
     clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2);
     ground.material.map=clothTexture;ground.material.needsUpdate=true;ground.userData.fabric=style;
    }
