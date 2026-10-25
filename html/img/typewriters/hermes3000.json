@@ -1,8 +1,8 @@
 {
   "id": "hermes3000",
   "label": "Hermes 3000 · 87키",
-  "reference": "User-provided first-generation Hermes 3000 reference sheets",
-  "accuracy": "Hermes-inspired 87-key adaptation from user reference images, not an exact historical replica or measured CAD. Width rebuilt from 378 to 468 mm without root stretching. Synthesized sound, not real recordings.",
+  "reference": "Paillard manual 3003 B and TWDB owner photographs, with user reference sheets as visual targets",
+  "accuracy": "87-key web adaptation. Component relationships checked against Paillard instruction manual 3003 B and primary photographs of serial 3138796. Not a measured reconstruction: case width, clearances, curvature, platen radius, groove counts, material chemistry and timing are not factory-verified. Synthesized sound, not recordings.",
   "project": "https://higgsfield.ai/3d-jutsu/97a11171-2038-4d28-837e-087e65dd9170",
   "method": "Articulated GLB with fixed symmetrical front camera and projected native HTML textarea paper",
   "manual": "https://www.christopherlong.co.uk/oth/writing/TypewriterHermes3000manual.pdf",
@@ -10,18 +10,61 @@
   "typebars": 47,
   "text": "The same tbInput node moves into the projected paper and restores when changing modes; no duplicate draft or text renderer. IME commits drive carriage spacing.",
   "parts": [
-    "rounded cast body",
+    "continuous curved side cheeks and recessed spacebar front lip (87-key adaptation)",
     "dished mint keycaps",
-    "typebasket",
-    "typebars and slugs",
-    "two-color ribbon carrier",
-    "platen and reeded knobs",
-    "carriage rails and ruler",
+    "carriage channel and separate end cheeks",
+    "paper bail with inset scale and two margin indicator bands",
+    "rubber platen and ridged knobs",
+    "paper table, supports and side guide",
+    "transparent body-fixed card holders with line graduations",
+    "fixed type guide and moving ribbon carrier",
+    "continuous black-over-red 13 mm ribbon through side guides",
+    "fan segment, individual bars and two-row slug faces",
     "return lever"
   ],
-  "revision": 6,
+  "revision": 9,
   "width_m": 0.468,
   "layout": "ANSI 87-key tenkeyless adaptation, individually placed standard key widths",
   "lighting": "Runtime studio reflection environment, coated enamel, fine surface grain, VSM shadows and contact shadow",
-  "motion": "Independent key travel, 42 ms typebar strike, delayed 58 ms carriage step, 390 ms return and 180 ms paper feed; platen angle follows travel / 18 mm radius"
+  "motion": "Independent key travel, 42 ms typebar strike, delayed 58 ms carriage step, 390 ms return and 180 ms paper feed; platen angle follows travel / 18 mm radius",
+  "dimensions_status": "width_m and other mesh dimensions are authored parameters for this 87-key adaptation; no verified keyboard-cheek or bezel measurements available",
+  "verified_facts": [
+    {
+      "part": "paper bail / margins",
+      "source": "Paillard manual p.6, components 18,23,25",
+      "finding": "Left/right margin positions are displayed inside paper bail; not an independent lower ruler."
+    },
+    {
+      "part": "card holders",
+      "source": "Paillard manual p.3, components 20,24,26",
+      "finding": "Transparent holders have graduations showing writing line; not solid metal blocks."
+    },
+    {
+      "part": "ribbon",
+      "source": "Paillard manual pp.8-9, components 9,37,39",
+      "finding": "1/2 inch (13 mm); black/red ribbon red at bottom; separate side guides and carrier."
+    },
+    {
+      "part": "platen knobs",
+      "source": "Paillard manual pp.2,6, components 10,35",
+      "finding": "Both knobs feed paper; left knob can be pulled out to release platen indexing."
+    },
+    {
+      "part": "bezel / caps / slugs",
+      "source": "https://typewriterdatabase.com/1962-hermes-3000.17953.typewriter",
+      "finding": "Owner photos show rounded keyboard cheeks, low central spacebar recess, dished caps and two-row reversed slug faces; no manufacturing dimensions provided."
+    }
+  ],
+  "sources": [
+    "https://site.xavier.edu/polt/typewriters/Hermes3000.pdf",
+    "https://www.christopherlong.co.uk/oth/writing/TypewriterHermes3000manual.pdf",
+    "https://typewriterdatabase.com/1962-hermes-3000.17953.typewriter"
+  ],
+  "adaptation_limits": [
+    "87 keys and 47 web printable bars are custom, not original keyboard count.",
+    "Scale divisions and indicator positions follow the web sheet, not a measured factory scale.",
+    "Paper-release, margin-stop and line-spacing levers are modeled but do not yet expose manual pointer controls.",
+    "Groove/slot tessellation and PBR numeric values are rendering choices, not measured parts specifications.",
+    "No internal escapement, ratchet or spring transmission is asserted as reconstructed."
+  ]
 }

@@ -35,10 +35,11 @@
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=2');
+   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=3');
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
-   nodes.Paper.visible=false;
+   // Invisible depth surface lets the HTML sheet hide the paper table behind it.
+   nodes.Paper.visible=true;nodes.Paper.castShadow=false;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
    // Window-shaped reflection cards describe chrome and enamel without a network HDRI.
    const room=new T.Scene();room.background=new T.Color(.055,.055,.055);
    for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
@@ -59,6 +60,17 @@
     else {m=old.clone();m.envMapIntensity=.3;}
     materials.set(old,m);o.material=m;
    });
+   // Keep small steel mechanisms readable under the broad reflection cards.
+   const mechanismMetal=new T.MeshStandardMaterial({color:new T.Color(.22,.25,.23),metalness:.95,roughness:.32,envMapIntensity:.55});
+   asset.scene.traverse(o=>{if(o.isMesh&&/^(TypebarArm_|TypeSlug_|Type_Guide_|Ribbon_Carrier_)/.test(o.name))o.material=mechanismMetal;});
+   nodes.Paper.material=new T.MeshBasicMaterial({colorWrite:false,depthWrite:true,side:T.DoubleSide});
+   for(const name of ['Card_Holder_Left','Card_Holder_Right']){
+    const m=nodes[name].material;m.transparent=true;m.opacity=.16;m.depthWrite=false;m.side=T.DoubleSide;
+    nodes[name].castShadow=false;
+   }
+   // Ribbon side guides stay fixed while the center follows the carrier lift.
+   const ribbonPaths=['Ribbon_Path_Black','Ribbon_Path_Red'].map(n=>nodes[n]);
+   for(const o of ribbonPaths){o.material=o.material.clone();o.material.side=T.DoubleSide;o.userData.basePositions=o.geometry.attributes.position.array.slice();o.geometry.attributes.position.setUsage(T.DynamicDrawUsage);}
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
@@ -91,7 +103,13 @@
    const camera=new T.OrthographicCamera();camera.position.set(0,.60,.73);camera.lookAt(0,.205,0);
    view.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
    const keys=Object.values(nodes).filter(o=>o.name.startsWith('Key_')),bars=Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name));
-   keys.forEach(o=>{o.userData.rest=o.position.clone();o.userData.restQ=o.quaternion.clone();});bars.forEach(o=>o.userData.rest=o.quaternion.clone());
+   keys.forEach(o=>{o.userData.rest=o.position.clone();o.userData.restQ=o.quaternion.clone();});bars.forEach(o=>{
+    o.userData.rest=o.quaternion.clone();
+    const slug=o.children.find(c=>c.name.startsWith('TypeSlug_'));
+    const restDirection=slug.position.clone().applyQuaternion(o.quaternion).normalize();
+    const strikeDirection=new T.Vector3(0,.164,-.119).sub(o.position).normalize();
+    o.userData.strike=new T.Quaternion().setFromUnitVectors(restDirection,strikeDirection).multiply(o.quaternion);
+   });
    const barFor=new Map(bars.map(o=>[o.userData.keyCode,o])),carriage=nodes.Carriage,platen=nodes.Platen,guide=nodes.Ribbon_Guide,lever=nodes.Return_Lever,basket=nodes.Typebasket;
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
@@ -155,17 +173,25 @@
      const h=hits[i],age=now-h.time;if(age>=160){hits.splice(i,1);continue;}
      // Fast strike, brief contact, slower spring return; no sinusoidal slow approach.
      let s=age<42?smooth(clamp(age/42)):age<50?1:1-smooth(clamp((age-50)/110));if(!motion)s=0;
-     h.bar.quaternion.copy(h.bar.userData.rest).multiply(delta.setFromAxisAngle(xAxis,-1.05*s));lift=Math.max(lift,s);impact=Math.max(impact,Math.max(0,1-Math.abs(age-46)/12));
+     h.bar.quaternion.slerpQuaternions(h.bar.userData.rest,h.bar.userData.strike,s);lift=Math.max(lift,s);impact=Math.max(impact,Math.max(0,1-Math.abs(age-46)/12));
     }
-    guide.position.y=guideY+lift*.008;basket.position.y+=( (shift&&motion?-.004:0)-basket.position.y)*(1-Math.exp(-dt*35));
+    guide.position.y=guideY+lift*.008;
+    for(const o of ribbonPaths){
+     const p=o.geometry.attributes.position,b=o.userData.basePositions;
+     for(let i=0;i<p.count;i++){const w=1-smoothRange(.012,.101,Math.abs(b[i*3]));p.setY(i,b[i*3+1]+lift*.008*w);}
+     p.needsUpdate=true;o.geometry.computeVertexNormals();
+    }
+    basket.position.y+=( (shift&&motion?-.004:0)-basket.position.y)*(1-Math.exp(-dt*35));
     if(!motion){currentX=targetX;currentFeed=feed;drive=feedDrive=null;}
     if(drive){const t=clamp((now-drive.start)/drive.duration);currentX=drive.from+(drive.to-drive.from)*smooth(t);if(t===1)drive=null;}
     if(feedDrive){const t=clamp((now-feedDrive.start)/feedDrive.duration);currentFeed=feedDrive.from+(feedDrive.to-feedDrive.from)*smooth(t);if(t===1)feedDrive=null;}
     carriage.position.x=currentX;carriage.position.y=motion?impact*.0002:0;
-    // Roller angle is derived from paper travel / actual 18 mm platen radius.
+    // 18 mm is the authored mesh radius, not a measured Hermes specification.
     const angle=-currentFeed/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
     const rt=now-returnAt;lever.quaternion.copy(leverQ);
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
+    const sheetHeight=.222*fullHeight/paperHeight;
+    nodes.Paper.scale.y=fullHeight/paperHeight;nodes.Paper.position.y=.396+currentFeed-sheetHeight/2;
     placePaper();renderer.render(scene,camera);
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }

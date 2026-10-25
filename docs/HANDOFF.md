@@ -262,3 +262,7 @@ img.save("sample.png")
 - 검증 node tools/check_typing_hermes.mjs: 실제 GLB/Three.js로 87키·47바·타격점·키복귀·모디파이어·캐리지·IME·종이이송·롤러축·마진벨 중복방지·모델전환·WebGL 복원 검사. 실제 브라우저 데스크톱 입력/Enter, 390px 모바일 표시 확인. validate.py 오류0, 기존 경고264.
 
 - 2026-10-25: 키캡 상판/두께면 명암 보강. typing-hermes.js에서 키캡에만 로컬 높이·법선 기반 vertex color를 적용(밝은 상판, 짙은 스커트/아랫단, 얇은 상단 림 반사). 공유 물리 재질 하나로 draw call 수 유지, 노브·몸체·기존 GLB/타건 기구는 그대로. typing-hermes.js v3. 브라우저 외형 확인 및 기존 타건 회귀 검사 통과.
+
+- 2026-10-25: Hermes 부품 사실 대조. Paillard 3003 B 제조사 설명서(https://site.xavier.edu/polt/typewriters/Hermes3000.pdf)와 Stephen Hanafin의 실물 일련번호3138796 사진(https://typewriterdatabase.com/1962-hermes-3000.17953.typewriter)을 확인. 원형·사용자 참고 시트·87키 확장 설계를 혼동하지 않는다. **기존 기록의 378→468mm, 롤러 반지름18mm, 동작ms는 제작 설정값이며 실물 측정값이 아님.** 키 영역 여백·베젤 두께·노브 홈 개수·정확한 합금/도금 규격은 검증되지 않았다. JSON accuracy/dimensions_status/verified_facts/adaptation_limits에 근거와 한계를 기록.
+- 외형: 연속 측벽과 스페이스바 앞 낮은 립, 부채꼴 덮개 개구부, 분리된 캐리지 끝판/베어링, 페이퍼 베일 내부 눈금/마진 표시, 종이 받침/지지대, 투명 카드 홀더, 고정 활자 가이드, 움직이는 리본 캐리어와 좌우 가이드, 흑상·적하 13mm 리본, 가시적인 활자봉 휴지 위치 및 2열 역상 글자를 추가. 마진/종이해제/줄간격 레버의 수동 포인터 조작은 미구현. 눈금 수와 위치는 웹 용지에 맞춘 설계. 실측 복원 또는 내부 탈진기 재현으로 소개하지 말 것.
+- 리본 중앙은 캐리어와 함께 올라가고 양끝은 고정 가이드에 유지. 활자봉은 개별 휴지 회전에서 공통 타격점으로 보간. HTML 용지가 뒤쪽 종이 받침을 가리도록 투명 깊이용 mesh를 동기화(텍스트를 중복 렌더하지 않음). 87키 유지. GLB 최종 revision9, typing-hermes.js v4/GLB v3, 편집원본 /Volumes/AI_dev/web/letsum-hermes-3000/hermes3000-verified-v9.blend.
