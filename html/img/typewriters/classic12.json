@@ -1,0 +1,27 @@
+{
+  "id": "classic12",
+  "label": "Classic 12 · 3D 재현",
+  "identification": "Smith-Corona Classic 12 family, provisional identification from supplied cropped photograph",
+  "accuracy": "Visual reconstruction from reference photographs, not measured engineering CAD. Simplified mechanisms and modern text editing including Korean IME.",
+  "creatorTool": "Higgsfield 3D Jutsu / Blender",
+  "project": "https://higgsfield.ai/3d-jutsu/6c078d37-3501-4fc3-83a1-1a019a5d8c88",
+  "references": [
+    "https://blog.naver.com/doctor4you/222148247987",
+    "https://americanhistory.si.edu/collections/object/nmah_1180653",
+    "https://site.xavier.edu/polt/typewriters/SmithCorona70sENFRSPDE.pdf"
+  ],
+  "parts": {
+    "Key_*": "independent key pivots, local Y travel in glTF",
+    "Typebar_0..39": "40 independent typebar pivots, local X stroke",
+    "Ribbon_Guide": "ribbon vibrator, local Y lift",
+    "Carriage": "paper, platen, knobs, ruler, return lever move on X",
+    "Platen": "local Z cylinder rotation",
+    "Paper": "UV mapped sheet with local canvas text",
+    "Return_Lever": "local X return motion"
+  },
+  "library": {
+    "three": "0.128.0",
+    "license": "MIT",
+    "path": "/js/vendor/three/LICENSE"
+  }
+}

@@ -241,3 +241,7 @@ img.save("sample.png")
 - 2026-10-25: 필사 설정을 헤더 **⚙ 설정** 팝업(`#tbSet`, 읽기 화면에서만 보임)으로 — 글꼴(원문·필사)·글자 크기·레트로 타건음·음량·용지·이 쪽 다시 쓰기·인쇄. 표지 옆(`.tb-rh-body`)에는 도서 정보만(NOW READING/저자·연도·출처, 제목, 목차, `#tbInfo` 갈래·편/장·글자·쪽·저작권)과 그 아래 쪽 넘김(`.tb-pager`).
 
 - 필사 서가 히어로: `tools/typing_app.html` + `html/css/typing-hero.css`, 초원·타자기 이미지 `html/img/typing-hero-meadow.webp`. 원본 생성 이미지 `/Volumes/AI_dev/web/letsum-typing-hero/hero-typewriter-meadow.png`. 문구·버튼은 HTML, 기록은 히어로 아래 6칸(모바일 3×2). 읽기 화면에는 적용 안 함.
+
+- 2026-10-25: **Classic 12 3D 타자기** — 운영자 사진의 SCM 로고·CL 표기를 근거로 Classic 12 계열로 잠정 식별(정확한 연식 미확정). Higgsfield 3D Jutsu 프로젝트 `6c078d37-3501-4fc3-83a1-1a019a5d8c88`에서 부품을 분리해 제작. GLB는 `html/img/typewriters/classic12.glb`, 출처·부품 명세는 같은 폴더 JSON. 실측 CAD/물리 시뮬레이션이 아닌 시각적 재현이며, 영어 실물에 한국어 입력·디지털 편집을 결합함.
+- 화면 원본 `tools/typing_app.html`: 레트로에서 모델 선택(3D Classic 12 / 기존 LETSUM 레트로). `html/js/typing-3d.js`가 Three.js r128·GLTFLoader를 같은 도메인에서 지연 로딩. 키캡·40개 활자봉·리본 가이드·캐리지·롤러·복귀 레버와 용지 캔버스가 입력에 연동. `typing.js` carriage에서 `tb:paper` 이벤트를 발행하여 페이지/초안 전환도 반영. 원래 textarea·IME 판정·기록은 그대로 사용. 설정 저장 키 `typebook-v1:model`; CSS `typing-3d.css`로 범위를 한정. 화면 밖·비활성 탭 렌더 중단, 동작 줄이기 설정 존중, WebGL 실패해도 기본 필사 유지.
+- 검증: 390px 모바일·데스크톱 실제 브라우저 표시, 모델 전환, 입력·Enter·Backspace 확인. 실제 GLB와 Three.js 수학을 이용한 동작 검사(키 복원·활자봉·리본·캐리지·레버·롤러 축 유지·한글 텍스트 보존) 통과. `validate.py` 오류 0, 기존 경고 264. 로컬 편집 원본 `/Volumes/AI_dev/web/letsum-typewriter-3d/classic12.blend`, Higgsfield revision 4. 이후 다른 실물 기종은 별도 GLB/부품 명세를 만들어 추가해야 함.

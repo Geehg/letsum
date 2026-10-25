@@ -135,7 +135,7 @@
     } catch (e) { /* 오디오를 못 쓰는 브라우저는 소리 없이 */ }
   }
   function strike() { const m = $("tbMachine"); m.classList.add("strike"); clearTimeout(strikeT); strikeT = setTimeout(() => m.classList.remove("strike"), 90); }
-  function carriage() { // 줄 안에서 친 글자 수만큼 캐리지가 왼쪽으로, Enter면 처음으로
+  function carriage() { document.getElementById("tbInput").dispatchEvent(new Event("tb:paper")); // 줄 안에서 친 글자 수만큼 캐리지가 왼쪽으로, Enter면 처음으로
     if (!isRetro()) return;
     const inp = $("tbInput"), before = inp.value.slice(0, inp.selectionStart), col = chars(before.slice(before.lastIndexOf("\n") + 1)).length;
     $("tbMachine").style.setProperty("--col", String(col % 56));
