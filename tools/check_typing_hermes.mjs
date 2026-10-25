@@ -47,7 +47,7 @@ const standardPixelsPerMeter=paperMatrix()[0]*600/.224;
 function assertPaperInFrame(){
  const [sx,,,sy,x,y]=paperMatrix(),w=sx*600,h=sy*parseFloat(ids.tbHermesPaper.style.height);
  const vw=ids.tbHermesView.clientWidth,vh=ids.tbHermesView.clientHeight,previousWidth=.210*1.5*vh/Math.max(.52,.70/(vw/vh));
- const framedWidth=vw>980?Math.min(previousWidth,(vw-400)/1.86):previousWidth;
+ const framedWidth=vw>980?Math.min(previousWidth,(vw-464)/1.86):previousWidth;
  assert(Math.abs(w-framedWidth)<1e-7,'paper width preserved unless desktop side panels need space');
  assert(x>=0&&x+w<=ids.tbHermesView.clientWidth,'both side edges stay in frame during carriage travel');
  assert(y>=0&&y+h<=ids.tbHermesView.clientHeight,'whole A4 height stays in frame');

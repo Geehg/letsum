@@ -279,3 +279,5 @@ img.save("sample.png")
 - 좌측 실제 도서 표지/제목/저자, 우측 실제 b.pages[i+1] 본문 미리보기 추가. 쪽 변경 시 내용 갱신; 현재 쪽 완료 전 이동 제한과 마지막 쪽 안내 유지. 패널은 종이·캐리지 이동 여유를 남겨 배치하며 좁은 화면은 하단 두 칸. 모바일 빈 무대 높이 축소. typing.js v22, typing-hermes.js v10, typing-retro-focus.js/css v2. 브라우저에서 10px 조절, 미리보기/실제 다음 본문 일치, 마지막 쪽, 기본 레트로 복원, 모바일 확인. 원본 tools/typing_app.html.
 
 - 최초 로딩/창 크기 변경 후 tb:hermes-layout 이벤트로 종이 투영이 확정된 뒤 좌우 패널 폭을 재계산. 세로가 긴 데스크톱에서는 양측 패널과 캐리지 이동 공간을 확보하도록 카메라 최대 배율을 제한. 최종 typing-hermes.js v11 / typing-retro-focus.js v3.
+
+- 2026-10-25: 몰입 좌우 패널 20% 확대(표지 최대200→240px, 다음 쪽226→271.2px). 좌측 제목12px/저자10px. 다음 본문11px 기본, 실제 내용·폭·글꼴 변경 시 8px까지 자동 맞춤 후 필요한 경우 종이 높이를 늘려 본문 내부 스크롤과 잘림 방지. 확대 패널용 캐리지 여유 공간 보정. typing-hermes.js v12 / typing-retro-focus.js v4 / CSS v3. 1280×720에서 표지240px, 다음 쪽271.2px, 다음 본문 scrollHeight=clientHeight, 문서 높이720 확인.

@@ -130,7 +130,7 @@
     const trace=tracing(),a=width/height,instrumentScale=1.15;
     const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
     // On tall desktop windows keep room for both reading panels and carriage travel.
-    const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-400)/1.86):0;
+    const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
     const span=Math.max(baseSpan,panelSpan);
     renderer.setSize(width,height,false);
     // Enlarge the instrument by 15%; inversely compensate the A4 sheet
