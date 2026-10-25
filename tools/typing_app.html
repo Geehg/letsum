@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css?v=108">
 <link rel="stylesheet" href="css/typing-hero.css?v=2">
-<link rel="stylesheet" href="css/typing-3d.css?v=1">
+<link rel="stylesheet" href="css/typing-3d.css?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -108,12 +108,6 @@
             </div>
           </div>
           <div class="tb-machine" id="tbMachine">
-          <label class="tb-model-choice"><span>타자기</span><select id="tbModel" aria-label="타자기 모델 선택"><option value="classic12">Classic 12 · 3D 재현</option><option value="retro">LETSUM 레트로 · 기본</option></select></label>
-          <section class="tb-3d-stage" id="tb3dStage" aria-label="입력에 반응하는 3D 타자기" hidden>
-            <div class="tb-3d-head"><b>THE WRITING ROOM</b><span>CLASSIC 12</span></div>
-            <div class="tb-3d-view" id="tb3dView"></div>
-            <div class="tb-3d-foot"><span id="tb3dStatus" role="status">타자기를 불러오는 중…</span><button id="tb3dFocus" type="button">필사 입력하기 ↗</button></div>
-          </section>
           <div class="tb-carriage" aria-hidden="true"><i class="tb-lever"></i><div class="tb-rail" id="tbRail"><span class="tb-roller"></span><span class="tb-platen"></span><span class="tb-roller"></span></div></div>
           <div class="tb-book">
             <i class="tb-spine" aria-hidden="true"></i>
@@ -130,6 +124,14 @@
             </article>
           </div>
           </div>
+        </div>
+        <div class="tb-instrument">
+          <label class="tb-model-choice"><span>타자기</span><select id="tbModel" aria-label="타자기 모델 선택"><option value="classic12">Classic 12 · 3D 재현</option><option value="retro">LETSUM 레트로 · 기본</option></select></label>
+          <section class="tb-3d-stage" id="tb3dStage" aria-label="입력에 반응하는 3D 타자기" hidden>
+            <div class="tb-3d-head"><b>CLASSIC 12</b><span>실제 키보드로 타이핑하세요</span></div>
+            <div class="tb-3d-view" id="tb3dView"></div>
+            <div class="tb-3d-foot"><span id="tb3dStatus" role="status">타자기를 불러오는 중…</span><button id="tb3dFocus" type="button">타이핑 시작</button></div>
+          </section>
         </div>
         <div class="tb-kb" id="tbKb">
           <div class="tb-kb-h"><p><i class="tb-kb-ic" aria-hidden="true">⌨</i><b>가상 키보드</b><small>표준 <span id="tbKbLang">두벌식</span> · 물리 키 입력 표시</small></p>
@@ -214,7 +216,7 @@
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
 <script src="js/typing.js?v=19"></script>
-<script src="js/typing-3d.js?v=1"></script>
+<script src="js/typing-3d.js?v=2"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

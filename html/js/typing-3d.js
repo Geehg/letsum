@@ -21,6 +21,7 @@
   new IntersectionObserver(entries=>{intersecting=entries[0].isIntersecting;if(engine)engine.wake();}).observe(stage);
   document.addEventListener('visibilitychange',()=>{if(engine)engine.wake();});
   document.getElementById('tb3dFocus').addEventListener('click',()=>input.focus({preventScroll:true}));
+  viewport.addEventListener('click',()=>input.focus({preventScroll:true}));
   async function init(){
     loading=true;status.textContent='타자기를 불러오는 중…';
     let renderer;
@@ -45,13 +46,13 @@
       keys.forEach(o=>o.userData.rest=o.position.clone());bars.forEach(o=>o.userData.rest=o.quaternion.clone());
       const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone();
       const sheet=document.createElement('canvas');sheet.width=1024;sheet.height=1024;
-      const ctx=sheet.getContext('2d'), texture=new THREE.CanvasTexture(sheet);texture.encoding=THREE.sRGBEncoding;
+      const ctx=sheet.getContext('2d'), texture=new THREE.CanvasTexture(sheet);texture.encoding=THREE.sRGBEncoding;texture.flipY=false;
       paper.material=new THREE.MeshStandardMaterial({map:texture,side:THREE.DoubleSide,roughness:.9});
       let targetX=0,currentX=0,feed=0,returnAt=0,lastText=null,lastPaper=null,raf=0,until=0,lastTime=0;
       const presses=new Map(), hits=[];
       const barCodes=[...'1234567890'].map(x=>'Digit'+x).concat([...'QWERTYUIOPASDFGHJKLZXCVBNM'].map(x=>'Key'+x),['Comma','Period','Semicolon','Minus']);
       const barFor=new Map(barCodes.map((code,i)=>[code,bars.find(o=>o.name==='Typebar_'+i)]));
-      function resize(){const w=viewport.clientWidth,h=viewport.clientHeight;renderer.setSize(w,h,false);const a=w/h;const span=Math.max(.48,.62/a);camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();wake();}
+      function resize(){const w=viewport.clientWidth,h=viewport.clientHeight;renderer.setSize(w,h,false);const a=w/h;const span=Math.max(.43,.56/a);camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();wake();}
       function wrapped(text){const out=[];for(const line of text.split('\n')){const chars=Array.from(line);if(!chars.length)out.push('');else for(let i=0;i<chars.length;i+=42)out.push(chars.slice(i,i+42).join(''));}return out;}
       function sync(){
         const before=input.value.slice(0,input.selectionStart), lines=wrapped(before),col=Array.from(lines[lines.length-1]||'').length;
@@ -91,9 +92,9 @@
       input.addEventListener('keydown',keydown);document.addEventListener('keyup',keyup);window.addEventListener('blur',clear);
       ['input','compositionend','click','keyup','tb:paper'].forEach(event=>input.addEventListener(event,sync));
       new MutationObserver(sync).observe(main,{attributes:true,attributeFilter:['data-paper']});
-      new ResizeObserver(resize).observe(viewport);engine={sync,wake};resize();sync();status.textContent='Classic 12 · 시각적 재현';stage.dataset.ready='true';
-      renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();status.textContent='3D 표시가 중단되었습니다. 기본 필사는 계속 사용할 수 있습니다.';cancelAnimationFrame(raf);});
-    }catch(e){if(renderer){renderer.dispose();renderer.domElement.remove();}status.textContent='3D를 불러오지 못했습니다. 기본 필사는 그대로 사용할 수 있습니다.';stage.dataset.ready='error';console.warn('Typewriter 3D unavailable',e);}
+      new ResizeObserver(resize).observe(viewport);engine={sync,wake};resize();sync();status.textContent='Classic 12 · 시각적 재현';stage.dataset.ready='true';main.dataset.modelFailed='false';
+      renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();main.dataset.modelFailed='true';status.textContent='3D 표시가 중단되었습니다. 기본 필사는 계속 사용할 수 있습니다.';cancelAnimationFrame(raf);});
+    }catch(e){if(renderer){renderer.dispose();renderer.domElement.remove();}status.textContent='3D를 불러오지 못했습니다. 기본 필사는 그대로 사용할 수 있습니다.';stage.dataset.ready='error';main.dataset.modelFailed='true';console.warn('Typewriter 3D unavailable',e);}
     finally{loading=false;}
   }
   update();

@@ -247,3 +247,5 @@ img.save("sample.png")
 - 검증: 390px 모바일·데스크톱 실제 브라우저 표시, 모델 전환, 입력·Enter·Backspace 확인. 실제 GLB와 Three.js 수학을 이용한 동작 검사(키 복원·활자봉·리본·캐리지·레버·롤러 축 유지·한글 텍스트 보존) 통과. `validate.py` 오류 0, 기존 경고 264. 로컬 편집 원본 `/Volumes/AI_dev/web/letsum-typewriter-3d/classic12.blend`, Higgsfield revision 4. 이후 다른 실물 기종은 별도 GLB/부품 명세를 만들어 추가해야 함.
 
 - 2026-10-25: 운영자 요청으로 서가 히어로를 imagegen으로 새로 생성한 24:9 이미지(2048×768, `typing-hero-meadow-wide.webp`)로 교체. 가로 폭 유지, 높이는 기존 clamp(620px,56.28vw,780px)의 절반인 clamp(310px,28.14vw,390px), 모바일 310px. 글자·버튼 간격도 축소. CSS v2.
+
+- 2026-10-25: 운영자 지시에 따라 3D 타자기를 좌측 미리보기에서 제거하고 하단 가상 키보드 위치로 이동. Classic 12 선택 시 기존 #tbKb를 숨기고 큰 3D 본체를 표시(실패 시 기존 키보드 복원). 상단 원문·필사는 데스크톱 2열, 모바일 1열. 타자기 클릭으로 textarea에 스크롤 이동 없이 포커스, 키보드 연동 유지. CSS/JS typing-3d v2.
