@@ -1,0 +1,22 @@
+{
+  "id": "hermes3000",
+  "label": "Hermes 3000 · 정면 타자기",
+  "reference": "User-provided first-generation Hermes 3000 reference sheets",
+  "accuracy": "Photo-derived visual reconstruction, not measured manufacturing CAD. Sound is synthesized, not a recording of the real machine.",
+  "project": "https://higgsfield.ai/3d-jutsu/97a11171-2038-4d28-837e-087e65dd9170",
+  "method": "Articulated GLB with fixed symmetrical front camera and projected native HTML textarea paper",
+  "manual": "https://www.christopherlong.co.uk/oth/writing/TypewriterHermes3000manual.pdf",
+  "keys": 49,
+  "typebars": 40,
+  "text": "The same tbInput node moves into the projected paper and restores when changing modes; no duplicate draft or text renderer. IME commits drive carriage spacing.",
+  "parts": [
+    "rounded cast body",
+    "dished mint keycaps",
+    "typebasket",
+    "typebars and slugs",
+    "two-color ribbon carrier",
+    "platen and reeded knobs",
+    "carriage rails and ruler",
+    "return lever"
+  ]
+}

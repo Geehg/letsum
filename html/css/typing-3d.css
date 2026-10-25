@@ -31,3 +31,30 @@ main.tb[data-skin="retro"][data-model="classic12"][data-model-failed="true"] #tb
  .tb-3d-foot{font-size:10px}
 }
 @media print{.tb-instrument{display:none!important}}
+
+/* Hermes: one real editable sheet aligned to the fixed front camera. */
+.tb-hermes-stage[hidden]{display:none!important}
+.tb-hermes-stage{position:relative;width:100%;min-width:0}
+.tb-hermes-view{height:clamp(500px,70vh,680px);width:100%;position:relative;overflow:hidden;isolation:isolate;cursor:text}
+.tb-hermes-view>canvas{position:absolute;inset:0;z-index:2;pointer-events:none;display:block;width:100%;height:100%}
+.tb-hermes-paper{position:absolute;left:0;top:0;width:600px;height:594px;transform-origin:0 0;z-index:1;background:#f6f1e3;box-shadow:0 1px 3px #4a49373b;overflow:hidden}
+.tb-hermes-paper::before{content:"LETSUM · 한 장의 기록";position:absolute;top:24px;left:42px;color:#a09b8d;font:12px sans-serif;letter-spacing:.12em;pointer-events:none}
+.tb-hermes-paper[data-paper="white"]{background:#fffefa}
+.tb-hermes-paper[data-paper="parchment"]{background:#e8d6af}
+main.tb[data-hermes-ready="true"] #tbInput{position:absolute;inset:0;width:600px;height:594px;min-height:0;max-height:none;box-sizing:border-box;margin:0;padding:24px 42px 30px;border:0;outline:0;border-radius:0;background:transparent;color:#262b24;font-size:34px;line-height:48px;letter-spacing:0;word-break:break-all;overflow-wrap:anywhere;white-space:pre-wrap;resize:none;overflow-y:auto;scrollbar-width:none;caret-color:#382e20;font-kerning:none;font-variant-ligatures:none;text-shadow:.25px 0 .3px #31362855}
+main.tb[data-hermes-ready="true"] #tbInput::-webkit-scrollbar{display:none}
+main.tb[data-hermes-ready="true"] #tbInput::placeholder{font-size:19px;color:#979384;text-shadow:none}
+.tb-hermes-foot{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px;font-size:11px;color:var(--t-mute);padding:8px 16px 16px}
+.tb-hermes-foot button{font:inherit;padding:8px 14px;border:1px solid #a3afa0;border-radius:20px;background:#f5f5ec;color:#354938;cursor:pointer}
+main.tb[data-skin="retro"][data-model="hermes3000"] .tb-machine{padding:0;filter:none;max-width:none;width:100%}
+main.tb[data-skin="retro"][data-model="hermes3000"] .tb-carriage,
+main.tb[data-skin="retro"][data-model="hermes3000"] .tb-spine{display:none}
+main.tb[data-hermes-ready="true"] .tb-pg.tb-w,
+main.tb[data-hermes-ready="true"] #tbKb{display:none}
+main.tb[data-hermes-ready="true"] .tb-book{display:block;border-radius:8px;box-shadow:none;transform:none!important}
+main.tb[data-hermes-ready="true"] .tb-pg.tb-o{border:0;padding:12px 22px}
+main.tb[data-hermes-ready="true"] #tbOrig{height:110px;min-height:0;max-height:110px;padding:6px 0;line-height:1.8}
+@media(max-width:760px){.tb-hermes-view{height:clamp(390px,104vw,550px)}.tb-hermes-foot{font-size:10px;gap:10px}main.tb[data-hermes-ready="true"] #tbOrig{height:100px;max-height:100px}}
+
+.tb-hermes-paper{visibility:hidden}
+main.tb[data-hermes-ready="true"] .tb-hermes-paper{visibility:visible}

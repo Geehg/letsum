@@ -249,3 +249,8 @@ img.save("sample.png")
 - 2026-10-25: 운영자 요청으로 서가 히어로를 imagegen으로 새로 생성한 24:9 이미지(2048×768, `typing-hero-meadow-wide.webp`)로 교체. 가로 폭 유지, 높이는 기존 clamp(620px,56.28vw,780px)의 절반인 clamp(310px,28.14vw,390px), 모바일 310px. 글자·버튼 간격도 축소. CSS v2.
 
 - 2026-10-25: 운영자 지시에 따라 3D 타자기를 좌측 미리보기에서 제거하고 하단 가상 키보드 위치로 이동. Classic 12 선택 시 기존 #tbKb를 숨기고 큰 3D 본체를 표시(실패 시 기존 키보드 복원). 상단 원문·필사는 데스크톱 2열, 모바일 1열. 타자기 클릭으로 textarea에 스크롤 이동 없이 포커스, 키보드 연동 유지. CSS/JS typing-3d v2.
+
+- 2026-10-25: **Hermes 3000 정면 타자기 + 실제 입력용 종이**. 운영자 제공 초기형 참고 이미지 기반의 시각적 재현(실측 CAD 아님), Higgsfield 프로젝트 `97a11171-2038-4d28-837e-087e65dd9170`. GLB와 메타데이터 `html/img/typewriters/hermes3000.*`, 새 모듈 `html/js/typing-hermes.js`. 49개 키·40개 타입바·리본·캐리지·롤러·복귀 레버·Shift 바스켓 분리. 타건음은 기존 합성음을 사용(실물 녹음 아님).
+- Hermes는 별도 미리보기 입력을 만들지 않고, 기존 #tbInput을 #tbHermesPaper 안으로 실제 이동. WebGL 정면 직교 카메라로 종이 세 모서리를 투영해 HTML matrix와 캐리지 위치를 맞춤. 종이 하단에 현재 줄을 배치, 이전 줄은 위로 공급. native textarea를 유지하여 한글 IME·커서·선택·키보드 편집·localStorage 기록은 기존 엔진 그대로. 모델/스킨 전환 시 #tbInputHome 뒤로 복원. 실패 시 기존 입력·키보드 표시. 입력 조합 중 캐리지 전진 보류, 확정 후 이동.
+- 모델 선택 저장키 `typebook-v1:model-v2`, 기본 Hermes 3000; Classic 12 및 기본 레트로도 선택 가능. typing-3d CSS/JS v3, typing-hermes JS v1. 수정 원본은 계속 tools/typing_app.html. 참고 자료의 인물·홍보 문구는 모델링 근거로 사용하지 않음.
+- Hermes 검증: 실제 GLB로 키 눌림·타격점·리본·Enter 복귀·롤러 축, IME 조합 보류, 입력창 복원·값 보존 검사 통과. 최종 Higgsfield revision 3. Blender 원본 `/Volumes/AI_dev/web/letsum-hermes-3000/hermes3000.blend`.

@@ -4,8 +4,8 @@
   const main=document.getElementById('tbMain'), input=document.getElementById('tbInput'), stage=document.getElementById('tb3dStage'), select=document.getElementById('tbModel');
   if(!main || !input || !stage || !select) return;
   const status=document.getElementById('tb3dStatus'), viewport=document.getElementById('tb3dView');
-  let choice='classic12'; try {choice=localStorage.getItem('typebook-v1:model') || choice;}catch(e){}
-  if(!['classic12','retro'].includes(choice)) choice='classic12'; select.value=choice;
+  let choice='hermes3000'; try {choice=localStorage.getItem('typebook-v1:model-v2') || choice;}catch(e){}
+  if(!['hermes3000','classic12','retro'].includes(choice)) choice='hermes3000'; select.value=choice;
   let engine, loading=false, visible=false, intersecting=true;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   function active(){return visible && intersecting && !document.hidden;}
@@ -15,7 +15,7 @@
     if(visible && !engine && !loading) init();
     if(engine){engine.sync();engine.wake();}
   }
-  select.addEventListener('change',()=>{choice=select.value;try{localStorage.setItem('typebook-v1:model',choice);}catch(e){}update();});
+  select.addEventListener('change',()=>{choice=select.value;try{localStorage.setItem('typebook-v1:model-v2',choice);}catch(e){}update();});
   new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin']});
   new MutationObserver(update).observe(document.getElementById('tbRead'),{attributes:true,attributeFilter:['hidden']});
   new IntersectionObserver(entries=>{intersecting=entries[0].isIntersecting;if(engine)engine.wake();}).observe(stage);
