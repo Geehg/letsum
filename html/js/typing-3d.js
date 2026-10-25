@@ -5,14 +5,16 @@
   if(!main || !input || !stage || !select) return;
   const status=document.getElementById('tb3dStatus'), viewport=document.getElementById('tb3dView');
   let choice='hermes3000'; try {choice=localStorage.getItem('typebook-v1:model-v2') || choice;}catch(e){}
-  if(!['hermes3000','classic12','retro'].includes(choice)) choice='hermes3000'; select.value=choice;
+  if(!['hermes3000','lettera32','classic12','retro'].includes(choice)) choice='hermes3000'; select.value=choice;
   let engine, loading=false, visible=false, intersecting=true;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   function active(){return visible && intersecting && !document.hidden;}
   function update(){
-    const model=main.dataset.readingMode==='immersive'?'hermes3000':choice;
+    const immersive=main.dataset.readingMode==='immersive';
+    const model=immersive&&!['hermes3000','lettera32'].includes(choice)?'hermes3000':choice;
+    select.value=model;for(const option of select.options)option.disabled=immersive&&['classic12','retro'].includes(option.value);
     visible=main.dataset.skin==='retro' && !document.getElementById('tbRead').hidden && model==='classic12';
-    main.dataset.model=model;stage.hidden=!visible;
+    if(main.dataset.model!==model)main.dataset.model=model;stage.hidden=!visible;
     if(visible && !engine && !loading) init();
     if(engine){engine.sync();engine.wake();}
   }

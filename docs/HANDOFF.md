@@ -352,3 +352,11 @@ img.save("sample.png")
 - 작은 스피커 아이콘을 '효과음 켜짐/꺼짐' switch로 교체. 별도 볼륨 행에 0~100% 전체 폭 슬라이더와 실시간 퍼센트, 0% 음소거 접근성 설명 제공. 타건·벨·캐리지·종이에 공통 적용.
 - 기존 오디오 master gain/configure/stop 경로와 localStorage retro 설정 유지. 음량값 범위 정규화. OFF 시 재생 중 소리 중지 및 슬라이더 비활성화, 다시 켤 때 기존 볼륨 유지.
 - 로컬 UI: 67%로 변경→OFF→새로고침 후 OFF/67%/disabled 유지, ON 후 활성화 및 Home 키 0% 음소거 설명 확인. 운영 사용자 볼륨 값은 임의 변경하지 않음. style.css v109, typing.js v29.
+
+### 2026-10-26 — Olivetti Lettera 32 모델 선택 추가 (Codex)
+- 모델 선택을 본체 아래에서 **설정 > 레트로 타자기**로 이동. Hermes 3000 / Olivetti Lettera 32를 일반 레트로와 레트로 몰입 양쪽에서 선택·저장한다. 기존 Classic 12/기본 레트로는 일반 모드에 보존.
+- `typing-lettera.js`는 새 외곽 몸체·분리 상판·좁은 리본 개구부·낮은 검정 키캡·밝은 각인·검정 노브·금속 눈금·곡선 리턴 레버·분할 명판을 제작. `hermes3000.glb`의 공유 입력/기계 리그 위에 전용 형상을 구성한다. Hermes 원본 GLB는 수정하지 않음.
+- 사실 근거와 웹 재구성 범위: `docs/LETTERA32_MODEL.md`. 제조사 British Olivetti 안내서 실물 사진/부품 번호/재질/사양 확인. 실물 측정 CAD나 Lettera 전용 녹음으로 표방하지 않음. 기존 61키 현대 입력, A4, 검정 리본, 카운터·효과음·테이블 설정 유지.
+- 모델 변경 때 이벤트·Resize/MutationObserver·프레임·GPU 자원을 해제. 필사 입력값 보존, 로딩 중 재선택 및 이전 모델 WebGL 실패 후 다른 모델 복구 지원.
+- 버전: typing-3d.css v9, typing-3d.js v5, typing-hermes.js v28, typing-lettera.js v1. 템플릿 원본과 생성 페이지 동기화.
+- 검사: `node tools/check_typing_hermes.mjs` 및 `--lettera` 각각 통과(IME, 타건, 캐리지, 종이, 폐곡면, 반복 전환/리스너 중복/오류 복귀). `validate.py` 오류0 / 기존 경고264. 실제 로컬 브라우저 선택·새로고침·왕복 전환 후 입력30자 유지, 캔버스1개 확인. 별도 1132×873 iframe에서 한글25자 입력과 전체 모델 시각 확인.

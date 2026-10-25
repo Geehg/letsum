@@ -3,23 +3,25 @@
  'use strict';
  const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
  if(!stage)return;
+ const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32'};
  const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let active=false,inView=true,loading=false,engine=null,composing=false,failed=false;
+ let active=false,inView=true,loading=false,engine=null,composing=false,failed=false,failedModel='';
  function restore(){
   if(input.parentElement===paper){home.after(input);for(const p of ['paddingTop','paddingBottom','fontSize','lineHeight','height'])input.style[p]='';input.placeholder=originalPlaceholder;}
   main.dataset.hermesReady='false';
  }
  function update(){
-  active=main.dataset.skin==='retro'&&main.dataset.model==='hermes3000'&&!$('tbRead').hidden;stage.hidden=!active;
+  active=main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
+  if((engine&&engine.model!==main.dataset.model)||(failed&&failedModel!==main.dataset.model)){engine?.dispose();engine=null;failed=false;restore();}
   if(failed){restore();return;}
   if(!engine&&!loading)init();
   if(engine){
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
    input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
-   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':'Hermes 3000 · 61키 · 종이에 직접 입력';engine.resize();
+   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+' · 61키 · 종이에 직접 입력';engine.resize();
   }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode']});
@@ -30,13 +32,17 @@
  input.addEventListener('compositionstart',()=>{composing=true;});
  input.addEventListener('compositionend',()=>{composing=false;engine?.sync();});
  async function init(){
-  loading=true;status.textContent='Hermes 3000을 준비하고 있어요…';let renderer;
+  loading=true;const selectedModel=main.dataset.model,cleanups=[];
+  status.textContent=modelNames[selectedModel]+' 준비 중…';let renderer,disposed=false;
+  function listen(target,type,fn){target.addEventListener(type,fn);cleanups.push(()=>target.removeEventListener(type,fn));}
+  function observe(Observer,fn,target,options){const o=new Observer(fn);o.observe(target,options);cleanups.push(()=>o.disconnect());}
   try{
    const T=await import('/js/vendor/three/three.module.js'),{GLTFLoader}=await import('/js/vendor/three/GLTFLoader.js');
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
    const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
+   if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
@@ -60,7 +66,7 @@
    for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    if(['Hermes_Sage_Enamel','Lettera_Blue_Enamel'].includes(old.name)){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
     else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.23;m.envMapIntensity=.85;}
     else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
@@ -83,8 +89,8 @@
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
-   capMaterial.name='Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
-   capMaterial.clearcoat=.11;capMaterial.clearcoatRoughness=.36;capMaterial.envMapIntensity=.24;
+   capMaterial.name=selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
+   capMaterial.clearcoat=.11;capMaterial.clearcoatRoughness=.36;capMaterial.envMapIntensity=selectedModel==='lettera32'?.55:.24;
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
     if(!o.isMesh||!o.name.startsWith('Cap_'))return;
@@ -179,7 +185,7 @@
     ground.material.map=clothTexture;ground.material.needsUpdate=true;ground.userData.fabric=style;
    }
    applyTablecloth();
-   new MutationObserver(()=>{applyTablecloth();wake();}).observe(main,{attributes:true,attributeFilter:['data-table']});
+   observe(MutationObserver,()=>{applyTablecloth();wake();},main,{attributes:true,attributeFilter:['data-table']});
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
@@ -211,12 +217,12 @@
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
-   function running(){return active&&!failed&&inView&&!document.hidden;}
+   function running(){return !disposed&&active&&!failed&&inView&&!document.hidden;}
    function resetKeys(){pressed.clear();hits.length=0;shift=false;keys.forEach(k=>{k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);});}
    function stop(){cancelAnimationFrame(raf);raf=0;prev=0;resetKeys();}
    function wake(){until=performance.now()+800;if(!raf&&running())raf=requestAnimationFrame(frame);}
    function resize(){
-    if(!active||failed)return;
+    if(disposed||!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
     const trace=tracing(),a=width/height,instrumentScale=1.15;
     const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
@@ -261,7 +267,7 @@
     lines.push({text:row,width:units});return lines;
    }
    function sync(snap=false){
-    if(!active||failed)return;snap=snap===true;
+    if(disposed||!active||failed)return;snap=snap===true;
     const trace=tracing(),source=$('tbOrig').dataset.source||input.value,caret=Array.from(input.value.slice(0,input.selectionStart).normalize('NFC')).length;
     const prefix=trace?Array.from(source.normalize('NFC')).slice(0,caret).join(''):input.value.slice(0,input.selectionStart);
     const all=layout(input.value),before=layout(prefix),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
@@ -339,14 +345,19 @@
     wake();
    }
    function up(e){if(e.code.startsWith('Shift'))shift=false;const k=pressed.get('Key_'+e.code);if(k)k.up=performance.now();wake();}
-   input.addEventListener('keydown',down);document.addEventListener('keyup',up);window.addEventListener('blur',()=>{resetKeys();wake();});input.addEventListener('blur',()=>{resetKeys();wake();});
-   ['input','click','keyup','tb:paper'].forEach(e=>input.addEventListener(e,()=>sync()));
-   new MutationObserver(()=>sync()).observe(main,{attributes:true,attributeFilter:['data-paper']});
-   view.addEventListener('tb:hermes-align',resize);
-   new ResizeObserver(resize).observe(view);['tbMinus','tbPlus'].forEach(id=>$(id).addEventListener('click',()=>{if(tracing())resize();}));$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
-   renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
-   engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 61키 · 종이에 직접 입력';loading=false;update();
-  }catch(error){failed=true;renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Hermes 3000 unavailable',error);loading=false;}
+   listen(input,'keydown',down);listen(document,'keyup',up);listen(window,'blur',()=>{resetKeys();wake();});listen(input,'blur',()=>{resetKeys();wake();});
+   ['input','click','keyup','tb:paper'].forEach(e=>listen(input,e,()=>sync()));
+   observe(MutationObserver,()=>sync(),main,{attributes:true,attributeFilter:['data-paper']});
+   listen(view,'tb:hermes-align',resize);
+   observe(ResizeObserver,resize,view);['tbMinus','tbPlus'].forEach(id=>listen($(id),'click',()=>{if(tracing())resize();}));listen($('tbFontW'),'change',()=>sync(true));listen($('tbReset'),'click',()=>queueMicrotask(()=>sync(true)));
+   listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failed=true;failedModel=selectedModel;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
+   function dispose(){
+    disposed=true;stop();cleanups.splice(0).forEach(fn=>fn());const geometries=new Set(),mats=new Set(),textures=new Set([grain,finish,countTexture,contact.material.map,...clothCache.values()]);
+    scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){mats.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}}});
+    geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());environment.dispose();renderer.dispose();renderer.domElement.remove();
+   }
+   engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+' 61키 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+' · 61키 · 종이에 직접 입력';loading=false;update();
+  }catch(error){failed=true;failedModel=selectedModel;cleanups.splice(0).forEach(fn=>fn());renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Typewriter unavailable',error);loading=false;if(selectedModel!==main.dataset.model)update();}
  }
  update();
 })();

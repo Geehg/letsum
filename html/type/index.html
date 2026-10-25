@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="/css/style.css?v=109">
 <link rel="stylesheet" href="/css/typing-hero.css?v=2">
-<link rel="stylesheet" href="/css/typing-3d.css?v=8">
+<link rel="stylesheet" href="/css/typing-3d.css?v=9">
 <link rel="stylesheet" href="/css/typing-retro-focus.css?v=6">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -127,8 +127,7 @@
           </div>
         </div>
         <div class="tb-instrument">
-          <label class="tb-model-choice"><span>타자기</span><select id="tbModel" aria-label="타자기 모델 선택"><option value="hermes3000">Hermes 3000 · 61키</option><option value="classic12">Classic 12 · 3D 재현</option><option value="retro">LETSUM 레트로 · 기본</option></select></label>
-          <section class="tb-hermes-stage" id="tbHermesStage" aria-label="Hermes 3000 61키 타자기와 입력 용지" hidden>
+          <section class="tb-hermes-stage" id="tbHermesStage" aria-label="61키 타자기와 입력 용지" hidden>
             <aside class="tb-focus-aside tb-focus-book" aria-label="읽고 있는 도서">
               <p class="tb-focus-label">지금 읽는 책</p>
               <div id="tbFocusCover" class="tb-focus-cover" aria-hidden="true"></div>
@@ -189,6 +188,8 @@
       <div class="tb-set-row"><span>글자 크기</span><span class="tb-set-size"><button class="tb-chip" id="tbMinus" type="button" aria-label="글자 작게">A−</button><b id="tbSizeV">18px</b><button class="tb-chip" id="tbPlus" type="button" aria-label="글자 크게">A+</button></span></div>
     </div>
     <div class="tb-set-sec tb-retro-only"><h4>레트로 타자기</h4>
+      <label class="tb-set-row"><span>타자기 모델</span><select id="tbModel" aria-label="타자기 모델 선택"><option value="hermes3000">Hermes 3000 · 세이지</option><option value="lettera32">Olivetti Lettera 32 · 블루</option><option value="classic12">Classic 12</option><option value="retro">LETSUM 레트로 · 기본</option></select></label>
+      <p class="tb-sound-help" id="tbModelHelp">61키 필사 배열 · 선택한 모델을 기억합니다.</p>
       <div class="tb-set-row"><span>효과음</span><button class="tb-sound-switch" id="tbSound" type="button" role="switch" aria-checked="true" aria-label="타자기 효과음" aria-describedby="tbSoundHelp"><i aria-hidden="true"></i><span id="tbSoundState">켜짐</span></button></div>
       <div class="tb-volume-control"><div class="tb-set-row"><label for="tbVolume">볼륨</label><output id="tbVolumeValue" for="tbVolume">38%</output></div><input type="range" id="tbVolume" class="tb-vol" min="0" max="100" step="1" value="38" aria-label="효과음 볼륨" aria-valuetext="38%"><div class="tb-volume-ends" aria-hidden="true"><span>0%</span><span>100%</span></div></div>
       <p id="tbSoundHelp" class="tb-sound-help">타건 · 벨 · 캐리지 · 종이 소리에 모두 적용됩니다.</p>
@@ -239,8 +240,9 @@
 <script src="/js/shot.js?v=2"></script>
 <script src="/js/typing-audio.js?v=2"></script>
 <script src="/js/typing.js?v=29"></script>
-<script src="/js/typing-3d.js?v=4"></script>
+<script src="/js/typing-3d.js?v=5"></script>
 <script src="/js/typing-retro-focus.js?v=7"></script>
-<script src="/js/typing-hermes.js?v=27"></script>
+<script src="/js/typing-lettera.js?v=1"></script>
+<script src="/js/typing-hermes.js?v=28"></script>
 </body>
 </html>
