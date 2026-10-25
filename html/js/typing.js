@@ -257,6 +257,9 @@
     $("tbTitle").textContent = b.title; $("tbAuthor").textContent = b.author + (b.year && b.year < 2000 ? ` · ${b.year}` : "");
     $("tbSource").hidden = !b.source; if (b.source) { $("tbSource").href = b.source; $("tbSource").title = b.license || ""; }
     $("tbKbLang").textContent = b.lang === "en" ? "영문 QWERTY" : "두벌식";
+    // 제목 왼쪽 표지(서가와 같은 입체 책, 마우스를 올리면 책등)
+    const th = Math.round(Math.min(34, Math.max(16, 6 + 5 * Math.log10(Math.max(100, b.chars || 0)))) * 0.55);
+    $("tbCv").innerHTML = b.cover ? `<span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span></span>` : cover(b);
     fillFontSelects(); applyFonts(); renderKeys(b.lang === "en"); fillToc();
     $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — LETSUM 필사독서`; $("tbCrumb").textContent = b.title;
     loadPage(Math.max(0, Math.min(b.pages.length - 1, Number(p.index) || 0)), false);
