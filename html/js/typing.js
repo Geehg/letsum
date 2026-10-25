@@ -105,13 +105,13 @@
   }
 
   // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
-  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "floral" }, readJSON("retro", {}));
+  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham" }, readJSON("retro", {}));
   const isRetro = () => $("tbMain").dataset.skin === "retro";
   let strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
     $("tbSound").setAttribute("aria-pressed", !!retro.sound); $("tbSound").textContent = retro.sound ? "🔊" : "🔇"; $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound; $("tbPaper").value = $("tbMain").dataset.paper;
-    $("tbMain").dataset.table = ["floral", "check", "linen"].includes(retro.table) ? retro.table : "floral";
+    $("tbMain").dataset.table = ["gingham", "floral", "check", "linen"].includes(retro.table) ? retro.table : "gingham";
     $("tbTable").value = $("tbMain").dataset.table;
     window.LSTypewriterAudio?.configure(retro);
   }

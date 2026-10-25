@@ -34,7 +34,7 @@
   try{
    const T=await import('/js/vendor/three/three.module.js'),{GLTFLoader}=await import('/js/vendor/three/GLTFLoader.js');
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
-   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;
+   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
    const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=5');
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
@@ -60,9 +60,9 @@
    for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.roughness=.37;m.map=finish;m.roughnessMap=finish;m.clearcoat=.18;m.clearcoatRoughness=.32;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
-    else if(old.name==='Mint_Keycaps'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
-    else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.16;m.envMapIntensity=1.1;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
+    else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.23;m.envMapIntensity=.85;}
     else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
     else {m=old.clone();m.envMapIntensity=.3;}
     materials.set(old,m);o.material=m;
@@ -83,8 +83,8 @@
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
-   capMaterial.name='Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.31;
-   capMaterial.clearcoat=.18;capMaterial.clearcoatRoughness=.26;capMaterial.envMapIntensity=.24;
+   capMaterial.name='Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
+   capMaterial.clearcoat=.11;capMaterial.clearcoatRoughness=.36;capMaterial.envMapIntensity=.24;
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
     if(!o.isMesh||!o.name.startsWith('Cap_'))return;
@@ -101,10 +101,10 @@
     }
     o.material=capMaterial;
    });
-   scene.add(new T.HemisphereLight(0xfffaf0,0x4e5b50,.28));
-   const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
-   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
-   const fill=new T.DirectionalLight(0xe2edf1,.25);fill.position.set(.5,.3,-.3);scene.add(fill);
+   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,.38));
+   const keyLight=new T.DirectionalLight(0xffecd7,1.30);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=9;keyLight.shadow.blurSamples=12;
+   const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
    // full-width table has no image boundary or lighting baked into the pattern.
    const clothCache=new Map();let clothTexture,clothRepeat=12;
@@ -112,6 +112,10 @@
     if(clothCache.has(style))return clothCache.get(style);
     const size=512,pixels=new Uint8Array(size*size*4);let seed=73;
     const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+    // Two woven repeats per tile. Broad yarn bands, darker intersections and
+    // paired fine threads match the reference's honey/brown check, not a line grid.
+    const band=n=>{const t=((n%256)+256)%256;return t>=72&&t<164?1:0;};
+    const pin=n=>{const t=((n%256)+256)%256;return (t>=61&&t<65)||(t>=171&&t<175);};
     for(let y=0;y<size;y++)for(let x=0;x<size;x++){
      const i=(y*size+x)*4,gridX=x%128<6,gridY=y%128<6;
      const ink=style==='check'?(gridX&&gridY?.68:gridX||gridY?.54:0):0;
@@ -119,6 +123,13 @@
      // Floral albedo compensates for the warm key light/ACES washout; compare rendered colors, not raw pixels.
      const base=style==='check'?[170,187,177]:style==='linen'?[218,204,181]:[226,200,132];
      for(let c=0;c<3;c++)pixels[i+c]=Math.round(base[c]*(1-ink)+[91,121,128][c]*ink+weave);
+     if(style==='gingham'){
+      const u=x+y,v=y-x,bx=band(u),by=band(v),over=(Math.floor(x/2)+Math.floor(y/2))%2;
+      const mix=bx&&by?.67:bx||by?.36:0;
+      const fine=pin(u)||pin(v)?.095:0;
+      const thread=(x%3===0?-1.6:.6)+(y%3===0?-1.4:.5)+(over?(bx-by)*2:(by-bx)*2)+Math.sin(x*Math.PI/16)*1.8+Math.sin(y*Math.PI/32)*1.4;
+      for(let c=0;c<3;c++)pixels[i+c]=Math.round([193,143,76][c]*(1-mix-fine)+[99,63,38][c]*(mix+fine)+weave+thread);
+     }
      pixels[i+3]=255;
     }
     function oval(cx,cy,rx,ry,angle,color,opacity=1){
@@ -162,8 +173,8 @@
    const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:null,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
    ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
    function applyTablecloth(){
-    const style=['floral','check','linen'].includes(main.dataset.table)?main.dataset.table:'floral';
-    clothTexture=fabric(style);clothRepeat=style==='check'?45:style==='floral'?18:12;
+    const style=['gingham','floral','check','linen'].includes(main.dataset.table)?main.dataset.table:'gingham';
+    clothTexture=fabric(style);clothRepeat=style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
     clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2);
     ground.material.map=clothTexture;ground.material.needsUpdate=true;ground.userData.fabric=style;
    }
