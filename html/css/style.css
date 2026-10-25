@@ -2171,3 +2171,7 @@ main.tb .tb-card.tb-cov{background:none!important;border:0!important;box-shadow:
 .tb-card.tb-cov:hover .tb-sp3,.tb-card.tb-cov:focus-visible .tb-sp3{opacity:1}
 .tb-sp3 b,.tb-sp3 i{color:var(--si);opacity:1}
 .tb-sp3 b{text-shadow:0 1px 1px rgba(0,0,0,.18)}
+/* yes24 방식에 맞춤: 원근 1800px(가까운 모서리가 덜 커져 위가 잘리지 않음), 40도 회전, 옆으로 밀지 않음. 가로 줄은 위아래 여유 */
+.tb-card.tb-cov{perspective:1800px}
+.tb-card.tb-cov:hover .tb-b3,.tb-card.tb-cov:focus-visible .tb-b3{transform:rotateY(40deg)}
+.tb-row{padding-top:18px;padding-bottom:28px;margin-top:-16px}
