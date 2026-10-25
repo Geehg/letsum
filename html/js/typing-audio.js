@@ -4,8 +4,10 @@
   const main = document.getElementById('tbMain'), input = document.getElementById('tbInput');
   if (!main || !input) return;
   const base = '/data/typing/audio/', names = ['key-1','key-2','key-3','key-4','key-5','key-6','space','bell','return','paper'];
+  // Measured attack offsets in the decoded recordings; preserve the natural tails.
+  const attack = {'key-1':.028,'key-2':.020,'key-3':.034,'key-4':.030,'key-5':.020,'key-6':.038,space:.008,bell:.006,return:.050,paper:.012};
   const raw = new Map(), buffers = new Map(), voices = new Set();
-  let context, master, loading, decoding, enabled = true, volume = .38, epoch = 0, keyIndex = -1;
+  let context, master, loading, decoding, enabled = true, volume = .38, keyIndex = -1;
   let lastValue = input.value, lastLine = null, composing = false, compositionHardware = false, physicalAt = -Infinity, warned = false;
   const active = () => enabled && volume > 0 && main.dataset.skin === 'retro' && !document.hidden;
   const now = () => performance.now();
@@ -21,58 +23,64 @@
     })).then(() => status('loaded')).catch(() => { status('error'); loading = null; });
     return loading;
   }
-  async function unlock() {
-    if (!active()) return false;
+  function ensureContext() {
+    if (!context) {
+      context = new (window.AudioContext || window.webkitAudioContext)({latencyHint:'interactive'});
+      master = context.createGain(); master.gain.value = volume;
+      master.connect(context.destination);
+    }
+  }
+  function prepare() {
+    if (!active()) return;
     try {
-      if (!context) {
-        context = new (window.AudioContext || window.webkitAudioContext)({latencyHint:'interactive'});
-        master = context.createGain(); master.gain.value = volume;
-        master.connect(context.destination);
-      }
-      if (context.state !== 'running') await context.resume();
-      if (!decoding) decoding = (async () => {
+      ensureContext(); // Decode ahead of typing, even while autoplay keeps the context suspended.
+      if (buffers.size === names.length || decoding) return;
+      decoding = (async () => {
         await preload();
         await Promise.all(names.map(async name => {
           if (!buffers.has(name) && raw.has(name)) buffers.set(name, await context.decodeAudioData(raw.get(name).slice(0)));
         }));
         status(buffers.size === names.length ? 'ready' : 'error');
-      })().finally(() => { decoding = null; });
-      await decoding;
-      return context.state === 'running';
-    } catch (_) { status('error'); return false; }
+      })().catch(() => status('error')).finally(() => { decoding = null; });
+    } catch (_) { status('error'); }
+  }
+  function unlock() {
+    if (!active()) return;
+    prepare();
+    if (context && context.state !== 'running') context.resume().catch(() => status('error'));
   }
   function stop() {
-    epoch++;
     for (const source of voices) { try { source.stop(); } catch (_) {} }
     voices.clear();
   }
   function configure(settings) {
     enabled = !!settings.sound; volume = Math.max(0, Math.min(1, Number(settings.volume) / 100 || 0));
     if (master) master.gain.setValueAtTime(volume, context.currentTime);
-    if (!active()) stop(); else preload();
+    if (!active()) stop(); else prepare();
   }
-  async function play(name, gain = 1, delay = 0) {
+  function play(name, gain = 1) {
     if (!active()) return;
-    const requested = now(), token = epoch;
-    if (!await unlock() || !active() || token !== epoch || now() - requested > 180) return; // Never replay a backlog after loading.
-    const buffer = buffers.get(name); if (!buffer) return; // No synthesized fallback.
+    const buffer = buffers.get(name);
+    // The hot path is synchronous. Cold/interrupted audio is prepared for the next
+    // action, never queued to play late after a load/resume or in a burst.
+    if (!buffer || context?.state !== 'running') { unlock(); return; }
     if (voices.size >= 18) { const oldest = voices.values().next().value; oldest.stop(); voices.delete(oldest); }
     const source = context.createBufferSource(), level = context.createGain();
     source.buffer = buffer; level.gain.value = gain;
     source.connect(level).connect(master); voices.add(source);
     source.onended = () => { voices.delete(source); source.disconnect(); level.disconnect(); };
-    source.start(context.currentTime + delay);
+    source.start(context.currentTime, attack[name] || 0);
   }
   function keySound(key) {
     if (key === 'Enter') return;
     if (key === ' ' || key === 'Backspace' || key === 'Delete') { play('space', key === ' ' ? .75 : .5); return; }
     // Distinct recorded strikes; do not transpose or generate noise.
     keyIndex = (keyIndex + 1 + Math.floor(Math.random() * 5)) % 6;
-    play('key-' + (keyIndex + 1), .85, .012);
+    play('key-' + (keyIndex + 1), .85);
   }
   function lineReturn() {
     if (!warned) play('bell', .42);
-    play('return', .72, warned ? .025 : .10);
+    play('return', .72);
     warned = false;
   }
   function inserted(before, after) {
@@ -126,16 +134,18 @@
     }
   });
   input.addEventListener('compositionstart', () => { composing = true; compositionHardware = false; });
-  input.addEventListener('compositionend', () => { composing = false; if (compositionHardware) physicalAt = now(); queueMicrotask(changed); });
-  input.addEventListener('input', () => queueMicrotask(changed));
+  input.addEventListener('compositionend', () => { composing = false; if (compositionHardware) physicalAt = now(); changed(); });
+  input.addEventListener('input', changed);
   input.addEventListener('click', () => { lastLine = position(); unlock(); });
   input.addEventListener('keyup', e => { if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(e.key)) lastLine = position(); });
-  input.addEventListener('tb:page-loaded', e => { stop(); reset(); if (e.detail?.changed) play('paper', .75); });
+  input.addEventListener('tb:page-changing', () => { stop(); play('paper', .75); });
+  input.addEventListener('tb:page-loaded', e => { if (!e.detail?.changed) stop(); reset(); });
   input.addEventListener('tb:audio-reset', reset);
+  input.addEventListener('focus', unlock);
   document.addEventListener('pointerdown', () => { if (active()) unlock(); }, {passive:true});
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
   window.addEventListener('blur', stop);
-  new MutationObserver(() => { stop(); reset(); if (active()) preload(); }).observe(main, {attributes:true, attributeFilter:['data-skin','data-reading-mode']});
+  new MutationObserver(() => { stop(); reset(); if (active()) prepare(); }).observe(main, {attributes:true, attributeFilter:['data-skin','data-reading-mode']});
   new ResizeObserver(() => { lastLine = position(); }).observe(input);
   window.LSTypewriterAudio = {configure, preview:() => keySound('x')};
 })();

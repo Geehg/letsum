@@ -281,6 +281,7 @@
   function loadPage(i, save = true) {
     const b = state.book; if (!b || i < 0 || i >= b.pages.length) return;
     const pageChanged = save && state.page !== i;
+    if (pageChanged) $("tbInput").dispatchEvent(new Event("tb:page-changing"));
     if (save) storeProgress();
     state.page = i;
     const next = b.pages[i + 1];
