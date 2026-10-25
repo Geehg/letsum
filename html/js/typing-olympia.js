@@ -18,7 +18,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  // Closed rings: outer skirt, rounded shoulder, recessed lip and underside.
  function loft(rings,N=128,sideUV=false){
   const pos=[],uv=[],idx=[];
-  for(const r of rings){const points=r.path.getSpacedPoints(N);for(let i=0;i<N;i++){const p=points[i];pos.push(p.x,r.y(p.x,p.y),p.y);uv.push(...(sideUV?[i/N*12,r.y(p.x,p.y)*8]:[p.x*8,p.y*8]));}}
+  for(const r of rings){const points=sideUV?r.path.curves.flatMap(c=>Array.from({length:N/8},(_,i)=>c.getPoint(i/(N/8)))):r.path.getSpacedPoints(N);for(let i=0;i<N;i++){const p=points[i];pos.push(p.x,r.y(p.x,p.y),p.y);uv.push(...(sideUV?[i/N*12,r.y(p.x,p.y)*8]:[p.x*8,p.y*8]));}}
   for(let j=0;j<rings.length;j++){const next=(j+1)%rings.length;for(let i=0;i<N;i++){const a=j*N+i,b=j*N+(i+1)%N,c=next*N+(i+1)%N,d=next*N+i;idx.push(a,d,b,b,d,c);}}
   const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();return g;
  }
@@ -42,7 +42,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  hole.moveTo(-.127,-.072);hole.bezierCurveTo(-.134,-.066,-.131,-.059,-.119,-.057);
  hole.bezierCurveTo(-.068,-.040,.068,-.040,.119,-.057);hole.bezierCurveTo(.131,-.059,.134,-.066,.127,-.072);
  hole.bezierCurveTo(.115,-.080,.079,-.074,.050,-.095);hole.quadraticCurveTo(.029,-.108,.032,-.129);
- hole.lineTo(.026,-.150);hole.lineTo(-.026,-.150);hole.lineTo(-.032,-.129);
+ hole.lineTo(.026,-.146);hole.lineTo(-.026,-.146);hole.lineTo(-.032,-.129);
  hole.quadraticCurveTo(-.029,-.108,-.050,-.095);hole.bezierCurveTo(-.079,-.074,-.115,-.080,-.127,-.072);
  cover.holes.push(hole);
  const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0014,bevelSize:.0022,bevelSegments:5,curveSegments:24});
@@ -52,17 +52,26 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   const mid=(a,b)=>a.map((v,i)=>(v+b[i])/2),ab=mid(a,b),bc=mid(b,c),ca=mid(c,a),uab=mid(ua,ub),ubc=mid(ub,uc),uca=mid(uc,ua);
   split(a,ab,ca,ua,uab,uca,depth-1);split(ab,b,bc,uab,ub,ubc,depth-1);split(ca,bc,c,uca,ubc,uc,depth-1);split(ab,bc,ca,uab,ubc,uca,depth-1);
  }
- for(let i=0;i<dp.count;i+=3){const a=[dp.getX(i),dp.getY(i),dp.getZ(i)],b=[dp.getX(i+1),dp.getY(i+1),dp.getZ(i+1)],c=[dp.getX(i+2),dp.getY(i+2),dp.getZ(i+2)];split(a,b,c,[du.getX(i),du.getY(i)],[du.getX(i+1),du.getY(i+1)],[du.getX(i+2),du.getY(i+2)],2);}
+ for(let i=0;i<dp.count;i+=3){const a=[dp.getX(i),dp.getY(i),dp.getZ(i)],b=[dp.getX(i+1),dp.getY(i+1),dp.getZ(i+1)],c=[dp.getX(i+2),dp.getY(i+2),dp.getZ(i+2)];split(a,b,c,[du.getX(i),du.getY(i)],[du.getX(i+1),du.getY(i+1)],[du.getX(i+2),du.getY(i+2)],3);}
  hood.setAttribute('position',new T.Float32BufferAttribute(positions,3));hood.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));hood.deleteAttribute('normal');hood.setIndex(null);hood.clearGroups();if(dense!==hood)dense.dispose();
  const hp=hood.attributes.position;
+ // Smooth the original bevel normals before bending. Transforming those normals
+ // analytically avoids the diagonal reflection patches from triangulated faces.
+ hood.computeVertexNormals();const sourceNormals=hood.attributes.normal,normalSums=new Map(),normalKeys=[];
+ for(let i=0;i<hp.count;i++){const key=[hp.getX(i),hp.getY(i),hp.getZ(i)].map(v=>Math.round(v*1e7)).join(',');normalKeys.push(key);const n=normalSums.get(key)||new T.Vector3();n.add(new T.Vector3().fromBufferAttribute(sourceNormals,i));normalSums.set(key,n);}
+ for(const n of normalSums.values())n.normalize();
+ const transformedNormals=new Float32Array(hp.count*3);
+
  const hoodY=z=>.124+.040*smooth(.021,.095,-z)-.005*smooth(.10,.155,-z)-rearRelief(z);
  const crown=(x,z)=>(.003+.006*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.021)/.132))))*(1-(x/.226)**2);
- for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i);hp.setXYZ(i,x,hoodY(z)+d+crown(x,z),z);hood.attributes.uv.setXY(i,x*8,z*8);}
+ for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i),n=normalSums.get(normalKeys[i]),e=.00001;
+  const fx=(crown(x+e,z)-crown(x-e,z))/(2*e),fz=(hoodY(z+e)+crown(x,z+e)-hoodY(z-e)-crown(x,z-e))/(2*e);
+  const mapped=new T.Vector3(n.x-fx*n.z,n.z,n.y-fz*n.z).normalize();mapped.toArray(transformedNormals,i*3);
+  hp.setXYZ(i,x,hoodY(z)+d+crown(x,z),z);hood.attributes.uv.setXY(i,x*12,z*12);
+ }
+ hood.setAttribute('normal',new T.Float32BufferAttribute(transformedNormals,3));
  // XY -> XZ reverses handedness, so restore outward face winding.
  const hi=hood.index;if(hi){for(let i=0;i<hi.count;i+=3){const t=hi.getX(i+1);hi.setX(i+1,hi.getX(i+2));hi.setX(i+2,t);}}else{for(let i=0;i<hp.count;i+=3){for(const attr of Object.values(hood.attributes)){for(let c=0;c<attr.itemSize;c++){const a=(i+1)*attr.itemSize+c,b=(i+2)*attr.itemSize+c,t=attr.array[a];attr.array[a]=attr.array[b];attr.array[b]=t;}}}}
- hood.computeVertexNormals();
- const hn=hood.attributes.normal,sums=new Map(),keys=[];for(let i=0;i<hp.count;i++){const key=[hp.getX(i),hp.getY(i),hp.getZ(i)].map(v=>Math.round(v*1e7)).join(',');keys.push(key);const sum=sums.get(key)||new T.Vector3();sum.add(new T.Vector3(hn.getX(i),hn.getY(i),hn.getZ(i)));sums.set(key,sum);}
- for(const n of sums.values())n.normalize();for(let i=0;i<hp.count;i++){const n=sums.get(keys[i]);hn.setXYZ(i,n.x,n.y,n.z);}
  replace('Ribbon_Hood',hood,blue);
  // The cover's front apron closes the gap above the key bank.
  const apronGeo=new T.ExtrudeGeometry(rounded(-.215,.101,.215,.127,.006),{depth:.004,bevelEnabled:true,bevelThickness:.001,bevelSize:.001,bevelSegments:4,curveSegments:16});
@@ -117,10 +126,10 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  }
  const grain=new T.DataTexture(data,size,size,T.RGBAFormat);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.generateMipmaps=true;grain.minFilter=T.LinearMipmapLinearFilter;grain.magFilter=T.LinearFilter;grain.needsUpdate=true;
  const finishData=new Uint8Array(data.length),roughData=new Uint8Array(data.length);
- for(let i=0;i<data.length;i+=4){const h=data[i]/255,tone=Math.round(220+35*h),rough=Math.round(213+40*h);for(let c=0;c<3;c++){finishData[i+c]=tone;roughData[i+c]=rough;}finishData[i+3]=roughData[i+3]=255;}
+ for(let i=0;i<data.length;i+=4){const h=data[i]/255,tone=Math.round(240+15*h),rough=Math.round(213+40*h);for(let c=0;c<3;c++){finishData[i+c]=tone;roughData[i+c]=rough;}finishData[i+3]=roughData[i+3]=255;}
  const paint=new T.DataTexture(finishData,size,size,T.RGBAFormat),roughMap=new T.DataTexture(roughData,size,size,T.RGBAFormat);
  for(const texture of [paint,roughMap]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.generateMipmaps=true;texture.minFilter=T.LinearMipmapLinearFilter;texture.magFilter=T.LinearFilter;texture.needsUpdate=true;}
- blue.map=paint;blue.roughnessMap=roughMap;blue.bumpMap=grain;blue.bumpScale=.00085;blue.roughness=.78;
+ blue.map=paint;blue.roughnessMap=roughMap;blue.bumpMap=grain;blue.bumpScale=.00030;blue.roughness=.78;
  // Continuous chrome cover seam and the lower shell trim, separate closed tubes.
  // Rolled metal edging: a broad curved face with a dark underside and a fine
  // highlight edge, so the strip reflects the room instead of reading as white paint.
@@ -152,7 +161,8 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  const lever=new T.Mesh(lg,chrome);lever.name='Olympia_Return_Lever';nodes.Return_Lever.add(lever);
  // Cursive raised lettering on the RIGHT of the front cover. Hand-traced paths,
  // not an assertion that an original factory logo drawing has been recovered.
- const badge=new T.Group();badge.name='Olympia_Script_Badge';badge.position.set(.116,.140,-.040);badge.rotation.x=-.63;
+ const badge=new T.Group();badge.name='Olympia_Script_Badge';
+ const badgeMetal=new T.MeshStandardMaterial({name:'Olympia_Badge_Metal',color:0xadb5b7,metalness:1,roughness:.23,envMapIntensity:.85});
  const strokes=[
   [[.80,.96],['C',.25,1.18,-.22,.33,.20,.10],['C',.73,-.20,1.36,.34,1.14,.82],['C',.95,1.22,.48,.75,.63,.42],['C',.81,.16,1.22,.43,1.34,.60]],
   [[1.34,.60],['C',1.83,1.52,1.78,1.56,1.60,1.30],['C',1.40,1.00,1.22,.02,1.65,.23],['C',1.78,.29,1.85,.40,1.95,.55]],
@@ -163,8 +173,31 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   [[4.63,.85],['L',4.66,.87]],
   [[5.45,.51],['C',5.10,.78,4.72,.17,4.99,.13],['C',5.18,.10,5.39,.40,5.44,.53],['C',5.18,-.01,5.61,.10,5.82,.34]]
  ];
- for(const [start,...segments] of strokes){let path=new T.CurvePath(),last=new T.Vector3(start[0],start[1],0);for(const [cmd,...v] of segments){if(cmd==='M'){last=new T.Vector3(v[0],v[1],0);continue;}const end=new T.Vector3(v.at(-2),v.at(-1),0);path.add(cmd==='C'?new T.CubicBezierCurve3(last,new T.Vector3(v[0],v[1],0),new T.Vector3(v[2],v[3],0),end):new T.LineCurve3(last,end));last=end;}const mesh=new T.Mesh(new T.TubeGeometry(path,100,.053,10,false),chrome);badge.add(mesh);const backing=new T.Mesh(mesh.geometry,dark);backing.position.set(.012,-.018,-.036);badge.add(backing);}
- badge.scale.setScalar(.015);root.add(badge);
+ // Solid rounded rectangular strokes: a broad face, beveled edges and closed ends.
+ // Place the back of every stroke on the curved lid instead of floating a flat decal.
+ function badgeStroke(path){
+  const profile=rounded(-.073,0,.073,.105,.022).getSpacedPoints(24).slice(0,-1),N=144,M=profile.length,pos=[],idx=[];
+  for(let i=0;i<=N;i++){
+   const p=path.getPoint(i/N),t=path.getTangent(i/N),len=Math.hypot(t.x,t.y)||1;
+   for(const q of profile){const u=p.x-t.y/len*q.x,v=p.y+t.x/len*q.x,x=.116+u*.015,z=-.040-v*.012;
+    pos.push(x,hoodY(z)+crown(x,z)+.0053+q.y*.015,z);}
+  }
+  for(let i=0;i<N;i++)for(let j=0;j<M;j++){const a=i*M+j,b=i*M+(j+1)%M,c=(i+1)*M+(j+1)%M,d=(i+1)*M+j;idx.push(a,b,d,b,c,d);}
+  // End caps use ring vertices, keeping the extrusion watertight.
+  for(let j=1;j<M-1;j++){idx.push(0,j+1,j);idx.push(N*M,N*M+j,N*M+j+1);}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();
+  const mesh=new T.Mesh(g,badgeMetal);mesh.name='Olympia_Badge_Stroke_'+badge.children.length;badge.add(mesh);
+ }
+ for(const [start,...segments] of strokes){
+  let path=new T.CurvePath(),last=new T.Vector3(start[0],start[1],0);
+  for(const [cmd,...v] of segments){
+   if(cmd==='M'){if(path.curves.length)badgeStroke(path);path=new T.CurvePath();last=new T.Vector3(v[0],v[1],0);continue;}
+   const end=new T.Vector3(v.at(-2),v.at(-1),0);
+   path.add(cmd==='C'?new T.CubicBezierCurve3(last,new T.Vector3(v[0],v[1],0),new T.Vector3(v[2],v[3],0),end):new T.LineCurve3(last,end));last=end;
+  }
+  if(path.curves.length)badgeStroke(path);
+ }
+ root.add(badge);
  // Visible ribbon selector beside the right keyboard edge: black / white / red.
  for(const [i,color] of [0x1b211c,0xe7e3d3,0x923e30].entries()){
   const dot=new T.Mesh(new T.SphereGeometry(.0014,12,8),new T.MeshStandardMaterial({color,roughness:.5}));dot.name='Olympia_Ribbon_Setting_'+i;dot.position.set(.220,.086-i*.005,.046);root.add(dot);

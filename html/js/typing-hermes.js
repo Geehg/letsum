@@ -78,6 +78,7 @@
     if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
     else if(old.name==='Lettera_Blue_Enamel'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000025;m.envMapIntensity=1.05;}
     else if(old.name==='Olympia_Crinkle_Enamel'){m=old.clone();m.envMapIntensity=.32;}
+    else if(old.name==='Olympia_Badge_Metal'){m=old.clone();m.envMapIntensity=.85;}
     else if(old.name==='Olympia_Chrome'){m=old.clone();m.envMapIntensity=1.05;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
     else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.23;m.envMapIntensity=.85;}

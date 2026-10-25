@@ -136,6 +136,13 @@ if(model==='lettera32'){
 }
 if(model==='olympiasm3'){
  assert.equal(nodes.Ribbon_Hood.material.name,'Olympia_Crinkle_Enamel');assert(nodes.Ribbon_Hood.material.bumpMap);
+ const normals=nodes.Ribbon_Hood.geometry.attributes.normal;for(let i=0;i<normals.count;i++){const n=new T.Vector3().fromBufferAttribute(normals,i);assert(Number.isFinite(n.length())&&Math.abs(n.length()-1)<1e-5,'SM3 curved cover has finite unit normals');}
+ gltf.scene.updateMatrixWorld(true);const badgeRay=new T.Raycaster();
+ for(const stroke of gltf.scene.getObjectByName('Olympia_Script_Badge').children){
+  assert.equal(stroke.material.metalness,1);assert.equal(stroke.material.name,'Olympia_Badge_Metal');
+  const p=stroke.geometry.attributes.position;
+  for(const index of [0,Math.floor(p.count/2),p.count-1]){const point=new T.Vector3().fromBufferAttribute(p,index).applyMatrix4(stroke.matrixWorld);badgeRay.set(new T.Vector3(point.x,.4,point.z),new T.Vector3(0,-1,0));const hit=badgeRay.intersectObject(nodes.Ribbon_Hood,false)[0];assert(hit&&point.y>hit.point.y,'solid logo remains above the cover mesh '+JSON.stringify({stroke:stroke.name,index,point,hit:hit?.point}));}
+ }
  assert.equal(nodes.Cap_KeyA.material.name,'Olympia_Keycaps_Contour');assert.equal(nodes.Hermes_Badge.visible,false);
  for(const name of ['Olympia_Cover_Chrome','Olympia_Base_Chrome','Olympia_Script_Badge','Olympia_Return_Lever','Olympia_Paper_Support'])assert(gltf.scene.getObjectByName(name),name);
  assert.equal(gltf.scene.getObjectByName('Olympia_Paper_Support').parent,nodes.Carriage);
