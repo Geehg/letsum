@@ -111,6 +111,27 @@ for(const [w,h] of [[1052,522],[1069,678],[1392,850],[342,570],[600,260]]){
 ids.tbHermesView.clientWidth=870;ids.tbHermesView.clientHeight=600;
 const traceDraft=ids.tbInput.value;ids.tbMain.dataset.readingMode='standard';modeObservers();tick();
 assert.equal(nodes.Paper.scale.x,1,'standard paper size restores');assert.equal(ids.tbInput.value,traceDraft,'mode switch preserves draft');assert.equal(ids.tbInput.style.paddingBottom,'30px');
+// Optional physical feed: first line starts at the platen; line transitions, not letters, raise the sheet.
+function feedOption(on){ids.tbMain.dataset.paperFeed=on?'physical':'full';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-paper-feed')).forEach(o=>o.f());tick();}
+ids.tbMain.dataset.readingMode='immersive';ids.tbOrig.dataset.source='a'.repeat(80)+'\n'+'b'.repeat(120);ids.tbInput.value='';ids.tbInput.selectionStart=0;modeObservers();tick();
+const fullPaperMatrix=paperMatrix(),fullPaperHeight=parseFloat(ids.tbHermesPaper.style.height);feedOption(true);
+const firstLineY=paperMatrix()[5],firstLineHeight=parseFloat(ids.tbHermesPaper.style.height),firstRoll=nodes.Platen.quaternion.clone();
+assert(firstLineHeight<fullPaperHeight*.25,'initial exposed sheet is just the first line and top margin');
+assert(Math.abs(paperMatrix()[0]-fullPaperMatrix[0])<1e-9,'physical feed keeps A4 width');
+assert(Math.abs(nodes.Paper.position.y-nodes.Paper.scale.y*.222/2-.174)<1e-9,'depth mask ends at the platen instead of obscuring the keyboard');
+ids.tbInput.value='a';ids.tbInput.selectionStart=1;event('tbInput','input');for(let i=0;i<20;i++)tick();
+assert(Math.abs(paperMatrix()[5]-firstLineY)<1e-9,'typing within a line does not feed vertically');
+ids.tbInput.value='a'.repeat(45);ids.tbInput.selectionStart=45;event('tbInput','input');for(let i=0;i<20;i++)tick();
+assert(paperMatrix()[5]<firstLineY-1,'soft wrapping raises the paper');
+assert(parseFloat(ids.tbHermesPaper.style.height)>firstLineHeight,'more paper emerges after wrapping');
+assert(nodes.Platen.quaternion.angleTo(firstRoll)>.01,'platen rolls with paper feed');
+const physicalY=paperMatrix()[5];event('tbInput','compositionstart');ids.tbInput.value=ids.tbOrig.dataset.source.slice(0,82);ids.tbInput.selectionStart=82;event('tbInput','input');for(let i=0;i<20;i++)tick();
+assert.equal(paperMatrix()[5],physicalY,'IME composition cannot prematurely feed');event('tbInput','compositionend');for(let i=0;i<20;i++)tick();assert(paperMatrix()[5]<physicalY,'committed newline advances the sheet');
+ids.tbOrig.dataset.source='a'.repeat(3000);ids.tbInput.value='a'.repeat(1000);ids.tbInput.selectionStart=1000;event('tbInput','input');for(let i=0;i<20;i++)tick();
+assert(Number(ids.tbHermesPaper.dataset.feedScroll)>0,'long source continues on a new physical sheet');assert(parseFloat(ids.tbHermesPaper.style.height)<=fullPaperHeight,'new sheet stays within A4 height');
+ids.tbInput.value='';ids.tbInput.selectionStart=0;event('tbInput','tb:paper');for(let i=0;i<20;i++)tick();assert.equal(ids.tbHermesPaper.dataset.feedScroll,'0','next page resets to its first line');
+const feedDraft=ids.tbInput.value;feedOption(false);assert.equal(ids.tbInput.value,feedDraft,'feed toggle preserves draft');assert.equal(parseFloat(ids.tbHermesPaper.style.height),fullPaperHeight,'OFF restores the complete A4');assert.equal(ids.tbOrig.scrollTop,0);
+ids.tbMain.dataset.readingMode='standard';modeObservers();feedOption(true);assert(parseFloat(ids.tbHermesPaper.style.height)<600,'standard retro also exposes a short first section');feedOption(false);assert.equal(ids.tbInput.style.paddingBottom,'30px');
 // Wood uses the supplied image once, wraps continuously, and restores cloth drape.
 const table=renderedScene.getObjectByName('Tablecloth'),tableZ=table.geometry.attributes.position;
 function tableStyle(style){ids.tbMain.dataset.table=style;observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-table')).forEach(o=>o.f());tick();}
@@ -173,4 +194,4 @@ for(const next of [...['hermes3000','lettera32','olympiasm3'].filter(x=>x!==mode
  assert.equal(events['tbInput:keydown'].length,1,'only one model keydown handler after switching');
  assert.equal(events['tbHermesView:tb:hermes-align'].length,1,'one alignment handler after switching');
 }
-console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners'],renders,nodes:Object.keys(nodes).length}));
+console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','optional physical feed / fixed print line / soft wrap / IME / new sheet / OFF restoration','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners'],renders,nodes:Object.keys(nodes).length}));

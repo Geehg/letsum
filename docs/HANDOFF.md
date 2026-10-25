@@ -402,3 +402,9 @@ img.save("sample.png")
 - Larry McMurtry / Cormac McCarthy / Woody Allen 사용 모델 근거와 인물 사진·크레딧 연결. 원본 세대와 인물 소유 개별 기기의 동일성은 단정하지 않음. TYPEWRITER_GALLERY.md에 근거·사진 조건·렌더 절차 기록.
 - 확인: 기본 서가 및 직접 필사 진입, 모드 왕복/취소, 설정 재선택 후 입력150자 유지·canvas1개·ready true. 390px 모바일 1열 실제 화면 확인. 기존 Hermes 동작 회귀 검사 통과.
 - typing.js v31 / typing-hermes.js v34 / 새 typing-model-gallery.js·css v1. 원본 템플릿과 생성 페이지 동기화.
+
+### 2026-10-26 — 선택형 실제 종이 이송
+- 설정 → 레트로 타자기 → **실제 종이 이송** 스위치 추가. 기본 OFF, 기존 retro 저장 객체의 paperFeed 불리언으로 지속. 세 3D 모델의 레트로/레트로 몰입에서 공통 지원.
+- ON: 첫 줄을 플래튼 위 타격선에 두고, 자동 줄바꿈/원문의 개행을 넘을 때 종이와 플래튼을 함께 이송. 숨겨진 종이 꼬리가 본체를 가리거나 문서 스크롤을 늘리지 않도록 노출 높이와 depth mask만 갱신. IME 조합 중 이동 보류, 긴 원문은 A4 높이에 맞춰 다음 용지 구간으로 이어짐.
+- OFF: 전체 A4 표시와 기존 커서 추적 복원. 초안/모델/용지 폭 유지. 프레임과 타자기 위치는 기존과 동일.
+- 검증: check_typing_hermes.mjs에 첫 줄/동일 줄/자동 줄바꿈/IME/다음 용지/OFF 복원 검증 추가, Hermes·Lettera·Olympia 모두 통과. 로컬 브라우저 토글·새로고침 저장·큰 글꼴 이어쓰기 확인.

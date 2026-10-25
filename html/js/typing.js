@@ -107,8 +107,9 @@
   }
 
   // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
-  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham" }, readJSON("retro", {}));
+  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham", paperFeed: false }, readJSON("retro", {}));
   retro.sound = retro.sound !== false;
+  retro.paperFeed = retro.paperFeed === true;
   retro.volume = Number.isFinite(Number(retro.volume)) ? Math.max(0, Math.min(100, Math.round(Number(retro.volume)))) : 38;
   function updateSoundControls() {
     $("tbSound").setAttribute("aria-checked", String(retro.sound));
@@ -121,6 +122,9 @@
   let strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
+    $("tbMain").dataset.paperFeed = retro.paperFeed ? "physical" : "full";
+    $("tbPaperFeed").setAttribute("aria-checked", String(retro.paperFeed));
+    $("tbPaperFeedState").textContent = retro.paperFeed ? "켜짐" : "꺼짐";
     updateSoundControls(); $("tbPaper").value = $("tbMain").dataset.paper;
     $("tbMain").dataset.table = ["gingham", "floral", "check", "linen", "wood"].includes(retro.table) ? retro.table : "gingham";
     $("tbTable").value = $("tbMain").dataset.table;
@@ -544,6 +548,7 @@
     $("tbSound").addEventListener("click", () => { retro.sound = !retro.sound; writeJSON("retro", retro); applyRetro(); if (retro.sound) window.LSTypewriterAudio?.preview(); });
     $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; updateSoundControls(); writeJSON("retro", retro); window.LSTypewriterAudio?.configure(retro); });
     $("tbVolume").addEventListener("change", () => window.LSTypewriterAudio?.preview());
+    $("tbPaperFeed").addEventListener("click", () => { retro.paperFeed = !retro.paperFeed; writeJSON("retro", retro); applyRetro(); });
     $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });
     $("tbTable").addEventListener("change", (e) => { retro.table = e.target.value; writeJSON("retro", retro); applyRetro(); });
     $("tbPrint").addEventListener("click", printPages);

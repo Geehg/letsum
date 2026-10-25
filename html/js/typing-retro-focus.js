@@ -64,7 +64,7 @@
   }
   if(caret){
    const line=parseFloat(getComputedStyle(input).lineHeight)||48;
-   const target=Math.max(0,caret.offsetTop-(original.clientHeight-line)*.36);
+   const target=main.dataset.paperFeed==='physical'?Number(paper.dataset.feedScroll||0):Math.max(0,caret.offsetTop-(original.clientHeight-line)*.36);
    following=true;original.scrollTop=target;input.scrollTop=original.scrollTop;following=false;
   }
  }
@@ -80,13 +80,13 @@
   if(!want)main.style.removeProperty('--tb-focus-height');
   schedule();scheduleFit();
  }
- new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready']});
+ new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready','data-paper-feed']});
  new MutationObserver(update).observe(read,{attributes:true,attributeFilter:['hidden']});
  new MutationObserver(schedule).observe(original,{childList:true});
  new MutationObserver(()=>{nextMeasureKey='';scheduleFit();}).observe($('tbFocusNextText'),{childList:true,characterData:true,subtree:true});
  new MutationObserver(()=>{schedule();scheduleFit();}).observe(input,{attributes:true,attributeFilter:['style']});
  for(const name of ['input','click','keyup','select','compositionstart','compositionend','tb:paper'])input.addEventListener(name,schedule);
- input.addEventListener('scroll',()=>{if(mounted&&!following)original.scrollTop=input.scrollTop;});
+ input.addEventListener('scroll',()=>{if(mounted&&!following&&main.dataset.paperFeed!=='physical')original.scrollTop=input.scrollTop;});
  document.addEventListener('selectionchange',()=>{if(document.activeElement===input)schedule();});
  document.fonts?.addEventListener('loadingdone',()=>{nextMeasureKey='';schedule();scheduleFit();});
  view.addEventListener('tb:hermes-layout',scheduleFit);

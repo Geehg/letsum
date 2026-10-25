@@ -4,6 +4,7 @@
  const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
  if(!stage)return;
  const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32',olympiasm3:'Olympia SM3'};
+ const feeding=()=>main.dataset.paperFeed==='physical';
  const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,inView=true,loading=false,engine=null,composing=false,failed=false,failedModel='';
@@ -270,7 +271,8 @@
     // Enlarge the instrument by 15%; inversely compensate the A4 sheet
     // to preserve its screen position, width, height and text size.
     sheetWidth=trace?.420/instrumentScale:.224;paperTop=trace?.174+.594/instrumentScale:.396;
-    paperHeight=trace?paperWidth*297/210:594;
+    paperHeight=trace||feeding()?paperWidth*297/210:594;
+    if(feeding()&&!trace)paperTop=.174+sheetWidth*297/210;
     camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
     const sheetInset=trace?(parseFloat(getComputedStyle(main).getPropertyValue('--tb-focus-sheet-top'))||16):16;
@@ -300,22 +302,30 @@
    }
    function sync(snap=false){
     if(disposed||!active||failed)return;snap=snap===true;
-    const trace=tracing(),source=$('tbOrig').dataset.source||input.value,caret=Array.from(input.value.slice(0,input.selectionStart).normalize('NFC')).length;
+    const trace=tracing(),physical=feeding(),source=$('tbOrig').dataset.source||input.value,caret=Array.from(input.value.slice(0,input.selectionStart).normalize('NFC')).length;
     const prefix=trace?Array.from(source.normalize('NFC')).slice(0,caret).join(''):input.value.slice(0,input.selectionStart);
     const all=layout(input.value),before=layout(prefix),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
-    fullHeight=trace?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
-    input.style.paddingTop=(trace?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace?32:30)+'px';if(!trace)input.scrollTop=0;
+    fullHeight=trace||physical?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
+    input.style.paddingTop=(trace||physical?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace||physical?32:30)+'px';if(!trace)input.scrollTop=0;
     paper.dataset.paper=main.dataset.paper||'ivory';$('tbHermesCount').textContent=$('tbCount').textContent;
     if(!composing){
-     const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth,nextFeed=trace?0:(before.length-1)*lineHeight*.222/paperHeight;
-     const newLine=trace?before.length>lastLine:nextFeed>feed+.0001;lastLine=before.length;
+     const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth;
+     // Keep the active baseline at the ribbon. Unskewed text needs the same
+     // projection compensation in its mechanical feed distance.
+     const worldPerPixel=(paperTop-.174)/paperHeight,rowsPerSheet=Math.max(1,Math.floor((paperHeight*traceProjection-64)/lineHeight));
+     const row=before.length-1,sheetRow=physical?row%rowsPerSheet:row;
+     const contentOffset=physical?Math.floor(row/rowsPerSheet)*rowsPerSheet*lineHeight:0;
+     paper.dataset.feedScroll=String(contentOffset);
+     if(physical){input.scrollTop=contentOffset;if(trace)$('tbOrig').scrollTop=contentOffset;}
+     const nextFeed=physical?.196+(32+fontPixels*.95+sheetRow*lineHeight)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
+     const newLine=trace||physical?before.length>lastLine:nextFeed>feed+.0001;lastLine=before.length;
      if(newLine&&changed&&!initial)returnAt=now;
      if(initial||snap||input.value.length<(lastValue||'').length)bellLine=-1;
      if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==before.length){bellLine=before.length;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
      if(Math.abs(nextFeed-feed)>.000001){feedDrive={from:currentFeed,to:nextFeed,start:now+(newLine?20:0),duration:newLine?180:150};feed=nextFeed;}
-     targetRoll=trace?(before.length-1)*lineHeight*sheetWidth/paperWidth:nextFeed;
+     targetRoll=physical?sheetRow*lineHeight/traceProjection*worldPerPixel:trace?(before.length-1)*lineHeight*sheetWidth/paperWidth:nextFeed;
      if(snap||initial){currentX=targetX;currentFeed=feed;rollerFeed=targetRoll;drive=feedDrive=null;}
      // Mobile IME may commit text without keyboard events. Space/newline never hit a typebar.
      if(changed&&!initial&&input.value.length>(lastValue||'').length&&now-lastKeyAt>100&&/\S$/.test(input.value)){const ch=Array.from(input.value).at(-1),bar=barFor.get('Key'+ch.toUpperCase())||bars[Array.from(input.value).length%bars.length];hits.push({bar,time:now});input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:ch}}));}
@@ -326,6 +336,16 @@
     const top=paperTop+currentFeed+shiftLift,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed+shiftLift,-.151).project(camera);
     const x=(tl.x+1)*renderWidth/2-bleedLeft,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*renderWidth/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
+    const visible=feeding()?Math.max(0,Math.min(fullHeight,(top-shiftLift-.174)/(paperTop-.174)*paperHeight)):fullHeight;
+    // Size the exposed sheet itself so the hidden tail cannot extend document scrolling.
+    paper.style.height=(feeding()?visible:fullHeight)+'px';
+    if(feeding()){
+     const editorHeight=visible*traceProjection+'px';
+     if(input.style.height!==editorHeight)input.style.height=editorHeight;
+     if(paper.style.getPropertyValue('--tb-trace-editor-height')!==editorHeight)paper.style.setProperty('--tb-trace-editor-height',editorHeight);
+    }
+    paper.style.clipPath='none';
+    paper.style.setProperty('--tb-feed-visible-height',visible+'px');
    }
    function placeCount(){
     const text=$('tbHermesCount').textContent;if(text===drawnCount)return;drawnCount=text;
@@ -364,10 +384,10 @@
     carriage.position.x=currentX;carriage.position.y=shiftLift+(motion?impact*.0002:0);
     // 18 mm is the authored mesh radius, not a measured Hermes specification.
     rollerFeed=motion?rollerFeed+(targetRoll-rollerFeed)*(1-Math.exp(-dt*20)):targetRoll;
-    const angle=-(tracing()?rollerFeed:currentFeed)/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
+    const angle=-(tracing()||feeding()?rollerFeed:currentFeed)/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
     const rt=now-returnAt;lever.quaternion.copy(leverQ);
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
-    const sheetHeight=(paperTop-.174)*fullHeight/paperHeight;
+    const sheetHeight=feeding()?Math.max(.0001,paperTop+currentFeed-.174):(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
     placePaper();placeCount();renderer.render(scene,camera);
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
@@ -383,6 +403,7 @@
    listen(input,'keydown',down);listen(document,'keyup',up);listen(window,'blur',()=>{resetKeys();wake();});listen(input,'blur',()=>{resetKeys();wake();});
    ['input','click','keyup','tb:paper'].forEach(e=>listen(input,e,()=>sync()));
    observe(MutationObserver,()=>sync(),main,{attributes:true,attributeFilter:['data-paper']});
+   observe(MutationObserver,()=>{input.scrollTop=0;$('tbOrig').scrollTop=0;resize();},main,{attributes:true,attributeFilter:['data-paper-feed']});
    listen(view,'tb:hermes-align',resize);
    observe(ResizeObserver,resize,view);['tbMinus','tbPlus'].forEach(id=>listen($(id),'click',()=>{if(tracing())resize();}));listen($('tbFontW'),'change',()=>sync(true));listen($('tbReset'),'click',()=>queueMicrotask(()=>sync(true)));
    listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failed=true;failedModel=selectedModel;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
