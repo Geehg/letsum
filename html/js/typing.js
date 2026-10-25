@@ -108,7 +108,7 @@
   let actx = null, strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
-    $("tbSound").checked = !!retro.sound; $("tbVolume").value = retro.volume; $("tbPaper").value = $("tbMain").dataset.paper;
+    $("tbSound").setAttribute("aria-pressed", !!retro.sound); $("tbSound").textContent = retro.sound ? "🔊" : "🔇"; $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound; $("tbPaper").value = $("tbMain").dataset.paper;
   }
   function tone(f, d, a, type = "triangle", delay = 0) {
     const t = actx.currentTime + delay, o = actx.createOscillator(), g = actx.createGain();
@@ -139,7 +139,6 @@
     if (!isRetro()) return;
     const inp = $("tbInput"), before = inp.value.slice(0, inp.selectionStart), col = chars(before.slice(before.lastIndexOf("\n") + 1)).length;
     $("tbMachine").style.setProperty("--col", String(col % 56));
-    $("tbStatus").textContent = state.book && state.completed.has(state.page) ? "PAGE COMPLETE" : state.draft ? "TYPING" : "READY";
   }
   function printPages() {
     const b = state.book; if (!b) return;
@@ -516,7 +515,7 @@
     $("tbCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; lib.cat = b.dataset.cat; lib.shown = 24; $("tbCats").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); renderLib(); });
     $("tbAuthorSel").addEventListener("change", (e) => { lib.author = e.target.value; lib.shown = 24; renderLib(); });
     $("tbMore").addEventListener("click", () => { lib.shown += 48; renderLib(); });
-    $("tbSound").addEventListener("change", (e) => { retro.sound = e.target.checked; writeJSON("retro", retro); });
+    $("tbSound").addEventListener("click", () => { retro.sound = !retro.sound; writeJSON("retro", retro); applyRetro(); if (retro.sound) clack("x"); });
     $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); });
     $("tbVolume").addEventListener("change", () => clack("x"));
     $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });

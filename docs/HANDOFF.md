@@ -236,3 +236,4 @@ img.save("sample.png")
 - nginx/default.conf를 바꾸면 '받아와 재배포'만으로는 안 되고 `docker restart letsum-web` 필요(파일 단위 연결).
 - 2026-10-25: **생성 표지 474권 적용** — 운영자 폴더 `/Volumes/AI_dev/web/letsum-covers-20261024`(generation-manifest.json의 source_id로 짝지음)를 `import_covers.py`로 `html/img/typing/<id>.webp`(480×679, 약 28MB). 표지 있는 카드(`.tb-card.cov`)는 그림만 보이고 제목·저자·분량·'필사 시작'은 마우스를 올리거나 키보드로 고를 때만(쓰던 책은 표지 아래 진행 막대만). letsum.app 소개 페이지의 대표 작품도 같은 방식.
 - 2026-10-25: 표지 카드(`.tb-card.tb-cov` — `.cov`는 사이트의 글자 지원 표시 클래스와 겹쳐 쓰지 말 것) **입체 책** — `.tb-b3`(앞표지 + `.tb-sp3` 책등). 책등 색은 표지 그림 아래 60% 평균을 조금 어둡게(`import_covers.py` → index.json `sc`, 글자색 `si`), 두께는 글자 수 로그(16~34px). 마우스를 올리면 rotateY(40deg)·원근 1800px(yes24와 같은 값, 위가 잘리지 않음)로 돌아가며 책등의 세로 제목·저자가 보이고 아래쪽에 분량 띠. 터치 기기는 회전 없음.
+- 2026-10-25: 레트로 아래쪽 명판(LETSUM FILSA·TYPEWRITER)·상태등·잉크 리본·설정 줄 삭제 → 타건음(🔊 켜기·끄기)·음량·용지는 작품 제목 옆 도구 줄(`.tb-retro-tools`, 레트로에서만), '인쇄'는 모든 디자인에서 도구 줄에. 캐리지(위쪽 롤러)는 유지.
