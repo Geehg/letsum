@@ -12,6 +12,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css?v=108">
+<link rel="stylesheet" href="css/typing-hero.css?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -38,15 +39,16 @@
 
   <!-- 서가 -->
   <section id="tbShelf" aria-label="필사 서가">
-    <div class="wrap tb-hero">
-      <div class="tb-hero-l">
+    <div class="tb-meadow">
+      <img class="tb-meadow-art" src="img/typing-hero-meadow.webp" alt="초원 속 책상에서 종이가 꽂힌 타자기로 글을 쓰는 모습" width="1672" height="941" fetchpriority="high">
+      <div class="wrap tb-meadow-copy">
         <p class="tb-kick">READ · TYPE · REMEMBER</p>
         <h1>읽는 것을 넘어, <em>쓰는 독서.</em></h1>
-        <p class="tb-lead">명작의 문장을 따라 한 글자씩 타이핑하세요. 틀린 글자는 바로 보이고, 한 쪽을 완성할 때마다 나만의 완독 기록이 쌓입니다.</p>
+        <p class="tb-lead">명작의 문장을 따라, 한 글자씩.<br>고요히 쓰는 시간이 나만의 완독 기록이 됩니다.</p>
         <div class="tb-cta"><button class="tb-btn pri" id="tbContinue" type="button" hidden>이어서 쓰기 →</button><button class="tb-btn" id="tbStart" type="button">오늘의 한 편 쓰기 →</button><button class="tb-btn" id="tbImportOpen" type="button">＋ 내 글 가져오기</button></div>
       </div>
-      <div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div>
     </div>
+    <div class="wrap tb-meadow-record"><div class="tb-me" id="tbMe" aria-label="나의 필사 기록"></div></div>
     <div class="wrap" id="tbThemes"><p class="note">서가를 불러오는 중…</p></div>
     <section class="wrap tb-lib" id="tbLib" aria-label="전체 서가">
       <div class="tb-th-h"><div><p class="tb-kick">FULL LIBRARY</p><h2>전체 서가 <span id="tbLibN"></span></h2><p class="note">저작권 보호기간이 끝난 한국 근대 문학과 영어 고전 — 시집·소설 전권을 장(목차) 단위로 필사할 수 있습니다</p></div></div>

@@ -239,3 +239,5 @@ img.save("sample.png")
 - 2026-10-25: 레트로 아래쪽 명판(LETSUM FILSA·TYPEWRITER)·상태등·잉크 리본·설정 줄 삭제 → 타건음(🔊 켜기·끄기)·음량·용지는 작품 제목 옆 도구 줄(`.tb-retro-tools`, 레트로에서만), '인쇄'는 모든 디자인에서 도구 줄에. 캐리지(위쪽 롤러)는 유지.
 - 2026-10-25: 읽기 화면 머리 통합 — `.tb-rh`에 입체 표지(`#tbCv`, 서가와 같은 책등 회전) + 제목·도구(`.tb-rh-body`). 몰입·레트로(data-layout=focus)에서는 `.tb-left/.tb-main/.tb-reading`을 display:contents로 풀어 `.tb-app` 격자에서 머리(왼쪽)와 진행 수치 2×2(오른쪽, 280px)를 한 카드로 나란히(세로 약 150px, 이전의 1/3). 휴대폰은 머리 아래 수치 4칸.
 - 2026-10-25: 필사 설정을 헤더 **⚙ 설정** 팝업(`#tbSet`, 읽기 화면에서만 보임)으로 — 글꼴(원문·필사)·글자 크기·레트로 타건음·음량·용지·이 쪽 다시 쓰기·인쇄. 표지 옆(`.tb-rh-body`)에는 도서 정보만(NOW READING/저자·연도·출처, 제목, 목차, `#tbInfo` 갈래·편/장·글자·쪽·저작권)과 그 아래 쪽 넘김(`.tb-pager`).
+
+- 필사 서가 히어로: `tools/typing_app.html` + `html/css/typing-hero.css`, 초원·타자기 이미지 `html/img/typing-hero-meadow.webp`. 원본 생성 이미지 `/Volumes/AI_dev/web/letsum-typing-hero/hero-typewriter-meadow.png`. 문구·버튼은 HTML, 기록은 히어로 아래 6칸(모바일 3×2). 읽기 화면에는 적용 안 함.

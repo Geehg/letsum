@@ -1,0 +1,32 @@
+/* Shelf-only meadow artwork; reading layouts keep their existing styles. */
+.tb-meadow{position:relative;isolation:isolate;overflow:hidden;background:#f7f5ee;height:clamp(620px,56.28vw,780px);color:#20291d}
+.tb-meadow-art{position:absolute;z-index:-1;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.tb-meadow-copy{text-align:center;padding-top:32px;padding-bottom:24px;position:relative}
+.tb-meadow .tb-kick{color:#52633b;margin:0 0 12px;letter-spacing:.16em}
+.tb-meadow h1{font-size:clamp(32px,3.6vw,52px);line-height:1.2;letter-spacing:-.045em;margin:0 0 14px;color:#20291d}
+.tb-meadow h1 em{font-style:normal;color:#52633b}
+.tb-meadow .tb-lead{color:#5d6457;max-width:none;margin:0 0 20px;font-size:15px;line-height:1.7}
+.tb-meadow .tb-cta{justify-content:center}
+.tb-meadow .tb-btn{background:#fffdf7;color:#273321;border:1px solid #7b856c;border-radius:8px;box-shadow:none}
+.tb-meadow #tbStart,.tb-meadow #tbContinue{background:#354e2e;color:#fff;border-color:#354e2e}
+.tb-meadow .tb-btn:hover{background:#e9eddf;color:#273321;transform:translateY(-1px)}
+.tb-meadow .tb-btn:focus-visible{outline:3px solid #263f20;outline-offset:4px}
+.tb-meadow-record{padding-top:22px;padding-bottom:4px}
+.tb-meadow-record .tb-me{grid-template-columns:repeat(6,minmax(0,1fr))}
+.tb-meadow-record .tb-me div{padding:18px 20px;border-bottom:0;border-right:1px solid var(--t-line);gap:10px}
+.tb-meadow-record .tb-me div:last-child{border-right:0}
+@media(min-width:1440px){.tb-meadow-copy{padding-top:48px}}
+@media(max-width:760px){
+ .tb-meadow{height:620px}
+ .tb-meadow-art{height:100%;object-fit:cover;object-position:50% 100%}
+ .tb-meadow-copy{padding-top:30px;padding-left:20px;padding-right:20px}
+ .tb-meadow h1{font-size:32px;max-width:360px;margin-left:auto;margin-right:auto;text-wrap:balance}
+ .tb-meadow .tb-lead{font-size:14px}
+ .tb-meadow .tb-cta{max-width:390px;margin:auto;gap:8px}
+ .tb-meadow .tb-btn{font-size:13px;padding:11px 14px}
+ .tb-meadow-record .tb-me{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .tb-meadow-record .tb-me div{padding:16px 12px}
+ .tb-meadow-record .tb-me div:nth-child(3n){border-right:0}
+ .tb-meadow-record .tb-me div:nth-child(-n+3){border-bottom:1px solid var(--t-line)}
+}
+@media(prefers-reduced-motion:reduce){.tb-meadow .tb-btn:hover{transform:none}}
