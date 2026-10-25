@@ -2,6 +2,7 @@
 
 이 저장소를 이어받는 AI(Claude, GPT/Codex, muse.ai 등)와 사람은 **작업 전에 이 문서를 끝까지 읽는다.**
 자세한 배경·절차는 `docs/HANDOFF.md`.
+**필사독서(type.letsum.app)를 고칠 때는 `docs/GPT_BRIEF.md`를 먼저 읽는다** — 화면 원본(`tools/typing_app.html`)·생성물·디자인 체계·이미 겪은 함정 요약.
 
 ## 1. 한 줄 요약
 letsum.app = 상업용 무료 한글 폰트 사이트. 정적 사이트(`html/`, NAS) + 수집 도구(`tools/`) + 좋아요·댓글 API(`worker/`, Cloudflare Workers 무료 플랜 + D1). AI 기능 없음.
