@@ -172,6 +172,16 @@
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
+   // Keep the progress holder in front of the travelling platen knobs.
+   // Move along the fixed viewing ray to preserve its on-screen outline.
+   nodes.Card_Holder_Left.position.y+=.06*(.395/.73);nodes.Card_Holder_Left.position.z+=.06;
+   nodes.Card_Holder_Left.material=new T.MeshStandardMaterial({color:0x242c26,metalness:.5,roughness:.4,envMapIntensity:.25,side:T.DoubleSide});
+   // Print progress on the inset surface.
+   const countCanvas=document.createElement('canvas');countCanvas.width=512;countCanvas.height=128;
+   const countContext=countCanvas.getContext('2d'),countTexture=new T.CanvasTexture(countCanvas);
+   countTexture.encoding=T.sRGBEncoding;countTexture.minFilter=T.LinearFilter;
+   const countPlate=new T.Mesh(new T.PlaneGeometry(.083,.018),new T.MeshBasicMaterial({map:countTexture,toneMapped:false}));
+   countPlate.position.set(-.0615,.1705+.06*(.395/.73),-.0595);countPlate.name='Typing_Progress_Inset';scene.add(countPlate);let drawnCount='';
    const camera=new T.OrthographicCamera();camera.position.set(0,.60,.73);camera.lookAt(0,.205,0);
    view.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
    const keys=Object.values(nodes).filter(o=>o.name.startsWith('Key_')),bars=Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name));
@@ -266,14 +276,10 @@
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
    function placeCount(){
-    // The right card-holder window is fixed to the body, not the moving carriage.
-    // Project its inner bounds so the counter stays inside the requested inset.
-    const a=new T.Vector3(.020,.174,-.119).project(camera),b=new T.Vector3(.103,.174,-.119).project(camera);
-    const middle=new T.Vector3(.0615,.171,-.119).project(camera),label=$('tbHermesCount');
-    const w=(b.x-a.x)*renderWidth/2;
-    label.style.left=((a.x+1)*renderWidth/2-bleedLeft)+'px';
-    label.style.top=((1-middle.y)*height/2)+'px';
-    label.style.width=w+'px';label.style.fontSize=Math.max(7,Math.min(12,w/8.5))+'px';
+    const text=$('tbHermesCount').textContent;if(text===drawnCount)return;drawnCount=text;
+    countContext.fillStyle='#242c26';countContext.fillRect(0,0,512,128);
+    countContext.font='52px monospace';countContext.textAlign='center';countContext.textBaseline='middle';
+    countContext.fillStyle='#efe8d2';countContext.fillText(text,256,66,470);countTexture.needsUpdate=true;
    }
    function frame(now){
     raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
