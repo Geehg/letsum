@@ -3,6 +3,10 @@
  'use strict';
  const $=id=>document.getElementById(id),main=$('tbMain'),read=$('tbRead'),input=$('tbInput'),original=$('tbOrig'),home=$('tbOrigHome'),paper=$('tbHermesPaper'),view=$('tbHermesView');
  if(!main||!home)return;
+ // Move the real controls so their handlers and book-specific state remain intact.
+ const sideControls=[[$('tbTocWrap'),$('tbFocusBookTools')],[$('tbSource'),$('tbFocusBookTools')],[$('tbPrev'),$('tbFocusBookPager')],[$('tbCur').closest('.tb-pno'),$('tbFocusBookPager')]].map(([el,target])=>{
+  const anchor=document.createComment('reader control home');el.before(anchor);return {el,target,anchor};
+ });
  let mounted=false,frame=0,fitFrame=0,following=false,nextMeasureKey='';
  const wanted=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro'&&!read.hidden;
  const count=s=>Array.from(s.normalize('NFC')).length;
@@ -60,8 +64,8 @@
   const want=wanted(),next=want&&main.dataset.hermesReady==='true';
   const entering=want&&!document.body.classList.contains('tb-retro-immersive');
   document.body.classList.toggle('tb-retro-immersive',want);
-  if(next&&!mounted){paper.prepend(original);original.scrollTop=0;input.setAttribute('aria-describedby','tbHermesStatus');}
-  if(!next&&mounted){home.after(original);original.scrollTop=0;input.removeAttribute('aria-describedby');original.querySelectorAll('.trace-caret,.trace-after,.trace-selected').forEach(s=>s.classList.remove('trace-caret','trace-after','trace-selected'));}
+  if(next&&!mounted){sideControls.forEach(({el,target})=>target.append(el));paper.prepend(original);original.scrollTop=0;input.setAttribute('aria-describedby','tbHermesStatus');}
+  if(!next&&mounted){sideControls.forEach(({el,anchor})=>anchor.after(el));home.after(original);original.scrollTop=0;input.removeAttribute('aria-describedby');original.querySelectorAll('.trace-caret,.trace-after,.trace-selected').forEach(s=>s.classList.remove('trace-caret','trace-after','trace-selected'));}
   mounted=next;
   if(entering)window.scrollTo({top:0,behavior:'instant'});
   if(!want)main.style.removeProperty('--tb-focus-height');
@@ -78,6 +82,6 @@
  document.fonts?.addEventListener('loadingdone',()=>{nextMeasureKey='';schedule();scheduleFit();});
  view.addEventListener('tb:hermes-layout',scheduleFit);
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
- const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbHermesStage').querySelector('.tb-hermes-foot')])observer.observe(el);
+ const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbHermesStage').querySelector('.tb-hermes-foot'),$('tbFocusBookTools'),$('tbFocusBookPager')])observer.observe(el);
  update();
 })();

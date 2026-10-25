@@ -119,3 +119,17 @@ main.tb[data-focus-sides="below"] .tb-hermes-foot{grid-column:1/-1;grid-row:2}
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"][data-focus-sides="below"] .tb-focus-aside{position:static;grid-row:3;width:100%;max-width:288px;justify-self:center;margin:24px 0 32px;min-width:0}
 main.tb[data-focus-sides="below"] .tb-focus-book{grid-column:1}
 main.tb[data-focus-sides="below"] .tb-focus-next{grid-column:2}
+
+/* The cover already names the book; keep navigation beside it instead of a second header. */
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] .tb-rh{display:none}
+.tb-focus-book-tools{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:12px}
+.tb-focus-book-tools:empty{display:none}
+.tb-focus-book-tools #tbSource{font-size:11px;color:var(--t-mute);text-underline-offset:3px}
+main.tb[data-reading-mode="immersive"] .tb-focus-book-tools .tb-toc{max-width:100%;width:100%;font-size:11px}
+main.tb[data-reading-mode="immersive"] .tb-focus-book-tools .tb-toc select{min-width:0;width:100%;max-width:100%;font-size:11px}
+.tb-focus-book-pager{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tb-focus-book-pager .tb-nav{font-size:11px;padding:7px 10px}
+.tb-focus-book-pager .tb-pno{font-size:11px;white-space:nowrap}
+.tb-focus-book-pager .tb-pno::before{content:"현재 쪽 ";font-size:10px;font-weight:400;color:var(--t-mute);margin-right:4px}
+
+.tb-focus-book-tools .tb-toc>span{white-space:nowrap;flex-shrink:0}
