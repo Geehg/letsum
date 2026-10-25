@@ -104,45 +104,14 @@
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
   }
 
-  // ---------- 레트로 타자기: 합성 타건음(외부 음원 없음)·캐리지·용지·인쇄 ----------
+  // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
   const retro = Object.assign({ sound: true, volume: 38, paper: "ivory" }, readJSON("retro", {}));
   const isRetro = () => $("tbMain").dataset.skin === "retro";
-  let actx = null, strikeT = 0;
+  let strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
     $("tbSound").setAttribute("aria-pressed", !!retro.sound); $("tbSound").textContent = retro.sound ? "🔊" : "🔇"; $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound; $("tbPaper").value = $("tbMain").dataset.paper;
-  }
-  function tone(f, d, a, type = "triangle", delay = 0) {
-    const t = actx.currentTime + delay, o = actx.createOscillator(), g = actx.createGain();
-    o.type = type; o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(Math.max(65, f * 0.63), t + d);
-    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(0.00011, a), t + 0.003); g.gain.exponentialRampToValueAtTime(0.0001, t + d);
-    o.connect(g).connect(actx.destination); o.start(t); o.stop(t + d + 0.02);
-  }
-  function noise(d, a, delay = 0) {
-    const r = actx.sampleRate, b = actx.createBuffer(1, Math.ceil(r * d), r), x = b.getChannelData(0);
-    for (let i = 0; i < x.length; i++) x[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / x.length, 2);
-    const src = actx.createBufferSource(), fl = actx.createBiquadFilter(), g = actx.createGain();
-    src.buffer = b; fl.type = "bandpass"; fl.frequency.value = 1180; fl.Q.value = 0.78; g.gain.value = a;
-    src.connect(fl).connect(g).connect(actx.destination); src.start(actx.currentTime + delay);
-  }
-  function clack(key) {
-    if (!retro.sound || !retro.volume) return;
-    try {
-      actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === "suspended") actx.resume();
-      const v = Math.min(0.65, Math.max(0, retro.volume / 100));
-      if ($("tbMain").dataset.hermesReady === "true") {
-        if (key === "MarginBell") { tone(1280, 0.32, v * 0.085, "sine"); tone(2568, 0.13, v * 0.022, "sine", 0.006); }
-        else if (key === "Enter") { noise(0.035, v * 0.11); noise(0.20, v * 0.06, 0.07); tone(135, 0.055, v * 0.065, "triangle", 0.39); }
-        else if (key === "Backspace") { noise(0.027, v * 0.10); tone(185, 0.035, v * 0.035, "triangle"); }
-        else if (key === " ") { noise(0.024, v * 0.09); tone(145, 0.03, v * 0.05, "triangle", 0.025); }
-        else { noise(0.017, v * 0.07); noise(0.022, v * 0.17, 0.042); tone(285 + Math.random() * 22, 0.026, v * 0.045, "triangle", 0.042); noise(0.015, v * 0.035, 0.12); }
-        return;
-      }
-      if (key === "Enter") { noise(0.095, v * 0.14); tone(840, 0.16, v * 0.12, "sine"); tone(1180, 0.21, v * 0.075, "sine", 0.06); } // 캐리지 복귀 + 벨
-      else if (key === "Backspace") { noise(0.038, v * 0.12); tone(170, 0.05, v * 0.06, "square"); }
-      else if (key === " ") { noise(0.065, v * 0.19); tone(150, 0.035, v * 0.08); }
-      else { noise(0.028, v * 0.19); tone(240 + Math.random() * 55, 0.035, v * 0.075, "square"); tone(580, 0.018, v * 0.025, "triangle", 0.012); }
-    } catch (e) { /* 오디오를 못 쓰는 브라우저는 소리 없이 */ }
+    window.LSTypewriterAudio?.configure(retro);
   }
   function strike() { const m = $("tbMachine"); m.classList.add("strike"); clearTimeout(strikeT); strikeT = setTimeout(() => m.classList.remove("strike"), 90); }
   function carriage() { document.getElementById("tbInput").dispatchEvent(new Event("tb:paper")); // 줄 안에서 친 글자 수만큼 캐리지가 왼쪽으로, Enter면 처음으로
@@ -309,6 +278,7 @@
   // ---------- 쪽 ----------
   function loadPage(i, save = true) {
     const b = state.book; if (!b || i < 0 || i >= b.pages.length) return;
+    const pageChanged = save && state.page !== i;
     if (save) storeProgress();
     state.page = i;
     const next = b.pages[i + 1];
@@ -319,7 +289,9 @@
     state.elapsed = +m.elapsed || 0; state.keystrokes = +m.keystrokes || 0; state.attempts = +m.attempts || 0; state.errors = +m.errors || 0;
     state.started = false; state.lastActivity = 0; state.composing = false;
     state.draft = state.drafts[i] ?? (state.completed.has(i) ? b.pages[i] : "");
-    $("tbInput").value = state.draft; refresh(); storeProgress(); carriage();
+    $("tbInput").value = state.draft; refresh(); storeProgress();
+    $("tbInput").dispatchEvent(new CustomEvent("tb:page-loaded", { detail: { changed: pageChanged } }));
+    carriage();
     if (b.partStart.length > 1) { $("tbToc").value = String(partOf(i)); }
     $("tbPartName").textContent = b.partStart.length > 1 ? b.partTitles[partOf(i)] : "읽기";
   }
@@ -509,7 +481,6 @@
   // ---------- 이벤트 ----------
   function bind() {
     const inp = $("tbInput");
-    inp.addEventListener("tb:hermes-sound", (e) => { if (isRetro() && $("tbMain").dataset.hermesReady === "true") clack(e.detail.key); });
     inp.addEventListener("compositionstart", () => { state.composing = true; });
     inp.addEventListener("compositionend", () => {
       state.composing = false; // 조합이 끝난 한 음절을 한 번의 시도로(중간 자모는 오타로 세지 않음)
@@ -521,7 +492,7 @@
     inp.addEventListener("input", onInput);
     inp.addEventListener("paste", (e) => { e.preventDefault(); toast("필사에서는 붙여 넣기를 쓸 수 없어요. 직접 입력해 주세요."); });
     inp.addEventListener("drop", (e) => e.preventDefault());
-    inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { clack(e.key === "Process" || e.key === "Unidentified" ? "x" : e.key); strike(); }
+    inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { strike(); }
       if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
     document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish", "tbSet"].forEach((id) => { if (!$(id).hidden) close(id); }); });
     document.addEventListener("keyup", (e) => press(e.code, false));
@@ -529,7 +500,7 @@
     $("tbOrig").addEventListener("click", () => inp.focus());
     $("tbPrev").addEventListener("click", () => loadPage(state.page - 1));
     $("tbNext").addEventListener("click", () => loadPage(state.page + 1));
-    $("tbReset").addEventListener("click", () => { if (!confirm("이 쪽에 입력한 내용만 지울까요? (완성 기록은 남습니다)")) return; Object.assign(state, { draft: "", elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false }); state.drafts[state.page] = ""; inp.value = ""; refresh(); storeProgress(); inp.focus(); });
+    $("tbReset").addEventListener("click", () => { if (!confirm("이 쪽에 입력한 내용만 지울까요? (완성 기록은 남습니다)")) return; Object.assign(state, { draft: "", elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false }); state.drafts[state.page] = ""; inp.value = ""; refresh(); storeProgress(); inp.dispatchEvent(new Event("tb:audio-reset")); inp.focus(); });
     const resizeText = (delta) => {
       if ($("tbMain").dataset.readingMode === "immersive") { state.traceFontSize = Math.max(10, Math.min(28, state.traceFontSize + delta)); writeJSON("trace-font", state.traceFontSize); }
       else { state.fontSize = Math.max(14, Math.min(34, state.fontSize + delta)); writeJSON("font", state.fontSize); }
@@ -539,7 +510,7 @@
     $("tbPlus").addEventListener("click", () => resizeText(2));
     $("tbFocusNextAction").addEventListener("click", () => $("tbNext").click());
     $("tbFontO").addEventListener("change", (e) => { state.fontO = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); });
-    $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.focus(); });
+    $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.dispatchEvent(new Event("tb:audio-reset")); inp.focus(); });
     $("tbFinger").addEventListener("click", () => { state.finger = !state.finger; $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").setAttribute("aria-pressed", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF"; writeJSON("finger", state.finger); });
     $("tbKbToggle").addEventListener("click", () => { state.kb = !state.kb; $("tbKeys").hidden = !state.kb; $("tbKbToggle").setAttribute("aria-pressed", state.kb); $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF"; writeJSON("kb", state.kb); });
     ["tbImportOpen", "tbImportTop", "tbSideAdd"].forEach((id) => $(id).addEventListener("click", () => open("tbImport")));
@@ -556,9 +527,9 @@
     $("tbCats").addEventListener("click", (e) => { const b = e.target.closest("[data-cat]"); if (!b) return; lib.cat = b.dataset.cat; lib.shown = 24; $("tbCats").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); renderLib(); });
     $("tbAuthorSel").addEventListener("change", (e) => { lib.author = e.target.value; lib.shown = 24; renderLib(); });
     $("tbMore").addEventListener("click", () => { lib.shown += 48; renderLib(); });
-    $("tbSound").addEventListener("click", () => { retro.sound = !retro.sound; writeJSON("retro", retro); applyRetro(); if (retro.sound) clack("x"); });
-    $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); });
-    $("tbVolume").addEventListener("change", () => clack("x"));
+    $("tbSound").addEventListener("click", () => { retro.sound = !retro.sound; writeJSON("retro", retro); applyRetro(); if (retro.sound) window.LSTypewriterAudio?.preview(); });
+    $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); window.LSTypewriterAudio?.configure(retro); });
+    $("tbVolume").addEventListener("change", () => window.LSTypewriterAudio?.preview());
     $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });
     $("tbPrint").addEventListener("click", printPages);
     inp.addEventListener("click", carriage); inp.addEventListener("keyup", carriage);

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "key-1.mp3",
+    "source": "hermes3000",
+    "start": 1.215,
+    "end": 1.48,
+    "sha256": "c878ca26cfa25229315e87adf691b6c351e93f6c932347af6a4e8f41f99e447f"
+  },
+  {
+    "file": "key-2.mp3",
+    "source": "hermes3000",
+    "start": 1.645,
+    "end": 1.93,
+    "sha256": "92877d7f9d3458d3d8964c3f053615a582c11937e25d075818e737a134a25a4d"
+  },
+  {
+    "file": "key-3.mp3",
+    "source": "hermes3000",
+    "start": 2.13,
+    "end": 2.38,
+    "sha256": "80f124a38546b0c16c903b0645434e564251503fef100a2e270abdd668486ec7"
+  },
+  {
+    "file": "key-4.mp3",
+    "source": "hermes3000",
+    "start": 2.455,
+    "end": 2.72,
+    "sha256": "400d47e8b8b1d59b4d1dfc5fb90d075d5ec5e95082ee899ec1b4e3349b5a377e"
+  },
+  {
+    "file": "key-5.mp3",
+    "source": "hermes3000",
+    "start": 3.215,
+    "end": 3.46,
+    "sha256": "75611f4a6b1bf763e279fca4cf77217a31d9c308fdd39a3d014ba9a96a46f660"
+  },
+  {
+    "file": "key-6.mp3",
+    "source": "hermes3000",
+    "start": 3.94,
+    "end": 4.22,
+    "sha256": "a51dd8a8f014da1b0dff9d0d311dab961b831431961c19c711483661f07f3f44"
+  },
+  {
+    "file": "space.mp3",
+    "source": "typewriter-space",
+    "start": 0.122,
+    "end": 0.6,
+    "sha256": "329d9fea4a293e58312d43f66d2a8f200fea7f59e872a61a6ced2a21e49b1b6b"
+  },
+  {
+    "file": "bell.mp3",
+    "source": "typewriter-bell",
+    "start": 0.105,
+    "end": 2.2,
+    "sha256": "8b42984f84c4caa8ae336af8fd53d203d8c95f61ef382f32543e558af7b7d91b"
+  },
+  {
+    "file": "return.mp3",
+    "source": "carriage-return",
+    "start": 0.035,
+    "end": 1.12,
+    "sha256": "6d34bf85bfea02c562555bd083b554d8749c04a3ca5a8677eeb12740aa8a4f67"
+  },
+  {
+    "file": "paper.mp3",
+    "source": "paper-turn",
+    "start": 0,
+    "end": 0.7005,
+    "sha256": "002a8751e500c97f363fc7da7f04aac929272dff36242ba3e83ebb55b98d5a38"
+  }
+]

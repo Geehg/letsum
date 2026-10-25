@@ -301,3 +301,8 @@ img.save("sample.png")
 - 2026-10-25: 사용자 빨간 표시선에 맞춰 테이블보 뒤쪽 경계를 +0.30 모델 단위 이동(본체 덮개 중간 높이부터 표시). 3D 캔버스를 뷰포트 좌우 끝까지 확장하고 직교 카메라의 좌우 frustum/HTML 종이 투영을 보정하여 기존 본체·종이 크기 유지. 무대의 세로 crop은 clip-path로 유지하고 좌우만 bleed 허용. 넓은 화면은 천 폭/텍스처 반복을 함께 확대하여 체크 간격 유지. typing-hermes.js v18 / typing-3d.css v6. 브라우저 canvas bounds 0~1280px, 문서 scrollWidth=1280 확인. 종이 투영 불변 회귀 검사 추가.
 
 - 2026-10-25: 운영자 요청으로 94ad8b19의 Enter/자동 줄바꿈 모션 보강을 이전 동작으로 복원. DOM 기반 줄바꿈 감지·짧은 A4 이송/복귀·복귀 중 후속 타자 대기·확정 이벤트 복귀음을 되돌리고 기존 키다운 Enter/원문 측정 기반 동작 유지. 이후 추가한 체크 테이블보, 낮춘 시작선, 좌우 full-bleed 및 종이 투영 보정은 유지. typing-hermes.js v19 / typing.js v24. 기존 동작과 full-bleed 회귀 검사 유지.
+
+
+### 2026-10-25 — 실제 녹음 타자기 소리
+- 합성 tone/noise를 제거하고 `typing-audio.js`에서 10개 CC0 녹음(총 약 104KB)을 자체 호스팅해 재생. 타건은 Hermes 3000 6개 구간, 벨·공백은 Hermes Precisa 305, 캐리지 ramsamba, 종이 LilMati. 정확한 모델·라이선스·편집 구간은 `html/data/typing/audio/credits.html`과 `segments.json`. 모든 소리를 Hermes 3000 원음이라고 부르지 않음.
+- 실제 입력 변경과 화면의 원문 행 위치로 줄 끝 벨/줄바꿈 복귀 재생. IME 확정 Enter만으로는 복귀 안 함. 페이지 이동은 `tb:page-loaded`로 소리·행 기준 초기화, 성공한 쪽 변경에만 종이 소리. 소리 OFF·음량 0·스킨 이동·숨김 때 진행 중/대기 소리 취소. 오디오 실패 시 합성음 대체 없음. 기존 모션 및 테이블보 배치는 변경하지 않음.

@@ -61,7 +61,7 @@ bash tools/run.sh finish "커밋 메시지"   # 검증 → git add -A → 커밋
 - 한글 IME: compositionstart/end로 조합 중 글자는 판정 보류, 확정 글자만 시도·오타 집계. NFC 정규화, 문장부호 동치(`EQ`: “→" 등). 줄 끝 ↵ = Enter.
 - 쪽: 문단 기준 약 350자(시는 연 단위, 줄바꿈 유지). 장(parts)마다 새 쪽.
 - 완성한 쪽 다음 쪽까지만 이동(새 장 첫 쪽은 언제든). 붙여 넣기 막음.
-- 레트로: Web Audio 합성 타건음(외부 음원 없음), 캐리지 이동, A4 인쇄(`#tbPrintArea` + `@media print`).
+- 레트로: 실제 녹음 재생(typing-audio.js, data/typing/audio/credits.html 출처; 합성음 없음), 캐리지 이동, A4 인쇄(`#tbPrintArea` + `@media print`).
 
 ### 데이터
 - `html/data/typing/index.json`: `themes`(추천 줄) + `library`(전체 456권). 항목: id·title·author·cat·lang·poem·color·ink·font·chars·nparts·source·license·cover(표지 시각)·sc/si(책등 색·글자색).
