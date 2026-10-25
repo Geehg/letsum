@@ -106,11 +106,20 @@
 
   // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
   const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham" }, readJSON("retro", {}));
+  retro.sound = retro.sound !== false;
+  retro.volume = Number.isFinite(Number(retro.volume)) ? Math.max(0, Math.min(100, Math.round(Number(retro.volume)))) : 38;
+  function updateSoundControls() {
+    $("tbSound").setAttribute("aria-checked", String(retro.sound));
+    $("tbSoundState").textContent = retro.sound ? "켜짐" : "꺼짐";
+    $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound;
+    $("tbVolume").setAttribute("aria-valuetext", retro.volume === 0 ? "0% · 음소거" : retro.volume + "%");
+    $("tbVolumeValue").textContent = retro.volume + "%";
+  }
   const isRetro = () => $("tbMain").dataset.skin === "retro";
   let strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
-    $("tbSound").setAttribute("aria-pressed", !!retro.sound); $("tbSound").textContent = retro.sound ? "🔊" : "🔇"; $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound; $("tbPaper").value = $("tbMain").dataset.paper;
+    updateSoundControls(); $("tbPaper").value = $("tbMain").dataset.paper;
     $("tbMain").dataset.table = ["gingham", "floral", "check", "linen"].includes(retro.table) ? retro.table : "gingham";
     $("tbTable").value = $("tbMain").dataset.table;
     window.LSTypewriterAudio?.configure(retro);
@@ -531,7 +540,7 @@
     $("tbAuthorSel").addEventListener("change", (e) => { lib.author = e.target.value; lib.shown = 24; renderLib(); });
     $("tbMore").addEventListener("click", () => { lib.shown += 48; renderLib(); });
     $("tbSound").addEventListener("click", () => { retro.sound = !retro.sound; writeJSON("retro", retro); applyRetro(); if (retro.sound) window.LSTypewriterAudio?.preview(); });
-    $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); window.LSTypewriterAudio?.configure(retro); });
+    $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; updateSoundControls(); writeJSON("retro", retro); window.LSTypewriterAudio?.configure(retro); });
     $("tbVolume").addEventListener("change", () => window.LSTypewriterAudio?.preview());
     $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });
     $("tbTable").addEventListener("change", (e) => { retro.table = e.target.value; writeJSON("retro", retro); applyRetro(); });

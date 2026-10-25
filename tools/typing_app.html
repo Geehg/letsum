@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=108">
+<link rel="stylesheet" href="css/style.css?v=109">
 <link rel="stylesheet" href="css/typing-hero.css?v=2">
 <link rel="stylesheet" href="css/typing-3d.css?v=8">
 <link rel="stylesheet" href="css/typing-retro-focus.css?v=6">
@@ -189,7 +189,9 @@
       <div class="tb-set-row"><span>글자 크기</span><span class="tb-set-size"><button class="tb-chip" id="tbMinus" type="button" aria-label="글자 작게">A−</button><b id="tbSizeV">18px</b><button class="tb-chip" id="tbPlus" type="button" aria-label="글자 크게">A+</button></span></div>
     </div>
     <div class="tb-set-sec tb-retro-only"><h4>레트로 타자기</h4>
-      <div class="tb-set-row"><span>타자기 소리</span><span class="tb-set-snd"><button class="tb-chip" id="tbSound" type="button" aria-pressed="true" title="타자기 소리 켜기·끄기">🔊</button><input type="range" id="tbVolume" class="tb-vol" min="0" max="100" value="38" aria-label="타자기 소리 음량"></span></div>
+      <div class="tb-set-row"><span>효과음</span><button class="tb-sound-switch" id="tbSound" type="button" role="switch" aria-checked="true" aria-label="타자기 효과음" aria-describedby="tbSoundHelp"><i aria-hidden="true"></i><span id="tbSoundState">켜짐</span></button></div>
+      <div class="tb-volume-control"><div class="tb-set-row"><label for="tbVolume">볼륨</label><output id="tbVolumeValue" for="tbVolume">38%</output></div><input type="range" id="tbVolume" class="tb-vol" min="0" max="100" step="1" value="38" aria-label="효과음 볼륨" aria-valuetext="38%"><div class="tb-volume-ends" aria-hidden="true"><span>0%</span><span>100%</span></div></div>
+      <p id="tbSoundHelp" class="tb-sound-help">타건 · 벨 · 캐리지 · 종이 소리에 모두 적용됩니다.</p>
       <p style="font-size:12px;line-height:1.6;color:var(--t-muted);margin:8px 0">실제 녹음 · 타건, 벨, 캐리지, 종이 <a href="data/typing/audio/credits.html" target="_blank" rel="noopener">음원 출처</a></p>
       <label class="tb-set-row"><span>용지</span><select id="tbPaper" aria-label="용지"><option value="ivory">아이보리</option><option value="white">백색</option><option value="parchment">양피지</option></select></label>
       <label class="tb-set-row"><span>테이블보</span><select id="tbTable" aria-label="테이블보 패턴"><option value="gingham">허니 브라운 체크</option><option value="floral">크림 잔꽃</option><option value="check">세이지 체크</option><option value="linen">내추럴 린넨</option></select></label>
@@ -236,7 +238,7 @@
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
 <script src="js/typing-audio.js?v=2"></script>
-<script src="js/typing.js?v=28"></script>
+<script src="js/typing.js?v=29"></script>
 <script src="js/typing-3d.js?v=4"></script>
 <script src="js/typing-retro-focus.js?v=7"></script>
 <script src="js/typing-hermes.js?v=27"></script>
