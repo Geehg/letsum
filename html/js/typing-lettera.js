@@ -5,33 +5,42 @@
  */
 globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalThis.document) {
  const nodes={};root.traverse(o=>nodes[o.name]=o);
- const blue=new T.MeshPhysicalMaterial({name:'Lettera_Blue_Enamel',color:new T.Color(.25,.43,.52),metalness:.16,roughness:.38,clearcoat:.16,clearcoatRoughness:.34});
- const black=new T.MeshPhysicalMaterial({name:'Lettera_Black_Keycaps',color:new T.Color(.038,.043,.048),metalness:0,roughness:.32,clearcoat:.16,clearcoatRoughness:.3});
+ const blue=new T.MeshPhysicalMaterial({name:'Lettera_Blue_Enamel',color:new T.Color(.20,.33,.41),metalness:.08,roughness:.20,clearcoat:.72,clearcoatRoughness:.10});
+ const black=new T.MeshPhysicalMaterial({name:'Lettera_Black_Keycaps',color:new T.Color(.014,.016,.018),metalness:0,roughness:.24,clearcoat:.50,clearcoatRoughness:.16});
  const rubber=new T.MeshStandardMaterial({name:'Platen_Rubber',color:0x16191b,roughness:.75});
  const chrome=new T.MeshStandardMaterial({name:'Polished_Nickel',color:0xaeb7bb,metalness:1,roughness:.23});
  const ink=new T.MeshStandardMaterial({name:'Lettera_Legends',color:0xf3f0e7,roughness:.64});
  const dark=new T.MeshStandardMaterial({color:0x171b1e,roughness:.65});
+ const linkage=new T.MeshStandardMaterial({name:'Lettera_Key_Linkage',color:0x292d2f,metalness:.78,roughness:.48});
  function replace(name,geometry,material){const o=nodes[name];o.geometry=geometry;o.material=material;o.position.set(0,0,0);o.quaternion.identity();o.scale.set(1,1,1);return o;}
  function hide(prefixes){root.traverse(o=>{if(prefixes.some(p=>o.name.startsWith(p)))o.visible=false;});}
  function rounded(x0,z0,x1,z1,r){const p=new T.Shape();p.moveTo(x0+r,z0);p.lineTo(x1-r,z0);p.quadraticCurveTo(x1,z0,x1,z0+r);p.lineTo(x1,z1-r);p.quadraticCurveTo(x1,z1,x1-r,z1);p.lineTo(x0+r,z1);p.quadraticCurveTo(x0,z1,x0,z1-r);p.lineTo(x0,z0+r);p.quadraticCurveTo(x0,z0,x0+r,z0);return p;}
  const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
  // Closed rings: outer skirt, rounded shoulder, recessed lip and underside.
- function loft(rings,N=128){
+ function loft(rings,N=128,sideUV=false){
   const pos=[],uv=[],idx=[];
-  for(const r of rings){const points=r.path.getSpacedPoints(N);for(let i=0;i<N;i++){const p=points[i];pos.push(p.x,r.y(p.x,p.y),p.y);uv.push(p.x*8,p.y*8);}}
+  // Match corresponding straight/rounded sections on every ring. Equal arc-length
+  // resampling shifted the inner corners and twisted the front keyboard bezel.
+  for(const r of rings){const points=r.path.curves.flatMap(c=>Array.from({length:N/8},(_,i)=>c.getPoint(i/(N/8))));
+   for(let i=0;i<N;i++){const p=points[i],height=r.y(p.x,p.y);pos.push(p.x,height,p.y);uv.push(...(sideUV?[i/N*16,height*12]:[p.x*12,p.y*12]));}}
+
   for(let j=0;j<rings.length;j++){const next=(j+1)%rings.length;for(let i=0;i<N;i++){const a=j*N+i,b=j*N+(i+1)%N,c=next*N+(i+1)%N,d=next*N+i;idx.push(a,d,b,b,d,c);}}
   const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();return g;
  }
- const bodyTop=z=>.045+.102*(1-smooth(-.13,.15,z));
+ // The rear carriage shelf is lower than the cover shoulder; the front cheeks
+ // descend toward the keyboard, with continuous rolled corners at the lip.
+ const rearRelief=z=>.032*(1-smooth(-.112,-.078,z));
+ const bodyTop=z=>.047+.100*(1-smooth(-.12,.16,z))-rearRelief(z);
  replace('Cast_Perimeter',loft([
   {path:rounded(-.232,-.166,.232,.181,.020),y:()=>.014},
   {path:rounded(-.235,-.169,.235,.184,.021),y:()=>.018},
-  {path:rounded(-.234,-.168,.234,.183,.020),y:(x,z)=>bodyTop(z)-.005},
+  {path:rounded(-.234,-.168,.234,.183,.020),y:(x,z)=>bodyTop(z)-.008},
+  {path:rounded(-.232,-.166,.232,.181,.020),y:(x,z)=>bodyTop(z)-.002},
   {path:rounded(-.230,-.164,.230,.179,.019),y:(x,z)=>bodyTop(z)},
-  {path:rounded(-.215,-.043,.215,.169,.012),y:(x,z)=>bodyTop(z)-.002},
-  {path:rounded(-.212,-.040,.212,.166,.010),y:(x,z)=>bodyTop(z)-.007},
-  {path:rounded(-.212,-.040,.212,.166,.010),y:()=>.014}
- ]),blue);
+  {path:rounded(-.219,-.152,.219,.170,.013),y:(x,z)=>bodyTop(z)-.002},
+  {path:rounded(-.217,-.149,.217,.168,.012),y:(x,z)=>bodyTop(z)-.007},
+  {path:rounded(-.217,-.149,.217,.168,.012),y:()=>.014}
+ ],128,true),blue);
  // Removable low cover: broad folded front face, flatter crown and two inner wings.
  const cover=rounded(-.224,-.151,.224,-.026,.020),hole=new T.Path();
  hole.moveTo(-.119,-.075);hole.quadraticCurveTo(-.131,-.077,-.128,-.089);hole.lineTo(-.120,-.113);
@@ -49,30 +58,46 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  for(let i=0;i<dp.count;i+=3){const a=[dp.getX(i),dp.getY(i),dp.getZ(i)],b=[dp.getX(i+1),dp.getY(i+1),dp.getZ(i+1)],c=[dp.getX(i+2),dp.getY(i+2),dp.getZ(i+2)];split(a,b,c,[du.getX(i),du.getY(i)],[du.getX(i+1),du.getY(i+1)],[du.getX(i+2),du.getY(i+2)],2);}
  hood.setAttribute('position',new T.Float32BufferAttribute(positions,3));hood.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));hood.deleteAttribute('normal');hood.setIndex(null);hood.clearGroups();if(dense!==hood)dense.dispose();
  const hp=hood.attributes.position;
- const hoodY=z=>.128+.034*smooth(.026,.066,-z)+.002*smooth(.066,.15,-z);
- for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i);hp.setXYZ(i,x,hoodY(z)+d,z);}
+ // Smooth the original bevel normals before bending. Transforming those normals
+ // analytically avoids the diagonal reflection patches from triangulated faces.
+ hood.computeVertexNormals();const sourceNormals=hood.attributes.normal,normalSums=new Map(),normalKeys=[];
+ for(let i=0;i<hp.count;i++){const key=[hp.getX(i),hp.getY(i),hp.getZ(i)].map(v=>Math.round(v*1e7)).join(',');normalKeys.push(key);const n=normalSums.get(key)||new T.Vector3();n.add(new T.Vector3().fromBufferAttribute(sourceNormals,i));normalSums.set(key,n);}
+ for(const n of normalSums.values())n.normalize();
+ const transformedNormals=new Float32Array(hp.count*3);
+
+ // A broad sloping front folds into a nearly flat crown. Two short eased
+ // transitions make the fold readable instead of inflating the entire lid.
+ const hoodY=z=>{const t=-z,a=t-.027,b=t-.066,e=.0018,front=(Math.sqrt(a*a+e*e)+a-Math.sqrt(b*b+e*e)-b)/(.039*2);return .124+.034*front+.002*smooth(.066,.115,t)-rearRelief(z);};
+ const crown=(x,z)=>.007*(1-(x/.224)**2)*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.026)/.125)));
+ for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i),n=normalSums.get(normalKeys[i]),e=.00001;
+  const fx=(crown(x+e,z)-crown(x-e,z))/(2*e),fz=(hoodY(z+e)+crown(x,z+e)-hoodY(z-e)-crown(x,z-e))/(2*e);
+  const mapped=new T.Vector3(n.x-fx*n.z,n.z,n.y-fz*n.z).normalize();mapped.toArray(transformedNormals,i*3);
+  hp.setXYZ(i,x,hoodY(z)+d+crown(x,z),z);hood.attributes.uv.setXY(i,x*12,z*12);
+ }
+ hood.setAttribute('normal',new T.Float32BufferAttribute(transformedNormals,3));
  // XY -> XZ reverses handedness, so restore outward face winding.
  const hi=hood.index;if(hi){for(let i=0;i<hi.count;i+=3){const t=hi.getX(i+1);hi.setX(i+1,hi.getX(i+2));hi.setX(i+2,t);}}else{for(let i=0;i<hp.count;i+=3){for(const attr of Object.values(hood.attributes)){for(let c=0;c<attr.itemSize;c++){const a=(i+1)*attr.itemSize+c,b=(i+2)*attr.itemSize+c,t=attr.array[a];attr.array[a]=attr.array[b];attr.array[b]=t;}}}}
- hood.computeVertexNormals();
- const hn=hood.attributes.normal,sums=new Map(),keys=[];for(let i=0;i<hp.count;i++){const key=[hp.getX(i),hp.getY(i),hp.getZ(i)].map(v=>Math.round(v*1e7)).join(',');keys.push(key);const sum=sums.get(key)||new T.Vector3();sum.add(new T.Vector3(hn.getX(i),hn.getY(i),hn.getZ(i)));sums.set(key,sum);}
- for(const n of sums.values())n.normalize();for(let i=0;i<hp.count;i++){const n=sums.get(keys[i]);hn.setXYZ(i,n.x,n.y,n.z);}
  replace('Ribbon_Hood',hood,blue);
+ const apronGeo=new T.ExtrudeGeometry(rounded(-.217,.101,.217,.126,.005),{depth:.003,bevelEnabled:true,bevelThickness:.0008,bevelSize:.0008,bevelSegments:3,curveSegments:16});
+ const apron=new T.Mesh(apronGeo,blue);apron.name='Lettera_Front_Apron';apron.position.z=-.029;root.add(apron);
+
  // Lower tray stays fully inside the perimeter, with a thin dark assembly seam.
  for(const name of ['Bottom_Tray','Base_Seam'])nodes[name].material=dark;
  hide(['Badge_','Hermes_Badge','Selector_','Ribbon_Dot','Margin_Indicator_','Margin_Window','Bail_Graduation_','Bail_Number_','Paper_Support_Tip']);
  // Rebuild the black caps with a lower skirt, crisp rounded-square lip and shallow dishes.
  const capCache=new Map();root.traverse(o=>{
   if(o.isMesh&&o.material.name==='Hermes_Sage_Enamel')o.material=blue;
-  if(o.name.startsWith('Glyph_')){o.material=ink;o.position.y+=.0015;}
+  if(o.isMesh&&/^(Stem_|Keyboard_Linkage)/.test(o.name))o.material=linkage;
+  if(o.isMesh&&o.name.startsWith('Glyph_')){o.material=ink;o.position.y+=.0004;const size=/^Glyph_(Key[A-Z]|Digit[0-9])$/.test(o.name)?1.30:1.08;o.scale.x*=size;o.scale.z*=size;}
   if(!o.name.startsWith('Cap_'))return;
   o.geometry.computeBoundingBox();const b=o.geometry.boundingBox,w=(b.max.x-b.min.x)/2,d=(b.max.z-b.min.z)/2,key=w+':'+d;
   if(!capCache.has(key)){
-   const ring=(inset,y)=>({path:rounded(-w+inset,-d+inset,w-inset,d-inset,Math.min(.0023,(d-inset)*.4)),y:typeof y==='function'?y:()=>y});
+   const ring=(inset,y)=>({path:rounded(-w+inset,-d+inset,w-inset,d-inset,Math.min(.0032,(d-inset)*.6)),y:typeof y==='function'?y:()=>y});
    capCache.set(key,loft([
-    ring(.0004,-.0085),ring(0,-.0072),ring(.00035,.0035),ring(.0011,.0057),ring(.0019,.0063),
-    ring(.0026,.0059),ring(Math.min(d*.66,.0055),(x,z)=>.0049),
-    {path:rounded(-.00005,-.00005,.00005,.00005,.00002),y:()=>.0047},
-    {path:rounded(-.00005,-.00005,.00005,.00005,.00002),y:()=>-.0085}
+    ring(.0003,-.0058),ring(0,-.0048),ring(.0006,.0027),ring(.0011,.0048),ring(.0017,.0056),
+    ring(.0023,.0055),ring(.0030,.0049),ring(Math.min(d*.66,.0055),(x,z)=>.0037),
+    {path:rounded(-.00005,-.00005,.00005,.00005,.00002),y:()=>.0037},
+    {path:rounded(-.00005,-.00005,.00005,.00005,.00002),y:()=>-.0058}
    ],64));
   }
   o.geometry=capCache.get(key);o.material=black;
@@ -89,12 +114,10 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  const badgeCanvas=document.createElement('canvas');badgeCanvas.width=1024;badgeCanvas.height=128;const c=badgeCanvas.getContext('2d');
  c.fillStyle='#dadfdd';c.fillRect(0,0,1024,128);c.fillStyle='#171a1c';c.fillRect(10,10,444,108);c.textBaseline='middle';c.textAlign='center';c.font='bold 80px Arial';c.fillStyle='#f5f4ec';c.fillText('olivetti',230,67,420);c.fillStyle='#191c1e';c.font='bold 74px Arial';c.fillText('lettera 32',735,67,540);
  const badgeTexture=new T.CanvasTexture(badgeCanvas);badgeTexture.encoding=T.sRGBEncoding;
- const badge=new T.Mesh(new T.PlaneGeometry(.097,.0121),new T.MeshStandardMaterial({map:badgeTexture,roughness:.42,metalness:.18}));badge.name='Lettera_Split_Badge';badge.position.set(0,.145,-.042);badge.rotation.x=-.76;root.add(badge);
- // Side seam follows the detachable cover edge instead of Hermes' front selector slots.
- for(const sign of [-1,1]){
-  const pts=[new T.Vector3(sign*.224,.151,-.125),new T.Vector3(sign*.225,.142,-.075),new T.Vector3(sign*.224,.123,-.028)];
-  const seam=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(pts),24,.00045,6,false),dark);seam.name='Lettera_Cover_Seam_'+sign;root.add(seam);
- }
+ const badge=new T.Mesh(new T.PlaneGeometry(.097,.0121),new T.MeshStandardMaterial({map:badgeTexture,roughness:.42,metalness:.18}));badge.name='Lettera_Split_Badge';badge.position.set(0,hoodY(-.046)+crown(0,-.046)+.005,-.046);badge.rotation.x=-.85;root.add(badge);
+ // Continuous removable-cover seam follows the actual edge, including corners.
+ const seamPoints=cover.getSpacedPoints(160).slice(0,-1).map(p=>new T.Vector3(p.x,hoodY(p.y)-.0005+crown(p.x,p.y),p.y));
+ const coverSeam=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(seamPoints,true),192,.00055,6,true),dark);coverSeam.name='Lettera_Cover_Seam';root.add(coverSeam);
  // Silver return lever with the broad rounded paddle visible in the manufacturer's photo.
  hide(['Return_Lever_Chrome','Return_Lever_Paddle']);
  const lp=new T.Shape();lp.moveTo(0,-.003);lp.quadraticCurveTo(-.035,-.001,-.050,.022);lp.lineTo(-.091,.061);lp.quadraticCurveTo(-.102,.076,-.091,.080);lp.quadraticCurveTo(-.082,.081,-.075,.069);lp.lineTo(-.043,.030);lp.quadraticCurveTo(-.027,.007,0,.003);lp.closePath();

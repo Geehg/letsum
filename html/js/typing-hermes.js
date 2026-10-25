@@ -53,10 +53,13 @@
    for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
     const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color,side:T.DoubleSide}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,0,0);room.add(card);
    }
-   if(selectedModel==='olympiasm3'){
+   if(['olympiasm3','lettera32'].includes(selectedModel)){
     // Narrow dark room divisions break up the chrome reflections; geometry and
     // physically based materials provide highlights, not white painted stripes.
     for(const [x,w] of [[-.7,.12],[.65,.24]]){const mullion=new T.Mesh(new T.BoxGeometry(w,2.6,.04),new T.MeshBasicMaterial({color:0x080b0c}));mullion.position.set(x,1.5,2.6);mullion.lookAt(0,.1,0);room.add(mullion);}
+   }
+   if(selectedModel==='lettera32'){
+    const glossWindow=new T.Mesh(new T.BoxGeometry(.65,2.4,.025),new T.MeshBasicMaterial({color:0xf4f8ff}));glossWindow.material.color.multiplyScalar(4.2);glossWindow.position.set(-1.2,1.8,2);glossWindow.lookAt(0,0,0);room.add(glossWindow);
    }
    const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
@@ -72,7 +75,8 @@
    for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(['Hermes_Sage_Enamel','Lettera_Blue_Enamel'].includes(old.name)){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    else if(old.name==='Lettera_Blue_Enamel'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000025;m.envMapIntensity=1.05;}
     else if(old.name==='Olympia_Crinkle_Enamel'){m=old.clone();m.envMapIntensity=.32;}
     else if(old.name==='Olympia_Chrome'){m=old.clone();m.envMapIntensity=1.05;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
@@ -100,6 +104,7 @@
    capMaterial.name=selectedModel==='olympiasm3'?'Olympia_Keycaps_Contour':selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
    capMaterial.clearcoat=selectedModel==='olympiasm3'?.60:.11;capMaterial.clearcoatRoughness=selectedModel==='olympiasm3'?.13:.36;capMaterial.envMapIntensity=selectedModel==='olympiasm3'?.85:selectedModel==='lettera32'?.55:.24;
    if(selectedModel==='olympiasm3')capMaterial.roughness=.22;
+   if(selectedModel==='lettera32'){capMaterial.roughness=.24;capMaterial.clearcoat=.48;capMaterial.clearcoatRoughness=.15;capMaterial.envMapIntensity=.72;}
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
     if(!o.isMesh||!o.name.startsWith('Cap_'))return;

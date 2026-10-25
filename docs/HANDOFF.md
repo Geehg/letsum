@@ -373,3 +373,9 @@ img.save("sample.png")
 - 짙은 회녹색 도장, 미세 bump+albedo+roughness, 측면 UV 높이 보정(세로줄 제거), 상판 크라운 보강. 검녹색 키의 clearcoat/roughness를 SM3 전용으로 분리하고 각인 식별성 개선.
 - 크롬 띠를 타원 단면과 하부 이음새로 변경, 전용 금속 재질/반사 환경, 로고 양각 두께·하부 그림자 보강. 이전 모델 재질 값 유지.
 - typing-olympia.js v2 / typing-hermes.js v30. 상세 근거 및 측정값이 아닌 제작값 구분은 OLYMPIA_SM3_MODEL.md.
+
+### 2026-10-26 — Lettera 32 곡면·베젤·광택 보강
+- 외장 loft를 직선/곡선 구간별 대응 정점으로 연결해 앞 모서리의 비틀린 면 제거. 키 바닥 둘레 여유, 후면 캐리지 통로, 별도 전면 apron과 상판 연속 이음새 구성.
+- 전면 경사→평탄한 상판 전환과 좌우 크라운 보강. 원래 bevel 법선을 곡면 기울기로 변환해 반사 삼각 패치 축소. 상판 UV/측면 둘레·높이 UV 정리.
+- Lettera 도장 clearcoat/roughness를 공통 무광 보정에서 분리. 별도 창 반사, 극미세 bump만 적용. 낮은 검정 오목 키캡·선명한 각인·키 링크 밝기 조정. 다른 모델 재질·종이 좌표·입력 배열 유지.
+- 버전 typing-lettera.js v2 / typing-hermes.js v31. 전용 광택·법선·캐리지 간격 회귀 검사 추가. 근거와 사진 기반 표현 한계는 LETTERA32_MODEL.md.

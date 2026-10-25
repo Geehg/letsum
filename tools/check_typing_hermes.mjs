@@ -116,6 +116,9 @@ ids.tbMain.dataset.model=model;observers.filter(o=>o.e===ids.tbMain&&o.o.attribu
 if(model==='lettera32'){
  assert.equal(nodes.Ribbon_Hood.material.name,'Lettera_Blue_Enamel');
  assert.equal(nodes.Cap_KeyA.material.name,'Lettera_Keycaps_Contour');
+ assert(nodes.Ribbon_Hood.material.clearcoat>.5&&nodes.Ribbon_Hood.material.roughness<.3,'Lettera enamel retains its own gloss');
+ assert(nodes.Cap_KeyA.material.clearcoat>.4&&nodes.Cap_KeyA.material.roughness<.3,'Lettera caps retain distinct polished resin');
+ const normals=nodes.Ribbon_Hood.geometry.attributes.normal;for(let i=0;i<normals.count;i++){const n=new T.Vector3().fromBufferAttribute(normals,i);assert(Number.isFinite(n.length())&&Math.abs(n.length()-1)<1e-5,'bent cover normals are finite unit vectors');}
  assert.equal(nodes.Hermes_Badge.visible,false);assert.equal(nodes.Selector_Slot.visible,false);assert.equal(nodes.Margin_Indicator_Left.visible,false);
  assert(gltf.scene.getObjectByName('Lettera_Split_Badge'));assert(gltf.scene.getObjectByName('Lettera_Return_Paddle'));assert(gltf.scene.getObjectByName('Lettera_Pica_Scale'));
  assert.equal(gltf.scene.userData.model,'lettera32');
@@ -126,6 +129,8 @@ if(model==='olympiasm3'){
  for(const name of ['Olympia_Cover_Chrome','Olympia_Base_Chrome','Olympia_Script_Badge','Olympia_Return_Lever','Olympia_Paper_Support'])assert(gltf.scene.getObjectByName(name),name);
  assert.equal(gltf.scene.getObjectByName('Olympia_Paper_Support').parent,nodes.Carriage);
  assert(Object.values(nodes).filter(o=>o.name.startsWith('Paper_Support')).every(o=>!o.visible),'original paired supports are hidden');
+}
+if(['olympiasm3','lettera32'].includes(model)){
  // Sweep the conservative lower envelope of the carriage across the full
  // immersive travel range. It must clear both the fixed hood and side cheeks.
  const carriagePosition=nodes.Carriage.position.clone();nodes.Carriage.position.set(0,0,0);gltf.scene.updateMatrixWorld(true);
