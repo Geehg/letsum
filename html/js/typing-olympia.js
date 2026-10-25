@@ -5,10 +5,10 @@
  */
 globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=globalThis.document) {
  const nodes={};root.traverse(o=>nodes[o.name]=o);
- const blue=new T.MeshPhysicalMaterial({name:'Olympia_Crinkle_Enamel',color:new T.Color(.145,.165,.125),metalness:.12,roughness:.69,clearcoat:.035,clearcoatRoughness:.7});
- const black=new T.MeshPhysicalMaterial({name:'Olympia_Green_Keycaps',color:new T.Color(.012,.042,.028),metalness:0,roughness:.29,clearcoat:.25,clearcoatRoughness:.24});
+ const blue=new T.MeshPhysicalMaterial({name:'Olympia_Crinkle_Enamel',color:new T.Color(.092,.107,.079),metalness:.04,roughness:.74,clearcoat:.025,clearcoatRoughness:.65});
+ const black=new T.MeshPhysicalMaterial({name:'Olympia_Green_Keycaps',color:new T.Color(.006,.018,.011),metalness:0,roughness:.22,clearcoat:.55,clearcoatRoughness:.14});
  const rubber=new T.MeshStandardMaterial({name:'Platen_Rubber',color:0x172a22,roughness:.75});
- const chrome=new T.MeshStandardMaterial({name:'Polished_Nickel',color:0xaeb7bb,metalness:1,roughness:.23});
+ const chrome=new T.MeshStandardMaterial({name:'Olympia_Chrome',color:0xa5adb0,metalness:1,roughness:.16,envMapIntensity:1.05});
  const ink=new T.MeshStandardMaterial({name:'Olympia_Legends',color:0xf3f0e7,roughness:.64});
  const dark=new T.MeshStandardMaterial({color:0x171b1e,roughness:.65});
  function replace(name,geometry,material){const o=nodes[name];o.geometry=geometry;o.material=material;o.position.set(0,0,0);o.quaternion.identity();o.scale.set(1,1,1);return o;}
@@ -16,14 +16,17 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  function rounded(x0,z0,x1,z1,r){const p=new T.Shape();p.moveTo(x0+r,z0);p.lineTo(x1-r,z0);p.quadraticCurveTo(x1,z0,x1,z0+r);p.lineTo(x1,z1-r);p.quadraticCurveTo(x1,z1,x1-r,z1);p.lineTo(x0+r,z1);p.quadraticCurveTo(x0,z1,x0,z1-r);p.lineTo(x0,z0+r);p.quadraticCurveTo(x0,z0,x0+r,z0);return p;}
  const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
  // Closed rings: outer skirt, rounded shoulder, recessed lip and underside.
- function loft(rings,N=128){
+ function loft(rings,N=128,sideUV=false){
   const pos=[],uv=[],idx=[];
-  for(const r of rings){const points=r.path.getSpacedPoints(N);for(let i=0;i<N;i++){const p=points[i];pos.push(p.x,r.y(p.x,p.y),p.y);uv.push(p.x*8,p.y*8);}}
+  for(const r of rings){const points=r.path.getSpacedPoints(N);for(let i=0;i<N;i++){const p=points[i];pos.push(p.x,r.y(p.x,p.y),p.y);uv.push(...(sideUV?[i/N*12,r.y(p.x,p.y)*8]:[p.x*8,p.y*8]));}}
   for(let j=0;j<rings.length;j++){const next=(j+1)%rings.length;for(let i=0;i<N;i++){const a=j*N+i,b=j*N+(i+1)%N,c=next*N+(i+1)%N,d=next*N+i;idx.push(a,d,b,b,d,c);}}
   const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();return g;
  }
  // Taller continuous side cheeks and the rounded front lip seen in the SM3 reference.
- const bodyTop=z=>.048+.108*(1-smooth(-.135,.16,z));
+ // Recess the rear shoulder across the entire carriage sweep, not only at rest.
+ // This preserves the paper/print point and gives knobs + bearings physical clearance.
+ const rearRelief=z=>.039*(1-smooth(-.112,-.073,z));
+ const bodyTop=z=>.048+.108*(1-smooth(-.135,.16,z))-rearRelief(z);
  replace('Cast_Perimeter',loft([
   {path:rounded(-.237,-.168,.237,.184,.031),y:()=>.013},
   {path:rounded(-.241,-.171,.241,.188,.033),y:()=>.018},
@@ -33,7 +36,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   {path:rounded(-.216,-.152,.216,.169,.015),y:(x,z)=>bodyTop(z)-.002},
   {path:rounded(-.212,-.148,.212,.165,.012),y:(x,z)=>bodyTop(z)-.008},
   {path:rounded(-.212,-.148,.212,.165,.012),y:()=>.013}
- ]),blue);
+ ],128,true),blue);
  // Broad curved opening with inward swept shoulders; exposed fan of typebars.
  const cover=rounded(-.226,-.153,.226,-.021,.027),hole=new T.Path();
  hole.moveTo(-.127,-.072);hole.bezierCurveTo(-.134,-.066,-.131,-.059,-.119,-.057);
@@ -52,8 +55,9 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  for(let i=0;i<dp.count;i+=3){const a=[dp.getX(i),dp.getY(i),dp.getZ(i)],b=[dp.getX(i+1),dp.getY(i+1),dp.getZ(i+1)],c=[dp.getX(i+2),dp.getY(i+2),dp.getZ(i+2)];split(a,b,c,[du.getX(i),du.getY(i)],[du.getX(i+1),du.getY(i+1)],[du.getX(i+2),du.getY(i+2)],2);}
  hood.setAttribute('position',new T.Float32BufferAttribute(positions,3));hood.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));hood.deleteAttribute('normal');hood.setIndex(null);hood.clearGroups();if(dense!==hood)dense.dispose();
  const hp=hood.attributes.position;
- const hoodY=z=>.124+.040*smooth(.021,.095,-z)-.005*smooth(.10,.155,-z);
- for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i);hp.setXYZ(i,x,hoodY(z)+d+.003*(1-(x/.226)**2),z);hood.attributes.uv.setXY(i,x*8,z*8);}
+ const hoodY=z=>.124+.040*smooth(.021,.095,-z)-.005*smooth(.10,.155,-z)-rearRelief(z);
+ const crown=(x,z)=>(.003+.006*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.021)/.132))))*(1-(x/.226)**2);
+ for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i);hp.setXYZ(i,x,hoodY(z)+d+crown(x,z),z);hood.attributes.uv.setXY(i,x*8,z*8);}
  // XY -> XZ reverses handedness, so restore outward face winding.
  const hi=hood.index;if(hi){for(let i=0;i<hi.count;i+=3){const t=hi.getX(i+1);hi.setX(i+1,hi.getX(i+2));hi.setX(i+2,t);}}else{for(let i=0;i<hp.count;i+=3){for(const attr of Object.values(hood.attributes)){for(let c=0;c<attr.itemSize;c++){const a=(i+1)*attr.itemSize+c,b=(i+2)*attr.itemSize+c,t=attr.array[a];attr.array[a]=attr.array[b];attr.array[b]=t;}}}}
  hood.computeVertexNormals();
@@ -83,7 +87,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  // Taller tapered deep-green caps, dished tops, small bright crown edges; original 61-key web mapping retained.
  const capCache=new Map();root.traverse(o=>{
   if(o.isMesh&&o.material.name==='Hermes_Sage_Enamel')o.material=blue;
-  if(o.name.startsWith('Glyph_')){o.material=ink;o.position.y+=.0010;}
+  if(o.isMesh&&o.name.startsWith('Glyph_')){o.material=ink;o.position.y+=.0014;const size=/^Glyph_(Key[A-Z]|Digit[0-9])$/.test(o.name)?1.32:1.10;o.scale.x*=size;o.scale.z*=size;}
   if(!o.name.startsWith('Cap_'))return;
   o.geometry.computeBoundingBox();const b=o.geometry.boundingBox,w=(b.max.x-b.min.x)/2,d=(b.max.z-b.min.z)/2,key=w+':'+d;
   if(!capCache.has(key)){
@@ -112,11 +116,26 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   const i=(y*size+x)*4;data[i]=data[i+1]=data[i+2]=height;data[i+3]=255;
  }
  const grain=new T.DataTexture(data,size,size,T.RGBAFormat);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.generateMipmaps=true;grain.minFilter=T.LinearMipmapLinearFilter;grain.magFilter=T.LinearFilter;grain.needsUpdate=true;
- blue.bumpMap=grain;blue.bumpScale=.00048;blue.roughness=.69;
+ const finishData=new Uint8Array(data.length),roughData=new Uint8Array(data.length);
+ for(let i=0;i<data.length;i+=4){const h=data[i]/255,tone=Math.round(220+35*h),rough=Math.round(213+40*h);for(let c=0;c<3;c++){finishData[i+c]=tone;roughData[i+c]=rough;}finishData[i+3]=roughData[i+3]=255;}
+ const paint=new T.DataTexture(finishData,size,size,T.RGBAFormat),roughMap=new T.DataTexture(roughData,size,size,T.RGBAFormat);
+ for(const texture of [paint,roughMap]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.generateMipmaps=true;texture.minFilter=T.LinearMipmapLinearFilter;texture.magFilter=T.LinearFilter;texture.needsUpdate=true;}
+ blue.map=paint;blue.roughnessMap=roughMap;blue.bumpMap=grain;blue.bumpScale=.00085;blue.roughness=.78;
  // Continuous chrome cover seam and the lower shell trim, separate closed tubes.
- function piping(name,path,y,radius){const points=path.getSpacedPoints(192).map(p=>new T.Vector3(p.x,y(p.x,p.y),p.y));const tube=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(points.slice(0,-1),true),256,radius,8,true),chrome);tube.name=name;root.add(tube);return tube;}
- piping('Olympia_Cover_Chrome',rounded(-.229,-.156,.229,-.018,.029),(x,z)=>hoodY(Math.min(-.021,z))+.001+.003*(1-(x/.226)**2),.00125);
- piping('Olympia_Base_Chrome',rounded(-.240,-.171,.240,.187,.033),()=>.0145,.0010);
+ // Rolled metal edging: a broad curved face with a dark underside and a fine
+ // highlight edge, so the strip reflects the room instead of reading as white paint.
+ function piping(name,path,y,radius){
+  const points=path.getSpacedPoints(192).slice(0,-1).map(p=>new T.Vector3(p.x,y(p.x,p.y),p.y));
+  const curve=new T.CatmullRomCurve3(points,true),N=256,M=12,pos=[],idx=[];
+  for(let i=0;i<=N;i++){const t=i/N,p=curve.getPointAt(t),v=curve.getTangentAt(t),out=new T.Vector3(v.z,0,-v.x).normalize();
+   for(let j=0;j<M;j++){const a=j/M*Math.PI*2,q=p.clone().addScaledVector(out,Math.cos(a)*radius);q.y+=Math.sin(a)*radius*.62;pos.push(q.x,q.y,q.z);}}
+  for(let i=0;i<N;i++)for(let j=0;j<M;j++){const a=i*M+j,b=i*M+(j+1)%M,c=(i+1)*M+(j+1)%M,d=(i+1)*M+j;idx.push(a,b,d,b,c,d);}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();
+  const band=new T.Mesh(g,chrome);band.name=name;root.add(band);
+  const seam=new T.Mesh(new T.TubeGeometry(curve,N,radius*.55,6,true),dark);seam.name=name+'_Recess';seam.position.y=-radius*.8;root.add(seam);return band;
+ }
+ piping('Olympia_Cover_Chrome',rounded(-.229,-.156,.229,-.018,.029),(x,z)=>hoodY(Math.min(-.021,z))+.001+crown(x,z),.00175);
+ piping('Olympia_Base_Chrome',rounded(-.240,-.171,.240,.187,.033),()=>.0145,.0016);
  // Black bail rollers on a metal scale; replace the Hermes red margin windows.
  nodes.Paper_Bail_Channel.material=chrome;
  root.traverse(o=>{if(o.isMesh&&/Bail_Roller/.test(o.name))o.material=rubber;});
@@ -133,7 +152,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  const lever=new T.Mesh(lg,chrome);lever.name='Olympia_Return_Lever';nodes.Return_Lever.add(lever);
  // Cursive raised lettering on the RIGHT of the front cover. Hand-traced paths,
  // not an assertion that an original factory logo drawing has been recovered.
- const badge=new T.Group();badge.name='Olympia_Script_Badge';badge.position.set(.124,.143,-.039);badge.rotation.x=-.63;
+ const badge=new T.Group();badge.name='Olympia_Script_Badge';badge.position.set(.116,.140,-.040);badge.rotation.x=-.63;
  const strokes=[
   [[.80,.96],['C',.25,1.18,-.22,.33,.20,.10],['C',.73,-.20,1.36,.34,1.14,.82],['C',.95,1.22,.48,.75,.63,.42],['C',.81,.16,1.22,.43,1.34,.60]],
   [[1.34,.60],['C',1.83,1.52,1.78,1.56,1.60,1.30],['C',1.40,1.00,1.22,.02,1.65,.23],['C',1.78,.29,1.85,.40,1.95,.55]],
@@ -144,8 +163,8 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   [[4.63,.85],['L',4.66,.87]],
   [[5.45,.51],['C',5.10,.78,4.72,.17,4.99,.13],['C',5.18,.10,5.39,.40,5.44,.53],['C',5.18,-.01,5.61,.10,5.82,.34]]
  ];
- for(const [start,...segments] of strokes){let path=new T.CurvePath(),last=new T.Vector3(start[0],start[1],0);for(const [cmd,...v] of segments){if(cmd==='M'){last=new T.Vector3(v[0],v[1],0);continue;}const end=new T.Vector3(v.at(-2),v.at(-1),0);path.add(cmd==='C'?new T.CubicBezierCurve3(last,new T.Vector3(v[0],v[1],0),new T.Vector3(v[2],v[3],0),end):new T.LineCurve3(last,end));last=end;}const mesh=new T.Mesh(new T.TubeGeometry(path,100,.031,7,false),chrome);badge.add(mesh);}
- badge.scale.setScalar(.014);root.add(badge);
+ for(const [start,...segments] of strokes){let path=new T.CurvePath(),last=new T.Vector3(start[0],start[1],0);for(const [cmd,...v] of segments){if(cmd==='M'){last=new T.Vector3(v[0],v[1],0);continue;}const end=new T.Vector3(v.at(-2),v.at(-1),0);path.add(cmd==='C'?new T.CubicBezierCurve3(last,new T.Vector3(v[0],v[1],0),new T.Vector3(v[2],v[3],0),end):new T.LineCurve3(last,end));last=end;}const mesh=new T.Mesh(new T.TubeGeometry(path,100,.053,10,false),chrome);badge.add(mesh);const backing=new T.Mesh(mesh.geometry,dark);backing.position.set(.012,-.018,-.036);badge.add(backing);}
+ badge.scale.setScalar(.015);root.add(badge);
  // Visible ribbon selector beside the right keyboard edge: black / white / red.
  for(const [i,color] of [0x1b211c,0xe7e3d3,0x923e30].entries()){
   const dot=new T.Mesh(new T.SphereGeometry(.0014,12,8),new T.MeshStandardMaterial({color,roughness:.5}));dot.name='Olympia_Ribbon_Setting_'+i;dot.position.set(.220,.086-i*.005,.046);root.add(dot);

@@ -126,6 +126,20 @@ if(model==='olympiasm3'){
  for(const name of ['Olympia_Cover_Chrome','Olympia_Base_Chrome','Olympia_Script_Badge','Olympia_Return_Lever','Olympia_Paper_Support'])assert(gltf.scene.getObjectByName(name),name);
  assert.equal(gltf.scene.getObjectByName('Olympia_Paper_Support').parent,nodes.Carriage);
  assert(Object.values(nodes).filter(o=>o.name.startsWith('Paper_Support')).every(o=>!o.visible),'original paired supports are hidden');
+ // Sweep the conservative lower envelope of the carriage across the full
+ // immersive travel range. It must clear both the fixed hood and side cheeks.
+ const carriagePosition=nodes.Carriage.position.clone();nodes.Carriage.position.set(0,0,0);gltf.scene.updateMatrixWorld(true);
+ const ray=new T.Raycaster(),surfaces=[nodes.Cast_Perimeter,nodes.Ribbon_Hood];
+ for(const name of ['Platen_Knob_Left','Platen_Knob_Right','Platen','Carriage_Frame','Carriage_End_Cheek_L','Carriage_End_Cheek_R']){
+  const box=new T.Box3();nodes[name].traverse(o=>{if(!o.isMesh)return;const p=o.geometry.attributes.position;for(let i=0;i<p.count;i++)box.expandByPoint(new T.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld));});
+  for(let step=0;step<=10;step++)for(const x of [box.min.x,(box.min.x+box.max.x)/2,box.max.x])for(const z of [box.min.z,(box.min.z+box.max.z)/2,box.max.z]){
+   ray.set(new T.Vector3(x-.157+step*.0314,.3,z),new T.Vector3(0,-1,0));
+   const hit=ray.intersectObjects(surfaces,false)[0];
+   if(hit)assert(box.min.y-hit.point.y>.001,name+' clears shell throughout carriage travel: '+JSON.stringify({gap:box.min.y-hit.point.y,x:x-.157+step*.0314,z,y:box.min.y,surface:hit.object.name}));
+  }
+ }
+ nodes.Carriage.position.copy(carriagePosition);gltf.scene.updateMatrixWorld(true);
+
 }
 // Switch away from a failed model, then repeatedly between all three detailed models.
 for(const next of [...['hermes3000','lettera32','olympiasm3'].filter(x=>x!==model),model]){
