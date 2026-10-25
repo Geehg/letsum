@@ -118,7 +118,7 @@
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
    let raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
-   let paperHeight=594,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
+   let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
    function running(){return active&&!failed&&inView&&!document.hidden;}
    function resetKeys(){pressed.clear();hits.length=0;shift=false;keys.forEach(k=>{k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);});}
@@ -141,8 +141,13 @@
      camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
     }
     camera.updateProjectionMatrix();
-    const selectedSize=parseFloat(main.style.getPropertyValue('--tb-size'))||18;
-    const scale=sheetWidth/(span*a)*width;fontPixels=Math.max(tracing()?28:34,Math.min(tracing()?96:76,(tracing()?selectedSize-1:16)/(scale/600)));lineHeight=fontPixels*1.42;
+    const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
+    const scale=sheetWidth/(span*a)*width;
+    fontPixels=trace?selectedSize/(scale/600):Math.max(34,Math.min(76,16/(scale/600)));
+    lineHeight=fontPixels*(trace?1.65:1.42);
+    // The sheet is foreshortened by the camera, but the editor's glyphs must not be.
+    traceProjection=trace?Math.abs(camera.matrixWorldInverse.elements[5]):1;
+    paper.style.setProperty('--tb-trace-unskew',String(1/traceProjection));
     paper.style.setProperty('--tb-trace-size',fontPixels+'px');paper.style.setProperty('--tb-trace-line',lineHeight+'px');
     input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';sync(true);wake();
    }
@@ -157,8 +162,8 @@
     const prefix=trace?Array.from(source.normalize('NFC')).slice(0,caret).join(''):input.value.slice(0,input.selectionStart);
     const all=layout(input.value),before=layout(prefix),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
-    fullHeight=trace?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight+'px';
-    input.style.paddingTop=(trace?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace?paperHeight-64:30)+'px';if(!trace)input.scrollTop=0;
+    fullHeight=trace?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
+    input.style.paddingTop=(trace?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace?32:30)+'px';if(!trace)input.scrollTop=0;
     paper.dataset.paper=main.dataset.paper||'ivory';$('tbHermesCount').textContent=$('tbCount').textContent;
     if(!composing){
      const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth,nextFeed=trace?0:(before.length-1)*lineHeight*.222/paperHeight;

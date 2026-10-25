@@ -9,13 +9,20 @@
  function fit(){
   fitFrame=0;if(!wanted())return;
   const viewport=window.visualViewport?.height||window.innerHeight;
-  const top=view.getBoundingClientRect().top+window.scrollY,foot=view.nextElementSibling.getBoundingClientRect().height;
-  main.style.setProperty('--tb-focus-height',Math.max(260,Math.floor(viewport-top-foot-8))+'px');
+  const top=view.getBoundingClientRect().top+window.scrollY,foot=$('tbHermesStage').querySelector('.tb-hermes-foot').getBoundingClientRect().height;
+  const available=Math.max(260,Math.floor(viewport-top-foot-8));
+  const compact=view.clientWidth<600?Math.max(300,Math.round(view.clientWidth*1.05)):available;
+  main.style.setProperty('--tb-focus-height',Math.min(available,compact)+'px');
+  // Reserve the whole carriage sweep; side panels must never cover the writing sheet.
+  const sideWidth=(view.clientWidth-paper.getBoundingClientRect().width*1.86)/2-40;
+  main.style.setProperty('--tb-focus-side-width',Math.max(150,Math.floor(sideWidth))+'px');
+  main.dataset.focusSides=sideWidth<150?'below':'beside';
  }
  function scheduleFit(){if(!fitFrame)fitFrame=requestAnimationFrame(fit);}
  function refresh(){
   frame=0;if(!mounted)return;
   paper.style.setProperty('--tb-trace-font',getComputedStyle(input).fontFamily);
+  main.style.setProperty('--tb-focus-font',getComputedStyle(input).fontFamily);
   const start=count(input.value.slice(0,input.selectionStart)),end=count(input.value.slice(0,input.selectionEnd));
   const spans=Array.from(original.children);let caret=spans[Math.min(start,spans.length-1)];
   for(let i=0;i<spans.length;i++){
@@ -44,12 +51,12 @@
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready']});
  new MutationObserver(update).observe(read,{attributes:true,attributeFilter:['hidden']});
  new MutationObserver(schedule).observe(original,{childList:true});
- new MutationObserver(schedule).observe(input,{attributes:true,attributeFilter:['style']});
+ new MutationObserver(()=>{schedule();scheduleFit();}).observe(input,{attributes:true,attributeFilter:['style']});
  for(const name of ['input','click','keyup','select','compositionstart','compositionend','tb:paper'])input.addEventListener(name,schedule);
  input.addEventListener('scroll',()=>{if(mounted&&!following)original.scrollTop=input.scrollTop;});
  document.addEventListener('selectionchange',()=>{if(document.activeElement===input)schedule();});
  document.fonts?.addEventListener('loadingdone',()=>{schedule();scheduleFit();});
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
- const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),view.nextElementSibling])observer.observe(el);
+ const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbHermesStage').querySelector('.tb-hermes-foot')])observer.observe(el);
  update();
 })();
