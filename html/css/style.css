@@ -2249,3 +2249,9 @@ main.tb[data-layout="focus"] .tb-stats>div:first-child{padding:7px 12px}
 .tb-set-acts .tb-btn{flex:1 1 0;padding:10px 12px;font-size:13px}
 .tb-retro-only{display:none}
 main.tb[data-skin="retro"] .tb-retro-only{display:block}
+/* 읽기 머리: 배경 카드 없이(표지·정보·수치만) */
+main.tb[data-layout="focus"] .tb-rh,main.tb[data-skin="retro"] .tb-rh,main.tb[data-skin="focus"] .tb-rh{background:none;border:0;border-radius:0;padding:0 20px 0 0}
+main.tb[data-layout="focus"] .tb-stats,main.tb[data-skin="retro"] .tb-stats,main.tb[data-skin="focus"] .tb-stats{background:none;border:0;border-left:1px solid var(--t-line);border-radius:0;padding:0 0 0 6px}
+main.tb[data-skin="retro"] .tb-stats{border-left-color:#cbbfa9}
+main.tb[data-layout="focus"] .tb-rh,main.tb[data-layout="focus"] .tb-stats{margin-bottom:26px}
+@media(max-width:760px){main.tb[data-layout="focus"] .tb-rh{padding:0 0 12px}main.tb[data-layout="focus"] .tb-stats{border-left:0;border-top:1px solid var(--t-line);padding:6px 0 0}}
