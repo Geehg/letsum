@@ -235,14 +235,15 @@
     paperHeight=trace?paperWidth*297/210:594;
     camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
+    const sheetInset=trace?(parseFloat(getComputedStyle(main).getPropertyValue('--tb-focus-sheet-top'))||16):16;
     if(trace){
-     // Anchor the whole sheet below the toolbar. The lower keys may leave the frame.
+     // Align the sheet with the flanking book cover and next-page surface. The lower keys may leave the frame.
      const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
-     camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
+     camera.top=sheetTop+sheetInset*span/height;camera.bottom=camera.top-span;
     }
     camera.updateProjectionMatrix();
     // Lower only the cloth by 10% of the immersive view height.
-    ground.position.z=.60+(trace?span*.10/Math.abs(camera.matrixWorldInverse.elements[9]):0);
+    ground.position.z=.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
@@ -341,6 +342,7 @@
    input.addEventListener('keydown',down);document.addEventListener('keyup',up);window.addEventListener('blur',()=>{resetKeys();wake();});input.addEventListener('blur',()=>{resetKeys();wake();});
    ['input','click','keyup','tb:paper'].forEach(e=>input.addEventListener(e,()=>sync()));
    new MutationObserver(()=>sync()).observe(main,{attributes:true,attributeFilter:['data-paper']});
+   view.addEventListener('tb:hermes-align',resize);
    new ResizeObserver(resize).observe(view);['tbMinus','tbPlus'].forEach(id=>$(id).addEventListener('click',()=>{if(tracing())resize();}));$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
    renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
    engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 61키 · 종이에 직접 입력';loading=false;update();

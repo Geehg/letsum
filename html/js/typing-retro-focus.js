@@ -39,6 +39,15 @@
   main.style.setProperty('--tb-focus-side-width',Math.max(150,Math.floor(sideWidth))+'px');
   main.dataset.focusSides=sideWidth<150?'below':'beside';
   fitNextPage();
+  // Align the central sheet with the actual top of both flanking page surfaces.
+  const nextSheet=$('tbFocusNextText').parentElement;
+  const beside=getComputedStyle(nextSheet.parentElement).position==='absolute';
+  const inset=beside?Math.max(16,nextSheet.getBoundingClientRect().top-view.getBoundingClientRect().top):16;
+  const value=inset.toFixed(2)+'px';
+  if(main.style.getPropertyValue('--tb-focus-sheet-top')!==value){
+   main.style.setProperty('--tb-focus-sheet-top',value);
+   view.dispatchEvent(new CustomEvent('tb:hermes-align'));
+  }
  }
  function scheduleFit(){if(!fitFrame)fitFrame=requestAnimationFrame(fit);}
  function refresh(){
