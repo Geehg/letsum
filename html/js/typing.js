@@ -96,7 +96,9 @@
   const SKINS = ["focus-light", "focus-dark", "retro", "retro-focus", "book", "ink"];
   function applySkin(k) {
     if (k === "focus") k = "focus-dark"; // 예전 '몰입'(어두움)
-    if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
+    if (!SKINS.includes(k)) k = "retro-focus"; // 기본: 레트로 몰입
+    if(k === "retro-focus" && $("tbMain").dataset.readingMode !== "immersive") $("tbMain").dataset.modelGate = "pending";
+    if(k !== "retro-focus") delete $("tbMain").dataset.modelGate;
     $("tbMain").dataset.readingMode = k === "retro-focus" ? "immersive" : "standard";
     $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k === "retro-focus" ? "retro" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark"; $("tbMain").dataset.layout = k.startsWith("focus") || k === "retro" || k === "retro-focus" ? "focus" : "wide"; // 몰입·레트로 = 한 단
     writeJSON("skin2", k);
@@ -562,7 +564,7 @@
   // ---------- 시작 ----------
   async function init() {
     applyRetro();
-    applySkin(new URLSearchParams(location.search).get("skin") || readJSON("skin2", "")); // ?skin=ink 처럼 주소로도 고름
+    applySkin(new URLSearchParams(location.search).get("skin") || "retro-focus"); // ?skin=ink 처럼 주소로도 고름
     const [idx, fonts] = await Promise.all([fetch("data/typing/index.json?v=2").then((r) => r.json()), fetch("data/typing/fonts.json?v=1").then((r) => r.json()).catch(() => ({ ko: [], en: [] }))]);
     state.index = idx; state.fonts = fonts;
     const seen = new Set();
@@ -574,7 +576,7 @@
     renderKeys(); $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF";
     $("tbKeys").hidden = !state.kb; $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF";
     bind(); route();
-    setInterval(() => { if (state.book && state.started && !$("tbRead").hidden && document.visibilityState === "visible" && Date.now() - state.lastActivity <= 10000 && !state.completed.has(state.page)) { state.elapsed++; renderStats(); if (state.elapsed % 5 === 0) storeProgress(); } }, 1000);
+    setInterval(() => { if (state.book && state.started && !$("tbModelGallery")?.open && !$("tbRead").hidden && document.visibilityState === "visible" && Date.now() - state.lastActivity <= 10000 && !state.completed.has(state.page)) { state.elapsed++; renderStats(); if (state.elapsed % 5 === 0) storeProgress(); } }, 1000);
   }
   init().catch((e) => { $("tbThemes").innerHTML = `<p class="note">서가를 불러오지 못했습니다. 새로고침해 주세요. (${esc(e.message)})</p>`; });
 })();

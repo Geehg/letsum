@@ -396,3 +396,9 @@ img.save("sample.png")
 - 상판 법선을 곡면 변형식으로 변환하여 삼각형 반사 패치 제거, 분할 보강 및 뒤 개구부 베벨 간격 확보. 외곽 loft의 모서리 대응 보정. 도장 bump .00085→.00030, 색 편차 축소.
 - Olympia 로고를 닫힌 둥근 사각 단면(평평한 전면/모서리/측면)의 입체 획으로 교체. 독립 금속 재질 및 곡면 추종 배치, 끊어진 획은 분리. 실제 상판과의 간격 레이 검사 추가.
 - 세 모델 동작 회귀 검사 통과. 로컬 화면에서 로고 전체 가시성과 상판 음영 확인. typing-olympia.js v3 / typing-hermes.js v33.
+
+### 2026-10-26 — 기본 레트로 몰입 · 타자기 선택 갤러리
+- 첫 진입 기본 retro-focus, 명시적 skin 쿼리 존중. native dialog에서 Hermes/Lettera/SM3를 비교 후 선택. 종이+실제 구현 모델 렌더 3열, 좁은 화면 1열. 선택 전 엔진 gate와 modal inert, 필사 시간 중단. 재진입/취소/설정 재선택 및 기존 draft 유지.
+- Larry McMurtry / Cormac McCarthy / Woody Allen 사용 모델 근거와 인물 사진·크레딧 연결. 원본 세대와 인물 소유 개별 기기의 동일성은 단정하지 않음. TYPEWRITER_GALLERY.md에 근거·사진 조건·렌더 절차 기록.
+- 확인: 기본 서가 및 직접 필사 진입, 모드 왕복/취소, 설정 재선택 후 입력150자 유지·canvas1개·ready true. 390px 모바일 1열 실제 화면 확인. 기존 Hermes 동작 회귀 검사 통과.
+- typing.js v31 / typing-hermes.js v34 / 새 typing-model-gallery.js·css v1. 원본 템플릿과 생성 페이지 동기화.

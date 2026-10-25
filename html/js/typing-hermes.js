@@ -12,7 +12,7 @@
   main.dataset.hermesReady='false';
  }
  function update(){
-  active=main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
+  active=main.dataset.modelGate!=='pending'&&main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
   if((engine&&engine.model!==main.dataset.model)||(failed&&failedModel!==main.dataset.model)){engine?.dispose();engine=null;failed=false;restore();}
   if(failed){restore();return;}
@@ -24,7 +24,7 @@
    status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+' · 61키 · 종이에 직접 입력';engine.resize();
   }
  }
- new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode']});
+ new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode','data-model-gate']});
  new MutationObserver(update).observe($('tbRead'),{attributes:true,attributeFilter:['hidden']});
  new IntersectionObserver(e=>{inView=e[0].isIntersecting;engine?.wake();}).observe(stage);
  document.addEventListener('visibilitychange',()=>engine?.wake());

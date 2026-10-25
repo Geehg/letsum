@@ -1,0 +1,21 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>LETSUM 모델 이미지 렌더</title><style>body{background:#eee7d8}img{width:360px}p{font:14px sans-serif}</style>
+<script src="/js/typing-lettera.js?v=2"></script><script src="/js/typing-olympia.js?v=3"></script>
+<p id="status">모델 렌더링 중</p><main></main>
+<script type="module">
+import * as T from '/js/vendor/three/three.module.js';import {GLTFLoader} from '/js/vendor/three/GLTFLoader.js';
+const renderer=new T.WebGLRenderer({alpha:true,antialias:true,preserveDrawingBuffer:true});renderer.setSize(720,440);renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
+const room=new T.Scene();room.background=new T.Color(.055,.055,.055);
+for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,0,0);room.add(card);}
+const pmrem=new T.PMREMGenerator(renderer),env=pmrem.fromScene(room,.025);const buffer=await fetch('/img/typewriters/hermes3000.glb?v=6').then(r=>r.arrayBuffer());
+for(const id of ['hermes3000','lettera32','olympiasm3']){
+ const asset=await new Promise((resolve,reject)=>new GLTFLoader().parse(buffer.slice(0),'',resolve,reject));if(id==='lettera32')LSBuildLettera32(T,asset.scene);if(id==='olympiasm3')LSBuildOlympiaSM3(T,asset.scene);
+ asset.scene.getObjectByName('Ribbon_Path_Red').material=asset.scene.getObjectByName('Ribbon_Path_Black').material;
+ const scene=new T.Scene();scene.environment=env.texture;scene.add(asset.scene);
+ asset.scene.traverse(o=>{if(o.isCamera||o.isLight||o.name==='Paper')o.visible=false;});
+ scene.add(new T.HemisphereLight(0xfffaf0,0x524e41,1.1));const sun=new T.DirectionalLight(0xfff4dd,2.6);sun.position.set(-.5,.8,.6);scene.add(sun);const fill=new T.DirectionalLight(0xe0e9ed,.5);fill.position.set(.6,.4,-.2);scene.add(fill);
+ const camera=new T.OrthographicCamera(-.325,.325,.1986,-.1986,.01,5);camera.position.set(0,.56,.65);camera.lookAt(0,.10,-.015);renderer.render(scene,camera);
+ const img=document.createElement('img');img.id=id;img.alt=id;img.src=renderer.domElement.toDataURL('image/png');document.querySelector('main').append(img);
+ const geometries=new Set(),materials=new Set(),textures=new Set();asset.scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material)materials.add(o.material);});for(const m of materials){for(const v of Object.values(m))if(v?.isTexture)textures.add(v);m.dispose();}for(const g of geometries)g.dispose();for(const t of textures)t.dispose();
+}
+renderer.dispose();env.dispose();pmrem.dispose();document.getElementById('status').textContent='세 모델 이미지 준비 완료';
+</script></html>

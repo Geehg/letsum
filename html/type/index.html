@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="/css/typing-hero.css?v=2">
 <link rel="stylesheet" href="/css/typing-3d.css?v=10">
 <link rel="stylesheet" href="/css/typing-retro-focus.css?v=7">
+<link rel="stylesheet" href="/css/typing-model-gallery.css?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -28,11 +29,11 @@
   </div>
 </header>
 
-<main class="tb" id="tbMain" data-skin="focus" data-tone="light" data-layout="focus">
+<main class="tb" id="tbMain" data-skin="retro" data-tone="light" data-layout="focus" data-reading-mode="immersive" data-model-gate="pending">
   <div class="tb-topw"><div class="wrap tb-top">
     <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
     <div class="tb-top-r">
-      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="retro-focus" title="레트로 몰입 — 한 장의 종이에 원문을 따라 쓰기">레트로 몰입</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
+      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="retro-focus" title="레트로 몰입 — 기본 · 한 장의 종이에 원문을 따라 쓰기">레트로 몰입</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
       <button class="tb-plain tb-setbtn" id="tbSetOpen" type="button" hidden aria-haspopup="dialog"><b>⚙</b> 설정</button>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
@@ -183,6 +184,7 @@
     <button class="x" data-close aria-label="닫기">×</button>
     <p class="tb-kick">SETTINGS</p>
     <h3 id="tbSetH">필사 설정</h3>
+    <button id="tbModelGalleryOpen" class="tb-plain" type="button">타자기 3종 비교해서 고르기 →</button>
     <div class="tb-set-sec"><h4>글꼴</h4>
       <label class="tb-set-row"><span>원문</span><select id="tbFontO" aria-label="원문 글꼴"></select></label>
       <label class="tb-set-row"><span>필사</span><select id="tbFontW" aria-label="필사 글꼴"></select></label>
@@ -231,6 +233,24 @@
   <div class="tb-print" id="tbPrintArea" aria-hidden="true"></div>
   <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
+<dialog id="tbModelGallery" class="tb-model-gallery" aria-labelledby="tbModelGalleryTitle" aria-describedby="tbModelGalleryIntro">
+ <header class="tb-model-gallery-head"><div><p>LETSUM · THE WRITING ROOM</p><h2 id="tbModelGalleryTitle" tabindex="-1">오늘의 문장을 함께할 타자기</h2><p id="tbModelGalleryIntro">마음에 드는 한 대를 고르세요. 종이 위에서 나만의 필사가 시작됩니다.</p></div><button id="tbModelGalleryBack" type="button">서가로 돌아가기 ↗</button></header>
+ <div class="tb-model-grid"><article class="tb-model-card" data-gallery-model="hermes3000">
+ <div class="tb-model-scene"><div class="tb-model-sheet"><span>01 / THE WRITING ROOM</span><h3>에르메스 3000</h3><p>부드러운 곡선, 민트빛 건반</p><small>SWITZERLAND</small></div><img class="tb-model-photo" src="/img/typewriters/hermes3000-preview.png?v=2" alt="Hermes 3000 정면 모델" width="720" height="440"></div>
+ <div class="tb-model-copy"><p class="tb-model-maker">E. Paillard & Cie · 스위스</p><h3>Hermes 3000</h3><p class="tb-model-desc">둥글게 감싼 금속 몸체와 민트색 키캡. 차분한 색감으로 문장에 집중하는 시간.</p>
+ <div class="tb-model-writer"><img src="/img/typewriters/people/larry-mcmurtry.png" alt="래리 맥머트리" width="64" height="76"><div><b>래리 맥머트리</b><span>Larry McMurtry</span><p>소설가 · 『Lonesome Dove』의 작가. Hermes 3000을 사용했고, 2006년 골든글로브 수상 소감에서 자신의 타자기에 감사를 전했습니다. <a href="https://site.xavier.edu/polt/typewriters/typingwriters.pdf" target="_blank" rel="noopener">기록 ↗</a></p></div></div>
+ <button type="button" data-choose-model="hermes3000">에르메스 3000으로 시작 <span aria-hidden="true">→</span></button></div></article><article class="tb-model-card" data-gallery-model="lettera32">
+ <div class="tb-model-scene"><div class="tb-model-sheet"><span>02 / THE WRITING ROOM</span><h3>올리베티 레테라 32</h3><p>낮고 간결한 이탈리아의 선</p><small>ITALY</small></div><img class="tb-model-photo" src="/img/typewriters/lettera32-preview.png?v=2" alt="Olivetti Lettera 32 정면 모델" width="720" height="440"></div>
+ <div class="tb-model-copy"><p class="tb-model-maker">Olivetti · 이탈리아</p><h3>Olivetti Lettera 32</h3><p class="tb-model-desc">연청색 상판과 검정 키캡, 낮게 이어지는 몸체. 마르첼로 니촐리가 디자인한 휴대용 타자기.</p>
+ <div class="tb-model-writer"><img src="/img/typewriters/people/cormac-mccarthy.jpg" alt="코맥 매카시" width="64" height="76"><div><b>코맥 매카시</b><span>Cormac McCarthy</span><p>소설가 · 『The Road』의 작가. 오랫동안 사용한 Lettera 32를 2009년 경매에 내놓아 산타페 연구소를 지원했습니다. <a href="https://www.christies.com/en/lot/lot-5273848" target="_blank" rel="noopener">기록 ↗</a></p></div></div>
+ <button type="button" data-choose-model="lettera32">올리베티 레테라 32로 시작 <span aria-hidden="true">→</span></button></div></article><article class="tb-model-card" data-gallery-model="olympiasm3">
+ <div class="tb-model-scene"><div class="tb-model-sheet"><span>03 / THE WRITING ROOM</span><h3>올림피아 SM3</h3><p>짙은 녹색과 단단한 금속의 결</p><small>WEST GERMANY</small></div><img class="tb-model-photo" src="/img/typewriters/olympiasm3-preview.png?v=2" alt="Olympia SM3 정면 모델" width="720" height="440"></div>
+ <div class="tb-model-copy"><p class="tb-model-maker">Olympia Werke · 서독</p><h3>Olympia SM3</h3><p class="tb-model-desc">올리브색 요철 도장, 짙은 녹색 키캡과 크롬 테두리. 캐리지가 올라가는 시프트 구조.</p>
+ <div class="tb-model-writer"><img src="/img/typewriters/people/woody-allen.jpg" alt="우디 앨런" width="64" height="76"><div><b>우디 앨런</b><span>Woody Allen</span><p>영화감독 · 각본가. Olympia의 역사 자료에는 SM3를 사용해 영화 각본을 집필한 인물로 소개되어 있습니다. <a href="https://www.olympia-werke.com/" target="_blank" rel="noopener">기록 ↗</a></p></div></div>
+ <button type="button" data-choose-model="olympiasm3">올림피아 SM3로 시작 <span aria-hidden="true">→</span></button></div></article></div>
+ <footer class="tb-model-gallery-foot"><p>설정에서 언제든 다른 타자기로 바꿀 수 있어요.</p><details><summary>인물 사진 · 자료 출처</summary><p>사용 인물은 해당 모델의 기록을 소개합니다. 화면의 색상·세대와 인물이 소유했던 개별 기기의 사양은 다를 수 있습니다.</p><p><a href="https://commons.wikimedia.org/wiki/File:Larry_McMurtry_Photo_Last_Picture_Show_1966.png" target="_blank" rel="noopener">래리 맥머트리 사진</a> — 촬영자 미상 · 1966 · PD-US</p><p><a href="https://commons.wikimedia.org/wiki/File:Cormac_McCarthy_(Child_of_God_author_portrait_-_high-res).jpg" target="_blank" rel="noopener">코맥 매카시 사진</a> — David Styles · 1973 · PD-US</p><p><a href="https://commons.wikimedia.org/wiki/File:Woody_Allen_portrait_2009.jpg" target="_blank" rel="noopener">우디 앨런 사진</a> — David Shankbone · 2009 · CC BY 3.0</p><p>사진 원본 유지 · 화면에서 일부 잘라 표시. <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0 이용조건</a></p><p><a href="https://www.sfmoma.org/artwork/2004.182.A-B/" target="_blank" rel="noopener">Lettera 32 디자인 · SFMOMA</a> · <a href="https://site.xavier.edu/polt/typewriters/OlympiaSM3.pdf" target="_blank" rel="noopener">Olympia SM3 사용설명서</a></p></details></footer>
+</dialog>
+
 
 <footer>
   <div class="wrap">
@@ -240,11 +260,12 @@
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
 <script src="/js/typing-audio.js?v=2"></script>
-<script src="/js/typing.js?v=30"></script>
+<script src="/js/typing.js?v=31"></script>
 <script src="/js/typing-3d.js?v=6"></script>
 <script src="/js/typing-retro-focus.js?v=8"></script>
 <script src="/js/typing-lettera.js?v=2"></script>
 <script src="/js/typing-olympia.js?v=3"></script>
-<script src="/js/typing-hermes.js?v=33"></script>
+<script src="/js/typing-hermes.js?v=34"></script>
+<script src="/js/typing-model-gallery.js?v=1"></script>
 </body>
 </html>

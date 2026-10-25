@@ -53,7 +53,7 @@ bash tools/run.sh finish "커밋 메시지"   # 검증 → git add -A → 커밋
 ### 디자인(스킨) 체계 — `style.css`
 - `main.tb`의 속성: `data-skin`(색·질감: `focus`·`retro`·`book`·`ink`), `data-tone`(`light`/`dark`, 몰입만), `data-layout`(`focus` = 몰입·레트로 한 단 / `wide` = 책상·잉크 왼쪽 칸), `data-paper`(레트로 용지).
 - 색은 `--t-*` 변수로만. 스킨마다 변수 묶음이 있음. 바닥 색은 JS가 `--tb-page`로 맞춤.
-- 기본 디자인: 몰입(사이트가 어두우면 어둡게). 저장 키 `typebook-v1:skin2`.
+- 기본 디자인: 레트로 몰입. 새 페이지 진입은 저장된 과거 스킨보다 기본값을 우선하며, 명시적 `?skin=`은 유지한다. `typing-model-gallery.js`의 3종 선택 대화상자에서 모델을 고른 뒤 진입. 같은 진입 세션의 도서 이동에는 다시 묻지 않고 모드 재진입·새로고침에는 선택 화면 표시. 모델 저장 키 `typebook-v1:model-v2`.
 - 기본 글꼴: 원문 KoPub World 바탕체(`k-kopubworldbatang`), 필사 프리텐다드(`k-pretendard`) — 운영자 지정.
 
 ### 엔진(`html/js/typing.js`)
