@@ -4,7 +4,7 @@
  const $=id=>document.getElementById(id),main=$('tbMain'),read=$('tbRead'),input=$('tbInput'),original=$('tbOrig'),home=$('tbOrigHome'),paper=$('tbHermesPaper'),view=$('tbHermesView');
  if(!main||!home)return;
  // Move the real controls so their handlers and book-specific state remain intact.
- const sideControls=[[$('tbTocWrap'),$('tbFocusBookTools')],[$('tbSource'),$('tbFocusBookTools')],[$('tbPrev'),$('tbFocusBookPager')],[$('tbCur').closest('.tb-pno'),$('tbFocusBookPager')]].map(([el,target])=>{
+ const sideControls=[[main.querySelector('.tb-stats'),$('tbFocusStats')],[$('tbTocWrap'),$('tbFocusBookTools')],[$('tbSource'),$('tbFocusBookTools')],[$('tbPrev'),$('tbFocusBookPager')],[$('tbCur').closest('.tb-pno'),$('tbFocusBookPager')]].map(([el,target])=>{
   const anchor=document.createComment('reader control home');el.before(anchor);return {el,target,anchor};
  });
  let mounted=false,frame=0,fitFrame=0,following=false,nextMeasureKey='';
