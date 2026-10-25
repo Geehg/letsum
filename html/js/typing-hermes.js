@@ -3,10 +3,11 @@
  'use strict';
  const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
  if(!stage)return;
+ const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,inView=true,loading=false,engine=null,composing=false,failed=false;
  function restore(){
-  if(input.parentElement===paper){home.after(input);for(const p of ['paddingTop','fontSize','lineHeight','height'])input.style[p]='';input.placeholder=originalPlaceholder;}
+  if(input.parentElement===paper){home.after(input);for(const p of ['paddingTop','paddingBottom','fontSize','lineHeight','height'])input.style[p]='';input.placeholder=originalPlaceholder;}
   main.dataset.hermesReady='false';
  }
  function update(){
@@ -17,10 +18,11 @@
   if(engine){
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
-   input.placeholder='종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';engine.resize();
+   input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
+   status.textContent=tracing()?'연한 글자를 따라 쓰세요 · ↵ Enter':'Hermes 3000 · 87키 · 종이에 직접 입력';engine.resize();
   }
  }
- new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model']});
+ new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode']});
  new MutationObserver(update).observe($('tbRead'),{attributes:true,attributeFilter:['hidden']});
  new IntersectionObserver(e=>{inView=e[0].isIntersecting;engine?.wake();}).observe(stage);
  document.addEventListener('visibilitychange',()=>engine?.wake());
@@ -115,8 +117,8 @@
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
    let raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
-   const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,paperHeight=594,left=42,printBottom=30;
-   let fontPixels=34,lineHeight=48,fullHeight=paperHeight;
+   const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
+   let paperHeight=594,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
    function running(){return active&&!failed&&inView&&!document.hidden;}
    function resetKeys(){pressed.clear();hits.length=0;shift=false;keys.forEach(k=>{k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);});}
@@ -127,7 +129,11 @@
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
     renderer.setSize(width,height,false);const a=width/height,span=Math.max(.52,.70/a);
     camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();camera.updateMatrixWorld();
-    const scale=.224/(span*a)*width;fontPixels=Math.max(34,Math.min(76,16/(scale/600)));lineHeight=fontPixels*1.42;
+    sheetWidth=tracing()?.30:.224;paperTop=.396+(tracing()?Math.max(0,Math.min(.33,(span-.52)*.6)):0);
+    paperHeight=tracing()?(paperTop-.174)/sheetWidth*paperWidth:594;
+    const selectedSize=parseFloat(main.style.getPropertyValue('--tb-size'))||18;
+    const scale=sheetWidth/(span*a)*width;fontPixels=Math.max(tracing()?28:34,Math.min(tracing()?96:76,(tracing()?selectedSize-1:16)/(scale/600)));lineHeight=fontPixels*1.42;
+    paper.style.setProperty('--tb-trace-size',fontPixels+'px');paper.style.setProperty('--tb-trace-line',lineHeight+'px');
     input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';sync(true);wake();
    }
    function layout(text){
@@ -137,26 +143,30 @@
    }
    function sync(snap=false){
     if(!active||failed)return;snap=snap===true;
-    const all=layout(input.value),before=layout(input.value.slice(0,input.selectionStart)),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
+    const trace=tracing(),source=$('tbOrig').dataset.source||input.value,caret=Array.from(input.value.slice(0,input.selectionStart).normalize('NFC')).length;
+    const prefix=trace?Array.from(source.normalize('NFC')).slice(0,caret).join(''):input.value.slice(0,input.selectionStart);
+    const all=layout(input.value),before=layout(prefix),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
-    fullHeight=paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight+'px';input.style.paddingTop=(paperHeight-printBottom-lineHeight)+'px';input.scrollTop=0;
+    fullHeight=trace?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight+'px';
+    input.style.paddingTop=(trace?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace?paperHeight-64:30)+'px';if(!trace)input.scrollTop=0;
     paper.dataset.paper=main.dataset.paper||'ivory';$('tbHermesCount').textContent=$('tbCount').textContent;
     if(!composing){
-     const line=before[before.length-1],nextX=.112-left/paperWidth*.224-line.width/paperWidth*.224,nextFeed=(before.length-1)*lineHeight*.222/paperHeight;
-     const newLine=nextFeed>feed+.0001;
+     const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth,nextFeed=trace?0:(before.length-1)*lineHeight*.222/paperHeight;
+     const newLine=trace?before.length>lastLine:nextFeed>feed+.0001;lastLine=before.length;
      if(newLine&&changed&&!initial)returnAt=now;
      if(initial||snap||input.value.length<(lastValue||'').length)bellLine=-1;
      if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==before.length){bellLine=before.length;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
      if(Math.abs(nextFeed-feed)>.000001){feedDrive={from:currentFeed,to:nextFeed,start:now+(newLine?20:0),duration:newLine?180:150};feed=nextFeed;}
-     if(snap||initial){currentX=targetX;currentFeed=feed;drive=feedDrive=null;}
+     targetRoll=trace?(before.length-1)*lineHeight*sheetWidth/paperWidth:nextFeed;
+     if(snap||initial){currentX=targetX;currentFeed=feed;rollerFeed=targetRoll;drive=feedDrive=null;}
      // Mobile IME may commit text without keyboard events. Space/newline never hit a typebar.
      if(changed&&!initial&&input.value.length>(lastValue||'').length&&now-lastKeyAt>100&&/\S$/.test(input.value)){const ch=Array.from(input.value).at(-1),bar=barFor.get('Key'+ch.toUpperCase())||bars[Array.from(input.value).length%bars.length];hits.push({bar,time:now});input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:ch}}));}
     }
     if(!composing)lastValue=input.value;wake();
    }
    function placePaper(){
-    const top=.396+currentFeed,tl=new T.Vector3(-.112+currentX,top,-.151).project(camera),tr=new T.Vector3(.112+currentX,top,-.151).project(camera),bl=new T.Vector3(-.112+currentX,.174+currentFeed,-.151).project(camera);
+    const top=paperTop+currentFeed,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed,-.151).project(camera);
     const x=(tl.x+1)*width/2,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*width/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
@@ -187,11 +197,12 @@
     if(feedDrive){const t=clamp((now-feedDrive.start)/feedDrive.duration);currentFeed=feedDrive.from+(feedDrive.to-feedDrive.from)*smooth(t);if(t===1)feedDrive=null;}
     carriage.position.x=currentX;carriage.position.y=motion?impact*.0002:0;
     // 18 mm is the authored mesh radius, not a measured Hermes specification.
-    const angle=-currentFeed/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
+    rollerFeed=motion?rollerFeed+(targetRoll-rollerFeed)*(1-Math.exp(-dt*20)):targetRoll;
+    const angle=-(tracing()?rollerFeed:currentFeed)/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
     const rt=now-returnAt;lever.quaternion.copy(leverQ);
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
-    const sheetHeight=.222*fullHeight/paperHeight;
-    nodes.Paper.scale.y=fullHeight/paperHeight;nodes.Paper.position.y=.396+currentFeed-sheetHeight/2;
+    const sheetHeight=(paperTop-.174)*fullHeight/paperHeight;
+    nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
     placePaper();renderer.render(scene,camera);
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }
@@ -205,7 +216,7 @@
    input.addEventListener('keydown',down);document.addEventListener('keyup',up);window.addEventListener('blur',()=>{resetKeys();wake();});input.addEventListener('blur',()=>{resetKeys();wake();});
    ['input','click','keyup','tb:paper'].forEach(e=>input.addEventListener(e,()=>sync()));
    new MutationObserver(()=>sync()).observe(main,{attributes:true,attributeFilter:['data-paper']});
-   new ResizeObserver(resize).observe(view);$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
+   new ResizeObserver(resize).observe(view);['tbMinus','tbPlus'].forEach(id=>$(id).addEventListener('click',()=>{if(tracing())resize();}));$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
    renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
    engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 87키 · 종이에 직접 입력';loading=false;update();
   }catch(error){failed=true;renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Hermes 3000 unavailable',error);loading=false;}

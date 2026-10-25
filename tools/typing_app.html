@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/style.css?v=108">
 <link rel="stylesheet" href="css/typing-hero.css?v=2">
 <link rel="stylesheet" href="css/typing-3d.css?v=4">
+<link rel="stylesheet" href="css/typing-retro-focus.css?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -31,7 +32,7 @@
   <div class="tb-topw"><div class="wrap tb-top">
     <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
     <div class="tb-top-r">
-      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
+      <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="retro-focus" title="레트로 몰입 — 한 장의 종이에 원문을 따라 쓰기">레트로 몰입</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
       <button class="tb-plain tb-setbtn" id="tbSetOpen" type="button" hidden aria-haspopup="dialog"><b>⚙</b> 설정</button>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
@@ -113,7 +114,7 @@
             <i class="tb-spine" aria-hidden="true"></i>
             <article class="tb-pg tb-o">
               <div class="tb-pg-h"><span><i class="dot"></i>ORIGINAL TEXT</span><span class="tb-tag" id="tbPartName">읽기</span></div>
-              <div class="tb-text" id="tbOrig" aria-label="원문"></div>
+              <span id="tbOrigHome" hidden></span><div class="tb-text" id="tbOrig" aria-label="원문"></div>
               <div class="tb-pg-f"><span id="tbPageNoO">01</span><span id="tbPoemHint"></span><span>한 글자씩 천천히</span></div>
             </article>
             <article class="tb-pg tb-w">
@@ -219,9 +220,10 @@
 </footer>
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
-<script src="js/typing.js?v=20"></script>
-<script src="js/typing-3d.js?v=3"></script>
-<script src="js/typing-hermes.js?v=4"></script>
+<script src="js/typing.js?v=21"></script>
+<script src="js/typing-3d.js?v=4"></script>
+<script src="js/typing-retro-focus.js?v=1"></script>
+<script src="js/typing-hermes.js?v=5"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

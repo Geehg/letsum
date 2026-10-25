@@ -1,0 +1,72 @@
+/* Optional single-sheet mode. Standard retro keeps its original layout. */
+body.tb-retro-immersive>footer{display:none}
+body.tb-retro-immersive main.tb{padding-bottom:0}
+main.tb[data-reading-mode="immersive"] .tb-top{min-height:42px;gap:8px;padding-top:4px;padding-bottom:4px}
+main.tb[data-reading-mode="immersive"] .tb-top-r{min-width:0;gap:8px}
+main.tb[data-reading-mode="immersive"] .tb-skin{max-width:100%;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+main.tb[data-reading-mode="immersive"] .tb-skin button{flex-shrink:0;padding:5px 9px}
+main.tb[data-reading-mode="immersive"] .tb-skin>span{display:none}
+main.tb[data-reading-mode="immersive"] .tb-app{grid-template-columns:minmax(0,1fr);max-width:1100px;padding-top:0;gap:0}
+main.tb[data-reading-mode="immersive"] .tb-left{display:none}
+main.tb[data-reading-mode="immersive"] .tb-main,
+main.tb[data-reading-mode="immersive"] .tb-reading{display:contents}
+main.tb[data-reading-mode="immersive"] .tb-rh{grid-column:1;grid-row:1;min-width:0;margin:0;padding:9px 0;border:0;border-bottom:1px solid var(--t-line);border-radius:0;background:transparent;box-shadow:none}
+main.tb[data-reading-mode="immersive"] .tb-rh-cv,
+main.tb[data-reading-mode="immersive"] .tb-rk,
+main.tb[data-reading-mode="immersive"] .tb-binfo,
+main.tb[data-reading-mode="immersive"] .tb-dots{display:none}
+main.tb[data-reading-mode="immersive"] .tb-rh-body{flex-direction:row;align-items:center;justify-content:space-between;gap:8px}
+main.tb[data-reading-mode="immersive"] .tb-rt{display:flex;align-items:center;gap:10px;min-width:0}
+main.tb[data-reading-mode="immersive"] .tb-rh-body h2{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+main.tb[data-reading-mode="immersive"] .tb-toc{margin:0;max-width:200px}
+main.tb[data-reading-mode="immersive"] .tb-toc select{max-width:155px}
+main.tb[data-reading-mode="immersive"] .tb-pager{flex-shrink:0;padding:0;gap:4px}
+main.tb[data-reading-mode="immersive"] .tb-model-choice{display:none}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] .tb-machine{display:none}
+main.tb[data-reading-mode="immersive"] .tb-instrument{margin:0;grid-column:1}
+main.tb[data-reading-mode="immersive"] .tb-hermes-view{height:var(--tb-focus-height,calc(100dvh - 174px));min-height:260px}
+main.tb[data-reading-mode="immersive"] .tb-hermes-foot{padding:4px 0;gap:12px;min-height:32px;box-sizing:border-box}
+main.tb[data-reading-mode="immersive"] .tb-hermes-foot button{padding:5px 12px}
+/* Identical metrics keep the native input and source glyphs on the same sheet. */
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig{
+ position:absolute;inset:0;width:600px;height:100%;min-height:0;max-height:none;box-sizing:border-box;
+ margin:0;padding:32px 42px;overflow:auto;scrollbar-width:none;pointer-events:none;
+ color:#999588;font-family:var(--tb-trace-font,monospace)!important;font-size:var(--tb-trace-size,34px);line-height:var(--tb-trace-line,48px);
+ letter-spacing:0;word-break:break-all;overflow-wrap:anywhere;white-space:pre-wrap;font-kerning:none;font-variant-ligatures:none;text-shadow:none;
+}
+main.tb[data-reading-mode="immersive"] #tbOrig::-webkit-scrollbar{display:none}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbInput{color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;caret-color:transparent;overflow-y:auto}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbInput::selection{background:transparent}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span{position:relative;border:0;box-shadow:none;background:transparent;text-decoration:none;border-radius:0}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.ok{color:#242b24;text-shadow:.22px 0 .25px #242b2433}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad,
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.pend{color:transparent}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad::after,
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.pend::after{content:attr(data-typed);position:absolute;left:0;top:0;color:#ad3b2d;text-decoration:underline;text-decoration-style:wavy;text-decoration-thickness:1.5px;text-underline-offset:4px;white-space:pre}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.pend::after{color:#8d702d;text-decoration-style:dotted}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.cur{color:inherit}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-caret::before{content:"";position:absolute;left:-1px;top:0;height:1em;border-left:2px solid #315544}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-after::before{left:auto;right:-2px}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-selected{background:#56785c2b}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.nl{display:inline-block;width:0;overflow:visible;color:#a9a497;font-size:.7em;vertical-align:baseline}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.nl.ok{color:#566a57}
+@media(max-width:760px){
+ main.tb[data-reading-mode="immersive"] .tb-top{padding-top:4px;padding-bottom:4px}
+ main.tb[data-reading-mode="immersive"] .tb-crumb{display:none}
+ main.tb[data-reading-mode="immersive"] .tb-top-r{flex-wrap:wrap;gap:2px 8px}
+ main.tb[data-reading-mode="immersive"] .tb-skin{flex-basis:100%;justify-content:space-between}
+ main.tb[data-reading-mode="immersive"] .tb-skin button{padding:5px 8px;font-size:11px}
+ main.tb[data-reading-mode="immersive"] .tb-plain{padding:5px 4px}
+ main.tb[data-reading-mode="immersive"] .tb-rh-body{flex-wrap:wrap;gap:5px}
+ main.tb[data-reading-mode="immersive"] .tb-rt{width:100%;justify-content:space-between}
+ main.tb[data-reading-mode="immersive"] .tb-pager{margin-left:auto}
+ main.tb[data-reading-mode="immersive"] .tb-hermes-foot{font-size:10px;gap:8px}
+}
+
+.tb-text .trace-overflow{display:none}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig .trace-overflow{display:inline}
+
+main.tb[data-reading-mode="immersive"] .tb-rt{flex:1}
+main.tb[data-reading-mode="immersive"] .tb-rh-body .tb-rk{display:block;order:3;font-size:0;margin:0;white-space:nowrap}
+main.tb[data-reading-mode="immersive"] .tb-rk>span{display:none}
+main.tb[data-reading-mode="immersive"] .tb-rk>a{font-size:11px}

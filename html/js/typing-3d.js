@@ -10,13 +10,14 @@
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   function active(){return visible && intersecting && !document.hidden;}
   function update(){
-    visible=main.dataset.skin==='retro' && !document.getElementById('tbRead').hidden && choice==='classic12';
-    main.dataset.model=choice;stage.hidden=!visible;
+    const model=main.dataset.readingMode==='immersive'?'hermes3000':choice;
+    visible=main.dataset.skin==='retro' && !document.getElementById('tbRead').hidden && model==='classic12';
+    main.dataset.model=model;stage.hidden=!visible;
     if(visible && !engine && !loading) init();
     if(engine){engine.sync();engine.wake();}
   }
   select.addEventListener('change',()=>{choice=select.value;try{localStorage.setItem('typebook-v1:model-v2',choice);}catch(e){}update();});
-  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin']});
+  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-reading-mode']});
   new MutationObserver(update).observe(document.getElementById('tbRead'),{attributes:true,attributeFilter:['hidden']});
   new IntersectionObserver(entries=>{intersecting=entries[0].isIntersecting;if(engine)engine.wake();}).observe(stage);
   document.addEventListener('visibilitychange',()=>{if(engine)engine.wake();});

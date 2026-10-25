@@ -93,11 +93,12 @@
   }
 
   // ---------- 화면 디자인(책상·잉크·몰입) ----------
-  const SKINS = ["focus-light", "focus-dark", "retro", "book", "ink"];
+  const SKINS = ["focus-light", "focus-dark", "retro", "retro-focus", "book", "ink"];
   function applySkin(k) {
     if (k === "focus") k = "focus-dark"; // 예전 '몰입'(어두움)
     if (!SKINS.includes(k)) k = document.documentElement.getAttribute("data-theme") === "dark" ? "focus-dark" : "focus-light"; // 기본: 몰입(사이트 밝기 따라)
-    $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark"; $("tbMain").dataset.layout = k.startsWith("focus") || k === "retro" ? "focus" : "wide"; // 몰입·레트로 = 한 단
+    $("tbMain").dataset.readingMode = k === "retro-focus" ? "immersive" : "standard";
+    $("tbMain").dataset.skin = k.startsWith("focus") ? "focus" : k === "retro-focus" ? "retro" : k; $("tbMain").dataset.tone = k === "focus-light" ? "light" : "dark"; $("tbMain").dataset.layout = k.startsWith("focus") || k === "retro" || k === "retro-focus" ? "focus" : "wide"; // 몰입·레트로 = 한 단
     writeJSON("skin2", k);
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => { b.classList.toggle("on", b.dataset.skin === k); b.setAttribute("aria-pressed", b.dataset.skin === k); });
   }
@@ -315,18 +316,25 @@
   }
   function renderOrig() {
     const host = $("tbOrig"); host.textContent = "";
+    host.dataset.source = state.book.pages[state.page];
     const target = chars(state.book.pages[state.page]), typed = chars(state.draft);
     const fr = document.createDocumentFragment();
     for (let i = 0; i < target.length; i++) {
       const c = target[i], s = document.createElement("span");
+      s.dataset.index = i; s.dataset.typed = typed[i] || "";
       if (c === "\n") { s.className = "nl"; s.textContent = "↵"; }
       else s.textContent = c;
       if (i < typed.length) s.classList.add(state.composing && i === typed.length - 1 ? "pend" : same(typed[i], c) ? "ok" : "bad");
       else if (i === typed.length) s.classList.add("cur");
       fr.appendChild(s); if (c === "\n") fr.appendChild(document.createTextNode("\n"));
     }
+    // Keep excess input visible in the single-sheet editor so it can be corrected.
+    for (let i = target.length; i < typed.length; i++) {
+      const s = document.createElement("span"); s.className = "bad trace-overflow";
+      s.dataset.index = i; s.dataset.typed = typed[i]; s.textContent = typed[i]; fr.appendChild(s);
+    }
     host.appendChild(fr);
-    const cur = host.querySelector(".cur"); if (cur && host.scrollHeight > host.clientHeight) { const t = cur.offsetTop - host.clientHeight / 2; if (Math.abs(host.scrollTop - t) > host.clientHeight / 3) host.scrollTop = t; }
+    const cur = host.querySelector(".cur"); if (cur && host.parentElement.id !== "tbHermesPaper" && host.scrollHeight > host.clientHeight) { const t = cur.offsetTop - host.clientHeight / 2; if (Math.abs(host.scrollTop - t) > host.clientHeight / 3) host.scrollTop = t; }
     const n = state.book.pages.length, done = state.completed.has(state.page) || pageDone(state.draft, state.book.pages[state.page]);
     $("tbCount").textContent = `${typed.length.toLocaleString()} / ${target.length.toLocaleString()}자`;
     $("tbCountBar").style.width = Math.min(100, typed.length / target.length * 100) + "%";

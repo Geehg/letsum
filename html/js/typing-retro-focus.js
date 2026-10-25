@@ -1,0 +1,55 @@
+/* One native editor and one original-text layer. Both return home on mode exit. */
+(() => {
+ 'use strict';
+ const $=id=>document.getElementById(id),main=$('tbMain'),read=$('tbRead'),input=$('tbInput'),original=$('tbOrig'),home=$('tbOrigHome'),paper=$('tbHermesPaper'),view=$('tbHermesView');
+ if(!main||!home)return;
+ let mounted=false,frame=0,fitFrame=0,following=false;
+ const wanted=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro'&&!read.hidden;
+ const count=s=>Array.from(s.normalize('NFC')).length;
+ function fit(){
+  fitFrame=0;if(!wanted())return;
+  const viewport=window.visualViewport?.height||window.innerHeight;
+  const top=view.getBoundingClientRect().top+window.scrollY,foot=view.nextElementSibling.getBoundingClientRect().height;
+  main.style.setProperty('--tb-focus-height',Math.max(260,Math.floor(viewport-top-foot-8))+'px');
+ }
+ function scheduleFit(){if(!fitFrame)fitFrame=requestAnimationFrame(fit);}
+ function refresh(){
+  frame=0;if(!mounted)return;
+  paper.style.setProperty('--tb-trace-font',getComputedStyle(input).fontFamily);
+  const start=count(input.value.slice(0,input.selectionStart)),end=count(input.value.slice(0,input.selectionEnd));
+  const spans=Array.from(original.children);let caret=spans[Math.min(start,spans.length-1)];
+  for(let i=0;i<spans.length;i++){
+   const span=spans[i];span.classList.toggle('trace-caret',span===caret&&start===end);
+   span.classList.toggle('trace-after',span===caret&&start>=spans.length);
+   span.classList.toggle('trace-selected',i>=start&&i<end);
+  }
+  if(caret){
+   const line=parseFloat(getComputedStyle(input).lineHeight)||48;
+   const target=Math.max(0,caret.offsetTop-(original.clientHeight-line)*.36);
+   following=true;original.scrollTop=target;input.scrollTop=original.scrollTop;following=false;
+  }
+ }
+ function schedule(){if(!frame)frame=requestAnimationFrame(refresh);}
+ function update(){
+  const want=wanted(),next=want&&main.dataset.hermesReady==='true';
+  const entering=want&&!document.body.classList.contains('tb-retro-immersive');
+  document.body.classList.toggle('tb-retro-immersive',want);
+  if(next&&!mounted){paper.prepend(original);original.scrollTop=0;input.setAttribute('aria-describedby','tbHermesStatus');}
+  if(!next&&mounted){home.after(original);original.scrollTop=0;input.removeAttribute('aria-describedby');original.querySelectorAll('.trace-caret,.trace-after,.trace-selected').forEach(s=>s.classList.remove('trace-caret','trace-after','trace-selected'));}
+  mounted=next;
+  if(entering)window.scrollTo({top:0,behavior:'instant'});
+  if(!want)main.style.removeProperty('--tb-focus-height');
+  schedule();scheduleFit();
+ }
+ new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready']});
+ new MutationObserver(update).observe(read,{attributes:true,attributeFilter:['hidden']});
+ new MutationObserver(schedule).observe(original,{childList:true});
+ new MutationObserver(schedule).observe(input,{attributes:true,attributeFilter:['style']});
+ for(const name of ['input','click','keyup','select','compositionstart','compositionend','tb:paper'])input.addEventListener(name,schedule);
+ input.addEventListener('scroll',()=>{if(mounted&&!following)original.scrollTop=input.scrollTop;});
+ document.addEventListener('selectionchange',()=>{if(document.activeElement===input)schedule();});
+ document.fonts?.addEventListener('loadingdone',()=>{schedule();scheduleFit();});
+ window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
+ const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),view.nextElementSibling])observer.observe(el);
+ update();
+})();
