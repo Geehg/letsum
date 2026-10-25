@@ -254,3 +254,9 @@ img.save("sample.png")
 - Hermes는 별도 미리보기 입력을 만들지 않고, 기존 #tbInput을 #tbHermesPaper 안으로 실제 이동. WebGL 정면 직교 카메라로 종이 세 모서리를 투영해 HTML matrix와 캐리지 위치를 맞춤. 종이 하단에 현재 줄을 배치, 이전 줄은 위로 공급. native textarea를 유지하여 한글 IME·커서·선택·키보드 편집·localStorage 기록은 기존 엔진 그대로. 모델/스킨 전환 시 #tbInputHome 뒤로 복원. 실패 시 기존 입력·키보드 표시. 입력 조합 중 캐리지 전진 보류, 확정 후 이동.
 - 모델 선택 저장키 `typebook-v1:model-v2`, 기본 Hermes 3000; Classic 12 및 기본 레트로도 선택 가능. typing-3d CSS/JS v3, typing-hermes JS v1. 수정 원본은 계속 tools/typing_app.html. 참고 자료의 인물·홍보 문구는 모델링 근거로 사용하지 않음.
 - Hermes 검증: 실제 GLB로 키 눌림·타격점·리본·Enter 복귀·롤러 축, IME 조합 보류, 입력창 복원·값 보존 검사 통과. 최종 Higgsfield revision 3. Blender 원본 `/Volumes/AI_dev/web/letsum-hermes-3000/hermes3000.blend`.
+
+- 2026-10-25: **Hermes 3000 87키 정교화** — 운영자가 87키 텐키리스 선택. 49→87개 키, 40→47개 printable typebar. 외장은 378→468mm(약24%)로 단면을 재설계, root scale 1 유지. 역사적 실물의 정확한 복원이 아니라 Hermes 형태를 참고한 87키 확장 모델임. Higgsfield 최종 revision 6, 원본 /Volumes/AI_dev/web/letsum-hermes-3000/hermes3000-87.blend. GLB 약7MB.
+- 연속 곡면·안쪽 립·오목한 키캡·개별 폭의 기능키·각인·노브 리딩 부모 구조 보정. 자체 생성 PMREM 반사 환경, 에나멜 코팅/미세 표면, 금속 반사, VSM 그림자와 접촉 그림자를 사용. 카메라는 좌우 대칭 정면, 키캡 상판이 보이는 높이.
+- 종이 padding을 즉시 바꾸던 방식을 없애고 종이 전체를 위로 이송(HTML textarea 높이와 투영 위치 연동). 롤러 회전각=종이 이송거리/18mm. 타격42ms→캐리지58ms, 리턴390ms·줄이송180ms. 한글 조합 중 이송 보류, 확정 때 반영. 기존 입력 노드·기록 유지. context lost 시 기본 입력으로 복원.
+- 타건음은 계속 합성음. Hermes에만 눌림/타격/복귀음을 나누고 타격 시점42ms에 맞춤. 줄 끝 근처에서 벨1회, Enter에서는 리턴 소리. 나머지 모델 소리는 유지. typing-hermes.js v2, typing-3d.css v4.
+- 검증 node tools/check_typing_hermes.mjs: 실제 GLB/Three.js로 87키·47바·타격점·키복귀·모디파이어·캐리지·IME·종이이송·롤러축·마진벨 중복방지·모델전환·WebGL 복원 검사. 실제 브라우저 데스크톱 입력/Enter, 390px 모바일 표시 확인. validate.py 오류0, 기존 경고264.

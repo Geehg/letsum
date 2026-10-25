@@ -1,13 +1,13 @@
 {
   "id": "hermes3000",
-  "label": "Hermes 3000 · 정면 타자기",
+  "label": "Hermes 3000 · 87키",
   "reference": "User-provided first-generation Hermes 3000 reference sheets",
-  "accuracy": "Photo-derived visual reconstruction, not measured manufacturing CAD. Sound is synthesized, not a recording of the real machine.",
+  "accuracy": "Hermes-inspired 87-key adaptation from user reference images, not an exact historical replica or measured CAD. Width rebuilt from 378 to 468 mm without root stretching. Synthesized sound, not real recordings.",
   "project": "https://higgsfield.ai/3d-jutsu/97a11171-2038-4d28-837e-087e65dd9170",
   "method": "Articulated GLB with fixed symmetrical front camera and projected native HTML textarea paper",
   "manual": "https://www.christopherlong.co.uk/oth/writing/TypewriterHermes3000manual.pdf",
-  "keys": 49,
-  "typebars": 40,
+  "keys": 87,
+  "typebars": 47,
   "text": "The same tbInput node moves into the projected paper and restores when changing modes; no duplicate draft or text renderer. IME commits drive carriage spacing.",
   "parts": [
     "rounded cast body",
@@ -18,5 +18,10 @@
     "platen and reeded knobs",
     "carriage rails and ruler",
     "return lever"
-  ]
+  ],
+  "revision": 6,
+  "width_m": 0.468,
+  "layout": "ANSI 87-key tenkeyless adaptation, individually placed standard key widths",
+  "lighting": "Runtime studio reflection environment, coated enamel, fine surface grain, VSM shadows and contact shadow",
+  "motion": "Independent key travel, 42 ms typebar strike, delayed 58 ms carriage step, 390 ms return and 180 ms paper feed; platen angle follows travel / 18 mm radius"
 }

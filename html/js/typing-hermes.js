@@ -1,18 +1,24 @@
-/* Fixed front camera, articulated Hermes 3000, and the actual IME textarea on its paper. */
+/* Hermes-inspired 87-key TKL: articulated parts, native IME paper, staged mechanical motion. */
 (() => {
  'use strict';
- const $=id=>document.getElementById(id), main=$('tbMain'), stage=$('tbHermesStage'), view=$('tbHermesView'), paper=$('tbHermesPaper'), input=$('tbInput'), home=$('tbInputHome'), status=$('tbHermesStatus');
+ const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
  if(!stage)return;
- const originalPlaceholder=input.placeholder;
- let active=false, inView=true, loading=false, engine=null, composing=false;
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- function restore(){if(input.parentElement===paper){home.after(input);input.style.paddingTop='';input.style.fontSize='';input.style.lineHeight='';input.placeholder=originalPlaceholder;}main.dataset.hermesReady='false';}
+ const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let active=false,inView=true,loading=false,engine=null,composing=false,failed=false;
+ function restore(){
+  if(input.parentElement===paper){home.after(input);for(const p of ['paddingTop','fontSize','lineHeight','height'])input.style[p]='';input.placeholder=originalPlaceholder;}
+  main.dataset.hermesReady='false';
+ }
  function update(){
-  active=main.dataset.skin==='retro' && main.dataset.model==='hermes3000' && !$('tbRead').hidden;
-  stage.hidden=!active;
+  active=main.dataset.skin==='retro'&&main.dataset.model==='hermes3000'&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
-  if(!engine && !loading)init();
-  if(engine){if(composing && input.parentElement!==paper)return;if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}input.placeholder='종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';engine.sync();engine.resize();}
+  if(failed){restore();return;}
+  if(!engine&&!loading)init();
+  if(engine){
+   if(composing&&input.parentElement!==paper)return;
+   if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
+   input.placeholder='종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';engine.resize();
+  }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model']});
  new MutationObserver(update).observe($('tbRead'),{attributes:true,attributeFilter:['hidden']});
@@ -21,84 +27,141 @@
  $('tbHermesFocus').addEventListener('click',()=>input.focus({preventScroll:true}));
  view.addEventListener('click',e=>{if(e.target!==input)input.focus({preventScroll:true});});
  input.addEventListener('compositionstart',()=>{composing=true;});
- input.addEventListener('compositionend',()=>{composing=false;update();engine?.sync();});
+ input.addEventListener('compositionend',()=>{composing=false;engine?.sync();});
  async function init(){
   loading=true;status.textContent='Hermes 3000을 준비하고 있어요…';let renderer;
   try{
    const T=await import('/js/vendor/three/three.module.js'),{GLTFLoader}=await import('/js/vendor/three/GLTFLoader.js');
-   renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.85;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=1');
-   const scene=new T.Scene();scene.add(asset.scene);const nodes={};asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight || o.isCamera)o.visible=false;});nodes.Paper.visible=false;
-   scene.add(new T.HemisphereLight(0xfffaf0,0x405348,.75));
-   for(const [pos,power] of [[[-.35,.6,.5],1.5],[[.4,.3,.1],.5],[[0,.5,-.5],.4]]){const l=new T.DirectionalLight(0xffffff,power);l.position.set(...pos);scene.add(l);}
-   const camera=new T.OrthographicCamera();camera.position.set(0,.42,.65);camera.lookAt(0,.18,-.015);
+   renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
+   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;
+   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
+   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=2');
+   const scene=new T.Scene(),nodes={};scene.add(asset.scene);
+   asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
+   nodes.Paper.visible=false;
+   // Window-shaped reflection cards describe chrome and enamel without a network HDRI.
+   const room=new T.Scene();room.background=new T.Color(.055,.055,.055);
+   for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
+    const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color,side:T.DoubleSide}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,0,0);room.add(card);
+   }
+   const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();
+   room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
+   // Fine deterministic surface texture; subtle enough to remain an enamel finish.
+   const grainData=new Uint8Array(128*128*4);let seed=31;
+   for(let i=0;i<grainData.length;i+=4){seed=(Math.imul(seed,1664525)+1013904223)>>>0;const n=115+(seed>>>27);grainData[i]=grainData[i+1]=grainData[i+2]=n;grainData[i+3]=255;}
+   const grain=new T.DataTexture(grainData,128,128,T.RGBAFormat);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.magFilter=T.LinearFilter;grain.minFilter=T.LinearMipmapLinearFilter;grain.generateMipmaps=true;grain.needsUpdate=true;
+   const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
+    let m=old;
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.clearcoat=.24;m.clearcoatRoughness=.28;m.bumpMap=grain;m.bumpScale=.00011;m.envMapIntensity=.48;}
+    else if(old.name==='Mint_Keycaps'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000045;m.envMapIntensity=.38;}
+    else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.16;m.envMapIntensity=1.1;}
+    else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
+    else {m=old.clone();m.envMapIntensity=.3;}
+    materials.set(old,m);o.material=m;
+   });
+   scene.add(new T.HemisphereLight(0xfffaf0,0x4e5b50,.28));
+   const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   keyLight.castShadow=true;keyLight.shadow.mapSize.set(1024,1024);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
+   const fill=new T.DirectionalLight(0xe2edf1,.25);fill.position.set(.5,.3,-.3);scene.add(fill);
+   const ground=new T.Mesh(new T.PlaneGeometry(2,2),new T.ShadowMaterial({opacity:.17}));ground.rotation.x=-Math.PI/2;ground.position.y=-.004;ground.receiveShadow=true;scene.add(ground);
+   // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
+   const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.22)');gradient.addColorStop(.6,'rgba(25,32,26,.10)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
+   const contact=new T.Mesh(new T.PlaneGeometry(.61,.42),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
+   const camera=new T.OrthographicCamera();camera.position.set(0,.60,.73);camera.lookAt(0,.205,0);
    view.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
    const keys=Object.values(nodes).filter(o=>o.name.startsWith('Key_')),bars=Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name));
-   keys.forEach(o=>o.userData.rest=o.position.clone());bars.forEach(o=>o.userData.rest=o.quaternion.clone());
-   const barFor=new Map(bars.map(o=>[o.userData.keyCode,o]));
-   const carriage=nodes.Carriage,platen=nodes.Platen,guide=nodes.Ribbon_Guide,lever=nodes.Return_Lever,basket=nodes.Typebasket;
-   const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone();
+   keys.forEach(o=>{o.userData.rest=o.position.clone();o.userData.restQ=o.quaternion.clone();});bars.forEach(o=>o.userData.rest=o.quaternion.clone());
+   const barFor=new Map(bars.map(o=>[o.userData.keyCode,o])),carriage=nodes.Carriage,platen=nodes.Platen,guide=nodes.Ribbon_Guide,lever=nodes.Return_Lever,basket=nodes.Typebasket;
+   const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
+   knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=0,lastValue='',width=0,height=0,shift=false;
-   const measure=document.createElement('canvas').getContext('2d');
-   const paperWidth=600,paperHeight=594,left=42,printBottom=30;let fontPixels=34,lineHeight=48;
-   function running(){return active && inView && !document.hidden;}
-   function stop(){cancelAnimationFrame(raf);raf=0;pressed.clear();hits.length=0;}
-   function wake(){until=performance.now()+700;if(!raf && running())raf=requestAnimationFrame(frame);}
-   function resize(){width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;renderer.setSize(width,height,false);const a=width/height,span=Math.max(.43,.63/a);camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();camera.updateMatrixWorld();const paperScale=.224/(span*a)*width;fontPixels=Math.max(34,Math.min(72,16/(paperScale/600)));lineHeight=fontPixels*1.42;input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';sync();wake();}
+   let raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
+   const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,paperHeight=594,left=42,printBottom=30;
+   let fontPixels=34,lineHeight=48,fullHeight=paperHeight;
+   const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
+   function running(){return active&&!failed&&inView&&!document.hidden;}
+   function resetKeys(){pressed.clear();hits.length=0;shift=false;keys.forEach(k=>{k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);});}
+   function stop(){cancelAnimationFrame(raf);raf=0;prev=0;resetKeys();}
+   function wake(){until=performance.now()+800;if(!raf&&running())raf=requestAnimationFrame(frame);}
+   function resize(){
+    if(!active||failed)return;
+    width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
+    renderer.setSize(width,height,false);const a=width/height,span=Math.max(.52,.70/a);
+    camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();camera.updateMatrixWorld();
+    const scale=.224/(span*a)*width;fontPixels=Math.max(34,Math.min(76,16/(scale/600)));lineHeight=fontPixels*1.42;
+    input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';sync(true);wake();
+   }
    function layout(text){
-    const font=getComputedStyle(input);measure.font=fontPixels+'px '+font.fontFamily;
-    const lines=[];let row='',units=0;
-    for(const ch of Array.from(text)){if(ch==='\n'){lines.push({text:row,width:units});row='';units=0;continue;}const n=measure.measureText(ch).width;if(units+n>paperWidth-left*2 && row){lines.push({text:row,width:units});row='';units=0;}row+=ch;units+=n;}
+    measure.font=fontPixels+'px '+getComputedStyle(input).fontFamily;const lines=[];let row='',units=0;
+    for(const ch of Array.from(text)){if(ch==='\n'){lines.push({text:row,width:units});row='';units=0;continue;}const n=measure.measureText(ch).width;if(units+n>paperWidth-left*2&&row){lines.push({text:row,width:units});row='';units=0;}row+=ch;units+=n;}
     lines.push({text:row,width:units});return lines;
    }
-   function sync(){
-    if(!active)return;
-    const all=layout(input.value),before=layout(input.value.slice(0,input.selectionStart));
-    // Padding puts the current writing line at the platen; completed lines feed upward.
-    input.style.paddingTop=Math.max(24,paperHeight-printBottom-all.length*lineHeight)+'px';
-    if(input.selectionStart===input.value.length)input.scrollTop=input.scrollHeight;
-    paper.dataset.paper=main.dataset.paper||'ivory';
-    $('tbHermesCount').textContent=$('tbCount').textContent;
-    if(!composing){const line=before[before.length-1];targetX=.112-left/paperWidth*.224-line.width/paperWidth*.224;feed=(before.length-1)*.22;}
-    // Touch keyboards may send input without physical keydown; still strike on committed text.
-    if(!composing && input.value.length>lastValue.length && performance.now()-lastKeyAt>90 && bars.length){hits.push({bar:bars[Array.from(input.value).length%bars.length],time:performance.now()});}
-    lastValue=input.value;wake();
+   function sync(snap=false){
+    if(!active||failed)return;snap=snap===true;
+    const all=layout(input.value),before=layout(input.value.slice(0,input.selectionStart)),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
+    // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
+    fullHeight=paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight+'px';input.style.paddingTop=(paperHeight-printBottom-lineHeight)+'px';input.scrollTop=0;
+    paper.dataset.paper=main.dataset.paper||'ivory';$('tbHermesCount').textContent=$('tbCount').textContent;
+    if(!composing){
+     const line=before[before.length-1],nextX=.112-left/paperWidth*.224-line.width/paperWidth*.224,nextFeed=(before.length-1)*lineHeight*.222/paperHeight;
+     const newLine=nextFeed>feed+.0001;
+     if(newLine&&changed&&!initial)returnAt=now;
+     if(initial||snap||input.value.length<(lastValue||'').length)bellLine=-1;
+     if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==before.length){bellLine=before.length;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
+     if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
+     if(Math.abs(nextFeed-feed)>.000001){feedDrive={from:currentFeed,to:nextFeed,start:now+(newLine?20:0),duration:newLine?180:150};feed=nextFeed;}
+     if(snap||initial){currentX=targetX;currentFeed=feed;drive=feedDrive=null;}
+     // Mobile IME may commit text without keyboard events. Space/newline never hit a typebar.
+     if(changed&&!initial&&input.value.length>(lastValue||'').length&&now-lastKeyAt>100&&/\S$/.test(input.value)){const ch=Array.from(input.value).at(-1),bar=barFor.get('Key'+ch.toUpperCase())||bars[Array.from(input.value).length%bars.length];hits.push({bar,time:now});input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:ch}}));}
+    }
+    if(!composing)lastValue=input.value;wake();
    }
    function placePaper(){
-    const tl=new T.Vector3(-.112+currentX,.396,-.151).project(camera),tr=new T.Vector3(.112+currentX,.396,-.151).project(camera),bl=new T.Vector3(-.112+currentX,.174,-.151).project(camera);
+    const top=.396+currentFeed,tl=new T.Vector3(-.112+currentX,top,-.151).project(camera),tr=new T.Vector3(.112+currentX,top,-.151).project(camera),bl=new T.Vector3(-.112+currentX,.174+currentFeed,-.151).project(camera);
     const x=(tl.x+1)*width/2,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*width/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
    function frame(now){
     raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
-    keys.forEach(k=>{k.position.copy(k.userData.rest);const p=pressed.get(k.name);if(p){let depth=Math.min(1,(now-p.time)/24);if(p.up)depth*=Math.max(0,1-(now-p.up)/90);k.position.y-=motion?depth*.0045:0;if(p.up && now-p.up>100)pressed.delete(k.name);}});
-    bars.forEach(b=>b.quaternion.copy(b.userData.rest));let lift=0;
-    for(let i=hits.length-1;i>=0;i--){const h=hits[i],t=(now-h.time)/150;if(t>=1){hits.splice(i,1);continue;}const s=motion?Math.sin(Math.PI*t):0;h.bar.quaternion.copy(h.bar.userData.rest).multiply(delta.setFromAxisAngle(xAxis,-1.05*s));lift=Math.max(lift,s);}
-    guide.position.y=guideY+lift*.008;basket.position.y=shift&&motion?-.004:0;
-    currentX=motion?currentX+(targetX-currentX)*(1-Math.exp(-dt*(now-returnAt<420?10:28))):targetX;carriage.position.x=currentX;
-    currentFeed=motion?currentFeed+(feed-currentFeed)*(1-Math.exp(-dt*16)):feed;
-    platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,currentFeed));
-    lever.quaternion.copy(leverQ);if(motion && now-returnAt<420)lever.rotateX(-.4*Math.sin(Math.PI*(now-returnAt)/420));
-    for(const name of ['Platen_Knob_Left','Platen_Knob_Right']){const k=nodes[name];if(k){k.userData.restQ??=k.quaternion.clone();k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,currentFeed));}}
+    for(const k of keys){
+     k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);const p=pressed.get(k.name);if(!p)continue;
+     let depth=smooth(clamp((now-p.time)/24));
+     if(p.up){const t=(now-p.up)/95;depth*=t<1?1-smooth(clamp(t)):-.055*Math.exp(-(t-1)*8)*Math.sin((t-1)*12);if(t>1.5){pressed.delete(k.name);depth=0;}}
+     if(motion){k.position.y-=depth*.0045;k.quaternion.multiply(delta.setFromAxisAngle(xAxis,-.025*depth));}
+    }
+    bars.forEach(b=>b.quaternion.copy(b.userData.rest));let lift=0,impact=0;
+    for(let i=hits.length-1;i>=0;i--){
+     const h=hits[i],age=now-h.time;if(age>=160){hits.splice(i,1);continue;}
+     // Fast strike, brief contact, slower spring return; no sinusoidal slow approach.
+     let s=age<42?smooth(clamp(age/42)):age<50?1:1-smooth(clamp((age-50)/110));if(!motion)s=0;
+     h.bar.quaternion.copy(h.bar.userData.rest).multiply(delta.setFromAxisAngle(xAxis,-1.05*s));lift=Math.max(lift,s);impact=Math.max(impact,Math.max(0,1-Math.abs(age-46)/12));
+    }
+    guide.position.y=guideY+lift*.008;basket.position.y+=( (shift&&motion?-.004:0)-basket.position.y)*(1-Math.exp(-dt*35));
+    if(!motion){currentX=targetX;currentFeed=feed;drive=feedDrive=null;}
+    if(drive){const t=clamp((now-drive.start)/drive.duration);currentX=drive.from+(drive.to-drive.from)*smooth(t);if(t===1)drive=null;}
+    if(feedDrive){const t=clamp((now-feedDrive.start)/feedDrive.duration);currentFeed=feedDrive.from+(feedDrive.to-feedDrive.from)*smooth(t);if(t===1)feedDrive=null;}
+    carriage.position.x=currentX;carriage.position.y=motion?impact*.0002:0;
+    // Roller angle is derived from paper travel / actual 18 mm platen radius.
+    const angle=-currentFeed/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
+    const rt=now-returnAt;lever.quaternion.copy(leverQ);
+    if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
     placePaper();renderer.render(scene,camera);
-    if(now<until || pressed.size || hits.length || Math.abs(currentX-targetX)>.0001 || Math.abs(currentFeed-feed)>.001)raf=requestAnimationFrame(frame);
+    if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }
    function down(e){
-    if(!active || e.ctrlKey || e.metaKey || e.altKey)return;lastKeyAt=performance.now();
-    if(e.code.startsWith('Shift'))shift=true;
+    if(!active)return;lastKeyAt=performance.now();if(e.code.startsWith('Shift'))shift=true;
     const key=nodes['Key_'+e.code];if(key&&!e.repeat)pressed.set(key.name,{time:lastKeyAt,up:0});
-    if(e.code==='Enter'&&!e.isComposing)returnAt=lastKeyAt;
-    const bar=barFor.get(e.code);if(bar)hits.push({bar,time:lastKeyAt});wake();
+    if(!e.ctrlKey&&!e.metaKey&&!e.altKey){if(e.code==='Enter'&&!e.isComposing)returnAt=lastKeyAt;const bar=barFor.get(e.code);if(bar)hits.push({bar,time:lastKeyAt});}
+    wake();
    }
    function up(e){if(e.code.startsWith('Shift'))shift=false;const k=pressed.get('Key_'+e.code);if(k)k.up=performance.now();wake();}
-   input.addEventListener('keydown',down);document.addEventListener('keyup',up);window.addEventListener('blur',()=>{shift=false;pressed.clear();hits.length=0;wake();});
-   ['input','click','keyup','tb:paper'].forEach(e=>input.addEventListener(e,sync));
-   new MutationObserver(sync).observe(main,{attributes:true,attributeFilter:['data-paper']});
-   new ResizeObserver(resize).observe(view);$('tbFontW').addEventListener('change',sync);$('tbReset').addEventListener('click',()=>queueMicrotask(sync));
-   renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
-   engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='정면 타자기 · 종이에 직접 입력';loading=false;update();
-  }catch(error){renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Hermes 3000 unavailable',error);loading=false;}
+   input.addEventListener('keydown',down);document.addEventListener('keyup',up);window.addEventListener('blur',()=>{resetKeys();wake();});input.addEventListener('blur',()=>{resetKeys();wake();});
+   ['input','click','keyup','tb:paper'].forEach(e=>input.addEventListener(e,()=>sync()));
+   new MutationObserver(()=>sync()).observe(main,{attributes:true,attributeFilter:['data-paper']});
+   new ResizeObserver(resize).observe(view);$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
+   renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
+   engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 87키 · 종이에 직접 입력';loading=false;update();
+  }catch(error){failed=true;renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Hermes 3000 unavailable',error);loading=false;}
  }
  update();
 })();

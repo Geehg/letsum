@@ -128,6 +128,14 @@
     try {
       actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === "suspended") actx.resume();
       const v = Math.min(0.65, Math.max(0, retro.volume / 100));
+      if ($("tbMain").dataset.hermesReady === "true") {
+        if (key === "MarginBell") { tone(1280, 0.32, v * 0.085, "sine"); tone(2568, 0.13, v * 0.022, "sine", 0.006); }
+        else if (key === "Enter") { noise(0.035, v * 0.11); noise(0.20, v * 0.06, 0.07); tone(135, 0.055, v * 0.065, "triangle", 0.39); }
+        else if (key === "Backspace") { noise(0.027, v * 0.10); tone(185, 0.035, v * 0.035, "triangle"); }
+        else if (key === " ") { noise(0.024, v * 0.09); tone(145, 0.03, v * 0.05, "triangle", 0.025); }
+        else { noise(0.017, v * 0.07); noise(0.022, v * 0.17, 0.042); tone(285 + Math.random() * 22, 0.026, v * 0.045, "triangle", 0.042); noise(0.015, v * 0.035, 0.12); }
+        return;
+      }
       if (key === "Enter") { noise(0.095, v * 0.14); tone(840, 0.16, v * 0.12, "sine"); tone(1180, 0.21, v * 0.075, "sine", 0.06); } // 캐리지 복귀 + 벨
       else if (key === "Backspace") { noise(0.038, v * 0.12); tone(170, 0.05, v * 0.06, "square"); }
       else if (key === " ") { noise(0.065, v * 0.19); tone(150, 0.035, v * 0.08); }
@@ -482,6 +490,7 @@
   // ---------- 이벤트 ----------
   function bind() {
     const inp = $("tbInput");
+    inp.addEventListener("tb:hermes-sound", (e) => { if (isRetro() && $("tbMain").dataset.hermesReady === "true") clack(e.detail.key); });
     inp.addEventListener("compositionstart", () => { state.composing = true; });
     inp.addEventListener("compositionend", () => {
       state.composing = false; // 조합이 끝난 한 음절을 한 번의 시도로(중간 자모는 오타로 세지 않음)

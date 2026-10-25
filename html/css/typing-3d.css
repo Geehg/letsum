@@ -58,3 +58,10 @@ main.tb[data-hermes-ready="true"] #tbOrig{height:110px;min-height:0;max-height:1
 
 .tb-hermes-paper{visibility:hidden}
 main.tb[data-hermes-ready="true"] .tb-hermes-paper{visibility:visible}
+
+/* Cast enamel, paper edge and a larger instrument footprint for the 87-key model. */
+.tb-hermes-view{height:clamp(600px,78vh,760px)}
+.tb-hermes-paper{background-image:linear-gradient(90deg,#00000004,transparent 9%,#ffffff21 55%,#00000007);box-shadow:1px 0 0 #ffffff9c,-1px 0 0 #d7d0be,0 3px 6px #32382d22;will-change:transform}
+.tb-hermes-paper::before{content:""}
+main.tb[data-hermes-ready="true"] #tbInput{overflow:hidden;font-variant-ligatures:none}
+@media(max-width:760px){.tb-hermes-view{height:clamp(390px,102vw,550px)}}
