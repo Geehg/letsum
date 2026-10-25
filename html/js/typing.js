@@ -521,7 +521,7 @@
     inp.addEventListener("input", onInput);
     inp.addEventListener("paste", (e) => { e.preventDefault(); toast("필사에서는 붙여 넣기를 쓸 수 없어요. 직접 입력해 주세요."); });
     inp.addEventListener("drop", (e) => e.preventDefault());
-    inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { clack(e.key === "Process" || e.key === "Unidentified" ? "x" : e.key); strike(); }
+    inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { if (!(e.key === "Enter" && $("tbMain").dataset.hermesReady === "true")) clack(e.key === "Process" || e.key === "Unidentified" ? "x" : e.key); strike(); }
       if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
     document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish", "tbSet"].forEach((id) => { if (!$(id).hidden) close(id); }); });
     document.addEventListener("keyup", (e) => press(e.code, false));
