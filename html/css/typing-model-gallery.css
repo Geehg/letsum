@@ -36,3 +36,5 @@ body.tb-model-choosing{overflow:hidden}
  .tb-model-sheet{padding:10px 12px}
  .tb-model-sheet h3{font-size:16px;line-height:1.25;margin:8px 0}
 }
+/* Programmatic dialog heading focus is for screen-reader context, not a control. */
+#tbModelGalleryTitle:focus{outline:none}
