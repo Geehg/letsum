@@ -286,3 +286,5 @@ img.save("sample.png")
 - Higgsfield project 97a11171-2038-4d28-837e-087e65dd9170 revision11, GLB 7,294,284bytes. 편집 원본 /Volumes/AI_dev/web/letsum-hermes-3000/hermes3000-61-v11.blend, 변환 스크립트 compact-61-v11.py. typing-hermes.js v13 / GLB v5, 모델 선택·aria·JSON 61키로 갱신. node tools/check_typing_hermes.mjs: 삭제 노드 부재, 61키 등방 배율/중앙/베젤 범위 및 기존 47타입바·IME·캐리지·종이·모드 복원·WebGL 검사 통과. 레트로/레트로 몰입 실제 웹 외형 확인. 제작 치수·배율은 웹용 설계값이며 역사적 실물 복원이 아님.
 
 - 2026-10-25: 운영자 요청으로 Hermes 리본의 아래쪽 빨간 띠도 기존 위쪽 검정 직물 재질로 통일. 두 리본 mesh의 형상/타건 리프트 유지, 마진 표시와 리본 선택기 점은 유지. 웹 재질 오버라이드로 적용, GLB는 그대로. typing-hermes.js v14.
+
+- 2026-10-25: A4 하단 접촉 그림자 추가. .tb-hermes-paper::after의 44px 페이드와 아래쪽 외부 그림자로 플래튼에 닿는 종이 끝을 표현. 종이 투영/이송을 함께 따라가며 pointer-events:none으로 입력 유지. typing-3d.css v5, 레트로/레트로 몰입 공통.

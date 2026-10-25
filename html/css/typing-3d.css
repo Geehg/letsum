@@ -61,7 +61,10 @@ main.tb[data-hermes-ready="true"] .tb-hermes-paper{visibility:visible}
 
 /* Cast enamel, paper edge and a larger instrument footprint for the 87-key model. */
 .tb-hermes-view{height:clamp(600px,78vh,760px)}
-.tb-hermes-paper{background-image:linear-gradient(90deg,#00000004,transparent 9%,#ffffff21 55%,#00000007);box-shadow:1px 0 0 #ffffff9c,-1px 0 0 #d7d0be,0 3px 6px #32382d22;will-change:transform}
+.tb-hermes-paper{background-image:linear-gradient(90deg,#00000004,transparent 9%,#ffffff21 55%,#00000007);box-shadow:1px 0 0 #ffffff9c,-1px 0 0 #d7d0be,0 3px 6px #32382d22,0 14px 20px -10px #24291f55;will-change:transform}
 .tb-hermes-paper::before{content:""}
 main.tb[data-hermes-ready="true"] #tbInput{overflow:hidden;font-variant-ligatures:none}
 @media(max-width:760px){.tb-hermes-view{height:clamp(390px,102vw,550px)}}
+
+/* Soft contact shade where the sheet meets the platen; travels with the paper. */
+.tb-hermes-paper::after{content:"";position:absolute;left:0;right:0;bottom:0;height:44px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,transparent,#34372b08 35%,#34372b1c 72%,#252a2142);box-shadow:inset 0 -1px 0 #252a2138}
