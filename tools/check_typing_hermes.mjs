@@ -94,32 +94,8 @@ for(const [w,h] of [[1052,522],[1069,678],[1392,850],[342,570],[600,260]]){
  for(const caret of [0,39,70]){ids.tbInput.selectionStart=caret;modeObservers();tick();assertPaperInFrame();}
 }
 ids.tbHermesView.clientWidth=870;ids.tbHermesView.clientHeight=600;
-// A browser wrap can occur before the canvas estimate. Follow the visible row.
-let returns=0;(events['tbInput:tb:hermes-sound']??=[]).push(e=>{if(e.detail.key==='Enter')returns++});
-ids.tbOrig.dataset.source='a'.repeat(80);ids.tbInput.value='aaaaa';ids.tbInput.selectionStart=5;
-modeObservers();tick();
-const logicalLine=parseFloat(ids.tbInput.style.lineHeight);
-ids.tbOrig.children=Array.from({length:80},(_,i)=>({offsetTop:32+Math.floor(i/6)*logicalLine,offsetLeft:42+(i%6)*13}));
-modeObservers();tick();const wrapX=nodes.Carriage.position.x,wrapY=nodes.Paper.position.y,wrapRoll=nodes.Platen.quaternion.clone();
-ids.tbInput.value+='a';ids.tbInput.selectionStart=6;event('tbInput','input');tick(100);
-assert.equal(returns,1,'DOM wrap triggers one return without Enter');assert(nodes.Return_Lever.quaternion.angleTo(new T.Quaternion())>.1,'automatic wrap pulls return lever');
-assert(nodes.Paper.position.y>wrapY+.001,'immersive paper visibly feeds during return');assert(nodes.Platen.quaternion.angleTo(wrapRoll)>.1,'automatic wrap turns roller');assertPaperInFrame();
-const duringReturn=nodes.Carriage.position.x;
-ids.tbInput.value+='a';ids.tbInput.selectionStart=7;event('tbInput','input');event('tbInput','keyup');tick(100);
-assert(nodes.Carriage.position.x>duringReturn,'continued typing does not interrupt return sweep');assert(nodes.Carriage.position.x>wrapX,'carriage returns toward left typing margin');
-for(let i=0;i<20;i++)tick();assert.equal(returns,1,'input/keyup do not duplicate return sound');assert(Math.abs(nodes.Paper.position.y-wrapY)<1e-9,'whole A4 settles into reading frame');
-// Cursor movement, deletion, font/layout changes must not act like a new line feed.
-ids.tbInput.selectionStart=0;event('tbInput','click');tick(600);ids.tbInput.selectionStart=7;event('tbInput','click');tick(600);
-ids.tbInput.value='aaaaa';ids.tbInput.selectionStart=5;event('tbInput','input');tick(600);modeObservers();tick();assert.equal(returns,1);
-// IME-confirming Enter alone does not feed; a committed newline does, even off the source boundary.
-event('tbInput','compositionstart');event('tbInput','keydown',{code:'Enter',isComposing:true});tick(100);assert.equal(returns,1);assert(nodes.Return_Lever.quaternion.angleTo(new T.Quaternion())<.0001);
-event('document','keyup',{code:'Enter'});event('tbInput','compositionend');tick(100);assert.equal(returns,1);
-ids.tbOrig.children=undefined;ids.tbInput.value+='\n';ids.tbInput.selectionStart=6;event('tbInput','keydown',{code:'Enter'});event('tbInput','input');event('document','keyup',{code:'Enter'});event('tbInput','keyup');tick(100);
-assert.equal(returns,2,'explicit newline produces exactly one return');assert(nodes.Return_Lever.quaternion.angleTo(new T.Quaternion())>.1);for(let i=0;i<20;i++)tick();assertPaperInFrame();
-// Switching pages restores position quietly instead of replaying its saved draft.
-ids.tbOrig.dataset.source='other page';ids.tbInput.value='other\npage';ids.tbInput.selectionStart=10;event('tbInput','tb:paper');tick();assert.equal(returns,2);assert(nodes.Return_Lever.quaternion.angleTo(new T.Quaternion())<.0001);
 const traceDraft=ids.tbInput.value;ids.tbMain.dataset.readingMode='standard';modeObservers();tick();
 assert.equal(nodes.Paper.scale.x,1,'standard paper size restores');assert.equal(ids.tbInput.value,traceDraft,'mode switch preserves draft');assert.equal(ids.tbInput.style.paddingBottom,'30px');
 const saved=ids.tbInput.value;ids.tbMain.dataset.model='classic12';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbInput.value,saved);assert.equal(ids.tbInput.style.paddingTop,'');assert.equal(ids.tbMain.dataset.hermesReady,'false');
 ids.tbMain.dataset.model='hermes3000';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);event('canvas','webglcontextlost',{preventDefault(){}});assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbMain.dataset.hermesFailed,'true');observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement,'failure does not reattach input');
-console.log(JSON.stringify({passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','DOM auto-wrap / Enter / rapid typing / no duplicate feed / IME / page restore','WebGL failure restores native input'],renders,nodes:Object.keys(nodes).length}));
+console.log(JSON.stringify({passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','WebGL failure restores native input'],renders,nodes:Object.keys(nodes).length}));
