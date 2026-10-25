@@ -72,7 +72,9 @@
    }
    // Ribbon side guides stay fixed while the center follows the carrier lift.
    const ribbonPaths=['Ribbon_Path_Black','Ribbon_Path_Red'].map(n=>nodes[n]);
-   for(const o of ribbonPaths){o.material=o.material.clone();o.material.side=T.DoubleSide;o.userData.basePositions=o.geometry.attributes.position.array.slice();o.geometry.attributes.position.setUsage(T.DynamicDrawUsage);}
+   // Both ribbon bands use the same black fabric, including during the strike lift.
+   const ribbonFabric=nodes.Ribbon_Path_Black.material;
+   for(const o of ribbonPaths){o.material=ribbonFabric.clone();o.material.side=T.DoubleSide;o.userData.basePositions=o.geometry.attributes.position.array.slice();o.geometry.attributes.position.setUsage(T.DynamicDrawUsage);}
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
