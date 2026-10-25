@@ -41,7 +41,7 @@ const before=nodes.Carriage.position.x;const sheetBefore=ids.tbHermesPaper.style
 assert(parseFloat(ids.tbHermesPaper.style.height)>heightBefore,'paper extends with feed');assert.notEqual(ids.tbHermesPaper.style.transform,sheetBefore,'top edge rises');assert(nodes.Platen.quaternion.angleTo(angleBefore)>.1,'platen turns with feed');
 for(const code of ['Space','ArrowLeft','F1','ControlLeft','AltRight','Backslash','Delete']){const k=nodes['Key_'+code],y=k.position.y;event('tbInput','keydown',{code});tick(30);assert(k.position.y<y-.004,code+' responds');event('document','keyup',{code});tick(200);assert.equal(k.position.y,y,code+' restores');}
 let bells=0;(events['tbInput:tb:hermes-sound']??=[]).push(e=>{if(e.detail.key==='MarginBell')bells++});ids.tbInput.value='a'.repeat(36);ids.tbInput.selectionStart=36;event('tbInput','input');event('tbInput','keyup',{});assert.equal(bells,1,'one bell on approaching margin, no duplicates');
-// Immersive mode keeps a fully framed A4 sheet with the instrument halved and paper width preserved.
+// Immersive mode keeps a fully framed A4 sheet with the instrument enlarged 15% and paper width preserved.
 const paperMatrix=()=>ids.tbHermesPaper.style.transform.slice(7,-1).split(',').map(Number);
 const standardPixelsPerMeter=paperMatrix()[0]*600/.224;
 function assertPaperInFrame(){
@@ -56,13 +56,13 @@ ids.tbMain.dataset.readingMode='immersive';ids.tbOrig.dataset.source='a'.repeat(
 ids.tbInput.value='z'.repeat(12);ids.tbInput.selectionStart=12;
 const modeObservers=()=>observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-reading-mode')).forEach(o=>o.f());
 modeObservers();tick();const traceHeight=ids.tbHermesPaper.style.height,traceWidth=nodes.Paper.scale.x;
-assert(Math.abs(parseFloat(traceHeight)/600-297/210)<1e-8,'A4 aspect ratio');assert(Math.abs(traceWidth*.224-.420)<1e-8);
-assert(Math.abs(paperMatrix()[0]*600/.420/standardPixelsPerMeter-.75)<1e-8,'instrument is half the previous 1.5x zoom');assertPaperInFrame();
+assert(Math.abs(parseFloat(traceHeight)/600-297/210)<1e-8,'A4 aspect ratio');assert(Math.abs(traceWidth*.224-.420/1.15)<1e-8);
+assert(Math.abs(paperMatrix()[0]*600/(.420/1.15)/standardPixelsPerMeter-.75*1.15)<1e-8,'instrument is 15% larger than the previous .75x zoom');assertPaperInFrame();
 assert.equal(ids.tbInput.style.paddingTop,'32px');const tracePosition=nodes.Carriage.position.x;
 event('tbInput','compositionstart');ids.tbInput.value+='한';ids.tbInput.selectionStart=13;event('tbInput','input');tick(200);assert.equal(nodes.Carriage.position.x,tracePosition,'tracing also waits for IME commit');event('tbInput','compositionend');tick(300);tick(300);
 ids.tbInput.value=ids.tbOrig.dataset.source.slice(0,70);ids.tbInput.selectionStart=70;event('tbInput','input');for(let i=0;i<20;i++)tick();
 assert.equal(ids.tbHermesPaper.style.height,traceHeight,'long drafts do not expand the page');
-assert(Math.abs(nodes.Paper.position.y-.471)<1e-9,'trace paper edge stays at the platen');assertPaperInFrame();
+assert(Math.abs(nodes.Paper.position.y-(.174+.594/1.15/2))<1e-9,'trace paper edge stays at the platen');assertPaperInFrame();
 for(const [w,h] of [[1052,522],[342,570],[600,260]]){
  ids.tbHermesView.clientWidth=w;ids.tbHermesView.clientHeight=h;
  for(const caret of [0,39,70]){ids.tbInput.selectionStart=caret;modeObservers();tick();assertPaperInFrame();}
@@ -72,4 +72,4 @@ const traceDraft=ids.tbInput.value;ids.tbMain.dataset.readingMode='standard';mod
 assert.equal(nodes.Paper.scale.x,1,'standard paper size restores');assert.equal(ids.tbInput.value,traceDraft,'mode switch preserves draft');assert.equal(ids.tbInput.style.paddingBottom,'30px');
 const saved=ids.tbInput.value;ids.tbMain.dataset.model='classic12';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbInput.value,saved);assert.equal(ids.tbInput.style.paddingTop,'');assert.equal(ids.tbMain.dataset.hermesReady,'false');
 ids.tbMain.dataset.model='hermes3000';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);event('canvas','webglcontextlost',{preventDefault(){}});assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbMain.dataset.hermesFailed,'true');observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement,'failure does not reattach input');
-console.log(JSON.stringify({passed:['87 independent keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','87-key function/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive half-size instrument / preserved A4 width desktop-mobile / source cursor / IME / restoration','WebGL failure restores native input'],renders,nodes:Object.keys(nodes).length}));
+console.log(JSON.stringify({passed:['87 independent keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','87-key function/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','WebGL failure restores native input'],renders,nodes:Object.keys(nodes).length}));

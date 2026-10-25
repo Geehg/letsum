@@ -127,11 +127,11 @@
    function resize(){
     if(!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    const trace=tracing(),a=width/height,span=Math.max(.52,.70/a)/(trace?.75:1);
+    const trace=tracing(),a=width/height,instrumentScale=1.15,span=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
     renderer.setSize(width,height,false);
-    // Halve the previous 1.5x instrument view; compensate only the A4 sheet
-    // so its on-screen width, height and text size remain unchanged.
-    sheetWidth=trace?.420:.224;paperTop=trace?.174+.594:.396;
+    // Enlarge the instrument by 15%; inversely compensate the A4 sheet
+    // to preserve its screen position, width, height and text size.
+    sheetWidth=trace?.420/instrumentScale:.224;paperTop=trace?.174+.594/instrumentScale:.396;
     paperHeight=trace?paperWidth*297/210:594;
     camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
