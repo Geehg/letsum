@@ -5,10 +5,10 @@ const root=fileURLToPath(new URL('..',import.meta.url));const scratch=fs.mkdtemp
 fs.copyFileSync(root+'/html/js/vendor/three/three.module.js',path.join(scratch,'hermes-three.mjs'));fs.writeFileSync(path.join(scratch,'hermes-loader.mjs'),fs.readFileSync(root+'/html/js/vendor/three/GLTFLoader.js','utf8').replace("'./three.module.js'","'./hermes-three.mjs'"));
 const T=await import(path.join(scratch,'hermes-three.mjs')),{GLTFLoader}=await import(path.join(scratch,'hermes-loader.mjs'));
 const b=fs.readFileSync(root+'/html/img/typewriters/hermes3000.glb');const gltf=await new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j));const nodes={};gltf.scene.traverse(o=>nodes[o.name]=o);
-const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene;const textureLoads=[];
+const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene,renderedCamera;const textureLoads=[];
 function el(id){return {id,dataset:{},style:{setProperty(k,v){this[k]=v},getPropertyValue(k){return this[k]||''}},hidden:false,value:'',placeholder:'write',selectionStart:0,scrollHeight:594,scrollTop:0,clientWidth:870,clientHeight:600,parentElement:null,addEventListener(e,f){(events[id+':'+e]??=[]).push(f)},removeEventListener(e,f){events[id+':'+e]=(events[id+':'+e]||[]).filter(x=>x!==f)},appendChild(c){c.parentElement=this},after(c){c.parentElement=this.parentElement},setAttribute(){},dispatchEvent(e){for(const f of events[id+':'+e.type]||[])f(e)},remove(){},focus(){ctx.document.activeElement=this},getContext(){return {measureText(c){return {width:c.codePointAt(0)>127?26:13}},fillRect(){},fillText(){},createRadialGradient(){return {addColorStop(){}}}}}};}
 const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
-class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene){renderedScene=scene;renders++}dispose(){}}
+class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene,camera){renderedScene=scene;renderedCamera=camera;renders++}dispose(){}}
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
 fs.copyFileSync(root+'/html/js/typing-lettera.js',path.join(scratch,'lettera.mjs'));await import(path.join(scratch,'lettera.mjs'));const buildLettera32=globalThis.LSBuildLettera32;
 let thisUsed=false;
@@ -111,6 +111,18 @@ for(const [w,h] of [[1052,522],[1069,678],[1392,850],[342,570],[600,260]]){
 ids.tbHermesView.clientWidth=870;ids.tbHermesView.clientHeight=600;
 const traceDraft=ids.tbInput.value;ids.tbMain.dataset.readingMode='standard';modeObservers();tick();
 assert.equal(nodes.Paper.scale.x,1,'standard paper size restores');assert.equal(ids.tbInput.value,traceDraft,'mode switch preserves draft');assert.equal(ids.tbInput.style.paddingBottom,'30px');
+// Portrait devices frame the complete paper and body, including the carriage sweep.
+ids.tbMain.dataset.readingMode='immersive';ids.tbMain.dataset.focusPortrait='true';ids.tbMain.style.setProperty('--tb-focus-sheet-top','44px');
+for(const [w,h] of [[390,844],[768,1024],[1024,1366]]){
+ ids.tbHermesView.clientWidth=w;ids.tbHermesView.clientHeight=h;
+ for(const caret of [0,25,70]){
+  ids.tbInput.selectionStart=caret;modeObservers();tick();
+  const [sx,,,sy,x,y]=paperMatrix();assert(x>=-1&&x+sx*600<=w+1,'portrait paper stays inside both screen edges');assert(y>=0&&y+sy*parseFloat(ids.tbHermesPaper.style.height)<=h,'portrait paper fits vertically');
+  renderedScene.updateMatrixWorld(true);const bodyBox=new T.Box3().setFromObject(nodes.Cast_Perimeter);
+  for(const bx of [bodyBox.min.x,bodyBox.max.x])for(const by of [bodyBox.min.y,bodyBox.max.y])for(const bz of [bodyBox.min.z,bodyBox.max.z]){const p=new T.Vector3(bx,by,bz).project(renderedCamera);assert(p.x>=-1.01&&p.x<=1.01&&p.y>=-1&&p.y<=1,'portrait body is not cropped');}
+ }
+}
+ids.tbMain.dataset.focusPortrait='false';ids.tbMain.style.setProperty('--tb-focus-sheet-top','16px');ids.tbHermesView.clientWidth=870;ids.tbHermesView.clientHeight=600;modeObservers();tick();
 // Optional physical feed: first line starts at the platen; line transitions, not letters, raise the sheet.
 function feedOption(on){ids.tbMain.dataset.paperFeed=on?'physical':'full';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-paper-feed')).forEach(o=>o.f());tick();}
 ids.tbMain.dataset.readingMode='immersive';ids.tbOrig.dataset.source='a'.repeat(80)+'\n'+'b'.repeat(120);ids.tbInput.value='';ids.tbInput.selectionStart=0;modeObservers();tick();
@@ -194,4 +206,4 @@ for(const next of [...['hermes3000','lettera32','olympiasm3'].filter(x=>x!==mode
  assert.equal(events['tbInput:keydown'].length,1,'only one model keydown handler after switching');
  assert.equal(events['tbHermesView:tb:hermes-align'].length,1,'one alignment handler after switching');
 }
-console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','optional physical feed / fixed print line / soft wrap / IME / new sheet / OFF restoration','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners'],renders,nodes:Object.keys(nodes).length}));
+console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','optional physical feed / fixed print line / soft wrap / IME / new sheet / OFF restoration','portrait phone/tablet full-body framing and carriage sweep','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners'],renders,nodes:Object.keys(nodes).length}));

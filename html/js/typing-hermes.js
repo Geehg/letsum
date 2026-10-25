@@ -208,7 +208,7 @@
    function applyTablecloth(){
     const style=['gingham','floral','check','linen','wood'].includes(main.dataset.table)?main.dataset.table:'gingham';
     clothTexture=fabric(style);clothRepeat=style==='wood'?4:style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
-    clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2);
+    clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2*ground.scale.y);
     ground.material.map=clothTexture;ground.material.roughness=style==='wood'?.64:.96;
     // Compensate the room/ACES desaturation against the supplied photograph.
     ground.material.color.setRGB(style==='wood'?1.25:1,style==='wood'?.74:1,style==='wood'?.60:1);
@@ -261,7 +261,12 @@
     const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
     // On tall desktop windows keep room for both reading panels and carriage travel.
     const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
-    const span=Math.max(baseSpan,panelSpan);
+    const portrait=trace&&main.dataset.focusPortrait==='true';
+    const span=portrait?Math.max(.80,.64/a):Math.max(baseSpan,panelSpan);
+    // Pull back along the same orthographic sightline so tall screens do not clip the foreground cloth.
+    camera.position.set(0,.60,.73);
+    if(portrait)camera.position.addScaledVector(new T.Vector3(0,.395,.73).normalize(),3);
+    camera.lookAt(0,.205,0);
     // Render the cloth to the viewport edges without changing instrument framing.
     const rect=view.getBoundingClientRect?.(),viewportWidth=document.documentElement?.clientWidth||width;
     bleedLeft=Math.max(0,rect?.left||0);bleedRight=Math.max(0,viewportWidth-(rect?.right||width));renderWidth=width+bleedLeft+bleedRight;
@@ -283,7 +288,9 @@
     }
     camera.updateProjectionMatrix();
     // Lower only the cloth by 10% of the immersive view height.
-    ground.position.z=.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
+    ground.scale.y=portrait?Math.max(1,span*2):1;
+    ground.position.z=portrait?.90+.9*(ground.scale.y-1):.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
+    clothTexture.repeat.y=clothRepeat/2*ground.scale.y;
     ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
@@ -333,6 +340,11 @@
     if(!composing)lastValue=input.value;wake();
    }
    function placePaper(){
+    if(tracing()&&main.dataset.focusPortrait==='true'){
+     // Track part of the carriage sweep so the full body and moving paper fit a narrow screen.
+     const offset=Math.max(-.07,Math.min(.07,currentX*.43)),span=camera.top-camera.bottom,a=width/height;
+     camera.left=-span*a/2-bleedLeft*span/height+offset;camera.right=span*a/2+bleedRight*span/height+offset;camera.updateProjectionMatrix();
+    }
     const top=paperTop+currentFeed+shiftLift,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed+shiftLift,-.151).project(camera);
     const x=(tl.x+1)*renderWidth/2-bleedLeft,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*renderWidth/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;

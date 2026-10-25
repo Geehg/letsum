@@ -183,3 +183,20 @@ main.tb[data-reading-mode="immersive"] .tb-focus-stats .tb-stats .tb-track{width
  main.tb[data-reading-mode="immersive"] .tb-focus-stats .tb-stats b{font-size:22px;line-height:1.1}
  main.tb[data-reading-mode="immersive"] .tb-focus-stats .tb-stats .tb-track{height:3px;margin-top:2px}
 }
+
+/* Portrait reading starts with the complete instrument scene; supporting pages follow below. */
+.tb-focus-mobile-tools{display:none}
+body.tb-retro-portrait>header{display:none}
+body.tb-retro-portrait main.tb{position:relative}
+body.tb-retro-portrait .tb-topw{display:none}
+body.tb-retro-portrait .tb-focus-mobile-tools{display:flex;position:absolute;top:max(5px,env(safe-area-inset-top));left:12px;right:12px;height:34px;align-items:center;gap:10px;z-index:8;font-size:11px;color:var(--t-mute)}
+.tb-focus-mobile-tools a{margin-right:auto}
+.tb-focus-mobile-tools button,.tb-focus-mobile-tools a{padding:8px 6px;color:inherit;font:inherit;min-height:34px}
+body.tb-retro-portrait main.tb[data-focus-menu="true"] .tb-topw{display:block;position:absolute;top:44px;left:8px;right:8px;z-index:9;border:1px solid var(--t-line);border-radius:10px;box-shadow:0 8px 24px #302b2422}
+body.tb-retro-portrait .tb-top{display:block;padding:10px}
+body.tb-retro-portrait .tb-top-r{display:flex;flex-wrap:wrap}
+body.tb-retro-portrait .tb-crumb{display:none}
+body.tb-retro-portrait .tb-skin{flex-basis:100%;justify-content:space-between}
+body.tb-retro-portrait main.tb .tb-app{width:100%;max-width:none;padding:0}
+body.tb-retro-portrait main.tb .tb-hermes-view{height:var(--tb-focus-height,100svh);min-height:260px}
+body.tb-retro-portrait main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] .tb-focus-aside{max-width:300px;width:calc(100% - 32px);margin-top:28px}

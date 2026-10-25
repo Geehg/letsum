@@ -7,7 +7,8 @@
  const sideControls=[[main.querySelector('.tb-stats'),$('tbFocusStats')],[$('tbTocWrap'),$('tbFocusBookTools')],[$('tbSource'),$('tbFocusBookTools')],[$('tbPrev'),$('tbFocusBookPager')],[$('tbCur').closest('.tb-pno'),$('tbFocusBookPager')]].map(([el,target])=>{
   const anchor=document.createComment('reader control home');el.before(anchor);return {el,target,anchor};
  });
- let mounted=false,frame=0,fitFrame=0,following=false,nextMeasureKey='';
+ let mounted=false,frame=0,fitFrame=0,following=false,nextMeasureKey='',portraitViewport=0,portraitWidth=0;
+ const portraitMedia=matchMedia('(max-width:600px), (max-width:1100px) and (orientation:portrait)');
  const wanted=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro'&&!read.hidden;
  const count=s=>Array.from(s.normalize('NFC')).length;
  function fitNextPage(){
@@ -29,22 +30,31 @@
  }
  function fit(){
   fitFrame=0;if(!wanted())return;
-  const viewport=window.visualViewport?.height||window.innerHeight;
+  const portrait=portraitMedia.matches&&main.dataset.hermesReady==='true';
+  const changed=main.dataset.focusPortrait!==String(portrait);
+  main.dataset.focusPortrait=String(portrait);document.body.classList.toggle('tb-retro-portrait',portrait);
+  let viewport=window.visualViewport?.height||window.innerHeight;
+  if(portrait){
+   // Keep framing stable when the software keyboard reduces only the visual viewport.
+   const h=window.innerHeight,w=window.innerWidth;
+   if(w!==portraitWidth||!portraitViewport||document.activeElement!==input||h>portraitViewport-160){portraitViewport=h;portraitWidth=w;}
+   viewport=portraitViewport;
+  }
   const top=view.getBoundingClientRect().top+window.scrollY;
   const available=Math.max(260,Math.ceil(viewport-top));
-  const compact=view.clientWidth<600?Math.max(300,Math.round(view.clientWidth*1.05)):available;
+  const compact=portrait?available:view.clientWidth<600?Math.max(300,Math.round(view.clientWidth*1.05)):available;
   main.style.setProperty('--tb-focus-height',Math.min(available,compact)+'px');
   // Reserve the whole carriage sweep; side panels must never cover the writing sheet.
   const sideWidth=(view.clientWidth-paper.getBoundingClientRect().width*1.86)/2-40;
   main.style.setProperty('--tb-focus-side-width',Math.max(150,Math.floor(sideWidth))+'px');
-  main.dataset.focusSides=sideWidth<150?'below':'beside';
+  main.dataset.focusSides=portrait||sideWidth<150?'below':'beside';
   fitNextPage();
   // Align the central sheet with the actual top of both flanking page surfaces.
   const nextSheet=$('tbFocusNextText').parentElement;
   const beside=getComputedStyle(nextSheet.parentElement).position==='absolute';
-  const inset=beside?Math.max(16,nextSheet.getBoundingClientRect().top-view.getBoundingClientRect().top):16;
+  const inset=portrait?44:beside?Math.max(16,nextSheet.getBoundingClientRect().top-view.getBoundingClientRect().top):16;
   const value=inset.toFixed(2)+'px';
-  if(main.style.getPropertyValue('--tb-focus-sheet-top')!==value){
+  if(changed||main.style.getPropertyValue('--tb-focus-sheet-top')!==value){
    main.style.setProperty('--tb-focus-sheet-top',value);
    view.dispatchEvent(new CustomEvent('tb:hermes-align'));
   }
@@ -77,7 +87,8 @@
   if(!next&&mounted){sideControls.forEach(({el,anchor})=>anchor.after(el));home.after(original);original.scrollTop=0;input.removeAttribute('aria-describedby');original.querySelectorAll('.trace-caret,.trace-after,.trace-selected').forEach(s=>s.classList.remove('trace-caret','trace-after','trace-selected'));}
   mounted=next;
   if(entering)window.scrollTo({top:0,behavior:'instant'});
-  if(!want)main.style.removeProperty('--tb-focus-height');
+  if(!want){main.style.removeProperty('--tb-focus-height');main.dataset.focusPortrait='false';document.body.classList.remove('tb-retro-portrait');}
+  if(!next){main.dataset.focusMenu='false';$('tbFocusMenu').setAttribute('aria-expanded','false');}
   schedule();scheduleFit();
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready','data-paper-feed']});
@@ -92,5 +103,8 @@
  view.addEventListener('tb:hermes-layout',scheduleFit);
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
  const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbFocusBookTools'),$('tbFocusBookPager')])observer.observe(el);
+ $('tbFocusMenu').addEventListener('click',()=>{const open=main.dataset.focusMenu!=='true';main.dataset.focusMenu=String(open);$('tbFocusMenu').setAttribute('aria-expanded',String(open));});
+ $('tbFocusSettings').addEventListener('click',()=>$('tbSetOpen').click());
+ portraitMedia.addEventListener('change',scheduleFit);
  update();
 })();
