@@ -37,7 +37,7 @@
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=3');
+   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=4');
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
@@ -55,7 +55,7 @@
    const grain=new T.DataTexture(grainData,128,128,T.RGBAFormat);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.magFilter=T.LinearFilter;grain.minFilter=T.LinearMipmapLinearFilter;grain.generateMipmaps=true;grain.needsUpdate=true;
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.clearcoat=.24;m.clearcoatRoughness=.28;m.bumpMap=grain;m.bumpScale=.00011;m.envMapIntensity=.48;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.roughness=.34;m.clearcoat=.18;m.clearcoatRoughness=.32;m.bumpMap=grain;m.bumpScale=.00011;m.envMapIntensity=.48;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000045;m.envMapIntensity=.38;}
     else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.16;m.envMapIntensity=1.1;}
     else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
@@ -86,7 +86,7 @@
      const p=g.attributes.position,n=g.attributes.normal,c=new Float32Array(p.count*3);
      for(let i=0;i<p.count;i++){
       const y=p.getY(i),top=smoothRange(.25,.82,n.getY(i))*smoothRange(-.001,.0035,y);
-      const skirt=.40+.14*smoothRange(-.008,.003,y),rim=.09*smoothRange(.0048,.0072,y);
+      const skirt=.56+.15*smoothRange(-.008,.003,y),rim=.045*smoothRange(.0048,.0072,y);
       const tone=skirt*(1-top)+(1.02+rim)*top;
       c[i*3]=tone*.97;c[i*3+1]=tone;c[i*3+2]=tone*.96;
      }
@@ -96,12 +96,12 @@
    });
    scene.add(new T.HemisphereLight(0xfffaf0,0x4e5b50,.28));
    const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
-   keyLight.castShadow=true;keyLight.shadow.mapSize.set(1024,1024);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
+   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
    const fill=new T.DirectionalLight(0xe2edf1,.25);fill.position.set(.5,.3,-.3);scene.add(fill);
-   const ground=new T.Mesh(new T.PlaneGeometry(2,2),new T.ShadowMaterial({opacity:.17}));ground.rotation.x=-Math.PI/2;ground.position.y=-.004;ground.receiveShadow=true;scene.add(ground);
+   const ground=new T.Mesh(new T.PlaneGeometry(2,2),new T.ShadowMaterial({opacity:.17}));ground.rotation.x=-Math.PI/2;ground.position.y=-.0026;ground.receiveShadow=true;scene.add(ground);
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
-   const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.22)');gradient.addColorStop(.6,'rgba(25,32,26,.10)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
-   const contact=new T.Mesh(new T.PlaneGeometry(.61,.42),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
+   const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
+   const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
    const camera=new T.OrthographicCamera();camera.position.set(0,.60,.73);camera.lookAt(0,.205,0);
    view.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
    const keys=Object.values(nodes).filter(o=>o.name.startsWith('Key_')),bars=Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name));

@@ -10,8 +10,8 @@
   "typebars": 47,
   "text": "The same tbInput node moves into the projected paper and restores when changing modes; no duplicate draft or text renderer. IME commits drive carriage spacing.",
   "parts": [
-    "continuous curved side cheeks and recessed spacebar front lip (87-key adaptation)",
-    "dished mint keycaps",
+    "closed continuous curved shell with uniform front bezel and inset underside tray (87-key adaptation)",
+    "constant-radius dished mint keycaps and a separately crowned spacebar",
     "carriage channel and separate end cheeks",
     "paper bail with inset scale and two margin indicator bands",
     "rubber platen and ridged knobs",
@@ -22,7 +22,7 @@
     "fan segment, individual bars and two-row slug faces",
     "return lever"
   ],
-  "revision": 9,
+  "revision": 10,
   "width_m": 0.468,
   "layout": "ANSI 87-key tenkeyless adaptation, individually placed standard key widths",
   "lighting": "Runtime studio reflection environment, coated enamel, fine surface grain, VSM shadows and contact shadow",
@@ -66,5 +66,6 @@
     "Paper-release, margin-stop and line-spacing levers are modeled but do not yet expose manual pointer controls.",
     "Groove/slot tessellation and PBR numeric values are rendering choices, not measured parts specifications.",
     "No internal escapement, ratchet or spring transmission is asserted as reconstructed."
-  ]
+  ],
+  "finish_revision": "Rebuilt closed enclosure and keyboard bed, inset bottom tray, lowered decorative linkage, shared cap corner radii and surface-conforming legends. All clearances are authored, not factory measurements."
 }
