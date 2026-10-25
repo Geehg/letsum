@@ -127,10 +127,11 @@
    function resize(){
     if(!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    const trace=tracing(),a=width/height,span=Math.max(.52,.70/a)/(trace?1.5:1);
+    const trace=tracing(),a=width/height,span=Math.max(.52,.70/a)/(trace?.75:1);
     renderer.setSize(width,height,false);
-    // A4 stays physically proportioned; zoom the camera, never stretch the model.
-    sheetWidth=trace?.210:.224;paperTop=trace?.174+.297:.396;
+    // Halve the previous 1.5x instrument view; compensate only the A4 sheet
+    // so its on-screen width, height and text size remain unchanged.
+    sheetWidth=trace?.420:.224;paperTop=trace?.174+.594:.396;
     paperHeight=trace?paperWidth*297/210:594;
     camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
