@@ -3,7 +3,7 @@
  'use strict';
  const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
  if(!stage)return;
- const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32'};
+ const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32',olympiasm3:'Olympia SM3'};
  const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,inView=true,loading=false,engine=null,composing=false,failed=false,failedModel='';
@@ -43,6 +43,7 @@
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
    const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
+   if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
@@ -67,6 +68,7 @@
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
     if(['Hermes_Sage_Enamel','Lettera_Blue_Enamel'].includes(old.name)){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    else if(old.name==='Olympia_Crinkle_Enamel'){m=old.clone();m.envMapIntensity=.42;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
     else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.23;m.envMapIntensity=.85;}
     else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
@@ -74,7 +76,7 @@
     materials.set(old,m);o.material=m;
    });
    // Keep small steel mechanisms readable under the broad reflection cards.
-   const mechanismMetal=new T.MeshStandardMaterial({color:new T.Color(.22,.25,.23),metalness:.95,roughness:.32,envMapIntensity:.55});
+   const mechanismMetal=new T.MeshStandardMaterial({color:selectedModel==='olympiasm3'?new T.Color(.48,.49,.46):new T.Color(.22,.25,.23),metalness:.95,roughness:.32,envMapIntensity:selectedModel==='olympiasm3'?.85:.55});
    asset.scene.traverse(o=>{if(o.isMesh&&/^(TypebarArm_|TypeSlug_|Type_Guide_|Ribbon_Carrier_)/.test(o.name))o.material=mechanismMetal;});
    nodes.Paper.material=new T.MeshBasicMaterial({colorWrite:false,depthWrite:true,side:T.DoubleSide});
    for(const name of ['Card_Holder_Left','Card_Holder_Right']){
@@ -89,8 +91,8 @@
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
-   capMaterial.name=selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
-   capMaterial.clearcoat=.11;capMaterial.clearcoatRoughness=.36;capMaterial.envMapIntensity=selectedModel==='lettera32'?.55:.24;
+   capMaterial.name=selectedModel==='olympiasm3'?'Olympia_Keycaps_Contour':selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
+   capMaterial.clearcoat=.11;capMaterial.clearcoatRoughness=.36;capMaterial.envMapIntensity=selectedModel!=='hermes3000'?.55:.24;
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
     if(!o.isMesh||!o.name.startsWith('Cap_'))return;
@@ -213,7 +215,7 @@
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
+   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
@@ -291,7 +293,7 @@
     if(!composing)lastValue=input.value;wake();
    }
    function placePaper(){
-    const top=paperTop+currentFeed,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed,-.151).project(camera);
+    const top=paperTop+currentFeed+shiftLift,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed+shiftLift,-.151).project(camera);
     const x=(tl.x+1)*renderWidth/2-bleedLeft,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*renderWidth/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
@@ -322,11 +324,14 @@
      for(let i=0;i<p.count;i++){const w=1-smoothRange(.012,.101,Math.abs(b[i*3]));p.setY(i,b[i*3+1]+lift*.008*w);}
      p.needsUpdate=true;o.geometry.computeVertexNormals();
     }
-    basket.position.y+=( (shift&&motion?-.004:0)-basket.position.y)*(1-Math.exp(-dt*35));
+    const carriageShift=selectedModel==='olympiasm3';
+    const shiftTarget=carriageShift&&shift&&motion?.006:0;
+    shiftLift+=(shiftTarget-shiftLift)*(1-Math.exp(-dt*35));if(Math.abs(shiftTarget-shiftLift)<.000001)shiftLift=shiftTarget;
+    basket.position.y+=((!carriageShift&&shift&&motion?-.004:0)-basket.position.y)*(1-Math.exp(-dt*35));
     if(!motion){currentX=targetX;currentFeed=feed;drive=feedDrive=null;}
     if(drive){const t=clamp((now-drive.start)/drive.duration);currentX=drive.from+(drive.to-drive.from)*smooth(t);if(t===1)drive=null;}
     if(feedDrive){const t=clamp((now-feedDrive.start)/feedDrive.duration);currentFeed=feedDrive.from+(feedDrive.to-feedDrive.from)*smooth(t);if(t===1)feedDrive=null;}
-    carriage.position.x=currentX;carriage.position.y=motion?impact*.0002:0;
+    carriage.position.x=currentX;carriage.position.y=shiftLift+(motion?impact*.0002:0);
     // 18 mm is the authored mesh radius, not a measured Hermes specification.
     rollerFeed=motion?rollerFeed+(targetRoll-rollerFeed)*(1-Math.exp(-dt*20)):targetRoll;
     const angle=-(tracing()?rollerFeed:currentFeed)/.018;platen.quaternion.copy(platenQ).multiply(delta.setFromAxisAngle(yAxis,angle));knobs.forEach(k=>k.quaternion.copy(k.userData.restQ).multiply(delta.setFromAxisAngle(yAxis,angle)));
@@ -344,7 +349,7 @@
     if(!e.ctrlKey&&!e.metaKey&&!e.altKey){if(e.code==='Enter'&&!e.isComposing)returnAt=lastKeyAt;const bar=barFor.get(e.code);if(bar)hits.push({bar,time:lastKeyAt});}
     wake();
    }
-   function up(e){if(e.code.startsWith('Shift'))shift=false;const k=pressed.get('Key_'+e.code);if(k)k.up=performance.now();wake();}
+   function up(e){if(e.code.startsWith('Shift'))shift=[...pressed.entries()].some(([name,p])=>name!=='Key_'+e.code&&name.startsWith('Key_Shift')&&!p.up);const k=pressed.get('Key_'+e.code);if(k)k.up=performance.now();wake();}
    listen(input,'keydown',down);listen(document,'keyup',up);listen(window,'blur',()=>{resetKeys();wake();});listen(input,'blur',()=>{resetKeys();wake();});
    ['input','click','keyup','tb:paper'].forEach(e=>listen(input,e,()=>sync()));
    observe(MutationObserver,()=>sync(),main,{attributes:true,attributeFilter:['data-paper']});

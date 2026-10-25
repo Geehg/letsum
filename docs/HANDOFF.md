@@ -360,3 +360,10 @@ img.save("sample.png")
 - 모델 변경 때 이벤트·Resize/MutationObserver·프레임·GPU 자원을 해제. 필사 입력값 보존, 로딩 중 재선택 및 이전 모델 WebGL 실패 후 다른 모델 복구 지원.
 - 버전: typing-3d.css v9, typing-3d.js v5, typing-hermes.js v28, typing-lettera.js v1. 템플릿 원본과 생성 페이지 동기화.
 - 검사: `node tools/check_typing_hermes.mjs` 및 `--lettera` 각각 통과(IME, 타건, 캐리지, 종이, 폐곡면, 반복 전환/리스너 중복/오류 복귀). `validate.py` 오류0 / 기존 경고264. 실제 로컬 브라우저 선택·새로고침·왕복 전환 후 입력30자 유지, 캔버스1개 확인. 별도 1132×873 iframe에서 한글25자 입력과 전체 모델 시각 확인.
+
+### 2026-10-26 — Olympia SM3 세 번째 모델 (Codex)
+- 설정 > 레트로 타자기 > 타자기 모델에 Olympia SM3 추가. 일반 레트로/레트로 몰입 양쪽에서 선택·저장, 기존 Hermes/Lettera와 같은 입력·용지·소리·테이블 설정 공유.
+- `typing-olympia.js`: 독립 외곽/상판/앞쪽 apron, 올리브 그레이 미세 crinkle, 짙은 녹색 두꺼운 오목 키캡, 상·하 크롬 테두리, 오른쪽 필기체 마크, 단일 종이 지지대, 홈 노브, 곡선 리턴 레버, 중앙 가이드와 고정 세그먼트 분리 제작.
+- 제조사 SM3 사용설명서 4개 펼침면 확인: Shift는 바스켓이 아니라 캐리지 상승. SM3에서 캐리지/종이/깊이 마스크를 함께 올리고 양쪽 Shift 유지 처리. 사실 근거와 61키 웹 적용 한계는 `docs/OLYMPIA_SM3_MODEL.md`.
+- 공유 GLB 원본은 변경하지 않음. 입력값 보존·모델 교체 자원 정리 유지. 버전 typing-3d.css v10 / typing-3d.js v6 / typing-hermes.js v29 / typing-olympia.js v1.
+- 회귀 검사에 SM3 전용 Shift·단일 지지대·외장/재질 및 세 모델 왕복 전환 추가. 기존 키 입력·IME·종이·타격점·실패 복구 검사 유지.

@@ -1,6 +1,6 @@
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
 import path from 'node:path';import {tmpdir} from 'node:os';import {fileURLToPath} from 'node:url';
-const model=process.argv.includes('--lettera')?'lettera32':'hermes3000';
+const model=process.argv.includes('--olympia')?'olympiasm3':process.argv.includes('--lettera')?'lettera32':'hermes3000';
 const root=fileURLToPath(new URL('..',import.meta.url));const scratch=fs.mkdtempSync(path.join(tmpdir(),'letsum-hermes-check-'));process.on('exit',()=>fs.rmSync(scratch,{recursive:true,force:true}));
 fs.copyFileSync(root+'/html/js/vendor/three/three.module.js',path.join(scratch,'hermes-three.mjs'));fs.writeFileSync(path.join(scratch,'hermes-loader.mjs'),fs.readFileSync(root+'/html/js/vendor/three/GLTFLoader.js','utf8').replace("'./three.module.js'","'./hermes-three.mjs'"));
 const T=await import(path.join(scratch,'hermes-three.mjs')),{GLTFLoader}=await import(path.join(scratch,'hermes-loader.mjs'));
@@ -12,7 +12,8 @@ class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setP
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
 fs.copyFileSync(root+'/html/js/typing-lettera.js',path.join(scratch,'lettera.mjs'));await import(path.join(scratch,'lettera.mjs'));const buildLettera32=globalThis.LSBuildLettera32;
 let thisUsed=false;
-const ctx={LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
+fs.copyFileSync(root+'/html/js/typing-olympia.js',path.join(scratch,'olympia.mjs'));await import(path.join(scratch,'olympia.mjs'));const buildOlympiaSM3=globalThis.LSBuildOlympiaSM3;
+const ctx={LSBuildOlympiaSM3:(T,root)=>buildOlympiaSM3(T,root,doc),LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
 let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
@@ -57,6 +58,17 @@ event('tbInput','compositionstart');ids.tbInput.value='hello한';ids.tbInput.sel
 const before=nodes.Carriage.position.x;const sheetBefore=ids.tbHermesPaper.style.transform;const heightBefore=parseFloat(ids.tbHermesPaper.style.height);const angleBefore=nodes.Platen.quaternion.clone();const axis=new T.Vector3(0,1,0).applyQuaternion(nodes.Platen.quaternion);ids.tbInput.value+='\n';ids.tbInput.selectionStart=7;event('tbInput','keydown',{code:'Enter'});event('tbInput','input');event('document','keyup',{code:'Enter'});tick(100);assert(nodes.Return_Lever.quaternion.angleTo(new T.Quaternion())>.1);for(let i=0;i<25;i++)tick();assert(nodes.Carriage.position.x>before+.02);assert(new T.Vector3(0,1,0).applyQuaternion(nodes.Platen.quaternion).distanceTo(axis)<.00001);
 assert(parseFloat(ids.tbHermesPaper.style.height)>heightBefore,'paper extends with feed');assert.notEqual(ids.tbHermesPaper.style.transform,sheetBefore,'top edge rises');assert(nodes.Platen.quaternion.angleTo(angleBefore)>.1,'platen turns with feed');
 for(const code of ['Space','Backspace','Enter','ShiftLeft','ControlLeft','AltRight','Backslash']){const k=nodes['Key_'+code],y=k.position.y;event('tbInput','keydown',{code});tick(30);assert(k.position.y<y-.004,code+' responds');event('document','keyup',{code});tick(200);assert.equal(k.position.y,y,code+' restores');}
+// SM3 raises the carriage, not the basket. HTML sheet and depth-mask rise together.
+if(model==='olympiasm3'){
+ const paperY=Number(ids.tbHermesPaper.style.transform.slice(7,-1).split(',').at(-1)),basketY=nodes.Typebasket.position.y;
+ event('tbInput','keydown',{code:'ShiftLeft'});for(let i=0;i<12;i++)tick();
+ assert(nodes.Carriage.position.y>.0059,'SM3 carriage rises for Shift');assert.equal(nodes.Typebasket.position.y,basketY,'SM3 basket stays fixed');
+ assert(Number(ids.tbHermesPaper.style.transform.slice(7,-1).split(',').at(-1))<paperY,'HTML sheet follows raised carriage');
+ gltf.scene.updateMatrixWorld(true);assert(nodes.Paper.getWorldPosition(new T.Vector3()).y>nodes.Paper.position.y+.0059,'depth mask gets the same lift once');
+ event('tbInput','keydown',{code:'ShiftRight'});event('document','keyup',{code:'ShiftLeft'});tick(100);
+ assert(nodes.Carriage.position.y>.0059,'other Shift key keeps carriage up');
+ event('document','keyup',{code:'ShiftRight'});for(let i=0;i<15;i++)tick();assert(nodes.Carriage.position.y<.00001,'SM3 carriage settles after Shift release');
+}
 let bells=0;(events['tbInput:tb:hermes-sound']??=[]).push(e=>{if(e.detail.key==='MarginBell')bells++});ids.tbInput.value='a'.repeat(36);ids.tbInput.selectionStart=36;event('tbInput','input');event('tbInput','keyup',{});assert.equal(bells,1,'one bell on approaching margin, no duplicates');
 // Immersive mode keeps a fully framed A4 sheet with the instrument enlarged 15% and paper width preserved.
 const paperMatrix=()=>ids.tbHermesPaper.style.transform.slice(7,-1).split(',').map(Number);
@@ -108,8 +120,15 @@ if(model==='lettera32'){
  assert(gltf.scene.getObjectByName('Lettera_Split_Badge'));assert(gltf.scene.getObjectByName('Lettera_Return_Paddle'));assert(gltf.scene.getObjectByName('Lettera_Pica_Scale'));
  assert.equal(gltf.scene.userData.model,'lettera32');
 }
-// Switch away from a failed model, then repeatedly between both detailed models.
-for(const next of [model==='hermes3000'?'lettera32':'hermes3000',model,model==='hermes3000'?'lettera32':'hermes3000']){
+if(model==='olympiasm3'){
+ assert.equal(nodes.Ribbon_Hood.material.name,'Olympia_Crinkle_Enamel');assert(nodes.Ribbon_Hood.material.bumpMap);
+ assert.equal(nodes.Cap_KeyA.material.name,'Olympia_Keycaps_Contour');assert.equal(nodes.Hermes_Badge.visible,false);
+ for(const name of ['Olympia_Cover_Chrome','Olympia_Base_Chrome','Olympia_Script_Badge','Olympia_Return_Lever','Olympia_Paper_Support'])assert(gltf.scene.getObjectByName(name),name);
+ assert.equal(gltf.scene.getObjectByName('Olympia_Paper_Support').parent,nodes.Carriage);
+ assert(Object.values(nodes).filter(o=>o.name.startsWith('Paper_Support')).every(o=>!o.visible),'original paired supports are hidden');
+}
+// Switch away from a failed model, then repeatedly between all three detailed models.
+for(const next of [...['hermes3000','lettera32','olympiasm3'].filter(x=>x!==model),model]){
  ids.tbMain.dataset.model=next;observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());
  await new Promise(r=>setImmediate(r));tick();
  assert.equal(ids.tbMain.dataset.hermesReady,'true','new selection recovers from failed context');
