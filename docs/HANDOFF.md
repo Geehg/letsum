@@ -260,3 +260,5 @@ img.save("sample.png")
 - 종이 padding을 즉시 바꾸던 방식을 없애고 종이 전체를 위로 이송(HTML textarea 높이와 투영 위치 연동). 롤러 회전각=종이 이송거리/18mm. 타격42ms→캐리지58ms, 리턴390ms·줄이송180ms. 한글 조합 중 이송 보류, 확정 때 반영. 기존 입력 노드·기록 유지. context lost 시 기본 입력으로 복원.
 - 타건음은 계속 합성음. Hermes에만 눌림/타격/복귀음을 나누고 타격 시점42ms에 맞춤. 줄 끝 근처에서 벨1회, Enter에서는 리턴 소리. 나머지 모델 소리는 유지. typing-hermes.js v2, typing-3d.css v4.
 - 검증 node tools/check_typing_hermes.mjs: 실제 GLB/Three.js로 87키·47바·타격점·키복귀·모디파이어·캐리지·IME·종이이송·롤러축·마진벨 중복방지·모델전환·WebGL 복원 검사. 실제 브라우저 데스크톱 입력/Enter, 390px 모바일 표시 확인. validate.py 오류0, 기존 경고264.
+
+- 2026-10-25: 키캡 상판/두께면 명암 보강. typing-hermes.js에서 키캡에만 로컬 높이·법선 기반 vertex color를 적용(밝은 상판, 짙은 스커트/아랫단, 얇은 상단 림 반사). 공유 물리 재질 하나로 draw call 수 유지, 노브·몸체·기존 GLB/타건 기구는 그대로. typing-hermes.js v3. 브라우저 외형 확인 및 기존 타건 회귀 검사 통과.

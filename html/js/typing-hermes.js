@@ -59,6 +59,27 @@
     else {m=old.clone();m.envMapIntensity=.3;}
     materials.set(old,m);o.material=m;
    });
+   // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
+   const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
+   T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
+   capMaterial.name='Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.31;
+   capMaterial.clearcoat=.18;capMaterial.clearcoatRoughness=.26;capMaterial.envMapIntensity=.24;
+   const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
+   asset.scene.traverse(o=>{
+    if(!o.isMesh||!o.name.startsWith('Cap_'))return;
+    const g=o.geometry;
+    if(!shadedCaps.has(g)){
+     const p=g.attributes.position,n=g.attributes.normal,c=new Float32Array(p.count*3);
+     for(let i=0;i<p.count;i++){
+      const y=p.getY(i),top=smoothRange(.25,.82,n.getY(i))*smoothRange(-.001,.0035,y);
+      const skirt=.40+.14*smoothRange(-.008,.003,y),rim=.09*smoothRange(.0048,.0072,y);
+      const tone=skirt*(1-top)+(1.02+rim)*top;
+      c[i*3]=tone*.97;c[i*3+1]=tone;c[i*3+2]=tone*.96;
+     }
+     g.setAttribute('color',new T.BufferAttribute(c,3));shadedCaps.add(g);
+    }
+    o.material=capMaterial;
+   });
    scene.add(new T.HemisphereLight(0xfffaf0,0x4e5b50,.28));
    const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
    keyLight.castShadow=true;keyLight.shadow.mapSize.set(1024,1024);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
