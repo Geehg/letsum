@@ -281,3 +281,6 @@ img.save("sample.png")
 - 최초 로딩/창 크기 변경 후 tb:hermes-layout 이벤트로 종이 투영이 확정된 뒤 좌우 패널 폭을 재계산. 세로가 긴 데스크톱에서는 양측 패널과 캐리지 이동 공간을 확보하도록 카메라 최대 배율을 제한. 최종 typing-hermes.js v11 / typing-retro-focus.js v3.
 
 - 2026-10-25: 몰입 좌우 패널 20% 확대(표지 최대200→240px, 다음 쪽226→271.2px). 좌측 제목12px/저자10px. 다음 본문11px 기본, 실제 내용·폭·글꼴 변경 시 8px까지 자동 맞춤 후 필요한 경우 종이 높이를 늘려 본문 내부 스크롤과 잘림 방지. 확대 패널용 캐리지 여유 공간 보정. typing-hermes.js v12 / typing-retro-focus.js v4 / CSS v3. 1280×720에서 표지240px, 다음 쪽271.2px, 다음 본문 scrollHeight=clientHeight, 문서 높이720 확인.
+
+- 2026-10-25: 사용자 표시 영역에 따라 Hermes 상단 Esc/F1–F12/PrtSc/Scroll/Pause 및 우측 탐색/방향키 26개와 하위 cap/glyph/stem을 제거, 61키 5줄로 재배치. 남은 키는 1.28 등방 확대(문자 왜곡 없음), 본체 폭/베젤/종이/카메라 크기는 유지. 키 영역 중앙 정렬, 확대된 키의 베젤 안쪽 범위·간격 검증. 실제 키보드의 방향키/Delete 편집은 native textarea가 그대로 처리.
+- Higgsfield project 97a11171-2038-4d28-837e-087e65dd9170 revision11, GLB 7,294,284bytes. 편집 원본 /Volumes/AI_dev/web/letsum-hermes-3000/hermes3000-61-v11.blend, 변환 스크립트 compact-61-v11.py. typing-hermes.js v13 / GLB v5, 모델 선택·aria·JSON 61키로 갱신. node tools/check_typing_hermes.mjs: 삭제 노드 부재, 61키 등방 배율/중앙/베젤 범위 및 기존 47타입바·IME·캐리지·종이·모드 복원·WebGL 검사 통과. 레트로/레트로 몰입 실제 웹 외형 확인. 제작 치수·배율은 웹용 설계값이며 역사적 실물 복원이 아님.

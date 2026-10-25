@@ -1,16 +1,16 @@
 {
   "id": "hermes3000",
-  "label": "Hermes 3000 · 87키",
+  "label": "Hermes 3000 · 61키",
   "reference": "Paillard manual 3003 B and TWDB owner photographs, with user reference sheets as visual targets",
-  "accuracy": "87-key web adaptation. Component relationships checked against Paillard instruction manual 3003 B and primary photographs of serial 3138796. Not a measured reconstruction: case width, clearances, curvature, platen radius, groove counts, material chemistry and timing are not factory-verified. Synthesized sound, not recordings.",
+  "accuracy": "61-key web adaptation. Component relationships checked against Paillard instruction manual 3003 B and primary photographs of serial 3138796. Not a measured reconstruction: case width, clearances, curvature, platen radius, groove counts, material chemistry and timing are not factory-verified. Synthesized sound, not recordings.",
   "project": "https://higgsfield.ai/3d-jutsu/97a11171-2038-4d28-837e-087e65dd9170",
   "method": "Articulated GLB with fixed symmetrical front camera and projected native HTML textarea paper",
   "manual": "https://www.christopherlong.co.uk/oth/writing/TypewriterHermes3000manual.pdf",
-  "keys": 87,
+  "keys": 61,
   "typebars": 47,
   "text": "The same tbInput node moves into the projected paper and restores when changing modes; no duplicate draft or text renderer. IME commits drive carriage spacing.",
   "parts": [
-    "closed continuous curved shell with uniform front bezel and inset underside tray (87-key adaptation)",
+    "closed continuous curved shell with uniform front bezel and inset underside tray (61-key adaptation)",
     "constant-radius dished mint keycaps and a separately crowned spacebar",
     "carriage channel and separate end cheeks",
     "paper bail with inset scale and two margin indicator bands",
@@ -22,12 +22,12 @@
     "fan segment, individual bars and two-row slug faces",
     "return lever"
   ],
-  "revision": 10,
+  "revision": 11,
   "width_m": 0.468,
-  "layout": "ANSI 87-key tenkeyless adaptation, individually placed standard key widths",
+  "layout": "61-key typing block, function row and navigation cluster removed; remaining keys uniformly enlarged 28%, centered in five rows",
   "lighting": "Runtime studio reflection environment, coated enamel, fine surface grain, VSM shadows and contact shadow",
   "motion": "Independent key travel, 42 ms typebar strike, delayed 58 ms carriage step, 390 ms return and 180 ms paper feed; platen angle follows travel / 18 mm radius",
-  "dimensions_status": "width_m and other mesh dimensions are authored parameters for this 87-key adaptation; no verified keyboard-cheek or bezel measurements available",
+  "dimensions_status": "width_m and other mesh dimensions are authored parameters for this 61-key adaptation; no verified keyboard-cheek or bezel measurements available",
   "verified_facts": [
     {
       "part": "paper bail / margins",
@@ -61,7 +61,7 @@
     "https://typewriterdatabase.com/1962-hermes-3000.17953.typewriter"
   ],
   "adaptation_limits": [
-    "87 keys and 47 web printable bars are custom, not original keyboard count.",
+    "61 keys and 47 web printable bars are custom, not original keyboard count.",
     "Scale divisions and indicator positions follow the web sheet, not a measured factory scale.",
     "Paper-release, margin-stop and line-spacing levers are modeled but do not yet expose manual pointer controls.",
     "Groove/slot tessellation and PBR numeric values are rendering choices, not measured parts specifications.",

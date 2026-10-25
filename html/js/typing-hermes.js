@@ -1,4 +1,4 @@
-/* Hermes-inspired 87-key TKL: articulated parts, native IME paper, staged mechanical motion. */
+/* Hermes-inspired 61-key typing layout: articulated parts, native IME paper, staged mechanical motion. */
 (() => {
  'use strict';
  const $=id=>document.getElementById(id),main=$('tbMain'),stage=$('tbHermesStage'),view=$('tbHermesView'),paper=$('tbHermesPaper'),input=$('tbInput'),home=$('tbInputHome'),status=$('tbHermesStatus');
@@ -19,7 +19,7 @@
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
    input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
-   status.textContent=tracing()?'연한 글자를 따라 쓰세요 · ↵ Enter':'Hermes 3000 · 87키 · 종이에 직접 입력';engine.resize();
+   status.textContent=tracing()?'연한 글자를 따라 쓰세요 · ↵ Enter':'Hermes 3000 · 61키 · 종이에 직접 입력';engine.resize();
   }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode']});
@@ -37,7 +37,7 @@
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=4');
+   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=5');
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
@@ -238,7 +238,7 @@
    new MutationObserver(()=>sync()).observe(main,{attributes:true,attributeFilter:['data-paper']});
    new ResizeObserver(resize).observe(view);['tbMinus','tbPlus'].forEach(id=>$(id).addEventListener('click',()=>{if(tracing())resize();}));$('tbFontW').addEventListener('change',()=>sync(true));$('tbReset').addEventListener('click',()=>queueMicrotask(()=>sync(true)));
    renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
-   engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 87키 · 종이에 직접 입력';loading=false;update();
+   engine={sync,resize,wake,stop};main.dataset.hermesFailed='false';status.textContent='Hermes 3000 · 61키 · 종이에 직접 입력';loading=false;update();
   }catch(error){failed=true;renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Hermes 3000 unavailable',error);loading=false;}
  }
  update();
