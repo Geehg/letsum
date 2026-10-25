@@ -105,12 +105,14 @@
   }
 
   // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
-  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory" }, readJSON("retro", {}));
+  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "floral" }, readJSON("retro", {}));
   const isRetro = () => $("tbMain").dataset.skin === "retro";
   let strikeT = 0;
   function applyRetro() {
     $("tbMain").dataset.paper = ["ivory", "white", "parchment"].includes(retro.paper) ? retro.paper : "ivory";
     $("tbSound").setAttribute("aria-pressed", !!retro.sound); $("tbSound").textContent = retro.sound ? "🔊" : "🔇"; $("tbVolume").value = retro.volume; $("tbVolume").disabled = !retro.sound; $("tbPaper").value = $("tbMain").dataset.paper;
+    $("tbMain").dataset.table = ["floral", "check", "linen"].includes(retro.table) ? retro.table : "floral";
+    $("tbTable").value = $("tbMain").dataset.table;
     window.LSTypewriterAudio?.configure(retro);
   }
   function strike() { const m = $("tbMachine"); m.classList.add("strike"); clearTimeout(strikeT); strikeT = setTimeout(() => m.classList.remove("strike"), 90); }
@@ -531,6 +533,7 @@
     $("tbVolume").addEventListener("input", (e) => { retro.volume = +e.target.value; writeJSON("retro", retro); window.LSTypewriterAudio?.configure(retro); });
     $("tbVolume").addEventListener("change", () => window.LSTypewriterAudio?.preview());
     $("tbPaper").addEventListener("change", (e) => { retro.paper = e.target.value; writeJSON("retro", retro); applyRetro(); });
+    $("tbTable").addEventListener("change", (e) => { retro.table = e.target.value; writeJSON("retro", retro); applyRetro(); });
     $("tbPrint").addEventListener("click", printPages);
     inp.addEventListener("click", carriage); inp.addEventListener("keyup", carriage);
     $("tbFile").addEventListener("change", async (e) => { const f = e.target.files[0]; if (!f) return; $("tbFileNote").textContent = "파일을 읽는 중…"; try { await importFile(f); $("tbFileNote").textContent = ""; } catch (err) { $("tbFileNote").textContent = err.message; toast(err.message); } finally { e.target.value = ""; } });

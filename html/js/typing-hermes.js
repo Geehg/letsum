@@ -106,27 +106,69 @@
    const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
    keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
    const fill=new T.DirectionalLight(0xe2edf1,.25);fill.position.set(.5,.3,-.3);scene.add(fill);
-   // A woven sage tablecloth with fine blue-grey checks, extending beyond the desk view.
-   const clothPixels=new Uint8Array(256*256*4);let clothSeed=73;
-   for(let y=0;y<256;y++)for(let x=0;x<256;x++){
-    clothSeed=(Math.imul(clothSeed,1664525)+1013904223)>>>0;
-    const i=(y*256+x)*4,gridX=x%64<3,gridY=y%64<3;
-    const ink=gridX&&gridY?.68:gridX||gridY?.54:0;
-    const weave=((x%2?1:-1)+(y%2?1:-1))*.65+((clothSeed>>>28)-7.5)*.24;
-    for(let c=0;c<3;c++)clothPixels[i+c]=Math.round([170,187,177][c]*(1-ink)+[91,121,128][c]*ink+weave);
-    clothPixels[i+3]=255;
+   // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
+   // full-width table has no image boundary or lighting baked into the pattern.
+   const clothCache=new Map();let clothTexture,clothRepeat=12;
+   function fabric(style){
+    if(clothCache.has(style))return clothCache.get(style);
+    const size=512,pixels=new Uint8Array(size*size*4);let seed=73;
+    const rand=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
+    for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+     const i=(y*size+x)*4,gridX=x%128<6,gridY=y%128<6;
+     const ink=style==='check'?(gridX&&gridY?.68:gridX||gridY?.54:0):0;
+     const weave=((x%2?1:-1)+(y%2?1:-1))*.55+(rand()-.5)*2.6;
+     const base=style==='check'?[170,187,177]:style==='linen'?[218,204,181]:[239,231,209];
+     for(let c=0;c<3;c++)pixels[i+c]=Math.round(base[c]*(1-ink)+[91,121,128][c]*ink+weave);
+     pixels[i+3]=255;
+    }
+    function oval(cx,cy,rx,ry,angle,color,opacity=1){
+     const radius=Math.ceil(Math.max(rx,ry)+1),co=Math.cos(angle),si=Math.sin(angle);
+     for(let y=Math.floor(cy-radius);y<=cy+radius;y++)for(let x=Math.floor(cx-radius);x<=cx+radius;x++){
+      const dx=x+.5-cx,dy=y+.5-cy,u=(dx*co+dy*si)/rx,v=(-dx*si+dy*co)/ry,d=u*u+v*v;
+      if(d>=1)continue;const alpha=Math.min(1,(1-d)*4)*opacity,i=(((y%size+size)%size)*size+(x%size+size)%size)*4;
+      for(let c=0;c<3;c++)pixels[i+c]=Math.round(pixels[i+c]*(1-alpha)+color[c]*alpha);
+     }
+    }
+    if(style==='floral'){
+     for(let row=0;row<7;row++)for(let col=0;col<8;col++){
+      const cx=(col+.5+(rand()-.5)*.75)*size/8,cy=(row+.5+(rand()-.5)*.72)*size/7;
+      const angle=rand()*Math.PI*2,scale=.75+rand()*.5,co=Math.cos(angle),si=Math.sin(angle);
+      const stamp=(x,y,rx,ry,a,color,opacity)=>oval(cx+(x*co-y*si)*scale,cy+(x*si+y*co)*scale,rx*scale,ry*scale,a+angle,color,opacity);
+      // Slender botanical sprigs and irregular, softly printed golden petals.
+      stamp(0,4,.6,8,-.10,[144,150,100],.6);
+      stamp(-2,6,3.2,1.3,-.55,[160,166,109],.7);stamp(2.3,9,3.6,1.4,.65,[157,164,108],.65);
+      for(let k=0;k<5;k++){
+       const a=k*Math.PI*2/5+rand()*.35,x=Math.cos(a)*2.1,y=Math.sin(a)*2.1-3;
+       stamp(x,y,1.9+rand(),3.3+rand()*.8,a-Math.PI/2,[229,180+Math.floor(rand()*24),104],.88);
+      }
+      stamp(0,-3,1.35,1.35,0,[184,126,59],.82);
+      stamp(3.6,1.8,1.7,2.7,-.4,[225,163,82],.8);
+      // A few tiny detached buds break up the repeat without a rigid grid.
+      if(rand()>.4)stamp(-12,20,1.3,2.2,.5,[222,169,92],.7);
+     }
+    }
+    const texture=new T.DataTexture(pixels,size,size,T.RGBAFormat);
+    texture.encoding=T.sRGBEncoding;texture.wrapS=texture.wrapT=T.RepeatWrapping;
+    texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;
+    texture.anisotropy=Math.min(8,renderer.capabilities?.getMaxAnisotropy?.()||1);
+    clothCache.set(style,texture);return texture;
    }
-   const clothTexture=new T.DataTexture(clothPixels,256,256,T.RGBAFormat);
-   clothTexture.encoding=T.sRGBEncoding;clothTexture.wrapS=clothTexture.wrapT=T.RepeatWrapping;clothTexture.repeat.set(45,22.5);
-   clothTexture.magFilter=T.LinearFilter;clothTexture.minFilter=T.LinearMipmapLinearFilter;clothTexture.generateMipmaps=true;clothTexture.needsUpdate=true;
    const clothGeometry=new T.PlaneGeometry(3.6,1.8,64,48),clothPositions=clothGeometry.attributes.position;
    for(let i=0;i<clothPositions.count;i++){
     const x=clothPositions.getX(i),depth=.60-clothPositions.getY(i),drape=Math.max(0,Math.min(1,(depth-.22)/.35));
     clothPositions.setZ(i,drape*(Math.sin(x*23+depth*5)*.0016+Math.sin(x*9-depth*12)*.001));
    }
    clothGeometry.computeVertexNormals();
-   const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:clothTexture,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
-   ground.name='Sage_Checked_Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
+   const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:null,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
+   ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
+   function applyTablecloth(){
+    const style=['floral','check','linen'].includes(main.dataset.table)?main.dataset.table:'floral';
+    clothTexture=fabric(style);clothRepeat=style==='check'?45:12;
+    clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2);
+    ground.material.map=clothTexture;ground.material.needsUpdate=true;ground.userData.fabric=style;
+   }
+   applyTablecloth();
+   new MutationObserver(()=>{applyTablecloth();wake();}).observe(main,{attributes:true,attributeFilter:['data-table']});
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
@@ -178,7 +220,7 @@
      camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
     }
     camera.updateProjectionMatrix();
-    ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=45*ground.scale.x;
+    ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
     fontPixels=trace?selectedSize/(scale/600):Math.max(34,Math.min(76,16/(scale/600)));
