@@ -49,14 +49,20 @@
    }
    const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
-   // Fine deterministic surface texture; subtle enough to remain an enamel finish.
-   const grainData=new Uint8Array(128*128*4);let seed=31;
-   for(let i=0;i<grainData.length;i+=4){seed=(Math.imul(seed,1664525)+1013904223)>>>0;const n=115+(seed>>>27);grainData[i]=grainData[i+1]=grainData[i+2]=n;grainData[i+3]=255;}
-   const grain=new T.DataTexture(grainData,128,128,T.RGBAFormat);grain.wrapS=grain.wrapT=T.RepeatWrapping;grain.magFilter=T.LinearFilter;grain.minFilter=T.LinearMipmapLinearFilter;grain.generateMipmaps=true;grain.needsUpdate=true;
+   // Static micrograin stays attached to the finish; mipmaps avoid sparkling at small sizes.
+   const grainData=new Uint8Array(256*256*4),finishData=new Uint8Array(grainData.length);let seed=31;
+   for(let i=0;i<grainData.length;i+=4){
+    seed=(Math.imul(seed,1664525)+1013904223)>>>0;
+    const height=80+(seed>>>25),tone=240+(seed>>>28);
+    grainData[i]=grainData[i+1]=grainData[i+2]=height;grainData[i+3]=255;
+    finishData[i]=finishData[i+1]=finishData[i+2]=tone;finishData[i+3]=255;
+   }
+   const grain=new T.DataTexture(grainData,256,256,T.RGBAFormat),finish=new T.DataTexture(finishData,256,256,T.RGBAFormat);
+   for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.roughness=.34;m.clearcoat=.18;m.clearcoatRoughness=.32;m.bumpMap=grain;m.bumpScale=.00011;m.envMapIntensity=.48;}
-    else if(old.name==='Mint_Keycaps'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000045;m.envMapIntensity=.38;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';m.roughness=.37;m.map=finish;m.roughnessMap=finish;m.clearcoat=.18;m.clearcoatRoughness=.32;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    else if(old.name==='Mint_Keycaps'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
     else if(old.name==='Polished_Nickel'){m=old.clone();m.metalness=1;m.roughness=.16;m.envMapIntensity=1.1;}
     else if(old.name==='Platen_Rubber'){m=old.clone();m.bumpMap=grain;m.bumpScale=.0001;m.envMapIntensity=.12;}
     else {m=old.clone();m.envMapIntensity=.3;}
