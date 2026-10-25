@@ -121,12 +121,12 @@
    clothTexture.magFilter=T.LinearFilter;clothTexture.minFilter=T.LinearMipmapLinearFilter;clothTexture.generateMipmaps=true;clothTexture.needsUpdate=true;
    const clothGeometry=new T.PlaneGeometry(3.6,1.8,64,48),clothPositions=clothGeometry.attributes.position;
    for(let i=0;i<clothPositions.count;i++){
-    const x=clothPositions.getX(i),depth=.30-clothPositions.getY(i),drape=Math.max(0,Math.min(1,(depth-.22)/.35));
+    const x=clothPositions.getX(i),depth=.60-clothPositions.getY(i),drape=Math.max(0,Math.min(1,(depth-.22)/.35));
     clothPositions.setZ(i,drape*(Math.sin(x*23+depth*5)*.0016+Math.sin(x*9-depth*12)*.001));
    }
    clothGeometry.computeVertexNormals();
    const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:clothTexture,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
-   ground.name='Sage_Checked_Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.30);ground.receiveShadow=true;scene.add(ground);
+   ground.name='Sage_Checked_Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
@@ -144,7 +144,7 @@
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,lastSource=null,traceFeed=0,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
+   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,lastSource=null,traceFeed=0,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
@@ -160,12 +160,17 @@
     // On tall desktop windows keep room for both reading panels and carriage travel.
     const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
     const span=Math.max(baseSpan,panelSpan);
-    renderer.setSize(width,height,false);
+    // Render the cloth to the viewport edges without changing instrument framing.
+    const rect=view.getBoundingClientRect?.(),viewportWidth=document.documentElement?.clientWidth||width;
+    bleedLeft=Math.max(0,rect?.left||0);bleedRight=Math.max(0,viewportWidth-(rect?.right||width));renderWidth=width+bleedLeft+bleedRight;
+    renderer.setSize(renderWidth,height,false);
+    renderer.domElement.style.width=renderWidth+'px';renderer.domElement.style.left=-bleedLeft+'px';
+    view.style.setProperty('--tb-bleed-left',bleedLeft+'px');view.style.setProperty('--tb-bleed-right',bleedRight+'px');
     // Enlarge the instrument by 15%; inversely compensate the A4 sheet
     // to preserve its screen position, width, height and text size.
     sheetWidth=trace?.420/instrumentScale:.224;paperTop=trace?.174+.594/instrumentScale:.396;
     paperHeight=trace?paperWidth*297/210:594;
-    camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;
+    camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
     if(trace){
      // Anchor the whole sheet below the toolbar. The lower keys may leave the frame.
@@ -173,6 +178,7 @@
      camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
     }
     camera.updateProjectionMatrix();
+    ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=45*ground.scale.x;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
     fontPixels=trace?selectedSize/(scale/600):Math.max(34,Math.min(76,16/(scale/600)));
@@ -240,7 +246,7 @@
    }
    function placePaper(){
     const top=paperTop+currentFeed+traceFeed,tl=new T.Vector3(-sheetWidth/2+currentX,top,-.151).project(camera),tr=new T.Vector3(sheetWidth/2+currentX,top,-.151).project(camera),bl=new T.Vector3(-sheetWidth/2+currentX,.174+currentFeed+traceFeed,-.151).project(camera);
-    const x=(tl.x+1)*width/2,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*width/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
+    const x=(tl.x+1)*renderWidth/2-bleedLeft,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*renderWidth/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
    function frame(now){

@@ -73,6 +73,11 @@ const modeObservers=()=>observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilte
 modeObservers();tick();const traceHeight=ids.tbHermesPaper.style.height,traceWidth=nodes.Paper.scale.x;
 assert(Math.abs(parseFloat(traceHeight)/600-297/210)<1e-8,'A4 aspect ratio');assert(Math.abs(traceWidth*.224-.420/1.15)<1e-8);
 assert(Math.abs(paperMatrix()[0]*600/(.420/1.15)/standardPixelsPerMeter-.75*1.15)<1e-8,'instrument is 15% larger than the previous .75x zoom');assertPaperInFrame();
+// Full-viewport cloth must preserve the existing paper projection in its content column.
+const insetMatrix=paperMatrix();ids.tbHermesView.getBoundingClientRect=()=>({left:24,right:ids.tbHermesView.clientWidth+24});doc.documentElement={clientWidth:ids.tbHermesView.clientWidth+48};
+modeObservers();tick();paperMatrix().forEach((v,i)=>assert(Math.abs(v-insetMatrix[i])<1e-7,'edge-to-edge ground keeps paper framing'));
+assert.equal(ids.tbHermesView.style['--tb-bleed-left'],'24px');assert.equal(ids.tbHermesView.style['--tb-bleed-right'],'24px');
+delete ids.tbHermesView.getBoundingClientRect;delete doc.documentElement;modeObservers();tick();
 const [textScale,,,paperYScale]=paperMatrix();
 assert(Math.abs(textScale-paperYScale*Number(ids.tbHermesPaper.style['--tb-trace-unskew']))<1e-8,'glyphs have equal horizontal and vertical scale');
 assert(Math.abs(parseFloat(ids.tbInput.style.fontSize)*textScale-14)<1e-8,'default immersive font is 14 screen pixels');

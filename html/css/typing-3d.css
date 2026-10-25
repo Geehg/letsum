@@ -68,3 +68,6 @@ main.tb[data-hermes-ready="true"] #tbInput{overflow:hidden;font-variant-ligature
 
 /* Soft contact shade where the sheet meets the platen; travels with the paper. */
 .tb-hermes-paper::after{content:"";position:absolute;left:0;right:0;bottom:0;height:44px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,transparent,#34372b08 35%,#34372b1c 72%,#252a2142);box-shadow:inset 0 -1px 0 #252a2138}
+
+/* Let the ground reach the viewport edges while retaining the existing vertical crop. */
+main.tb[data-hermes-ready="true"] .tb-hermes-view{overflow:visible;clip-path:inset(0 calc(-1 * var(--tb-bleed-right,0px)) 0 calc(-1 * var(--tb-bleed-left,0px)))}
