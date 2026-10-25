@@ -127,10 +127,19 @@
    function resize(){
     if(!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    renderer.setSize(width,height,false);const a=width/height,span=Math.max(.52,.70/a);
-    camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();camera.updateMatrixWorld();
-    sheetWidth=tracing()?.30:.224;paperTop=.396+(tracing()?Math.max(0,Math.min(.33,(span-.52)*.6)):0);
-    paperHeight=tracing()?(paperTop-.174)/sheetWidth*paperWidth:594;
+    const trace=tracing(),a=width/height,span=Math.max(.52,.70/a)/(trace?1.5:1);
+    renderer.setSize(width,height,false);
+    // A4 stays physically proportioned; zoom the camera, never stretch the model.
+    sheetWidth=trace?.210:.224;paperTop=trace?.174+.297:.396;
+    paperHeight=trace?paperWidth*297/210:594;
+    camera.left=-span*a/2;camera.right=span*a/2;camera.top=span/2;camera.bottom=-span/2;
+    camera.updateMatrixWorld();
+    if(trace){
+     // Anchor the whole sheet below the toolbar. The lower keys may leave the frame.
+     const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
+     camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
+    }
+    camera.updateProjectionMatrix();
     const selectedSize=parseFloat(main.style.getPropertyValue('--tb-size'))||18;
     const scale=sheetWidth/(span*a)*width;fontPixels=Math.max(tracing()?28:34,Math.min(tracing()?96:76,(tracing()?selectedSize-1:16)/(scale/600)));lineHeight=fontPixels*1.42;
     paper.style.setProperty('--tb-trace-size',fontPixels+'px');paper.style.setProperty('--tb-trace-line',lineHeight+'px');
