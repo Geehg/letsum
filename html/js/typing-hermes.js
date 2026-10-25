@@ -241,6 +241,8 @@
      camera.top=sheetTop+16*span/height;camera.bottom=camera.top-span;
     }
     camera.updateProjectionMatrix();
+    // Lower only the cloth by 10% of the immersive view height.
+    ground.position.z=.60+(trace?span*.10/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
