@@ -106,7 +106,27 @@
    const keyLight=new T.DirectionalLight(0xfff4df,1.65);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
    keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=5;keyLight.shadow.blurSamples=8;
    const fill=new T.DirectionalLight(0xe2edf1,.25);fill.position.set(.5,.3,-.3);scene.add(fill);
-   const ground=new T.Mesh(new T.PlaneGeometry(2,2),new T.ShadowMaterial({opacity:.17}));ground.rotation.x=-Math.PI/2;ground.position.y=-.0026;ground.receiveShadow=true;scene.add(ground);
+   // A woven sage tablecloth with fine blue-grey checks, extending beyond the desk view.
+   const clothPixels=new Uint8Array(256*256*4);let clothSeed=73;
+   for(let y=0;y<256;y++)for(let x=0;x<256;x++){
+    clothSeed=(Math.imul(clothSeed,1664525)+1013904223)>>>0;
+    const i=(y*256+x)*4,gridX=x%64<3,gridY=y%64<3;
+    const ink=gridX&&gridY?.68:gridX||gridY?.54:0;
+    const weave=((x%2?1:-1)+(y%2?1:-1))*.65+((clothSeed>>>28)-7.5)*.24;
+    for(let c=0;c<3;c++)clothPixels[i+c]=Math.round([170,187,177][c]*(1-ink)+[91,121,128][c]*ink+weave);
+    clothPixels[i+3]=255;
+   }
+   const clothTexture=new T.DataTexture(clothPixels,256,256,T.RGBAFormat);
+   clothTexture.encoding=T.sRGBEncoding;clothTexture.wrapS=clothTexture.wrapT=T.RepeatWrapping;clothTexture.repeat.set(45,22.5);
+   clothTexture.magFilter=T.LinearFilter;clothTexture.minFilter=T.LinearMipmapLinearFilter;clothTexture.generateMipmaps=true;clothTexture.needsUpdate=true;
+   const clothGeometry=new T.PlaneGeometry(3.6,1.8,64,48),clothPositions=clothGeometry.attributes.position;
+   for(let i=0;i<clothPositions.count;i++){
+    const x=clothPositions.getX(i),depth=.30-clothPositions.getY(i),drape=Math.max(0,Math.min(1,(depth-.22)/.35));
+    clothPositions.setZ(i,drape*(Math.sin(x*23+depth*5)*.0016+Math.sin(x*9-depth*12)*.001));
+   }
+   clothGeometry.computeVertexNormals();
+   const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:clothTexture,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
+   ground.name='Sage_Checked_Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.30);ground.receiveShadow=true;scene.add(ground);
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
