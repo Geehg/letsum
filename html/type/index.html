@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — 명작을 따라 쓰는 타이핑 독서"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="/css/style.css?v=105">
+<link rel="stylesheet" href="/css/style.css?v=106">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -30,6 +30,7 @@
     <nav class="tb-crumb" aria-label="위치"><a href="#/">MY LIBRARY</a><span class="sep">/</span><b id="tbCrumb">서가</b></nav>
     <div class="tb-top-r">
       <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면(기본)">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
+      <button class="tb-plain tb-setbtn" id="tbSetOpen" type="button" hidden aria-haspopup="dialog"><b>⚙</b> 설정</button>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
     </div>
@@ -95,14 +96,7 @@
             <div class="tb-rh-cv" id="tbCv" aria-hidden="true"></div>
             <div class="tb-rh-body">
             <div class="tb-rt"><p class="tb-rk">NOW READING<span class="sep">/</span><span id="tbAuthor"></span><a id="tbSource" target="_blank" rel="noopener">출처</a></p><h2 id="tbTitle"></h2><label class="tb-toc" id="tbTocWrap" hidden><span>목차</span><select id="tbToc" aria-label="목차"></select></label></div>
-            <div class="tb-tools">
-              <label class="tb-sel"><span>원문</span><select id="tbFontO" aria-label="원문 글꼴"></select></label>
-              <label class="tb-sel"><span>필사</span><select id="tbFontW" aria-label="필사 글꼴"></select></label>
-              <button class="tb-chip" id="tbMinus" type="button" aria-label="글자 작게">A−</button><button class="tb-chip" id="tbPlus" type="button" aria-label="글자 크게">A+</button>
-              <button class="tb-chip" id="tbReset" type="button" title="이 쪽 입력 지우기">↺ 다시 쓰기</button>
-              <span class="tb-retro-tools"><button class="tb-chip" id="tbSound" type="button" aria-pressed="true" title="타건음 켜기·끄기">🔊</button><input type="range" id="tbVolume" class="tb-vol" min="0" max="100" value="38" aria-label="타건음 음량" title="타건음 음량"><select id="tbPaper" class="tb-paper" aria-label="용지" title="용지"><option value="ivory">아이보리</option><option value="white">백색</option><option value="parchment">양피지</option></select></span>
-              <button class="tb-chip" id="tbPrint" type="button" title="이 책에서 쓴 쪽을 A4로 인쇄·PDF 저장">🖨 인쇄</button>
-            </div>
+            <p class="tb-binfo" id="tbInfo"></p>
             </div>
           </div>
           <div class="tb-machine" id="tbMachine">
@@ -155,6 +149,25 @@
     </div>
   </div></div>
 
+  <!-- 필사 설정 -->
+  <div class="tb-ov" id="tbSet" hidden><div class="tb-modal tb-setm" role="dialog" aria-modal="true" aria-labelledby="tbSetH">
+    <button class="x" data-close aria-label="닫기">×</button>
+    <p class="tb-kick">SETTINGS</p>
+    <h3 id="tbSetH">필사 설정</h3>
+    <div class="tb-set-sec"><h4>글꼴</h4>
+      <label class="tb-set-row"><span>원문</span><select id="tbFontO" aria-label="원문 글꼴"></select></label>
+      <label class="tb-set-row"><span>필사</span><select id="tbFontW" aria-label="필사 글꼴"></select></label>
+      <div class="tb-set-row"><span>글자 크기</span><span class="tb-set-size"><button class="tb-chip" id="tbMinus" type="button" aria-label="글자 작게">A−</button><b id="tbSizeV">18px</b><button class="tb-chip" id="tbPlus" type="button" aria-label="글자 크게">A+</button></span></div>
+    </div>
+    <div class="tb-set-sec tb-retro-only"><h4>레트로 타자기</h4>
+      <div class="tb-set-row"><span>타건음</span><span class="tb-set-snd"><button class="tb-chip" id="tbSound" type="button" aria-pressed="true" title="타건음 켜기·끄기">🔊</button><input type="range" id="tbVolume" class="tb-vol" min="0" max="100" value="38" aria-label="타건음 음량"></span></div>
+      <label class="tb-set-row"><span>용지</span><select id="tbPaper" aria-label="용지"><option value="ivory">아이보리</option><option value="white">백색</option><option value="parchment">양피지</option></select></label>
+    </div>
+    <div class="tb-set-sec"><h4>이 쪽</h4>
+      <div class="tb-set-acts"><button class="tb-btn" id="tbReset" type="button">↺ 이 쪽 다시 쓰기</button><button class="tb-btn" id="tbPrint" type="button">🖨 쓴 쪽 인쇄·PDF</button></div>
+    </div>
+  </div></div>
+
   <!-- 도움말 -->
   <div class="tb-ov" id="tbHelp" hidden><div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbHelpH">
     <button class="x" data-close aria-label="닫기">×</button>
@@ -165,7 +178,7 @@
       <li>틀리면 Backspace로 지우고 다시 쓰면 됩니다. 한 쪽 전체가 원문과 같아지는 순간 완성됩니다.</li>
       <li>↵ 표시가 있는 곳에서 Enter를 칩니다. 산문은 문단이 바뀔 때 한 번, 시는 줄 끝마다 치고 연이 바뀌는 곳(빈 줄)에서 한 번 더 칩니다.</li>
       <li>“ ” ‘ ’ 「 」 · ― 는 키보드의 " ' . - 로 쳐도 맞습니다. 붙여 넣기는 막혀 있습니다.</li>
-      <li>원문·필사 글꼴은 위쪽에서 바꿀 수 있습니다. 손글씨 글꼴로 쓰면 손으로 쓴 느낌을 볼 수 있어요.</li>
+      <li>원문·필사 글꼴, 글자 크기, 이 쪽 다시 쓰기·인쇄, 레트로의 타건음·용지는 오른쪽 위 <b>⚙ 설정</b>에서 바꿉니다. 손글씨 글꼴로 쓰면 손으로 쓴 느낌을 볼 수 있어요.</li>
       <li>화면 디자인은 오른쪽 위에서 고릅니다 — 몰입(밝게·어둡게: 원문과 필사만 크게), 레트로(타자기 본체·타건음·용지 선택·필사 인쇄), 책상(서재 목록과 펼친 책), 잉크(평면 활자 견본).</li>
       <li>분당 타수는 이 쪽에서 누른 글쇠 수 기준, 정확도는 확정된 글자 기준의 참고값입니다(공인 타자 검정 수치가 아님).</li>
     </ol>
@@ -191,6 +204,6 @@
 </footer>
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
-<script src="/js/typing.js?v=17"></script>
+<script src="/js/typing.js?v=18"></script>
 </body>
 </html>

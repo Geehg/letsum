@@ -2231,3 +2231,21 @@ main.tb[data-skin="retro"] .tb-rh,main.tb[data-skin="retro"] .tb-stats{backgroun
 }
 main.tb[data-layout="focus"] .tb-stats>div:first-child{padding:7px 12px}
 .tb-rh-body .tb-sel select{max-width:158px}
+
+/* 필사 설정 팝업(헤더 ⚙ 설정) — 도서 옆에는 도서 정보만 */
+.tb-binfo{display:flex;flex-wrap:wrap;gap:4px 0;margin:6px 0 0;font-size:12.5px;color:var(--t-mute)}
+.tb-binfo span+span::before{content:"·";margin:0 7px;opacity:.6}
+.tb-setbtn b{font-weight:400}
+.tb-setm{width:min(440px,100%)}
+.tb-set-sec{border-top:1px solid var(--t-line);padding:14px 0 6px;margin-top:12px}
+.tb-set-sec h4{font:var(--t-lab);letter-spacing:var(--t-lab-ls);color:var(--t-mute);margin:0 0 10px}
+.tb-set-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;font-size:13.5px;font-weight:600;color:var(--t-ink)}
+.tb-set-row select{flex:0 1 240px;min-width:0;border:1px solid var(--t-line);border-radius:var(--t-r3);background:var(--t-alt);padding:8px 10px;font-size:13.5px;font-weight:600;color:var(--t-ink)}
+.tb-set-row select option,.tb-set-row select optgroup{background:var(--t-panel);color:var(--t-ink)}
+.tb-set-size,.tb-set-snd{display:inline-flex;align-items:center;gap:8px}
+.tb-set-size b{min-width:46px;text-align:center;font:600 13px var(--mono)}
+.tb-set-snd .tb-vol{width:150px}
+.tb-set-acts{display:flex;flex-wrap:wrap;gap:8px}
+.tb-set-acts .tb-btn{flex:1 1 0;padding:10px 12px;font-size:13px}
+.tb-retro-only{display:none}
+main.tb[data-skin="retro"] .tb-retro-only{display:block}

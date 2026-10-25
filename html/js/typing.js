@@ -257,16 +257,19 @@
     $("tbTitle").textContent = b.title; $("tbAuthor").textContent = b.author + (b.year && b.year < 2000 ? ` · ${b.year}` : "");
     $("tbSource").hidden = !b.source; if (b.source) { $("tbSource").href = b.source; $("tbSource").title = b.license || ""; }
     $("tbKbLang").textContent = b.lang === "en" ? "영문 QWERTY" : "두벌식";
+    $("tbSetOpen").hidden = false;
     // 제목 왼쪽 표지(서가와 같은 입체 책, 마우스를 올리면 책등)
     const th = Math.round(Math.min(34, Math.max(16, 6 + 5 * Math.log10(Math.max(100, b.chars || 0)))) * 0.55);
     $("tbCv").innerHTML = b.cover ? `<span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span></span>` : cover(b);
     fillFontSelects(); applyFonts(); renderKeys(b.lang === "en"); fillToc();
+    const cat = b.lang === "en" ? `English · ${catOf(b)}` : catOf(b), np = (b.partTitles || []).length;
+    $("tbInfo").innerHTML = [cat, np > 1 ? `${np}${b.poem ? "편" : "장"}` : "", `${(b.chars || chars(b.text || "").length).toLocaleString()}자`, `${b.pages.length.toLocaleString()}쪽`, b.imported ? "내가 가져온 글" : (b.license || "")].filter(Boolean).map((x) => `<span>${esc(x)}</span>`).join("");
     $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — LETSUM 필사독서`; $("tbCrumb").textContent = b.title;
     loadPage(Math.max(0, Math.min(b.pages.length - 1, Number(p.index) || 0)), false);
     renderSide(); renderMini();
     scrollTo(0, 0); $("tbInput").focus({ preventScroll: true });
   }
-  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; $("tbCrumb").textContent = "서가"; document.title = "필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM(렛섬)"; renderShelf(); }
+  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; $("tbSetOpen").hidden = true; close("tbSet"); $("tbCrumb").textContent = "서가"; document.title = "필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM(렛섬)"; renderShelf(); }
 
   // ---------- 글꼴 고르기 ----------
   function fillFontSelects() {
@@ -279,7 +282,7 @@
   function applyFonts() {
     loadFont(fontById(state.fontO)); loadFont(fontById(state.fontW));
     $("tbOrig").style.fontFamily = stackOf(state.fontO); $("tbInput").style.fontFamily = stackOf(state.fontW);
-    document.documentElement.style.setProperty("--tb-size", state.fontSize + "px");
+    document.documentElement.style.setProperty("--tb-size", state.fontSize + "px"); $("tbSizeV").textContent = state.fontSize + "px";
   }
 
   // ---------- 목차(장) ----------
@@ -492,7 +495,7 @@
     inp.addEventListener("drop", (e) => e.preventDefault());
     inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { clack(e.key === "Process" || e.key === "Unidentified" ? "x" : e.key); strike(); }
       if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
-    document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish"].forEach((id) => { if (!$(id).hidden) close(id); }); });
+    document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish", "tbSet"].forEach((id) => { if (!$(id).hidden) close(id); }); });
     document.addEventListener("keyup", (e) => press(e.code, false));
     addEventListener("blur", () => document.querySelectorAll(".tb-k.down").forEach((k) => k.classList.remove("down")));
     $("tbOrig").addEventListener("click", () => inp.focus());
@@ -508,6 +511,7 @@
     ["tbImportOpen", "tbImportTop", "tbSideAdd"].forEach((id) => $(id).addEventListener("click", () => open("tbImport")));
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => b.addEventListener("click", () => applySkin(b.dataset.skin)));
     $("tbHelpOpen").addEventListener("click", () => open("tbHelp"));
+    $("tbSetOpen").addEventListener("click", () => open("tbSet"));
     $("tbStart").addEventListener("click", () => { const L = state.index.themes.find((t) => t.id === "poems").books; const pick = L.find((b) => !(progressOf(b.id).completed || []).length) || L[Math.floor(Math.random() * L.length)]; location.hash = "#/read/" + pick.id; });
     $("tbContinue").addEventListener("click", () => { const l = readJSON("last", ""); if (l) location.hash = "#/read/" + encodeURIComponent(l); });
     document.querySelectorAll(".tb-ov").forEach((o) => o.addEventListener("click", (e) => { if (e.target === o || e.target.closest("[data-close]")) close(o.id); }));
