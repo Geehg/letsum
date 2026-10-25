@@ -2255,3 +2255,11 @@ main.tb[data-layout="focus"] .tb-stats,main.tb[data-skin="retro"] .tb-stats,main
 main.tb[data-skin="retro"] .tb-stats{border-left-color:#cbbfa9}
 main.tb[data-layout="focus"] .tb-rh,main.tb[data-layout="focus"] .tb-stats{margin-bottom:26px}
 @media(max-width:760px){main.tb[data-layout="focus"] .tb-rh{padding:0 0 12px}main.tb[data-layout="focus"] .tb-stats{border-left:0;border-top:1px solid var(--t-line);padding:6px 0 0}}
+
+/* 쪽 넘김을 도서 정보 아래로 */
+.tb-rh-body .tb-pager{justify-content:flex-start;gap:6px;padding:4px 0 0;margin:0}
+.tb-rh-body .tb-nav{padding:6px 10px;border:1px solid var(--t-line);border-radius:var(--t-pill);font-size:12px}
+.tb-rh-body .tb-nav.next:not(:disabled){border-color:var(--t-acc)}
+main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:var(--ink)}
+.tb-rh-body .tb-pno{padding:0 8px;font-size:12.5px}
+.tb-rh-body .tb-dots{margin-left:8px}

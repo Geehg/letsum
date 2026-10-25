@@ -11,7 +11,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=107">
+<link rel="stylesheet" href="css/style.css?v=108">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
@@ -97,6 +97,11 @@
             <div class="tb-rh-body">
             <div class="tb-rt"><p class="tb-rk">NOW READING<span class="sep">/</span><span id="tbAuthor"></span><a id="tbSource" target="_blank" rel="noopener">출처</a></p><h2 id="tbTitle"></h2><label class="tb-toc" id="tbTocWrap" hidden><span>목차</span><select id="tbToc" aria-label="목차"></select></label></div>
             <p class="tb-binfo" id="tbInfo"></p>
+            <div class="tb-pager">
+              <button class="tb-nav" id="tbPrev" type="button">← 이전 쪽</button>
+              <span class="tb-pno"><b id="tbCur">1</b><span class="sep">/</span><span id="tbTot">1</span><span class="tb-dots" id="tbDots"></span></span>
+              <button class="tb-nav next" id="tbNext" type="button">다음 쪽 →</button>
+            </div>
             </div>
           </div>
           <div class="tb-machine" id="tbMachine">
@@ -115,11 +120,6 @@
               <div class="tb-pg-f"><span id="tbCount">0 / 0자</span><i class="tb-track"><i id="tbCountBar"></i></i><span id="tbPageNoW">01</span></div>
             </article>
           </div>
-          </div>
-          <div class="tb-pager">
-            <button class="tb-nav" id="tbPrev" type="button">← 이전 쪽</button>
-            <span class="tb-pno"><b id="tbCur">1</b><span class="sep">/</span><span id="tbTot">1</span><span class="tb-dots" id="tbDots"></span></span>
-            <button class="tb-nav next" id="tbNext" type="button">다음 쪽 →</button>
           </div>
         </div>
         <div class="tb-kb" id="tbKb">
