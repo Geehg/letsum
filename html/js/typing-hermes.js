@@ -116,7 +116,7 @@
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
+   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,shift=false,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
@@ -127,7 +127,11 @@
    function resize(){
     if(!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    const trace=tracing(),a=width/height,instrumentScale=1.15,span=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
+    const trace=tracing(),a=width/height,instrumentScale=1.15;
+    const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
+    // On tall desktop windows keep room for both reading panels and carriage travel.
+    const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-400)/1.86):0;
+    const span=Math.max(baseSpan,panelSpan);
     renderer.setSize(width,height,false);
     // Enlarge the instrument by 15%; inversely compensate the A4 sheet
     // to preserve its screen position, width, height and text size.
@@ -149,7 +153,7 @@
     traceProjection=trace?Math.abs(camera.matrixWorldInverse.elements[5]):1;
     paper.style.setProperty('--tb-trace-unskew',String(1/traceProjection));
     paper.style.setProperty('--tb-trace-size',fontPixels+'px');paper.style.setProperty('--tb-trace-line',lineHeight+'px');
-    input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';sync(true);wake();
+    input.style.fontSize=fontPixels+'px';input.style.lineHeight=lineHeight+'px';layoutPending=true;sync(true);wake();
    }
    function layout(text){
     measure.font=fontPixels+'px '+getComputedStyle(input).fontFamily;const lines=[];let row='',units=0;
@@ -219,6 +223,7 @@
     const sheetHeight=(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
     placePaper();renderer.render(scene,camera);
+    if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }
    function down(e){

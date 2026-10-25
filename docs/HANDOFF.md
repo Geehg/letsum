@@ -277,3 +277,5 @@ img.save("sample.png")
 
 - 2026-10-25: 레트로 몰입 글자 비율/크기 및 독서 패널 개선. Hermes 종이는 기존 표시 크기와 타자기 +15% 구도를 유지하며, 종이 투영으로 눌리던 원문/입력 글자는 역방향 세로 보정을 같이 적용해 최종 가로·세로 배율을 동일하게 함. --tb-size는 documentElement에 저장되므로 getComputedStyle(main)에서 상속값을 읽도록 수정. 몰입 별도 trace-font 설정은 기본14px/최소10px/최대28px, 일반 모드는 기존 font 설정 유지. 논리 글자 최소28px 제한 제거. 원문과 native 입력의 높이/변환/스크롤 일치.
 - 좌측 실제 도서 표지/제목/저자, 우측 실제 b.pages[i+1] 본문 미리보기 추가. 쪽 변경 시 내용 갱신; 현재 쪽 완료 전 이동 제한과 마지막 쪽 안내 유지. 패널은 종이·캐리지 이동 여유를 남겨 배치하며 좁은 화면은 하단 두 칸. 모바일 빈 무대 높이 축소. typing.js v22, typing-hermes.js v10, typing-retro-focus.js/css v2. 브라우저에서 10px 조절, 미리보기/실제 다음 본문 일치, 마지막 쪽, 기본 레트로 복원, 모바일 확인. 원본 tools/typing_app.html.
+
+- 최초 로딩/창 크기 변경 후 tb:hermes-layout 이벤트로 종이 투영이 확정된 뒤 좌우 패널 폭을 재계산. 세로가 긴 데스크톱에서는 양측 패널과 캐리지 이동 공간을 확보하도록 카메라 최대 배율을 제한. 최종 typing-hermes.js v11 / typing-retro-focus.js v3.

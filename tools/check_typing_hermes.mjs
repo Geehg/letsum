@@ -9,7 +9,7 @@ function el(id){return {id,dataset:{},style:{setProperty(k,v){this[k]=v},getProp
 const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model:'hermes3000'};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
 class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(){renders++}dispose(){}}
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
-const ctx={console,CustomEvent:class{constructor(type,init){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){observers.push({e,o,f:this.fn})}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture()}}dispose(){}}},GLTFLoader:class{loadAsync(){return Promise.resolve(gltf)}}};
+const ctx={console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){observers.push({e,o,f:this.fn})}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture()}}dispose(){}}},GLTFLoader:class{loadAsync(){return Promise.resolve(gltf)}}};
 let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
@@ -47,7 +47,8 @@ const standardPixelsPerMeter=paperMatrix()[0]*600/.224;
 function assertPaperInFrame(){
  const [sx,,,sy,x,y]=paperMatrix(),w=sx*600,h=sy*parseFloat(ids.tbHermesPaper.style.height);
  const vw=ids.tbHermesView.clientWidth,vh=ids.tbHermesView.clientHeight,previousWidth=.210*1.5*vh/Math.max(.52,.70/(vw/vh));
- assert(Math.abs(w-previousWidth)<1e-7,'paper screen width matches the previous 1.5x view');
+ const framedWidth=vw>980?Math.min(previousWidth,(vw-400)/1.86):previousWidth;
+ assert(Math.abs(w-framedWidth)<1e-7,'paper width preserved unless desktop side panels need space');
  assert(x>=0&&x+w<=ids.tbHermesView.clientWidth,'both side edges stay in frame during carriage travel');
  assert(y>=0&&y+h<=ids.tbHermesView.clientHeight,'whole A4 height stays in frame');
 }
@@ -69,7 +70,7 @@ event('tbInput','compositionstart');ids.tbInput.value+='한';ids.tbInput.selecti
 ids.tbInput.value=ids.tbOrig.dataset.source.slice(0,70);ids.tbInput.selectionStart=70;event('tbInput','input');for(let i=0;i<20;i++)tick();
 assert.equal(ids.tbHermesPaper.style.height,traceHeight,'long drafts do not expand the page');
 assert(Math.abs(nodes.Paper.position.y-(.174+.594/1.15/2))<1e-9,'trace paper edge stays at the platen');assertPaperInFrame();
-for(const [w,h] of [[1052,522],[342,570],[600,260]]){
+for(const [w,h] of [[1052,522],[1069,678],[1392,850],[342,570],[600,260]]){
  ids.tbHermesView.clientWidth=w;ids.tbHermesView.clientHeight=h;
  for(const caret of [0,39,70]){ids.tbInput.selectionStart=caret;modeObservers();tick();assertPaperInFrame();}
 }

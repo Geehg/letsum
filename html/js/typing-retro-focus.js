@@ -56,6 +56,7 @@
  input.addEventListener('scroll',()=>{if(mounted&&!following)original.scrollTop=input.scrollTop;});
  document.addEventListener('selectionchange',()=>{if(document.activeElement===input)schedule();});
  document.fonts?.addEventListener('loadingdone',()=>{schedule();scheduleFit();});
+ view.addEventListener('tb:hermes-layout',scheduleFit);
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
  const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbHermesStage').querySelector('.tb-hermes-foot')])observer.observe(el);
  update();
