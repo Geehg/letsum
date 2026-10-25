@@ -30,8 +30,8 @@
  function fit(){
   fitFrame=0;if(!wanted())return;
   const viewport=window.visualViewport?.height||window.innerHeight;
-  const top=view.getBoundingClientRect().top+window.scrollY,foot=$('tbHermesStage').querySelector('.tb-hermes-foot').getBoundingClientRect().height;
-  const available=Math.max(260,Math.floor(viewport-top-foot-8));
+  const top=view.getBoundingClientRect().top+window.scrollY;
+  const available=Math.max(260,Math.ceil(viewport-top));
   const compact=view.clientWidth<600?Math.max(300,Math.round(view.clientWidth*1.05)):available;
   main.style.setProperty('--tb-focus-height',Math.min(available,compact)+'px');
   // Reserve the whole carriage sweep; side panels must never cover the writing sheet.
@@ -64,7 +64,7 @@
   const want=wanted(),next=want&&main.dataset.hermesReady==='true';
   const entering=want&&!document.body.classList.contains('tb-retro-immersive');
   document.body.classList.toggle('tb-retro-immersive',want);
-  if(next&&!mounted){sideControls.forEach(({el,target})=>target.append(el));paper.prepend(original);original.scrollTop=0;input.setAttribute('aria-describedby','tbHermesStatus');}
+  if(next&&!mounted){sideControls.forEach(({el,target})=>target.append(el));paper.prepend(original);original.scrollTop=0;input.setAttribute('aria-describedby','tbHermesStatus');if(!document.activeElement||document.activeElement===document.body||document.activeElement===input)input.focus({preventScroll:true});}
   if(!next&&mounted){sideControls.forEach(({el,anchor})=>anchor.after(el));home.after(original);original.scrollTop=0;input.removeAttribute('aria-describedby');original.querySelectorAll('.trace-caret,.trace-after,.trace-selected').forEach(s=>s.classList.remove('trace-caret','trace-after','trace-selected'));}
   mounted=next;
   if(entering)window.scrollTo({top:0,behavior:'instant'});
@@ -82,6 +82,6 @@
  document.fonts?.addEventListener('loadingdone',()=>{nextMeasureKey='';schedule();scheduleFit();});
  view.addEventListener('tb:hermes-layout',scheduleFit);
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
- const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbHermesStage').querySelector('.tb-hermes-foot'),$('tbFocusBookTools'),$('tbFocusBookPager')])observer.observe(el);
+ const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbFocusBookTools'),$('tbFocusBookPager')])observer.observe(el);
  update();
 })();

@@ -19,14 +19,13 @@
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
    input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
-   status.textContent=tracing()?'연한 글자를 따라 쓰세요 · ↵ Enter':'Hermes 3000 · 61키 · 종이에 직접 입력';engine.resize();
+   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':'Hermes 3000 · 61키 · 종이에 직접 입력';engine.resize();
   }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode']});
  new MutationObserver(update).observe($('tbRead'),{attributes:true,attributeFilter:['hidden']});
  new IntersectionObserver(e=>{inView=e[0].isIntersecting;engine?.wake();}).observe(stage);
  document.addEventListener('visibilitychange',()=>engine?.wake());
- $('tbHermesFocus').addEventListener('click',()=>input.focus({preventScroll:true}));
  view.addEventListener('click',e=>{if(e.target!==input)input.focus({preventScroll:true});});
  input.addEventListener('compositionstart',()=>{composing=true;});
  input.addEventListener('compositionend',()=>{composing=false;engine?.sync();});
@@ -266,6 +265,16 @@
     const x=(tl.x+1)*renderWidth/2-bleedLeft,y=(1-tl.y)*height/2,sx=(tr.x-tl.x)*renderWidth/2/paperWidth,sy=(tl.y-bl.y)*height/2/paperHeight;
     paper.style.transform=`matrix(${sx},0,0,${sy},${x},${y})`;
    }
+   function placeCount(){
+    // The right card-holder window is fixed to the body, not the moving carriage.
+    // Project its inner bounds so the counter stays inside the requested inset.
+    const a=new T.Vector3(.020,.174,-.119).project(camera),b=new T.Vector3(.103,.174,-.119).project(camera);
+    const middle=new T.Vector3(.0615,.171,-.119).project(camera),label=$('tbHermesCount');
+    const w=(b.x-a.x)*renderWidth/2;
+    label.style.left=((a.x+1)*renderWidth/2-bleedLeft)+'px';
+    label.style.top=((1-middle.y)*height/2)+'px';
+    label.style.width=w+'px';label.style.fontSize=Math.max(7,Math.min(12,w/8.5))+'px';
+   }
    function frame(now){
     raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
     for(const k of keys){
@@ -299,7 +308,7 @@
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
     const sheetHeight=(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
-    placePaper();renderer.render(scene,camera);
+    placePaper();placeCount();renderer.render(scene,camera);
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }

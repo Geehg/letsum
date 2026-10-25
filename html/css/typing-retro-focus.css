@@ -133,3 +133,10 @@ main.tb[data-reading-mode="immersive"] .tb-focus-book-tools .tb-toc select{min-w
 .tb-focus-book-pager .tb-pno::before{content:"현재 쪽 ";font-size:10px;font-weight:400;color:var(--t-mute);margin-right:4px}
 
 .tb-focus-book-tools .tb-toc>span{white-space:nowrap;flex-shrink:0}
+
+/* Fill the viewport through the cloth, without a footer band or bottom gutter. */
+body.tb-retro-immersive{background:var(--tb-page,#ddd7ca)}
+body.tb-retro-immersive main.tb,body.tb-retro-immersive .tb-app,body.tb-retro-immersive .tb-instrument{padding-bottom:0;margin-bottom:0}
+@keyframes tb-paper-caret{0%,48%{opacity:1}49%,100%{opacity:0}}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-caret::before{animation:tb-paper-caret 1.1s steps(1,end) infinite;border-left-width:2.5px}
+@media(prefers-reduced-motion:reduce){main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-caret::before{animation:none}}
