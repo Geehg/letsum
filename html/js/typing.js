@@ -498,7 +498,7 @@
 
   // ---------- 창 ----------
   function open(id) { $(id).hidden = false; const f = id === "tbFinish" ? $("fnNext") : $(id).querySelector(".tb-modal button:not(.x), .tb-modal input"); f?.focus(); }
-  function close(id) { $(id).hidden = true; if (id === "tbFinish" && state.book) $("tbInput").focus({ preventScroll: true }); }
+  function close(id) { $(id).hidden = true; }
   function shotPage() {
     const b = state.book; const text = b.pages[state.page]; const f = fontById(state.fontW);
     const excerpt = text.length > 260 ? chars(text).slice(0, 250).join("").replace(/\s\S*$/, "") + " …" : text;
@@ -532,7 +532,7 @@
     $("tbOrig").addEventListener("click", () => inp.focus());
     $("tbPrev").addEventListener("click", () => loadPage(state.page - 1));
     $("tbNext").addEventListener("click", () => loadPage(state.page + 1));
-    $("tbReset").addEventListener("click", () => { if (!confirm("이 쪽에 입력한 내용만 지울까요? (완성 기록은 남습니다)")) return; Object.assign(state, { draft: "", elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false }); state.drafts[state.page] = ""; inp.value = ""; refresh(); storeProgress(); inp.dispatchEvent(new Event("tb:audio-reset")); inp.focus(); });
+    $("tbReset").addEventListener("click", () => { if (!confirm("이 쪽에 입력한 내용만 지울까요? (완성 기록은 남습니다)")) return; Object.assign(state, { draft: "", elapsed: 0, keystrokes: 0, attempts: 0, errors: 0, started: false }); state.drafts[state.page] = ""; inp.value = ""; refresh(); storeProgress(); inp.dispatchEvent(new Event("tb:audio-reset")); });
     const resizeText = (delta) => {
       if ($("tbMain").dataset.readingMode === "immersive") { state.traceFontSize = Math.max(10, Math.min(28, state.traceFontSize + delta)); writeJSON("trace-font", state.traceFontSize); }
       else { state.fontSize = Math.max(14, Math.min(34, state.fontSize + delta)); writeJSON("font", state.fontSize); }
@@ -542,7 +542,7 @@
     $("tbPlus").addEventListener("click", () => resizeText(2));
     $("tbFocusNextAction").addEventListener("click", () => $("tbNext").click());
     $("tbFontO").addEventListener("change", (e) => { state.fontO = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); });
-    $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.dispatchEvent(new Event("tb:audio-reset")); inp.focus(); });
+    $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.dispatchEvent(new Event("tb:audio-reset")); });
     $("tbFinger").addEventListener("click", () => { state.finger = !state.finger; $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").setAttribute("aria-pressed", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF"; writeJSON("finger", state.finger); });
     $("tbKbToggle").addEventListener("click", () => { state.kb = !state.kb; $("tbKeys").hidden = !state.kb; $("tbKbToggle").setAttribute("aria-pressed", state.kb); $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF"; writeJSON("kb", state.kb); });
     ["tbImportOpen", "tbImportTop", "tbSideAdd"].forEach((id) => $(id).addEventListener("click", () => open("tbImport")));
