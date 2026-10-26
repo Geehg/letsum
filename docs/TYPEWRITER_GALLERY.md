@@ -15,8 +15,8 @@
 - SM3 캐리지 시프트: 제조사 설명서. https://site.xavier.edu/polt/typewriters/OlympiaSM3.pdf
 - 화면 모델의 색상/생산 세대와 인물의 개별 기기가 같다는 주장 및 인물의 서비스 추천·보증을 하지 않는다.
 
-## 사진 · 크레딧
-원본 다운로드 후 변형 없이 보관. 화면에서 CSS로 일부를 잘라 표시하고 저채도로 표시. 각 카드 기록 링크, 접을 수 있는 크레딧에 원본·라이선스 링크 제공.
+## 초상 일러스트 · 사진 크레딧
+2026-10-26: 기존 사진을 참조하여 built-in image_gen으로 지폐 동판화풍 초상화 3종을 생성. 얼굴·나이·시선·의복 특징을 유지하고 배경을 제거, 올리브 차콜 단색의 곡선 해칭과 교차선으로 재해석. 화면은 `people/*-engraved.webp`(480×600)를 사용하며, CSS 필터 없이 종이 배경에 multiply 합성. 원본 사진은 아래 경로에 그대로 보존. 각 카드 기록 링크, 접을 수 있는 크레딧에 원본·라이선스와 일러스트 변형 사실을 명시. 우디 앨런 참조 사진의 David Shankbone / CC BY 3.0 크레딧 유지. 생성 프롬프트는 `docs/typewriter-portrait-prompts.json`. PNG 마스터는 작업 워크스페이스 `/Volumes/AI_dev/web/letsum-engraved-portraits/`에 보관.
 - `people/larry-mcmurtry.png`: 촬영자 미상, 1966년 The Last Picture Show 재킷 사진. Wikimedia Commons PD-US-no notice 표기. https://commons.wikimedia.org/wiki/File:Larry_McMurtry_Photo_Last_Picture_Show_1966.png
 - `people/cormac-mccarthy.jpg`: David Styles, 1973년 Child of God 재킷 사진. Commons 업로더 Blz 2049 크롭/보정본, PD-US-no notice/PD-scan 표기. https://commons.wikimedia.org/wiki/File:Cormac_McCarthy_(Child_of_God_author_portrait_-_high-res).jpg
 - `people/woody-allen.jpg`: David Shankbone, 2009 Tribeca Film Festival, CC BY 3.0. https://commons.wikimedia.org/wiki/File:Woody_Allen_portrait_2009.jpg / https://creativecommons.org/licenses/by/3.0/

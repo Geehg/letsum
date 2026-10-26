@@ -442,3 +442,9 @@ img.save("sample.png")
 ### 2026-10-26 — 실제 종이 이송 기본 ON
 - 최신 Claude 변경(a86a3a09) 확인 후, retro.paperFeed 기본값을 true로 변경. 저장된 명시적 false는 존중하며 새 사용자/종이 이송 값이 없는 기존 설정은 ON으로 시작. 토글과 저장 흐름은 유지.
 - 초기 설정 스위치의 aria-checked/표시 문구도 ON으로 동기화. typing.js v34.
+
+
+## 2026-10-26 — 타자기 선택 인물 초상 동판화 스타일
+- Larry McMurtry / Cormac McCarthy / Woody Allen 사진을 참조해 built-in image_gen으로 3종 일러스트 생성. 원본 사진 보존, `html/img/typewriters/people/*-engraved.webp` 사용.
+- 얼굴 특징·시선·의복 유지, 올리브 차콜의 곡선/교차 해칭. portrait 크기를 76×95로 정리하고 잘림/사진 필터 제거. CSS v3.
+- 출처 상세에는 사진 기반 재해석과 원본 촬영자·라이선스 유지. 생성 프롬프트 `docs/typewriter-portrait-prompts.json`.

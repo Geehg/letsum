@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-26",
+  "portraits": [
+    {
+      "name": "Larry McMurtry",
+      "asset": "larry-mcmurtry-engraved.webp",
+      "master": "larry-mcmurtry-engraved.png",
+      "prompt": "Use case: style-transfer.\nAsset: editorial portrait for a refined vintage typewriter selection gallery.\nReference image: original photograph of Larry McMurtry, the only identity reference. Transform this specific young man's likeness into a meticulous banknote intaglio engraved portrait. Preserve his recognizable face, dark swept hair, glasses, age and left-facing three-quarter profile; retain the open collared shirt. Reframe as a centered head-and-shoulders bust, face occupying most of the image, full hair and chin visible with modest clear margin. Remove bookshelves, bottle, hands and surroundings.\nStyle: authentic hand-cut copperplate line engraving used for banknote portraits, dense fine curved parallel contour lines and delicate crosshatching; facial planes and hair modeled entirely with crisp ink lines, restrained contrast, no photorealistic shading. Single dark warm olive-charcoal ink #343b30 on clean warm ivory #f3eddf. Crisp enough to remain recognizable as a small 76px portrait. Vertical 4:5 composition. Light unprinted background, subtle line taper at lower shoulders, no decorative border, no text, no numbers, no currency symbols, no seal, no watermark. This is a portrait illustration, not a whole banknote."
+    },
+    {
+      "name": "Cormac McCarthy",
+      "asset": "cormac-mccarthy-engraved.webp",
+      "master": "cormac-mccarthy-engraved.png",
+      "prompt": "Use case: style-transfer. Asset: editorial author portrait for a refined vintage typewriter gallery. Image 1 is the identity/photo reference. Image 2 is ONLY the engraving style and palette reference, not the person to depict. Transform Image 1 into a meticulous banknote intaglio engraved portrait. Preserve the specific person's recognizable face, age, hair, expression and gaze direction. Centered head-and-shoulders bust, full hair and chin visible, modest clear margin, face fills most of frame. Remove photo surroundings and hands. Match Image 2's precise curved parallel contour lines, fine crosshatching, single dark warm olive-charcoal ink #343b30 on warm ivory #f3eddf; model facial planes entirely in lines. Fine hand-cut copperplate workmanship, not a photo filter or pencil sketch. Vertical 4:5 composition; simple unprinted background; lower shoulder lines taper softly. No border, text, numbers, currency symbols, seal or watermark. This is a portrait illustration, not a whole banknote. Subject: Cormac McCarthy in the supplied 1973 photograph. Preserve the dark hair, moustache, strong eyebrows, rightward three-quarter gaze and patterned open-collar shirt."
+    },
+    {
+      "name": "Woody Allen",
+      "asset": "woody-allen-engraved.webp",
+      "master": "woody-allen-engraved.png",
+      "prompt": "Use case: style-transfer. Asset: editorial author portrait for a refined vintage typewriter gallery. Image 1 is the identity/photo reference. Image 2 is ONLY the engraving style and palette reference, not the person to depict. Transform Image 1 into a meticulous banknote intaglio engraved portrait. Preserve the specific person's recognizable face, age, hair, expression and gaze direction. Centered head-and-shoulders bust, full hair and chin visible, modest clear margin, face fills most of frame. Remove photo surroundings and hands. Match Image 2's precise curved parallel contour lines, fine crosshatching, single dark warm olive-charcoal ink #343b30 on warm ivory #f3eddf; model facial planes entirely in lines. Fine hand-cut copperplate workmanship, not a photo filter or pencil sketch. Vertical 4:5 composition; simple unprinted background; lower shoulder lines taper softly. No border, text, numbers, currency symbols, seal or watermark. This is a portrait illustration, not a whole banknote. Subject: Woody Allen in the supplied 2009 photograph. Preserve the grey tousled hair, thick dark rounded glasses, downcast slightly rightward gaze, lined face, tweed jacket, shirt and loose tie."
+    }
+  ]
+}
