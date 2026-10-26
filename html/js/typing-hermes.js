@@ -49,7 +49,7 @@
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
-   nodes.Paper.visible=true;nodes.Paper.castShadow=false;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
+   nodes.Paper.visible=true;nodes.Paper.castShadow=true;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
    // Window-shaped reflection cards describe chrome and enamel without a network HDRI.
    const room=new T.Scene();room.background=new T.Color(.055,.055,.055);
    for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
@@ -130,7 +130,7 @@
    });
    scene.add(new T.HemisphereLight(0xfff7e9,0x635347,.38));
    const keyLight=new T.DirectionalLight(0xffecd7,1.30);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
-   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.52,right:.52,top:.5,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=9;keyLight.shadow.blurSamples=12;
+   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=9;keyLight.shadow.blurSamples=12;
    const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
    // full-width table has no image boundary or lighting baked into the pattern.
@@ -224,6 +224,15 @@
    }
    applyTablecloth();
    observe(MutationObserver,()=>{applyTablecloth();wake();},main,{attributes:true,attributeFilter:['data-table']});
+   // A transparent rear wall receives the same upper-left light as the table.
+   // Keep it behind the entire carriage and sheet; the opaque depth-only Paper
+   // mesh masks this shadow out of the HTML writing surface. Its exposed height
+   // is updated with paper feed, so no hidden sheet tail casts a false shadow.
+   const wall=new T.Mesh(new T.PlaneGeometry(3.6,3),new T.ShadowMaterial({color:0x514538,opacity:.24,depthWrite:false}));
+   // VSM also draws receivers into its depth pass. Cull the wall's light-facing
+   // side there so the infinite backdrop cannot cast a shadow onto itself.
+   wall.material.shadowSide=T.BackSide;
+   wall.name='Rear_Wall_Shadow';wall.position.set(0,.70,-.26);wall.receiveShadow=true;scene.add(wall);
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
@@ -316,6 +325,7 @@
     ground.position.z=portrait?.90+.9*(ground.scale.y-1):.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     clothTexture.repeat.y=clothRepeat/2*ground.scale.y;
     ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
+    wall.scale.x=ground.scale.x;
     const nextPanel=$('tbFocusNextText')?.parentElement?.getBoundingClientRect?.();
     countLimit=tracing()&&main.dataset.focusSides==='beside'&&nextPanel?nextPanel.left-(rect?.left||0)-8:width-8;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);

@@ -6,7 +6,7 @@ fs.copyFileSync(root+'/html/js/vendor/three/three.module.js',path.join(scratch,'
 const T=await import(path.join(scratch,'hermes-three.mjs')),{GLTFLoader}=await import(path.join(scratch,'hermes-loader.mjs'));
 const b=fs.readFileSync(root+'/html/img/typewriters/hermes3000.glb');const gltf=await new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j));const nodes={};gltf.scene.traverse(o=>nodes[o.name]=o);
 const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene,renderedCamera;const textureLoads=[];
-function el(id){return {id,dataset:{},style:{setProperty(k,v){this[k]=v},getPropertyValue(k){return this[k]||''}},hidden:false,value:'',placeholder:'write',selectionStart:0,scrollHeight:594,scrollTop:0,clientWidth:870,clientHeight:600,parentElement:null,addEventListener(e,f){(events[id+':'+e]??=[]).push(f)},removeEventListener(e,f){events[id+':'+e]=(events[id+':'+e]||[]).filter(x=>x!==f)},appendChild(c){c.parentElement=this},after(c){c.parentElement=this.parentElement},setAttribute(){},dispatchEvent(e){for(const f of events[id+':'+e.type]||[])f(e)},remove(){},focus(){ctx.document.activeElement=this},getContext(){return {measureText(c){return {width:c.codePointAt(0)>127?26:13}},fillRect(){},fillText(){},createRadialGradient(){return {addColorStop(){}}}}}};}
+function el(id){return {id,children:[],dataset:{},style:{setProperty(k,v){this[k]=v},getPropertyValue(k){return this[k]||''}},hidden:false,value:'',placeholder:'write',selectionStart:0,scrollHeight:594,scrollTop:0,clientWidth:870,clientHeight:600,parentElement:null,addEventListener(e,f){(events[id+':'+e]??=[]).push(f)},removeEventListener(e,f){events[id+':'+e]=(events[id+':'+e]||[]).filter(x=>x!==f)},appendChild(c){c.parentElement=this},after(c){c.parentElement=this.parentElement},setAttribute(){},dispatchEvent(e){for(const f of events[id+':'+e.type]||[])f(e)},remove(){},focus(){ctx.document.activeElement=this},getContext(){return {measureText(c){return {width:c.codePointAt(0)>127?26:13}},fillRect(){},fillText(){},createRadialGradient(){return {addColorStop(){}}}}}};}
 const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
 class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene,camera){renderedScene=scene;renderedCamera=camera;renders++}dispose(){}}
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
@@ -18,6 +18,10 @@ const ctx={LSRefineTypewriterDetails:globalThis.LSRefineTypewriterDetails,LSBuil
 let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
+const wall=renderedScene.getObjectByName('Rear_Wall_Shadow');
+assert(wall?.receiveShadow&&wall.material.isShadowMaterial,'rear wall receives real projected shadows without painting the background');
+assert(!wall.material.depthWrite,'wall cannot occlude the HTML paper depth mask');
+assert(nodes.Paper.castShadow&&!nodes.Paper.material.colorWrite,'the visible sheet casts a shadow without a duplicate paper rendering');
 assert.equal(Object.values(nodes).filter(o=>o.name.startsWith('Key_')).length,61);assert.equal(Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name)).length,47);assert.equal(nodes.TYPEWRITER_ROOT.scale.x,1);
 const removedKeys=['Escape',...Array.from({length:12},(_,i)=>'F'+(i+1)),'PrintScreen','ScrollLock','Pause','Insert','Home','PageUp','Delete','End','PageDown','ArrowUp','ArrowLeft','ArrowDown','ArrowRight'];
 for(const code of removedKeys){
@@ -114,6 +118,17 @@ const modeObservers=()=>observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilte
 modeObservers();tick();const traceHeight=ids.tbHermesPaper.style.height,traceWidth=nodes.Paper.scale.x;
 assert(Math.abs(parseFloat(traceHeight)/600-297/210)<1e-8,'A4 aspect ratio');assert(Math.abs(traceWidth*.224-.420/1.15)<1e-8);
 assert(Math.abs(paperMatrix()[0]*600/(.420/1.15)/standardPixelsPerMeter-.75*1.15)<1e-8,'instrument is 15% larger than the previous .75x zoom');assertPaperInFrame();
+// A full A4 must remain inside the light camera; otherwise the wall shadow
+// acquires an artificial diagonal cut along the shadow-map frustum.
+renderedScene.updateMatrixWorld(true);
+const shadowLight=renderedScene.children.find(o=>o.isDirectionalLight&&o.castShadow);
+shadowLight.shadow.updateMatrices(shadowLight);
+const sheetBox=new T.Box3().setFromObject(nodes.Paper);
+for(const x of [sheetBox.min.x,sheetBox.max.x])for(const y of [sheetBox.min.y,sheetBox.max.y])for(const z of [sheetBox.min.z,sheetBox.max.z]){
+ const projected=new T.Vector3(x,y,z).project(shadowLight.shadow.camera);
+ assert(Math.abs(projected.x)<1&&Math.abs(projected.y)<1,'entire A4 casts an unclipped shadow');
+}
+
 // Full-viewport cloth must preserve the existing paper projection in its content column.
 const insetMatrix=paperMatrix();ids.tbHermesView.getBoundingClientRect=()=>({left:24,right:ids.tbHermesView.clientWidth+24});doc.documentElement={clientWidth:ids.tbHermesView.clientWidth+48};
 modeObservers();tick();paperMatrix().forEach((v,i)=>assert(Math.abs(v-insetMatrix[i])<1e-7,'edge-to-edge ground keeps paper framing'));

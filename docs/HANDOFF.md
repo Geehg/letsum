@@ -461,3 +461,10 @@ img.save("sample.png")
 ## 2026-10-26 — 모델별 추가 사용 인물
 - Hermes 3000: Sylvia Plath, Lettera 32: Francis Ford Coppola, Olympia SM3: Evan S. Connell. 각 모델에 기존 인물 아래 1명씩 추가하여 총 6명. 사용 근거 링크와 일러스트 참고 출처 제공.
 - 기존과 동일한 지폐 동판화풍 초상 3종 생성, 모델 선택 로직은 유지. typing-model-gallery.css v4. 상세 출처 TYPEWRITER_GALLERY.md, 프롬프트 typewriter-portrait-prompts.json.
+
+
+## 2026-10-26 — 타자기 뒤 벽면 그림자
+- Claude 최신 d50c1b75(회원·동기화) 확인 및 보존. 세 3D 모델 공통으로 기존 주광원에 연결된 투명 ShadowMaterial 후면 수신 면 추가. 기존 배경색은 유지하고 벽 그림자는 24% 농도로 표현.
+- 기존 DOM 종이의 깊이 마스크를 shadow caster로 사용해 실제 노출 높이·캐리지·종이 이송과 그림자가 함께 움직임. 숨겨진 종이 꼬리는 투영하지 않으며 글자 위로 그림자가 덮이지 않음.
+- A4 전체 그림자가 잘리지 않도록 주광원 shadow camera 범위 확대. VSM 수신 면의 자기 그림자 방지. typing-hermes.js v40.
+- 세 모델 입력/IME/이송 회귀 검사 및 A4 그림자 범위 검사. 기존 테스트 DOM의 children 누락 보완. 로컬 브라우저에서 Hermes 물리 이송·Lettera/Olympia 전체 용지 및 세로 태블릿 화면 확인.
