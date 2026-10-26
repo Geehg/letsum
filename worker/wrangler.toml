@@ -5,7 +5,11 @@ name = "letsum-api"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 workers_dev = false
-routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }]
+routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }, { pattern = "type.letsum.app/api/*", zone_name = "letsum.app" }]
+
+# 매일 03:17(UTC): 필사독서 만료 세션·장기 미접속 회원 정리
+[triggers]
+crons = ["17 3 * * *"]
 
 [[d1_databases]]
 binding = "DB"
@@ -17,8 +21,13 @@ migrations_dir = "migrations"
 [vars]
 ADMIN_ID = "admin"
 ADMIN_PW_HASH = "689db2d3a68fce03c7663845092dc7d58fc43085b39c38d146682cf1e7625ed3"
+# 필사독서 선택 회원 — 시행일(KST) 전에는 로그인 경로가 닫혀 있다. 공개 클라이언트 ID는 앱 등록 후 채운다(비밀값은 wrangler secret)
+AUTH_FROM = "2026-11-02"
+KAKAO_CLIENT_ID = ""
+NAVER_CLIENT_ID = ""
+GOOGLE_CLIENT_ID = ""
 
-# 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT
+# 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT / AUTH_SALT / NAVER_CLIENT_SECRET / GOOGLE_CLIENT_SECRET / KAKAO_CLIENT_SECRET(선택)
 
 # 과다 요청 차단(무료): IP별 10초 한도(40회). 넘으면 429. 화면 사용(피드 스크롤·상세 열기)은 1분 10~30회 정도라 닿지 않음. Cloudflare 계산이 근사라 실제로는 한도보다 조금 더 허용됨.
 [[ratelimits]]

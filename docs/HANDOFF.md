@@ -420,3 +420,13 @@ img.save("sample.png")
 - Hermes 외장 완만한 경계 법선 연결, 도장 광택/미세 요철 조정, 금속 명판 테두리·인레이·양각 두께. Lettera 외장 샘플과 공유 모서리 기반 상판 분할, 커버 이음새, 분할 명판 금속 backing. Olympia 외장 샘플 보강, 키 광택 및 활자봉/팁/분리판 재질 차등.
 - 선택용 세 모델 썸네일 재렌더. typing-hermes v37 / typing-lettera v3 / typing-olympia v4 / typing-details v1 / preview v3.
 - 세 모델 회귀 검사 통과: 닫힌 형상·키캡 정상 법선/중앙 표면, 입력·종이 이송·모델 교체·세로 화면 범위. 브라우저 정면/사선 렌더 확인. 사실 근거·남는 실측 한계는 `TYPEWRITER_DETAIL_REVIEW.md`.
+
+### 2026-10-26 — 필사독서 선택 회원(카카오·네이버·구글) · 기록 동기화 · 찜 · 나의 학습
+- **시행 2026-11-02**(개인정보처리방침·이용약관 7일 전 공지, `html/privacy.html`·`html/terms.html`). 그 전에는 `/api/auth/status`가 `{open:false}` → 로그인 버튼 숨김.
+- 서버: `worker/src/account.js`(라우트 `type.letsum.app/api/*`), D1 `0008_accounts.sql`(tb_users·tb_sessions·tb_data), 매일 크론 `17 3 * * *`(만료 세션·2년 미접속 회원 삭제). 회원 ID는 `HMAC(AUTH_SALT, 제공자:고유번호)`만, 세션은 쿠키 값의 SHA-256만 저장. 이메일·이름 받지 않음.
+- 클라이언트: `html/js/typing-sync.js` — 로그인 창(만 14세·동의 체크 필수), 계정 창(지금 동기화·내 데이터 내려받기·로그아웃·탈퇴). 45초마다(보이는 동안)·창 숨김 시 동기화.
+- 서버 키: `p:<책id>`(쪽 번호·완성 쪽 구간·지금 쓰는 쪽 초안·t), `days`·`points`·`marks`·`learn`·`last`·`prefs`. 합치기: 완성 쪽 합집합, 날짜별 값 큰 쪽, 찜은 책마다 최근(음수 = 해제), 설정·마지막 책은 최근. 가져온 글(import-*)은 보내지 않음.
+- 새 기능(로그인과 무관): 서가 카드 ♡ 찜 + 갈래 '♥ 찜한 책', 상단 `📈 나의 학습`(날짜별 글자·정확도·시간, 30회 이상 친 글쇠의 오타율). 저장 키 `typebook-v1:marks`·`typebook-v1:learn`.
+- 운영자 몫(보안상 직접): 카카오·네이버·구글 개발자 앱 등록 → 리디렉션 URI `https://type.letsum.app/api/auth/<kakao|naver|google>/callback` → 클라이언트 ID는 `worker/wrangler.toml` vars에, 비밀값은 `npx wrangler secret put NAVER_CLIENT_SECRET`·`GOOGLE_CLIENT_SECRET`(·`KAKAO_CLIENT_SECRET` 선택). `AUTH_SALT`는 설정 완료(바꾸면 기존 회원과 연결이 끊김).
+- 로컬 시험: `npx wrangler dev --port 8787 --local-upstream type.letsum.app --var AUTH_FROM:2020-01-01 --var AUTH_SALT:… --var KAKAO_CLIENT_ID:dummy` + 정적 파일과 /api를 함께 내주는 프록시(Origin을 https://type.letsum.app으로). 동기화·다른 기기 복원·병합·탈퇴(서버 0행) 확인.
+- 비용: Workers 무료 10만 요청/일, D1 무료 읽기 500만·쓰기 10만 행/일. 넘으면 요청이 실패할 뿐 과금 없음(무료 플랜).

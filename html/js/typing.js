@@ -75,6 +75,15 @@
     writeJSON(`progress:${state.book.id}`, { index: state.page, completed: [...state.completed], drafts: state.drafts, metrics: state.metrics, updatedAt: new Date().toISOString() });
     writeJSON("last", state.book.id);
   }
+  // 학습 기록(이 브라우저, 로그인하면 동기화): learn = { "YYYY-MM-DD": { a: 시도, e: 오타, s: 초, k: { 글쇠코드: [시도, 오타] } } }
+  function learn(expected, ok) {
+    const L = readJSON("learn", {}), d = today(), D = (L[d] = L[d] || { a: 0, e: 0, s: 0, k: {} });
+    D.a++; if (!ok) D.e++;
+    const code = keyFor(expected)[0]; if (code) { const x = (D.k[code] = D.k[code] || [0, 0]); x[0]++; if (!ok) x[1]++; }
+    const ks = Object.keys(L); if (ks.length > 400) ks.sort().slice(0, ks.length - 400).forEach((k) => delete L[k]);
+    writeJSON("learn", L);
+  }
+  function learnSec() { const L = readJSON("learn", {}), d = today(); (L[d] = L[d] || { a: 0, e: 0, s: 0, k: {} }).s++; writeJSON("learn", L); }
   function addDay(n) { if (n <= 0) return; const d = readJSON("days", {}); d[today()] = (d[today()] || 0) + n; writeJSON("days", d); }
   function streak() {
     const d = readJSON("days", {}); let s = 0; const t = new Date(Date.now() + 9 * 3600e3);
@@ -172,16 +181,19 @@
     if (b.cover) return `<span class="tb-cv has-img${big ? " big" : ""}" style="--c:${esc(b.color || "#444")}"><img src="${coverImg(b)}" alt="" loading="lazy" decoding="async"></span>`;
     return `<span class="tb-cv${big ? " big" : ""}" style="--c:${esc(b.color || "#444")};--ci:${esc(b.ink || "#fff")}"><span class="tb-cv-t" style="font-family:${f ? esc(stackOf(b.font)) : "inherit"}">${esc(b.title)}</span><span class="tb-cv-a">${esc(b.author)}</span>${b.year && b.year < 2000 ? `<i>${b.year}</i>` : ""}</span>`;
   }
+  const marked = (id) => (readJSON("marks", {})[id] || 0) > 0;
+  function toggleMark(id) { const M = readJSON("marks", {}); M[id] = marked(id) ? -Date.now() : Date.now(); writeJSON("marks", M); return M[id] > 0; }
   function bookCard(b) {
     const p = progressOf(b.id); const done = (p.completed || []).length; const n = b.pageCount || Math.max(1, Math.round((b.chars || 0) / 330)); // 열기 전에는 글자 수로 어림
     const pct = b.pageCount ? Math.round(done / b.pageCount * 100) : 0;
     const meta = `<span class="tb-cm"><b>${esc(b.title)}</b><small>${esc(b.author)} · ${b.nparts > 1 ? `${b.nparts}${b.poem ? "편" : "장"} · ` : ""}${(b.chars || 0) >= 10000 ? `${Math.round(b.chars / 10000).toLocaleString()}만` : (b.chars || 0).toLocaleString()}자 · ${b.pageCount ? "" : "약 "}${n.toLocaleString()}쪽</small>
       <span class="tb-cprog"><i style="width:${pct}%"></i></span><span class="tb-cgo">${done ? (pct >= 100 ? "완필 ✓ 다시 쓰기" : `이어 쓰기 · ${done}/${n}쪽`) : "필사 시작"}<em>→</em></span></span>`;
     const href = `#/read/${encodeURIComponent(b.id)}`, label = `${esc(b.title)} — ${esc(b.author)}`;
-    if (!b.cover) return `<a class="tb-card" href="${href}" aria-label="${label}">${cover(b)}${meta}</a>`;
+    const mk = b.imported ? "" : `<button type="button" class="tb-mark${marked(b.id) ? " on" : ""}" data-mark="${esc(b.id)}" aria-pressed="${marked(b.id)}" title="찜한 책에 담기">${marked(b.id) ? "♥" : "♡"}</button>`;
+    if (!b.cover) return `<a class="tb-card" href="${href}" aria-label="${label}">${cover(b)}${meta}${mk}</a>`;
     // 생성 표지: 입체 책(앞표지 + 책등). 마우스를 올리면 돌아가며 책등이 보이고, 제목·저자·분량이 나타난다. 두께는 분량에 따라
     const th = Math.round(Math.min(34, Math.max(16, 6 + 5 * Math.log10(Math.max(100, b.chars || 0)))));
-    return `<a class="tb-card tb-cov" href="${href}" aria-label="${label}"><span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3" aria-hidden="true"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span>${done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}${meta}</span></a>`;
+    return `<a class="tb-card tb-cov" href="${href}" aria-label="${label}"><span class="tb-b3" style="--th:${th}px;--sc:${esc(b.sc || b.color || "#444")};--si:${esc(b.si || "#fff")}">${cover(b)}<span class="tb-sp3" aria-hidden="true"><b>${esc(b.title)}</b><i>${esc(b.author)}</i></span>${done ? `<i class="tb-cbar" style="--p:${pct}%"></i>` : ""}${meta}</span>${mk}</a>`;
   }
   function renderShelf() {
     const themes = state.index.themes.map((t) => `<section class="tb-theme"><div class="tb-th-h"><div><p class="tb-kick">${esc(t.kicker)}</p><h2>${esc(t.title)}</h2><p class="note">${esc(t.desc)}</p></div><span class="tb-th-n">${t.books.length}편</span></div>
@@ -197,7 +209,7 @@
   }
 
   // ---------- 전체 서가(검색·갈래·작가) ----------
-  const CATS = [["all", "전체"], ["소설", "소설"], ["시", "시"], ["수필", "수필"], ["동화", "동화·동요"], ["en", "English"]];
+  const CATS = [["all", "전체"], ["mark", "♥ 찜한 책"], ["소설", "소설"], ["시", "시"], ["수필", "수필"], ["동화", "동화·동요"], ["en", "English"]];
   const lib = { q: "", cat: "all", author: "", shown: 24 };
   const catOf = (b) => b.cat || (b.poem ? "시" : "소설");
   function initLib() {
@@ -211,12 +223,12 @@
     const q = lib.q.trim().toLowerCase().replace(/\s+/g, "");
     const order = { 소설: 0, 시: 1, 수필: 2, 동화: 3 };
     const list = state.books.filter((b) => !b.imported && b.author !== "필사독서 예문" &&
-      (lib.cat === "all" || (lib.cat === "en" ? b.lang === "en" : b.lang !== "en" && catOf(b) === lib.cat)) &&
+      (lib.cat === "all" || (lib.cat === "mark" ? marked(b.id) : lib.cat === "en" ? b.lang === "en" : b.lang !== "en" && catOf(b) === lib.cat)) &&
       (!lib.author || b.author === lib.author) &&
       (!q || (b.title + b.author).toLowerCase().replace(/\s+/g, "").includes(q)))
       .sort((a, b) => (a.lang === "en") - (b.lang === "en") || (order[catOf(a)] ?? 9) - (order[catOf(b)] ?? 9) || a.author.localeCompare(b.author, "ko") || a.title.localeCompare(b.title, "ko"));
     const vis = list.slice(0, lib.shown);
-    $("tbGrid").innerHTML = vis.length ? vis.map(bookCard).join("") : `<p class="tb-empty">찾는 작품이 없습니다. 다른 이름으로 검색해 보세요.</p>`;
+    $("tbGrid").innerHTML = vis.length ? vis.map(bookCard).join("") : `<p class="tb-empty">${lib.cat === "mark" ? "아직 찜한 책이 없어요. 책 표지의 ♡를 눌러 담아 보세요." : "찾는 작품이 없습니다. 다른 이름으로 검색해 보세요."}</p>`;
     vis.forEach((b) => loadFont(fontById(b.font), b.title + b.author));
     $("tbMore").hidden = list.length <= lib.shown; $("tbMore").textContent = `더 보기 (${(list.length - lib.shown).toLocaleString()}권 더)`;
   }
@@ -368,7 +380,7 @@
     const a = chars(prev), b = chars(next), t = chars(state.book.pages[state.page]);
     if (b.length > a.length) { // 새로 확정된 글자만 셈(한글 조합 중간 자모는 세지 않음)
       state.attempts += b.length - a.length; let ok = 0;
-      for (let i = a.length; i < b.length; i++) if (same(b[i], t[i])) ok++; else state.errors++;
+      for (let i = a.length; i < b.length; i++) { const good = same(b[i], t[i]); if (good) ok++; else state.errors++; if (t[i] != null) learn(t[i], good); }
       addDay(ok);
     }
   }
@@ -504,7 +516,7 @@
       state.composing = false; // 조합이 끝난 한 음절을 한 번의 시도로(중간 자모는 오타로 세지 않음)
       state.draft = inp.value; // 브라우저마다 input·compositionend 순서가 달라 실제 값으로 판정
       const t = chars(state.book.pages[state.page]); const e = chars(inp.value.slice(0, inp.selectionStart)).length;
-      if (e > 0 && e <= t.length) { state.attempts++; if (same(chars(inp.value)[e - 1], t[e - 1])) addDay(1); else state.errors++; }
+      if (e > 0 && e <= t.length) { state.attempts++; const good = same(chars(inp.value)[e - 1], t[e - 1]); if (good) addDay(1); else state.errors++; learn(t[e - 1], good); }
       refresh(); storeProgress(); finishCheck();
     });
     inp.addEventListener("input", onInput);
@@ -512,7 +524,7 @@
     inp.addEventListener("drop", (e) => e.preventDefault());
     inp.addEventListener("keydown", (e) => { if (isRetro() && !e.repeat && !e.metaKey && !e.ctrlKey && !e.altKey && (e.key.length === 1 || ["Enter", "Backspace", "Process", "Unidentified"].includes(e.key))) { strike(); }
       if (e.key === "Tab") { e.preventDefault(); } if (!e.repeat && (e.key.length === 1 || e.key === "Enter" || e.isComposing || e.key === "Process" || e.key === "Unidentified")) state.keystrokes++; });
-    document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish", "tbSet"].forEach((id) => { if (!$(id).hidden) close(id); }); });
+    document.addEventListener("keydown", (e) => { press(e.code, true); if (e.key === "Escape") ["tbImport", "tbHelp", "tbFinish", "tbSet", "tbLearn", "tbAcctModal"].forEach((id) => { if (!$(id).hidden) close(id); }); });
     document.addEventListener("keyup", (e) => press(e.code, false));
     addEventListener("blur", () => document.querySelectorAll(".tb-k.down").forEach((k) => k.classList.remove("down")));
     $("tbOrig").addEventListener("click", () => inp.focus());
@@ -534,6 +546,12 @@
     ["tbImportOpen", "tbImportTop", "tbSideAdd"].forEach((id) => $(id).addEventListener("click", () => open("tbImport")));
     document.querySelectorAll(".tb-skin [data-skin]").forEach((b) => b.addEventListener("click", () => applySkin(b.dataset.skin)));
     $("tbHelpOpen").addEventListener("click", () => open("tbHelp"));
+    $("tbLearnOpen")?.addEventListener("click", () => { renderLearn(); open("tbLearn"); });
+    document.addEventListener("click", (e) => { // 표지의 ♡(찜) — 링크 이동 없이 담기·빼기
+      const b = e.target.closest("[data-mark]"); if (!b) return; e.preventDefault(); e.stopPropagation();
+      const on = toggleMark(b.dataset.mark); document.querySelectorAll(`[data-mark="${CSS.escape(b.dataset.mark)}"]`).forEach((x) => { x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); x.textContent = on ? "♥" : "♡"; });
+      toast(on ? "찜한 책에 담았습니다." : "찜한 책에서 뺐습니다."); if (lib.cat === "mark") renderLib();
+    }, true);
     $("tbSetOpen").addEventListener("click", () => open("tbSet"));
     $("tbStart").addEventListener("click", () => { const L = state.index.themes.find((t) => t.id === "poems").books; const pick = L.find((b) => !(progressOf(b.id).completed || []).length) || L[Math.floor(Math.random() * L.length)]; location.hash = "#/read/" + pick.id; });
     $("tbContinue").addEventListener("click", () => { const l = readJSON("last", ""); if (l) location.hash = "#/read/" + encodeURIComponent(l); });
@@ -561,6 +579,32 @@
     addEventListener("beforeunload", storeProgress);
     addEventListener("hashchange", route);
   }
+  // ---------- 나의 학습(날짜별 글자·정확도·시간, 약점 글쇠) ----------
+  function renderLearn() {
+    const L = readJSON("learn", {}), D = readJSON("days", {}), days = Object.keys(L).sort().reverse();
+    const sum = (f) => days.reduce((n, d) => n + f(L[d]), 0), A = sum((x) => x.a), E = sum((x) => x.e), S = sum((x) => x.s);
+    const label = {}; ROWS.flat().forEach(([code, en, ko]) => (label[code] = ko ? `${ko} · ${en}` : en || code));
+    const keys = {}; days.forEach((d) => Object.entries(L[d].k || {}).forEach(([c, [a, e]]) => { const x = (keys[c] = keys[c] || [0, 0]); x[0] += a; x[1] += e; }));
+    const weak = Object.entries(keys).filter(([, [a]]) => a >= 30).map(([c, [a, e]]) => [c, a, e / a]).sort((x, y) => y[2] - x[2]).slice(0, 8);
+    const pct = (a, e) => (a ? Math.round((a - e) / a * 1000) / 10 : 0), mm = (s) => (s >= 3600 ? `${Math.floor(s / 3600)}시간 ${Math.round(s % 3600 / 60)}분` : `${Math.round(s / 60)}분`);
+    $("tbLearnBody").innerHTML = !days.length ? `<p class="tb-mdesc">아직 학습 기록이 없어요. 한 쪽을 써 보면 날짜별 정확도와 약점 글쇠가 여기에 쌓입니다.</p>` : `
+      <div class="tb-lr-sum"><div><span>지금까지 확정한 글자</span><b>${A.toLocaleString()}</b></div><div><span>평균 정확도</span><b>${pct(A, E)}%</b></div><div><span>필사 시간</span><b>${mm(S)}</b></div><div><span>연속 필사</span><b>${streak()}일</b></div></div>
+      <h4>최근 14일</h4><table class="tb-lr-t"><thead><tr><th>날짜</th><th>쓴 글자</th><th>정확도</th><th>시간</th></tr></thead><tbody>${days.slice(0, 14).map((d) => `<tr><td>${d.slice(5).replace("-", ".")}</td><td>${(D[d] || 0).toLocaleString()}</td><td>${pct(L[d].a, L[d].e)}%</td><td>${mm(L[d].s)}</td></tr>`).join("")}</tbody></table>
+      <h4>자주 틀리는 글쇠</h4>${weak.length ? `<ol class="tb-lr-weak">${weak.map(([c, a, r]) => `<li><b>${esc(label[c] || c)}</b><i style="--w:${Math.min(100, Math.round(r * 300))}%"></i><span>오타 ${Math.round(r * 1000) / 10}% · ${a.toLocaleString()}회</span></li>`).join("")}</ol>` : `<p class="tb-mdesc">한 글쇠를 30번 이상 치면 오타율을 보여 드려요.</p>`}`;
+  }
+
+  // 동기화(typing-sync.js)가 다른 기기 기록을 합친 뒤 화면을 다시 그리도록 쓰는 고리
+  window.TB = {
+    openId: () => (state.book && !$("tbRead").hidden ? state.book.id : null),
+    flush: () => storeProgress(),
+    reloadOpen() { // 열려 있는 책: 저장소에 합쳐진 완성 쪽을 화면 상태에 더함
+      if (!state.book) return; const p = progressOf(state.book.id);
+      (p.completed || []).forEach((i) => Number.isInteger(i) && i < state.book.pages.length && state.completed.add(i)); refresh();
+    },
+    refreshShelf() { if (!$("tbShelf").hidden && state.index) renderShelf(); },
+    toast,
+  };
+
   function route() {
     const m = location.hash.match(/^#\/read\/(.+)$/);
     if (m) openBook(decodeURIComponent(m[1])); else showShelf();
@@ -581,7 +625,7 @@
     renderKeys(); $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF";
     $("tbKeys").hidden = !state.kb; $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF";
     bind(); route();
-    setInterval(() => { if (state.book && state.started && !$("tbModelGallery")?.open && !$("tbRead").hidden && document.visibilityState === "visible" && Date.now() - state.lastActivity <= 10000 && !state.completed.has(state.page)) { state.elapsed++; renderStats(); if (state.elapsed % 5 === 0) storeProgress(); } }, 1000);
+    setInterval(() => { if (state.book && state.started && !$("tbModelGallery")?.open && !$("tbRead").hidden && document.visibilityState === "visible" && Date.now() - state.lastActivity <= 10000 && !state.completed.has(state.page)) { state.elapsed++; learnSec(); renderStats(); if (state.elapsed % 5 === 0) storeProgress(); } }, 1000);
   }
   init().catch((e) => { $("tbThemes").innerHTML = `<p class="note">서가를 불러오지 못했습니다. 새로고침해 주세요. (${esc(e.message)})</p>`; });
 })();

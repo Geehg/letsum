@@ -2278,3 +2278,44 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 .tb-volume-ends{display:flex;justify-content:space-between;color:var(--t-mute);font-size:11px}
 .tb-sound-help{font-size:12px;line-height:1.6;color:var(--t-mute);margin:8px 0}
 @media(prefers-reduced-motion:reduce){.tb-sound-switch i,.tb-sound-switch i::after{transition:none}}
+/* 찜(서가 카드 오른쪽 위) */
+.tb-card{position:relative}
+.tb-mark{position:absolute;top:8px;right:8px;z-index:6;width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#5d5f5a;font-size:16px;line-height:30px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.18);opacity:0;transition:opacity .15s,transform .15s;cursor:pointer}
+.tb-card:hover .tb-mark,.tb-card:focus-within .tb-mark,.tb-mark:focus-visible,.tb-mark.on{opacity:1}
+.tb-mark.on{color:#d2394a}
+.tb-mark:hover{transform:scale(1.08)}
+@media(hover:none){.tb-mark{opacity:1}}
+/* 나의 학습 */
+.tb-learnm{width:min(600px,100%)}
+.tb-lr-sum{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--t-line);border-radius:var(--t-r2);margin:14px 0 20px}
+.tb-lr-sum div{padding:12px 12px 10px;display:flex;flex-direction:column;gap:4px}
+.tb-lr-sum div+div{border-left:1px solid var(--t-line)}
+.tb-lr-sum span{font-size:11.5px;color:var(--t-mute)}
+.tb-lr-sum b{font-size:19px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tb-learnm h4{font-size:13px;margin:18px 0 8px;color:var(--t-ink2)}
+.tb-lr-t{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
+.tb-lr-t th,.tb-lr-t td{padding:6px 8px;border-bottom:1px solid var(--t-line);text-align:right}
+.tb-lr-t th:first-child,.tb-lr-t td:first-child{text-align:left}
+.tb-lr-t th{font-weight:700;color:var(--t-mute);font-size:11.5px}
+.tb-lr-weak{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.tb-lr-weak li{display:grid;grid-template-columns:minmax(90px,1.1fr) 2fr auto;align-items:center;gap:10px;font-size:12.5px}
+.tb-lr-weak i{display:block;height:6px;border-radius:3px;background:var(--t-line);position:relative;overflow:hidden}
+.tb-lr-weak i::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:#d2394a}
+.tb-lr-weak span{color:var(--t-mute);font-variant-numeric:tabular-nums}
+.tb-lr-note{margin-top:16px}
+@media(max-width:560px){.tb-lr-sum{grid-template-columns:repeat(2,1fr)}.tb-lr-sum div:nth-child(3){border-left:0}.tb-lr-sum div:nth-child(n+3){border-top:1px solid var(--t-line)}}
+/* 계정(선택 회원) */
+.tb-acctm{width:min(460px,100%)}
+.tb-acct-list{margin:12px 0 14px;padding-left:18px;font-size:12.5px;line-height:1.8;color:var(--t-ink2)}
+.tb-age{align-items:flex-start;line-height:1.6;margin:0 0 14px}
+.tb-age input{margin-top:3px}
+.tb-age a{text-decoration:underline}
+.tb-login-btns{display:grid;gap:8px}
+.tb-login{height:46px;border-radius:8px;font-size:14.5px;font-weight:700;border:1px solid transparent;cursor:pointer}
+.tb-login:disabled{opacity:.4;cursor:not-allowed}
+.tb-login-kakao{background:#FEE500;color:rgba(0,0,0,.85)}
+.tb-login-naver{background:#03C75A;color:#fff}
+.tb-login-google{background:#fff;color:#1f1f1f;border-color:#747775}
+.tb-acct-st{font-size:12.5px;color:var(--t-ink2);margin:10px 0 14px}
+.tb-acctm .tb-set-acts{margin-bottom:8px}
+.tb-danger{color:#c0392b}

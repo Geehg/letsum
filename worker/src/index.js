@@ -1,4 +1,5 @@
 // LETSUM API — 좋아요 수·댓글. 로그인 없음, 개인정보 최소화(IP는 해시로만), AI 없음.
+// 필사독서 회원·동기화(type.letsum.app/api/auth/*, /api/me, /api/sync …)는 account.js
 // 경로: GET  /api/stats?ids=a,b,c        → { a: { likes, comments, liked } }
 //       POST /api/like     { id, on }      → { likes, liked }
 //       GET  /api/comments?id=x           → { items: [{ id, name, body, created, parent_id, likes, liked }] }  (오래된 순, 답글은 parent_id)
@@ -27,6 +28,7 @@
 //       POST /api/admin/shot { shotId, action: approve|reject|unpublish }
 //       GET  /api/admin/comments?filter=all|hidden|reported
 //       POST /api/admin/comment { commentId, action: hide|show|delete }
+import { account, accountCleanup } from "./account.js"; // 필사독서 선택 회원(type.letsum.app)
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
 // 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
@@ -473,6 +475,7 @@ export default {
     }
     try {
       const p = url.pathname;
+      const acc = await account(req, url, env); if (acc) return acc;
       if (req.method === "POST" && p === "/api/admin/login") return await adminLogin(req, env);
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
@@ -496,4 +499,6 @@ export default {
       return json({ error: "일시적인 오류입니다. 잠시 후 다시 시도해 주세요" }, 503);
     }
   },
+  // 매일 한 번: 필사독서 만료 세션·장기 미접속(2년) 회원 정리
+  async scheduled(event, env, ctx) { ctx.waitUntil(accountCleanup(env)); },
 };

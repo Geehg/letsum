@@ -14,14 +14,14 @@
 
 - 정적 사이트. 서버는 Synology NAS의 nginx 컨테이너 하나(`letsum-web`, 포트 8516), Cloudflare 터널 `kuri-nas`가 두 주소를 같은 포트로 보낸다. nginx가 Host로 나눔(`nginx/default.conf`).
 - type.letsum.app은 **css·js·data/typing·img를 letsum.app과 같은 파일로 공유**한다(nginx `location ~ ^/(css|js|img|data/typing)/`). 첫 화면 `/`만 `html/type/index.html`.
-- 좋아요·댓글 API는 Cloudflare Worker(`worker/`), letsum.app 전용.
+- Cloudflare Worker(`worker/`): letsum.app 좋아요·댓글 API + type.letsum.app 선택 회원·동기화(`worker/src/account.js`, `/api/*`, 2026-11-02 시행).
 
 ## 2. 절대 규칙(요약)
 
 1. 사용자 대상 AI 기능 금지(운영비 0원). 계산은 브라우저·정적 데이터로.
 2. **지어내지 않는다** — 날짜·라이선스·순위·별점·인기 수치 금지. 필사독서의 '오늘의 한 편' 같은 것은 날짜로만 고른다.
 3. 필사독서 본문은 **저작자 사망 1955년 이전(국내 보호기간 만료)** 작품만. 한국 = 위키문헌, 영어 = Project Gutenberg 공개 원문. 번역본 넣지 않음.
-4. 필사 기록은 브라우저 localStorage(`typebook-v1:*`)에만. 서버 전송·계정·랭킹 만들지 않음(가짜 랭킹 금지).
+4. 필사 기록은 브라우저 localStorage(`typebook-v1:*`)가 기본. **로그인한 경우에만** `html/js/typing-sync.js`가 계정에 동기화(키·병합 규칙은 HANDOFF 2026-10-26). 이메일·이름 수집, 랭킹(가짜 포함) 만들지 않음. 수집 항목을 바꾸면 개인정보처리방침 7일 전 공지.
 5. 비밀번호·토큰을 코드·문서에 넣지 않는다.
 6. 운영자가 시킨 것만 지우고, 고친 뒤 실제 화면을 확인하고 보고한다.
 
@@ -36,7 +36,7 @@ bash tools/run.sh finish "커밋 메시지"   # 검증 → git add -A → 커밋
 ```
 - 푸시 후 **운영자가 NAS 패널 '받아와 재배포'** 를 눌러야 사이트에 반영된다.
 - `nginx/default.conf`를 바꾸면 재배포만으로 안 되고 컨테이너 재시작(`docker restart letsum-web`) 필요 — 운영자에게 요청.
-- css·js를 바꾸면 **`?v=` 숫자를 올린다**: 필사독서는 `tools/typing_app.html`의 `css/style.css?v=`·`js/typing.js?v=` (현재 108·18). letsum.app 페이지는 각 html의 `?v=`.
+- css·js를 바꾸면 **`?v=` 숫자를 올린다**: 필사독서는 `tools/typing_app.html`의 `css/style.css?v=`·`js/typing.js?v=` (2026-10-26 기준 110·33, `typing-sync.js?v=1`). letsum.app 페이지는 각 html의 `?v=`.
 
 ## 4. 필사독서 구조(가장 자주 고칠 곳)
 
@@ -48,6 +48,7 @@ bash tools/run.sh finish "커밋 메시지"   # 검증 → git add -A → 커밋
 - 위 막대: 위치(MY LIBRARY / 작품), **디자인 선택**(몰입 밝게·몰입 어둡게·레트로·책상·잉크), **⚙ 설정**(읽기 화면에서만), 도서 가져오기, ?.
 - 서가 `#tbShelf`: 소개·기록(`#tbMe`) → 추천 줄(`#tbThemes`, index.json의 themes) → 전체 서가(`#tbLib`: 검색 `#tbQ`·갈래·작가 필터·'더 보기') → 안내.
 - 읽기 `#tbRead`: 머리 `.tb-rh`(입체 표지 `#tbCv` + 도서 정보 `.tb-rh-body`: 제목·목차 `#tbToc`·정보 `#tbInfo`·쪽 넘김 `.tb-pager`) + 진행 수치 `.tb-stats` → `.tb-machine`(레트로 캐리지 + 원문 `#tbOrig`/필사 `#tbInput`) → 가상 키보드 `#tbKb`.
+- 위 막대에 `📈 나의 학습`(`#tbLearn`), `☁ 로그인`(`#tbAcct` → `#tbAcctModal`, 시행일 전·제공자 미설정 시 숨김). 서가 카드 ♡ 찜(`.tb-mark`).
 - 창: `#tbImport`(TXT·MD·EPUB), `#tbSet`(필사 설정: 글꼴·글자 크기·레트로 타건음·음량·용지·다시 쓰기·인쇄), `#tbHelp`, `#tbFinish`(쪽 완성).
 
 ### 디자인(스킨) 체계 — `style.css`

@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — 명작을 따라 쓰는 타이핑 독서"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-<link rel="stylesheet" href="/css/style.css?v=109">
+<link rel="stylesheet" href="/css/style.css?v=110">
 <link rel="stylesheet" href="/css/typing-hero.css?v=2">
 <link rel="stylesheet" href="/css/typing-3d.css?v=11">
 <link rel="stylesheet" href="/css/typing-retro-focus.css?v=8">
@@ -35,7 +35,9 @@
     <div class="tb-top-r">
       <div class="tb-skin" role="group" aria-label="화면 디자인"><span>디자인</span><button type="button" data-skin="focus-light" title="몰입 밝게 — 밝은 한 단 화면">몰입 밝게</button><button type="button" data-skin="focus-dark" title="몰입 어둡게 — 어두운 한 단 화면">몰입 어둡게</button><button type="button" data-skin="retro" title="레트로 — 타자기 본체·타건음·용지">레트로</button><button type="button" data-skin="retro-focus" title="레트로 몰입 — 기본 · 한 장의 종이에 원문을 따라 쓰기">레트로 몰입</button><button type="button" data-skin="book" title="책상 — 흰 카드와 펼친 책">책상</button><button type="button" data-skin="ink" title="잉크 — LETSUM 평면 활자 견본">잉크</button></div>
       <button class="tb-plain tb-setbtn" id="tbSetOpen" type="button" hidden aria-haspopup="dialog"><b>⚙</b> 설정</button>
+      <button class="tb-plain" id="tbLearnOpen" type="button" aria-haspopup="dialog"><b>📈</b> 나의 학습</button>
       <button class="tb-plain" id="tbImportTop" type="button"><b>＋</b> 도서 가져오기</button>
+      <button class="tb-plain tb-acctbtn" id="tbAcct" type="button" hidden aria-haspopup="dialog"><b>☁</b> 로그인</button>
       <button class="tb-ico" id="tbHelpOpen" type="button" aria-label="필사하는 법">?</button>
     </div>
   </div></div>
@@ -209,6 +211,23 @@
     </div>
   </div></div>
 
+  <!-- 나의 학습 -->
+  <div class="tb-ov" id="tbLearn" hidden><div class="tb-modal tb-learnm" role="dialog" aria-modal="true" aria-labelledby="tbLearnH">
+    <button class="x" data-close aria-label="닫기">×</button>
+    <p class="tb-kick">MY PRACTICE</p>
+    <h3 id="tbLearnH">나의 학습</h3>
+    <div id="tbLearnBody"></div>
+    <p class="tb-mdesc tb-lr-note">확정한 글자 기준의 참고값입니다. 기록은 이 브라우저에 저장되고, 로그인하면 계정에도 보관됩니다.</p>
+  </div></div>
+
+  <!-- 계정(선택 회원) -->
+  <div class="tb-ov" id="tbAcctModal" hidden><div class="tb-modal tb-acctm" role="dialog" aria-modal="true" aria-labelledby="tbAcctH">
+    <button class="x" data-close aria-label="닫기">×</button>
+    <p class="tb-kick">ACCOUNT</p>
+    <h3 id="tbAcctH">기록 이어 쓰기</h3>
+    <div id="tbAcctBody"></div>
+  </div></div>
+
   <!-- 도움말 -->
   <div class="tb-ov" id="tbHelp" hidden><div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tbHelpH">
     <button class="x" data-close aria-label="닫기">×</button>
@@ -258,13 +277,14 @@
 
 <footer>
   <div class="wrap">
-    <p class="fine">LETSUM(렛섬) 필사독서 — 서가의 작품은 저작권 보호기간이 끝난 글(위키문헌·Project Gutenberg 공개 원문)이며, 필사 기록은 이 브라우저에만 저장됩니다. 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a><br><a href="https://letsum.app/privacy.html">개인정보처리방침</a> · <a href="https://letsum.app/terms.html">이용약관</a> · <a href="https://letsum.app/notice.html">저작권·라이선스 고지</a> · <a href="/js/JSZip-LICENSE.md">JSZip 라이선스</a></p>
+    <p class="fine">LETSUM(렛섬) 필사독서 — 서가의 작품은 저작권 보호기간이 끝난 글(위키문헌·Project Gutenberg 공개 원문)이며, 필사 기록은 이 브라우저에 저장되며, 로그인한 경우에만 계정에 동기화됩니다. 운영 고요서가 출판사 · 문의 <a href="mailto:interq4@naver.com">interq4@naver.com</a><br><a href="https://letsum.app/privacy.html">개인정보처리방침</a> · <a href="https://letsum.app/terms.html">이용약관</a> · <a href="https://letsum.app/notice.html">저작권·라이선스 고지</a> · <a href="/js/JSZip-LICENSE.md">JSZip 라이선스</a></p>
   </div>
 </footer>
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
 <script src="/js/typing-audio.js?v=2"></script>
-<script src="/js/typing.js?v=32"></script>
+<script src="/js/typing.js?v=33"></script>
+<script src="/js/typing-sync.js?v=1"></script>
 <script src="/js/typing-3d.js?v=6"></script>
 <script src="/js/typing-retro-focus.js?v=10"></script>
 <script src="/js/typing-lettera.js?v=3"></script>
