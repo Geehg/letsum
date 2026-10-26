@@ -116,9 +116,9 @@
   }
 
   // ---------- 레트로 타자기: 실제 녹음(typing-audio.js)·캐리지·용지·인쇄 ----------
-  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham", paperFeed: false }, readJSON("retro", {}));
+  const retro = Object.assign({ sound: true, volume: 38, paper: "ivory", table: "gingham", paperFeed: true }, readJSON("retro", {}));
   retro.sound = retro.sound !== false;
-  retro.paperFeed = retro.paperFeed === true;
+  retro.paperFeed = retro.paperFeed !== false;
   retro.volume = Number.isFinite(Number(retro.volume)) ? Math.max(0, Math.min(100, Math.round(Number(retro.volume)))) : 38;
   function updateSoundControls() {
     $("tbSound").setAttribute("aria-checked", String(retro.sound));
