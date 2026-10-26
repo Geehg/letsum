@@ -431,3 +431,10 @@ img.save("sample.png")
 - 운영자 몫(보안상 직접): 개발자 앱 등록 → 리디렉션 URI `https://type.letsum.app/api/auth/<kakao|naver|google>/callback` → 클라이언트 ID는 `worker/wrangler.toml` vars에, 비밀값은 `npx wrangler secret put NAVER_CLIENT_SECRET`·`GOOGLE_CLIENT_SECRET`(·`KAKAO_CLIENT_SECRET` 선택). `AUTH_SALT`는 설정 완료(바꾸면 기존 회원과 연결이 끊김).
 - 로컬 시험: `npx wrangler dev --port 8787 --local-upstream type.letsum.app --var AUTH_FROM:2020-01-01 --var AUTH_SALT:… --var KAKAO_CLIENT_ID:dummy` + 정적 파일과 /api를 함께 내주는 프록시(Origin을 https://type.letsum.app으로). 동기화·다른 기기 복원·병합·탈퇴(서버 0행) 확인.
 - 비용: Workers 무료 10만 요청/일, D1 무료 읽기 500만·쓰기 10만 행/일. 넘으면 요청이 실패할 뿐 과금 없음(무료 플랜).
+
+### 2026-10-26 — 몸체 비율·홀더·종이 바깥 진행 표시
+- 세 모델 몸체/키/타격 리그를 타격점 중심으로 균등 0.9배, X축 3도 기울여 약간 위에서 내려다보는 구도로 변경. 캐리지와 종이는 독립 유지하여 용지 폭/입력 폰트/타격점 유지. Lettera/SM3 후면 외장·이음새는 캐리지 전체 이동 간격을 확보하도록 완만하게 보정.
+- 용지 앞 좌우 Card_Holder는 안쪽 타격 간격과 끝 윤곽·높이를 유지하면서 중앙 직선 구간만 늘려 각각 가로폭 10% 확대. 이전 진행 숫자용 입체 플레이트와 좌측 홀더의 앞쪽 돌출 보정 제거.
+- 글자 수 DOM을 종이 바깥 우측 상단으로 이동하고 종이 이동에 동기화. 옆 패널/좁은 화면과 겹치는 경우 우측 상단 바로 위로 배치. 종이 텍스트처럼 확대·축소하지 않아 가독성 유지.
+- 회귀 검사: 균등 축소·각도·타격점 고정, 홀더 폭과 안쪽 간격, 종이 바깥 수치 위치, 기존 IME/종이 이송/모델 교체·세로 구도. 브라우저 768×1024 / 390×844, 입력151→152→151 갱신 확인.
+- typing-hermes.js v38 / typing-3d.css v12. 필수 페이지 생성에서 함께 갱신된 주제/짝짓기 페이지는 생성 결과대로 보존.

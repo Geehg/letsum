@@ -227,16 +227,35 @@
    // Wide soft contact below the rubber feet, plus real moving cast shadows above it.
    const contactCanvas=document.createElement('canvas');contactCanvas.width=128;contactCanvas.height=128;const cc=contactCanvas.getContext('2d');const gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(25,32,26,.16)');gradient.addColorStop(.6,'rgba(25,32,26,.07)');gradient.addColorStop(1,'rgba(25,32,26,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
    const contact=new T.Mesh(new T.PlaneGeometry(.49,.33),new T.MeshBasicMaterial({map:new T.CanvasTexture(contactCanvas),transparent:true,depthWrite:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,-.003,.01);scene.add(contact);
-   // Keep the progress holder in front of the travelling platen knobs.
-   // Move along the fixed viewing ray to preserve its on-screen outline.
-   nodes.Card_Holder_Left.position.y+=.06*(.395/.73);nodes.Card_Holder_Left.position.z+=.06;
-   nodes.Card_Holder_Left.material=new T.MeshStandardMaterial({color:0x242c26,metalness:.5,roughness:.4,envMapIntensity:.25,side:T.DoubleSide});
-   // Print progress on the inset surface.
-   const countCanvas=document.createElement('canvas');countCanvas.width=512;countCanvas.height=128;
-   const countContext=countCanvas.getContext('2d'),countTexture=new T.CanvasTexture(countCanvas);
-   countTexture.encoding=T.sRGBEncoding;countTexture.minFilter=T.LinearFilter;
-   const countPlate=new T.Mesh(new T.PlaneGeometry(.083,.018),new T.MeshBasicMaterial({map:countTexture,toneMapped:false}));
-   countPlate.position.set(-.0615,.1705+.06*(.395/.73),-.0595);countPlate.name='Typing_Progress_Inset';scene.add(countPlate);let drawnCount='';
+   // Body-only presentation transform: uniform 10% reduction and a subtle
+   // 3-degree top view around the fixed type strike point. Paper/carriage stay put.
+   // Preserve clearance under the unchanged carriage after the body reduction.
+   // The shallow rear relief affects the enclosure/seam only, not the strike rig.
+   if(selectedModel!=='hermes3000')for(const name of ['Ribbon_Hood','Cast_Perimeter','Lettera_Cover_Seam','Olympia_Cover_Chrome']){
+    const mesh=nodes[name];if(!mesh)continue;mesh.geometry=mesh.geometry.clone();const g=mesh.geometry,p=g.attributes.position,n=g.attributes.normal;
+    for(let i=0;i<p.count;i++){const z=p.getZ(i),t=Math.max(0,Math.min(1,(-.10-z)/.05)),drop=.008*t*t*(3-2*t),slope=t>0&&t<1?-.008*6*t*(1-t)/.05:0;
+     p.setY(i,p.getY(i)-drop);const normal=new T.Vector3(n.getX(i),n.getY(i),n.getZ(i)+slope*n.getY(i)).normalize();n.setXYZ(i,normal.x,normal.y,normal.z);}
+    p.needsUpdate=n.needsUpdate=true;g.computeBoundingBox();g.computeBoundingSphere();
+   }
+   const bodyPose=new T.Group();bodyPose.name='Typewriter_Body_Pose';
+   const strikePivot=new T.Vector3(0,.164,-.119);
+   for(const part of [nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right])asset.scene.attach(part);
+   const bodyParts=asset.scene.children.filter(o=>![nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right].includes(o)&&!o.isLight&&!o.isCamera);
+   asset.scene.add(bodyPose);for(const part of bodyParts)bodyPose.attach(part);
+   bodyPose.matrixAutoUpdate=false;
+   bodyPose.matrix.makeTranslation(...strikePivot.toArray()).multiply(new T.Matrix4().makeRotationX(Math.PI/60)).multiply(new T.Matrix4().makeScale(.9,.9,.9)).multiply(new T.Matrix4().makeTranslation(...strikePivot.clone().negate().toArray()));
+   contact.scale.set(.9,.9,1);
+   // Extend only each paper holder's straight middle; retain its end profiles,
+   // thickness and the inner gap around the printing point.
+   for(const name of ['Card_Holder_Left','Card_Holder_Right']){
+    const holder=nodes[name];holder.geometry=holder.geometry.clone();const g=holder.geometry,p=g.attributes.position;g.computeBoundingBox();
+    const b=g.boundingBox,extra=(b.max.x-b.min.x)*.10,mid=(b.max.x+b.min.x)/2,half=(b.max.x-b.min.x)*.20,leftSide=name.endsWith('Left');
+    for(let i=0;i<p.count;i++){const x=p.getX(i),t=Math.max(0,Math.min(1,(x-mid+half)/(2*half)));p.setX(i,x+(leftSide?-extra*(1-t):extra*t));}
+    p.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
+   }
+   // A DOM counter follows the actual sheet corner, outside the clipped paper.
+   const count=$('tbHermesCount');stage.appendChild(count);
+   let countWidth=88,countHeight=20,countLimit=0;
    const camera=new T.OrthographicCamera();camera.position.set(0,.60,.73);camera.lookAt(0,.205,0);
    view.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
    const keys=Object.values(nodes).filter(o=>o.name.startsWith('Key_')),bars=Object.values(nodes).filter(o=>/^Typebar_\d+$/.test(o.name));
@@ -297,6 +316,8 @@
     ground.position.z=portrait?.90+.9*(ground.scale.y-1):.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     clothTexture.repeat.y=clothRepeat/2*ground.scale.y;
     ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
+    const nextPanel=$('tbFocusNextText')?.parentElement?.getBoundingClientRect?.();
+    countLimit=tracing()&&main.dataset.focusSides==='beside'&&nextPanel?nextPanel.left-(rect?.left||0)-8:width-8;
     const selectedSize=parseFloat(getComputedStyle(main).getPropertyValue('--tb-size'))||(trace?14:18);
     const scale=sheetWidth/(span*a)*width;
     fontPixels=trace?selectedSize/(scale/600):Math.max(34,Math.min(76,16/(scale/600)));
@@ -320,7 +341,7 @@
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
     fullHeight=trace||physical?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
     input.style.paddingTop=(trace||physical?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace||physical?32:30)+'px';if(!trace)input.scrollTop=0;
-    paper.dataset.paper=main.dataset.paper||'ivory';$('tbHermesCount').textContent=$('tbCount').textContent;
+    paper.dataset.paper=main.dataset.paper||'ivory';count.textContent=$('tbCount').textContent;countWidth=Math.max(76,count.textContent.length*6.5+12);count.style.width=countWidth+'px';
     if(!composing){
      const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth;
      // Keep the active baseline at the ribbon. Unskewed text needs the same
@@ -363,12 +384,10 @@
     }
     paper.style.clipPath='none';
     paper.style.setProperty('--tb-feed-visible-height',visible+'px');
-   }
-   function placeCount(){
-    const text=$('tbHermesCount').textContent;if(text===drawnCount)return;drawnCount=text;
-    countContext.fillStyle='#242c26';countContext.fillRect(0,0,512,128);
-    countContext.font='52px monospace';countContext.textAlign='center';countContext.textBaseline='middle';
-    countContext.fillStyle='#efe8d2';countContext.fillText(text,256,66,470);countTexture.needsUpdate=true;
+    const right=x+sx*paperWidth,beside=right+8+countWidth<=countLimit;
+    count.dataset.placement=beside?'right':'above';
+    count.style.left=((view.offsetLeft||0)+(beside?right+8:Math.max(4,Math.min(width-countWidth-4,right-countWidth))))+'px';
+    count.style.top=((view.offsetTop||0)+y+(beside?2:-countHeight-6))+'px';
    }
    function frame(now){
     raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
@@ -406,7 +425,7 @@
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
     const sheetHeight=feeding()?Math.max(.0001,paperTop+currentFeed-.174):(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
-    placePaper();placeCount();renderer.render(scene,camera);
+    placePaper();renderer.render(scene,camera);
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
    }
@@ -425,7 +444,7 @@
    observe(ResizeObserver,resize,view);['tbMinus','tbPlus'].forEach(id=>listen($(id),'click',()=>{if(tracing())resize();}));listen($('tbFontW'),'change',()=>sync(true));listen($('tbReset'),'click',()=>queueMicrotask(()=>sync(true)));
    listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failed=true;failedModel=selectedModel;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
    function dispose(){
-    disposed=true;stop();cleanups.splice(0).forEach(fn=>fn());const geometries=new Set(),mats=new Set(),textures=new Set([grain,finish,countTexture,contact.material.map,...clothCache.values()]);
+    disposed=true;stop();cleanups.splice(0).forEach(fn=>fn());const geometries=new Set(),mats=new Set(),textures=new Set([grain,finish,contact.material.map,...clothCache.values()]);
     scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){mats.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}}});
     geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());environment.dispose();renderer.dispose();renderer.domElement.remove();
    }

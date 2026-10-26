@@ -31,8 +31,20 @@ for(const key of Object.values(nodes).filter(o=>o.name.startsWith('Key_'))){
  assert(bounds.min.x>-.214&&bounds.max.x<.214,'cap fits inside unchanged keyboard recess');
 }
 const enlargedCaps=new T.Box3();for(const o of Object.values(nodes).filter(o=>o.name.startsWith('Cap_')))enlargedCaps.expandByObject(o);
-assert(enlargedCaps.max.x-enlargedCaps.min.x>.39,'remaining keys fill the former navigation area');
+assert(enlargedCaps.max.x-enlargedCaps.min.x>.39*.9,'remaining keys fill the former navigation area');
 assert(Math.abs(enlargedCaps.min.x+enlargedCaps.max.x)<.002,'keyboard is centered');
+const bodyPose=gltf.scene.getObjectByName('Typewriter_Body_Pose'),bodyScale=new T.Vector3(),bodyPosition=new T.Vector3(),bodyRotation=new T.Quaternion();
+bodyPose.matrix.decompose(bodyPosition,bodyRotation,bodyScale);
+assert(bodyScale.distanceTo(new T.Vector3(.9,.9,.9))<1e-9,'body reduces uniformly by 10 percent');
+assert(Math.abs(new T.Euler().setFromQuaternion(bodyRotation).x-Math.PI/60)<1e-9,'body-only top view is three degrees');
+assert(new T.Vector3(0,.164,-.119).applyMatrix4(bodyPose.matrix).distanceTo(new T.Vector3(0,.164,-.119))<1e-9,'body pose keeps the printing point fixed');
+assert.equal(nodes.Carriage.parent,gltf.scene,'carriage and paper remain outside body reduction');
+for(const side of ['Left','Right']){const holder=nodes['Card_Holder_'+side];holder.geometry.computeBoundingBox();const b=holder.geometry.boundingBox;
+ assert(Math.abs(b.max.x-b.min.x-.094*1.1)<1e-7,'holder width grows ten percent');
+ assert(Math.abs((side==='Left'?b.max.x:b.min.x)-(side==='Left'?-.014:.014))<1e-7,'holder keeps its inner printing gap');
+ assert.equal(holder.parent,gltf.scene,'holder does not shrink with the body');}
+assert(!renderedScene.getObjectByName('Typing_Progress_Inset'),'old counter plate is removed');
+
 // The rebuilt enclosure and keycaps must export as closed surfaces, including UV seams.
 function assertClosed(name){
  const g=nodes[name].geometry,p=g.attributes.position,idx=g.index?.array||Array.from({length:p.count},(_,i)=>i),edges=new Map();
@@ -90,6 +102,10 @@ function assertPaperInFrame(){
  assert(Math.abs(w-framedWidth)<1e-7,'paper width preserved unless desktop side panels need space');
  assert(x>=0&&x+w<=ids.tbHermesView.clientWidth,'both side edges stay in frame during carriage travel');
  assert(y>=0&&y+h<=ids.tbHermesView.clientHeight,'whole A4 height stays in frame');
+ const counterX=parseFloat(ids.tbHermesCount.style.left),counterY=parseFloat(ids.tbHermesCount.style.top),counterW=parseFloat(ids.tbHermesCount.style.width);
+ assert(counterX>=0&&counterX+counterW<=vw,'progress stays horizontally inside the view');
+ assert(counterX>=x+w||counterY+20<=y,'progress is outside the paper');
+
 }
 // Drive the carriage from the source, including through IME composition.
 ids.tbMain.dataset.readingMode='immersive';ids.tbOrig.dataset.source='a'.repeat(25)+'\n'+'b'.repeat(70);
