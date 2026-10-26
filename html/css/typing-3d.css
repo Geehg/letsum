@@ -87,5 +87,5 @@ main.tb[data-paper-feed="physical"][data-hermes-ready="true"] #tbInput{overflow:
 .tb-hermes-loading[hidden]{display:none}
 .tb-hermes-loading button{font:inherit;color:inherit;padding:10px 16px;border:1px solid #a99e8e;border-radius:4px;background:#eee7db;cursor:pointer}
 main.tb[data-hermes-state="loading"] :is(.tb-hermes-paper,.tb-hermes-counter,.tb-hermes-view>canvas,.tb-focus-aside){visibility:hidden!important}
-main.tb[data-reading-mode="immersive"]:not([data-hermes-state="error"]) :is(.tb-machine,.tb-rh){display:none}
+main.tb[data-reading-mode="immersive"]:not([data-hermes-state="error"]) :is(.tb-machine,.tb-rh,#tbKb){display:none}
 main.tb[data-hermes-state="error"] .tb-hermes-view{height:140px;min-height:140px}

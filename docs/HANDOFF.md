@@ -477,3 +477,5 @@ img.save("sample.png")
 - 데스크톱 카메라는 전체 A4와 본체 하단을 함께 계산해 화면 높이에 맞춤. 기존 종이 상단만 기준으로 삼아 본체가 화면 아래로 밀리던 현상 수정.
 - 검증: startup guard와 명시적 모드 진입 검사, 세 모델 입력/IME/이송 및 데스크톱·세로 구도, 다운로드 실패·렌더 실패·context loss 후 같은 모델 재시도, 지연 다운로드 중 모델 변경, GPU 해제/단일 핸들러 검사 통과. 로컬 「운수 좋은 날」 첫 줄에서 본체 전체 표시 확인.
 - typing.js v35 / typing-hermes.js v41 / typing-model-gallery.js v2 / typing-3d.css v13.
+
+- 운영 최초 다운로드 확인 후, 준비 중 가상 키보드도 숨겨 일반 모드의 순간 노출을 완전히 차단. typing-3d.css v14.
