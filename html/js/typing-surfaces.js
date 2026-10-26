@@ -3,7 +3,7 @@
  * shells and attached to moving keys. The images encode relief, never lighting. */
 globalThis.LSApplyTypewriterSurfaces=function(T,root,model,{anisotropy=1,onLoad=()=>{}}={}){
  const profiles={
-  hermes3000:{tile:.120,depth:.00008,variation:.065,roughness:.30,coat:.36,coatRoughness:.22},
+  hermes3000:{tile:.120,depth:.00008,variation:.065,roughness:.26,coat:.48,coatRoughness:.19},
   lettera32:{tile:.120,depth:.000025,variation:.055,roughness:.23,coat:.60,coatRoughness:.16},
   olympiasm3:{tile:.120,depth:.0004,variation:.15,roughness:.69,coat:.035,coatRoughness:.58}
  };

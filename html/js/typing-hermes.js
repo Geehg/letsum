@@ -78,13 +78,19 @@
    for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
     const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color,side:T.DoubleSide}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,0,0);room.add(card);
    }
-   if(['olympiasm3','lettera32'].includes(selectedModel)){
+   if(['olympiasm3','lettera32','hermes3000'].includes(selectedModel)){
     // Narrow dark room divisions break up the chrome reflections; geometry and
     // physically based materials provide highlights, not white painted stripes.
     for(const [x,w] of [[-.7,.12],[.65,.24]]){const mullion=new T.Mesh(new T.BoxGeometry(w,2.6,.04),new T.MeshBasicMaterial({color:0x080b0c}));mullion.position.set(x,1.5,2.6);mullion.lookAt(0,.1,0);room.add(mullion);}
    }
    if(selectedModel==='lettera32'){
     const glossWindow=new T.Mesh(new T.BoxGeometry(.65,2.4,.025),new T.MeshBasicMaterial({color:0xf4f8ff}));glossWindow.material.color.multiplyScalar(4.2);glossWindow.position.set(-1.2,1.8,2);glossWindow.lookAt(0,0,0);room.add(glossWindow);
+   }
+   if(selectedModel==='hermes3000'){
+    // Broad window and narrow edge source: both reflect in the real curved shell.
+    for(const [pos,size,power,color] of [[[-1.4,1.4,2.1],[1.5,2.3,.025],3.6,0xfff8eb],[[1.8,.8,.6],[.22,2.1,.025],1.4,0xe5edf1],[[0,-.9,2.5],[2.2,.65,.025],2.6,0xfff6e7]]){
+     const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,.1,0);room.add(card);
+    }
    }
    const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();cleanups.push(()=>environment.dispose());
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
@@ -100,7 +106,7 @@
    for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.33;m.map=finish;m.roughnessMap=finish;m.clearcoat=.32;m.clearcoatRoughness=.23;m.bumpMap=grain;m.bumpScale=.00009;m.envMapIntensity=.68;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.color.setRGB(.19,.265,.20);m.roughness=.33;m.map=finish;m.roughnessMap=finish;m.clearcoat=.32;m.clearcoatRoughness=.23;m.bumpMap=grain;m.bumpScale=.00009;m.envMapIntensity=selectedModel==='hermes3000'?.94:.68;}
     else if(old.name==='Lettera_Blue_Enamel'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000025;m.envMapIntensity=1.05;}
     else if(old.name==='Olympia_Crinkle_Enamel'){m=old.clone();m.envMapIntensity=.32;}
     else if(old.name==='Hermes_Badge_Metal'){m=old.clone();m.envMapIntensity=1.05;}
@@ -135,6 +141,7 @@
    capMaterial.clearcoat=selectedModel==='olympiasm3'?.44:.30;capMaterial.clearcoatRoughness=selectedModel==='olympiasm3'?.21:.24;capMaterial.envMapIntensity=selectedModel==='olympiasm3'?.85:selectedModel==='lettera32'?.55:.24;
    if(selectedModel==='olympiasm3')capMaterial.roughness=.27;
    if(selectedModel==='lettera32'){capMaterial.roughness=.24;capMaterial.clearcoat=.48;capMaterial.clearcoatRoughness=.15;capMaterial.envMapIntensity=.72;}
+   if(selectedModel==='hermes3000'){capMaterial.color.setRGB(.32,.49,.255);capMaterial.roughness=.24;capMaterial.clearcoat=.42;capMaterial.clearcoatRoughness=.18;capMaterial.envMapIntensity=.65;}
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
     if(!o.isMesh||!o.name.startsWith('Cap_'))return;
@@ -143,7 +150,7 @@
      const p=g.attributes.position,n=g.attributes.normal,c=new Float32Array(p.count*3);
      for(let i=0;i<p.count;i++){
       const y=p.getY(i),top=smoothRange(.25,.82,n.getY(i))*smoothRange(-.001,.0035,y);
-      const skirt=.64+.13*smoothRange(-.008,.003,y),rim=.045*smoothRange(.0048,.0072,y);
+      const skirt=(selectedModel==='hermes3000'?.51:.64)+.13*smoothRange(-.008,.003,y),rim=.045*smoothRange(.0048,.0072,y);
       const tone=skirt*(1-top)+(1.02+rim)*top;
       c[i*3]=tone*.97;c[i*3+1]=tone;c[i*3+2]=tone*.96;
      }
@@ -151,9 +158,9 @@
     }
     o.material=capMaterial;
    });
-   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,.38));
-   const keyLight=new T.DirectionalLight(0xffecd7,1.30);keyLight.position.set(-.5,1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
-   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=.00045;keyLight.shadow.radius=9;keyLight.shadow.blurSamples=12;
+   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel==='hermes3000'?.25:.38));
+   const keyLight=new T.DirectionalLight(0xffecd7,1.30);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=selectedModel==='hermes3000'?.00012:.00045;keyLight.shadow.radius=selectedModel==='hermes3000'?4:9;keyLight.shadow.blurSamples=12;
    const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
    // full-width table has no image boundary or lighting baked into the pattern.

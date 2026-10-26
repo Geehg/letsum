@@ -76,7 +76,15 @@ for(const name of ['Cap_KeyA','Cap_Space','Cap_Enter']){
  for(let i=0;i<n.count;i++){const v=new T.Vector3().fromBufferAttribute(n,i);assert(Number.isFinite(v.length())&&Math.abs(v.length()-1)<1e-5,'cap tangent normals stay normalized');}
  const at=new T.Vector3(0,.04,0).applyMatrix4(cap.matrixWorld),dir=new T.Vector3(0,-1,0).transformDirection(cap.matrixWorld);detailRay.set(at,dir);assert(detailRay.intersectObject(cap,false).length>0,'crown has an outward-facing solid center: '+name);
 }
-if(model==='hermes3000'){assert.equal(nodes.Badge_Frame.material.metalness,1);assert.equal(nodes.Hermes_Badge.material.metalness,1);}
+if(model==='hermes3000'){
+ assert.equal(nodes.Badge_Frame.material.metalness,1);assert.equal(nodes.Hermes_Badge.material.metalness,1);
+ assert(nodes.Ribbon_Hood.geometry.index.count>90000,'cover contains interior curvature samples');
+ const n=nodes.Ribbon_Hood.geometry.attributes.normal;for(let i=0;i<n.count;i++)assert(Math.abs(new T.Vector3().fromBufferAttribute(n,i).length()-1)<1e-5,'deformed cover keeps unit normals');
+ assert(nodes.Cap_KeyA.material.envMapIntensity>.5,'key reflections remain visible');
+ assert(nodes.Ribbon_Hood.material.color.g<.30,'sage paint keeps its midtone');
+ assert(shadowLightForCheck().shadow.normalBias<.0002,'fine gaps do not lose their contact shadow');
+}
+function shadowLightForCheck(){return renderedScene.children.find(o=>o.isDirectionalLight&&o.castShadow);}
 if(model==='lettera32')assert(gltf.scene.getObjectByName('Lettera_Badge_Backing'),'split badge has a solid metal edge');
 const shellBounds=new T.Box3().setFromObject(nodes.Cast_Perimeter),trayBounds=new T.Box3().setFromObject(nodes.Bottom_Tray);
 assert(trayBounds.min.x>shellBounds.min.x&&trayBounds.max.x<shellBounds.max.x&&trayBounds.min.z>shellBounds.min.z&&trayBounds.max.z<shellBounds.max.z,'bottom tray is inset within enclosure');
