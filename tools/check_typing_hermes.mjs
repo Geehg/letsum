@@ -78,8 +78,13 @@ for(const name of ['Cap_KeyA','Cap_Space','Cap_Enter']){
 }
 if(model==='hermes3000'){
  assert.equal(nodes.Badge_Frame.material.metalness,1);assert.equal(nodes.Hermes_Badge.material.metalness,1);
- assert(nodes.Ribbon_Hood.geometry.index.count>90000,'cover contains interior curvature samples');
+ assert(nodes.Ribbon_Hood.geometry.attributes.position.count>10000,'rebuilt curved cover has interior surface samples');
  const n=nodes.Ribbon_Hood.geometry.attributes.normal;for(let i=0;i<n.count;i++)assert(Math.abs(new T.Vector3().fromBufferAttribute(n,i).length()-1)<1e-5,'deformed cover keeps unit normals');
+ const badgeRay=new T.Raycaster(),badge=nodes.Badge_Frame,normal=new T.Vector3(0,0,1).transformDirection(badge.matrixWorld),bp=badge.geometry.attributes.position;
+ for(const i of [0,Math.floor(bp.count/3),Math.floor(bp.count*2/3),bp.count-1]){
+  const point=new T.Vector3().fromBufferAttribute(bp,i).applyMatrix4(badge.matrixWorld);badgeRay.set(point.clone().addScaledVector(normal,.03),normal.clone().negate());const hit=badgeRay.intersectObject(nodes.Ribbon_Hood,false)[0];assert(hit&&hit.distance>.0298,'badge frame stays above the sloping cover');
+ }
+ const dividers=[];gltf.scene.traverse(o=>{if(o.name.startsWith('Hermes_Segment_Divider_'))dividers.push(o);});assert.equal(dividers.length,48,'fixed segment remains separate from animated typebars');
  assert(nodes.Cap_KeyA.material.envMapIntensity>.5,'key reflections remain visible');
  assert(nodes.Ribbon_Hood.material.color.g<.30,'sage paint keeps its midtone');
  assert(shadowLightForCheck().shadow.normalBias<.0002,'fine gaps do not lose their contact shadow');
