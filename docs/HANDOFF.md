@@ -427,6 +427,7 @@ img.save("sample.png")
 - 클라이언트: `html/js/typing-sync.js` — 로그인 창(만 14세·동의 체크 필수), 계정 창(지금 동기화·내 데이터 내려받기·로그아웃·탈퇴). 45초마다(보이는 동안)·창 숨김 시 동기화.
 - 서버 키: `p:<책id>`(쪽 번호·완성 쪽 구간·지금 쓰는 쪽 초안·t), `days`·`points`·`marks`·`learn`·`last`·`prefs`. 합치기: 완성 쪽 합집합, 날짜별 값 큰 쪽, 찜은 책마다 최근(음수 = 해제), 설정·마지막 책은 최근. 가져온 글(import-*)은 보내지 않음.
 - 새 기능(로그인과 무관): 서가 카드 ♡ 찜 + 갈래 '♥ 찜한 책', 상단 `📈 나의 학습`(날짜별 글자·정확도·시간, 30회 이상 친 글쇠의 오타율). 저장 키 `typebook-v1:marks`·`typebook-v1:learn`.
-- 운영자 몫(보안상 직접): 카카오·네이버·구글 개발자 앱 등록 → 리디렉션 URI `https://type.letsum.app/api/auth/<kakao|naver|google>/callback` → 클라이언트 ID는 `worker/wrangler.toml` vars에, 비밀값은 `npx wrangler secret put NAVER_CLIENT_SECRET`·`GOOGLE_CLIENT_SECRET`(·`KAKAO_CLIENT_SECRET` 선택). `AUTH_SALT`는 설정 완료(바꾸면 기존 회원과 연결이 끊김).
+- 앱 등록 현황(10-26): 구글 = 프로젝트 letsum-512005 웹 클라이언트·프로덕션 게시 완료 / 카카오 = 앱 1622658 "LETSUM 필사독서"(로그인 ON, 닉네임 선택 동의, 클라이언트 시크릿 ON) / 네이버 = 미등록(개발자 사이트가 자동화 도구에서 막힘, 운영자 직접).
+- 운영자 몫(보안상 직접): 개발자 앱 등록 → 리디렉션 URI `https://type.letsum.app/api/auth/<kakao|naver|google>/callback` → 클라이언트 ID는 `worker/wrangler.toml` vars에, 비밀값은 `npx wrangler secret put NAVER_CLIENT_SECRET`·`GOOGLE_CLIENT_SECRET`(·`KAKAO_CLIENT_SECRET` 선택). `AUTH_SALT`는 설정 완료(바꾸면 기존 회원과 연결이 끊김).
 - 로컬 시험: `npx wrangler dev --port 8787 --local-upstream type.letsum.app --var AUTH_FROM:2020-01-01 --var AUTH_SALT:… --var KAKAO_CLIENT_ID:dummy` + 정적 파일과 /api를 함께 내주는 프록시(Origin을 https://type.letsum.app으로). 동기화·다른 기기 복원·병합·탈퇴(서버 0행) 확인.
 - 비용: Workers 무료 10만 요청/일, D1 무료 읽기 500만·쓰기 10만 행/일. 넘으면 요청이 실패할 뿐 과금 없음(무료 플랜).
