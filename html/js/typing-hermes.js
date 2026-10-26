@@ -285,6 +285,8 @@
     for(let i=0;i<p.count;i++){const x=p.getX(i),t=Math.max(0,Math.min(1,(x-mid+half)/(2*half)));p.setX(i,x+(leftSide?-extra*(1-t):extra*t));}
     p.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
    }
+   const surfaces=globalThis.LSApplyTypewriterSurfaces?.(T,asset.scene,selectedModel,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1,onLoad:()=>{if(!disposed)wake();}});
+   if(surfaces)cleanups.push(()=>surfaces.dispose());
    // A DOM counter follows the actual sheet corner, outside the clipped paper.
    const count=$('tbHermesCount');stage.appendChild(count);
    let countWidth=88,countHeight=20,countLimit=0;

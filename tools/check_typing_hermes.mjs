@@ -15,9 +15,21 @@ let thisUsed=false;
 fs.copyFileSync(root+'/html/js/typing-olympia.js',path.join(scratch,'olympia.mjs'));await import(path.join(scratch,'olympia.mjs'));const buildOlympiaSM3=globalThis.LSBuildOlympiaSM3;
 fs.copyFileSync(root+'/html/js/typing-details.js',path.join(scratch,'details.mjs'));await import(path.join(scratch,'details.mjs'));
 const ctx={setTimeout,clearTimeout,LSRefineTypewriterDetails:globalThis.LSRefineTypewriterDetails,LSBuildOlympiaSM3:(T,root)=>buildOlympiaSM3(T,root,doc),LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,TextureLoader:class{load(url,onLoad){textureLoads.push(url);const texture=new T.Texture();queueMicrotask(()=>onLoad(texture));return texture;}},WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(delayNextLoad){delayNextLoad=false;return new Promise(resolve=>{releaseDelayedLoad=()=>resolve(new ctx.GLTFLoader().loadAsync());});}if(failNextLoad){failNextLoad=false;return Promise.reject(new Error('simulated model download failure'));}if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
-let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
+let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(fs.readFileSync(root+'/html/js/typing-surfaces.js','utf8'),ctx);vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
+assert(textureLoads.includes(`/img/typewriters/surfaces/${model}-relief-v1.webp`),'chosen model loads its own relief');
+for(const name of ['Ribbon_Hood','Cast_Perimeter','Cap_KeyA','Cap_Space']){
+ const mesh=nodes[name],g=mesh.geometry,m=mesh.material;
+ assert(m.userData.surface,'paint and key surfaces are mapped');
+ assert.equal(g.attributes.surfacePosition.count,g.attributes.position.count);
+ assert([...g.attributes.surfacePosition.array,...g.attributes.surfaceNormal.array].every(Number.isFinite));
+ assert.equal(m.bumpMap.encoding,T.LinearEncoding);assert.equal(m.bumpMap.wrapS,T.MirroredRepeatWrapping);
+ const rest=g.attributes.surfacePosition.array.slice();mesh.position.x+=.001;mesh.updateMatrixWorld(true);
+ assert.deepEqual(g.attributes.surfacePosition.array,rest,'grain remains attached during movement');mesh.position.x-=.001;
+ const shader={uniforms:{},vertexShader:T.ShaderLib.physical.vertexShader,fragmentShader:T.ShaderLib.physical.fragmentShader};m.onBeforeCompile(shader);
+ assert(shader.fragmentShader.includes('perturbNormalArb(-vViewPosition'));assert(shader.vertexShader.includes('surfacePosition'));
+}
 const wall=renderedScene.getObjectByName('Rear_Wall_Shadow');
 assert(wall?.receiveShadow&&wall.material.isShadowMaterial,'rear wall receives real projected shadows without painting the background');
 assert(!wall.material.depthWrite,'wall cannot occlude the HTML paper depth mask');
@@ -205,13 +217,13 @@ ids.tbMain.dataset.readingMode='standard';modeObservers();feedOption(true);asser
 const table=renderedScene.getObjectByName('Tablecloth'),tableZ=table.geometry.attributes.position;
 function tableStyle(style){ids.tbMain.dataset.table=style;observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-table')).forEach(o=>o.f());tick();}
 const tablePosition=table.position.clone(),tableWidth=table.scale.x;tableStyle('wood');
-assert.equal(textureLoads.length,1);assert.match(textureLoads[0],/table-light-wood\.png/);
+assert.equal(textureLoads.filter(u=>u.includes('table-light-wood')).length,1);
 assert.equal(table.material.map.wrapS,T.MirroredRepeatWrapping);assert.equal(table.material.map.wrapT,T.MirroredRepeatWrapping);
 assert.equal(table.material.map.repeat.x,4*tableWidth);assert.equal(table.material.bumpMap,null);
 for(let i=0;i<tableZ.count;i++)assert.equal(tableZ.getZ(i),0,'wood surface is flat');
 assert(table.position.equals(tablePosition),'wood keeps existing table placement');
 tableStyle('gingham');assert(Array.from(tableZ.array).some((v,i)=>i%3===2&&Math.abs(v)>.001),'cloth drape restores');
-tableStyle('wood');assert.equal(textureLoads.length,1,'wood texture reused');tableStyle('gingham');
+tableStyle('wood');assert.equal(textureLoads.filter(u=>u.includes('table-light-wood')).length,1,'wood texture reused');tableStyle('gingham');
 const saved=ids.tbInput.value;ids.tbMain.dataset.model='classic12';observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbInput.value,saved);assert.equal(ids.tbInput.style.paddingTop,'');assert.equal(ids.tbMain.dataset.hermesReady,'false');
 ids.tbMain.dataset.model=model;observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);event('canvas','webglcontextlost',{preventDefault(){}});assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement);assert.equal(ids.tbMain.dataset.hermesFailed,'true');observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());assert.equal(ids.tbInput.parentElement,ids.tbInputHome.parentElement,'failure does not reattach input');
 if(model==='lettera32'){
