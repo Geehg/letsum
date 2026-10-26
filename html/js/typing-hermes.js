@@ -333,32 +333,48 @@
     for(const ch of Array.from(text)){if(ch==='\n'){lines.push({text:row,width:units});row='';units=0;continue;}const n=measure.measureText(ch).width;if(units+n>paperWidth-left*2&&row){lines.push({text:row,width:units});row='';units=0;}row+=ch;units+=n;}
     lines.push({text:row,width:units});return lines;
    }
+   function tracePosition(caret){
+    const host=$('tbOrig'),spans=host.children,first=spans[0];
+    if(host.parentElement!==paper||!first||!host.clientWidth)return null;
+    const atEnd=caret>=spans.length,span=spans[Math.min(caret,spans.length-1)];
+    // Read the next glyph in the actual, fully laid-out source. Measuring just
+    // the typed prefix cannot see a soft wrap until one character too late,
+    // and canvas metrics can differ from the loaded webfont/DOM line boxes.
+    let row=Math.max(0,Math.round((span.offsetTop-first.offsetTop)/lineHeight));
+    let x=span.offsetLeft-left;
+    if(atEnd){
+     if(span.classList.contains('nl')){row++;x=0;}
+     else x+=span.getBoundingClientRect().width/(paper.getBoundingClientRect().width/paperWidth);
+    }
+    return {row,width:Math.max(0,x)};
+   }
    function sync(snap=false){
     if(disposed||!active||failed)return;snap=snap===true;
     const trace=tracing(),physical=feeding(),source=$('tbOrig').dataset.source||input.value,caret=Array.from(input.value.slice(0,input.selectionStart).normalize('NFC')).length;
     const prefix=trace?Array.from(source.normalize('NFC')).slice(0,caret).join(''):input.value.slice(0,input.selectionStart);
-    const all=layout(input.value),before=layout(prefix),now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
+    if(trace)paper.style.setProperty('--tb-trace-font',getComputedStyle(input).fontFamily);
+    const all=layout(input.value),before=layout(prefix),position=trace?tracePosition(caret):null,now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
     fullHeight=trace||physical?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
     input.style.paddingTop=(trace||physical?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace||physical?32:30)+'px';if(!trace)input.scrollTop=0;
     paper.dataset.paper=main.dataset.paper||'ivory';count.textContent=$('tbCount').textContent;countWidth=Math.max(76,count.textContent.length*6.5+12);count.style.width=countWidth+'px';
     if(!composing){
-     const line=before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth;
+     const row=position?position.row:before.length-1,line=position||before[before.length-1],nextX=sheetWidth/2-left/paperWidth*sheetWidth-line.width/paperWidth*sheetWidth;
      // Keep the active baseline at the ribbon. Unskewed text needs the same
      // projection compensation in its mechanical feed distance.
      const worldPerPixel=(paperTop-.174)/paperHeight,rowsPerSheet=Math.max(1,Math.floor((paperHeight*traceProjection-64)/lineHeight));
-     const row=before.length-1,sheetRow=physical?row%rowsPerSheet:row;
+     const sheetRow=physical?row%rowsPerSheet:row;
      const contentOffset=physical?Math.floor(row/rowsPerSheet)*rowsPerSheet*lineHeight:0;
      paper.dataset.feedScroll=String(contentOffset);
      if(physical){input.scrollTop=contentOffset;if(trace)$('tbOrig').scrollTop=contentOffset;}
      const nextFeed=physical?.196+(32+fontPixels*.95+sheetRow*lineHeight)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
-     const newLine=trace||physical?before.length>lastLine:nextFeed>feed+.0001;lastLine=before.length;
+     const newLine=trace||physical?row+1>lastLine:nextFeed>feed+.0001;lastLine=row+1;
      if(newLine&&changed&&!initial)returnAt=now;
      if(initial||snap||input.value.length<(lastValue||'').length)bellLine=-1;
-     if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==before.length){bellLine=before.length;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
+     if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==row+1){bellLine=row+1;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
      if(Math.abs(nextFeed-feed)>.000001){feedDrive={from:currentFeed,to:nextFeed,start:now+(newLine?20:0),duration:newLine?180:150};feed=nextFeed;}
-     targetRoll=physical?sheetRow*lineHeight/traceProjection*worldPerPixel:trace?(before.length-1)*lineHeight*sheetWidth/paperWidth:nextFeed;
+     targetRoll=physical?sheetRow*lineHeight/traceProjection*worldPerPixel:trace?row*lineHeight*sheetWidth/paperWidth:nextFeed;
      if(snap||initial){currentX=targetX;currentFeed=feed;rollerFeed=targetRoll;drive=feedDrive=null;}
      // Mobile IME may commit text without keyboard events. Space/newline never hit a typebar.
      if(changed&&!initial&&input.value.length>(lastValue||'').length&&now-lastKeyAt>100&&/\S$/.test(input.value)){const ch=Array.from(input.value).at(-1),bar=barFor.get('Key'+ch.toUpperCase())||bars[Array.from(input.value).length%bars.length];hits.push({bar,time:now});input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:ch}}));}
@@ -441,6 +457,7 @@
    observe(MutationObserver,()=>sync(),main,{attributes:true,attributeFilter:['data-paper']});
    observe(MutationObserver,()=>{input.scrollTop=0;$('tbOrig').scrollTop=0;resize();},main,{attributes:true,attributeFilter:['data-paper-feed']});
    listen(view,'tb:hermes-align',resize);
+   if(document.fonts)listen(document.fonts,'loadingdone',()=>sync(true));
    observe(ResizeObserver,resize,view);['tbMinus','tbPlus'].forEach(id=>listen($(id),'click',()=>{if(tracing())resize();}));listen($('tbFontW'),'change',()=>sync(true));listen($('tbReset'),'click',()=>queueMicrotask(()=>sync(true)));
    listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failed=true;failedModel=selectedModel;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
    function dispose(){

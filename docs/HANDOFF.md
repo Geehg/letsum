@@ -448,3 +448,10 @@ img.save("sample.png")
 - Larry McMurtry / Cormac McCarthy / Woody Allen 사진을 참조해 built-in image_gen으로 3종 일러스트 생성. 원본 사진 보존, `html/img/typewriters/people/*-engraved.webp` 사용.
 - 얼굴 특징·시선·의복 유지, 올리브 차콜의 곡선/교차 해칭. portrait 크기를 76×95로 정리하고 잘림/사진 필터 제거. CSS v3.
 - 출처 상세에는 사진 기반 재해석과 원본 촬영자·라이선스 유지. 생성 프롬프트 `docs/typewriter-portrait-prompts.json`.
+
+
+## 2026-10-26 — 실제 종이 이송의 줄바꿈 동기화 수정
+- 원인 재현: 1280px 화면의 「검둥이」 첫 줄 33글자를 입력하면 원문 커서는 다음 줄인데 기존 canvas는 입력한 접두부만 재어 첫 줄로 판단. 종이 노출 높이가 96.76px에 머물러 다음 커서가 하단 밖으로 내려감.
+- 몰입 모드 캐리지/종이/플래튼/마진벨의 위치를 `tbOrig` 다음 글자의 실제 DOM 줄·열로 통일. 웹폰트 로딩 후 재동기화. 일반 레트로 입력의 기존 텍스트 측정 경로 유지. typing-hermes.js v39.
+- 브라우저 확인: Hermes/Lettera/Olympia 자동 줄바꿈, 경계 Backspace 후 복귀, 실제 Enter(84→85자), 글자 크기 14→16px. Hermes 첫 줄 완료 시 종이 높이 96.76→138.86px, 캐리지 오른쪽 복귀, 다음 글자와 커서가 용지 안에 표시됨.
+- 페이지 빌드 및 validate 오류 0, 기존 경고 264. 사용자 운영 필사 내용은 수정하지 않음.
