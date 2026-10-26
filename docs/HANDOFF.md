@@ -422,7 +422,8 @@ img.save("sample.png")
 - 세 모델 회귀 검사 통과: 닫힌 형상·키캡 정상 법선/중앙 표면, 입력·종이 이송·모델 교체·세로 화면 범위. 브라우저 정면/사선 렌더 확인. 사실 근거·남는 실측 한계는 `TYPEWRITER_DETAIL_REVIEW.md`.
 
 ### 2026-10-26 — 필사독서 선택 회원(카카오·네이버·구글) · 기록 동기화 · 찜 · 나의 학습
-- **시행 2026-11-02**(개인정보처리방침·이용약관 7일 전 공지, `html/privacy.html`·`html/terms.html`). 그 전에는 `/api/auth/status`가 `{open:false}` → 로그인 버튼 숨김.
+- **운영자 결정으로 2026-10-26 즉시 시행**(처음엔 7일 뒤 11-02로 잡았으나, 기존 이용자에게 불리하지 않은 선택 기능 추가라 공지일 시행으로 변경 — 약관 8항에 예외 문구 추가). `AUTH_FROM` 이전에는 `/api/auth/status`가 `{open:false}`.
+- 네이버는 검수 승인 전이라 `AUTH_PAUSED = "naver"`(wrangler.toml) → 로그인 창에 '네이버 로그인 · 준비 중' 비활성 버튼. 승인 후 `AUTH_PAUSED = ""`로 비우고 `npx wrangler deploy`.
 - 서버: `worker/src/account.js`(라우트 `type.letsum.app/api/*`), D1 `0008_accounts.sql`(tb_users·tb_sessions·tb_data), 매일 크론 `17 3 * * *`(만료 세션·2년 미접속 회원 삭제). 회원 ID는 `HMAC(AUTH_SALT, 제공자:고유번호)`만, 세션은 쿠키 값의 SHA-256만 저장. 이메일·이름 받지 않음.
 - 클라이언트: `html/js/typing-sync.js` — 로그인 창(만 14세·동의 체크 필수), 계정 창(지금 동기화·내 데이터 내려받기·로그아웃·탈퇴). 45초마다(보이는 동안)·창 숨김 시 동기화.
 - 서버 키: `p:<책id>`(쪽 번호·완성 쪽 구간·지금 쓰는 쪽 초안·t), `days`·`points`·`marks`·`learn`·`last`·`prefs`. 합치기: 완성 쪽 합집합, 날짜별 값 큰 쪽, 찜은 책마다 최근(음수 = 해제), 설정·마지막 책은 최근. 가져온 글(import-*)은 보내지 않음.

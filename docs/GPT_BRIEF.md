@@ -14,7 +14,7 @@
 
 - 정적 사이트. 서버는 Synology NAS의 nginx 컨테이너 하나(`letsum-web`, 포트 8516), Cloudflare 터널 `kuri-nas`가 두 주소를 같은 포트로 보낸다. nginx가 Host로 나눔(`nginx/default.conf`).
 - type.letsum.app은 **css·js·data/typing·img를 letsum.app과 같은 파일로 공유**한다(nginx `location ~ ^/(css|js|img|data/typing)/`). 첫 화면 `/`만 `html/type/index.html`.
-- Cloudflare Worker(`worker/`): letsum.app 좋아요·댓글 API + type.letsum.app 선택 회원·동기화(`worker/src/account.js`, `/api/*`, 2026-11-02 시행).
+- Cloudflare Worker(`worker/`): letsum.app 좋아요·댓글 API + type.letsum.app 선택 회원·동기화(`worker/src/account.js`, `/api/*`, 2026-10-26 시행. 네이버는 검수 전이라 `AUTH_PAUSED="naver"`로 '준비 중' 버튼만).
 
 ## 2. 절대 규칙(요약)
 
@@ -48,7 +48,7 @@ bash tools/run.sh finish "커밋 메시지"   # 검증 → git add -A → 커밋
 - 위 막대: 위치(MY LIBRARY / 작품), **디자인 선택**(몰입 밝게·몰입 어둡게·레트로·책상·잉크), **⚙ 설정**(읽기 화면에서만), 도서 가져오기, ?.
 - 서가 `#tbShelf`: 소개·기록(`#tbMe`) → 추천 줄(`#tbThemes`, index.json의 themes) → 전체 서가(`#tbLib`: 검색 `#tbQ`·갈래·작가 필터·'더 보기') → 안내.
 - 읽기 `#tbRead`: 머리 `.tb-rh`(입체 표지 `#tbCv` + 도서 정보 `.tb-rh-body`: 제목·목차 `#tbToc`·정보 `#tbInfo`·쪽 넘김 `.tb-pager`) + 진행 수치 `.tb-stats` → `.tb-machine`(레트로 캐리지 + 원문 `#tbOrig`/필사 `#tbInput`) → 가상 키보드 `#tbKb`.
-- 위 막대에 `📈 나의 학습`(`#tbLearn`), `☁ 로그인`(`#tbAcct` → `#tbAcctModal`, 시행일 전·제공자 미설정 시 숨김). 서가 카드 ♡ 찜(`.tb-mark`).
+- 위 막대에 `📈 나의 학습`(`#tbLearn`), `☁ 로그인`(`#tbAcct` → `#tbAcctModal`, 제공자 미설정 시 숨김). 서가 카드 ♡ 찜(`.tb-mark`).
 - 창: `#tbImport`(TXT·MD·EPUB), `#tbSet`(필사 설정: 글꼴·글자 크기·레트로 타건음·음량·용지·다시 쓰기·인쇄), `#tbHelp`, `#tbFinish`(쪽 완성).
 
 ### 디자인(스킨) 체계 — `style.css`

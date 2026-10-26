@@ -22,7 +22,9 @@ migrations_dir = "migrations"
 ADMIN_ID = "admin"
 ADMIN_PW_HASH = "689db2d3a68fce03c7663845092dc7d58fc43085b39c38d146682cf1e7625ed3"
 # 필사독서 선택 회원 — 시행일(KST) 전에는 로그인 경로가 닫혀 있다. 공개 클라이언트 ID는 앱 등록 후 채운다(비밀값은 wrangler secret)
-AUTH_FROM = "2026-11-02"
+AUTH_FROM = "2026-10-26"
+# 버튼만 보이고 쓸 수 없는 로그인(쉼표 목록). 네이버 검수 승인 후 "" 로 비우고 배포하면 켜짐
+AUTH_PAUSED = "naver"
 KAKAO_CLIENT_ID = "095409f059a5d17790cf025c3216b370"
 NAVER_CLIENT_ID = "_CkQphkwualJXZMvBJud"
 GOOGLE_CLIENT_ID = "141373438831-1oa7j1q3gi2hld0fe1hn4i5vf8lf2rs3.apps.googleusercontent.com"

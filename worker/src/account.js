@@ -2,7 +2,7 @@
 // 원칙: 비밀번호를 받지 않음, 이메일·이름 받지 않음(회원 고유번호는 HMAC 해시로만), 세션 값도 해시로만 저장,
 //       로그인 없이도 모든 기능 동작(브라우저 저장) — 서버는 기록을 보관·전달만 하고 합치기는 브라우저가 한다.
 // 경로(type.letsum.app/api/*, 시행일 AUTH_FROM 이후에만 열림):
-//   GET  /api/auth/status                 → { open, providers: ["kakao", …] }
+//   GET  /api/auth/status                 → { open, providers: ["kakao", …], soon: [준비 중] }
 //   GET  /api/auth/<p>/start?r=/…&age14=1 → 로그인 화면으로 이동(새 가입은 만 14세 이상 확인 필요)
 //   GET  /api/auth/<p>/callback           → 세션 쿠키(tb_s) 발급 후 r로 돌아감
 //   GET  /api/me                          → { open, user: { provider, nickname, created } | null }
@@ -70,7 +70,10 @@ function cookies(req) {
 }
 const setCookie = (name, value, maxAge, path) => `${name}=${encodeURIComponent(value)}; Path=${path}; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
 export const isOpen = (env) => !!env.AUTH_FROM && Date.now() >= Date.parse(`${env.AUTH_FROM}T00:00:00+09:00`);
-const configured = (env) => Object.keys(PROVIDERS).filter((p) => PROVIDERS[p].id(env) && (!PROVIDERS[p].needSecret || PROVIDERS[p].secret(env)) && env.AUTH_SALT);
+const ready = (env) => Object.keys(PROVIDERS).filter((p) => PROVIDERS[p].id(env) && (!PROVIDERS[p].needSecret || PROVIDERS[p].secret(env)) && env.AUTH_SALT);
+/** AUTH_PAUSED(쉼표 목록)에 든 로그인은 버튼만 '준비 중'으로 보이고 쓸 수 없음(예: 네이버 검수 전) */
+const paused = (env) => String(env.AUTH_PAUSED || "").split(",").map((s) => s.trim()).filter(Boolean);
+const configured = (env) => ready(env).filter((p) => !paused(env).includes(p));
 const safeReturn = (r) => (typeof r === "string" && /^\/[^/\\]/.test(r) && r.length < 300 ? r : "/");
 
 async function currentUser(req, env) {
@@ -158,7 +161,7 @@ export async function account(req, url, env) {
   // 쓰기 요청은 같은 사이트에서만(쿠키가 SameSite=Lax라 이중 방어)
   if (req.method !== "GET") { const origin = req.headers.get("origin"); if (origin !== SITE) return bad("허용되지 않은 요청", 403); }
   const open = isOpen(env);
-  if (p === "/api/auth/status") return json({ open, providers: open ? configured(env) : [] });
+  if (p === "/api/auth/status") return json({ open, providers: open ? configured(env) : [], soon: open ? ready(env).filter((x) => paused(env).includes(x)) : [] });
   if (!open) return bad("회원 기능은 시행일부터 열립니다", 403);
   const m = /^\/api\/auth\/(kakao|naver|google)\/(start|callback)$/.exec(p);
   if (m) {

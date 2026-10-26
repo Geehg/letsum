@@ -12,7 +12,7 @@
   const toast = (m) => (window.TB?.toast ? window.TB.toast(m) : null);
   const PREF_KEYS = ["skin2", "font", "trace-font", "retro", "kb", "finger", "model-v2"];
   const NAMES = { kakao: "카카오", naver: "네이버", google: "구글" };
-  const S = { open: false, providers: [], user: null, busy: false, timer: 0 };
+  const S = { open: false, providers: [], soon: [], user: null, busy: false, timer: 0 };
 
   // ---------- 이 브라우저 기록 → 서버용 묶음 ----------
   const ranges = (arr) => { const a = [...new Set(arr)].filter(Number.isInteger).sort((x, y) => x - y), out = []; for (let i = 0; i < a.length; i++) { let j = i; while (a[j + 1] === a[j] + 1) j++; out.push(i === j ? `${a[i]}` : `${a[i]}-${a[j]}`); i = j; } return out.join(","); };
@@ -122,7 +122,9 @@
         <p class="tb-mdesc">로그아웃·탈퇴해도 이 브라우저에 저장된 기록은 그대로 남습니다.</p>`;
       setStatus();
     } else {
-      const btns = S.providers.map((p) => `<button type="button" class="tb-login tb-login-${p}" data-login="${p}" disabled>${p === "kakao" ? "카카오 로그인" : p === "naver" ? "네이버 로그인" : "구글로 로그인"}</button>`).join("");
+      const label = (p) => (p === "kakao" ? "카카오 로그인" : p === "naver" ? "네이버 로그인" : "구글로 로그인");
+      const btns = S.providers.map((p) => `<button type="button" class="tb-login tb-login-${p}" data-login="${p}" disabled>${label(p)}</button>`).join("")
+        + S.soon.map((p) => `<button type="button" class="tb-login tb-login-${p} tb-login-soon" disabled aria-disabled="true">${label(p)} · 준비 중</button>`).join("");
       body.innerHTML = `<p class="tb-mdesc">로그인하지 않아도 모든 기능을 쓸 수 있고, 기록은 이 브라우저에 저장됩니다. <b>로그인하면 다른 기기에서도 진도·찜한 책·학습 기록을 이어 씁니다.</b></p>
         <ul class="tb-acct-list"><li>비밀번호를 만들지 않습니다(카카오·네이버·구글 계정으로 로그인).</li><li>이메일·이름·전화번호는 받지 않고 회원 고유번호만 암호화해 보관합니다.</li><li>언제든 내 데이터를 내려받거나 탈퇴(즉시 삭제)할 수 있습니다.</li></ul>
         <label class="tb-chk tb-age"><input type="checkbox" id="tbAge"> 만 14세 이상이며 <a href="https://letsum.app/privacy.html" target="_blank" rel="noopener">개인정보처리방침</a>·<a href="https://letsum.app/terms.html" target="_blank" rel="noopener">이용약관</a>에 동의합니다</label>
@@ -150,7 +152,7 @@
     if (!$("tbAcct")) return;
     bind();
     const st = await fetch(`${API}/auth/status`).then((r) => r.json()).catch(() => ({ open: false, providers: [] }));
-    S.open = !!st.open; S.providers = st.providers || [];
+    S.open = !!st.open; S.providers = st.providers || []; S.soon = st.soon || [];
     if (!S.open) return renderBtn();
     const me = await fetch(`${API}/me`, { credentials: "same-origin" }).then((r) => r.json()).catch(() => ({}));
     S.user = me.user || null; renderBtn();

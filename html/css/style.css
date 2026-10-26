@@ -2319,3 +2319,4 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 .tb-acct-st{font-size:12.5px;color:var(--t-ink2);margin:10px 0 14px}
 .tb-acctm .tb-set-acts{margin-bottom:8px}
 .tb-danger{color:#c0392b}
+.tb-login-soon{opacity:.35!important;cursor:not-allowed}
