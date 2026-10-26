@@ -100,7 +100,7 @@ async function callback(p, url, req, env) {
   if (P.secret(env)) body.set("client_secret", P.secret(env));
   const tr = await fetch(P.token, { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded;charset=utf-8" }, body });
   const tok = await tr.json().catch(() => ({}));
-  if (!tok.access_token && !tok.id_token) return back("token");
+  if (!tok.access_token && !tok.id_token) { console.log("auth token fail", p, tr.status, tok.error || "", tok.error_code || tok.error_description || ""); return back("token"); }
   const prof = await P.profile(tok);
   const subHash = await hmac(env.AUTH_SALT, `${p}:${prof.sub}`), now = Date.now();
   let user = await env.DB.prepare("SELECT id FROM tb_users WHERE provider = ? AND sub_hash = ?").bind(p, subHash).first();
