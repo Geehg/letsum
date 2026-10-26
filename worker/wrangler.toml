@@ -24,7 +24,7 @@ ADMIN_PW_HASH = "689db2d3a68fce03c7663845092dc7d58fc43085b39c38d146682cf1e7625ed
 # 필사독서 선택 회원 — 시행일(KST) 전에는 로그인 경로가 닫혀 있다. 공개 클라이언트 ID는 앱 등록 후 채운다(비밀값은 wrangler secret)
 AUTH_FROM = "2026-11-02"
 KAKAO_CLIENT_ID = "095409f059a5d17790cf025c3216b370"
-NAVER_CLIENT_ID = ""
+NAVER_CLIENT_ID = "_CkQphkwualJXZMvBJud"
 GOOGLE_CLIENT_ID = "141373438831-1oa7j1q3gi2hld0fe1hn4i5vf8lf2rs3.apps.googleusercontent.com"
 
 # 비밀 값(코드·저장소에 넣지 않음): wrangler secret put ADMIN_KEY / VOTER_SALT / AUTH_SALT / NAVER_CLIENT_SECRET / GOOGLE_CLIENT_SECRET / KAKAO_CLIENT_SECRET(선택)
