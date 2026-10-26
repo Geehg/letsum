@@ -36,7 +36,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   {path:rounded(-.216,-.152,.216,.169,.015),y:(x,z)=>bodyTop(z)-.002},
   {path:rounded(-.212,-.148,.212,.165,.012),y:(x,z)=>bodyTop(z)-.008},
   {path:rounded(-.212,-.148,.212,.165,.012),y:()=>.013}
- ],128,true),blue);
+ ],384,true),blue);
  // Broad curved opening with inward swept shoulders; exposed fan of typebars.
  const cover=rounded(-.226,-.153,.226,-.021,.027),hole=new T.Path();
  hole.moveTo(-.127,-.072);hole.bezierCurveTo(-.134,-.066,-.131,-.059,-.119,-.057);

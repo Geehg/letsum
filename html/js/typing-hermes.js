@@ -45,6 +45,7 @@
    const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
+   globalThis.LSRefineTypewriterDetails(T,asset.scene,selectedModel);
    const scene=new T.Scene(),nodes={};scene.add(asset.scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
@@ -76,9 +77,11 @@
    for(const texture of [grain,finish]){texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.generateMipmaps=true;texture.needsUpdate=true;}
    const materials=new Map();asset.scene.traverse(o=>{if(!o.isMesh)return;const old=o.material;if(materials.has(old)){o.material=materials.get(old);return;}
     let m=old;
-    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.46;m.map=finish;m.roughnessMap=finish;m.clearcoat=.10;m.clearcoatRoughness=.42;m.bumpMap=grain;m.bumpScale=.00019;m.envMapIntensity=.48;}
+    if(old.name==='Hermes_Sage_Enamel'){m=new T.MeshPhysicalMaterial();T.MeshStandardMaterial.prototype.copy.call(m,old);m.defines.PHYSICAL='';if(selectedModel!=='lettera32')m.color.lerp(new T.Color(.34,.32,.27),.16);m.roughness=.33;m.map=finish;m.roughnessMap=finish;m.clearcoat=.32;m.clearcoatRoughness=.23;m.bumpMap=grain;m.bumpScale=.00009;m.envMapIntensity=.68;}
     else if(old.name==='Lettera_Blue_Enamel'){m=old.clone();m.bumpMap=grain;m.bumpScale=.000025;m.envMapIntensity=1.05;}
     else if(old.name==='Olympia_Crinkle_Enamel'){m=old.clone();m.envMapIntensity=.32;}
+    else if(old.name==='Hermes_Badge_Metal'){m=old.clone();m.envMapIntensity=1.05;}
+    else if(old.name==='Lettera_Badge_Edge'){m=old.clone();m.envMapIntensity=.85;}
     else if(old.name==='Olympia_Badge_Metal'){m=old.clone();m.envMapIntensity=.85;}
     else if(old.name==='Olympia_Chrome'){m=old.clone();m.envMapIntensity=1.05;}
     else if(old.name==='Mint_Keycaps'){m=old.clone();m.color.lerp(new T.Color(.48,.43,.31),.13);m.bumpMap=grain;m.bumpScale=.000065;m.envMapIntensity=.38;}
@@ -88,8 +91,10 @@
     materials.set(old,m);o.material=m;
    });
    // Keep small steel mechanisms readable under the broad reflection cards.
-   const mechanismMetal=new T.MeshStandardMaterial({color:selectedModel==='olympiasm3'?new T.Color(.48,.49,.46):new T.Color(.22,.25,.23),metalness:.95,roughness:.32,envMapIntensity:selectedModel==='olympiasm3'?.85:.55});
+   const mechanismMetal=new T.MeshStandardMaterial({color:new T.Color(.20,.23,.21),metalness:.95,roughness:.38,envMapIntensity:.68});
    asset.scene.traverse(o=>{if(o.isMesh&&/^(TypebarArm_|TypeSlug_|Type_Guide_|Ribbon_Carrier_)/.test(o.name))o.material=mechanismMetal;});
+   const slugMetal=new T.MeshStandardMaterial({color:new T.Color(.32,.34,.31),metalness:1,roughness:.28,envMapIntensity:.72});
+   asset.scene.traverse(o=>{if(o.isMesh&&/^TypeSlug_/.test(o.name))o.material=slugMetal;if(o.isMesh&&/^Olympia_Segment_Divider_/.test(o.name))o.material=mechanismMetal;});
    nodes.Paper.material=new T.MeshBasicMaterial({colorWrite:false,depthWrite:true,side:T.DoubleSide});
    for(const name of ['Card_Holder_Left','Card_Holder_Right']){
     const m=nodes[name].material;m.transparent=true;m.opacity=.16;m.depthWrite=false;m.side=T.DoubleSide;
@@ -103,9 +108,9 @@
    // One shared cap material; local-space tone survives key travel and separates the crown from the skirt.
    const capSource=nodes.Cap_KeyA.material,capMaterial=new T.MeshPhysicalMaterial();
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
-   capMaterial.name=selectedModel==='olympiasm3'?'Olympia_Keycaps_Contour':selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.39;
-   capMaterial.clearcoat=selectedModel==='olympiasm3'?.60:.11;capMaterial.clearcoatRoughness=selectedModel==='olympiasm3'?.13:.36;capMaterial.envMapIntensity=selectedModel==='olympiasm3'?.85:selectedModel==='lettera32'?.55:.24;
-   if(selectedModel==='olympiasm3')capMaterial.roughness=.22;
+   capMaterial.name=selectedModel==='olympiasm3'?'Olympia_Keycaps_Contour':selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.29;
+   capMaterial.clearcoat=selectedModel==='olympiasm3'?.44:.30;capMaterial.clearcoatRoughness=selectedModel==='olympiasm3'?.21:.24;capMaterial.envMapIntensity=selectedModel==='olympiasm3'?.85:selectedModel==='lettera32'?.55:.24;
+   if(selectedModel==='olympiasm3')capMaterial.roughness=.27;
    if(selectedModel==='lettera32'){capMaterial.roughness=.24;capMaterial.clearcoat=.48;capMaterial.clearcoatRoughness=.15;capMaterial.envMapIntensity=.72;}
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
@@ -115,7 +120,7 @@
      const p=g.attributes.position,n=g.attributes.normal,c=new Float32Array(p.count*3);
      for(let i=0;i<p.count;i++){
       const y=p.getY(i),top=smoothRange(.25,.82,n.getY(i))*smoothRange(-.001,.0035,y);
-      const skirt=.56+.15*smoothRange(-.008,.003,y),rim=.045*smoothRange(.0048,.0072,y);
+      const skirt=.64+.13*smoothRange(-.008,.003,y),rim=.045*smoothRange(.0048,.0072,y);
       const tone=skirt*(1-top)+(1.02+rim)*top;
       c[i*3]=tone*.97;c[i*3+1]=tone;c[i*3+2]=tone*.96;
      }

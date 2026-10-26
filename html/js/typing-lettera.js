@@ -40,7 +40,7 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
   {path:rounded(-.219,-.152,.219,.170,.013),y:(x,z)=>bodyTop(z)-.002},
   {path:rounded(-.217,-.149,.217,.168,.012),y:(x,z)=>bodyTop(z)-.007},
   {path:rounded(-.217,-.149,.217,.168,.012),y:()=>.014}
- ],128,true),blue);
+ ],384,true),blue);
  // Removable low cover: broad folded front face, flatter crown and two inner wings.
  const cover=rounded(-.224,-.151,.224,-.026,.020),hole=new T.Path();
  hole.moveTo(-.119,-.075);hole.quadraticCurveTo(-.131,-.077,-.128,-.089);hole.lineTo(-.120,-.113);
@@ -50,12 +50,26 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  cover.holes.push(hole);
  const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0014,bevelSize:.0022,bevelSegments:5,curveSegments:24});
  let dense=hood.index?hood.toNonIndexed():hood;const dp=dense.attributes.position,du=dense.attributes.uv,positions=[],uvs=[];
- function split(a,b,c,ua,ub,uc,depth){
-  if(depth===0){positions.push(...a,...b,...c);uvs.push(...ua,...ub,...uc);return;}
-  const mid=(a,b)=>a.map((v,i)=>(v+b[i])/2),ab=mid(a,b),bc=mid(b,c),ca=mid(c,a),uab=mid(ua,ub),ubc=mid(ub,uc),uca=mid(uc,ua);
-  split(a,ab,ca,ua,uab,uca,depth-1);split(ab,b,bc,uab,ub,ubc,depth-1);split(ca,bc,c,uca,ubc,uc,depth-1);split(ab,bc,ca,uab,ubc,uca,depth-1);
+ // Split shared edges by the same coordinate rule on both adjoining faces.
+ // Independent per-triangle subdivision left T-junctions after bending the lid.
+ const midpoint=(a,b)=>a.map((v,i)=>(v+b[i])/2);
+ let faces=[];
+ for(let i=0;i<dp.count;i+=3)faces.push([0,1,2].map(k=>({p:[dp.getX(i+k),dp.getY(i+k),dp.getZ(i+k)],uv:[du.getX(i+k),du.getY(i+k)]})));
+ for(let pass=0;pass<8;pass++){
+  let changed=false;const next=[];
+  for(const [a,b,c] of faces){
+   const long=(a,b)=>Math.abs(a.p[0]-b.p[0])>.028||Math.abs(a.p[1]-b.p[1])>.0035;
+   const mask=(long(a,b)?1:0)|(long(b,c)?2:0)|(long(c,a)?4:0);
+   if(!mask){next.push([a,b,c]);continue;}changed=true;
+   const mid=(a,b)=>({p:midpoint(a.p,b.p),uv:midpoint(a.uv,b.uv)}),ab=mid(a,b),bc=mid(b,c),ca=mid(c,a);
+   const parts={1:[[a,ab,c],[ab,b,c]],2:[[b,bc,a],[bc,c,a]],4:[[c,ca,b],[ca,a,b]],
+    3:[[b,bc,ab],[a,ab,c],[ab,bc,c]],5:[[a,ab,ca],[ab,b,c],[ab,c,ca]],6:[[c,ca,bc],[a,b,ca],[b,bc,ca]],
+    7:[[a,ab,ca],[ab,b,bc],[ca,bc,c],[ab,bc,ca]]};
+   next.push(...parts[mask]);
+  }
+  faces=next;if(!changed)break;
  }
- for(let i=0;i<dp.count;i+=3){const a=[dp.getX(i),dp.getY(i),dp.getZ(i)],b=[dp.getX(i+1),dp.getY(i+1),dp.getZ(i+1)],c=[dp.getX(i+2),dp.getY(i+2),dp.getZ(i+2)];split(a,b,c,[du.getX(i),du.getY(i)],[du.getX(i+1),du.getY(i+1)],[du.getX(i+2),du.getY(i+2)],2);}
+ for(const face of faces)for(const v of face){positions.push(...v.p);uvs.push(...v.uv);}
  hood.setAttribute('position',new T.Float32BufferAttribute(positions,3));hood.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));hood.deleteAttribute('normal');hood.setIndex(null);hood.clearGroups();if(dense!==hood)dense.dispose();
  const hp=hood.attributes.position;
  // Smooth the original bevel normals before bending. Transforming those normals
@@ -117,7 +131,7 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  const badge=new T.Mesh(new T.PlaneGeometry(.097,.0121),new T.MeshStandardMaterial({map:badgeTexture,roughness:.42,metalness:.18}));badge.name='Lettera_Split_Badge';badge.position.set(0,hoodY(-.046)+crown(0,-.046)+.005,-.046);badge.rotation.x=-.85;root.add(badge);
  // Continuous removable-cover seam follows the actual edge, including corners.
  const seamPoints=cover.getSpacedPoints(160).slice(0,-1).map(p=>new T.Vector3(p.x,hoodY(p.y)-.0005+crown(p.x,p.y),p.y));
- const coverSeam=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(seamPoints,true),192,.00055,6,true),dark);coverSeam.name='Lettera_Cover_Seam';root.add(coverSeam);
+ const coverSeam=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(seamPoints,true),192,.0008,8,true),dark);coverSeam.name='Lettera_Cover_Seam';root.add(coverSeam);
  // Silver return lever with the broad rounded paddle visible in the manufacturer's photo.
  hide(['Return_Lever_Chrome','Return_Lever_Paddle']);
  const lp=new T.Shape();lp.moveTo(0,-.003);lp.quadraticCurveTo(-.035,-.001,-.050,.022);lp.lineTo(-.091,.061);lp.quadraticCurveTo(-.102,.076,-.091,.080);lp.quadraticCurveTo(-.082,.081,-.075,.069);lp.lineTo(-.043,.030);lp.quadraticCurveTo(-.027,.007,0,.003);lp.closePath();
