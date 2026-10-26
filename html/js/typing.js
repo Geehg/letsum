@@ -254,6 +254,8 @@
   }
   async function openBook(id) {
     const b = await getBook(id); if (!b || !b.pages.length) { toast("이 글을 불러오지 못했습니다."); location.hash = "#/"; return; }
+    if ($("tbMain").dataset.readingMode === "immersive" && ($("tbRead").hidden || state.book !== b)) $("tbMain").dataset.modelGate = "pending";
+    $("tbRead").dataset.bookId = b.id;
     if (state.book && state.book !== b) storeProgress();
     state.book = b; const p = progressOf(b.id);
     state.completed = new Set((p.completed || []).filter((i) => Number.isInteger(i) && i >= 0 && i < b.pages.length));

@@ -4,7 +4,7 @@
  'use strict';
  const main=document.getElementById('tbMain'),dialog=document.getElementById('tbModelGallery'),read=document.getElementById('tbRead'),select=document.getElementById('tbModel');
  if(!dialog||!main||!select)return;
- let first=true,wasImmersive=false,wasReading=false,returnFocus=null,fromSettings=false;
+ let first=true,wasImmersive=false,wasReading=false,lastBook='',returnFocus=null,fromSettings=false;
  const immersive=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro';
  function open(settings=false){
   if(dialog.open)return;
@@ -34,13 +34,13 @@
  });
  function sync(){
   if(main.dataset.appReady!=='true')return;
-  const wanted=immersive(),reading=!read.hidden;
-  if(wanted&&(first||!wasImmersive||(reading&&!wasReading&&main.dataset.modelGate==='pending')))open();
-  if(!wanted&&dialog.open)close();
-  first=false;wasImmersive=wanted;wasReading=reading;
+  const wanted=immersive(),reading=!read.hidden,book=read.dataset.bookId||'';
+  if(wanted&&reading&&(first||!wasImmersive||!wasReading||book!==lastBook))open();
+  if((!wanted||!reading)&&dialog.open)close();
+  first=false;wasImmersive=wanted;wasReading=reading;lastBook=book;
   clearTimeout(window.tbBootTimer);document.documentElement.removeAttribute('data-tb-boot');
  }
  new MutationObserver(sync).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-app-ready']});
- new MutationObserver(sync).observe(read,{attributes:true,attributeFilter:['hidden']});
+ new MutationObserver(sync).observe(read,{attributes:true,attributeFilter:['hidden','data-book-id']});
  sync();
 })();

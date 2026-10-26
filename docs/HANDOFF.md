@@ -479,3 +479,9 @@ img.save("sample.png")
 - typing.js v35 / typing-hermes.js v41 / typing-model-gallery.js v2 / typing-3d.css v13.
 
 - 운영 최초 다운로드 확인 후, 준비 중 가상 키보드도 숨겨 일반 모드의 순간 노출을 완전히 차단. typing-3d.css v14.
+
+
+## 2026-10-26 — 서가 진입 후 도서별 타자기 선택
+- 루트 메인/서가에서는 모델 선택 팝업을 열지 않음. 레트로 몰입에서 도서를 열 때만 3종 팝업 표시. 서가에서 같은 책 재진입/다른 책 선택/직접 읽기 링크도 선택 화면 제공, 같은 책의 쪽 넘김에는 반복하지 않음.
+- 읽기 영역의 data-book-id와 hidden 상태로 도서 진입을 구분하고, 본문 준비 시 modelGate를 먼저 pending으로 설정. 취소 시 팝업을 닫고 서가 복귀. 명시적으로 선택한 다른 모드는 기존 동작 유지.
+- startup 회귀 검사에 서가 첫 진입/재진입/책 변경/취소 추가. typing.js v36 / typing-model-gallery.js v3.
