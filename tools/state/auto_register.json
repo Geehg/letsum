@@ -194,8 +194,8 @@
  "kyh0703/jetbatang": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-12T09:12:11Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-21T08:22:26Z",
+  "checked": "2026-10-26"
  },
  "beomjungil/NotoSerifKR-Web": {
   "result": "skip",
@@ -218,14 +218,14 @@
  "hunterhogan/Integrated_code_fire_font": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-13T07:26:31Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-23T05:55:58Z",
+  "checked": "2026-10-26"
  },
  "xkho/presevka": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-18T14:38:51Z",
-  "checked": "2026-10-19"
+  "pushed": "2026-10-23T10:29:17Z",
+  "checked": "2026-10-26"
  },
  "bepyan/arita": {
   "result": "skip",
@@ -274,5 +274,11 @@
   "why": "라이선스 Apache-2.0",
   "pushed": "2026-10-13T06:55:10Z",
   "checked": "2026-10-16"
+ },
+ "jaff2836/hangyeol-code": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2026-10-20T14:35:33Z",
+  "checked": "2026-10-26"
  }
 }
