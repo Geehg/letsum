@@ -20,5 +20,28 @@
       "master": "woody-allen-engraved.png",
       "prompt": "Use case: style-transfer. Asset: editorial author portrait for a refined vintage typewriter gallery. Image 1 is the identity/photo reference. Image 2 is ONLY the engraving style and palette reference, not the person to depict. Transform Image 1 into a meticulous banknote intaglio engraved portrait. Preserve the specific person's recognizable face, age, hair, expression and gaze direction. Centered head-and-shoulders bust, full hair and chin visible, modest clear margin, face fills most of frame. Remove photo surroundings and hands. Match Image 2's precise curved parallel contour lines, fine crosshatching, single dark warm olive-charcoal ink #343b30 on warm ivory #f3eddf; model facial planes entirely in lines. Fine hand-cut copperplate workmanship, not a photo filter or pencil sketch. Vertical 4:5 composition; simple unprinted background; lower shoulder lines taper softly. No border, text, numbers, currency symbols, seal or watermark. This is a portrait illustration, not a whole banknote. Subject: Woody Allen in the supplied 2009 photograph. Preserve the grey tousled hair, thick dark rounded glasses, downcast slightly rightward gaze, lined face, tweed jacket, shirt and loose tie."
     }
-  ]
+  ],
+  "additional_portraits": {
+    "tool": "built-in image_gen",
+    "portraits": [
+      {
+        "key": "plath",
+        "file": "sylvia-plath-reference.png",
+        "subject": "Subject is Sylvia Plath as a young woman in 1953, dark waved bob, pearl earrings, necklace, dark jacket and blouse, calm slight smile.",
+        "prompt": "Use case: style-transfer. Asset: additional editorial portrait in an existing vintage typewriter gallery. Image 1 is the identity reference; image 2 is ONLY the engraving style reference, never copy its face. Create a meticulous banknote intaglio portrait of the person in image 1, matching image 2. Preserve their facial features, age, hairstyle, expression, gaze direction and recognizable clothing. Recompose as centered head-and-shoulders bust, full hair and chin with modest clear margin, face filling most of frame; remove hands, props, furniture and photo background. Dense crisp curved parallel contour lines and delicate crosshatching, all face volume described by engraved ink lines. Single warm olive-charcoal #343b30 ink on clean warm ivory #f3eddf, vertical 4:5. Lower shoulders fade through tapered engraved lines. No decorative frame, text, lettering, numbers, seals or watermark. Not a banknote design, only a portrait illustration. Subject is Sylvia Plath as a young woman in 1953, dark waved bob, pearl earrings, necklace, dark jacket and blouse, calm slight smile."
+      },
+      {
+        "key": "coppola",
+        "file": "francis-ford-coppola-reference.jpg",
+        "subject": "Subject is Francis Ford Coppola in 1973, long dark hair, full dark beard, large wire-frame glasses, striped open-collar shirt.",
+        "prompt": "Use case: style-transfer. Asset: additional editorial portrait in an existing vintage typewriter gallery. Image 1 is the identity reference; image 2 is ONLY the engraving style reference, never copy its face. Create a meticulous banknote intaglio portrait of the person in image 1, matching image 2. Preserve their facial features, age, hairstyle, expression, gaze direction and recognizable clothing. Recompose as centered head-and-shoulders bust, full hair and chin with modest clear margin, face filling most of frame; remove hands, props, furniture and photo background. Dense crisp curved parallel contour lines and delicate crosshatching, all face volume described by engraved ink lines. Single warm olive-charcoal #343b30 ink on clean warm ivory #f3eddf, vertical 4:5. Lower shoulders fade through tapered engraved lines. No decorative frame, text, lettering, numbers, seals or watermark. Not a banknote design, only a portrait illustration. Subject is Francis Ford Coppola in 1973, long dark hair, full dark beard, large wire-frame glasses, striped open-collar shirt."
+      },
+      {
+        "key": "connell",
+        "file": "evan-connell-reference.jpg",
+        "subject": "Subject is Evan S. Connell, closely cropped dark hair, small moustache, direct contemplative gaze, dark collared shirt. Remove the clasped hands and typewriter, keep his real facial proportions, do not invent older age or beard.",
+        "prompt": "Use case: style-transfer. Asset: additional editorial portrait in an existing vintage typewriter gallery. Image 1 is the identity reference; image 2 is ONLY the engraving style reference, never copy its face. Create a meticulous banknote intaglio portrait of the person in image 1, matching image 2. Preserve their facial features, age, hairstyle, expression, gaze direction and recognizable clothing. Recompose as centered head-and-shoulders bust, full hair and chin with modest clear margin, face filling most of frame; remove hands, props, furniture and photo background. Dense crisp curved parallel contour lines and delicate crosshatching, all face volume described by engraved ink lines. Single warm olive-charcoal #343b30 ink on clean warm ivory #f3eddf, vertical 4:5. Lower shoulders fade through tapered engraved lines. No decorative frame, text, lettering, numbers, seals or watermark. Not a banknote design, only a portrait illustration. Subject is Evan S. Connell, closely cropped dark hair, small moustache, direct contemplative gaze, dark collared shirt. Remove the clasped hands and typewriter, keep his real facial proportions, do not invent older age or beard."
+      }
+    ]
+  }
 }

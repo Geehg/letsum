@@ -38,3 +38,6 @@ body.tb-model-choosing{overflow:hidden}
 }
 /* Programmatic dialog heading focus is for screen-reader context, not a control. */
 #tbModelGalleryTitle:focus{outline:none}
+
+/* Two documented users per model, with identical portrait and copy alignment. */
+.tb-model-writer+.tb-model-writer{margin-top:12px}

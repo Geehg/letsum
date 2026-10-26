@@ -23,3 +23,12 @@
 
 ## 타자기 이미지
 `tools/typewriter-preview.html`을 개발 서버에 임시로 제공하여 동일 카메라·조명으로 각 모델 렌더. GLB 및 현재 Lettera/SM3 builder를 사용. 검정 리본, 투명 배경 720×440 PNG. `/img/typewriters/*-preview.png`로 저장. 운영 화면은 정적 PNG만 사용하므로 모델 선택 중 3개 WebGL 엔진을 계속 실행하지 않는다. 제작 모델이며 실물 사진으로 표시하지 않는다.
+
+## 추가 인물 · 2026-10-26
+- hermes3000 / 실비아 플라스: 시인 · 소설가. 『The Bell Jar』를 집필한 Hermes 3000이 가족 소장품으로 전해져 본햄스 경매에 출품됐습니다. 근거: https://bonhams.shorthandstories.com/beyond-the-bookshelf/
+- lettera32 / 프랜시스 포드 코폴라: 영화감독 · 각본가. 『대부』의 작업 노트를 준비할 때 Lettera 32로 타이핑한 기록이 골든글로브 자료에 남아 있습니다. 근거: https://goldenglobes.com/articles/how-words-become-images-inside-mind-francis-ford-coppola-godfather-notebook/
+- olympiasm3 / 에번 S. 코넬: 소설가 · 『Mrs. Bridge』의 작가. 타자기 연구자 리처드 폴트의 사진 자료에 Olympia SM3 사용자로 기록되어 있습니다. 근거: https://site.xavier.edu/polt/typewriters/typers.html
+- Plath 사진: AP 배포, The Boston Globe 1953-08-26. Commons PD-US-not renewed 표기: https://commons.wikimedia.org/wiki/File:Sylvia_Plath_-_The_Boston_Globe_(1953)_(cropped).png
+- Coppola 사진: Bernard Gotfryd, 1973, Library of Congress 소장·알려진 저작권 제한 없음: https://www.loc.gov/item/2020730227/
+- Connell 얼굴 참고: https://site.xavier.edu/polt/typewriters/Connell.jpg (원사진 촬영자·연도·라이선스는 자료에 명시되지 않아 단정하지 않음. 원사진은 운영 사이트에 복제하지 않음). SM3 사용 기록에 키보드 부분이 리터칭된 사진이라는 주석이 있어 특정 작품의 집필 기계라고 확대 해석하지 않음. 작품명 확인: https://en.wikipedia.org/wiki/Evan_S._Connell
+- 세 초상 모두 built-in image_gen으로 재해석. 기존 Larry 초상을 스타일 기준으로 사용. PNG·참고자료·프롬프트는 /Volumes/AI_dev/web/letsum-more-writers/, 웹 자산은 people/*-engraved.webp 480×600.

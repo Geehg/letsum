@@ -455,3 +455,8 @@ img.save("sample.png")
 - 몰입 모드 캐리지/종이/플래튼/마진벨의 위치를 `tbOrig` 다음 글자의 실제 DOM 줄·열로 통일. 웹폰트 로딩 후 재동기화. 일반 레트로 입력의 기존 텍스트 측정 경로 유지. typing-hermes.js v39.
 - 브라우저 확인: Hermes/Lettera/Olympia 자동 줄바꿈, 경계 Backspace 후 복귀, 실제 Enter(84→85자), 글자 크기 14→16px. Hermes 첫 줄 완료 시 종이 높이 96.76→138.86px, 캐리지 오른쪽 복귀, 다음 글자와 커서가 용지 안에 표시됨.
 - 페이지 빌드 및 validate 오류 0, 기존 경고 264. 사용자 운영 필사 내용은 수정하지 않음.
+
+
+## 2026-10-26 — 모델별 추가 사용 인물
+- Hermes 3000: Sylvia Plath, Lettera 32: Francis Ford Coppola, Olympia SM3: Evan S. Connell. 각 모델에 기존 인물 아래 1명씩 추가하여 총 6명. 사용 근거 링크와 일러스트 참고 출처 제공.
+- 기존과 동일한 지폐 동판화풍 초상 3종 생성, 모델 선택 로직은 유지. typing-model-gallery.css v4. 상세 출처 TYPEWRITER_GALLERY.md, 프롬프트 typewriter-portrait-prompts.json.
