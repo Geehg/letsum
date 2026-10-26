@@ -5,10 +5,10 @@ const root=fileURLToPath(new URL('..',import.meta.url));const scratch=fs.mkdtemp
 fs.copyFileSync(root+'/html/js/vendor/three/three.module.js',path.join(scratch,'hermes-three.mjs'));fs.writeFileSync(path.join(scratch,'hermes-loader.mjs'),fs.readFileSync(root+'/html/js/vendor/three/GLTFLoader.js','utf8').replace("'./three.module.js'","'./hermes-three.mjs'"));
 const T=await import(path.join(scratch,'hermes-three.mjs')),{GLTFLoader}=await import(path.join(scratch,'hermes-loader.mjs'));
 const b=fs.readFileSync(root+'/html/img/typewriters/hermes3000.glb');const gltf=await new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j));const nodes={};gltf.scene.traverse(o=>nodes[o.name]=o);
-const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene,renderedCamera;const textureLoads=[];let failNextLoad=false,throwNextRender=false,releasedContexts=0,delayNextLoad=false,releaseDelayedLoad;
+const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,sizeChanges=0,renderedScene,renderedCamera;const textureLoads=[];let failNextLoad=false,throwNextRender=false,releasedContexts=0,delayNextLoad=false,releaseDelayedLoad;
 function el(id){return {id,children:[],dataset:{},style:{setProperty(k,v){this[k]=v},getPropertyValue(k){return this[k]||''}},hidden:false,value:'',placeholder:'write',selectionStart:0,scrollHeight:594,scrollTop:0,clientWidth:870,clientHeight:600,parentElement:null,addEventListener(e,f){(events[id+':'+e]??=[]).push(f)},removeEventListener(e,f){events[id+':'+e]=(events[id+':'+e]||[]).filter(x=>x!==f)},appendChild(c){c.parentElement=this},after(c){c.parentElement=this.parentElement},setAttribute(){},dispatchEvent(e){for(const f of events[id+':'+e.type]||[])f(e)},remove(){},focus(){ctx.document.activeElement=this},getContext(){return {measureText(c){return {width:c.codePointAt(0)>127?26:13}},fillRect(){},fillText(){},createRadialGradient(){return {addColorStop(){}}}}}};}
 const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus','tbHermesLoading','tbHermesLoadingText','tbHermesRetry'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
-class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene,camera){if(throwNextRender){throwNextRender=false;throw new Error('simulated render failure');}renderedScene=scene;renderedCamera=camera;renders++}dispose(){}forceContextLoss(){releasedContexts++}}
+class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){sizeChanges++}render(scene,camera){if(throwNextRender){throwNextRender=false;throw new Error('simulated render failure');}renderedScene=scene;renderedCamera=camera;renders++}dispose(){}forceContextLoss(){releasedContexts++}}
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
 fs.copyFileSync(root+'/html/js/typing-lettera.js',path.join(scratch,'lettera.mjs'));await import(path.join(scratch,'lettera.mjs'));const buildLettera32=globalThis.LSBuildLettera32;
 let thisUsed=false;
@@ -169,6 +169,22 @@ function feedOption(on){ids.tbMain.dataset.paperFeed=on?'physical':'full';observ
 ids.tbMain.dataset.readingMode='immersive';ids.tbOrig.dataset.source='a'.repeat(80)+'\n'+'b'.repeat(120);ids.tbInput.value='';ids.tbInput.selectionStart=0;modeObservers();tick();
 const fullPaperMatrix=paperMatrix(),fullPaperHeight=parseFloat(ids.tbHermesPaper.style.height);feedOption(true);
 const firstLineY=paperMatrix()[5],firstLineHeight=parseFloat(ids.tbHermesPaper.style.height),firstRoll=nodes.Platen.quaternion.clone();
+// A background resize must not clear the last canvas or expose the entire paper
+// before a render can restore its physical feed crop.
+const beforeBackground={sizes:sizeChanges,renders,height:ids.tbHermesPaper.style.height};
+doc.hidden=true;event('document','visibilitychange');
+ids.tbHermesView.clientWidth+=12;
+event('tbHermesView','tb:hermes-align');event('tbInput','tb:paper');
+assert.equal(sizeChanges,beforeBackground.sizes,'background resize must not clear the last canvas');
+assert.equal(ids.tbHermesPaper.style.height,beforeBackground.height,'background sync keeps the exposed sheet height');
+tick();assert.equal(renders,beforeBackground.renders,'hidden document does not render');
+doc.hidden=false;event('document','visibilitychange');tick();
+assert(renders>beforeBackground.renders,'foreground resume paints the pending resize');
+assert.equal(sizeChanges,beforeBackground.sizes+1,'pending size changes commit with the render');
+const stableSizes=sizeChanges;event('tbHermesView','tb:hermes-align');tick();
+assert.equal(sizeChanges,stableSizes,'same-size alignment never clears the drawing buffer');
+ids.tbHermesView.clientWidth-=12;event('tbHermesView','tb:hermes-align');tick();
+
 assert(firstLineHeight<fullPaperHeight*.25,'initial exposed sheet is just the first line and top margin');
 assert(Math.abs(paperMatrix()[0]-fullPaperMatrix[0])<1e-9,'physical feed keeps A4 width');
 assert(Math.abs(nodes.Paper.position.y-nodes.Paper.scale.y*.222/2-.174)<1e-9,'depth mask ends at the platen instead of obscuring the keyboard');

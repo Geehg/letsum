@@ -7,7 +7,7 @@
  const feeding=()=>main.dataset.paperFeed==='physical';
  const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let active=false,inView=true,loading=false,engine=null,composing=false,failed=false,failedModel='';
+ let active=false,loading=false,engine=null,composing=false,failed=false,failedModel='';
  function sceneState(value,message){
   main.dataset.hermesState=value;
   const panel=$('tbHermesLoading'),label=$('tbHermesLoadingText'),retry=$('tbHermesRetry');
@@ -40,8 +40,9 @@
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode','data-model-gate']});
  new MutationObserver(update).observe($('tbRead'),{attributes:true,attributeFilter:['hidden']});
- new IntersectionObserver(e=>{inView=e[0].isIntersecting;engine?.wake();}).observe(stage);
- document.addEventListener('visibilitychange',()=>engine?.wake());
+ new IntersectionObserver(e=>{if(e[0].isIntersecting)engine?.wake();}).observe(stage);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)engine?.stop();else engine?.resize();});
+ window.addEventListener('pageshow',()=>engine?.resize());
  view.addEventListener('click',e=>{if(e.target!==input)input.focus({preventScroll:true});});
  input.addEventListener('compositionstart',()=>{composing=true;});
  input.addEventListener('compositionend',()=>{composing=false;engine?.sync();});
@@ -301,15 +302,18 @@
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,bellLine=-1;
+   let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
-   function running(){return !disposed&&active&&!failed&&inView&&!document.hidden;}
+   function running(){return !disposed&&active&&!failed&&!document.hidden;}
    function resetKeys(){pressed.clear();hits.length=0;shift=false;keys.forEach(k=>{k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);});}
    function stop(){cancelAnimationFrame(raf);raf=0;prev=0;resetKeys();}
    function wake(){until=performance.now()+800;if(!raf&&running())raf=requestAnimationFrame(frame);}
-   function resize(){
+   // Canvas allocation and paper layout commit together inside a visible frame.
+   function resize(){resizePending=true;wake();}
+   function applyResize(){
+    resizePending=false;
     if(disposed||!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
     const trace=tracing(),a=width/height,instrumentScale=1.15;
@@ -325,7 +329,7 @@
     // Render the cloth to the viewport edges without changing instrument framing.
     const rect=view.getBoundingClientRect?.(),viewportWidth=document.documentElement?.clientWidth||width;
     bleedLeft=Math.max(0,rect?.left||0);bleedRight=Math.max(0,viewportWidth-(rect?.right||width));renderWidth=width+bleedLeft+bleedRight;
-    renderer.setSize(renderWidth,height,false);
+    if(bufferWidth!==renderWidth||bufferHeight!==height){renderer.setSize(renderWidth,height,false);bufferWidth=renderWidth;bufferHeight=height;}
     renderer.domElement.style.width=renderWidth+'px';renderer.domElement.style.left=-bleedLeft+'px';
     view.style.setProperty('--tb-bleed-left',bleedLeft+'px');view.style.setProperty('--tb-bleed-right',bleedRight+'px');
     // Enlarge the instrument by 15%; inversely compensate the A4 sheet
@@ -393,7 +397,7 @@
     if(trace)paper.style.setProperty('--tb-trace-font',getComputedStyle(input).fontFamily);
     const all=layout(input.value),before=layout(prefix),position=trace?tracePosition(caret):null,now=performance.now(),changed=input.value!==lastValue,initial=lastValue===null;
     // The sheet physically feeds upward; its print area grows instead of moving padding instantly.
-    fullHeight=trace||physical?paperHeight:paperHeight+(all.length-1)*lineHeight;paper.style.height=fullHeight+'px';input.style.height=fullHeight*traceProjection+'px';paper.style.setProperty('--tb-trace-editor-height',fullHeight*traceProjection+'px');
+    fullHeight=trace||physical?paperHeight:paperHeight+(all.length-1)*lineHeight;
     input.style.paddingTop=(trace||physical?32:paperHeight-printBottom-lineHeight)+'px';input.style.paddingBottom=(trace||physical?32:30)+'px';if(!trace)input.scrollTop=0;
     paper.dataset.paper=main.dataset.paper||'ivory';count.textContent=$('tbCount').textContent;countWidth=Math.max(76,count.textContent.length*6.5+12);count.style.width=countWidth+'px';
     if(!composing){
@@ -431,8 +435,8 @@
     const visible=feeding()?Math.max(0,Math.min(fullHeight,(top-shiftLift-.174)/(paperTop-.174)*paperHeight)):fullHeight;
     // Size the exposed sheet itself so the hidden tail cannot extend document scrolling.
     paper.style.height=(feeding()?visible:fullHeight)+'px';
-    if(feeding()){
-     const editorHeight=visible*traceProjection+'px';
+    {
+     const editorHeight=(feeding()?visible:fullHeight)*traceProjection+'px';
      if(input.style.height!==editorHeight)input.style.height=editorHeight;
      if(paper.style.getPropertyValue('--tb-trace-editor-height')!==editorHeight)paper.style.setProperty('--tb-trace-editor-height',editorHeight);
     }
@@ -445,7 +449,7 @@
    }
    function frame(now){
     try{
-    raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
+    raf=0;if(!running())return;if(resizePending)applyResize();const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
     for(const k of keys){
      k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);const p=pressed.get(k.name);if(!p)continue;
      let depth=smooth(clamp((now-p.time)/24));
@@ -483,7 +487,7 @@
     placePaper();renderer.render(scene,camera);
     if(main.dataset.hermesState!=='ready')sceneState('ready');
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
-    if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
+    if(!raf&&(now<until||pressed.size||hits.length||drive||feedDrive))raf=requestAnimationFrame(frame);
     }catch(error){failEngine(error);}
    }
    function down(e){
