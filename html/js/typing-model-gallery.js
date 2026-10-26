@@ -33,12 +33,14 @@
   else document.getElementById('tbStart').focus({preventScroll:true});
  });
  function sync(){
+  if(main.dataset.appReady!=='true')return;
   const wanted=immersive(),reading=!read.hidden;
   if(wanted&&(first||!wasImmersive||(reading&&!wasReading&&main.dataset.modelGate==='pending')))open();
   if(!wanted&&dialog.open)close();
   first=false;wasImmersive=wanted;wasReading=reading;
+  clearTimeout(window.tbBootTimer);document.documentElement.removeAttribute('data-tb-boot');
  }
- new MutationObserver(sync).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin']});
+ new MutationObserver(sync).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-app-ready']});
  new MutationObserver(sync).observe(read,{attributes:true,attributeFilter:['hidden']});
  sync();
 })();

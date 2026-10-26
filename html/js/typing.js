@@ -607,7 +607,7 @@
 
   function route() {
     const m = location.hash.match(/^#\/read\/(.+)$/);
-    if (m) openBook(decodeURIComponent(m[1])); else showShelf();
+    if (m) return openBook(decodeURIComponent(m[1])); else showShelf();
   }
 
   // ---------- 시작 ----------
@@ -624,8 +624,8 @@
     state.fontSize = Math.max(14, Math.min(34, +readJSON("font", 18) || 18)); state.traceFontSize = Math.max(10, Math.min(28, +readJSON("trace-font", 14) || 14)); state.finger = readJSON("finger", false) === true; state.kb = readJSON("kb", true) !== false;
     renderKeys(); $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF";
     $("tbKeys").hidden = !state.kb; $("tbKbToggle").querySelector("span").textContent = state.kb ? "ON" : "OFF";
-    bind(); route();
+    bind(); await route(); $("tbMain").dataset.appReady = "true";
     setInterval(() => { if (state.book && state.started && !$("tbModelGallery")?.open && !$("tbRead").hidden && document.visibilityState === "visible" && Date.now() - state.lastActivity <= 10000 && !state.completed.has(state.page)) { state.elapsed++; learnSec(); renderStats(); if (state.elapsed % 5 === 0) storeProgress(); } }, 1000);
   }
-  init().catch((e) => { $("tbThemes").innerHTML = `<p class="note">서가를 불러오지 못했습니다. 새로고침해 주세요. (${esc(e.message)})</p>`; });
+  init().catch((e) => { const boot=$("tbBoot"); if(boot){boot.querySelector("p").textContent="필사 공간을 불러오지 못했습니다. 연결을 확인하고 다시 시도해 주세요.";boot.querySelector("button").hidden=false;} $("tbThemes").innerHTML = `<p class="note">서가를 불러오지 못했습니다. 새로고침해 주세요. (${esc(e.message)})</p>`; });
 })();

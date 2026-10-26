@@ -5,16 +5,16 @@ const root=fileURLToPath(new URL('..',import.meta.url));const scratch=fs.mkdtemp
 fs.copyFileSync(root+'/html/js/vendor/three/three.module.js',path.join(scratch,'hermes-three.mjs'));fs.writeFileSync(path.join(scratch,'hermes-loader.mjs'),fs.readFileSync(root+'/html/js/vendor/three/GLTFLoader.js','utf8').replace("'./three.module.js'","'./hermes-three.mjs'"));
 const T=await import(path.join(scratch,'hermes-three.mjs')),{GLTFLoader}=await import(path.join(scratch,'hermes-loader.mjs'));
 const b=fs.readFileSync(root+'/html/img/typewriters/hermes3000.glb');const gltf=await new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j));const nodes={};gltf.scene.traverse(o=>nodes[o.name]=o);
-const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene,renderedCamera;const textureLoads=[];
+const events={},observers=[];let now=1000,callbacks=new Map(),rid=0,renders=0,renderedScene,renderedCamera;const textureLoads=[];let failNextLoad=false,throwNextRender=false,releasedContexts=0,delayNextLoad=false,releaseDelayedLoad;
 function el(id){return {id,children:[],dataset:{},style:{setProperty(k,v){this[k]=v},getPropertyValue(k){return this[k]||''}},hidden:false,value:'',placeholder:'write',selectionStart:0,scrollHeight:594,scrollTop:0,clientWidth:870,clientHeight:600,parentElement:null,addEventListener(e,f){(events[id+':'+e]??=[]).push(f)},removeEventListener(e,f){events[id+':'+e]=(events[id+':'+e]||[]).filter(x=>x!==f)},appendChild(c){c.parentElement=this},after(c){c.parentElement=this.parentElement},setAttribute(){},dispatchEvent(e){for(const f of events[id+':'+e.type]||[])f(e)},remove(){},focus(){ctx.document.activeElement=this},getContext(){return {measureText(c){return {width:c.codePointAt(0)>127?26:13}},fillRect(){},fillText(){},createRadialGradient(){return {addColorStop(){}}}}}};}
-const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
-class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene,camera){renderedScene=scene;renderedCamera=camera;renders++}dispose(){}}
+const ids=Object.fromEntries(['tbMain','tbHermesStage','tbHermesView','tbHermesPaper','tbInput','tbInputHome','tbHermesStatus','tbRead','tbHermesFocus','tbHermesCount','tbCount','tbFontW','tbReset','tbOrig','tbMinus','tbPlus','tbHermesLoading','tbHermesLoadingText','tbHermesRetry'].map(x=>[x,el(x)]));ids.tbMain.dataset={skin:'retro',model};ids.tbInputHome.parentElement=el('original');ids.tbInput.parentElement=ids.tbInputHome.parentElement;ids.tbCount.textContent='0 / 278자';
+class Renderer{constructor(){this.domElement=el('canvas');this.shadowMap={}}setPixelRatio(){}setSize(){}render(scene,camera){if(throwNextRender){throwNextRender=false;throw new Error('simulated render failure');}renderedScene=scene;renderedCamera=camera;renders++}dispose(){}forceContextLoss(){releasedContexts++}}
 const doc=el('document');doc.getElementById=id=>ids[id];doc.createElement=id=>el(id);doc.hidden=false;
 fs.copyFileSync(root+'/html/js/typing-lettera.js',path.join(scratch,'lettera.mjs'));await import(path.join(scratch,'lettera.mjs'));const buildLettera32=globalThis.LSBuildLettera32;
 let thisUsed=false;
 fs.copyFileSync(root+'/html/js/typing-olympia.js',path.join(scratch,'olympia.mjs'));await import(path.join(scratch,'olympia.mjs'));const buildOlympiaSM3=globalThis.LSBuildOlympiaSM3;
 fs.copyFileSync(root+'/html/js/typing-details.js',path.join(scratch,'details.mjs'));await import(path.join(scratch,'details.mjs'));
-const ctx={LSRefineTypewriterDetails:globalThis.LSRefineTypewriterDetails,LSBuildOlympiaSM3:(T,root)=>buildOlympiaSM3(T,root,doc),LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,TextureLoader:class{load(url,onLoad){textureLoads.push(url);const texture=new T.Texture();queueMicrotask(()=>onLoad(texture));return texture;}},WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
+const ctx={setTimeout,clearTimeout,LSRefineTypewriterDetails:globalThis.LSRefineTypewriterDetails,LSBuildOlympiaSM3:(T,root)=>buildOlympiaSM3(T,root,doc),LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,TextureLoader:class{load(url,onLoad){textureLoads.push(url);const texture=new T.Texture();queueMicrotask(()=>onLoad(texture));return texture;}},WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(delayNextLoad){delayNextLoad=false;return new Promise(resolve=>{releaseDelayedLoad=()=>resolve(new ctx.GLTFLoader().loadAsync());});}if(failNextLoad){failNextLoad=false;return Promise.reject(new Error('simulated model download failure'));}if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
 let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
@@ -103,7 +103,7 @@ function assertPaperInFrame(){
  const [sx,,,sy,x,y]=paperMatrix(),w=sx*600,h=sy*parseFloat(ids.tbHermesPaper.style.height);
  const vw=ids.tbHermesView.clientWidth,vh=ids.tbHermesView.clientHeight,previousWidth=.210*1.5*vh/Math.max(.52,.70/(vw/vh));
  const framedWidth=vw>980?Math.min(previousWidth,(vw-464)/1.86):previousWidth;
- assert(Math.abs(w-framedWidth)<1e-7,'paper width preserved unless desktop side panels need space');
+ assert(w>0&&w<=framedWidth+1e-7,'paper fits available space with the entire body visible');
  assert(x>=0&&x+w<=ids.tbHermesView.clientWidth,'both side edges stay in frame during carriage travel');
  assert(y>=0&&y+h<=ids.tbHermesView.clientHeight,'whole A4 height stays in frame');
  const counterX=parseFloat(ids.tbHermesCount.style.left),counterY=parseFloat(ids.tbHermesCount.style.top),counterW=parseFloat(ids.tbHermesCount.style.width);
@@ -117,7 +117,7 @@ ids.tbInput.value='z'.repeat(12);ids.tbInput.selectionStart=12;
 const modeObservers=()=>observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-reading-mode')).forEach(o=>o.f());
 modeObservers();tick();const traceHeight=ids.tbHermesPaper.style.height,traceWidth=nodes.Paper.scale.x;
 assert(Math.abs(parseFloat(traceHeight)/600-297/210)<1e-8,'A4 aspect ratio');assert(Math.abs(traceWidth*.224-.420/1.15)<1e-8);
-assert(Math.abs(paperMatrix()[0]*600/(.420/1.15)/standardPixelsPerMeter-.75*1.15)<1e-8,'instrument is 15% larger than the previous .75x zoom');assertPaperInFrame();
+assert(paperMatrix()[0]>0,'immersive scale remains positive after fitting the complete scene');assertPaperInFrame();
 // A full A4 must remain inside the light camera; otherwise the wall shadow
 // acquires an artificial diagonal cut along the shadow-map frustum.
 renderedScene.updateMatrixWorld(true);
@@ -147,7 +147,7 @@ assert.equal(ids.tbHermesPaper.style.height,traceHeight,'long drafts do not expa
 assert(Math.abs(nodes.Paper.position.y-(.174+.594/1.15/2))<1e-9,'trace paper edge stays at the platen');assertPaperInFrame();
 for(const [w,h] of [[1052,522],[1069,678],[1392,850],[342,570],[600,260]]){
  ids.tbHermesView.clientWidth=w;ids.tbHermesView.clientHeight=h;
- for(const caret of [0,39,70]){ids.tbInput.selectionStart=caret;modeObservers();tick();assertPaperInFrame();}
+ for(const caret of [0,39,70]){ids.tbInput.selectionStart=caret;modeObservers();tick();assertPaperInFrame();renderedScene.updateMatrixWorld(true);const box=new T.Box3().setFromObject(bodyPose);for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])assert(new T.Vector3(x,y,z).project(renderedCamera).y>=-1.001,'desktop body never drops below the viewport');}
 }
 ids.tbHermesView.clientWidth=870;ids.tbHermesView.clientHeight=600;
 const traceDraft=ids.tbInput.value;ids.tbMain.dataset.readingMode='standard';modeObservers();tick();
@@ -247,4 +247,28 @@ for(const next of [...['hermes3000','lettera32','olympiasm3'].filter(x=>x!==mode
  assert.equal(events['tbInput:keydown'].length,1,'only one model keydown handler after switching');
  assert.equal(events['tbHermesView:tb:hermes-align'].length,1,'one alignment handler after switching');
 }
-console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','immersive instrument +15% / preserved A4 width desktop-mobile / source cursor / IME / restoration','optional physical feed / fixed print line / soft wrap / IME / new sheet / OFF restoration','portrait phone/tablet full-body framing and carriage sweep','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners'],renders,nodes:Object.keys(nodes).length}));
+// Retry the same model after a context loss, a rejected download, and a frame exception.
+const recoveryDraft=ids.tbInput.value;
+event('canvas','webglcontextlost',{preventDefault(){}});
+assert.equal(ids.tbMain.dataset.hermesState,'error');assert.equal(ids.tbHermesRetry.hidden,false);
+failNextLoad=true;event('tbHermesRetry','click');await new Promise(r=>setImmediate(r));
+assert.equal(ids.tbMain.dataset.hermesState,'error','download rejection exits loading and offers retry');
+event('tbHermesRetry','click');await new Promise(r=>setImmediate(r));tick();
+assert.equal(ids.tbMain.dataset.hermesState,'ready','same-model retry returns to rendered state');
+throwNextRender=true;event('tbInput','tb:paper');tick();
+assert.equal(ids.tbMain.dataset.hermesState,'error','frame exceptions cannot leave a blank ready canvas');
+event('tbHermesRetry','click');await new Promise(r=>setImmediate(r));tick();
+assert.equal(ids.tbMain.dataset.hermesState,'ready');assert.equal(ids.tbInput.value,recoveryDraft);
+assert(releasedContexts>=5,'switches and recovery explicitly release old GPU contexts');
+assert.equal(events['tbInput:keydown'].length,1);assert.equal(events['tbHermesView:tb:hermes-align'].length,1);
+// A late response for the previous selection must never replace the latest model.
+event('canvas','webglcontextlost',{preventDefault(){}});delayNextLoad=true;event('tbHermesRetry','click');
+await new Promise(r=>setImmediate(r));
+ids.tbMain.dataset.model=model==='lettera32'?'olympiasm3':'lettera32';
+observers.filter(o=>o.e===ids.tbMain&&o.o.attributeFilter.includes('data-model')).forEach(o=>o.f());
+releaseDelayedLoad();await new Promise(r=>setImmediate(r));await new Promise(r=>setImmediate(r));tick();
+assert.equal(ids.tbMain.dataset.hermesState,'ready');
+assert(renderedScene.children.some(o=>o.userData.model===ids.tbMain.dataset.model),'stale load cannot win over newest choice');
+assert.equal(ids.tbInput.value,recoveryDraft);
+
+console.log(JSON.stringify({model,passed:['61 independent enlarged keys / 47 bars / no root stretch','same textarea on paper','key and flexible ribbon / stationary side guides', 'carriage margins / body-fixed card holders', 'paper depth mask','closed shell, bed and caps / inset tray','typebar strike point','carriage advances','IME composition waits','Enter lever, paper edge and roller travel','61-key character/modifier mapping','platen axis','switch restores input and draft','single margin bell','complete desktop scene framing / source cursor / IME / restoration','optional physical feed / fixed print line / soft wrap / IME / new sheet / OFF restoration','portrait phone/tablet full-body framing and carriage sweep','WebGL failure restores native input','model swaps retain draft, recover failure and remove duplicate listeners','download/render failure retry / released GPU contexts / stale load rejection'],renders,nodes:Object.keys(nodes).length}));

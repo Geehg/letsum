@@ -8,6 +8,19 @@
  const tracing=()=>main.dataset.readingMode==='immersive';
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,inView=true,loading=false,engine=null,composing=false,failed=false,failedModel='';
+ function sceneState(value,message){
+  main.dataset.hermesState=value;
+  const panel=$('tbHermesLoading'),label=$('tbHermesLoadingText'),retry=$('tbHermesRetry');
+  if(panel)panel.hidden=value==='ready';if(label)label.textContent=message||'타자기를 준비하고 있어요…';if(retry)retry.hidden=value!=='error';
+ }
+ function failEngine(error){
+  failed=true;failedModel=main.dataset.model;loading=false;
+  engine?.dispose();engine=null;restore();main.dataset.hermesFailed='true';
+  sceneState('error','타자기 표시가 중단됐어요. 작성한 내용은 유지됩니다.');
+  status.textContent='타자기 다시 불러오기를 눌러 주세요. 기본 입력창에서도 이어 쓸 수 있어요.';
+  console.warn('Typewriter unavailable',error);
+ }
+ $('tbHermesRetry')?.addEventListener('click',()=>{failed=false;failedModel='';main.dataset.hermesFailed='false';update();});
  function restore(){
   if(input.parentElement===paper){home.after(input);for(const p of ['paddingTop','paddingBottom','fontSize','lineHeight','height'])input.style[p]='';input.placeholder=originalPlaceholder;}
   main.dataset.hermesReady='false';
@@ -33,20 +46,29 @@
  input.addEventListener('compositionstart',()=>{composing=true;});
  input.addEventListener('compositionend',()=>{composing=false;engine?.sync();});
  async function init(){
-  loading=true;const selectedModel=main.dataset.model,cleanups=[];
-  status.textContent=modelNames[selectedModel]+' 준비 중…';let renderer,disposed=false;
+  loading=true;sceneState('loading');const selectedModel=main.dataset.model,cleanups=[];
+  status.textContent=modelNames[selectedModel]+' 준비 중…';let renderer,disposed=false,releaseResources=()=>{};
+  function releaseGraph(root){const geometries=new Set(),materials=new Set(),textures=new Set();root?.traverse(o=>{if(o.geometry)geometries.add(o.geometry);for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){materials.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());}
   function listen(target,type,fn){target.addEventListener(type,fn);cleanups.push(()=>target.removeEventListener(type,fn));}
   function observe(Observer,fn,target,options){const o=new Observer(fn);o.observe(target,options);cleanups.push(()=>o.disconnect());}
   try{
    const T=await import('/js/vendor/three/three.module.js'),{GLTFLoader}=await import('/js/vendor/three/GLTFLoader.js');
+   T.Cache.enabled=true;
+   let loadExpired=false,loadTimer;
+   const pending=new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
+   pending.then(result=>{if(loadExpired)releaseGraph(result.scene);},()=>{});
+   let asset;
+   try{asset=await Promise.race([pending,new Promise((_,reject)=>{loadTimer=setTimeout(()=>{loadExpired=true;reject(new Error('Model download timed out'));},30000);})]);}finally{clearTimeout(loadTimer);}
+   releaseResources=()=>releaseGraph(asset.scene);
+   if(!active||main.dataset.model!==selectedModel){releaseResources();loading=false;update();return;}
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
-   const asset=await new GLTFLoader().loadAsync('/img/typewriters/hermes3000.glb?v=6');
+
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
    globalThis.LSRefineTypewriterDetails(T,asset.scene,selectedModel);
-   const scene=new T.Scene(),nodes={};scene.add(asset.scene);
+   const scene=new T.Scene(),nodes={};scene.add(asset.scene);releaseResources=()=>releaseGraph(scene);
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
    nodes.Paper.visible=true;nodes.Paper.castShadow=true;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
@@ -63,7 +85,7 @@
    if(selectedModel==='lettera32'){
     const glossWindow=new T.Mesh(new T.BoxGeometry(.65,2.4,.025),new T.MeshBasicMaterial({color:0xf4f8ff}));glossWindow.material.color.multiplyScalar(4.2);glossWindow.position.set(-1.2,1.8,2);glossWindow.lookAt(0,0,0);room.add(glossWindow);
    }
-   const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();
+   const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();cleanups.push(()=>environment.dispose());
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
    // Static micrograin stays attached to the finish; mipmaps avoid sparkling at small sizes.
    const grainData=new Uint8Array(256*256*4),finishData=new Uint8Array(grainData.length);let seed=31;
@@ -295,7 +317,7 @@
     // On tall desktop windows keep room for both reading panels and carriage travel.
     const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
     const portrait=trace&&main.dataset.focusPortrait==='true';
-    const span=portrait?Math.max(.80,.64/a):Math.max(baseSpan,panelSpan);
+    let span=portrait?Math.max(.80,.64/a):Math.max(baseSpan,panelSpan);
     // Pull back along the same orthographic sightline so tall screens do not clip the foreground cloth.
     camera.position.set(0,.60,.73);
     if(portrait)camera.position.addScaledVector(new T.Vector3(0,.395,.73).normalize(),3);
@@ -311,11 +333,17 @@
     sheetWidth=trace?.420/instrumentScale:.224;paperTop=trace?.174+.594/instrumentScale:.396;
     paperHeight=trace||feeding()?paperWidth*297/210:594;
     if(feeding()&&!trace)paperTop=.174+sheetWidth*297/210;
-    camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;camera.top=span/2;camera.bottom=-span/2;
     camera.updateMatrixWorld();
     const sheetInset=trace?(parseFloat(getComputedStyle(main).getPropertyValue('--tb-focus-sheet-top'))||16):16;
+    if(trace&&!portrait){
+     const bounds=new T.Box3().setFromObject(bodyPose);let bottom=Infinity;
+     for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z])bottom=Math.min(bottom,new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse).y);
+     const top=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
+     span=Math.max(span,(top-bottom)/Math.max(.35,1-(sheetInset+20)/height));
+    }
+    camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;camera.top=span/2;camera.bottom=-span/2;
     if(trace){
-     // Align the sheet with the flanking book cover and next-page surface. The lower keys may leave the frame.
+     // Align the sheet with the flanking pages while keeping the complete body in frame.
      const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
      camera.top=sheetTop+sheetInset*span/height;camera.bottom=camera.top-span;
     }
@@ -416,6 +444,7 @@
     count.style.top=((view.offsetTop||0)+y+(beside?2:-countHeight-6))+'px';
    }
    function frame(now){
+    try{
     raf=0;if(!running())return;const dt=Math.min((now-(prev||now))/1000,.06);prev=now;const motion=!reduced.matches;
     for(const k of keys){
      k.position.copy(k.userData.rest);k.quaternion.copy(k.userData.restQ);const p=pressed.get(k.name);if(!p)continue;
@@ -452,8 +481,10 @@
     const sheetHeight=feeding()?Math.max(.0001,paperTop+currentFeed-.174):(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
     placePaper();renderer.render(scene,camera);
+    if(main.dataset.hermesState!=='ready')sceneState('ready');
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
     if(now<until||pressed.size||hits.length||drive||feedDrive)raf=requestAnimationFrame(frame);
+    }catch(error){failEngine(error);}
    }
    function down(e){
     if(!active)return;lastKeyAt=performance.now();if(e.code.startsWith('Shift'))shift=true;
@@ -469,14 +500,14 @@
    listen(view,'tb:hermes-align',resize);
    if(document.fonts)listen(document.fonts,'loadingdone',()=>sync(true));
    observe(ResizeObserver,resize,view);['tbMinus','tbPlus'].forEach(id=>listen($(id),'click',()=>{if(tracing())resize();}));listen($('tbFontW'),'change',()=>sync(true));listen($('tbReset'),'click',()=>queueMicrotask(()=>sync(true)));
-   listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failed=true;failedModel=selectedModel;stop();restore();main.dataset.hermesFailed='true';status.textContent='3D 표시가 중단되어 기본 입력창으로 전환했어요.';});
+   listen(renderer.domElement,'webglcontextlost',e=>{e.preventDefault();failEngine(new Error('WebGL context lost'));});
    function dispose(){
-    disposed=true;stop();cleanups.splice(0).forEach(fn=>fn());const geometries=new Set(),mats=new Set(),textures=new Set([grain,finish,contact.material.map,...clothCache.values()]);
+    if(disposed)return;disposed=true;stop();cleanups.splice(0).forEach(fn=>fn());const geometries=new Set(),mats=new Set(),textures=new Set([grain,finish,contact.material.map,...clothCache.values()]);
     scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){mats.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}}});
-    geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());environment.dispose();renderer.dispose();renderer.domElement.remove();
+    geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss?.();renderer.domElement.remove();
    }
    engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+' 61키 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+' · 61키 · 종이에 직접 입력';loading=false;update();
-  }catch(error){failed=true;failedModel=selectedModel;cleanups.splice(0).forEach(fn=>fn());renderer?.dispose();renderer?.domElement.remove();restore();main.dataset.hermesFailed='true';status.textContent='타자기를 불러오지 못했어요. 기본 입력창을 사용해 주세요.';console.warn('Typewriter unavailable',error);loading=false;if(selectedModel!==main.dataset.model)update();}
+  }catch(error){cleanups.splice(0).forEach(fn=>fn());releaseResources();renderer?.dispose();renderer?.forceContextLoss?.();renderer?.domElement.remove();loading=false;if(selectedModel!==main.dataset.model||!active){update();return;}failEngine(error);}
  }
  update();
 })();

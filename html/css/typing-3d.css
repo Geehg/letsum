@@ -81,3 +81,11 @@ main.tb[data-hermes-ready="true"] .tb-hermes-counter{visibility:visible}
 main.tb[data-paper-feed="physical"][data-hermes-ready="true"] .tb-hermes-paper::after{bottom:auto;top:calc(var(--tb-feed-visible-height,100%) - 44px)}
 main.tb[data-paper-feed="physical"][data-hermes-ready="true"] #tbOrig,
 main.tb[data-paper-feed="physical"][data-hermes-ready="true"] #tbInput{overflow:hidden!important}
+
+/* Show one stable scene while the model downloads, compiles, or recovers. */
+.tb-hermes-loading{position:absolute;inset:0;z-index:6;display:grid;align-content:center;justify-items:center;gap:12px;color:#61584b;font:13px/1.7 sans-serif;background:#d0c6b8}
+.tb-hermes-loading[hidden]{display:none}
+.tb-hermes-loading button{font:inherit;color:inherit;padding:10px 16px;border:1px solid #a99e8e;border-radius:4px;background:#eee7db;cursor:pointer}
+main.tb[data-hermes-state="loading"] :is(.tb-hermes-paper,.tb-hermes-counter,.tb-hermes-view>canvas,.tb-focus-aside){visibility:hidden!important}
+main.tb[data-reading-mode="immersive"]:not([data-hermes-state="error"]) :is(.tb-machine,.tb-rh){display:none}
+main.tb[data-hermes-state="error"] .tb-hermes-view{height:140px;min-height:140px}

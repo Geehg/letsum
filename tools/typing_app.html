@@ -10,15 +10,29 @@
 <meta property="og:image" content="https://letsum.app/img/og-main.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="렛섬 필사독서"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website"><meta property="og:title" content="필사독서 — LETSUM(렛섬)"><meta property="og:description" content="읽는 것을 넘어, 쓰는 독서. 명작을 한 글자씩 따라 쓰고 기록을 쌓으세요.">
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>
+// Keep the server-rendered reader out of the first paint until routing and the
+// model chooser agree on the requested mode. No stored draft is touched.
+document.documentElement.dataset.tbBoot='loading';
+window.tbBootTimer=setTimeout(function(){var b=document.getElementById('tbBoot');if(b){b.querySelector('p').textContent='준비가 지연되고 있어요. 연결을 확인하고 다시 시도해 주세요.';b.querySelector('button').hidden=false;}},20000);
+</script>
+<style>
+html[data-tb-boot] body{background:#d0c6b8}
+html[data-tb-boot] #tbMain,html[data-tb-boot] body>footer{visibility:hidden}
+#tbBoot{display:none;position:fixed;inset:100px 0 0;z-index:20;background:#d0c6b8;color:#514b40;text-align:center;align-content:center;font:14px/1.8 sans-serif}
+html[data-tb-boot] #tbBoot{display:block}
+#tbBoot button{padding:10px 18px;border:1px solid #a99e8e;background:#eee7db;color:inherit;border-radius:4px}
+</style>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="css/style.css?v=111">
 <link rel="stylesheet" href="css/typing-hero.css?v=2">
-<link rel="stylesheet" href="css/typing-3d.css?v=12">
+<link rel="stylesheet" href="css/typing-3d.css?v=13">
 <link rel="stylesheet" href="css/typing-retro-focus.css?v=8">
 <link rel="stylesheet" href="css/typing-model-gallery.css?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="tb-page">
+<div id="tbBoot" role="status"><p>필사 공간을 준비하고 있어요…</p><button type="button" hidden onclick="location.reload()">다시 불러오기</button></div>
 <header>
   <div class="wrap hd">
     <a class="logo" href="index.html"><img class="lg-l" src="img/logo.png" alt="렛섬 LETSUM" width="116" height="32"><img class="lg-d" src="img/logo-dark.png" alt="" aria-hidden="true" width="116" height="32"></a>
@@ -141,7 +155,7 @@
               <nav id="tbFocusBookPager" class="tb-focus-book-pager" aria-label="현재 쪽과 이전 쪽"></nav>
               <section id="tbFocusStats" class="tb-focus-stats" aria-label="실시간 필사 통계"></section>
             </aside>
-            <div class="tb-hermes-view" id="tbHermesView"><div class="tb-hermes-paper" id="tbHermesPaper" role="group" aria-label="타자기에 끼워진 종이"></div><span id="tbHermesCount" class="tb-hermes-counter" aria-label="필사 글자 수"></span></div>
+            <div class="tb-hermes-view" id="tbHermesView"><div class="tb-hermes-loading" id="tbHermesLoading" role="status" hidden><p id="tbHermesLoadingText">타자기를 준비하고 있어요…</p><button type="button" id="tbHermesRetry" hidden>타자기 다시 불러오기</button></div><div class="tb-hermes-paper" id="tbHermesPaper" role="group" aria-label="타자기에 끼워진 종이"></div><span id="tbHermesCount" class="tb-hermes-counter" aria-label="필사 글자 수"></span></div>
             <aside class="tb-focus-aside tb-focus-next" aria-label="다음 쪽 미리보기">
               <p class="tb-focus-label">다음 쪽 <span id="tbFocusNextNumber"></span></p>
               <div class="tb-focus-next-paper"><div id="tbFocusNextText" tabindex="0" role="region" aria-label="다음 쪽 본문"></div></div>
@@ -286,15 +300,15 @@
 <script src="js/common.js?v=2" data-base=""></script>
 <script src="js/shot.js?v=2"></script>
 <script src="js/typing-audio.js?v=2"></script>
-<script src="js/typing.js?v=34"></script>
+<script src="js/typing.js?v=35"></script>
 <script src="js/typing-sync.js?v=2"></script>
 <script src="js/typing-3d.js?v=6"></script>
 <script src="js/typing-retro-focus.js?v=10"></script>
 <script src="js/typing-lettera.js?v=3"></script>
 <script src="js/typing-olympia.js?v=4"></script>
 <script src="js/typing-details.js?v=1"></script>
-<script src="js/typing-hermes.js?v=40"></script>
-<script src="js/typing-model-gallery.js?v=1"></script>
+<script src="js/typing-hermes.js?v=41"></script>
+<script src="js/typing-model-gallery.js?v=2"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>
