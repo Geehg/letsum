@@ -1,0 +1,10 @@
+{
+  "model": "Olivetti Lettera 32, visual reconstruction",
+  "reference_serial": "2330939",
+  "reference_url": "https://typewriterdatabase.com/1965-olivetti-lettera-32.17916.typewriter",
+  "manual": "https://site.xavier.edu/polt/typewriters/OlivettiLettera32_ManualEN.pdf",
+  "accuracy": "Photo-derived appearance, not measured CAD. No hidden mechanism accuracy claimed. Typography on plaque is approximated.",
+  "objects": 547,
+  "keys": 50,
+  "blender": "4.5.15 LTS"
+}

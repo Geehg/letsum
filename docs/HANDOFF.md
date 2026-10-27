@@ -510,3 +510,25 @@ img.save("sample.png")
 - 세 모델의 상판 개구부·내측 접힘·캐리지 연결부·리본·키캡을 보강하고 어두운 실버 재질, 투명 배경 엠블럼, PCF 그림자를 반영했다. 상세: TYPEWRITER_ASSEMBLY_REVIEW.md / TYPEWRITER_SURFACES.md / TYPEWRITER_BADGES.md.
 - three-model 회귀 검사(각 20 항목), 재질·엠블럼 검사 통과. validate.py 오류 0, 기존 경고 264. 로컬 통합 화면에서 모델 로딩·입력 포커스·메뉴 숨김·미리보기 제거 확인.
 - 운영자가 현재 버전 배포를 명시적으로 요청해 GitHub main 및 NAS 정적 서비스에 반영하는 작업이다.
+
+### 2026-10-27 — Hermes 3000 실물 대조 Blender 제작본 (로컬 검토)
+- 기준: Stephen Hanafin의 1962 #3138796 직접 촬영과 Paillard 3003 B 설명서. 출처·관찰·제작값 구분은 HERMES_REFERENCE_BUILD.md.
+- tools/modeling/build_hermes_reference.py: Blender 4.5.15 LTS에서 독립 생성. 곡면 외장·개구부·접힘·캐리지 측판·44 문자키/54 전체키·PBR/normal. 편집 원본: /Volumes/AI_dev/web/typewriter-precision/hermes3000-reference.blend.
+- html/hermes-reference-review.html + html/js/hermes-reference-review.js: 4각도·회전·확대·형태 보기·키 누름. html/img/typewriters/reference/ GLB 약 13 MB. 로컬 8777 연결. 기존 필사 모델 교체나 NAS 배포는 하지 않음.
+- tools/check_hermes_reference.py 통과: GLB 구조·유한 좌표·11/12/11/10 문자키·54 전체키·캐리지 부모·내장 이미지/normal. validate 오류 0/기존 경고 264. 브라우저 로딩·각도·형태 보기·입력 확인, 경고/오류 로그 없음.
+- 사진 비례 제작이며 실측 CAD 아님. 국가별 이중 각인·내부 전체 기구는 미완전. 운영 모델 연결·모바일 성능 최적화·나머지 두 기종 재제작은 다음 단계.
+- 원격 커밋·푸시 및 잠금 해제는 자동 승인 검토에서 신규 모델 원격 반영의 명시적 승인이 없다는 이유로 차단. 로컬 변경과 codex-hermes-reference-rebuild 잠금 유지. 승인 없이 우회 실행하지 않음.
+
+- 이어서 재질 보강(로컬만): 독립 normal/roughness 맵 5개 내장 GLB 13,194,052바이트, Mapping 반복 보존, PMREM 창/띠 반사, VSM 그림자와 하부 깊이 기반 접촉 그림자. Blender 원본과 PNG 재생성. `check_hermes_reference.py` 통과, 전체 검증 오류 0/기존 경고 264, 브라우저 각도·형태 전환/키 입력 확인, 콘솔 오류·경고 없음. 결과 `/Volumes/AI_dev/web/typewriter-precision/material-after.png`. 커밋·푸시·운영 배포 미실행.
+
+- 레버 재제작(로컬만): 기존 3구간 튜브+수평 손잡이를 단일 연속 닫힌 메시로 교체. 상승부·둥근 꺾임·하향 손잡이·목의 점진적 비틀림·보이는 체결부 구성, 캐리지 하위 조립체로 묶음. 측면 버튼은 좌측으로 변경. GLB 13,712,936 bytes / 572 meshes / 54 keys, 구조 검증 통과, 전체 오류 0/기존 경고 264, 브라우저 정면·좌측·사선 확인 및 콘솔 오류·경고 없음. Blender/GLB/PNG 갱신, 스크린샷 `typewriter-precision/lever-after.png`, `lever-after-side.png`. JS/GLB 캐시 v5. 커밋·푸시·배포 미실행.
+
+- 레버 실제 필사 화면 연결(로컬): Hermes에만 `reference/hermes-return-lever.glb?v=1`(약 537 KB)을 추가 로드, 기존 Return_Lever 피벗과 줄바꿈 애니메이션 유지. 옛 샤프트/손잡이 숨김, 키보드·본문·종이 이송 변경 없음. typing-hermes.js v49, 원본 템플릿 및 생성 페이지 갱신. Hermes/Lettera/Olympia 회귀 테스트 모두 통과, 검증 오류 0/기존 경고 264. 브라우저 로컬 필사 화면에서 위치·로드 확인, 콘솔 오류/경고 없음. 독립 정밀 모델 전체 교체가 아닌 레버 부품 적용. 운영 배포·커밋·푸시 미실행.
+
+- 2026-10-27 Lettera 32 실물 대조 독립 모델: 1965 #2330939(Tas Kyprianou)의 정면·상면·내부·양 측면을 기준으로 Blender 새 제작. 빨간 오른쪽 키는 해당 개체의 특징이며 사용자가 준 검정 키 사진과 차이가 있음. 덮개 개구부·바스켓·뒤쪽 연속 외곽·검은 키·금속 재질과 캐리지·레버를 별도 구성. `docs/LETTERA_REFERENCE_BUILD.md` 출처/한계. 로컬 `http://localhost:8777/lettera-reference-review.html`, Blender/GLB/렌더 `/Volumes/AI_dev/web/typewriter-precision/lettera32-reference.*`, 웹 GLB 11,597,664 bytes, 545 meshes, 50 keys. `tools/check_lettera_reference.py` 통과, 전체 검증 오류 0/기존 경고 264, 웹 각도·입력과 로딩 확인, 콘솔 오류 없음. 명판 글꼴·일부 각인·캐리지 측면은 추가 보강 여지. 기존 필사 앱 미교체, 커밋·푸시·배포 미실행. 기존 Hermes 작업 LOCK 유지.
+
+
+### 2026-10-27 Lettera reference integrated into local typing
+- typing-lettera-reference.js attaches complete #2330939 reconstruction with embedded PBR materials to existing typing events; hidden legacy rig retained for input/paper compatibility. 50 visible reference keys, carriage, roller, lever and typebars follow motion. No duplicate legacy emblem.
+- typing-hermes.js v50; template and generated page updated. Local only; no push/deployment.
+- Separate reference review remains available. Photo-derived appearance and authored animation, not measured mechanical CAD.

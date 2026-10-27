@@ -1,0 +1,10 @@
+{
+  "model": "Hermes 3000, first-series visual reconstruction",
+  "reference_serial": "3138796",
+  "reference_url": "https://typewriterdatabase.com/1962-hermes-3000.17953.typewriter",
+  "manual": "https://site.xavier.edu/polt/typewriters/Hermes3000.pdf",
+  "accuracy": "Photo-derived appearance, not measured CAD. No hidden mechanism accuracy claimed. Generated badge is not original artwork.",
+  "objects": 574,
+  "keys": 54,
+  "blender": "4.5.15 LTS"
+}
