@@ -532,3 +532,6 @@ img.save("sample.png")
 - typing-lettera-reference.js attaches complete #2330939 reconstruction with embedded PBR materials to existing typing events; hidden legacy rig retained for input/paper compatibility. 50 visible reference keys, carriage, roller, lever and typebars follow motion. No duplicate legacy emblem.
 - typing-hermes.js v50; template and generated page updated. Local only; no push/deployment.
 - Separate reference review remains available. Photo-derived appearance and authored animation, not measured mechanical CAD.
+
+### 2026-10-28 Lettera interior contrast
+- Darkened recessed keybed and lowered internal mechanism reflection in typing-lettera-reference.js v2. Per-role cloned materials preserve exterior paint, keycaps and carriage chrome. Embedded texture maps retained.

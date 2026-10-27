@@ -5,13 +5,27 @@ globalThis.LSAttachLetteraReference=function(T,scene,rig,model,nodes,{anisotropy
  if(!carriage||!model.getObjectByName('Platen'))throw new Error('Lettera reference carriage missing');
  const root=new T.Group();root.name='Lettera_Reference_Integrated';root.scale.setScalar(1.22);root.position.z=-.02656;root.add(model);scene.add(root);
  rig.traverse(o=>{if(o.isMesh&&o!==nodes.Paper){o.visible=false;o.castShadow=false;}});
- const keys=[],rotors=[],bars=[],guides=[];
+ const keys=[],rotors=[],bars=[],guides=[],interiorMaterials=new Map();
  model.updateMatrixWorld(true);
  model.traverse(o=>{
   if(o.userData.key_code)keys.push({object:o,rest:o.position.clone(),driver:nodes['Key_'+o.userData.key_code]});
   if(o.isMesh){o.castShadow=!/Legend|Scale_tick|Card_graduation|Card_holder/.test(o.name);o.receiveShadow=true;
    for(const m of Array.isArray(o.material)?o.material:[o.material]){m.envMapIntensity=m.metalness>.8?1.22:.72;for(const slot of ['map','normalMap','roughnessMap','metalnessMap'])if(m[slot])m[slot].anisotropy=anisotropy;}
   }
+   // Interior surfaces receive little reflected room light. Clone by role so
+   // the carriage/lever chrome and exterior enamel retain their own finish.
+   const role=o.name==='Key_well_metal'?'bed':/^(Typebar_|Type_slug_|Type_guide|Stem_|Segment_arc|Ribbon_spool)/.test(o.name)?'mechanism':null;
+   if(role){
+    const source=o.material,key=source.uuid+':'+role;
+    if(!interiorMaterials.has(key)){
+     const m=source.clone();m.name=source.name+' — recessed '+role;
+     if(role==='bed'){m.color.setRGB(.026,.033,.030);m.metalness=.28;m.roughness=.65;m.envMapIntensity=.16;}
+     else {m.color.multiplyScalar(.45);m.roughness=Math.max(m.roughness,.46);m.envMapIntensity=.30;}
+     if('clearcoat' in m)m.clearcoat=0;
+     interiorMaterials.set(key,m);
+    }
+    o.material=interiorMaterials.get(key);
+   }
   if(/^(Platen$|Platen_knob)/.test(o.name))rotors.push({object:o,rest:o.quaternion.clone()});
   if(/^Type_guide/.test(o.name))guides.push({object:o,y:o.position.y});
  });
