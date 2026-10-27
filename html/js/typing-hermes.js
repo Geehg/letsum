@@ -35,7 +35,7 @@
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
    input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
-   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':' · 61키')+' · 종이에 직접 입력';engine.resize();
+   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 61키')+' · 종이에 직접 입력';engine.resize();
   }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode','data-model-gate']});
@@ -55,16 +55,16 @@
   try{
    const T=await import('/js/vendor/three/three.module.js'),{GLTFLoader}=await import('/js/vendor/three/GLTFLoader.js');
    T.Cache.enabled=true;
-   let loadExpired=false,loadTimer,letteraReference;
+   let loadExpired=false,loadTimer,detailedReference;
    const loader=new GLTFLoader();
    const pending=Promise.allSettled([
     loader.loadAsync('/img/typewriters/hermes3000.glb?v=6'),
     selectedModel==='hermes3000'?loader.loadAsync('/img/typewriters/reference/hermes-return-lever.glb?v=1'):Promise.resolve(null),
-    selectedModel==='lettera32'?loader.loadAsync('/img/typewriters/reference/lettera32-reference.glb?v=4'):Promise.resolve(null)
+    selectedModel==='lettera32'?loader.loadAsync('/img/typewriters/reference/lettera32-reference.glb?v=4'):selectedModel==='olympiasm3'?loader.loadAsync('/img/typewriters/reference/olympiasm3-reference.glb?v=2'):Promise.resolve(null)
    ]).then(results=>{
     const error=results.find(r=>r.status==='rejected');
     if(error){for(const r of results)if(r.status==='fulfilled'&&r.value)releaseGraph(r.value.scene);throw error.reason;}
-    const [base,reference,lettera]=results.map(r=>r.value);letteraReference=lettera?.scene;
+    const [base,reference,lettera]=results.map(r=>r.value);detailedReference=lettera?.scene;
     if(reference){
      const pivot=base.scene.getObjectByName('Return_Lever'),oldChrome=base.scene.getObjectByName('Return_Lever_Chrome');
      if(!pivot||!oldChrome){releaseGraph(reference.scene);releaseGraph(base.scene);throw new Error('Hermes return lever anchor missing');}
@@ -78,19 +78,19 @@
     }
     return base;
    });
-   pending.then(result=>{if(loadExpired){releaseGraph(result.scene);releaseGraph(letteraReference);}},()=>{});
+   pending.then(result=>{if(loadExpired){releaseGraph(result.scene);releaseGraph(detailedReference);}},()=>{});
    let asset;
    try{asset=await Promise.race([pending,new Promise((_,reject)=>{loadTimer=setTimeout(()=>{loadExpired=true;reject(new Error('Model download timed out'));},30000);})]);}finally{clearTimeout(loadTimer);}
-   releaseResources=()=>{releaseGraph(asset.scene);releaseGraph(letteraReference);};
+   releaseResources=()=>{releaseGraph(asset.scene);releaseGraph(detailedReference);};
    if(!active||main.dataset.model!==selectedModel){releaseResources();loading=false;update();return;}
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
-   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=selectedModel==='lettera32'?.94:.86;
+   renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=selectedModel==='olympiasm3'?.88:selectedModel==='lettera32'?.94:.86;
    renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
 
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
    globalThis.LSRefineTypewriterDetails(T,asset.scene,selectedModel);
-   const scene=new T.Scene(),nodes={};scene.add(asset.scene);releaseResources=()=>{releaseGraph(scene);if(letteraReference&&!letteraReference.parent)releaseGraph(letteraReference);};
+   const scene=new T.Scene(),nodes={};scene.add(asset.scene);releaseResources=()=>{releaseGraph(scene);if(detailedReference&&!detailedReference.parent)releaseGraph(detailedReference);};
    asset.scene.traverse(o=>{nodes[o.name]=o;if(o.isLight||o.isCamera)o.visible=false;if(o.isMesh){o.castShadow=!/Glyph_|Tick_|Ruler_Number|Knob_Reeding/.test(o.name);o.receiveShadow=true;}});
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
    nodes.Paper.visible=true;nodes.Paper.castShadow=true;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
@@ -119,6 +119,11 @@
    // Dark flags beside the window separate near-black silver reflections from
    // narrow highlights; the effect follows the surface normal, not painted bands.
    for(const x of [-1.25,1.25]){const flag=new T.Mesh(new T.BoxGeometry(.42,2.4,.025),new T.MeshBasicMaterial({color:0x030405}));flag.position.set(x,.3,2.4);flag.lookAt(0,.1,0);room.add(flag);}
+   if(selectedModel==='olympiasm3'){
+    for(const child of [...room.children]){room.remove(child);child.geometry?.dispose();child.material?.dispose();}
+    room.background=new T.Color(.008,.009,.008);
+    for(const [p,s,k] of [[[-.45,.8,-.55],[.65,.85,.01],6],[[.65,.4,.25],[.13,.85,.01],3],[[0,.75,-.6],[.9,.10,.01],7],[[0,.35,1.2],[.8,.12,.01],1.2]]){const m=new T.MeshBasicMaterial({color:0xffffff});m.color.multiplyScalar(k);const o=new T.Mesh(new T.BoxGeometry(...s),m);o.position.set(...p);o.lookAt(0,0,0);room.add(o);}
+   }
    const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();cleanups.push(()=>environment.dispose());
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
    // Static micrograin stays attached to the finish; mipmaps avoid sparkling at small sizes.
@@ -185,8 +190,9 @@
     }
     o.material=capMaterial;
    });
-   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel==='lettera32'?.10:selectedModel==='hermes3000'?.25:.38));
-   const keyLight=new T.DirectionalLight(0xffecd7,selectedModel==='lettera32'?.65:1.30);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel!=='hermes3000'?.10:selectedModel==='hermes3000'?.25:.38));
+   const keyLight=new T.DirectionalLight(0xffecd7,selectedModel!=='hermes3000'?.65:1.30);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   if(selectedModel==='olympiasm3'){keyLight.color.setHex(0xfff9ee);keyLight.position.set(-.45,.8,.6);}
    keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.00015;keyLight.shadow.normalBias=.00018;keyLight.shadow.radius=4;keyLight.shadow.blurSamples=12;
    const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
@@ -303,7 +309,7 @@
      p.setY(i,p.getY(i)-drop);const normal=new T.Vector3(n.getX(i),n.getY(i),n.getZ(i)+slope*n.getY(i)).normalize();n.setXYZ(i,normal.x,normal.y,normal.z);}
     p.needsUpdate=n.needsUpdate=true;g.computeBoundingBox();g.computeBoundingSphere();
    }
-   const badges=selectedModel==='lettera32'?null:globalThis.LSApplyTypewriterBadges?.(T,asset.scene,selectedModel,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1,onLoad:()=>{if(!disposed)wake();}});
+   const badges=selectedModel!=='hermes3000'?null:globalThis.LSApplyTypewriterBadges?.(T,asset.scene,selectedModel,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1,onLoad:()=>{if(!disposed)wake();}});
    if(badges)cleanups.push(()=>badges.dispose());
    const bodyPose=new T.Group();bodyPose.name='Typewriter_Body_Pose';
    const strikePivot=new T.Vector3(0,.164,-.119);
@@ -339,7 +345,7 @@
    const barFor=new Map(bars.map(o=>[o.userData.keyCode,o])),carriage=nodes.Carriage,platen=nodes.Platen,guide=nodes.Ribbon_Guide,lever=nodes.Return_Lever,basket=nodes.Typebasket;
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
-   const referenceMotion=letteraReference?globalThis.LSAttachLetteraReference(T,scene,asset.scene,letteraReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
+   const referenceMotion=detailedReference?(selectedModel==='olympiasm3'?globalThis.LSAttachOlympiaReference:globalThis.LSAttachLetteraReference)(T,scene,asset.scene,detailedReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
    let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,bellLine=-1;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
@@ -523,7 +529,7 @@
     if(motion&&rt>=0&&rt<480){const pull=rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140);lever.rotateX(-.34*pull);}
     const sheetHeight=feeding()?Math.max(.0001,paperTop+currentFeed-.174):(paperTop-.174)*fullHeight/paperHeight;
     nodes.Paper.scale.x=sheetWidth/.224;nodes.Paper.scale.y=sheetHeight/.222;nodes.Paper.position.y=paperTop+currentFeed-sheetHeight/2;
-    referenceMotion?.sync({currentX,angle,leverPull:motion&&rt>=0&&rt<480?(rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140)):0,lift});
+    referenceMotion?.sync({currentX,angle,leverPull:motion&&rt>=0&&rt<480?(rt<85?smooth(rt/85):rt<340?1:1-smooth((rt-340)/140)):0,lift,shiftLift});
     placePaper();renderer.render(scene,camera);
     if(main.dataset.hermesState!=='ready')sceneState('ready');
     if(layoutPending){layoutPending=false;view.dispatchEvent(new CustomEvent('tb:hermes-layout'));}
@@ -550,7 +556,7 @@
     scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){mats.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}}});
     geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss?.();renderer.domElement.remove();
    }
-   engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+(referenceMotion?' 50키':' 61키')+' 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':' · 61키')+' · 종이에 직접 입력';loading=false;update();
+   engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+(selectedModel==='olympiasm3'?' 51키':referenceMotion?' 50키':' 61키')+' 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 61키')+' · 종이에 직접 입력';loading=false;update();
   }catch(error){cleanups.splice(0).forEach(fn=>fn());releaseResources();renderer?.dispose();renderer?.forceContextLoss?.();renderer?.domElement.remove();loading=false;if(selectedModel!==main.dataset.model||!active){update();return;}failEngine(error);}
  }
  update();

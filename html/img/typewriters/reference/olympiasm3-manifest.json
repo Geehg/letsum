@@ -1,0 +1,10 @@
+{
+  "model": "Olympia SM3, visual reconstruction",
+  "reference_serial": null,
+  "reference_url": "https://www.typewriters101.com/store/p578/1956_Olympia_SM3.html",
+  "manual": "https://site.xavier.edu/polt/typewriters/OlympiaSM3.pdf",
+  "accuracy": "Photo-derived appearance, not measured CAD. No hidden mechanism accuracy claimed. Existing generated Olympia emblem reused; not original manufacturer artwork.",
+  "objects": 610,
+  "keys": 51,
+  "blender": "4.5.15 LTS"
+}

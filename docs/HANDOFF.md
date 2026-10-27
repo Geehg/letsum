@@ -535,3 +535,27 @@ img.save("sample.png")
 
 ### 2026-10-28 Lettera interior contrast
 - Darkened recessed keybed and lowered internal mechanism reflection in typing-lettera-reference.js v2. Per-role cloned materials preserve exterior paint, keycaps and carriage chrome. Embedded texture maps retained.
+
+### 2026-10-28 Olympia SM3 standalone reference reconstruction
+- tools/modeling/build_olympia_reference.py: new scalloped hood opening, continuous shoulder curvature, separate chrome bands, open underframe/linkages, tall dished green keys, concentric knobs and long swept lever. Based on Typewriters101 p578 green specimen; gray #1103959 for supplemental internal structure only. docs/OLYMPIA_REFERENCE_BUILD.md documents evidence/limits.
+- 608 meshes, 51 keys, 5 embedded images. Structure check and repository validation pass (0 errors / existing 264 warnings). Existing generated emblem reused; dimensions/curves are authored, not measured CAD.
+- Local http://localhost:8777/olympia-reference-review.html; Blender/GLB/PNG in /Volumes/AI_dev/web/typewriter-precision/. Standalone review only, NOT integrated into typing engine or deployed. Own codex-olympia-reference lock retained for follow-up.
+
+- SM3 lever refinement: reduced authored blade twist 75→32 degrees, wider continuous neck/grip with rounded rectangular section, slightly thicker edge; lower chrome band moved outside shell to eliminate burial. GLB cache v2 / review JS v3. Front browser view verified; structure validation passed, repository errors 0 (264 existing warnings). Local review only; no deployment.
+
+- Olympia full reference integration (local): typing-olympia-reference.js attaches the exact review GLB v2, embedded paint/normal/roughness/emblem retained. 51 visible keys, moving carriage, shift lift, roller, return lever and typebar motion follow existing input engine. Hidden old rig only supports compatibility; old external badge suppressed. Reflection cards/exposure match review. typing-hermes.js v51; local only, no deployment.
+
+
+## 2026-10-28 메인 사이트 헤더 로고
+- 제공된 LETSUM_03_Retro_v1.0.svg를 html/img/logo-retro-v1.svg로 원본 그대로 추가. 메인 및 하위 페이지 헤더를 높이 44px, 원본 비율로 교체. 생성 템플릿도 반영. 필사독서 전용 헤더와 푸터는 유지.
+- build_pages.js 및 validate.py 완료(오류 0, 기존 경고 264). 로컬 8780에서 시각 확인. 운영 미배포.
+
+
+## 2026-10-28 세종자으미모으미체 컬러 견본
+- 소개 전용으로 빈 미리보기가 표시되던 컬러판에 원본 WOFF2의 SVG 글리프를 원형·색상 그대로 조판한 SVG 견본을 추가. 폰트 파일 수정 없음. 실시간 입력 미리보기는 미지원이며 안내 문구로 명시.
+- 공식 배포처 현재 형식별 다운로드 응답은 HTML이므로 보관된 공식 원본 사용. 상세 페이지에서 색상 견본 확인. 운영 미배포.
+
+
+## 2026-10-28 운영 배포
+- 사용자 배포 요청: Olympia 전체 모델 통합, 메인/필사독서 Retro 헤더 로고, Balanced 푸터 로고, 필사 헤더 외부 메뉴 제거 및 로고 letsum.app 링크, 세종 컬러 원본 견본을 함께 배포.
+- 회귀 테스트 3모델 통과, 전체 검증 오류 0/기존 경고 264.

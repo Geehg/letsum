@@ -5333,7 +5333,8 @@ const FONTS = [
     tags: ["컬러", "손글씨", "시민참여"], mood: ["발랄한", "귀여운"], weights: [400], formats: ["WOFF2"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
     intro: true,
-    introReason: "배포처가 준 컬러 글꼴(COLR·SVG 색 표)을 브라우저가 열지 못하고, 이용조건상 변형할 수 없어 미리보기를 제공하지 않습니다. 볼드판은 미리보기가 됩니다. 컬러판 생김새는 배포처 페이지에서 확인하세요.",
+    specimen: "img/specimen/sjcf-jaeumi-color.svg",
+    introReason: "원본 컬러 폰트의 브라우저 호환 문제로 원본 글자 도형·색상을 그대로 렌더링한 견본을 제공합니다. 입력 문장은 적용되지 않습니다. 공식 이용조건에 따라 폰트 파일은 수정하지 않았습니다.",
     dl: { page: "https://www.sjcf.or.kr/hangeul/www/content.do?key=2504150011", srcName: "세종시문화관광재단(공식)" },
     license: "공공누리 제1유형", matrix: OFL_ALL_OK, verified: "2026-10-20", status: "verified", attribution: "세종자으미모으미체 컬러 © 세종시문화관광재단, 공공누리 제1유형",
     
