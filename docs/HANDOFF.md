@@ -498,3 +498,8 @@ img.save("sample.png")
 - `typing-focus.js?v=1` 공통 처리 추가. 도서/모델 준비 완료, 설정/도움말/학습/완료/스크린숏 창 닫기, 읽기 화면 조작 완료, 창 복귀 시 실제 tbInput에 preventScroll 포커스. 입력값과 선택 범위는 변경하지 않음.
 - 열린 모달/모델 선택 대기/모바일 메뉴/서가/숨겨진 입력창/한글 조합 중에는 포커스를 빼앗지 않는다. select·range는 선택 동작 완료 시 확인한다. 설정 내부 글꼴 변경·초기화에서 기존 직접 focus 호출 제거.
 - typing.js v37. check_typing_focus.mjs: 진입·완료 조작·모달·모델 대기·IME·서가·창 복귀·선택 범위 유지 검사. startup 검사 통과. 로컬 브라우저에서 모델 로드 직후, 글자 크기 변경 후 설정 닫기, 도서 제목 클릭 뒤 tbInput 포커스 확인. 종이를 다시 클릭하지 않은 상태에서 a 입력/Backspace 복구 확인.
+
+### 2026-10-27 — 레트로 몰입: '다음 쪽' 미리보기 삭제 · 머리글 자동 숨김 (Claude)
+- 운영자 요청으로 오른쪽 `.tb-focus-next`(다음 쪽 종이·안내·버튼)를 HTML·`typing.js`·`typing-retro-focus.js/.css`에서 모두 삭제. 좁은 화면(`data-focus-sides="below"`)은 도서 정보 한 칸만 가운데.
+- `html/js/typing-header-peek.js`(신규): `body.tb-retro-immersive`(세로 모드·모델 선택 중 제외)에서 머리글과 `.tb-topw`를 `position:fixed`로 띄워 3초 뒤 숨김(`body.tb-peek-off`). 맨 위 14px `.tb-peek-zone` 호버·탭 시 표시, 벗어나면 0.6초 뒤 숨김, 포커스가 안에 있으면 유지.
+- Codex가 잠금(`codex-metal-lettera-olympia`)을 건 채 10시간 넘게 변경이 없어, 운영자 요청을 위해 **별도 worktree에서 커밋 66e7a3fd를 푸시**(잠금 파일은 건드리지 않음). Codex의 `run.sh finish` 중 `git pull --rebase`에서 `tools/typing_app.html` 스크립트 버전 줄이 충돌하면: 양쪽 버전을 모두 살리고(`typing-retro-focus.js?v=11`, `typing-header-peek.js?v=1` 유지 + Codex의 lettera·olympia·details·surfaces·badges·hermes 버전) `node tools/build_pages.js`로 `html/type/index.html`을 다시 만든 뒤 `git rebase --continue`.
