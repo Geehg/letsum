@@ -7,27 +7,10 @@
  const sideControls=[[main.querySelector('.tb-stats'),$('tbFocusStats')],[$('tbTocWrap'),$('tbFocusBookTools')],[$('tbSource'),$('tbFocusBookTools')],[$('tbPrev'),$('tbFocusBookPager')],[$('tbCur').closest('.tb-pno'),$('tbFocusBookPager')]].map(([el,target])=>{
   const anchor=document.createComment('reader control home');el.before(anchor);return {el,target,anchor};
  });
- let mounted=false,frame=0,fitFrame=0,following=false,nextMeasureKey='',portraitViewport=0,portraitWidth=0;
+ let mounted=false,frame=0,fitFrame=0,following=false,portraitViewport=0,portraitWidth=0;
  const portraitMedia=matchMedia('(max-width:600px), (max-width:1100px) and (orientation:portrait)');
  const wanted=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro'&&!read.hidden;
  const count=s=>Array.from(s.normalize('NFC')).length;
- function fitNextPage(){
-  const text=$('tbFocusNextText'),sheet=text.parentElement;
-  if(!mounted||!text.clientWidth)return;
-  const key=[text.textContent,sheet.clientWidth,getComputedStyle(text).fontFamily].join('|');
-  if(key===nextMeasureKey)return;
-  nextMeasureKey=key;sheet.style.minHeight='';text.style.fontSize='11px';
-  // Fit the complete next page, rather than hiding overflow behind a scrollbar.
-  let size=11;
-  while(size>8&&(text.scrollHeight>text.clientHeight+1||text.scrollWidth>text.clientWidth+1)){
-   size-=.25;text.style.fontSize=size+'px';
-  }
-  if(text.scrollHeight>text.clientHeight+1){
-   const css=getComputedStyle(sheet);
-   sheet.style.minHeight=Math.ceil(text.scrollHeight+parseFloat(css.paddingTop)+parseFloat(css.paddingBottom))+'px';
-  }
-  text.scrollTop=0;
- }
  function fit(){
   fitFrame=0;if(!wanted())return;
   const portrait=portraitMedia.matches&&main.dataset.hermesReady==='true';
@@ -48,11 +31,10 @@
   const sideWidth=(view.clientWidth-paper.getBoundingClientRect().width*1.86)/2-40;
   main.style.setProperty('--tb-focus-side-width',Math.max(150,Math.floor(sideWidth))+'px');
   main.dataset.focusSides=portrait||sideWidth<150?'below':'beside';
-  fitNextPage();
-  // Align the central sheet with the actual top of both flanking page surfaces.
-  const nextSheet=$('tbFocusNextText').parentElement;
-  const beside=getComputedStyle(nextSheet.parentElement).position==='absolute';
-  const inset=portrait?44:beside?Math.max(16,nextSheet.getBoundingClientRect().top-view.getBoundingClientRect().top):16;
+  // Align the central sheet with the top of the book panel beside it.
+  const book=main.querySelector('.tb-focus-book');
+  const beside=getComputedStyle(book).position==='absolute';
+  const inset=portrait?44:beside?Math.max(16,book.getBoundingClientRect().top-view.getBoundingClientRect().top):16;
   const value=inset.toFixed(2)+'px';
   if(changed||main.style.getPropertyValue('--tb-focus-sheet-top')!==value){
    main.style.setProperty('--tb-focus-sheet-top',value);
@@ -64,7 +46,6 @@
   frame=0;if(!mounted)return;
   paper.style.setProperty('--tb-trace-font',getComputedStyle(input).fontFamily);
   main.style.setProperty('--tb-focus-font',getComputedStyle(input).fontFamily);
-  fitNextPage();
   const start=count(input.value.slice(0,input.selectionStart)),end=count(input.value.slice(0,input.selectionEnd));
   const spans=Array.from(original.children);let caret=spans[Math.min(start,spans.length-1)];
   for(let i=0;i<spans.length;i++){
@@ -94,12 +75,11 @@
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-reading-mode','data-skin','data-hermes-ready','data-paper-feed']});
  new MutationObserver(update).observe(read,{attributes:true,attributeFilter:['hidden']});
  new MutationObserver(schedule).observe(original,{childList:true});
- new MutationObserver(()=>{nextMeasureKey='';scheduleFit();}).observe($('tbFocusNextText'),{childList:true,characterData:true,subtree:true});
  new MutationObserver(()=>{schedule();scheduleFit();}).observe(input,{attributes:true,attributeFilter:['style']});
  for(const name of ['input','click','keyup','select','compositionstart','compositionend','tb:paper'])input.addEventListener(name,schedule);
  input.addEventListener('scroll',()=>{if(mounted&&!following&&main.dataset.paperFeed!=='physical')original.scrollTop=input.scrollTop;});
  document.addEventListener('selectionchange',()=>{if(document.activeElement===input)schedule();});
- document.fonts?.addEventListener('loadingdone',()=>{nextMeasureKey='';schedule();scheduleFit();});
+ document.fonts?.addEventListener('loadingdone',()=>{schedule();scheduleFit();});
  view.addEventListener('tb:hermes-layout',scheduleFit);
  window.addEventListener('resize',scheduleFit);window.visualViewport?.addEventListener('resize',scheduleFit);
  const observer=new ResizeObserver(scheduleFit);for(const el of [main.querySelector('.tb-topw'),main.querySelector('.tb-rh'),$('tbFocusBookTools'),$('tbFocusBookPager')])observer.observe(el);

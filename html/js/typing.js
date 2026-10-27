@@ -313,10 +313,6 @@
     if (pageChanged) $("tbInput").dispatchEvent(new Event("tb:page-changing"));
     if (save) storeProgress();
     state.page = i;
-    const next = b.pages[i + 1];
-    $("tbFocusNextText").textContent = next ?? "이 책의 마지막 쪽입니다.";
-    $("tbFocusNextNumber").textContent = next === undefined ? "마지막 쪽" : `${i + 2} / ${b.pages.length}쪽`;
-    $("tbFocusNextText").scrollTop = 0;
     const m = state.metrics[i] || {};
     state.elapsed = +m.elapsed || 0; state.keystrokes = +m.keystrokes || 0; state.attempts = +m.attempts || 0; state.errors = +m.errors || 0;
     state.started = false; state.lastActivity = 0; state.composing = false;
@@ -355,8 +351,6 @@
     $("tbCur").textContent = state.page + 1; $("tbTot").textContent = n;
     $("tbPrev").disabled = state.page === 0; const reach = Math.max(-1, ...state.completed) + 1; // 완성한 쪽의 바로 다음 쪽까지 이동 가능(명세 FR-07). 새 장의 첫 쪽은 언제든
     $("tbNext").disabled = state.page >= n - 1 || !(done || state.page + 1 <= reach || state.book.partStart.includes(state.page + 1));
-    $("tbFocusNextAction").disabled = $("tbNext").disabled;
-    $("tbFocusNextHint").textContent = state.page >= n - 1 ? "지금의 문장으로 이 책을 마무리해요." : $("tbNext").disabled ? "현재 쪽을 마치면 다음 쪽으로 넘어갈 수 있어요." : "다음 쪽을 이어서 써 보세요.";
     $("tbDots").innerHTML = n <= 24 ? state.book.pages.map((_, k) => `<i class="${k === state.page ? "on" : state.completed.has(k) ? "past" : ""}"></i>`).join("") : "";
     $("tbPoemHint").textContent = target.includes("\n") ? "↵ 자리에서 Enter" : "";
     hintNext(target[typed.length]);
@@ -540,7 +534,6 @@
     };
     $("tbMinus").addEventListener("click", () => resizeText(-2));
     $("tbPlus").addEventListener("click", () => resizeText(2));
-    $("tbFocusNextAction").addEventListener("click", () => $("tbNext").click());
     $("tbFontO").addEventListener("change", (e) => { state.fontO = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); });
     $("tbFontW").addEventListener("change", (e) => { state.fontW = e.target.value; writeJSON(`fonts:${state.book.id}`, { o: state.fontO, w: state.fontW }); applyFonts(); inp.dispatchEvent(new Event("tb:audio-reset")); });
     $("tbFinger").addEventListener("click", () => { state.finger = !state.finger; $("tbKeys").classList.toggle("fg", state.finger); $("tbFinger").setAttribute("aria-pressed", state.finger); $("tbFinger").querySelector("span").textContent = state.finger ? "ON" : "OFF"; writeJSON("finger", state.finger); });
