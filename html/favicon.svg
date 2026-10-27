@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#15140f"/><text x="32" y="46" text-anchor="middle" font-family="Hahmlet, 'Noto Serif KR', serif" font-weight="800" font-size="38" fill="#d8ff4a">렛</text></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+ <title id="title">LETSUM favicon — Round badge</title>
+ <desc id="desc">Optically simplified script L derived from the supplied LETSUM logos. Vector artwork; font independent. Version 1.0, 2026-10-28.</desc>
+ <circle id="badge" cx="128" cy="128" r="120" fill="#1F1F1F"/>
+ <path id="script-l" d="M167 34 C146 20 122 43 102 76 C89 98 79 121 71 146 C61 151 51 152 46 148 C41 144 48 136 42 136 C30 136 24 147 27 158 C31 172 48 175 62 168 C54 194 51 215 62 226 C82 246 108 217 122 200 C136 209 152 221 170 215 C190 209 201 191 206 178 C209 170 201 167 195 172 C184 184 174 188 163 184 L141 172 C129 167 120 172 111 184 C103 195 91 211 84 210 C75 207 81 186 89 161 C117 142 140 118 157 88 C176 55 181 42 167 34 Z
+M103 132 C115 98 137 60 153 49 C165 40 155 65 147 81 C134 104 119 121 103 132 Z" transform="translate(40 18) scale(.78)" fill="#B4F23C" fill-rule="evenodd"/>
+ <circle id="domain-dot" cx="184" cy="204" r="14" fill="#B4F23C"/>
+</svg>

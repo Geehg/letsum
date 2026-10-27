@@ -54,7 +54,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="../css/style.css?v=84">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
@@ -219,7 +219,7 @@ function topicPage(t, list) {
 <meta property="og:title" content="${esc(t.title(n))}"><meta property="og:description" content="${esc(t.desc(n))}"><meta property="og:url" content="${url}"><meta property="og:type" content="website"><meta property="og:image" content="${SITE}/img/og-main.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="LETSUM(렛섬)"><meta property="og:locale" content="ko_KR"><meta name="twitter:card" content="summary_large_image">
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="../css/style.css?v=84">
 </head>
 <body>
