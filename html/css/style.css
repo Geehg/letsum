@@ -2304,19 +2304,46 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 .tb-lr-weak span{color:var(--t-mute);font-variant-numeric:tabular-nums}
 .tb-lr-note{margin-top:16px}
 @media(max-width:560px){.tb-lr-sum{grid-template-columns:repeat(2,1fr)}.tb-lr-sum div:nth-child(3){border-left:0}.tb-lr-sum div:nth-child(n+3){border-top:1px solid var(--t-line)}}
-/* 계정(선택 회원) */
-.tb-acctm{width:min(460px,100%)}
-.tb-acct-list{margin:12px 0 14px;padding-left:18px;font-size:12.5px;line-height:1.8;color:var(--t-ink2)}
-.tb-age{align-items:flex-start;line-height:1.6;margin:0 0 14px}
-.tb-age input{margin-top:3px}
+/* 계정(선택 회원): 왼쪽 타자기 그림 + 오른쪽 로그인 */
+.tb-modal.tb-acctm{width:min(880px,100%);padding:12px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:24px}
+.tb-acctm .x{right:20px;top:14px;z-index:2}
+.tb-acct-art{position:relative;overflow:hidden;min-height:520px;border-radius:16px;background:#d6c8ef;display:flex;flex-direction:column;justify-content:flex-end;padding:0 26px 22%}
+.tb-acct-art::before{content:"";position:absolute;left:0;right:0;bottom:0;height:27%;background:#c3b1e3}
+.tb-acct-art-k{position:absolute;top:22px;left:24px;margin:0;font-size:10.5px;font-weight:700;letter-spacing:.16em;color:#42375c99}
+.tb-acct-machine{position:relative;width:100%;max-width:400px;margin:0 auto;margin-bottom:-14%}
+.tb-acct-machine::after{content:"";position:absolute;left:8%;right:8%;bottom:1%;height:9%;border-radius:50%;background:#33265224;z-index:0}
+.tb-acct-machine img{position:relative;z-index:1;display:block;width:100%;height:auto}
+.tb-acct-sheet{position:absolute;left:27%;right:27%;bottom:84%;padding:18px 16px 44px;background:#fbf8f1;box-shadow:0 1px 3px #2e244414;font:500 13px/1.8 "Nanum Myeongjo","AppleMyungjo",serif;color:#3a3530}
+.tb-acct-main{position:relative;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:56px 44px 36px}
+.tb-acct-free{position:absolute;top:18px;left:44px;right:56px;margin:0;font-size:12px;color:var(--t-mute);text-align:left}
+.tb-acctm .tb-acct-main h3{font-size:30px;letter-spacing:-.04em;margin:0 0 10px}
+.tb-acct-lead{font-size:14px;line-height:1.7;color:var(--t-ink2);margin:0 0 26px}
+.tb-age{justify-content:center;text-align:left;align-items:flex-start;line-height:1.6;margin:0 0 14px;font-size:12.5px}
+.tb-age input{margin-top:3px;flex-shrink:0}
 .tb-age a{text-decoration:underline}
-.tb-login-btns{display:grid;gap:8px}
-.tb-login{height:46px;border-radius:8px;font-size:14.5px;font-weight:700;border:1px solid transparent;cursor:pointer}
+.tb-login-btns{display:grid;gap:10px}
+.tb-login{display:flex;align-items:center;justify-content:center;gap:10px;height:50px;border-radius:12px;font-size:14.5px;font-weight:700;border:1px solid transparent;cursor:pointer}
+.tb-login svg{width:19px;height:19px;flex-shrink:0}
 .tb-login:disabled{opacity:.4;cursor:not-allowed}
 .tb-login-kakao{background:#FEE500;color:rgba(0,0,0,.85)}
 .tb-login-naver{background:#03C75A;color:#fff}
 .tb-login-google{background:#fff;color:#1f1f1f;border-color:#747775}
-.tb-acct-st{font-size:12.5px;color:var(--t-ink2);margin:10px 0 14px}
-.tb-acctm .tb-set-acts{margin-bottom:8px}
-.tb-danger{color:#c0392b}
 .tb-login-soon{opacity:.35!important;cursor:not-allowed}
+.tb-acct-or{display:flex;align-items:center;gap:12px;margin:26px 0 12px;font-size:11.5px;color:var(--t-mute)}
+.tb-acct-or::before,.tb-acct-or::after{content:"";flex:1;border-top:1px solid var(--t-line)}
+.tb-acct-list{list-style:none;margin:0;padding:0;font-size:12.5px;line-height:1.9;color:var(--t-mute)}
+.tb-acct-st{font-size:12.5px;color:var(--t-ink2);margin:0 0 18px}
+.tb-acct-acts{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.tb-acct-note{font-size:12px;color:var(--t-mute);margin:18px 0 0}
+.tb-danger{color:#c0392b}
+@media(max-width:720px){
+ .tb-modal.tb-acctm{grid-template-columns:minmax(0,1fr);padding:10px;border-radius:20px}
+ .tb-acct-art{min-height:0;height:210px;padding:0 20px 46px}
+ .tb-acct-art-k{display:none}
+ .tb-acct-machine{max-width:230px}
+ .tb-acct-sheet{font-size:10px;padding:8px 8px 22px}
+ .tb-acct-main{padding:46px 14px 18px}
+ .tb-acct-free{top:14px;left:14px;right:44px}
+ .tb-acctm .tb-acct-main h3{font-size:24px}
+ .tb-acct-lead{margin-bottom:18px}
+}

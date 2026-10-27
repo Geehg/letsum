@@ -112,23 +112,31 @@
     const at = get("sync-at", 0);
     el.textContent = msg || (at ? `마지막 동기화 ${new Date(at).toLocaleString("ko-KR", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" })}` : "아직 동기화하지 않았습니다");
   }
+  const ICON = {
+    kakao: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#000" d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.5c-.1.3.3.5.5.4l4.2-2.8c.5.1 1.1.1 1.6.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3z"/></svg>',
+    naver: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M15.6 12.8 8.2 3H3v18h5.4v-9.8L15.8 21H21V3h-5.4z"/></svg>',
+    google: '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.6l6.9-6.9C35.9 2.4 30.5 0 24 0 14.6 0 6.5 5.4 2.6 13.2l8 6.2C12.4 13.7 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M47 24.6c0-1.6-.2-3.1-.4-4.6H24v9h12.9c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 7.2-10.4 7.2-17.6z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.5-.8-3-.8-4.6s.3-3.1.8-4.6l-8-6.2C.9 16.5 0 20.1 0 24s.9 7.5 2.6 10.8l7.9-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.2 1.5-4.9 2.3-8.2 2.3-6.3 0-11.6-4.2-13.5-9.9l-8 6.2C6.5 42.6 14.6 48 24 48z"/></svg>',
+  };
   function renderModal() {
     const body = $("tbAcctBody"); if (!body) return;
+    $("tbAcctH").textContent = S.user ? "다시 만나 반가워요" : "기록 이어 쓰기";
+    $("tbAcctModal").querySelector(".tb-acct-free").hidden = !!S.user;
     if (S.user) {
-      body.innerHTML = `<p class="tb-mdesc"><b>${esc(S.user.nickname || "회원")}</b> · ${esc(NAMES[S.user.provider] || S.user.provider)} 로그인 · ${new Date(S.user.created).toLocaleDateString("ko-KR")} 가입</p>
+      body.innerHTML = `<p class="tb-acct-lead"><b>${esc(S.user.nickname || "회원")}</b> · ${esc(NAMES[S.user.provider] || S.user.provider)} 로그인 · ${new Date(S.user.created).toLocaleDateString("ko-KR")} 가입</p>
         <p class="tb-acct-st" id="tbAcctStatus"></p>
-        <div class="tb-set-acts"><button class="tb-btn pri" type="button" data-acct="sync">지금 동기화</button><a class="tb-btn" href="${API}/export" download>내 데이터 내려받기</a></div>
-        <div class="tb-set-acts"><button class="tb-btn" type="button" data-acct="logout">로그아웃</button><button class="tb-btn tb-danger" type="button" data-acct="delete">탈퇴(서버 기록 삭제)</button></div>
-        <p class="tb-mdesc">로그아웃·탈퇴해도 이 브라우저에 저장된 기록은 그대로 남습니다.</p>`;
+        <div class="tb-acct-acts"><button class="tb-btn pri" type="button" data-acct="sync">지금 동기화</button><a class="tb-btn" href="${API}/export" download>내 데이터 내려받기</a></div>
+        <div class="tb-acct-acts"><button class="tb-btn" type="button" data-acct="logout">로그아웃</button><button class="tb-btn tb-danger" type="button" data-acct="delete">탈퇴(서버 기록 삭제)</button></div>
+        <p class="tb-acct-note">로그아웃·탈퇴해도 이 브라우저에 저장된 기록은 그대로 남습니다.</p>`;
       setStatus();
     } else {
-      const label = (p) => (p === "kakao" ? "카카오 로그인" : p === "naver" ? "네이버 로그인" : "구글로 로그인");
-      const btns = S.providers.map((p) => `<button type="button" class="tb-login tb-login-${p}" data-login="${p}" disabled>${label(p)}</button>`).join("")
-        + S.soon.map((p) => `<button type="button" class="tb-login tb-login-${p} tb-login-soon" disabled aria-disabled="true">${label(p)} · 준비 중</button>`).join("");
-      body.innerHTML = `<p class="tb-mdesc">로그인하지 않아도 모든 기능을 쓸 수 있고, 기록은 이 브라우저에 저장됩니다. <b>로그인하면 다른 기기에서도 진도·찜한 책·학습 기록을 이어 씁니다.</b></p>
-        <ul class="tb-acct-list"><li>비밀번호를 만들지 않습니다(카카오·네이버·구글 계정으로 로그인).</li><li>이메일·이름·전화번호는 받지 않고 회원 고유번호만 암호화해 보관합니다.</li><li>언제든 내 데이터를 내려받거나 탈퇴(즉시 삭제)할 수 있습니다.</li></ul>
-        <label class="tb-chk tb-age"><input type="checkbox" id="tbAge"> 만 14세 이상이며 <a href="https://letsum.app/privacy.html" target="_blank" rel="noopener">개인정보처리방침</a>·<a href="https://letsum.app/terms.html" target="_blank" rel="noopener">이용약관</a>에 동의합니다</label>
-        <div class="tb-login-btns">${btns || `<p class="tb-mdesc">로그인 준비 중입니다.</p>`}</div>`;
+      const label = (p) => (p === "kakao" ? "카카오 로그인" : p === "naver" ? "네이버 로그인" : "Google 계정으로 로그인");
+      const btn = (p, soon) => `<button type="button" class="tb-login tb-login-${p}${soon ? " tb-login-soon" : ""}"${soon ? ' aria-disabled="true"' : ` data-login="${p}"`} disabled>${ICON[p] || ""}<span>${label(p)}${soon ? " · 준비 중" : ""}</span></button>`;
+      const btns = S.providers.map((p) => btn(p)).join("") + S.soon.map((p) => btn(p, true)).join("");
+      body.innerHTML = `<p class="tb-acct-lead">로그인하면 다른 기기에서도<br>진도·찜한 책·학습 기록이 이어집니다.</p>
+        <label class="tb-chk tb-age"><input type="checkbox" id="tbAge"> <span>만 14세 이상이며 <a href="https://letsum.app/privacy.html" target="_blank" rel="noopener">개인정보처리방침</a>·<a href="https://letsum.app/terms.html" target="_blank" rel="noopener">이용약관</a>에 동의합니다</span></label>
+        <div class="tb-login-btns">${btns || `<p class="tb-mdesc">로그인 준비 중입니다.</p>`}</div>
+        <p class="tb-acct-or"><span>안심하고 쓰세요</span></p>
+        <ul class="tb-acct-list"><li>비밀번호를 만들지 않습니다</li><li>이메일·이름·전화번호를 받지 않습니다</li><li>언제든 내 데이터를 내려받거나 바로 탈퇴할 수 있습니다</li></ul>`;
       $("tbAge")?.addEventListener("change", (e) => body.querySelectorAll("[data-login]").forEach((b) => (b.disabled = !e.target.checked)));
     }
   }
