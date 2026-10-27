@@ -5,7 +5,7 @@ globalThis.LSApplyTypewriterSurfaces=function(T,root,model,{anisotropy=1,onLoad=
  const profiles={
   hermes3000:{tile:.120,depth:.00008,variation:.065,roughness:.22,coat:.58,coatRoughness:.16},
   lettera32:{tile:.120,depth:.000025,variation:.055,roughness:.23,coat:.60,coatRoughness:.16},
-  olympiasm3:{tile:.120,depth:.0004,variation:.15,roughness:.69,coat:.035,coatRoughness:.58}
+  olympiasm3:{tile:.120,depth:.00019,variation:.10,roughness:.69,coat:.035,coatRoughness:.58}
  };
  const profile=profiles[model];if(!profile)return {dispose(){},ready:Promise.resolve(false)};
  let disposed=false,loadedTexture;
@@ -20,6 +20,12 @@ globalThis.LSApplyTypewriterSurfaces=function(T,root,model,{anisotropy=1,onLoad=
    if(kind==='paint'){for(const name of ['map','roughnessMap','bumpMap']){if(m[name])oldTextures.add(m[name]);m[name]=null;}
     m.roughness=profile.roughness;m.clearcoat=profile.coat;m.clearcoatRoughness=profile.coatRoughness;m.metalness=.02;
    }else if(m.bumpMap){oldTextures.add(m.bumpMap);m.bumpMap=null;}
+   if(kind==='metal'){
+    const polished=/Nickel|Chrome|Badge|Knob_Rim/.test(old.name||'');
+    m.color.setRGB(polished?.27:.20,polished?.29:.22,polished?.31:.24);
+    m.metalness=1;m.roughness=polished?.115:.27;m.envMapIntensity=polished?1.12:.82;
+    if(m.isMeshPhysicalMaterial){m.clearcoat=0;m.clearcoatRoughness=.2;}
+   }
    m.bumpMap=neutral;m.bumpScale=kind==='paint'?profile.depth:kind==='keys'?.000003:.000001;
    const tile=kind==='paint'?profile.tile:kind==='keys'?.035:.070;
    const variation=kind==='paint'?profile.variation:kind==='keys'?.035:.025;
@@ -70,7 +76,7 @@ normal=perturbNormalArb(-vViewPosition,normal,bumpScale*vec2(dFdx(surfaceRelief)
   const name=o.material.name||'';
   if(/^(Hermes_Sage_Enamel|Lettera_Blue_Enamel|Olympia_Crinkle_Enamel)$/.test(name))attach(o,'paint');
   else if(/^Cap_/.test(o.name))attach(o,'keys');
-  else if(/^(Polished_Nickel|Olympia_Chrome|Hermes_Badge_Metal|Lettera_Badge_Edge|Olympia_Badge_Metal)$/.test(name))attach(o,'metal');
+  else if(o.material.metalness>=.65&&!o.material.map)attach(o,'metal');
  });
  const ready=new Promise(resolve=>{
   loadedTexture=new T.TextureLoader().load(`/img/typewriters/surfaces/${model}-relief-v1.webp`,texture=>{

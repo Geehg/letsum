@@ -64,7 +64,7 @@
    if(!active||main.dataset.model!==selectedModel){releaseResources();loading=false;update();return;}
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.86;
-   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.VSMShadowMap;
+   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
 
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
@@ -74,7 +74,7 @@
    // Invisible depth surface lets the HTML sheet hide the paper table behind it.
    nodes.Paper.visible=true;nodes.Paper.castShadow=true;nodes.Paper.receiveShadow=false;nodes.Paper.renderOrder=-10;
    // Window-shaped reflection cards describe chrome and enamel without a network HDRI.
-   const room=new T.Scene();room.background=new T.Color(.055,.055,.055);
+   const room=new T.Scene();room.background=new T.Color(.022,.023,.025);
    for(const [pos,size,power,color] of [[[-2,3,2],[2.8,3.5,1],3.4,0xfff5df],[[3,1,0],[1.5,3,1],.8,0xdce9ed],[[0,3,-3],[3,.65,1],2,0xffffff]]){
     const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color,side:T.DoubleSide}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,0,0);room.add(card);
    }
@@ -92,6 +92,12 @@
      const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,.1,0);room.add(card);
     }
    }
+   if(selectedModel!=='hermes3000'){
+    const bounce=new T.Mesh(new T.BoxGeometry(2.2,.65,.025),new T.MeshBasicMaterial({color:0xfff6e7}));bounce.material.color.multiplyScalar(2.2);bounce.position.set(0,-.9,2.5);bounce.lookAt(0,.1,0);room.add(bounce);
+   }
+   // Dark flags beside the window separate near-black silver reflections from
+   // narrow highlights; the effect follows the surface normal, not painted bands.
+   for(const x of [-1.25,1.25]){const flag=new T.Mesh(new T.BoxGeometry(.42,2.4,.025),new T.MeshBasicMaterial({color:0x030405}));flag.position.set(x,.3,2.4);flag.lookAt(0,.1,0);room.add(flag);}
    const pmrem=new T.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.025);scene.environment=environment.texture;pmrem.dispose();cleanups.push(()=>environment.dispose());
    room.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
    // Static micrograin stays attached to the finish; mipmaps avoid sparkling at small sizes.
@@ -139,8 +145,8 @@
    T.MeshStandardMaterial.prototype.copy.call(capMaterial,capSource);capMaterial.defines.PHYSICAL='';
    capMaterial.name=selectedModel==='olympiasm3'?'Olympia_Keycaps_Contour':selectedModel==='lettera32'?'Lettera_Keycaps_Contour':'Mint_Keycaps_Contour';capMaterial.vertexColors=true;capMaterial.roughness=.29;
    capMaterial.clearcoat=selectedModel==='olympiasm3'?.44:.30;capMaterial.clearcoatRoughness=selectedModel==='olympiasm3'?.21:.24;capMaterial.envMapIntensity=selectedModel==='olympiasm3'?.85:selectedModel==='lettera32'?.55:.24;
-   if(selectedModel==='olympiasm3')capMaterial.roughness=.27;
-   if(selectedModel==='lettera32'){capMaterial.roughness=.24;capMaterial.clearcoat=.48;capMaterial.clearcoatRoughness=.15;capMaterial.envMapIntensity=.72;}
+   if(selectedModel==='olympiasm3'){capMaterial.color.setRGB(.009,.023,.015);capMaterial.roughness=.22;capMaterial.clearcoat=.55;capMaterial.clearcoatRoughness=.16;capMaterial.envMapIntensity=.55;}
+   if(selectedModel==='lettera32'){capMaterial.roughness=.22;capMaterial.clearcoat=.56;capMaterial.clearcoatRoughness=.14;capMaterial.envMapIntensity=.78;}
    if(selectedModel==='hermes3000'){capMaterial.color.setRGB(.32,.49,.255);capMaterial.roughness=.24;capMaterial.clearcoat=.42;capMaterial.clearcoatRoughness=.18;capMaterial.envMapIntensity=.65;}
    const shadedCaps=new Set(),smoothRange=(a,b,v)=>{const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);};
    asset.scene.traverse(o=>{
@@ -160,7 +166,7 @@
    });
    scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel==='hermes3000'?.25:.38));
    const keyLight=new T.DirectionalLight(0xffecd7,1.30);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
-   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.0001;keyLight.shadow.normalBias=selectedModel==='hermes3000'?.00012:.00045;keyLight.shadow.radius=selectedModel==='hermes3000'?4:9;keyLight.shadow.blurSamples=12;
+   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.00015;keyLight.shadow.normalBias=.00018;keyLight.shadow.radius=4;keyLight.shadow.blurSamples=12;
    const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
    // full-width table has no image boundary or lighting baked into the pattern.
@@ -270,25 +276,27 @@
    // 3-degree top view around the fixed type strike point. Paper/carriage stay put.
    // Preserve clearance under the unchanged carriage after the body reduction.
    // The shallow rear relief affects the enclosure/seam only, not the strike rig.
-   if(selectedModel!=='hermes3000')for(const name of ['Ribbon_Hood','Cast_Perimeter','Lettera_Cover_Seam','Olympia_Cover_Chrome']){
+   if(selectedModel!=='hermes3000')for(const name of ['Ribbon_Hood','Cast_Perimeter','Lettera_Cover_Seam','Olympia_Cover_Chrome','Opening_Folded_Flange']){
     const mesh=nodes[name];if(!mesh)continue;mesh.geometry=mesh.geometry.clone();const g=mesh.geometry,p=g.attributes.position,n=g.attributes.normal;
     for(let i=0;i<p.count;i++){const z=p.getZ(i),t=Math.max(0,Math.min(1,(-.10-z)/.05)),drop=.008*t*t*(3-2*t),slope=t>0&&t<1?-.008*6*t*(1-t)/.05:0;
      p.setY(i,p.getY(i)-drop);const normal=new T.Vector3(n.getX(i),n.getY(i),n.getZ(i)+slope*n.getY(i)).normalize();n.setXYZ(i,normal.x,normal.y,normal.z);}
     p.needsUpdate=n.needsUpdate=true;g.computeBoundingBox();g.computeBoundingSphere();
    }
+   const badges=globalThis.LSApplyTypewriterBadges?.(T,asset.scene,selectedModel,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1,onLoad:()=>{if(!disposed)wake();}});
+   if(badges)cleanups.push(()=>badges.dispose());
    const bodyPose=new T.Group();bodyPose.name='Typewriter_Body_Pose';
    const strikePivot=new T.Vector3(0,.164,-.119);
-   for(const part of [nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right])asset.scene.attach(part);
-   const bodyParts=asset.scene.children.filter(o=>![nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right].includes(o)&&!o.isLight&&!o.isCamera);
+   for(const part of [nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right,nodes.Card_Holder_Edge,nodes.Card_Holder_Edge001])asset.scene.attach(part);
+   const bodyParts=asset.scene.children.filter(o=>![nodes.Carriage,nodes.Card_Holder_Left,nodes.Card_Holder_Right,nodes.Card_Holder_Edge,nodes.Card_Holder_Edge001].includes(o)&&!o.isLight&&!o.isCamera);
    asset.scene.add(bodyPose);for(const part of bodyParts)bodyPose.attach(part);
    bodyPose.matrixAutoUpdate=false;
    bodyPose.matrix.makeTranslation(...strikePivot.toArray()).multiply(new T.Matrix4().makeRotationX(Math.PI/60)).multiply(new T.Matrix4().makeScale(.9,.9,.9)).multiply(new T.Matrix4().makeTranslation(...strikePivot.clone().negate().toArray()));
    contact.scale.set(.9,.9,1);
    // Extend only each paper holder's straight middle; retain its end profiles,
    // thickness and the inner gap around the printing point.
-   for(const name of ['Card_Holder_Left','Card_Holder_Right']){
+   for(const name of ['Card_Holder_Left','Card_Holder_Right','Card_Holder_Edge','Card_Holder_Edge001']){
     const holder=nodes[name];holder.geometry=holder.geometry.clone();const g=holder.geometry,p=g.attributes.position;g.computeBoundingBox();
-    const b=g.boundingBox,extra=(b.max.x-b.min.x)*.10,mid=(b.max.x+b.min.x)/2,half=(b.max.x-b.min.x)*.20,leftSide=name.endsWith('Left');
+    const b=g.boundingBox,extra=(b.max.x-b.min.x)*.10,mid=(b.max.x+b.min.x)/2,half=(b.max.x-b.min.x)*.20,leftSide=name.endsWith('Left')||name==='Card_Holder_Edge';
     for(let i=0;i<p.count;i++){const x=p.getX(i),t=Math.max(0,Math.min(1,(x-mid+half)/(2*half)));p.setX(i,x+(leftSide?-extra*(1-t):extra*t));}
     p.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
    }

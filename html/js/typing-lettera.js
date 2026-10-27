@@ -29,7 +29,7 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  }
  // The rear carriage shelf is lower than the cover shoulder; the front cheeks
  // descend toward the keyboard, with continuous rolled corners at the lip.
- const rearRelief=z=>.032*(1-smooth(-.112,-.078,z));
+ const rearRelief=z=>.032*(1-smooth(-.116,-.097,z));
  const bodyTop=z=>.047+.100*(1-smooth(-.12,.16,z))-rearRelief(z);
  replace('Cast_Perimeter',loft([
   {path:rounded(-.232,-.166,.232,.181,.020),y:()=>.014},
@@ -42,13 +42,13 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
   {path:rounded(-.217,-.149,.217,.168,.012),y:()=>.014}
  ],384,true),blue);
  // Removable low cover: broad folded front face, flatter crown and two inner wings.
- const cover=rounded(-.224,-.151,.224,-.026,.020),hole=new T.Path();
+ const cover=new T.Shape();cover.moveTo(-.205,-.026);cover.lineTo(.205,-.026);cover.quadraticCurveTo(.225,-.026,.224,-.046);cover.lineTo(.208,-.133);cover.quadraticCurveTo(.205,-.151,.188,-.151);cover.lineTo(-.188,-.151);cover.quadraticCurveTo(-.205,-.151,-.208,-.133);cover.lineTo(-.224,-.046);cover.quadraticCurveTo(-.225,-.026,-.205,-.026);const hole=new T.Path();
  hole.moveTo(-.119,-.075);hole.quadraticCurveTo(-.131,-.077,-.128,-.089);hole.lineTo(-.120,-.113);
  hole.quadraticCurveTo(-.114,-.119,-.095,-.116);hole.lineTo(-.036,-.111);hole.quadraticCurveTo(-.018,-.111,-.017,-.128);
  hole.lineTo(-.015,-.148);hole.lineTo(.015,-.148);hole.lineTo(.017,-.128);hole.quadraticCurveTo(.018,-.111,.036,-.111);
  hole.lineTo(.095,-.116);hole.quadraticCurveTo(.114,-.119,.120,-.113);hole.lineTo(.128,-.089);hole.quadraticCurveTo(.131,-.077,.119,-.075);hole.lineTo(-.119,-.075);
  cover.holes.push(hole);
- const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0014,bevelSize:.0022,bevelSegments:5,curveSegments:24});
+ const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0010,bevelSize:.0008,bevelSegments:5,curveSegments:24});
  let dense=hood.index?hood.toNonIndexed():hood;const dp=dense.attributes.position,du=dense.attributes.uv,positions=[],uvs=[];
  // Split shared edges by the same coordinate rule on both adjoining faces.
  // Independent per-triangle subdivision left T-junctions after bending the lid.
@@ -81,8 +81,8 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
 
  // A broad sloping front folds into a nearly flat crown. Two short eased
  // transitions make the fold readable instead of inflating the entire lid.
- const hoodY=z=>{const t=-z,a=t-.027,b=t-.066,e=.0018,front=(Math.sqrt(a*a+e*e)+a-Math.sqrt(b*b+e*e)-b)/(.039*2);return .124+.034*front+.002*smooth(.066,.115,t)-rearRelief(z);};
- const crown=(x,z)=>.007*(1-(x/.224)**2)*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.026)/.125)));
+ const hoodY=z=>{const t=-z,a=t-.027,b=t-.066,e=.0018,front=(Math.sqrt(a*a+e*e)+a-Math.sqrt(b*b+e*e)-b)/(.039*2);return .116+.034*front+.002*smooth(.066,.115,t)-rearRelief(z)*.78;};
+ const crown=(x,z)=>(.002+.004*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.026)/.125))))*Math.max(0,1-(x/.226)**8);
  for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i),n=normalSums.get(normalKeys[i]),e=.00001;
   const fx=(crown(x+e,z)-crown(x-e,z))/(2*e),fz=(hoodY(z+e)+crown(x,z+e)-hoodY(z-e)-crown(x,z-e))/(2*e);
   const mapped=new T.Vector3(n.x-fx*n.z,n.z,n.y-fz*n.z).normalize();mapped.toArray(transformedNormals,i*3);
@@ -92,9 +92,15 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  // XY -> XZ reverses handedness, so restore outward face winding.
  const hi=hood.index;if(hi){for(let i=0;i<hi.count;i+=3){const t=hi.getX(i+1);hi.setX(i+1,hi.getX(i+2));hi.setX(i+2,t);}}else{for(let i=0;i<hp.count;i+=3){for(const attr of Object.values(hood.attributes)){for(let c=0;c<attr.itemSize;c++){const a=(i+1)*attr.itemSize+c,b=(i+2)*attr.itemSize+c,t=attr.array[a];attr.array[a]=attr.array[b];attr.array[b]=t;}}}}
  replace('Ribbon_Hood',hood,blue);
- const apronGeo=new T.ExtrudeGeometry(rounded(-.217,.101,.217,.126,.005),{depth:.003,bevelEnabled:true,bevelThickness:.0008,bevelSize:.0008,bevelSegments:3,curveSegments:16});
+ nodes.Ribbon_Hood.userData.opening={points:hole.getSpacedPoints(192).slice(0,-1).map(p=>[p.x,p.y]),height:(x,z)=>hoodY(z)+crown(x,z),depth:.003};
+ const apronGeo=new T.ExtrudeGeometry(rounded(-.217,.101,.217,.119,.004),{depth:.003,bevelEnabled:true,bevelThickness:.0008,bevelSize:.0008,bevelSegments:3,curveSegments:16});
  const apron=new T.Mesh(apronGeo,blue);apron.name='Lettera_Front_Apron';apron.position.z=-.029;root.add(apron);
 
+ // Visible fixed segment below the opening; keep the animated typebar rig intact.
+ for(let i=0;i<48;i++){
+  const a=-1.25+i*2.5/47,points=[.028,.048,.069,.087].map(r=>new T.Vector3(Math.sin(a)*r,.137+Math.cos(a)*.003,-.123+Math.cos(a)*r*.58));
+  const rib=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(points),10,.00042,5,false),chrome);rib.name='Lettera_Segment_Divider_'+i;nodes.Typebasket.add(rib);
+ }
  // Lower tray stays fully inside the perimeter, with a thin dark assembly seam.
  for(const name of ['Bottom_Tray','Base_Seam'])nodes[name].material=dark;
  hide(['Badge_','Hermes_Badge','Selector_','Ribbon_Dot','Margin_Indicator_','Margin_Window','Bail_Graduation_','Bail_Number_','Paper_Support_Tip']);
@@ -120,7 +126,7 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  root.traverse(o=>{if(o.isMesh&&/^(Platen_Knob_|Knob_)/.test(o.name))o.material=rubber;});
  for(const side of ['Left','Right']){
   const knob=nodes['Platen_Knob_'+side];knob.material=rubber;
-  const face=new T.Mesh(new T.CylinderGeometry(.0184,.0184,.001,64),dark);face.name='Lettera_Knob_Inset_'+side;face.position.y=side==='Left'?-.0105:.0105;knob.add(face);
+  const face=new T.Mesh(new T.CylinderGeometry(.0184,.0184,.001,64),side==='Right'?chrome:dark);face.name='Lettera_Knob_Inset_'+side;face.position.y=side==='Left'?-.0105:.0105;knob.add(face);
  }
  // The original Lettera has a metal scale and separate white paper-bail rollers.
  nodes.Paper_Bail_Channel.material=chrome;
@@ -128,7 +134,7 @@ globalThis.LSBuildLettera32 = function buildLettera32(T, root, document=globalTh
  const badgeCanvas=document.createElement('canvas');badgeCanvas.width=1024;badgeCanvas.height=128;const c=badgeCanvas.getContext('2d');
  c.fillStyle='#dadfdd';c.fillRect(0,0,1024,128);c.fillStyle='#171a1c';c.fillRect(10,10,444,108);c.textBaseline='middle';c.textAlign='center';c.font='bold 80px Arial';c.fillStyle='#f5f4ec';c.fillText('olivetti',230,67,420);c.fillStyle='#191c1e';c.font='bold 74px Arial';c.fillText('lettera 32',735,67,540);
  const badgeTexture=new T.CanvasTexture(badgeCanvas);badgeTexture.encoding=T.sRGBEncoding;
- const badge=new T.Mesh(new T.PlaneGeometry(.097,.0121),new T.MeshStandardMaterial({map:badgeTexture,roughness:.42,metalness:.18}));badge.name='Lettera_Split_Badge';badge.position.set(0,hoodY(-.046)+crown(0,-.046)+.005,-.046);badge.rotation.x=-.85;root.add(badge);
+ const badge=new T.Mesh(new T.PlaneGeometry(.097,.0121),new T.MeshStandardMaterial({map:badgeTexture,roughness:.42,metalness:.18}));badge.name='Lettera_Split_Badge';badge.position.set(0,hoodY(-.046)+crown(0,-.046)+.005,-.046);const badgeSlope=(hoodY(-.04599)+crown(0,-.04599)-hoodY(-.04601)-crown(0,-.04601))/.00002;badge.rotation.x=-Math.atan2(1,-badgeSlope);badge.position.addScaledVector(new T.Vector3(0,-Math.sin(badge.rotation.x),Math.cos(badge.rotation.x)),.0018);root.add(badge);
  // Continuous removable-cover seam follows the actual edge, including corners.
  const seamPoints=cover.getSpacedPoints(160).slice(0,-1).map(p=>new T.Vector3(p.x,hoodY(p.y)-.0005+crown(p.x,p.y),p.y));
  const coverSeam=new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(seamPoints,true),192,.0008,8,true),dark);coverSeam.name='Lettera_Cover_Seam';root.add(coverSeam);

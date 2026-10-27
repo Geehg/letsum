@@ -25,7 +25,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  // Taller continuous side cheeks and the rounded front lip seen in the SM3 reference.
  // Recess the rear shoulder across the entire carriage sweep, not only at rest.
  // This preserves the paper/print point and gives knobs + bearings physical clearance.
- const rearRelief=z=>.039*(1-smooth(-.112,-.073,z));
+ const rearRelief=z=>.043*(1-smooth(-.116,-.097,z));
  const bodyTop=z=>.048+.108*(1-smooth(-.135,.16,z))-rearRelief(z);
  replace('Cast_Perimeter',loft([
   {path:rounded(-.237,-.168,.237,.184,.031),y:()=>.013},
@@ -38,14 +38,16 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   {path:rounded(-.212,-.148,.212,.165,.012),y:()=>.013}
  ],384,true),blue);
  // Broad curved opening with inward swept shoulders; exposed fan of typebars.
- const cover=rounded(-.226,-.153,.226,-.021,.027),hole=new T.Path();
- hole.moveTo(-.127,-.072);hole.bezierCurveTo(-.134,-.066,-.131,-.059,-.119,-.057);
- hole.bezierCurveTo(-.068,-.040,.068,-.040,.119,-.057);hole.bezierCurveTo(.131,-.059,.134,-.066,.127,-.072);
- hole.bezierCurveTo(.115,-.080,.079,-.074,.050,-.095);hole.quadraticCurveTo(.029,-.108,.032,-.129);
- hole.lineTo(.026,-.146);hole.lineTo(-.026,-.146);hole.lineTo(-.032,-.129);
- hole.quadraticCurveTo(-.029,-.108,-.050,-.095);hole.bezierCurveTo(-.079,-.074,-.115,-.080,-.127,-.072);
+ const cover=new T.Shape();cover.moveTo(-.199,-.021);cover.lineTo(.199,-.021);cover.quadraticCurveTo(.227,-.021,.226,-.049);cover.lineTo(.212,-.130);cover.quadraticCurveTo(.208,-.153,.186,-.153);cover.lineTo(-.186,-.153);cover.quadraticCurveTo(-.208,-.153,-.212,-.130);cover.lineTo(-.226,-.049);cover.quadraticCurveTo(-.227,-.021,-.199,-.021);const hole=new T.Path();
+ hole.moveTo(-.123,-.082);hole.bezierCurveTo(-.130,-.076,-.128,-.070,-.115,-.067);
+ hole.bezierCurveTo(-.065,-.050,.065,-.050,.115,-.067);hole.bezierCurveTo(.128,-.070,.130,-.076,.123,-.082);
+ hole.bezierCurveTo(.115,-.090,.086,-.091,.049,-.090);
+ hole.bezierCurveTo(.033,-.089,.027,-.095,.028,-.105);hole.lineTo(.026,-.146);
+ hole.lineTo(-.026,-.146);hole.lineTo(-.028,-.105);
+ hole.bezierCurveTo(-.027,-.095,-.033,-.089,-.049,-.090);
+ hole.bezierCurveTo(-.086,-.091,-.115,-.090,-.123,-.082);
  cover.holes.push(hole);
- const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0014,bevelSize:.0022,bevelSegments:5,curveSegments:24});
+ const hood=new T.ExtrudeGeometry(cover,{depth:.003,steps:1,bevelEnabled:true,bevelThickness:.0010,bevelSize:.0008,bevelSegments:5,curveSegments:24});
  let dense=hood.index?hood.toNonIndexed():hood;const dp=dense.attributes.position,du=dense.attributes.uv,positions=[],uvs=[];
  function split(a,b,c,ua,ub,uc,depth){
   if(depth===0){positions.push(...a,...b,...c);uvs.push(...ua,...ub,...uc);return;}
@@ -62,8 +64,8 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  for(const n of normalSums.values())n.normalize();
  const transformedNormals=new Float32Array(hp.count*3);
 
- const hoodY=z=>.124+.040*smooth(.021,.095,-z)-.005*smooth(.10,.155,-z)-rearRelief(z);
- const crown=(x,z)=>(.003+.006*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.021)/.132))))*(1-(x/.226)**2);
+ const hoodY=z=>.118+.034*smooth(.021,.095,-z)-.003*smooth(.10,.155,-z)-rearRelief(z)*.72;
+ const crown=(x,z)=>(.003+.005*Math.sin(Math.PI*Math.max(0,Math.min(1,(-z-.021)/.132))))*Math.max(0,1-(x/.228)**6);
  for(let i=0;i<hp.count;i++){const x=hp.getX(i),z=hp.getY(i),d=hp.getZ(i),n=normalSums.get(normalKeys[i]),e=.00001;
   const fx=(crown(x+e,z)-crown(x-e,z))/(2*e),fz=(hoodY(z+e)+crown(x,z+e)-hoodY(z-e)-crown(x,z-e))/(2*e);
   const mapped=new T.Vector3(n.x-fx*n.z,n.z,n.y-fz*n.z).normalize();mapped.toArray(transformedNormals,i*3);
@@ -73,8 +75,9 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  // XY -> XZ reverses handedness, so restore outward face winding.
  const hi=hood.index;if(hi){for(let i=0;i<hi.count;i+=3){const t=hi.getX(i+1);hi.setX(i+1,hi.getX(i+2));hi.setX(i+2,t);}}else{for(let i=0;i<hp.count;i+=3){for(const attr of Object.values(hood.attributes)){for(let c=0;c<attr.itemSize;c++){const a=(i+1)*attr.itemSize+c,b=(i+2)*attr.itemSize+c,t=attr.array[a];attr.array[a]=attr.array[b];attr.array[b]=t;}}}}
  replace('Ribbon_Hood',hood,blue);
+ nodes.Ribbon_Hood.userData.opening={points:hole.getSpacedPoints(192).slice(0,-1).map(p=>[p.x,p.y]),height:(x,z)=>hoodY(z)+crown(x,z),depth:.003};
  // The cover's front apron closes the gap above the key bank.
- const apronGeo=new T.ExtrudeGeometry(rounded(-.215,.101,.215,.127,.006),{depth:.004,bevelEnabled:true,bevelThickness:.001,bevelSize:.001,bevelSegments:4,curveSegments:16});
+ const apronGeo=new T.ExtrudeGeometry(rounded(-.215,.101,.215,.123,.006),{depth:.004,bevelEnabled:true,bevelThickness:.001,bevelSize:.001,bevelSegments:4,curveSegments:16});
  const apron=new T.Mesh(apronGeo,blue);apron.name='Olympia_Front_Apron';apron.position.z=-.023;root.add(apron);
  // Compact semicircular central shield leaves the radial typebar arms exposed.
  // Its outline follows the visible shield, without fabricating hidden linkages.
@@ -134,7 +137,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
  // Rolled metal edging: a broad curved face with a dark underside and a fine
  // highlight edge, so the strip reflects the room instead of reading as white paint.
  function piping(name,path,y,radius){
-  const points=path.getSpacedPoints(192).slice(0,-1).map(p=>new T.Vector3(p.x,y(p.x,p.y),p.y));
+  const points=path.getSpacedPoints(192).slice(0,-1).map(p=>new T.Vector3(name==='Olympia_Cover_Chrome'?p.x*1.008:p.x,y(p.x,p.y),name==='Olympia_Cover_Chrome'?-.087+(p.y+.087)*1.018:p.y));
   const curve=new T.CatmullRomCurve3(points,true),N=256,M=12,pos=[],idx=[];
   for(let i=0;i<=N;i++){const t=i/N,p=curve.getPointAt(t),v=curve.getTangentAt(t),out=new T.Vector3(v.z,0,-v.x).normalize();
    for(let j=0;j<M;j++){const a=j/M*Math.PI*2,q=p.clone().addScaledVector(out,Math.cos(a)*radius);q.y+=Math.sin(a)*radius*.62;pos.push(q.x,q.y,q.z);}}
@@ -143,7 +146,7 @@ globalThis.LSBuildOlympiaSM3 = function buildOlympiaSM3(T, root, document=global
   const band=new T.Mesh(g,chrome);band.name=name;root.add(band);
   const seam=new T.Mesh(new T.TubeGeometry(curve,N,radius*.55,6,true),dark);seam.name=name+'_Recess';seam.position.y=-radius*.8;root.add(seam);return band;
  }
- piping('Olympia_Cover_Chrome',rounded(-.229,-.156,.229,-.018,.029),(x,z)=>hoodY(Math.min(-.021,z))+.001+crown(x,z),.00175);
+ piping('Olympia_Cover_Chrome',cover,(x,z)=>hoodY(Math.min(-.021,z))+.001+crown(x,z),.00175);
  piping('Olympia_Base_Chrome',rounded(-.240,-.171,.240,.187,.033),()=>.0145,.0016);
  // Black bail rollers on a metal scale; replace the Hermes red margin windows.
  nodes.Paper_Bail_Channel.material=chrome;

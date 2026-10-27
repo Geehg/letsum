@@ -503,3 +503,10 @@ img.save("sample.png")
 - 운영자 요청으로 오른쪽 `.tb-focus-next`(다음 쪽 종이·안내·버튼)를 HTML·`typing.js`·`typing-retro-focus.js/.css`에서 모두 삭제. 좁은 화면(`data-focus-sides="below"`)은 도서 정보 한 칸만 가운데.
 - `html/js/typing-header-peek.js`(신규): `body.tb-retro-immersive`(세로 모드·모델 선택 중 제외)에서 머리글과 `.tb-topw`를 `position:fixed`로 띄워 3초 뒤 숨김(`body.tb-peek-off`). 맨 위 14px `.tb-peek-zone` 호버·탭 시 표시, 벗어나면 0.6초 뒤 숨김, 포커스가 안에 있으면 유지.
 - Codex가 잠금(`codex-metal-lettera-olympia`)을 건 채 10시간 넘게 변경이 없어, 운영자 요청을 위해 **별도 worktree에서 커밋 66e7a3fd를 푸시**(잠금 파일은 건드리지 않음). Codex의 `run.sh finish` 중 `git pull --rebase`에서 `tools/typing_app.html` 스크립트 버전 줄이 충돌하면: 양쪽 버전을 모두 살리고(`typing-retro-focus.js?v=11`, `typing-header-peek.js?v=1` 유지 + Codex의 lettera·olympia·details·surfaces·badges·hermes 버전) `node tools/build_pages.js`로 `html/type/index.html`을 다시 만든 뒤 `git rebase --continue`.
+
+
+### 2026-10-27 — 타자기 외형·재질·엠블럼 통합 배포 (Codex)
+- Claude의 66e7a3fd / 0785d50f를 먼저 반영하고, 다음 쪽 미리보기 삭제·상단 메뉴 자동 숨김을 유지했다. 충돌은 템플릿의 스크립트 버전만 양쪽 최신 값으로 병합하고 HTML을 재생성했다.
+- 세 모델의 상판 개구부·내측 접힘·캐리지 연결부·리본·키캡을 보강하고 어두운 실버 재질, 투명 배경 엠블럼, PCF 그림자를 반영했다. 상세: TYPEWRITER_ASSEMBLY_REVIEW.md / TYPEWRITER_SURFACES.md / TYPEWRITER_BADGES.md.
+- three-model 회귀 검사(각 20 항목), 재질·엠블럼 검사 통과. validate.py 오류 0, 기존 경고 264. 로컬 통합 화면에서 모델 로딩·입력 포커스·메뉴 숨김·미리보기 제거 확인.
+- 운영자가 현재 버전 배포를 명시적으로 요청해 GitHub main 및 NAS 정적 서비스에 반영하는 작업이다.

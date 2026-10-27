@@ -15,7 +15,7 @@ let thisUsed=false;
 fs.copyFileSync(root+'/html/js/typing-olympia.js',path.join(scratch,'olympia.mjs'));await import(path.join(scratch,'olympia.mjs'));const buildOlympiaSM3=globalThis.LSBuildOlympiaSM3;
 fs.copyFileSync(root+'/html/js/typing-details.js',path.join(scratch,'details.mjs'));await import(path.join(scratch,'details.mjs'));
 const ctx={setTimeout,clearTimeout,LSRefineTypewriterDetails:globalThis.LSRefineTypewriterDetails,LSBuildOlympiaSM3:(T,root)=>buildOlympiaSM3(T,root,doc),LSBuildLettera32:(T,root)=>buildLettera32(T,root,doc),console,CustomEvent:class{constructor(type,init={}){this.type=type;this.detail=init.detail}},document:doc,window:el('window'),devicePixelRatio:1,getComputedStyle:e=>({fontFamily:'monospace',getPropertyValue:k=>e.style.getPropertyValue(k)}),matchMedia:()=>({matches:false}),MutationObserver:class{constructor(f){this.fn=f}observe(e,o){this.entry={e,o,f:this.fn};observers.push(this.entry)}disconnect(){const i=observers.indexOf(this.entry);if(i>=0)observers.splice(i,1)}},IntersectionObserver:class{observe(){}},ResizeObserver:class{observe(){}disconnect(){}},performance:{now:()=>now},requestAnimationFrame:f=>{callbacks.set(++rid,f);return rid},cancelAnimationFrame:id=>callbacks.delete(id),queueMicrotask,THREE:{...T,TextureLoader:class{load(url,onLoad){textureLoads.push(url);const texture=new T.Texture();queueMicrotask(()=>onLoad(texture));return texture;}},WebGLRenderer:Renderer,PMREMGenerator:class{fromScene(){return {texture:new T.Texture(),dispose(){}}}dispose(){}}},GLTFLoader:class{loadAsync(){if(delayNextLoad){delayNextLoad=false;return new Promise(resolve=>{releaseDelayedLoad=()=>resolve(new ctx.GLTFLoader().loadAsync());});}if(failNextLoad){failNextLoad=false;return Promise.reject(new Error('simulated model download failure'));}if(!thisUsed){thisUsed=true;return Promise.resolve(gltf)}return new Promise((r,j)=>new GLTFLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'',r,j))}}};
-let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(fs.readFileSync(root+'/html/js/typing-surfaces.js','utf8'),ctx);vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
+let source=fs.readFileSync(root+'/html/js/typing-hermes.js','utf8').replace("await import('/js/vendor/three/three.module.js')",'globalThis.THREE').replace("await import('/js/vendor/three/GLTFLoader.js')",'({GLTFLoader:globalThis.GLTFLoader})');vm.runInNewContext(fs.readFileSync(root+'/html/js/typing-surfaces.js','utf8'),ctx);vm.runInNewContext(fs.readFileSync(root+'/html/js/typing-badges.js','utf8'),ctx);vm.runInNewContext(source,ctx);await new Promise(r=>setImmediate(r));
 function event(id,e,p={}){for(const f of events[id+':'+e]||[])f(p)}function tick(ms=30){now+=ms;const q=[...callbacks.values()];callbacks.clear();q.forEach(f=>f(now));}
 tick();assert.equal(ids.tbInput.parentElement,ids.tbHermesPaper);assert.equal(ids.tbMain.dataset.hermesReady,'true');assert.equal(nodes.Paper.visible,true);assert.equal(nodes.Paper.material.colorWrite,false,'paper masks rear geometry without duplicating HTML text');
 assert(textureLoads.includes(`/img/typewriters/surfaces/${model}-relief-v1.webp`),'chosen model loads its own relief');
@@ -30,6 +30,10 @@ for(const name of ['Ribbon_Hood','Cast_Perimeter','Cap_KeyA','Cap_Space']){
  const shader={uniforms:{},vertexShader:T.ShaderLib.physical.vertexShader,fragmentShader:T.ShaderLib.physical.fragmentShader};m.onBeforeCompile(shader);
  assert(shader.fragmentShader.includes('perturbNormalArb(-vViewPosition'));assert(shader.vertexShader.includes('surfacePosition'));
 }
+const silverMaterials=new Set();gltf.scene.traverse(o=>{if(o.isMesh&&o.material?.userData.surface?.kind==='metal')silverMaterials.add(o.material);});
+assert(silverMaterials.size>=3,'rails, badges and mechanisms use the shared silver treatment');
+for(const m of silverMaterials){assert.equal(m.metalness,1);assert(m.color.r>=.19&&m.color.r<=.28&&m.color.b<=.32,'silver midtones stay restrained');assert(m.roughness<=.27,'metal keeps defined reflection contrast');}
+const emblem=gltf.scene.getObjectByName('Reference_Emblem');assert(emblem?.visible,'generated emblem is visible after load');assert(textureLoads.includes(`/img/typewriters/badges/${model}-v1.png`));assert(emblem.material.transparent&&emblem.material.alphaTest>0,'emblem preserves transparent contours');assert([...emblem.geometry.attributes.position.array].every(Number.isFinite),'emblem surface projection is finite');assert.equal(emblem.material.map.encoding,T.sRGBEncoding);
 const wall=renderedScene.getObjectByName('Rear_Wall_Shadow');
 assert(wall?.receiveShadow&&wall.material.isShadowMaterial,'rear wall receives real projected shadows without painting the background');
 assert(!wall.material.depthWrite,'wall cannot occlude the HTML paper depth mask');
@@ -69,6 +73,19 @@ function assertClosed(name){
  assert([...edges.values()].every(n=>n===2),name+' has no open or multiply joined edges');
 }
 for(const name of ['Ribbon_Hood','Cast_Perimeter','Bottom_Tray','Black_Keyboard_Well','Cap_Space','Cap_KeyA','Cap_Enter'])assertClosed(name);
+// Probe the actual cut-out, not only welded topology: bevels must not bridge the opening.
+const opening=nodes.Ribbon_Hood.userData.opening,cutRay=new T.Raycaster(),outline=opening.points;
+const inside=(x,z)=>{let yes=false;for(let i=0,j=outline.length-1;i<outline.length;j=i++){const [a,b]=outline[i],[c,d]=outline[j];if((b>z)!==(d>z)&&x<(c-a)*(z-b)/(d-b)+a)yes=!yes;}return yes;};
+let voidSamples=0;gltf.scene.updateMatrixWorld(true);
+for(let x=-.12;x<=.12;x+=.008)for(let z=-.14;z<=-.065;z+=.006){
+ if(!inside(x,z)||outline.some(([a,b])=>Math.hypot(a-x,b-z)<.004))continue;
+ const hood=nodes.Ribbon_Hood,origin=new T.Vector3(x,.4,z).applyMatrix4(hood.matrixWorld),direction=new T.Vector3(0,-1,0).transformDirection(hood.matrixWorld);cutRay.set(origin,direction);
+ assert.equal(cutRay.intersectObject(hood,false).length,0,'cut-out contains no unwanted cap/overlapping bevel');voidSamples++;
+}
+assert(voidSamples>40,'opening has a substantial unobstructed interior');
+const flange=gltf.scene.getObjectByName('Opening_Folded_Flange');assert(flange,'opening has a separate downturned inner edge');nodes.Opening_Folded_Flange=flange;assertClosed('Opening_Folded_Flange');
+for(const name of ['Carriage_End_Cheek_L','Carriage_End_Cheek_R'])assertClosed(name);
+assert(gltf.scene.getObjectByName('Carriage_Bearing_Collar_L'),'bearing is a separate part');
 // Cap crowns are closed even at the long center of the space bar, with smooth finite normals.
 const detailRay=new T.Raycaster();gltf.scene.updateMatrixWorld(true);
 for(const name of ['Cap_KeyA','Cap_Space','Cap_Enter']){
@@ -246,6 +263,8 @@ if(model==='lettera32'){
  assert(nodes.Cap_KeyA.material.clearcoat>.4&&nodes.Cap_KeyA.material.roughness<.3,'Lettera caps retain distinct polished resin');
  const normals=nodes.Ribbon_Hood.geometry.attributes.normal;for(let i=0;i<normals.count;i++){const n=new T.Vector3().fromBufferAttribute(normals,i);assert(Number.isFinite(n.length())&&Math.abs(n.length()-1)<1e-5,'bent cover normals are finite unit vectors');}
  assert.equal(nodes.Hermes_Badge.visible,false);assert.equal(nodes.Selector_Slot.visible,false);assert.equal(nodes.Margin_Indicator_Left.visible,false);
+ assert.equal(gltf.scene.getObjectByName('Lettera_Knob_Inset_Right').material.metalness,1,'right knob has its observed metal center');
+ assert(gltf.scene.getObjectByName('Lettera_Segment_Divider_47'),'fixed segment is visible independently of moving bars');
  assert(gltf.scene.getObjectByName('Lettera_Split_Badge'));assert(gltf.scene.getObjectByName('Lettera_Return_Paddle'));assert(gltf.scene.getObjectByName('Lettera_Pica_Scale'));
  assert.equal(gltf.scene.userData.model,'lettera32');
 }
