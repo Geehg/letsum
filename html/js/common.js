@@ -2,6 +2,7 @@
 (function () {
   const base = (document.currentScript && document.currentScript.dataset.base) || "";
   const home = base + "index.html";
+  const localizedURL = value => window.LSUI ? LSUI.localURL(value) : value;
   const tb = document.getElementById("themeBtn");
   if (tb) tb.addEventListener("click", () => {
     const cur = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -11,10 +12,10 @@
   if (pb) {
     let n = 0; try { n = (JSON.parse(localStorage.getItem("ls_projects")) || []).length; } catch (e) {}
     if (n) pb.innerHTML = `폰트 보관함 <small>${n}</small>`;
-    pb.addEventListener("click", () => { location.href = home + "#vault"; });
+    pb.addEventListener("click", () => { location.href = localizedURL(home + "#vault"); });
   }
   const q = document.getElementById("qTop");
-  if (q) q.closest("form").addEventListener("submit", (e) => { e.preventDefault(); const v = q.value.trim(); location.href = home + (v ? "?q=" + encodeURIComponent(v) : ""); });
+  if (q) q.closest("form").addEventListener("submit", (e) => { e.preventDefault(); const v = q.value.trim(); location.href = localizedURL(home + (v ? "?q=" + encodeURIComponent(v) : "")); });
   // 폰트 상세 페이지: 받기를 누르면 운영체제별 설치 순서와 '설치 후 보이는 이름'을 알려 준다(홈 main.js와 같은 안내)
   const inst = document.getElementById("instData");
   if (inst) document.addEventListener("click", (e) => {

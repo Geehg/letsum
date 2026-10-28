@@ -29,6 +29,7 @@
 //       GET  /api/admin/comments?filter=all|hidden|reported
 //       POST /api/admin/comment { commentId, action: hide|show|delete }
 import { account, accountCleanup } from "./account.js"; // 필사독서 선택 회원(type.letsum.app)
+import { localeResponse } from "./locale.js";
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
 // 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
@@ -475,6 +476,7 @@ export default {
     }
     try {
       const p = url.pathname;
+      if (req.method === "GET" && p === "/api/locale") return localeResponse(req);
       const acc = await account(req, url, env); if (acc) return acc;
       if (req.method === "POST" && p === "/api/admin/login") return await adminLogin(req, env);
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);

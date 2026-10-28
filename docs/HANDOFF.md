@@ -603,3 +603,9 @@ img.save("sample.png")
 
 2026-10-28 이전 화방 CV/ETF 배포 확인: 7ee01774가 GitHub main 및 NAS에 반영됨.
 2026-10-28 화방 추가 기능: 효과음 on/off·음량·미리듣기·타건동기, A4 표시10%확대, TXT/MD/DOCX/EPUB 장문100만자 가져오기/직접입력·잔여본문 이어쓰기. studio14/flow8/worker11/machine5/CSS6/audio1/documents1. 상세와 검증 TYPEWRITER_STUDIO.md. 사용자 배포 확인 요청에 따라 운영 반영 진행.
+
+
+## 2026-10-29 한국어/영어 화면
+- 국가별 기본 UI: 한국은 한국어, 확인된 해외 국가는 영어. 수동 선택을 최우선으로 저장하며, 국가 미확인 시 브라우저 언어로 동작. `/en/` 폰트 카테고리와 독립.
+- `worker/src/locale.js`, `tools/i18n/`, `tools/build_ui_language.js`. 생성은 build_pages.js 마지막에서 자동 실행. 상세·주제 페이지에도 공통 언어 전환.
+- 테스트·유지보수·원문 유지 범위: `docs/I18N.md`. 필사독서 별도 앱(type.letsum.app)은 변경하지 않음.

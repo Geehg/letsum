@@ -74,7 +74,7 @@ function page(f, en, db) {
   <nav class="crumb" aria-label="현재 위치"><a href="${home}">홈</a>${topicsOf(f)[0] ? ` › <a href="${home}?topic=${topicsOf(f)[0].slug}">${esc(topicsOf(f)[0].short)}</a>` : ""} › <span>${esc(f.name)}</span></nav>
   <p class="k">${esc(f.category)} · ${esc(f.designer)} · ${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${esc(f.glyphs)}</p>
   <h1>${esc(f.name)} <span style="font-family:var(--mono);font-size:16px;font-weight:500;color:var(--ink3)">${esc(f.en)}</span></h1>
-  <p class="sub">${esc(f.desc)}</p>
+  <p class="sub" data-ui-editorial>${esc(f.desc)}</p>
   ${REASONS[f.id] ? `<div class="why-box"><b>추천 이유</b><p>${esc(REASONS[f.id].why)}</p><p class="note">잘 맞는 곳: ${REASONS[f.id].good.map(esc).join(" · ")}${REASONS[f.id].caution ? `<br>주의: ${esc(REASONS[f.id].caution)}` : ""}</p></div>` : ""}
   ${f.intro ? `${f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : db ? (f.typeable ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>${esc(f.sample)}</div>` : `<div class="sample db-sample" style="font-family:${esc(f.family)}"><span class="l">견본 기호 · ${esc(f.glyphs)}</span>${(f.icons || []).map((x) => `<i title="${esc(x[1])}">${esc(x[0])}</i>`).join("")}</div>`)
     : en ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>The quick brown fox jumps over the lazy dog<br>Reading is always time well spent<br><span style="font-size:28px">ABC abc 0123456789 · $4.50</span></div>`
@@ -236,7 +236,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
   <nav class="crumb" aria-label="현재 위치"><a href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : "index.html"}">홈</a> › <span>${esc(t.short)}</span></nav>
   <h1>${esc(t.h1)} <span class="tp-n">${n}종</span></h1>
   <p class="tp-go"><a class="btn" href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : ""}?topic=${t.slug}">메인 화면에서 이 목록 보기 →</a><span class="note">내 문장으로 미리보기·비교·필터를 함께 쓸 수 있습니다</span></p>
-  <p class="lead">${esc(t.lead)}</p>
+  <p class="lead" data-ui-editorial>${esc(t.lead)}</p>
   <p class="note">라이선스 원문 대조 · 다운로드는 원 배포처로 연결 · 목록 갱신 ${today} · 견본 이미지를 누르면 상세 정보와 내 문장 미리보기로 갑니다.</p>
   <div class="tp-grid">${list.map(card).join("")}</div>
   <h2>자주 묻는 질문</h2>
@@ -397,3 +397,6 @@ Sitemap: ${SITE}/sitemap.xml
 // type.letsum.app 도 같은 규칙, 사이트맵만 자기 것
 fs.writeFileSync(path.join(ROOT, "type", "robots.txt"), fs.readFileSync(path.join(ROOT, "robots.txt"), "utf8").replace("# LETSUM(렛섬)", "# LETSUM 필사독서(type.letsum.app)").replace(`Sitemap: ${SITE}/sitemap.xml`, "Sitemap: https://type.letsum.app/sitemap.xml"));
 console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);
+
+// Keep UI translations on generated font, topic and catalogue pages.
+require("./build_ui_language.js");

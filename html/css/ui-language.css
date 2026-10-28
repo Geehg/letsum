@@ -1,0 +1,32 @@
+.ui-language{display:flex;align-items:center;flex-shrink:0;gap:2px;padding:3px;border:1px solid var(--line,#d5d5d5);border-radius:999px;margin-left:8px}
+.ui-language button{font:600 11px/1.3 Inter,system-ui,sans-serif;padding:6px 9px;border:0;border-radius:999px;background:transparent;color:var(--ink,#222);cursor:pointer;white-space:nowrap}
+.ui-language button[aria-pressed=true]{background:var(--ink,#222);color:var(--paper,#fff)}
+.ui-language button:focus-visible{outline:2px solid var(--accent,#327e50);outline-offset:2px}
+html[data-ui-language=en] .hd nav.main{gap:12px}
+html[data-ui-language=en] .hd nav.main a,html[data-ui-language=en] .nav-proj{font-size:12px;white-space:nowrap}
+html[data-ui-language=en] .hd-search{min-width:120px}
+html[data-ui-language=en] .fbtn{white-space:normal;text-align:left}
+html[data-ui-language=en] .deck .k{white-space:nowrap}
+html[data-ui-language=en] .spec th{overflow-wrap:anywhere}
+html[data-ui-language=en] [data-ui-editorial][lang=ko]::before{content:"Original Korean text";display:block;font:500 10px/1.5 Inter,system-ui,sans-serif;opacity:.65;margin-bottom:4px}
+html[data-ui-language=en] .si-g{min-width:0}
+html[data-ui-language=en] .si-g p{display:flex;flex-wrap:wrap;column-gap:6px;align-items:baseline}
+html[data-ui-language=en] .si-g i{margin:0}
+html[data-ui-language=en] .seo-topics.si-idx a{white-space:normal}
+html[data-ui-language=en] .si-idx{grid-template-columns:repeat(4,minmax(0,1fr))}
+html[data-ui-language=en] .hd{height:auto;min-height:var(--hd);column-gap:16px}
+@media(max-width:760px){
+ html[data-ui-language=en]{--hd:132px}
+ html[data-ui-language=en] .hd{min-height:0;gap:4px 12px}
+ html[data-ui-language=en] .hd-search{order:4;flex:1 0 100%;margin:4px 0}
+ html[data-ui-language=en] .hd-search input{width:100%}
+ html[data-ui-language=en] .hd nav.main{order:5}
+ html[data-ui-language=en] .si-idx{grid-template-columns:1fr}
+ html[data-ui-language=en] .si-g{grid-template-columns:90px minmax(0,1fr)}
+ html[data-ui-language=en] .deck .d1{flex-wrap:wrap;gap:4px}
+ html[data-ui-language=en] .deck .d1 .d-text{flex-basis:100%;display:grid;grid-template-columns:auto minmax(0,1fr) 80px}
+ html[data-ui-language=en] .d-text select{min-width:0;max-width:80px;width:80px}
+ html[data-ui-language=en] .deck .d1 .deck-more{margin-left:auto}
+}
+@media(max-width:1200px){html[data-ui-language=en] .hd{flex-wrap:wrap}html[data-ui-language=en] .hd nav.main{order:5;width:100%;overflow-x:auto;padding:6px 0}.ui-language{margin-left:auto}}
+@media(max-width:600px){.ui-language button{padding:6px 7px}.ui-language{margin-left:0}html[data-ui-language=en] .hd-search{min-width:0}.ui-language button{min-height:30px}html[data-ui-language=en] .d2{flex-wrap:wrap}}

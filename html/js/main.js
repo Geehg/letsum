@@ -1,6 +1,10 @@
 // LETSUM — 상업용 무료 한글 폰트 (홈)
 // 구조: 전역 컨트롤(문장·크기·굵기) → 필터 → 목록/격자/맥락 보기 → 비교 트레이 → 상세 모달
 (function () {
+  // Localize browser dialogs without changing user-entered text.
+  const alert = message => window.alert(window.LSUI ? LSUI.t(message) : message);
+  const confirm = message => window.confirm(window.LSUI ? LSUI.t(message) : message);
+  const prompt = (message, value) => window.prompt(window.LSUI ? LSUI.t(message) : message, value);
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
   const LS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
@@ -434,7 +438,7 @@
     if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
     else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
     state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new");
-    $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel)); render();
+    $$("[data-alt]").forEach((x) => x.classList.toggle("on", ALTERNATIVES[+x.dataset.alt].for === state.onlyLabel)); render();
   }));
 
   // ---------- 필터링 ----------
@@ -759,7 +763,7 @@
     const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, DB ? f.glyphs : EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro || DB ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
-      <p>${esc(f.desc)}</p><div class="ii-m">${esc(meta)}</div></div>`;
+      <p data-ui-editorial>${esc(f.desc)}</p><div class="ii-m">${esc(meta)}</div></div>`;
     if (f.intro) return [`<div class="ig-s ig-intro">${introBox(f, "big")}</div>`, info];
     if (DB) return dbSlides(f, i, info);
     const ws = f.weights.length > 6 ? f.weights.filter((_, k) => k % 2 === 0 || k === f.weights.length - 1) : f.weights;
@@ -973,7 +977,7 @@
     $$("[data-mood]").forEach((x) => x.classList.toggle("on", state.mood.has(x.dataset.mood)));
     $$("[data-cov]").forEach((x) => x.classList.toggle("on", state.cov.has(x.dataset.cov)));
     $$("[data-coll]").forEach((x) => x.classList.toggle("on", x.dataset.coll === state.coll));
-    $$("[data-alt]").forEach((x) => x.classList.toggle("on", x.textContent === state.onlyLabel));
+    $$("[data-alt]").forEach((x) => x.classList.toggle("on", ALTERNATIVES[+x.dataset.alt].for === state.onlyLabel));
     syncLic(); render();
   }
   // 문장·크기·굵기 변경은 전체 재렌더 없이 미리보기만 갱신
@@ -1223,7 +1227,7 @@
           ${LAT ? "" : ({ miss: `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>`, pending: `<span class="pill chk">글자 지원 확인 중</span>`, na: `<span class="pill">소개 전용 · 글자 지원 미확인</span>` }[covState[f.id]] || (covChars.length ? `<span class="pill ok">현재 문장의 한글·한자 모두 지원</span>` : `<span class="note">문장에 검사할 한글·한자가 없습니다</span>`))}
           ${LAT ? "" : '<span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span>'}</div>
       </div>`}
-      <p style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
+      <p data-ui-editorial style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
       ${f.intro ? "" : `<button class="tbtn" id="shotBtn" type="button" title="이 폰트 견본을 이미지로 — 카톡·메신저로 보내 의견 묻기">이미지로 저장·공유</button>`}
       <div class="why-box" id="whyBox" hidden></div>
 
@@ -1731,7 +1735,7 @@ import "@fontsource/${f.id}/400.css";</pre>
         </form>
         ${projects.map((p) => { const ch = changedIn(p); return `<button class="pj-card${addIds ? " pick" : ""}" ${addIds ? `data-pjadd="${p.id}"` : `data-pjopen="${p.id}"`}>
           <span class="pj-ico" aria-hidden="true">📁</span>
-          <b class="pj-t">${esc(p.name)}</b>
+          <b class="pj-t"><span translate="no">${esc(p.name)}</span></b>
           <span class="pj-m">${p.items.length}종 · ${new Date(p.updated).toLocaleDateString("ko-KR")}</span>
           ${ch ? `<span class="pj-alert">조건 바뀜 ${ch}</span>` : ""}
           <span class="pj-chips">${chips(p) || '<i class="more">비어 있음</i>'}</span>

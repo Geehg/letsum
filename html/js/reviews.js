@@ -2,6 +2,10 @@
 // 넓은 화면: 상세 창 오른쪽에 붙는 고정 패널(목록만 스크롤, 입력창은 아래 고정) / 좁은 화면: 상세 창 안 '리뷰' 칸
 // 베스트(좋아요 2개 이상 중 가장 많은 댓글)는 맨 위 고정, 답글은 한 단계 들여쓰기. 지금은 로그인 없이(닉네임) — 나중에 회원제로 바꿀 수 있게 서버에 user_id 칸을 둠.
 (function () {
+  // Localize browser dialogs without changing user-entered text.
+  const alert = message => window.alert(window.LSUI ? LSUI.t(message) : message);
+  const confirm = message => window.confirm(window.LSUI ? LSUI.t(message) : message);
+  const prompt = (message, value) => window.prompt(window.LSUI ? LSUI.t(message) : message, value);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
   const EMO = ["❤️", "🙌", "🔥", "👏", "😍", "😮", "😂", "👍"];
   const nick = () => { try { return localStorage.getItem("ls_nick") || ""; } catch (e) { return ""; } };
