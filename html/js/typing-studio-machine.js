@@ -24,9 +24,10 @@ globalThis.LSCreateStudioMachine=async function(host,art){
  const cc=contactCanvas.getContext('2d'),gradient=cc.createRadialGradient(64,64,12,64,64,64);gradient.addColorStop(0,'rgba(31,26,19,.26)');gradient.addColorStop(.55,'rgba(31,26,19,.14)');gradient.addColorStop(1,'rgba(31,26,19,0)');cc.fillStyle=gradient;cc.fillRect(0,0,128,128);
  const contactTexture=new T.CanvasTexture(contactCanvas),contact=new T.Mesh(new T.PlaneGeometry(.43,.33),new T.MeshBasicMaterial({map:contactTexture,transparent:true,depthWrite:false,toneMapped:false}));contact.rotation.x=-Math.PI/2;contact.position.set(0,.0015,.01);scene.add(contact);
  const texture=new T.CanvasTexture(art);texture.encoding=T.sRGBEncoding;
- const paper=new T.Mesh(new T.PlaneGeometry(.224,.317),new T.MeshStandardMaterial({map:texture,roughness:.93,side:T.DoubleSide,clippingPlanes:[new T.Plane(new T.Vector3(0,1,0),-.153)]}));
+ const PAPER_SCALE=1.1,PAPER_WIDTH=.224*PAPER_SCALE,PAPER_HEIGHT=.317*PAPER_SCALE,START_FEED=.025*PAPER_SCALE;
+ const paper=new T.Mesh(new T.PlaneGeometry(PAPER_WIDTH,PAPER_HEIGHT),new T.MeshStandardMaterial({map:texture,roughness:.93,side:T.DoubleSide,clippingPlanes:[new T.Plane(new T.Vector3(0,1,0),-.153)]}));
  let fitWidth=.68,fitCenter=0;
- let model,carriage,lever,keys=[],bars=[],guides=[],ribbons=[],rotors=[],token=0,raf=0,until=0,last=0,targetX=0,x=0,row=0,rows=120,feed=.025,targetFeed=.025,returnAt=-1e6,hitAt=-1e6,hitKey=null,hitBar=null,full=false;
+ let model,carriage,lever,keys=[],bars=[],guides=[],ribbons=[],rotors=[],token=0,raf=0,until=0,last=0,targetX=0,x=0,row=0,rows=120,feed=START_FEED,targetFeed=START_FEED,returnAt=-1e6,hitAt=-1e6,hitKey=null,hitBar=null,full=false;
  const rest=new T.Quaternion(),axis=new T.Vector3(0,1,0),q=new T.Quaternion();
  function resize(){const w=host.clientWidth||480,h=host.clientHeight||600;renderer.setSize(w,h,false);const span=Math.max(.57,fitWidth*h/w);camera.left=fitCenter-span*w/h/2;camera.right=fitCenter+span*w/h/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();wake();}
  const observer=new ResizeObserver(resize);observer.observe(host);
@@ -41,7 +42,7 @@ globalThis.LSCreateStudioMachine=async function(host,art){
   for(const r of ribbons){const p=r.o.geometry.attributes.position;for(let i=0;i<p.count;i++){const dx=r.base[i*3];p.setY(i,r.base[i*3+1]+s*.004*Math.max(0,1-Math.abs(dx)/.04));}p.needsUpdate=true;}
   for(const r of rotors)r.o.quaternion.copy(r.q).multiply(q.setFromAxisAngle(axis,-feed/.018));
   if(lever){const t=(now-returnAt)/500;lever.rotation.x=t>=0&&t<1?-.42*Math.sin(Math.PI*t):0;}
-  paper.position.set(0,.153+feed-.317/2,-.139);renderer.render(scene,camera);
+  paper.position.set(0,.153+feed-PAPER_HEIGHT/2,-.139);renderer.render(scene,camera);
   if(now<until)raf=requestAnimationFrame(frame);
  }
  function disposeModel(root){if(!root)return;root.remove(paper);root.traverse(o=>{o.geometry?.dispose();for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){for(const slot of ['map','normalMap','roughnessMap','metalnessMap'])m[slot]?.dispose();m.dispose();}});}
@@ -79,9 +80,9 @@ globalThis.LSCreateStudioMachine=async function(host,art){
   host.dataset.framing='full-carriage-travel';
   reset();host.dataset.ready='true';resize();
  }
- function reset(){targetX=x=0;targetFeed=feed=.025;row=0;full=false;hitAt=returnAt=-1e6;hitKey=hitBar=null;wake();}
- function position(col,line,count){rows=count;row=line;targetX=(.5-col)*.202;targetFeed=full?.317:.025+row/rows*.296;wake();}
+ function reset(){targetX=x=0;targetFeed=feed=START_FEED;row=0;full=false;hitAt=returnAt=-1e6;hitKey=hitBar=null;wake();}
+ function position(col,line,count){rows=count;row=line;targetX=(.5-col)*.202;targetFeed=full?PAPER_HEIGHT:START_FEED+row/rows*(.296*PAPER_SCALE);wake();}
  function hit(g){const code=/[a-z]/i.test(g)?'Key'+g.toUpperCase():/\d/.test(g)?'Digit'+g:g;hitKey=keys.find(k=>k.code===code)||keys[g.charCodeAt(0)%keys.length];hitBar=bars[g.charCodeAt(0)%bars.length];hitAt=performance.now();wake();}
  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();host.dataset.ready='error';host.dispatchEvent(new Event('machineerror'));});
- return {load,reset,position,hit,returnCarriage(){returnAt=performance.now();wake();},finish(){full=true;targetX=0;targetFeed=.317;wake();},refresh:wake,dispose(){token++;observer.disconnect();cancelAnimationFrame(raf);paper.parent?.remove(paper);disposeModel(model);paper.geometry.dispose();paper.material.dispose();texture.dispose();env.dispose();floor.geometry.dispose();floor.material.dispose();contact.geometry.dispose();contact.material.dispose();contactTexture.dispose();light.shadow.map?.dispose();light.shadow.mapPass?.dispose();renderer.dispose();renderer.domElement.remove();}};
+ return {load,reset,position,hit,returnCarriage(){returnAt=performance.now();wake();},finish(){full=true;targetX=0;targetFeed=PAPER_HEIGHT;wake();},refresh:wake,dispose(){token++;observer.disconnect();cancelAnimationFrame(raf);paper.parent?.remove(paper);disposeModel(model);paper.geometry.dispose();paper.material.dispose();texture.dispose();env.dispose();floor.geometry.dispose();floor.material.dispose();contact.geometry.dispose();contact.material.dispose();contactTexture.dispose();light.shadow.map?.dispose();light.shadow.mapPass?.dispose();renderer.dispose();renderer.domElement.remove();}};
 }

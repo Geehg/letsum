@@ -58,3 +58,16 @@ console.log('PASS: image-only levels, white background, measured prose ink/order
  for(let y=0;y<height;y++)for(let x=82;x<158;x++)assert.ok(Math.abs(plain[y*width+x]-sharp[y*width+x])<.00001,'source step does not gain a bright or dark rim');
  console.log('PASS: halo-free local contrast on a clean brightness edge');
 }
+
+// Source offsets consume exactly the supplied sequence without dropping its tail.
+const finite=compose(0,{text:'iMWiMW',textOffset:2,repeatText:false});
+assert.equal(finite.marks.flat().map(s=>s.g).join(''),'WiMW');
+assert.equal(finite.textCharactersUsed,4);assert.equal(finite.textRemaining,0);assert.equal(finite.nextTextOffset,6);assert.equal(finite.textRepeated,false);
+const longText='iMW'.repeat(100000),first=compose(0,{text:longText,repeatText:false});
+assert.equal(first.textLength,300000);assert.ok(first.textRemaining>0);
+const second=compose(0,{text:longText,textOffset:first.nextTextOffset,repeatText:false});
+assert.equal(second.marks.flat().map(s=>s.g).join(''),longText.slice(first.nextTextOffset,second.nextTextOffset));
+assert.equal(second.textRemaining,longText.length-second.nextTextOffset);
+assert.ok(compose(0,{text:'iMW',textOffset:3,repeatText:false}).marks.every(p=>!p.length),'exhausted prose produces no invented letters');
+assert.ok(compose(0,{text:'iMW',repeatText:true}).textRepeated,'short prose can explicitly repeat');
+console.log('PASS: 300,000-character source, exact continuation, finite text and optional repeat');

@@ -128,3 +128,12 @@
 - 브라우저: 사용자 첨부 모나리자,1.2배/160열/대비110/윤곽35/자유영문/진갈색으로 실제 전경 보정 및124,376타 완성/100% 확대 확인. 이전 초기타원보다 머리 윤곽을 따라 배경 줄이 연결되며 곡선 방향이 달라짐. 비슷한 색의 왼쪽 하단 배경이 전경으로 포함되는 부분은 남으므로 브러시 보정 안내 유지. 사람의 의미별 구도·글자 선택과 동일하지 않다.
 - 증빙 화면: `/Volumes/AI_dev/web/typewriter-studio/mona-refined-flow-screen.png`.
 - core8 / flow7 / streamlines6 / ETF1 / segmentation-worker1 / drawing-worker10 / studio13 / machine4. 로컬 반영, 운영 미배포.
+
+
+## 2026-10-28 효과음·확대 용지·긴 본문
+- 작업대 위에 효과음 on/off, 음량 0~100%, 소리 듣기. 기본 off/38%, 선택값 로컬 저장. 기존 출처 표기된 실제 녹음 9개를 Web Audio decode/cache, 타건·줄 끝 벨·복귀·이송에 즉시 재생. 초기 로딩 중 놓친 소리를 뒤늦게 쌓아 재생하지 않으며 pause/mute/화면 이탈 시 정지.
+- 3D 용지 가로/세로/이송량 1.1배, 2D fallback 폭62→68.2%. 타자기 본체·카메라 배율과 저장/인쇄용 A4 2480×3508 및 210×297mm 규격은 유지.
+- 직접 입력 최대100만 code point, 문서20MiB 이하 TXT/MD/DOCX/EPUB. JSZip3.10.1 기존 파일 재사용, Word 본문·표/EPUB spine 순서로 순수 텍스트 추출. UTF-8/UTF-16/EUC-KR 판독. PDF/HWP는 TXT로 저장해서 사용. 서버 전송 및 문서 내 코드 실행 없음.
+- 문서 가져오기 중단/실패 때 기존 입력 유지, 압축 해제 XML 총24MiB 제한. 기존2만자 제한 제거. glyph atlas는 고유 글자로만 생성.
+- 본문 총/사용/남은 분량 표시, 완료 후 남은 본문 이어 쓰기, 처음부터/반복 여부 설정. 글자의 순서는 유지하고 모든 공백은 한 칸으로 정규화. 그림과 본문의 읽기 순서가 같다는 보장은 없음(곡선·중첩).
+- 회귀: audio fake-context, motion sound phase, flow 300,000자 정확한 offset/반복종료, 실제브라우저 documents HTML 9항목. UI에339,999자TXT 첨부/그림완성/다음본문검증. 기존 studio/flow/streamlines/ETF/GrabCut/render/startup/focus 통과.

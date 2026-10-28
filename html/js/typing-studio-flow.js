@@ -64,6 +64,8 @@
  function flow(plan,options,gray,progress){
   const {cols,rows}=plan,n=cols*rows,W=cols*core.SW,{angles,offsets,masks}=field(cols,rows,options,gray);
   const patterns=options.patterns||core.patterns,seq=sequence(options.text),samples=options.samples;
+  const textStart=Math.max(0,Math.min(seq.length,Math.trunc(Number(options.textOffset)||0))),repeatText=options.repeatText!==false;
+  const charAt=i=>seq.length&&(repeatText||textStart+i<seq.length)?seq[(textStart+i)%seq.length]:null;
   // Backwards-compatible callers without measured glyph data keep their plan.
   if(!samples){let consumed=0;const marks=Array.from(plan.choices,(p,i)=>p?patterns[p].map(s=>({...s,g:seq.length?seq[consumed++%seq.length]:s.g,a:angles[i],y:s.y+offsets[i]})):[]);return {...plan,marks,angles,offsets,strikes:marks.reduce((s,p)=>s+p.length,0),textCharactersUsed:consumed,textLength:seq.length};}
   const choices=new Uint8Array(n),marks=new Array(n),errors=new Float32Array(n),glyphs=new Map();
@@ -76,7 +78,7 @@
   }
   let capacity;
   if(seq.length){
-   const peaks=[];for(let start=0;start<Math.min(seq.length,160);start++){const union=new Float32Array(pixels);let mean=0;for(let k=0;k<maxLayers;k++)mean=stamp(union,stencil(seq[(start+k)%seq.length],k));peaks.push(mean);}
+   const peaks=[];for(let start=0;start<Math.min(seq.length,160);start++){const union=new Float32Array(pixels);let mean=0;for(let k=0;k<maxLayers;k++){const g=charAt(start+k);if(g===null)break;mean=stamp(union,stencil(g,k));}peaks.push(mean);}
    peaks.sort((a,b)=>a-b);capacity=peaks[Math.floor(peaks.length*.65)]||.1;
   }else capacity=Math.max(...samples.slice(0,options.overstrike===false?options.singles:samples.length).map(s=>s.mean));
   // Preserve paper highlights and use a printable ink range; density, never gray ink.
@@ -99,12 +101,12 @@
      const lum=at((anchor.x+dx*cos-dy*sin)*core.SW-.5,(anchor.y+(dx*sin+dy*cos)/1.5)*core.SH-.5);
      target[k]=core.inkTone(lum)*capacity*(options.ink||1)*(anchor.inkWeight??densityCompensation);mean+=target[k];
     }
-    mean/=target.length;const desired=mean<1e-7?0:clamp(mean+errors[i]/Math.max(1,anchors.length),0,capacity),count=seq.length?maxLayers:(options.overstrike===false?options.singles:samples.length)-1;
+    mean/=target.length;const desired=mean<1e-7?0:clamp(mean+errors[i]/Math.max(1,anchors.length),0,capacity),count=seq.length?(repeatText?maxLayers:Math.min(maxLayers,Math.max(0,seq.length-textStart-consumed))):(options.overstrike===false?options.singles:samples.length)-1;
     let best=0,bestMean=0,bestCost=desired*desired*14,entry=[];union.fill(0);
     const candidates=[];
     for(let k=1;k<=count;k++){
      let sample,coverage;
-     if(seq.length){const g=seq[(consumed+k-1)%seq.length];coverage=stamp(union,stencil(g,k-1));sample=null;}
+     if(seq.length){const g=charAt(consumed+k-1);coverage=stamp(union,stencil(g,k-1));sample=null;}
      else{coverage=samples[k].mean;sample=samples[k].v;}
      let shape=0;if(sample)for(let j=0;j<target.length;j++){const v=(sample[j]-coverage)-(target[j]-mean);shape+=v*v;}
      const cost=(coverage-desired)**2*14+shape/target.length*.012;
@@ -118,7 +120,7 @@
      if(equivalents.length>1){const band=anchor.run>=0?anchor.run:y*31+Math.floor(x/7),index=((Math.imul(band+19,2654435761)>>>0)%equivalents.length),pick=equivalents[index];best=pick.k;bestMean=pick.coverage;}
     }
     if(best){
-     entry=seq.length?Array.from({length:best},(_,k)=>({g:seq[(consumed+k)%seq.length],x:placements[k][0],y:placements[k][1],font:options.language||'en'})):patterns[best].map(s=>({...s}));
+     entry=seq.length?Array.from({length:best},(_,k)=>({g:charAt(consumed+k),x:placements[k][0],y:placements[k][1],font:options.language||'en'})):patterns[best].map(s=>({...s}));
      if(seq.length)consumed+=best;
      for(const s of entry){s.a=anchor.angle;s.px=anchor.x-(x+.5);s.py=anchor.y-(y+.5);}
      cellMarks.push(...entry);strikes+=entry.length;
@@ -131,7 +133,7 @@
    if(y+1<rows){if(x)errors[i+cols-1]+=error*3/16;errors[i+cols]+=error*5/16;if(x+1<cols)errors[i+cols+1]+=error/16;}
    if(progress&&x===cols-1&&y%8===0)progress(y/rows);
   }
-  return {cols,rows,choices,marks,strikes,textCharactersUsed:consumed,textLength:seq.length,angles,offsets,inkCapacity:capacity,inkColor:options.inkColor||'#211f1c',curvedRuns:layout.runLengths.length};
+  return {cols,rows,choices,marks,strikes,textCharactersUsed:consumed,textLength:seq.length,textStart,textRemaining:Math.max(0,seq.length-textStart-consumed),nextTextOffset:Math.min(seq.length,textStart+consumed),textRepeated:textStart+consumed>seq.length,angles,offsets,inkCapacity:capacity,inkColor:options.inkColor||'#211f1c',curvedRuns:layout.runLengths.length};
  }
  core.makePatterns=makePatterns;core.flow=flow;
 })(typeof self==='undefined'?globalThis:self);

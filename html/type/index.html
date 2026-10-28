@@ -31,7 +31,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <link rel="stylesheet" href="/css/typing-retro-focus.css?v=9">
 <link rel="stylesheet" href="/css/typing-model-gallery.css?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/css/typing-studio.css?v=5">
+<link rel="stylesheet" href="/css/typing-studio.css?v=6">
 </head>
 <body class="tb-page">
 <div id="tbBoot" role="status"><p>필사 공간을 준비하고 있어요…</p><button type="button" hidden onclick="location.reload()">다시 불러오기</button></div>
@@ -291,7 +291,12 @@ html[data-tb-boot] #tbBoot{display:block}
    <label>명암 대비 <output id="tsContrastValue">110%</output><input id="tsContrast" type="range" min="60" max="180" value="110"></label>
    <details class="ts-flow-settings" open><summary>곡선 · 인물 · 타이핑 내용</summary>
    <label>문자 언어<select id="tsLanguage"><option value="en">영문 · Courier Prime</option><option value="ko">한글 · 본명조</option><option value="ja">일본어 · Noto Serif JP</option></select></label>
-   <label>사용할 본문 (선택)<textarea id="tsCustomText" rows="5" maxlength="20000" placeholder="직접 작성했거나 사용 권한이 있는 본문을 붙여 넣으세요."></textarea></label><p class="ts-hint">입력 순서대로 찍고 부족하면 처음부터 반복합니다. 이미지의 여백은 건너뛰며, 중첩 때문에 본문의 가독성은 낮아질 수 있습니다. 비우면 선택한 언어의 문자를 사용합니다.</p>
+   <label>사용할 본문 (선택)<textarea id="tsCustomText" rows="8" maxlength="2000000" placeholder="긴 본문을 직접 입력하거나 붙여 넣으세요. 문서 파일로도 가져올 수 있습니다." aria-describedby="tsTextCount tsTextHelp"></textarea></label>
+   <div class="ts-document-actions"><label class="ts-document-upload">문서 파일 첨부<input id="tsTextFile" type="file" accept=".txt,.md,.markdown,.docx,.epub" aria-label="본문 문서 파일 첨부"></label><button id="tsTextCancel" type="button" hidden>가져오기 중단</button><button id="tsTextClear" type="button">본문 비우기</button></div>
+   <p id="tsTextFileStatus" class="ts-hint" role="status" aria-live="polite"></p><p id="tsTextCount" class="ts-hint">0자 / 최대 1,000,000자</p>
+   <label class="ts-check"><input id="tsTextRepeat" type="checkbox" checked> 본문을 다 쓰면 처음부터 반복</label>
+   <div class="ts-document-actions"><button id="tsTextContinue" type="button" disabled>남은 본문 이어 쓰기</button><button id="tsTextRestart" type="button" disabled>처음부터</button></div>
+   <p id="tsTextHelp" class="ts-hint">TXT·MD·DOCX·EPUB · 20MB 이하 · 최대 100만 자. 파일은 이 기기에서만 읽습니다. 한 장에 담지 못한 본문은 다음 그림에서 이어 쓸 수 있습니다. 비우면 선택한 언어의 문자를 사용합니다. 이미지의 여백은 건너뛰고, 중첩되면 본문 가독성이 낮아질 수 있습니다.</p>
    <label class="ts-check"><input id="tsCurve" type="checkbox" checked> 이미지의 결을 따라 곡선으로 찍기</label>
    <label class="ts-check"><input id="tsPortrait" type="checkbox" checked> 인물 영역과 가로 타이핑 배경 구분</label>
    <p class="ts-hint">항상 흑백 변환 + 자동 레벨 보정. 밝은 영역은 글자를 찍지 않고 여백으로 남깁니다. 초록색은 사진의 색 차이로 찾은 인물 범위입니다. 가장자리에서는 곡선과 가로 타이핑이 섞입니다. 비슷한 색의 배경이 포함되면 브러시로 고쳐 주세요.</p>
@@ -307,6 +312,7 @@ html[data-tb-boot] #tbBoot{display:block}
    <p class="ts-hint">설정을 바꾼 뒤 다시 그리면 적용됩니다. 밝은 배경과 또렷한 피사체가 있는 사진에 잘 어울립니다.</p>
   </aside>
   <section class="ts-stage" aria-label="타자기 드로잉 작업대"><div class="ts-stage-top"><span id="tsModelName">Hermes 3000</span><button id="tsChangeModel" class="ts-text-button" type="button">타자기 바꾸기</button></div>
+   <div class="ts-sound-controls" aria-label="타자기 효과음"><label class="ts-check"><input id="tsSound" type="checkbox"> 효과음 켜기</label><label>음량 <output id="tsSoundValue">38%</output><input id="tsSoundVolume" type="range" min="0" max="100" value="38" aria-label="효과음 음량"></label><button id="tsSoundPreview" type="button">소리 듣기</button><span id="tsSoundStatus" role="status" aria-live="polite">효과음 꺼짐</span></div>
    <div class="ts-machine-area" id="tsMachineArea"><div id="tsMachine3D" class="ts-machine-3d"></div><div class="ts-paper-slot"><div class="ts-paper" id="tsPaper"><canvas id="tsCanvas" width="1240" height="1754" role="img" aria-label="A4 세로 문자 드로잉"><span>문자로 그린 그림 미리보기</span></canvas><div id="tsPaperHint"><span>YOUR FIRST IMPRESSION</span><b>한 장의 사진이<br>수천 번의 타건으로.</b><p>왼쪽에서 사진을 선택해 주세요.</p></div></div></div><img id="tsMachine" class="ts-machine" src="/img/typewriters/hermes3000-preview.png?v=3" alt="선택한 타자기" width="720" height="440"><span class="ts-hammer" aria-hidden="true"></span><span class="ts-key-flash" aria-hidden="true"></span></div>
    <div class="ts-playback"><progress id="tsProgress" value="0" max="1" aria-label="드로잉 진행률"></progress><div><span id="tsStatus" role="status" aria-live="polite">사진을 기다리고 있어요.</span><span id="tsCount">A4 · 세로</span></div><div class="ts-play-buttons"><button id="tsPause" type="button" disabled>일시정지</button><button id="tsFinish" type="button" disabled>바로 완성</button><button id="tsZoomOpen" type="button" disabled>용지 확대 ↗</button><button id="tsReplay" type="button" disabled>다시 재생</button><label>속도<select id="tsSpeed"><option value="8">천천히 · 8타/초</option><option value="20" selected>보통 · 20타/초</option><option value="45">빠르게 · 45타/초</option></select></label></div></div>
   </section>
@@ -362,7 +368,9 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="/js/typing-focus.js?v=1"></script>
 <script src="/js/typing-header-peek.js?v=1"></script>
 <script src="/js/typing-studio-core.js?v=8"></script>
-<script src="/js/typing-studio-flow.js?v=7"></script>
-<script src="/js/typing-studio.js?v=13"></script>
+<script src="/js/typing-studio-flow.js?v=8"></script>
+<script src="/js/typing-studio-audio.js?v=1"></script>
+<script src="/js/typing-studio-documents.js?v=1"></script>
+<script src="/js/typing-studio.js?v=14"></script>
 </body>
 </html>

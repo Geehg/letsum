@@ -3,7 +3,7 @@ const source=fs.readFileSync('html/js/typing-studio.js','utf8');
 const block=source.slice(source.indexOf(' function resetMotion(){'),source.indexOf(' function start(){'));
 const harness=`
 let layer=0,typed=0,phase='strike',feedRow=0,due=0,cursor=0,frame=0,playing=true,active=true;
-const machine=null;
+const machine=null;const sounds=[];const audio={hit:()=>sounds.push("hit"),bell:()=>sounds.push("bell"),carriage:()=>sounds.push("return"),feed:()=>sounds.push("feed")};
 const plan={choices:[1,2,0,1],cols:2,rows:2,strikes:4};
 const noop=()=>{},styles={},classes=new Set(),painted=[];
 const node={style:{},animate:noop};const area={style:{setProperty:(k,v)=>styles[k]=v},classList:{add:k=>classes.add(k),remove:k=>classes.delete(k)},querySelector:()=>node};
@@ -15,7 +15,7 @@ const requestAnimationFrame=()=>1,status=noop,pause=noop,controls=noop,prepareSh
 ${block}
 complete=()=>{playing=false;};
 globalThis.run=t=>tick(t);
-globalThis.state=()=>({cursor,layer,typed,phase,feedRow,painted:[...painted],carriage:styles['--carriage']});
+globalThis.state=()=>({cursor,layer,typed,phase,feedRow,sounds:[...sounds],painted:[...painted],carriage:styles['--carriage']});
 `;
 const c=vm.createContext({});vm.runInContext(harness,c);
 c.run(0);assert.equal(c.state().cursor,1);assert.equal(c.state().typed,1);
@@ -27,3 +27,5 @@ c.run(50000);assert.equal(c.state().typed,3,'no strike during return/feed');
 c.run(60000);assert.equal(c.state().typed,3,'space does not strike');
 c.run(70000);assert.equal(c.state().typed,4);
 console.log('PASS: individual overstrikes, no catch-up batch, line-end hold, rightward return, discrete feed, silent space');
+
+assert.deepEqual(Array.from(c.state().sounds),['hit','hit','hit','bell','return','feed','hit'],'audio follows actual strikes and return/feed phases, no blank-cell strike');

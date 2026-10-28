@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><title>화방 문서 회귀 검증</title>
+<h1>화방 문서 회귀 검증</h1><pre id="result">검증 중…</pre>
+<script src="/js/jszip.min.js"></script><script src="/js/typing-studio-documents.js?v=1"></script>
+<script>
+(async()=>{
+const d=TypewriterDocuments,log=[],out=document.getElementById('result');
+const ok=(condition,label)=>{if(!condition)throw Error(label);log.push('PASS '+label);out.textContent=log.join('\n');};
+const file=(text,name)=>new File([text],name);
+const zipped=async(entries,name)=>{const z=new JSZip();for(const [p,t]of Object.entries(entries))z.file(p,t);return file(await z.generateAsync({type:'uint8array',compression:'DEFLATE'}),name);};
+try{
+ const long='The sea is calm. '.repeat(20000),read=await d.read(file(long,'long.txt'));ok(read.text===long.trim()&&read.count>300000,'300,000자 이상 TXT 끝까지 읽기');
+ const chars='한글 日本語 🖋',utf16=new Uint8Array(2+chars.length*2);utf16.set([255,254]);for(let i=0;i<chars.length;i++){utf16[i*2+2]=chars.charCodeAt(i)&255;utf16[i*2+3]=chars.charCodeAt(i)>>8;}ok((await d.read(file(utf16,'utf16.txt'))).text===chars,'UTF-16 한글·일본어·이모지');
+ ok((await d.read(file('# Title\n\n**Body** [link](https://example.com)','text.md'))).text==='Title\n\nBody link','Markdown 텍스트 추출');
+ const docx=await zipped({'word/document.xml':'<w:document xmlns:w="urn:word"><w:body><w:p><w:r><w:t>First &amp; second</w:t><w:tab/><w:t>tab</w:t><w:br/><w:t>next</w:t></w:r><w:del><w:r><w:t>DELETED</w:t></w:r></w:del></w:p><w:tbl><w:tr><w:tc><w:p><w:r><w:t>Table</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:t>Last paragraph</w:t></w:r></w:p></w:body></w:document>'},'sample.docx');
+ const word=await d.read(docx);ok(word.text.includes('First & second\ttab\nnext')&&word.text.includes('Table')&&word.text.endsWith('Last paragraph')&&!word.text.includes('DELETED'),'DOCX 문단·표·줄바꿈·삭제문자 제외');
+ const epub=await zipped({'META-INF/container.xml':'<container><rootfiles><rootfile full-path="OPS/book.opf"/></rootfiles></container>','OPS/book.opf':'<package><manifest><item id="one" href="one.xhtml" media-type="application/xhtml+xml"/><item id="two" href="two.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="two"/><itemref idref="one"/></spine></package>','OPS/one.xhtml':'<html><body><p>First chapter</p></body></html>','OPS/two.xhtml':'<html><body><script>BAD SCRIPT<\/script><p>Second <b>chapter</b> &amp; text</p></body></html>'},'sample.epub');
+ const book=await d.read(epub);ok(book.text==='Second chapter & text\n\nFirst chapter','EPUB spine 순서·태그 제거·스크립트 제외');
+ let error;try{await d.read(file('x'.repeat(1000001),'big.txt'));}catch(e){error=e;}ok(error?.message.includes('100만'),'100만 자 초과 명시적 거부');
+ error=null;try{await d.read(file('broken','bad.docx'));}catch(e){error=e;}ok(!!error,'손상 문서 거부');
+ error=null;const controller=new AbortController();controller.abort();try{await d.read(docx,{signal:controller.signal});}catch(e){error=e;}ok(error?.name==='AbortError','취소 요청 보존');
+ const bomb=await zipped({'word/document.xml':'x'.repeat(25*1024*1024)},'expanded.docx');error=null;try{await d.read(bomb);}catch(e){error=e;}ok(error?.message.includes('압축 해제'),'압축 해제 용량 상한');
+ out.textContent+='\nALL PASSED';
+}catch(e){out.textContent+='\nFAIL '+e.stack;}
+})();
+</script>

@@ -1,6 +1,6 @@
 
 'use strict';
-importScripts('typing-studio-core.js?v=8','typing-studio-etf.js?v=1','typing-studio-streamlines.js?v=6','typing-studio-flow.js?v=7');
+importScripts('typing-studio-core.js?v=8','typing-studio-etf.js?v=1','typing-studio-streamlines.js?v=6','typing-studio-flow.js?v=8');
 self.onmessage=({data})=>{try{
  const core=TypewriterArt,gray=core.prepare(data.rgba,data.cols*core.SW,data.rows*core.SH,data.contrast,data.edge,data.bounds);
  const final=core.flow({cols:data.cols,rows:data.rows},data,gray,value=>self.postMessage({type:'progress',value}));

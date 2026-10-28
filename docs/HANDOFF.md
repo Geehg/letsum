@@ -599,3 +599,7 @@ img.save("sample.png")
 
 
 2026-10-28 화방 GitHub 검토안 반영(로컬): 공식 OpenCV.js4.13.0/Apache-2.0 보관 + 별도 Worker에서 RGB GrabCut 전경 보정. 수동 FG/BG 보정 보존, signed-distance softmask 유지, 초기 자동분석/재시도/중단/30초유휴메모리해제. SSARCandy ETF식 CPU이식(MIT/고정commit/출처포함),640px/2회, 기존tensor 명암근거로 신뢰도제한. 밝은부분무타건·진갈색고정 유지. 완성/확대/저장 분할렌더와exportcanvas재사용, 범위분석중 경로이탈의 잠금해제 수정. ETF/실제OpenCV/분할렌더 회귀추가 및기존검사통과, validate0오류/기존264경고. 모나리자1.2배160열 실제124,376타/확대 확인. color-based 분리의 배경포함오차는브러시보정필요. 상세 TYPEWRITER_STUDIO.md. core8/flow7/streamlines6/etf1/seg-worker1/worker10/studio13, 미배포. 기존 codex-studio-lighting 잠금 유지.
+
+
+2026-10-28 이전 화방 CV/ETF 배포 확인: 7ee01774가 GitHub main 및 NAS에 반영됨.
+2026-10-28 화방 추가 기능: 효과음 on/off·음량·미리듣기·타건동기, A4 표시10%확대, TXT/MD/DOCX/EPUB 장문100만자 가져오기/직접입력·잔여본문 이어쓰기. studio14/flow8/worker11/machine5/CSS6/audio1/documents1. 상세와 검증 TYPEWRITER_STUDIO.md. 사용자 배포 확인 요청에 따라 운영 반영 진행.
