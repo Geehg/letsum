@@ -9,7 +9,8 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),exportButtons=['tsPNG','tsPDF','tsPrint','tsShare'];
  let sampleCache=null,fontPromise=null,generationId=0;
  let maskWorker=null,maskBusy=false,maskTicket=0,maskTimer=0,maskRefined=false;
- let finishing=false,exportCache=null,zoomToken=0;
+ let finishing=false,exportCache=null,zoomToken=0,playback=null;
+ const PLAYBACK_MS=3600; // Reserve 400 ms for the final physical paper/carriage settling.
  let textLoading=false,textImport=null,textRevision=0,textOffset=0,textCount=0,textTooLong=false,textCountTimer=0;
  let soundSettings={enabled:false,volume:38};try{const saved=JSON.parse(localStorage.getItem('letsum-studio-audio-v1'));if(saved){soundSettings.enabled=!!saved.enabled;soundSettings.volume=Math.max(0,Math.min(100,Number(saved.volume)||0));}}catch(_){}
  const audio=window.TypewriterStudioAudio.create({isActive:()=>active&&!document.hidden,onStatus:value=>{$('tsSoundStatus').textContent=({off:'효과음 꺼짐',muted:'음량 0% · 소리 없음',idle:'효과음 켜짐',loading:'타자기 녹음을 준비하고 있어요…',ready:'효과음 켜짐 · 타건과 종이 이송에 맞춰 재생',error:'녹음을 불러오지 못했어요. 소리 듣기로 다시 시도하세요.'})[value];}});
@@ -44,10 +45,10 @@
   $('tsZoomOpen').disabled=!plan||locked;
   for(const id of exportButtons)$(id).disabled=!plan||playing||cursor<plan.choices.length||locked;
  }
- function pause(){audio.stop();playing=false;cancelAnimationFrame(frame);area.classList.remove('is-playing');controls();}
+ function pause(){if(playing&&playback){playback.elapsed+=Math.max(0,performance.now()-playback.stamp);playback.stamp=performance.now();}audio.stop();playing=false;cancelAnimationFrame(frame);area.classList.remove('is-playing');controls();}
  function clearExport(){exportToken++;exportCache=null;sharedFile=null;$('tsPrintArea').replaceChildren();$('tsExportStatus').textContent='';}
  function stopJob(){job?.terminate();job=null;busy=false;}
- function reset(){generationId++;finishing=false;pause();stopJob();plan=null;cursor=0;resetMotion();clearExport();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);area.style.setProperty('--feed',1);area.style.setProperty('--carriage','0px');area.classList.add('is-empty');area.classList.remove('is-complete');$('tsProgress').value=0;$('tsCount').textContent='A4 · 세로';$('tsPaperHint').hidden=false;controls();}
+ function reset(){generationId++;finishing=false;pause();stopJob();plan=null;playback=null;cursor=0;resetMotion();clearExport();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);area.style.setProperty('--feed',1);area.style.setProperty('--carriage','0px');area.classList.add('is-empty');area.classList.remove('is-complete');$('tsProgress').value=0;$('tsCount').textContent='A4 · 세로';$('tsPaperHint').hidden=false;controls();}
  function route(){
   active=location.hash.split('?')[0]==='#/studio';root.hidden=!active;document.body.classList.toggle('ts-open',active);
   document.querySelectorAll('header .main a').forEach(a=>{if(a.dataset.studioNav)a.classList.toggle('on',active);else if(a.textContent.trim()==='서가')a.classList.toggle('on',!active);});
@@ -264,7 +265,7 @@
   }
   return valid();
  }
- function resetMotion(){machine?.reset();layer=0;typed=0;phase='strike';feedRow=0;due=0;area.classList.remove('is-returning');}
+ function resetMotion(){if(playback){playback.elapsed=0;playback.lastHit=playback.lastReturn=-Infinity;}machine?.reset();layer=0;typed=0;phase='strike';feedRow=0;due=0;area.classList.remove('is-returning');}
  function progress(){
   const p=cursor/plan.choices.length;$('tsProgress').value=p;
   $('tsCount').textContent=`${Math.round(p*100)}% · ${typed.toLocaleString()} / ${plan.strikes.toLocaleString()}타`;
@@ -274,18 +275,29 @@
   machine?.position(col/Math.max(1,plan.cols-1),feedRow,plan.rows);
   area.style.setProperty('--carriage',`${(0.5-col/Math.max(1,plan.cols-1))*90}%`);
  }
- function strike(){
-  const pattern=patternAt(cursor),mark=pattern[layer];
-  const margin=canvas.width*10/210,cw=(canvas.width-margin*2)/plan.cols,ch=canvas.height*(277/297)/plan.rows;
-  ctx.fillStyle='#211f1c';
-  core.paint(ctx,[mark],margin+(cursor%plan.cols)*cw,canvas.height*10/297+Math.floor(cursor/plan.cols)*ch,cw,ch,((cursor*73%101)/100)-.5,plan.inkColor);
-  typed++;layer++;
-  machine?.hit(mark.g);audio.hit();
-  if(layer===pattern.length){layer=0;cursor++;}
+ // Rasterize every glyph once; playback only reveals the exact finished raster.
+ // Complexity during the four-second animation is independent of strike count.
+ async function preparePlayback(drawing,generation){
+  if(playback?.drawing===drawing)return playback;
+  const sheet=document.createElement('canvas');sheet.width=canvas.width;sheet.height=canvas.height;
+  const x=sheet.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,sheet.width,sheet.height);
+  const valid=()=>generation===generationId&&plan===drawing;
+  if(!await renderInChunks(sheet,drawing.choices.length,drawing,valid,p=>status(`4초 재생을 준비하고 있어요 · ${Math.round(p*100)}%`)))return null;
+  const counts=new Uint32Array(drawing.choices.length+1);
+  for(let i=0;i<drawing.choices.length;i++)counts[i+1]=counts[i]+(drawing.choices[i]?(drawing.marks?.[i]||core.patterns[drawing.choices[i]]).length:0);
+  if(!valid())return null;
+  return playback={drawing,sheet,counts,elapsed:0,stamp:0,lastHit:-Infinity,lastReturn:-Infinity};
+ }
+ function revealPlayback(){
+  const marginX=canvas.width*10/210,marginY=canvas.height*10/297,cw=(canvas.width-2*marginX)/plan.cols,ch=(canvas.height-2*marginY)/plan.rows;
+  const row=Math.floor(cursor/plan.cols),col=cursor%plan.cols,y=marginY+row*ch;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+  if(cursor>=plan.choices.length){ctx.drawImage(playback.sheet,0,0);return;}
+  ctx.save();ctx.beginPath();ctx.rect(0,0,canvas.width,y);ctx.rect(0,y,marginX+col*cw,ch);ctx.clip();ctx.drawImage(playback.sheet,0,0);ctx.restore();
  }
  async function finishDrawing(){
   if(!plan||busy||maskBusy||finishing||textLoading)return;
-  pause();finishing=true;controls();const drawing=plan,generation=generationId;
+  pause();if(playback?.drawing===plan){ctx.drawImage(playback.sheet,0,0);complete();return;}finishing=true;controls();const drawing=plan,generation=generationId;
   // Rebuild including a partially overstruck cell, identical to the saved plan.
   ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
   try{
@@ -293,28 +305,39 @@
    if(done){finishing=false;complete();}
   }finally{if(generation===generationId){finishing=false;controls();}}
  }
- function complete(){pause();cursor=plan.choices.length;typed=plan.strikes;feedRow=plan.rows;phase='strike';area.classList.remove('is-returning');progress();area.classList.add('is-complete');machine?.finish();status(dirty?'완성됐어요. 바꾼 설정은 다시 그리기를 누르면 적용됩니다.':'완성됐어요. 한 장의 작품으로 저장해 보세요.');controls();prepareShare();}
+ function complete(){pause();area.dataset.playbackElapsed=String(Math.round(playback?.elapsed||0));cursor=plan.choices.length;typed=plan.strikes;feedRow=plan.rows;phase='strike';area.classList.remove('is-returning');progress();area.classList.add('is-complete');machine?.finish();status(dirty?'완성됐어요. 바꾼 설정은 다시 그리기를 누르면 적용됩니다.':'완성됐어요. 한 장의 작품으로 저장해 보세요.');controls();prepareShare();}
  function tick(now){
-  if(!playing||!active)return;
-  if(now>=due){
-   if(phase==='line-end'){
-    phase='return';machine?.returnCarriage();audio.carriage();area.classList.add('is-returning');progress();status('캐리지 복귀…');due=now+360;
-   }else if(phase==='return'){
-    feedRow++;phase='feed';audio.feed();progress();status('종이를 한 줄 올리고 있어요…');due=now+200;
-   }else if(phase==='feed'){
-    phase='strike';area.classList.remove('is-returning');status('한 글자씩, 겹쳐 치며 그리고 있어요…');due=now+100;
-   }else{
-    // At most one strike per animation frame: no catch-up batches after a slow frame.
-    if(plan.choices[cursor])strike();else cursor++;
-    if(cursor>=plan.choices.length){complete();return;}
-    if(layer===0&&cursor%plan.cols===0){phase='line-end';audio.bell();due=now+180;}
-    else due=now+1000/Number($('tsSpeed').value)*(layer?.85:1+(cursor%7)*.045);
-    progress();
+  if(!playing||!active||!playback)return;
+  playback.elapsed+=Math.max(0,now-playback.stamp);playback.stamp=now;
+  const previous=cursor,oldRow=feedRow,total=plan.choices.length;
+  cursor=Math.min(total,Math.floor(Math.min(1,playback.elapsed/PLAYBACK_MS)*total));
+  layer=0;typed=playback.counts[cursor];feedRow=Math.min(plan.rows,Math.floor(cursor/plan.cols));phase='strike';
+  if(cursor!==previous){
+   revealPlayback();
+   // Coalesce mechanical/audio cues: never schedule thousands of overlapping sounds.
+   if(typed>playback.counts[previous]&&now-playback.lastHit>=45){
+    for(let i=cursor-1;i>=previous;i--){const mark=patternAt(i).find(m=>m.g.trim());if(mark){machine?.hit(mark.g);audio.hit();playback.lastHit=now;break;}}
    }
+   if(feedRow>oldRow&&now-playback.lastReturn>=280){machine?.returnCarriage();audio.carriage();audio.feed();playback.lastReturn=now;}
+   progress();
   }
+  if(cursor>=total){complete();return;}
   frame=requestAnimationFrame(tick);
  }
- function start(){if(finishing||busy||maskBusy||textLoading||!plan||$('tsMachine3D').dataset.ready!=='true')return;audio.prepare();area.classList.remove('is-complete');if(reduced.matches){finishDrawing();return;}playing=true;due=performance.now()+100;area.classList.add('is-playing');progress();status('한 글자씩, 겹쳐 치며 그리고 있어요…');controls();frame=requestAnimationFrame(tick);}
+ async function start(){
+  if(finishing||busy||maskBusy||textLoading||!plan||$('tsMachine3D').dataset.ready!=='true')return;
+  audio.prepare();const drawing=plan,generation=generationId;finishing=true;controls();
+  try{
+   const prepared=await preparePlayback(drawing,generation);
+   if(!prepared||generation!==generationId||plan!==drawing)return;
+   finishing=false;controls();if(!active||!$('tsChooser').hidden||$('tsMachine3D').dataset.ready!=='true')return;
+   area.classList.remove('is-complete');
+   if(reduced.matches){ctx.drawImage(prepared.sheet,0,0);complete();return;}
+   playing=true;prepared.stamp=performance.now();area.dataset.playbackElapsed='0';
+   area.classList.add('is-playing');progress();status('타이핑과 종이 이송을 압축해 재생해요 · 4초 이내 완성');controls();frame=requestAnimationFrame(tick);
+  }catch(e){if(generation===generationId)status('재생을 준비하지 못했어요. 다시 그리기를 눌러 주세요.');console.warn(e);}
+  finally{if(generation===generationId){finishing=false;controls();}}
+ }
  $('tsPause').addEventListener('click',()=>{if(playing){pause();status('잠시 멈췄어요. 이어서 그릴 수 있습니다.');}else start();});
  $('tsFinish').addEventListener('click',()=>{if(plan)finishDrawing();});
  $('tsReplay').addEventListener('click',()=>{if(!plan)return;pause();clearExport();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);cursor=0;resetMotion();start();});
