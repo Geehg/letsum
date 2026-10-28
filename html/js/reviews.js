@@ -59,17 +59,18 @@
           </div>
           <button type="button" class="rv-heart${c.liked ? " on" : ""}" data-like="${c.id}" aria-label="좋아요" aria-pressed="${c.liked}">${c.liked ? "♥" : "♡"}</button>
         </div>`;
+      const sample = () => window.LSShowcase ? LSShowcase.review(f.id) : "";
       function draw() {
         const top = items.filter((c) => !c.parent_id);
         const kids = (id) => items.filter((c) => c.parent_id === id);
         $("[data-n]").textContent = items.length ? items.length : "";
         opts.onCount && opts.onCount(items.length);
-        if (!top.length) { list.innerHTML = '<p class="rv-empty">아직 리뷰가 없어요.<br>이 폰트를 어디에 써 보셨나요? 첫 이야기를 남겨 주세요.</p>'; return; }
+        if (!top.length) { list.innerHTML = sample() + '<p class="rv-empty">아직 리뷰가 없어요.<br>이 폰트를 어디에 써 보셨나요? 첫 이야기를 남겨 주세요.</p>'; return; }
         const best = top.filter((c) => c.likes >= 2).sort((a, b) => b.likes - a.likes || a.created - b.created)[0];
         const rest = top.filter((c) => c !== best).sort((a, b) => b.created - a.created);
         const thread = (c) => { const r = kids(c.id); const show = open.has(c.id) ? r : r.slice(0, 2);
           return `<div class="rv-t">${cHTML(c)}${r.length ? `<div class="rv-replies">${show.map((x) => cHTML(x, true)).join("")}${r.length > show.length ? `<button type="button" class="rv-more" data-more="${c.id}">— 답글 ${r.length - show.length}개 더 보기</button>` : ""}</div>` : ""}</div>`; };
-        list.innerHTML = (best ? `<div class="rv-best"><span class="rv-pin">📌 베스트 리뷰</span>${thread(best)}</div>` : "") + rest.map(thread).join("");
+        list.innerHTML = sample() + (best ? `<div class="rv-best"><span class="rv-pin">📌 베스트 리뷰</span>${thread(best)}</div>` : "") + rest.map(thread).join("");
       }
       list.addEventListener("click", async (e) => {
         const b = e.target.closest("button"); if (!b) return;
@@ -106,7 +107,7 @@
       });
       call("comments?id=" + f.id).then((j) => {
         if (!alive) return;
-        if (!j || j.error) { list.innerHTML = '<p class="rv-empty">리뷰를 불러오지 못했습니다.</p>'; return; }
+        if (!j || j.error) { list.innerHTML = sample() + '<p class="rv-empty">리뷰를 불러오지 못했습니다.</p>'; return; }
         items = j.items || []; draw();
       });
       return {

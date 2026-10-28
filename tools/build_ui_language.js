@@ -19,3 +19,5 @@ for (const name of files) {
   fs.writeFileSync(file, source);
 }
 console.log(`UI language: ${Object.keys(dictionary).length} translations, ${files.length} pages`);
+
+require("./build_font_showcase.js");

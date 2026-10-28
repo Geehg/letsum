@@ -805,6 +805,7 @@
         <p class="ig-likes" data-likeline="${f.id}"></p>
         <div class="ig-titlerow"><span class="ig-lics">${pills(f)}</span></div>
         <p class="ig-tags">${[f.category, ...f.tags, ...f.mood].slice(0, 6).map((x) => `#${esc(String(x).replace(/\s+/g, ""))}`).join(" ")}</p>
+        ${window.LSShowcase ? LSShowcase.feed(f.id) : ""}
         <button type="button" class="ig-recent" data-cmt="${f.id}" data-recent="${f.id}" title="리뷰 모두 보기"></button>
       </div>
     </article>`;
