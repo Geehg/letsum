@@ -26,3 +26,9 @@ const ink=[];const pen={fillText(){ink.push([this.fillStyle,this.globalAlpha,thi
 for(const variation of [-.5,0,.5])core.paint(pen,core.patterns[40],0,0,20,30,variation);
 assert.ok(ink.length>0&&ink.every(([color,alpha,font])=>color==='#211f1c'&&alpha===1&&font.includes('LS Studio Courier Prime')),'uniform solid typewriter ink and dedicated font');
 console.log('PASS: identical ink color/opacity for every overstrike and variation');
+
+const actions=[],brownPen={save(){},restore(){},translate(x,y){actions.push(['translate',x,y]);},rotate(a){actions.push(['rotate',a]);},fillText(){actions.push(['ink',this.fillStyle,this.globalAlpha]);}};
+core.paint(brownPen,[{g:'M',x:0,y:0,a:.5,px:.2,py:-.3},{g:'W',x:.1,y:.1,a:.5,px:.2,py:-.3}],10,20,20,30,0,'#3b2b24');
+assert.ok(actions.filter(a=>a[0]==='ink').every(a=>a[1]==='#3b2b24'&&a[2]===1),'uniform opaque dark-brown ribbon');
+assert.deepEqual(actions[0],['translate',24,26],'anchor moves in paper coordinates before glyph rotates');
+console.log('PASS: uniform brown ribbon and independent curved-anchor placement');

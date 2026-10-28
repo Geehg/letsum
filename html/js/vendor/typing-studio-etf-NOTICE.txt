@@ -1,0 +1,31 @@
+TypewriterETF provenance and adaptation record
+
+Upstream project: SSARCandy/Coherent-Line-Drawing
+Author/copyright: Copyright (c) 2019 HSU,SHU-HSUAN
+License: MIT, included verbatim in typing-studio-etf.js
+Reviewed: 2026-10-28
+Upstream commit: 37887374e99fe22f1d22004ca114ed2538f0abaf (2026-07-09)
+Commit source: https://github.com/SSARCandy/Coherent-Line-Drawing/commits/master/
+Original implementation sources:
+  https://github.com/SSARCandy/Coherent-Line-Drawing/blob/37887374e99fe22f1d22004ca114ed2538f0abaf/webgl/index.html
+  https://github.com/SSARCandy/Coherent-Line-Drawing/blob/37887374e99fe22f1d22004ca114ed2538f0abaf/src/ETF.cpp
+License source:
+  https://raw.githubusercontent.com/SSARCandy/Coherent-Line-Drawing/37887374e99fe22f1d22004ca114ed2538f0abaf/LICENSE
+
+Algorithm attribution: Edge Tangent Flow from Kang et al., Coherent Line Drawing,
+NPAR 2007. The upstream implementation labels the ETF equations (1)-(5).
+
+This adaptation:
+  - Uses CPU TypedArrays and no DOM/GPU/model/network dependency.
+  - Keeps image x/y coordinates and clamped Sobel borders from the WebGL port.
+  - Uses separable 5x5 Sobel and exact area downsampling before refinement.
+  - Follows the strict circular spatial window, magnitude weighting,
+    direction weighting and sign alignment of upstream ETF equations (1)-(5).
+  - Replaces phi*abs(dot) with the mathematically identical dot product.
+  - Interpolates a tanh weight table at 1/1024 spacing; tested against a direct
+    Math.tanh implementation of the upstream equations (max vector error <2e-6).
+  - Adds absolute-gradient confidence, physical-aspect-aware doubled-angle grid
+    pooling, progress/cancellation hooks, finite-input validation and timing.
+  - Does not include upstream FDoG/thresholding, demo UI, or any image samples.
+  - Does not identify people or produce a subject segmentation mask.
+

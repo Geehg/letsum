@@ -30,7 +30,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <link rel="stylesheet" href="css/typing-retro-focus.css?v=9">
 <link rel="stylesheet" href="css/typing-model-gallery.css?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/typing-studio.css?v=4">
+<link rel="stylesheet" href="css/typing-studio.css?v=5">
 </head>
 <body class="tb-page">
 <div id="tbBoot" role="status"><p>필사 공간을 준비하고 있어요…</p><button type="button" hidden onclick="location.reload()">다시 불러오기</button></div>
@@ -284,8 +284,22 @@ html[data-tb-boot] #tbBoot{display:block}
    <div id="tsSourceBox" hidden><img id="tsSource" alt="선택한 원본 이미지"><p id="tsFileName"></p></div>
    <button id="tsExample" class="ts-text-button" type="button">사진 없이 예제로 살펴보기 ↗</button>
    <label>화면에 담기<select id="tsFit"><option value="contain">전체 이미지 · 여백 유지</option><option value="cover">A4에 채우기 · 중앙 자르기</option></select></label>
+   <label>피사체 확대<select id="tsSubjectZoom"><option value="1">1배 · 원래 구도</option><option value="1.2">1.2배</option><option value="1.4">1.4배</option><option value="1.6">1.6배</option><option value="2">2배</option></select></label>
+   <div id="tsFramingTools" hidden><label>좌우 위치<input id="tsFocusX" type="range" min="0" max="100" value="50"></label><label>상하 위치<input id="tsFocusY" type="range" min="0" max="100" value="50"></label><button id="tsFrameReset" class="ts-text-button" type="button">원래 구도로 돌아가기</button></div>
+   <p class="ts-hint">작은 피사체는 확대하면 더 많은 문자로 묘사할 수 있어요. 아래 흑백 미리보기에서 잘리는 범위를 확인하세요.</p>
    <label>문자 정밀도<select id="tsDetail"><option value="80">부드럽게 · 가로 80자</option><option value="120" selected>섬세하게 · 가로 120자</option><option value="160">아주 섬세하게 · 가로 160자</option></select></label>
    <label>명암 대비 <output id="tsContrastValue">110%</output><input id="tsContrast" type="range" min="60" max="180" value="110"></label>
+   <details class="ts-flow-settings" open><summary>곡선 · 인물 · 타이핑 내용</summary>
+   <label>문자 언어<select id="tsLanguage"><option value="en">영문 · Courier Prime</option><option value="ko">한글 · 본명조</option><option value="ja">일본어 · Noto Serif JP</option></select></label>
+   <label>사용할 본문 (선택)<textarea id="tsCustomText" rows="5" maxlength="20000" placeholder="직접 작성했거나 사용 권한이 있는 본문을 붙여 넣으세요."></textarea></label><p class="ts-hint">입력 순서대로 찍고 부족하면 처음부터 반복합니다. 이미지의 여백은 건너뛰며, 중첩 때문에 본문의 가독성은 낮아질 수 있습니다. 비우면 선택한 언어의 문자를 사용합니다.</p>
+   <label class="ts-check"><input id="tsCurve" type="checkbox" checked> 이미지의 결을 따라 곡선으로 찍기</label>
+   <label class="ts-check"><input id="tsPortrait" type="checkbox" checked> 인물 영역과 가로 타이핑 배경 구분</label>
+   <p class="ts-hint">항상 흑백 변환 + 자동 레벨 보정. 밝은 영역은 글자를 찍지 않고 여백으로 남깁니다. 초록색은 사진의 색 차이로 찾은 인물 범위입니다. 가장자리에서는 곡선과 가로 타이핑이 섞입니다. 비슷한 색의 배경이 포함되면 브러시로 고쳐 주세요.</p>
+   <canvas id="tsMaskPreview" width="240" height="351" aria-label="흑백 레벨 보정 미리보기와 인물 영역 편집"></canvas>
+   <div id="tsMaskTools"><button id="tsMaskAuto" type="button" disabled>사진에서 범위 찾기</button><button id="tsMaskCancel" type="button" hidden>범위 찾기 중단</button><p id="tsMaskStatus" class="ts-hint" role="status" aria-live="polite"></p><label>브러시<select id="tsMaskBrush"><option value="add">인물로 칠하기</option><option value="erase">배경으로 지우기</option></select></label><label>굵기<input id="tsMaskSize" type="range" min="5" max="60" value="22"></label><button id="tsMaskReset" type="button">초기 인물 범위</button><button id="tsMaskAll" type="button">전체를 인물로</button></div>
+   <p class="ts-hint">곡선은 이미지 경계 방향을 계산한 표현이며 실제 타자기의 종이 회전 동작까지 재현하지는 않습니다.</p>
+   </details>
+   <label>리본 잉크<select id="tsInkTone"><option value="#3b2b24" selected>진갈색 · 빈티지 리본</option><option value="#211f1c">차콜 블랙</option></select></label>
    <label>타건 밀도 <output id="tsInkValue">100%</output><input id="tsInk" type="range" min="60" max="140" value="100"></label>
    <label>윤곽 강조 <output id="tsEdgeValue">35%</output><input id="tsEdge" type="range" min="0" max="100" value="35"></label>
    <label class="ts-check"><input type="checkbox" id="tsOverstrike" checked>짙은 부분은 문자를 겹쳐 찍기</label>
@@ -296,9 +310,9 @@ html[data-tb-boot] #tbBoot{display:block}
    <div class="ts-machine-area" id="tsMachineArea"><div id="tsMachine3D" class="ts-machine-3d"></div><div class="ts-paper-slot"><div class="ts-paper" id="tsPaper"><canvas id="tsCanvas" width="1240" height="1754" role="img" aria-label="A4 세로 문자 드로잉"><span>문자로 그린 그림 미리보기</span></canvas><div id="tsPaperHint"><span>YOUR FIRST IMPRESSION</span><b>한 장의 사진이<br>수천 번의 타건으로.</b><p>왼쪽에서 사진을 선택해 주세요.</p></div></div></div><img id="tsMachine" class="ts-machine" src="img/typewriters/hermes3000-preview.png?v=3" alt="선택한 타자기" width="720" height="440"><span class="ts-hammer" aria-hidden="true"></span><span class="ts-key-flash" aria-hidden="true"></span></div>
    <div class="ts-playback"><progress id="tsProgress" value="0" max="1" aria-label="드로잉 진행률"></progress><div><span id="tsStatus" role="status" aria-live="polite">사진을 기다리고 있어요.</span><span id="tsCount">A4 · 세로</span></div><div class="ts-play-buttons"><button id="tsPause" type="button" disabled>일시정지</button><button id="tsFinish" type="button" disabled>바로 완성</button><button id="tsZoomOpen" type="button" disabled>용지 확대 ↗</button><button id="tsReplay" type="button" disabled>다시 재생</button><label>속도<select id="tsSpeed"><option value="8">천천히 · 8타/초</option><option value="20" selected>보통 · 20타/초</option><option value="45">빠르게 · 45타/초</option></select></label></div></div>
   </section>
-  <aside class="ts-panel ts-output" aria-label="작품 저장"><p class="ts-eyebrow">02 / YOUR PRINT</p><h2>종이 위에 남기기</h2><label>작품 이름<input id="tsName" type="text" maxlength="70" value="나의 타자기 드로잉"></label><p>A4 세로 · 흰 종이 · 검정 리본<br>Courier Prime · 동일한 잉크색<br>원본 사진 없이 문자만으로 저장합니다.</p><div class="ts-exports"><button id="tsPNG" type="button" disabled>PNG 다운로드 <small>2480 × 3508 px</small></button><button id="tsPDF" type="button" disabled>PDF 다운로드 <small>A4 · 210 × 297 mm</small></button><button id="tsPrint" type="button" disabled>인쇄</button><button id="tsShare" type="button" disabled>작품 공유</button></div><p id="tsExportStatus" role="status" aria-live="polite"></p><details><summary>어떻게 그리나요?</summary><p>사진을 흑백 명암으로 읽고, 작은 구역의 윤곽에 맞는 문자 획을 고릅니다. 짙은 구역은 여러 번 겹쳐 찍고 농도 오차를 이웃 구역으로 나눕니다. 모든 문자는 같은 잉크색과 불투명도로 찍습니다. 타건 밀도는 글자색이 아니라 문자 선택과 중첩량을 조절합니다.</p><p>사진의 실제 3차원 깊이나 사람의 의도를 이해하는 방식은 아닙니다. 밝기·경계·질감을 계산한 결과이므로 원본에 따라 표현이 달라집니다.</p></details><p class="ts-hint">사용 권한이 있는 이미지를 선택해 주세요. 새로고침하면 현재 작업은 사라집니다.</p></aside>
+  <aside class="ts-panel ts-output" aria-label="작품 저장"><p class="ts-eyebrow">02 / YOUR PRINT</p><h2>종이 위에 남기기</h2><label>작품 이름<input id="tsName" type="text" maxlength="70" value="나의 타자기 드로잉"></label><p>A4 세로 · 흰 종이 · <span id="tsInkLabel">진갈색 리본</span><br><span id="tsFontLabel">Courier Prime</span> · 동일한 잉크색<br>원본 사진 없이 문자만으로 저장합니다.</p><div class="ts-exports"><button id="tsPNG" type="button" disabled>PNG 다운로드 <small>2480 × 3508 px</small></button><button id="tsPDF" type="button" disabled>PDF 다운로드 <small>A4 · 210 × 297 mm</small></button><button id="tsPrint" type="button" disabled>인쇄</button><button id="tsShare" type="button" disabled>작품 공유</button></div><p id="tsExportStatus" role="status" aria-live="polite"></p><details><summary>어떻게 그리나요?</summary><p>사진을 흑백 명암으로 읽고, 작은 구역의 윤곽에 맞는 문자 획을 고릅니다. 짙은 구역은 여러 번 겹쳐 찍고 농도 오차를 이웃 구역으로 나눕니다. 모든 문자는 같은 잉크색과 불투명도로 찍습니다. 타건 밀도는 글자색이 아니라 문자 선택과 중첩량을 조절합니다.</p><p>사진의 실제 3차원 깊이나 사람의 의도를 이해하는 방식은 아닙니다. 밝기·경계·질감을 계산한 결과이므로 원본에 따라 표현이 달라집니다.</p></details><p class="ts-hint">사용 권한이 있는 이미지를 선택해 주세요. 새로고침하면 현재 작업은 사라집니다.</p></aside>
  </div>
- <dialog id="tsZoomDialog" class="ts-zoom-dialog" aria-labelledby="tsZoomTitle"><header><div><h2 id="tsZoomTitle">문자와 잉크 자세히 보기</h2><p>Courier Prime · 모든 문자는 동일한 잉크색 · 확대 중에는 타건이 잠시 멈춥니다.</p></div><label>확대<select id="tsZoomLevel"><option value="1">100%</option><option value="1.5">150%</option><option value="2" selected>200%</option><option value="3">300%</option></select></label><button id="tsZoomClose" type="button">닫기 ×</button></header><div id="tsZoomScroll" class="ts-zoom-scroll" tabindex="0" aria-label="확대한 용지, 스크롤하여 이동"><canvas id="tsZoomCanvas" width="1" height="1" role="img" aria-label="고해상도 문자 드로잉 확대"></canvas></div></dialog>
+ <dialog id="tsZoomDialog" class="ts-zoom-dialog" aria-labelledby="tsZoomTitle"><header><div><h2 id="tsZoomTitle">문자와 잉크 자세히 보기</h2><p>선택한 언어의 글꼴 · 모든 문자는 동일한 잉크색 · 확대 중에는 타건이 잠시 멈춥니다.</p></div><label>확대<select id="tsZoomLevel"><option value="1">100%</option><option value="1.5">150%</option><option value="2" selected>200%</option><option value="3">300%</option></select></label><button id="tsZoomClose" type="button">닫기 ×</button></header><div id="tsZoomScroll" class="ts-zoom-scroll" tabindex="0" aria-label="확대한 용지, 스크롤하여 이동"><canvas id="tsZoomCanvas" width="1" height="1" role="img" aria-label="고해상도 문자 드로잉 확대"></canvas></div></dialog>
  <div id="tsPrintArea" aria-hidden="true"></div>
 </section>
 
@@ -347,8 +361,9 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="js/typing-model-gallery.js?v=4"></script>
 <script src="js/typing-focus.js?v=1"></script>
 <script src="js/typing-header-peek.js?v=1"></script>
-<script src="js/typing-studio-core.js?v=2"></script>
-<script src="js/typing-studio.js?v=4"></script>
+<script src="js/typing-studio-core.js?v=8"></script>
+<script src="js/typing-studio-flow.js?v=7"></script>
+<script src="js/typing-studio.js?v=13"></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>
 </html>

@@ -584,3 +584,18 @@ img.save("sample.png")
 화방 글꼴/확대 로컬 변경: Courier Prime 로딩 후 atlas 생성, 모든 타건 색 #211f1c·alpha1 고정. 용지 확대 100~300% 글리프 재렌더링 및 재생 정지/복원. 타건 밀도 문구로 변경. 현재 미배포.
 
 2026-10-28 운영자 배포 승인: 화방 Courier Prime 전용 글꼴, 동일 잉크색/불투명도, 100~300% 용지 확대를 운영 반영.
+
+화방 캐리지/조명 보강 로컬 작업: 양 끝 캐리지+레버 회전 mesh bounds로 카메라 자동 맞춤, VSM 그림자/접촉 음영/방향광 및 재질 반사 조정. studio JS v5, machine v4. 미배포.
+
+화방 방향성/본문 로컬 구현: 흑백+자동레벨 항상 적용, 구조 텐서 방향 곡선 문자, 직접 칠하는 인물 마스크와 가로 배경, 영문/한글/일본어 및 사용자 본문 반복. 단어 의미 기반 인물 인식은 없으며 초기 타원 보정 필요. 앞선 조명/잘림 변경과 함께 미배포. flow/core/motion 검사 추가/통과.
+
+2026-10-28 모나리자 실험 로컬 보완: 본문 치환 후 명암 불일치 제거(실제 glyph ink union으로0~5타 선택), 흰 여백 제외 자동 레벨/국소 대비/균열 억제, 곡선 방향 안정화, 흰 배경 강제 타건 제거. 피사체1.2/1.4/1.6/2배+상하좌우 구도, 마스크 동반 변환 추가. 본문·자유영문과1.2배 PNG 실물 확인. core v5/flow v3/studio v8/worker v5, machine v4. 검증 오류0·기존 경고264. 앞선 로컬 변경과 함께 아직 미배포. 세부 docs/TYPEWRITER_STUDIO.md.
+
+2026-10-28 수작업 문자화 참고 보강(로컬): 실제6~16문자 곡선 앵커/RK2, 어두운 옷 평탄부 방향 연장, anchor위치에서 명암 재샘플링. 최대9타/피부 밝은 중간톤 보존/짙은 잉크, 진갈색 기본+차콜 선택(alpha1 동일), 지정 본문 하이라이트 고착 수정. 100%용지 확대는 높이 맞춤. 모나리자 자유문자와 MONA LISA 본문 PNG검증 완료. docs/TYPEWRITER_STUDIO.md에 비교/한계/결과 기록. core v6/flow v4/streamlines v2/studio v9/worker v6. 검증 오류0(기존 경고264), 미배포.
+
+2026-10-28 화방 인물 경계/여백 수정(로컬): 이진 마스크의 잘라붙인 경계를 양쪽 전환 폭의 연속 방향·동일 배치 규칙으로 연결. 이전 하이라이트 압축 삭제, 밝기0.82 이상 무타건 및 오차확산 유입 차단. 모나리자 자유문자/MONA LISA PNG 확인. core7/flow5/streamlines3/worker7/studio10. 관련 검사 및 validate 오류0(기존 경고264), 미배포.
+
+2026-10-28 화방 경계 추가 보강(로컬): 가로/곡선 run 혼합, 외곽step 우선순위·길이 감소, 국소밀도 잉크보정, 대비halo 억제. 모나리자 PNG/화면 확인. 전체오류0(기존264경고), core8/flow6/streamlines5/worker9/studio12. GitHub 후보 검토는 TYPEWRITER_STUDIO.md에 기록. 외부코드 미도입, 미배포.
+
+
+2026-10-28 화방 GitHub 검토안 반영(로컬): 공식 OpenCV.js4.13.0/Apache-2.0 보관 + 별도 Worker에서 RGB GrabCut 전경 보정. 수동 FG/BG 보정 보존, signed-distance softmask 유지, 초기 자동분석/재시도/중단/30초유휴메모리해제. SSARCandy ETF식 CPU이식(MIT/고정commit/출처포함),640px/2회, 기존tensor 명암근거로 신뢰도제한. 밝은부분무타건·진갈색고정 유지. 완성/확대/저장 분할렌더와exportcanvas재사용, 범위분석중 경로이탈의 잠금해제 수정. ETF/실제OpenCV/분할렌더 회귀추가 및기존검사통과, validate0오류/기존264경고. 모나리자1.2배160열 실제124,376타/확대 확인. color-based 분리의 배경포함오차는브러시보정필요. 상세 TYPEWRITER_STUDIO.md. core8/flow7/streamlines6/etf1/seg-worker1/worker10/studio13, 미배포. 기존 codex-studio-lighting 잠금 유지.

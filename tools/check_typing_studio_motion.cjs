@@ -10,6 +10,7 @@ const node={style:{},animate:noop};const area={style:{setProperty:(k,v)=>styles[
 const ui={};const $=id=>ui[id]||(ui[id]={value:20,animate:noop});
 const ctx={};const canvas={width:1240,height:1754};
 const core={patterns:[[],[{g:'x'}],[{g:'a'},{g:'b'}]],paint:(ctx,p)=>painted.push(p[0].g)};
+const patternAt=i=>core.patterns[plan.choices[i]];
 const requestAnimationFrame=()=>1,status=noop,pause=noop,controls=noop,prepareShare=noop;
 ${block}
 complete=()=>{playing=false;};
