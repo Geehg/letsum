@@ -4,6 +4,28 @@
  'use strict';
  const main=document.getElementById('tbMain'),dialog=document.getElementById('tbModelGallery'),read=document.getElementById('tbRead'),select=document.getElementById('tbModel');
  if(!dialog||!main||!select)return;
+ const previews=[];
+ for(const card of dialog.querySelectorAll('[data-gallery-model]')){
+  const scene=card.querySelector('.tb-model-scene'),text=card.querySelector('.tb-model-typed');
+  let timer=0,hovered=false,focused=false,touched=false;
+  const stop=()=>{clearTimeout(timer);timer=0;card.dataset.preview='false';card.dataset.typing='false';text.textContent='';};
+  const start=()=>{
+   if(card.dataset.preview==='true')return;
+   stop();card.dataset.preview='true';
+   const chars=Array.from(scene.dataset.description||'');let i=0;
+   if(matchMedia('(prefers-reduced-motion: reduce)').matches){text.textContent=chars.join('');return;}
+   const tick=()=>{text.textContent+=chars[i++];if(i<chars.length)timer=setTimeout(tick,40);else card.dataset.typing='false';};
+   timer=setTimeout(()=>{card.dataset.typing='true';tick();},550);
+  };
+  const update=()=>{if(hovered||focused||touched)start();else stop();};
+  card.addEventListener('pointerenter',e=>{if(e.pointerType!=='touch'){hovered=true;update();}});
+  card.addEventListener('pointerleave',()=>{hovered=false;update();});
+  card.addEventListener('focusin',()=>{focused=true;update();});
+  card.addEventListener('focusout',e=>{if(!card.contains(e.relatedTarget)){focused=false;touched=false;update();}});
+  scene.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'){touched=true;update();}});
+  previews.push(()=>{hovered=focused=touched=false;stop();});
+ }
+ dialog.addEventListener('close',()=>previews.forEach(reset=>reset()));
  let first=true,wasImmersive=false,wasReading=false,lastBook='',returnFocus=null,fromSettings=false;
  const immersive=()=>main.dataset.readingMode==='immersive'&&main.dataset.skin==='retro';
  function open(settings=false){
