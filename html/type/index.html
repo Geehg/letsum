@@ -31,13 +31,14 @@ html[data-tb-boot] #tbBoot{display:block}
 <link rel="stylesheet" href="/css/typing-retro-focus.css?v=9">
 <link rel="stylesheet" href="/css/typing-model-gallery.css?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/typing-studio.css?v=3">
 </head>
 <body class="tb-page">
 <div id="tbBoot" role="status"><p>필사 공간을 준비하고 있어요…</p><button type="button" hidden onclick="location.reload()">다시 불러오기</button></div>
 <header>
   <div class="wrap hd">
     <a class="logo tb-logo" href="https://letsum.app/" aria-label="렛섬 LETSUM 메인으로"><img src="/img/logo-retro-v1.svg" alt="렛섬 LETSUM" width="652" height="252" style="height:44px;width:auto"><span class="tb-brand">필사독서</span></a>
-    <nav class="main"><a href="/" class="on">서가</a></nav>
+    <nav class="main"><a href="#/" class="on">서가</a><a href="#/studio" data-studio-nav="true">화방</a></nav>
     <div class="sp"></div>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
   </div>
@@ -270,6 +271,36 @@ html[data-tb-boot] #tbBoot{display:block}
   <div class="tb-print" id="tbPrintArea" aria-hidden="true"></div>
   <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
+<section id="tsStudio" class="ts-studio" hidden aria-labelledby="tsTitle">
+ <div class="ts-heading"><div><p class="ts-eyebrow">LETSUM · TYPEWRITER ATELIER</p><h1 id="tsTitle">문자로 그리는 화방</h1><p>사진의 빛과 그림자를, 한 타 한 타 종이 위에.</p></div><a href="#/">서가로 돌아가기 ↗</a></div>
+ <section id="tsChooser" class="ts-chooser" aria-labelledby="tsChooseTitle"><h2 id="tsChooseTitle">그림을 함께할 타자기를 고르세요.</h2><div class="ts-models">
+ <button type="button" data-studio-model="hermes3000"><img src="/img/typewriters/hermes3000-preview.png?v=3" alt="민트색 Hermes 3000" width="720" height="440"><span>01 · SWITZERLAND</span><b>Hermes 3000</b><small>이 타자기로 그리기 →</small></button>
+ <button type="button" data-studio-model="lettera32"><img src="/img/typewriters/lettera32-preview.png?v=3" alt="연청색 Olivetti Lettera 32" width="720" height="440"><span>02 · ITALY</span><b>Olivetti Lettera 32</b><small>이 타자기로 그리기 →</small></button>
+ <button type="button" data-studio-model="olympiasm3"><img src="/img/typewriters/olympiasm3-preview.png?v=3" alt="올리브색 Olympia SM3" width="720" height="440"><span>03 · WEST GERMANY</span><b>Olympia SM3</b><small>이 타자기로 그리기 →</small></button>
+ </div><p class="ts-local-note">사진은 이 기기 안에서만 처리합니다. AI·서버 업로드 없이 명암과 윤곽을 문자로 옮깁니다.</p></section>
+ <div id="tsWorkspace" class="ts-workspace" hidden>
+  <aside class="ts-panel" aria-label="그림 설정"><p class="ts-eyebrow">01 / IMAGE & INK</p><h2>그림의 재료</h2>
+   <label class="ts-upload" id="tsDrop"><input id="tsFile" type="file" accept="image/jpeg,image/png,image/webp"><b>사진을 올려놓으세요</b><span>클릭 또는 드래그 · JPG, PNG, WebP · 최대 20MB</span></label>
+   <div id="tsSourceBox" hidden><img id="tsSource" alt="선택한 원본 이미지"><p id="tsFileName"></p></div>
+   <button id="tsExample" class="ts-text-button" type="button">사진 없이 예제로 살펴보기 ↗</button>
+   <label>화면에 담기<select id="tsFit"><option value="contain">전체 이미지 · 여백 유지</option><option value="cover">A4에 채우기 · 중앙 자르기</option></select></label>
+   <label>문자 정밀도<select id="tsDetail"><option value="80">부드럽게 · 가로 80자</option><option value="120" selected>섬세하게 · 가로 120자</option><option value="160">아주 섬세하게 · 가로 160자</option></select></label>
+   <label>명암 대비 <output id="tsContrastValue">110%</output><input id="tsContrast" type="range" min="60" max="180" value="110"></label>
+   <label>리본 농도 <output id="tsInkValue">100%</output><input id="tsInk" type="range" min="60" max="140" value="100"></label>
+   <label>윤곽 강조 <output id="tsEdgeValue">35%</output><input id="tsEdge" type="range" min="0" max="100" value="35"></label>
+   <label class="ts-check"><input type="checkbox" id="tsOverstrike" checked>짙은 부분은 문자를 겹쳐 찍기</label>
+   <button id="tsGenerate" class="ts-primary" type="button" disabled>타이핑으로 그리기</button>
+   <p class="ts-hint">설정을 바꾼 뒤 다시 그리면 적용됩니다. 밝은 배경과 또렷한 피사체가 있는 사진에 잘 어울립니다.</p>
+  </aside>
+  <section class="ts-stage" aria-label="타자기 드로잉 작업대"><div class="ts-stage-top"><span id="tsModelName">Hermes 3000</span><button id="tsChangeModel" class="ts-text-button" type="button">타자기 바꾸기</button></div>
+   <div class="ts-machine-area" id="tsMachineArea"><div id="tsMachine3D" class="ts-machine-3d"></div><div class="ts-paper-slot"><div class="ts-paper" id="tsPaper"><canvas id="tsCanvas" width="1240" height="1754" role="img" aria-label="A4 세로 문자 드로잉"><span>문자로 그린 그림 미리보기</span></canvas><div id="tsPaperHint"><span>YOUR FIRST IMPRESSION</span><b>한 장의 사진이<br>수천 번의 타건으로.</b><p>왼쪽에서 사진을 선택해 주세요.</p></div></div></div><img id="tsMachine" class="ts-machine" src="/img/typewriters/hermes3000-preview.png?v=3" alt="선택한 타자기" width="720" height="440"><span class="ts-hammer" aria-hidden="true"></span><span class="ts-key-flash" aria-hidden="true"></span></div>
+   <div class="ts-playback"><progress id="tsProgress" value="0" max="1" aria-label="드로잉 진행률"></progress><div><span id="tsStatus" role="status" aria-live="polite">사진을 기다리고 있어요.</span><span id="tsCount">A4 · 세로</span></div><div class="ts-play-buttons"><button id="tsPause" type="button" disabled>일시정지</button><button id="tsFinish" type="button" disabled>바로 완성</button><button id="tsReplay" type="button" disabled>다시 재생</button><label>속도<select id="tsSpeed"><option value="8">천천히 · 8타/초</option><option value="20" selected>보통 · 20타/초</option><option value="45">빠르게 · 45타/초</option></select></label></div></div>
+  </section>
+  <aside class="ts-panel ts-output" aria-label="작품 저장"><p class="ts-eyebrow">02 / YOUR PRINT</p><h2>종이 위에 남기기</h2><label>작품 이름<input id="tsName" type="text" maxlength="70" value="나의 타자기 드로잉"></label><p>A4 세로 · 흰 종이 · 검정 리본<br>원본 사진 없이 문자만으로 저장합니다.</p><div class="ts-exports"><button id="tsPNG" type="button" disabled>PNG 다운로드 <small>2480 × 3508 px</small></button><button id="tsPDF" type="button" disabled>PDF 다운로드 <small>A4 · 210 × 297 mm</small></button><button id="tsPrint" type="button" disabled>인쇄</button><button id="tsShare" type="button" disabled>작품 공유</button></div><p id="tsExportStatus" role="status" aria-live="polite"></p><details><summary>어떻게 그리나요?</summary><p>사진을 흑백 명암으로 읽고, 작은 구역의 윤곽에 맞는 문자 획을 고릅니다. 짙은 구역은 여러 번 겹쳐 찍고 농도 오차를 이웃 구역으로 나눕니다. 종이와 리본의 미세한 흔들림을 더해 타자기 특유의 인상을 냅니다.</p><p>사진의 실제 3차원 깊이나 사람의 의도를 이해하는 방식은 아닙니다. 밝기·경계·질감을 계산한 결과이므로 원본에 따라 표현이 달라집니다.</p></details><p class="ts-hint">사용 권한이 있는 이미지를 선택해 주세요. 새로고침하면 현재 작업은 사라집니다.</p></aside>
+ </div>
+ <div id="tsPrintArea" aria-hidden="true"></div>
+</section>
+
 <dialog id="tbModelGallery" class="tb-model-gallery" aria-labelledby="tbModelGalleryTitle" aria-describedby="tbModelGalleryIntro">
  <header class="tb-model-gallery-head"><div><p>LETSUM · THE WRITING ROOM</p><h2 id="tbModelGalleryTitle" tabindex="-1">오늘의 문장을 함께할 타자기</h2><p id="tbModelGalleryIntro">마음에 드는 한 대를 고르세요. 종이 위에서 나만의 필사가 시작됩니다.</p></div><button id="tbModelGalleryBack" type="button">서가로 돌아가기 ↗</button></header>
  <div class="tb-model-grid"><article class="tb-model-card" data-gallery-model="hermes3000">
@@ -300,7 +331,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
 <script src="/js/typing-audio.js?v=2"></script>
-<script src="/js/typing.js?v=38"></script>
+<script src="/js/typing.js?v=39"></script>
 <script src="/js/typing-sync.js?v=3"></script>
 <script src="/js/typing-3d.js?v=6"></script>
 <script src="/js/typing-retro-focus.js?v=11"></script>
@@ -315,5 +346,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="/js/typing-model-gallery.js?v=4"></script>
 <script src="/js/typing-focus.js?v=1"></script>
 <script src="/js/typing-header-peek.js?v=1"></script>
+<script src="/js/typing-studio-core.js?v=1"></script>
+<script src="/js/typing-studio.js?v=3"></script>
 </body>
 </html>

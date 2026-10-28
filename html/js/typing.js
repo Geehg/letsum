@@ -601,6 +601,7 @@
   };
 
   function route() {
+    if (location.hash.split("?")[0] === "#/studio") { showShelf(); document.title = "화방 — 타자기로 그리는 그림 | LETSUM"; return; }
     const m = location.hash.match(/^#\/read\/(.+)$/);
     if (m) return openBook(decodeURIComponent(m[1])); else showShelf();
   }
