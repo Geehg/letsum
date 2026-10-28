@@ -580,3 +580,7 @@ img.save("sample.png")
 화방 정적 PNG 재생을 `typing-studio-machine.js`의 reference GLB 구동으로 교체. 종이와 캐리지 결합, 키/타입바/리본/레버/롤러 구동. Three.js 구버전 호환으로 parent.remove 사용. 현재 로컬 미배포.
 
 2026-10-28 운영자 배포 승인: 화방 전체(로컬 이미지 분석, 문자 중첩, A4 PNG/PDF/인쇄/공유, 세 reference 타자기 부품 구동)를 운영 반영. studio/core/motion 및 기존 startup/focus 검사 통과.
+
+화방 글꼴/확대 로컬 변경: Courier Prime 로딩 후 atlas 생성, 모든 타건 색 #211f1c·alpha1 고정. 용지 확대 100~300% 글리프 재렌더링 및 재생 정지/복원. 타건 밀도 문구로 변경. 현재 미배포.
+
+2026-10-28 운영자 배포 승인: 화방 Courier Prime 전용 글꼴, 동일 잉크색/불투명도, 100~300% 용지 확대를 운영 반영.

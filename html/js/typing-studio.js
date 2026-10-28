@@ -7,15 +7,23 @@
  const models={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32',olympiasm3:'Olympia SM3'};
  let model='',source=null,sourceURL='',job=null,plan=null,cursor=0,frame=0,due=0,layer=0,typed=0,phase='strike',feedRow=0,playing=false,busy=false,active=false,imageToken=0,exportToken=0,sharedFile=null,dirty=false;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),exportButtons=['tsPNG','tsPDF','tsPrint','tsShare'];
- const sampleCache=core.atlas((w,h)=>Object.assign(document.createElement('canvas'),{width:w,height:h}));
+ let sampleCache=null,fontPromise=null;
+ function ensureFont(){
+  return fontPromise ||= (async()=>{
+   const face=new FontFace('LS Studio Courier Prime','url(https://fonts.gstatic.com/s/courierprime/v11/u-450q2lgwslOqpF_6gQ8kELawFpWs39pvk.woff2)',{weight:'400',style:'normal'});
+   await face.load();document.fonts.add(face);
+   sampleCache=core.atlas((w,h)=>Object.assign(document.createElement('canvas'),{width:w,height:h}));
+  })().catch(e=>{fontPromise=null;throw e;});
+ }
  const status=text=>{$('tsStatus').textContent=text;};
  function controls(){
-  $('tsGenerate').disabled=!source||busy||!machine||$('tsMachine3D').dataset.ready!=='true';
+  $('tsGenerate').disabled=!source||busy||!sampleCache||!machine||$('tsMachine3D').dataset.ready!=='true';
   for(const id of ['tsFit','tsDetail','tsContrast','tsInk','tsEdge','tsOverstrike'])$(id).disabled=busy;
   $('tsPause').disabled=!plan||cursor>=plan.choices.length||$('tsMachine3D').dataset.ready!=='true';
   $('tsPause').textContent=playing?'일시정지':'계속 그리기';
   $('tsFinish').disabled=!plan||cursor>=plan.choices.length;
   $('tsReplay').disabled=!plan||busy;
+  $('tsZoomOpen').disabled=!plan||busy;
   for(const id of exportButtons)$(id).disabled=!plan||playing||cursor<plan.choices.length||busy;
  }
  function pause(){playing=false;cancelAnimationFrame(frame);area.classList.remove('is-playing');controls();}
@@ -34,8 +42,8 @@
   model=value;$('tsModelName').textContent=models[value];$('tsMachine').src=`/img/typewriters/${value}-preview.png?v=3`;$('tsMachine').alt=models[value]+' 타자기';
   $('tsChooser').hidden=true;$('tsWorkspace').hidden=false;area.classList.add('is-empty');if(plan)area.classList.remove('is-empty');$('tsFile').focus({preventScroll:true});
   controls();status('움직이는 타자기를 불러오고 있어요…');
-  try{machinePromise ||= import('/js/typing-studio-machine.js?v=3').then(()=>globalThis.LSCreateStudioMachine($('tsMachine3D'),canvas));machine=await machinePromise;if(ticket!==modelToken)return;await machine.load(value);if(ticket!==modelToken)return;area.classList.add('has-3d');if(plan){progress();if(cursor>=plan.choices.length)machine.finish();}status('타자기가 준비됐어요. 사진을 선택해 그려 보세요.');controls();}
-  catch(e){machinePromise=null;status('3D 타자기를 불러오지 못했습니다. 타자기 바꾸기에서 다시 선택해 주세요.');controls();console.warn(e);}
+  try{await ensureFont();machinePromise ||= import('/js/typing-studio-machine.js?v=3').then(()=>globalThis.LSCreateStudioMachine($('tsMachine3D'),canvas));machine=await machinePromise;if(ticket!==modelToken)return;await machine.load(value);if(ticket!==modelToken)return;area.classList.add('has-3d');if(plan){progress();if(cursor>=plan.choices.length)machine.finish();}status('타자기가 준비됐어요. 사진을 선택해 그려 보세요.');controls();}
+  catch(e){machinePromise=null;status(sampleCache?'3D 타자기를 불러오지 못했습니다. 타자기 바꾸기에서 다시 선택해 주세요.':'타자기 글꼴을 불러오지 못했습니다. 연결을 확인하고 타자기를 다시 선택해 주세요.');controls();console.warn(e);}
  }
  root.querySelectorAll('[data-studio-model]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.studioModel)));
  $('tsChangeModel').addEventListener('click',()=>{pause();if(busy){stopJob();status('분석을 중단했어요. 타자기를 고른 뒤 다시 시작해 주세요.');controls();}$('tsChooser').hidden=false;$('tsWorkspace').hidden=true;root.querySelector(`[data-studio-model="${model}"]`).focus();});
@@ -83,7 +91,7 @@
   if(!source||busy)return;reset();busy=true;dirty=false;status('빛과 윤곽에 맞는 문자를 고르고 있어요…');$('tsPaperHint').hidden=true;area.classList.remove('is-empty');area.style.setProperty('--feed',0);controls();
   const cols=Number($('tsDetail').value),rows=Math.round(cols*(277/190)/1.5),rgba=drawInput(cols,rows);
   try{
-   job=new Worker('/js/typing-studio-worker.js?v=1');
+   job=new Worker('/js/typing-studio-worker.js?v=2');
    job.onmessage=({data})=>{
     if(data.type==='progress'){$('tsProgress').value=data.value;status(`문자 분석 중 · ${Math.round(data.value*100)}%`);return;}
     if(data.type==='error'){stopJob();status(data.message);controls();return;}
@@ -150,6 +158,29 @@
  $('tsFinish').addEventListener('click',()=>{if(plan)finishDrawing();});
  $('tsReplay').addEventListener('click',()=>{if(!plan)return;pause();clearExport();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);cursor=0;resetMotion();start();});
  document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing){pause();status('다른 화면으로 이동해 잠시 멈췄어요. 계속 그리기를 눌러 주세요.');}});
+ // Redraw the glyphs at the requested display resolution; never stretch the preview bitmap.
+ const zoomDialog=$('tsZoomDialog'),zoomCanvas=$('tsZoomCanvas'),zoomScroll=$('tsZoomScroll');
+ let resumeAfterZoom=false;
+ function drawZoom(){
+  if(!plan||!zoomDialog.open)return;
+  const zoom=Number($('tsZoomLevel').value),base=Math.min(640,Math.max(200,zoomScroll.clientWidth-40));
+  const cssWidth=base*zoom,pixelWidth=Math.ceil(cssWidth*Math.min(devicePixelRatio||1,2));
+  zoomCanvas.width=pixelWidth;zoomCanvas.height=Math.round(pixelWidth*297/210);
+  zoomCanvas.style.width=cssWidth+'px';zoomCanvas.style.height=(cssWidth*297/210)+'px';
+  const z=zoomCanvas.getContext('2d');z.fillStyle='#fff';z.fillRect(0,0,zoomCanvas.width,zoomCanvas.height);
+  renderCells(zoomCanvas,0,cursor);
+  if(layer&&cursor<plan.choices.length){
+   const margin=pixelWidth*10/210,cw=(pixelWidth-margin*2)/plan.cols,ch=zoomCanvas.height*(277/297)/plan.rows;
+   core.paint(z,core.patterns[plan.choices[cursor]].slice(0,layer),margin+(cursor%plan.cols)*cw,zoomCanvas.height*10/297+Math.floor(cursor/plan.cols)*ch,cw,ch,((cursor*73%101)/100)-.5);
+  }
+ }
+ function openZoom(){if(!plan||busy)return;resumeAfterZoom=playing;pause();zoomDialog.showModal();drawZoom();}
+ $('tsZoomOpen').addEventListener('click',openZoom);
+ $('tsMachine3D').addEventListener('dblclick',openZoom);
+ $('tsZoomClose').addEventListener('click',()=>zoomDialog.close());
+ $('tsZoomLevel').addEventListener('change',drawZoom);
+ zoomDialog.addEventListener('close',()=>{zoomCanvas.width=1;zoomCanvas.height=1;if(resumeAfterZoom&&active)start();resumeAfterZoom=false;});
+ addEventListener('resize',drawZoom);
  const filename=()=>($('tsName').value.trim()||'타자기 드로잉').replace(/[\\/:*?"<>|\u0000-\u001f]/g,'_');
  function exportCanvas(){const c=document.createElement('canvas');c.width=2480;c.height=3508;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);renderCells(c,0,plan.choices.length);return c;}
  const toBlob=(c,type='image/png')=>new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(Error('이미지 저장 실패')),type,.97));

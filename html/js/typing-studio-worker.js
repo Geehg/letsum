@@ -1,5 +1,5 @@
 'use strict';
-importScripts('typing-studio-core.js?v=1');
+importScripts('typing-studio-core.js?v=2');
 self.onmessage=({data})=>{
  try{
   const result=TypewriterArt.match(data,data.samples,value=>self.postMessage({type:'progress',value}));

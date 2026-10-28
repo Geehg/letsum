@@ -10,9 +10,9 @@
  patterns.push([{g:'M',x:-.16,y:0},{g:'W',x:.16,y:0},{g:'@',x:0,y:-.12},{g:'#',x:0,y:.12}]);
  patterns.push([-1,0,1].flatMap(y=>[-1,0,1].map(x=>({g:'#',x:x*.14,y:y*.10}))));
  function paint(ctx,pattern,x,y,cw,ch,variation=0){
-  ctx.font=`${cw*1.6}px "Courier New", monospace`;ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.font=`${cw*1.6}px "LS Studio Courier Prime", monospace`;ctx.textAlign='center';ctx.textBaseline='alphabetic';
   for(let k=0;k<pattern.length;k++){
-   const s=pattern[k];ctx.globalAlpha=.88+variation*.05;
+   const s=pattern[k];ctx.globalAlpha=1;ctx.fillStyle='#211f1c';
    ctx.fillText(s.g,x+cw*(.5+s.x+variation*.012),y+ch*(.78+s.y),cw*1.08);
   }
   ctx.globalAlpha=1;

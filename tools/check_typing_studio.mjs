@@ -21,3 +21,8 @@ const p=pixels(255);for(let y=0;y<rows*core.SH;y++)for(let x=cols*core.SW/2;x<co
 const edge=run(p);let left=0,right=0;for(let i=0;i<edge.choices.length;i++){if(i%cols<cols/2)left+=edge.choices[i];else right+=edge.choices[i];}assert.ok(right>left*4,'spatial structure must survive conversion');
 const template=fs.readFileSync('tools/typing_app.html','utf8');for(const id of ['tsStudio','tsFile','tsCanvas','tsPNG','tsPDF','tsPrint','tsShare'])assert.equal((template.match(new RegExp(`id="${id}"`,'g'))||[]).length,1,`${id} must be unique`);
 console.log('PASS: white/transparent, monotonic tones, overstrike toggle, deterministic output, ink control, spatial structure, unique UI IDs');
+// Every strike has the same ink and alpha; tone comes from glyph coverage only.
+const ink=[];const pen={fillText(){ink.push([this.fillStyle,this.globalAlpha,this.font]);}};
+for(const variation of [-.5,0,.5])core.paint(pen,core.patterns[40],0,0,20,30,variation);
+assert.ok(ink.length>0&&ink.every(([color,alpha,font])=>color==='#211f1c'&&alpha===1&&font.includes('LS Studio Courier Prime')),'uniform solid typewriter ink and dedicated font');
+console.log('PASS: identical ink color/opacity for every overstrike and variation');
