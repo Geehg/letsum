@@ -30,7 +30,7 @@ main.tb[data-reading-mode="immersive"] .tb-hermes-foot button{padding:5px 12px}
 /* Identical metrics keep the native input and source glyphs on the same sheet. */
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig{
  position:absolute;inset:0;width:600px;height:100%;min-height:0;max-height:none;box-sizing:border-box;
- margin:0;padding:32px 42px;overflow:auto;scrollbar-width:none;pointer-events:none;
+ margin:0;padding:32px 42px;overflow-anchor:none;overflow:auto;scrollbar-width:none;pointer-events:none;
  color:#999588;font-family:var(--tb-trace-font,monospace)!important;font-size:var(--tb-trace-size,34px);line-height:var(--tb-trace-line,48px);
  letter-spacing:0;word-break:break-all;overflow-wrap:anywhere;white-space:pre-wrap;font-kerning:none;font-variant-ligatures:none;text-shadow:none;
 }
@@ -48,7 +48,7 @@ main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.cu
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-caret::before{content:"";position:absolute;left:-1px;top:0;height:1em;border-left:2px solid #315544}
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-after::before{left:auto;right:-2px}
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.trace-selected{background:#56785c2b}
-main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.nl{display:inline-block;width:0;overflow:visible;color:#a9a497;font-size:.7em;vertical-align:baseline}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.nl{display:inline-block;width:0;overflow:visible;color:#a9a497;font-size:.7em;line-height:1;vertical-align:baseline}
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.nl.ok{color:#566a57}
 @media(max-width:760px){
  main.tb[data-reading-mode="immersive"] .tb-top{padding-top:4px;padding-bottom:4px}

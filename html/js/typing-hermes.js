@@ -347,7 +347,7 @@
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const referenceMotion=detailedReference?(selectedModel==='olympiasm3'?globalThis.LSAttachOlympiaReference:globalThis.LSAttachLetteraReference)(T,scene,asset.scene,detailedReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
-   let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,bellLine=-1;
+   let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,contentOffset=0;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
    let paperHeight=594,traceProjection=1,sheetWidth=.224,paperTop=.396,fontPixels=34,lineHeight=48,fullHeight=paperHeight,lastLine=0,rollerFeed=0,targetRoll=0;
    const clamp=v=>Math.max(0,Math.min(1,v)),smooth=t=>t*t*(3-2*t);
@@ -421,6 +421,7 @@
     lines.push({text:row,width:units});return lines;
    }
    function tracePosition(caret){
+    const measured=window.LSTypewriterPaper?.position(input,$('tbOrig'),paper);if(measured)return measured;
     const host=$('tbOrig'),spans=host.children,first=spans[0];
     if(host.parentElement!==paper||!first||!host.clientWidth)return null;
     const atEnd=caret>=spans.length,span=spans[Math.min(caret,spans.length-1)];
@@ -450,23 +451,32 @@
      // Keep the active baseline at the ribbon. Unskewed text needs the same
      // projection compensation in its mechanical feed distance.
      const worldPerPixel=(paperTop-.174)/paperHeight,rowsPerSheet=Math.max(1,Math.floor((paperHeight*traceProjection-64)/lineHeight));
-     const sheetRow=physical?row%rowsPerSheet:row;
-     const contentOffset=physical?Math.floor(row/rowsPerSheet)*rowsPerSheet*lineHeight:0;
-     paper.dataset.feedScroll=String(contentOffset);
-     if(physical){input.scrollTop=contentOffset;if(trace)$('tbOrig').scrollTop=contentOffset;}
-     const nextFeed=physical?.196+(32+fontPixels*.95+sheetRow*lineHeight)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
+     // Keep the exposed A4 sheet in place when full. Scroll only the overflow,
+     // rather than snapping from the last row back to an almost hidden sheet.
+     const advance=position?.advance??row*lineHeight,maxAdvance=Math.max(0,rowsPerSheet-1)*lineHeight;
+     const sheetAdvance=physical?Math.min(advance,maxAdvance):advance;
+     contentOffset=physical?Math.max(0,advance-maxAdvance):0;
+     const nextFeed=physical?.196+(32+fontPixels*.95+sheetAdvance)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
      const newLine=trace||physical?row+1>lastLine:nextFeed>feed+.0001;lastLine=row+1;
      if(newLine&&changed&&!initial)returnAt=now;
-     if(initial||snap||input.value.length<(lastValue||'').length)bellLine=-1;
-     if(changed&&!initial&&!snap&&line.width>(paperWidth-left*2)*.86&&bellLine!==row+1){bellLine=row+1;input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:'MarginBell'}}));}
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
      if(Math.abs(nextFeed-feed)>.000001){feedDrive={from:currentFeed,to:nextFeed,start:now+(newLine?20:0),duration:newLine?180:150};feed=nextFeed;}
-     targetRoll=physical?sheetRow*lineHeight/traceProjection*worldPerPixel:trace?row*lineHeight*sheetWidth/paperWidth:nextFeed;
+     targetRoll=physical?advance/traceProjection*worldPerPixel:trace?advance*sheetWidth/paperWidth:nextFeed;
      if(snap||initial){currentX=targetX;currentFeed=feed;rollerFeed=targetRoll;drive=feedDrive=null;}
      // Mobile IME may commit text without keyboard events. Space/newline never hit a typebar.
      if(changed&&!initial&&input.value.length>(lastValue||'').length&&now-lastKeyAt>100&&/\S$/.test(input.value)){const ch=Array.from(input.value).at(-1),bar=barFor.get('Key'+ch.toUpperCase())||bars[Array.from(input.value).length%bars.length];hits.push({bar,time:now});input.dispatchEvent(new CustomEvent('tb:hermes-sound',{detail:{key:ch}}));}
     }
-    if(!composing)lastValue=input.value;wake();
+    syncPaperScroll();if(!composing)lastValue=input.value;wake();
+   }
+   function syncPaperScroll(){
+    if(!feeding())return;
+    // During a feed animation the next glyph already belongs to the next line.
+    // Compensate the not-yet-exposed part so it never slips below the ribbon.
+    const worldPerPixel=(paperTop-.174)/paperHeight;
+    const pending=Math.max(0,(feed-currentFeed)*traceProjection/worldPerPixel);
+    const offset=contentOffset+pending;
+    paper.dataset.feedScroll=String(offset);
+    input.scrollTop=offset;if(tracing())$('tbOrig').scrollTop=offset;
    }
    function placePaper(){
     if(tracing()&&main.dataset.focusPortrait==='true'){
@@ -485,7 +495,7 @@
      if(input.style.height!==editorHeight)input.style.height=editorHeight;
      if(paper.style.getPropertyValue('--tb-trace-editor-height')!==editorHeight)paper.style.setProperty('--tb-trace-editor-height',editorHeight);
     }
-    paper.style.clipPath='none';
+    syncPaperScroll();paper.style.clipPath='none';
     paper.style.setProperty('--tb-feed-visible-height',visible+'px');
     const right=x+sx*paperWidth,beside=right+8+countWidth<=countLimit;
     count.dataset.placement=beside?'right':'above';
@@ -539,7 +549,7 @@
    function down(e){
     if(!active)return;lastKeyAt=performance.now();if(e.code.startsWith('Shift'))shift=true;
     const key=nodes['Key_'+e.code];if(key&&!e.repeat)pressed.set(key.name,{time:lastKeyAt,up:0});
-    if(!e.ctrlKey&&!e.metaKey&&!e.altKey){if(e.code==='Enter'&&!e.isComposing)returnAt=lastKeyAt;const bar=barFor.get(e.code);if(bar)hits.push({bar,time:lastKeyAt});}
+    if(!e.ctrlKey&&!e.metaKey&&!e.altKey){if(e.code==='Enter'&&!e.isComposing&&!composing&&e.keyCode!==229)returnAt=lastKeyAt;const bar=barFor.get(e.code);if(bar)hits.push({bar,time:lastKeyAt});}
     wake();
    }
    function up(e){if(e.code.startsWith('Shift'))shift=[...pressed.entries()].some(([name,p])=>name!=='Key_'+e.code&&name.startsWith('Key_Shift')&&!p.up);const k=pressed.get('Key_'+e.code);if(k)k.up=performance.now();wake();}

@@ -8,7 +8,7 @@
   const attack = {'key-1':.028,'key-2':.020,'key-3':.034,'key-4':.030,'key-5':.020,'key-6':.038,space:.008,bell:.006,return:.050,paper:.012};
   const raw = new Map(), buffers = new Map(), voices = new Set();
   let context, master, loading, decoding, enabled = true, volume = .38, keyIndex = -1;
-  let lastValue = input.value, lastLine = null, composing = false, compositionHardware = false, physicalAt = -Infinity, warned = false;
+  let lastValue = input.value, lastLine = null, composing = false, compositionHardware = false, physicalAt = -Infinity;
   const active = () => enabled && volume > 0 && main.dataset.skin === 'retro' && !document.hidden;
   const now = () => performance.now();
   function status(value) { main.dataset.typewriterAudio = value; }
@@ -79,9 +79,8 @@
     play('key-' + (keyIndex + 1), .85);
   }
   function lineReturn() {
-    if (!warned) play('bell', .42);
+    play('bell', .42);
     play('return', .72);
-    warned = false;
   }
   function inserted(before, after) {
     let a = 0, b = before.length, c = after.length;
@@ -93,6 +92,8 @@
     const caret = Array.from(input.value.slice(0, input.selectionStart).normalize('NFC')).length;
     if (main.dataset.readingMode === 'immersive') {
       const host = document.getElementById('tbOrig');
+      const measured=window.LSTypewriterPaper?.position(input,host,document.getElementById('tbHermesPaper'));
+      if(measured)return {row:measured.row,ratio:0};
       const span = host.querySelector('[data-index="' + caret + '"]') || host.lastElementChild;
       if (span) {
         const r = span.getBoundingClientRect(), box = host.getBoundingClientRect();
@@ -112,7 +113,7 @@
     }
     return {row,ratio:width > 0 ? x/width : 0};
   }
-  function reset() { lastValue = input.value; lastLine = position(); warned = false; composing = false; }
+  function reset() { lastValue = input.value; lastLine = position(); composing = false; }
   function changed() {
     const value = input.value;
     if (composing || value === lastValue) return;
@@ -121,9 +122,7 @@
       // A physical Korean keystroke already sounded; composition commit must not strike twice.
       if (now() - physicalAt > 120 && !addition.includes('\n')) keySound(addition === ' ' ? ' ' : 'x');
       if (addition.includes('\n') || (lastLine && line.row > lastLine.row)) lineReturn();
-      else if (line.ratio >= .86 && !warned) { play('bell', .42); warned = true; }
     }
-    if (!grew) warned = false;
     lastValue = value; lastLine = line;
   }
   input.addEventListener('keydown', e => {
@@ -146,6 +145,6 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
   window.addEventListener('blur', stop);
   new MutationObserver(() => { stop(); reset(); if (active()) prepare(); }).observe(main, {attributes:true, attributeFilter:['data-skin','data-reading-mode']});
-  new ResizeObserver(() => { lastLine = position(); }).observe(input);
+  new ResizeObserver(() => { if (!composing) lastLine = position(); }).observe(input);
   window.LSTypewriterAudio = {configure, preview:() => keySound('x')};
 })();
