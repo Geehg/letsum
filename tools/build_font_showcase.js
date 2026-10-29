@@ -1,4 +1,4 @@
-// Verified screenshots and synthetic review copy are kept separate from visitor data.
+// Bot-curated screenshots and sample copy are kept separate from visitor data.
 const fs = require('node:fs'), path = require('node:path'), crypto = require('node:crypto');
 const root = path.join(__dirname, '..');
 const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'state/font_showcase.json'), 'utf8'));
@@ -6,6 +6,13 @@ if (data.entries.length !== 30 || new Set(data.entries.map(x => x.id)).size !== 
 for (const row of data.entries) {
   if (!row.body || !Number.isSafeInteger(row.demoLikes) || row.demoLikes < 0) throw Error('Invalid sample review');
   if (row.source && (!row.source.proof || !row.source.checked || !/^https:\/\//.test(row.source.url) || !row.source.image.startsWith('/img/font-showcase/') || !fs.existsSync(path.join(root, 'html', row.source.image)))) throw Error('Unverified screenshot: ' + row.id);
+  if (row.source && !['usage','specimen','official-example'].includes(row.source.kind)) throw Error('Unknown source kind: ' + row.id);
+  if (row.source?.kind === 'usage') {
+    const p=row.source.proof;
+    if (!p.text || !p.computedFamily || !p.fonts?.some(f=>f.glyphCount>0) || !p.sha256 || !p.capturedAt) throw Error('Missing rendered-font evidence: ' + row.id);
+    const hash=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'html',row.source.image))).digest('hex');
+    if (hash !== p.sha256) throw Error('Screenshot differs from verified capture: ' + row.id);
+  }
 }
 const publicEntries = Object.fromEntries(data.entries.map(({id, body, demoLikes, source}) => [id, {body,demoLikes,source:source ? (({proof,...publicSource})=>publicSource)(source) : null}]));
 const js = fs.readFileSync(path.join(__dirname, 'showcase_runtime.js'), 'utf8').replace('/* SHOWCASE_DATA */ {}', JSON.stringify(publicEntries));

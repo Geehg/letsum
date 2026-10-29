@@ -1,0 +1,422 @@
+{
+  "checked": "2026-10-29",
+  "verification": "Match declared CSS family with actual Chrome rendered font family and glyph count, inspect the capture, and describe only the verified text. Never infer from appearance alone.",
+  "entries": [
+    {
+      "id": "noto-sans-kr",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Noto+Sans+KR",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/noto-sans-kr.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Noto Sans KR Thin",
+              "postScriptName": "NotoSansKR-Thin_Regular",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 738,
+        "height": 290
+      },
+      "currentURL": "https://www.korea.kr/",
+      "scope": "키워드로 찾아보는 정책뉴스"
+    },
+    {
+      "id": "noto-serif-kr",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Noto+Serif+KR",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/noto-serif-kr.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Noto Serif KR ExtraLight",
+              "postScriptName": "NotoSerifKR-Regular",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 738,
+        "height": 330
+      },
+      "currentURL": "https://www.pwc.com/kr/ko.html",
+      "scope": "삼일PwC Heritage Center"
+    },
+    {
+      "id": "k-pretendard",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+        "publisher": "NEXON",
+        "checked": "2026-10-29",
+        "kind": "usage",
+        "caption": "넥슨 브랜드 가이드의 안내 문구",
+        "image": "/img/font-showcase/k-pretendard.jpg",
+        "proof": {
+          "method": "Chrome CSS.getPlatformFontsForNode: custom font and nonzero glyph count verified on initial capture",
+          "familyMatch": "Pretendard",
+          "capturedText": "넥슨 서체의 저작권은 누구에게 있나요?",
+          "recheck": "Later source visits timed out; retained the visually checked first capture, whose renderer verification succeeded."
+        },
+        "width": 281,
+        "height": 61
+      },
+      "currentURL": "https://flex.team/",
+      "scope": "조직을 제대로 아는"
+    },
+    {
+      "id": "jua",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "nanum-gothic",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Nanum+Gothic",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/nanum-gothic.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "NanumGothic",
+              "postScriptName": "NanumGothic",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 281
+      },
+      "currentURL": "https://www.seoul.go.kr/",
+      "scope": "주요 서비스"
+    },
+    {
+      "id": "black-han-sans",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "gowun-dodum",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Gowun+Dodum",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/gowun-dodum.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Gowun Dodum",
+              "postScriptName": "GowunDodum-Regular",
+              "isCustomFont": true,
+              "glyphCount": 62
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 330
+      },
+      "currentURL": "https://muriahutle.com/",
+      "scope": "Lebe deine wahre Größe – ohne dich klein zu machen"
+    },
+    {
+      "id": "nanum-myeongjo",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "gowun-batang",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Gowun+Batang",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/gowun-batang.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Gowun Batang",
+              "postScriptName": "GowunBatang-Regular",
+              "isCustomFont": true,
+              "glyphCount": 62
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 330
+      },
+      "currentURL": "https://ridam-clinic.imweb.me/",
+      "scope": "리담한의원"
+    },
+    {
+      "id": "do-hyeon",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "k-gmarket-sans",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://corp.gmarket.com/fonts/",
+        "kind": "official-example",
+        "publisher": "G마켓",
+        "caption": "G마켓이 공개한 공식 적용 예시",
+        "proof": {
+          "method": "Official publisher explicitly identifies this image as a font application example",
+          "alt": "G마켓 산스 폰트 적용 사례 4",
+          "src": "http://pics.gmarket.co.kr/pc/single/kr/company/galleryimg-4.png"
+        },
+        "image": "/img/font-showcase/k-gmarket-sans.jpg",
+        "checked": "2026-10-29",
+        "width": 1065,
+        "height": 710
+      },
+      "currentURL": "https://maplestory.nexon.com/",
+      "scope": "업데이트 자세히 확인하기"
+    },
+    {
+      "id": "k-ygot-jalnan2",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "gothic-a1",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Gothic+A1",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/gothic-a1.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Gothic A1",
+              "postScriptName": "GothicA1-Regular",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 284
+      },
+      "currentURL": "https://www.aflhyperscale.com/",
+      "scope": "Your Data Center Connectivity Partner."
+    },
+    {
+      "id": "nanum-pen",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "ibm-plex-sans-kr",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Sans+KR",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/ibm-plex-sans-kr.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "IBM Plex Sans KR",
+              "postScriptName": "IBMPlexSansKR-Regular",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 330
+      },
+      "currentURL": "https://www.ibm.com/kr-ko",
+      "scope": "최고의 엔터프라이즈 기술"
+    },
+    {
+      "id": "asta-sans",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "k-paperlogy",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://freesentation.blog/paperlogyfont",
+        "kind": "specimen",
+        "publisher": "Freesentation",
+        "caption": "페이퍼로지 공식 소개 페이지 일부",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "text": "PPT 유튜버 페이퍼로지님과 함께 ",
+          "css": "\"Paperlogy 4 Regular\", \"Paperlogy 4 Regular Placeholder\", sans-serif",
+          "fonts": [
+            {
+              "familyName": "Paperlogy 4 Regular",
+              "postScriptName": "Paperlogy-4Regular",
+              "isCustomFont": true,
+              "glyphCount": 19
+            }
+          ]
+        },
+        "image": "/img/font-showcase/k-paperlogy.jpg",
+        "checked": "2026-10-29",
+        "width": 286,
+        "height": 61
+      },
+      "currentURL": "https://www.sdulife.com/",
+      "scope": "청소년지도사"
+    },
+    {
+      "id": "k-freesentation",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "single-day",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "nanum-brush-script",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "gaegu",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "k-accchildrenskyotf",
+      "decision": "no-attachment",
+      "reason": "No verifiable screenshot attached."
+    },
+    {
+      "id": "k-suit",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://sun.fo/suit/",
+        "kind": "specimen",
+        "publisher": "SUN TYPEFACE",
+        "caption": "SUIT 제작자 공식 소개 페이지 일부",
+        "usageNote": "제작자는 SK telecom·SK innovation·SK on·SK energy의 UI 사용을 안내합니다. 캡처는 기업 서비스 화면이 아닌 제작자의 소개 페이지입니다.",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "text": "인터페이스",
+          "css": "SUIT, sans-serif",
+          "fonts": [
+            {
+              "familyName": "SUIT",
+              "postScriptName": "SUIT-Regular",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        "image": "/img/font-showcase/k-suit.jpg",
+        "checked": "2026-10-29",
+        "width": 196,
+        "height": 81
+      },
+      "currentURL": "https://www.sknetworks.co.kr/",
+      "scope": "Company"
+    },
+    {
+      "id": "k-nexon-lv1-gothic",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "hahmlet",
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Hahmlet",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/hahmlet.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Hahmlet",
+              "postScriptName": "Hahmlet-Regular",
+              "isCustomFont": true,
+              "glyphCount": 62
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 330
+      },
+      "currentURL": "https://satisfly.co/",
+      "scope": "E-Commerce Agency"
+    },
+    {
+      "id": "yeon-sung",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "k-kccdodamdodam",
+      "decision": "no-attachment",
+      "reason": "No verifiable screenshot attached."
+    },
+    {
+      "id": "bagel-fat-one",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "dongle",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    },
+    {
+      "id": "gamja-flower",
+      "decision": "retain-official-reference",
+      "reason": "No replacement passed the actual-use verification in this review."
+    }
+  ]
+}

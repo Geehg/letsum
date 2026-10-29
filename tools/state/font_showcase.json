@@ -1,91 +1,154 @@
 {
-  "version": 1,
+  "version": 2,
   "checked": "2026-10-29",
   "selection": "First 30 Korean fonts in the existing pop sort; not a measured market ranking.",
-  "disclosure": "Synthetic sample reviews and demo likes; excluded from visitor counts, rankings and APIs.",
+  "disclosure": "Verified source posts are attributed to Letsum Bot. Official specimens are reference material, not external-use examples or user reviews. No source post displays demo likes or changes visitor counts.",
   "entries": [
     {
       "id": "noto-sans-kr",
       "name": "본고딕",
-      "body": "본문과 버튼을 같은 글꼴로 묶을 때 먼저 비교해 볼 만해요. 굵기로 위계를 나누고, 모바일에서는 줄간격을 조금 넉넉하게 잡아 보세요.",
+      "body": "정책브리핑의 정책뉴스 섹션 제목에서 본고딕 사용을 확인했습니다. 첨부는 실제 홈페이지 화면 일부이며, 확인한 문구는 ‘키워드로 찾아보는 정책뉴스’입니다.",
       "demoLikes": 12,
       "source": {
-        "url": "https://fonts.google.com/specimen/Noto+Sans+KR",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://www.korea.kr/",
+        "publisher": "대한민국 정책브리핑",
+        "caption": "정책브리핑의 정책뉴스 섹션 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/noto-sans-kr.jpg",
+        "image": "/img/font-showcase/noto-sans-kr-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H3",
+          "id": "",
+          "className": "title",
+          "text": "키워드로 찾아보는 정책뉴스",
+          "computedFamily": "\"Noto Sans KR\"",
           "fonts": [
             {
-              "familyName": "Noto Sans KR Thin",
-              "postScriptName": "NotoSansKR-Thin_Regular",
+              "familyName": "Noto Sans KR Bold",
+              "postScriptName": "NotoSansKR-Bold",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 14
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 0,
+            "y": 353.0625,
+            "width": 1100,
+            "height": 224.796875
+          },
+          "sourceTitle": "대한민국 정책브리핑",
+          "capturedAt": "2026-10-29T01:52:45.880Z",
+          "sha256": "becd411ab990772be82901cad4c8806c6fc131c2767abd0d553bdafde5d321c3"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 738,
-        "height": 290
+        "width": 1100,
+        "height": 224
       }
     },
     {
       "id": "noto-serif-kr",
       "name": "본명조",
-      "body": "긴 글에 차분한 인상을 주고 싶을 때 어울리는 방향이에요. 화면에서는 가는 획이 묻히지 않는지 작은 크기로도 확인해 보세요.",
+      "body": "삼일PwC 홈페이지의 ‘삼일PwC Heritage Center’ 제목 중 한글 ‘삼일’에서 본명조 사용을 확인했습니다. 같은 제목의 영문은 별도 서체이므로 한글 부분을 참고해 주세요.",
       "demoLikes": 19,
       "source": {
-        "url": "https://fonts.google.com/specimen/Noto+Serif+KR",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://www.pwc.com/kr/ko.html",
+        "publisher": "삼일PwC",
+        "caption": "삼일PwC Heritage Center 제목의 한글 부분",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/noto-serif-kr.jpg",
+        "image": "/img/font-showcase/noto-serif-kr-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "text": "삼일PwC Heritage Center",
+          "computedFamily": "\"PwC ITC Charter\", Georgia, \"Noto Serif KR\", serif",
           "fonts": [
             {
               "familyName": "Noto Serif KR ExtraLight",
               "postScriptName": "NotoSerifKR-Regular",
               "isCustomFont": true,
-              "glyphCount": 4
+              "glyphCount": 2
+            },
+            {
+              "familyName": "",
+              "postScriptName": "CharterITCW05-Regular",
+              "isCustomFont": true,
+              "glyphCount": 18
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 400,
+            "y": 331.40625,
+            "width": 650,
+            "height": 267.203125
+          },
+          "sourceTitle": "Samil PwC",
+          "capturedAt": "2026-10-29T01:57:54.714Z",
+          "sha256": "15f8d5e3c6b13f44ac3b90aca213dcfb3fad3892245fe027788589e5c6b2d21c"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 738,
-        "height": 330
+        "width": 650,
+        "height": 267
       }
     },
     {
       "id": "k-pretendard",
       "name": "프리텐다드",
-      "body": "한글·영문·숫자가 섞이는 안내 문구를 비교하기 좋아요. 첨부한 넥슨 브랜드 가이드의 안내 문구에서는 프리텐다드가 실제로 렌더링되는 것을 확인했어요.",
+      "body": "flex 서비스 홈페이지의 첫 화면 제목에서 프리텐다드 사용을 확인했습니다. ‘조직을 제대로 아는’ 문구의 실제 웹페이지 적용 모습을 첨부했습니다.",
       "demoLikes": 26,
       "source": {
-        "url": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
-        "publisher": "NEXON",
-        "checked": "2026-10-29",
+        "url": "https://flex.team/",
+        "publisher": "flex",
+        "caption": "flex 서비스 홈페이지의 첫 화면 제목",
         "kind": "usage",
-        "caption": "넥슨 브랜드 가이드의 안내 문구",
-        "image": "/img/font-showcase/k-pretendard.jpg",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/k-pretendard-real.jpg",
         "proof": {
-          "method": "Chrome CSS.getPlatformFontsForNode: custom font and nonzero glyph count verified on initial capture",
-          "familyMatch": "Pretendard",
-          "capturedText": "넥슨 서체의 저작권은 누구에게 있나요?",
-          "recheck": "Later source visits timed out; retained the visually checked first capture, whose renderer verification succeeded."
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "SPAN",
+          "id": "",
+          "className": "l2024-c-dvyfwe",
+          "text": "조직을 제대로 아는",
+          "computedFamily": "\"Pretendard Variable\", Pretendard, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fonts": [
+            {
+              "familyName": "Pretendard Variable",
+              "postScriptName": "PretendardVariable-SemiBold",
+              "isCustomFont": true,
+              "glyphCount": 10
+            }
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 361.875,
+            "y": 177.03125,
+            "width": 650,
+            "height": 242.625
+          },
+          "sourceTitle": "flex – Relations Driven AX",
+          "capturedAt": "2026-10-29T01:52:55.915Z",
+          "sha256": "929ab62c015277aac212185321417e37d1790b0b583d1b4b101a7b0da504a92c"
         },
-        "width": 281,
-        "height": 61
+        "width": 650,
+        "height": 242
       }
     },
     {
       "id": "jua",
       "name": "주아체",
-      "body": "둥글고 두툼한 글자가 짧은 메뉴 이름에 잘 어울리는 인상이에요. 문장이 길어지면 본문용 글꼴과 나눠 쓰는 구성을 비교해 보세요.",
+      "body": "Google Fonts에서 공개한 주아체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 33,
       "source": {
         "url": "https://fonts.google.com/specimen/Jua",
@@ -113,35 +176,58 @@
     {
       "id": "nanum-gothic",
       "name": "나눔고딕",
-      "body": "문서와 안내문처럼 정보가 중심인 화면에 비교하기 좋아요. 제목은 굵게, 설명은 보통 굵기로 두면 변화가 과하지 않아요.",
+      "body": "서울특별시 홈페이지의 ‘주요 서비스’ 제목에서 나눔고딕 사용을 확인했습니다. 공공 서비스 메뉴와 함께 배치된 실제 화면을 참고해 보세요.",
       "demoLikes": 40,
       "source": {
-        "url": "https://fonts.google.com/specimen/Nanum+Gothic",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://www.seoul.go.kr/",
+        "publisher": "서울특별시",
+        "caption": "서울시 홈페이지의 주요 서비스 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/nanum-gothic.jpg",
+        "image": "/img/font-showcase/nanum-gothic-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H2",
+          "id": "",
+          "className": "",
+          "text": "주요 서비스",
+          "computedFamily": "\"Nanum Gothic\"",
           "fonts": [
             {
               "familyName": "NanumGothic",
-              "postScriptName": "NanumGothic",
+              "postScriptName": "NanumGothicBold",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Times",
+              "postScriptName": "Times-Bold",
+              "isCustomFont": false,
+              "glyphCount": 1
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 4,
+            "y": 522.546875,
+            "width": 1100,
+            "height": 223.40625
+          },
+          "sourceTitle": "삶의 질 특별시 서울 | 서울특별시",
+          "capturedAt": "2026-10-29T01:52:50.983Z",
+          "sha256": "c1bbf6980c0fb917e279264a955bde88aa2eab1a3d09fd3bc615dee086037580"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 281
+        "width": 1100,
+        "height": 223
       }
     },
     {
       "id": "black-han-sans",
       "name": "검은고딕",
-      "body": "짧은 제목을 크게 보여 줄 때 존재감이 뚜렷해요. 작은 설명까지 같은 굵기로 채우기보다 여백과 대비를 먼저 살펴보세요.",
+      "body": "Google Fonts에서 공개한 검은고딕의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 47,
       "source": {
         "url": "https://fonts.google.com/specimen/Black+Han+Sans",
@@ -169,35 +255,52 @@
     {
       "id": "gowun-dodum",
       "name": "고운돋움",
-      "body": "부드러운 안내 문구나 생활 콘텐츠에 어울리는 인상이에요. 작은 화면에서도 받침과 글자 사이가 충분히 구분되는지 확인해 보세요.",
+      "body": "Muria Hutle 코칭 홈페이지의 독일어 소개 문구에서 고운돋움 사용을 확인했습니다. 이 사례는 고운돋움의 라틴 문자 사용이며, 손글씨 모양의 큰 제목은 다른 글꼴입니다.",
       "demoLikes": 15,
       "source": {
-        "url": "https://fonts.google.com/specimen/Gowun+Dodum",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://muriahutle.com/",
+        "publisher": "Muria Hutle",
+        "caption": "Muria Hutle 코칭 홈페이지의 독일어 소개 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/gowun-dodum.jpg",
+        "image": "/img/font-showcase/gowun-dodum-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "text": "Lebe deine wahre Größe – ohne dich klein zu machen",
+          "computedFamily": "\"Gowun Dodum\"",
           "fonts": [
             {
               "familyName": "Gowun Dodum",
               "postScriptName": "GowunDodum-Regular",
               "isCustomFont": true,
-              "glyphCount": 62
+              "glyphCount": 50
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 40.703125,
+            "y": 363.046875,
+            "width": 650,
+            "height": 205
+          },
+          "sourceTitle": "muriahutle | Erfahre dich als Seele im Menschsein",
+          "capturedAt": "2026-10-29T01:57:49.060Z",
+          "sha256": "f01139d14e0c453245abc4c9b0a59ea9fcd0262b2bb8c563d013080462c8a744"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 330
+        "width": 650,
+        "height": 205
       }
     },
     {
       "id": "nanum-myeongjo",
       "name": "나눔명조",
-      "body": "책 소개나 인용문에 차분한 리듬을 만들기 좋아 보여요. 짧은 인용과 긴 본문을 각각 놓고 행간을 비교해 보세요.",
+      "body": "Google Fonts에서 공개한 나눔명조의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 22,
       "source": {
         "url": "https://fonts.google.com/specimen/Nanum+Myeongjo",
@@ -225,35 +328,53 @@
     {
       "id": "gowun-batang",
       "name": "고운바탕",
-      "body": "정제된 본문에 손으로 쓴 듯한 온기를 조금 더하고 싶을 때 비교해 보세요. 밝은 배경에서 획의 굵기 차이를 살펴보기 좋아요.",
+      "body": "리담한의원 홈페이지의 소개 문장 중 ‘리담한의원’에서 고운바탕 사용을 확인했습니다. 제작사의 작업 리포트에도 고운바탕 사용이 명시되어 있습니다.",
       "demoLikes": 29,
       "source": {
-        "url": "https://fonts.google.com/specimen/Gowun+Batang",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://ridam-clinic.imweb.me/",
+        "publisher": "리담한의원",
+        "caption": "리담한의원 홈페이지의 소개 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/gowun-batang.jpg",
+        "image": "/img/font-showcase/gowun-batang-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "text": "리담한의원",
+          "computedFamily": "GowunBatang-Regular",
           "fonts": [
             {
               "familyName": "Gowun Batang",
               "postScriptName": "GowunBatang-Regular",
               "isCustomFont": true,
-              "glyphCount": 62
+              "glyphCount": 5
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 391.34375,
+            "y": 348.890625,
+            "width": 650,
+            "height": 232
+          },
+          "sourceTitle": "사직동 소아·성장·총명한약 리담한의원",
+          "capturedAt": "2026-10-29T01:53:25.626Z",
+          "sha256": "d038c4c8cbd0c7ef258e613136c1c2b9d61fb4ebf57ff47f11f8b1c8f45ea131",
+          "corroboratingSource": "https://yellopencil.com/design_report_kmong/?bmode=view&idx=167757689"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 330
+        "width": 650,
+        "height": 232
       }
     },
     {
       "id": "do-hyeon",
       "name": "도현체",
-      "body": "각진 획이 짧은 문구를 또렷하게 잡아주는 인상이에요. 행사 제목처럼 강한 위계가 필요한 곳에서 크기와 여백을 함께 조절해 보세요.",
+      "body": "Google Fonts에서 공개한 도현체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 36,
       "source": {
         "url": "https://fonts.google.com/specimen/Do+Hyeon",
@@ -281,28 +402,52 @@
     {
       "id": "k-gmarket-sans",
       "name": "G마켓 산스",
-      "body": "공식 갤러리에서 글꼴 이름을 명시한 적용 예시를 확인했어요. 꽉 찬 글자와 넓은 여백의 대비를 참고하되, 실제 판매 성과나 이용자 반응을 뜻하는 자료는 아니에요.",
+      "body": "메이플스토리의 업데이트 안내 페이지에서 G마켓 산스 사용을 확인했습니다. 확인 범위는 ‘업데이트 자세히 확인하기’ 버튼의 문구입니다.",
       "demoLikes": 43,
       "source": {
-        "url": "https://corp.gmarket.com/fonts/",
-        "kind": "official-example",
-        "publisher": "G마켓",
-        "caption": "G마켓이 공개한 공식 적용 예시",
-        "proof": {
-          "method": "Official publisher explicitly identifies this image as a font application example",
-          "alt": "G마켓 산스 폰트 적용 사례 4",
-          "src": "http://pics.gmarket.co.kr/pc/single/kr/company/galleryimg-4.png"
-        },
-        "image": "/img/font-showcase/k-gmarket-sans.jpg",
+        "url": "https://maplestory.nexon.com/",
+        "publisher": "넥슨 메이플스토리",
+        "caption": "메이플스토리 업데이트 안내 페이지의 버튼 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "width": 1065,
-        "height": 710
+        "image": "/img/font-showcase/k-gmarket-sans-real.jpg",
+        "proof": {
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "A",
+          "id": "",
+          "className": "btn_view",
+          "text": "업데이트 자세히 확인하기",
+          "computedFamily": "GmarketSansTTFMedium, sans-serif",
+          "fonts": [
+            {
+              "familyName": "Gmarket Sans TTF Medium",
+              "postScriptName": "GmarketSansTTFMedium",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 433,
+            "y": 655,
+            "width": 684,
+            "height": 260
+          },
+          "sourceTitle": "[메이플스토리] 2026년 10월 업데이트",
+          "capturedAt": "2026-10-29T01:54:02.837Z",
+          "sha256": "e2e1362fe99db55ad242c7eed582d2c7f60c77e6e1a5c889342d7239f49be5c0"
+        },
+        "width": 684,
+        "height": 245
       }
     },
     {
       "id": "k-ygot-jalnan2",
       "name": "여기어때 잘난체2",
-      "body": "큰 제목에서 곡선과 직선의 조합을 비교하기 좋아요. 첨부는 여기어때의 공식 잘난체2 견본이며, 외부 업체의 사용 후기는 아니에요.",
+      "body": "여기어때에서 공개한 여기어때 잘난체2의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 50,
       "source": {
         "url": "https://gccompany.co.kr/font",
@@ -331,35 +476,52 @@
     {
       "id": "gothic-a1",
       "name": "고딕 A1",
-      "body": "제목과 본문 사이의 굵기 차이를 세밀하게 잡고 싶을 때 비교해 보세요. 한 화면에 너무 많은 굵기를 섞지 않으면 정보 구조를 보기 쉬워요.",
+      "body": "AFL Hyperscale 홈페이지의 데이터센터 소개 제목에서 고딕 A1 사용을 확인했습니다. 이 화면은 고딕 A1의 영문 제목 적용 사례입니다.",
       "demoLikes": 18,
       "source": {
-        "url": "https://fonts.google.com/specimen/Gothic+A1",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://www.aflhyperscale.com/",
+        "publisher": "AFL Hyperscale",
+        "caption": "AFL Hyperscale 홈페이지의 영문 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/gothic-a1.jpg",
+        "image": "/img/font-showcase/gothic-a1-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H2",
+          "id": "",
+          "className": "elementor-heading-title elementor-size-default",
+          "text": "Your Data Center Connectivity Partner.",
+          "computedFamily": "\"Gothic A1\", sans-serif",
           "fonts": [
             {
               "familyName": "Gothic A1",
-              "postScriptName": "GothicA1-Regular",
+              "postScriptName": "GothicA1-Bold",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 37
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 10,
+            "y": 256,
+            "width": 1100,
+            "height": 418
+          },
+          "sourceTitle": "Hyperscale and AI/ML Solutions | We Are AFL",
+          "capturedAt": "2026-10-29T01:53:57.838Z",
+          "sha256": "83d13b16bb7f86bfd93d9a3c180ea3080c30e7161f81f4c8e85e407f9aa986b6"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 284
+        "width": 1100,
+        "height": 418
       }
     },
     {
       "id": "nanum-pen",
       "name": "나눔손글씨 펜",
-      "body": "짧은 메모나 메시지 카드에 가볍고 편안한 분위기를 줄 수 있어요. 실제 손글씨 기록으로 오해되지 않도록 디자인 문구로 활용해 보세요.",
+      "body": "Google Fonts에서 공개한 나눔손글씨 펜의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 25,
       "source": {
         "url": "https://fonts.google.com/specimen/Nanum+Pen+Script",
@@ -387,35 +549,52 @@
     {
       "id": "ibm-plex-sans-kr",
       "name": "IBM Plex Sans KR",
-      "body": "기술 문서처럼 한글·영문·숫자가 자주 교차하는 문장으로 비교해 보세요. 표 안의 숫자와 단위를 함께 놓으면 균형을 살피기 좋아요.",
+      "body": "IBM 한국 홈페이지의 ‘최고의 엔터프라이즈 기술’ 제목에서 IBM Plex Sans KR 사용을 확인했습니다. 제품·기술 소개 화면에 쓰인 한글 제목을 참고해 보세요.",
       "demoLikes": 32,
       "source": {
-        "url": "https://fonts.google.com/specimen/IBM+Plex+Sans+KR",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://www.ibm.com/kr-ko",
+        "publisher": "IBM",
+        "caption": "IBM 한국 홈페이지의 기술 소개 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/ibm-plex-sans-kr.jpg",
+        "image": "/img/font-showcase/ibm-plex-sans-kr-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H2",
+          "id": "",
+          "className": "expressive-heading-05 ",
+          "text": "최고의 엔터프라이즈 기술",
+          "computedFamily": "\"IBM Plex Sans KR\", \"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif",
           "fonts": [
             {
-              "familyName": "IBM Plex Sans KR",
-              "postScriptName": "IBMPlexSansKR-Regular",
+              "familyName": "IBM Plex Sans KR Light",
+              "postScriptName": "IBMPlexSansKR-Light",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 13
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 0,
+            "y": 347.28125,
+            "width": 712,
+            "height": 236.21875
+          },
+          "sourceTitle": "IBM",
+          "capturedAt": "2026-10-29T01:53:07.382Z",
+          "sha256": "1b32d3c8486de8fa83e45ebf55e357cc7a7005eeb266d70841c668a48ab4bd6a"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 330
+        "width": 712,
+        "height": 236
       }
     },
     {
       "id": "asta-sans",
       "name": "아스타 산스",
-      "body": "크기가 다른 제목을 한 화면에 놓고 글자의 밀도를 비교해 보기 좋아요. 가는 굵기는 밝은 배경에서 대비가 충분한지 먼저 확인해 보세요.",
+      "body": "Google Fonts에서 공개한 아스타 산스의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 39,
       "source": {
         "url": "https://fonts.google.com/specimen/Asta+Sans",
@@ -443,40 +622,56 @@
     {
       "id": "k-paperlogy",
       "name": "페이퍼로지",
-      "body": "슬라이드의 큰 제목과 숫자 강조를 함께 비교하기 좋아요. 첨부는 제작자의 소개 페이지 일부로, 실제 고객 발표자료의 사용 사례와는 구분돼요.",
+      "body": "서울디지털평생교육원 홈페이지의 ‘청소년지도사’ 과정 배너에서 페이퍼로지 사용을 확인했습니다. 실제 교육과정 홍보 화면의 큰 제목을 캡처했습니다.",
       "demoLikes": 46,
       "source": {
-        "url": "https://freesentation.blog/paperlogyfont",
-        "kind": "specimen",
-        "publisher": "Freesentation",
-        "caption": "페이퍼로지 공식 소개 페이지 일부",
+        "url": "https://www.sdulife.com/",
+        "publisher": "서울디지털평생교육원",
+        "caption": "서울디지털평생교육원의 청소년지도사 과정 배너",
+        "kind": "usage",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/k-paperlogy-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "text": "PPT 유튜버 페이퍼로지님과 함께 ",
-          "css": "\"Paperlogy 4 Regular\", \"Paperlogy 4 Regular Placeholder\", sans-serif",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "SPAN",
+          "id": "",
+          "className": "bold",
+          "text": "청소년지도사",
+          "computedFamily": "Paperlogy",
           "fonts": [
             {
-              "familyName": "Paperlogy 4 Regular",
-              "postScriptName": "Paperlogy-4Regular",
-              "isCustomFont": true,
-              "glyphCount": 19
+              "familyName": "Paperlogy 8 ExtraBold",
+              "postScriptName": "Paperlogy-8ExtraBold",
+              "isCustomFont": false,
+              "glyphCount": 6
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 75,
+            "y": 198.5,
+            "width": 650,
+            "height": 257
+          },
+          "sourceTitle": "서울디지털평생교육원",
+          "capturedAt": "2026-10-29T01:55:56.922Z",
+          "sha256": "f91e20e20458dfac6dbb9de7cc689445d9315b42eacbc5723ea19c0601a002c9"
         },
-        "image": "/img/font-showcase/k-paperlogy.jpg",
-        "checked": "2026-10-29",
-        "width": 286,
-        "height": 61
+        "width": 650,
+        "height": 257
       }
     },
     {
       "id": "k-freesentation",
       "name": "프리젠테이션",
-      "body": "공식 홈페이지의 큰 제목에서 실제 적용을 확인했어요. 발표 화면을 만들 때는 먼 거리에서도 읽히는 크기와 명도 대비를 같이 살펴보세요.",
+      "body": "Freesentation에서 공개한 프리젠테이션의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 14,
       "source": {
         "url": "https://freesentation.blog/",
-        "kind": "usage",
+        "kind": "specimen",
         "publisher": "Freesentation",
         "caption": "Freesentation 공식 홈페이지 제목",
         "proof": {
@@ -501,7 +696,7 @@
     {
       "id": "single-day",
       "name": "싱글데이",
-      "body": "손글씨 느낌을 살린 짧은 한마디에 어울리는 방향이에요. 긴 설명보다는 카드의 제목이나 강조 문장부터 비교해 보세요.",
+      "body": "Google Fonts에서 공개한 싱글데이의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 21,
       "source": {
         "url": "https://fonts.google.com/specimen/Single+Day",
@@ -529,7 +724,7 @@
     {
       "id": "nanum-brush-script",
       "name": "나눔손글씨 붓",
-      "body": "붓의 리듬이 드러나는 짧은 인용이나 표제에 비교해 보세요. 작은 글씨로 줄이면 획의 특징이 얼마나 남는지도 함께 살펴보면 좋아요.",
+      "body": "Google Fonts에서 공개한 나눔손글씨 붓의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 28,
       "source": {
         "url": "https://fonts.google.com/specimen/Nanum+Brush+Script",
@@ -557,7 +752,7 @@
     {
       "id": "gaegu",
       "name": "개구체",
-      "body": "가지런하지 않은 듯한 글자 흐름이 친근하게 느껴져요. 어린이 콘텐츠를 구상한다면 장식보다 실제 읽기 쉬운 크기를 먼저 확인해 보세요.",
+      "body": "Google Fonts에서 공개한 개구체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 35,
       "source": {
         "url": "https://fonts.google.com/specimen/Gaegu",
@@ -592,37 +787,52 @@
     {
       "id": "k-suit",
       "name": "수트",
-      "body": "UI 문구에서 한글과 숫자의 높이·간격을 함께 비교하기 좋아요. 첨부는 제작자의 공식 소개 페이지이며, 기업 서비스 화면 캡처는 아니에요.",
+      "body": "SK네트웍스 홈페이지의 상단 Company 메뉴에서 SUIT 사용을 확인했습니다. 첨부는 폰트 견본이 아닌 실제 기업 홈페이지의 메뉴 화면입니다.",
       "demoLikes": 49,
       "source": {
-        "url": "https://sun.fo/suit/",
-        "kind": "specimen",
-        "publisher": "SUN TYPEFACE",
-        "caption": "SUIT 제작자 공식 소개 페이지 일부",
-        "usageNote": "제작자는 SK telecom·SK innovation·SK on·SK energy의 UI 사용을 안내합니다. 캡처는 기업 서비스 화면이 아닌 제작자의 소개 페이지입니다.",
+        "url": "https://www.sknetworks.co.kr/",
+        "publisher": "SK네트웍스",
+        "caption": "SK네트웍스 홈페이지의 상단 메뉴",
+        "kind": "usage",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/k-suit-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "text": "인터페이스",
-          "css": "SUIT, sans-serif",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "A",
+          "id": "",
+          "className": "depth1",
+          "text": "Company",
+          "computedFamily": "SUIT, sans-serif",
           "fonts": [
             {
               "familyName": "SUIT",
-              "postScriptName": "SUIT-Regular",
+              "postScriptName": "SUIT-Bold",
               "isCustomFont": true,
-              "glyphCount": 5
+              "glyphCount": 7
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 206.5625,
+            "y": 0,
+            "width": 650,
+            "height": 251.59375
+          },
+          "sourceTitle": "SK Networks",
+          "capturedAt": "2026-10-29T01:55:44.508Z",
+          "sha256": "b66205453f383f823c0ea3b8631d3c4656f257d3faf54f68512dbad1cc2d74d0"
         },
-        "image": "/img/font-showcase/k-suit.jpg",
-        "checked": "2026-10-29",
-        "width": 196,
-        "height": 81
+        "width": 650,
+        "height": 251
       }
     },
     {
       "id": "k-nexon-lv1-gothic",
       "name": "넥슨 Lv.1 고딕",
-      "body": "게임 공지처럼 제목과 설명을 함께 배치할 때 굵기 차이를 비교해 보세요. 첨부는 넥슨이 공개한 Lv.1 고딕 견본이며, 특정 게임 화면의 사용을 주장하지 않아요.",
+      "body": "NEXON에서 공개한 넥슨 Lv.1 고딕의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 17,
       "source": {
         "url": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
@@ -644,35 +854,52 @@
     {
       "id": "hahmlet",
       "name": "함렛",
-      "body": "부리와 획의 대비를 살린 큰 제목으로 먼저 비교해 보고 싶어요. 본문에 쓸 때는 화면 크기별로 가는 획이 사라지지 않는지 확인해 보세요.",
+      "body": "Satisfly 홈페이지의 ‘E-Commerce Agency’ 제목에서 함렛 사용을 확인했습니다. 한글용 견본이 아닌 실제 서비스 사이트의 영문 제목 사례입니다.",
       "demoLikes": 24,
       "source": {
-        "url": "https://fonts.google.com/specimen/Hahmlet",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://satisfly.co/",
+        "publisher": "Satisfly",
+        "caption": "Satisfly 홈페이지의 영문 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/hahmlet.jpg",
+        "image": "/img/font-showcase/hahmlet-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H1",
+          "id": "",
+          "className": "",
+          "text": "E-Commerce Agency",
+          "computedFamily": "Hahmlet, Georgia, \"Times New Roman\", serif",
           "fonts": [
             {
-              "familyName": "Hahmlet",
-              "postScriptName": "Hahmlet-Regular",
+              "familyName": "Hahmlet Black",
+              "postScriptName": "Hahmlet-Black",
               "isCustomFont": true,
-              "glyphCount": 62
+              "glyphCount": 16
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 0,
+            "y": 149.65625,
+            "width": 728,
+            "height": 314.1875
+          },
+          "sourceTitle": "Satisfly - E-Commerce, that sells",
+          "capturedAt": "2026-10-29T01:53:51.757Z",
+          "sha256": "eac2ce0e8a6748d93bdb63de536983fc12f884faca6245b021db880e9a3566a3"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 330
+        "width": 728,
+        "height": 314
       }
     },
     {
       "id": "yeon-sung",
       "name": "연성",
-      "body": "붓글씨의 흐름이 있는 짧은 문장에 어울리는 인상이에요. 정보가 많은 페이지라면 제목에만 쓰는 구성도 비교해 보세요.",
+      "body": "Google Fonts에서 공개한 연성의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 31,
       "source": {
         "url": "https://fonts.google.com/specimen/Yeon+Sung",
@@ -707,7 +934,7 @@
     {
       "id": "bagel-fat-one",
       "name": "베이글 팻 원",
-      "body": "두툼한 곡선이 짧은 제목을 하나의 덩어리처럼 보여줘요. 문구가 길어질수록 줄바꿈과 글자 사이 여백을 먼저 조절해 보세요.",
+      "body": "Google Fonts에서 공개한 베이글 팻 원의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 45,
       "source": {
         "url": "https://fonts.google.com/specimen/Bagel+Fat+One",
@@ -735,7 +962,7 @@
     {
       "id": "dongle",
       "name": "동글체",
-      "body": "둥글고 좁은 글자 폭이 만드는 리듬을 비교해 보기 좋아요. 다른 글꼴과 같은 숫자 크기만 적용하지 말고 실제로 보이는 크기를 맞춰 보세요.",
+      "body": "Google Fonts에서 공개한 동글체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 13,
       "source": {
         "url": "https://fonts.google.com/specimen/Dongle",
@@ -763,7 +990,7 @@
     {
       "id": "gamja-flower",
       "name": "감자꽃",
-      "body": "작은 안내 카드에 손글씨 같은 온기를 더하는 방향이에요. 배경 장식이 많으면 글자가 묻힐 수 있으니 단순한 배경에서도 비교해 보세요.",
+      "body": "Google Fonts에서 공개한 감자꽃의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
       "demoLikes": 20,
       "source": {
         "url": "https://fonts.google.com/specimen/Gamja+Flower",
