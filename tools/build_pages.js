@@ -283,7 +283,7 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
   const hdr = `<header>
   <div class="wrap hd">
     <a class="logo tb-logo" href="https://letsum.app/" aria-label="렛섬 LETSUM 메인으로"><img src="/img/logo-retro-v1.svg" alt="렛섬 LETSUM" width="652" height="252" style="height:44px;width:auto"><span class="tb-brand">필사독서</span></a>
-    <nav class="main"><a href="#/" class="on">서가</a><a href="#/studio" data-studio-nav="true">화방</a></nav>
+    <nav class="main"><a href="#/" class="on">서가</a><a href="#/studio" data-studio-nav="true">화방</a><a href="#/dot-retro" data-dot-nav="true">도트레트로</a></nav>
     <div class="sp"></div>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
   </div>

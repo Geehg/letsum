@@ -32,13 +32,14 @@ html[data-tb-boot] #tbBoot{display:block}
 <link rel="stylesheet" href="/css/typing-model-gallery.css?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/css/typing-studio.css?v=6">
+<link rel="stylesheet" href="/css/typing-dot.css?v=1">
 </head>
 <body class="tb-page">
 <div id="tbBoot" role="status"><p>필사 공간을 준비하고 있어요…</p><button type="button" hidden onclick="location.reload()">다시 불러오기</button></div>
 <header>
   <div class="wrap hd">
     <a class="logo tb-logo" href="https://letsum.app/" aria-label="렛섬 LETSUM 메인으로"><img src="/img/logo-retro-v1.svg" alt="렛섬 LETSUM" width="652" height="252" style="height:44px;width:auto"><span class="tb-brand">필사독서</span></a>
-    <nav class="main"><a href="#/" class="on">서가</a><a href="#/studio" data-studio-nav="true">화방</a></nav>
+    <nav class="main"><a href="#/" class="on">서가</a><a href="#/studio" data-studio-nav="true">화방</a><a href="#/dot-retro" data-dot-nav="true">도트레트로</a></nav>
     <div class="sp"></div>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
   </div>
@@ -271,6 +272,39 @@ html[data-tb-boot] #tbBoot{display:block}
   <div class="tb-print" id="tbPrintArea" aria-hidden="true"></div>
   <div class="tb-toast" id="tbToast" role="status" aria-live="polite"></div>
 </main>
+<section id="drApp" class="dr-app" hidden aria-labelledby="drTitle">
+ <div class="dr-heading"><div><p class="dr-kicker">LETSUM · DOT RETRO</p><h1 id="drTitle">사진 한 장, <span>점으로 남기다.</span></h1><p>빛과 그림자를 작은 잉크 점으로. 나만의 레트로 인쇄 이미지를 만들어 보세요.</p></div><span class="dr-private">사진은 이 기기에서만 처리됩니다</span></div>
+ <div class="dr-work">
+  <aside class="dr-panel" aria-label="도트레트로 설정">
+   <fieldset><legend><span>01</span>사진 가져오기</legend>
+    <label id="drDrop" class="dr-drop"><input id="drFile" type="file" accept="image/jpeg,image/png,image/webp" aria-label="도트로 바꿀 사진 선택"><b>＋ 사진 선택 또는 끌어놓기</b><small>JPG · PNG · WebP / 최대 20MB<br>최대 2,400만 화소</small></label>
+    <p id="drFileName" class="dr-file">사진을 선택하거나 예제로 시작하세요.</p><div class="dr-links"><button id="drExample" type="button" class="dr-link">예제로 시작</button><button id="drClear" type="button" class="dr-link" disabled>사진 지우기</button></div>
+   </fieldset>
+   <fieldset><legend><span>02</span>인쇄의 질감</legend>
+    <label class="dr-label" style="margin-top:0">표현 방식<select id="drMode"><option value="grain">레트로 입자 · 거친 인쇄점</option><option value="diffusion">디더링 · 섬세한 명암</option><option value="halftone">하프톤 · 둥근 망점</option></select></label>
+    <label class="dr-label" for="drDot">점 크기 <output id="drDotValue" for="drDot">2</output><input id="drDot" type="range" min="1" max="12" step="1" value="2"></label>
+    <label class="dr-label" for="drContrast">대비 <output id="drContrastValue" for="drContrast">115%</output><input id="drContrast" type="range" min="40" max="200" value="115"></label>
+    <label class="dr-label" for="drBrightness">밝기 <output id="drBrightnessValue" for="drBrightness">0</output><input id="drBrightness" type="range" min="-50" max="50" value="0"></label>
+    <div class="dr-links"><button id="drReset" class="dr-link" type="button">질감 초기화</button></div>
+   </fieldset>
+   <fieldset><legend><span>03</span>잉크와 종이</legend>
+    <label class="dr-label" style="margin-top:0">색 조합<select id="drPalette"><option value="rose">네이비 × 로즈</option><option value="cream">먹색 × 크림</option><option value="green">포레스트 × 아이보리</option><option value="orange">버밀리언 × 웜화이트</option><option value="custom" disabled>직접 고른 색</option></select></label>
+    <div class="dr-colors"><label>잉크색<input id="drInk" type="color" value="#2a267c"></label><label>종이색<input id="drPaper" type="color" value="#efd8dd"></label></div>
+    <label class="dr-check"><input id="drTransparent" type="checkbox">종이색 없이 투명하게 저장</label>
+   </fieldset>
+   <label class="dr-label" style="margin-top:0">출력 크기 · 긴 변 기준<select id="drSize"><option value="1200">1,200px · 가볍게</option><option value="1600" selected>1,600px · 기본</option><option value="2400">2,400px · 크게</option></select></label>
+   <p id="drSizeNote" class="dr-save-note">원본보다 확대하지 않습니다. 화면의 결과와 같은 크기로 저장합니다.</p>
+   <button id="drSave" class="dr-primary" type="button" style="margin-top:18px" disabled>PNG로 저장 ↓</button>
+  </aside>
+  <div class="dr-stage">
+   <div class="dr-stage-head"><span id="drDimensions">PRINT PREVIEW</span><div class="dr-view-tabs" role="group" aria-label="사진 비교"><button id="drViewOriginal" type="button" aria-pressed="false">원본</button><button id="drViewResult" type="button" aria-pressed="true">도트레트로</button></div></div>
+   <div id="drPaperFrame" class="dr-paper"><div id="drEmpty" class="dr-empty"><b aria-hidden="true">∴</b>사진을 불러오면<br>이곳에 인쇄 이미지가 나타납니다.</div><canvas id="drOriginal" hidden aria-label="변환 전 원본 사진"></canvas><canvas id="drResult" hidden aria-label="도트레트로 변환 결과"></canvas></div>
+   <div class="dr-stage-foot"><p id="drStatus" class="dr-status" role="status" aria-live="polite">사진 한 장으로 시작해 보세요.</p><div class="dr-links" style="margin:0"><button id="drCancel" type="button" class="dr-link" hidden>중단</button><button id="drRetry" type="button" class="dr-link" hidden>다시 변환</button><button id="drZoom" type="button" class="dr-link" disabled aria-pressed="false">실제 크기 보기</button></div></div>
+  </div>
+ </div>
+ <div class="dr-caption"><p><b>작은 점이 만드는 인쇄의 표정</b><br>밝은 곳은 종이로, 어두운 곳은 잉크로 표현합니다. 밝은 배경과 뚜렷한 피사체가 있는 사진부터 시작해 보세요. 배경을 자동으로 지우는 효과는 아닙니다.</p><p>사진은 서버로 전송하거나 계정에 저장하지 않습니다.<br>저장 전 페이지를 새로고침하면 작업이 사라집니다.</p></div>
+</section>
+
 <section id="tsStudio" class="ts-studio" hidden aria-labelledby="tsTitle">
  <div class="ts-heading"><div><p class="ts-eyebrow">LETSUM · TYPEWRITER ATELIER</p><h1 id="tsTitle">문자로 그리는 화방</h1><p>사진의 빛과 그림자를, 한 타 한 타 종이 위에.</p></div><a href="#/">서가로 돌아가기 ↗</a></div>
  <section id="tsChooser" class="ts-chooser" aria-labelledby="tsChooseTitle"><h2 id="tsChooseTitle">그림을 함께할 타자기를 고르세요.</h2><div class="ts-models">
@@ -352,7 +386,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="/js/common.js?v=2" data-base="https://letsum.app/"></script>
 <script src="/js/shot.js?v=2"></script>
 <script src="/js/typing-audio.js?v=2"></script>
-<script src="/js/typing.js?v=39"></script>
+<script src="/js/typing.js?v=40"></script>
 <script src="/js/typing-sync.js?v=3"></script>
 <script src="/js/typing-3d.js?v=6"></script>
 <script src="/js/typing-retro-focus.js?v=11"></script>
@@ -371,6 +405,7 @@ html[data-tb-boot] #tbBoot{display:block}
 <script src="/js/typing-studio-flow.js?v=8"></script>
 <script src="/js/typing-studio-audio.js?v=1"></script>
 <script src="/js/typing-studio-documents.js?v=1"></script>
-<script src="/js/typing-studio.js?v=15"></script>
+<script src="/js/typing-studio.js?v=16"></script>
+<script src="/js/typing-dot.js?v=1"></script>
 </body>
 </html>

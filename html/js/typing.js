@@ -601,7 +601,8 @@
   };
 
   function route() {
-    if (location.hash.split("?")[0] === "#/studio") { showShelf(); document.title = "화방 — 타자기로 그리는 그림 | LETSUM"; return; }
+    const room = location.hash.split("?")[0];
+    if (["#/studio", "#/dot-retro"].includes(room)) { showShelf(); document.title = room === "#/studio" ? "화방 — 타자기로 그리는 그림 | LETSUM" : "도트레트로 — 사진을 점으로 바꾸는 인쇄 화방 | LETSUM"; return; }
     const m = location.hash.match(/^#\/read\/(.+)$/);
     if (m) return openBook(decodeURIComponent(m[1])); else showShelf();
   }

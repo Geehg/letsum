@@ -51,7 +51,7 @@
  function reset(){generationId++;finishing=false;pause();stopJob();plan=null;playback=null;cursor=0;resetMotion();clearExport();ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);area.style.setProperty('--feed',1);area.style.setProperty('--carriage','0px');area.classList.add('is-empty');area.classList.remove('is-complete');$('tsProgress').value=0;$('tsCount').textContent='A4 · 세로';$('tsPaperHint').hidden=false;controls();}
  function route(){
   active=location.hash.split('?')[0]==='#/studio';root.hidden=!active;document.body.classList.toggle('ts-open',active);
-  document.querySelectorAll('header .main a').forEach(a=>{if(a.dataset.studioNav)a.classList.toggle('on',active);else if(a.textContent.trim()==='서가')a.classList.toggle('on',!active);});
+  document.querySelectorAll('header .main a').forEach(a=>{if(a.dataset.studioNav)a.classList.toggle('on',active);else if(a.textContent.trim()==='서가')a.classList.toggle('on',!active&&location.hash.split('?')[0]!=='#/dot-retro');});
   if(active){document.title='화방 — 타자기로 그리는 그림 | LETSUM';document.documentElement.removeAttribute('data-tb-boot');clearTimeout(window.tbBootTimer);}
   else{pause();cancelMask();cancelTextImport();controls();if(busy){stopJob();status('분석을 중단했어요. 돌아와 다시 그릴 수 있습니다.');controls();}}
  }
