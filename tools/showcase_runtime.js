@@ -16,10 +16,10 @@
     return `<section class="sc-review${compact ? ' sc-compact' : ''}" data-post-type="${!attachment ? 'sample' : isUsage ? 'bot-usage' : 'bot-reference'}" aria-label="${esc(t(badge))}">
       <div class="sc-heading"><span class="sc-avatar" aria-hidden="true">${attachment ? '봇' : 'L'}</span><b>${attachment ? '렛썸봇' : 'LETSUM'}</b><span class="sc-badge">${esc(t(badge))}</span></div>
       <p class="sc-text">${esc(t(item.body))}</p>
-      ${attachment ? `<figure class="sc-figure"><a href="${safeURL(attachment.url)}" target="_blank" rel="noopener noreferrer" title="${esc(t('출처에서 원본 보기'))}"><img src="${safeURL(attachment.image)}" alt="${esc(t(attachment.caption))}" loading="lazy" width="${attachment.width}" height="${attachment.height}"></a><figcaption><span class="sc-badge">${esc(t(label(attachment)))}</span> ${esc(t(attachment.caption))}<br><a href="${safeURL(attachment.url)}" target="_blank" rel="noopener noreferrer">${esc(attachment.publisher)} ↗</a> · <span>${esc(t('확인일'))} ${esc(attachment.checked)}</span></figcaption></figure>${!compact && attachment.usageNote ? `<p class="sc-note">${esc(t(attachment.usageNote))}</p>` : ''}` : `<p class="sc-note">${esc(t('확인된 사용 사례 이미지 없음'))}</p>`}
+      ${attachment ? `<figure class="sc-figure"><a href="${safeURL(attachment.url)}" target="_blank" rel="noopener noreferrer" title="${esc(t('출처에서 원본 보기'))}"><img src="${safeURL(attachment.image)}" alt="${esc(t(attachment.caption))}" loading="lazy" width="${attachment.width}" height="${attachment.height}"></a><figcaption><span class="sc-badge">${esc(t(label(attachment)))}</span> ${esc(t(attachment.caption))}<br><a href="${safeURL(attachment.url)}" target="_blank" rel="noopener noreferrer">${esc(attachment.publisher)} ↗</a> · <span>${esc(t('확인일'))}</span> ${esc(attachment.checked)}</figcaption></figure>${!compact && attachment.usageNote ? `<p class="sc-note">${esc(t(attachment.usageNote))}</p>` : ''}` : `<p class="sc-note">${esc(t('확인된 사용 사례 이미지 없음'))}</p>`}
       ${!attachment ? `<p class="sc-demo"><span aria-hidden="true">♡</span> <span>${esc(t('데모 좋아요'))}</span> ${item.demoLikes} <span>· ${esc(t('실제 집계 제외'))}</span></p>` : ''}
       <p class="sc-disclosure">${esc(t(disclosure))}</p>
-      ${compact ? `<button type="button" class="sc-open" data-cmt="${esc(id)}">${esc(t('리뷰 보기·남기기'))} ↗</button>` : ''}
+      ${compact ? `<button type="button" class="sc-open" data-cmt="${esc(id)}"><span>${esc(t('리뷰 보기·남기기'))}</span> ↗</button>` : ''}
     </section>`;
   };
   window.LSShowcase = { feed: id => render(id, true), review: id => render(id, false) };

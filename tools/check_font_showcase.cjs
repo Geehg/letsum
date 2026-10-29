@@ -66,6 +66,8 @@ const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json');
   await page.waitForSelector('.rv-list .sc-review');assert.match(await page.locator('.rv-empty').innerText(),/could not|unable|failed|불러오지/i);
   await page.goto(base+'/?ui=en&view=feed&q=주아체');await page.waitForSelector('.sc-review');
   assert.match(await page.locator('.sc-heading b').innerText(),/Letsum Bot/);
+  assert.match(await page.locator('.sc-figure figcaption').innerText(),/Checked/);
+  assert.match(await page.locator('.sc-open').innerText(),/Read or write a review/);
   assert.match(await page.locator('.sc-disclosure').innerText(),/reference material, not a real-service usage example/);
   assert.equal(await page.locator('.sc-demo').count(),0);
   await page.evaluate(()=>LSUI.choose('ko'));
