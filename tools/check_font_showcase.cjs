@@ -1,7 +1,9 @@
 // Exercise bot attribution, reference/usage separation, real-count isolation and posting.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {chromium}=require(process.env.LETSUM_PLAYWRIGHT||'playwright');
-const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json');
+const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json'),dictionary=require('./i18n/en.json');
+const added=['jua','black-han-sans','nanum-myeongjo','asta-sans','k-freesentation','gaegu','k-nexon-lv1-gothic','bagel-fat-one'];
+for(const id of added){const r=data.entries.find(x=>x.id===id);assert.equal(r.source.kind,'usage');assert(dictionary[r.body]);assert(dictionary[r.source.caption]);}
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});
  try{
@@ -29,8 +31,8 @@ const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json');
   assert.equal(posts.filter(x=>['/api/like','/api/comments','/api/comment-like'].includes(x.path)).length,0);
   const counts=await page.evaluate(ids=>ids.map(id=>({id,html:LSShowcase.feed(id)})),data.entries.map(x=>x.id));
   assert.equal(counts.length,30);
-  assert.equal(data.entries.filter(x=>x.source?.kind==='usage').length,12);
-  assert.equal(data.entries.filter(x=>x.source?.kind==='specimen').length,16);
+  assert.equal(data.entries.filter(x=>x.source?.kind==='usage').length,20);
+  assert.equal(data.entries.filter(x=>x.source?.kind==='specimen').length,8);
   for(const x of counts){
    const source=data.entries.find(e=>e.id===x.id).source;
    assert.match(x.html,/sc-disclosure/);assert(!x.html.includes('data-like='));
@@ -64,7 +66,7 @@ const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json');
   await page.route('**/api/comments?*',route=>route.fulfill({status:503,json:{error:'unavailable'}}));
   await page.goto(base+'/?ui=en&view=feed&q=프리텐다드');await page.waitForSelector('.sc-open');await page.locator('.sc-open').click();
   await page.waitForSelector('.rv-list .sc-review');assert.match(await page.locator('.rv-empty').innerText(),/could not|unable|failed|불러오지/i);
-  await page.goto(base+'/?ui=en&view=feed&q=주아체');await page.waitForSelector('.sc-review');
+  await page.goto(base+'/?ui=en&view=feed&q=도현체');await page.waitForSelector('.sc-review');
   assert.match(await page.locator('.sc-heading b').innerText(),/Letsum Bot/);
   assert.match(await page.locator('.sc-figure figcaption').innerText(),/Checked/);
   assert.match(await page.locator('.sc-open').innerText(),/Read or write a review/);
@@ -73,6 +75,6 @@ const root=path.join(__dirname,'..'),data=require('./state/font_showcase.json');
   await page.evaluate(()=>LSUI.choose('ko'));
   assert.match(await page.locator('.sc-disclosure').innerText(),/참고용으로 게시한 공식 견본/);
   await page.screenshot({path:'/tmp/letsum-bot-reference.png'});
-  assert.deepEqual(errors,[]);console.log('PASS: 12 verified usage posts, 16 bot references, 2 samples, 28 attachments, real counts/reviews, posting, ko/en, mobile, API failure');
+  assert.deepEqual(errors,[]);console.log('PASS: 20 verified usage posts, 8 bot references, 2 samples, 28 attachments, real counts/reviews, posting, ko/en, mobile, API failure');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

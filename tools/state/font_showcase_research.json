@@ -82,8 +82,31 @@
     },
     {
       "id": "jua",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Jua",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/jua.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Jua",
+              "postScriptName": "Jua-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 284
+      },
+      "currentURL": "https://cozy.dreim.dev/",
+      "scope": "cozy campers."
     },
     {
       "id": "nanum-gothic",
@@ -115,8 +138,31 @@
     },
     {
       "id": "black-han-sans",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Black+Han+Sans",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/black-han-sans.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Black Han Sans",
+              "postScriptName": "BlackHanSans-Regular",
+              "isCustomFont": true,
+              "glyphCount": 63
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 287
+      },
+      "currentURL": "https://moimevent.site/",
+      "scope": "한불수교 140주년"
     },
     {
       "id": "gowun-dodum",
@@ -148,8 +194,31 @@
     },
     {
       "id": "nanum-myeongjo",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Nanum+Myeongjo",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/nanum-myeongjo.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "NanumMyeongjo",
+              "postScriptName": "NanumMyeongjo",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 284
+      },
+      "currentURL": "https://hippi-ibz.com/",
+      "scope": "At Hippi Ibz, we believe in living life to the fullest with love, kindness, and a free-spirited attitude. Our clothing line is inspired by the beautiful island of Ibiza, where we encourage you to find your own truth and embrace every moment of your journey. We believe that life is a journey, not a destination, and that every moment should be lived with joy and gratitude. Join us on our mission to spread positivity and live the Hippi Ibz lifestyle."
     },
     {
       "id": "gowun-batang",
@@ -273,8 +342,31 @@
     },
     {
       "id": "asta-sans",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Asta+Sans",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/asta-sans.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Asta Sans Light",
+              "postScriptName": "AstaSans-Regular",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 272
+      },
+      "currentURL": "https://42dot.ai/",
+      "scope": "42dot은 현대자동차그룹의 글로벌 소프트웨어 센터로, 소프트웨어와 AI를 통해 모빌리티 패러다임을 바꾸고 있습니다."
     },
     {
       "id": "k-paperlogy",
@@ -307,8 +399,32 @@
     },
     {
       "id": "k-freesentation",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://freesentation.blog/",
+        "kind": "specimen",
+        "publisher": "Freesentation",
+        "caption": "Freesentation 공식 홈페이지 제목",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "text": "당신의 PPT가 아름답도록..",
+          "css": "\"Freesentation 8 ExtraBold\", \"Freesentation 8 ExtraBold Placeholder\", sans-serif",
+          "fonts": [
+            {
+              "familyName": "Freesentation 8 ExtraBold",
+              "postScriptName": "Freesentation-8ExtraBold",
+              "isCustomFont": true,
+              "glyphCount": 16
+            }
+          ]
+        },
+        "image": "/img/font-showcase/k-freesentation.jpg",
+        "checked": "2026-10-29",
+        "width": 1040,
+        "height": 148
+      },
+      "currentURL": "https://www.sindoh.com/about/business-overview?hsLang=ko-kr",
+      "scope": "1960년, 대한민국에서"
     },
     {
       "id": "single-day",
@@ -322,8 +438,31 @@
     },
     {
       "id": "gaegu",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Gaegu",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/gaegu.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Gaegu",
+              "postScriptName": "Gaegu-Regular",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 286
+      },
+      "currentURL": "https://flemmetea.com/",
+      "scope": "Japanese everyday tea"
     },
     {
       "id": "k-accchildrenskyotf",
@@ -362,8 +501,25 @@
     },
     {
       "id": "k-nexon-lv1-gothic",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
+        "publisher": "NEXON",
+        "checked": "2026-10-29",
+        "kind": "specimen",
+        "caption": "넥슨 Lv.1 고딕 공식 견본",
+        "image": "/img/font-showcase/k-nexon-lv1-gothic.jpg",
+        "proof": {
+          "method": "Chrome CSS.getPlatformFontsForNode: custom font and nonzero glyph count verified on initial capture",
+          "familyMatch": "NexonLv1Gothic",
+          "capturedText": "업그레이드 된 플레이 게임세계에 입장하기 전 떨림과 설레임 1234567890",
+          "recheck": "Later source visits timed out; retained the visually checked first capture, whose renderer verification succeeded."
+        },
+        "width": 699,
+        "height": 99
+      },
+      "currentURL": "https://nexonhands.tistory.com/",
+      "scope": "넥슨이 하는 코딩 교육은 어떻게 다를까?"
     },
     {
       "id": "hahmlet",
@@ -405,8 +561,31 @@
     },
     {
       "id": "bagel-fat-one",
-      "decision": "retain-official-reference",
-      "reason": "No replacement passed the actual-use verification in this review."
+      "decision": "replace-with-verified-website",
+      "previousSource": {
+        "url": "https://fonts.google.com/specimen/Bagel+Fat+One",
+        "kind": "specimen",
+        "publisher": "Google Fonts",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/bagel-fat-one.jpg",
+        "proof": {
+          "method": "Chrome rendered fonts",
+          "selector": ".hero__text-sample",
+          "fonts": [
+            {
+              "familyName": "Bagel Fat One",
+              "postScriptName": "BagelFatOne-Regular",
+              "isCustomFont": true,
+              "glyphCount": 64
+            }
+          ]
+        },
+        "caption": "Google Fonts 공식 견본 일부",
+        "width": 984,
+        "height": 330
+      },
+      "currentURL": "https://savasgames.com/",
+      "scope": "Toy-box games for your phone"
     },
     {
       "id": "dongle",
@@ -417,6 +596,149 @@
       "id": "gamja-flower",
       "decision": "retain-official-reference",
       "reason": "No replacement passed the actual-use verification in this review."
+    }
+  ],
+  "followupReviews": [
+    {
+      "checked": "2026-10-29",
+      "reviewed": 18,
+      "replaced": 8,
+      "entries": [
+        {
+          "id": "jua",
+          "decision": "replaced",
+          "url": "https://cozy.dreim.dev/",
+          "scope": "cozy campers."
+        },
+        {
+          "id": "black-han-sans",
+          "decision": "replaced",
+          "url": "https://moimevent.site/",
+          "scope": "한불수교 140주년"
+        },
+        {
+          "id": "nanum-myeongjo",
+          "decision": "replaced",
+          "url": "https://hippi-ibz.com/",
+          "scope": "At Hippi Ibz, we believe in living life to the fullest with love, kindness, and a free-spirited attitude. Our clothing line is inspired by the beautiful island of Ibiza, where we encourage you to find your own truth and embrace every moment of your journey. We believe that life is a journey, not a destination, and that every moment should be lived with joy and gratitude. Join us on our mission to spread positivity and live the Hippi Ibz lifestyle."
+        },
+        {
+          "id": "do-hyeon",
+          "decision": "retain-official-reference",
+          "reason": "게임 크레딧과 지원 폰트 목록은 찾았지만 캡처할 특정 문구에 적용된 글꼴을 확인하지 못함.",
+          "candidates": [
+            "https://www.sume.com/docs/media/video-captions"
+          ]
+        },
+        {
+          "id": "k-ygot-jalnan2",
+          "decision": "retain-official-reference",
+          "reason": "제작사 사례는 Jalnan2를 명시하지만 현재 구름계란덮밥의 확인한 텍스트는 Pretendard/GmarketSans로 렌더링됨. 이미지 문구의 정확한 서체 버전은 미확인.",
+          "candidates": [
+            "https://website.ne.kr/portfolio/gooruem/",
+            "https://gooruem.com/"
+          ]
+        },
+        {
+          "id": "nanum-pen",
+          "decision": "retain-official-reference",
+          "reason": "서비스 저작권 고지와 게임 크레딧의 사용 목록은 확인했지만 특정 실제 화면 문구와의 연결 근거가 부족함.",
+          "candidates": [
+            "https://signitforme.com/copyright.html",
+            "https://ikgoo.itch.io/wanderhearth"
+          ]
+        },
+        {
+          "id": "asta-sans",
+          "decision": "replaced",
+          "url": "https://42dot.ai/",
+          "scope": "42dot은 현대자동차그룹의 글로벌 소프트웨어 센터로, 소프트웨어와 AI를 통해 모빌리티 패러다임을 바꾸고 있습니다."
+        },
+        {
+          "id": "k-freesentation",
+          "decision": "replaced",
+          "url": "https://www.sindoh.com/about/business-overview?hsLang=ko-kr",
+          "scope": "1960년, 대한민국에서"
+        },
+        {
+          "id": "single-day",
+          "decision": "retain-official-reference",
+          "reason": "공식 견본과 배포·지원 폰트 목록 외에 적용 범위를 확인할 수 있는 실제 사이트·광고·패키지 근거를 확보하지 못함.",
+          "candidates": []
+        },
+        {
+          "id": "nanum-brush-script",
+          "decision": "retain-official-reference",
+          "reason": "ChordInk의 크레딧에 포함되지만 현재 초기 화면에서 실제 렌더링은 확인되지 않음. 지원 폰트 목록만으로 교체하지 않음.",
+          "candidates": [
+            "https://chordink.com/credits",
+            "https://chordink.com/"
+          ]
+        },
+        {
+          "id": "gaegu",
+          "decision": "replaced",
+          "url": "https://flemmetea.com/",
+          "scope": "Japanese everyday tea"
+        },
+        {
+          "id": "k-accchildrenskyotf",
+          "decision": "no-attachment",
+          "reason": "기관 홈페이지와 배포·출처표시 안내를 확인했지만 하늘맑은체의 특정 실제 적용 문구는 미확인.",
+          "candidates": [
+            "https://www.acc.go.kr/main"
+          ]
+        },
+        {
+          "id": "k-nexon-lv1-gothic",
+          "decision": "replaced",
+          "url": "https://nexonhands.tistory.com/",
+          "scope": "넥슨이 하는 코딩 교육은 어떻게 다를까?"
+        },
+        {
+          "id": "yeon-sung",
+          "decision": "retain-official-reference",
+          "reason": "게임 크레딧과 영상 자막 지원 목록 단서는 있으나 실제 캡처 영역의 서체를 확정하지 못함.",
+          "candidates": [
+            "https://www.sume.com/docs/media/video-captions"
+          ]
+        },
+        {
+          "id": "k-kccdodamdodam",
+          "decision": "no-attachment",
+          "reason": "배포·이용 안내 이외에 서체 사용이 명시되고 실제 적용 화면까지 대조할 수 있는 사례를 확보하지 못함.",
+          "candidates": []
+        },
+        {
+          "id": "bagel-fat-one",
+          "decision": "replaced",
+          "url": "https://savasgames.com/",
+          "scope": "Toy-box games for your phone"
+        },
+        {
+          "id": "dongle",
+          "decision": "retain-official-reference",
+          "reason": "Onlee 로고 제작 사례는 Dongle Bold를 명시하지만 실제 운영·인쇄 적용과 포트폴리오 목업을 구분할 근거가 부족함. 게임 소개 사이트도 다른 서체로 렌더링됨.",
+          "candidates": [
+            "https://www.fletch.design/onlee-accounting-logo",
+            "https://www.majorariatto.com/pineapple-on-pizza"
+          ]
+        },
+        {
+          "id": "gamja-flower",
+          "decision": "retain-official-reference",
+          "reason": "공개 게임의 크레딧에 사용 사실이 명시되어 있지만 캡처할 특정 화면 문구와의 연결 검증은 완료하지 못함.",
+          "candidates": [
+            "https://espiongames.itch.io/sprouts",
+            "https://a-random-developer.itch.io/the-unimaginably-hard-life-of-a-potato"
+          ]
+        }
+      ],
+      "notes": [
+        "CSS names or a font list alone are not sufficient.",
+        "Some designer case studies are outdated: current rendering was used to decide.",
+        "No advertising or packaging image passed the verification in this round."
+      ]
     }
   ]
 }

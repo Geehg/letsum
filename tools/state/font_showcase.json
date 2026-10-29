@@ -148,29 +148,51 @@
     {
       "id": "jua",
       "name": "주아체",
-      "body": "Google Fonts에서 공개한 주아체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "Cozy Campers 웹게임의 시작 화면 제목에서 주아체 사용을 확인했습니다. 첨부는 실제 게임 시작 메뉴의 영문 제목을 캡처한 화면입니다.",
       "demoLikes": 33,
       "source": {
-        "url": "https://fonts.google.com/specimen/Jua",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://cozy.dreim.dev/",
+        "publisher": "Cozy Campers",
+        "caption": "Cozy Campers 웹게임의 시작 화면 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/jua.jpg",
+        "image": "/img/font-showcase/jua-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "visibility": "Screenshot visually reviewed: title is visible; pointer-events passes through to the game canvas",
+          "tag": "H1",
+          "id": "menu-title",
+          "className": "",
+          "text": "cozy campers.",
+          "computedFamily": "Jua, sans-serif",
           "fonts": [
             {
               "familyName": "Jua",
               "postScriptName": "Jua-Regular",
               "isCustomFont": true,
-              "glyphCount": 63
+              "glyphCount": 13
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 65.32023620605469,
+            "y": 144.2879180908203,
+            "width": 747.0064239501953,
+            "height": 314.8450469970703
+          },
+          "sourceTitle": "Cozy Campers",
+          "capturedAt": "2026-10-29T06:41:21.444Z",
+          "sha256": "a95ed883e7b23027b1d15f56947c85793d433afc3d9a2a436cf9ed8c707e90f8",
+          "expectedFamilies": [
+            "Jua"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29."
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 284
+        "width": 747,
+        "height": 314
       }
     },
     {
@@ -227,29 +249,51 @@
     {
       "id": "black-han-sans",
       "name": "검은고딕",
-      "body": "Google Fonts에서 공개한 검은고딕의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "프랑스의 한국 문화 행사를 소개하는 Moim 홈페이지에서 검은고딕 사용을 확인했습니다. 확인한 문구는 ‘한불수교 140주년’이며, 행사 안내 화면 일부를 첨부했습니다.",
       "demoLikes": 47,
       "source": {
-        "url": "https://fonts.google.com/specimen/Black+Han+Sans",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://moimevent.site/",
+        "publisher": "Moim",
+        "caption": "Moim 한국 문화 행사 안내 사이트의 한불수교 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/black-han-sans.jpg",
+        "image": "/img/font-showcase/black-han-sans-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "visibility": "hit-test",
+          "tag": "SPAN",
+          "id": "",
+          "className": "mq-ko",
+          "text": "한불수교 140주년",
+          "computedFamily": "\"Black Han Sans\", Pretendard, sans-serif",
           "fonts": [
             {
               "familyName": "Black Han Sans",
               "postScriptName": "BlackHanSans-Regular",
               "isCustomFont": true,
-              "glyphCount": 63
+              "glyphCount": 10
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 307.90625,
+            "y": 684.28125,
+            "width": 650,
+            "height": 238.875
+          },
+          "sourceTitle": "Moim — l'agenda de la culture coréenne en France",
+          "capturedAt": "2026-10-29T06:41:28.425Z",
+          "sha256": "ce7d57b8f327bd3f0614f088f115e4fb1b483cb2de8c5c51166e41c447e92ee5",
+          "expectedFamilies": [
+            "Black Han Sans"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29."
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 287
+        "width": 650,
+        "height": 215
       }
     },
     {
@@ -300,29 +344,53 @@
     {
       "id": "nanum-myeongjo",
       "name": "나눔명조",
-      "body": "Google Fonts에서 공개한 나눔명조의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "Hippi IBZ 의류 브랜드 홈페이지의 영문 소개 본문에서 나눔명조 사용을 확인했습니다. 브랜드의 가치와 분위기를 소개하는 실제 웹페이지 문단입니다.",
       "demoLikes": 22,
       "source": {
-        "url": "https://fonts.google.com/specimen/Nanum+Myeongjo",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://hippi-ibz.com/",
+        "publisher": "Hippi IBZ",
+        "caption": "Hippi IBZ 의류 브랜드 홈페이지의 영문 소개 본문",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/nanum-myeongjo.jpg",
+        "image": "/img/font-showcase/nanum-myeongjo-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "visibility": "hit-test",
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "text": "At Hippi Ibz, we believe in living life to the fullest with love, kindness, and a free-spirited attitude. Our clothing line is inspired by the beautiful island of Ibiza, where we encourage you to find your own truth and embrace every moment of your journey. We believe that life is a journey, not a destination, and that every moment should be lived with joy and gratitude. Join us on our mission to spread positivity and live the Hippi Ibz lifestyle.",
+          "computedFamily": "\"Nanum Myeongjo\", sans-serif",
           "fonts": [
             {
               "familyName": "NanumMyeongjo",
               "postScriptName": "NanumMyeongjo",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 447
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 165.5,
+            "y": 299.75,
+            "width": 949,
+            "height": 330
+          },
+          "sourceTitle": "Hippi IBZ",
+          "capturedAt": "2026-10-29T06:43:43.477Z",
+          "sha256": "e4d4a7c847ba5850ca00532b30fd0e11fe835382a775ee31d14d682ba8e05252",
+          "expectedFamilies": [
+            "NanumMyeongjo",
+            "Nanum Myeongjo"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29.",
+          "corroboratingSource": "https://martaib.com/project-hippi-ibz/"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 284
+        "width": 949,
+        "height": 330
       }
     },
     {
@@ -594,29 +662,50 @@
     {
       "id": "asta-sans",
       "name": "아스타 산스",
-      "body": "Google Fonts에서 공개한 아스타 산스의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "42dot 기업 홈페이지의 한글 소개 문장에서 아스타 산스 사용을 확인했습니다. 캡처의 작은 한글 본문이 확인 범위이며, 위의 큰 영문 제목은 다른 서체입니다.",
       "demoLikes": 39,
       "source": {
-        "url": "https://fonts.google.com/specimen/Asta+Sans",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://42dot.ai/",
+        "publisher": "42dot",
+        "caption": "42dot 홈페이지의 기업 소개 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/asta-sans.jpg",
+        "image": "/img/font-showcase/asta-sans-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "P",
+          "id": "",
+          "className": "KeyVisual-module-scss-module__iElTzq__kv_desc",
+          "text": "42dot은 현대자동차그룹의 글로벌 소프트웨어 센터로, 소프트웨어와 AI를 통해 모빌리티 패러다임을 바꾸고 있습니다.",
+          "computedFamily": "\"Asta Sans\", sans-serif, sans-serif",
           "fonts": [
             {
-              "familyName": "Asta Sans Light",
-              "postScriptName": "AstaSans-Regular",
+              "familyName": "Asta Sans Medium",
+              "postScriptName": "AstaSans-Medium",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 65
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 0,
+            "y": 734.703125,
+            "width": 1036,
+            "height": 200.296875
+          },
+          "sourceTitle": "포티투닷 - SDV, AI 기술로 소프트웨어 혁신을 이끄는 기업 | 42dot",
+          "capturedAt": "2026-10-29T06:36:18.601Z",
+          "sha256": "9b9fe0f002adb143dc7f8bed02294075b59aea40e894332548956f118665a715",
+          "expectedFamilies": [
+            "Asta Sans"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29."
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 272
+        "width": 1036,
+        "height": 165
       }
     },
     {
@@ -667,30 +756,52 @@
     {
       "id": "k-freesentation",
       "name": "프리젠테이션",
-      "body": "Freesentation에서 공개한 프리젠테이션의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "신도리코 사업개요 페이지의 ‘1960년, 대한민국에서’ 제목에서 프리젠테이션 사용을 확인했습니다. 회사의 사무혁신 역사를 소개하는 실제 화면입니다.",
       "demoLikes": 14,
       "source": {
-        "url": "https://freesentation.blog/",
-        "kind": "specimen",
-        "publisher": "Freesentation",
-        "caption": "Freesentation 공식 홈페이지 제목",
+        "url": "https://www.sindoh.com/about/business-overview?hsLang=ko-kr",
+        "publisher": "신도리코",
+        "caption": "신도리코 사업개요 페이지의 사무혁신 소개 제목",
+        "kind": "usage",
+        "checked": "2026-10-29",
+        "image": "/img/font-showcase/k-freesentation-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "text": "당신의 PPT가 아름답도록..",
-          "css": "\"Freesentation 8 ExtraBold\", \"Freesentation 8 ExtraBold Placeholder\", sans-serif",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "visibility": "hit-test",
+          "tag": "SPAN",
+          "id": "",
+          "className": "ti-container",
+          "text": "1960년, 대한민국에서",
+          "computedFamily": "Freesentation",
           "fonts": [
             {
-              "familyName": "Freesentation 8 ExtraBold",
-              "postScriptName": "Freesentation-8ExtraBold",
+              "familyName": "Freesentation 5 Medium",
+              "postScriptName": "Freesentation-5Medium",
               "isCustomFont": true,
-              "glyphCount": 16
+              "glyphCount": 14
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 386.71875,
+            "y": 314.7959899902344,
+            "width": 650,
+            "height": 239
+          },
+          "sourceTitle": "사업개요",
+          "capturedAt": "2026-10-29T06:43:48.871Z",
+          "sha256": "360ffa306eb763b24117d222a44b36d85cfa49add5c06ded4b22d8a9e6b7ff70",
+          "expectedFamilies": [
+            "Freesentation"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29.",
+          "corroboratingSource": "https://www.sindoh.com/hubfs/site/docs/sindoh_CI_Simple%20Guidelines.pdf?hsLang=ko-kr"
         },
-        "image": "/img/font-showcase/k-freesentation.jpg",
-        "checked": "2026-10-29",
-        "width": 1040,
-        "height": 148
+        "width": 650,
+        "height": 239
       }
     },
     {
@@ -752,29 +863,51 @@
     {
       "id": "gaegu",
       "name": "개구체",
-      "body": "Google Fonts에서 공개한 개구체의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "Flemme Tea 온라인 매장의 ‘Japanese everyday tea’ 문구에서 개구체 사용을 확인했습니다. 실제 차 브랜드 쇼핑몰에 쓰인 영문 소개 문구입니다.",
       "demoLikes": 35,
       "source": {
-        "url": "https://fonts.google.com/specimen/Gaegu",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://flemmetea.com/",
+        "publisher": "Flemme Tea",
+        "caption": "Flemme Tea 온라인 매장의 영문 소개 문구",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/gaegu.jpg",
+        "image": "/img/font-showcase/gaegu-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "text": "Japanese everyday tea",
+          "computedFamily": "Gaegu, cursive",
           "fonts": [
             {
               "familyName": "Gaegu",
               "postScriptName": "Gaegu-Regular",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 21
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 0,
+            "y": 241,
+            "width": 1100,
+            "height": 260
+          },
+          "sourceTitle": "flemme tea - Japanese everyday tea",
+          "capturedAt": "2026-10-29T06:39:14.213Z",
+          "sha256": "eee757dd2997f405c7bd698cad7bcdbe4203a613ebc2337f52814b4c14b004c8",
+          "expectedFamilies": [
+            "Gaegu"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29.",
+          "corroboratingSource": "https://www.lanlai.design/flemme"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 286
+        "width": 1100,
+        "height": 260
       }
     },
     {
@@ -832,23 +965,51 @@
     {
       "id": "k-nexon-lv1-gothic",
       "name": "넥슨 Lv.1 고딕",
-      "body": "NEXON에서 공개한 넥슨 Lv.1 고딕의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "넥슨 사회공헌 블로그의 ‘넥슨이 하는 코딩 교육은 어떻게 다를까?’ 제목에서 넥슨 Lv.1 고딕 사용을 확인했습니다. 서체 배포 페이지가 아닌 사회공헌 소식 화면입니다.",
       "demoLikes": 17,
       "source": {
-        "url": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
-        "publisher": "NEXON",
+        "url": "https://nexonhands.tistory.com/",
+        "publisher": "넥슨핸즈",
+        "caption": "넥슨 사회공헌 블로그의 코딩 교육 소식 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "kind": "specimen",
-        "caption": "넥슨 Lv.1 고딕 공식 견본",
-        "image": "/img/font-showcase/k-nexon-lv1-gothic.jpg",
+        "image": "/img/font-showcase/k-nexon-lv1-gothic-real.jpg",
         "proof": {
-          "method": "Chrome CSS.getPlatformFontsForNode: custom font and nonzero glyph count verified on initial capture",
-          "familyMatch": "NexonLv1Gothic",
-          "capturedText": "업그레이드 된 플레이 게임세계에 입장하기 전 떨림과 설레임 1234567890",
-          "recheck": "Later source visits timed out; retained the visually checked first capture, whose renderer verification succeeded."
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "SPAN",
+          "id": "",
+          "className": "title",
+          "text": "넥슨이 하는 코딩 교육은 어떻게 다를까?",
+          "computedFamily": "NEXON_Lv1_Gothic_OTF, sans-serif",
+          "fonts": [
+            {
+              "familyName": "NEXON Lv1 Gothic OTF",
+              "postScriptName": "NEXONLv1GothicOTFRegular",
+              "isCustomFont": true,
+              "glyphCount": 22
+            }
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 560,
+            "y": 673.59375,
+            "width": 720,
+            "height": 253.984375
+          },
+          "sourceTitle": "넥슨 사회공헌 블로그 - 넥슨핸즈 이야기",
+          "capturedAt": "2026-10-29T06:37:37.874Z",
+          "sha256": "4c51e92de6a9b6cdf3737758b73085f2f6b82a05e292ab4f738afd799f12805a",
+          "expectedFamilies": [
+            "NEXON Lv1 Gothic",
+            "NEXON Lv.1 Gothic"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29."
         },
-        "width": 699,
-        "height": 99
+        "width": 720,
+        "height": 226
       }
     },
     {
@@ -934,29 +1095,51 @@
     {
       "id": "bagel-fat-one",
       "name": "베이글 팻 원",
-      "body": "Google Fonts에서 공개한 베이글 팻 원의 공식 견본 일부입니다. 렛썸봇이 글자의 형태와 획을 비교할 수 있도록 참고용으로 게시했습니다.",
+      "body": "Savas Games 홈페이지의 ‘Toy-box games for your phone’ 제목에서 베이글 팻 원 사용을 확인했습니다. 게임 스튜디오가 실제 서비스 소개에 사용한 영문 제목입니다.",
       "demoLikes": 45,
       "source": {
-        "url": "https://fonts.google.com/specimen/Bagel+Fat+One",
-        "kind": "specimen",
-        "publisher": "Google Fonts",
+        "url": "https://savasgames.com/",
+        "publisher": "Savas Games",
+        "caption": "Savas Games 홈페이지의 영문 제목",
+        "kind": "usage",
         "checked": "2026-10-29",
-        "image": "/img/font-showcase/bagel-fat-one.jpg",
+        "image": "/img/font-showcase/bagel-fat-one-real.jpg",
         "proof": {
-          "method": "Chrome rendered fonts",
-          "selector": ".hero__text-sample",
+          "method": "Chrome CSS.getPlatformFontsForNode",
+          "tag": "H1",
+          "id": "",
+          "className": "max-w-4xl font-display text-5xl text-balance text-ink sm:text-7xl lg:col-span-3 lg:text-hero",
+          "text": "Toy-box games for your phone",
+          "computedFamily": "\"Bagel Fat One\", \"Bagel Fallback\", ui-rounded, system-ui, sans-serif",
           "fonts": [
             {
               "familyName": "Bagel Fat One",
               "postScriptName": "BagelFatOne-Regular",
               "isCustomFont": true,
-              "glyphCount": 64
+              "glyphCount": 27
             }
-          ]
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "clip": {
+            "x": 4,
+            "y": 50.5,
+            "width": 792,
+            "height": 348
+          },
+          "sourceTitle": "Savas Games — cosy puzzle and arcade games for phones",
+          "capturedAt": "2026-10-29T06:36:23.634Z",
+          "sha256": "df7da33f5a811e4302a2b33e810e3779a6f3833b74e8bd219f9d3b7ec7a78601",
+          "expectedFamilies": [
+            "Bagel Fat One"
+          ],
+          "visualReview": "Verified text is visible in the saved crop; visually reviewed on 2026-10-29.",
+          "corroboratingSource": "https://savasgames.com/press"
         },
-        "caption": "Google Fonts 공식 견본 일부",
-        "width": 984,
-        "height": 330
+        "width": 792,
+        "height": 348
       }
     },
     {
