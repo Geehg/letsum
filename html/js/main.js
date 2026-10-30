@@ -25,68 +25,139 @@
     : `<div class="intro-pv none${cls ? " " + cls : ""}"><b>${esc(f.name)}</b><span class="i-cap">미리보기 미제공 · 배포처에서 생김새 확인</span></div>`;
   // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
   const fmtRel = (d) => !d ? "" : d.length === 4 ? d + "년" : d.length === 7 ? `${d.slice(0, 4)}년 ${+d.slice(5)}월` : d.replace(/-/g, ".");
-  // ---------- LETSUM 미리보기 웹폰트 로더 ----------
-  // 1) 카드에 실제로 보이는 굵기 1개를 먼저 받는다(한 폰트의 굵기 9개를 다 받을 때까지 기다리지 않음) → 나머지 굵기는 한가할 때.
-  // 2) 화면 1.5장 앞에서 미리 줄을 세우고, 지금 화면에 들어온 카드는 줄 맨 앞으로(지나간 카드가 앞을 막지 않게).
-  // 3) 동시에 6개까지. 받는 중엔 data-fl="wait"(흐리게), 실패하면 한 번 다시 시도.
-  const declared = new Set(); const faceState = {}; const faceWait = []; const faceLater = []; const gotW = {};
-  let faceActive = 0; const FACE_MAX = 6;
+  // Preview faces are loaded by requested weight, with one job per font/weight.
+  // Keep nearby cards and open dialogs, then evict least-recently-used faces over the budget.
+  const faceState = {}, faceEntries = new Map(), faceQueue = [], nearFaces = new Set(), googleSheets = new Map();
+  let faceActive = 0, faceClock = 0;
+  const FACE_MAX = 6, FACE_CACHE_MAX = 96;
   const fmtOf = (u) => { u = u.split("?")[0]; return /\.otf$/.test(u) ? "opentype" : /\.ttf$/.test(u) ? "truetype" : /\.woff$/.test(u) ? "woff" : "woff2"; };
   const shownW = (f) => { const ws = Object.keys(f.webfont).map(Number); const w = state.weight; return ws.includes(w) ? w : ws.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); };
+  const idOf = (el) => FONTS.find((x) => x.id === el.dataset.id);
   function markFace(id, st) {
     faceState[id] = st;
     document.querySelectorAll(`[data-id="${id}"]`).forEach((el) => { if (st === "ok") el.removeAttribute("data-fl"); else el.setAttribute("data-fl", st); });
   }
-  async function loadFace(job, retry) {
-    const { f, ws, main } = job; const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
-    const todo = ws.filter((w) => !(gotW[f.id] || new Set()).has(w)); if (!todo.length) { if (main) markFace(f.id, "ok"); return; }
-    const faces = todo.map((w) => { const url = f.webfont[w]; return new FontFace(fam, `url("${url}${retry ? (url.includes("?") ? "&" : "?") + "r=1" : ""}") format("${fmtOf(url)}")`, { weight: String(w), display: "swap" }); });
-    faces.forEach((x) => document.fonts.add(x));
-    const t = main ? setTimeout(() => { if (faceState[f.id] === "wait") markFace(f.id, "slow"); }, 8000) : 0;
+  function pinnedFaces() {
+    const ids = new Set([...nearFaces].filter(el => el.isConnected).map(el => el.dataset.id));
+    const hero = document.querySelector('#nbTrack .sp.on'); if (hero) ids.add(hero.dataset.id);
+    if (document.querySelector('#overlay.open')) {
+      const id = location.hash.match(/^#f=([\w-]+)/); if (id) ids.add(id[1]);
+      document.querySelectorAll('#modalBox [data-open],#modalBox [data-cid],#modalBox [data-did]').forEach(el => ids.add(el.dataset.open || el.dataset.cid || el.dataset.did));
+    }
+    return ids;
+  }
+  function trimFaces() {
+    const pinned = pinnedFaces();
+    for (const [id, sheet] of [...googleSheets].sort((a, b) => a[1].used - b[1].used)) {
+      if (googleSheets.size <= 24) break;
+      if (pinned.has(id) || sheet.status === 'loading') continue;
+      sheet.link.remove(); googleSheets.delete(id);
+    }
+    const loaded = [...faceEntries.values()].filter(e => e.status === 'loaded');
+    let excess = loaded.length - FACE_CACHE_MAX; if (excess <= 0) return;
+    for (const e of loaded.sort((a, b) => a.used - b.used)) {
+      if (excess <= 0) break;
+      if (pinned.has(e.f.id)) continue;
+      document.fonts.delete(e.face); faceEntries.delete(e.key); excess--;
+      delete faceState[e.f.id];
+    }
+  }
+  function ensureGoogleFont(f, priority) {
+    // The small Korean catalogue also supports the full-catalogue glyph filter.
+    // Latin/dingbat catalogues have hundreds of families: load only the ones in use.
+    if (!LAT) return fontsCssReady.then(() => true);
+    let sheet = googleSheets.get(f.id);
+    if (sheet?.status === 'failed' && priority) { sheet.link.remove(); googleSheets.delete(f.id); sheet = null; }
+    if (sheet) { sheet.used = ++faceClock; return sheet.promise; }
+    const link = document.createElement('link'); link.rel = 'stylesheet'; link.dataset.fontPreview = f.id;
+    sheet = { link, status:'loading', used:++faceClock };
+    sheet.promise = new Promise(resolve => {
+      const done = ok => { if (sheet.status !== 'loading') return; clearTimeout(timer); sheet.status = ok ? 'loaded' : 'failed'; resolve(ok); trimFaces(); };
+      const timer = setTimeout(() => done(false), 10000);
+      link.onload = () => done(true); link.onerror = () => done(false);
+    });
+    googleSheets.set(f.id, sheet);
+    link.href = 'https://fonts.googleapis.com/css2?family=' + f.en.replace(/ /g, '+') + ':wght@' + f.weights.join(';') + '&display=swap';
+    document.head.appendChild(link);
+    return sheet.promise;
+  }
+  async function loadFace(e) {
+    e.status = 'loading';
+    const fam = e.f.family.split(',')[0].replace(/['"]/g, '').trim();
+    let ok = false;
+    const slow = setTimeout(() => { if (faceState[e.f.id] === 'wait') markFace(e.f.id, 'slow'); }, 8000);
     try {
-      await Promise.all(faces.map((x) => x.load())); clearTimeout(t);
-      (gotW[f.id] = gotW[f.id] || new Set()); todo.forEach((w) => gotW[f.id].add(w));
-      if (main) { markFace(f.id, "ok"); const rest = Object.keys(f.webfont).map(Number).filter((w) => !gotW[f.id].has(w)); if (rest.length) { faceLater.push({ f, ws: rest, main: false }); } }
-    } catch (e) {
-      clearTimeout(t); faces.forEach((x) => document.fonts.delete(x));
-      if (!retry) { await new Promise((r) => setTimeout(r, 1500)); return loadFace(job, true); }
-      if (main) { markFace(f.id, "fail"); ev("ffail", f.id); } // 모니터링: 미리보기 실패 폰트(폰트별 합계)
+      for (let retry = 0; retry < 2; retry++) {
+        const url = e.f.webfont[e.w];
+        const face = new FontFace(fam, `url("${url}${retry ? (url.includes('?') ? '&' : '?') + 'r=1' : ''}") format("${fmtOf(url)}")`, { weight: String(e.w), display: 'swap' });
+        e.face = face; document.fonts.add(face);
+        try { await face.load(); ok = true; break; }
+        catch (_) { document.fonts.delete(face); e.face = null; }
+      }
+      e.status = ok ? 'loaded' : 'failed';
+      if (e.w === shownW(e.f)) markFace(e.f.id, ok ? 'ok' : 'fail');
+      if (!ok) ev('ffail', e.f.id);
+    } catch (_) {
+      e.status = 'failed'; if (e.face) document.fonts.delete(e.face); e.face = null;
+      if (e.w === shownW(e.f)) markFace(e.f.id, 'fail');
+    } finally {
+      clearTimeout(slow); e.resolve(ok); trimFaces();
     }
   }
   function pumpFaces() {
-    while (faceActive < FACE_MAX && (faceWait.length || (faceLater.length && faceActive < 2))) {  // 나머지 굵기는 2개까지만(화면 카드가 늘 우선)
-      const job = faceWait.length ? faceWait.shift() : faceLater.shift(); faceActive++;
-      loadFace(job).finally(() => { faceActive--; pumpFaces(); });
+    while (faceActive < FACE_MAX && faceQueue.length) {
+      const e = faceQueue.shift(); faceActive++;
+      loadFace(e).finally(() => { faceActive--; pumpFaces(); });
     }
   }
-  function ensureFace(f, priority) {
-    if (!f || !f.webfont) return;
-    if (priority && faceState[f.id] === "fail") declared.delete(f.id); // 상세를 열면 실패한 폰트를 다시 시도
-    if (declared.has(f.id)) { // 대기 중인데 지금 필요해지면 앞으로
-      const k = faceWait.findIndex((j) => j.f === f); if (priority && k > 0) { faceWait.unshift(faceWait.splice(k, 1)[0]); }
-      if (priority) { const l = faceLater.findIndex((j) => j.f === f); if (l >= 0) faceWait.unshift(faceLater.splice(l, 1)[0]); pumpFaces(); } // 상세처럼 모든 굵기가 필요할 때
-      const w = shownW(f); if (faceState[f.id] === "ok" && !(gotW[f.id] || new Set()).has(w)) { faceWait.unshift({ f, ws: [w], main: false }); pumpFaces(); } // 굵기 전환 직후
-      return;
-    }
-    declared.add(f.id); markFace(f.id, "wait");
-    const job = { f, ws: [shownW(f)], main: true };
-    priority ? faceWait.unshift(job) : faceWait.push(job); pumpFaces();
+  function ensureFace(f, priority, weights) {
+    if (!f || f.intro) return Promise.resolve(false);
+    if (!f.webfont) return ensureGoogleFont(f, priority);
+    const wanted = Array.isArray(weights) ? weights : [shownW(f)];
+    const jobs = wanted.filter(w => f.webfont[w]).map(w => {
+      const key = f.id + ':' + w;
+      let e = faceEntries.get(key);
+      if (e && e.status === 'failed' && priority) { faceEntries.delete(key); e = null; }
+      if (!e) {
+        e = { key, f, w, status:'queued', face:null, used:++faceClock };
+        e.promise = new Promise(resolve => { e.resolve = resolve; });
+        faceEntries.set(key, e); priority ? faceQueue.unshift(e) : faceQueue.push(e);
+      } else {
+        e.used = ++faceClock;
+        if (priority && e.status === 'queued') { const i = faceQueue.indexOf(e); if (i > 0) faceQueue.unshift(faceQueue.splice(i, 1)[0]); }
+      }
+      return e;
+    });
+    const primary = faceEntries.get(f.id + ':' + shownW(f));
+    if (primary) markFace(f.id, primary.status === 'loaded' ? 'ok' : primary.status === 'failed' ? 'fail' : 'wait');
+    pumpFaces();
+    return Promise.all(jobs.map(e => e.promise)).then(results => results.length > 0 && results.every(Boolean));
   }
-  // 멀리(화면 1.5장 앞) 들어오면 줄을 세우고, 화면에 실제로 보이면 맨 앞으로
-  const idOf = (el) => FONTS.find((x) => x.id === el.dataset.id);
-  const faceNear = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
-    if (!e.isIntersecting) return; ensureFace(idOf(e.target)); faceNear.unobserve(e.target);
-  }), { rootMargin: "150% 0px" }) : null;
-  const faceSeen = "IntersectionObserver" in window ? new IntersectionObserver((ents) => ents.forEach((e) => {
-    if (!e.isIntersecting) return; const f = idOf(e.target); if (faceState[f && f.id] !== "ok") ensureFace(f, true); else faceSeen.unobserve(e.target);
-  }), { rootMargin: "0px" }) : null;
+  const faceNear = 'IntersectionObserver' in window ? new IntersectionObserver(ents => {
+    for (const e of ents) {
+      if (e.isIntersecting) { nearFaces.add(e.target); const f = idOf(e.target); ensureFace(f, false, state.view === 'list' ? f?.weights : undefined); }
+      else nearFaces.delete(e.target);
+    }
+    trimFaces();
+  }, { rootMargin:'50% 0px' }) : null;
+  const faceSeen = 'IntersectionObserver' in window ? new IntersectionObserver(ents => {
+    for (const e of ents) if (e.isIntersecting) ensureFace(idOf(e.target), true);
+  }) : null;
   function observeFaces(root) {
-    (root || document).querySelectorAll("[data-id]").forEach((el) => {
-      const f = idOf(el); if (!f || !f.webfont) return;
-      if (faceState[f.id] && faceState[f.id] !== "ok") el.setAttribute("data-fl", faceState[f.id]);
-      if (faceState[f.id] === "ok") return;
+    (root || document).querySelectorAll('[data-id]').forEach(el => {
+      const f = idOf(el); if (!f || f.intro) return;
+      if (faceState[f.id] && faceState[f.id] !== 'ok') el.setAttribute('data-fl', faceState[f.id]);
       if (faceNear) { faceNear.observe(el); faceSeen.observe(el); } else ensureFace(f);
     });
+  }
+  function resetFaceObservers() {
+    faceNear?.disconnect(); faceSeen?.disconnect(); nearFaces.clear();
+    // A replaced result set no longer needs queued prefetches. Running loads settle normally.
+    const keep = pinnedFaces();
+    for (let i = faceQueue.length - 1; i >= 0; i--) {
+      const e = faceQueue[i]; if (keep.has(e.f.id)) continue;
+      faceQueue.splice(i, 1); faceEntries.delete(e.key); e.resolve(false);
+    }
   }
   // KS X 1001 완성형 2,350자 집합 — 2,350자 폰트의 누락 글자를 폰트를 받지 않고도 판정
   const KSX = (() => {
@@ -100,6 +171,7 @@
   })();
 
   const fontsCssReady = new Promise((resolve) => {
+    if (LAT) { resolve(); return; }
     const fam = FONTS.filter(isGF).map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
     if (!fam) { resolve(); return; }
     const link = document.createElement("link");
@@ -154,6 +226,7 @@
   const isCJK = (ch) => /[ᄀ-ᇿ㄰-㆏ꥠ-꥿가-퟿㐀-䶿一-鿿豈-﫿]/.test(ch);
 
   async function detectAll() {
+    if (LAT) return;
     await fontsCssReady;
     const gf = FONTS.filter(isGF);
     await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가나다ㅣㅡ").catch(() => {})));
@@ -165,10 +238,10 @@
   }
   // LETSUM 웹폰트의 형태 측정은 상세를 열 때(파일을 받은 뒤) 한다
   async function measureLazy(f) {
-    if (!f.webfont || metrics[f.id]) return;
-    ensureFace(f);
+    if (f.intro || metrics[f.id]) return;
+    if (!await ensureFace(f, true, f.webfont ? [400 in f.webfont ? 400 : shownW(f)] : undefined)) return;
     const fam = f.family.split(",")[0].replace(/['"]/g, "").trim();
-    await document.fonts.load(`400 48px "${fam}"`, "가나다ㅣㅡ").catch(() => {});
+    await document.fonts.load(`400 48px "${fam}"`, LAT ? 'ABCIX' : "가나다ㅣㅡ").catch(() => {});
     metrics[f.id] = measure(fam);
   }
 
@@ -186,7 +259,7 @@
     }
     return function (en) {
       try {
-        const a = ink("가나다", en), v = ink("ㅣ", en), h = ink("ㅡ", en);
+        const a = ink(LAT ? 'ABC' : "가나다", en), v = ink(LAT ? 'I' : "ㅣ", en), h = ink(LAT ? '_' : "ㅡ", en);
         return { density: a.n / (a.w * 48 || 1), width: a.w / 48 / 3, contrast: h.rows / (v.cols || 1) };
       } catch (e) { return null; }
     };
@@ -671,7 +744,7 @@
       const tr = card.querySelector(".ig-track"); const first = tr.firstElementChild;
       const html = s.shots.map((x) => `<div class="ig-s ig-shot"><img src="/api/shot/${x.id}" alt="사용 사례" loading="lazy"><span class="ig-cap2">사용 사례 · ${esc(x.name)}</span></div>`).join("");
       first.insertAdjacentHTML("afterend", html);
-      const n = tr.children.length; const m = card.querySelector(".ig-media");
+      const n = tr.children.length - (tr.querySelector(".ig-clone") ? 1 : 0); const m = card.querySelector(".ig-media");
       let dots = m.querySelector(".ig-dots");
       if (!dots) { m.insertAdjacentHTML("beforeend", '<button class="ig-nav prev" aria-label="이전 이미지">‹</button><button class="ig-nav next" aria-label="다음 이미지">›</button><div class="ig-dots"></div>'); dots = m.querySelector(".ig-dots"); bindCarousel(m); }
       dots.innerHTML = Array.from({ length: n }, (_, k) => `<i class="${k ? "" : "on"}"></i>`).join("");
@@ -814,37 +887,45 @@
   // '동작 줄이기'(윈도우 '애니메이션 효과' 끔) 설정이어도 넘김은 유지하고, 미끄러지는 대신 바로 바꾼다
   const canHover = matchMedia("(hover:hover)").matches;
   const lessMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const carouselDisposers = new Map();
+  function disposeCarousels() { for (const dispose of carouselDisposers.values()) dispose(); carouselDisposers.clear(); }
   function bindCarousel(m) {
     if (m.dataset.bound) return; m.dataset.bound = "1";
     const tr = m.querySelector(".ig-track");
+    let disposed = false, t = null, t0 = null, se = null, fade = null;
+    const stop = () => { clearInterval(t); clearTimeout(t0); clearTimeout(se); clearTimeout(fade); t = t0 = se = fade = null; };
+    carouselDisposers.set(m, () => { disposed = true; stop(); });
+    const loadWeights = () => { const card = m.closest('[data-id]'); if (card) { const f = idOf(card); ensureFace(f, true, f?.weights); } };
+    m.addEventListener('pointerdown', loadWeights, { passive: true });
+    m.addEventListener('mouseenter', loadWeights);
     // 마우스를 올리면 1.6초마다 다음 이미지로 — 마지막 뒤에 첫 장 복제를 붙여 계속 왼쪽으로 넘어가는 무한 반복(되감기 없음)
-    const real = tr.children.length;
+    const count = () => tr.children.length - (tr.querySelector(".ig-clone") ? 1 : 0);
     const kOf = () => Math.round(tr.scrollLeft / tr.clientWidth);
     // 진행 중인 부드러운 넘김·스냅을 끊고 첫 장으로 순간 이동
-    const jump0 = () => { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; requestAnimationFrame(() => { tr.scrollLeft = 0; tr.style.scrollSnapType = ""; }); };
-    if (canHover && real > 1) {
+    const jump0 = () => { if (disposed) return; tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; requestAnimationFrame(() => { if (disposed) return; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; }); };
+    if (canHover && count() > 1) {
       const cl = tr.children[0].cloneNode(true); cl.setAttribute("aria-hidden", "true"); cl.classList.add("ig-clone"); tr.appendChild(cl);
-      let t = null, t0 = null; const card = m.closest(".ig") || m;
-      const step = () => { let k = kOf(); if (k >= real) { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; k = 0; } tr.scrollTo({ left: (k + 1) * tr.clientWidth, behavior: lessMotion ? "auto" : "smooth" }); };
+      const card = m.closest(".ig") || m;
+      const step = () => { if (disposed || !m.isConnected || document.hidden) { stop(); return; } const real = count(); let k = kOf(); if (k >= real) { tr.style.scrollSnapType = "none"; tr.scrollLeft = 0; tr.style.scrollSnapType = ""; k = 0; } tr.scrollTo({ left: (k + 1) * tr.clientWidth, behavior: lessMotion ? "auto" : "smooth" }); };
       // 복제 장(=첫 장과 같은 그림)에 도착하면 보이지 않게 진짜 첫 장으로 순간 이동
-      let se = null; const snap = () => { if (kOf() >= real) jump0(); };
+      const snap = () => { if (kOf() >= count()) jump0(); };
       tr.addEventListener("scroll", () => { clearTimeout(se); se = setTimeout(snap, 140); }, { passive: true });
       // 0.7초 이상 머물 때만 시작(스크롤하며 스치는 것은 무시)
       card.addEventListener("mouseenter", () => {
         clearInterval(t); clearTimeout(t0);
-        t0 = setTimeout(() => { if (Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, lessMotion ? 2200 : 1600); }, 700);
+        t0 = setTimeout(() => { if (disposed || !m.isConnected || Date.now() - lastScroll < 300 || !card.matches(":hover")) return; step(); t = setInterval(step, lessMotion ? 2200 : 1600); }, 700);
       });
       // 떠나면 멈추고, 뒤로 감기는 움직임 없이 살짝 사라졌다 첫 장으로 나타남
       card.addEventListener("mouseleave", () => {
         clearInterval(t); clearTimeout(t0); t = t0 = null;
         if (tr.scrollLeft < 2) return;
         tr.classList.add("ig-fade");
-        setTimeout(() => { jump0(); requestAnimationFrame(() => requestAnimationFrame(() => tr.classList.remove("ig-fade"))); }, 180);
+        fade = setTimeout(() => { jump0(); requestAnimationFrame(() => requestAnimationFrame(() => tr.classList.remove("ig-fade"))); }, 180);
       });
     }
     const go = (d) => tr.scrollBy({ left: d * tr.clientWidth, behavior: "smooth" });
     m.addEventListener("click", (e) => { const b = e.target.closest(".ig-nav"); if (b) go(b.classList.contains("prev") ? -1 : 1); });
-    tr.addEventListener("scroll", () => { const k = kOf() % real; m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
+    tr.addEventListener("scroll", () => { const k = kOf() % count(); m.querySelectorAll(".ig-dots i").forEach((d, j) => d.classList.toggle("on", j === k)); }, { passive: true });
   }
   function bindFeed(host) {
     host.querySelectorAll(".ig-media").forEach(bindCarousel);
@@ -862,46 +943,58 @@
     host.querySelectorAll("[data-cmt]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.cmt, "comments")));
     host.querySelectorAll("[data-lic-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.licOpen, "license")));
     loadStats([...host.querySelectorAll(".ig[data-id]")].map((el) => el.dataset.id));
-    $("#feedMore")?.addEventListener("click", () => { state.feedN = (state.feedN || 24) + 24; render(); });
   }
 
   // ---------- 메인 렌더 ----------
-  let renderSig = "", shownN = 60;
+  let renderSig = "", shownN = 60, renderedN = 0, moreObserver = null;
   // 목록 불러오기: 120종까지만 화면 끝에서 자동으로 이어 붙이고, 그 뒤는 '더 보기' 버튼으로(푸터에 늘 닿도록)
   const AUTO_MAX = 120, STEP = 60;
   // 다른 페이지에 갔다가 돌아오면 불러온 개수·위치를 되살림(이 탭에서만)
   let restore = null; try { restore = JSON.parse(sessionStorage.getItem("ls_listpos") || "null"); } catch (e) {}
   const savePos = () => { try { sessionStorage.setItem("ls_listpos", JSON.stringify({ sig: renderSig, n: shownN, y: scrollY })); } catch (e) {} };
   addEventListener("pagehide", savePos); document.addEventListener("visibilitychange", () => { if (document.hidden) savePos(); });
-  function render() {
+  function render(append = false) {
     const list = filtered();
     $("#count").innerHTML = `<b>${list.length}</b> / ${FONTS.length}종`;
     const host = $("#results");
+    if (moreObserver) { moreObserver.disconnect(); moreObserver = null; }
     // 한 번에 다 그리지 않고 60개씩: 끝에 닿으면 이어서 그린다(DOM을 가볍게)
     const sig = state.view + "|" + list.length + "|" + (list[0] || {}).id;
     if (sig !== renderSig) {
-      renderSig = sig; shownN = STEP;
+      append = false; renderSig = sig; shownN = STEP;
       if (restore && restore.sig === sig) { shownN = Math.max(STEP, restore.n | 0); const y = restore.y; restore = null; setTimeout(() => scrollTo(0, y), 60); }
     }
-    const part = list.slice(0, shownN);
+    if (!append) { disposeCarousels(); resetFaceObservers(); renderedN = 0; }
+    const mount = append ? document.createElement('div') : host;
+    const start = append ? renderedN : 0;
+    const part = list.slice(start, shownN);
     const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button>${shownN >= AUTO_MAX ? `<p class="more-help">찾는 폰트가 따로 있나요? <button class="linklike" data-more="wiz">용도로 고르기</button> · <button class="linklike" data-more="filter">필터로 좁히기</button> · <button class="linklike" data-more="search">이름으로 검색</button></p>` : ""}</div>` : "";
     const hits = state.q && !isChoQuery(state.q) ? list.slice(0, 3).map((f) => [f, nameHit(f, state.q)]).filter(([f, h]) => h && !(f.name + f.en).toLowerCase().includes(state.q.toLowerCase())) : [];
     const hitBar = hits.length ? `<div class="name-hit">${hits.map(([f, h]) => `<p><span class="nh-k">${esc(h.lab)}</span> <code>${esc(h.val)}</code> → <button class="linklike" data-open="${f.id}"><b>${esc(f.name)}</b>${h.w ? ` ${WN[h.w] || h.w}(${h.w})` : ""}</button></p>`).join("")}<small>프로그램에 보이는 이름이 LETSUM 표기와 달라도 찾아 드려요.</small></div>` : "";
-    if (!list.length) host.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? "<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요.</small>" : ""}</div>`;
-    else if (state.view === "list") host.innerHTML = part.map(rowHTML).join("") + more;
-    else if (state.view === "grid") host.innerHTML = `<div class="grid">${part.map(cardHTML).join("")}</div>` + more;
+    if (!list.length) mount.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? "<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요.</small>" : ""}</div>`;
+    else if (state.view === "list") mount.innerHTML = part.map(rowHTML).join("") + more;
+    else if (state.view === "grid") mount.innerHTML = `<div class="grid">${part.map(cardHTML).join("")}</div>` + more;
     else if (state.view === "feed") {
       const n = state.feedN || 24;
-      host.innerHTML = `<div class="igrid">${list.slice(0, n).map(feedHTML).join("")}</div>`
+      mount.innerHTML = `<div class="igrid">${list.slice(start, n).map((f, i) => feedHTML(f, start + i)).join("")}</div>`
         + (list.length > n ? `<div class="ig-more"><button class="btn ghost" id="feedMore">더 보기 <small>${n} / ${list.length}종</small></button></div>` : "");
     }
-    else host.innerHTML = `<div class="ctxgrid">${part.map(ctxHTML).join("")}</div>` + more;
-    if (hitBar) host.insertAdjacentHTML("afterbegin", hitBar);
-    renderActive(); bind(host); observeFaces(host);
-    if (state.view === "feed") bindFeed(host);
+    else mount.innerHTML = `<div class="ctxgrid">${part.map(ctxHTML).join("")}</div>` + more;
+    if (hitBar && !append) mount.insertAdjacentHTML("afterbegin", hitBar);
+    if (!append) renderActive(); bind(mount); observeFaces(mount);
+    if (state.view === "feed") bindFeed(mount);
+    if (append) {
+      host.querySelector('.more-sentinel,.ig-more')?.remove();
+      const addedGrid = mount.querySelector('.igrid,.grid,.ctxgrid');
+      if (addedGrid) { host.querySelector('.igrid,.grid,.ctxgrid').append(...addedGrid.childNodes); addedGrid.remove(); }
+      host.append(...mount.childNodes);
+      paintSocial();
+    }
+    renderedN = Math.min(list.length, state.view === 'feed' ? state.feedN || 24 : shownN);
+    $('#feedMore')?.addEventListener('click', () => { state.feedN = (state.feedN || 24) + 24; render(true); });
     const sen = $("#moreSentinel");
     if (sen) {
-      const grow = () => { const y = scrollY; shownN += STEP; render(); scrollTo(0, y); };
+      const grow = () => { const y = scrollY; shownN += STEP; render(true); scrollTo(0, y); };
       $("#moreBtn").addEventListener("click", grow);
       sen.querySelectorAll("[data-more]").forEach((b) => b.addEventListener("click", () => {
         const k = b.dataset.more;
@@ -910,7 +1003,7 @@
         else { const fb = $("#filterBtn"); if (fb && fb.offsetParent) fb.click(); else { scrollTo({ top: 0, behavior: "smooth" }); $("#side")?.scrollTo({ top: 0 }); } }
       }));
       // 자동 이어 붙이기는 AUTO_MAX까지만
-      if (shownN < AUTO_MAX && "IntersectionObserver" in window) { const io = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting)) { io.disconnect(); grow(); } }, { rootMargin: "800px 0px" }); io.observe(sen); }
+      if (shownN < AUTO_MAX && "IntersectionObserver" in window) { moreObserver = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting) && sen.isConnected) { moreObserver.disconnect(); moreObserver = null; grow(); } }, { rootMargin: "800px 0px" }); moreObserver.observe(sen); }
     }
   }
   function renderActive() {
@@ -1020,7 +1113,7 @@
   function openCompare() {
     const list = [...cmp].map((id) => FONTS.find((x) => x.id === id)); if (!list.length) return;
     ev("cmp_open");
-    list.forEach(ensureFace);
+    list.forEach(f => ensureFace(f, true));
     const t = { size: Math.max(28, state.size), ls: 0, lh: 140, inv: false };
     modal.className = "modal wide";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
@@ -1065,7 +1158,7 @@
     }
     const applySize = () => { const v = +$("#cSize").value; pvs.forEach((p) => { const id = p.closest("[data-cid]").dataset.cid; const k = norm ? ratio[id] || 1 : 1; p.style.fontSize = (v * k).toFixed(1) + "px"; const lab = p.closest("[data-cid]").querySelector("[data-normk]"); if (lab) lab.textContent = norm && Math.abs(k - 1) > 0.01 ? `크기 ×${k.toFixed(2)}` : ""; }); $("#cSizeV").textContent = v + "px"; };
     $("#cSize").addEventListener("input", applySize);
-    $("#cNorm").addEventListener("click", async (e) => { const btn = e.currentTarget; norm = !norm; btn.classList.toggle("on", norm); if (norm && !Object.keys(ratio).length) { btn.textContent = "재는 중…"; await measureNorm(); btn.textContent = "눈에 보이는 크기 맞춤"; } applySize(); });
+    $("#cNorm").addEventListener("click", async (e) => { const btn = e.currentTarget; norm = !norm; btn.classList.toggle("on", norm); if (norm && !Object.keys(ratio).length) { btn.textContent = "재는 중…"; await measureNorm(); if (!btn.isConnected) return; btn.textContent = "눈에 보이는 크기 맞춤"; } applySize(); });
     $("#cLs").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.letterSpacing = e.target.value + "px")); $("#cLsV").textContent = e.target.value + "px"; });
     $("#cLh").addEventListener("input", (e) => { pvs.forEach((p) => (p.style.lineHeight = e.target.value + "%")); $("#cLhV").textContent = e.target.value + "%"; });
     $("#cInv").addEventListener("click", (e) => { e.currentTarget.classList.toggle("on"); $$(".cmp .col").forEach((c) => c.classList.toggle("inv")); });
@@ -1198,8 +1291,8 @@
   function openDetail(id, focus) {
     const f = FONTS.find((x) => x.id === id); if (!f) return;
     if (evDetail !== id || !overlay.classList.contains("open")) { ev("detail", id); evDetail = id; }
-    ensureFace(f, true);
-    if (f.webfont && !metrics[f.id] && !DB) measureLazy(f).then(() => { if (overlay.classList.contains("open") && location.hash === "#f=" + f.id) openDetail(f.id); });
+    ensureFace(f, true, f.weights);
+    const measurement = !f.intro && !metrics[f.id] && !DB ? measureLazy(f) : null;
     const gfam = f.en.replace(/ /g, "+");
     const gfont = `https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&display=swap`;
     const specimen = "https://fonts.google.com/specimen/" + gfam;
@@ -1249,7 +1342,7 @@
 
       <div class="m-sec"><h3>사양</h3>
         <table class="spec">
-          ${f.intro || DB ? "" : `<tr><th>측정값</th><td>${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>`}
+          ${f.intro || DB ? "" : `<tr><th>측정값</th><td id="fontMetrics">${metrics[f.id] ? `굵기 밀도 ${(metrics[f.id].density * 100).toFixed(0)}% · 너비 ${metrics[f.id].width.toFixed(2)}em · 획 대비 ${metrics[f.id].contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>` : "측정 중…"}</td></tr>`}
           <tr><th>굵기</th><td>${f.weightsUnknown ? '<span class="note">배포처에서 확인</span>' : f.intro ? f.weights.join(" · ") : `<span class="r-weights" style="font-family:${f.family};opacity:1;font-size:24px">${f.weights.map((w) => `<i style="font-weight:${w}">${esc(g1(f))}<small>${w}</small></i>`).join("")}</span>`}</td></tr>
           <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
@@ -1315,9 +1408,15 @@ import "@fontsource/${f.id}/400.css";</pre>
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     const pv = $("#pvBig"); const base = state.text || f.name;
-    reasonsLoad.then((Rz) => { const r = Rz[f.id]; const b = $("#whyBox"); if (!r || !b) return; b.hidden = false;
+    const metricCell = $('#fontMetrics');
+    if (measurement) measurement.then(() => {
+      const m = metrics[f.id]; if (!m || !metricCell?.isConnected) return;
+      metricCell.innerHTML = `굵기 밀도 ${(m.density * 100).toFixed(0)}% · 너비 ${m.width.toFixed(2)}em · 획 대비 ${m.contrast.toFixed(2)} <span class="note">(브라우저 측정)</span>`;
+    });
+    const whyBox = $("#whyBox"), evBox = $("#evBox");
+    reasonsLoad.then((Rz) => { const r = Rz[f.id]; const b = whyBox; if (!r || !b?.isConnected) return; b.hidden = false;
       b.innerHTML = `<b>추천 이유</b><p>${esc(r.why)}</p><p class="note">잘 맞는 곳: ${r.good.map(esc).join(" · ")}${r.caution ? `<br>주의: ${esc(r.caution)}` : ""}</p>`; });
-    evidenceLoad().then((E) => { const x = E[f.id]; const box = $("#evBox"); if (!x || !box) return;
+    evidenceLoad().then((E) => { const x = E[f.id]; const box = evBox; if (!x || !box?.isConnected) return;
       box.innerHTML = `<details><summary>확인 근거 보기</summary>${x.ev ? `<p>${esc(x.ev)}</p>` : ""}${x.pg ? `<p><a class="linklike" href="${esc(x.pg)}" target="_blank" rel="noopener">근거 자료 ↗</a></p>` : ""}${x.src ? `<p class="note">원본 파일: ${esc(x.src)}</p>` : ""}${x.ver ? `<p class="note">폰트 버전: ${esc(x.ver)}</p>` : ""}</details>`; });
     const commonBind = () => {
       bindComments(f, focus); bindShots(f);
@@ -1364,6 +1463,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   async function bindShots(f) {
     const grid = $("#shotGrid"), form = $("#shotForm"), msg = $("#shotMsg"); if (!grid) return;
     const j = await api("shots?id=" + f.id);
+    if (!grid.isConnected) return;
     if (!j || j.error) { $("#shotSec").style.display = "none"; return; }
     $("#shotCount").textContent = j.items.length ? `${j.items.length}장` : "";
     grid.innerHTML = j.items.length ? j.items.map((x) => `<figure><a href="/api/shot/${x.id}" target="_blank" rel="noopener"><img src="/api/shot/${x.id}" alt="${esc(x.caption || "사용 사례")}" loading="lazy"></a><figcaption>${esc(x.caption)} <span class="note">— ${esc(x.name)}</span></figcaption></figure>`).join("")
@@ -1425,7 +1525,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   }
   function openDesigner(name) {
     const list = FONTS.filter((f) => f.designer === name);
-    list.forEach(ensureFace);
+    list.forEach(f => ensureFace(f, true));
     modal.className = "modal";
     modal.innerHTML = `<button class="x" id="mx" aria-label="닫기">×</button>
       <div class="m-head"><h2>${esc(name)}</h2><span class="en">LETSUM 등록 폰트 ${list.length}종</span></div>
@@ -1441,7 +1541,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     if (on && !html.classList.contains("modal-open")) { html.style.setProperty("--sbw", (innerWidth - html.clientWidth) + "px"); html.classList.add("modal-open"); }
     else if (!on && html.classList.contains("modal-open")) html.classList.remove("modal-open");
   }).observe(overlay, { attributes: true, attributeFilter: ["class"] });
-  function closeModal() { rvUnmount && rvUnmount(); overlay.classList.remove("open"); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
+  function closeModal() { rvUnmount && rvUnmount(); overlay.classList.remove("open"); modal.replaceChildren(); trimFaces(); try { if (location.hash.startsWith("#f=")) history.replaceState(null, "", location.pathname); } catch (e) {} }
   // 폰트별 정적 페이지(font/<id>.html)와 공유 링크에서 #f=<id>로 들어오면 바로 상세를 연다
   function openFromHash() { const m = location.hash.match(/^#f=([\w-]+)/); if (m && FONTS.some((x) => x.id === m[1])) openDetail(m[1]); }
   window.addEventListener("hashchange", openFromHash);
@@ -1620,7 +1720,7 @@ import "@fontsource/${f.id}/400.css";</pre>
       wt.querySelector(".sp-wt-name").innerHTML = `<b>${WNAME[w] || w}</b> <span>${w}</span>`;
       wt.querySelectorAll(".sp-scale i").forEach((t, q) => t.classList.toggle("on", q === k));
       wt.querySelector(".sp-scale u").style.left = (f.weights.length > 1 ? (k / (f.weights.length - 1)) * 100 : 0) + "%";
-      const st = await stemOf(fam, w); if (j === k) wt.querySelector(".sp-wt-stem b").textContent = st ? `${st.toFixed(1)}%` : "—";
+      await ensureFace(f, true, [w]); const st = await stemOf(fam, w); if (j === k) wt.querySelector(".sp-wt-stem b").textContent = st ? `${st.toFixed(1)}%` : "—";
     };
     show(0);
     if (!reduce) spotWt = setInterval(() => show((j + 1) % f.weights.length), 2800);
@@ -1629,7 +1729,9 @@ import "@fontsource/${f.id}/400.css";</pre>
     const els = $$("#nbTrack .sp"); if (!els.length) return;
     spotIdx = (i + els.length) % els.length;
     els.forEach((el, k) => { el.classList.toggle("on", k === spotIdx); el.setAttribute("aria-hidden", k === spotIdx ? "false" : "true"); });
-    const cur = els[spotIdx]; ensureFace(FONTS.find((x) => x.id === cur.dataset.id), true); ensureFace(FONTS.find((x) => x.id === (els[(spotIdx + 1) % els.length] || cur).dataset.id));
+    const cur = els[spotIdx], currentFont = idOf(cur);
+    ensureFace(currentFont, true, [currentFont.weights[0], currentFont.weights[currentFont.weights.length - 1], wOf(currentFont)]);
+    ensureFace(idOf(els[(spotIdx + 1) % els.length] || cur));
     const spot = $("#spot"); spot.style.setProperty("--spot-ui", cur.style.getPropertyValue("--fg")); spot.style.setProperty("--spot-bg", cur.style.getPropertyValue("--bg"));
     $$("#spotBars i").forEach((b, k) => { b.className = k < spotIdx ? "done" : k === spotIdx ? "run" : ""; });
     spotPlay(cur);

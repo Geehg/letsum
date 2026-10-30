@@ -77,6 +77,7 @@
   function textNode(node) {
     if (!node.parentElement || node.parentElement.closest(excluded)) return;
     let record = textRecords.get(node);
+    if (language === "ko" && !record) return;
     if (!record || (node.data !== record.original && node.data !== record.translated)) {
       record = { original: node.data, translated: english(node.data) };
       // Editorial descriptions stay wholly in the original language until translated.
@@ -99,9 +100,11 @@
     }
     for (const attr of attributes) if (node.hasAttribute(attr)) {
       let records = attrRecords.get(node);
+      if (language === "ko" && !records) continue;
       if (!records) { records = {}; attrRecords.set(node, records); }
       const current = node.getAttribute(attr);
       let r = records[attr];
+      if (language === "ko" && !r) continue;
       if (!r || (current !== r.original && current !== r.translated)) r = records[attr] = { original: current, translated: english(current) };
       const next = language === "en" ? r.translated : r.original;
       if (current !== next) node.setAttribute(attr, next);
@@ -110,7 +113,7 @@
   function translate(root) {
     if (root.nodeType === Node.TEXT_NODE) { textNode(root); return; }
     if (root.nodeType !== Node.ELEMENT_NODE && root !== document) return;
-    if (root.nodeType === Node.ELEMENT_NODE) element(root);
+    if (root.nodeType === Node.ELEMENT_NODE) { element(root); if (root.matches(excluded)) return; }
     const walk = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         if (node.nodeType === Node.ELEMENT_NODE && node.matches(excluded)) { element(node); return NodeFilter.FILTER_REJECT; }
@@ -121,6 +124,7 @@
     while ((node = walk.nextNode())) node.nodeType === Node.TEXT_NODE ? textNode(node) : element(node);
   }
   function connect() {
+    if (language !== "en") return;
     observer.observe(document.documentElement, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: attributes });
   }
   function apply() {
@@ -177,9 +181,15 @@
       const roots = new Set();
       for (const record of records) {
         if (record.type === "childList") record.addedNodes.forEach(node => roots.add(node));
+        else if (record.type === "attributes") element(record.target);
         else roots.add(record.target);
       }
-      for (const node of roots) if (node.isConnected) translate(node);
+      for (const node of roots) {
+        if (!node.isConnected) continue;
+        let parent = node.parentNode;
+        while (parent && !roots.has(parent)) parent = parent.parentNode;
+        if (!parent) translate(node);
+      }
       connect();
     });
     ready = true; apply();

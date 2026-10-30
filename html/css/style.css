@@ -2347,3 +2347,6 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
  .tb-acctm .tb-acct-main h3{font-size:24px}
  .tb-acct-lead{margin-bottom:18px}
 }
+
+/* Fixed-size preview tracks can skip offscreen slide rendering without changing card geometry. */
+#results .ig-track{content-visibility:auto}
