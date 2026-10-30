@@ -63,7 +63,7 @@ function page(f, en, db) {
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img src="../img/logo-retro-v1.svg" alt="렛섬 LETSUM" width="652" height="252" style="height:44px;width:auto"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색 — LETSUM 이름, 설치 후 이름, 포토샵 글꼴 누락 이름, 초성으로 찾기" aria-describedby="qHint" autocomplete="off">
       <span class="q-hint" id="qHint" role="note"><b>프로그램에 보이는 이름으로도 찾아요</b>포토샵 '글꼴 누락' 창 이름 <code>GSHYEJAROUNTTF-Bold</code> · 윈도우 목록 이름 <code>나눔스퀘어 Light</code> · 영문 <code>NanumSquare</code> · 초성 <code>ㄴㄴㅅ</code></span></form>
@@ -105,7 +105,7 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
   ${topicsOf(f).length ? `<h2>이 폰트가 포함된 목록</h2>\n  <p class="tp-links">${topicsOf(f).map((t) => `<a href="../topics/${t.slug}.html">${esc(t.short)}</a>`).join("")}</p>` : ""}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
-<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script type="application/json" id="instData">${JSON.stringify((() => { const n = NAMES[f.id] || {}; const w = (n.w || {})[400] || Object.values(n.w || {})[0] || {}; return { name: f.name, fam: n.fam || "", win: w.win || "", ps: w.ps || "", gf: /fonts\.google\.com/.test(dl.page || "") }; })()).replace(/</g, "\\u003c")}</script>
 <script src="../js/common.js?v=2" data-base="../"></script>
 <script src="../js/pv.js?v=1" defer></script>
@@ -226,7 +226,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 <header>
   <div class="wrap hd">
     <a class="logo" href="../index.html"><img src="../img/logo-retro-v1.svg" alt="렛섬 LETSUM" width="652" height="252" style="height:44px;width:auto"></a>
-    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../guide.html">라이선스 가이드</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
+    <nav class="main"><a href="../index.html">한글 폰트</a><a href="../en/">영문 폰트</a><a href="../dingbat/">딩벳 폰트</a><a href="../symbols.html">특수기호</a><a href="../typing.html">필사독서</a><a href="../subset.html">웹폰트 코드</a><button class="nav-proj" id="projBtn" type="button" title="작업별 폴더로 폰트를 모아 두고, 라이선스가 바뀌면 알려 드려요">폰트 보관함</button></nav>
     <div class="sp"></div>
     <form class="hd-search" role="search" action="../index.html"><span aria-hidden="true">⌕</span><input id="qTop" name="q" type="search" placeholder="폰트명 · 포토샵·윈도우에 보이는 이름도 OK" aria-label="폰트 검색" autocomplete="off"></form>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="밝기 전환" title="밝기 전환">◐</button>
@@ -245,7 +245,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
   <p class="tp-links">${others.map(([o, l]) => `<a href="${o.slug}.html">${esc(o.short)} <span>${l.length}</span></a>`).join("")}</p>
   <p class="disclaimer">※ 사용 범위는 참고용이며, 정확한 범위는 이용 전 저작권자의 원문 라이선스로 확인하세요. 모든 폰트의 저작권은 각 저작권자에게 있습니다.</p>
 </main>
-<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 폰트 · <a href="../index.html">전체 한글 폰트</a> · <a href="../en/">영문 폰트</a> · <a href="../dingbat/">딩벳 폰트</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
+<footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 폰트 · <a href="../index.html">전체 한글 폰트</a> · <a href="../en/">영문 폰트</a> · <a href="../dingbat/">딩벳 폰트</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script src="../js/common.js?v=2" data-base="../"></script>
 <script src="../js/pv.js?v=1" defer></script>
 </body>
