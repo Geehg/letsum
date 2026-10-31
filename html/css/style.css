@@ -2374,7 +2374,7 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 }
 
 /* Keep sign coordinates tied to the un-cropped image, using the real font. */
-#spot:has(.sp-station){width:70%;margin-inline:auto}
+#spot:has(.sp-station){width:100%;margin-inline:0}
 #nbTrack:has(.sp-station){height:clamp(336px,31.5vw,448px);min-height:0}
 .sp-station-art{position:absolute;left:0;top:50%;width:100%;aspect-ratio:1672/941;transform:translateY(-50%);container-type:inline-size}
 .sp-station-art .sp-station-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
@@ -2386,7 +2386,7 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
  .sp-station-caption{padding-bottom:48px}
 }
 
-/* Compact station caption follows the 70% hero dimensions. */
+/* Compact caption follows the reduced hero height. */
 .sp-station-caption{padding-inline:24px;padding-bottom:40px;gap:16px}
 .sp-station-title{font-size:clamp(24px,2.45vw,34px)}
 .sp-station .sp-type{font-size:13px}
