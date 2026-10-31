@@ -13,6 +13,8 @@ const LICENSE_CATS = [
 
 // 라이선스별 표기 — 화면에서 라이선스 이름·조건을 이 표로 보여준다
 const LICENSE_INFO = {
+  "을유1945 서체 이용조건": {"full": "을유1945 서체 이용조건", "short": "무료 이용", "note": "인쇄·웹페이지·영상·CI/BI·이북·UI 디자인 무료 사용. 임베딩·수정·변형·복사·대여·재판매·배포 불가(인쇄용 PDF 임베딩 지원). 책 본문 사용 시 서체 사용 문구 표시.", "url": "https://www.eulyoo.co.kr/member/font.html"},
+  "세방고딕 이용 안내": {"full": "세방고딕 이용 안내", "short": "무료 이용", "note": "개인·기업 모두 무료, 상업적 용도로 자유롭게 사용 가능. 파일 수정·재배포의 허용 범위는 공식 안내에 명시되지 않아 원 배포처에서 다운로드하세요.", "url": "https://www.sebang.com/contents/01_03.asp"},
   "OFL": { full: "SIL Open Font License 1.1", short: "OFL", note: "상업 이용·수정·재배포 가능, 폰트 파일 단독 판매 금지", url: "https://openfontlicense.org/open-font-license-official-text/" },
   "부산시 전용서체 이용조건": { full: "부산시 전용서체 이용조건", short: "부산시 무료 이용", note: "영상·인쇄·출판·웹·모바일에 누구나 허가 없이 무료 사용, 유료 판매·대가 수수 금지", url: "https://www.busan.go.kr/bhbusan/font" },
   "부산시교육청 무료 글꼴 이용조건": { full: "부산시교육청 무료 글꼴 이용조건", short: "교육청 무료 이용", note: "누구나 무료로 자유롭게 사용(CI·BI·판매용 저작물 포함), 출처 표기 권장, 유료 양도·판매 금지", url: "https://blog.naver.com/with_pen/224432897441" },
@@ -68,6 +70,8 @@ const MOODS = ["단정한", "차분한", "따뜻한", "세련된", "고전적", 
 
 // 글자 범위 — cov: 한글 완성형 수. 옛한글·한자는 브라우저에서 자동 검출
 const FONTS = [
+  {"id": "k-eulyoo1945", "name": "을유1945", "en": "Eulyoo1945", "family": "'Eulyoo1945', serif", "designer": "윤민구", "holder": "을유문화사", "category": "명조", "tags": ["본문"], "mood": ["단정한"], "weights": [400, 600], "formats": ["TTF", "OTF", "WOFF2"], "cov": 0, "glyphs": "공식 배포처 확인", "intro": true, "introReason": "공식 가이드의 임베딩·복사·배포 제한에 따라 원본으로 만든 견본과 공식 다운로드 링크만 제공합니다.", "specimen": "img/specimen/k-eulyoo1945.png", "dl": {"page": "https://www.eulyoo.co.kr/member/font.html", "srcName": "을유문화사"}, "license": "을유1945 서체 이용조건", "matrix": {"print": "ok", "web": "ok", "video": "ok", "embed": "cond", "bici": "ok", "package": "cond", "ofl": "no"}, "verified": "2026-10-31", "status": "verified", "pair": "inter", "pop": 35, "added": "2026-10-31", "desc": "을유문화사의 법고창신 정신을 담은 본문용 명조 서체. 윤민구가 디자인했으며 Regular·SemiBold 두 굵기를 제공합니다."},
+  {"id": "k-sebang-gothic-2", "name": "세방고딕 2.0", "en": "SEBANG Gothic 2.0", "family": "'SEBANG Gothic 2.0', serif", "designer": "세방그룹", "holder": "세방그룹", "category": "고딕", "tags": ["본문"], "mood": ["단정한"], "weights": [300, 400, 700], "formats": ["TTF", "OTF", "WOFF2"], "cov": 0, "glyphs": "공식 배포처 확인", "intro": true, "introReason": "공식 안내에 파일 재배포 조건이 명시되지 않아 원본으로 만든 견본과 공식 다운로드 링크를 제공합니다.", "specimen": "img/specimen/k-sebang-gothic-2.png", "dl": {"page": "https://www.sebang.com/contents/01_03.asp", "srcName": "세방그룹"}, "license": "세방고딕 이용 안내", "matrix": {"print": "ok", "web": "ok", "video": "ok", "embed": "cond", "bici": "cond", "package": "cond", "ofl": "no"}, "verified": "2026-10-31", "status": "verified", "pair": "inter", "pop": 35, "added": "2026-10-31", "desc": "세방그룹이 배포하는 전용 고딕 서체. 공식 2.0 배포 묶음은 Light·Regular·Bold 및 이탤릭을 제공합니다."},
   { id: "noto-sans-kr", name: "본고딕", en: "Noto Sans KR", family: "'Noto Sans KR', sans-serif",
     designer: "Google · Adobe", holder: "Google LLC", category: "고딕",
     tags: ["본문", "UI", "깔끔한"], mood: ["단정한", "세련된"], weights: [100,300,400,500,700,900], formats: ["OTF","TTF","WOFF2"],
