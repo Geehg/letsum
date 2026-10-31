@@ -1662,6 +1662,17 @@ import "@fontsource/${f.id}/400.css";</pre>
     const [bg, fg, ac] = B ? [B.bg, B.fg, B.ac] : SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
     const dl = dlFor(f); const L = LICENSE_CATS.filter((c) => c.key !== "ofl");
     const heavy = f.weights[f.weights.length - 1];
+    if (f.id === "k-busan-dandi-gothic") {
+      return `<article class="sp sp-station${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:#132c35;--fg:#fff;--ac:#f3dfad" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
+        <div class="sp-station-art"><img class="sp-station-photo" src="img/hero/busan-dandi-station-blank-v2.webp" width="1672" height="941" alt="바다를 뒤로한 부산 단디 고딕 역. 사람들이 기다리는 승강장 앞으로 오래된 열차가 오른쪽에서 왼쪽으로 들어오는 창작 장면." decoding="async"><span class="sp-station-sign" style="font-family:${f.family};font-weight:700">부산 단디 고딕 역</span></div>
+        <div class="wrap sp-station-caption">
+          <div><div class="sp-kick">부산의 바다 곁, 잠시 머무는 글자</div>
+            <h2 class="sp-station-title" style="font-family:${f.family};font-weight:700">부산단디고딕</h2>
+            <p class="sp-type" data-line="바다를 지나, 당신의 문장에 도착합니다."></p></div>
+          <div class="sp-cta"><button class="sp-btn" data-open="${f.id}">자세히 보기</button><a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">공식 배포처 ↗</a><span class="sp-station-credit">서체를 위한 창작 이미지</span></div>
+        </div>
+      </article>`;
+    }
     const nm = [...f.name];
     const title = f.intro
       ? (f.specimen ? `<img class="sp-spec" src="${f.specimen}" alt="${esc(f.name)} 견본">` : `<span class="sp-noprev">${esc(f.name)}</span>`)

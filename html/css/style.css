@@ -2350,3 +2350,37 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 
 /* Fixed-size preview tracks can skip offscreen slide rendering without changing card geometry. */
 #results .ig-track{content-visibility:auto}
+
+/* 부산단디고딕: 바닷가 간이역 */
+.sp-station-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+.sp-station::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,28,36,.93),rgba(8,28,36,.4) 23%,transparent 52%);pointer-events:none}
+.sp-station-caption{position:relative;z-index:1;height:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-top:24px;padding-bottom:62px;color:#fff}
+.sp-station-title{font-size:clamp(28px,3.5vw,48px);line-height:1.15;margin:8px 0}
+.sp-station .sp-type{font-size:16px;min-height:22px}
+.sp-station .sp-type::after{display:none}
+.sp-station .sp-kick{opacity:.9;font-size:12px}
+.sp-station .sp-btn{background:rgba(10,34,42,.7)}
+.sp-station .sp-btn.ac{background:#f3dfad;color:#132c35;border-color:#f3dfad}
+.sp-station-credit{flex-basis:100%;text-align:right;font-size:10px;opacity:.7}
+@media(max-width:700px){
+ .sp-station-photo{height:66%;object-fit:cover;object-position:45% 50%}
+ .sp-station::after{background:linear-gradient(0deg,#132c35 27%,transparent 60%)}
+ .sp-station-caption{display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:8px;padding-bottom:52px}
+ .sp-station-title{font-size:28px;margin:5px 0}
+ .sp-station .sp-type{font-size:13px}
+ .sp-station .sp-cta{gap:8px;margin-top:0}
+ .sp-station .sp-btn{font-size:12px;padding:8px 13px}
+ .sp-station-credit{flex-basis:auto;text-align:left;font-size:9px}
+}
+
+/* Keep sign coordinates tied to the un-cropped image, using the real font. */
+#nbTrack:has(.sp-station){height:clamp(480px,45vw,640px);min-height:0}
+.sp-station-art{position:absolute;left:0;top:50%;width:100%;aspect-ratio:1672/941;transform:translateY(-50%);container-type:inline-size}
+.sp-station-art .sp-station-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.sp-station-sign{position:absolute;left:28%;top:36.6%;width:23.4%;height:5.2%;display:flex;align-items:center;justify-content:center;white-space:nowrap;font-size:2.05cqw;line-height:1;color:#f6eee0;text-shadow:0 2px 2px #0008;letter-spacing:.025em}
+@media(max-width:700px){
+ #nbTrack:has(.sp-station){height:440px}
+ .sp-station-art{top:0;transform:none}
+ .sp-station::after{background:linear-gradient(0deg,#132c35 40%,transparent 62%)}
+ .sp-station-caption{padding-bottom:48px}
+}
