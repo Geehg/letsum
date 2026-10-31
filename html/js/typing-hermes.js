@@ -77,7 +77,7 @@
    if(!active||main.dataset.model!==selectedModel){releaseResources();loading=false;update();return;}
    renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
    renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=selectedModel==='olympiasm3'?.88:selectedModel==='lettera32'?.94:.86;
-   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
+   renderer.shadowMap.enabled=true;renderer.shadowMap.type=selectedModel==='hermes3000'?T.PCFShadowMap:T.PCFSoftShadowMap;
 
    if(selectedModel==='lettera32')globalThis.LSBuildLettera32(T,asset.scene);
    if(selectedModel==='olympiasm3')globalThis.LSBuildOlympiaSM3(T,asset.scene);
@@ -100,9 +100,11 @@
     const glossWindow=new T.Mesh(new T.BoxGeometry(.65,2.4,.025),new T.MeshBasicMaterial({color:0xf4f8ff}));glossWindow.material.color.multiplyScalar(4.2);glossWindow.position.set(-1.2,1.8,2);glossWindow.lookAt(0,0,0);room.add(glossWindow);
    }
    if(selectedModel==='hermes3000'){
-    // Broad window and narrow edge source: both reflect in the real curved shell.
-    for(const [pos,size,power,color] of [[[-1.4,1.4,2.1],[1.5,2.3,.025],3.6,0xfff8eb],[[1.8,.8,.6],[.22,2.1,.025],1.4,0xe5edf1],[[0,-.9,2.5],[2.2,.65,.025],2.6,0xfff6e7]]){
-     const card=new T.Mesh(new T.BoxGeometry(...size),new T.MeshBasicMaterial({color}));card.material.color.multiplyScalar(power);card.position.set(...pos);card.lookAt(0,.1,0);room.add(card);
+    for(const child of [...room.children]){room.remove(child);child.geometry?.dispose();child.material?.dispose();}
+    room.background=new T.Color(.009,.011,.012);
+    for(const [pos,size,power] of [[[-1.2,2,1],[1.5,2.5,.02],2.4],[[1,.7,-1],[.25,1.6,.02],1.2],[[0,-.3,1.5],[1.6,.35,.02],2.8]]){
+     const m=new T.MeshBasicMaterial({color:0xfff8ee});m.color.multiplyScalar(power);
+     const card=new T.Mesh(new T.BoxGeometry(...size),m);card.position.set(...pos);card.lookAt(0,.1,0);room.add(card);
     }
    }
    if(selectedModel!=='hermes3000'){
@@ -182,11 +184,11 @@
     }
     o.material=capMaterial;
    });
-   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel!=='hermes3000'?.10:selectedModel==='hermes3000'?.25:.38));
-   const keyLight=new T.DirectionalLight(0xffecd7,selectedModel!=='hermes3000'?.65:1.30);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
+   scene.add(new T.HemisphereLight(0xfff7e9,0x635347,selectedModel!=='hermes3000'?.10:selectedModel==='hermes3000'?.09:.38));
+   const keyLight=new T.DirectionalLight(0xffecd7,selectedModel!=='hermes3000'?.65:1.05);keyLight.position.set(-.5,selectedModel==='hermes3000'?1.05:1.6,.7);keyLight.target.position.set(0,.07,0);scene.add(keyLight,keyLight.target);
    if(selectedModel==='olympiasm3'){keyLight.color.setHex(0xfff9ee);keyLight.position.set(-.45,.8,.6);}
-   keyLight.castShadow=true;const shadowSize=view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=-.00015;keyLight.shadow.normalBias=.00018;keyLight.shadow.radius=4;keyLight.shadow.blurSamples=12;
-   const fill=new T.DirectionalLight(0xe8dfd8,.22);fill.position.set(.5,.3,-.3);scene.add(fill);
+   keyLight.castShadow=true;const shadowSize=selectedModel==='hermes3000'||view.clientWidth>760?2048:1024;keyLight.shadow.mapSize.set(shadowSize,shadowSize);Object.assign(keyLight.shadow.camera,{left:-.62,right:.62,top:.85,bottom:-.5,near:.1,far:3});keyLight.shadow.bias=selectedModel==='hermes3000'?-.0003:-.00015;keyLight.shadow.normalBias=selectedModel==='hermes3000'?.0008:.00018;keyLight.shadow.radius=4;keyLight.shadow.blurSamples=12;
+   const fill=new T.DirectionalLight(0xe8dfd8,selectedModel==='hermes3000'?.07:.22);fill.position.set(.5,.3,-.3);scene.add(fill);
    // Seamless woven fabrics. Petals/leaves wrap across the tile edge, so the
    // full-width table has no image boundary or lighting baked into the pattern.
    const clothCache=new Map();let clothTexture,clothRepeat=12;
@@ -363,7 +365,7 @@
     camera.position.set(0,.60,.73);
     if(portrait)camera.position.addScaledVector(new T.Vector3(0,.395,.73).normalize(),3);
     camera.lookAt(0,.205,0);
-    if(close){camera.position.set(0,.80,.52);camera.lookAt(0,.164,-.08);}
+    if(close){camera.position.set(0,.90,.40);camera.lookAt(0,.164,-.08);}
     // Render the cloth to the viewport edges without changing instrument framing.
     const rect=view.getBoundingClientRect?.(),viewportWidth=document.documentElement?.clientWidth||width;
     bleedLeft=Math.max(0,rect?.left||0);bleedRight=Math.max(0,viewportWidth-(rect?.right||width));renderWidth=width+bleedLeft+bleedRight;
@@ -389,7 +391,7 @@
      const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
      camera.top=sheetTop+sheetInset*span/height;camera.bottom=camera.top-span;
     }
-    if(close){span=Math.max(.46,.34/a);const strike=new T.Vector3(0,.174,-.151).applyMatrix4(camera.matrixWorldInverse);camera.top=strike.y+span*.34;camera.bottom=camera.top-span;camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;}
+    if(close){span=Math.max(.33,.20/a);const strike=new T.Vector3(0,.174,-.151).applyMatrix4(camera.matrixWorldInverse);camera.top=strike.y+span*.20;camera.bottom=camera.top-span;camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;}
     camera.updateProjectionMatrix();
     // Lower only the cloth by 10% of the immersive view height.
     ground.scale.y=portrait?Math.max(1,span*2):1;
