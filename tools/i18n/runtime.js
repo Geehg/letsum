@@ -13,13 +13,38 @@
   let cached = null;
   try { cached = JSON.parse(read("sessionStorage", "ls_ui_region")); } catch (_) {}
   if (!cached || !valid(cached.language) || !Number.isFinite(cached.time) || cached.time > Date.now() || Date.now() - cached.time > 30 * 60e3) cached = null;
-  const fallback = /^ko(?:-|$)/i.test(navigator.languages?.[0] || navigator.language || "en") ? "ko" : "en";
-  let language = valid(preference) ? preference : cached?.language || fallback;
+  // Public URLs have one stable default for visitors and crawlers alike.
+  // Location/browser language may suggest English, but must never translate
+  // the page (including its title) without an explicit visitor preference.
+  const browserLanguage = /^ko(?:-|$)/i.test(navigator.languages?.[0] || navigator.language || "en") ? "ko" : "en";
+  let suggestion = cached?.language || browserLanguage;
+  let language = valid(preference) ? preference : "ko";
   const attributes = ["title", "placeholder", "aria-label", "alt"];
   // Specimens, user text, code, installed font names and attribution remain verbatim.
   const excluded = 'script,style,code,pre,textarea,[contenteditable], [translate="no"], [data-ui-original], .r-pv,.g-pv,.pv,.pv-big,.t-pv,.mock,.fx [data-t],.sp-type,.sp-title,.sp-marquee,.sp-loupe,.ig-pv,.ig-sample,.ig-weights b,.fp-t,.fp-book p,.wc-pv,.c-pv,.rv-b>p,.ig-rtx,.pj-note,.sample';
   const textRecords = new WeakMap(), attrRecords = new WeakMap();
   let observer, ready = false;
+
+  function syncPreferenceURL() {
+    if (!valid(preference)) return;
+    const url = new URL(location.href);
+    if (url.searchParams.get("ui") === preference) return;
+    url.searchParams.set("ui", preference);
+    try { history.replaceState(history.state, "", url); } catch (_) {}
+  }
+  // A returning visitor's saved English choice gets an explicit, shareable URL.
+  // This does not change the canonical URL or create a translated SEO page.
+  syncPreferenceURL();
+
+  function updateSuggestion() {
+    const button = document.querySelector('[data-ui-choice="en"]');
+    if (!button) return;
+    const suggested = !valid(preference) && suggestion === "en";
+    button.dataset.uiSuggested = String(suggested);
+    button.textContent = suggested ? "English →" : "English";
+    button.setAttribute("aria-label", "View this site in English");
+    button.title = "View this site in English";
+  }
 
   function english(value) {
     const s = String(value), key = s.trim();
@@ -134,6 +159,7 @@
     observer.disconnect();
     translate(document);
     document.querySelectorAll("[data-ui-choice]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.uiChoice === language)));
+    updateSuggestion();
     connect();
     document.dispatchEvent(new CustomEvent("ls:ui-language", { detail: { language } }));
   }
@@ -141,8 +167,7 @@
     if (!valid(next)) return;
     language = preference = next;
     write("localStorage", "ls_ui_language", next);
-    const url = new URL(location.href); url.searchParams.set("ui", next);
-    history.replaceState(history.state, "", url);
+    syncPreferenceURL();
     apply();
   }
   function localURL(value) {
@@ -160,7 +185,7 @@
       .then(result => {
         if (!valid(result?.language)) return;
         write("sessionStorage", "ls_ui_region", JSON.stringify({ language: result.language, time: Date.now() }));
-        if (!valid(preference)) { language = result.language; apply(); }
+        if (!valid(preference)) { suggestion = result.language; updateSuggestion(); }
       }).catch(() => {}).finally(() => clearTimeout(timer));
   }
   function init() {

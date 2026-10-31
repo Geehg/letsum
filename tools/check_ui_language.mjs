@@ -29,12 +29,17 @@ const { chromium } = require(process.env.LETSUM_PLAYWRIGHT);
 const base = process.env.LETSUM_TEST_URL || 'http://127.0.0.1:8879';
 const browser = await chromium.launch({ headless: true, channel: 'chrome' });
 const errors = [];
-async function scenario({ locale = 'en-US', language = 'en', stored, query = '', fail = false, delay = 0, blocked = false, mobile = false } = {}) {
-  const context = await browser.newContext({ locale, viewport: mobile ? { width: 390, height: 844 } : { width: 1440, height: 1000 } });
-  await context.addInitScript(({ stored, blocked }) => {
+async function scenario({ locale = 'en-US', language = 'en', stored, cached, query = '', pathname = '/', userAgent, fail = false, delay = 0, blocked = false, mobile = false } = {}) {
+  const context = await browser.newContext({ locale, ...(userAgent ? { userAgent } : {}), viewport: mobile ? { width: 390, height: 844 } : { width: 1440, height: 1000 } });
+  await context.addInitScript(({ stored, cached, blocked }) => {
     if (stored) localStorage.setItem('ls_ui_language', stored);
+    if (cached) sessionStorage.setItem('ls_ui_region', JSON.stringify({ language: cached, time: Date.now() }));
     if (blocked) for (const name of ['localStorage','sessionStorage']) Object.defineProperty(window, name, { get() { throw new Error('Storage blocked'); } });
-  }, { stored, blocked });
+    window.__languageHistory = [];
+    new MutationObserver(() => {
+      if (document.documentElement) window.__languageHistory.push(document.documentElement.lang);
+    }).observe(document, { subtree: true, childList: true, attributes: true, attributeFilter: ['lang'] });
+  }, { stored, cached, blocked });
   const page = await context.newPage(); page.on('pageerror', error => errors.push(error.message));
   await page.route('**/*', async route => {
     const url = new URL(route.request().url());
@@ -46,7 +51,7 @@ async function scenario({ locale = 'en-US', language = 'en', stored, query = '',
     if (url.pathname.startsWith('/api/')) return route.fulfill({ json: url.pathname === '/api/samples' ? { items: null } : /comments|shots/.test(url.pathname) ? { items: [] } : {} });
     return route.continue();
   });
-  await page.goto(base + '/' + query); await page.waitForTimeout(300);
+  await page.goto(base + pathname + query); await page.waitForTimeout(300);
   return { page, context };
 }
 async function isLanguage(page, expected) {
@@ -56,18 +61,70 @@ async function isLanguage(page, expected) {
 }
 try {
   for (const [options, expected] of [
-    [{ locale:'ko-KR', language:'en' },'en'],
+    [{ locale:'ko-KR', language:'en' },'ko'],
     [{ locale:'en-US', language:'ko' },'ko'],
-    [{ locale:'ja-JP', language:null },'en'],
+    [{ locale:'ja-JP', language:null },'ko'],
     [{ locale:'ko-KR', language:null },'ko'],
     [{ locale:'ko-KR', fail:true },'ko'],
-    [{ locale:'en-US', fail:true },'en'],
+    [{ locale:'en-US', fail:true },'ko'],
     [{ language:'en', stored:'ko' },'ko'],
+    [{ language:'ko', stored:'en' },'en'],
+    [{ language:'en', cached:'en' },'ko'],
     [{ language:'ko', stored:'ko', query:'?ui=en' },'en'],
-    [{ language:'en', query:'?ui=invalid' },'en'],
-    [{ language:'en', blocked:true },'en'],
-  ]) { const { page, context } = await scenario(options); await isLanguage(page, expected); await context.close(); }
-  console.log('PASS: country priority, language fallback, preferences, explicit URL, blocked storage');
+    [{ language:'en', stored:'en', query:'?ui=ko' },'ko'],
+    [{ language:'en', query:'?ui=invalid' },'ko'],
+    [{ language:'en', blocked:true },'ko'],
+    [{ language:'ko', query:'?ui=en', blocked:true },'en'],
+  ]) {
+    const { page, context } = await scenario(options); await isLanguage(page, expected);
+    if (expected === 'ko') {
+      assert.match(await page.title(), /^무료 한글 폰트/);
+      assert(!await page.evaluate(() => window.__languageHistory.includes('en')), 'Korean page must never flash English');
+    } else assert.equal(new URL(page.url()).searchParams.get('ui'), 'en');
+    await context.close();
+  }
+  console.log('PASS: stable Korean default across regions, browser languages, old region caches and failures; explicit/saved choices');
+
+  // Compare rendered crawlable content against the actual source, not test copy.
+  // The same rule applies to ordinary visitors and Googlebot; no bot detection.
+  for (const pathname of ['/', '/index.html', '/font/k-busan-dandi-gothic.html', '/topics/free-gothic-fonts.html', '/en/', '/guide.html']) {
+    const file = pathname.endsWith('/') ? pathname + 'index.html' : pathname;
+    const source = fs.readFileSync(new URL('../html' + file, import.meta.url), 'utf8');
+    const title = source.match(/<title>([^<]+)<\/title>/)[1];
+    const canonical = source.match(/<link rel="canonical" href="([^"]+)"/)[1];
+    const { page, context } = await scenario({ pathname, locale:'en-US', language:'en', userAgent:'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' });
+    await isLanguage(page, 'ko');
+    assert.equal(await page.title(), title);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), canonical);
+    const description = source.match(/<meta name="description" content="([^"]*)"/);
+    if (description) assert.equal(await page.locator('meta[name="description"]').getAttribute('content'), description[1]);
+    else assert.equal(await page.locator('meta[name="description"]').count(), 0);
+    assert.match(await page.locator('h1').first().textContent(), /[가-힣]/);
+    assert.equal(new URL(page.url()).pathname, pathname);
+    assert.equal(new URL(page.url()).search, '');
+    await context.close();
+  }
+  console.log('PASS: home, index alias, font detail, topic, Latin catalogue and guide keep Korean titles, headings, descriptions and canonical URLs');
+
+  const suggested = await scenario({ mobile:true });
+  assert.equal(await suggested.page.locator('[data-ui-choice="en"]').getAttribute('data-ui-suggested'), 'true');
+  assert(await suggested.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  assert((await suggested.page.locator('#qTop').boundingBox()).width >= 200, 'Language choices must not squeeze the mobile search input');
+  await suggested.page.screenshot({ path:'/private/tmp/letsum-seo-korean-mobile.png' });
+  await suggested.page.locator('[data-ui-choice="en"]').click();
+  await isLanguage(suggested.page, 'en');
+  assert.equal(await suggested.page.locator('[data-ui-choice="en"]').getAttribute('data-ui-suggested'), 'false');
+  await suggested.context.close();
+  console.log('PASS: overseas visitors receive an English suggestion and can switch on mobile');
+
+  const returning = await scenario({ stored:'en', query:'?q=Noto%20Sans%20KR#fonts' });
+  const restoredURL = new URL(returning.page.url());
+  assert.equal(restoredURL.searchParams.get('ui'), 'en');
+  assert.equal(restoredURL.searchParams.get('q'), 'Noto Sans KR');
+  assert.equal(restoredURL.hash, '#fonts');
+  await returning.page.reload(); await isLanguage(returning.page, 'en');
+  await returning.context.close();
+  console.log('PASS: restoring a saved preference preserves search parameters, fragment and reload behavior');
 
   const { page, context } = await scenario({ query:'?ui=en' });
   const originalSample = await page.locator('#previewText').inputValue();
@@ -77,7 +134,7 @@ try {
   assert.equal(await page.locator('.r-pv').first().textContent(), '분류 Filter 한글 123');
   await page.locator('#qTop').fill('Noto Sans KR');
   await page.waitForTimeout(100);
-  assert.match(await page.locator('#count').innerText(), /1 \/ 562 fonts/);
+  assert.match(await page.locator('#count').innerText(), /1 \/ [\d,]+ fonts/);
   await page.locator('#qTop').fill('');
   await page.locator('[data-cat="명조"]').click();
   assert.equal(await page.locator('[data-cat="명조"]').getAttribute('class'), 'fbtn on');
@@ -116,10 +173,19 @@ try {
   const race = await scenario({ language:'en', locale:'ko-KR', delay:900 });
   await race.page.locator('[data-ui-choice="ko"]').click(); await race.page.waitForTimeout(1000);
   await isLanguage(race.page, 'ko'); await race.context.close();
+  const englishRace = await scenario({ language:'ko', locale:'ko-KR', delay:900 });
+  await englishRace.page.locator('[data-ui-choice="en"]').click(); await englishRace.page.waitForTimeout(1000);
+  await isLanguage(englishRace.page, 'en'); await englishRace.context.close();
+  const late = await scenario({ language:'en', locale:'ko-KR', delay:1800 });
+  await late.page.waitForTimeout(1900); await isLanguage(late.page, 'ko'); await late.context.close();
   const blocked = await scenario({ language:'en', blocked:true });
   await blocked.page.locator('[data-ui-choice="ko"]').click();
   await blocked.page.locator('nav.main a[href^="en/"]').click(); await isLanguage(blocked.page, 'ko');
   await blocked.context.close();
+  const blockedEnglish = await scenario({ blocked:true });
+  await blockedEnglish.page.locator('[data-ui-choice="en"]').click();
+  await blockedEnglish.page.locator('nav.main a[href^="en/"]').click(); await isLanguage(blockedEnglish.page, 'en');
+  await blockedEnglish.context.close();
   console.log('PASS: late country response cannot override manual choice; navigation retains choice without storage');
 
   const mobile = await scenario({ mobile:true, query:'?ui=en' });
