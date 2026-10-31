@@ -33,11 +33,11 @@
 @media(prefers-reduced-motion:reduce){.tb-meadow .tb-btn:hover{transform:none}}
 
 /* Main statement uses the requested Damion face at its native regular weight. */
-.tb-meadow h1.tb-meadow-title{font-family:"Damion",cursive;font-weight:400;font-synthesis:none;font-size:clamp(38px,5vw,72px);line-height:1.15;letter-spacing:0;margin:0 0 8px;color:#26382c;text-shadow:0 1px 12px #fff9}
-.tb-meadow-tagline{text-shadow:0 1px 6px #fff;font-size:16px;font-weight:600;margin:0 0 8px;color:#344637}
-.tb-meadow .tb-lead{font-size:13px;color:#354537;text-shadow:0 1px 6px #fff}
+.tb-meadow h1.tb-meadow-title{font-family:"Damion",cursive;font-weight:400;font-synthesis:none;font-size:clamp(26.6px,3.5vw,50.4px);line-height:1.15;letter-spacing:0;margin:0 0 8px;color:#26382c;text-shadow:0 1px 12px #fff9}
+.tb-meadow-tagline{text-shadow:0 1px 5px #18241bd9;font-size:16px;font-weight:600;margin:0 0 8px;color:#fff}
+.tb-meadow .tb-lead{font-size:13px;color:#fff;text-shadow:0 1px 5px #18241bd9}
 @media(max-width:760px){
- .tb-meadow h1.tb-meadow-title{font-size:clamp(27px,7.2vw,42px);max-width:none;white-space:nowrap}
+ .tb-meadow h1.tb-meadow-title{font-size:clamp(18.9px,5.04vw,29.4px);max-width:none;white-space:nowrap}
  .tb-meadow-tagline{font-size:13px;margin-bottom:6px}
  .tb-meadow .tb-lead{font-size:11px;margin-bottom:9px}
  .tb-meadow-copy{padding-inline:12px}
