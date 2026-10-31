@@ -4,10 +4,11 @@ const fs=require('node:fs'),assert=require('node:assert/strict');
 const base=process.env.TYPEBOOK_URL||'http://127.0.0.1:8888',out=process.env.PAPER_QA_DIR||'/tmp/letsum-paper-qa';fs.mkdirSync(out,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});const reports=[];
- const cases=[['olympiasm3',1310,863,14],['hermes3000',1440,900,14],['lettera32',1280,800,18],['olympiasm3',1310,863,28],['olympiasm3',390,844,14],['hermes3000',768,1024,14]];
+ const cases=process.env.TYPEBOOK_CLOSEUP?[['hermes3000',1440,900,14],['hermes3000',390,844,14]]:[['olympiasm3',1310,863,14],['hermes3000',1440,900,14],['lettera32',1280,800,18],['olympiasm3',1310,863,28],['olympiasm3',390,844,14],['hermes3000',768,1024,14]];
  for(const [model,width,height,size] of cases){
   const context=await browser.newContext({viewport:{width,height},isMobile:width<600,hasTouch:width<600});const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.addInitScript(({size})=>{
+  await page.addInitScript(({size,close})=>{
+   if(close)localStorage.setItem('typebook-v1:camera','close');
    localStorage.setItem('typebook-v1:trace-font',JSON.stringify(size));
    // Record the exact scheduled sounds without using an OS audio device.
    window.__sounds=[];const realFetch=window.fetch;
@@ -18,7 +19,7 @@ const base=process.env.TYPEBOOK_URL||'http://127.0.0.1:8888',out=process.env.PAP
     createBufferSource(){return {connect(){return {connect(){}};},disconnect(){},stop(){},start(){window.__sounds.push({name:this.buffer.name,n:Array.from(document.getElementById('tbInput').value).length});queueMicrotask(()=>this.onended?.());}};}
     async decodeAudioData(raw){return {name:raw.name};}async resume(){}
    };
-  },{size});
+  },{size,close:!!process.env.TYPEBOOK_CLOSEUP});
   await page.goto(base+'/#/read/byeol');await page.locator('#tbModelGallery[open]').waitFor();await page.click(`[data-choose-model="${model}"]`);await page.locator('#tbMain[data-hermes-state="ready"]').waitFor({timeout:60000});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(900);
   const report=await page.evaluate(async()=>{
    const input=document.getElementById('tbInput'),host=document.getElementById('tbOrig'),paper=document.getElementById('tbHermesPaper');

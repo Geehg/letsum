@@ -198,3 +198,7 @@ body.tb-peek.tb-peek-off>header,body.tb-peek.tb-peek-off main.tb>.tb-topw{transf
 body.tb-peek .tb-peek-zone{display:block;position:fixed;top:0;left:0;right:0;height:14px;z-index:62}
 body.tb-peek:not(.tb-peek-off) .tb-peek-zone{display:none}
 @media(prefers-reduced-motion:reduce){body.tb-peek>header,body.tb-peek main.tb>.tb-topw{transition:none}}
+/* Close framing crops the instrument, never the mobile layout viewport. */
+main.tb[data-model="hermes3000"][data-camera="close"] .tb-hermes-stage{overflow:clip}
+
+body.tb-retro-portrait #tbCloseup{top:56px!important}

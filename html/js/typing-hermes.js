@@ -6,6 +6,9 @@
  const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32',olympiasm3:'Olympia SM3'};
  const feeding=()=>main.dataset.paperFeed==='physical';
  const tracing=()=>main.dataset.readingMode==='immersive';
+ const closeButton=$('tbCloseup');
+ try{main.dataset.camera=localStorage.getItem('typebook-v1:camera')==='close'?'close':'full';}catch{}
+ closeButton?.addEventListener('click',()=>{main.dataset.camera=main.dataset.camera==='close'?'full':'close';try{localStorage.setItem('typebook-v1:camera',main.dataset.camera);}catch{}update();});
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,loading=false,engine=null,composing=false,failed=false,failedModel='';
  function sceneState(value,message){
@@ -26,6 +29,7 @@
   main.dataset.hermesReady='false';
  }
  function update(){
+  if(closeButton){closeButton.hidden=main.dataset.model!=='hermes3000';closeButton.setAttribute('aria-pressed',String(main.dataset.camera==='close'));closeButton.textContent=main.dataset.camera==='close'?'전체 구도':'근접 구도';}
   active=main.dataset.modelGate!=='pending'&&main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
   if((engine&&engine.model!==main.dataset.model)||(failed&&failedModel!==main.dataset.model)){engine?.dispose();engine=null;failed=false;restore();}
@@ -35,7 +39,7 @@
    if(composing&&input.parentElement!==paper)return;
    if(input.parentElement!==paper){const focused=document.activeElement===input;paper.appendChild(input);if(focused)input.focus({preventScroll:true});}
    input.placeholder=tracing()?'':'종이를 클릭하고 첫 문장을 입력하세요…';main.dataset.hermesReady='true';
-   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 61키')+' · 종이에 직접 입력';engine.resize();
+   status.textContent=tracing()?'종이의 현재 커서 위치에서 필사를 시작할 수 있습니다.':modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 54키 외형')+' · 종이에 직접 입력';engine.resize();
   }
  }
  new MutationObserver(update).observe(main,{attributes:true,attributeFilter:['data-skin','data-model','data-reading-mode','data-model-gate']});
@@ -59,23 +63,11 @@
    const loader=new GLTFLoader();
    const pending=Promise.allSettled([
     loader.loadAsync('/img/typewriters/hermes3000.glb?v=6'),
-    selectedModel==='hermes3000'?loader.loadAsync('/img/typewriters/reference/hermes-return-lever.glb?v=1'):Promise.resolve(null),
-    selectedModel==='lettera32'?loader.loadAsync('/img/typewriters/reference/lettera32-reference.glb?v=4'):selectedModel==='olympiasm3'?loader.loadAsync('/img/typewriters/reference/olympiasm3-reference.glb?v=2'):Promise.resolve(null)
+    selectedModel==='hermes3000'?loader.loadAsync('/img/typewriters/reference/hermes3000-reference.glb?v=1'):selectedModel==='lettera32'?loader.loadAsync('/img/typewriters/reference/lettera32-reference.glb?v=4'):selectedModel==='olympiasm3'?loader.loadAsync('/img/typewriters/reference/olympiasm3-reference.glb?v=2'):Promise.resolve(null)
    ]).then(results=>{
     const error=results.find(r=>r.status==='rejected');
     if(error){for(const r of results)if(r.status==='fulfilled'&&r.value)releaseGraph(r.value.scene);throw error.reason;}
-    const [base,reference,lettera]=results.map(r=>r.value);detailedReference=lettera?.scene;
-    if(reference){
-     const pivot=base.scene.getObjectByName('Return_Lever'),oldChrome=base.scene.getObjectByName('Return_Lever_Chrome');
-     if(!pivot||!oldChrome){releaseGraph(reference.scene);releaseGraph(base.scene);throw new Error('Hermes return lever anchor missing');}
-     // Keep the established animation pivot. The reference grip is a single
-     // continuous mesh; only the authored reference anchor is translated.
-     const metal=oldChrome.material,unused=new Set();
-     reference.scene.traverse(o=>{if(!o.isMesh)return;unused.add(o.material);o.material=metal;if(o.name==='Return_joint_washer'){o.material=metal.clone();o.material.name='Return_Joint_Dark';o.material.color.setRGB(.025,.03,.025);o.material.roughness=.52;}});
-     unused.forEach(m=>m.dispose());pivot.children.forEach(o=>o.visible=false);
-     reference.scene.name='Hermes_Reference_Return';reference.scene.scale.setScalar(1.10);
-     reference.scene.position.set(.168*1.10,-.174*1.10,.130*1.10);pivot.add(reference.scene);
-    }
+    const [base,reference]=results.map(r=>r.value);detailedReference=reference?.scene;
     return base;
    });
    pending.then(result=>{if(loadExpired){releaseGraph(result.scene);releaseGraph(detailedReference);}},()=>{});
@@ -345,7 +337,7 @@
    const barFor=new Map(bars.map(o=>[o.userData.keyCode,o])),carriage=nodes.Carriage,platen=nodes.Platen,guide=nodes.Ribbon_Guide,lever=nodes.Return_Lever,basket=nodes.Typebasket;
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
-   const referenceMotion=detailedReference?(selectedModel==='olympiasm3'?globalThis.LSAttachOlympiaReference:globalThis.LSAttachLetteraReference)(T,scene,asset.scene,detailedReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
+   const referenceMotion=detailedReference?(selectedModel==='hermes3000'?globalThis.LSAttachHermesReference:selectedModel==='olympiasm3'?globalThis.LSAttachOlympiaReference:globalThis.LSAttachLetteraReference)(T,scene,asset.scene,detailedReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
    let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,contentOffset=0;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
@@ -361,7 +353,7 @@
     resizePending=false;
     if(disposed||!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    const trace=tracing(),a=width/height,instrumentScale=1.15;
+    const trace=tracing(),a=width/height,instrumentScale=1.15,close=selectedModel==='hermes3000'&&main.dataset.camera==='close';
     const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
     // On tall desktop windows keep room for both reading panels and carriage travel.
     const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
@@ -371,6 +363,7 @@
     camera.position.set(0,.60,.73);
     if(portrait)camera.position.addScaledVector(new T.Vector3(0,.395,.73).normalize(),3);
     camera.lookAt(0,.205,0);
+    if(close){camera.position.set(0,.80,.52);camera.lookAt(0,.164,-.08);}
     // Render the cloth to the viewport edges without changing instrument framing.
     const rect=view.getBoundingClientRect?.(),viewportWidth=document.documentElement?.clientWidth||width;
     bleedLeft=Math.max(0,rect?.left||0);bleedRight=Math.max(0,viewportWidth-(rect?.right||width));renderWidth=width+bleedLeft+bleedRight;
@@ -396,6 +389,7 @@
      const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
      camera.top=sheetTop+sheetInset*span/height;camera.bottom=camera.top-span;
     }
+    if(close){span=Math.max(.46,.34/a);const strike=new T.Vector3(0,.174,-.151).applyMatrix4(camera.matrixWorldInverse);camera.top=strike.y+span*.34;camera.bottom=camera.top-span;camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;}
     camera.updateProjectionMatrix();
     // Lower only the cloth by 10% of the immersive view height.
     ground.scale.y=portrait?Math.max(1,span*2):1;
@@ -479,7 +473,7 @@
     input.scrollTop=offset;if(tracing())$('tbOrig').scrollTop=offset;
    }
    function placePaper(){
-    if(tracing()&&main.dataset.focusPortrait==='true'){
+    if(tracing()&&main.dataset.focusPortrait==='true'&&!(selectedModel==='hermes3000'&&main.dataset.camera==='close')){
      // Track part of the carriage sweep so the full body and moving paper fit a narrow screen.
      const offset=Math.max(-.07,Math.min(.07,currentX*.43)),span=camera.top-camera.bottom,a=width/height;
      camera.left=-span*a/2-bleedLeft*span/height+offset;camera.right=span*a/2+bleedRight*span/height+offset;camera.updateProjectionMatrix();
@@ -566,7 +560,7 @@
     scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){mats.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}}});
     geometries.forEach(g=>g.dispose());mats.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss?.();renderer.domElement.remove();
    }
-   engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+(selectedModel==='olympiasm3'?' 51키':referenceMotion?' 50키':' 61키')+' 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 61키')+' · 종이에 직접 입력';loading=false;update();
+   engine={sync,resize,wake,stop,dispose,model:selectedModel};stage.setAttribute('aria-label',modelNames[selectedModel]+(selectedModel==='hermes3000'?' 54키 외형':selectedModel==='olympiasm3'?' 51키':' 50키')+' 타자기와 입력 용지');main.dataset.hermesFailed='false';status.textContent=modelNames[main.dataset.model]+(main.dataset.model==='lettera32'?' · 50키':main.dataset.model==='olympiasm3'?' · 51키':' · 54키 외형')+' · 종이에 직접 입력';loading=false;update();
   }catch(error){cleanups.splice(0).forEach(fn=>fn());releaseResources();renderer?.dispose();renderer?.forceContextLoss?.();renderer?.domElement.remove();loading=false;if(selectedModel!==main.dataset.model||!active){update();return;}failEngine(error);}
  }
  update();
