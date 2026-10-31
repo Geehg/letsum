@@ -1673,6 +1673,18 @@ import "@fontsource/${f.id}/400.css";</pre>
         </div>
       </article>`;
     }
+    if (f.id === "k-busan-dandi-handwriting") {
+      return `<article class="sp sp-station sp-corridor${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:#292824;--fg:#fff;--ac:#d6edf3" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
+        <img class="sp-corridor-photo" src="img/hero/busan-dandi-corridor-v1.webp" width="2172" height="724" alt="역 내부 타일 벽에 걸린 부산 여행 간판과 흐릿하게 지나가는 사람들을 표현한 창작 장면" decoding="async">
+        <div class="wrap sp-station-caption sp-corridor-caption"><div>
+          <div class="sp-kick">스쳐 가는 일상에, 부산 한 줄</div>
+          <h2 class="sp-station-title" style="font-family:${f.family};font-weight:${heavy}">부산단디손글씨</h2>
+          <p class="sp-type" data-line="부산 가서 뭐 하지?"></p>
+          <div class="sp-cta"><button class="sp-btn" data-open="${f.id}">자세히 보기</button><a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">공식 배포처 ↗</a></div>
+          <span class="sp-station-credit">첨부 간판을 활용한 창작 이미지</span>
+        </div></div>
+      </article>`;
+    }
     const nm = [...f.name];
     const title = f.intro
       ? (f.specimen ? `<img class="sp-spec" src="${f.specimen}" alt="${esc(f.name)} 견본">` : `<span class="sp-noprev">${esc(f.name)}</span>`)

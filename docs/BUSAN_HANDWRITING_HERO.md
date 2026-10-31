@@ -1,0 +1,8 @@
+# 부산단디손글씨 역 통로 히어로
+
+2026-10-31. 사용자 첨부 간판을 역 타일 벽에 배치한 창작 장면. 실제 설치 사례로 표시하지 않음. 제목은 실제 부산단디손글씨 웹폰트로 렌더링. 기존 히어로 폭·높이 유지.
+
+생성 도구: built-in image_gen. 최종 자산: html/img/hero/busan-dandi-corridor-v1.webp (WebP q88).
+
+프롬프트:
+Create a photorealistic panoramic website hero background, very wide 3:1 landscape composition. The attached image is the exact advertising lightbox artwork to preserve and place into the scene, including its blue Busan seaside photograph, woman, white Korean handwriting and doodles; do not redesign or replace the poster. Scene: an interior corridor of a Korean railway station, dark warm-grey small rectangular glazed tile wall with clear grout lines, subtle ceiling fluorescent reflections, realistic slightly worn tiled floor. Mount the attached black framed illuminated advertisement on the tile wall slightly right of center, front facing and rectangular, at realistic human eye height. The entire lightbox must fit inside the CENTRAL 55 percent of image height, with generous tile wall above and below, because this image will be cropped to a very shallow 4.6:1 banner. Lightbox around 35 percent of image width. A few commuters pass through foreground from left and right, deliberately strong long-exposure motion blur, ghosted bodies and walking legs, indistinct faces. Keep central poster legible and not blocked by people. Quiet nostalgic cinematic station atmosphere, cool ocean-blue poster contrasted with warm grey tile, natural photographic texture. Keep the left quarter mostly uncluttered darker tile for HTML title and buttons. No extra signs, no additional text, no watermark. This is a conceptual advertising mockup, not documentary evidence.

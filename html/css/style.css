@@ -2406,3 +2406,18 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
  .sp-station-credit{flex-basis:100%}
 }
 @media(max-width:700px){#spot:has(.sp-station) .sp-arrow{top:30%}}
+
+/* Busan handwriting: tiled station passage with a supplied poster. */
+.sp-corridor-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.sp-corridor::after{background:linear-gradient(90deg,rgba(20,23,23,.7),rgba(20,23,23,.25) 33%,transparent 53%)}
+.sp-corridor-caption{align-items:center;padding-top:16px;padding-bottom:20px}
+.sp-corridor .sp-station-title{font-size:clamp(28px,3vw,44px)}
+.sp-corridor .sp-cta{margin:12px 0 6px}
+.sp-corridor .sp-station-credit{display:block;text-align:left}
+@media(max-width:700px){
+ .sp-corridor-photo{object-position:68% 40%}
+ .sp-corridor::after{background:linear-gradient(0deg,rgba(20,23,23,.85),transparent 72%)}
+ .sp-corridor-caption{align-items:flex-start;justify-content:flex-end;padding-bottom:20px}
+ .sp-corridor .sp-station-title{font-size:24px}
+ .sp-corridor .sp-cta{margin:5px 0}
+}
