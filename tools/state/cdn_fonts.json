@@ -1095,5 +1095,35 @@
   "files": {
    "400": "https://static.toss.im/assets/homepage/moneygraphy-font/font/Moneygraphy-Pixel_1.1.woff2"
   }
+ },
+ "k-chogoon-v2": {
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V2",
+  "files": {
+   "500": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V2@0f2b1fb1ee06d23152c16ee6fc1660ccf22625de/CHOGOONChickenScratchV2-Medium.ttf"
+  }
+ },
+ "k-chogoon-v3": {
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V3",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V3@4def6c0cd14756f2efce71f82746f646964634d4/CHOGOONCHICKENSCRATCHV3-Regular.ttf"
+  }
+ },
+ "k-chogoon-v5": {
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V5",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V5@32dcf4d8f1a52631c60e1a9df7762cea8e3e5a13/CHOGOONCHICKENSCRATCHV5-Regular.ttf"
+  }
+ },
+ "k-chogoon-v6": {
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V6",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V6@7790836b153ee3c2bfd4cf4ba17fd4a7893f9ee5/CHOGOONCHICKENSCRATCHV6-Regular.ttf"
+  }
+ },
+ "k-chogoon-v7": {
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V7",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V7@ecb173abf7083c0294c4767e75622afe5113a7ba/CHOGOONCHICKENSCRATCHV7-Regular.ttf"
+  }
  }
 }

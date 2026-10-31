@@ -2221,5 +2221,41 @@
   "evidence": "인쇄·웹페이지·영상·CI/BI·이북·UI 디자인 무료 사용. 임베딩·수정·변형·복사·대여·재판매·배포 불가(인쇄용 PDF 임베딩 지원). 책 본문 사용 시 서체 사용 문구 표시. 공식 서체 가이드 PDF 4·5·14쪽 확인. 포함된 본명조의 OFL은 을유1945 전체 라이선스가 아님.",
   "page": "https://www.eulyoo.co.kr/member/font.html",
   "checked": "2026-10-31"
+ },
+ "k-chogoon-v2": {
+  "license": "OFL",
+  "evidence": "제작자 공식 블로그가 연결한 chogoons GitHub의 LICENSE.md: SIL OFL 1.1, 개인·교육·상업 목적 사용 및 재배포 허용, 수정본 이름 변경·라이선스 동봉·파일 단독 판매 금지. TTF 원본 무변환, 커밋 고정 CDN 사용.",
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V2/blob/0f2b1fb1ee06d23152c16ee6fc1660ccf22625de/LICENSE.md",
+  "checked": "2026-10-31"
+ },
+ "k-chogoon-v3": {
+  "license": "OFL",
+  "evidence": "제작자 공식 블로그가 연결한 chogoons GitHub의 LICENSE.md: SIL OFL 1.1, 개인·교육·상업 목적 사용 및 재배포 허용, 수정본 이름 변경·라이선스 동봉·파일 단독 판매 금지. TTF 원본 무변환, 커밋 고정 CDN 사용.",
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V3/blob/4def6c0cd14756f2efce71f82746f646964634d4/LICENSE.md",
+  "checked": "2026-10-31"
+ },
+ "k-chogoon-v5": {
+  "license": "OFL",
+  "evidence": "제작자 공식 블로그가 연결한 chogoons GitHub의 LICENSE.md: SIL OFL 1.1, 개인·교육·상업 목적 사용 및 재배포 허용, 수정본 이름 변경·라이선스 동봉·파일 단독 판매 금지. TTF 원본 무변환, 커밋 고정 CDN 사용.",
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V5/blob/32dcf4d8f1a52631c60e1a9df7762cea8e3e5a13/LICENSE.md",
+  "checked": "2026-10-31"
+ },
+ "k-chogoon-v6": {
+  "license": "OFL",
+  "evidence": "제작자 공식 블로그가 연결한 chogoons GitHub의 LICENSE.md: SIL OFL 1.1, 개인·교육·상업 목적 사용 및 재배포 허용, 수정본 이름 변경·라이선스 동봉·파일 단독 판매 금지. TTF 원본 무변환, 커밋 고정 CDN 사용.",
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V6/blob/7790836b153ee3c2bfd4cf4ba17fd4a7893f9ee5/LICENSE.md",
+  "checked": "2026-10-31"
+ },
+ "k-chogoon-v7": {
+  "license": "OFL",
+  "evidence": "제작자 공식 블로그가 연결한 chogoons GitHub의 LICENSE.md: SIL OFL 1.1, 개인·교육·상업 목적 사용 및 재배포 허용, 수정본 이름 변경·라이선스 동봉·파일 단독 판매 금지. TTF 원본 무변환, 커밋 고정 CDN 사용.",
+  "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V7/blob/ecb173abf7083c0294c4767e75622afe5113a7ba/LICENSE.md",
+  "checked": "2026-10-31"
+ },
+ "k-bookend-batang": {
+  "license": "북엔드 바탕 이용 안내",
+  "evidence": "개인·기업 무료, 상업 이용 및 인쇄·웹·영상·포장·임베딩·BI/CI 허용. 폰트 파일 자체 유료 판매 금지. 현재 공식 안내에는 수정·재배포 조건이 명시되지 않음. 현재 페이지 직접 확인: 검색 색인의 과거 OFL 문구 대신 현행 사용 안내 적용.",
+  "page": "https://www.bookend.tech/font",
+  "checked": "2026-10-31"
  }
 }
