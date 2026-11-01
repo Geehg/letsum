@@ -335,6 +335,7 @@
       else s.textContent = c;
       if (i < typed.length) s.classList.add(state.composing && i === typed.length - 1 ? "pend" : same(typed[i], c) ? "ok" : "bad");
       else if (i === typed.length) s.classList.add("cur");
+      if (s.classList.contains("bad") && /^\s$/u.test(typed[i])) { s.dataset.whitespaceError = "true"; s.dataset.errorMark = typed[i] === "\n" ? "↵" : "␣"; }
       fr.appendChild(s); if (c === "\n") fr.appendChild(document.createTextNode("\n"));
     }
     // Keep excess input visible in the single-sheet editor so it can be corrected.
@@ -514,6 +515,15 @@
       const t = chars(state.book.pages[state.page]); const e = chars(inp.value.slice(0, inp.selectionStart)).length;
       if (e > 0 && e <= t.length) { state.attempts++; const good = same(chars(inp.value)[e - 1], t[e - 1]); if (good) addDay(1); else state.errors++; learn(t[e - 1], good); }
       refresh(); storeProgress(); finishCheck();
+    });
+    // Native line breaks only consume an explicit source newline. In the
+    // immersive view soft wrapping and carriage return already happen visually.
+    inp.addEventListener("beforeinput", (e) => {
+      if (!state.book || state.composing || e.isComposing || $("tbMain").dataset.readingMode !== "immersive" || !["insertLineBreak", "insertParagraph"].includes(e.inputType) || inp.selectionStart !== inp.selectionEnd) return;
+      const index = chars(inp.value.slice(0, inp.selectionStart)).length;
+      if (chars(state.book.pages[state.page])[index] !== "\n" && e.cancelable) {
+        e.preventDefault(); toast("줄바꿈은 ↵ 표시에서만 입력해 주세요.");
+      }
     });
     inp.addEventListener("input", onInput);
     inp.addEventListener("paste", (e) => { e.preventDefault(); toast("필사에서는 붙여 넣기를 쓸 수 없어요. 직접 입력해 주세요."); });

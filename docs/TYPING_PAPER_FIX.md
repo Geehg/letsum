@@ -52,3 +52,12 @@
 - 화면 원본은 `tools/typing_app.html`, 생성물은 `node tools/build_pages.js`의 `html/type/index.html`.
 
 브라우저 검사는 `PLAYWRIGHT_MODULE`로 설치된 Playwright 경로를 지정할 수 있고, `TYPEBOOK_URL`로 검사할 로컬 서버 주소를 바꿀 수 있다. 테스트는 매번 격리된 새 브라우저 저장소를 사용한다.
+
+## 엔터 이후 첫 글자가 빈칸으로 보이는 문제 — 2026-11-01
+
+`small-sentence` 원문의 줄바꿈 인덱스는 84/172이다. 172에서 줄바꿈한 뒤 추가 Enter가 들어오면 173번 ‘읽’ 자리에 newline이 입력되고 `.bad {color:transparent}`와 `data-typed`의 보이지 않는 newline이 결합해 첫 글자가 사라진다. 사용자 화면의 174/278 상태를 동일하게 재현했다. 종이 위치/카메라 잘림과는 별개의 표시 문제다.
+
+- 몰입 모드 beforeinput에서 원문의 명시적인 newline 위치만 줄바꿈을 소비한다. 추가 Enter는 기본 입력을 취소하고 안내한다. 조합 중 입력·선택 영역은 이 처리에서 제외한다.
+- 기존 잘못된 초안의 공백/줄바꿈 오타는 원문 글자를 유지하고 작은 오류 기호를 표시한다. 저장된 원문/초안/진행 기록을 자동 수정하지 않는다.
+- `check_typing_enter_hint.cjs`: Hermes 전체/모바일 근접, Lettera, Olympia에서 정상 엔터, 추가 엔터 3회, 첫 한글 입력, 기존 newline 오류 표시, Backspace, IME 이벤트 검증. 기존 paper_interactions 검사도 통과했다.
+- 실제 화면에서 ‘읽’이 `cur trace-caret`이며 불투명 원문색으로 보이는 것을 확인. validator 오류 0, 기존 경고 272.

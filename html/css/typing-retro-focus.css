@@ -202,3 +202,7 @@ body.tb-peek:not(.tb-peek-off) .tb-peek-zone{display:none}
 main.tb[data-model="hermes3000"][data-camera="close"] .tb-hermes-stage{overflow:clip}
 
 body.tb-retro-portrait #tbCloseup{top:56px!important}
+
+/* A whitespace mistake must not erase the expected source character. */
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad[data-whitespace-error]{color:#ad3b2d}
+main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad[data-whitespace-error]::after{content:attr(data-error-mark);left:100%;top:-.45em;font-size:.55em;line-height:1;text-decoration:none}
