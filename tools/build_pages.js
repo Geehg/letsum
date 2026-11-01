@@ -108,7 +108,7 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script type="application/json" id="instData">${JSON.stringify((() => { const n = NAMES[f.id] || {}; const w = (n.w || {})[400] || Object.values(n.w || {})[0] || {}; return { name: f.name, fam: n.fam || "", win: w.win || "", ps: w.ps || "", gf: /fonts\.google\.com/.test(dl.page || "") }; })()).replace(/</g, "\\u003c")}</script>
 <script src="../js/common.js?v=2" data-base="../"></script>
-<script src="../js/pv.js?v=1" defer></script>
+<script src="../js/pv.js?v=2" defer></script>
 </body>
 </html>
 `;
@@ -247,7 +247,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 폰트 · <a href="../index.html">전체 한글 폰트</a> · <a href="../en/">영문 폰트</a> · <a href="../dingbat/">딩벳 폰트</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script src="../js/common.js?v=2" data-base="../"></script>
-<script src="../js/pv.js?v=1" defer></script>
+<script src="../js/pv.js?v=2" defer></script>
 </body>
 </html>
 `;
