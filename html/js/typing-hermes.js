@@ -340,6 +340,8 @@
    const guideY=guide.position.y,leverQ=lever.quaternion.clone(),platenQ=platen.quaternion.clone(),knobs=['Platen_Knob_Left','Platen_Knob_Right'].map(n=>nodes[n]);
    knobs.forEach(k=>{k.userData.restQ=k.quaternion.clone();});
    const referenceMotion=detailedReference?(selectedModel==='hermes3000'?globalThis.LSAttachHermesReference:selectedModel==='olympiasm3'?globalThis.LSAttachOlympiaReference:globalThis.LSAttachLetteraReference)(T,scene,asset.scene,detailedReference,nodes,{anisotropy:renderer.capabilities?.getMaxAnisotropy?.()||1}):null;
+   // Neutral model bounds are captured before carriage/key animation.
+   const closeModelBounds=new T.Box3().setFromObject(detailedReference?.parent||bodyPose);
    const pressed=new Map(),hits=[],xAxis=new T.Vector3(1,0,0),yAxis=new T.Vector3(0,1,0),delta=new T.Quaternion();
    let resizePending=false,bufferWidth=0,bufferHeight=0,layoutPending=false,raf=0,until=0,prev=0,targetX=.096,currentX=.096,feed=0,currentFeed=0,returnAt=-1000,lastKeyAt=-1000,lastValue=null,width=0,height=0,renderWidth=0,bleedLeft=0,bleedRight=0,shift=false,shiftLift=0,drive=null,feedDrive=null,contentOffset=0;
    const measure=document.createElement('canvas').getContext('2d'),paperWidth=600,left=42,printBottom=30;
@@ -391,7 +393,19 @@
      const sheetTop=new T.Vector3(0,paperTop,-.151).applyMatrix4(camera.matrixWorldInverse).y;
      camera.top=sheetTop+sheetInset*span/height;camera.bottom=camera.top-span;
     }
-    if(close){span=Math.max(.33,.20/a);const strike=new T.Vector3(0,.174,-.151).applyMatrix4(camera.matrixWorldInverse);camera.top=strike.y+span*.20;camera.bottom=camera.top-span;camera.left=-span*a/2-bleedLeft*span/height;camera.right=span*a/2+bleedRight*span/height;}
+    if(close){
+     // Fit the entire instrument, full sheet and both carriage extremes. Use
+     // fixed travel bounds so typing never changes the zoom or camera center.
+     const fit=new T.Box3(),travel=sheetWidth/2;
+     const include=(x,y,z)=>fit.expandByPoint(new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse));
+     for(const x of [closeModelBounds.min.x-travel,closeModelBounds.max.x+travel])for(const y of [closeModelBounds.min.y,closeModelBounds.max.y])for(const z of [closeModelBounds.min.z,closeModelBounds.max.z])include(x,y,z);
+     for(const x of [-sheetWidth,sheetWidth])for(const y of [.174,paperTop+.06])include(x,y,-.151);
+     const insetX=20,insetTop=portrait?104:64,insetBottom=24;
+     span=Math.max((fit.max.y-fit.min.y)*height/Math.max(120,height-insetTop-insetBottom),(fit.max.x-fit.min.x)*height/Math.max(120,width-insetX*2));
+     const cx=(fit.min.x+fit.max.x)/2,cy=(fit.min.y+fit.max.y)/2;
+     camera.top=cy+span/2+(insetTop-insetBottom)*span/(2*height);camera.bottom=camera.top-span;
+     camera.left=cx-span*a/2-bleedLeft*span/height;camera.right=cx+span*a/2+bleedRight*span/height;
+    }
     camera.updateProjectionMatrix();
     // Lower only the cloth by 10% of the immersive view height.
     ground.scale.y=portrait?Math.max(1,span*2):1;
@@ -452,7 +466,7 @@
      const advance=position?.advance??row*lineHeight,maxAdvance=Math.max(0,rowsPerSheet-1)*lineHeight;
      const sheetAdvance=physical?Math.min(advance,maxAdvance):advance;
      contentOffset=physical?Math.max(0,advance-maxAdvance):0;
-     const nextFeed=physical?.196+(32+fontPixels*.95+sheetAdvance)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
+     const nextFeed=physical?.196+(32+fontPixels*(selectedModel==='hermes3000'&&main.dataset.camera==='close'?1.15:.95)+sheetAdvance)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
      const newLine=trace||physical?row+1>lastLine:nextFeed>feed+.0001;lastLine=row+1;
      if(newLine&&changed&&!initial)returnAt=now;
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
