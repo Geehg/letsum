@@ -8,6 +8,21 @@
     const b = JSON.stringify(o);
     try { if (!(navigator.sendBeacon && navigator.sendBeacon("/api/pv", new Blob([b], { type: "application/json" })))) fetch("/api/pv", { method: "POST", headers: { "content-type": "application/json" }, body: b, keepalive: true }).catch(() => {}); } catch (e) {}
   };
+  // Static font detail pages use CSS FontFace rather than the home preview loader.
+  const detailFont = location.pathname.match(/^\/font\/([a-z0-9-]+)\.html$/);
+  if (detailFont && document.fonts) {
+    const reported = new Set();
+    const inspectFailures = () => {
+      for (const face of document.fonts) {
+        if (face.status !== 'error' || reported.has(face) || !face.family.includes(detailFont[1])) continue;
+        reported.add(face);
+        const payload = JSON.stringify([{ e:'ffail', v:detailFont[1], diagnostic:{ version:1, weight:Number(face.weight), reason:navigator.onLine === false ? 'offline' : 'unknown', error:'unknown' } }]);
+        try { if (!(navigator.sendBeacon && navigator.sendBeacon('/api/e', new Blob([payload],{type:'application/json'})))) fetch('/api/e',{method:'POST',headers:{'content-type':'application/json'},body:payload,keepalive:true}).catch(()=>{}); } catch (_) {}
+      }
+    };
+    document.fonts.addEventListener('loadingerror', inspectFailures);
+    document.fonts.ready.then(inspectFailures); inspectFailures();
+  }
   let s = 1; try { if (sessionStorage.getItem("ls_pv")) s = 0; else sessionStorage.setItem("ls_pv", "1"); } catch (e) {}
   const q = new URLSearchParams(location.search);
   const u = q.get("utm_source") ? { source: q.get("utm_source"), medium: q.get("utm_medium") || "", campaign: q.get("utm_campaign") || "" } : null;

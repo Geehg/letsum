@@ -84,7 +84,7 @@
   async function loadFace(e) {
     e.status = 'loading';
     const fam = e.f.family.split(',')[0].replace(/['"]/g, '').trim();
-    let ok = false;
+    let ok = false, failureName = "unknown";
     const slow = setTimeout(() => { if (faceState[e.f.id] === 'wait') markFace(e.f.id, 'slow'); }, 8000);
     try {
       for (let retry = 0; retry < 2; retry++) {
@@ -92,17 +92,33 @@
         const face = new FontFace(fam, `url("${url}${retry ? (url.includes('?') ? '&' : '?') + 'r=1' : ''}") format("${fmtOf(url)}")`, { weight: String(e.w), display: 'swap' });
         e.face = face; document.fonts.add(face);
         try { await face.load(); ok = true; break; }
-        catch (_) { document.fonts.delete(face); e.face = null; }
+        catch (error) { failureName = error.name || "unknown"; document.fonts.delete(face); e.face = null; }
       }
       e.status = ok ? 'loaded' : 'failed';
       if (e.w === shownW(e.f)) markFace(e.f.id, ok ? 'ok' : 'fail');
-      if (!ok) ev('ffail', e.f.id);
+      if (!ok) reportFaceFailure(e, failureName);
     } catch (_) {
+      reportFaceFailure(e, 'loader-exception');
       e.status = 'failed'; if (e.face) document.fonts.delete(e.face); e.face = null;
       if (e.w === shownW(e.f)) markFace(e.f.id, 'fail');
     } finally {
       clearTimeout(slow); e.resolve(ok); trimFaces();
     }
+  }
+  async function reportFaceFailure(e, error) {
+    if (noTrack) return;
+    let reason = navigator.onLine === false ? 'offline' : 'network-or-cors';
+    // A failed FontFace does not expose HTTP status. Probe only after both attempts fail.
+    // Successful HEAD means only that the URL is reachable, not proof of a decoding error.
+    if (reason !== 'offline') {
+      const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 3000);
+      try {
+        const response = await fetch(e.f.webfont[e.w], { method:'HEAD', signal:ctl.signal, credentials:'omit' });
+        reason = response.ok ? 'load-rejected-url-reachable' : response.status >= 500 ? 'http-5xx' : response.status >= 400 ? 'http-4xx' : 'http-other';
+      } catch (x) { if (x.name === 'AbortError') reason = 'probe-timeout'; }
+      finally { clearTimeout(timer); }
+    }
+    ev('ffail', e.f.id, { version:1, weight:Number(e.w), reason, error });
   }
   function pumpFaces() {
     while (faceActive < FACE_MAX && faceQueue.length) {
@@ -668,9 +684,9 @@
     if (!evQ.length) return; const body = JSON.stringify(evQ.splice(0, 20));
     try { if (!navigator.sendBeacon || !navigator.sendBeacon("/api/e", new Blob([body], { type: "application/json" }))) fetch("/api/e", { method: "POST", headers: { "content-type": "application/json" }, body, keepalive: true }).catch(() => {}); } catch (e) {}
   }
-  function ev(e, v) {
+  function ev(e, v, diagnostic) {
     if (noTrack || !/^https:\/\/letsum\.app$/.test(location.origin)) return;
-    evQ.push(v ? { e, v: String(v) } : { e }); clearTimeout(evT); evT = setTimeout(flushEv, 3000);
+    evQ.push(v ? { e, v: String(v), ...(diagnostic ? { diagnostic } : {}) } : { e }); clearTimeout(evT); evT = setTimeout(flushEv, 3000);
     if (evQ.length >= 20) flushEv();
   }
   addEventListener("pagehide", flushEv); document.addEventListener("visibilitychange", () => { if (document.hidden) flushEv(); });

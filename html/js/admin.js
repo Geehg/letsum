@@ -553,11 +553,17 @@
     const outage = iss instanceof Error ? `<p class="note">${esc(iss.message)}</p>` : `<table class="spec mt-tbl">${iss.map((i) => `<tr><th><span class="st ${i.state === "open" ? "bad" : "ok"}">${i.state === "open" ? "장애 중" : "복구"}</span>${esc(i.title)}</th><td class="n">${fmt(i.created_at)}${i.closed_at ? ` → ${fmt(i.closed_at)}` : ""}</td></tr>`).join("") || '<tr><td class="note">장애 기록이 없습니다</td></tr>'}</table>`;
     let jobs = ""; if (runs instanceof Error) jobs = `<p class="note">${esc(runs.message)}</p>`; else { const last = {}; runs.workflow_runs.forEach((r) => { if (!last[r.name]) last[r.name] = r; }); jobs = `<table class="spec mt-tbl">${Object.values(last).map((r) => { const lv = r.status !== "completed" ? "warn" : r.conclusion === "success" ? "ok" : "bad"; return `<tr><th><span class="st ${lv}">${lv === "ok" ? "성공" : lv === "warn" ? "진행 중" : "실패"}</span><a class="linklike" href="${esc(r.html_url)}" target="_blank" rel="noopener noreferrer">${esc(r.name)}</a></th><td class="n">${fmt(r.run_started_at)}</td></tr>`; }).join("")}</table>`; }
     const ffail = {}; if (met && !(met instanceof Error)) met.rows.filter((x) => x.name === "ffail").forEach((x) => { ffail[x.font] = (ffail[x.font] || 0) + x.n; });
+    const today = new Date(Date.now()+9*3600e3).toISOString().slice(0,10);
+    const recentFailures = met && !(met instanceof Error) ? met.rows.filter(x => x.name === 'ffail' && x.day === today).reduce((a,x)=>a+x.n,0) : null;
+    const reasons = { offline:'오프라인', 'network-or-cors':'네트워크 또는 CORS (구분 불가)', 'probe-timeout':'진단 요청 시간 초과', 'http-4xx':'HTTP 4xx', 'http-5xx':'HTTP 5xx', 'http-other':'기타 HTTP 응답', 'load-rejected-url-reachable':'주소 응답 정상·폰트 로드 거부 (원인 미확정)', unknown:'원인 미상' };
+    const details = met?.diagnostics;
+    const diagnosticHtml = !details ? '<p class="note">상세 진단 자료 없음 — 이전 기록에는 원인·환경이 없습니다.</p>' : `<p class="note">한국 시간·시간 단위 집계 / 최대 500행·30일 보관. 오늘 ${nf(recentFailures)}건은 최근 발생 기록이며 현재 장애 확정이 아닙니다. 상세 수집 이전 실패는 아래 표에 없습니다. 브라우저·기기는 UA 기반 추정이며 태블릿의 데스크톱 모드는 구분되지 않을 수 있습니다.</p><div class="adm-scroll"><table class="spec mt-tbl"><tr><th>발생 시간(KST)</th><th>폰트 / 굵기</th><th>진단</th><th>브라우저·기기·OS</th><th>건수</th></tr>${details.rows.map(x=>`<tr><td>${esc(x.hour.replace('T',' '))}시</td><td>${esc(fname(x.font))} / ${esc(x.weight)}</td><td>${esc(reasons[x.reason] || x.reason)}<br>${esc(x.error)}</td><td>${esc(x.browser)} / ${esc(x.device)} / ${esc(x.os)}</td><td>${nf(x.n)}</td></tr>`).join('') || '<tr><td colspan="5">새 상세 진단 기록이 없습니다. 현재 정상이라는 보증은 아닙니다.</td></tr>'}</table></div>`;
     const needKey = '<p class="note">로그인하면 보입니다.</p>';
     cols.innerHTML = `
       <div><p class="mt-sub">가동 감시 기록 <span class="note">(10분마다 · 최근 10건)</span></p>${outage}</div>
       <div><p class="mt-sub">자동 작업 최근 실행</p>${jobs}</div>
-      ${met === null ? `<div><p class="mt-sub">미리보기 실패 폰트 (7일)</p>${needKey}</div>` : met instanceof Error ? "" : table("미리보기 실패 폰트 (7일, 방문자 화면 기준)", Object.entries(ffail).sort((a, b) => b[1] - a[1]), { label: fname, noPct: true })}
+      ${met === null ? `<div><p class="mt-sub">미리보기 실패 폰트 (7일)</p>${needKey}</div>` : met instanceof Error ? "" : table("과거 포함 누적 미리보기 실패 (최근 7일 · 현재 장애 아님)", Object.entries(ffail).sort((a, b) => b[1] - a[1]), { label: fname, noPct: true })}
+      <div><p class="mt-sub">미리보기 실패 상세 · 최근 발생 진단</p>${diagnosticHtml}</div>
       ${tr === null ? `<div><p class="mt-sub">스크립트 오류 (7일)</p>${needKey}</div>` : tr instanceof Error ? "" : table("스크립트 오류 (7일)", tr.dims.err || [], { noPct: true, max: 20 })}
       ${tr && !(tr instanceof Error) ? table("검색 로봇 방문 (7일)", tr.dims.bot || [], { noPct: true }) : ""}`;
   };

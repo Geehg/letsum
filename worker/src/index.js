@@ -1,3 +1,4 @@
+import { failureStatement, failureReport } from './preview-diagnostics.js';
 // LETSUM API — 좋아요 수·댓글. 로그인 없음, 개인정보 최소화(IP는 해시로만), AI 없음.
 // 필사독서 회원·동기화(type.letsum.app/api/auth/*, /api/me, /api/sync …)는 account.js
 // 경로: GET  /api/stats?ids=a,b,c        → { a: { likes, comments, liked } }
@@ -204,6 +205,7 @@ async function track(req, env) {
     if (!x || !EVENTS.has(x.e)) continue;
     const v = typeof x.v === "string" && /^[a-z0-9][a-z0-9-]{0,63}$/.test(x.v) ? x.v : "";
     st.push(env.DB.prepare("INSERT INTO events (day, name, font, n) VALUES (?, ?, ?, 1) ON CONFLICT(day, name, font) DO UPDATE SET n = n + 1").bind(day, x.e, v));
+    if (x.e === "ffail" && v) { const detail = failureStatement(req, env.DB, v, x.diagnostic); if (detail) st.push(detail); }
   }
   if (st.length) await env.DB.batch(st);
   return new Response(null, { status: 204 });
@@ -415,7 +417,7 @@ async function admin(url, req, env) {
     const days = Math.min(90, Math.max(1, parseInt(url.searchParams.get("days") || "28", 10)));
     const from = new Date(Date.now() + 9 * 3600e3 - (days - 1) * 86400e3).toISOString().slice(0, 10);
     const r = await env.DB.prepare("SELECT day, name, font, n FROM events WHERE day >= ? ORDER BY day").bind(from).all();
-    return json({ from, rows: r.results });
+    return json({ from, rows: r.results, diagnostics: await failureReport(env.DB, from) });
   }
   if (req.method === "POST" && url.pathname === "/api/admin/samples") return samplesSave(req, env);
   if (req.method === "GET" && url.pathname === "/api/admin/traffic") return trafficReport(url, env);
@@ -502,5 +504,5 @@ export default {
     }
   },
   // 매일 한 번: 필사독서 만료 세션·장기 미접속(2년) 회원 정리
-  async scheduled(event, env, ctx) { ctx.waitUntil(accountCleanup(env)); },
+  async scheduled(event, env, ctx) { ctx.waitUntil(Promise.all([accountCleanup(env), env.DB.prepare("DELETE FROM preview_failures WHERE hour < ?").bind(new Date(Date.now()+9*3600e3-30*86400e3).toISOString().slice(0,13)).run()])); },
 };
