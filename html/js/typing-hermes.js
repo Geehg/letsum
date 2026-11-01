@@ -10,7 +10,7 @@
  const views=['full','close','detail'];
  try{const saved=localStorage.getItem('typebook-v1:camera');main.dataset.camera=views.includes(saved)?saved:'full';}catch{main.dataset.camera='full';}
  const zoomLevel=()=>Math.max(0,views.indexOf(main.dataset.camera));
- const closeView=()=>main.dataset.model==='hermes3000'&&zoomLevel()>0;
+ const closeView=()=>Boolean(modelNames[main.dataset.model])&&zoomLevel()>0;
  function zoomBy(delta){main.dataset.camera=views[Math.max(0,Math.min(2,zoomLevel()+delta))];try{localStorage.setItem('typebook-v1:camera',main.dataset.camera);}catch{}update();}
  zoomIn?.addEventListener('click',()=>zoomBy(1));zoomOut?.addEventListener('click',()=>zoomBy(-1));
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -33,7 +33,7 @@
   main.dataset.hermesReady='false';
  }
  function update(){
-  if(zoomControls){zoomControls.hidden=main.dataset.model!=='hermes3000';zoomOut.disabled=zoomLevel()===0;zoomIn.disabled=zoomLevel()===2;$('tbZoomLabel').textContent=['전체','근접','확대'][zoomLevel()];}
+  if(zoomControls){zoomControls.hidden=!modelNames[main.dataset.model];zoomOut.disabled=zoomLevel()===0;zoomIn.disabled=zoomLevel()===2;$('tbZoomLabel').textContent=['전체','근접','확대'][zoomLevel()];}
   active=main.dataset.modelGate!=='pending'&&main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
   if((engine&&engine.model!==main.dataset.model)||(failed&&failedModel!==main.dataset.model)){engine?.dispose();engine=null;failed=false;restore();}
@@ -271,13 +271,26 @@
    const clothRestPositions=clothPositions.array.slice();
    const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:null,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
    ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
-   const deskShape=new T.Shape();deskShape.moveTo(-1.8,-.9);deskShape.lineTo(1.8,-.9);deskShape.lineTo(1.8,.74);deskShape.quadraticCurveTo(1.8,.9,1.64,.9);deskShape.lineTo(-1.64,.9);deskShape.quadraticCurveTo(-1.8,.9,-1.8,.74);deskShape.closePath();
-   const deskGeometry=new T.ShapeGeometry(deskShape,20),deskUV=deskGeometry.attributes.uv,deskPos=deskGeometry.attributes.position;
-   for(let i=0;i<deskUV.count;i++)deskUV.setXY(i,deskPos.getX(i)/3.6+.5,deskPos.getY(i)/1.8+.5);
-   cleanups.push(()=>{deskGeometry.dispose();clothGeometry.dispose();});
+   // Radius is measured after world scaling, not in the stretched base plane.
+   let deskGeometry=null,deskScaleKey='';
+   const deskEdge=new T.Mesh(new T.BufferGeometry(),new T.MeshStandardMaterial({color:0x99623e,roughness:.6,metalness:0}));
+   deskEdge.name='Rounded_Desk_Edge';deskEdge.receiveShadow=true;ground.add(deskEdge);
+   function reshapeDesk(){
+    const sx=ground.scale.x,sy=ground.scale.y,key=sx.toFixed(5)+':'+sy.toFixed(5);if(key===deskScaleKey)return;deskScaleKey=key;
+    const radius=Math.min(.032,3.6*sx*.025),rx=radius/sx,ry=radius/sy,k=.55228475;
+    const shape=new T.Shape();shape.moveTo(-1.8,-.9);shape.lineTo(1.8,-.9);shape.lineTo(1.8,.9-ry);
+    shape.bezierCurveTo(1.8,.9-ry+k*ry,1.8-rx+k*rx,.9,1.8-rx,.9);shape.lineTo(-1.8+rx,.9);
+    shape.bezierCurveTo(-1.8+rx-k*rx,.9,-1.8,.9-ry+k*ry,-1.8,.9-ry);shape.closePath();
+    const previous=deskGeometry;deskGeometry=new T.ShapeGeometry(shape,24);
+    const uv=deskGeometry.attributes.uv,pos=deskGeometry.attributes.position;
+    for(let i=0;i<uv.count;i++)uv.setXY(i,pos.getX(i)/3.6+.5,pos.getY(i)/1.8+.5);
+    deskEdge.geometry.dispose();deskEdge.geometry=new T.ExtrudeGeometry(shape,{depth:.012,bevelEnabled:false,steps:1,curveSegments:24});deskEdge.geometry.translate(0,0,-.0121);
+    if(closeView())ground.geometry=deskGeometry;previous?.dispose();
+   }
+   reshapeDesk();cleanups.push(()=>{deskGeometry?.dispose();clothGeometry.dispose();});
    function applyTablecloth(){
     const style=closeView()?'wood':['gingham','floral','check','linen','wood'].includes(main.dataset.table)?main.dataset.table:'gingham';
-    ground.geometry=closeView()?deskGeometry:clothGeometry;
+    ground.geometry=closeView()?deskGeometry:clothGeometry;deskEdge.visible=closeView();
     clothTexture=fabric(style);clothRepeat=style==='wood'?4:style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
     clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2*ground.scale.y);
     ground.material.map=clothTexture;ground.material.roughness=style==='wood'?.64:.96;
@@ -426,6 +439,7 @@
     ground.position.z=portrait?.90+.9*(ground.scale.y-1):.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     clothTexture.repeat.y=clothRepeat/2*ground.scale.y;
     ground.scale.x=closeView()?(span*a*.94/3.6):Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
+    if(closeView())reshapeDesk();
     wall.scale.x=ground.scale.x;
     const nextPanel=$('tbFocusNextText')?.parentElement?.getBoundingClientRect?.();
     countLimit=tracing()&&main.dataset.focusSides==='beside'&&nextPanel?nextPanel.left-(rect?.left||0)-8:width-8;

@@ -4,7 +4,7 @@ const fs=require('node:fs'),assert=require('node:assert/strict');
 const base=process.env.TYPEBOOK_URL||'http://127.0.0.1:8888',out=process.env.PAPER_QA_DIR||'/tmp/letsum-paper-qa';fs.mkdirSync(out,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});const reports=[];
- const cases=process.env.TYPEBOOK_CLOSEUP?[['hermes3000',1440,900,14],['hermes3000',390,844,14]]:[['olympiasm3',1310,863,14],['hermes3000',1440,900,14],['lettera32',1280,800,18],['olympiasm3',1310,863,28],['olympiasm3',390,844,14],['hermes3000',768,1024,14]];
+ const cases=process.env.TYPEBOOK_CLOSEUP?[[process.env.TYPEBOOK_MODEL||'hermes3000',1440,900,14],[process.env.TYPEBOOK_MODEL||'hermes3000',390,844,14]]:[['olympiasm3',1310,863,14],['hermes3000',1440,900,14],['lettera32',1280,800,18],['olympiasm3',1310,863,28],['olympiasm3',390,844,14],['hermes3000',768,1024,14]];
  for(const [model,width,height,size] of cases){
   const context=await browser.newContext({viewport:{width,height},isMobile:width<600,hasTouch:width<600});const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(({size,close})=>{

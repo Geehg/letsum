@@ -199,7 +199,7 @@ body.tb-peek .tb-peek-zone{display:block;position:fixed;top:0;left:0;right:0;hei
 body.tb-peek:not(.tb-peek-off) .tb-peek-zone{display:none}
 @media(prefers-reduced-motion:reduce){body.tb-peek>header,body.tb-peek main.tb>.tb-topw{transition:none}}
 /* Close framing crops the instrument, never the mobile layout viewport. */
-main.tb[data-model="hermes3000"]:is([data-camera="close"],[data-camera="detail"]) .tb-hermes-stage{overflow:clip}
+main.tb:is([data-camera="close"],[data-camera="detail"]) .tb-hermes-stage{overflow:clip}
 
 
 
