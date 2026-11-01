@@ -199,10 +199,18 @@ body.tb-peek .tb-peek-zone{display:block;position:fixed;top:0;left:0;right:0;hei
 body.tb-peek:not(.tb-peek-off) .tb-peek-zone{display:none}
 @media(prefers-reduced-motion:reduce){body.tb-peek>header,body.tb-peek main.tb>.tb-topw{transition:none}}
 /* Close framing crops the instrument, never the mobile layout viewport. */
-main.tb[data-model="hermes3000"][data-camera="close"] .tb-hermes-stage{overflow:clip}
+main.tb[data-model="hermes3000"]:is([data-camera="close"],[data-camera="detail"]) .tb-hermes-stage{overflow:clip}
 
-body.tb-retro-portrait #tbCloseup{top:56px!important}
+
 
 /* A whitespace mistake must not erase the expected source character. */
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad[data-whitespace-error]{color:#ad3b2d}
 main.tb[data-reading-mode="immersive"][data-hermes-ready="true"] #tbOrig span.bad[data-whitespace-error]::after{content:attr(data-error-mark);left:100%;top:-.45em;font-size:.55em;line-height:1;text-decoration:none}
+
+.tb-zoom-controls{position:absolute;z-index:30;display:flex;flex-direction:column;align-items:center;gap:8px;width:48px}
+.tb-zoom-controls[hidden]{display:none}
+.tb-zoom-controls button{width:44px;height:44px;border-radius:50%;border:1px solid #9e400f;background:#dc681f;color:#fff;font:500 28px/1 system-ui;box-shadow:0 3px 8px #56321526;cursor:pointer;touch-action:manipulation}
+.tb-zoom-controls button:hover:not(:disabled){background:#bd5013}
+.tb-zoom-controls button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.tb-zoom-controls button:disabled{opacity:.45;cursor:default}
+.tb-zoom-controls span{font-size:10px;color:#49392c;background:#eee4d4dd;border-radius:12px;padding:2px 7px;white-space:nowrap}

@@ -8,7 +8,7 @@ const base=process.env.TYPEBOOK_URL||'http://127.0.0.1:8888',out=process.env.PAP
  for(const [model,width,height,size] of cases){
   const context=await browser.newContext({viewport:{width,height},isMobile:width<600,hasTouch:width<600});const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(({size,close})=>{
-   if(close)localStorage.setItem('typebook-v1:camera','close');
+   if(close)localStorage.setItem('typebook-v1:camera',close);
    localStorage.setItem('typebook-v1:trace-font',JSON.stringify(size));
    // Record the exact scheduled sounds without using an OS audio device.
    window.__sounds=[];const realFetch=window.fetch;
@@ -19,7 +19,7 @@ const base=process.env.TYPEBOOK_URL||'http://127.0.0.1:8888',out=process.env.PAP
     createBufferSource(){return {connect(){return {connect(){}};},disconnect(){},stop(){},start(){window.__sounds.push({name:this.buffer.name,n:Array.from(document.getElementById('tbInput').value).length});queueMicrotask(()=>this.onended?.());}};}
     async decodeAudioData(raw){return {name:raw.name};}async resume(){}
    };
-  },{size,close:!!process.env.TYPEBOOK_CLOSEUP});
+  },{size,close:process.env.TYPEBOOK_CLOSEUP==='detail'?'detail':process.env.TYPEBOOK_CLOSEUP?'close':''});
   await page.goto(base+'/#/read/byeol');await page.locator('#tbModelGallery[open]').waitFor();await page.click(`[data-choose-model="${model}"]`);await page.locator('#tbMain[data-hermes-state="ready"]').waitFor({timeout:60000});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(900);
   const report=await page.evaluate(async()=>{
    const input=document.getElementById('tbInput'),host=document.getElementById('tbOrig'),paper=document.getElementById('tbHermesPaper');

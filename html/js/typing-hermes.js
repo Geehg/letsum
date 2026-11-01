@@ -6,9 +6,13 @@
  const modelNames={hermes3000:'Hermes 3000',lettera32:'Olivetti Lettera 32',olympiasm3:'Olympia SM3'};
  const feeding=()=>main.dataset.paperFeed==='physical';
  const tracing=()=>main.dataset.readingMode==='immersive';
- const closeButton=$('tbCloseup');
- try{main.dataset.camera=localStorage.getItem('typebook-v1:camera')==='close'?'close':'full';}catch{}
- closeButton?.addEventListener('click',()=>{main.dataset.camera=main.dataset.camera==='close'?'full':'close';try{localStorage.setItem('typebook-v1:camera',main.dataset.camera);}catch{}update();});
+ const zoomControls=$('tbZoomControls'),zoomIn=$('tbZoomIn'),zoomOut=$('tbZoomOut');
+ const views=['full','close','detail'];
+ try{const saved=localStorage.getItem('typebook-v1:camera');main.dataset.camera=views.includes(saved)?saved:'full';}catch{main.dataset.camera='full';}
+ const zoomLevel=()=>Math.max(0,views.indexOf(main.dataset.camera));
+ const closeView=()=>main.dataset.model==='hermes3000'&&zoomLevel()>0;
+ function zoomBy(delta){main.dataset.camera=views[Math.max(0,Math.min(2,zoomLevel()+delta))];try{localStorage.setItem('typebook-v1:camera',main.dataset.camera);}catch{}update();}
+ zoomIn?.addEventListener('click',()=>zoomBy(1));zoomOut?.addEventListener('click',()=>zoomBy(-1));
  const originalPlaceholder=input.placeholder,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let active=false,loading=false,engine=null,composing=false,failed=false,failedModel='';
  function sceneState(value,message){
@@ -29,7 +33,7 @@
   main.dataset.hermesReady='false';
  }
  function update(){
-  if(closeButton){closeButton.hidden=main.dataset.model!=='hermes3000';closeButton.setAttribute('aria-pressed',String(main.dataset.camera==='close'));closeButton.textContent=main.dataset.camera==='close'?'전체 구도':'근접 구도';}
+  if(zoomControls){zoomControls.hidden=main.dataset.model!=='hermes3000';zoomOut.disabled=zoomLevel()===0;zoomIn.disabled=zoomLevel()===2;$('tbZoomLabel').textContent=['전체','근접','확대'][zoomLevel()];}
   active=main.dataset.modelGate!=='pending'&&main.dataset.skin==='retro'&&Boolean(modelNames[main.dataset.model])&&!$('tbRead').hidden;stage.hidden=!active;
   if(!active){restore();engine?.stop();return;}
   if((engine&&engine.model!==main.dataset.model)||(failed&&failedModel!==main.dataset.model)){engine?.dispose();engine=null;failed=false;restore();}
@@ -267,8 +271,13 @@
    const clothRestPositions=clothPositions.array.slice();
    const ground=new T.Mesh(clothGeometry,new T.MeshStandardMaterial({map:null,roughness:.96,metalness:0,bumpMap:grain,bumpScale:.000035,envMapIntensity:.12}));
    ground.name='Tablecloth';ground.rotation.x=-Math.PI/2;ground.position.set(0,-.004,.60);ground.receiveShadow=true;scene.add(ground);
+   const deskShape=new T.Shape();deskShape.moveTo(-1.8,-.9);deskShape.lineTo(1.8,-.9);deskShape.lineTo(1.8,.74);deskShape.quadraticCurveTo(1.8,.9,1.64,.9);deskShape.lineTo(-1.64,.9);deskShape.quadraticCurveTo(-1.8,.9,-1.8,.74);deskShape.closePath();
+   const deskGeometry=new T.ShapeGeometry(deskShape,20),deskUV=deskGeometry.attributes.uv,deskPos=deskGeometry.attributes.position;
+   for(let i=0;i<deskUV.count;i++)deskUV.setXY(i,deskPos.getX(i)/3.6+.5,deskPos.getY(i)/1.8+.5);
+   cleanups.push(()=>{deskGeometry.dispose();clothGeometry.dispose();});
    function applyTablecloth(){
-    const style=['gingham','floral','check','linen','wood'].includes(main.dataset.table)?main.dataset.table:'gingham';
+    const style=closeView()?'wood':['gingham','floral','check','linen','wood'].includes(main.dataset.table)?main.dataset.table:'gingham';
+    ground.geometry=closeView()?deskGeometry:clothGeometry;
     clothTexture=fabric(style);clothRepeat=style==='wood'?4:style==='gingham'?30:style==='check'?45:style==='floral'?18:12;
     clothTexture.repeat.set(clothRepeat*ground.scale.x,clothRepeat/2*ground.scale.y);
     ground.material.map=clothTexture;ground.material.roughness=style==='wood'?.64:.96;
@@ -280,7 +289,7 @@
     ground.material.needsUpdate=true;ground.userData.fabric=style;
    }
    applyTablecloth();
-   observe(MutationObserver,()=>{applyTablecloth();wake();},main,{attributes:true,attributeFilter:['data-table']});
+   observe(MutationObserver,()=>{applyTablecloth();wake();},main,{attributes:true,attributeFilter:['data-table','data-camera']});
    // A transparent rear wall receives the same upper-left light as the table.
    // Keep it behind the entire carriage and sheet; the opaque depth-only Paper
    // mesh masks this shadow out of the HTML writing surface. Its exposed height
@@ -357,7 +366,7 @@
     resizePending=false;
     if(disposed||!active||failed)return;
     width=view.clientWidth;height=view.clientHeight;if(!width||!height)return;
-    const trace=tracing(),a=width/height,instrumentScale=1.15,close=selectedModel==='hermes3000'&&main.dataset.camera==='close';
+    const trace=tracing(),a=width/height,instrumentScale=1.15,close=closeView();
     const baseSpan=Math.max(.52,.70/a)/(trace?.75*instrumentScale:1);
     // On tall desktop windows keep room for both reading panels and carriage travel.
     const panelSpan=trace&&width>980?(.420/instrumentScale)*height/((width-464)/1.86):0;
@@ -400,7 +409,12 @@
      const include=(x,y,z)=>fit.expandByPoint(new T.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse));
      for(const x of [closeModelBounds.min.x-travel,closeModelBounds.max.x+travel])for(const y of [closeModelBounds.min.y,closeModelBounds.max.y])for(const z of [closeModelBounds.min.z,closeModelBounds.max.z])include(x,y,z);
      for(const x of [-sheetWidth,sheetWidth])for(const y of [.174,paperTop+.06])include(x,y,-.151);
-     const insetX=20,insetTop=portrait?104:64,insetBottom=24;
+     if(zoomLevel()===2){
+      fit.makeEmpty();
+      for(const x of [closeModelBounds.min.x,closeModelBounds.max.x])for(const y of [closeModelBounds.min.y,closeModelBounds.max.y])for(const z of [closeModelBounds.min.z,closeModelBounds.max.z])include(x,y,z);
+      include(-.18,.28,-.151);include(.18,.28,-.151);
+     }
+     const insetX=zoomLevel()===2?64:20,insetTop=portrait?76:40,insetBottom=24;
      span=Math.max((fit.max.y-fit.min.y)*height/Math.max(120,height-insetTop-insetBottom),(fit.max.x-fit.min.x)*height/Math.max(120,width-insetX*2));
      const cx=(fit.min.x+fit.max.x)/2,cy=(fit.min.y+fit.max.y)/2;
      camera.top=cy+span/2+(insetTop-insetBottom)*span/(2*height);camera.bottom=camera.top-span;
@@ -411,7 +425,7 @@
     ground.scale.y=portrait?Math.max(1,span*2):1;
     ground.position.z=portrait?.90+.9*(ground.scale.y-1):.60+(trace?span*(.10-(sheetInset-16)/height)/Math.abs(camera.matrixWorldInverse.elements[9]):0);
     clothTexture.repeat.y=clothRepeat/2*ground.scale.y;
-    ground.scale.x=Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
+    ground.scale.x=closeView()?(span*a*.94/3.6):Math.max(1,(camera.right-camera.left)/3.6+.05);clothTexture.repeat.x=clothRepeat*ground.scale.x;
     wall.scale.x=ground.scale.x;
     const nextPanel=$('tbFocusNextText')?.parentElement?.getBoundingClientRect?.();
     countLimit=tracing()&&main.dataset.focusSides==='beside'&&nextPanel?nextPanel.left-(rect?.left||0)-8:width-8;
@@ -466,7 +480,7 @@
      const advance=position?.advance??row*lineHeight,maxAdvance=Math.max(0,rowsPerSheet-1)*lineHeight;
      const sheetAdvance=physical?Math.min(advance,maxAdvance):advance;
      contentOffset=physical?Math.max(0,advance-maxAdvance):0;
-     const nextFeed=physical?.196+(32+fontPixels*(selectedModel==='hermes3000'&&main.dataset.camera==='close'?1.15:.95)+sheetAdvance)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
+     const nextFeed=physical?.196+(32+fontPixels*(closeView()?1.15:.95)+sheetAdvance)/traceProjection*worldPerPixel-paperTop:trace?0:row*lineHeight*.222/paperHeight;
      const newLine=trace||physical?row+1>lastLine:nextFeed>feed+.0001;lastLine=row+1;
      if(newLine&&changed&&!initial)returnAt=now;
      if(Math.abs(nextX-targetX)>.000001){const returning=newLine&&nextX>targetX;drive={from:currentX,to:nextX,start:now+(returning?55:changed?34:0),duration:returning?390:changed?58:130};targetX=nextX;}
@@ -489,7 +503,13 @@
     input.scrollTop=offset;if(tracing())$('tbOrig').scrollTop=offset;
    }
    function placePaper(){
-    if(tracing()&&main.dataset.focusPortrait==='true'&&!(selectedModel==='hermes3000'&&main.dataset.camera==='close')){
+    if(zoomControls&&!zoomControls.hidden){
+     const edge=new T.Vector3(closeModelBounds.max.x,.09,0).project(camera);
+     const zx=(edge.x+1)*renderWidth/2-bleedLeft+16,zy=(1-edge.y)*height/2;
+     zoomControls.style.left=Math.max(8,Math.min(width-56,zx))+'px';
+     zoomControls.style.top=Math.max(82,Math.min(height-134,zy-56))+'px';
+    }
+    if(tracing()&&main.dataset.focusPortrait==='true'&&!(closeView())){
      // Track part of the carriage sweep so the full body and moving paper fit a narrow screen.
      const offset=Math.max(-.07,Math.min(.07,currentX*.43)),span=camera.top-camera.bottom,a=width/height;
      camera.left=-span*a/2-bleedLeft*span/height+offset;camera.right=span*a/2+bleedRight*span/height+offset;camera.updateProjectionMatrix();
