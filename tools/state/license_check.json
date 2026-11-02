@@ -4206,5 +4206,37 @@
   "license": "OFL",
   "evidence": "직접 확인: 공식 화면용 ZIP 첨부 HapinessSans_License.pdf 1~3쪽: SIL OFL 1.1, 재배포·임베딩·BI/CI 허용, RFN 명시. 공식 WOFF2 원본을 변환 없이 사용하며 라이선스 PDF 동봉. 화면용은 한자 미포함, 별도 인쇄용에는 공식 안내 기준 한자 4,888자 포함.",
   "page": "https://thehyundaifont.com/"
+ },
+ {
+  "id": "k-ria-sans",
+  "name": "롯데리아 리아체",
+  "expected": "롯데리아 리아체 이용조건",
+  "license": "롯데리아 리아체 이용조건",
+  "evidence": "직접 확인: 공식 RiaSans.zip의 RiaSans_license.pdf 시각 확인: 개인·기업 무료, 인쇄·웹·영상·서버 임베딩 및 BI/CI 허용. 판매·임의 수정 및 개작 재배포 금지. 무변환 TTF를 서버 임베딩으로만 사용. cmap 11,172칸 중 실제 윤곽선 한글은 2,780자.",
+  "page": "https://lotteriafont.com/riasans"
+ },
+ {
+  "id": "k-samlip-hopang-basic",
+  "name": "삼립호빵체 베이직",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 삼립 공식 typography 페이지의 사용범위 펼침에서 SIL Open Font License Version 1.1 명시와 OSI 전문 링크 확인. 개인·기업 무료, 수정·재배포 허용, 글꼴 단독 판매 금지. 공식 TTF 원본 무변환, 저작권 및 OFL 전문 동봉. name 0·13에 RFN 지정 없음. 내부 weight 550이지만 스타일 Regular로 단일 굵기 표시.",
+  "page": "https://spcsamlip.co.kr/brand/bakery/hopang/typography"
+ },
+ {
+  "id": "k-samlip-hopang-outline",
+  "name": "삼립호빵체 아웃라인",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 삼립 공식 typography 페이지의 사용범위 펼침에서 SIL Open Font License Version 1.1 명시와 OSI 전문 링크 확인. 개인·기업 무료, 수정·재배포 허용, 글꼴 단독 판매 금지. 공식 TTF 원본 무변환, 저작권 및 OFL 전문 동봉. name 0·13에 RFN 지정 없음. 내부 weight 550이지만 스타일 Regular로 단일 굵기 표시.",
+  "page": "https://spcsamlip.co.kr/brand/bakery/hopang/typography"
+ },
+ {
+  "id": "k-yuhan-green-forest",
+  "name": "유한킴벌리 푸른숲체",
+  "expected": "유한킴벌리 푸른숲체 이용조건",
+  "license": "유한킴벌리 푸른숲체 이용조건",
+  "evidence": "직접 확인: 공식 배포 페이지: 누구나 허가 없이 무료 사용, 영상·인쇄·웹·로고·간판 및 프로그램 탑재 배포 가능, 폰트 자체 판매·유료 양도 금지. 공식 웹폰트 ZIP 원본 WOFF2 세 굵기를 변환 없이 서버 임베딩. 한글 윤곽선 각 2,780자, 한자 없음.",
+  "page": "https://www.yuhan-kimberly.co.kr/society/woopoopoofont"
  }
 ]

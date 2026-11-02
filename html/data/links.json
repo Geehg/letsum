@@ -3389,22 +3389,76 @@
   "code": 200,
   "checked": "2026-11-03"
  },
- "k-lotteria-chab": {
-  "url": "https://lotteriafont.com/chobddag",
+ "k-yangjin": {
+  "url": "https://fonts.google.com/download?family=Yangjin",
   "ok": true,
-  "code": 206,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-ansung": {
+  "url": "https://fonts.google.com/download?family=Ansungtangmyun",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile": {
+  "url": "https://fonts.google.com/download?family=ONE+Mobile",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile-title": {
+  "url": "https://fonts.google.com/download?family=ONE+Mobile+Title",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile-pop": {
+  "url": "https://fonts.google.com/download?family=ONE+Mobile+POP",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-lotteria-chab": {
+  "url": "https://fonts.google.com/download?family=LOTTERIA+CHAB",
+  "ok": true,
+  "code": 200,
   "checked": "2026-11-03"
  },
  "k-lotteria-ddag": {
-  "url": "https://lotteriafont.com/chobddag",
+  "url": "https://fonts.google.com/download?family=LOTTERIA+DDAG",
   "ok": true,
-  "code": 206,
+  "code": 200,
   "checked": "2026-11-03"
  },
  "k-happiness-sans": {
-  "url": "https://thehyundaifont.com/",
+  "url": "https://fonts.google.com/download?family=Happiness+Sans",
   "ok": true,
-  "code": 206,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-ria-sans": {
+  "url": "https://fonts.google.com/download?family=Ria+Sans",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-samlip-hopang-basic": {
+  "url": "https://fonts.google.com/download?family=Sandoll+Samliphopangche+Basic",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-samlip-hopang-outline": {
+  "url": "https://fonts.google.com/download?family=Sandoll+Samliphopangche+Outline",
+  "ok": true,
+  "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-yuhan-green-forest": {
+  "url": "https://fonts.google.com/download?family=YK+Green+Forest",
+  "ok": true,
+  "code": 200,
   "checked": "2026-11-03"
  }
 }

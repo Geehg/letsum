@@ -684,3 +684,12 @@ img.save("sample.png")
 - Ansung and ONE Mobile body/title/POP: introduction-only with specimens rendered from official original downloads. Ansung forbids modification/redistribution; current ONE ZIP lacks detailed terms, so unspecified uses remain conditional.
 - Total 583 families. Only sourced release dates: Yangjin 2019-10-08, ONE 2021-05-17. Home data.js cache v15.
 - Originals, licenses, identical-byte audit and research: /Volumes/AI_dev/web/output/font-round2-20261103/.
+
+
+## 2026-11-03 — Ria Sans, Samlip Hopang, YK Green Forest
+- Added four selectable entries (587 total): Ria Sans 400/700/800, Samlip Hopang Basic and Outline, YK Green Forest 300/500/700. Samlip styles use Regular UI weight; original OS/2 weight is 550.
+- All eight preview files are official originals without conversion. Ria and YK use NAS-only embedding; Samlip originals and full OFL with copyright are in mirror commit 7396cf5. Official downloads remain the primary links.
+- Actual-outline verification: all files have 2,780 Hangul syllables and no Hanja. Ria cmap has 11,172 mapped slots but the others have empty outlines; do not claim full Hangul coverage.
+- Ria license explicitly permits BI/CI (unlike CHAB/DDAG), forbids font sale and modified redistribution. YK officially supplies WOFF2 and permits web/program embedding; modification/standalone redistribution left conditional. Samlip official expanded use table explicitly declares SIL OFL 1.1.
+- Release dates: only Samlip 2020-11-15 from official page; Ria/YK exact release dates remain blank. Home data.js cache v16.
+- Official originals, per-file outline audit, 8/8 Chrome FontFace loading check, and production byte-identity checks: /Volumes/AI_dev/web/output/font-research-round3-20261103/.
