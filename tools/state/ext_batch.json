@@ -1291,5 +1291,94 @@
   "license": "쿠키런 글꼴 이용조건",
   "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"cond\", package: \"ok\", ofl: \"no\" }",
   "mode": "keep"
+ },
+ "myungwon-jaemin4": {
+  "fam": "명원체 (한글재민체4.0)",
+  "org": "국민대학교",
+  "lic": "OFL",
+  "mode": "keep",
+  "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+  "srcName": "국민대학교(공식)",
+  "id": "myungwon-jaemin4",
+  "evidence": "국민대 공식 UI 페이지의 명원체 항목: OFL, 연구·수정·재배포 가능, 파일 자체 유료 판매 금지. 공식 kmu_win4.zip의 Hangeuljaemin4-Regular.ttf; name 0·13에 RFN 없음. 원본 TTF 무변환 사용.",
+  "category": "손글씨",
+  "tags": [
+   "서예",
+   "붓글씨",
+   "전통"
+  ],
+  "mood": [
+   "고전적",
+   "따뜻한"
+  ],
+  "desc": "국민대학교 명원박물관 전용 서체. 붓의 굵기 변화와 힘 있는 획이 드러나 전통문화 소개와 전시 제목에 어울립니다."
+ },
+ "y-universe": {
+  "fam": "Y유니버스체",
+  "org": "KT",
+  "lic": "CUSTOM",
+  "mode": "keep",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "srcName": "KT Y(공식)",
+  "id": "y-universe",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 28쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "category": "명조",
+  "tags": [
+   "제목",
+   "감성"
+  ],
+  "mood": [
+   "차분한",
+   "세련된"
+  ],
+  "desc": "가는 가로획과 곡선이 어우러진 KT Y 서체. Light와 Bold 두 굵기로 차분한 제목과 짧은 문구를 표현합니다.",
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"ok\", ofl: \"cond\" }"
+ },
+ "y-clover": {
+  "fam": "Y클로버체",
+  "org": "KT",
+  "lic": "CUSTOM",
+  "mode": "keep",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "srcName": "KT Y(공식)",
+  "id": "y-clover",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 28쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "category": "디스플레이",
+  "tags": [
+   "제목",
+   "귀여운",
+   "장식"
+  ],
+  "mood": [
+   "귀여운",
+   "발랄한"
+  ],
+  "desc": "네잎클로버 모양이 글자 안에 담긴 KT Y 장식 서체. 카드와 행사 제목에 발랄한 인상을 더합니다.",
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"ok\", ofl: \"cond\" }"
+ },
+ "y-onepick": {
+  "fam": "Y최애체",
+  "org": "KT",
+  "lic": "CUSTOM",
+  "mode": "keep",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "srcName": "KT Y(공식)",
+  "id": "y-onepick",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 35쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "category": "디스플레이",
+  "tags": [
+   "제목",
+   "귀여운",
+   "장식"
+  ],
+  "mood": [
+   "귀여운",
+   "따뜻한"
+  ],
+  "desc": "둥근 획과 하트 모양이 특징인 KT Y 장식 서체. 응원 문구와 카드 제목에 어울립니다. Regular는 한글 11,172자, Bold는 기본 2,780자와 장식 글자를 제공해 굵기별 지원 범위가 다릅니다.",
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"ok\", ofl: \"cond\" }"
  }
 }

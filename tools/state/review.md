@@ -1,30 +1,20 @@
 # 공공 무료폰트 검수 대기 목록
 
-개별 레코드 240건 → 패밀리 154개로 묶음. 다운로드 많은 순.
+개별 레코드 228건 → 패밀리 143개로 묶음. 다운로드 많은 순.
 제외됨: 비영리 조건(공공누리 2·4유형, CC BY-NC), 묶음 파일(안심글꼴 N종 등).
 
-## OFL — 39개
+## OFL — 28개
 
 | 패밀리 | 저작권자 | 굵기/파일 | 다운로드 | 원 배포처 |
 |---|---|---|---|---|
 | KCC무럭무럭체 | 한국저작권위원회 | 1 | 8207 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262151&menuNo=200023 |
 | 가나초콜릿체 | 롯데제과 | 1 | 7806 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262104&menuNo=200023 |
-| 나눔바른고딕 | (재)네이버문화재단 | 1 | 6767 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288242&menuNo=200023 |
-| 배달의 민족 한나는 열한살체 | ㈜우아한형제들 | 1 | 6268 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288261&menuNo=200023 |
-| 나눔바른펜 | (재)네이버문화재단 | 1 | 5481 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288243&menuNo=200023 |
 | 60‘S스트라이프체 | greenegg | 1 | 4879 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288263&menuNo=200023 |
-| 나눔스퀘어 | (재)네이버문화재단 | 1 | 4737 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288246&menuNo=200023 |
-| 나눔고딕에코 | 에코 네이버㈜, (재)네이버문화재단 | 1 | 3968 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 아이엠어플레이어체 | greenegg | 1 | 3965 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288255&menuNo=200023 |
 | 크룩트체 | greenegg | 1 | 3746 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288258&menuNo=200023 |
 | 델타유니버스체 | greenegg | 1 | 3491 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288248&menuNo=200023 |
 | 보케체 | greenegg | 1 | 3286 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288253&menuNo=200023 |
-| 가비아 봄바람체 | 가비아 | 1 | 3199 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288265&menuNo=200023 |
-| 한나 Pro | ㈜우아한형제들 | 1 | 2988 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288268&menuNo=200023 |
-| 가비아 납작블럭체 | 가비아 | 1 | 2896 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288264&menuNo=200023 |
-| 한나 Ai | ㈜우아한형제들 | 1 | 2713 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288267&menuNo=200023 |
 | 안경잡이체 | greenegg | 1 | 2632 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200023 |
-| 스포카 한 산스 | ㈜스포카 | 3 | 2719 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288254&menuNo=200023 |
 | 한글재민체 | 김민 | 1 | 2267 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262491&menuNo=200023 |
 | 김정철 고딕체 |  | 3 | 4297 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 박용준투사회보체 | (사)지역공공정책플랫폼광주로 | 1 | 1394 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023 |
@@ -32,10 +22,9 @@
 | 김정철 명조체 |  | 3 | 3340 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | KCC안창호체 | 한국저작권위원회 | 1 | 415 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366248&menuNo=200023 |
 | 야놀자 야체 |  | 2 | 177 | https://gongu.copyright.or.kr/freeFontEvent.html |
+| 스포카 한 산스 |  | 2 | 145 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 학교안심 오키라니 | 한국교육학술정보원 | 1 | 43 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 유앤피플 고딕체 | ㈜유앤피플 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13210384&menuNo=200023 |
-| 나눔명조 에코 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288241&menuNo=200023 |
-| 나눔스퀘어 라운드 | (재)네이버문화재단 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288247&menuNo=200023 |
 | 한글재민체 2.0 | 김민 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288473&menuNo=200023 |
 | 한글재민체3.0 | 김민 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304319&menuNo=200023 |
 | 김정철_고딕체 | (주)정림건축종합건축사무소 | 1 |  | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304541&menuNo=200023 |

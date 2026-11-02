@@ -2257,5 +2257,35 @@
   "evidence": "개인·기업 무료, 상업 이용 및 인쇄·웹·영상·포장·임베딩·BI/CI 허용. 폰트 파일 자체 유료 판매 금지. 현재 공식 안내에는 수정·재배포 조건이 명시되지 않음. 현재 페이지 직접 확인: 검색 색인의 과거 OFL 문구 대신 현행 사용 안내 적용.",
   "page": "https://www.bookend.tech/font",
   "checked": "2026-10-31"
+ },
+ "k-myungwon-jaemin4": {
+  "license": "OFL",
+  "evidence": "국민대 공식 UI 페이지의 명원체 항목: OFL, 연구·수정·재배포 가능, 파일 자체 유료 판매 금지. 공식 kmu_win4.zip의 Hangeuljaemin4-Regular.ttf; name 0·13에 RFN 없음. 원본 TTF 무변환 사용.",
+  "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+  "checked": "2026-11-03"
+ },
+ "k-y-universe": {
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 28쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "checked": "2026-11-03"
+ },
+ "k-y-clover": {
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 28쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "checked": "2026-11-03"
+ },
+ "k-y-onepick": {
+  "license": "KT Y 유니버스·클로버·최애체 이용조건",
+  "evidence": "KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 35쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "checked": "2026-11-03"
+ },
+ "k-y-pairing": {
+  "license": "KT Y페어링체 이용조건",
+  "evidence": "공식 ZIP 매뉴얼 36~37쪽: 인쇄·웹·포장·영상·임베딩·BI/CI 가능, 파일 수정·복제·배포·판매 금지. 홈페이지 재배포 안내와 상충하여 소개 전용, 파일 미배포.",
+  "page": "https://www.yspotlight.co.kr/download/font",
+  "checked": "2026-11-03"
  }
 }

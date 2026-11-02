@@ -86,7 +86,7 @@ function page(f, en, db) {
     <a class="btn${dl.zip ? " ghost" : ""}" data-dl="page" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
     <a class="btn ghost" href="${home}#f=${f.id}">${f.intro ? "홈에서 보기 →" : "홈에서 테스트·비교 →"}</a>
   </div>
-  <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ${f.intro ? "이용 조건은 배포처 원문을 따릅니다." : "ZIP 안에 라이선스 원문이 함께 들어 있습니다."}${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
+  <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ${f.downloadNote ? esc(f.downloadNote) : f.intro ? "이용 조건은 배포처 원문을 따릅니다." : "ZIP 안에 라이선스 원문이 함께 들어 있습니다."}${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
   <h2>사용 범위 (라이선스 매트릭스)</h2>
   <p>${allOk ? "<b>상업용 무료</b> · " : ""}${esc((LICENSE_INFO[f.license] || { full: f.license }).full)} — ${esc((LICENSE_INFO[f.license] || { note: "원문 확인 필요" }).note)}${f.attribution ? ` · 출처 표시 예: ${esc(f.attribution)}` : ""} · 검토 상태 ${f.status === "verified" ? "원문 대조 완료" : "확인 중"} (최근 확인일 ${f.verified})</p>
   <table class="matrix"><tr><th style="width:90px">카테고리</th><th>사용 범위</th><th style="width:92px">허용 여부</th></tr>

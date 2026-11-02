@@ -2,7 +2,7 @@
 """글자 지원 판정용 실제 글리프 목록 — 미리보기 웹폰트 파일에서 '실제로 그려진' 글자만 센다.
 cmap에 있어도 윤곽선이 비어 있으면(빈 글자) 지원하지 않는 것으로 본다(예: GS혜자로운체는 11,172칸 중 2,8xx자만 그려짐).
 결과: html/data/coverage.json  { "<id>": { "n": 한글 수, "h": "<11,172비트 base64 — 없으면 한글 완성형 전체>", "hanja": bool, "old": bool, "jamo": 낱자 ㄱ~ㅣ 51자 모두 } }
-사용: python -I tools/build_coverage.py <미러 webfonts 폴더>   (서버 전용 폰트는 tools/archive/hosted에서 읽음)
+사용: python -I tools/build_coverage.py <미러 webfonts 폴더> [--ids id1,id2]   (서버 전용 폰트는 tools/archive/hosted에서 읽음)
 """
 import sys, os, io, json, base64, subprocess
 from fontTools.ttLib import TTFont
@@ -10,7 +10,22 @@ from fontTools.pens.boundsPen import ControlBoundsPen
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
 js = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';this.o=FONTS',c);process.stdout.write(JSON.stringify(c.o))"
 FONTS = json.loads(subprocess.run(["node", "-e", js, os.path.join(ROOT, "html", "js", "data.js")], capture_output=True, text=True, check=True).stdout)
-mirror = sys.argv[1]; out = {}
+import argparse
+ap = argparse.ArgumentParser()
+ap.add_argument("mirror")
+ap.add_argument("--ids", help="Comma-separated font IDs; preserve other cached coverage records")
+a = ap.parse_args()
+mirror = a.mirror
+selected = set(a.ids.split(",")) if a.ids else None
+if selected:
+    unknown = selected - {f["id"] for f in FONTS}
+    if unknown: ap.error("Unknown font IDs: " + ", ".join(sorted(unknown)))
+coverage_path = os.path.join(ROOT, "html", "data", "coverage.json")
+out = json.load(open(coverage_path)) if selected and os.path.exists(coverage_path) else {}
+if selected:
+    # Do not leave a stale successful record when the requested file is unavailable.
+    for fid in selected: out.pop(fid, None)
+
 def real(font, gs, names):
     ok = set(); glyf = font["glyf"] if "glyf" in font else None
     for name in set(names):
@@ -34,6 +49,7 @@ def old_composes(path, font):
         feats = {fr.FeatureTag for fr in font["GSUB"].table.FeatureList.FeatureRecord} if "GSUB" in font and font["GSUB"].table.FeatureList else set()
         return {"ljmo", "vjmo"} <= feats
 for f in FONTS:
+    if selected and f["id"] not in selected: continue
     wf = f.get("webfont")
     if not wf: continue
     w = "400" if "400" in wf else sorted(wf)[0]; url = wf[w]
@@ -64,6 +80,7 @@ print(f"완료 {len(out)}종 · 부분 지원 {sum(1 for v in out.values() if 'h
 import re
 DATA = os.path.join(ROOT, "html", "js", "data.js"); src = open(DATA, encoding="utf-8").read(); changed = 0
 for fid, rec in out.items():
+    if selected and fid not in selected: continue
     m = re.search(r'\{ id: "' + re.escape(fid) + r'".*?desc: "[^"]*"[^}]*\},', src, re.S)
     if not m: continue
     b = m.group(0); nb = re.sub(r'cov: \d+', f'cov: {rec["n"]}', b, count=1)
