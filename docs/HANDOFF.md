@@ -674,3 +674,4 @@ img.save("sample.png")
 - Y페어링은 홈페이지 재배포 허용 문구와 매뉴얼 37쪽 재배포 금지가 상충. 소개 전용으로 원본 렌더 견본과 공식 페이지 링크만 등록; 폰트 파일 미배포.
 - 공식 원본 ZIP·PDF·글리프/해시 검사 기록: /Volumes/AI_dev/web/output/font-additions-20261103/. 재배포 7개 파일 전부 공식 ZIP 바이트와 일치하며 Chrome FontFace 로드 검사 7/7 통과.
 - 글자 범위 재계산에 `build_coverage.py <mirror> --ids id1,id2` 선택 옵션 추가. 기존 513종 결과 보존 및 알 수 없는 ID 거부 확인. 전체 기본 실행 방식 유지. 라이선스 대조 522종 일치·불일치/판정 불가 0.
+- Production check found the home still using cached data.js?v=13; bumped to v14 and regenerated derived indexes to refresh existing visitor caches.
