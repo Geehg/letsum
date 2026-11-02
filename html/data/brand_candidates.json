@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26",
+ "generated": "2026-11-02",
  "items": {
   "k-kccdodamdodam": {
    "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023",
@@ -9802,8 +9802,7 @@
   },
   "k-gmarket-sans": {
    "page": "https://corp.gmarket.com/fonts/",
-   "palette": [],
-   "error": "HTTP Error 404: Not Found"
+   "palette": []
   },
   "k-nexon-lv1-gothic": {
    "page": "https://brand.nexon.com/ko/ci-brand-guidelines/typeface",
@@ -12896,23 +12895,13 @@
    "palette": [
     {
      "hex": "#000000",
-     "score": 28.5,
-     "src": "CSS 변수"
+     "score": 17.5,
+     "src": "CSS 빈도"
     },
     {
      "hex": "#003964",
      "score": 13.1,
      "src": "대표 이미지"
-    },
-    {
-     "hex": "#ffffff",
-     "score": 12,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#007aff",
-     "score": 9,
-     "src": "CSS 변수"
     },
     {
      "hex": "#e2eaff",
@@ -12923,6 +12912,11 @@
      "hex": "#ed193a",
      "score": 4.1,
      "src": "대표 이미지"
+    },
+    {
+     "hex": "#fdfde4",
+     "score": 3,
+     "src": "CSS 빈도"
     },
     {
      "hex": "#636363",
@@ -12941,6 +12935,11 @@
     },
     {
      "hex": "#246beb",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ec6941",
      "score": 1,
      "src": "CSS 빈도"
     },
@@ -15945,62 +15944,62 @@
    "palette": [
     {
      "hex": "#ffffff",
-     "score": 43.4,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#007cba",
-     "score": 18,
+     "score": 120.4,
      "src": "CSS 변수"
     },
     {
      "hex": "#000000",
-     "score": 17.0,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#cf2e2e",
-     "score": 13,
+     "score": 56.0,
      "src": "CSS 변수"
     },
     {
      "hex": "#333333",
-     "score": 13.0,
+     "score": 50.0,
      "src": "CSS 빈도"
     },
     {
-     "hex": "#ff6900",
-     "score": 11,
+     "hex": "#dddddd",
+     "score": 35,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4a4a4a",
+     "score": 22,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#007cba",
+     "score": 20,
      "src": "CSS 변수"
     },
     {
-     "hex": "#0693e3",
-     "score": 11,
+     "hex": "#a4a4a4",
+     "score": 18,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#111111",
+     "score": 16.3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#cf2e2e",
+     "score": 16,
      "src": "CSS 변수"
     },
     {
-     "hex": "#00d084",
-     "score": 11,
-     "src": "CSS 변수"
+     "hex": "#717171",
+     "score": 15,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#89c712",
+     "score": 13,
+     "src": "CSS 빈도"
     },
     {
      "hex": "#abb8c3",
-     "score": 10.9,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#fcb900",
-     "score": 10,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#9b51e0",
-     "score": 10,
-     "src": "CSS 변수"
-    },
-    {
-     "hex": "#7bdcb5",
-     "score": 10,
+     "score": 12.9,
      "src": "CSS 변수"
     }
    ],
@@ -16028,64 +16027,8 @@
   },
   "k-hangeul-nuri": {
    "page": "https://hanfont.hangeul.go.kr/relaxfont/font/hangeulnuri.do",
-   "palette": [
-    {
-     "hex": "#ffffff",
-     "score": 22,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#292929",
-     "score": 18,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#e5e5e5",
-     "score": 10,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#bd9338",
-     "score": 6,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#666666",
-     "score": 6,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#dbc698",
-     "score": 4,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#215aaf",
-     "score": 4,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#bdb6b6",
-     "score": 4,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#fbcd69",
-     "score": 2,
-     "src": "CSS 빈도"
-    },
-    {
-     "hex": "#b39f88",
-     "score": 2,
-     "src": "CSS 빈도"
-    }
-   ],
-   "suggest": {
-    "bg": "#f0e7d3",
-    "fg": "#292929",
-    "ac": "#97762d",
-    "acInk": "#ffffff"
-   }
+   "palette": [],
+   "error": "<urlopen error timed out>"
   },
   "k-ksif": {
    "page": "https://www.ksif.or.kr/com/cmm/EgovContentView.do?menuNo=10101062",
@@ -16741,12 +16684,12 @@
    "palette": [
     {
      "hex": "#ffffff",
-     "score": 109,
+     "score": 105,
      "src": "CSS 빈도"
     },
     {
      "hex": "#0a0a0a",
-     "score": 106.5,
+     "score": 102.5,
      "src": "CSS 빈도"
     },
     {
@@ -16756,12 +16699,12 @@
     },
     {
      "hex": "#ffd03e",
-     "score": 31,
+     "score": 29,
      "src": "CSS 변수"
     },
     {
      "hex": "#ff2f74",
-     "score": 23,
+     "score": 21,
      "src": "CSS 빈도"
     },
     {
@@ -16843,6 +16786,177 @@
     "bg": "#dbf0f6",
     "fg": "#234751",
     "ac": "#3b798a",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-bookend-batang": {
+   "page": "https://www.bookend.tech/font",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 35.9,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#f96815",
+     "score": 10.1,
+     "src": "CSS 변수"
+    },
+    {
+     "hex": "#171717",
+     "score": 8.2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ededeb",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#c5c5c0",
+     "score": 3.2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#555555",
+     "score": 3.2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#7c00ff",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 2.0,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#999999",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#777777",
+     "score": 1.2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#d5dbe0",
+     "score": 1,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#b42318",
+     "score": 1,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#fedecc",
+    "fg": "#171717",
+    "ac": "#c75311",
+    "acInk": "#ffffff"
+   }
+  },
+  "k-chogoon-v7": {
+   "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V7",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chogoon-v6": {
+   "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V6",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chogoon-v5": {
+   "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V5",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chogoon-v3": {
+   "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V3",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-chogoon-v2": {
+   "page": "https://github.com/chogoons/CHOGOON-CHICKEN-SCRATCH-V2",
+   "palette": [],
+   "error": "여러 제작사가 함께 쓰는 배포 플랫폼 주소 — 제작사 페이지(brandPage)를 지정하면 추출"
+  },
+  "k-eulyoo1945": {
+   "page": "https://www.eulyoo.co.kr/member/font.html",
+   "palette": []
+  },
+  "k-sebang-gothic-2": {
+   "page": "https://www.sebang.com/contents/01_03.asp",
+   "palette": [
+    {
+     "hex": "#ffffff",
+     "score": 103,
+     "src": "theme-color"
+    },
+    {
+     "hex": "#cccccc",
+     "score": 38,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e9e9e9",
+     "score": 35,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#333333",
+     "score": 28,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#000000",
+     "score": 20,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#4b545e",
+     "score": 11,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#ff3061",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#266184",
+     "score": 5,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#9ed4ff",
+     "score": 4,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#e8180c",
+     "score": 3,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#043285",
+     "score": 2,
+     "src": "CSS 빈도"
+    },
+    {
+     "hex": "#6e6e6e",
+     "score": 2,
+     "src": "CSS 빈도"
+    }
+   ],
+   "suggest": {
+    "bg": "#9ed4ff",
+    "fg": "#333333",
+    "ac": "#cc264e",
     "acInk": "#ffffff"
    }
   }

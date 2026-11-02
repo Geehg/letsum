@@ -86,8 +86,8 @@
  "lxgw/LxgwWenkaiKR": {
   "result": "skip",
   "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
-  "pushed": "2026-10-17T18:52:28Z",
-  "checked": "2026-10-19"
+  "pushed": "2026-10-31T08:47:07Z",
+  "checked": "2026-11-02"
  },
  "quiple/x10y12pxDenkiChipHangul": {
   "result": "added",
@@ -206,8 +206,8 @@
  "younjungpark/Monatendard": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-11T10:43:11Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-30T08:43:26Z",
+  "checked": "2026-11-02"
  },
  "wudys/0xProtoD2": {
   "result": "skip",
@@ -218,14 +218,14 @@
  "hunterhogan/Integrated_code_fire_font": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-23T05:55:58Z",
-  "checked": "2026-10-26"
+  "pushed": "2026-10-29T03:03:29Z",
+  "checked": "2026-11-02"
  },
  "xkho/presevka": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-23T10:29:17Z",
-  "checked": "2026-10-26"
+  "pushed": "2026-11-02T03:07:43Z",
+  "checked": "2026-11-02"
  },
  "bepyan/arita": {
   "result": "skip",
@@ -254,8 +254,8 @@
  "harena-hq/harena-term-font": {
   "result": "skip",
   "why": "라이선스 Apache-2.0",
-  "pushed": "2026-09-24T07:20:07Z",
-  "checked": "2026-10-16"
+  "pushed": "2026-10-30T09:59:57Z",
+  "checked": "2026-11-02"
  },
  "Lingenics/lingenic-compose-character": {
   "result": "skip",
@@ -280,5 +280,17 @@
   "why": "별 0개(기준 15)",
   "pushed": "2026-10-20T14:35:33Z",
   "checked": "2026-10-26"
+ },
+ "jiwonMe/undoless": {
+  "result": "skip",
+  "why": "별 2개(기준 15)",
+  "pushed": "2026-10-27T05:18:49Z",
+  "checked": "2026-11-02"
+ },
+ "AustinKimDev/paperlokyung": {
+  "result": "skip",
+  "why": "별 0개(기준 15)",
+  "pushed": "2026-10-31T01:32:58Z",
+  "checked": "2026-11-02"
  }
 }
