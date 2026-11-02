@@ -1125,5 +1125,11 @@
   "files": {
    "400": "https://cdn.jsdelivr.net/gh/chogoons/CHOGOON-CHICKEN-SCRATCH-V7@ecb173abf7083c0294c4767e75622afe5113a7ba/CHOGOONCHICKENSCRATCHV7-Regular.ttf"
   }
+ },
+ "k-yangjin": {
+  "page": "https://www.supernovice.org/font",
+  "files": {
+   "400": "https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff"
+  }
  }
 }

@@ -1380,5 +1380,71 @@
   "desc": "둥근 획과 하트 모양이 특징인 KT Y 장식 서체. 응원 문구와 카드 제목에 어울립니다. Regular는 한글 11,172자, Bold는 기본 2,780자와 장식 글자를 제공해 굵기별 지원 범위가 다릅니다.",
   "license": "KT Y 유니버스·클로버·최애체 이용조건",
   "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"ok\", ofl: \"cond\" }"
+ },
+ "lotteria-chab": {
+  "lic": "CUSTOM",
+  "mode": "hosted",
+  "org": "롯데GRS",
+  "srcName": "롯데리아(공식)",
+  "page": "https://lotteriafont.com/chobddag",
+  "license": "롯데리아 촵딱체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"cond\", ofl: \"no\" }",
+  "evidence": "공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "category": "디스플레이",
+  "tags": [
+   "제목",
+   "광고"
+  ],
+  "mood": [
+   "강렬한",
+   "발랄한"
+  ],
+  "id": "lotteria-chab",
+  "fam": "롯데리아 촵땡겨체",
+  "desc": "둥글고 두꺼운 획이 꽉 찬 인상을 주는 제목 서체. 이벤트와 짧은 광고 문구에 어울리며, BI/CI 용도로는 사용할 수 없습니다."
+ },
+ "lotteria-ddag": {
+  "lic": "CUSTOM",
+  "mode": "hosted",
+  "org": "롯데GRS",
+  "srcName": "롯데리아(공식)",
+  "page": "https://lotteriafont.com/chobddag",
+  "license": "롯데리아 촵딱체 이용조건",
+  "matrix": "{ print: \"ok\", web: \"ok\", video: \"ok\", embed: \"ok\", bici: \"no\", package: \"cond\", ofl: \"no\" }",
+  "evidence": "공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "category": "디스플레이",
+  "tags": [
+   "제목",
+   "광고"
+  ],
+  "mood": [
+   "강렬한",
+   "발랄한"
+  ],
+  "id": "lotteria-ddag",
+  "fam": "롯데리아 딱붙어체",
+  "desc": "좁고 높은 글자 형태가 두드러지는 제목 서체. 세로로 긴 포스터와 짧은 강조 문구에 어울리며, BI/CI 용도로는 사용할 수 없습니다."
+ },
+ "happiness-sans": {
+  "id": "happiness-sans",
+  "fam": "해피니스 산스",
+  "en": "Happiness Sans",
+  "org": "현대백화점",
+  "lic": "OFL",
+  "mode": "keep",
+  "page": "https://thehyundaifont.com/",
+  "srcName": "현대백화점(공식)",
+  "evidence": "공식 화면용 ZIP 첨부 HapinessSans_License.pdf 1~3쪽: SIL OFL 1.1, 재배포·임베딩·BI/CI 허용, RFN 명시. 공식 WOFF2 원본을 변환 없이 사용하며 라이선스 PDF 동봉. 화면용은 한자 미포함, 별도 인쇄용에는 공식 안내 기준 한자 4,888자 포함.",
+  "category": "고딕",
+  "tags": [
+   "본문",
+   "제목",
+   "가변폰트"
+  ],
+  "mood": [
+   "단정한",
+   "따뜻한"
+  ],
+  "desc": "획 끝의 부드러운 곡선이 특징인 현대백화점 고딕. Regular·Bold·Title과 가변 폰트를 제공합니다. LETSUM 미리보기는 한자가 없는 화면용이며, 공식 인쇄용에는 한자 4,888자가 포함됩니다."
  }
 }

@@ -2287,5 +2287,53 @@
   "evidence": "공식 ZIP 매뉴얼 36~37쪽: 인쇄·웹·포장·영상·임베딩·BI/CI 가능, 파일 수정·복제·배포·판매 금지. 홈페이지 재배포 안내와 상충하여 소개 전용, 파일 미배포.",
   "page": "https://www.yspotlight.co.kr/download/font",
   "checked": "2026-11-03"
+ },
+ "k-yangjin": {
+  "license": "양진체 이용조건",
+  "evidence": "개인·기업 상업 이용 가능. 폰트 파일을 수정해 판매하는 행위와 양진체만으로 구성한 스티커팩·이모티콘팩 등 상품 판매 금지. 제작자가 제공한 공식 웹폰트 코드를 사용합니다. 파일 내부 OFL 문구와 별개로 현행 제작자 이용 안내를 표시합니다.",
+  "page": "https://www.supernovice.org/font",
+  "checked": "2026-11-03"
+ },
+ "k-ansung": {
+  "license": "안성탕면체 이용조건",
+  "evidence": "개인·기업 누구나 인쇄·출판·영상·온라인에 사용 가능. 글꼴 파일 판매·수정·재배포 금지, 배포 형태 그대로 사용. 사용 이미지는 농심 프로모션에 활용될 수 있으며 제외 요청 가능.",
+  "page": "https://brand.nongshim.com/resources/images/ansung/fonts/file/LICENSE.pdf",
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile": {
+  "license": "원스토어 무료 글꼴 안내",
+  "evidence": "공식 배포 페이지와 2021-05-17 발표에서 개인·기업 상업 이용 가능한 무료 글꼴로 안내. 현행 다운로드 ZIP에는 별도 이용약관이 없어 임베딩·BI/CI·수정·재배포의 세부 허용 범위는 미확인. LETSUM은 소개용 견본과 공식 다운로드 링크만 제공합니다.",
+  "page": "https://onestorecorp.com/about/brand/",
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile-title": {
+  "license": "원스토어 무료 글꼴 안내",
+  "evidence": "공식 배포 페이지와 2021-05-17 발표에서 개인·기업 상업 이용 가능한 무료 글꼴로 안내. 현행 다운로드 ZIP에는 별도 이용약관이 없어 임베딩·BI/CI·수정·재배포의 세부 허용 범위는 미확인. LETSUM은 소개용 견본과 공식 다운로드 링크만 제공합니다.",
+  "page": "https://onestorecorp.com/about/brand/",
+  "checked": "2026-11-03"
+ },
+ "k-one-mobile-pop": {
+  "license": "원스토어 무료 글꼴 안내",
+  "evidence": "공식 배포 페이지와 2021-05-17 발표에서 개인·기업 상업 이용 가능한 무료 글꼴로 안내. 현행 다운로드 ZIP에는 별도 이용약관이 없어 임베딩·BI/CI·수정·재배포의 세부 허용 범위는 미확인. LETSUM은 소개용 견본과 공식 다운로드 링크만 제공합니다.",
+  "page": "https://onestorecorp.com/about/brand/",
+  "checked": "2026-11-03"
+ },
+ "k-lotteria-chab": {
+  "license": "롯데리아 촵딱체 이용조건",
+  "evidence": "공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "page": "https://lotteriafont.com/chobddag",
+  "checked": "2026-11-03"
+ },
+ "k-lotteria-ddag": {
+  "license": "롯데리아 촵딱체 이용조건",
+  "evidence": "공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "page": "https://lotteriafont.com/chobddag",
+  "checked": "2026-11-03"
+ },
+ "k-happiness-sans": {
+  "license": "OFL",
+  "evidence": "공식 화면용 ZIP 첨부 HapinessSans_License.pdf 1~3쪽: SIL OFL 1.1, 재배포·임베딩·BI/CI 허용, RFN 명시. 공식 WOFF2 원본을 변환 없이 사용하며 라이선스 PDF 동봉. 화면용은 한자 미포함, 별도 인쇄용에는 공식 안내 기준 한자 4,888자 포함.",
+  "page": "https://thehyundaifont.com/",
+  "checked": "2026-11-03"
  }
 }

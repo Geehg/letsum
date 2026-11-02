@@ -3371,12 +3371,6 @@
   "code": 206,
   "checked": "2026-11-03"
  },
- "k-myungwon-jaemin4": {
-  "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
-  "ok": true,
-  "code": 200,
-  "checked": "2026-11-03"
- },
  "k-y-universe": {
   "url": "https://www.yspotlight.co.kr/download/font",
   "ok": true,
@@ -3393,6 +3387,24 @@
   "url": "https://www.yspotlight.co.kr/download/font",
   "ok": true,
   "code": 200,
+  "checked": "2026-11-03"
+ },
+ "k-lotteria-chab": {
+  "url": "https://lotteriafont.com/chobddag",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-03"
+ },
+ "k-lotteria-ddag": {
+  "url": "https://lotteriafont.com/chobddag",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-03"
+ },
+ "k-happiness-sans": {
+  "url": "https://thehyundaifont.com/",
+  "ok": true,
+  "code": 206,
   "checked": "2026-11-03"
  }
 }

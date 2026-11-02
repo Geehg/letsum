@@ -675,3 +675,12 @@ img.save("sample.png")
 - 공식 원본 ZIP·PDF·글리프/해시 검사 기록: /Volumes/AI_dev/web/output/font-additions-20261103/. 재배포 7개 파일 전부 공식 ZIP 바이트와 일치하며 Chrome FontFace 로드 검사 7/7 통과.
 - 글자 범위 재계산에 `build_coverage.py <mirror> --ids id1,id2` 선택 옵션 추가. 기존 513종 결과 보존 및 알 수 없는 ID 거부 확인. 전체 기본 실행 방식 유지. 라이선스 대조 522종 일치·불일치/판정 불가 0.
 - Production check found the home still using cached data.js?v=13; bumped to v14 and regenerated derived indexes to refresh existing visitor caches.
+
+
+## 2026-11-03 — Additional 8 Korean fonts
+- Yangjin: official v0.9 WOFF CDN (CORS verified), current maker terms take precedence in the UI over the embedded OFL label; no redistribution.
+- Happiness Sans: original official screen WOFF2 at 400/700/900 with full OFL PDF in mirror. RFN exists: no conversion. Screen preview has no Hanja; description explains 4,888 Hanja in the separate print download.
+- LOTTERIA CHAB/DDAG: original TTF in fonts-hosted only; official PDF permits web server embedding and prohibits BI/CI.
+- Ansung and ONE Mobile body/title/POP: introduction-only with specimens rendered from official original downloads. Ansung forbids modification/redistribution; current ONE ZIP lacks detailed terms, so unspecified uses remain conditional.
+- Total 583 families. Only sourced release dates: Yangjin 2019-10-08, ONE 2021-05-17. Home data.js cache v15.
+- Originals, licenses, identical-byte audit and research: /Volumes/AI_dev/web/output/font-round2-20261103/.

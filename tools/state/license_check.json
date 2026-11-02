@@ -4174,5 +4174,37 @@
   "license": "KT Y 유니버스·클로버·최애체 이용조건",
   "evidence": "직접 확인: KT Y 공식 페이지 및 공식 ZIP 첨부 매뉴얼 35쪽 확인: 개인·기업 무료, 사용자 재배포 가능, 인쇄·웹·영상·임베딩·패키지 상업 이용 허용. 파일 수정·유료 판매와 BI/CI 사용 금지. 공식 배포 파일 무변환 사용.",
   "page": "https://www.yspotlight.co.kr/download/font"
+ },
+ {
+  "id": "k-yangjin",
+  "name": "양진체",
+  "expected": "양진체 이용조건",
+  "license": "양진체 이용조건",
+  "evidence": "직접 확인: 개인·기업 상업 이용 가능. 폰트 파일을 수정해 판매하는 행위와 양진체만으로 구성한 스티커팩·이모티콘팩 등 상품 판매 금지. 제작자가 제공한 공식 웹폰트 코드를 사용합니다. 파일 내부 OFL 문구와 별개로 현행 제작자 이용 안내를 표시합니다.",
+  "page": "https://www.supernovice.org/font"
+ },
+ {
+  "id": "k-lotteria-chab",
+  "name": "롯데리아 촵땡겨체",
+  "expected": "롯데리아 촵딱체 이용조건",
+  "license": "롯데리아 촵딱체 이용조건",
+  "evidence": "직접 확인: 공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "page": "https://lotteriafont.com/chobddag"
+ },
+ {
+  "id": "k-lotteria-ddag",
+  "name": "롯데리아 딱붙어체",
+  "expected": "롯데리아 촵딱체 이용조건",
+  "license": "롯데리아 촵딱체 이용조건",
+  "evidence": "직접 확인: 공식 lotteria_font_license.pdf 1쪽: 개인·기업 무료, 인쇄·웹·영상·서버 내 임베딩 허용, BI/CI 금지. 파일 수정·개작 재배포 금지. 공식 TTF 원본을 변환 없이 서버 표시용으로 사용하며 공개 미러에 재배포하지 않음.",
+  "page": "https://lotteriafont.com/chobddag"
+ },
+ {
+  "id": "k-happiness-sans",
+  "name": "해피니스 산스",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 공식 화면용 ZIP 첨부 HapinessSans_License.pdf 1~3쪽: SIL OFL 1.1, 재배포·임베딩·BI/CI 허용, RFN 명시. 공식 WOFF2 원본을 변환 없이 사용하며 라이선스 PDF 동봉. 화면용은 한자 미포함, 별도 인쇄용에는 공식 안내 기준 한자 4,888자 포함.",
+  "page": "https://thehyundaifont.com/"
  }
 ]
