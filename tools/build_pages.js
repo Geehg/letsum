@@ -19,6 +19,8 @@ const namesHTML = (f) => { const n = NAMES[f.id]; if (!n) return ""; return `<h2
   ${n.file ? `<p class="note">배포처 파일 이름: ${esc(n.file)}</p>` : ""}`; };
 const REASONS = (() => { try { const j = JSON.parse(fs.readFileSync(path.join(__dirname, "state", "reasons.json"), "utf8")); delete j._; return j; } catch (e) { return {}; } })();
 fs.writeFileSync(path.join(ROOT, "data", "reasons.json"), JSON.stringify(REASONS));
+const taxonomy = require("../html/js/font-taxonomy.js");
+const coverageData = JSON.parse(fs.readFileSync(path.join(ROOT,"data/coverage.json"),"utf8"));
 const SITE = "https://letsum.app";
 // 주제별 소개 페이지(검색어 맞춤 목록) — tools/seo_topics.js. 3종 미만인 주제는 만들지 않는다.
 const { TOPICS, TOPICS_EN, Q } = require("./seo_topics");
@@ -95,6 +97,7 @@ function page(f, en, db) {
     <tr><th>굵기</th><td>${f.weightsUnknown ? "배포처 확인" : f.weights.join(" · ")}</td></tr>
     <tr><th>출시·배포일</th><td>${f.released ? `${f.released.length === 4 ? f.released + "년" : f.released.length === 7 ? f.released.slice(0, 4) + "년 " + (+f.released.slice(5)) + "월" : f.released.replace(/-/g, ".")} <span class="note">— 출처: <a href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : "원 출시일 확인 중"}</td></tr>
     <tr><th>형식</th><td>${f.formats.join(", ")}</td></tr>
+${!en && !db ? `<tr><th>한자 지원 여부</th><td>${taxonomy.hanja(f, coverageData)} <span class="note">${taxonomy.note}</span></td></tr>` : ""}
     <tr><th>${db ? "수록 기호" : en ? "지원 문자" : "한글 글자수"}</th><td>${esc(f.glyphs)}</td></tr>
     <tr><th>저작권자</th><td>${esc(f.holder)}</td></tr>
     <tr><th>태그</th><td>${[...f.tags, ...f.mood].map(esc).join(", ")}</td></tr>
@@ -126,6 +129,7 @@ const INTRO_GROUPS = {
   ko: [["분류", [["free-gothic-fonts", "고딕"], ["free-myeongjo-fonts", "명조"], ["free-handwriting-fonts", "손글씨"], ["free-display-title-fonts", "제목용"]]],
     ["분위기", [["cute-fonts", "귀여운"], ["pretty-aesthetic-fonts", "예쁜 감성"], ["retro-pixel-fonts", "레트로·픽셀"], ["calligraphy-brush-fonts", "캘리그라피"]]],
     ["용도", [["youtube-thumbnail-fonts", "유튜브 썸네일"], ["presentation-ppt-fonts", "PPT"], ["logo-bi-ci-fonts", "로고(BI/CI)"], ["free-korean-webfonts", "웹폰트"]]],
+    ["캘리·서예", taxonomy.groups.map(g => [g.slug, g.name])],
     ["글자·라이선스", [["full-hangul-11172-fonts", "11,172자"], ["hanja-support-fonts", "한자"], ["old-hangul-fonts", "옛한글"], ["coding-monospace-fonts", "코딩"], ["ofl-korean-fonts", "OFL"], ["kogl-public-fonts", "공공누리"]]]],
   en: [["분류", [["english-sans-serif-fonts", "산세리프"], ["english-serif-fonts", "세리프"], ["english-script-handwriting-fonts", "필기체·손글씨"], ["english-display-logo-fonts", "제목·로고"]]],
     ["특징", [["english-variable-fonts", "가변 폰트"], ["english-monospace-coding-fonts", "코딩(고정폭)"], ["english-multilingual-fonts", "다국어 지원"]]]],
@@ -204,7 +208,7 @@ function topicPage(t, list) {
   const others = TOPIC_LISTS.filter(([o]) => o !== t);
   const okTxt = (f) => [["print", "인쇄"], ["web", "웹"], ["video", "영상"], ["bici", "BI/CI"]].filter(([k]) => (f.matrix || {})[k] === "ok").map(([, l]) => l).join("·");
   const card = (f) => { const og = fs.existsSync(path.join(ROOT, "img/og", f.id + ".png"));
-    return `<a class="tp-card" href="../font/${f.id}.html">${og ? `<img src="../img/og/${f.id}.png" alt="${esc(f.name)} 글꼴 견본" loading="lazy" width="600" height="315">` : `<span class="tp-noimg">${esc(f.name)}</span>`}<b>${esc(f.name)}</b><span>${esc(f.category)} · ${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${esc(f.glyphs || "")}</span><span class="tp-lic">${esc(((LICENSE_INFO[f.license] || {}).short) || f.license)}${okTxt(f) ? ` · ${okTxt(f)} 가능` : ""}</span></a>`; };
+    return `<a class="tp-card" href="../font/${f.id}.html">${og ? `<img src="../img/og/${f.id}.png" alt="${esc(f.name)} 글꼴 견본" loading="lazy" width="600" height="315">` : `<span class="tp-noimg">${esc(f.name)}</span>`}<b>${esc(f.name)}</b><span>${esc(f.category)} · ${f.weightsUnknown ? "굵기 배포처 확인" : `굵기 ${f.weights.length}종`} · ${esc(f.glyphs || "")}</span>${!t.db && !TOPICS_EN.includes(t) ? `<span title="${taxonomy.note}">${taxonomy.hanja(f, coverageData)}${taxonomy.group(f) ? " · " + taxonomy.group(f).name : ""}</span>` : ""}<span class="tp-lic">${esc(((LICENSE_INFO[f.license] || {}).short) || f.license)}${okTxt(f) ? ` · ${okTxt(f)} 가능` : ""}</span></a>`; };
   const ld = [{ "@context": "https://schema.org", "@type": "CollectionPage", name: t.title(n), description: t.desc(n), url, inLanguage: "ko",
       mainEntity: { "@type": "ItemList", numberOfItems: n, itemListElement: list.slice(0, 100).map((f, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/font/${f.id}.html`, name: f.name })) } },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" }, { "@type": "ListItem", position: 2, name: t.short, item: url }] }];
@@ -236,6 +240,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
   <nav class="crumb" aria-label="현재 위치"><a href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : "index.html"}">홈</a> › <span>${esc(t.short)}</span></nav>
   <h1>${esc(t.h1)} <span class="tp-n">${n}종</span></h1>
   <p class="tp-go"><a class="btn" href="../${t.db ? "dingbat/" : TOPICS_EN.includes(t) ? "en/" : ""}?topic=${t.slug}">메인 화면에서 이 목록 보기 →</a><span class="note">내 문장으로 미리보기·비교·필터를 함께 쓸 수 있습니다</span></p>
+${t.slug === 'calligraphy-brush-fonts' || taxonomy.groups.some(g => g.slug === t.slug) ? `<nav class="tp-links" aria-label="캘리그라피 세부 분류"><a href="calligraphy-brush-fonts.html">전체 붓글씨</a>${taxonomy.groups.map(g => `<a href="${g.slug}.html">${g.name}</a>`).join('')}</nav><p class="note">${taxonomy.note}</p>` : ''}
   <p class="lead" data-ui-editorial>${esc(t.lead)}</p>
   <p class="note">라이선스 원문 대조 · 다운로드는 원 배포처로 연결 · 목록 갱신 ${today} · 견본 이미지를 누르면 상세 정보와 내 문장 미리보기로 갑니다.</p>
   <div class="tp-grid">${list.map(card).join("")}</div>

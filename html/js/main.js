@@ -541,14 +541,14 @@
       if (state.lic.size && !matrixOk(f, [...state.lic])) return false;
       if (state.cov.has("11172") && ((covData && covData[f.id]) ? covData[f.id].n : f.cov) < 11172) return false;
       if (state.cov.has("old") && !(detect[f.id] && detect[f.id].old)) return false;
-      if (state.cov.has("hanja") && !(detect[f.id] && detect[f.id].hanja)) return false;
+      if (state.cov.has("hanja") && FontTaxonomy.hanja(f, covData) !== "한자 지원") return false;
       if (state.cov.has("multi") && f.weights.length < 3) return false;
       if (state.favOnly && !favs.has(f.id)) return false;
       if (state.coverOnly && covState[f.id] !== "ok") return false;
       if (state.liveOnly && f.intro) return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
-        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q))))) return false; }
+        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!FontTaxonomy.matches(f, q) && !hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q))))) return false; }
       }
       return true;
     });
@@ -618,10 +618,11 @@
   }
   const covTags = (f) => {
     const d = detect[f.id];
+    const hj = FontTaxonomy.hanja(f, covData);
     if (LAT) return `<span class="cov"><span class="y">${esc(f.glyphs || "라틴")}</span></span>`;
-    if (!f.cov) return `<span class="cov"><span class="dim">글자수 배포처 확인</span></span>`;
+    if (!f.cov) return `<span class="cov"><span class="dim">글자수 배포처 확인</span><span class="dim">${hj}</span></span>`;
     return `<span class="cov"><span class="${f.cov >= 11172 ? "y" : ""}">${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자</span>`
-      + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span><span class="${d.hanja ? "y" : "dim"}">漢</span>` : "") + `</span>`;
+      + (d ? `<span class="${d.old ? "y" : "dim"}">옛한글</span>` : "") + `<span class="${hj === "한자 지원" ? "y" : "dim"}" title="${FontTaxonomy.note}">${hj}</span></span>`;
   };
   const missPill = (f) => covState[f.id] === "miss" ? `<span class="pill miss" title="이 폰트에 없는 글자: ${esc(coverage[f.id].join(" "))}">누락 ${coverage[f.id].length}자</span>`
     : covState[f.id] === "pending" ? `<span class="pill chk">글자 확인 중</span>` : covState[f.id] === "na" && covChars.length ? `<span class="pill">글자 지원 미확인</span>` : "";
@@ -849,7 +850,7 @@
     // 라틴 글자는 한글보다 폭이 절반 정도라 같은 크기면 작아 보인다 → 영문은 약 2배
     // 크기는 거의 고정(문장 길이에 따라 들쑥날쑥하지 않게) — 넘치면 줄 수를 잘라 '…'(한글 4줄 · 영문 3줄)
     const sz = EN ? enFit(t) : [...t].length <= 6 ? 16 : 12;
-    const meta = [f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, DB ? f.glyphs : EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
+    const meta = [!LAT ? FontTaxonomy.hanja(f, covData) : "", !LAT && FontTaxonomy.group(f) ? FontTaxonomy.group(f).name : "", f.weightsUnknown ? "" : `굵기 ${f.weights.length}종`, DB ? f.glyphs : EN ? (f.variable ? "가변" : "") : f.cov ? `한글 ${f.cov >= 11172 ? "11,172" : f.cov.toLocaleString()}자` : "", f.released ? `${fmtRel(f.released)} 출시` : ""].filter(Boolean).join(" · ");
     const info = `<div class="ig-s ig-info"><div class="ii-k">${esc(f.category)} · ${esc(licInfo(f).short)}</div>
       <div class="ii-n" style="${f.intro || DB ? "" : `font-family:${f.family};font-weight:${f.weights[f.weights.length - 1]}`}">${esc(f.name)}</div>
       <p data-ui-editorial>${esc(f.desc)}</p><div class="ii-m">${esc(meta)}</div></div>`;
@@ -1335,7 +1336,7 @@
         </div>
         <div class="t-row" style="margin-bottom:0"><span class="k">글자 범위</span>${covTags(f)}
           ${LAT ? "" : ({ miss: `<span class="pill miss">현재 문장에서 누락 ${miss.length}자: ${esc(miss.join(" "))}</span>`, pending: `<span class="pill chk">글자 지원 확인 중</span>`, na: `<span class="pill">소개 전용 · 글자 지원 미확인</span>` }[covState[f.id]] || (covChars.length ? `<span class="pill ok">현재 문장의 한글·한자 모두 지원</span>` : `<span class="note">문장에 검사할 한글·한자가 없습니다</span>`))}
-          ${LAT ? "" : '<span class="note">옛한글·한자·누락은 브라우저 자동 검출(참고용)</span>'}</div>
+          ${LAT ? "" : '<span class="note">한자는 파일 검사 기준 · 문장 누락은 브라우저 검출(참고용)</span>'}</div>
       </div>`}
       <p data-ui-editorial style="margin-top:16px;color:var(--ink2)">${esc(f.desc)}</p>
       ${f.intro ? "" : `<button class="tbtn" id="shotBtn" type="button" title="이 폰트 견본을 이미지로 — 카톡·메신저로 보내 의견 묻기">이미지로 저장·공유</button>`}
@@ -1363,7 +1364,7 @@
           <tr><th>출시·배포일</th><td>${f.released ? `${fmtRel(f.released)} <span class="note">— 출처: <a class="linklike" href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : '<span class="note">원 출시일 확인 중</span>'}</td></tr>
           <tr><th>지원 형식</th><td>${f.formats.join(", ")}</td></tr>
           <tr><th>${DB ? "수록 기호" : EN ? "지원 문자" : "한글 글자수"}</th><td>${f.glyphs}${!f.intro && f.cov && f.cov < 11172 ? ' <span class="note">— 완성형 전체가 아니라 희귀 글자(뷁·똠 등)가 빠질 수 있습니다. 위 문장 검사로 확인하세요.</span>' : ""}</td></tr>
-          ${f.intro || LAT ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${d.hanja ? "한자 지원" : "한자 미지원"} <span class="note">(자동 검출)</span></td></tr>`}
+          ${f.intro || LAT ? "" : `<tr><th>옛한글 · 한자</th><td>${d.old ? "옛한글 지원" : "옛한글 미지원"} · ${FontTaxonomy.hanja(f, covData)} <span class="note">${FontTaxonomy.note}</span></td></tr>`}
           <tr><th>라이선스</th><td>${licInfo(f).url ? `<a class="linklike" href="${licInfo(f).url}" target="_blank" rel="noopener">${esc(licInfo(f).full)}</a>` : esc(licInfo(f).full)} <span class="note">— ${esc(licInfo(f).note)}</span>${f.attribution ? `<br><span class="note">출처 표시 예: ${esc(f.attribution)}</span>` : ""}${f.hostedNote ? `<br><span class="note">미리보기: ${esc(f.hostedNote)}</span>` : ""}</td></tr>
           <tr><th>검토 상태</th><td>${stText(f)} · 최근 확인일 ${f.verified}<div class="ev-box" id="evBox"></div></td></tr>
         </table></div>

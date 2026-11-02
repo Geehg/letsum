@@ -3,6 +3,7 @@
 //   무료폰트/무료 글꼴 + 다운로드·사이트·추천·모음·ttf, 상업용(상업적) 무료폰트, 한글폰트 추천, 귀여운·예쁜·레트로·캘리그라피·손글씨·고딕·명조·제목 폰트,
 //   썸네일 폰트(저작권), 로고 폰트 저작권, ppt 폰트 포함 저장·깨짐, 폰트 다운로드 후 적용 방법, 웹폰트 적용방법, 영문 폰트.
 // 목록은 data.js의 실제 값(분류·분위기·태그·라이선스 매트릭스·굵기·글자 수)으로만 거른다(지어낸 내용 없음). 순서는 인기(pop) → 이름.
+const taxonomy = require("../html/js/font-taxonomy.js");
 const ok = (f, k) => (f.matrix || {})[k] === "ok";
 const commercial = (f) => ok(f, "print") && ok(f, "web");
 const maxW = (f) => Math.max(...(f.weights || [400]));
@@ -71,7 +72,13 @@ const TOPICS = [
     title: (n) => `캘리그라피 폰트 ${n}종 — 붓글씨·붓펜 상업용 무료 한글 폰트`,
     desc: (n) => `붓글씨·붓펜·캘리그라피 느낌의 상업용 무료 한글 폰트 ${n}종. 전통·감성 디자인에 쓸 수 있는지 사용 범위를 확인하세요.`,
     lead: "LETSUM이 '붓글씨'·'붓펜'·'캘리'로 분류한 상업용 무료 한글 폰트입니다. 전통 행사·명절 카드·감성 문구처럼 손으로 쓴 붓 맛이 필요한 곳에 어울립니다.",
-    faq: ["commercial", "logo", "install"], filter: (f) => commercial(f) && tagIs(f, /캘리|붓|육필|전통/) },
+    faq: ["commercial", "logo", "install"], filter: (f) => commercial(f) && !!taxonomy.group(f) },
+  ...taxonomy.groups.map(g => ({slug:g.slug, short:g.name, h1:g.name+' 무료 폰트',
+    title:n => `${g.name} 무료 폰트 ${n}종 — 한자 지원 확인`,
+    desc:n => `${g.name} 계열 무료 한글 폰트 ${n}종. 같은 문장으로 비교하고 한자 지원 여부와 라이선스를 확인하세요.`,
+    lead:`캘리그라피·붓글씨 모음 중 ${g.name} 분위기로 고른 목록입니다. ${taxonomy.note}`,
+    lines:['새해 복 많이 받으세요','마음을 담아 전합니다','가화만사성 家和萬事成'],
+    faq:['hanja','commercial','install'], filter:f => commercial(f) && taxonomy.group(f) === g})),
   { slug: "youtube-thumbnail-fonts", lines: ["이걸 모르면 손해!", "단 10분 만에 끝내는 정리법", "역대급 반전 결말 (실화)"], short: "유튜브 썸네일 폰트", h1: "유튜브 썸네일 무료 폰트",
     title: (n) => `썸네일 폰트 추천 ${n}종 — 저작권 걱정 없는 유튜브 썸네일·자막 무료 폰트`,
     desc: (n) => `영상(유튜브·쇼츠·자막) 사용이 라이선스로 확인된 굵은 썸네일용 무료 폰트 ${n}종. 썸네일 폰트 저작권이 걱정된다면 사용 범위부터 확인하세요.`,
