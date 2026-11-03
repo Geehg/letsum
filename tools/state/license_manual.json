@@ -2425,5 +2425,173 @@
   "evidence": "폰트 OFL 1.1 / 아이콘 별도 MIT·CC BY 등 · THIRD_PARTY_NOTICES 및 licenses 전체 동봉 필요. K/J 각 Regular/Bold 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 폰트 본체 OFL 1.1, Harena Term은 예약 이름입니다. 포함 아이콘은 MIT·CC BY 4.0 등 개별 라이선스 적용. 재배포·임베딩 시 OFL.txt, THIRD_PARTY_NOTICES.md와 licenses의 저작권·출처 고지를 유지하세요.",
   "page": "https://github.com/harena-hq/harena-term-font",
   "checked": "2026-11-03"
+ },
+ "k-brutalmix": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/galaon/BrutalMix",
+  "checked": "2026-11-04"
+ },
+ "k-integrated-code-fire-kr": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/hunterhogan/Integrated_code_fire_font",
+  "checked": "2026-11-04"
+ },
+ "k-jetkai-mono": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/phyyou/JetKaiMono",
+  "checked": "2026-11-04"
+ },
+ "k-jetendard": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/kuskhan/jetendard",
+  "checked": "2026-11-04"
+ },
+ "k-lythd2": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/wudys/LythD2",
+  "checked": "2026-11-04"
+ },
+ "k-monatendard": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/younjungpark/Monatendard",
+  "checked": "2026-11-04"
+ },
+ "k-muxjk": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/juhyeonni/MuxJK",
+  "checked": "2026-11-04"
+ },
+ "k-tenten-kr": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/linyiru/tenten",
+  "checked": "2026-11-04"
+ },
+ "k-zxprotod2": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/wudys/0xProtoD2",
+  "checked": "2026-11-04"
+ },
+ "k-im-hyemin": {
+  "license": "iM혜민체 이용조건",
+  "evidence": "공식 PDF에서 웹서버용 폰트·서버·임베딩 허용 확인. CI/BI, 수정, 재배포 금지. 공개 다운로드 미러 없이 사이트 표시용 원본 서버 제공으로 제한. 개인·기업 상업 이용, 인쇄·웹·영상·웹서버·임베딩·상품 제작 가능. CI/BI(회사명·브랜드명·상품명·로고·마크·슬로건 등), 글꼴 수정·재배포·유료 판매 금지. 배포 원본 그대로 사용. 사용 이미지는 은행 홍보에 활용될 수 있으며 제외 요청 가능.",
+  "page": "https://www.imbank.co.kr/cms/imhyemin/",
+  "checked": "2026-11-04"
+ },
+ "k-godo-maum": {
+  "license": "고도체 사용규정",
+  "evidence": "제작자 사용규정 이미지에서 모든 매체 상업 이용·수정·재배포 허용. 저작권·라이선스 포함, 글꼴 자체 유료 판매 금지. 원본 파일 검사. 개인·기업 모두 모든 매체에서 상업적으로 사용 가능. 수정·재배포 가능, 소프트웨어 번들·재배포 시 저작권 안내와 라이선스 전문 포함. 글꼴 자체 유료 판매 금지. 사용 인쇄물·게임·광고 이미지는 NHN커머스 및 서체 홍보에 활용될 수 있음.",
+  "page": "https://design.godo.co.kr/custom/free-font.php",
+  "checked": "2026-11-04"
+ },
+ "k-godo": {
+  "license": "고도체 사용규정",
+  "evidence": "제작자 사용규정 이미지에서 모든 매체 상업 이용·수정·재배포 허용. 저작권·라이선스 포함, 글꼴 자체 유료 판매 금지. 원본 파일 검사. 개인·기업 모두 모든 매체에서 상업적으로 사용 가능. 수정·재배포 가능, 소프트웨어 번들·재배포 시 저작권 안내와 라이선스 전문 포함. 글꼴 자체 유료 판매 금지. 사용 인쇄물·게임·광고 이미지는 NHN커머스 및 서체 홍보에 활용될 수 있음.",
+  "page": "https://design.godo.co.kr/custom/free-font.php",
+  "checked": "2026-11-04"
+ },
+ "k-goorm-sans": {
+  "license": "구름 산스 이용조건",
+  "evidence": "제작자 현행 페이지에서 무료 사용·재배포와 SIL OFL 표기 확인. 수정 후 상업적 목적 이용 제한 문구가 함께 있어 원본 유지 방식만 판정. 설치본 전체와 공식 미리보기 파일을 구분. 공식 페이지는 SIL OFL과 무료 사용·수정·재배포를 안내하면서 글꼴 수정 후 상업적 사용을 별도로 제한합니다. 원본으로 상업 이용하고, 수정본의 상업 사용은 제작사에 확인하세요. 폰트 단독 판매 금지, 저작권·라이선스 고지 유지.",
+  "page": "https://www.goorm.io/resources/fonts",
+  "checked": "2026-11-04"
+ },
+ "k-goorm-sans-code": {
+  "license": "구름 산스 이용조건",
+  "evidence": "제작자 현행 페이지에서 무료 사용·재배포와 SIL OFL 표기 확인. 수정 후 상업적 목적 이용 제한 문구가 함께 있어 원본 유지 방식만 판정. 설치본 전체와 공식 미리보기 파일을 구분. 공식 페이지는 SIL OFL과 무료 사용·수정·재배포를 안내하면서 글꼴 수정 후 상업적 사용을 별도로 제한합니다. 원본으로 상업 이용하고, 수정본의 상업 사용은 제작사에 확인하세요. 폰트 단독 판매 금지, 저작권·라이선스 고지 유지.",
+  "page": "https://www.goorm.io/resources/fonts",
+  "checked": "2026-11-04"
+ },
+ "k-kkakdugi-drafting": {
+  "license": "OFL",
+  "evidence": "개별 라이선스 근거와 원본 폰트 파일 확보. 무변환 파일로 등록 준비 가능; 운영 배포·브라우저 점검은 후속 단계. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/dynamic-potato/kkakdugi-drafting",
+  "checked": "2026-11-04"
+ },
+ "k-dcu": {
+  "license": "대구가톨릭대학체 이용조건",
+  "evidence": "공식 페이지에서 상업 이용·웹폰트·임베디드·앱 사용을 명시 허용. 폰트 자체 재판매 금지. 원본 TTF 제공 방식으로 등록 가능. 개인·기업 상업·비상업 이용, 인쇄·웹·영상·CI/BI·상품·웹폰트·애플리케이션 임베딩 허용. 서체 원형을 그대로 사용. 파일 수정·재배포는 별도 확인이 필요하며 다운로드는 공식 배포처를 이용하세요.",
+  "page": "https://www.cu.ac.kr/introduction/uisystem/dcufont",
+  "checked": "2026-11-04"
+ },
+ "k-deogon-princess-classic": {
+  "license": "덕온공주체 이용조건",
+  "evidence": "출처 표시·변경 금지. 상업적 인쇄·출판·영상·웹·모바일 허용. 폰트 유료 판매·대여 및 유해매체 사용 금지. TTF 원본 유지. 공공누리 제3유형: 출처 표시, 상업 이용 가능, 폰트 파일 변경·형식 변환 금지. 공식 안내에 따라 글꼴 자체 유료 판매·대여 및 유해매체 사용 금지. 국립한글박물관·윤디자인그룹 저작권.",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "checked": "2026-11-04"
+ },
+ "k-deogon-princess": {
+  "license": "덕온공주체 이용조건",
+  "evidence": "출처 표시·변경 금지. 상업적 인쇄·출판·영상·웹·모바일 허용. 폰트 유료 판매·대여 및 유해매체 사용 금지. TTF 원본 유지. 공공누리 제3유형: 출처 표시, 상업 이용 가능, 폰트 파일 변경·형식 변환 금지. 공식 안내에 따라 글꼴 자체 유료 판매·대여 및 유해매체 사용 금지. 국립한글박물관·윤디자인그룹 저작권.",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "checked": "2026-11-04"
+ },
+ "k-swagger": {
+  "license": "스웨거체 이용조건",
+  "evidence": "공식 웹폰트 ZIP과 임베딩·번들·재배포 허용 확인. 원본 변경 금지, 글꼴 자체 판매 금지. 로고·그래픽 형태의 상표 글리프는 비상업 용도로만 사용. 개인·기업 무료, 원본 그대로 사용. 폰트 임의 수정·개작·유료 판매 금지. 저작권 안내와 라이선스를 포함한 임베딩·번들·재배포 가능. 로고·그래픽 형태의 글리프는 스웨거 상표권 때문에 비상업 용도로만 사용 가능. 사용 광고물은 제작사 홍보에 활용될 수 있으며 제외 요청 가능.",
+  "page": "https://www.swagger.kr/font.html",
+  "checked": "2026-11-04"
+ },
+ "k-seocho-dotum": {
+  "license": "OFL",
+  "evidence": "제작자 페이지에서 OFL·웹폰트 임베딩·재배포 허용 확인. 법원 공식 서체가 아님을 표시. 공식 미리보기 WOFF 검사. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://casedock.cloud/font",
+  "checked": "2026-11-04"
+ },
+ "k-seocho-batang": {
+  "license": "OFL",
+  "evidence": "제작자 페이지에서 OFL·웹폰트 임베딩·재배포 허용 확인. 법원 공식 서체가 아님을 표시. 공식 미리보기 WOFF 검사. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://casedock.cloud/font",
+  "checked": "2026-11-04"
+ },
+ "k-slei-gothic": {
+  "license": "OFL",
+  "evidence": "공식 공개 폰트 내부에 저작권자·RFN·OFL 전문 포함. 원본 그대로 사용하고 SLEI Gothic 예약 이름 조건 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202210310000000004927",
+  "checked": "2026-11-04"
+ },
+ "k-foureyes": {
+  "license": "OFL",
+  "evidence": "폰트 내부 OFL 확인. 같은 제작사의 영문 전용 5종과 달리 한글 윤곽이 존재함. 지원 글자 수가 제한돼 전체 한글 지원으로 표시하지 않음. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200195",
+  "checked": "2026-11-04"
+ },
+ "k-grace-serif": {
+  "license": "OFL",
+  "evidence": "공식 ZIP의 개별 OFL 전문 확인. 같은 제작사의 다른 폰트에 적용되는 유료 확장 조건과 구분. RFN GraceSerif/우아한세리프 유지, 라이선스 동봉. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://www.peartype.kr/",
+  "checked": "2026-11-04"
+ },
+ "k-hakgyoansim-deongdeongi": {
+  "license": "OFL",
+  "evidence": "KERIS 자체 공모 OFL 서체. 공식 공개 미리보기 WOFF 확보·검사. 설문을 임의 제출하지 않았으며 설치용 ZIP 수집과 구분함. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000002",
+  "checked": "2026-11-04"
+ },
+ "k-hakgyoansim-bamhaneul": {
+  "license": "OFL",
+  "evidence": "KERIS 자체 공모 OFL 서체. 공식 공개 미리보기 WOFF 확보·검사. 설문을 임의 제출하지 않았으며 설치용 ZIP 수집과 구분함. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000003",
+  "checked": "2026-11-04"
+ },
+ "k-hakgyoansim-edge": {
+  "license": "OFL",
+  "evidence": "KERIS 자체 공모 OFL 서체. 공식 공개 미리보기 WOFF 확보·검사. 설문을 임의 제출하지 않았으며 설치용 ZIP 수집과 구분함. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000001",
+  "checked": "2026-11-04"
+ },
+ "k-hangyeol-code": {
+  "license": "OFL",
+  "evidence": "제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
+  "page": "https://github.com/jaff2836/hangyeol-code",
+  "checked": "2026-11-04"
  }
 }

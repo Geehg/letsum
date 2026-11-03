@@ -1,6 +1,6 @@
 // Shared editorial classification for home search and generated topic pages.
 (function(root) {
-  const traditional = new Set(['k-myungwon-jaemin4','k-yisunshin','k-chusalove','k-chosun-gungseo','k-yeongjuseonbi','k-jeonju-wanpanbon-gak','k-jeonju-wanpanbon-sun','k-yydimibang','k-js-arirang-ppuri','k-js-arirang-hon','k-js-arirang','k-jejuhallasan']);
+  const traditional = new Set(['k-deogon-princess','k-deogon-princess-classic','k-myungwon-jaemin4','k-yisunshin','k-chusalove','k-chosun-gungseo','k-yeongjuseonbi','k-jeonju-wanpanbon-gak','k-jeonju-wanpanbon-sun','k-yydimibang','k-js-arirang-ppuri','k-js-arirang-hon','k-js-arirang','k-jejuhallasan']);
   const strong = new Set(['dokdo','east-sea-dokdo','yeon-sung','kirang-haerang','k-mapohongdaefreedom','k-makgeolli','k-kccahnjunggeun','k-sumunjang-title','k-inje-haneulnaerin']);
   const groups = [
     {slug:'traditional-calligraphy-fonts',name:'전통 서예·궁서',terms:['서예','서예체','전통서예','궁서','궁서체']},

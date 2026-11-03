@@ -693,3 +693,13 @@ img.save("sample.png")
 - Ria license explicitly permits BI/CI (unlike CHAB/DDAG), forbids font sale and modified redistribution. YK officially supplies WOFF2 and permits web/program embedding; modification/standalone redistribution left conditional. Samlip official expanded use table explicitly declares SIL OFL 1.1.
 - Release dates: only Samlip 2020-11-15 from official page; Ria/YK exact release dates remain blank. Home data.js cache v16.
 - Official originals, per-file outline audit, 8/8 Chrome FontFace loading check, and production byte-identity checks: /Volumes/AI_dev/web/output/font-research-round3-20261103/.
+
+
+## 2026-11-04 — Font census additions (Codex)
+- Added 28 reviewed families (598 → 626), with 74 unmodified original preview files. Introduction-only and held candidates remain outside this batch; Presevka stays held after browser loading failure.
+- iM Hyemin (400/700) and DCU (400) are NAS-only originals, no public mirror redistribution. Other 26 families have original notices in letsum-mirror commits e4e9dcc / 75201ca.
+- Added explicit conditions for iM Hyemin (no CI/BI, modification or redistribution), Goorm (modified commercial use restricted), DCU, Deogon Princess (attribution/no changes/no harmful media), Swagger (graphic/logo glyphs noncommercial only), and Godo. All downloads lead to official publishers.
+- Generated actual outline coverage: school Deongdeongi/Bamhaneul 2,780; Edge 2,793; Godo/Maum 2,479; DCU/Swagger 2,350; Deogon variants 2,788; Foureyes 2,373. Hanja flags derive from the same original-file inspection.
+- Deogon variants join traditional calligraphy search/topic classification. Build names and OG generated for all new entries; homepage data cache v17, taxonomy v3.
+- Validation now accepts supplied original WOFF and numeric CSS weights (including 250/350/450/950), without remapping font weight metadata or converting original files.
+- Local IAB FontFace check: 74/74 loads. Audit, original file hashes and deployment verification: /Volumes/AI_dev/web/output/font-update-20261104/. Large unconverted Integrated Code and JetKai previews disclose first-load size/cost in descriptions.

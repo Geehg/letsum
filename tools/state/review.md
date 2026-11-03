@@ -1,9 +1,9 @@
 # 공공 무료폰트 검수 대기 목록
 
-개별 레코드 228건 → 패밀리 143개로 묶음. 다운로드 많은 순.
+개별 레코드 227건 → 패밀리 142개로 묶음. 다운로드 많은 순.
 제외됨: 비영리 조건(공공누리 2·4유형, CC BY-NC), 묶음 파일(안심글꼴 N종 등).
 
-## OFL — 28개
+## OFL — 27개
 
 | 패밀리 | 저작권자 | 굵기/파일 | 다운로드 | 원 배포처 |
 |---|---|---|---|---|
@@ -14,7 +14,6 @@
 | 크룩트체 | greenegg | 1 | 3746 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288258&menuNo=200023 |
 | 델타유니버스체 | greenegg | 1 | 3491 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288248&menuNo=200023 |
 | 보케체 | greenegg | 1 | 3286 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288253&menuNo=200023 |
-| 안경잡이체 | greenegg | 1 | 2632 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200023 |
 | 한글재민체 | 김민 | 1 | 2267 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262491&menuNo=200023 |
 | 김정철 고딕체 |  | 3 | 4297 | https://gongu.copyright.or.kr/freeFontEvent.html |
 | 박용준투사회보체 | (사)지역공공정책플랫폼광주로 | 1 | 1394 | https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023 |

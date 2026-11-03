@@ -4339,5 +4339,815 @@
    "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gabia-napjakblock/400.woff2"
   },
   "source": "가비아 공식 다운로드(static.gabia.com) OTF → WOFF2 형식 변환"
+ },
+ "k-brutalmix": {
+  "name": "BrutalMix",
+  "en": "BrutalMix",
+  "ko": "BrutalMix",
+  "author": "galaon",
+  "page": "https://github.com/galaon/BrutalMix",
+  "source": "https://github.com/galaon/BrutalMix",
+  "weights": [
+   350,
+   400,
+   700,
+   800,
+   900,
+   950
+  ],
+  "files": {
+   "350": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/350.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/800.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/900.ttf",
+   "950": "https://geehg.github.io/letsum-mirror/webfonts/k-brutalmix/950.ttf"
+  },
+  "source_files": [
+   "BrutalMix-v1.7.4/BrutalMix_01_Light.ttf",
+   "BrutalMix-v1.7.4/BrutalMix_02_Regular.ttf",
+   "BrutalMix-v1.7.4/BrutalMix_03_Bold.ttf",
+   "BrutalMix-v1.7.4/BrutalMix_04_ExtraBold.ttf",
+   "BrutalMix-v1.7.4/BrutalMix_05_Heavy.ttf",
+   "BrutalMix-v1.7.4/BrutalMix_06_Black.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 18685960,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-integrated-code-fire-kr": {
+  "name": "Integrated Code 火 한국어판",
+  "en": "Integrated Code 火 한국인",
+  "ko": "Integrated Code 火 한국어판",
+  "author": "hunterhogan",
+  "page": "https://github.com/hunterhogan/Integrated_code_fire_font",
+  "source": "https://github.com/hunterhogan/Integrated_code_fire_font",
+  "weights": [
+   300,
+   400,
+   450,
+   500,
+   600,
+   700
+  ],
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/400.ttf",
+   "450": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/450.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-integrated-code-fire-kr/700.ttf"
+  },
+  "source_files": [
+   "IntegratedCode火한국인Light.ttf",
+   "IntegratedCode火한국인Regular.ttf",
+   "IntegratedCode火한국인Retina.ttf",
+   "IntegratedCode火한국인Medium.ttf",
+   "IntegratedCode火한국인SemiBold.ttf",
+   "IntegratedCode火한국인Bold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 133210544,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-jetkai-mono": {
+  "name": "JetKai Mono",
+  "en": "JetKai Mono",
+  "ko": "JetKai Mono",
+  "author": "phyyou",
+  "page": "https://github.com/phyyou/JetKaiMono",
+  "source": "https://github.com/phyyou/JetKaiMono",
+  "weights": [
+   300,
+   400,
+   500,
+   700
+  ],
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-jetkai-mono/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jetkai-mono/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-jetkai-mono/500.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jetkai-mono/700.ttf"
+  },
+  "source_files": [
+   "JetKaiMono-v0.1.0/JetKaiMono-Light.ttf",
+   "JetKaiMono-v0.1.0/JetKaiMono-Regular.ttf",
+   "JetKaiMono-v0.1.0/JetKaiMono-Medium.ttf",
+   "JetKaiMono-v0.1.0/JetKaiMono-Bold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 113254340,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-jetendard": {
+  "name": "Jetendard",
+  "en": "Jetendard",
+  "ko": "Jetendard",
+  "author": "kuskhan",
+  "page": "https://github.com/kuskhan/jetendard",
+  "source": "https://github.com/kuskhan/jetendard",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/100.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/200.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-jetendard/800.ttf"
+  },
+  "source_files": [
+   "ttf/Jetendard-Thin.ttf",
+   "ttf/Jetendard-ExtraLight.ttf",
+   "ttf/Jetendard-Light.ttf",
+   "ttf/Jetendard-Regular.ttf",
+   "ttf/Jetendard-Medium.ttf",
+   "ttf/Jetendard-SemiBold.ttf",
+   "ttf/Jetendard-Bold.ttf",
+   "ttf/Jetendard-ExtraBold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 37446904,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-lythd2": {
+  "name": "LythD2",
+  "en": "LythD2",
+  "ko": "LythD2",
+  "author": "wudys",
+  "page": "https://github.com/wudys/LythD2",
+  "source": "https://github.com/wudys/LythD2",
+  "weights": [
+   300,
+   400,
+   500,
+   700
+  ],
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-lythd2/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-lythd2/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-lythd2/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-lythd2/700.woff2"
+  },
+  "source_files": [
+   "woff2/LythD2-Light.woff2",
+   "woff2/LythD2-Regular.woff2",
+   "woff2/LythD2-Medium.woff2",
+   "woff2/LythD2-Bold.woff2"
+  ],
+  "license": "OFL",
+  "bytes": 3551776,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-monatendard": {
+  "name": "Monatendard",
+  "en": "Monatendard",
+  "ko": "Monatendard",
+  "author": "younjungpark",
+  "page": "https://github.com/younjungpark/Monatendard",
+  "source": "https://github.com/younjungpark/Monatendard",
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "files": {
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/200.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-monatendard/800.ttf"
+  },
+  "source_files": [
+   "fonts/Monatendard-ExtraLight.ttf",
+   "fonts/Monatendard-Light.ttf",
+   "fonts/Monatendard-Regular.ttf",
+   "fonts/Monatendard-Medium.ttf",
+   "fonts/Monatendard-SemiBold.ttf",
+   "fonts/Monatendard-Bold.ttf",
+   "fonts/Monatendard-ExtraBold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 21077484,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-muxjk": {
+  "name": "MuxJK",
+  "en": "MuxJK",
+  "ko": "MuxJK",
+  "author": "juhyeonni",
+  "page": "https://github.com/juhyeonni/MuxJK",
+  "source": "https://github.com/juhyeonni/MuxJK",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-muxjk/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-muxjk/700.ttf"
+  },
+  "source_files": [
+   "MuxJK-Regular.ttf",
+   "MuxJK-Bold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 13106896,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-tenten-kr": {
+  "name": "Tenten KR",
+  "en": "Tenten KR",
+  "ko": "Tenten KR",
+  "author": "linyiru",
+  "page": "https://github.com/linyiru/tenten",
+  "source": "https://github.com/linyiru/tenten",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-tenten-kr/400.ttf"
+  },
+  "source_files": [
+   "linyiru--tenten-TentenKR-KSX.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 7251280,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-zxprotod2": {
+  "name": "ZxProtoD2",
+  "en": "ZxProtoD2",
+  "ko": "ZxProtoD2",
+  "author": "wudys",
+  "page": "https://github.com/wudys/0xProtoD2",
+  "source": "https://github.com/wudys/0xProtoD2",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-zxprotod2/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-zxprotod2/700.woff2"
+  },
+  "source_files": [
+   "ZxProtoD2-Regular.woff2",
+   "ZxProtoD2-Bold.woff2"
+  ],
+  "license": "OFL",
+  "bytes": 805288,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-im-hyemin": {
+  "name": "iM혜민체",
+  "en": "IM Hyemin",
+  "ko": "iM혜민체",
+  "author": "iM뱅크",
+  "page": "https://www.imbank.co.kr/cms/imhyemin/",
+  "source": "https://www.imbank.co.kr/cms/imhyemin/",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "400": "https://letsum.app/fonts-hosted/k-im-hyemin/400.ttf",
+   "700": "https://letsum.app/fonts-hosted/k-im-hyemin/700.ttf"
+  },
+  "source_files": [
+   "IM_Hyemin-Regular.ttf",
+   "IM_Hyemin-Bold.ttf"
+  ],
+  "license": "iM혜민체 이용조건",
+  "bytes": 15132048,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-godo-maum": {
+  "name": "고도마음체",
+  "en": "godoMaum",
+  "ko": "고도마음체",
+  "author": "NHN커머스",
+  "page": "https://design.godo.co.kr/custom/free-font.php",
+  "source": "https://design.godo.co.kr/custom/free-font.php",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-godo-maum/400.ttf"
+  },
+  "source_files": [
+   "godoFont_all/godoMaum.ttf"
+  ],
+  "license": "고도체 사용규정",
+  "bytes": 2760760,
+  "cov": 2479,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-godo": {
+  "name": "고도체",
+  "en": "Godo",
+  "ko": "고도체",
+  "author": "NHN커머스",
+  "page": "https://design.godo.co.kr/custom/free-font.php",
+  "source": "https://design.godo.co.kr/custom/free-font.php",
+  "weights": [
+   500,
+   700
+  ],
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-godo/500.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-godo/700.ttf"
+  },
+  "source_files": [
+   "godoFont_all/GodoM.ttf",
+   "godoFont_all/GodoB.ttf"
+  ],
+  "license": "고도체 사용규정",
+  "bytes": 4362148,
+  "cov": 2479,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-goorm-sans": {
+  "name": "구름 산스",
+  "en": "goorm Sans",
+  "ko": "구름 산스",
+  "author": "구름",
+  "page": "https://www.goorm.io/resources/fonts",
+  "source": "https://www.goorm.io/resources/fonts",
+  "weights": [
+   400,
+   500,
+   700
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-goorm-sans/400.woff",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-goorm-sans/500.woff",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-goorm-sans/700.woff"
+  },
+  "source_files": [
+   "GFT202408140000000000008-2-goorm-sans-regular.woff",
+   "GFT202408140000000000008-1-goorm-sans-medium.woff",
+   "GFT202408140000000000008-0-goorm-sans-bold.woff"
+  ],
+  "license": "구름 산스 이용조건",
+  "bytes": 1407308,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-goorm-sans-code": {
+  "name": "구름 산스 코드",
+  "en": "goorm Sans Code 400",
+  "ko": "구름 산스 코드",
+  "author": "구름",
+  "page": "https://www.goorm.io/resources/fonts",
+  "source": "https://www.goorm.io/resources/fonts",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-goorm-sans-code/400.woff"
+  },
+  "source_files": [
+   "GFT202408140000000000008-3-goorm_Sans_Code_400.woff"
+  ],
+  "license": "구름 산스 이용조건",
+  "bytes": 754972,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-kkakdugi-drafting": {
+  "name": "깍두기 도면체",
+  "en": "Kkakdugi Drafting",
+  "ko": "깍두기 도면체",
+  "author": "Dynamic Potato",
+  "page": "https://github.com/dynamic-potato/kkakdugi-drafting",
+  "source": "https://github.com/dynamic-potato/kkakdugi-drafting",
+  "weights": [
+   250,
+   300,
+   400,
+   700
+  ],
+  "files": {
+   "250": "https://geehg.github.io/letsum-mirror/webfonts/k-kkakdugi-drafting/250.woff",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-kkakdugi-drafting/300.woff",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kkakdugi-drafting/400.woff",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kkakdugi-drafting/700.woff"
+  },
+  "source_files": [
+   "GFT202610130000000000010-3-KkakdugiDrafting-ExtraLight.woff",
+   "GFT202610130000000000010-2-KkakdugiDrafting-Light.woff",
+   "GFT202610130000000000010-0-KkakdugiDrafting-Regular.woff",
+   "GFT202610130000000000010-1-KkakdugiDrafting-Bold.woff"
+  ],
+  "license": "OFL",
+  "bytes": 2826096,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-dcu": {
+  "name": "대구가톨릭대학체",
+  "en": "DaeguCatholicUniversity",
+  "ko": "대구가톨릭대학체",
+  "author": "대구가톨릭대학교",
+  "page": "https://www.cu.ac.kr/introduction/uisystem/dcufont",
+  "source": "https://www.cu.ac.kr/introduction/uisystem/dcufont",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://letsum.app/fonts-hosted/k-dcu/400.ttf"
+  },
+  "source_files": [
+   "┤δ▒╕░í┼τ╕»┤δ╟╨├╝ ╞∙╞«(│╗╖┴╣▐└║ ╚─ ┴┬├°╗≤┤▄ ╝│─í╣÷╞░ ┼¼╕»).ttf.ttf"
+  ],
+  "license": "대구가톨릭대학체 이용조건",
+  "bytes": 806728,
+  "cov": 2350,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-deogon-princess-classic": {
+  "name": "덕온공주옛체",
+  "en": "Deogon Princess Classic",
+  "ko": "덕온공주옛체",
+  "author": "국립한글박물관 / 윤디자인",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "source": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-deogon-princess-classic/400.ttf"
+  },
+  "source_files": [
+   "DeogonPrincessClassic.ttf"
+  ],
+  "license": "덕온공주체 이용조건",
+  "bytes": 6727312,
+  "cov": 2788,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-deogon-princess": {
+  "name": "덕온공주체",
+  "en": "Deogon Princess",
+  "ko": "덕온공주체",
+  "author": "국립한글박물관 / 윤디자인",
+  "page": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "source": "https://hanfont.hangeul.go.kr/relaxfont/font/deokon.do",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-deogon-princess/400.ttf"
+  },
+  "source_files": [
+   "DeogonPrincess.ttf"
+  ],
+  "license": "덕온공주체 이용조건",
+  "bytes": 7946740,
+  "cov": 2788,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-swagger": {
+  "name": "산돌스웨거체",
+  "en": "Swagger TTF",
+  "ko": "산돌스웨거체",
+  "author": "스웨거 / 산돌",
+  "page": "https://www.swagger.kr/font.html",
+  "source": "https://www.swagger.kr/font.html",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-swagger/400.woff2"
+  },
+  "source_files": [
+   "SDSwaggerTTF.woff2"
+  ],
+  "license": "스웨거체 이용조건",
+  "bytes": 333860,
+  "cov": 2350,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-seocho-dotum": {
+  "name": "서초돋움",
+  "en": "Seocho Dotum",
+  "ko": "서초돋움",
+  "author": "웨이즈홀딩스 / CaseDock",
+  "page": "https://casedock.cloud/font",
+  "source": "https://casedock.cloud/font",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seocho-dotum/400.woff"
+  },
+  "source_files": [
+   "GFT202608240000000000008-0-SeochoDotum-Regular.woff"
+  ],
+  "license": "OFL",
+  "bytes": 3955588,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-seocho-batang": {
+  "name": "서초바탕",
+  "en": "Seocho Batang",
+  "ko": "서초바탕",
+  "author": "웨이즈홀딩스 / CaseDock",
+  "page": "https://casedock.cloud/font",
+  "source": "https://casedock.cloud/font",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seocho-batang/400.woff"
+  },
+  "source_files": [
+   "GFT202608240000000000007-0-SeochoBatang-Regular.woff"
+  ],
+  "license": "OFL",
+  "bytes": 7519068,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-slei-gothic": {
+  "name": "서평원 꺾깍체",
+  "en": "SLEI Gothic TTF",
+  "ko": "서평원 꺾깍체",
+  "author": "서울특별시평생교육진흥원 / 이도타입",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202210310000000004927",
+  "source": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202210310000000004927",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-slei-gothic/400.woff"
+  },
+  "source_files": [
+   "GFT202210310000000004927-0-SLEIGothicTTF.woff"
+  ],
+  "license": "OFL",
+  "bytes": 279388,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-foureyes": {
+  "name": "안경잡이체",
+  "en": "FOUREYES",
+  "ko": "안경잡이체",
+  "author": "greenegg",
+  "page": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200195",
+  "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200195",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-foureyes/400.woff"
+  },
+  "source_files": [
+   "GFT202210270000000000136-0-FOUREYES.woff"
+  ],
+  "license": "OFL",
+  "bytes": 409484,
+  "cov": 2373,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-grace-serif": {
+  "name": "우아한세리프",
+  "en": "Grace Serif",
+  "ko": "우아한세리프",
+  "author": "Pear Type Foundry",
+  "page": "https://www.peartype.kr/",
+  "source": "https://www.peartype.kr/",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-grace-serif/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-grace-serif/700.ttf"
+  },
+  "source_files": [
+   "TTF/GraceSerif-Regular.ttf",
+   "TTF/GraceSerif-Bold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 1249280,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-hakgyoansim-deongdeongi": {
+  "name": "학교안심 덩덩이",
+  "en": "Hakgyoansim Deongdeongi",
+  "ko": "학교안심 덩덩이",
+  "author": "KERIS",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000002",
+  "source": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000002",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-deongdeongi/400.woff"
+  },
+  "source_files": [
+   "GFT202610270000000000002-0-HakgyoansimDeongdeongi.woff"
+  ],
+  "license": "OFL",
+  "bytes": 433712,
+  "cov": 2780,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-hakgyoansim-bamhaneul": {
+  "name": "학교안심 밤하늘",
+  "en": "Hakgyoansim Bamhaneul",
+  "ko": "학교안심 밤하늘",
+  "author": "KERIS",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000003",
+  "source": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000003",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bamhaneul/400.woff"
+  },
+  "source_files": [
+   "GFT202610270000000000003-0-HakgyoansimBamhaneul.woff"
+  ],
+  "license": "OFL",
+  "bytes": 296780,
+  "cov": 2780,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-hakgyoansim-edge": {
+  "name": "학교안심 엣지",
+  "en": "Hakgyoansim Edge",
+  "ko": "학교안심 엣지",
+  "author": "KERIS",
+  "page": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000001",
+  "source": "https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000001",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-edge/400.woff"
+  },
+  "source_files": [
+   "GFT202610270000000000001-0-HakgyoansimEdge.woff"
+  ],
+  "license": "OFL",
+  "bytes": 421240,
+  "cov": 2793,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-hangyeol-code": {
+  "name": "한결 코드",
+  "en": "Hangyeol Code",
+  "ko": "한결 코드",
+  "author": "jaff2836",
+  "page": "https://github.com/jaff2836/hangyeol-code",
+  "source": "https://github.com/jaff2836/hangyeol-code",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/100.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/200.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-hangyeol-code/800.ttf"
+  },
+  "source_files": [
+   "HangyeolCode-1.001/ttf/HangyeolCode-Thin.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-ExtraLight.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-Light.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-Regular.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-Medium.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-SemiBold.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-Bold.ttf",
+   "HangyeolCode-1.001/ttf/HangyeolCode-ExtraBold.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 39341756,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
  }
 }

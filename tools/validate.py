@@ -63,7 +63,7 @@ for f in FONTS:
     if f.get("pair") not in PAIRS: err(f"{fid}: 영문 짝꿍 '{f.get('pair')}' 허용 안 됨 {PAIRS}")
     if f.get("status") not in ("verified", "checking"): err(f"{fid}: status는 verified|checking")
     w = f.get("weights", [])
-    if not w or any(x not in range(100, 1000, 100) for x in w) or w != sorted(set(w)): err(f"{fid}: 굵기 목록 형식 오류 {w}")
+    if not w or any(type(x) is not int or not 1 <= x <= 1000 for x in w) or w != sorted(set(w)): err(f"{fid}: 굵기 목록 형식 오류 {w}")
     if set(f.get("matrix", {})) != MATRIX_KEYS or any(v not in ("ok", "no", "cond") for v in f.get("matrix", {}).values()):
         err(f"{fid}: 매트릭스 키/값 오류")
     for k in ("verified", "added"):
@@ -80,7 +80,7 @@ for f in FONTS:
         if not f.get("releasedSrc") or not str(f.get("releasedUrl", "")).startswith("http"): err(f"{fid}: released에는 releasedSrc·releasedUrl 필수")
     # 6) 링크
     for wv, url in (f.get("webfont") or {}).items():
-        if not re.fullmatch(r"https://(geehg\.github\.io/letsum-mirror/webfonts|letsum\.app/fonts-hosted)/[a-z0-9-]+/\d{3}\.(woff2|ttf|otf)", url) and not re.fullmatch(r"https://letsum\.app/fonts-hosted/[a-z0-9-]+/\d{3}\.(ttf|otf)", url) \
+        if not re.fullmatch(r"https://(geehg\.github\.io/letsum-mirror/webfonts|letsum\.app/fonts-hosted)/[a-z0-9-]+/\d{3}\.(woff2?|ttf|otf)", url) and not re.fullmatch(r"https://letsum\.app/fonts-hosted/[a-z0-9-]+/\d{3}\.(ttf|otf)", url) \
            and url not in CDN.get(fid, {}).get("files", {}).values(): err(f"{fid}: 웹폰트 주소 형식 오류(미러·서버 전용·cdn_fonts.json 등록 주소만) {url}")
         if "/fonts-hosted/" in url and not os.path.exists(os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])):
             warn(f"{fid}: 서버 전용 웹폰트 원본이 tools/archive/hosted에 없음(다른 컴퓨터에서 작업 중이면 정상)")
