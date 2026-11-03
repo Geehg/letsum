@@ -2359,5 +2359,71 @@
   "evidence": "공식 배포 페이지: 누구나 허가 없이 무료 사용, 영상·인쇄·웹·로고·간판 및 프로그램 탑재 배포 가능, 폰트 자체 판매·유료 양도 금지. 공식 웹폰트 ZIP 원본 WOFF2 세 굵기를 변환 없이 서버 임베딩. 한글 윤곽선 각 2,780자, 한자 없음.",
   "page": "https://www.yuhan-kimberly.co.kr/society/woopoopoofont",
   "checked": "2026-11-03"
+ },
+ "k-hada-levelup": {
+  "license": "OFL",
+  "evidence": "OFL 1.1 · 저작권/라이선스 동봉 · 원본 WOFF2 6스타일 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://hada-type.com/levelup",
+  "checked": "2026-11-03"
+ },
+ "k-hada-dancing-mono": {
+  "license": "OFL",
+  "evidence": "OFL 1.1 · Dance 가변 축 · 기존 비고정폭 서체와 별개 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://hada-type.com/dancing-peoples-mono",
+  "checked": "2026-11-03"
+ },
+ "k-neodgm-pro": {
+  "license": "OFL",
+  "evidence": "OFL 1.1 · 비례폭 픽셀 서체 · 기존 Neo둥근모/Code와 구분 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://github.com/neodgm/neodgm-pro",
+  "checked": "2026-11-03"
+ },
+ "k-monoplex-kr": {
+  "license": "OFL",
+  "evidence": "OFL 1.1 · 8굵기/이탤릭 · 원본 TTF 유지 · RFN Monoplex 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://github.com/y-kim/monoplex",
+  "checked": "2026-11-03"
+ },
+ "k-monoplex-cjk": {
+  "license": "OFL",
+  "evidence": "OFL 1.1 · 한중일 확장판 · 용량 큼, 미리보기 지연 로딩 필요 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://github.com/y-kim/monoplex",
+  "checked": "2026-11-03"
+ },
+ "k-fusion-pixel-12": {
+  "license": "OFL",
+  "evidence": "OFL 계열 출처 고지 동봉 · 이번 검증은 12px 비례폭 ko판 · 크기/언어판을 별도 신작으로 부풀리지 않음 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 공식 패키지 라이선스·저작권 고지 동봉.",
+  "page": "https://github.com/TakWolf/fusion-pixel-font",
+  "checked": "2026-11-03"
+ },
+ "k-tmoney-roundwind": {
+  "license": "티머니 둥근바람체 이용조건",
+  "evidence": "웹서버·임베딩 허용 / CI·BI 금지 / 원본 그대로 사용, 수정·개작 재배포 금지. 규정 PDF 8쪽 시각 확인 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 개인·기업 무료. 웹서버·영상·임베딩·포장 허용. 회사명·브랜드명·상품명·로고·마크·슬로건 등 CI/BI 금지. 파일 유료 판매·임의 수정/개작 재배포 금지. 배포 원본 그대로 사용.",
+  "page": "https://www.koreasmartcard.com/aeb/cmnctn/ci/ci.dev",
+  "checked": "2026-11-03"
+ },
+ "k-kmu80-sungkok": {
+  "license": "국민대 KMU80 CC BY-ND",
+  "evidence": "CC BY-ND · 저작자표시·변경금지 · 원본 웹폰트 제공 · Serif/Semi-Serif 및 가변판 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 상업적 사용 가능. 국민대학교 저작권 표시 필요. 폰트 변경·2차적 저작물 작성 금지, 폰트 판매 금지. 공식 배포 원본을 변환 없이 사용.",
+  "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+  "checked": "2026-11-03"
+ },
+ "k-kmu80-haeong": {
+  "license": "국민대 KMU80 CC BY-ND",
+  "evidence": "CC BY-ND · 저작자표시·변경금지 · Sans/Semi-Sans · 원본 웹폰트 제공 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 상업적 사용 가능. 국민대학교 저작권 표시 필요. 폰트 변경·2차적 저작물 작성 금지, 폰트 판매 금지. 공식 배포 원본을 변환 없이 사용.",
+  "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+  "checked": "2026-11-03"
+ },
+ "k-hbios-sys": {
+  "license": "HBIOS-SYS 혼합 라이선스",
+  "evidence": "혼합: IBM EGA 유래 글리프 CC BY-SA 4.0, 나머지 OFL 1.1. 단순 OFL로 표시하면 안 됨 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. IBM EGA 8x14에서 유래한 글리프는 CC BY-SA 4.0, 그 외 글리프는 OFL 1.1. 저작권·출처·라이선스 고지 유지. 수정·재배포 시 각 구성요소 조건(동일조건변경허락 포함)을 확인해야 합니다. 단일 OFL 폰트가 아닙니다.",
+  "page": "https://github.com/quiple/hbios-sys",
+  "checked": "2026-11-03"
+ },
+ "k-harena-term": {
+  "license": "Harena Term 복합 라이선스",
+  "evidence": "폰트 OFL 1.1 / 아이콘 별도 MIT·CC BY 등 · THIRD_PARTY_NOTICES 및 licenses 전체 동봉 필요. K/J 각 Regular/Bold 원본 무변환. 수집 파일 SHA-256 및 실제 윤곽선 검사 기록 보관. 폰트 본체 OFL 1.1, Harena Term은 예약 이름입니다. 포함 아이콘은 MIT·CC BY 4.0 등 개별 라이선스 적용. 재배포·임베딩 시 OFL.txt, THIRD_PARTY_NOTICES.md와 licenses의 저작권·출처 고지를 유지하세요.",
+  "page": "https://github.com/harena-hq/harena-term-font",
+  "checked": "2026-11-03"
  }
 }

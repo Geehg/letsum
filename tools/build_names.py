@@ -85,7 +85,8 @@ def variable_instances(t):
 def read(url, local=None):
     data = open(local, "rb").read() if local and Path(local).exists() else get(url)
     t = TTFont(io.BytesIO(data), fontNumber=0, lazy=True)
-    if "fvar" in t: return {"var": variable_instances(t)}
+    if "fvar" in t and any(axis.axisTag == "wght" for axis in t["fvar"].axes):
+        return {"var": variable_instances(t)}
     return {"one": names_of(t)}
 
 
