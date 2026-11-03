@@ -14,7 +14,7 @@ const LICENSE_CATS = [
 // 라이선스별 표기 — 화면에서 라이선스 이름·조건을 이 표로 보여준다
 const LICENSE_INFO = {
   "티머니 둥근바람체 이용조건": {"full": "티머니 둥근바람체 이용조건", "short": "티머니 무료 이용", "note": "개인·기업 무료. 웹서버·영상·임베딩·포장 허용. 회사명·브랜드명·상품명·로고·마크·슬로건 등 CI/BI 금지. 파일 유료 판매·임의 수정/개작 재배포 금지. 배포 원본 그대로 사용.", "url": "https://www.koreasmartcard.com/aeb/cmnctn/ci/ci.dev"},
-  "국민대 KMU80 CC BY-ND": {"full": "국민대 KMU80 CC BY-ND", "short": "출처 표시·변경 금지", "note": "상업적 사용 가능. 국민대학교 저작권 표시 필요. 폰트 변경·2차적 저작물 작성 금지, 폰트 판매 금지. 공식 배포 원본을 변환 없이 사용.", "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do"},
+  "국민대 KMU80 CC BY-ND": {"full": "국민대 KMU80 CC BY-ND", "short": "출처 표시·변경 금지", "note": "상업적 사용 가능. 국민대학교 저작권 표시 필요. 원본 공유는 저작자·라이선스 표시 조건. 폰트 변경·2차적 저작물 작성 금지, 폰트 판매 금지. 공식 배포 원본을 변환 없이 사용.", "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do"},
   "HBIOS-SYS 혼합 라이선스": {"full": "HBIOS-SYS 혼합 라이선스", "short": "OFL + CC BY-SA 4.0", "note": "IBM EGA 8x14에서 유래한 글리프는 CC BY-SA 4.0, 그 외 글리프는 OFL 1.1. 저작권·출처·라이선스 고지 유지. 수정·재배포 시 각 구성요소 조건(동일조건변경허락 포함)을 확인해야 합니다. 단일 OFL 폰트가 아닙니다.", "url": "https://github.com/quiple/hbios-sys/blob/main/LICENSE"},
   "Harena Term 복합 라이선스": {"full": "Harena Term 복합 라이선스", "short": "OFL + 아이콘별 조건", "note": "폰트 본체 OFL 1.1, Harena Term은 예약 이름입니다. 포함 아이콘은 MIT·CC BY 4.0 등 개별 라이선스 적용. 재배포·임베딩 시 OFL.txt, THIRD_PARTY_NOTICES.md와 licenses의 저작권·출처 고지를 유지하세요.", "url": "https://github.com/harena-hq/harena-term-font/blob/main/THIRD_PARTY_NOTICES.md"},
 
@@ -6004,7 +6004,7 @@ const FONTS = [
     webfontSrc: "공식 배포 원본 · 변환 없음",
     dl: {"page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do", "srcName": "국민대학교(공식)"},
     license: "국민대 KMU80 CC BY-ND",
-    matrix: {"print": "ok", "web": "ok", "video": "ok", "embed": "ok", "bici": "ok", "package": "ok", "ofl": "no"},
+    matrix: {"print": "ok", "web": "ok", "video": "ok", "embed": "ok", "bici": "ok", "package": "ok", "ofl": "cond"},
     verified: "2026-11-03",
     status: "verified",
     downloadNote: "공식 배포처에서 원본과 최신 이용조건을 확인하세요.",
@@ -6031,7 +6031,7 @@ const FONTS = [
     webfontSrc: "공식 배포 원본 · 변환 없음",
     dl: {"page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do", "srcName": "국민대학교(공식)"},
     license: "국민대 KMU80 CC BY-ND",
-    matrix: {"print": "ok", "web": "ok", "video": "ok", "embed": "ok", "bici": "ok", "package": "ok", "ofl": "no"},
+    matrix: {"print": "ok", "web": "ok", "video": "ok", "embed": "ok", "bici": "ok", "package": "ok", "ofl": "cond"},
     verified: "2026-11-03",
     status: "verified",
     downloadNote: "공식 배포처에서 원본과 최신 이용조건을 확인하세요.",
