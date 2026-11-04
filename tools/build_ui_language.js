@@ -14,6 +14,13 @@ for (const name of files) {
   const file = path.join(root, name);
   if (!fs.existsSync(file)) continue;
   let source = fs.readFileSync(file, "utf8").replace(/<!--UI_LANGUAGE-->[\s\S]*?<!--\/UI_LANGUAGE-->\n?/g, "");
+  source = source.replace(/<!--HEADER_BRAND-->[\s\S]*?<!--\/HEADER_BRAND-->\n?/g, "");
+  if (source.includes('id="qTop"') && source.includes('class="logo"')) {
+    source = source.replace(/(<a class="logo"[^>]*><img[^>]*>)(?:<span class="brand-copy">[\s\S]*?<\/span>)?(<\/a>)/g,
+      '$1<span class="brand-copy"><strong translate="no">렛섬</strong><small>내 취향에 맞는 무료 폰트</small></span>$2');
+    const headerHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "css/header-brand.css"))).digest("hex").slice(0, 10);
+    source = source.replace('</head>', `<!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=${headerHash}"><!--/HEADER_BRAND-->\n</head>`);
+  }
   source = source.replace('</head>', hook + '\n</head>');
   for (const [script, hash] of Object.entries(scriptVersions)) source = source.replace(new RegExp(`js/${script}\\.js\\?v=[\\w]+`, "g"), `js/${script}.js?v=${hash}`);
   fs.writeFileSync(file, source);

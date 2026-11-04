@@ -1,0 +1,27 @@
+/* Shared search header: brand at left, search at right-center, navigation below. */
+body:has(>header .brand-copy){--hd:104px}
+body>header .hd:has(.brand-copy){display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,520px) 34px auto;gap:0 20px;height:auto;min-height:104px;padding-top:10px}
+body>header .logo:has(.brand-copy){grid-column:1;grid-row:1;align-items:center;gap:14px;min-width:0}
+body>header .logo .brand-copy{display:flex;flex-direction:column;gap:3px;letter-spacing:0;font-family:inherit}
+body>header .brand-copy strong{font-family:var(--sans,system-ui,sans-serif);font-size:22px;line-height:1.15;font-weight:800}
+body>header .brand-copy small{font-family:var(--sans,system-ui,sans-serif);font-size:11px;line-height:1.4;letter-spacing:0;font-weight:500;color:var(--ink2)}
+body>header .hd:has(.brand-copy)>.sp{display:none}
+body>header .hd:has(.brand-copy)>.hd-search{grid-column:2;grid-row:1;width:100%;min-width:0;box-sizing:border-box;margin:0;padding:9px 12px}
+body>header .hd:has(.brand-copy)>.hd-search input{width:100%;min-width:0}
+body>header .hd:has(.brand-copy)>#themeBtn{grid-column:3;grid-row:1}
+body>header .hd:has(.brand-copy)>.ui-language{grid-column:4;grid-row:1;margin-left:0}
+body>header .hd:has(.brand-copy)>nav.main{grid-column:1/-1;grid-row:2;order:0;width:100%;min-width:0;overflow-x:auto;white-space:nowrap;gap:24px;padding:10px 0 7px;scrollbar-width:none}
+@media(max-width:1000px){body>header .hd:has(.brand-copy){grid-template-columns:minmax(230px,1fr) minmax(180px,1fr) 34px auto;column-gap:12px}body>header .logo:has(.brand-copy){gap:10px}body>header .logo:has(.brand-copy) img{height:36px!important}body>header .brand-copy strong{font-size:20px}body>header .brand-copy small{font-size:10px}}
+@media(max-width:760px){
+ body:has(>header .brand-copy){--hd:148px}
+ body>header .hd:has(.brand-copy){grid-template-columns:minmax(0,1fr) 30px auto;gap:8px;min-height:0;padding-top:8px}
+ body>header .logo:has(.brand-copy){grid-column:1;gap:8px}
+ body>header .logo:has(.brand-copy) img{height:30px!important}
+ body>header .brand-copy strong{font-size:18px}
+ body>header .brand-copy small{font-size:9px;white-space:normal;max-width:120px}
+ body>header .hd:has(.brand-copy)>#themeBtn{grid-column:2;width:30px;height:30px}
+ body>header .hd:has(.brand-copy)>.ui-language{grid-column:3;padding:2px}
+ body>header .hd:has(.brand-copy)>.ui-language button{font-size:10px;padding:5px 6px}
+ body>header .hd:has(.brand-copy)>.hd-search{grid-column:1/-1;grid-row:2;order:0;margin:0}
+ body>header .hd:has(.brand-copy)>nav.main{grid-row:3;gap:18px;padding:0 0 6px;font-size:13px}
+}

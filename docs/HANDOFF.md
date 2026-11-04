@@ -703,3 +703,8 @@ img.save("sample.png")
 - Deogon variants join traditional calligraphy search/topic classification. Build names and OG generated for all new entries; homepage data cache v17, taxonomy v3.
 - Validation now accepts supplied original WOFF and numeric CSS weights (including 250/350/450/950), without remapping font weight metadata or converting original files.
 - Local IAB FontFace check: 74/74 loads. Audit, original file hashes and deployment verification: /Volumes/AI_dev/web/output/font-update-20261104/. Large unconverted Integrated Code and JetKai previews disclose first-load size/cost in descriptions.
+
+## 2026-11-04 — Header branding and search alignment
+- Shared search headers now show 렛섬 and 내 취향에 맞는 무료 폰트 beside the logo, with search at right-center and navigation on the second row. Mobile uses a full-width search row.
+- build_ui_language.js maintains the markup and a content-hashed header-brand.css link across regenerated pages. Dedicated typing header is unchanged. English copy is in the existing dictionary.
+- Verified desktop and 390px mobile layout without horizontal page overflow, Korean search (2 Deogon results), and English copy switching.

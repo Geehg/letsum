@@ -1089,5 +1089,6 @@
   "한자 미확인": "Hanja unverified",
   "한자 지원 여부": "Hanja support",
   "전체 붓글씨": "All brush fonts",
-  "한자 지원은 확인한 폰트 파일의 실제 한자 50자 이상 기준입니다. 지원 제한은 미수록 또는 50자 미만이며, 지원 표시도 모든 한자를 보장하지 않습니다. 사용할 문장을 미리보기로 확인하세요.": "Hanja support means at least 50 drawn Hanja characters in the inspected font. Limited means fewer than 50 or none. Support does not guarantee every character; preview your text to check."
+  "한자 지원은 확인한 폰트 파일의 실제 한자 50자 이상 기준입니다. 지원 제한은 미수록 또는 50자 미만이며, 지원 표시도 모든 한자를 보장하지 않습니다. 사용할 문장을 미리보기로 확인하세요.": "Hanja support means at least 50 drawn Hanja characters in the inspected font. Limited means fewer than 50 or none. Support does not guarantee every character; preview your text to check.",
+  "내 취향에 맞는 무료 폰트": "Free fonts for your taste"
 }
