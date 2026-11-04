@@ -4550,5 +4550,53 @@
   "license": "OFL",
   "evidence": "직접 확인: 제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지. 제작자·공식 공공목록 OFL 및 원본 저작권 고지 확인. 원본 파일 무변환 사용, RFN·원천 고지 유지.",
   "page": "https://github.com/jaff2836/hangyeol-code"
+ },
+ {
+  "id": "k-jennysans",
+  "name": "제니산스",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: Pretendard·Noto Sans KR 기반. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. RFN JennySans/제니산스. 원본 무변환·저작권과 OFL 고지 유지. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/gjh999/jennysans"
+ },
+ {
+  "id": "k-roof-sans",
+  "name": "Roof Sans",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: Wanted Sans·Pretendard JP·Source Han 기반. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. 원천 저작권·OFL 고지 유지. 원본 16.2MB로 첫 로딩 성능 검토 필요. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/live-anywhere/roof-sans"
+ },
+ {
+  "id": "k-bb-mono-i",
+  "name": "BB Mono I",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: IBM Plex 기반 코딩용. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. 폰트 OFL, 빌드 코드 MIT를 구분. 원천 라이선스 동봉. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/thkmon/BBMonoFont"
+ },
+ {
+  "id": "k-bb-mono-s",
+  "name": "BB Mono S",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: IBM Plex·Sarasa 기반 코딩용. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. 폰트 OFL, 빌드 코드 MIT를 구분. 원천 라이선스 동봉. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/thkmon/BBMonoFont"
+ },
+ {
+  "id": "k-jeongdok",
+  "name": "정독",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: RIDI바탕·Libron 등 기반 독서용. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. OFL 및 원천 고지 동봉. 초기 0.1.0 배포본 품질·브라우저 추가 검증 필요. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/sharosoo/fonts"
+ },
+ {
+  "id": "k-jeongdok-display",
+  "name": "정독 Display",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 마루부리·Newsreader 기반 제목용. 공식 배포 원본과 패키지 OFL·원천 저작권 고지 확인. OFL 및 원천 고지 동봉. 초기 0.1.0 배포본 품질·브라우저 추가 검증 필요. 상업 이용 가능. 폰트 파일 단독 판매 금지, 재배포 시 저작권·OFL 원문 유지, 수정본도 OFL로 배포하며 예약 글꼴 이름 조건을 준수해야 합니다.",
+  "page": "https://github.com/sharosoo/fonts"
  }
 ]

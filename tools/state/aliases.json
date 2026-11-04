@@ -96,5 +96,21 @@
  "학교안심 엣지": "k-hakgyoansim-edge",
  "학교안심엣지": "k-hakgyoansim-edge",
  "한결 코드": "k-hangyeol-code",
- "한결코드": "k-hangyeol-code"
+ "한결코드": "k-hangyeol-code",
+ "제니산스": "k-jennysans",
+ "JennySans": "k-jennysans",
+ "jennysans": "k-jennysans",
+ "Roof Sans": "k-roof-sans",
+ "roofsans": "k-roof-sans",
+ "BB Mono I": "k-bb-mono-i",
+ "bbmonoi": "k-bb-mono-i",
+ "BB Mono S": "k-bb-mono-s",
+ "bbmonos": "k-bb-mono-s",
+ "정독": "k-jeongdok",
+ "Jeongdok": "k-jeongdok",
+ "jeongdok": "k-jeongdok",
+ "정독 Display": "k-jeongdok-display",
+ "Jeongdok Display": "k-jeongdok-display",
+ "정독display": "k-jeongdok-display",
+ "jeongdokdisplay": "k-jeongdok-display"
 }

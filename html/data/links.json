@@ -2809,8 +2809,8 @@
  },
  "k-gumi-cheomdan": {
   "url": "https://www.gumi.go.kr/portal/contents.do?mid=0502070000",
-  "ok": true,
-  "code": 200,
+  "ok": false,
+  "code": 500,
   "checked": "2026-11-04"
  },
  "k-gumi-romantic": {
@@ -3691,6 +3691,42 @@
  },
  "k-hangyeol-code": {
   "url": "https://github.com/jaff2836/hangyeol-code",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-jennysans": {
+  "url": "https://github.com/gjh999/jennysans",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-roof-sans": {
+  "url": "https://github.com/live-anywhere/roof-sans",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-bb-mono-i": {
+  "url": "https://github.com/thkmon/BBMonoFont",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-bb-mono-s": {
+  "url": "https://github.com/thkmon/BBMonoFont",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-jeongdok": {
+  "url": "https://github.com/sharosoo/fonts",
+  "ok": true,
+  "code": 206,
+  "checked": "2026-11-04"
+ },
+ "k-jeongdok-display": {
+  "url": "https://github.com/sharosoo/fonts",
   "ok": true,
   "code": 206,
   "checked": "2026-11-04"

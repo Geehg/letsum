@@ -5149,5 +5149,185 @@
   "hanja": false,
   "rfn": true,
   "note": "2026-11-04 original-byte import; no conversion. See notices and census audit."
+ },
+ "k-jennysans": {
+  "name": "제니산스",
+  "en": "JennySans",
+  "ko": "제니산스",
+  "author": "JennySoft",
+  "page": "https://github.com/gjh999/jennysans",
+  "source": "https://github.com/gjh999/jennysans",
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/100.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/200.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/800.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-jennysans/900.ttf"
+  },
+  "source_files": [
+   "JennySans-1.001-desktop/JennySans-Thin.ttf",
+   "JennySans-1.001-desktop/JennySans-ExtraLight.ttf",
+   "JennySans-1.001-desktop/JennySans-Light.ttf",
+   "JennySans-1.001-desktop/JennySans-Regular.ttf",
+   "JennySans-1.001-desktop/JennySans-Medium.ttf",
+   "JennySans-1.001-desktop/JennySans-SemiBold.ttf",
+   "JennySans-1.001-desktop/JennySans-Bold.ttf",
+   "JennySans-1.001-desktop/JennySans-ExtraBold.ttf",
+   "JennySans-1.001-desktop/JennySans-Black.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 23467424,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-roof-sans": {
+  "name": "Roof Sans",
+  "en": "Roof Sans",
+  "ko": "Roof Sans",
+  "author": "LiveAnywhere Inc.",
+  "page": "https://github.com/live-anywhere/roof-sans",
+  "source": "https://github.com/live-anywhere/roof-sans",
+  "weights": [
+   400
+  ],
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-roof-sans/400.ttf"
+  },
+  "source_files": [
+   "live-anywhere--roof-sans--RoofSansVariable.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 16228900,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-bb-mono-i": {
+  "name": "BB Mono I",
+  "en": "BB Mono I",
+  "ko": "BB Mono I",
+  "author": "thkmon",
+  "page": "https://github.com/thkmon/BBMonoFont",
+  "source": "https://github.com/thkmon/BBMonoFont",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-bb-mono-i/700.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-bb-mono-i/400.ttf"
+  },
+  "source_files": [
+   "BBMono-I-Bold.ttf",
+   "BBMono-I-Regular.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 19273540,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-bb-mono-s": {
+  "name": "BB Mono S",
+  "en": "BB Mono S",
+  "ko": "BB Mono S",
+  "author": "thkmon",
+  "page": "https://github.com/thkmon/BBMonoFont",
+  "source": "https://github.com/thkmon/BBMonoFont",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-bb-mono-s/700.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-bb-mono-s/400.ttf"
+  },
+  "source_files": [
+   "BBMono-S-Bold.ttf",
+   "BBMono-S-Regular.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 18958536,
+  "cov": 11172,
+  "old": false,
+  "hanja": true,
+  "rfn": true,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-jeongdok": {
+  "name": "정독",
+  "en": "Jeongdok",
+  "ko": "정독",
+  "author": "sharosoo",
+  "page": "https://github.com/sharosoo/fonts",
+  "source": "https://github.com/sharosoo/fonts",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jeongdok/700.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jeongdok/400.ttf"
+  },
+  "source_files": [
+   "Jeongdok-Bold.ttf",
+   "Jeongdok-Regular.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 16319096,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-jeongdok-display": {
+  "name": "정독 Display",
+  "en": "Jeongdok Display",
+  "ko": "정독 Display",
+  "author": "sharosoo",
+  "page": "https://github.com/sharosoo/fonts",
+  "source": "https://github.com/sharosoo/fonts",
+  "weights": [
+   400,
+   700
+  ],
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jeongdok-display/700.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jeongdok-display/400.ttf"
+  },
+  "source_files": [
+   "JeongdokDisplay-Bold.ttf",
+   "JeongdokDisplay-Regular.ttf"
+  ],
+  "license": "OFL",
+  "bytes": 14187252,
+  "cov": 11172,
+  "old": false,
+  "hanja": false,
+  "rfn": false,
+  "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
  }
 }
