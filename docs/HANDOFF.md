@@ -708,3 +708,11 @@ img.save("sample.png")
 - Shared search headers now show 렛섬 and 내 취향에 맞는 무료 폰트 beside the logo, with search at right-center and navigation on the second row. Mobile uses a full-width search row.
 - build_ui_language.js maintains the markup and a content-hashed header-brand.css link across regenerated pages. Dedicated typing header is unchanged. English copy is in the existing dictionary.
 - Verified desktop and 390px mobile layout without horizontal page overflow, Korean search (2 Deogon results), and English copy switching.
+
+
+## 2026-11-05 일반 17그룹·온글잎 506종 등록
+
+- 일반 17그룹을 독립 폭·가족 기준 25종으로 등록, 온글잎 506종 추가(632 → 1,163종). 일반 이탤릭·가변 파일은 중복 등록하지 않고 검증한 일반 굵기 78파일만 연결.
+- 온글잎은 공식 S3 WOFF2 원본을 CDN으로 사용. 수정·유료 판매 금지, 원본 배포·임베딩 허용, 제작물 이미지 홍보 활용 조건을 별도 LICENSE_INFO와 license_manual에 기록. 공개 날짜는 생성 시각으로 추정하지 않음.
+- 일반 폰트는 무변환 원본과 공식 라이선스·제3자 고지를 letsum-mirror에 보존. GPTSSAM 홍보 활용 조항, 백묵 고지 의무, HeadKasen 복합 조건, 칠칠공 공식 이용표를 분리 표시.
+- 검증/원본 SHA 기록: /Volumes/AI_dev/web/output/font-add-533-20261105/ (디렉터리명 533은 초안 집계명이며 실제 531종).

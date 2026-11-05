@@ -5329,5 +5329,639 @@
   "hanja": false,
   "rfn": false,
   "note": "2026-11-04 original-byte import, browser verified; no conversion. All font/upstream notices retained."
+ },
+ "k-lxgw-marker-gothic-kr": {
+  "name": "LXGW 마커고딕 KR",
+  "en": "LXGW Marker Gothic KR",
+  "page": "https://github.com/lxgw/LxgwMarkerGothicKR",
+  "source": "https://github.com/lxgw/LxgwMarkerGothicKR",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-lxgw-marker-gothic-kr/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2350,
+  "bytes": 1727884,
+  "source_files": [
+   "files/lxgw--LxgwMarkerGothicKR/LXGWMarkerGothicKR-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-mabyko-mono": {
+  "name": "Mabyko Mono",
+  "en": "Mabyko Mono",
+  "page": "https://github.com/mabyko/MabykoMono",
+  "source": "https://github.com/mabyko/MabykoMono",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/100.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono/700.ttf"
+  },
+  "weights": [
+   100,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 20844668,
+  "source_files": [
+   "files/mabyko--MabykoMono/extracted/MabykoMono-Bold.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMono-Light.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMono-Medium.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMono-Regular.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMono-SemiBold.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMono-Thin.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-mabyko-mono-narrow": {
+  "name": "Mabyko Mono Narrow",
+  "en": "Mabyko Mono Narrow",
+  "page": "https://github.com/mabyko/MabykoMono",
+  "source": "https://github.com/mabyko/MabykoMono",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/100.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-mabyko-mono-narrow/700.ttf"
+  },
+  "weights": [
+   100,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 20824988,
+  "source_files": [
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-Bold.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-Light.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-Medium.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-Regular.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-SemiBold.ttf",
+   "files/mabyko--MabykoMono/extracted/MabykoMonoNarrow-Thin.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-presevka": {
+  "name": "Presevka",
+  "en": "Presevka",
+  "page": "https://github.com/xkho/presevka",
+  "source": "https://github.com/xkho/presevka",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/100.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/200.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/800.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-presevka/900.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 11172,
+  "bytes": 24245596,
+  "source_files": [
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Regular.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-ExtraLight.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-ExtraBold.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Thin.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Black.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Light.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Bold.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-SemiBold.woff2",
+   "files/xkho--presevka/extracted/Presevka-0.8.2/Presevka-Medium.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-yeobaek": {
+  "name": "여백",
+  "en": "Yeobaek",
+  "page": "https://github.com/gerald-kim/yeobaek",
+  "source": "https://github.com/gerald-kim/yeobaek",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-yeobaek/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-yeobaek/700.ttf"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 15471568,
+  "source_files": [
+   "files/gerald-kim--yeobaek/extracted/Yeobaek/Yeobaek-Bold.ttf",
+   "files/gerald-kim--yeobaek/extracted/Yeobaek/Yeobaek-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-covendard": {
+  "name": "Covendard",
+  "en": "Covendard",
+  "page": "https://github.com/jaekook/covendard",
+  "source": "https://github.com/jaekook/covendard",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-covendard/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-covendard/700.woff2"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 3859968,
+  "source_files": [
+   "files/jaekook--covendard/extracted/Covendard/webfont/Covendard-Bold.woff2",
+   "files/jaekook--covendard/extracted/Covendard/webfont/Covendard-Regular.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-d2tendard": {
+  "name": "D2tendard",
+  "en": "D2tendard",
+  "page": "https://github.com/hulryung/d2tendard",
+  "source": "https://github.com/hulryung/d2tendard",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/100.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/200.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-d2tendard/800.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "cov": 11172,
+  "bytes": 20867224,
+  "source_files": [
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-Regular.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-Light.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-ExtraLight.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-ExtraBold.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-SemiBold.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-Medium.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-Thin.woff2",
+   "files/hulryung--d2tendard/extracted/D2tendard-1.0.0-Web/D2tendard-Bold.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-jetbatang-nf": {
+  "name": "JetBatang NF",
+  "en": "JetBatang NF",
+  "page": "https://github.com/kyh0703/jetbatang",
+  "source": "https://github.com/kyh0703/jetbatang",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/100.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/200.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/300.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/500.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/600.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/700.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbatang-nf/800.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "cov": 11172,
+  "bytes": 115948716,
+  "source_files": [
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-Bold.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-ExtraBold.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-ExtraLight.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-Light.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-Medium.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-Regular.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-SemiBold.ttf",
+   "files/kyh0703--jetbatang/extracted/JetBatangNF-Thin.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-d2koding": {
+  "name": "D2Koding",
+  "en": "D2Koding",
+  "page": "https://github.com/sharosoo/fonts/tree/main/packages/d2koding",
+  "source": "https://github.com/sharosoo/fonts/tree/main/packages/d2koding",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-d2koding/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-d2koding/700.woff2"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 2496896,
+  "source_files": [
+   "files/sharosoo--d2koding/extracted/woff2/D2Koding-Bold.woff2",
+   "files/sharosoo--d2koding/extracted/woff2/D2Koding-Regular.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-jetbrains-mono-kr": {
+  "name": "JetBrains Mono KR",
+  "en": "JetBrains Mono KR",
+  "page": "https://github.com/cueaz/fonts-mono-kr",
+  "source": "https://github.com/cueaz/fonts-mono-kr",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbrains-mono-kr/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-jetbrains-mono-kr/700.ttf"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 12445692,
+  "source_files": [
+   "files/cueaz--fonts-mono-kr/JetBrainsMonoKR-Bold.ttf",
+   "files/cueaz--fonts-mono-kr/JetBrainsMonoKR-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-fantasque-sans-mono-kr": {
+  "name": "Fantasque Sans Mono KR",
+  "en": "Fantasque Sans Mono KR",
+  "page": "https://github.com/cueaz/fonts-mono-kr",
+  "source": "https://github.com/cueaz/fonts-mono-kr",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-fantasque-sans-mono-kr/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-fantasque-sans-mono-kr/700.ttf"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 12966572,
+  "source_files": [
+   "files/cueaz--fonts-mono-kr/FantasqueSansMonoKR-Bold.ttf",
+   "files/cueaz--fonts-mono-kr/FantasqueSansMonoKR-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-interlude": {
+  "name": "Interlude",
+  "en": "Interlude",
+  "page": "https://github.com/avanturation/interlude",
+  "source": "https://github.com/avanturation/interlude",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/100.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/200.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/800.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude/900.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 11172,
+  "bytes": 19955760,
+  "source_files": [
+   "files/avanturation--interlude/extracted/woff2/Interlude-Black.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-Bold.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-ExtraBold.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-ExtraLight.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-Light.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-Medium.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-Regular.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-SemiBold.woff2",
+   "files/avanturation--interlude/extracted/woff2/Interlude-Thin.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-interlude-display": {
+  "name": "Interlude Display",
+  "en": "Interlude Display",
+  "page": "https://github.com/avanturation/interlude",
+  "source": "https://github.com/avanturation/interlude",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/100.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/200.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/800.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/k-interlude-display/900.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 11172,
+  "bytes": 19964724,
+  "source_files": [
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Black.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Bold.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-ExtraBold.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-ExtraLight.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Light.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Medium.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Regular.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-SemiBold.woff2",
+   "files/avanturation--interlude/extracted/woff2/InterludeDisplay-Thin.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-maruminya-hangul": {
+  "name": "마루미냐 한글",
+  "en": "x12y12px MaruMinya Hangul",
+  "page": "https://github.com/quiple/x12y12pxMaruMinyaHangul",
+  "source": "https://github.com/quiple/x12y12pxMaruMinyaHangul",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-maruminya-hangul/500.woff2"
+  },
+  "weights": [
+   500
+  ],
+  "cov": 11172,
+  "bytes": 497884,
+  "source_files": [
+   "files/quiple--x12y12pxMaruMinyaHangul/x12y12pxMaruMinyaHangul.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-sarasa-gothic-k": {
+  "name": "사라사 고딕 K",
+  "en": "Sarasa Gothic K",
+  "page": "https://github.com/be5invis/Sarasa-Gothic",
+  "source": "https://github.com/be5invis/Sarasa-Gothic",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sarasa-gothic-k/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 23959508,
+  "source_files": [
+   "files/be5invis--Sarasa-Gothic/extracted/SarasaGothicK-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-sarasa-mono-k": {
+  "name": "사라사 모노 K",
+  "en": "Sarasa Mono K",
+  "page": "https://github.com/be5invis/Sarasa-Gothic",
+  "source": "https://github.com/be5invis/Sarasa-Gothic",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-sarasa-mono-k/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 25525128,
+  "source_files": [
+   "files/be5invis--Sarasa-Gothic/extracted/SarasaMonoK-Regular.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-gnu-unifont": {
+  "name": "GNU Unifont",
+  "en": "GNU Unifont",
+  "page": "https://unifoundry.com/unifont/index.html",
+  "source": "https://unifoundry.com/unifont/index.html",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-gnu-unifont/400.otf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 5320148,
+  "source_files": [
+   "files/unifoundry--unifont/unifont-18.0.01.otf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-gptssam-caption": {
+  "name": "GPTSSAM Caption",
+  "en": "GPTSSAM Caption",
+  "page": "https://github.com/gptssam/gptssam-caption",
+  "source": "https://github.com/gptssam/gptssam-caption",
+  "license": "GPTSSAM Caption 이용조건",
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gptssam-caption/700.ttf"
+  },
+  "weights": [
+   700
+  ],
+  "cov": 11172,
+  "bytes": 2426956,
+  "source_files": [
+   "files/gptssam--gptssam-caption/extracted/GPTSSAMCaption-v0.4.0/GPTSSAMCaption-Bold.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-gptssam-caption-soft": {
+  "name": "GPTSSAM Caption Soft",
+  "en": "GPTSSAM Caption Soft",
+  "page": "https://github.com/gptssam/gptssam-caption",
+  "source": "https://github.com/gptssam/gptssam-caption",
+  "license": "GPTSSAM Caption 이용조건",
+  "files": {
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gptssam-caption-soft/700.ttf"
+  },
+  "weights": [
+   700
+  ],
+  "cov": 11172,
+  "bytes": 2427012,
+  "source_files": [
+   "files/gptssam--gptssam-caption/extracted/GPTSSAMCaption-v0.4.0/GPTSSAMCaptionSoft-Bold.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-headkasen": {
+  "name": "HeadKasen",
+  "en": "HeadKasen",
+  "page": "https://github.com/Da1eth/HeadKasen",
+  "source": "https://github.com/Da1eth/HeadKasen",
+  "license": "HeadKasen 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-headkasen/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 867248,
+  "source_files": [
+   "files/Da1eth--HeadKasen/HeadKasen-Web.woff2"
+  ],
+  "originalUnmodified": true
+ },
+ "k-baekmuk-batang": {
+  "name": "백묵 바탕",
+  "en": "Baekmuk Batang",
+  "page": "https://ctan.org/pkg/baekmuk",
+  "source": "https://ctan.org/pkg/baekmuk",
+  "license": "백묵 글꼴 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-baekmuk-batang/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 13894748,
+  "source_files": [
+   "files/ctan--baekmuk/extracted/baekmuk/batang.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-baekmuk-dotum": {
+  "name": "백묵 돋움",
+  "en": "Baekmuk Dotum",
+  "page": "https://ctan.org/pkg/baekmuk",
+  "source": "https://ctan.org/pkg/baekmuk",
+  "license": "백묵 글꼴 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-baekmuk-dotum/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2350,
+  "bytes": 3025844,
+  "source_files": [
+   "files/ctan--baekmuk/extracted/baekmuk/dotum.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-baekmuk-gulim": {
+  "name": "백묵 굴림",
+  "en": "Baekmuk Gulim",
+  "page": "https://ctan.org/pkg/baekmuk",
+  "source": "https://ctan.org/pkg/baekmuk",
+  "license": "백묵 글꼴 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-baekmuk-gulim/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 11172,
+  "bytes": 10320976,
+  "source_files": [
+   "files/ctan--baekmuk/extracted/baekmuk/gulim.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-baekmuk-headline": {
+  "name": "백묵 헤드라인",
+  "en": "Baekmuk Headline",
+  "page": "https://ctan.org/pkg/baekmuk",
+  "source": "https://ctan.org/pkg/baekmuk",
+  "license": "백묵 글꼴 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-baekmuk-headline/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2350,
+  "bytes": 1161240,
+  "source_files": [
+   "files/ctan--baekmuk/extracted/baekmuk/hline.ttf"
+  ],
+  "originalUnmodified": true
+ },
+ "k-770-balsa": {
+  "name": "칠칠공 발사체",
+  "en": "770 Balsa",
+  "page": "https://770.kr/main/html.php?htmid=page/page2-3.html",
+  "source": "https://770.kr/main/html.php?htmid=page/page2-3.html",
+  "license": "칠칠공 발사체 이용조건",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-770-balsa/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2780,
+  "bytes": 812460,
+  "source_files": [
+   "files/770--balsa/770Balsa-Regular.ttf"
+  ],
+  "originalUnmodified": true
  }
 }

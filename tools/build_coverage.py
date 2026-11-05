@@ -4,7 +4,7 @@ cmap에 있어도 윤곽선이 비어 있으면(빈 글자) 지원하지 않는 
 결과: html/data/coverage.json  { "<id>": { "n": 한글 수, "h": "<11,172비트 base64 — 없으면 한글 완성형 전체>", "hanja": bool, "old": bool, "jamo": 낱자 ㄱ~ㅣ 51자 모두 } }
 사용: python -I tools/build_coverage.py <미러 webfonts 폴더> [--ids id1,id2]   (서버 전용 폰트는 tools/archive/hosted에서 읽음)
 """
-import sys, os, io, json, base64, subprocess
+import sys, os, io, json, base64, subprocess, hashlib
 from fontTools.ttLib import TTFont
 from fontTools.pens.boundsPen import ControlBoundsPen
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
@@ -14,7 +14,15 @@ import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("mirror")
 ap.add_argument("--ids", help="Comma-separated font IDs; preserve other cached coverage records")
+ap.add_argument("--verified-audit", help="JSONL original-file audit; reuse complete Hangul coverage only when SHA-256 matches")
+ap.add_argument("--decoded-cache", help="Local build_og.py TTF cache; usable only with matching verified original audit")
 a = ap.parse_args()
+verified_full = set()
+if a.verified_audit:
+    for line in open(a.verified_audit, encoding="utf-8"):
+        record = json.loads(line)
+        if record.get("valid") is True and record.get("hangulNonempty") == 11172 and record.get("sha256"):
+            verified_full.add(record["sha256"])
 mirror = a.mirror
 selected = set(a.ids.split(",")) if a.ids else None
 if selected:
@@ -58,13 +66,27 @@ for f in FONTS:
     elif "/fonts-hosted/" in url: p = os.path.join(HERE, "archive", "hosted", url.split("/fonts-hosted/")[1])
     else: p = os.path.join(mirror, f["id"], url.split("?")[0].rsplit("/", 1)[1])
     if not os.path.exists(p): print("파일 없음:", f["id"], p); continue
-    font = TTFont(p, lazy=True); cmap = font.getBestCmap() or {}; gs = font.getGlyphSet()
+    font = TTFont(p, lazy=True); cmap = font.getBestCmap() or {}
     hk = [k for k in cmap if 0xAC00 <= k <= 0xD7A3]
     hj = [k for k in cmap if 0x4E00 <= k <= 0x9FFF][:400]
     od = [k for k in cmap if 0x1100 <= k <= 0x11FF or 0xA960 <= k <= 0xA97F or 0xD7B0 <= k <= 0xD7FF][:200]
     jm = [k for k in range(0x3131, 0x3164) if k in cmap]  # 호환 자모 ㄱ~ㅣ 51자
-    good = real(font, gs, [cmap[k] for k in hk + hj + od + jm])
-    have = [k for k in hk if cmap[k] in good]
+    # A prior full-outline audit is reusable only for byte-identical originals.
+    # Partial Hangul, Hanja, old Hangul and compatibility Jamo are still inspected here.
+    cached_full = len(hk) == 11172 and bool(verified_full) and hashlib.sha256(open(p, "rb").read()).hexdigest() in verified_full
+    if cached_full and a.decoded_cache:
+        decoded = os.path.join(a.decoded_cache, f["id"] + "-" + w + ".ttf")
+        if os.path.exists(decoded):
+            cached_font = TTFont(decoded, lazy=True)
+            # This is the local raster generator's decoded copy, never a served font.
+            # It retains outlines; that generator only removes bitmap/hinting tables.
+            if cached_font.getBestCmap() == cmap and cached_font["name"].getDebugName(6) == font["name"].getDebugName(6) and cached_font["name"].getDebugName(5) == font["name"].getDebugName(5):
+                font.close(); font = cached_font
+            else:
+                cached_font.close()
+    gs = font.getGlyphSet()
+    good = real(font, gs, [cmap[k] for k in ([] if cached_full else hk) + hj + od + jm])
+    have = hk if cached_full else [k for k in hk if cmap[k] in good]
     # 옛한글: 옛 자모 글리프가 있어도 첫가끝 조합이 안 되면 '나랏말ᄊᆞ미'가 낱자로 풀려 보인다 → 실제로 한 글자로 조합되는 폰트만 '옛한글 지원'
     rec = {"n": len(have), "hanja": sum(1 for k in hj if cmap[k] in good) >= 50, "old": sum(1 for k in od if cmap[k] in good) >= 50 and old_composes(p, font), "jamo": sum(1 for k in jm if cmap[k] in good) == 51}
     if len(have) < 11172:
@@ -72,6 +94,7 @@ for f in FONTS:
         for k in have: i = k - 0xAC00; bits[i >> 3] |= 1 << (i & 7)
         rec["h"] = base64.b64encode(bytes(bits)).decode()
     out[f["id"]] = rec
+    font.close()
     if rec["n"] != f.get("cov"): print(f"{f['id']}: data.js cov {f.get('cov')} → 실제 {rec['n']}")
 json.dump(out, open(os.path.join(ROOT, "html", "data", "coverage.json"), "w"), separators=(",", ":"))
 print(f"완료 {len(out)}종 · 부분 지원 {sum(1 for v in out.values() if 'h' in v)}종")
