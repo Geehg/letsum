@@ -30,9 +30,9 @@ for (const name of files) {
   for (const [script, hash] of Object.entries(scriptVersions)) source = source.replace(new RegExp(`js/${script}\\.js\\?v=[\\w]+`, "g"), `js/${script}.js?v=${hash}`);
   source = source.replace(/<!--FAMILY_SITES-->[\s\S]*?<!--\/FAMILY_SITES-->/g, "");
   if (source.includes("</footer>")) {
-    const familySites = [["한 코 · ONE DOT PATTERN", "https://pattern.one-dot.kr/"], ["원닷 · ONE DOT", "https://one-dot.kr/"], ["F.O.V. · Field of View", "https://foview.co.kr/"], ["렛섬 · LETSUM", "https://letsum.app/"], ["렛섬 필사독서", "https://type.letsum.app/"], ["고요서가", "https://goyoseoga.com/"]];
+    const familySites = [["한 코 · ONE DOT PATTERN", "https://pattern.one-dot.kr/", "나만의 뜨개 도안 작업실"], ["원닷 · ONE DOT", "https://one-dot.kr/", "AI를 읽는 새로운 시선"], ["F.O.V. · Field of View", "https://foview.co.kr/", "시야를 넓히는 콘텐츠 스튜디오"], ["렛섬 · LETSUM", "https://letsum.app/", "내 취향에 맞는 무료 폰트"], ["렛섬 필사독서", "https://type.letsum.app/", "읽는 것을 넘어, 쓰는 독서"], ["고요서가", "https://goyoseoga.com/", "오래된 문장, 오늘의 발견"]];
     const familyHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "css/family-sites.css"))).digest("hex").slice(0, 10);
-    const family = `<div class="family-sites-row wrap"><details class="family-sites"><summary>함께 운영하는 사이트 <span aria-hidden="true">＋</span></summary><nav aria-label="함께 운영하는 사이트">${familySites.map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener noreferrer"><span translate="no">${label}</span><span aria-hidden="true">↗</span><span class="family-sites-sr"> (새 탭)</span></a>`).join("")}</nav></details></div>`;
+    const family = `<div class="family-sites-row wrap"><details class="family-sites"><summary>함께 운영하는 사이트 <span aria-hidden="true">＋</span></summary><nav aria-label="함께 운영하는 사이트">${familySites.map(([label, url, copy]) => `<a href="${url}" target="_blank" rel="noopener noreferrer"><span class="family-sites-name" translate="no">${label}</span><small class="family-sites-copy">${copy}</small><span aria-hidden="true">↗</span><span class="family-sites-sr"> (새 탭)</span></a>`).join("")}</nav></details></div>`;
     source = source.replace("</footer>", `<!--FAMILY_SITES-->${family}<!--/FAMILY_SITES--></footer>`);
     source = source.replace("</head>", `<!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=${familyHash}"><!--/FAMILY_SITES--></head>`);
   }
