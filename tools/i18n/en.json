@@ -1118,5 +1118,10 @@
   "작은 크기 비교 · 12–24px": "Compare small sizes · 12–24px",
   "비교 문장": "Comparison text",
   "작은 크기 비교 문장": "Small-size comparison text",
-  "환경에 따라 차이가 없거나 획이 가늘어질 수 있습니다. 픽셀 서체는 배포처 권장 크기로도 비교하세요.": "The modes may look identical or strokes may look thinner, depending on your device. Also test pixel fonts at the creator’s recommended sizes."
+  "환경에 따라 차이가 없거나 획이 가늘어질 수 있습니다. 픽셀 서체는 배포처 권장 크기로도 비교하세요.": "The modes may look identical or strokes may look thinner, depending on your device. Also test pixel fonts at the creator’s recommended sizes.",
+  "1970년대 책의 명조를 바탕으로 각진 획을 구성한 서체입니다. 한글 2,781자를 지원하며 한자는 지원하지 않습니다. 제작자는 Light 단일 굵기로 소개하지만 파일 내부 표기는 Regular(400)입니다. 상업 이용·웹 임베딩·수정·공유가 가능하며 폰트 파일 자체의 유료 판매는 금지됩니다. 재배포 시 저작권 고지와 OFL 라이선스를 유지해야 합니다.": "An angular serif inspired by Korean books from the 1970s. Supports 2,781 Hangul syllables and no Hanja. The creator describes a single Light weight, while the font metadata says Regular (400). Commercial use, web embedding, modification and sharing are permitted. Selling the font file by itself is prohibited. Redistribution must retain the copyright notice and OFL license.",
+  "토활공 서체연구동": "RTF Type Study Dept.",
+  "토활공 공식 블로그": "Official RTF blog",
+  "제작자 공식 발행일": "Official release date",
+  "최현석": "Choi Hyunseok"
 }
