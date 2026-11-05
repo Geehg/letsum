@@ -1,0 +1,11 @@
+{
+  "publisher": "ca-pub-7515626837780401",
+  "verificationEnabled": true,
+  "adsEnabled": false,
+  "siteApproved": false,
+  "cmpPublished": false,
+  "privacyEffectiveAt": "2026-11-13T00:00:00+09:00",
+  "placements": {
+    "guide.html": "1602264730"
+  }
+}

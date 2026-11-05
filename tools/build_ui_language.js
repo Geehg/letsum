@@ -5,7 +5,7 @@ const dictionary = JSON.parse(fs.readFileSync(path.join(__dirname, "i18n", "en.j
 const runtime = fs.readFileSync(path.join(__dirname, "i18n", "runtime.js"), "utf8").replace("/* UI_DICTIONARY */ {}", JSON.stringify(dictionary));
 fs.writeFileSync(path.join(root, "js", "ui-language.js"), runtime);
 const version = crypto.createHash("sha256").update(runtime).update(fs.readFileSync(path.join(root, "css", "ui-language.css"))).digest("hex").slice(0, 10);
-const files = ["index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];
+const files = ["about.html", "index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];
 for (const directory of ["font", "topics"]) for (const name of fs.readdirSync(path.join(root, directory))) if (!name.startsWith(".") && name.endsWith(".html")) files.push(directory + "/" + name);
 const hook = `<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=${version}"><script src="/js/ui-language.js?v=${version}"></script><!--/UI_LANGUAGE-->`;
 const scriptVersions = Object.fromEntries(["main", "common", "reviews", "subset", "symbols", "shot", "data", "data_en", "data_db"].map(name => [name,
@@ -36,8 +36,12 @@ for (const name of files) {
     source = source.replace("</footer>", `<!--FAMILY_SITES-->${family}<!--/FAMILY_SITES--></footer>`);
     source = source.replace("</head>", `<!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=${familyHash}"><!--/FAMILY_SITES--></head>`);
   }
+  source = source.replace(/<!--SITE_ABOUT-->[\s\S]*?<!--\/SITE_ABOUT-->/g, "");
+  source = source.replace("</footer>", '<!--SITE_ABOUT--><p class="wrap fine"><a href="/about.html">렛섬 소개·편집 원칙</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/terms.html">이용약관</a></p><!--/SITE_ABOUT--></footer>');
   fs.writeFileSync(file, source);
 }
 console.log(`UI language: ${Object.keys(dictionary).length} translations, ${files.length} pages`);
 
 require("./build_font_showcase.js");
+
+require("./build_adsense.js").build(root, files);
