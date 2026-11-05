@@ -142,7 +142,7 @@ function seoIntro(kind) {
   const has = new Set(TOPIC_LISTS.map(([t]) => t.slug));
   const groups = INTRO_GROUPS[kind].map(([g, L]) => [g, L.filter(([sl]) => has.has(sl))]).filter(([, L]) => L.length);
   return `<section class="seo-intro"><div class="wrap"><details class="si-d" open><summary><span class="si-h"><h1>${h}</h1><span class="si-sub">${sub}</span></span><span class="si-btn">주제로 보기</span></summary>`
-    + `<nav class="seo-topics si-idx" aria-label="주제별 무료 폰트">${groups.map(([g, L]) => `<div class="si-g"><b>${g}</b><p>${L.map(([sl, l]) => `<a href="topics/${sl}.html">${esc(l)}</a>`).join('<i aria-hidden="true">·</i>')}</p></div>`).join("")}</nav></details></div></section>`;
+    + `<nav class="seo-topics si-idx" aria-label="주제별 무료 폰트">${groups.map(([g, L]) => `<div class="si-g${g === "글자·라이선스" ? " si-g-wide" : ""}"><b>${g}</b><p>${L.map(([sl, l]) => `<a href="topics/${sl}.html">${esc(l)}</a>`).join('<i aria-hidden="true">·</i>')}</p></div>`).join("")}</nav></details></div></section>`;
 }
 function seoDir(kind) {
   const L = (kind === "db" ? FONTS_DB : kind === "en" ? FONTS_EN : FONTS).slice().sort((a, b) => String(a.name).localeCompare(String(b.name), "ko"));

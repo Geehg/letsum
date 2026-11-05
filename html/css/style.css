@@ -1543,19 +1543,23 @@ kbd{display:inline-block;padding:1px 7px;border:1px solid var(--ink);border-bott
 .si-btn::after{content:" ▾"}
 .si-d[open] .si-btn{background:var(--ink);color:var(--paper)}
 .si-d[open] .si-btn::after{content:" ▴"}
-.si-idx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 28px;margin-top:12px;padding-top:12px;border-top:1px solid var(--rule2)}
-.si-g b{display:block;font:600 11px var(--mono);color:var(--ink3);margin-bottom:3px}
-.si-g p{margin:0;font-size:14px;line-height:1.75}
-.si-g i{font-style:normal;color:var(--ink3);margin:0 6px}
-.seo-topics.si-idx a{border:0;background:none;padding:0;display:inline;color:var(--ink);font-size:14px;white-space:nowrap}
+.si-idx{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:8px;padding-top:10px;border-top:1px solid var(--rule2)}
+.si-g{min-width:0;max-width:100%}
+.si-g b{display:block;font:600 11px var(--mono);color:var(--ink3);margin-bottom:4px}
+.si-g p{display:flex;flex-wrap:wrap;gap:4px;margin:0;font-size:13px;line-height:1.4}
+.si-g i{display:none}
+.si-g-wide{flex-basis:100%;display:flex;align-items:center;gap:10px}
+.si-g-wide b{margin:0;flex-shrink:0}
+.seo-topics.si-idx a{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d1d0ca;background:#fff;color:#24241f;padding:5px 7px;font-size:13px;line-height:1.4;white-space:nowrap;text-decoration:none;box-shadow:0 1px 1px #00000008}
 .seo-topics.si-idx a span{display:none}
-.seo-topics.si-idx a:hover{background:none;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.seo-topics.si-idx a.on{background:var(--ink);color:var(--paper);padding:1px 6px;text-decoration:none}
+.seo-topics.si-idx a:hover{background:#f7f7f2;color:#111;border-color:#77776d;text-decoration:none}
+.seo-topics.si-idx a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.seo-topics.si-idx a.on{background:var(--ink);color:var(--paper);border-color:var(--ink);text-decoration:none}
 @media(max-width:760px){
   .si-sub{display:none}
-  .si-idx{grid-template-columns:1fr;gap:6px}
-  .si-g{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:baseline}
-  .si-g b{margin:0}
+  .si-idx{gap:8px}
+  .si-g{flex-basis:100%;display:grid;grid-template-columns:84px minmax(0,1fr);align-items:start;gap:6px}
+  .si-g b{margin:6px 0 0}
 }
 
 /* ===== 필사독서(typing.html) — 화면 디자인 3종: 책상(book·기본, TYPEBOOK 스타일)·잉크(ink, LETSUM 평면)·몰입(focus, 어두운 한 단) ===== */
