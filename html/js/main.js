@@ -211,7 +211,7 @@
     liveOnly: false, body: (() => { try { return localStorage.getItem("ls_body") || ""; } catch (e) { return ""; } })(), bodySize: 11.5, bodyLh: 185, bodyLs: 0,
     q: "", cat: "전체", mood: new Set(), lic: new Set(), cov: new Set(), favOnly: false, coverOnly: false,
     only: null, onlyLabel: "", coll: null,
-    sort: "new", text: DB ? "" : curSample.t, size: DB ? 44 : EN ? 60 : 30, weight: 400, inv: false, pair: false,
+    sort: "released", text: DB ? "" : curSample.t, size: DB ? 44 : EN ? 60 : 30, weight: 400, inv: false, pair: false,
     view: "feed", ctx: "thumb",
   };
   const favs = new Set(LS("fm_favs", []));
@@ -526,7 +526,7 @@
     const a = ALTERNATIVES[+b.dataset.alt];
     if (state.onlyLabel === a.for) { state.only = null; state.onlyLabel = ""; }
     else { state.only = new Set(a.ids); state.onlyLabel = a.for; }
-    state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new");
+    state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("released");
     $$("[data-alt]").forEach((x) => x.classList.toggle("on", ALTERNATIVES[+x.dataset.alt].for === state.onlyLabel)); render();
   }));
 
@@ -1075,9 +1075,9 @@
   });
   function removeFilter(k) {
     const [t, v] = k.split(":");
-    if (k === "all") { topicUrl(""); state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
+    if (k === "all") { topicUrl(""); state.cat = "전체"; state.mood.clear(); state.lic.clear(); state.cov.clear(); state.coverOnly = false; state.favOnly = false; state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("released"); state.coll = null; $("#coverOnly").checked = false; $("#favOnly").checked = false; }
     else if (t === "coll") { state.coll = null; state.cat = "전체"; }
-    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("new"); topicUrl(""); }
+    else if (t === "only") { state.only = null; state.onlyLabel = ""; state.rank = null; state.recNote = ""; state.useLic = null; if (state.sort === "rec") setSort("released"); topicUrl(""); }
     else if (t === "cat") state.cat = "전체";
     else if (t === "mood") state.mood.delete(v);
     else if (t === "lic") LIC_FILTERS.find((p) => p.key === v).keys.forEach((x) => state.lic.delete(x));

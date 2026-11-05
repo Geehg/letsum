@@ -13,10 +13,12 @@
  8. 검수 파일(review_*.json)·출시일 덮어쓰기(release_overrides.json)의 id가 data.js에 있는가
 사용: python3 -I tools/validate.py
 """
+import runpy
 import json, os, re, subprocess, sys, unicodedata, glob
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+blocked = runpy.run_path(os.path.join(HERE, "collection_policy.py"))["blocked"]
 ROOT = os.path.join(HERE, "..")
 DATA = os.path.join(ROOT, "html", "js", "data.js")
 CATS = {"고딕", "명조", "손글씨", "디스플레이"}
@@ -39,6 +41,8 @@ except subprocess.CalledProcessError as e:
     print("✗ data.js 해석 실패 — 문법 오류:\n", e.stderr[-800:]); sys.exit(1)
 FONTS, LIC = D["FONTS"], D["LICENSE_INFO"]
 ids = [f.get("id") for f in FONTS]
+for f in FONTS:
+    if blocked(f): err(f"수집 금지 폰트 재등록: {f.get('id')}")
 
 # 2) 중복
 for label, key in (("id", lambda f: f.get("id")), ("이름", lambda f: n(f.get("name"))), ("영문명", lambda f: n(f.get("en")))):
@@ -119,6 +123,7 @@ if os.path.exists(EN_DATA):
         E = json.loads(subprocess.run(["node", "-e", jse, DATA, EN_DATA], capture_output=True, text=True, check=True).stdout)
         seen_en = set(); kr = set(ids)
         for f in E["FONTS_EN"]:
+            if blocked(f): err(f"수집 금지 폰트 재등록: {f.get('id')}")
             i = f.get("id", "")
             if not re.fullmatch(r"e-[a-z0-9][a-z0-9-]*", i): err(f"영문 {i}: id는 e- 접두사 소문자·숫자·하이픈")
             if i in seen_en or i in kr: err(f"영문 {i}: id 중복")
@@ -151,6 +156,7 @@ if os.path.exists(DB_DATA):
         D = json.loads(subprocess.run(["node", "-e", jsd, DATA, DB_DATA], capture_output=True, text=True, check=True).stdout)
         seen_db = set()
         for f in D["FONTS_DB"]:
+            if blocked(f): err(f"수집 금지 폰트 재등록: {f.get('id')}")
             i = f.get("id", "")
             if not re.fullmatch(r"d-[a-z0-9][a-z0-9-]*", i): err(f"딩벳 {i}: id는 d- 접두사 소문자·숫자·하이픈")
             if i in seen_db or i in ids: err(f"딩벳 {i}: id 중복")

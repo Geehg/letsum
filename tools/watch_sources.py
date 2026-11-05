@@ -16,10 +16,12 @@
 
 원칙: 라이선스 안내문 해석과 사이트 공개는 자동화하지 않는다. 카탈로그의 review 필드는 사람이 바꾼다.
 """
+import runpy
 import csv, glob, hashlib, json, os, re, sys, urllib.request
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+blocked = runpy.run_path(os.path.join(HERE, "collection_policy.py"))["blocked"]
 STATE_DIR = os.path.join(HERE, "state")
 CATALOG = os.path.join(STATE_DIR, "catalog.json")
 SNAPSHOT = os.path.join(STATE_DIR, "sources.json")
@@ -190,6 +192,12 @@ def site_ids():
 def merge(catalog, snap):
     """루트 스냅샷을 카탈로그에 누적. 반환: 변경 메시지 목록."""
     changes = []
+    # Filter source records before merging and remove previously collected blocked entries.
+    for source in ("google", "fontsource", "github", "kogl", "news"):
+        snap[source] = {name: value for name, value in snap.get(source, {}).items() if not blocked([name, value])}
+    for catalog_key in list(catalog):
+        if blocked([catalog_key, catalog[catalog_key]]):
+            del catalog[catalog_key]
     def rec_for(name):
         k = key(name)
         if k not in catalog:
@@ -268,8 +276,7 @@ def merge(catalog, snap):
 
 def export_candidates(catalog):
     """검수 승인(review=approved)됐지만 사이트에 없는 레코드를 data.js 형식 초안으로 내보낸다."""
-    rows = [r for r in catalog.values() if r.get("review") == "approved" and not r.get("site_id")]
-    if not rows: return 0
+    rows = [r for r in catalog.values() if r.get("review") == "approved" and not r.get("site_id") and not blocked(r)]
     def stub(r):
         fsid = r["sources"].get("fontsource", {}).get("id") or key(r["name"])
         w = r.get("weights") or ["400"]
