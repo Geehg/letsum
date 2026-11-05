@@ -720,3 +720,6 @@ img.save("sample.png")
 ## 2026-11-05 미리보기 렌더링 비교
 - preview-rendering.js/css: 기본(auto)·부드럽게(grayscale) 선택을 목록/상세에 적용하고 선택을 저장. 상세 미리보기 아래 12/14/16/18/24px 두 방식 비교, 문장 편집 및 원본 굵기 연동.
 - build_ui_language.js에서 자산 해시와 훅 생성. Windows/일부 브라우저는 차이가 없을 수 있으며 폰트 원본·힌팅은 변경하지 않음. Mac Chrome 로컬에서 토글/저장/굵기/영문/390px 레이아웃 확인.
+
+## 2026-11-05 Mabyko Mono 삭제
+운영자 요청으로 Mabyko 계열 전체(k-mabyko-mono, k-mabyko-mono-narrow)를 공개 카탈로그와 상세 페이지에서 제거. 과거 라이선스 근거는 보존하며 해당 계열을 재등록하지 말 것.

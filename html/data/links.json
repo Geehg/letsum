@@ -5,12 +5,6 @@
   "code": 206,
   "checked": "2026-11-05"
  },
- "k-mabyko-mono": {
-  "url": "https://github.com/mabyko/MabykoMono",
-  "ok": true,
-  "code": 206,
-  "checked": "2026-11-05"
- },
  "k-mabyko-mono-narrow": {
   "url": "https://github.com/mabyko/MabykoMono",
   "ok": true,
@@ -97,8 +91,8 @@
  },
  "k-gnu-unifont": {
   "url": "https://unifoundry.com/unifont/index.html",
-  "ok": true,
-  "code": 206,
+  "ok": false,
+  "code": "<urlopen error timed out>",
   "checked": "2026-11-05"
  },
  "k-gptssam-caption": {
