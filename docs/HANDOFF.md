@@ -716,3 +716,7 @@ img.save("sample.png")
 - 온글잎은 공식 S3 WOFF2 원본을 CDN으로 사용. 수정·유료 판매 금지, 원본 배포·임베딩 허용, 제작물 이미지 홍보 활용 조건을 별도 LICENSE_INFO와 license_manual에 기록. 공개 날짜는 생성 시각으로 추정하지 않음.
 - 일반 폰트는 무변환 원본과 공식 라이선스·제3자 고지를 letsum-mirror에 보존. GPTSSAM 홍보 활용 조항, 백묵 고지 의무, HeadKasen 복합 조건, 칠칠공 공식 이용표를 분리 표시.
 - 검증/원본 SHA 기록: /Volumes/AI_dev/web/output/font-add-533-20261105/ (디렉터리명 533은 초안 집계명이며 실제 531종).
+
+## 2026-11-05 미리보기 렌더링 비교
+- preview-rendering.js/css: 기본(auto)·부드럽게(grayscale) 선택을 목록/상세에 적용하고 선택을 저장. 상세 미리보기 아래 12/14/16/18/24px 두 방식 비교, 문장 편집 및 원본 굵기 연동.
+- build_ui_language.js에서 자산 해시와 훅 생성. Windows/일부 브라우저는 차이가 없을 수 있으며 폰트 원본·힌팅은 변경하지 않음. Mac Chrome 로컬에서 토글/저장/굵기/영문/390px 레이아웃 확인.

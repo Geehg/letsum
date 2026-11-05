@@ -1109,5 +1109,14 @@
   "칠칠공 발사체 이용조건": "770 Balsa terms",
   "칠칠공 무료 이용": "770 free license",
   "OFL 원본·고지 유지": "OFL originals · preserve notices",
-  "OFL · 고지·예약 이름 조건": "OFL · notices and reserved names"
+  "OFL · 고지·예약 이름 조건": "OFL · notices and reserved names",
+  "미리보기 렌더링": "Preview rendering",
+  "작은 글씨 미리보기": "Small-text preview",
+  "글자 표시": "Text rendering",
+  "기본": "Default",
+  "부드럽게": "Smooth",
+  "작은 크기 비교 · 12–24px": "Compare small sizes · 12–24px",
+  "비교 문장": "Comparison text",
+  "작은 크기 비교 문장": "Small-size comparison text",
+  "환경에 따라 차이가 없거나 획이 가늘어질 수 있습니다. 픽셀 서체는 배포처 권장 크기로도 비교하세요.": "The modes may look identical or strokes may look thinner, depending on your device. Also test pixel fonts at the creator’s recommended sizes."
 }

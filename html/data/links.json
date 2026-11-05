@@ -6576,7 +6576,7 @@
   "checked": "2026-11-05"
  },
  "k-yangjin": {
-  "url": "https://fonts.google.com/download?family=Yangjin",
+  "url": "https://www.supernovice.org/font",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
@@ -6606,111 +6606,111 @@
   "checked": "2026-11-05"
  },
  "k-lotteria-chab": {
-  "url": "https://fonts.google.com/download?family=LOTTERIA+CHAB",
+  "url": "https://lotteriafont.com/chobddag",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-lotteria-ddag": {
-  "url": "https://fonts.google.com/download?family=LOTTERIA+DDAG",
+  "url": "https://lotteriafont.com/chobddag",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-happiness-sans": {
-  "url": "https://fonts.google.com/download?family=Happiness+Sans",
+  "url": "https://thehyundaifont.com/",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-ria-sans": {
-  "url": "https://fonts.google.com/download?family=Ria+Sans",
+  "url": "https://lotteriafont.com/riasans",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-samlip-hopang-basic": {
-  "url": "https://fonts.google.com/download?family=Sandoll+Samliphopangche+Basic",
+  "url": "https://spcsamlip.co.kr/brand/bakery/hopang/typography",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-samlip-hopang-outline": {
-  "url": "https://fonts.google.com/download?family=Sandoll+Samliphopangche+Outline",
+  "url": "https://spcsamlip.co.kr/brand/bakery/hopang/typography",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-yuhan-green-forest": {
-  "url": "https://fonts.google.com/download?family=YK+Green+Forest",
-  "ok": true,
-  "code": 200,
+  "url": "https://www.yuhan-kimberly.co.kr/society/woopoopoofont",
+  "ok": false,
+  "code": 403,
   "checked": "2026-11-05"
  },
  "k-hada-levelup": {
-  "url": "https://fonts.google.com/download?family=LevelUp",
+  "url": "https://hada-type.com/levelup",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-hada-dancing-mono": {
-  "url": "https://fonts.google.com/download?family=Dancing+Peoples+Mono",
+  "url": "https://hada-type.com/dancing-peoples-mono",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-neodgm-pro": {
-  "url": "https://fonts.google.com/download?family=NeoDunggeunmo+Pro",
+  "url": "https://github.com/neodgm/neodgm-pro",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-monoplex-kr": {
-  "url": "https://fonts.google.com/download?family=Monoplex+KR",
+  "url": "https://github.com/y-kim/monoplex",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-monoplex-cjk": {
-  "url": "https://fonts.google.com/download?family=Monoplex+CJK",
+  "url": "https://github.com/y-kim/monoplex",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-fusion-pixel-12": {
-  "url": "https://fonts.google.com/download?family=Fusion+Pixel+12px+Proportional+KO",
+  "url": "https://github.com/TakWolf/fusion-pixel-font",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-tmoney-roundwind": {
-  "url": "https://fonts.google.com/download?family=Tmoney+RoundWind",
+  "url": "https://www.koreasmartcard.com/aeb/cmnctn/ci/ci.dev",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-kmu80-sungkok": {
-  "url": "https://fonts.google.com/download?family=KMU80+Sungkok+Serif",
+  "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-kmu80-haeong": {
-  "url": "https://fonts.google.com/download?family=KMU80+Haeong+Sans",
+  "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
   "ok": true,
   "code": 200,
   "checked": "2026-11-05"
  },
  "k-hbios-sys": {
-  "url": "https://fonts.google.com/download?family=HBIOS-SYS",
+  "url": "https://github.com/quiple/hbios-sys",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-harena-term": {
-  "url": "https://fonts.google.com/download?family=Harena+Term+K",
+  "url": "https://github.com/harena-hq/harena-term-font",
   "ok": true,
-  "code": 200,
+  "code": 206,
   "checked": "2026-11-05"
  },
  "k-brutalmix": {

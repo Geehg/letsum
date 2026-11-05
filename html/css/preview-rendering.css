@@ -1,0 +1,22 @@
+/* Keep browser-default and grayscale antialiasing distinct without changing font shapes. */
+html[data-preview-rendering="auto"] :is(.r-pv,.pv-big,.ig-sample,.fp .sample,.cmp .pv){-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
+html[data-preview-rendering="smooth"] :is(.r-pv,.pv-big,.ig-sample,.fp .sample,.cmp .pv){-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.pr-panel{border:1px solid var(--rule2);padding:14px 16px;margin:0 0 14px;background:var(--paper);color:var(--ink);font-family:var(--sans, sans-serif);font-size:13px}
+.pr-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px}
+.pr-controls>span{margin-right:4px;color:var(--ink2)}
+.pr-controls button{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--rule2);padding:6px 12px;cursor:pointer;border-radius:3px}
+.pr-controls button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pr-controls button:focus-visible,.pr-compare summary:focus-visible,.pr-compare input:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.pr-global{margin-left:8px}
+.pr-note{font-size:12px;line-height:1.6;color:var(--ink2);margin:9px 0}
+.pr-compare summary{cursor:pointer;padding:7px 0;font-weight:600}
+.pr-compare label{display:flex;align-items:center;gap:10px;margin:10px 0}
+.pr-compare input{min-width:0;flex:1;padding:8px;border:1px solid var(--rule2);background:var(--paper);color:var(--ink);font:inherit}
+.pr-grid{display:grid;grid-template-columns:42px minmax(0,1fr) minmax(0,1fr);gap:0;border-top:1px solid var(--rule2)}
+.pr-grid>strong,.pr-size,.pr-cell{padding:10px 8px;border-bottom:1px solid var(--rule2);min-width:0}
+.pr-grid>strong{font-size:12px}.pr-size{font-size:11px;color:var(--ink2);padding-left:0}
+.pr-cell{border-left:1px solid var(--rule2);overflow-wrap:anywhere}
+.pr-example{line-height:1.7;white-space:pre-wrap;word-break:normal;text-rendering:auto}
+.pr-example[data-pr-example="auto"]{-webkit-font-smoothing:auto!important;-moz-osx-font-smoothing:auto!important}
+.pr-example[data-pr-example="smooth"]{-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important}
+@media(max-width:600px){.pr-panel{padding:10px}.pr-grid{grid-template-columns:32px minmax(0,1fr) minmax(0,1fr)}.pr-cell{padding:8px 6px}.pr-global{margin-left:0}.pr-compare label{align-items:stretch;flex-direction:column;gap:5px}}

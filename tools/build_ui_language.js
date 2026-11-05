@@ -21,6 +21,11 @@ for (const name of files) {
     const headerHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "css/header-brand.css"))).digest("hex").slice(0, 10);
     source = source.replace('</head>', `<!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=${headerHash}"><!--/HEADER_BRAND-->\n</head>`);
   }
+  source = source.replace(/<!--PREVIEW_RENDERING-->[\s\S]*?<!--\/PREVIEW_RENDERING-->\n?/g, "");
+  if (["index.html", "en/index.html", "dingbat/index.html"].includes(name) || name.startsWith("font/")) {
+    const renderHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "js/preview-rendering.js"))).update(fs.readFileSync(path.join(root, "css/preview-rendering.css"))).digest("hex").slice(0, 10);
+    source = source.replace('</head>', `<!--PREVIEW_RENDERING--><link rel="stylesheet" href="/css/preview-rendering.css?v=${renderHash}"><script src="/js/preview-rendering.js?v=${renderHash}" defer></script><!--/PREVIEW_RENDERING-->\n</head>`);
+  }
   source = source.replace('</head>', hook + '\n</head>');
   for (const [script, hash] of Object.entries(scriptVersions)) source = source.replace(new RegExp(`js/${script}\\.js\\?v=[\\w]+`, "g"), `js/${script}.js?v=${hash}`);
   fs.writeFileSync(file, source);
