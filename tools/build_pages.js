@@ -320,7 +320,7 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
 }
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
-const urls = [`${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/typing.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
+const urls = [`${SITE}/contact.html`, `${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/typing.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.

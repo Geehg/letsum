@@ -19,6 +19,7 @@ migrations_dir = "migrations"
 
 # 관리자 로그인 확인용(비밀번호 자체가 아니라 SHA-256 값 — html/js/data.js의 ADMIN_ACCOUNT와 같게 유지)
 [vars]
+CONTACT_ENABLED = "true"
 ADMIN_ID = "admin"
 ADMIN_PW_HASH = "689db2d3a68fce03c7663845092dc7d58fc43085b39c38d146682cf1e7625ed3"
 # 필사독서 선택 회원 — 시행일(KST) 전에는 로그인 경로가 닫혀 있다. 공개 클라이언트 ID는 앱 등록 후 채운다(비밀값은 wrangler secret)
@@ -42,3 +43,8 @@ simple = { limit = 40, period = 10 }
 name = "ADMIN_RL"
 namespace_id = "1002"
 simple = { limit = 30, period = 60 }
+
+# Free delivery to the verified operator only; never accept user-supplied recipients.
+[[send_email]]
+name = "CONTACT_EMAIL"
+destination_address = "interq4@naver.com"

@@ -5,7 +5,7 @@ const dictionary = JSON.parse(fs.readFileSync(path.join(__dirname, "i18n", "en.j
 const runtime = fs.readFileSync(path.join(__dirname, "i18n", "runtime.js"), "utf8").replace("/* UI_DICTIONARY */ {}", JSON.stringify(dictionary));
 fs.writeFileSync(path.join(root, "js", "ui-language.js"), runtime);
 const version = crypto.createHash("sha256").update(runtime).update(fs.readFileSync(path.join(root, "css", "ui-language.css"))).digest("hex").slice(0, 10);
-const files = ["about.html", "index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];
+const files = ["pairing.html", "submit.html", "contact.html", "about.html", "index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];
 for (const directory of ["font", "topics"]) for (const name of fs.readdirSync(path.join(root, directory))) if (!name.startsWith(".") && name.endsWith(".html")) files.push(directory + "/" + name);
 const hook = `<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=${version}"><script src="/js/ui-language.js?v=${version}"></script><!--/UI_LANGUAGE-->`;
 const scriptVersions = Object.fromEntries(["main", "common", "reviews", "subset", "symbols", "shot", "data", "data_en", "data_db"].map(name => [name,
@@ -38,6 +38,19 @@ for (const name of files) {
   }
   source = source.replace(/<!--SITE_ABOUT-->[\s\S]*?<!--\/SITE_ABOUT-->/g, "");
   source = source.replace("</footer>", '<!--SITE_ABOUT--><p class="wrap fine"><a href="/about.html">렛섬 소개·편집 원칙</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/terms.html">이용약관</a></p><!--/SITE_ABOUT--></footer>');
+  source = source.replace(/<!--CONTACT_STYLE-->[\s\S]*?<!--\/CONTACT_STYLE-->/g, "");
+  if (source.includes("</footer>")) {
+    const contactLink = '<a class="contact-link" href="/contact.html">광고제휴 및 문의</a>';
+    source = source.replace(/<footer[\s\S]*?<\/footer>/g, footer => {
+      footer = footer.replace(/(?:문의[: ]*)?<a[^>]*href="mailto:interq4@naver.com"[^>]*>[\s\S]*?<\/a>/g, contactLink);
+      if (!footer.includes('class="contact-link"')) footer = footer.replace('</footer>', '<div class="wrap">'+contactLink+'</div></footer>');
+      return footer;
+    });
+    const contactHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root,"css/contact.css"))).update(fs.readFileSync(path.join(root,"js/contact.js"))).digest("hex").slice(0,10);
+    source = source.replace(/<link rel="stylesheet" href="\/css\/contact.css[^" ]*">/g, "");
+    source = source.replace('</head>', `<!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=${contactHash}"><!--/CONTACT_STYLE--></head>`);
+    source = source.replace(/js\/contact.js\?v=[\w]+/g, `js/contact.js?v=${contactHash}`);
+  }
   fs.writeFileSync(file, source);
 }
 console.log(`UI language: ${Object.keys(dictionary).length} translations, ${files.length} pages`);

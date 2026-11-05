@@ -1,3 +1,4 @@
+import { contact } from './contact.js';
 import { failureStatement, failureReport } from './preview-diagnostics.js';
 // LETSUM API — 좋아요 수·댓글. 로그인 없음, 개인정보 최소화(IP는 해시로만), AI 없음.
 // 필사독서 회원·동기화(type.letsum.app/api/auth/*, /api/me, /api/sync …)는 account.js
@@ -478,6 +479,7 @@ export default {
     }
     try {
       const p = url.pathname;
+      if (req.method === "POST" && p === "/api/contact") return await contact(req, env, await voterOf(req, env));
       if (req.method === "GET" && p === "/api/locale") return localeResponse(req);
       const acc = await account(req, url, env); if (acc) return acc;
       if (req.method === "POST" && p === "/api/admin/login") return await adminLogin(req, env);
@@ -504,5 +506,5 @@ export default {
     }
   },
   // 매일 한 번: 필사독서 만료 세션·장기 미접속(2년) 회원 정리
-  async scheduled(event, env, ctx) { ctx.waitUntil(Promise.all([accountCleanup(env), env.DB.prepare("DELETE FROM preview_failures WHERE hour < ?").bind(new Date(Date.now()+9*3600e3-30*86400e3).toISOString().slice(0,13)).run()])); },
+  async scheduled(event, env, ctx) { ctx.waitUntil(Promise.all([accountCleanup(env), env.DB.prepare("DELETE FROM contact_deliveries WHERE created < ?").bind(Math.floor(Date.now()/1000)-7*86400).run(), env.DB.prepare("DELETE FROM preview_failures WHERE hour < ?").bind(new Date(Date.now()+9*3600e3-30*86400e3).toISOString().slice(0,13)).run()])); },
 };
