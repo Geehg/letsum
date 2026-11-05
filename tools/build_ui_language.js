@@ -8,7 +8,7 @@ const version = crypto.createHash("sha256").update(runtime).update(fs.readFileSy
 const files = ["index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];
 for (const directory of ["font", "topics"]) for (const name of fs.readdirSync(path.join(root, directory))) if (!name.startsWith(".") && name.endsWith(".html")) files.push(directory + "/" + name);
 const hook = `<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=${version}"><script src="/js/ui-language.js?v=${version}"></script><!--/UI_LANGUAGE-->`;
-const scriptVersions = Object.fromEntries(["main", "common", "reviews", "subset", "symbols", "shot"].map(name => [name,
+const scriptVersions = Object.fromEntries(["main", "common", "reviews", "subset", "symbols", "shot", "data", "data_en", "data_db"].map(name => [name,
   crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "js", name + ".js"))).digest("hex").slice(0, 10)]));
 for (const name of files) {
   const file = path.join(root, name);
