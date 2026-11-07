@@ -1,0 +1,46 @@
+{
+  "checked": "2026-11-07",
+  "catalogCount": 1163,
+  "source": "https://www.cufs.ac.kr/cmm/FileUDown.do?fileNm=4c241a1702464ece89cdb2fa935c3cc5.pdf",
+  "announcementDate": "2026-10-29",
+  "scheduledRelease": "2026-11-26",
+  "announcedFamilies": 4,
+  "announcedStyles": 12,
+  "correction": "68서체 92종은 10월 현황. 4서체 12종 추가는 11월26일 예정(총72서체104종 계획).",
+  "fonts": [
+    {
+      "name": "가지롱히",
+      "existingMatches": [],
+      "officialSearchCount": 0,
+      "fileStatus": "현재 공식 검색 결과 0건. 파일 미공개로 파일명·내부 패밀리·굵기·해시 및 바이너리 중복 검증 보류",
+      "status": "공개 예정 / 등록 보류"
+    },
+    {
+      "name": "오묘미",
+      "existingMatches": [],
+      "officialSearchCount": 0,
+      "fileStatus": "현재 공식 검색 결과 0건. 파일 미공개로 파일명·내부 패밀리·굵기·해시 및 바이너리 중복 검증 보류",
+      "status": "공개 예정 / 등록 보류"
+    },
+    {
+      "name": "소우주",
+      "existingMatches": [],
+      "officialSearchCount": 0,
+      "fileStatus": "현재 공식 검색 결과 0건. 파일 미공개로 파일명·내부 패밀리·굵기·해시 및 바이너리 중복 검증 보류",
+      "status": "공개 예정 / 등록 보류"
+    },
+    {
+      "name": "더하기펜",
+      "existingMatches": [],
+      "officialSearchCount": 0,
+      "fileStatus": "현재 공식 검색 결과 0건. 파일 미공개로 파일명·내부 패밀리·굵기·해시 및 바이너리 중복 검증 보류",
+      "status": "공개 예정 / 등록 보류"
+    }
+  ],
+  "charmacist": {
+    "id": "k-charmacist",
+    "introOnly": true,
+    "fontDownloaded": false,
+    "licenseSource": "https://charmacist.com/wp-content/themes/charmacist/assets/font/Charmacist-License.pdf"
+  }
+}
