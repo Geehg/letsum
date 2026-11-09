@@ -7,8 +7,17 @@ import { renderReview, bindReview } from './review.js';
   const boot = window.__LETSUM_BOOTSTRAP__;
   if (!boot?.catalog || !boot?.taxonomy || !boot?.sources) return;
   const { catalog, taxonomy, sources, catalogSha256 } = boot;
+  // Optional identification images added by the LETSUM production build (tools/fetch_logo_thumbs.mjs); absent in the standalone build.
+  const thumbnails = boot.thumbnails || {};
+  const thumbSourceLabels = { 'simple-icons': 'Simple Icons', 'wikimedia-commons': 'Wikimedia Commons', 'official-page-image': '공식 페이지', 'official-site-icon': '공식 사이트 아이콘' };
   const app = document.querySelector('#app');
   const toast = document.querySelector('#toast');
+  // A missing or blocked image falls back to the typeset name instead of a broken icon.
+  app?.addEventListener('error', event => {
+    if (!event.target.matches?.('img.logo-thumb')) return;
+    event.target.closest('[data-thumb]')?.removeAttribute('data-thumb');
+    event.target.remove();
+  }, true);
   const sourceById = new Map(sources.sources.map(source => [source.id, source]));
   const recordById = new Map(catalog.records.map(record => [record.id, record]));
   const publicRecords = catalog.records.filter(record => !['draft', 'archived'].includes(record.review.status));
@@ -49,6 +58,7 @@ import { renderReview, bindReview } from './review.js';
       bookmark: '<path d="M6 4h12v17l-6-4-6 4V4Z"/>',
       check: '<path d="m5 12 4 4L19 6"/>',
       grid: '<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/>',
+      tiles: '<rect x="5" y="5" width="9" height="9" rx="2.5" transform="rotate(-30 9.5 9.5)"/><rect x="11" y="11" width="9" height="9" rx="2.5" transform="rotate(-30 15.5 15.5)"/>',
       list: '<path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/>',
       download: '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
       link: '<path d="m10 13 4-4m-5 7-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 8a4 4 0 0 0 6 0l4-4a4 4 0 0 0-6-6l-2 2" transform="translate(1 0) scale(.9)"/>',
@@ -118,7 +128,7 @@ import { renderReview, bindReview } from './review.js';
       access: valid('access', taxonomy.access.map(item => item.id)),
       includeHistorical: params.get('history') === '1',
       sort: valid('sort', ['relevance', 'name', 'checked'], 'relevance'),
-      view: valid('view', ['grid', 'list'], 'grid')
+      view: valid('view', ['grid', 'icons', 'list'], 'grid')
     };
   }
 
@@ -155,11 +165,40 @@ import { renderReview, bindReview } from './review.js';
     </div><label class="history-filter"><input id="history-filter" type="checkbox"${f.includeHistorical ? ' checked' : ''}> 이전 버전 포함</label><button id="reset-filters" class="text-button reset-filters" type="button" data-reset>초기화</button></div>`;
   }
 
+  // Card and icon mock-ups: a typeset name in the category colour, never an official logo or brand colour.
+  function cardMark(record) {
+    const latin = /^[\x20-\x7e]+$/;
+    const mark = latin.test(record.organization_name) ? record.organization_name : [...record.aliases].filter(alias => latin.test(alias) && alias.length <= 14).sort((a, b) => a.length - b.length)[0] || record.organization_name;
+    // Approximate width of the longest word in em, so the type can scale to fit without breaking inside a word.
+    const width = Math.max(...mark.split(' ').map(word => [...word].reduce((sum, char) => sum + (/[\x20-\x7e]/.test(char) ? (/[A-Z]/.test(char) ? 0.68 : 0.56) : 1), 0)));
+    return { mark, latin, width: Math.max(2, width).toFixed(2), size: mark.length > 12 ? 'long' : mark.length > 7 ? 'mid' : 'short' };
+  }
+
+  const brandStyle = thumb => thumb.bg ? ` style="--brand:${h(thumb.bg)};--brand-ink:${h(thumb.ink || '#ffffff')}"` : '';
+  const thumbAttrs = thumb => thumb ? ` data-thumb="${h(thumb.mode)}"${brandStyle(thumb)}` : '';
+  // Glyph thumbnails (single-colour SVG) sit white on the brand colour on the front and in colour on the back.
+  function thumbImg(thumb, place, record) {
+    if (!thumb) return '';
+    const src = place !== 'back' && thumb.mode === 'glyph' && thumb.on_brand ? thumb.on_brand : thumb.file;
+    return `<img class="logo-thumb" src="${h(src)}" alt="${place === 'detail' ? h(record.organization_name + ' 로고') : ''}" loading="lazy" decoding="async">`;
+  }
+
+  function renderTile(record) {
+    const { mark, size, latin, width } = cardMark(record);
+    const thumb = thumbnails[record.id];
+    return `<a class="icon-tile tone-${h(record.category)}" href="${h(detailHref(record.id))}" data-record="${h(record.id)}"${thumbAttrs(thumb)}><span class="tile-face size-${size}" style="--w:${width}" aria-hidden="true">${thumbImg(thumb, 'front', record)}<b${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</b></span><span class="tile-name">${h(record.name)}</span><span class="tile-kind">${h(label(categoryLabels, record.category))}</span></a>`;
+  }
+
   function renderCard(record) {
     const formats = getFormats(record);
+    const { mark, size, latin, width } = cardMark(record);
+    const kicker = mark === record.organization_name ? categoryAbbreviations[record.category] : record.organization_name;
+    const thumb = thumbnails[record.id];
     return `<article class="brand-card" data-record="${h(record.id)}">
-      <div class="identity-cover tone-${h(record.category)}"><div class="cover-kicker"><span>${h(categoryAbbreviations[record.category])}</span><button id="save-${h(record.id)}" type="button" class="bookmark-button" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 19)}</button></div>
-      <div class="identity-name">${h(record.organization_name)}</div><div class="cover-bottom"><span>${h(label(kindLabels, record.kind))}</span><span>공식 이미지 미수록</span></div></div>
+      <div class="identity-cover biz tone-${h(record.category)}"${thumbAttrs(thumb)}><div class="biz-front">${thumbImg(thumb, 'front', record)}<div class="cover-kicker"><span>${h(kicker)}</span><button id="save-${h(record.id)}" type="button" class="bookmark-button" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 19)}</button></div>
+      <div class="identity-name size-${size}" style="--w:${width}"${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</div></div>
+      <div class="biz-back" aria-hidden="true"><div class="biz-head">${thumbImg(thumb, 'back', record)}<span class="biz-mark size-${size}">${h(mark)}</span><span class="biz-role"><em>${h(label(kindLabels, record.kind))}</em><b>${h(record.name)}</b></span></div>
+      <div class="biz-rows"><span><em>지역</em>${h(record.region || label(categoryLabels, record.category))}</span><span><em>형식</em>${h(formats.slice(0, 3).join(' · ') || '미확인')}</span></div><span class="biz-note">${thumb ? `이미지: ${h(thumbSourceLabels[thumb.source] || thumb.source)}` : '공식 이미지 미수록'}</span></div></div>
       <div class="card-body"><div class="card-meta"><span>${h(label(categoryLabels, record.category))}</span>${record.region ? `<span>${h(record.region)}</span>` : ''}</div><h3><a href="${h(detailHref(record.id))}">${h(record.name)}</a></h3><p class="card-summary">${h(record.summary)}</p><div class="format-row">${formats.length ? formats.slice(0, 5).map(format => `<span class="format-badge">${h(format)}</span>`).join('') + '<span class="format-caption">제공 안내</span>' : '<span class="format-caption">파일 형식 미확인</span>'}</div>
       <div class="card-status">${reviewBadge(record)}<span>${h(fmtDate(record.review.checked_at))}</span></div></div>
       <div class="card-footer">${external(record.source_url, '공식 출처', 'source-button')}<a class="detail-link" href="${h(detailHref(record.id))}" aria-label="${h(record.name)} 상세정보">상세정보 ${icon('right', 16)}</a></div>
@@ -176,9 +215,9 @@ import { renderReview, bindReview } from './review.js';
     const records = filterRecords(publicRecords, { ...f, savedOnly: isSaved, savedIds: [...savedIds] });
     const stats = summarize(records);
     const hero = isSaved ? `<section class="directory-hero compact"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="page-heading">내 보관함<span class="accent-dot">.</span></h1><p class="hero-copy">다시 찾을 공식 출처, 한곳에 모아두세요.</p></div><div class="saved-actions"><button type="button" class="button light" id="export-saved"${savedIds.size ? '' : ' disabled'}>${icon('download', 18)} 링크 목록 저장</button><p>${storageAvailable ? '이 브라우저에 저장됩니다. 계정 간 동기화는 지원하지 않습니다.' : '저장 공간에 접근할 수 없어 현재 탭에서만 유지됩니다.'}</p></div></section>` : `<section class="directory-hero"><div><p class="eyebrow"><span class="small-dot"></span> LOGO & IDENTITY DIRECTORY</p><h1 id="page-heading">필요한 로고,<br>공식 출처에서<span class="accent-dot">.</span></h1><p class="hero-copy">공공기관부터 기업·대학까지.<br class="mobile-only"> 로고와 사용 안내를 함께 찾아보세요.</p></div><div class="hero-aside"><div class="hero-stat"><strong>${totals.organizations.toLocaleString('ko-KR')}</strong><span>기관·브랜드</span></div><div class="hero-stat"><strong>${totals.records.toLocaleString('ko-KR')}</strong><span>아이덴티티 정보</span></div><p>데이터 갱신일 ${h(fmtDate(catalog.updated_at))}<br><a href="/logos/#/guide">정보 확인 기준 ${icon('arrow', 14)}</a></p></div></section>`;
-    app.innerHTML = `<div class="page-container" id="main-content" tabindex="-1">${hero}<section class="search-section" aria-label="로고 검색 및 필터">${renderSearch(f, isSaved)}${renderFilters(f, isSaved)}</section><section class="results-section" aria-labelledby="results-heading"><div class="results-toolbar"><div><h2 id="results-heading" tabindex="-1">${isSaved ? '보관한 자료' : '로고·CI 둘러보기'}</h2><span id="result-count" role="status" aria-live="polite"><strong>${records.length}</strong>개 정보 <span class="result-divider">/</span> ${stats.organizations}개 기관</span></div><div class="results-controls"><label class="sr-only" for="sort-select">정렬</label><select id="sort-select" data-filter="sort"><option value="relevance"${f.sort === 'relevance' ? ' selected' : ''}>관련도순</option><option value="name"${f.sort === 'name' ? ' selected' : ''}>이름순</option><option value="checked"${f.sort === 'checked' ? ' selected' : ''}>최근 확인순</option></select><div class="view-toggle" role="group" aria-label="보기 방식"><button id="view-grid" type="button" data-view="grid" aria-label="카드 보기" aria-pressed="${f.view === 'grid'}">${icon('grid', 17)}</button><button id="view-list" type="button" data-view="list" aria-label="목록 보기" aria-pressed="${f.view === 'list'}">${icon('list', 18)}</button></div></div></div>
+    app.innerHTML = `<div class="page-container" id="main-content" tabindex="-1">${hero}<section class="search-section" aria-label="로고 검색 및 필터">${renderSearch(f, isSaved)}${renderFilters(f, isSaved)}</section><section class="results-section" aria-labelledby="results-heading"><div class="results-toolbar"><div><h2 id="results-heading" tabindex="-1">${isSaved ? '보관한 자료' : '로고·CI 둘러보기'}</h2><span id="result-count" role="status" aria-live="polite"><strong>${records.length}</strong>개 정보 <span class="result-divider">/</span> ${stats.organizations}개 기관</span></div><div class="results-controls"><label class="sr-only" for="sort-select">정렬</label><select id="sort-select" data-filter="sort"><option value="relevance"${f.sort === 'relevance' ? ' selected' : ''}>관련도순</option><option value="name"${f.sort === 'name' ? ' selected' : ''}>이름순</option><option value="checked"${f.sort === 'checked' ? ' selected' : ''}>최근 확인순</option></select><div class="view-toggle" role="group" aria-label="보기 방식"><button id="view-grid" type="button" data-view="grid" aria-label="명함 보기" title="명함 보기" aria-pressed="${f.view === 'grid'}">${icon('grid', 17)}</button><button id="view-icons" type="button" data-view="icons" aria-label="아이콘 보기" title="아이콘 보기" aria-pressed="${f.view === 'icons'}">${icon('tiles', 18)}</button><button id="view-list" type="button" data-view="list" aria-label="목록 보기" title="목록 보기" aria-pressed="${f.view === 'list'}">${icon('list', 18)}</button></div></div></div>
     ${f.q ? `<p class="query-label">“${h(f.q)}” 검색 결과</p>` : ''}
-    ${records.length ? `<div class="brand-grid ${f.view === 'list' ? 'list-view' : ''}">${records.map(renderCard).join('')}</div>` : renderEmpty(isSaved, f)}
+    ${!records.length ? renderEmpty(isSaved, f) : f.view === 'icons' ? `<div class="icon-wall">${records.map(renderTile).join('')}</div><p class="icon-wall-note">아이콘은 기관명을 유형별 색으로 조판한 견본이며 공식 로고·브랜드 색상이 아닙니다.</p>` : `<div class="brand-grid ${f.view === 'list' ? 'list-view' : ''}">${records.map(renderCard).join('')}</div>`}
     <div class="catalog-note">${icon('info', 18)}<p><strong>파일 형식은 공식 페이지의 안내 기준입니다.</strong> 원본 파일의 다운로드·검증 여부와 이용 허가는 각각 확인해야 합니다. <a href="/logos/#/guide">자세히 보기</a></p></div></section>
     ${!isSaved ? `<section class="contribute-banner"><div><span class="eyebrow">BUILD THE DIRECTORY</span><h2>아직 찾는 로고가 없나요?</h2><p>공식 링크를 문의 폼으로 보내주시면 확인 후 반영하겠습니다.</p></div><a class="button dark" href="/contact.html">링크 제보 작성 ${icon('right', 18)}</a></section>` : ''}</div>`;
     document.title = `${isSaved ? '내 보관함' : '로고·CI 찾기'} | LETSUM 로고`;
@@ -202,12 +241,19 @@ import { renderReview, bindReview } from './review.js';
     });
   }
 
+  function detailThumb(record) {
+    const thumb = thumbnails[record.id];
+    if (!thumb) return '';
+    const credit = [thumbSourceLabels[thumb.source] || thumb.source, thumb.license, thumb.author].filter(Boolean).map(h).join(' · ');
+    return `<figure class="detail-thumb" data-thumb="${h(thumb.mode)}"${brandStyle(thumb)}><div class="detail-thumb-frame">${thumbImg(thumb, 'detail', record)}</div><figcaption>식별용 미리보기 · 이미지 ${credit}${thumb.page_url ? ` · <a href="${h(safeUrl(thumb.page_url) || '#')}" target="_blank" rel="noopener noreferrer">이미지 출처</a>` : ''}<br>상표권은 각 권리자에게 있으며, 실제 사용은 공식 출처의 파일과 규정을 따르세요.</figcaption></figure>`;
+  }
+
   function renderDetail(record) {
     const recordSources = record.source_ids.map(id => sourceById.get(id)).filter(Boolean);
     const historical = record.version.status === 'historical';
     const related = visibleRecords.filter(row => row.id !== record.id && row.organization_id === record.organization_id);
     app.innerHTML = `<div class="page-container detail-page" id="main-content" tabindex="-1"><nav class="breadcrumbs" aria-label="현재 위치"><a href="/logos/#/">로고·CI</a><span>/</span><a href="/logos/#/?category=${h(record.category)}">${h(label(categoryLabels, record.category))}</a><span>/</span><span aria-current="page">${h(record.organization_name)}</span></nav>
-    <section class="detail-heading"><div><p class="eyebrow">${h(categoryAbbreviations[record.category])}</p><h1 id="page-heading">${h(record.name)}</h1>${record.name_en ? `<p class="english-name">${h(record.name_en)}</p>` : ''}<p class="detail-lead">${h(record.summary)}</p><div class="detail-tags"><span class="tag">${h(label(kindLabels, record.kind))}</span>${record.sectors.map(sector => `<span class="tag">${h(label(sectorLabels, sector))}</span>`).join('')}${record.region ? `<span class="tag">${h(record.region)}</span>` : ''}${reviewBadge(record)}</div></div><div class="detail-actions">${external(record.source_url, '공식 출처에서 확인', 'button dark')}<button id="save-${h(record.id)}" type="button" class="button light save-detail" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 18)} 보관하기</button><button id="copy-source" type="button" class="text-button" data-copy-source="${h(record.source_url)}">${icon('link', 16)} 공식 링크 복사</button></div></section>
+    ${detailThumb(record)}<section class="detail-heading"><div><p class="eyebrow">${h(categoryAbbreviations[record.category])}</p><h1 id="page-heading">${h(record.name)}</h1>${record.name_en ? `<p class="english-name">${h(record.name_en)}</p>` : ''}<p class="detail-lead">${h(record.summary)}</p><div class="detail-tags"><span class="tag">${h(label(kindLabels, record.kind))}</span>${record.sectors.map(sector => `<span class="tag">${h(label(sectorLabels, sector))}</span>`).join('')}${record.region ? `<span class="tag">${h(record.region)}</span>` : ''}${reviewBadge(record)}</div></div><div class="detail-actions">${external(record.source_url, '공식 출처에서 확인', 'button dark')}<button id="save-${h(record.id)}" type="button" class="button light save-detail" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 18)} 보관하기</button><button id="copy-source" type="button" class="text-button" data-copy-source="${h(record.source_url)}">${icon('link', 16)} 공식 링크 복사</button></div></section>
     ${historical ? '<div class="notice warning">이전 버전 자료입니다. 실제 제작물에 적용하기 전에 현재 버전을 확인해 주세요.</div>' : ''}${record.review.status === 'needs-review' ? '<div class="notice warning">수정 후 재검수가 필요한 정보입니다. 확인일과 이용 조건은 공식 출처에서 다시 확인해 주세요.</div>' : ''}
     <div class="detail-layout"><div class="detail-main"><section class="detail-section"><div class="section-heading"><h2>로고·자료 안내</h2><span>${record.assets.length}개 자료 항목</span></div><p class="section-intro">아래 형식과 접근 조건은 공식 페이지의 안내를 정리한 정보입니다.</p>
     <div class="asset-table-wrap"><table class="asset-table"><thead><tr><th scope="col">자료</th><th scope="col">파일 형식</th><th scope="col">접근 조건</th><th scope="col">확인 범위</th></tr></thead><tbody>${record.assets.length ? record.assets.map(asset => `<tr><th scope="row">${h(asset.label)}<small>${h(label(formLabels, asset.form))}</small></th><td>${asset.listed_formats.length ? asset.listed_formats.map(format => `<span class="format-badge">${h(format)}</span>`).join(' ') + '<small>공식 페이지 제공 안내</small>' : '<span class="muted">형식 미확인</span>'}</td><td>${h(accessLabels[asset.access])}</td><td><span class="asset-state">${h({ 'page-listed': '페이지 확인', 'link-checked': '링크 응답 확인', 'file-verified': '원본 파일 확인', 'not-provided': '파일 정보 미확인' }[asset.file_verification])}</span>${asset.file_verification === 'file-verified' ? `<small>${asset.size_bytes.toLocaleString('ko-KR')} bytes · ${h(asset.verified_format)}</small><details class="hash-details"><summary>SHA-256</summary><code>${h(asset.sha256)}</code></details>` : ''}</td></tr>`).join('') : '<tr><td colspan="4">등록된 자료 항목이 없습니다. 공식 출처를 확인해 주세요.</td></tr>'}</tbody></table></div>

@@ -60,3 +60,74 @@
 .notice.warning { color: #72501d; }
 .view-toggle button, .empty-icon { color: var(--muted); }
 #results-heading:focus { outline: 3px solid #678524; outline-offset: 5px; }
+
+/* Business-card covers: category colour + typeset name. Not an official logo or brand colour. */
+.identity-cover.biz{--tone:#2f3b35;height:auto;min-height:0;padding:18px 18px 20px;background:#e6e3da;display:flex;flex-direction:column;gap:12px}
+:is(.biz,.icon-tile).tone-national-government{--tone:#1f3a68}
+:is(.biz,.icon-tile).tone-local-government{--tone:#2e6b3c}
+:is(.biz,.icon-tile).tone-public-organization{--tone:#0d6b6b}
+:is(.biz,.icon-tile).tone-education{--tone:#6e2342}
+:is(.biz,.icon-tile).tone-business{--tone:#d0302a}
+:is(.biz,.icon-tile).tone-nonprofit{--tone:#6c4596}
+:is(.biz,.icon-tile).tone-intergovernmental{--tone:#1d6aae}
+.biz-front,.biz-back{border-radius:12px;box-shadow:0 1px 2px #15140f26,0 8px 18px #15140f14;container-type:inline-size;transition:transform .2s}
+.brand-card:hover .biz-front{transform:translateY(-2px)}
+.biz-front{background:var(--tone);color:#fff;aspect-ratio:2/1;padding:12px 14px 14px;display:flex;flex-direction:column}
+.biz .cover-kicker{color:#ffffffd9;font-size:11px;letter-spacing:0;font-weight:700}
+.biz .cover-kicker>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.biz .bookmark-button{background:#ffffff26;color:#fff}
+.biz .bookmark-button:hover{background:#ffffff47}
+.biz .identity-name{color:#fff;font-weight:800;letter-spacing:-.045em;line-height:1.05;margin:auto 0 4px;font-size:clamp(16px,min(15cqi,calc(88cqi / var(--w,6))),56px);word-break:keep-all;overflow-wrap:normal}
+.biz-back{background:#fff;color:#2b2a25;aspect-ratio:2.4/1;padding:13px 15px 11px;position:relative;display:flex;flex-direction:column}
+.biz-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding-bottom:10px;border-bottom:1px solid var(--tone)}
+.biz-mark{color:var(--tone);font-weight:800;letter-spacing:-.045em;line-height:1;font-size:clamp(14px,7cqi,26px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.biz-mark.size-mid{font-size:clamp(13px,5.4cqi,20px)}
+.biz-mark.size-long{font-size:clamp(11px,4cqi,15px)}
+.biz-role{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:3px;min-width:0;max-width:58%}
+.biz-role em{font-style:normal;color:var(--tone);font-size:10px;font-weight:700}
+.biz-role b{font-size:11px;font-weight:600;letter-spacing:.06em;line-height:1.35;color:#3d3c36;word-break:keep-all}
+.biz-rows{margin-top:auto;display:grid;gap:2px;font-size:10px;line-height:1.5;color:#4f4e47;padding-right:84px}
+.biz-rows span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.biz-rows em{font-style:normal;color:var(--tone);font-weight:700;margin-right:6px}
+.biz-note{position:absolute;right:15px;bottom:11px;font-size:9px;color:#9a988f}
+.list-view .identity-cover.biz{padding:10px;min-height:0;justify-content:center}
+.list-view .biz-back{display:none}
+.list-view .biz .cover-kicker>span{display:block}
+@media(prefers-reduced-motion:reduce){.biz-front{transition:none}.brand-card:hover .biz-front{transform:none}}
+
+/* Icon view: tilted app-icon tiles, typeset name only. */
+.icon-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:44px 28px;padding:48px 36px 40px;border-radius:18px;background:linear-gradient(170deg,#d6e5fb,#eef3fa 70%)}
+.icon-wall .icon-tile{background:none}
+.icon-tile{--tone:#2f3b35;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;color:#14233a}
+.tile-face{width:74%;aspect-ratio:1;border-radius:27%;background:var(--tone);color:#fff;display:grid;place-items:center;padding:9%;transform:rotate(-30deg);box-shadow:0 2px 5px #1a2b4a1f;container-type:inline-size;transition:transform .25s,box-shadow .25s;margin-bottom:22px}
+.icon-tile:nth-child(4n+3) .tile-face{background:#fff;color:var(--tone)}
+.tile-face b{font-weight:800;letter-spacing:-.045em;line-height:1.05;font-size:min(30cqi,calc(94cqi / var(--w,4)));word-break:keep-all;overflow-wrap:normal;text-align:center}
+.icon-tile:hover .tile-face,.icon-tile:focus-visible .tile-face{transform:rotate(-30deg) translate(4px,-8px);box-shadow:0 22px 34px #1a2b4a38}
+.tile-name{font-size:13px;font-weight:700;line-height:1.4;word-break:keep-all}
+.tile-kind{font-size:11px;color:#5d6b80}
+.icon-wall-note{margin:12px 0 0;font-size:11px;color:var(--muted)}
+@media(max-width:600px){.icon-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 16px;padding:36px 16px 28px}}
+@media(prefers-reduced-motion:reduce){.tile-face{transition:none}}
+
+/* Identification thumbnails (production build only). Typeset names stay as the fallback. */
+.logo-thumb{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.biz[data-thumb] .biz-front{position:relative}
+.biz[data-thumb] .identity-name,.biz[data-thumb] .biz-mark,.icon-tile[data-thumb] .tile-face b{display:none}
+.biz[data-thumb] .biz-front>.logo-thumb{position:absolute;left:14%;right:14%;top:42px;bottom:16px;width:72%;height:calc(100% - 58px)}
+.biz[data-thumb="glyph"] .biz-front{background:var(--brand);color:var(--brand-ink)}
+.biz[data-thumb="glyph"] .cover-kicker{color:var(--brand-ink);opacity:.85}
+.biz[data-thumb="glyph"] .bookmark-button{background:color-mix(in srgb,var(--brand-ink) 18%,transparent);color:var(--brand-ink)}
+.biz[data-thumb="image"] .biz-front{background:#fff}
+.biz[data-thumb="image"] .cover-kicker{color:var(--tone)}
+.biz[data-thumb="image"] .bookmark-button{background:#15140f0f;color:var(--tone)}
+.biz[data-thumb] .biz-head>.logo-thumb{height:24px;max-width:50%;object-position:left center}
+.icon-tile[data-thumb="glyph"] .tile-face{background:var(--brand)}
+.icon-tile[data-thumb="image"] .tile-face{background:#fff}
+.tile-face .logo-thumb{width:76%;height:76%}
+.icon-tile[data-thumb="glyph"] .tile-face .logo-thumb{width:58%;height:58%}
+.detail-thumb{display:flex;gap:20px;align-items:center;margin:10px 0 26px}
+.detail-thumb-frame{width:240px;aspect-ratio:16/10;flex-shrink:0;display:grid;place-items:center;padding:22px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.detail-thumb[data-thumb="glyph"] .detail-thumb-frame{background:var(--brand);border-color:transparent;padding:34px}
+.detail-thumb figcaption{font-size:12px;line-height:1.7;color:var(--muted)}
+.detail-thumb figcaption a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.detail-thumb{flex-direction:column;align-items:flex-start}.detail-thumb-frame{width:100%}}

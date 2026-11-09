@@ -403,7 +403,8 @@ Sitemap: ${SITE}/sitemap.xml
 fs.writeFileSync(path.join(ROOT, "type", "robots.txt"), fs.readFileSync(path.join(ROOT, "robots.txt"), "utf8").replace("# LETSUM(렛섬)", "# LETSUM 필사독서(type.letsum.app)").replace(`Sitemap: ${SITE}/sitemap.xml`, "Sitemap: https://type.letsum.app/sitemap.xml"));
 console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);
 
-require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_logos.mjs")], {stdio:"inherit"});
 require("./build_navigation.js").build();
 // Keep UI translations on generated font, topic and catalogue pages.
 require("./build_ui_language.js");
+// Logo pages copy the finished home header, footer and stylesheets, so they are built last.
+require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_logos.mjs")], {stdio:"inherit"});

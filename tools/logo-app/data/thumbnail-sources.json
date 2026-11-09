@@ -1,0 +1,296 @@
+{
+  "note": "Thumbnail sources per record, tried in order by tools/fetch_logo_thumbs.mjs. simple-icons = CC0 brand glyphs, image = a logo image used on the official page, commons = Wikimedia Commons file (license read from the file page), site-icon = the organisation's own site icon. Images are for identification only; trademarks stay with their owners.",
+  "sources": {
+    "gok-symbol": [
+      {
+        "type": "commons",
+        "file": "File:Emblem of the Government of the Republic of Korea (Korean).svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.mois.go.kr/"
+      }
+    ],
+    "mss-mi": [
+      {
+        "type": "commons",
+        "file": "File:Ministry of SMEs and Startups of the Republic of Korea Logo (vertical).svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.mss.go.kr/"
+      }
+    ],
+    "seoul-my-soul": [
+      {
+        "type": "image",
+        "url": "https://www.seoul.go.kr/res_newseoul/images/common/brand-seoulmysoul.png",
+        "page": "https://www.seoul.go.kr/main/index.jsp"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.seoul.go.kr/"
+      }
+    ],
+    "goyang-city-logo": [
+      {
+        "type": "image",
+        "url": "https://www.goyang.go.kr/resources/www/images/main2026/logo.png",
+        "page": "https://www.goyang.go.kr/www/index.do"
+      },
+      {
+        "type": "image",
+        "url": "https://www.goyang.go.kr/resources/www/images/content/goyangsi_logo1-1.png",
+        "page": "https://www.goyang.go.kr/www/www05/www05_3/www05_3_10.jsp"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.goyang.go.kr/"
+      }
+    ],
+    "snu-ui": [
+      {
+        "type": "site-icon",
+        "url": "https://www.snu.ac.kr/"
+      }
+    ],
+    "koreatech-ui": [
+      {
+        "type": "image",
+        "url": "https://www.koreatech.ac.kr/template/template01/img/layout/logo.png",
+        "page": "https://www.koreatech.ac.kr/menu.es?mid=a10101030100"
+      },
+      {
+        "type": "image",
+        "url": "https://www.koreatech.ac.kr/template/common/foot_logo.svg",
+        "page": "https://www.koreatech.ac.kr/menu.es?mid=a10101030100"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.koreatech.ac.kr/"
+      }
+    ],
+    "kedi-ci": [
+      {
+        "type": "image",
+        "url": "https://kedi.re.kr/mobile2/img/intro/img_symbol01.jpg",
+        "page": "https://kedi.re.kr/khome/mobile2/intro/kedici.do"
+      },
+      {
+        "type": "image",
+        "url": "https://kedi.re.kr/mobile2/img/renew/logo_renew.png",
+        "page": "https://kedi.re.kr/khome/mobile2/intro/kedici.do"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.kedi.re.kr/"
+      }
+    ],
+    "nhis-ci": [
+      {
+        "type": "image",
+        "url": "https://www.nhis.or.kr/_res/nhis/nhis/img/images/logo.png",
+        "page": "https://www.nhis.or.kr/"
+      },
+      {
+        "type": "image",
+        "url": "https://www.nhis.or.kr/static/html/wbdf/a/234325_body_1_3.jpg",
+        "page": "https://www.nhis.or.kr/static/html/wbdf/a/wbdfa0502.html"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.nhis.or.kr/"
+      }
+    ],
+    "naver-brand": [
+      {
+        "type": "simple-icons",
+        "slug": "naver"
+      }
+    ],
+    "kakao-ci": [
+      {
+        "type": "simple-icons",
+        "slug": "kakao"
+      }
+    ],
+    "kakaobank-brand": [
+      {
+        "type": "commons",
+        "file": "File:KakaoBank logo.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.kakaobank.com/"
+      }
+    ],
+    "kepco-ci": [
+      {
+        "type": "commons",
+        "file": "File:Kepco logo en.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://home.kepco.co.kr/"
+      }
+    ],
+    "khnp-ci": [
+      {
+        "type": "commons",
+        "file": "File:KHNP Logo.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://khnp.co.kr/"
+      }
+    ],
+    "mit-brand": [
+      {
+        "type": "commons",
+        "file": "File:MIT 2023 red logo.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.mit.edu/"
+      }
+    ],
+    "kaist-ui": [
+      {
+        "type": "commons",
+        "file": "File:KAIST logo.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.kaist.ac.kr/"
+      }
+    ],
+    "postech-ui": [
+      {
+        "type": "commons",
+        "file": "File:Postech Logotype.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.postech.ac.kr/"
+      }
+    ],
+    "yonsei-ui": [
+      {
+        "type": "image",
+        "url": "https://labor.yonsei.ac.kr/_res/designcenter/img/intro/intro_img01.png",
+        "page": "https://labor.yonsei.ac.kr/designcenter/intro/symbol.do"
+      },
+      {
+        "type": "commons",
+        "file": "File:Yonsei university logo en.gif"
+      },
+      {
+        "type": "commons",
+        "file": "File:Yonsei University Logo.png"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.yonsei.ac.kr/"
+      }
+    ],
+    "seoul-city-emblem": [
+      {
+        "type": "image",
+        "url": "https://www.seoul.go.kr/res_newseoul/images/seoul/img_seoullogo.png",
+        "page": "https://www.seoul.go.kr/seoul/emblem.do"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.seoul.go.kr/"
+      }
+    ],
+    "samsung-logo": [
+      {
+        "type": "simple-icons",
+        "slug": "samsung"
+      }
+    ],
+    "hyundai-ci": [
+      {
+        "type": "simple-icons",
+        "slug": "hyundai"
+      }
+    ],
+    "github-logo": [
+      {
+        "type": "simple-icons",
+        "slug": "github"
+      }
+    ],
+    "unesco-logo": [
+      {
+        "type": "commons",
+        "file": "File:UNESCO logo English.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.unesco.org/"
+      }
+    ],
+    "nasa-brand": [
+      {
+        "type": "simple-icons",
+        "slug": "nasa"
+      }
+    ],
+    "mozilla-trademarks": [
+      {
+        "type": "simple-icons",
+        "slug": "mozilla"
+      }
+    ],
+    "naver-api-hub-bi": [
+      {
+        "type": "simple-icons",
+        "slug": "naver"
+      }
+    ],
+    "microsoft-brand": [
+      {
+        "type": "commons",
+        "file": "File:Microsoft logo (2012).svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.microsoft.com/"
+      }
+    ],
+    "adobe-brand": [
+      {
+        "type": "commons",
+        "file": "File:Adobe Corporate logo.svg"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.adobe.com/"
+      }
+    ],
+    "google-brand": [
+      {
+        "type": "simple-icons",
+        "slug": "google"
+      }
+    ],
+    "wikimedia-foundation-mark": [
+      {
+        "type": "simple-icons",
+        "slug": "wikimediafoundation"
+      }
+    ],
+    "kakaogames-ci": [
+      {
+        "type": "commons",
+        "file": "File:Logo of Kakao Games.png"
+      },
+      {
+        "type": "site-icon",
+        "url": "https://www.kakaogamescorp.com/"
+      }
+    ]
+  }
+}
