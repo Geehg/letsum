@@ -986,45 +986,62 @@
     },
     "kr-q482789": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#003764",
-          "rgb": "0 55 100",
-          "share": 0.17
+          "label": null,
+          "cmyk": "C100 M70 Y20 K40",
+          "rgb": "0 54 104",
+          "hex": "#003668",
+          "hex_derived": "rgb"
         },
         {
-          "hex": "#E4032E",
-          "rgb": "228 3 46",
-          "share": 0.17
+          "label": null,
+          "cmyk": "C0 M100 Y80 K0",
+          "rgb": "230 0 45",
+          "hex": "#E6002D",
+          "hex_derived": "rgb"
         },
         {
-          "hex": "#575757",
-          "rgb": "87 87 87",
-          "share": 0.5
+          "label": null,
+          "cmyk": "C0 M0 Y0 K80",
+          "rgb": "89 87 87",
+          "hex": "#595757",
+          "hex_derived": "rgb"
         }
       ],
-      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/9/92/Ministry_of_Justice_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "official_source": "https://www.moj.go.kr/moj/262/subview.do"
     },
     "kr-q488542": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#F1E615",
-          "rgb": "241 230 21",
-          "share": 0.19
-        },
-        {
-          "hex": "#C51426",
+          "label": null,
           "rgb": "197 20 38",
-          "share": 0.19
+          "pantone": "1795",
+          "hex": "#C51426",
+          "hex_derived": "rgb"
         },
         {
-          "hex": "#818282",
+          "label": null,
+          "rgb": "241 230 21",
+          "pantone": "3965",
+          "hex": "#F1E615",
+          "hex_derived": "rgb"
+        },
+        {
+          "label": null,
           "rgb": "129 130 130",
-          "share": 0.08
+          "hex": "#818282",
+          "hex_derived": "rgb"
+        },
+        {
+          "label": null,
+          "rgb": "255 255 255",
+          "hex": "#FFFFFF",
+          "hex_derived": "rgb"
         }
       ],
-      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ministry_of_National_Defense_of_the_Republic_of_Korea_Logo_%28horizontal%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "official_source": "https://www.mnd.go.kr/mnd/322/subview.do"
     },
     "kr-q488954": {
       "checked_at": "2026-11-09",
@@ -4966,19 +4983,21 @@
     },
     "kr-q50431": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#0D76BD",
-          "rgb": "13 118 189",
-          "share": 0.05
+          "label": null,
+          "hex": "#036EB8"
         },
         {
-          "hex": "#2F5875",
-          "rgb": "47 88 117",
-          "share": 0.04
+          "label": null,
+          "hex": "#E52D1F"
+        },
+        {
+          "label": null,
+          "hex": "#FFFFFF"
         }
       ],
-      "extracted_from": "https://www.yuseong.go.kr/pcms/common/images/og-images.png"
+      "official_source": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do"
     },
     "kr-q50432": {
       "checked_at": "2026-11-09",
@@ -6104,14 +6123,31 @@
     },
     "kr-q7451674": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#231815",
-          "rgb": "35 24 21",
-          "share": 0.96
+          "label": null,
+          "pantone": "293 C"
+        },
+        {
+          "label": null,
+          "pantone": "3275 C"
+        },
+        {
+          "label": null,
+          "pantone": "293 C",
+          "cmyk": "C100 M60 Y0 K0",
+          "hex": "#0066FF",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": null,
+          "pantone": "3275 C",
+          "cmyk": "C90 M0 Y50 K0",
+          "hex": "#19FF80",
+          "hex_derived": "cmyk"
         }
       ],
-      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Seoul_Metropolitan_Office_of_Education_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "official_source": "https://www.sen.go.kr/www/office/symbol/symbol.jsp"
     },
     "kr-q12615090": {
       "checked_at": "2026-11-09",
@@ -6224,24 +6260,33 @@
     },
     "kr-q16164847": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#007A70",
-          "rgb": "0 122 112",
-          "share": 0.18
+          "label": null,
+          "cmyk": "C10 M100 Y0 K0",
+          "hex": "#E600FF",
+          "hex_derived": "cmyk"
         },
         {
-          "hex": "#BF8619",
-          "rgb": "191 134 25",
-          "share": 0.09
+          "label": null,
+          "cmyk": "C0 M45 Y100 K0",
+          "hex": "#FF8C00",
+          "hex_derived": "cmyk"
         },
         {
-          "hex": "#A61A6D",
-          "rgb": "166 26 109",
-          "share": 0.03
+          "label": null,
+          "cmyk": "C90 M0 Y100 K0",
+          "hex": "#19FF00",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": null,
+          "cmyk": "C100 M70 Y0 K0",
+          "hex": "#004DFF",
+          "hex_derived": "cmyk"
         }
       ],
-      "extracted_from": "https://use.go.kr/resources/familysite/www/images/logo.png"
+      "official_source": "https://use.go.kr/www/office/symbol.jsp"
     },
     "kr-q12602318": {
       "checked_at": "2026-11-09",
@@ -8755,19 +8800,20 @@
     },
     "kr-q21400278": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#0080CB",
-          "rgb": "0 128 203",
-          "share": 0.14
+          "label": null,
+          "pantone": "3005 C"
         },
         {
-          "hex": "#AAABAB",
-          "rgb": "170 171 171",
-          "share": 0.3
+          "label": null,
+          "pantone": "7544 C",
+          "rgb": "140 140 140",
+          "hex": "#8C8C8C",
+          "hex_derived": "rgb"
         }
       ],
-      "extracted_from": "https://www.sciport.or.kr/homepage/kor/_Img/Contents/mi_pic8.png"
+      "official_source": "https://www.sciport.or.kr/kor/CMS/Contents/Contents.do?mCode=MN102"
     },
     "kr-q12586769": {
       "checked_at": "2026-11-09",
@@ -8787,19 +8833,16 @@
     },
     "kr-q14850773": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#1A335B",
-          "rgb": "26 51 91",
-          "share": 0.97
-        },
-        {
-          "hex": "#00A0E9",
-          "rgb": "0 160 233",
-          "share": 0.03
+          "label": null,
+          "pantone": "299 C",
+          "cmyk": "C100 M0 Y0 K0",
+          "hex": "#00FFFF",
+          "hex_derived": "cmyk"
         }
       ],
-      "extracted_from": "https://www.innopolis.or.kr/resources/images/mps/2025/layout/header-logo.svg"
+      "official_source": "https://www.innopolis.or.kr/board;jsessionid=A93EF695D4BBD32602F558F29026B22D.tomcat1?menuId=MENU00875&siteId=null"
     },
     "kr-q14850776": {
       "checked_at": "2026-11-09",
@@ -10726,14 +10769,21 @@
     },
     "kr-q6431684": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#A7A7A7",
-          "rgb": "167 167 167",
-          "share": 1.0
+          "label": "시스템 금적색",
+          "cmyk": "C0 M100 Y100 K0",
+          "hex": "#FF0000",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": "군청색",
+          "cmyk": "C100 M80 Y0 K0",
+          "hex": "#0033FF",
+          "hex_derived": "cmyk"
         }
       ],
-      "extracted_from": "https://www.knfc.co.kr:443/resources/images/mps/layout/flogo.svg"
+      "official_source": "https://www.knfc.co.kr/board?menuId=MENU00500&siteId=null"
     },
     "kr-q16180044": {
       "checked_at": "2026-11-09",
@@ -11401,24 +11451,17 @@
     },
     "kr-q16164791": {
       "checked_at": "2026-11-09",
-      "extracted": [
+      "official": [
         {
-          "hex": "#5FA3BD",
-          "rgb": "95 163 189",
-          "share": 0.1
+          "label": null,
+          "pantone": "298 C"
         },
         {
-          "hex": "#283339",
-          "rgb": "40 51 57",
-          "share": 0.08
-        },
-        {
-          "hex": "#9ED5EA",
-          "rgb": "158 213 234",
-          "share": 0.07
+          "label": null,
+          "pantone": "2965 C"
         }
       ],
-      "extracted_from": "https://www.apcc21.org/apcc/img/acpp_logo1.png"
+      "official_source": "https://www.apcc21.org/content/ci?lang=ko"
     },
     "kr-q16171136": {
       "checked_at": "2026-11-09",
@@ -12384,7 +12427,50 @@
       "official_source": "https://www.cu.ac.kr/introduction/uisystem/uilogo"
     },
     "kr-q12591209": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "official": [
+        {
+          "label": null,
+          "pantone": "2985 CVC",
+          "cmyk": "C72 M0 Y0 K0",
+          "hex": "#47FFFF",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": null,
+          "pantone": "285 CVC",
+          "cmyk": "C91 M43 Y0 K0",
+          "hex": "#1791FF",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": null,
+          "pantone": "280 CVC",
+          "cmyk": "C100 M72 Y0 K18",
+          "hex": "#003BD1",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": "cool grey cvc",
+          "cmyk": "C0 M0 Y0 K65",
+          "hex": "#595959",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": "cool grey cvc",
+          "cmyk": "C0 M0 Y0 K11",
+          "pantone": "4302 CVC",
+          "hex": "#E3E3E3",
+          "hex_derived": "cmyk"
+        },
+        {
+          "label": null,
+          "cmyk": "C6 M0 Y0 K47",
+          "hex": "#7F8787",
+          "hex_derived": "cmyk"
+        }
+      ],
+      "official_source": "https://www.dgist.ac.kr/eng/sub01_02_04_01.do"
     },
     "kr-q482711": {
       "checked_at": "2026-11-09",

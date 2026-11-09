@@ -56,3 +56,14 @@ python3 -I tools/logo-survey/merge.py
 - 아이콘 보기 타일은 회전 없이 똑바로 표시.
 - 로고가 아닌 이미지(사진·배너·캐릭터·위젯 아이콘 등)는 `tools/logo-survey/data/thumbnail-rejects.json`의 `reject_files`(파일 단위)로 제외. 전수 육안 점검 2026-11-10.
 - 공용(Commons)에 없는 위키백과 전용(비자유) 파일은 쓰지 않는다.
+
+## 대분류·소분류, 파일 형식 (2026-11-10 추가)
+```bash
+python3 tools/logo-survey/find_formats.py   # CI 페이지(없으면 Chrome 렌더링 홈에서 CI 메뉴 재탐색)에서 AI·EPS·SVG·PDF·PNG·JPG·ZIP 표기·다운로드 링크 → page-listed 자료 항목
+python3 -I tools/logo-survey/merge.py
+python3 -I tools/logo-survey/classify.py    # 화면용 대분류·소분류(tools/logo-app/data/groups.json). 스키마 category와 별개
+```
+- 대분류: 중앙정부 · 지방정부 · 금융 · 공공기관 · 연구기관 · 대학·교육 · 의료기관 · 기업·브랜드 · 국제기구·비영리. 소분류는 classify.py의 GROUPS. 배정은 명단 그룹·기관명 규칙(공공기관은 이름 핵심어로 분야 판정), 수작업 레코드는 CURATED.
+- 화면: 대분류 바 아래 소분류 칩(`?group=…&sub=…`). groups.json이 없는 단독 빌드(테스트)는 기존 category 바.
+- 카드에는 분류·이름·확인된 파일 형식·공식 출처만 표시. 검토 상태·확인일·요약은 상세 페이지에.
+- 파일 형식은 공식 페이지 표기 기준이며 실제 파일 검증 전(`page-listed`). 다운로드 링크는 공식 사이트 원 링크(세션 ID 제거).

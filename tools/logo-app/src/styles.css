@@ -158,8 +158,8 @@
 /* Uniform logo placement: one centred box per surface; image height comes from logoHeight() in app.js. */
 .logo-box{display:flex;align-items:center;justify-content:center}
 .logo-box img{height:var(--lh,72%);width:auto;max-width:100%;max-height:100%;object-fit:contain}
-.logo-box-front{position:absolute;left:8%;right:8%;top:46px;bottom:20px}
-.logo-box-tile{position:absolute;inset:10%}
+.logo-box-front{position:absolute;left:5%;right:5%;top:40px;bottom:14px}
+.logo-box-tile{position:absolute;inset:6%}
 .logo-box-detail{position:absolute;inset:12%}
 .detail-thumb-frame{position:relative}
 .logo-box-back{height:30px;max-width:52%;justify-content:flex-start}
@@ -170,3 +170,14 @@
 .biz:not([data-thumb]) .cover-kicker{color:var(--tone)}
 .biz:not([data-thumb]) .bookmark-button{background:#15140f0f;color:var(--tone)}
 .icon-tile:not([data-thumb]) .tile-face{background:#fff;color:var(--tone)}
+
+/* Cards keep the name, category and file formats only. */
+.brand-card .card-body{padding-bottom:18px}
+.brand-card .format-row{margin-top:10px}
+/* Browse groups: 대분류 bar + 소분류 chips. */
+.group-bar{flex-wrap:wrap}
+.sub-bar{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 16px}
+.sub-chip{font-size:12px;font-weight:600;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.sub-chip span{color:var(--muted);font-weight:500;margin-left:3px}
+.sub-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sub-chip.active span{color:#ffffffb3}

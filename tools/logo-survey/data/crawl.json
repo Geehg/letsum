@@ -115,7 +115,10 @@
      "rgb": "0 0 0",
      "share": 0.58
     }
-   ]
+   ],
+   "ci_page": "https://www.bai.go.kr/bai/intro/instructionSymbol/",
+   "ci_link_text": "원훈/상징",
+   "ci_found_by": "rendered-home"
   },
   "Q624674": {
    "name": "금융위원회",
@@ -184,6 +187,21 @@
     "bytes": 3142,
     "tone": "normal",
     "file": "/logos/thumbs/survey-9d22e63c90.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135379&seq=1"
+     ]
+    ],
+    "page": "https://www.moleg.go.kr/menu.es?mid=a10701040000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q27951951": {
@@ -216,6 +234,19 @@
     "bytes": 4406,
     "tone": "normal",
     "file": "/logos/thumbs/survey-d053936c8f.svg"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://cio.go.kr/assets/CI.zip"
+     ]
+    ],
+    "page": "https://cio.go.kr/content/256",
+    "checked_at": "2026-11-10"
    }
   },
   "Q33492783": {
@@ -305,6 +336,15 @@
     "bytes": 10347,
     "tone": "normal",
     "file": "/logos/thumbs/survey-56b9e96bf1.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.mpm.go.kr/mpm/about/abotMpm/aboutMi/",
+    "checked_at": "2026-11-10"
    }
   },
   "Q484160": {
@@ -344,7 +384,20 @@
      "rgb": "92 92 91",
      "share": 0.94
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kmcc.go.kr/download.do?fileNm=kmcc_ci.zip"
+     ]
+    ],
+    "page": "https://www.kmcc.go.kr/user.do?page=A04010200&dc=K04010200",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q485566": {
    "name": "국가정보원",
@@ -510,7 +563,16 @@
      "rgb": "87 87 87",
      "share": 0.7
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.ftc.go.kr/www/contents.do?key=407",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q9405654": {
    "name": "외교부",
@@ -612,7 +674,10 @@
      "rgb": "87 87 87",
      "share": 0.62
     }
-   ]
+   ],
+   "ci_page": "https://www.mois.go.kr:443/frt/sub/a06/b08/nationalIcon/screen.do",
+   "ci_link_text": "국가상징 페이지로 이동- 국가상징",
+   "ci_found_by": "rendered-home"
   },
   "Q11233101": {
    "name": "국가데이터처",
@@ -718,7 +783,57 @@
      "rgb": "129 130 130",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_page": "https://www.mnd.go.kr/mnd/322/subview.do",
+   "ci_link_text": "상징물",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "rgb": "197 20 38",
+     "pantone": "1795",
+     "hex": "#C51426",
+     "hex_derived": "rgb"
+    },
+    {
+     "label": null,
+     "rgb": "241 230 21",
+     "pantone": "3965",
+     "hex": "#F1E615",
+     "hex_derived": "rgb"
+    },
+    {
+     "label": null,
+     "rgb": "129 130 130",
+     "hex": "#818282",
+     "hex_derived": "rgb"
+    },
+    {
+     "label": null,
+     "rgb": "255 255 255",
+     "hex": "#FFFFFF",
+     "hex_derived": "rgb"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "EPS",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.mnd.go.kr/sites/mnd/files/mnd_symbol.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mnd.go.kr/sites/mnd/files/mnd_standard_pdf.zip"
+     ]
+    ],
+    "page": "https://www.mnd.go.kr/mnd/322/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q9404048": {
    "name": "교육부",
@@ -806,7 +921,47 @@
      "rgb": "87 87 87",
      "share": 0.5
     }
-   ]
+   ],
+   "ci_page": "https://www.moj.go.kr/moj/262/subview.do",
+   "ci_link_text": "상징",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "cmyk": "C100 M70 Y20 K40",
+     "rgb": "0 54 104",
+     "hex": "#003668",
+     "hex_derived": "rgb"
+    },
+    {
+     "label": null,
+     "cmyk": "C0 M100 Y80 K0",
+     "rgb": "230 0 45",
+     "hex": "#E6002D",
+     "hex_derived": "rgb"
+    },
+    {
+     "label": null,
+     "cmyk": "C0 M0 Y0 K80",
+     "rgb": "89 87 87",
+     "hex": "#595757",
+     "hex_derived": "rgb"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.moj.go.kr/sites/moj/download/moj_logo.zip"
+     ]
+    ],
+    "page": "https://www.moj.go.kr/moj/262/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12583260": {
    "name": "개인정보보호위원회",
@@ -1075,6 +1230,17 @@
     "bytes": 4229,
     "tone": "normal",
     "file": "/logos/thumbs/survey-ea6d665494.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.mpva.go.kr/mpva/contents.do?key=233",
+    "checked_at": "2026-11-10"
    }
   },
   "Q488744": {
@@ -1125,6 +1291,23 @@
     "bytes": 7584,
     "tone": "normal",
     "file": "/logos/thumbs/survey-dcc2e9ab53.svg"
+   },
+   "formats": {
+    "list": [
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.mcst.go.kr/site/images/sub/about/mi003.jpg"
+     ],
+     [
+      "JPG",
+      "https://www.mcst.go.kr/site/images/sub/about/mi04.jpg"
+     ]
+    ],
+    "page": "https://www.mcst.go.kr/site/s_about/intro/symbol.jsp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q136541284": {
@@ -1254,6 +1437,20 @@
     "bytes": 23536,
     "tone": "normal",
     "file": "/logos/thumbs/survey-636290d586.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kasa.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001540Em2&fileSn=0"
+     ]
+    ],
+    "page": "https://www.kasa.go.kr/kor/sub06_03.do;jsessionid=qrNN32IM-Ioh9_T084B1OHXTnn7n7f28GC4TWvQI.homepage10",
+    "checked_at": "2026-11-10"
    }
   },
   "Q491047": {
@@ -1574,7 +1771,26 @@
      "rgb": "87 87 87",
      "share": 0.62
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.dapa.go.kr/dapa/files/05/ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dapa.go.kr/dapa/files/05/ci_png.zip"
+     ]
+    ],
+    "page": "https://www.dapa.go.kr/dapa/page/selectPage.do?menuSeq=3443&pageSeq=3504",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q624457": {
    "name": "병무청",
@@ -1865,7 +2081,28 @@
      "rgb": "87 87 87",
      "share": 0.62
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.mof.go.kr/data/mof_MI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mof.go.kr/data/mof_character2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mof.go.kr/data/mof_fonts.zip"
+     ]
+    ],
+    "page": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q15619524": {
    "name": "새만금개발청",
@@ -1954,6 +2191,26 @@
     "bytes": 6733,
     "tone": "normal",
     "file": "/logos/thumbs/survey-ade9a3155a.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kdca.go.kr/sites/kdca/download/KDCA_logo.ai"
+     ],
+     [
+      "ZIP",
+      "https://www.kdca.go.kr/sites/kdca/download/질병관리청+로고+jpg,+png+파일.zip"
+     ]
+    ],
+    "page": "https://www.kdca.go.kr/kdca/2799/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q41071": {
@@ -1987,7 +2244,10 @@
      "rgb": "110 108 112",
      "share": 0.71
     }
-   ]
+   ],
+   "ci_page": "https://state.gwd.go.kr",
+   "ci_link_text": "로고링크",
+   "ci_found_by": "rendered-home"
   },
   "Q20937": {
    "name": "경기도",
@@ -2021,7 +2281,42 @@
      "rgb": "0 64 151",
      "share": 0.5
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/영문슬로건_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/영문슬로건_jpg_.zip"
+     ],
+     [
+      "AI",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/BS17_전용색상.ai"
+     ],
+     [
+      "JPG",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/BS17_전용색상.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/2021_signature_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gg.go.kr/uploads/CONTENTS/site/gg/2021_signature_jpg.zip"
+     ]
+    ],
+    "page": "https://www.gg.go.kr/contents/contents.do?ciIdx=677&menuId=2455",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q8684": {
    "name": "서울특별시",
@@ -2063,6 +2358,41 @@
     "bytes": 16637,
     "tone": "normal",
     "file": "/logos/thumbs/survey-da08a51f0d.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/logo.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/ci_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/ci.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/ci_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/Emblem.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.seoul.go.kr/upload/seoul/emblem/emblem_png.zip"
+     ]
+    ],
+    "page": "https://www.seoul.go.kr/seoul/emblem.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q482921": {
@@ -2924,6 +3254,32 @@
     "bytes": 3351,
     "tone": "normal",
     "file": "/logos/thumbs/survey-47f9441bb2.png"
+   },
+   "formats": {
+    "list": [
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.gangnam.go.kr/assets/images/logo/gn_ci_2026.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gangnam.go.kr/assets/images/logo/gn_ci_png_2026.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gangnam.go.kr/assets/images/logo/gn_slogan_2026.zip?20260714"
+     ],
+     [
+      "ZIP",
+      "https://www.gangnam.go.kr/assets/images/logo/gn_slogan_png_2026.zip?20260714"
+     ]
+    ],
+    "page": "https://www.gangnam.go.kr/contents/identity/1/view.do?mid=ID06_040406",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50210": {
@@ -3213,6 +3569,19 @@
     "bytes": 5387,
     "tone": "normal",
     "file": "/logos/thumbs/survey-ea2e06b0e8.svg"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.mafra.go.kr/sites/home/download/signature.zip"
+     ]
+    ],
+    "page": "https://www.mafra.go.kr/home/5298/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q20927": {
@@ -3247,7 +3616,15 @@
      "rgb": "217 217 217",
      "share": 0.03
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [],
+    "page": "https://www.daegu.go.kr/index.do?menu_id=00000271&servletPath=%2Findex.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42067": {
    "name": "광양시",
@@ -3314,6 +3691,22 @@
     "bytes": 7534,
     "tone": "normal",
     "file": "/logos/thumbs/survey-8228c71740.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.gangdong.go.kr/web/newportal/file/download/uu/f6b83809ac0a4c4fb2436afc4656e57f"
+     ]
+    ],
+    "page": "https://www.gangdong.go.kr/web/newportal/contents/gdp_004_001_005_002",
+    "checked_at": "2026-11-10"
    }
   },
   "Q41164": {
@@ -3392,6 +3785,20 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-4dbc96da53.svg",
     "filled": true
+   },
+   "formats": {
+    "list": [
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.ulsan.go.kr/u/enc/media/data.ulsan?mediaId=RLE5SA9wSu9fEl%2BS2i5thyEKuc7XhEumhnP%2FRr%2FJpRY%3D"
+     ]
+    ],
+    "page": "https://www.ulsan.go.kr/u/rep/contents.ulsan?mId=001005005001000000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q488480": {
@@ -3471,6 +3878,19 @@
     "bytes": 59104,
     "tone": "normal",
     "file": "/logos/thumbs/survey-e50a438af4.svg"
+   },
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kcg.go.kr/upload/kcg/pm/logo.ai"
+     ]
+    ],
+    "page": "https://www.kcg.go.kr/kcg/si/sub/info.do?page=2823&mi=2823",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50352": {
@@ -3510,7 +3930,15 @@
      "rgb": "93 129 167",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50356": {
    "name": "구로구",
@@ -3692,6 +4120,22 @@
     "bytes": 1246,
     "tone": "normal",
     "file": "/logos/thumbs/survey-f9af58dea1.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.gwangjin.go.kr/portal/cmmn/file/fileDown.do?atchFileId=3fd879a5aa70bb48e900ecfd02fc3b200921e6e64db3b5f19c7681ac4812d2b4&fileSn=1"
+     ]
+    ],
+    "page": "https://www.gwangjin.go.kr/portal/main/contents.do?menuNo=200199",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50214": {
@@ -3747,6 +4191,16 @@
     "bytes": 3254,
     "tone": "light",
     "file": "/logos/thumbs/survey-d0c72e39e8.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [],
+    "page": "https://www.bsgangseo.go.kr/portal/contents.do?mid=0601020000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50215": {
@@ -3946,7 +4400,28 @@
      "rgb": "199 166 14",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_03.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_04.zip"
+     ]
+    ],
+    "page": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42080": {
    "name": "김포시",
@@ -4028,7 +4503,21 @@
      "rgb": "75 94 132",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.geumsan.go.kr/_prog/download/?file_id=j4v6d2insaby42g4e8wi7hhkid8304"
+     ]
+    ],
+    "page": "https://www.geumsan.go.kr/en/html/sub01/010301.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42078": {
    "name": "김천시",
@@ -4104,7 +4593,21 @@
      "rgb": "30 36 51",
      "share": 0.06
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.gwanak.go.kr/common/files/Download.do?cfIdx=CF00093299&cfGroup=COMMON&cfRename=c2ace335-a83c-42c7-b036-f9d242663a90.zip"
+     ]
+    ],
+    "page": "https://www.gwanak.go.kr/site/gwanak/11/11102010000002016051207.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50358": {
    "name": "금정구",
@@ -4147,7 +4650,43 @@
      "rgb": "0 0 0",
      "share": 0.48
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.geumjeong.go.kr/download/gj_mark(2023).jpg"
+     ],
+     [
+      "AI",
+      "https://www.geumjeong.go.kr/download/gj_mark.ai"
+     ],
+     [
+      "PNG",
+      "https://www.geumjeong.go.kr/download/gj_BS.png"
+     ],
+     [
+      "ZIP",
+      "https://www.geumjeong.go.kr/download/gj_30th_img.zip"
+     ],
+     [
+      "AI",
+      "https://www.geumjeong.go.kr/download/gj_30th.ai"
+     ],
+     [
+      "JPG",
+      "https://www.geumjeong.go.kr/new_img/geumjeong/sub/gj_character.jpg"
+     ]
+    ],
+    "page": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50363": {
    "name": "남구",
@@ -4446,7 +4985,21 @@
      "rgb": "237 28 36",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.gangseo.seoul.kr/comm/getImage?srvcId=MEDIA&upperNo=l6SxiEQ36g5T0HW43TzC1g%3d%3d&fileTy=MEDIA&fileNo=LSoB2EPQB8nXK8VH1oiCcw%3d%3d"
+     ]
+    ],
+    "page": "https://www.gangseo.seoul.kr/gs050701",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42061": {
    "name": "고양시",
@@ -4483,7 +5036,16 @@
    "fill_tried": [
     "commons: none",
     "site: none"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.goyang.go.kr/www/www05/www05_3/www05_3_10.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q26123": {
    "name": "남해군",
@@ -4723,7 +5285,36 @@
      "rgb": "194 213 188",
      "share": 0.03
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.naju.go.kr/contents/459/20140917_symbol.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.naju.go.kr/contents/459/character01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.naju.go.kr/contents/459/character02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.naju.go.kr/contents/459/character03.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.naju.go.kr/contents/459/najuo.zip"
+     ]
+    ],
+    "page": "https://www.naju.go.kr/www/introduction/symbol/mark",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50382": {
    "name": "동대문구",
@@ -4757,7 +5348,21 @@
      "rgb": "58 110 142",
      "share": 0.11
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.ddm.go.kr/downloadContentsFile.do?key=269&fileNo=35151"
+     ]
+    ],
+    "page": "https://www.ddm.go.kr/www/contents.do?key=269",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50370": {
    "name": "달서구",
@@ -4839,7 +5444,49 @@
      "rgb": "144 146 121",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/ci_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/dreampia_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/dreampia_img.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan-a01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan-a02.zip"
+     ]
+    ],
+    "page": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42060": {
    "name": "계룡시",
@@ -4861,6 +5508,21 @@
     "bytes": 4307,
     "tone": "normal",
     "file": "/logos/thumbs/survey-fcee629712.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://gyeryong.go.kr/site/kr/img/sub04/00brx.png"
+     ]
+    ],
+    "page": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50375": {
@@ -4939,6 +5601,21 @@
     "bytes": 4943,
     "tone": "normal",
     "file": "/logos/thumbs/survey-4fe1b1f888.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.daedeok.go.kr/document/dpt/dpt05/Signature_AI.ai"
+     ]
+    ],
+    "page": "https://www.daedeok.go.kr/dpt/goContents.do?link=/dpt/dpt05/DPT050201&menuId=DPT050201",
+    "checked_at": "2026-11-10"
    }
   },
   "Q42077": {
@@ -4971,6 +5648,41 @@
     "bytes": 3372,
     "tone": "normal",
     "file": "/logos/thumbs/survey-60a5622feb.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/ci_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/font.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/signature.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/emblem_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.gimje.go.kr/images/01_potal/file/sub01/emblem.zip"
+     ]
+    ],
+    "page": "https://www.gimje.go.kr/index.gimje?menuCd=DOM_000000101004002000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50367": {
@@ -5010,7 +5722,22 @@
      "rgb": "25 137 203",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.namdong.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=508&fileno=2"
+     ]
+    ],
+    "page": "https://www.namdong.go.kr/main/introduction/present/logo.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50385": {
    "name": "동작구",
@@ -5170,7 +5897,21 @@
      "rgb": "0 127 200",
      "share": 0.12
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.nonsan.go.kr/_prog/download/?file_id=05xgk37t3w0yivbns8ndo7b04ewwhy"
+     ]
+    ],
+    "page": "https://www.nonsan.go.kr/kor/html/sub04/04020701.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50241": {
    "name": "무안군",
@@ -5332,7 +6073,21 @@
      "rgb": "68 68 68",
      "share": 0.18
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.dobong.go.kr/FILE/link/www/depth06/도봉구_마크.zip"
+     ]
+    ],
+    "page": "https://www.dobong.go.kr/Contents.asp?code=10009553",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50378": {
    "name": "동구",
@@ -5371,7 +6126,16 @@
      "rgb": "189 133 165",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.bsdonggu.go.kr/index.donggu?menuCd=DOM_000000105001005000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50376": {
    "name": "동구",
@@ -5393,6 +6157,15 @@
     "bytes": 3184,
     "tone": "light",
     "file": "/logos/thumbs/survey-2244a8fd09.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://dong.daegu.kr/portal/contents.do?mid=0601010100",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50239": {
@@ -5432,7 +6205,50 @@
      "rgb": "35 31 32",
      "share": 0.2
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/symbol.zip"
+     ],
+     [
+      "PNG",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/symbol2024.png"
+     ],
+     [
+      "ZIP",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/images/country/logo.zip"
+     ],
+     [
+      "PNG",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/images/country/logo2024.png"
+     ],
+     [
+      "ZIP",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/Bird.zip"
+     ],
+     [
+      "PNG",
+      "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/Bird.png"
+     ]
+    ],
+    "page": "https://www.dalseong.daegu.kr/index.do?menu_id=00000258",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11233063": {
    "name": "조달청",
@@ -5558,6 +6374,15 @@
     "bytes": 33035,
     "tone": "normal",
     "file": "/logos/thumbs/survey-6679b7b13e.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.donggu.go.kr/dg/kor/contents/549",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50246": {
@@ -5630,7 +6455,42 @@
      "rgb": "221 221 221",
      "share": 0.44
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/markai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/markjpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/signature.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/signature_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/mascotai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.michuhol.go.kr/downloads/namgu/mascot.zip"
+     ]
+    ],
+    "page": "https://www.michuhol.go.kr/main/content.do?sq=9",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50244": {
    "name": "보은군",
@@ -5859,7 +6719,49 @@
      "rgb": "0 156 219",
      "share": 0.06
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol_down1_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol_down1_ai.zip"
+     ],
+     [
+      "PDF",
+      "https://www.brcn.go.kr/download/kor/sub06/boryeong_manual.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol2020_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol2020_ai.zip"
+     ],
+     [
+      "PDF",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol2020_manual.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol_down2_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.brcn.go.kr/download/kor/sub06/symbol_down2_ai.zip"
+     ]
+    ],
+    "page": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50379": {
    "name": "동구",
@@ -5895,6 +6797,15 @@
     "bytes": 2974,
     "tone": "normal",
     "file": "/logos/thumbs/survey-5c9b46a694.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.donggu.ulsan.kr:443/donggu/contents/contents.do?mId=5020103",
+    "checked_at": "2026-11-10"
    }
   },
   "Q42096": {
@@ -5934,7 +6845,22 @@
      "rgb": "103 23 26",
      "share": 0.24
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "EPS",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.miryang.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000004053&fileSn=3"
+     ]
+    ],
+    "page": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42100": {
    "name": "사천시",
@@ -6006,7 +6932,29 @@
      "rgb": "211 110 21",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "http://www.ddc.go.kr/site/ddc/download/AI_010101.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.ddc.go.kr/site/ddc/download/AI_010201.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.ddc.go.kr/site/ddc/download/AI_010301.zip"
+     ]
+    ],
+    "page": "http://www.ddc.go.kr/ddc/contents.do?key=74",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42102": {
    "name": "삼척시",
@@ -6078,7 +7026,29 @@
      "rgb": "56 57 80",
      "share": 0.03
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.boseong.go.kr/download/companion_animal_guide.pdf"
+     ],
+     [
+      "PDF",
+      "https://www.boseong.go.kr/download/companion_animal_guide.pdf"
+     ],
+     [
+      "JPG",
+      "https://www.boseong.go.kr/www/introduce/intro/represent/screen_print.jpg?page=1"
+     ]
+    ],
+    "page": "https://www.boseong.go.kr/www/introduce/intro/represent",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50388": {
    "name": "마포구",
@@ -6135,6 +7105,48 @@
     "bytes": 4507,
     "tone": "light",
     "file": "/logos/thumbs/survey-6f5103fe18.png"
+   },
+   "ci_page": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+   "ci_link_text": "구 상징물",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down1_1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down1_2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_3.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down3_1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sasang.go.kr/down/sasang/s4_1_7_down3_2.zip"
+     ]
+    ],
+    "page": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50364": {
@@ -6174,7 +7186,24 @@
      "rgb": "194 210 207",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ulsannamgu.go.kr/aboutNamgu/file/ci.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ulsannamgu.go.kr/aboutNamgu/file/mark02_jpg.zip"
+     ]
+    ],
+    "page": "https://www.ulsannamgu.go.kr/aboutNamgu/namguSymbols.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50393": {
    "name": "북구",
@@ -6213,7 +7242,20 @@
      "rgb": "49 55 59",
      "share": 0.22
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.buk.daegu.kr/cmsh/buk.daegu.kr/file/bukgu_symbol.zip"
+     ]
+    ],
+    "page": "https://www.buk.daegu.kr/index.do;JSESSIONID=0C429D7303FDB2A9F38AE1FD4464C147.tomcat2?menu_id=00004121",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q140403575": {
    "name": "서해구",
@@ -6292,7 +7334,21 @@
      "rgb": "185 185 185",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.bsbukgu.go.kr/board/download.bsbukgu?boardId=BBS_0000001&paging=ok&startPage=1&dataSid=443&command=update&fileSid=680"
+     ]
+    ],
+    "page": "https://www.bsbukgu.go.kr/index.bsbukgu?menuCd=DOM_000000106002004001",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42105": {
    "name": "서산시",
@@ -6374,7 +7430,16 @@
      "rgb": "243 156 0",
      "share": 0.25
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42163": {
    "name": "상주시",
@@ -6436,7 +7501,23 @@
      "rgb": "14 65 148",
      "share": 0.45
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.seogu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011824Cx7&fileSn=0"
+     ]
+    ],
+    "page": "https://www.seogu.go.kr/kor/sub05_01_04.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50411": {
    "name": "성동구",
@@ -6605,7 +7686,21 @@
    "fill_tried": [
     "commons: none",
     "site: none"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.bsseogu.go.kr/customuser/download/filedown.bsseogu?filename=/eng/01/seogu_logo.png"
+     ]
+    ],
+    "page": "https://www.bsseogu.go.kr/eng/index.bsseogu?menuCd=DOM_000001101002000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50248": {
    "name": "산청군",
@@ -6705,6 +7800,51 @@
     "bytes": 11277,
     "tone": "normal",
     "file": "/logos/thumbs/survey-4a911abe60.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.seongnam.go.kr/humanframe/file/Ci_AI.zip"
+     ],
+     [
+      "PDF",
+      "https://www.seongnam.go.kr/humanframe/file/Ci_pdf.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.seongnam.go.kr/humanframe/file/Ci_JPG.zip"
+     ],
+     [
+      "PNG",
+      "https://www.seongnam.go.kr/humanframe/file/ci-img-01.png"
+     ],
+     [
+      "PNG",
+      "https://www.seongnam.go.kr/humanframe/file/ci-img-02.png"
+     ],
+     [
+      "PNG",
+      "https://www.seongnam.go.kr/humanframe/file/ci-img-03.png"
+     ],
+     [
+      "PNG",
+      "https://www.seongnam.go.kr/humanframe/file/ci-img-04.png"
+     ],
+     [
+      "PNG",
+      "https://www.seongnam.go.kr/humanframe/file/ci-img-05.png"
+     ]
+    ],
+    "page": "https://www.seongnam.go.kr/cn04020201",
+    "checked_at": "2026-11-10"
    }
   },
   "Q20395": {
@@ -6734,7 +7874,15 @@
      "rgb": "38 57 151",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [],
+    "page": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50416": {
    "name": "수성구",
@@ -6817,7 +7965,20 @@
      "rgb": "166 61 66",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.seogu.gwangju.kr/boardDownload.es?bid=ATT&list_no=35486&seq=1"
+     ]
+    ],
+    "page": "https://www.seogu.gwangju.kr/menu.es?mid=a10101020100",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50415": {
    "name": "송파구",
@@ -7058,7 +8219,22 @@
      "rgb": "227 6 19",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.seocheon.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_00000004430Zt0t&fileSn=0"
+     ]
+    ],
+    "page": "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=4CF5D64950353BFD8716A6A88CBF07D1",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50252": {
    "name": "신안군",
@@ -7178,7 +8354,31 @@
      "rgb": "16 120 115",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.sdm.go.kr/fileUpload/work/wesdm/general/ci_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_ai.zip"
+     ]
+    ],
+    "page": "https://www.sdm.go.kr/wesdm/general/symbol.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42116": {
    "name": "안동시",
@@ -7252,7 +8452,10 @@
      "rgb": "135 194 227",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_page": "https://www.suyeong.go.kr/index.suyeong?menuCd=DOM_000000104002005001",
+   "ci_link_text": "수영 CI(이미지)",
+   "ci_found_by": "rendered-home"
   },
   "Q42124": {
    "name": "양주시",
@@ -7411,7 +8614,30 @@
      "rgb": "190 190 190",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "http://www.saha.go.kr/portal/Downfiles/symbol_jpg_2022.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.saha.go.kr/portal/Downfiles/symbol_ai_2022.zip"
+     ],
+     [
+      "AI",
+      "http://www.saha.go.kr/portal/Downfiles/ms9_ai_goals.ai"
+     ]
+    ],
+    "page": "http://www.saha.go.kr/portal/contents.do?mId=0602050000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50255": {
    "name": "양평군",
@@ -7571,6 +8797,21 @@
     "bytes": 5355,
     "tone": "normal",
     "file": "/logos/thumbs/survey-30250d8682.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.ansan.go.kr/common/file/directFileDown.do?path=Globals.cntsDownload&file_nm=cts2263_file1.ai"
+     ]
+    ],
+    "page": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001547",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50259": {
@@ -7711,7 +8952,20 @@
      "rgb": "136 115 116",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.dongnae.go.kr/board/download.dongnae?boardId=BBS_0000241&menuCd=null&startPage=1&dataSid=848015&command=update&fileSid=316300"
+     ]
+    ],
+    "page": "https://www.dongnae.go.kr/index.dongnae?menuCd=DOM_000000107001007000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50190": {
    "name": "영등포구",
@@ -7936,6 +9190,21 @@
     "bytes": 104505,
     "tone": "normal",
     "file": "/logos/thumbs/survey-4aac3cb601.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.yeonsu.go.kr:443/shareEtc/download.asp?filename=symbol_2023.ai&filepath=file_main"
+     ]
+    ],
+    "page": "https://www.yeonsu.go.kr:443/main/yeonsu/intro/logo.asp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50253": {
@@ -8085,6 +9354,16 @@
     "bytes": 2397,
     "tone": "light",
     "file": "/logos/thumbs/survey-26c6836d10.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG"
+    ],
+    "files": [],
+    "page": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50306": {
@@ -8360,6 +9639,19 @@
     "bytes": 4261,
     "tone": "normal",
     "file": "/logos/thumbs/survey-b1e95e43c3.png"
+   },
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.suncheon.go.kr/cms/getFile.do?file=2024022910411137251.zip&orgname=순천시 CI 기본형_ai.zip&mgmtId=MGMT_0000003039&siteId=SITE_00021&filePath=kr/common/file/&count=Y"
+     ]
+    ],
+    "page": "https://www.suncheon.go.kr/kr/info/0003/0001/0004/",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50429": {
@@ -8399,7 +9691,15 @@
      "rgb": "157 181 196",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "JPG"
+    ],
+    "files": [],
+    "page": "http://www.yongsan.go.kr/portal/main/contents.do?menuNo=200223",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42128": {
    "name": "영천시",
@@ -8438,7 +9738,21 @@
      "rgb": "12 77 162",
      "share": 0.24
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.yc.go.kr/portal/img/sub04/ci.zip"
+     ]
+    ],
+    "page": "https://www.yc.go.kr/portal/contents.do?mId=0404000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42123": {
    "name": "양산시",
@@ -8477,7 +9791,17 @@
      "rgb": "41 82 121",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [],
+    "page": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50314": {
    "name": "울진군",
@@ -8553,7 +9877,38 @@
      "rgb": "47 88 117",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_page": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+   "ci_link_text": "유성의 상징",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "hex": "#036EB8"
+    },
+    {
+     "label": null,
+     "hex": "#E52D1F"
+    },
+    {
+     "label": null,
+     "hex": "#FFFFFF"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011042Wi4&fileSn=0"
+     ]
+    ],
+    "page": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50432": {
    "name": "은평구",
@@ -8674,7 +10029,31 @@
      "rgb": "35 31 32",
      "share": 0.28
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://yeosu.go.kr/www/yeosu/symbol/mark/screen_print.jpg?page=1"
+     ],
+     [
+      "ZIP",
+      "https://yeosu.go.kr/contents/3221/yeosu_ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://yeosu.go.kr/contents/3221/yeosu_ci_jpg.zip"
+     ]
+    ],
+    "page": "https://yeosu.go.kr/www/yeosu/symbol/mark",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50316": {
    "name": "의령군",
@@ -8840,7 +10219,34 @@
      "rgb": "247 214 83",
      "share": 0.16
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down3.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down4.zip"
+     ]
+    ],
+    "page": "https://www.yeongdo.go.kr/00492/00550/00559.web",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42135": {
    "name": "의정부시",
@@ -9117,7 +10523,36 @@
      "rgb": "119 66 92",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/symbol_j.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/symbol_e_cs2ver.zip"
+     ],
+     [
+      "PDF",
+      "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/design_guide.pdf"
+     ],
+     [
+      "PDF",
+      "https://www.ulju.ulsan.kr/ulju/media/uj_lifeguide/down/SocialWelfareFacilities_260910.pdf"
+     ]
+    ],
+    "page": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42136": {
    "name": "이천시",
@@ -9156,7 +10591,15 @@
      "rgb": "238 232 0",
      "share": 0.03
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.icheon.go.kr/portal/contents.do?mid=0502040200",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50323": {
    "name": "정선군",
@@ -9279,7 +10722,51 @@
      "rgb": "63 108 115",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol/screen_print.jpg?page=1"
+     ],
+     [
+      "ZIP",
+      "https://www.jangheung.go.kr/contents/14296/jh_AI.zip"
+     ],
+     [
+      "JPG",
+      "https://www.jangheung.go.kr/contents/14296/jh_JPG.jpg?build_20261109001"
+     ],
+     [
+      "PNG",
+      "https://www.jangheung.go.kr/contents/14296/jh_png.png?build_20261109001"
+     ],
+     [
+      "ZIP",
+      "https://www.jangheung.go.kr/contents/14296/jh_logo_AI_2605.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.jangheung.go.kr/contents/14296/jh_logo_JPG_2025.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.jangheung.go.kr/contents/14296/jh_logo_png_2025.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.jangheung.go.kr/contents/14296/jh_C_AI_2025_2.zip"
+     ]
+    ],
+    "page": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50321": {
    "name": "장수군",
@@ -9318,7 +10805,20 @@
      "rgb": "208 16 39",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.jangsu.go.kr/synap/skin/doc.html?fn=178122705001750.pdf&rs=/upload_data/Synap/BBS_0000002/&cpath="
+     ]
+    ],
+    "page": "https://www.jangsu.go.kr/index.jangsu?menuCd=DOM_000000103002006000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50438": {
    "name": "중구",
@@ -9475,7 +10975,22 @@
      "rgb": "110 60 126",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.yongin.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=3641&resrceVer=1&fileSn=1"
+     ]
+    ],
+    "page": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q485570": {
    "name": "울릉군",
@@ -9832,7 +11347,20 @@
      "rgb": "96 116 133",
      "share": 0.8
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.jp.go.kr/kor/gonet/FileDownload.do?fileName=jp_logo.zip&code=download/kor/"
+     ]
+    ],
+    "page": "https://www.jp.go.kr/kor/sub04_02_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50329": {
    "name": "철원군",
@@ -10074,7 +11602,26 @@
      "rgb": "37 183 170",
      "share": 0.46
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000040400Bn3&fileSn=0"
+     ],
+     [
+      "JPG",
+      "https://www.djjunggu.go.kr/thumbnail/fileInfo/FI_202011080257177990_02.jpg"
+     ]
+    ],
+    "page": "https://www.djjunggu.go.kr/kr/sub05_02_07.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42147": {
    "name": "청주시",
@@ -10314,7 +11861,30 @@
      "rgb": "237 28 36",
      "share": 0.12
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.junggu.ulsan.kr/images/domain/junggu/file/symbol.jpg"
+     ],
+     [
+      "JPG",
+      "https://www.junggu.ulsan.kr/images/domain/junggu/file/brand.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.junggu.ulsan.kr/images/domain/junggu/file/brand_ai.zip"
+     ]
+    ],
+    "page": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42146": {
    "name": "천안시",
@@ -10474,7 +12044,16 @@
      "rgb": "178 178 178",
      "share": 0.32
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.wonju.go.kr/www/contents.do?key=235&",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42159": {
    "name": "하남시",
@@ -10587,7 +12166,20 @@
      "rgb": "209 117 134",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.jeonju.go.kr/images/www/dust/guidebook.pdf?subPath="
+     ]
+    ],
+    "page": "https://www.jeonju.go.kr/index.9is?contentUid=9be517a7914528ce01920cebdfe53515",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50338": {
    "name": "함안군",
@@ -10741,7 +12333,20 @@
      "rgb": "96 187 70",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.jeongeup.go.kr/images/01_potal/down/symbol.zip"
+     ]
+    ],
+    "page": "https://www.jeongeup.go.kr/index.jeongeup?menuCd=DOM_000000105003001001",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42153": {
    "name": "파주시",
@@ -10763,6 +12368,41 @@
     "bytes": 2078,
     "tone": "normal",
     "file": "/logos/thumbs/survey-c1aaa647c1.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/paju_symbol_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/paju_logomark_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/logomark_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/logomark_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/logotype_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.paju.go.kr/resources/download/logotype_jpg.zip"
+     ]
+    ],
+    "page": "https://www.paju.go.kr/www/intropaju/intropaju_02/intropaju_02_01.jsp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q50343": {
@@ -11049,7 +12689,15 @@
      "rgb": "0 139 68",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [],
+    "page": "https://www.hongcheon.go.kr/eng/contents.do?key=1338",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q7451674": {
    "name": "서울특별시교육청",
@@ -11077,7 +12725,77 @@
      "rgb": "35 24 21",
      "share": 0.96
     }
-   ]
+   ],
+   "ci_page": "https://www.sen.go.kr/www/office/symbol/symbol.jsp",
+   "ci_link_text": "휘장/서체",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "pantone": "293 C"
+    },
+    {
+     "label": null,
+     "pantone": "3275 C"
+    },
+    {
+     "label": null,
+     "pantone": "293 C",
+     "cmyk": "C100 M60 Y0 K0",
+     "hex": "#0066FF",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "pantone": "3275 C",
+     "cmyk": "C90 M0 Y50 K0",
+     "hex": "#19FF80",
+     "hex_derived": "cmyk"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.sen.go.kr/resources/www/data/senLogoAi.zip"
+     ],
+     [
+      "AI",
+      "https://www.sen.go.kr/resources/www/data/symbol_01_01_1.ai"
+     ],
+     [
+      "JPG",
+      "https://www.sen.go.kr/resources/www/data/symbol_01_01_2.jpg"
+     ],
+     [
+      "AI",
+      "https://www.sen.go.kr/resources/www/data/symbol_01_02_1.ai"
+     ],
+     [
+      "JPG",
+      "https://www.sen.go.kr/resources/www/data/symbol_01_02_2.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.sen.go.kr/resources/www/data/symbol_02_1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sen.go.kr/resources/www/data/symbol_02_2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sen.go.kr/resources/www/data/symbol_03_1.zip"
+     ]
+    ],
+    "page": "https://www.sen.go.kr/www/office/symbol/symbol.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50347": {
    "name": "횡성군",
@@ -11231,7 +12949,21 @@
      "rgb": "158 137 115",
      "share": 0.13
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.pen.go.kr/main/cf/fileDownload.do?fileKey=42adfc44ebbeb3a8d9000150bbd7b20f"
+     ]
+    ],
+    "page": "https://www.pen.go.kr/main/cm/cntnts/cntntsView.do?mi=30727&cntntsId=363",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16164847": {
    "name": "울산광역시교육청",
@@ -11274,7 +13006,45 @@
      "rgb": "166 26 109",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_page": "https://use.go.kr/www/office/symbol.jsp",
+   "ci_link_text": "심벌마크",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "cmyk": "C10 M100 Y0 K0",
+     "hex": "#E600FF",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "cmyk": "C0 M45 Y100 K0",
+     "hex": "#FF8C00",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "cmyk": "C90 M0 Y100 K0",
+     "hex": "#19FF00",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "cmyk": "C100 M70 Y0 K0",
+     "hex": "#004DFF",
+     "hex_derived": "cmyk"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://use.go.kr/www/office/symbol.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42157": {
    "name": "포항시",
@@ -11355,7 +13125,29 @@
      "rgb": "91 93 87",
      "share": 0.39
     }
-   ]
+   ],
+   "ci_page": "http://www.dje.go.kr/sub/info.do?page=0511&m=051101&s=dje",
+   "ci_link_text": "상징마크상징마크",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "http://www.dje.go.kr/upload/dje/file/ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.dje.go.kr/upload/dje/file/ci_png.zip"
+     ]
+    ],
+    "page": "http://www.dje.go.kr/sub/info.do?page=0511&m=051101&s=dje",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16219723": {
    "name": "강원특별자치도교육청",
@@ -11423,7 +13215,24 @@
      "rgb": "188 208 221",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.jge.go.kr/upload/ai/전남광주통합특별시교육청임시CI.ai"
+     ],
+     [
+      "AI",
+      "https://www.jge.go.kr/upload/ai/전남광주통합특별시교육청임시CI영문.ai"
+     ]
+    ],
+    "page": "https://www.jge.go.kr/jgemain/cm/cntnts/cntntsView.do?mi=2199&cntntsId=698",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50346": {
    "name": "화천군",
@@ -11459,6 +13268,19 @@
     "bytes": 1091,
     "tone": "normal",
     "file": "/logos/thumbs/survey-2cd7bb406f.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ihc.go.kr/DATA/download/www/cts123_logo.zip"
+     ]
+    ],
+    "page": "https://www.ihc.go.kr/www/contents.do?key=123",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12602318": {
@@ -11579,7 +13401,21 @@
      "rgb": "191 194 194",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "http://www.cne.go.kr:80/boardCnts/fileDown.do?m=0203&s=apple&fileSeq=df36a9a9ceb6d6d5e0c81828e67d94af"
+     ]
+    ],
+    "page": "http://www.cne.go.kr:80/sub/info.do?m=060701&s=cne&page=06070101",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50449": {
    "name": "해운대구",
@@ -11659,7 +13495,25 @@
      "rgb": "42 182 66",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_page": "https://www.gne.go.kr/www/office/slogan.jsp",
+   "ci_link_text": "교육청 상징/브랜드슬로건",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.gne.go.kr/component/resrce/file/ND_resrceFileDownload.do?dataSn=1021&chgCycl=1&fileSn=1"
+     ]
+    ],
+    "page": "https://www.gne.go.kr/www/office/slogan.jsp",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42126": {
    "name": "영주시",
@@ -11781,7 +13635,20 @@
      "rgb": "0 0 0",
      "share": 0.71
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.hwasun.go.kr/html/S01/img/logo.zip"
+     ]
+    ],
+    "page": "https://www.hwasun.go.kr/contents.do?S=S01&M=070402000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q489004": {
    "name": "한국석유공사",
@@ -11803,6 +13670,30 @@
     "bytes": 15841,
     "tone": "normal",
     "file": "/logos/thumbs/survey-a44cba7b37.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.knoc.co.kr/cip_down/identifier/KNOC_CI_STANDARDS_MANUAL.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.knoc.co.kr/cip_down/signature/BS2_SIGNATURE_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.knoc.co.kr/cip_down/signature/BS2_SIGNATURE_jpg.zip"
+     ]
+    ],
+    "page": "https://www.knoc.co.kr/sub01/sub01_2_5_1.jsp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12613478": {
@@ -11851,6 +13742,20 @@
     "bytes": 7168,
     "tone": "normal",
     "file": "/logos/thumbs/survey-bba7e16079.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.ice.go.kr/common/nttFileDownload.do?fileKey=677db2d6ff42f8935ace77e4518242e2"
+     ]
+    ],
+    "page": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12622947": {
@@ -11957,6 +13862,19 @@
     "bytes": 6644,
     "tone": "normal",
     "file": "/logos/thumbs/survey-77b5d57f3e.png"
+   },
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.jje.go.kr/board/download.jje?boardId=BBS_0000578&menuCd=DOM_000000108008000000&paging=ok&startPage=1&dataSid=1222192&command=update&fileSid=1262711"
+     ]
+    ],
+    "page": "https://www.jje.go.kr/index.jje?menuCd=DOM_000000106008000000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12615104": {
@@ -11996,7 +13914,21 @@
      "rgb": "21 164 155",
      "share": 0.11
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.jbe.go.kr/board/download.jbe?boardId=BBS_CONTENT_FILE&dataSid=1157768&fileSid=722348"
+     ]
+    ],
+    "page": "https://www.jbe.go.kr/index.jbe?menuCd=DOM_000000107005001000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q50317": {
    "name": "의성군",
@@ -12069,7 +14001,15 @@
      "rgb": "230 0 26",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623697": {
    "name": "한국중부발전",
@@ -12131,7 +14071,24 @@
      "rgb": "7 49 144",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "http://www.jincheon.go.kr/upload/icd/00000003/2026/1789975504232_bTbob2ekfepB4OCuBinu.png"
+     ],
+     [
+      "PNG",
+      "http://www.jincheon.go.kr/upload/icd/00000003/2026/1789975504232_bTbob2ekfepB4OCuBinu.png"
+     ]
+    ],
+    "page": "https://www.jincheon.go.kr/home/main.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16174863": {
    "name": "충청북도교육청",
@@ -12237,7 +14194,25 @@
      "rgb": "74 74 74",
      "share": 0.25
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.iwest.co.kr/sites/iwest/files/2026_file/2026_국민주권정부_국정과제_추진실적.zip"
+     ],
+     [
+      "JPG",
+      "https://www.iwest.co.kr/sites/iwest/images/elec_bill_20260427.jpg"
+     ]
+    ],
+    "page": "https://www.iwest.co.kr/iwest/index.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q489325": {
    "name": "한국도로공사",
@@ -12322,6 +14297,20 @@
     "bytes": 5429,
     "tone": "normal",
     "file": "/logos/thumbs/survey-863739b9f1.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.khnp.co.kr/downloadContentsFile.do?key=86&fileNo=2956"
+     ]
+    ],
+    "page": "https://www.khnp.co.kr/main/contents.do?key=2238",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12622879": {
@@ -12456,7 +14445,16 @@
    "ci_page": "https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=440",
    "kept": [
     "ci_page"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=440",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16192199": {
    "name": "한국가스기술공사",
@@ -12485,7 +14483,23 @@
      "rgb": "9 79 164",
      "share": 0.28
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://kogas-tech.or.kr/contentsFileDown.do?file_idx=1322"
+     ]
+    ],
+    "page": "https://kogas-tech.or.kr/kor/page.do?menuIdx=69",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q60376": {
    "name": "한국조폐공사",
@@ -12524,7 +14538,21 @@
      "rgb": "0 0 0",
      "share": 0.5
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "EPS",
+     "JPG"
+    ],
+    "files": [
+     [
+      "EPS",
+      "https://english.komsco.com/attach/f51d587df22ea812977ddd26bafbb2dc/9a9db098b587ee18b321c826f3707a49"
+     ]
+    ],
+    "page": "https://english.komsco.com/eng/contents/99",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12586274": {
    "name": "그랜드코리아레저",
@@ -12595,6 +14623,16 @@
     "bytes": 5932,
     "tone": "light",
     "file": "/logos/thumbs/survey-519f737031.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.jdcenter.com/about/symbolsystem/symbol.cs",
+    "checked_at": "2026-11-10"
    }
   },
   "Q6322893": {
@@ -12631,6 +14669,39 @@
     "bytes": 1173,
     "tone": "light",
     "file": "/logos/thumbs/survey-fa4963601c.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.kwater.or.kr/download/water/k-water_ci_guide.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.kwater.or.kr/download/water/k-water_ci_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kwater.or.kr/download/water/k-water_ci_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kwater.or.kr/download/water/ci_ai02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kwater.or.kr/download/water/ci_jpg02.zip"
+     ]
+    ],
+    "page": "https://www.kwater.or.kr/water/sub01/sub06/explPage.do?s_mid=129",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12583724": {
@@ -12670,7 +14741,20 @@
      "rgb": "198 209 193",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.gbe.kr/main/cf/fileDownload.do?fileKey=e222516e166c749cc7c6222205dcf514&mi=17868"
+     ]
+    ],
+    "page": "https://www.gbe.kr/main/cm/cntnts/cntntsView.do?mi=4160&cntntsId=9364",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q42148": {
    "name": "춘천시",
@@ -12748,7 +14832,21 @@
      "rgb": "168 39 78",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "http://www.kepco-enc.com/boardDownload.es?bid=ATT&list_no=141&seq=1"
+     ]
+    ],
+    "page": "http://www.kepco-enc.com/menu.es?mid=a10104010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12604471": {
    "name": "신용보증기금",
@@ -12864,7 +14962,50 @@
      "rgb": "255 200 202",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/symbol_01_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/symbol_01_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/symbol_02_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/symbol_02_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/new_signature_01_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/new_signature_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/new_signature_02_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ewp.co.kr/kor/download/ci/new_signature_02.zip"
+     ]
+    ],
+    "page": "https://www.ewp.co.kr/kor/subpage/content.html?pc=Z358YQX4PD9DJOHSFR4GQZ4IQW11K9N",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12622785": {
    "name": "한국부동산원",
@@ -13164,7 +15305,10 @@
      "rgb": "109 177 42",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_page": "https://www.khug.or.kr/index_hug_in.jsp",
+   "ci_link_text": "메인으로 이동 HUG 주택도시보증공사 로고",
+   "ci_found_by": "rendered-home"
   },
   "Q12623799": {
    "name": "한국토지주택공사",
@@ -13186,6 +15330,20 @@
     "bytes": 4886,
     "tone": "light",
     "file": "/logos/thumbs/survey-567fa9a037.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.lh.or.kr/boardDownload.es?bid=ATT&list_no=571701&seq=1"
+     ]
+    ],
+    "page": "https://www.lh.or.kr/menu.es?mid=a10702040100",
+    "checked_at": "2026-11-10"
    }
   },
   "Q31180818": {
@@ -13323,7 +15481,21 @@
      "rgb": "0 102 179",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://info.korail.com/crosseditor_u/binary/images/000022/ISMS-P_cert.pdf"
+     ]
+    ],
+    "page": "https://info.korail.com/info/contents.do?key=719",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11250418": {
    "name": "국민체육진흥공단",
@@ -13368,6 +15540,22 @@
     "bytes": 25008,
     "tone": "normal",
     "file": "/logos/thumbs/survey-4861e7f3fc.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PDF",
+      "http://www.kspo.or.kr/kspo/cmmn/file/fileDown.do?atchFileId=090b2d421a103feaeec18c05970d018ef57e1cf407ab5e4494ebe1e3877577ff&fileSn=1"
+     ]
+    ],
+    "page": "http://www.kspo.or.kr/kspo/main/contents.do?menuNo=200165",
+    "checked_at": "2026-11-10"
    }
   },
   "Q14850775": {
@@ -13733,6 +15921,20 @@
     "bytes": 3073,
     "tone": "normal",
     "file": "/logos/thumbs/survey-437e5ab03d.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.koem.or.kr/common/files/Download.do?cfIdx=CF00000045&cfGroup=COMMON"
+     ]
+    ],
+    "page": "https://www.koem.or.kr/site/koem/05/10501050000002019051004.jsp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623625": {
@@ -13850,6 +16052,20 @@
     "bytes": 19749,
     "tone": "normal",
     "file": "/logos/thumbs/survey-7cd52bd814.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://knto.or.kr/comm/getFile?srvcId=MEDIA&upperNo=YxUpliyEYhtCYer%5eL%5elDfA%3d%3d&fileTy=MEDIA&fileNo=A7cA47NMuphXyZ24sPQ%5eLw%3d%3d"
+     ]
+    ],
+    "page": "https://knto.or.kr/ktoCI",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16100482": {
@@ -14023,6 +16239,15 @@
     "bytes": 6991,
     "tone": "normal",
     "file": "/logos/thumbs/survey-7b4789719c.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kgs.or.kr/kgs/adcc/view.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623276": {
@@ -14049,7 +16274,10 @@
    "fill_tried": [
     "commons: none",
     "sites: none (5)"
-   ]
+   ],
+   "ci_page": "https://www.hira.or.kr/dummy.do?pgmid=HIRAA040003000100&WT.gnb=%EC%A0%84%EB%9E%B5%EC%B2%B4%EA%B3%84+%EB%B0%8F+CI",
+   "ci_link_text": "전략체계 및 CI",
+   "ci_found_by": "rendered-home"
   },
   "Q52854854": {
    "name": "한국지능정보사회진흥원",
@@ -14250,6 +16478,17 @@
     "bytes": 53543,
     "tone": "normal",
     "file": "/logos/thumbs/survey-7e35bf6f47.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [],
+    "page": "https://www.kicox.or.kr/contents/56",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12620023": {
@@ -14315,7 +16554,18 @@
      "rgb": "34 29 30",
      "share": 0.9
     }
-   ]
+   ],
+   "ci_page": "https://www.energy.or.kr/front/conts/102013002000000.do",
+   "ci_link_text": "로고타입",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.energy.or.kr/front/conts/102013002000000.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623152": {
    "name": "한국원자력환경공단",
@@ -14462,7 +16712,16 @@
      "hex": "#C8B158",
      "hex_derived": "rgb"
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.srail.co.kr/cms/archive.do?pageId=KR0211010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12585691": {
    "name": "국립공원공단",
@@ -14672,6 +16931,21 @@
     "bytes": 8631,
     "tone": "normal",
     "file": "/logos/thumbs/survey-8800fba6d6.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "http://www.ssis.or.kr/download.do?uuid=321ce025-8a4a-457a-a6e7-50471dfbc755"
+     ]
+    ],
+    "page": "http://www.ssis.or.kr/lay1/S1T2059C2060/contents.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16169603": {
@@ -14818,6 +17092,20 @@
     "bytes": 7456,
     "tone": "normal",
     "file": "/logos/thumbs/survey-ea04147bd4.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.kr.or.kr/file/download.do?fileId=87f9e4820a81755cb3afd11a35db51bf3dddb30f4abc1d594bbd11237b9c5b2cc64776e584dc41d5438034599eed16ec&seqNo=1dbb64ac3b223d235939abd6087e29b21238354bdf7a0291771d376c5fdee1a0"
+     ]
+    ],
+    "page": "https://www.kr.or.kr/sub/info.do?m=060105",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12622975": {
@@ -14840,6 +17128,25 @@
     "bytes": 5407,
     "tone": "light",
     "file": "/logos/thumbs/survey-ee2840ae48.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ekr.or.kr/down/ci_logo_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ekr.or.kr/down/ci_logo_ai.zip"
+     ]
+    ],
+    "page": "https://www.ekr.or.kr/index.krc?contentUid=8a8bb3529665d7140196c76b7f377ebd&subPath=",
+    "checked_at": "2026-11-10"
    }
   },
   "한국도로교통공단": {
@@ -14981,7 +17288,30 @@
      "rgb": "57 117 110",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.fowi.or.kr/download/CI01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.fowi.or.kr/download/CI02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.fowi.or.kr/download/CI03.zip"
+     ]
+    ],
+    "page": "https://www.fowi.or.kr/user/contents/contentsView.do?cntntsId=166",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q55735729": {
    "name": "한국수목원정원관리원",
@@ -15054,6 +17384,19 @@
     "bytes": 3030,
     "tone": "light",
     "file": "/logos/thumbs/survey-2fc8b6e7ef.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.komsa.or.kr/thumbnail/dwld/kor/CI.zip"
+     ]
+    ],
+    "page": "https://www.komsa.or.kr/kor/sub01_0201.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16262642": {
@@ -15093,7 +17436,21 @@
      "rgb": "144 197 60",
      "share": 0.22
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.kalis.or.kr/www/brd/m_588/down.do?brd_id=file_all02&seq=1&data_tp=A&file_seq=1"
+     ]
+    ],
+    "page": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12583410": {
    "name": "건축공간연구원",
@@ -15234,7 +17591,22 @@
      "rgb": "1 79 136",
      "share": 0.1
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.kesco.or.kr/page/pr/fileDown.do?path=sub&rname=ci_img1.png&filename=심볼마크.png"
+     ]
+    ],
+    "page": "https://www.kesco.or.kr/contents/selectContents.do?contents_id=PRC00000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12615656": {
    "name": "정보통신정책연구원",
@@ -15430,7 +17802,21 @@
      "rgb": "39 166 252",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://kcmf.or.kr/resource/kcmf/site/www/down/ci.zip"
+     ]
+    ],
+    "page": "https://kcmf.or.kr/KCMF/contents/KCMF060700.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11284963": {
    "name": "한국교육과정평가원",
@@ -15551,7 +17937,48 @@
      "rgb": "117 116 116",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_ai_all.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_jpg_all.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_5.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_41.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_11.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_3.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krihs.re.kr/main/file/ci_21.zip"
+     ]
+    ],
+    "page": "https://www.krihs.re.kr/menu.es?mid=a10301040000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16976172": {
    "name": "통일연구원",
@@ -15865,7 +18292,42 @@
      "rgb": "194 176 158",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/logo_CI_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/logo_CI_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/signature2.ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/signature2.jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/keu-di_AI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kdi.re.kr/res/ci/keu-di_PNG.zip"
+     ]
+    ],
+    "page": "https://www.kdi.re.kr/introduce/pmCi",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623419": {
    "name": "한국여성정책연구원",
@@ -15954,6 +18416,50 @@
     "bytes": 9361,
     "tone": "normal",
     "file": "/logos/thumbs/survey-d1c05ae4d0.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/ci_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/ci_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/ci_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/simbol_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/simbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/simbol_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/logo_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kipf.re.kr/thumbnail/kor/logo_jpg.zip"
+     ]
+    ],
+    "page": "https://www.kipf.re.kr/kor/About_CI.do;jsessionid=4873CAC83F90DEFD5E674AD222640732",
+    "checked_at": "2026-11-10"
    }
   },
   "Q31176245": {
@@ -16110,7 +18616,19 @@
      "rgb": "155 156 154",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_page": "https://www.kei.re.kr/menu.es?mid=a10402040000",
+   "ci_link_text": "CI 소개",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kei.re.kr/menu.es?mid=a10402040000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q19162234": {
    "name": "한국원자력안전재단",
@@ -16221,6 +18739,19 @@
     "bytes": 30788,
     "tone": "normal",
     "file": "/logos/thumbs/survey-69d23dedd7.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kofair.or.kr/static/file/ci.zip"
+     ]
+    ],
+    "page": "https://www.kofair.or.kr/home/content.do?menu_cd=000010",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623491": {
@@ -16263,6 +18794,15 @@
     "bytes": 37274,
     "tone": "light",
     "file": "/logos/thumbs/survey-613523854f.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kicj.re.kr/menu.es?mid=a10504020100",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16192503": {
@@ -16428,7 +18968,10 @@
      "rgb": "28 67 122",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_page": "https://kosii.or.kr/kosii/index.do",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home"
   },
   "Q12623571": {
    "name": "한국의약품안전관리원",
@@ -16499,6 +19042,19 @@
     "bytes": 7839,
     "tone": "normal",
     "file": "/logos/thumbs/survey-5ebf1a8653.jpg"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kins.re.kr/humanframe/theme/kins_kor/assets/file/KinsCI.zip"
+     ]
+    ],
+    "page": "https://www.kins.re.kr/CI",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623707": {
@@ -16538,7 +19094,28 @@
      "rgb": "0 40 108",
      "share": 0.11
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kiip.re.kr/images/contents/KIIP_LOGO.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kiip.re.kr/images/contents/CI_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kiip.re.kr/images/contents/CI_JPG.zip"
+     ]
+    ],
+    "page": "https://www.kiip.re.kr/contents/ci.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q4501812": {
    "name": "한국수출입은행",
@@ -16571,7 +19148,10 @@
      "rgb": "161 161 161",
      "share": 0.87
     }
-   ]
+   ],
+   "ci_page": "https://www.koreaexim.go.kr/HPHKBI005M01",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home"
   },
   "Q16181880": {
    "name": "한국특허기술진흥원",
@@ -16600,7 +19180,20 @@
      "rgb": "193 195 200",
      "share": 0.22
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kipro.or.kr/attachments/ci/kipro_ci_logo.zip"
+     ]
+    ],
+    "page": "https://www.kipro.or.kr/kipro/ci",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q6431623": {
    "name": "한국승강기안전공단",
@@ -16681,7 +19274,32 @@
      "rgb": "0 112 115",
      "share": 0.68
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.krei.re.kr/DATA/document/krei_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krei.re.kr/DATA/document/krei_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.krei.re.kr/DATA/document/krei_character.zip"
+     ]
+    ],
+    "page": "https://www.krei.re.kr/krei/page/38",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q13762021": {
    "name": "국립대구과학관",
@@ -16748,7 +19366,21 @@
      "rgb": "138 0 11",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.poma.or.kr/_res/poma_facility/poma/img/content/BS02-Logotype.zip"
+     ]
+    ],
+    "page": "https://www.poma.or.kr/poma/logo.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q21400278": {
    "name": "국립부산과학관",
@@ -16780,6 +19412,22 @@
      "hex": "#AAABAB",
      "rgb": "170 171 171",
      "share": 0.3
+    }
+   ],
+   "ci_page": "https://www.sciport.or.kr/kor/CMS/Contents/Contents.do?mCode=MN102",
+   "ci_link_text": "MI 및 캐릭터",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "pantone": "3005 C"
+    },
+    {
+     "label": null,
+     "pantone": "7544 C",
+     "rgb": "140 140 140",
+     "hex": "#8C8C8C",
+     "hex_derived": "rgb"
     }
    ]
   },
@@ -16814,6 +19462,15 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-f97ce23ff1.png",
     "filled": true
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.kista.re.kr/user/content.do?pageId=PAGE_000000000000008",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623804": {
@@ -16853,7 +19510,20 @@
      "rgb": "159 141 140",
      "share": 0.13
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kipi.or.kr/down/kipi_ci.zip"
+     ]
+    ],
+    "page": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q14850776": {
    "name": "정보통신산업진흥원",
@@ -17013,7 +19683,21 @@
      "rgb": "255 78 15",
      "share": 0.2
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kistep.re.kr/boardDownload.es?bid=ATT&list_no=84&seq=2"
+     ]
+    ],
+    "page": "https://www.kistep.re.kr/menu.es?mid=a10201010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q14850773": {
    "name": "연구개발특구진흥재단",
@@ -17045,7 +19729,42 @@
      "rgb": "0 160 233",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_page": "https://www.innopolis.or.kr/board;jsessionid=A93EF695D4BBD32602F558F29026B22D.tomcat1?menuId=MENU00875&siteId=null",
+   "ci_link_text": "로고",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "pantone": "299 C",
+     "cmyk": "C100 M0 Y0 K0",
+     "hex": "#00FFFF",
+     "hex_derived": "cmyk"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.innopolis.or.kr/resources/down/BRAND_MANUAL.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.innopolis.or.kr/resources/down/CI_AI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.innopolis.or.kr/resources/down/CI_jpg.zip"
+     ]
+    ],
+    "page": "https://www.innopolis.or.kr/board;jsessionid=A93EF695D4BBD32602F558F29026B22D.tomcat1?menuId=MENU00875&siteId=null",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q19161842": {
    "name": "과학기술사업화진흥원",
@@ -17122,7 +19841,20 @@
      "rgb": "89 87 88",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kdata.or.kr/kr/board/promotion_01/boardView.do?bbsIdx=38952"
+     ]
+    ],
+    "page": "https://www.kdata.or.kr/kr/main.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623488": {
    "name": "한국원자력의학원",
@@ -17502,7 +20234,22 @@
      "rgb": "24 175 115",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.nile.or.kr/usr/wap/downloadFile.do?app=39409&seq=59670&atchFileSeq=59658&fileColumn=atchFileSeq&fileSn=0"
+     ]
+    ],
+    "page": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12598795": {
    "name": "부산대학교병원",
@@ -17936,7 +20683,19 @@
      "rgb": "92 92 94",
      "share": 0.23
     }
-   ]
+   ],
+   "ci_page": "https://www.aks.ac.kr/com/cmm/EgovContentView.do?menuNo=5010174000&lang=kor",
+   "ci_link_text": "CI 소개",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.aks.ac.kr/com/cmm/EgovContentView.do?menuNo=5010174000&lang=kor",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12615669": {
    "name": "정부법무공단",
@@ -18152,7 +20911,20 @@
      "rgb": "196 209 214",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://sonosa.or.kr/usr/file/logo.ai"
+     ]
+    ],
+    "page": "https://sonosa.or.kr/?menuno=10",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16191268": {
    "name": "북한이탈주민지원재단",
@@ -18313,7 +21085,23 @@
      "rgb": "108 155 210",
      "share": 0.5
     }
-   ]
+   ],
+   "ci_page": "https://www.igbf.kr/gugak_web/?sub_num=756",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.igbf.kr/gugak_web/img/common/igbf_ci.zip"
+     ]
+    ],
+    "page": "https://www.igbf.kr/gugak_web/?sub_num=756",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q14545096": {
    "name": "민주화운동기념사업회",
@@ -18379,7 +21167,21 @@
      "rgb": "210 210 210",
      "share": 0.11
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.klac.or.kr/generalFileDownload.do?codeId=GNR009&codeValue=GNR00901"
+     ]
+    ],
+    "page": "https://www.klac.or.kr/introduce/ciIntroduce.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16097918": {
    "name": "세종학당재단",
@@ -18476,6 +21278,24 @@
     "bytes": 42490,
     "tone": "normal",
     "file": "/logos/thumbs/survey-43996323f3.jpg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.nmf.or.kr/admCMS/edit_popup.do?content_sid=20181024095937402100"
+     ],
+     [
+      "PNG",
+      "https://www.nmf.or.kr/images/user/main/web_mark.png"
+     ]
+    ],
+    "page": "https://www.nmf.or.kr/agency/sub/20181024095937402100_contents.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q483066": {
@@ -18588,7 +21408,21 @@
      "rgb": "109 121 143",
      "share": 0.5
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.grac.or.kr/download/CI.zip"
+     ]
+    ],
+    "page": "https://www.grac.or.kr/Committee/SecretariatLogo01.aspx",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12607644": {
    "name": "예술경영지원센터",
@@ -18665,6 +21499,34 @@
     "bytes": 51546,
     "tone": "normal",
     "file": "/logos/thumbs/survey-3947c5590f.jpg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kf.or.kr/upload/kf/KF_국영문.ai"
+     ],
+     [
+      "JPG",
+      "https://www.kf.or.kr/upload/kf/KF_국영문.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.kf.or.kr/upload/kf/logo_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kf.or.kr/upload/kf/logo_jpg.zip"
+     ]
+    ],
+    "page": "https://www.kf.or.kr/kf/cm/cntnts/cntntsView.do?mi=1166&cntntsId=1087",
+    "checked_at": "2026-11-10"
    }
   },
   "Q626710": {
@@ -18774,6 +21636,25 @@
     "bytes": 1741,
     "tone": "normal",
     "file": "/logos/thumbs/survey-c8eefa2eb4.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.kcgp.or.kr/resources/attach/ii/KCGP_Identity_Design_Guidelines.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.kcgp.or.kr/resources/attach/ii/KCGP_logo.zip"
+     ]
+    ],
+    "page": "https://www.kcgp.or.kr/portal/main/contents.do?menuNo=200129",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12622829": {
@@ -18925,7 +21806,21 @@
      "rgb": "0 103 181",
      "share": 0.13
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kcdf.or.kr/com/file/filedown?_ci=28104&_ck=3edde380c9234f50916a3bd8d6e33a98"
+     ]
+    ],
+    "page": "https://www.kcdf.or.kr/cms/content/view/207",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q18685317": {
    "name": "한국문화진흥",
@@ -18958,6 +21853,19 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-d4d07fc5c6.jpg",
     "filled": true
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "http://www.kcpi.co.kr/assets/images/ci_download.zip"
+     ]
+    ],
+    "page": "http://www.kcpi.co.kr/html/company/kcpi-ci.asp",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12620943": {
@@ -18997,7 +21905,16 @@
      "rgb": "0 0 0",
      "share": 0.38
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.tpf.or.kr/tpf/contents/tpf01010401.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11285146": {
    "name": "한국언론진흥재단",
@@ -19160,6 +22077,24 @@
     "bytes": 1430,
     "tone": "light",
     "file": "/logos/thumbs/survey-4caa87bc31.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://ltikorea.or.kr/upload/kr/KLTI_Logo_ai.ai"
+     ],
+     [
+      "JPG",
+      "https://ltikorea.or.kr/upload/kr/KLTI_Logo.jpg"
+     ]
+    ],
+    "page": "https://ltikorea.or.kr/kr/contents/about_inst_7/view.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q18734051": {
@@ -19236,7 +22171,28 @@
      "rgb": "0 113 185",
      "share": 0.05
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ksponco.or.kr/attachFiles/download/kspo/symbol.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ksponco.or.kr/attachFiles/download/kspo/signature.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ksponco.or.kr/attachFiles/download/kspo/signature.zip"
+     ]
+    ],
+    "page": "https://www.ksponco.or.kr/menu.es?mid=a10604010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16168232": {
    "name": "한국예술인복지재단",
@@ -19349,7 +22305,20 @@
      "rgb": "76 72 69",
      "share": 0.32
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://arte.or.kr/2024_new/images/download/ci.zip"
+     ]
+    ],
+    "page": "https://arte.or.kr/introduction/cinbi/ci/index.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q495807": {
    "name": "대외경제정책연구원",
@@ -19475,6 +22444,14 @@
     "bytes": 8359,
     "tone": "normal",
     "file": "/logos/thumbs/survey-b73e919475.svg"
+   },
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.koreafilm.or.kr/pages/PC_00000052",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12615121": {
@@ -19551,6 +22528,28 @@
     "bytes": 5224,
     "tone": "light",
     "file": "/logos/thumbs/survey-852d783ff4.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kcopa.or.kr/upload/board/2017/12/일러스트ai파일.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kcopa.or.kr/upload/board/2017/12/이미지png파일.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kcopa.or.kr/upload/board/2017/12/pdf파일(규정집).zip"
+     ]
+    ],
+    "page": "https://www.kcopa.or.kr/lay1/S1T9C197/contents.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12590543": {
@@ -19618,6 +22617,21 @@
     "bytes": 21454,
     "tone": "normal",
     "file": "/logos/thumbs/survey-b91f09b70d.jpg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "http://www.epis.or.kr/resource/www/images/home/kor/user/sub/EPIS_CI.ai"
+     ]
+    ],
+    "page": "http://www.epis.or.kr/content.do?key=2604210128",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623238": {
@@ -19842,6 +22856,19 @@
     "bytes": 4616,
     "tone": "normal",
     "file": "/logos/thumbs/survey-2fb1612b80.png"
+   },
+   "formats": {
+    "list": [
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.lhca.or.kr/resources/eng/images/layout/logo-bk.png"
+     ]
+    ],
+    "page": "https://www.lhca.or.kr/business/front/bonbu/hyun5.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623629": {
@@ -19876,7 +22903,20 @@
      "rgb": "91 91 91",
      "share": 0.24
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.copyright.or.kr/pdf/family_friendly.pdf"
+     ]
+    ],
+    "page": "https://www.copyright.or.kr/committee-introduction/ci/index.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16164343": {
    "name": "한국식품산업클러스터진흥원",
@@ -19915,7 +22955,24 @@
      "rgb": "49 108 172",
      "share": 0.08
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.foodpolis.kr/resources/user/web/img/brochure/equip_2026.pdf"
+     ],
+     [
+      "PDF",
+      "https://www.foodpolis.kr/resources/user/web/img/brochure/investguide_2026.pdf"
+     ]
+    ],
+    "page": "https://www.foodpolis.kr/web/index.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12585740": {
    "name": "국립암센터",
@@ -19955,6 +23012,14 @@
     "bytes": 27023,
     "tone": "normal",
     "file": "/logos/thumbs/survey-651f61bf88.png"
+   },
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.ncc.re.kr/main.ncc?uri=ncc_ci",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12607921": {
@@ -20123,7 +23188,16 @@
    "fill_tried": [
     "commons: none",
     "sites: none (2)"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "http://www.kiria.org/portal/reference/portalRefCi.do;jsessionid=DC28BC7F638518B7D5C3B7BF6DF5BB51",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11664005": {
    "name": "한국콘텐츠진흥원",
@@ -20152,7 +23226,49 @@
      "rgb": "106 31 116",
      "share": 0.21
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/ci/CI_basic_v2_new.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/bi/bi_basic_v2.zip"
+     ],
+     [
+      "PDF",
+      "https://www.kocca.kr/about/ci/ci_guideBook_new.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/ci/kocca_ci_new_k_.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/ci/kocca_ci_new_e.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/ci/kocca_ci_new_c.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/ci/kocca_ci_new_j.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kocca.kr/about/bi/kocca_bi_k_v2.zip"
+     ]
+    ],
+    "page": "https://www.kocca.kr/kocca/subPage.do?menuNo=204762",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12585766": {
    "name": "국립중앙의료원",
@@ -20233,6 +23349,15 @@
     "bytes": 30656,
     "tone": "normal",
     "file": "/logos/thumbs/survey-a18a4a17ec.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.nmc.or.kr:443/nmc/contents/symbol",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12591211": {
@@ -20317,7 +23442,25 @@
      "rgb": "7 104 179",
      "share": 0.1
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ipab.or.kr/resources/homepage/kor/_Date/PQA_logo_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.ipab.or.kr/resources/homepage/kor/_Date/PQA_logo_jpg.zip"
+     ]
+    ],
+    "page": "https://www.ipab.or.kr/kor/CMS/Contents/Contents.do?mCode=MN031",
+    "checked_at": "2026-11-10"
+   }
   },
   "한국보건의료정보원": {
    "name": "한국보건의료정보원",
@@ -20410,7 +23553,20 @@
    "fill_tried": [
     "commons: none",
     "sites: none (3)"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.koiha.or.kr/web/download/media/KOIHACI.zip"
+     ]
+    ],
+    "page": "https://www.koiha.or.kr/web/kr/koihaPR/koihaCI.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623178": {
    "name": "한국보건복지인재원",
@@ -20461,7 +23617,25 @@
      "rgb": "127 147 163",
      "share": 0.1
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.kordi.or.kr/downFile/kordi_logo_ci.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.kordi.or.kr/downFile/kordi_logo_ci.zip"
+     ]
+    ],
+    "page": "https://www.kordi.or.kr/content.do?cmsId=156",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623621": {
    "name": "한국장애인개발원",
@@ -20583,7 +23757,21 @@
      "rgb": "63 58 57",
      "share": 0.59
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.kofih.org/direct_download.do?path=/upload/sample/&file_nm=KOFIH_CI_JPG.zip&rfile_nm=KOFIH_CI_JPG.zip"
+     ]
+    ],
+    "page": "https://www.kofih.org/web/lay1/S1T59C91/contents.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "한국수자원조사기술원": {
    "name": "한국수자원조사기술원",
@@ -20825,6 +24013,19 @@
     "bytes": 8466,
     "tone": "normal",
     "file": "/logos/thumbs/survey-8f3b726095.jpg"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.bokji.net/images/down/SSN_CI.zip"
+     ]
+    ],
+    "page": "https://www.bokji.net/ssn/inf/04.bokji",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12623411": {
@@ -20931,6 +24132,14 @@
     "bytes": 10704,
     "tone": "normal",
     "file": "/logos/thumbs/survey-eea9c7e5ff.png"
+   },
+   "formats": {
+    "list": [
+     "PNG"
+    ],
+    "files": [],
+    "page": "https://www.kwwa.or.kr/kr/contents/CI_1/view.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12584356": {
@@ -20971,7 +24180,20 @@
      "rgb": "223 223 223",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ncrc.or.kr/upload/ncrc/ncrc_ci_ai.zip"
+     ]
+    ],
+    "page": "https://www.ncrc.or.kr/ncrc/cm/cntnts/cntntsView.do?mi=1016&cntntsId=1101",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16192455": {
    "name": "한국사회적기업진흥원",
@@ -21114,6 +24336,50 @@
     "bytes": 6115,
     "tone": "normal",
     "file": "/logos/thumbs/survey-d7872c93d8.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_01_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_06_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_01_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_01_gif.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_02_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_02_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_02_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kings.ac.kr/uploads/download/kings_ui_03_jpg.zip"
+     ]
+    ],
+    "page": "https://www.kings.ac.kr/whykings/kings_ui.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q7314493": {
@@ -21173,7 +24439,41 @@
      "rgb": "167 167 167",
      "share": 1.0
     }
-   ]
+   ],
+   "ci_page": "https://www.knfc.co.kr/board?menuId=MENU00500&siteId=null",
+   "ci_link_text": "CI 라이브러리",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": "시스템 금적색",
+     "cmyk": "C0 M100 Y100 K0",
+     "hex": "#FF0000",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": "군청색",
+     "cmyk": "C100 M80 Y0 K0",
+     "hex": "#0033FF",
+     "hex_derived": "cmyk"
+    }
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.knfc.co.kr/UploadFiles/down/KNF-AI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.knfc.co.kr/UploadFiles/down/KNF-JPG.zip"
+     ]
+    ],
+    "page": "https://www.knfc.co.kr/board?menuId=MENU00500&siteId=null",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q31180820": {
    "name": "국립낙동강생물자원관",
@@ -21212,7 +24512,20 @@
      "rgb": "49 129 182",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.nnibr.re.kr/cmsh/nnibr.re.kr/file/logo_20260123.zip"
+     ]
+    ],
+    "page": "https://www.nnibr.re.kr/index.do?menu_id=00000283&servletPath=%2Findex.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16167978": {
    "name": "한국여성인권진흥원",
@@ -21523,7 +24836,25 @@
      "rgb": "174 177 175",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_page": "https://www.koreatech.ac.kr/menu.es?mid=a10101030100",
+   "ci_link_text": "대학 UI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.koreatech.ac.kr/boardDownload.es?bid=ATT&list_no=187&seq=1"
+     ]
+    ],
+    "page": "https://www.koreatech.ac.kr/menu.es?mid=a10101030100",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q15623329": {
    "name": "코레일네트웍스",
@@ -21677,7 +25008,34 @@
      "rgb": "35 24 21",
      "share": 0.2
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kyci.or.kr/fileup/intro/logo02_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kyci.or.kr/fileup/intro/logo02_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kyci.or.kr/fileup/intro/도담이_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kyci.or.kr/fileup/intro/도담이_ai.zip"
+     ]
+    ],
+    "page": "https://www.kyci.or.kr/userSite/sub01_7_2.asp",
+    "checked_at": "2026-11-10"
+   }
   },
   "국립울진해양과학관": {
    "name": "국립울진해양과학관",
@@ -21717,7 +25075,16 @@
      "rgb": "51 51 51",
      "share": 0.47
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kigepe.or.kr:443/kor/intro/ci.do?menuNo=16600",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q130628": {
    "name": "국립해양박물관",
@@ -21927,7 +25294,20 @@
      "rgb": "50 46 47",
      "share": 0.11
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.kohom.or.kr/common/download.do;jsessionid=AFE4A1146A49A6FAE765D87D407C1F57?f=Z%2FWMJwpAbnLY%2BeY%2BS%2Bax%2BczNn%2BlPk3c8I0RuYg2N0I%2BqFSCNjRs7BdN13a4pzKLSoI3WXldZJQiw%0AOjPr%2FrlD6TmzQQ9XqiRLtQ1W5qJYqPhyOz%2BofX878w0Wx%2FawAbJZSZ4uTiB3BYamjyphZrp1hg%3D%3D"
+     ]
+    ],
+    "page": "https://www.kohom.or.kr/web/mainComm/HM007002003.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q24867026": {
    "name": "국립해양생물자원관",
@@ -21956,6 +25336,27 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-76f220e663.jpg",
     "filled": true
+   },
+   "formats": {
+    "list": [
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.mabik.re.kr/images/kor/sub06/mabik_symbol.png"
+     ],
+     [
+      "PNG",
+      "https://www.mabik.re.kr/images/kor/sub06/mabik_signature.png"
+     ],
+     [
+      "PNG",
+      "https://www.mabik.re.kr/images/kor/sub06/mabik_slogan.png"
+     ]
+    ],
+    "page": "https://www.mabik.re.kr/kor/sub06_03.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16176066": {
@@ -22030,7 +25431,20 @@
      "rgb": "0 23 77",
      "share": 0.23
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.sdco.or.kr/kor/file/CI.zip"
+     ]
+    ],
+    "page": "https://www.sdco.or.kr/menu.es?mid=a10405000000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12623862": {
    "name": "한국해양조사협회",
@@ -22194,6 +25608,29 @@
     "bytes": 5924,
     "tone": "normal",
     "file": "/logos/thumbs/survey-08426df4cb.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.kihf.or.kr/doc/한국건강가정진흥원_CI.jpg"
+     ],
+     [
+      "PNG",
+      "https://www.kihf.or.kr/doc/한국건강가정진흥원_CI.png"
+     ],
+     [
+      "AI",
+      "https://www.kihf.or.kr/doc/한국건강가정진흥원_CI.ai"
+     ]
+    ],
+    "page": "https://www.kihf.or.kr/web/lay1/S1T842C822/contents.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q55733822": {
@@ -22306,6 +25743,19 @@
     "bytes": 5087,
     "tone": "light",
     "file": "/logos/thumbs/survey-e6a9a7c1b8.png"
+   },
+   "formats": {
+    "list": [
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.upa.or.kr/file/direct/download.do?filename=심볼마크_jpg.jpg&path=/file"
+     ]
+    ],
+    "page": "https://www.upa.or.kr/portal/contents.do?mid=0505000000",
+    "checked_at": "2026-11-10"
    }
   },
   "창업진흥원": {
@@ -22351,7 +25801,17 @@
      "rgb": "192 221 228",
      "share": 0.06
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kiost.ac.kr/kor/sub04_08_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16189722": {
    "name": "한국중소벤처기업유통원",
@@ -22386,6 +25846,24 @@
     "bytes": 3308,
     "tone": "normal",
     "file": "/logos/thumbs/survey-d541e596a7.png"
+   },
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.fipa.or.kr/upload/cntnts/fipa_ci.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.fipa.or.kr/upload/cntnts/Fiparang.zip"
+     ]
+    ],
+    "page": "https://www.fipa.or.kr/fipa/cntnts/i-218/web.do",
+    "checked_at": "2026-11-10"
    }
   },
   "재외동포협력센터": {
@@ -22584,6 +26062,29 @@
     "bytes": 1386,
     "tone": "normal",
     "file": "/logos/thumbs/survey-50109f7f2a.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.icpa.or.kr/file/commonFileDownload.do?path=!@$*CJELQSRnZjbVLK3l7dJljVJhvBUdRArBXx5SPmaLKkw=!@$*"
+     ],
+     [
+      "ZIP",
+      "https://www.icpa.or.kr/data/Character_JPG_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.icpa.or.kr/data/Character_AI_01.zip"
+     ]
+    ],
+    "page": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12604470": {
@@ -22752,6 +26253,19 @@
     "bytes": 2284,
     "tone": "normal",
     "file": "/logos/thumbs/survey-3dc737cd1d.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kvic.or.kr/resources/upload/CI.zip"
+     ]
+    ],
+    "page": "https://www.kvic.or.kr/about-kvic/about-ci",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16164791": {
@@ -22796,7 +26310,37 @@
      "rgb": "158 213 234",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_page": "https://www.apcc21.org/content/ci?lang=ko",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "pantone": "298 C"
+    },
+    {
+     "label": null,
+     "pantone": "2965 C"
+    }
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.apcc21.org/apcc/files/APCC_CI_ai_2.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.apcc21.org/apcc/files/APCC_CI_JPG_v2.zip"
+     ]
+    ],
+    "page": "https://www.apcc21.org/content/ci?lang=ko",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16171136": {
    "name": "차세대수치예보모델개발사업단",
@@ -22896,7 +26440,15 @@
      "rgb": "168 168 171",
      "share": 0.53
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.tipa.or.kr/s060602",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q16169337": {
    "name": "한국임업진흥원",
@@ -22939,7 +26491,19 @@
      "rgb": "75 76 77",
      "share": 0.21
     }
-   ]
+   ],
+   "ci_page": "https://www.kofpi.or.kr/intro/intro_12.do",
+   "ci_link_text": "CI/수페스타 소개",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kofpi.or.kr/intro/intro_12.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q626610": {
    "name": "국방과학연구소",
@@ -22976,7 +26540,10 @@
      "rgb": "35 24 21",
      "share": 0.33
     }
-   ]
+   ],
+   "ci_page": "https://www.add.re.kr/board?menuId=MENU02026&siteId=null",
+   "ci_link_text": "ADD CI",
+   "ci_found_by": "rendered-home"
   },
   "Q12623037": {
    "name": "한국등산·트레킹지원센터",
@@ -23005,7 +26572,31 @@
      "rgb": "67 110 52",
      "share": 0.24
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://komount.or.kr/renewal/images/ci_ai_file.zip"
+     ],
+     [
+      "ZIP",
+      "https://komount.or.kr/renewal/images/ci_png_file.zip"
+     ],
+     [
+      "ZIP",
+      "https://komount.or.kr/renewal/images/ci_jpg_file.zip"
+     ]
+    ],
+    "page": "https://komount.or.kr/html/index.do?html=ci",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q56147": {
    "name": "가천대학교",
@@ -23223,7 +26814,16 @@
    "fill_tried": [
     "commons: none",
     "sites: none (2)"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.koat.or.kr/koat/ci.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q41738": {
    "name": "가톨릭대학교",
@@ -23279,7 +26879,25 @@
      "rgb": "174 174 174",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.mtu.ac.kr/mtu/file/mtu_ui.zip"
+     ],
+     [
+      "PDF",
+      "https://www.mtu.ac.kr/mtu/file/mtu_uibook.pdf"
+     ]
+    ],
+    "page": "https://www.mtu.ac.kr/mtu/contents/view.do?mId=267",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q487836": {
    "name": "경상국립대학교",
@@ -23316,7 +26934,25 @@
      "rgb": "74 83 90",
      "share": 0.2
     }
-   ]
+   ],
+   "ci_page": "https://www.gnu.ac.kr/main/cm/cntnts/cntntsView.do?mi=1367&cntntsId=1197",
+   "ci_link_text": "상징 / VI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.gnu.ac.kr/common/fileDownload.do?fileKey=4627"
+     ]
+    ],
+    "page": "https://www.gnu.ac.kr/main/cm/cntnts/cntntsView.do?mi=1367&cntntsId=1197",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q41765": {
    "name": "건국대학교",
@@ -23510,6 +27146,21 @@
     "bytes": 20749,
     "tone": "normal",
     "file": "/logos/thumbs/survey-beeaa81c4a.svg"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://kscms.ks.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDI2NixZ"
+     ]
+    ],
+    "page": "https://kscms.ks.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN027",
+    "checked_at": "2026-11-10"
    }
   },
   "Q626872": {
@@ -23732,7 +27383,10 @@
      "rgb": "198 163 171",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_page": "https://www.kw.ac.kr/ko/life/symbol02.jsp",
+   "ci_link_text": "광운상징물",
+   "ci_found_by": "rendered-home"
   },
   "Q496536": {
    "name": "경희대학교",
@@ -23849,6 +27503,23 @@
     "bytes": 9613,
     "tone": "normal",
     "file": "/logos/thumbs/survey-21bbfcad40.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kmiti.or.kr/_img/web/kmiti_CI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kmiti.or.kr/_img/web/kmiti_character.zip"
+     ]
+    ],
+    "page": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16093043": {
@@ -23913,7 +27584,15 @@
      "rgb": "241 71 29",
      "share": 0.14
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI"
+    ],
+    "files": [],
+    "page": "https://www.kyonggi.ac.kr/www/contents.do?key=5093",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12585152": {
    "name": "광주여자대학교",
@@ -23989,7 +27668,21 @@
      "rgb": "140 175 204",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.kduniv.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDc0MzY4LFk="
+     ]
+    ],
+    "page": "https://www.kduniv.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN200",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q494638": {
    "name": "국립경국대학교",
@@ -24026,7 +27719,10 @@
      "rgb": "0 169 234",
      "share": 0.33
     }
-   ]
+   ],
+   "ci_page": "https://www.anu.ac.kr/gknu-redirect.htm?t=1794267183373",
+   "ci_link_text": "대학상징 페이지로 이동합니다.대학상징",
+   "ci_found_by": "rendered-home"
   },
   "Q482661": {
    "name": "경인교육대학교",
@@ -24132,6 +27828,23 @@
     "bytes": 103188,
     "tone": "light",
     "file": "/logos/thumbs/survey-302a55b51e.svg"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.korea.ac.kr/sites/ko/files/tiger.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.korea.ac.kr/sites/ko/files/koreanpine.zip"
+     ]
+    ],
+    "page": "https://www.korea.ac.kr/ko/378/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q625159": {
@@ -24319,7 +28032,21 @@
      "rgb": "79 91 84",
      "share": 0.76
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.gist.ac.kr/download/?file_id=3uzmkiilfj905ge3vi923rhx3w0mkf"
+     ]
+    ],
+    "page": "https://www.gist.ac.kr/kr/html/sub01/01030301.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q490746": {
    "name": "국립한국해양대학교",
@@ -24397,7 +28124,33 @@
      "rgb": "229 243 232",
      "share": 0.07
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.gnue.ac.kr/groups/www/images/sub01/emblem_ul_24.ai"
+     ],
+     [
+      "JPG",
+      "https://www.gnue.ac.kr/groups/www/images/sub01/emblem_ul_24.JPG"
+     ],
+     [
+      "AI",
+      "https://www.gnue.ac.kr/groups/www/images/sub01/100logo_width_01.ai"
+     ],
+     [
+      "AI",
+      "https://www.gnue.ac.kr/groups/www/images/sub01/100logo_01.ai"
+     ]
+    ],
+    "page": "https://www.gnue.ac.kr/index.9is?contentUid=ff8080815bf1bf8b015bf5dfc3e5007d",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q5434550": {
    "name": "극동대학교",
@@ -24530,6 +28283,19 @@
     "bytes": 36251,
     "tone": "normal",
     "file": "/logos/thumbs/survey-75cb2c7041.jpg"
+   },
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.kmu.ac.kr/upload/down/03/KMU_AI_guideline.pdf"
+     ]
+    ],
+    "page": "https://www.kmu.ac.kr/uni/main/page.jsp?mnu_uid=371&",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16093712": {
@@ -24726,7 +28492,66 @@
      "rgb": "33 26 22",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_page": "https://www.dgist.ac.kr/eng/sub01_02_04_01.do",
+   "ci_link_text": "BRANDING & IDENTITY",
+   "ci_found_by": "rendered-home",
+   "colors_official": [
+    {
+     "label": null,
+     "pantone": "2985 CVC",
+     "cmyk": "C72 M0 Y0 K0",
+     "hex": "#47FFFF",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "pantone": "285 CVC",
+     "cmyk": "C91 M43 Y0 K0",
+     "hex": "#1791FF",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "pantone": "280 CVC",
+     "cmyk": "C100 M72 Y0 K18",
+     "hex": "#003BD1",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": "cool grey cvc",
+     "cmyk": "C0 M0 Y0 K65",
+     "hex": "#595959",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": "cool grey cvc",
+     "cmyk": "C0 M0 Y0 K11",
+     "pantone": "4302 CVC",
+     "hex": "#E3E3E3",
+     "hex_derived": "cmyk"
+    },
+    {
+     "label": null,
+     "cmyk": "C6 M0 Y0 K47",
+     "hex": "#7F8787",
+     "hex_derived": "cmyk"
+    }
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.dgist.ac.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000004217Pk3&fileSn=0"
+     ]
+    ],
+    "page": "https://www.dgist.ac.kr/eng/sub01_02_04_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12624539": {
    "name": "한국항로표지기술원",
@@ -24769,7 +28594,10 @@
      "rgb": "91 89 90",
      "share": 0.15
     }
-   ]
+   ],
+   "ci_page": "http://katon.or.kr/page/31",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home"
   },
   "Q16261977": {
    "name": "한국장기조직기증원",
@@ -24850,7 +28678,54 @@
      "rgb": "30 30 28",
      "share": 0.28
     }
-   ]
+   ],
+   "ci_page": "http://www.dnue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN050",
+   "ci_link_text": "로고/엠블럼",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "http://www.dnue.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDQ3NzUsWQ=="
+     ],
+     [
+      "JPG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_01b.jpg"
+     ],
+     [
+      "JPG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_02b.jpg"
+     ],
+     [
+      "JPG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_03b.jpg"
+     ],
+     [
+      "PNG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0101.png"
+     ],
+     [
+      "PNG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0102.png"
+     ],
+     [
+      "PNG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0103.png"
+     ],
+     [
+      "PNG",
+      "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0104.png"
+     ]
+    ],
+    "page": "http://www.dnue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN050",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482688": {
    "name": "국립군산대학교",
@@ -24910,6 +28785,26 @@
     "bytes": 5597,
     "tone": "normal",
     "file": "/logos/thumbs/survey-09891c121e.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kunsan.ac.kr/board/download.kunsan?boardId=CNT_ATCHDOWN&dataSid=79956&fileSid=44520"
+     ],
+     [
+      "ZIP",
+      "https://www.kunsan.ac.kr/images/001kunsan/file/UI Guideline AI.zip"
+     ]
+    ],
+    "page": "https://www.kunsan.ac.kr/index.kunsan?menuCd=DOM_000000102009002002&sso=ok&cpath=",
+    "checked_at": "2026-11-10"
    }
   },
   "Q486999": {
@@ -24986,7 +28881,26 @@
      "rgb": "97 166 134",
      "share": 0.1
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.kongju.ac.kr/sites/KNU/download/kongju_symbol.ai"
+     ],
+     [
+      "ZIP",
+      "https://www.kongju.ac.kr/sites/KNU/download/kongju_symbol_jpg,png.zip"
+     ]
+    ],
+    "page": "https://www.kongju.ac.kr/KNU/16661/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482680": {
    "name": "국립목포대학교",
@@ -25030,6 +28944,50 @@
     "bytes": 1830,
     "tone": "normal",
     "file": "/logos/thumbs/survey-bb40885118.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol1_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol1_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol2_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol2_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol3_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol3_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol4_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.mokpo.ac.kr/sites/www/files/ui_symbol4_ai.zip"
+     ]
+    ],
+    "page": "https://www.mokpo.ac.kr/www/2070/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q16094112": {
@@ -25092,6 +29050,42 @@
     "bytes": 5942,
     "tone": "light",
     "file": "/logos/thumbs/survey-e5426bb21d.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/2010_basic_symbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/2010_basic_symbol_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/2010_basic_symbol_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/2010_basic_symbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/daegu_UI.zip"
+     ],
+     [
+      "ZIP",
+      "https://daegu.ac.kr/resources/UI/2010_basic_symbol_png.zip"
+     ]
+    ],
+    "page": "https://daegu.ac.kr/page/36",
+    "checked_at": "2026-11-10"
    }
   },
   "Q5208186": {
@@ -25131,7 +29125,37 @@
      "rgb": "35 24 21",
      "share": 0.22
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.dgau.ac.kr/file/s1241/dgau_logo.zip"
+     ],
+     [
+      "JPG",
+      "https://www.dgau.ac.kr/file/s1241/dgau_vertical_logo.jpg"
+     ],
+     [
+      "JPG",
+      "https://www.dgau.ac.kr/file/s1241/dgau_horizontal_logo.jpg"
+     ],
+     [
+      "ZIP",
+      "https://www.dgau.ac.kr/file/s1241/dgau_20th_logo.zip"
+     ],
+     [
+      "JPG",
+      "https://www.dgau.ac.kr/file/s1241/dgau_20th_logo.jpg"
+     ]
+    ],
+    "page": "https://www.dgau.ac.kr/content/1241",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12591707": {
    "name": "대전가톨릭대학교",
@@ -25494,6 +29518,51 @@
     "bytes": 92091,
     "tone": "normal",
     "file": "/logos/thumbs/survey-5adc4667b2.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/symbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/symbol_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/emblem_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/emblem_ai02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/Logotype_KMU_JPG.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/Logotype_KMU_AI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/Signature_KMU_JPG.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.kookmin.ac.kr/content/05sub/style0005/file/Signature_KMU_AI.zip"
+     ]
+    ],
+    "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q6705649": {
@@ -25560,7 +29629,21 @@
      "rgb": "11 86 166",
      "share": 0.2
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.dsu.ac.kr/kr/index.php?pCode=notice&mode=view&idx=27956"
+     ]
+    ],
+    "page": "https://www.dsu.ac.kr/kr/index.php?pCode=uisymbol",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12595373": {
    "name": "목원대학교",
@@ -25665,7 +29748,33 @@
      "rgb": "173 219 214",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_page": "https://www.doowon.ac.kr/kr/1711/subview.do",
+   "ci_link_text": "로고 및 UI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.doowon.ac.kr/sites/kr/files/DUT UI IMG.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.doowon.ac.kr/sites/kr/files/DUT UI AI.zip"
+     ],
+     [
+      "PDF",
+      "https://www.doowon.ac.kr/sites/kr/files/DUT UI Guideline.pdf"
+     ]
+    ],
+    "page": "https://www.doowon.ac.kr/kr/1711/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q624072": {
    "name": "대전대학교",
@@ -25699,7 +29808,16 @@
      "rgb": "108 110 113",
      "share": 0.41
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.dju.ac.kr/dju/cm/cntnts/cntntsView.do?mi=1134&cntntsId=1047",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q488100": {
    "name": "동덕여자대학교",
@@ -25768,7 +29886,26 @@
      "rgb": "0 78 162",
      "share": 0.67
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.pcu.ac.kr/images/site/kor/zip/Basic System.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.pcu.ac.kr/images/site/kor/zip/Basic System(ai).zip"
+     ]
+    ],
+    "page": "https://www.pcu.ac.kr/kor/contents/83",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q483032": {
    "name": "명지대학교",
@@ -25940,6 +30077,51 @@
     "bytes": 4991,
     "tone": "light",
     "file": "/logos/thumbs/survey-3421102b4c.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_png.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_korean.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_english_01.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_english_02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_03.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_04_ai.zip"
+     ]
+    ],
+    "page": "https://www.cu.ac.kr/introduction/uisystem/uilogo",
+    "checked_at": "2026-11-10"
    }
   },
   "Q625165": {
@@ -26002,6 +30184,19 @@
     "bytes": 6268,
     "tone": "normal",
     "file": "/logos/thumbs/survey-a391066b59.svg"
+   },
+   "formats": {
+    "list": [
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "http://www.smu.ac.kr/cms/fileDownload.do?path=%2F_res%2Fkor%2Fetc%2Fimg-symbol.png"
+     ]
+    ],
+    "page": "http://www.smu.ac.kr/kor/intro/symbol1.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q625111": {
@@ -26170,7 +30365,33 @@
      "rgb": "0 0 0",
      "share": 0.45
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.mcu.ac.kr/home/mcu/down/mcu_symbol.ai"
+     ],
+     [
+      "PNG",
+      "https://www.mcu.ac.kr/home/mcu/down/mcu_symbol.png"
+     ],
+     [
+      "AI",
+      "https://www.mcu.ac.kr/home/mcu/down/mcu_logo.ai"
+     ],
+     [
+      "PNG",
+      "https://www.mcu.ac.kr/home/mcu/down/mcu_logo.png"
+     ]
+    ],
+    "page": "https://www.mcu.ac.kr/co/contentsView.php?pageID=mcu0114030000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q624575": {
    "name": "덕성여자대학교",
@@ -26204,7 +30425,20 @@
      "rgb": "38 38 38",
      "share": 0.29
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "http://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/duksung_UIS_manual_book.pdf"
+     ]
+    ],
+    "page": "http://www.duksung.ac.kr/contents/contents.do?ciIdx=290&menuId=1199",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11250368": {
    "name": "서울기독대학교",
@@ -26278,6 +30512,19 @@
     "bytes": 10977,
     "tone": "normal",
     "file": "/logos/thumbs/survey-4291e8c06a.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.seoultech.ac.kr/storage/www/intro/symbol/logo/symbol/symbol.zip"
+     ]
+    ],
+    "page": "https://www.seoultech.ac.kr/intro/symbol/logo/symbol",
+    "checked_at": "2026-11-10"
    }
   },
   "Q12601315": {
@@ -26344,6 +30591,29 @@
     "bytes": 12375,
     "tone": "normal",
     "file": "/logos/thumbs/survey-bef43bc1f0.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "EPS",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "EPS",
+      "https://tcmssso.bu.ac.kr/bu/biz/PwdResetForm.eps"
+     ],
+     [
+      "ZIP",
+      "http://www.bu.ac.kr/sites/web/files/baekseok_Signature_ai.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.bu.ac.kr/sites/web/files/baekseok_Signature_50th_ai.zip"
+     ]
+    ],
+    "page": "http://www.bu.ac.kr/web/3414/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q3242069": {
@@ -26469,7 +30739,19 @@
      "rgb": "91 89 90",
      "share": 0.15
     }
-   ]
+   ],
+   "ci_page": "https://www.kobc.or.kr/ebz/kor/contents.do?mId=0101040000",
+   "ci_link_text": "CI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.kobc.or.kr/ebz/kor/contents.do?mId=0101040000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q53122": {
    "name": "부산대학교",
@@ -26498,7 +30780,17 @@
      "rgb": "0 91 171",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.pusan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN154",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q484230": {
    "name": "서울여자대학교",
@@ -26585,6 +30877,23 @@
     "bytes": 34979,
     "tone": "normal",
     "file": "/logos/thumbs/survey-1d5d2b16ab.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.syu.ac.kr/wp-content/uploads/2023/02/syu_ui.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.syu.ac.kr/wp-content/uploads/2018/07/syu_ui_jpg.zip"
+     ]
+    ],
+    "page": "https://www.syu.ac.kr/about-sahmyook/symbols-ui/logo-ui/",
+    "checked_at": "2026-11-10"
    }
   },
   "Q482716": {
@@ -26634,7 +30943,26 @@
      "rgb": "35 31 32",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.sogang.ac.kr/file-fe/1.%20교장(Seal).ai"
+     ],
+     [
+      "ZIP",
+      "https://www.sogang.ac.kr/file-fe/1.%20교장(Seal).zip"
+     ]
+    ],
+    "page": "https://www.sogang.ac.kr/ko/symbol/ui",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q7446489": {
    "name": "세한대학교",
@@ -26672,7 +31000,27 @@
      "rgb": "89 89 91",
      "share": 0.19
     }
-   ]
+   ],
+   "ci_page": "https://www.sehan.ac.kr/sehan/246/subview.do",
+   "ci_link_text": "대학심볼",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.sehan.ac.kr/sites/sehan/files/symbolmark.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.sehan.ac.kr/sites/sehan/files/logotype.zip"
+     ]
+    ],
+    "page": "https://www.sehan.ac.kr/sehan/246/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q5053266": {
    "name": "부산가톨릭대학교",
@@ -26706,7 +31054,24 @@
      "rgb": "29 29 27",
      "share": 0.24
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.cup.ac.kr/common/front/home/file/cup_symbol(ai).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cup.ac.kr/common/front/home/file/cup_symbol(jpg).zip"
+     ]
+    ],
+    "page": "https://www.cup.ac.kr/entrance/home/front/symbols/mark.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482756": {
    "name": "수원대학교",
@@ -26853,7 +31218,26 @@
      "rgb": "118 119 123",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "EPS",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.skku.edu/_res/skku/etc/ai_1.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.skku.edu/_res/skku/etc/jpg_1.zip"
+     ]
+    ],
+    "page": "https://www.skku.edu/skku/about/symbol/symbol_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q3181302": {
    "name": "성결대학교",
@@ -26931,7 +31315,10 @@
      "rgb": "122 135 42",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_page": "https://www.silla.ac.kr:/ko/index.php?pCode=symbol1",
+   "ci_link_text": "신라상징",
+   "ci_found_by": "rendered-home"
   },
   "Q6858616": {
    "name": "세명대학교",
@@ -26970,7 +31357,21 @@
      "rgb": "230 239 246",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "JPG",
+      "https://www.semyung.ac.kr/gonet/FileDownload.do?fileName=UI_JPG_01.zip&code=download/kor/sub01/"
+     ]
+    ],
+    "page": "https://www.semyung.ac.kr/kor/sub01_04_05_01.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q12601429": {
    "name": "서일대학교",
@@ -27118,7 +31519,20 @@
      "rgb": "115 114 114",
      "share": 0.2
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://d3ahhveld6u9g3.cloudfront.net/images/sub/symbol.png"
+     ]
+    ],
+    "page": "https://sgu.ac.kr/about/symbol",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482735": {
    "name": "숙명여자대학교",
@@ -27166,6 +31580,16 @@
     "bytes": 3434,
     "tone": "normal",
     "file": "/logos/thumbs/survey-69c824024e.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.sookmyung.ac.kr:443/kr/intro/ui.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q7640246": {
@@ -27436,6 +31860,25 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-43dbf41020.png",
     "filled": true
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.anyang.ac.kr/cms/etcResourceDown.do?site=$cms$LYQwlgdkA&key=$cms$AwRgBICXOLWdgMi4N3OBv2gdAQwJZA"
+     ],
+     [
+      "JPG",
+      "https://www.anyang.ac.kr/_res/anyang/main/img/01 캐릭터컬러.jpg"
+     ]
+    ],
+    "page": "https://www.anyang.ac.kr/main/introduction/symbol.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q39988": {
@@ -27463,7 +31906,23 @@
      "rgb": "87 87 87",
      "share": 0.3
     }
-   ]
+   ],
+   "ci_page": "https://www.yonsei.ac.kr/sc/336/subview.do",
+   "ci_link_text": "UI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.yonsei.ac.kr/sites/sc/down/basic.zip"
+     ]
+    ],
+    "page": "https://www.yonsei.ac.kr/sc/336/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q498532": {
    "name": "영산선학대학교",
@@ -27739,7 +32198,31 @@
      "rgb": "205 23 25",
      "share": 0.09
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.wku.ac.kr/image/wku/01/%EC%9B%90%EA%B4%91%EB%8C%80%ED%95%99%EA%B5%90%20UI.202304.1.zip"
+     ],
+     [
+      "ZIP",
+      "https://image.wku.ac.kr/2023/02/WKU-Communication-Mark-AI.JPG.PNG.zip"
+     ],
+     [
+      "ZIP",
+      "https://image.wku.ac.kr/2023/02/WKU-signature-Amblem-AI.JPG.PNG.zip"
+     ]
+    ],
+    "page": "https://www.wku.ac.kr/about/school-info/logo.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482658": {
    "name": "을지대학교",
@@ -27813,7 +32296,48 @@
    "fill_tried": [
     "commons: none",
     "sites: none (4)"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/UI.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_01_kor.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_02_eng.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_03_chi.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_01_kor.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_02_eng.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_03_chi.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_04_all.zip"
+     ]
+    ],
+    "page": "https://www.yongin.ac.kr/cmn/sym/mnu/mpm/101050100/htmlMenuView.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q8058582": {
    "name": "유원대학교",
@@ -27842,7 +32366,20 @@
      "rgb": "228 228 228",
      "share": 0.12
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.u1.ac.kr/_res/u1/ipsi/etc/u1_ipsi_jungsi_2027.pdf"
+     ]
+    ],
+    "page": "https://www.u1.ac.kr/ipsi/index.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q7878055": {
    "name": "위덕대학교",
@@ -27901,7 +32438,21 @@
      "rgb": "151 203 205",
      "share": 0.04
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://ssu.ac.kr/download.php?data=1iZBAEYP01G24N2v6wVl9lozjEyUUmlYu%2BBI6hqOXoVdywSODYt2DoTmplO0nDJVjg4FKy2gZzvoUav9pxlrV74Jz602h7BJvSVxRiJNlZI9lP6Xl%2FXBbPw3XL1s1Gt7"
+     ]
+    ],
+    "page": "https://ssu.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ed%95%99%ea%b5%90%ec%83%81%ec%a7%95/ui/%ec%8b%9c%ea%b7%b8%eb%8b%88%ec%b2%98-%ec%97%a0%eb%b8%94%eb%9f%bc/",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q41114": {
    "name": "이화여자대학교",
@@ -28086,6 +32637,50 @@
     "sha256": "199d1a417ddc457126a92f4e66412b9d6882e895d4fee5a59899d7ee37e56b14",
     "bytes": 12871,
     "file": "/logos/thumbs/survey-8d6995b127.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/symbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/symbol_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/colorsystem.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/logotype_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/signature_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/signature_ai.zip"
+     ],
+     [
+      "PDF",
+      "https://www.deu.ac.kr/_res/deu/www/etc/signature_guide.pdf"
+     ],
+     [
+      "ZIP",
+      "https://www.deu.ac.kr/_res/deu/www/etc/colorsystem.zip"
+     ]
+    ],
+    "page": "https://www.deu.ac.kr/www/deu-ui.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q497488": {
@@ -28152,7 +32747,20 @@
      "rgb": "36 32 33",
      "share": 0.22
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.iccu.ac.kr/sc_ai/ui.zip"
+     ]
+    ],
+    "page": "https://www.iccu.ac.kr/hq/php/iccu_d.php",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482759": {
    "name": "전주대학교",
@@ -28228,7 +32836,16 @@
      "rgb": "93 92 93",
      "share": 0.26
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PDF"
+    ],
+    "files": [],
+    "page": "https://www.ulsan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN029",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q623828": {
    "name": "국립목포해양대학교",
@@ -28320,7 +32937,22 @@
      "rgb": "89 87 87",
      "share": 0.32
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.ysu.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDM2MTk3MCxZ"
+     ]
+    ],
+    "page": "https://www.ysu.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN034",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11272217": {
    "name": "중부대학교",
@@ -28453,6 +33085,19 @@
     "bytes": 47261,
     "tone": "normal",
     "file": "/logos/thumbs/survey-bac16031ca.png"
+   },
+   "formats": {
+    "list": [
+     "PDF"
+    ],
+    "files": [
+     [
+      "PDF",
+      "https://www.donga.ac.kr/resources/donga_kor/대표홈페이지_신규+UI+신청서.pdf"
+     ]
+    ],
+    "page": "https://www.donga.ac.kr/about/symbols/ui/symbol",
+    "checked_at": "2026-11-10"
    }
   },
   "Q487855": {
@@ -28573,7 +33218,25 @@
      "rgb": "109 95 94",
      "share": 0.17
     }
-   ]
+   ],
+   "ci_page": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN112",
+   "ci_link_text": "UI",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.cue.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDg1LFk="
+     ]
+    ],
+    "page": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN112",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q56143": {
    "name": "조선대학교",
@@ -28610,7 +33273,10 @@
      "rgb": "137 150 208",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_page": "http://www.chosun.ac.kr/chosun/645/subview.do",
+   "ci_link_text": "김보현미술관 로고김보현미술관",
+   "ci_found_by": "rendered-home"
   },
   "Q56148": {
    "name": "영남대학교",
@@ -28699,7 +33365,22 @@
      "rgb": "0 0 0",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG",
+     "JPG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.inje.ac.kr/kor/Download.asp?setDir=AboutInje&fName=UI_Inje_Authority_Mark&fExt=zip"
+     ]
+    ],
+    "page": "https://www.inje.ac.kr/kor/setRoute/S_Page.asp?pCode=AB050010000",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q488334": {
    "name": "서울시립대학교",
@@ -28726,7 +33407,10 @@
      "rgb": "8 77 155",
      "share": 0.5
     }
-   ]
+   ],
+   "ci_page": "https://www.uos.ac.kr/exsignon/sso/sso_index.jsp?RelayState=/common/error.jsp&ReturnUrl=https%3A%2F%2Fwww.uos.ac.kr%2Fkor%2Fhtml%2Fauos%2Fsymbol%2Fui%2Fui.do%3Fmenuid%3D2000001004003000000",
+   "ci_link_text": "UI",
+   "ci_found_by": "rendered-home"
   },
   "Q166202": {
    "name": "청운대학교",
@@ -29020,7 +33704,24 @@
      "rgb": "182 43 92",
      "share": 0.29
     }
-   ]
+   ],
+   "ci_page": "https://www.cbnu.ac.kr/www/selectWebSymbol.do?key=598&symbol=5",
+   "ci_link_text": "심볼마크 시그니처(단과대학)",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "PNG",
+      "https://www.cbnu.ac.kr/downloadContentsFile.do?key=598&fileNo=661"
+     ]
+    ],
+    "page": "https://www.cbnu.ac.kr/www/selectWebSymbol.do?key=598&symbol=5",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q623851": {
    "name": "전북대학교",
@@ -29054,7 +33755,20 @@
      "rgb": "0 67 134",
      "share": 0.29
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.jbnu.ac.kr/file/sub/ui.zip"
+     ]
+    ],
+    "page": "https://www.jbnu.ac.kr/web/intro/university/sub05.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q30294686": {
    "name": "한국성서대학교",
@@ -29126,6 +33840,49 @@
     "bytes": 6336,
     "tone": "normal",
     "file": "/logos/thumbs/survey-53e6fd3131.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_symbol_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_symbol_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/logo_type_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/logo_type_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_signature1_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_signature1_jpg.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_signature2_ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.cs.ac.kr/assets/images/intro/changshin_signature2_jpg.zip"
+     ]
+    ],
+    "page": "https://www.cs.ac.kr/document/intro6_2",
+    "checked_at": "2026-11-10"
    }
   },
   "Q623817": {
@@ -29208,6 +33965,19 @@
     "bytes": 3842,
     "tone": "normal",
     "file": "/logos/thumbs/survey-dd600d7982.png"
+   },
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.chugye.ac.kr/mbs/university/download/UI.zip"
+     ]
+    ],
+    "page": "https://www.chugye.ac.kr/mbs/university/subview.jsp?id=university_010501000000",
+    "checked_at": "2026-11-10"
    }
   },
   "Q40018": {
@@ -29303,7 +34073,28 @@
      "rgb": "0 160 233",
      "share": 0.17
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.knou.ac.kr/sites/knou/download/방송대 UI 다운로드_2025ver02.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.knou.ac.kr/sites/knou/download/심볼마크+지역대학+혼합형+이미지.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.knou.ac.kr/sites/knou/download/UI+서식류_251222.zip"
+     ]
+    ],
+    "page": "https://www.knou.ac.kr/knou/167/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q623604": {
    "name": "한동대학교",
@@ -29405,7 +34196,51 @@
      "rgb": "126 150 199",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_page": "https://www.dyu.ac.kr/intro-2-2/symbol/",
+   "ci_link_text": "동양상징동양상징",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/SYMBOL_MARK.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/LOGO_(KOREA).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/LOGO_(ENGLISH).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/LOGO_(CHINESE).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(KOREA).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(ENGLISH).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(CHINESE).zip"
+     ],
+     [
+      "ZIP",
+      "https://www.dyu.ac.kr/downfile/logo/Signature_B_File_(KOREA_A).zip"
+     ]
+    ],
+    "page": "https://www.dyu.ac.kr/intro-2-2/symbol/",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q488851": {
    "name": "인하대학교",
@@ -29445,6 +34280,25 @@
     "bytes": 8622,
     "tone": "normal",
     "file": "/logos/thumbs/survey-938c1f2e33.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.inha.ac.kr/sites/kr/files/CharacterLogo.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.inha.ac.kr/sites/kr/files/CharacterLogo2.zip"
+     ]
+    ],
+    "page": "https://www.inha.ac.kr/kr/1832/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q626053": {
@@ -29480,7 +34334,28 @@
      "rgb": "177 46 85",
      "share": 0.16
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.hannam.ac.kr/data/about/hannam-symbol-gif.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hannam.ac.kr/data/about/hannam-55-V.I.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hannam.ac.kr/data/about/hannam-logo-eps.zip"
+     ]
+    ],
+    "page": "https://www.hannam.ac.kr/kor/about/about_08_3.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q482724": {
    "name": "한림대학교",
@@ -29830,7 +34705,43 @@
      "rgb": "13 78 156",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_page": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+   "ci_link_text": "한성상징",
+   "ci_found_by": "rendered-home",
+   "formats": {
+    "list": [
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/HSU 시그니처.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/LOGOTYPE.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/HSUCOLOR.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/hansung-character.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/상상부기 프렌즈 ai.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hansung.ac.kr/sites/hansung/files/UI1.zip"
+     ]
+    ],
+    "page": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q626067": {
    "name": "한세대학교",
@@ -29957,7 +34868,21 @@
      "rgb": "35 24 21",
      "share": 1.0
     }
-   ]
+   ],
+   "formats": {
+    "list": [
+     "AI",
+     "PNG"
+    ],
+    "files": [
+     [
+      "AI",
+      "https://www.hongik.ac.kr/cms/etcResourceDown.do?site=%24cms%24NYJyA&key=%24cms%24BYewdg5glg1g+gZwJ4FsBGIA2KCGAneAQQEkA6HKIA"
+     ]
+    ],
+    "page": "https://www.hongik.ac.kr/kr/introduction/school-mark.do",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q11286676": {
    "name": "호남대학교",
@@ -29985,6 +34910,49 @@
     "bytes": 3610,
     "tone": "normal",
     "file": "/logos/thumbs/survey-1b2941a603.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsm_AI.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsm_JPG.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsn_AI.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsn1_JPG.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsn_AI.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hnsn2_JPG.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hneb_AI.zip"
+     ],
+     [
+      "ZIP",
+      "http://www.honam.ac.kr/img/contents/A01/hneb_JPG.zip"
+     ]
+    ],
+    "page": "http://www.honam.ac.kr/Logo",
+    "checked_at": "2026-11-10"
    }
   },
   "Q208736": {
@@ -30013,6 +34981,29 @@
     "bytes": 5989,
     "tone": "normal",
     "file": "/logos/thumbs/survey-c58fec109d.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.hufs.ac.kr/sites/hufs/files/UI_gif.zip"
+     ],
+     [
+      "ZIP",
+      "https://www.hufs.ac.kr/sites/hufs/files/HUFS_UI.zip"
+     ],
+     [
+      "PDF",
+      "https://www.hufs.ac.kr/sites/hufs/files/HUFS_UI.pdf"
+     ]
+    ],
+    "page": "https://www.hufs.ac.kr/hufs/11128/subview.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q490117": {
@@ -30047,6 +35038,20 @@
     "bytes": 17150,
     "tone": "normal",
     "file": "/logos/thumbs/survey-fc0b11962d.png"
+   },
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://www.hoseo.ac.kr/File/Download.do?dir=down&savename=logo_20260611.zip&realname=%ED%98%B8%EC%84%9C%EB%8C%80%ED%95%99%EA%B5%90_%EB%A1%9C%EA%B3%A0_%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.zip"
+     ]
+    ],
+    "page": "https://www.hoseo.ac.kr/Home/Contents.mbz?action=MAPP_1708220023",
+    "checked_at": "2026-11-10"
    }
   },
   "Q3954913": {
@@ -30106,6 +35111,15 @@
     "bytes": 7228,
     "tone": "light",
     "file": "/logos/thumbs/survey-a54c2e4e3f.png"
+   },
+   "formats": {
+    "list": [
+     "AI",
+     "JPG"
+    ],
+    "files": [],
+    "page": "https://www.hsmu.ac.kr/web/contents/HSMU10302000.do",
+    "checked_at": "2026-11-10"
    }
   },
   "Q484108": {
@@ -30240,7 +35254,41 @@
    "fill_tried": [
     "commons: none",
     "home: timeout"
-   ]
+   ],
+   "formats": {
+    "list": [
+     "PDF",
+     "ZIP"
+    ],
+    "files": [
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse01.zip"
+     ],
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse02.zip"
+     ],
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse03.zip"
+     ],
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse04.zip"
+     ],
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse05.zip"
+     ],
+     [
+      "ZIP",
+      "https://plus.cnu.ac.kr/Upl/kr/simbol/horse06.zip"
+     ]
+    ],
+    "page": "https://plus.cnu.ac.kr/html/kr/sub01/sub01_010502.html",
+    "checked_at": "2026-11-10"
+   }
   },
   "Q6431599": {
    "name": "한국침례신학대학교",

@@ -55,6 +55,18 @@ def region_for(org):
     return m.group(1) if m else None
 
 
+def formats_asset(rid, org_name, src_id, found):
+    """One page-listed asset for the file formats named on the CI page (find_formats.py); files are not verified."""
+    if not found or not found.get("list"):
+        return []
+    order = ["AI", "EPS", "SVG", "PDF", "PNG", "JPG", "ZIP"]
+    files = sorted(found.get("files", []), key=lambda f: order.index(f[0]) if f[0] in order else 99)
+    link = urllib.parse.quote(re.sub(r";jsessionid=[^?#]*", "", files[0][1], flags=re.I), safe=":/?&=%#+,;@~!$'()*") if files else None
+    return [{"id": rid + "-asset-1", "label": f"{org_name} CI 파일", "form": "signature", "listed_formats": found["list"],
+             "verified_format": None, "size_bytes": None, "sha256": None, "download_url": link,
+             "access": "public" if link else "information", "source_id": src_id, "file_verification": "page-listed"}]
+
+
 name_counts = Counter(o["name"] for o in orgs)
 # The same image on several organisations' sites is a shared banner or badge, not anyone's logo.
 logo_use = Counter(r["logo"]["sha256"] for r in crawl.values() if r.get("logo"))
@@ -95,7 +107,7 @@ for org in orgs:
     records.append({
         "id": rid, "organization_id": rid, "organization_name": org_name, "name": f"{org_name} {label}", "name_en": org.get("name_en"),
         "aliases": aliases, "category": org["category"], "kind": "organization", "sectors": sectors_for(org), "country": "KR", "region": region,
-        "summary": summary, "source_ids": [src_id], "source_url": url, "guideline_url": ci, "assets": [],
+        "summary": summary, "source_ids": [src_id], "source_url": url, "guideline_url": ci, "assets": formats_asset(rid, org_name, src_id, res.get("formats")),
         "usage": {"summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.", "approval": "unknown", "redistribution": "unknown", "preview": "unknown", "policy_url": None},
         "version": {"status": "unconfirmed", "introduced_at": None, "label": None},
         "review": {"status": "needs-review", "checked_at": res.get("checked_at"), "source_scope": "page" if res.get("checked_at") else None},

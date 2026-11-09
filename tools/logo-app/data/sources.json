@@ -432,13 +432,13 @@
     },
     {
       "id": "kr-q624438-src",
-      "title": "감사원 공식 홈페이지",
-      "url": "https://www.bai.go.kr/",
+      "title": "감사원 CI·상징 안내",
+      "url": "https://www.bai.go.kr/bai/intro/instructionSymbol/",
       "publisher": "감사원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '원훈/상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 위키데이터 Q624438"
     },
     {
@@ -641,35 +641,35 @@
     },
     {
       "id": "kr-q482789-src",
-      "title": "법무부 공식 홈페이지",
-      "url": "https://www.moj.go.kr",
+      "title": "법무부 CI·상징 안내",
+      "url": "https://www.moj.go.kr/moj/262/subview.do",
       "publisher": "법무부",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '상징'에서 이 페이지를 찾음. 공식 색상 표기 3건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 위키데이터 Q482789 · 수집 오류: home: HTTPError: HTTP Error 307: The HTTP server returned a redirect error that would lead to an "
     },
     {
       "id": "kr-q488542-src",
-      "title": "국방부 공식 홈페이지",
-      "url": "https://www.mnd.go.kr/",
+      "title": "국방부 CI·상징 안내",
+      "url": "https://www.mnd.go.kr/mnd/322/subview.do",
       "publisher": "국방부",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '상징물'에서 이 페이지를 찾음. 공식 색상 표기 4건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 위키데이터 Q488542"
     },
     {
       "id": "kr-q488954-src",
-      "title": "행정안전부 공식 홈페이지",
-      "url": "https://www.mois.go.kr:443/",
+      "title": "행정안전부 CI·상징 안내",
+      "url": "https://www.mois.go.kr:443/frt/sub/a06/b08/nationalIcon/screen.do",
       "publisher": "행정안전부",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '국가상징 페이지로 이동- 국가상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 위키데이터 Q488954"
     },
     {
@@ -1004,13 +1004,13 @@
     },
     {
       "id": "kr-q41071-src",
-      "title": "강원특별자치도 공식 홈페이지",
-      "url": "https://state.gwd.go.kr/eng",
+      "title": "강원특별자치도 CI·상징 안내",
+      "url": "https://state.gwd.go.kr",
       "publisher": "강원특별자치도",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '로고링크'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 위키데이터 Q41071 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -2192,13 +2192,13 @@
     },
     {
       "id": "kr-q50398-src",
-      "title": "사상구 공식 홈페이지",
-      "url": "https://www.sasang.go.kr/index.sasang",
+      "title": "사상구 CI·상징 안내",
+      "url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
       "publisher": "사상구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '구 상징물'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50398"
     },
     {
@@ -2434,13 +2434,13 @@
     },
     {
       "id": "kr-q50417-src",
-      "title": "수영구 공식 홈페이지",
-      "url": "https://www.suyeong.go.kr/index.suyeong",
+      "title": "수영구 CI·상징 안내",
+      "url": "https://www.suyeong.go.kr/index.suyeong?menuCd=DOM_000000104002005001",
       "publisher": "수영구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '수영 CI(이미지)'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50417"
     },
     {
@@ -2951,13 +2951,13 @@
     },
     {
       "id": "kr-q50431-src",
-      "title": "유성구 공식 홈페이지",
-      "url": "https://www.yuseong.go.kr/",
+      "title": "유성구 CI·상징 안내",
+      "url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
       "publisher": "유성구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '유성의 상징'에서 이 페이지를 찾음. 공식 색상 표기 3건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50431"
     },
     {
@@ -3644,13 +3644,13 @@
     },
     {
       "id": "kr-q7451674-src",
-      "title": "서울특별시교육청 공식 홈페이지",
-      "url": "https://www.sen.go.kr/",
+      "title": "서울특별시교육청 CI·상징 안내",
+      "url": "https://www.sen.go.kr/www/office/symbol/symbol.jsp",
       "publisher": "서울특별시교육청",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '휘장/서체'에서 이 페이지를 찾음. 공식 색상 표기 4건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 교육청 · 위키데이터 Q7451674"
     },
     {
@@ -3699,24 +3699,24 @@
     },
     {
       "id": "kr-q16167642-src",
-      "title": "대전광역시교육청 공식 홈페이지",
-      "url": "http://www.dje.go.kr",
+      "title": "대전광역시교육청 CI·상징 안내",
+      "url": "http://www.dje.go.kr/sub/info.do?page=0511&m=051101&s=dje",
       "publisher": "대전광역시교육청",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '상징마크상징마크'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 교육청 · 위키데이터 Q16167642"
     },
     {
       "id": "kr-q16164847-src",
-      "title": "울산광역시교육청 공식 홈페이지",
-      "url": "http://www.use.go.kr",
+      "title": "울산광역시교육청 CI·상징 안내",
+      "url": "https://use.go.kr/www/office/symbol.jsp",
       "publisher": "울산광역시교육청",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '심벌마크'에서 이 페이지를 찾음. 공식 색상 표기 4건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 교육청 · 위키데이터 Q16164847 · 수집 오류: home: HTTPError: HTTP Error 308: Permanent Redirect"
     },
     {
@@ -3798,13 +3798,13 @@
     },
     {
       "id": "kr-q12583702-src",
-      "title": "경상남도교육청 공식 홈페이지",
-      "url": "http://www.gne.go.kr/",
+      "title": "경상남도교육청 CI·상징 안내",
+      "url": "https://www.gne.go.kr/www/office/slogan.jsp",
       "publisher": "경상남도교육청",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '교육청 상징/브랜드슬로건'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 교육청 · 위키데이터 Q12583702 · 수집 오류: home: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
     },
     {
@@ -4084,13 +4084,13 @@
     },
     {
       "id": "kr-q12592673-src",
-      "title": "주택도시보증공사 공식 홈페이지",
-      "url": "https://www.khug.or.kr/",
+      "title": "주택도시보증공사 CI·상징 안내",
+      "url": "https://www.khug.or.kr/index_hug_in.jsp",
       "publisher": "주택도시보증공사",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '메인으로 이동 HUG 주택도시보증공사 로고'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 준시장형 공기업 · 위키데이터 Q12592673"
     },
     {
@@ -4513,13 +4513,13 @@
     },
     {
       "id": "kr-q16179935-src",
-      "title": "건강보험심사평가원 공식 홈페이지",
-      "url": "http://www.hira.or.kr",
+      "title": "건강보험심사평가원 CI·상징 안내",
+      "url": "https://www.hira.or.kr/dummy.do?pgmid=HIRAA040003000100&WT.gnb=%EC%A0%84%EB%9E%B5%EC%B2%B4%EA%B3%84+%EB%B0%8F+CI",
       "publisher": "건강보험심사평가원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '전략체계 및 CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 위키데이터 Q16179935 · 수집 오류: home: HTTPError: HTTP Error 308: Permanent Redirect"
     },
     {
@@ -4557,13 +4557,13 @@
     },
     {
       "id": "kr-q12606661-src",
-      "title": "한국에너지공단 공식 홈페이지",
-      "url": "https://www.energy.or.kr",
+      "title": "한국에너지공단 CI·상징 안내",
+      "url": "https://www.energy.or.kr/front/conts/102013002000000.do",
       "publisher": "한국에너지공단",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '로고타입'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 위키데이터 Q12606661 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -5019,13 +5019,13 @@
     },
     {
       "id": "kr-q16171239-src",
-      "title": "한국환경연구원 공식 홈페이지",
-      "url": "http://www.kei.re.kr",
+      "title": "한국환경연구원 CI·상징 안내",
+      "url": "https://www.kei.re.kr/menu.es?mid=a10402040000",
       "publisher": "한국환경연구원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI 소개'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q16171239 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -5162,13 +5162,13 @@
     },
     {
       "id": "kr-q19162245-src",
-      "title": "한국통계정보원 공식 홈페이지",
+      "title": "한국통계정보원 CI·상징 안내",
       "url": "https://kosii.or.kr/kosii/index.do",
       "publisher": "한국통계정보원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q19162245"
     },
     {
@@ -5239,13 +5239,13 @@
     },
     {
       "id": "kr-q4501812-src",
-      "title": "한국수출입은행 공식 홈페이지",
-      "url": "https://www.koreaexim.go.kr/",
+      "title": "한국수출입은행 CI·상징 안내",
+      "url": "https://www.koreaexim.go.kr/HPHKBI005M01",
       "publisher": "한국수출입은행",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q4501812 · 수집 오류: home: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an "
     },
     {
@@ -5305,13 +5305,13 @@
     },
     {
       "id": "kr-q21400278-src",
-      "title": "국립부산과학관 공식 홈페이지",
-      "url": "https://www.sciport.or.kr/",
+      "title": "국립부산과학관 CI·상징 안내",
+      "url": "https://www.sciport.or.kr/kor/CMS/Contents/Contents.do?mCode=MN102",
       "publisher": "국립부산과학관",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'MI 및 캐릭터'에서 이 페이지를 찾음. 공식 색상 표기 2건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q21400278"
     },
     {
@@ -5327,13 +5327,13 @@
     },
     {
       "id": "kr-q14850773-src",
-      "title": "연구개발특구진흥재단 공식 홈페이지",
-      "url": "https://www.innopolis.or.kr/mps",
+      "title": "연구개발특구진흥재단 CI·상징 안내",
+      "url": "https://www.innopolis.or.kr/board;jsessionid=A93EF695D4BBD32602F558F29026B22D.tomcat1?menuId=MENU00875&siteId=null",
       "publisher": "연구개발특구진흥재단",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '로고'에서 이 페이지를 찾음. 공식 색상 표기 1건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q14850773"
     },
     {
@@ -5657,13 +5657,13 @@
     },
     {
       "id": "kr-q626534-src",
-      "title": "한국학중앙연구원 공식 홈페이지",
-      "url": "https://www.aks.ac.kr/index.do",
+      "title": "한국학중앙연구원 CI·상징 안내",
+      "url": "https://www.aks.ac.kr/com/cmm/EgovContentView.do?menuNo=5010174000&lang=kor",
       "publisher": "한국학중앙연구원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI 소개'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q626534"
     },
     {
@@ -5833,13 +5833,13 @@
     },
     {
       "id": "kr-q115648978-src",
-      "title": "국악방송 공식 홈페이지",
-      "url": "https://www.igbf.kr/",
+      "title": "국악방송 CI·상징 안내",
+      "url": "https://www.igbf.kr/gugak_web/?sub_num=756",
       "publisher": "국악방송",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q115648978"
     },
     {
@@ -6658,13 +6658,13 @@
     },
     {
       "id": "kr-q6431684-src",
-      "title": "한전원자력연료 공식 홈페이지",
-      "url": "https://www.knfc.co.kr:443/mps",
+      "title": "한전원자력연료 CI·상징 안내",
+      "url": "https://www.knfc.co.kr/board?menuId=MENU00500&siteId=null",
       "publisher": "한전원자력연료",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI 라이브러리'에서 이 페이지를 찾음. 공식 색상 표기 2건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q6431684"
     },
     {
@@ -7043,13 +7043,13 @@
     },
     {
       "id": "kr-q12624539-src",
-      "title": "한국항로표지기술원 공식 홈페이지",
-      "url": "http://katon.or.kr/main",
+      "title": "한국항로표지기술원 CI·상징 안내",
+      "url": "http://katon.or.kr/page/31",
       "publisher": "한국항로표지기술원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q12624539"
     },
     {
@@ -7087,13 +7087,13 @@
     },
     {
       "id": "kr-q55735764-src",
-      "title": "한국해양진흥공사 공식 홈페이지",
-      "url": "https://www.kobc.or.kr",
+      "title": "한국해양진흥공사 CI·상징 안내",
+      "url": "https://www.kobc.or.kr/ebz/kor/contents.do?mId=0101040000",
       "publisher": "한국해양진흥공사",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q55735764 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
@@ -7219,13 +7219,13 @@
     },
     {
       "id": "kr-q626610-src",
-      "title": "국방과학연구소 공식 홈페이지",
-      "url": "https://www.add.re.kr/kps",
+      "title": "국방과학연구소 CI·상징 안내",
+      "url": "https://www.add.re.kr/board?menuId=MENU02026&siteId=null",
       "publisher": "국방과학연구소",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'ADD CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q626610"
     },
     {
@@ -7285,13 +7285,13 @@
     },
     {
       "id": "kr-q16169337-src",
-      "title": "한국임업진흥원 공식 홈페이지",
-      "url": "https://www.kofpi.or.kr/m/index.do",
+      "title": "한국임업진흥원 CI·상징 안내",
+      "url": "https://www.kofpi.or.kr/intro/intro_12.do",
       "publisher": "한국임업진흥원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI/수페스타 소개'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q16169337"
     },
     {
@@ -7307,13 +7307,13 @@
     },
     {
       "id": "kr-q16164791-src",
-      "title": "APEC기후센터 공식 홈페이지",
-      "url": "http://www.apcc21.org",
+      "title": "APEC기후센터 CI·상징 안내",
+      "url": "https://www.apcc21.org/content/ci?lang=ko",
       "publisher": "APEC기후센터",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 공식 색상 표기 2건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q16164791 · 수집 오류: home: HTTPError: HTTP Error 308: Permanent Redirect"
     },
     {
@@ -7505,13 +7505,13 @@
     },
     {
       "id": "kr-q487836-src",
-      "title": "경상국립대학교 공식 홈페이지",
-      "url": "https://www.gnu.ac.kr/intro/www/",
+      "title": "경상국립대학교 CI·상징 안내",
+      "url": "https://www.gnu.ac.kr/main/cm/cntnts/cntntsView.do?mi=1367&cntntsId=1197",
       "publisher": "경상국립대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '상징 / VI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q487836"
     },
     {
@@ -7637,13 +7637,13 @@
     },
     {
       "id": "kr-q212297-src",
-      "title": "광운대학교 공식 홈페이지",
-      "url": "https://www.kw.ac.kr",
+      "title": "광운대학교 CI·상징 안내",
+      "url": "https://www.kw.ac.kr/ko/life/symbol02.jsp",
       "publisher": "광운대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '광운상징물'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q212297"
     },
     {
@@ -7714,13 +7714,13 @@
     },
     {
       "id": "kr-q494638-src",
-      "title": "국립경국대학교 공식 홈페이지",
-      "url": "https://www.anu.ac.kr/",
+      "title": "국립경국대학교 CI·상징 안내",
+      "url": "https://www.anu.ac.kr/gknu-redirect.htm?t=1794267183373",
       "publisher": "국립경국대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '대학상징 페이지로 이동합니다.대학상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q494638"
     },
     {
@@ -7967,24 +7967,24 @@
     },
     {
       "id": "kr-q12591209-src",
-      "title": "대구경북과학기술원 공식 홈페이지",
-      "url": "https://dgist.ac.kr/",
+      "title": "대구경북과학기술원 CI·상징 안내",
+      "url": "https://www.dgist.ac.kr/eng/sub01_02_04_01.do",
       "publisher": "대구경북과학기술원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'BRANDING & IDENTITY'에서 이 페이지를 찾음. 공식 색상 표기 6건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q12591209 · 수집 오류: home: URLError: <urlopen error [Errno 54] Connection reset by peer>"
     },
     {
       "id": "kr-q482711-src",
-      "title": "대구교육대학교 공식 홈페이지",
-      "url": "http://www.dnue.ac.kr/kor/intro.do;jsessionid=C318F47A81BF6752224A062CFE182716.tomcat2",
+      "title": "대구교육대학교 CI·상징 안내",
+      "url": "http://www.dnue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN050",
       "publisher": "대구교육대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '로고/엠블럼'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q482711"
     },
     {
@@ -8154,13 +8154,13 @@
     },
     {
       "id": "kr-q5296069-src",
-      "title": "동양대학교 공식 홈페이지",
-      "url": "http://www.dyu.ac.kr/",
+      "title": "동양대학교 CI·상징 안내",
+      "url": "https://www.dyu.ac.kr/intro-2-2/symbol/",
       "publisher": "동양대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '동양상징동양상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q5296069 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
@@ -8176,13 +8176,13 @@
     },
     {
       "id": "kr-q5297278-src",
-      "title": "두원공과대학교 공식 홈페이지",
-      "url": "https://www.doowon.ac.kr/sites/kr/index.do",
+      "title": "두원공과대학교 CI·상징 안내",
+      "url": "https://www.doowon.ac.kr/kr/1711/subview.do",
       "publisher": "두원공과대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '로고 및 UI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q5297278"
     },
     {
@@ -8385,13 +8385,13 @@
     },
     {
       "id": "kr-q488334-src",
-      "title": "서울시립대학교 공식 홈페이지",
-      "url": "https://www.uos.ac.kr/exsignon/sso/sso_index.jsp?RelayState=/common/error.jsp&ReturnUrl=https%3A%2F%2Fwww.uos.ac.kr%2Fmain.do",
+      "title": "서울시립대학교 CI·상징 안내",
+      "url": "https://www.uos.ac.kr/exsignon/sso/sso_index.jsp?RelayState=/common/error.jsp&ReturnUrl=https%3A%2F%2Fwww.uos.ac.kr%2Fkor%2Fhtml%2Fauos%2Fsymbol%2Fui%2Fui.do%3Fmenuid%3D2000001004003000000",
       "publisher": "서울시립대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'UI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q488334"
     },
     {
@@ -8528,13 +8528,13 @@
     },
     {
       "id": "kr-q7446489-src",
-      "title": "세한대학교 공식 홈페이지",
-      "url": "https://www.sehan.ac.kr/",
+      "title": "세한대학교 CI·상징 안내",
+      "url": "https://www.sehan.ac.kr/sehan/246/subview.do",
       "publisher": "세한대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '대학심볼'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q7446489"
     },
     {
@@ -8616,13 +8616,13 @@
     },
     {
       "id": "kr-q626362-src",
-      "title": "신라대학교 공식 홈페이지",
-      "url": "https://www.silla.ac.kr:/",
+      "title": "신라대학교 CI·상징 안내",
+      "url": "https://www.silla.ac.kr:/ko/index.php?pCode=symbol1",
       "publisher": "신라대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '신라상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q626362"
     },
     {
@@ -9001,13 +9001,13 @@
     },
     {
       "id": "kr-q56143-src",
-      "title": "조선대학교 공식 홈페이지",
-      "url": "http://www.chosun.ac.kr/",
+      "title": "조선대학교 CI·상징 안내",
+      "url": "http://www.chosun.ac.kr/chosun/645/subview.do",
       "publisher": "조선대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '김보현미술관 로고김보현미술관'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q56143"
     },
     {
@@ -9056,13 +9056,13 @@
     },
     {
       "id": "kr-q482692-src",
-      "title": "진주교육대학교 공식 홈페이지",
-      "url": "http://www.cue.ac.kr/",
+      "title": "진주교육대학교 CI·상징 안내",
+      "url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN112",
       "publisher": "진주교육대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'UI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q482692 · 수집 오류: home: HTTPError: HTTP Error 500: Internal Server Error"
     },
     {
@@ -9177,13 +9177,13 @@
     },
     {
       "id": "kr-q491714-src",
-      "title": "충북대학교 공식 홈페이지",
-      "url": "https://www.cbnu.ac.kr/",
+      "title": "충북대학교 CI·상징 안내",
+      "url": "https://www.cbnu.ac.kr/www/selectWebSymbol.do?key=598&symbol=5",
       "publisher": "충북대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '심볼마크 시그니처(단과대학)'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q491714"
     },
     {
@@ -9375,13 +9375,13 @@
     },
     {
       "id": "kr-q482765-src",
-      "title": "한성대학교 공식 홈페이지",
-      "url": "https://www.hansung.ac.kr/",
+      "title": "한성대학교 CI·상징 안내",
+      "url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
       "publisher": "한성대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 '한성상징'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q482765"
     },
     {
