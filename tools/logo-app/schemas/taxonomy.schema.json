@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LETSUM logo taxonomy 1.0",
+  "type": "object",
+  "properties": {
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "national-government",
+              "local-government",
+              "public-organization",
+              "education",
+              "business",
+              "nonprofit",
+              "intergovernmental"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "sectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "administration",
+              "education",
+              "research-science",
+              "healthcare",
+              "welfare",
+              "culture-arts",
+              "tourism",
+              "sports",
+              "environment",
+              "transport-logistics",
+              "energy",
+              "finance",
+              "ict-digital",
+              "industry-manufacturing",
+              "agriculture-food",
+              "housing-construction",
+              "safety-defense",
+              "international-cooperation"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 18,
+      "maxItems": 18
+    },
+    "asset_forms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "symbol",
+              "wordmark",
+              "signature",
+              "emblem",
+              "slogan",
+              "character",
+              "guide"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "AI",
+          "EPS",
+          "SVG",
+          "PDF",
+          "PNG",
+          "JPG",
+          "WEBP",
+          "ZIP"
+        ]
+      },
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "access": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "public",
+              "login",
+              "request",
+              "information",
+              "unknown"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "identity_kinds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "organization",
+              "city-brand",
+              "product",
+              "service",
+              "campaign",
+              "anniversary"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 6,
+      "maxItems": 6
+    }
+  },
+  "required": [
+    "categories",
+    "sectors",
+    "asset_forms",
+    "formats",
+    "access",
+    "identity_kinds"
+  ],
+  "additionalProperties": false
+}

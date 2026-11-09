@@ -1,0 +1,194 @@
+{
+  "categories": [
+    {
+      "id": "national-government",
+      "label": "정부·국가기관"
+    },
+    {
+      "id": "local-government",
+      "label": "지자체·교육행정"
+    },
+    {
+      "id": "public-organization",
+      "label": "공공기관·공기업"
+    },
+    {
+      "id": "education",
+      "label": "대학·학교"
+    },
+    {
+      "id": "business",
+      "label": "기업·브랜드"
+    },
+    {
+      "id": "nonprofit",
+      "label": "협회·비영리단체"
+    },
+    {
+      "id": "intergovernmental",
+      "label": "국제기구"
+    }
+  ],
+  "sectors": [
+    {
+      "id": "administration",
+      "label": "행정·정책"
+    },
+    {
+      "id": "education",
+      "label": "교육·학습"
+    },
+    {
+      "id": "research-science",
+      "label": "연구·과학기술"
+    },
+    {
+      "id": "healthcare",
+      "label": "보건·의료"
+    },
+    {
+      "id": "welfare",
+      "label": "복지·사회서비스"
+    },
+    {
+      "id": "culture-arts",
+      "label": "문화·예술"
+    },
+    {
+      "id": "tourism",
+      "label": "관광"
+    },
+    {
+      "id": "sports",
+      "label": "체육·스포츠"
+    },
+    {
+      "id": "environment",
+      "label": "환경·기후"
+    },
+    {
+      "id": "transport-logistics",
+      "label": "교통·물류"
+    },
+    {
+      "id": "energy",
+      "label": "에너지·자원"
+    },
+    {
+      "id": "finance",
+      "label": "금융·보험"
+    },
+    {
+      "id": "ict-digital",
+      "label": "IT·통신·디지털"
+    },
+    {
+      "id": "industry-manufacturing",
+      "label": "산업·제조"
+    },
+    {
+      "id": "agriculture-food",
+      "label": "농림수산·식품"
+    },
+    {
+      "id": "housing-construction",
+      "label": "주거·건설·국토"
+    },
+    {
+      "id": "safety-defense",
+      "label": "안전·치안·국방"
+    },
+    {
+      "id": "international-cooperation",
+      "label": "국제협력·외교"
+    }
+  ],
+  "asset_forms": [
+    {
+      "id": "symbol",
+      "label": "심벌"
+    },
+    {
+      "id": "wordmark",
+      "label": "로고타입"
+    },
+    {
+      "id": "signature",
+      "label": "시그니처·조합형"
+    },
+    {
+      "id": "emblem",
+      "label": "엠블럼·정장"
+    },
+    {
+      "id": "slogan",
+      "label": "슬로건 마크"
+    },
+    {
+      "id": "character",
+      "label": "캐릭터"
+    },
+    {
+      "id": "guide",
+      "label": "사용 가이드·매뉴얼"
+    }
+  ],
+  "formats": [
+    "AI",
+    "EPS",
+    "SVG",
+    "PDF",
+    "PNG",
+    "JPG",
+    "WEBP",
+    "ZIP"
+  ],
+  "access": [
+    {
+      "id": "public",
+      "label": "공개 파일 제공 안내"
+    },
+    {
+      "id": "login",
+      "label": "로그인 필요"
+    },
+    {
+      "id": "request",
+      "label": "신청·문의 필요"
+    },
+    {
+      "id": "information",
+      "label": "정보만 제공"
+    },
+    {
+      "id": "unknown",
+      "label": "접근 방식 미확인"
+    }
+  ],
+  "identity_kinds": [
+    {
+      "id": "organization",
+      "label": "기관·기업 대표"
+    },
+    {
+      "id": "city-brand",
+      "label": "도시·지역 브랜드"
+    },
+    {
+      "id": "product",
+      "label": "제품 브랜드"
+    },
+    {
+      "id": "service",
+      "label": "서비스 브랜드"
+    },
+    {
+      "id": "campaign",
+      "label": "사업·행사"
+    },
+    {
+      "id": "anniversary",
+      "label": "기념 브랜드"
+    }
+  ]
+}

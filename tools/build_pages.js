@@ -167,9 +167,9 @@ const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-
   h = h.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="상업용 무료 영문 폰트를 내 문장으로 바로 비교하고 라이선스 사용 범위까지 확인합니다.">');
   R('<link rel="canonical" href="https://letsum.app/">', '<link rel="canonical" href="https://letsum.app/en/">');
   R('<meta property="og:url" content="https://letsum.app/">', '<meta property="og:url" content="https://letsum.app/en/">');
-  R('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/" class="on">영문 폰트</a>');
+  h = h.replace('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/" class="on">영문 폰트</a>');
   R('<a class="logo" href="index.html">', '<a class="logo" href="en/">');
-  h = h.replace(/<script src="js\/data\.js\?v=(\d+)"><\/script>/, (m) => '<script>window.LS_LANG="en"</script>\n' + m + '\n<script src="js/data_en.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_en.js"))).digest("hex").slice(0, 8) + '"></script>');
+  h = h.replace(/<script src="js\/data\.js\?v=([\w]+)"><\/script>/, (m) => '<script>window.LS_LANG="en"</script>\n' + m + '\n<script src="js/data_en.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_en.js"))).digest("hex").slice(0, 8) + '"></script>');
   // 한글 전용 필터(완성형·옛한글·한자, 입력 문장 글자 지원)는 뺀다
   h = h.replace(/\s*<button class="fbtn" data-cov="(11172|old|hanja)">[^<]*<\/button>/g, "");
   h = h.replace(/<label class="fcheck"[^>]*><input type="checkbox" id="coverOnly">[\s\S]*?<\/label>/, '<input type="checkbox" id="coverOnly" hidden>');
@@ -188,9 +188,9 @@ const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-
   h = h.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="상업용 무료 딩벳·아이콘·기호 폰트를 견본 기호로 비교하고 라이선스 사용 범위까지 확인합니다.">');
   R('<link rel="canonical" href="https://letsum.app/">', '<link rel="canonical" href="https://letsum.app/dingbat/">');
   R('<meta property="og:url" content="https://letsum.app/">', '<meta property="og:url" content="https://letsum.app/dingbat/">');
-  R('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/">딩벳 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/" class="on">딩벳 폰트</a>');
+  h = h.replace('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/">딩벳 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/" class="on">딩벳 폰트</a>');
   R('<a class="logo" href="index.html">', '<a class="logo" href="dingbat/">');
-  h = h.replace(/<script src="js\/data\.js\?v=(\d+)"><\/script>/, (m) => '<script>window.LS_LANG="db"</script>\n' + m + '\n<script src="js/data_db.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_db.js"))).digest("hex").slice(0, 8) + '"></script>');
+  h = h.replace(/<script src="js\/data\.js\?v=([\w]+)"><\/script>/, (m) => '<script>window.LS_LANG="db"</script>\n' + m + '\n<script src="js/data_db.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_db.js"))).digest("hex").slice(0, 8) + '"></script>');
   h = h.replace(/\s*<button class="fbtn" data-cov="(11172|old|hanja)">[^<]*<\/button>/g, "");
   h = h.replace(/<label class="fcheck"[^>]*><input type="checkbox" id="coverOnly">[\s\S]*?<\/label>/, '<input type="checkbox" id="coverOnly" hidden>');
   fs.mkdirSync(path.join(ROOT, "dingbat"), { recursive: true });
@@ -403,5 +403,7 @@ Sitemap: ${SITE}/sitemap.xml
 fs.writeFileSync(path.join(ROOT, "type", "robots.txt"), fs.readFileSync(path.join(ROOT, "robots.txt"), "utf8").replace("# LETSUM(렛섬)", "# LETSUM 필사독서(type.letsum.app)").replace(`Sitemap: ${SITE}/sitemap.xml`, "Sitemap: https://type.letsum.app/sitemap.xml"));
 console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);
 
+require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_logos.mjs")], {stdio:"inherit"});
+require("./build_navigation.js").build();
 // Keep UI translations on generated font, topic and catalogue pages.
 require("./build_ui_language.js");

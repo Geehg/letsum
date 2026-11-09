@@ -1,0 +1,581 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LETSUM logo catalog 1.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "scope_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "organization_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "organization_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name_en": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "national-government",
+              "local-government",
+              "public-organization",
+              "education",
+              "business",
+              "nonprofit",
+              "intergovernmental"
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "organization",
+              "city-brand",
+              "product",
+              "service",
+              "campaign",
+              "anniversary"
+            ]
+          },
+          "sectors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "administration",
+                "education",
+                "research-science",
+                "healthcare",
+                "welfare",
+                "culture-arts",
+                "tourism",
+                "sports",
+                "environment",
+                "transport-logistics",
+                "energy",
+                "finance",
+                "ict-digital",
+                "industry-manufacturing",
+                "agriculture-food",
+                "housing-construction",
+                "safety-defense",
+                "international-cooperation"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "country": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[A-Z]{2}$"
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+          },
+          "guideline_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri",
+            "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "form": {
+                  "type": "string",
+                  "enum": [
+                    "symbol",
+                    "wordmark",
+                    "signature",
+                    "emblem",
+                    "slogan",
+                    "character",
+                    "guide"
+                  ]
+                },
+                "listed_formats": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "AI",
+                      "EPS",
+                      "SVG",
+                      "PDF",
+                      "PNG",
+                      "JPG",
+                      "WEBP",
+                      "ZIP"
+                    ]
+                  },
+                  "uniqueItems": true
+                },
+                "verified_format": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "AI",
+                    "EPS",
+                    "SVG",
+                    "PDF",
+                    "PNG",
+                    "JPG",
+                    "WEBP",
+                    "ZIP",
+                    null
+                  ]
+                },
+                "size_bytes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "sha256": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "download_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri",
+                  "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+                },
+                "access": {
+                  "type": "string",
+                  "enum": [
+                    "public",
+                    "login",
+                    "request",
+                    "information",
+                    "unknown"
+                  ]
+                },
+                "source_id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "file_verification": {
+                  "type": "string",
+                  "enum": [
+                    "page-listed",
+                    "link-checked",
+                    "file-verified",
+                    "not-provided"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "form",
+                "listed_formats",
+                "verified_format",
+                "size_bytes",
+                "sha256",
+                "download_url",
+                "access",
+                "source_id",
+                "file_verification"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "file_verification": {
+                        "const": "file-verified"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "verified_format": {
+                        "type": "string",
+                        "enum": [
+                          "AI",
+                          "EPS",
+                          "SVG",
+                          "PDF",
+                          "PNG",
+                          "JPG",
+                          "WEBP",
+                          "ZIP"
+                        ]
+                      },
+                      "size_bytes": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "download_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+                      }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "verified_format": {
+                        "type": "null"
+                      },
+                      "size_bytes": {
+                        "type": "null"
+                      },
+                      "sha256": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "file_verification": {
+                        "const": "not-provided"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "listed_formats": {
+                        "maxItems": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "approval": {
+                "type": "string",
+                "enum": [
+                  "required",
+                  "conditional",
+                  "not-stated",
+                  "unknown"
+                ]
+              },
+              "redistribution": {
+                "type": "string",
+                "enum": [
+                  "permitted",
+                  "conditional",
+                  "restricted",
+                  "unknown"
+                ]
+              },
+              "preview": {
+                "type": "string",
+                "enum": [
+                  "permitted",
+                  "conditional",
+                  "restricted",
+                  "unknown"
+                ]
+              },
+              "policy_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri",
+                "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+              }
+            },
+            "required": [
+              "summary",
+              "approval",
+              "redistribution",
+              "preview",
+              "policy_url"
+            ],
+            "additionalProperties": false
+          },
+          "version": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "current",
+                  "historical",
+                  "unconfirmed"
+                ]
+              },
+              "introduced_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "label": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "status",
+              "introduced_at",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "review": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "source-reviewed",
+                  "needs-review",
+                  "draft",
+                  "archived"
+                ]
+              },
+              "checked_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "source_scope": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "page",
+                  "search",
+                  null
+                ]
+              }
+            },
+            "required": [
+              "status",
+              "checked_at",
+              "source_scope"
+            ],
+            "additionalProperties": false
+          },
+          "related_fonts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://[^/?#@\\\\\\u0000-\\u0020\\u007F-\\u009F]+(?:[/?#][^\\\\\\u0000-\\u0020\\u007F-\\u009F]*)?$"
+                }
+              },
+              "required": [
+                "name",
+                "source_url"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "organization_id",
+          "organization_name",
+          "name",
+          "name_en",
+          "aliases",
+          "category",
+          "kind",
+          "sectors",
+          "country",
+          "region",
+          "summary",
+          "source_ids",
+          "source_url",
+          "guideline_url",
+          "assets",
+          "usage",
+          "version",
+          "review",
+          "related_fonts"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "review": {
+                  "properties": {
+                    "status": {
+                      "const": "source-reviewed"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "review": {
+                  "properties": {
+                    "checked_at": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "source_scope": {
+                      "type": "string",
+                      "enum": [
+                        "page",
+                        "search"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "version": {
+                  "properties": {
+                    "status": {
+                      "const": "current"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "version": {
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "review": {
+                  "properties": {
+                    "source_scope": {
+                      "const": "page"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "version",
+    "updated_at",
+    "scope_note",
+    "records"
+  ],
+  "additionalProperties": false
+}
