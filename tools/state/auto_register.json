@@ -86,8 +86,8 @@
  "lxgw/LxgwWenkaiKR": {
   "result": "skip",
   "why": "jsDelivr 목록 실패(HTTP Error 403: Forbidden)",
-  "pushed": "2026-10-31T08:47:07Z",
-  "checked": "2026-11-02"
+  "pushed": "2026-11-08T09:04:51Z",
+  "checked": "2026-11-09"
  },
  "quiple/x10y12pxDenkiChipHangul": {
   "result": "added",
@@ -194,8 +194,8 @@
  "kyh0703/jetbatang": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-21T08:22:26Z",
-  "checked": "2026-10-26"
+  "pushed": "2026-11-04T04:20:26Z",
+  "checked": "2026-11-09"
  },
  "beomjungil/NotoSerifKR-Web": {
   "result": "skip",
@@ -206,8 +206,8 @@
  "younjungpark/Monatendard": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-30T08:43:26Z",
-  "checked": "2026-11-02"
+  "pushed": "2026-11-02T10:49:20Z",
+  "checked": "2026-11-09"
  },
  "wudys/0xProtoD2": {
   "result": "skip",
@@ -218,8 +218,8 @@
  "hunterhogan/Integrated_code_fire_font": {
   "result": "skip",
   "why": "라이선스 NOASSERTION",
-  "pushed": "2026-10-29T03:03:29Z",
-  "checked": "2026-11-02"
+  "pushed": "2026-11-07T09:44:15Z",
+  "checked": "2026-11-09"
  },
  "xkho/presevka": {
   "result": "skip",
@@ -292,5 +292,23 @@
   "why": "별 0개(기준 15)",
   "pushed": "2026-10-31T01:32:58Z",
   "checked": "2026-11-02"
+ },
+ "naemkung-company/naemkung-typewriter": {
+  "result": "skip",
+  "why": "별 1개(기준 15)",
+  "pushed": "2026-11-08T10:57:35Z",
+  "checked": "2026-11-09"
+ },
+ "lxgw/LxgwMarkerGothicKR": {
+  "result": "skip",
+  "why": "별 3개(기준 15)",
+  "pushed": "2026-11-05T16:58:17Z",
+  "checked": "2026-11-09"
+ },
+ "oqoz/presevka": {
+  "result": "skip",
+  "why": "라이선스 NOASSERTION",
+  "pushed": "2026-11-05T10:54:37Z",
+  "checked": "2026-11-09"
  }
 }
