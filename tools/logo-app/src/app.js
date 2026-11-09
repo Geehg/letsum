@@ -183,10 +183,20 @@ import { renderReview, bindReview } from './review.js';
   const brandStyle = thumb => thumb.bg ? ` style="--brand:${h(thumb.bg)};--brand-ink:${h(thumb.ink || '#ffffff')}"` : '';
   const thumbAttrs = thumb => thumb ? ` data-thumb="${h(thumb.mode)}"${thumb.tone === 'light' ? ' data-tone="light"' : ''}${brandStyle(thumb)}` : '';
   // Glyph thumbnails (single-colour SVG) sit white on the brand colour on the front and in colour on the back.
+  // Every logo is trimmed to its drawn area (tools/logo-survey/normalize_logos.py records the width/height ratio) and
+  // sized so that wide wordmarks and square emblems cover a similar area of the box: height = min(1, B / r, sqrt(A / r)),
+  // where B is the box's width/height ratio and A the target area in box-height units.
+  const LOGO_BOXES = { front: [2.6, 0.62], tile: [1, 0.5], detail: [1.6, 0.6] };
+  function logoHeight(ratio, place) {
+    if (place === 'back') return `${Math.round(30 * Math.min(1, Math.sqrt(1.4 / ratio)))}px`;
+    const [box, area] = LOGO_BOXES[place];
+    return `${(100 * Math.min(1, box / ratio, Math.sqrt(area / ratio))).toFixed(1)}%`;
+  }
   function thumbImg(thumb, place, record) {
     if (!thumb) return '';
     const src = place !== 'back' && thumb.mode === 'glyph' && thumb.on_brand ? thumb.on_brand : thumb.file;
-    return `<img class="logo-thumb" src="${h(src)}" alt="${place === 'detail' ? h(record.organization_name + ' 로고') : ''}" loading="lazy" decoding="async">`;
+    const size = thumb.ratio ? ` style="--lh:${logoHeight(thumb.ratio, place)}"` : '';
+    return `<span class="logo-box logo-box-${place}"><img class="logo-thumb" src="${h(src)}" alt="${place === 'detail' ? h(record.organization_name + ' 로고') : ''}"${size} loading="lazy" decoding="async"></span>`;
   }
 
   function renderTile(record) {

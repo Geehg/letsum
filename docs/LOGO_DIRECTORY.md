@@ -44,3 +44,15 @@ node tools/build_pages.js                       #    페이지 생성(로고 빌
 - 자동 수집 레코드는 `needs-review`(화면 표기 "자동 수집·검수 대기"). 사람이 원문을 대조하면 `source-reviewed`로 올린다. 이용 허락은 모두 `unknown`.
 - 컬러(`tools/logo-app/data/colors.json`): `official`은 공식 페이지 본문·이미지 대체 텍스트에 적힌 PANTONE·CMYK·RGB·HEX를 그대로 옮긴 값. HEX가 없으면 RGB/CMYK에서 환산하고 `hex_derived`로 표시(CMYK 환산은 근사). `extracted`는 공식 표기를 못 찾았을 때 로고 이미지에서 뽑은 대표색으로, 화면에 "추출값(비공식)"으로 표시한다.
 - 색상 표기가 이미지로만 된 CI 페이지는 자동으로 읽지 못한다(추출값으로 대체). TLS 인증서가 깨진 사이트는 검증을 끄지 않고 오류로 남긴다(`crawl.json`의 `errors`).
+
+## 로고 보충·정규화·균일 배치 (2026-11-10 추가)
+```bash
+python3 tools/logo-survey/fill_logos.py        # 로고 없는 기관 보충: 위키데이터 로고·문장·인장 → 위키백과 대표/로고 파일(기관명이 파일명에 있을 때만, 지자체는 시·군기) → 공용 검색(한글·로마자) → 홈페이지(정적·Chrome 렌더링) 헤더 로고·인라인 SVG·공유 이미지·아이콘
+python3 tools/logo-survey/normalize_logos.py   # 모든 썸네일 여백 제거·비율 기록(logo-geometry.json). SVG는 Chrome 캔버스 렌더링 픽셀로 범위 측정
+python3 -I tools/logo-survey/merge.py
+```
+- 화면 배치: 로고마다 여백을 뺀 가로세로 비율 r로 높이 = min(1, B/r, √(A/r))를 계산해 넓은 글자형과 정사각 심벌이 비슷한 면적으로 보이게 한다(app.js `logoHeight`). 모든 표면(명함 앞·뒷면, 아이콘, 상세)이 같은 규칙.
+- 흰색·반투명 흰 로고는 정규화에서 판별(`tone: light`)해 어두운 바탕에 표시. 반투명 푸터 로고는 불투명도를 복원한다.
+- 아이콘 보기 타일은 회전 없이 똑바로 표시.
+- 로고가 아닌 이미지(사진·배너·캐릭터·위젯 아이콘 등)는 `tools/logo-survey/data/thumbnail-rejects.json`의 `reject_files`(파일 단위)로 제외. 전수 육안 점검 2026-11-10.
+- 공용(Commons)에 없는 위키백과 전용(비자유) 파일은 쓰지 않는다.

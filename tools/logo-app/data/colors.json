@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-10",
   "colors": {
     "gok-symbol": {
       "checked_at": "2026-11-09",
@@ -509,6 +509,27 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Logo_of_Kakao_Games.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q624507": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F39500",
+          "rgb": "243 149 0",
+          "share": 0.05
+        },
+        {
+          "hex": "#00A9E5",
+          "rgb": "0 169 229",
+          "share": 0.05
+        },
+        {
+          "hex": "#595757",
+          "rgb": "89 87 87",
+          "share": 0.9
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/75/National_Human_Rights_Commission_of_the_Republic_of_Korea_Logo_%28horizontal%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q27951951": {
       "checked_at": "2026-11-09",
@@ -1100,6 +1121,27 @@
       ],
       "official_source": "http://www.customs.go.kr/kcs/cm/cntnts/cntntsView.do?mi=3131&cntntsId=896"
     },
+    "kr-q11233063": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003764",
+          "rgb": "0 55 100",
+          "share": 0.17
+        },
+        {
+          "hex": "#E4032E",
+          "rgb": "228 3 46",
+          "share": 0.17
+        },
+        {
+          "hex": "#575757",
+          "rgb": "87 87 87",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Public_Procurement_Service_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q124215730": {
       "checked_at": "2026-11-09",
       "official": [
@@ -1347,6 +1389,27 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Ministry_of_Health_and_Welfare_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
+    "kr-q136541284": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003764",
+          "rgb": "0 55 100",
+          "share": 0.09
+        },
+        {
+          "hex": "#E4032E",
+          "rgb": "228 3 46",
+          "share": 0.09
+        },
+        {
+          "hex": "#575757",
+          "rgb": "87 87 87",
+          "share": 0.73
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Ministry_of_Climate%2C_Energy_and_Environment_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q488949": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -1438,6 +1501,27 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Ministry_of_Oceans_and_Fisheries_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
+    "kr-q11232895": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003764",
+          "rgb": "0 55 100",
+          "share": 0.12
+        },
+        {
+          "hex": "#E4032E",
+          "rgb": "228 3 46",
+          "share": 0.12
+        },
+        {
+          "hex": "#575757",
+          "rgb": "87 87 87",
+          "share": 0.62
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/8/82/Rural_Development_Administration_of_the_Republic_of_Korea_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q483273": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -1490,6 +1574,27 @@
         }
       ],
       "official_source": "https://www.kdca.go.kr/kdca/2799/subview.do"
+    },
+    "kr-q482712": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00479D",
+          "rgb": "0 71 157",
+          "share": 0.77
+        },
+        {
+          "hex": "#009CE2",
+          "rgb": "0 156 226",
+          "share": 0.06
+        },
+        {
+          "hex": "#EA5505",
+          "rgb": "234 85 5",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/bc/%EA%B8%B0%EC%83%81%EC%B2%AD_%EB%A1%9C%EA%B3%A0_%282008-2016%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q11626082": {
       "checked_at": "2026-11-09",
@@ -1881,6 +1986,48 @@
       ],
       "official_source": "https://www.gangdong.go.kr/web/newportal/contents/gdp_004_001_005_002"
     },
+    "kr-q42056": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#4063B8",
+          "rgb": "64 99 184",
+          "share": 0.35
+        },
+        {
+          "hex": "#F14F30",
+          "rgb": "241 79 48",
+          "share": 0.29
+        },
+        {
+          "hex": "#CBCACB",
+          "rgb": "203 202 203",
+          "share": 0.35
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Gangneung_City_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50349": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00B0F0",
+          "rgb": "0 176 240",
+          "share": 0.36
+        },
+        {
+          "hex": "#47B754",
+          "rgb": "71 183 84",
+          "share": 0.32
+        },
+        {
+          "hex": "#2A57A5",
+          "rgb": "42 87 165",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_of_Gangbuk_District.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q50192": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -1902,6 +2049,111 @@
       ],
       "extracted_from": "https://www.gangseo.seoul.kr/humanframe/theme/global/assets/image/common/img_logo03.png"
     },
+    "kr-q50204": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#282968",
+          "rgb": "40 41 104",
+          "share": 0.3
+        },
+        {
+          "hex": "#121356",
+          "rgb": "18 19 86",
+          "share": 0.13
+        },
+        {
+          "hex": "#877B6E",
+          "rgb": "135 123 110",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://www.gangjin.go.kr/images/common/head_logo.png"
+    },
+    "kr-q50205": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#817F7E",
+          "rgb": "129 127 126",
+          "share": 0.13
+        },
+        {
+          "hex": "#53585B",
+          "rgb": "83 88 91",
+          "share": 0.12
+        },
+        {
+          "hex": "#A7B2AF",
+          "rgb": "167 178 175",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://ganghwa.ice.go.kr/images/logo.png"
+    },
+    "kr-q42057": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#410099",
+          "rgb": "65 0 153",
+          "share": 0.2
+        },
+        {
+          "hex": "#3F96B4",
+          "rgb": "63 150 180",
+          "share": 0.2
+        },
+        {
+          "hex": "#ECD798",
+          "rgb": "236 215 152",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://www.koje.ac.kr/site/resource/koje/common/images/logo.svg"
+    },
+    "kr-q50206": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.13
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.05
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Flag_of_Geochang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42059": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.12
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.12
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Gyeongsan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q50352": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -1922,6 +2174,164 @@
         }
       ],
       "extracted_from": "https://www.gyeyang.go.kr/open_content/main/images/main2020/logo.gif"
+    },
+    "kr-q50207": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00A946",
+          "rgb": "0 169 70",
+          "share": 0.12
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.07
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/5/50/Flag_of_Goryeong.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50208": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#276D87",
+          "rgb": "39 109 135",
+          "share": 0.13
+        },
+        {
+          "hex": "#220708",
+          "rgb": "34 7 8",
+          "share": 0.1
+        },
+        {
+          "hex": "#3EAC88",
+          "rgb": "62 172 136",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.goseong.go.kr/images/Potal/layout/logo.jpg"
+    },
+    "kr-q50209": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#008FDD",
+          "rgb": "0 143 221",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.gwgs.go.kr/images/icons/ios-chrome-144x144.png"
+    },
+    "kr-q50210": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#006EB8",
+          "rgb": "0 110 184",
+          "share": 0.25
+        },
+        {
+          "hex": "#364188",
+          "rgb": "54 65 136",
+          "share": 0.25
+        },
+        {
+          "hex": "#52AA6B",
+          "rgb": "82 170 107",
+          "share": 0.25
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Gochang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50211": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.26
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.11
+        },
+        {
+          "hex": "#2573B6",
+          "rgb": "37 115 182",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_Goheung.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50212": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#008DD2",
+          "rgb": "0 141 210",
+          "share": 0.18
+        },
+        {
+          "hex": "#74BB63",
+          "rgb": "116 187 99",
+          "share": 0.14
+        },
+        {
+          "hex": "#ECEAD7",
+          "rgb": "236 234 215",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.gokseong.go.kr/images/homepage/www/kr/intro/intro_logo.png"
+    },
+    "kr-q42062": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#C81E0B",
+          "rgb": "200 30 11",
+          "share": 0.08
+        },
+        {
+          "hex": "#005FA3",
+          "rgb": "0 95 163",
+          "share": 0.08
+        },
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 0.59
+        }
+      ],
+      "extracted_from": "http://www.gongju.go.kr/images/corona/slogan.png"
+    },
+    "kr-q42064": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.12
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/3/37/Flag_of_Gwacheon.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50353": {
       "checked_at": "2026-11-09",
@@ -1985,6 +2395,22 @@
         }
       ],
       "extracted_from": "https://www.gwangsan.go.kr/home/www/images/common/logo_gs_v2.png"
+    },
+    "kr-q42067": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004E97",
+          "rgb": "0 78 151",
+          "share": 0.17
+        },
+        {
+          "hex": "#B3B389",
+          "rgb": "179 179 137",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://gwangyang.go.kr/favicon/apple-touch-icon.png"
     },
     "kr-q42069": {
       "checked_at": "2026-11-09",
@@ -2052,6 +2478,59 @@
       ],
       "official_source": "https://www.gwangjin.go.kr/portal/main/contents.do?menuNo=200199"
     },
+    "kr-q50213": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.11
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.04
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/76/Flag_of_Goesan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50214": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#BFBFBF",
+          "rgb": "191 191 191",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://www.gurye.go.kr/images/corona/introLogo_new.png"
+    },
+    "kr-q50356": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.11
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Flag_of_Guro%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q42071": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2111,6 +2590,9 @@
         }
       ],
       "extracted_from": "https://www.gunsan.go.kr/www/images/farm/main/imgskin-logo2.png"
+    },
+    "kr-q50215": {
+      "checked_at": "2026-11-09"
     },
     "kr-q42075": {
       "checked_at": "2026-11-09",
@@ -2247,6 +2729,27 @@
       ],
       "extracted_from": "https://www.gc.go.kr/design/eng/img/common/headerLogo_w.png"
     },
+    "kr-q42080": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.12
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/9/90/Flag_of_Gimpo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q42082": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2321,6 +2824,27 @@
       ],
       "extracted_from": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/header/logo2.jpg"
     },
+    "kr-q50363": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F5E923",
+          "rgb": "245 233 35",
+          "share": 0.21
+        },
+        {
+          "hex": "#A47B54",
+          "rgb": "164 123 84",
+          "share": 0.16
+        },
+        {
+          "hex": "#C52F2B",
+          "rgb": "197 47 43",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Seal_of_L%E1%BB%A5c_Nam_District.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
     "kr-q50364": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2384,6 +2908,22 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Logo_of_Namyangju%2C_South_Korea.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
+    "kr-q42087": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D97",
+          "rgb": "233 93 151",
+          "share": 0.33
+        },
+        {
+          "hex": "#DD0042",
+          "rgb": "221 0 66",
+          "share": 0.33
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Namwon.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q26123": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2405,26 +2945,89 @@
       ],
       "extracted_from": "https://www.namhae.go.kr/tour/_res/eng/img/inc/logo.png"
     },
+    "kr-q50368": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.1
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Nowon%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q42088": {
       "checked_at": "2026-11-09",
       "extracted": [
         {
-          "hex": "#023894",
-          "rgb": "2 56 148",
-          "share": 0.77
+          "hex": "#204396",
+          "rgb": "32 67 150",
+          "share": 0.15
         },
         {
-          "hex": "#009FDE",
-          "rgb": "0 159 222",
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.12
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Flag_of_Nonsan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50220": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.11
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
           "share": 0.05
         },
         {
-          "hex": "#B8589D",
-          "rgb": "184 88 157",
+          "hex": "#D91920",
+          "rgb": "217 25 32",
           "share": 0.05
         }
       ],
-      "extracted_from": "https://www.nonsan.go.kr/kor/img/sub04/sub_04020701_img03.png"
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Flag_of_Danyang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50370": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#506082",
+          "rgb": "80 96 130",
+          "share": 0.11
+        },
+        {
+          "hex": "#AEBAC5",
+          "rgb": "174 186 197",
+          "share": 0.13
+        },
+        {
+          "hex": "#D5E3F0",
+          "rgb": "213 227 240",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://www.dalseo.daegu.kr/cms_images/egovframework/com/cmm/er_logo.jpg"
     },
     "kr-q50239": {
       "checked_at": "2026-11-09",
@@ -2446,6 +3049,48 @@
         }
       ],
       "extracted_from": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/common/img_logo_header.png"
+    },
+    "kr-q50240": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.11
+        },
+        {
+          "hex": "#AF2575",
+          "rgb": "175 37 117",
+          "share": 0.06
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Flag_of_Damyang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42089": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#366B5A",
+          "rgb": "54 107 90",
+          "share": 0.08
+        },
+        {
+          "hex": "#004B9B",
+          "rgb": "0 75 155",
+          "share": 0.08
+        },
+        {
+          "hex": "#111111",
+          "rgb": "17 17 17",
+          "share": 0.38
+        }
+      ],
+      "extracted_from": "https://www.cndje.go.kr/skin/default/images/lmi_logo.png?v=1"
     },
     "kr-q50371": {
       "checked_at": "2026-11-09",
@@ -2633,6 +3278,48 @@
       ],
       "extracted_from": "https://www.dongnae.go.kr/images/portal/new/logo.png"
     },
+    "kr-q50385": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00A0E4",
+          "rgb": "0 160 228",
+          "share": 0.2
+        },
+        {
+          "hex": "#00AC5B",
+          "rgb": "0 172 91",
+          "share": 0.2
+        },
+        {
+          "hex": "#5A2A00",
+          "rgb": "90 42 0",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/4/40/Flag_of_Dongjak%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42093": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.09
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.04
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_Donghae.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q50388": {
       "checked_at": "2026-11-09",
       "official": [
@@ -2651,6 +3338,85 @@
         }
       ],
       "official_source": "https://www.mapo.go.kr/site/main/content/mapo040102"
+    },
+    "kr-q42094": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00894C",
+          "rgb": "0 137 76",
+          "share": 0.3
+        },
+        {
+          "hex": "#1C4A8D",
+          "rgb": "28 74 141",
+          "share": 0.25
+        },
+        {
+          "hex": "#635668",
+          "rgb": "99 86 104",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://eng.mokpo.go.kr/images/www/common/logo_new.png"
+    },
+    "kr-q50241": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.16
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.07
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Flag_of_Muan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50242": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.2
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.2
+        },
+        {
+          "hex": "#1D2088",
+          "rgb": "29 32 136",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Muju.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42095": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F12535",
+          "rgb": "241 37 53",
+          "share": 0.63
+        },
+        {
+          "hex": "#483729",
+          "rgb": "72 55 41",
+          "share": 0.37
+        }
+      ],
+      "extracted_from": "https://www.gbmg.go.kr/portal/img/common/logo.png"
     },
     "kr-q50365": {
       "checked_at": "2026-11-09",
@@ -2726,6 +3492,48 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/af/%EB%B3%B4%EC%84%B1%EA%B5%B0_%EB%A1%9C%EA%B3%A0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
+    "kr-q50244": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#084E7E",
+          "rgb": "8 78 126",
+          "share": 0.13
+        },
+        {
+          "hex": "#806758",
+          "rgb": "128 103 88",
+          "share": 0.07
+        },
+        {
+          "hex": "#82B3A5",
+          "rgb": "130 179 165",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "http://www.boeun.go.kr/site/www/images/common/logo.png"
+    },
+    "kr-q50245": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0079BD",
+          "rgb": "0 121 189",
+          "share": 0.14
+        },
+        {
+          "hex": "#E14246",
+          "rgb": "225 66 70",
+          "share": 0.07
+        },
+        {
+          "hex": "#00A761",
+          "rgb": "0 167 97",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.bonghwa.go.kr/common/img/board/noimage.svg"
+    },
     "kr-q50390": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2741,6 +3549,27 @@
         }
       ],
       "extracted_from": "https://busanjin.go.kr/images/Potal_/content/new/logo.png"
+    },
+    "kr-q50246": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.24
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.24
+        },
+        {
+          "hex": "#0097E0",
+          "rgb": "0 151 224",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Flag_of_Buan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50247": {
       "checked_at": "2026-11-09",
@@ -2799,6 +3628,27 @@
         }
       ],
       "extracted_from": "https://www.icbp.go.kr/main/img/inc/logo02.png"
+    },
+    "kr-q50392": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#2573B6",
+          "rgb": "37 115 182",
+          "share": 0.16
+        },
+        {
+          "hex": "#30AB79",
+          "rgb": "48 171 121",
+          "share": 0.08
+        },
+        {
+          "hex": "#134D95",
+          "rgb": "19 77 149",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/75/Flag_of_Bukgu%2C_Ulsan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50393": {
       "checked_at": "2026-11-09",
@@ -2863,6 +3713,17 @@
       ],
       "extracted_from": "https://www.bukgu.ulsan.kr/images/header/logo.svg"
     },
+    "kr-q42100": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F25A22",
+          "rgb": "242 90 34",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.sacheon.go.kr/portal/img/inc/logo@2x2025.png"
+    },
     "kr-q50400": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2873,6 +3734,33 @@
         }
       ],
       "extracted_from": "http://www.saha.go.kr/portal/images/layout/footlogo.png"
+    },
+    "kr-q50248": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0C4DA2",
+          "rgb": "12 77 162",
+          "share": 0.59
+        },
+        {
+          "hex": "#6C9C78",
+          "rgb": "108 156 120",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.sancheong.go.kr/common/images/layout/logo.png"
+    },
+    "kr-q42102": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_Samcheok.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q42163": {
       "checked_at": "2026-11-09",
@@ -2906,6 +3794,27 @@
       ],
       "extracted_from": "https://www.seogu.gwangju.kr/kor/img/sub/sub01/symbol.png"
     },
+    "kr-q50404": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#FDD000",
+          "rgb": "253 208 0",
+          "share": 0.31
+        },
+        {
+          "hex": "#DF0623",
+          "rgb": "223 6 35",
+          "share": 0.24
+        },
+        {
+          "hex": "#6EB92B",
+          "rgb": "110 185 43",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "http://dgs.go.kr/common/img/common/logo1.png"
+    },
     "kr-q50405": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -2923,7 +3832,46 @@
       "extracted_from": "https://www.seogu.go.kr/images/kor/sub05/seogu_symbol01.png"
     },
     "kr-q50406": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0867B3",
+          "rgb": "8 103 179",
+          "share": 0.28
+        },
+        {
+          "hex": "#22B34C",
+          "rgb": "34 179 76",
+          "share": 0.23
+        },
+        {
+          "hex": "#231F20",
+          "rgb": "35 31 32",
+          "share": 0.28
+        }
+      ],
+      "extracted_from": "https://www.bsseogu.go.kr/img/portal/common/logo.png"
+    },
+    "kr-q140403575": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0077B1",
+          "rgb": "0 119 177",
+          "share": 0.14
+        },
+        {
+          "hex": "#C05427",
+          "rgb": "192 84 39",
+          "share": 0.1
+        },
+        {
+          "hex": "#303031",
+          "rgb": "48 48 49",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "https://www.seohae.go.kr/open_content/main/img2023/logo_bk.png"
     },
     "kr-q50408": {
       "checked_at": "2026-11-09",
@@ -2945,6 +3893,27 @@
         }
       ],
       "extracted_from": "https://www.sdm.go.kr/lib/n26/img/M_logo.png"
+    },
+    "kr-q42105": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#272C35",
+          "rgb": "39 44 53",
+          "share": 0.12
+        },
+        {
+          "hex": "#8D9292",
+          "rgb": "141 146 146",
+          "share": 0.13
+        },
+        {
+          "hex": "#676161",
+          "rgb": "103 97 97",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://www.cnssed.go.kr/skin/default/images/lmi_logo.gif"
     },
     "kr-q50249": {
       "checked_at": "2026-11-09",
@@ -3023,6 +3992,72 @@
       ],
       "official_source": "https://www.seongnam.go.kr/cn04020201"
     },
+    "kr-q50411": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.1
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Flag_of_Seongdong%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50412": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#263450",
+          "rgb": "38 52 80",
+          "share": 0.35
+        },
+        {
+          "hex": "#B7CF3F",
+          "rgb": "183 207 63",
+          "share": 0.18
+        },
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Seongbuk%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50250": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#009944",
+          "rgb": "0 153 68",
+          "share": 0.28
+        },
+        {
+          "hex": "#004EA2",
+          "rgb": "0 78 162",
+          "share": 0.12
+        },
+        {
+          "hex": "#222222",
+          "rgb": "34 34 34",
+          "share": 0.44
+        }
+      ],
+      "extracted_from": "https://www.sj.go.kr/ko/img/main/logo.png"
+    },
+    "kr-q42109": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q50415": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3043,6 +4078,27 @@
         }
       ],
       "extracted_from": "https://www.songpa.go.kr/songpa_html/images/logo.png"
+    },
+    "kr-q50416": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.07
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.03
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/3/37/Flag_of_Suseong%2C_Daegu.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50417": {
       "checked_at": "2026-11-09",
@@ -3086,6 +4142,27 @@
         }
       ],
       "official_source": "https://www.suwon.go.kr/sw-www/www05/www05-03/www05-03-07.jsp"
+    },
+    "kr-q50251": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#B5D100",
+          "rgb": "181 209 0",
+          "share": 0.18
+        },
+        {
+          "hex": "#46982F",
+          "rgb": "70 152 47",
+          "share": 0.09
+        },
+        {
+          "hex": "#2CB7D3",
+          "rgb": "44 183 211",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Sunchang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q42112": {
       "checked_at": "2026-11-09",
@@ -3156,6 +4233,64 @@
       ],
       "official_source": "https://www.suncheon.go.kr/kr/info/0003/0001/0004/"
     },
+    "kr-q42113": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F46F21",
+          "rgb": "244 111 33",
+          "share": 0.42
+        },
+        {
+          "hex": "#0C4DA2",
+          "rgb": "12 77 162",
+          "share": 0.41
+        },
+        {
+          "hex": "#432C22",
+          "rgb": "67 44 34",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "https://www.siheung.go.kr/common/img/common/favicon.png"
+    },
+    "kr-q50252": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1169AB",
+          "rgb": "17 105 171",
+          "share": 0.28
+        },
+        {
+          "hex": "#003067",
+          "rgb": "0 48 103",
+          "share": 0.23
+        }
+      ],
+      "extracted_from": "https://www.shinan.go.kr/images/covid/covid_intro_logo.png"
+    },
+    "kr-q42114": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0064AC",
+          "rgb": "0 100 172",
+          "share": 0.35
+        },
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.15
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.15
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Asan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q42116": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3194,6 +4329,27 @@
         }
       ],
       "official_source": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001547"
+    },
+    "kr-q42119": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#15366F",
+          "rgb": "21 54 111",
+          "share": 0.14
+        },
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.11
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Anseong.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q42120": {
       "checked_at": "2026-11-09",
@@ -3247,6 +4403,51 @@
         }
       ],
       "extracted_from": "https://www.yangsan.go.kr/portal/img/sub/05/img_0201_01.png"
+    },
+    "kr-q42124": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#58AD40",
+          "rgb": "88 173 64",
+          "share": 0.65
+        },
+        {
+          "hex": "#FAAB53",
+          "rgb": "250 171 83",
+          "share": 0.04
+        },
+        {
+          "hex": "#696A6C",
+          "rgb": "105 106 108",
+          "share": 0.29
+        }
+      ],
+      "extracted_from": "https://www.yangju.go.kr/site/www/images/common/yangju_logo.png"
+    },
+    "kr-q50420": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q50255": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#006CB7",
+          "rgb": "0 108 183",
+          "share": 0.22
+        },
+        {
+          "hex": "#004B85",
+          "rgb": "0 75 133",
+          "share": 0.12
+        },
+        {
+          "hex": "#80A191",
+          "rgb": "128 161 145",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://www.yp21.go.kr/site/www/images/common/logo.png"
     },
     "kr-q42125": {
       "checked_at": "2026-11-09",
@@ -3320,6 +4521,30 @@
       ],
       "official_source": "https://www.yeonsu.go.kr:443/main/yeonsu/intro/logo.asp"
     },
+    "kr-q50258": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q50259": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0066B3",
+          "rgb": "0 102 179",
+          "share": 0.31
+        },
+        {
+          "hex": "#003254",
+          "rgb": "0 50 84",
+          "share": 0.26
+        },
+        {
+          "hex": "#BE5242",
+          "rgb": "190 82 66",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "http://www.yeonggwang.go.kr/pages/headquarter_new/img/common/logo_new.png"
+    },
     "kr-q50423": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3341,6 +4566,101 @@
       ],
       "extracted_from": "https://www.yeongdo.go.kr/_res/portal/img/inc/logo@2x.png"
     },
+    "kr-q50261": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#11437D",
+          "rgb": "17 67 125",
+          "share": 0.04
+        },
+        {
+          "hex": "#4EAF4A",
+          "rgb": "78 175 74",
+          "share": 0.04
+        },
+        {
+          "hex": "#191917",
+          "rgb": "25 25 23",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.yd21.go.kr/common/img/logo.jpg"
+    },
+    "kr-q50190": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005AAB",
+          "rgb": "0 90 171",
+          "share": 0.26
+        },
+        {
+          "hex": "#70A457",
+          "rgb": "112 164 87",
+          "share": 0.12
+        },
+        {
+          "hex": "#6D6E71",
+          "rgb": "109 110 113",
+          "share": 0.31
+        }
+      ],
+      "extracted_from": "https://www.ydp.go.kr/site/www/images/common/footer_logo.png"
+    },
+    "kr-q50262": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.11
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.05
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Yeongam.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q97339644": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#5F94B5",
+          "rgb": "95 148 181",
+          "share": 0.05
+        },
+        {
+          "hex": "#E5C1C7",
+          "rgb": "229 193 199",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.yeongjong.go.kr/main/opengraph.png"
+    },
+    "kr-q42126": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00A651",
+          "rgb": "0 166 81",
+          "share": 0.52
+        },
+        {
+          "hex": "#ED1C24",
+          "rgb": "237 28 36",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.yeongju.go.kr/design2022/common/img/logo_w.png"
+    },
     "kr-q42128": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3361,6 +4681,69 @@
         }
       ],
       "extracted_from": "https://www.yc.go.kr/portal/img/common/logo.png"
+    },
+    "kr-q50307": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.11
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.11
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Yesan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50308": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#4DAC26",
+          "rgb": "77 172 38",
+          "share": 0.27
+        },
+        {
+          "hex": "#136C94",
+          "rgb": "19 108 148",
+          "share": 0.16
+        },
+        {
+          "hex": "#E34D16",
+          "rgb": "227 77 22",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "https://www.ycg.kr/images/intro/yc_logo.png"
+    },
+    "kr-q42129": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#181F2C",
+          "rgb": "24 31 44",
+          "share": 0.1
+        },
+        {
+          "hex": "#747C83",
+          "rgb": "116 124 131",
+          "share": 0.11
+        },
+        {
+          "hex": "#CCC39F",
+          "rgb": "204 195 159",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "http://www.ggpolice.go.kr/include/main/images/site/title.jpg"
     },
     "kr-q50309": {
       "checked_at": "2026-11-09",
@@ -3406,6 +4789,64 @@
         }
       ],
       "extracted_from": "https://www.ongjin.go.kr/open_content/main/images/inc/logo_2026v2.png"
+    },
+    "kr-q50311": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.16
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.07
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/63/Flag_of_Wando_%282003-2024%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50312": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.6
+        },
+        {
+          "hex": "#2A7A38",
+          "rgb": "42 122 56",
+          "share": 0.22
+        },
+        {
+          "hex": "#1E2B5B",
+          "rgb": "30 43 91",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://www.wanju.go.kr/images/intro/logo.png"
+    },
+    "kr-q114364248": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0070BD",
+          "rgb": "0 112 189",
+          "share": 0.27
+        },
+        {
+          "hex": "#636161",
+          "rgb": "99 97 97",
+          "share": 0.31
+        }
+      ],
+      "extracted_from": "https://www.incheon.go.kr/humanframe/globaltheme/assets/image/layout/logo-incheon.png"
     },
     "kr-q50429": {
       "checked_at": "2026-11-09",
@@ -3486,6 +4927,27 @@
       ],
       "extracted_from": "https://www.ulju.ulsan.kr/ulju/images/sub/symbolImg.gif"
     },
+    "kr-q50314": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.1
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.1
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/9/97/Flag_of_Uljin.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q42131": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3501,6 +4963,120 @@
         }
       ],
       "extracted_from": "https://www.wonju.go.kr/site_2024/www/images/common/footer_logo.png"
+    },
+    "kr-q50431": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D76BD",
+          "rgb": "13 118 189",
+          "share": 0.05
+        },
+        {
+          "hex": "#2F5875",
+          "rgb": "47 88 117",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.yuseong.go.kr/pcms/common/images/og-images.png"
+    },
+    "kr-q50432": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#176613",
+          "rgb": "23 102 19",
+          "share": 0.33
+        },
+        {
+          "hex": "#081059",
+          "rgb": "8 16 89",
+          "share": 0.33
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_Eunpyeong%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50315": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.64
+        },
+        {
+          "hex": "#004EA2",
+          "rgb": "0 78 162",
+          "share": 0.21
+        },
+        {
+          "hex": "#009E96",
+          "rgb": "0 158 150",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://www.eumseong.go.kr/site/public/images/common/footer_logo.png"
+    },
+    "kr-q50316": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q50317": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.13
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.13
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_Uiseong.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42134": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9E9974",
+          "rgb": "158 153 116",
+          "share": 0.14
+        },
+        {
+          "hex": "#161115",
+          "rgb": "22 17 21",
+          "share": 0.11
+        },
+        {
+          "hex": "#A3D8B4",
+          "rgb": "163 216 180",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.uiwang.go.kr/humanframe/theme/uiwang/assets/images/uiwang_images/logo.jpg"
+    },
+    "kr-q42135": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D589D",
+          "rgb": "13 88 157",
+          "share": 0.04
+        },
+        {
+          "hex": "#E0E0E0",
+          "rgb": "224 224 224",
+          "share": 0.84
+        }
+      ],
+      "extracted_from": "https://data.gg.go.kr/img/ggportal/desktop/main/og_logo.png"
     },
     "kr-q42136": {
       "checked_at": "2026-11-09",
@@ -3522,6 +5098,69 @@
         }
       ],
       "extracted_from": "https://www.icheon.go.kr/portal/img/content/05/ci_img1.svg"
+    },
+    "kr-q42137": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.16
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.16
+        },
+        {
+          "hex": "#FDD000",
+          "rgb": "253 208 0",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Iksan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50319": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.27
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.27
+        },
+        {
+          "hex": "#FF002B",
+          "rgb": "255 0 43",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Imsil.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50320": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0554A1",
+          "rgb": "5 84 161",
+          "share": 0.24
+        },
+        {
+          "hex": "#007ECA",
+          "rgb": "0 126 202",
+          "share": 0.24
+        },
+        {
+          "hex": "#00A2EA",
+          "rgb": "0 162 234",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://www.jangseong.go.kr/images/covid/js_bi.png"
     },
     "kr-q50321": {
       "checked_at": "2026-11-09",
@@ -3560,6 +5199,48 @@
       ],
       "extracted_from": "https://www.jangheung.go.kr/images/www/common_new/logo_new.png"
     },
+    "kr-q42140": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#DC4963",
+          "rgb": "220 73 99",
+          "share": 0.06
+        },
+        {
+          "hex": "#AA2645",
+          "rgb": "170 38 69",
+          "share": 0.05
+        },
+        {
+          "hex": "#D17586",
+          "rgb": "209 117 134",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.jeonju.go.kr/resource/common/images/favicon/apple-touch-icon.png"
+    },
+    "kr-q50323": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#488FD3",
+          "rgb": "72 143 211",
+          "share": 0.15
+        },
+        {
+          "hex": "#2E74C5",
+          "rgb": "46 116 197",
+          "share": 0.15
+        },
+        {
+          "hex": "#76A932",
+          "rgb": "118 169 50",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://www.jeongseon.go.kr/page/portal/images/common/img-logo.png"
+    },
     "kr-q42141": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3581,6 +5262,27 @@
       ],
       "extracted_from": "https://www.jeongeup.go.kr/images/01_potal/common/logo.png"
     },
+    "kr-q42143": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.11
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.05
+        },
+        {
+          "hex": "#D91920",
+          "rgb": "217 25 32",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Jecheon.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q36929": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3597,6 +5299,17 @@
       ],
       "extracted_from": "https://www.jongno.go.kr/portal/open_content/images/2026new/common/logo.png"
     },
+    "kr-q50438": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#848387",
+          "rgb": "132 131 135",
+          "share": 0.4
+        }
+      ],
+      "extracted_from": "https://www.jung.daegu.kr/new/images/common/flogo.png"
+    },
     "kr-q50439": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3612,6 +5325,48 @@
         }
       ],
       "extracted_from": "https://www.djjunggu.go.kr/images/kr/main/logo_ci.png"
+    },
+    "kr-q50440": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0066B3",
+          "rgb": "0 102 179",
+          "share": 0.22
+        },
+        {
+          "hex": "#1090D0",
+          "rgb": "16 144 208",
+          "share": 0.09
+        },
+        {
+          "hex": "#343434",
+          "rgb": "52 52 52",
+          "share": 0.22
+        }
+      ],
+      "extracted_from": "https://www.bsjunggu.go.kr/img/junggu/common_new/logo.png"
+    },
+    "kr-q50441": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.1
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Flag_of_Junggu%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50442": {
       "checked_at": "2026-11-09",
@@ -3633,6 +5388,27 @@
         }
       ],
       "extracted_from": "https://www.junggu.ulsan.kr/images/domain/junggu/junggu/junggu_logo.png"
+    },
+    "kr-q50444": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#40713A",
+          "rgb": "64 113 58",
+          "share": 0.12
+        },
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.04
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Flag_of_Jungnang%2C_Seoul.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50324": {
       "checked_at": "2026-11-09",
@@ -3666,8 +5442,100 @@
       ],
       "extracted_from": "https://www.jindo.go.kr/themes/home/images/intro/lg_intro.png"
     },
+    "kr-q50326": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E95D9D",
+          "rgb": "233 93 157",
+          "share": 0.19
+        },
+        {
+          "hex": "#6A016F",
+          "rgb": "106 1 111",
+          "share": 0.19
+        },
+        {
+          "hex": "#1E2A73",
+          "rgb": "30 42 115",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Jinan.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42144": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#21529C",
+          "rgb": "33 82 156",
+          "share": 0.79
+        },
+        {
+          "hex": "#FFC000",
+          "rgb": "255 192 0",
+          "share": 0.06
+        },
+        {
+          "hex": "#888554",
+          "rgb": "136 133 84",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/2/24/Jinju_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
     "kr-q50327": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#073190",
+          "rgb": "7 49 144",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://www.jincheon.go.kr/home/images/www_2023/logo_type01.png"
+    },
+    "kr-q50328": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#025D98",
+          "rgb": "2 93 152",
+          "share": 0.22
+        },
+        {
+          "hex": "#60A551",
+          "rgb": "96 165 81",
+          "share": 0.18
+        },
+        {
+          "hex": "#F68B1F",
+          "rgb": "246 139 31",
+          "share": 0.17
+        }
+      ],
+      "extracted_from": "https://www.cng.go.kr/_res/portal/img/inc/logo@2x.png"
+    },
+    "kr-q243327": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#02AD60",
+          "rgb": "2 173 96",
+          "share": 0.3
+        },
+        {
+          "hex": "#2588C9",
+          "rgb": "37 136 201",
+          "share": 0.22
+        },
+        {
+          "hex": "#005DA3",
+          "rgb": "0 93 163",
+          "share": 0.16
+        }
+      ],
+      "extracted_from": "https://www.changwon.go.kr/cwportal/tracer/logo.png"
     },
     "kr-q42146": {
       "checked_at": "2026-11-09",
@@ -3690,8 +5558,231 @@
       ],
       "extracted_from": "https://www.cheonan.go.kr/assets/images/main/kor/center-slogan.png"
     },
+    "kr-q50329": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#99855C",
+          "rgb": "153 133 92",
+          "share": 0.13
+        },
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 0.48
+        },
+        {
+          "hex": "#626262",
+          "rgb": "98 98 98",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://council.cwg.go.kr/site/council/images/common/council_logo.png"
+    },
+    "kr-q50330": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.11
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.11
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Cheongdo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q50331": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0060AF",
+          "rgb": "0 96 175",
+          "share": 0.3
+        },
+        {
+          "hex": "#2FBCED",
+          "rgb": "47 188 237",
+          "share": 0.25
+        },
+        {
+          "hex": "#95CD79",
+          "rgb": "149 205 121",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://www.cs.go.kr/_res/portal/img/inc/logo@2x.png"
+    },
+    "kr-q50332": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.1
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.1
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_Cheongyang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42147": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0099DA",
+          "rgb": "0 153 218",
+          "share": 0.11
+        },
+        {
+          "hex": "#5E3A2B",
+          "rgb": "94 58 43",
+          "share": 0.08
+        },
+        {
+          "hex": "#2A3B96",
+          "rgb": "42 59 150",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Cheongju.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42148": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00287A",
+          "rgb": "0 40 122",
+          "share": 0.5
+        },
+        {
+          "hex": "#0090DF",
+          "rgb": "0 144 223",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://www.chuncheon.go.kr/_user/common/img/layout/img-logo-mob.svg"
+    },
+    "kr-q31094": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00499B",
+          "rgb": "0 73 155",
+          "share": 0.12
+        },
+        {
+          "hex": "#E3D058",
+          "rgb": "227 208 88",
+          "share": 0.06
+        },
+        {
+          "hex": "#3F8254",
+          "rgb": "63 130 84",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.cbchje.go.kr:447/base/imgs/logo/logo_00000005.png"
+    },
     "kr-q50334": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0063AC",
+          "rgb": "0 99 172",
+          "share": 0.26
+        },
+        {
+          "hex": "#0090D3",
+          "rgb": "0 144 211",
+          "share": 0.21
+        },
+        {
+          "hex": "#B49C50",
+          "rgb": "180 156 80",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://www.chilgok.go.kr/common/img/common/logo.png"
+    },
+    "kr-q50335": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.08
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.08
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Taean.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q42152": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004099",
+          "rgb": "0 64 153",
+          "share": 0.33
+        },
+        {
+          "hex": "#36318F",
+          "rgb": "54 49 143",
+          "share": 0.24
+        },
+        {
+          "hex": "#B11633",
+          "rgb": "177 22 51",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.tongyeong.go.kr/_res/portal/img/inc/logo2026.png"
+    },
+    "kr-q188624": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0F8943",
+          "rgb": "15 137 67",
+          "share": 0.25
+        },
+        {
+          "hex": "#1270A5",
+          "rgb": "18 112 165",
+          "share": 0.25
+        },
+        {
+          "hex": "#CD2027",
+          "rgb": "205 32 39",
+          "share": 0.25
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Pyeongchang.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q42154": {
       "checked_at": "2026-11-09",
@@ -3703,6 +5794,27 @@
         }
       ],
       "extracted_from": "https://www.pyeongtaek.go.kr/en/images/common/logo_en.png"
+    },
+    "kr-q42155": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003964",
+          "rgb": "0 57 100",
+          "share": 0.39
+        },
+        {
+          "hex": "#C62042",
+          "rgb": "198 32 66",
+          "share": 0.12
+        },
+        {
+          "hex": "#BCD2E3",
+          "rgb": "188 210 227",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.pocheon.go.kr/site/krds/images/guide/favicon_512.png"
     },
     "kr-q42157": {
       "checked_at": "2026-11-09",
@@ -3724,6 +5836,106 @@
         }
       ],
       "extracted_from": "https://www.pohang.go.kr/portal/img/temp/logo.png"
+    },
+    "kr-q42159": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1251A4",
+          "rgb": "18 81 164",
+          "share": 0.24
+        },
+        {
+          "hex": "#F36C21",
+          "rgb": "243 108 33",
+          "share": 0.04
+        },
+        {
+          "hex": "#231F20",
+          "rgb": "35 31 32",
+          "share": 0.72
+        }
+      ],
+      "extracted_from": "https://www.hanam.go.kr/site/sotong/images/common/logo.png"
+    },
+    "kr-q26212": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F2770D",
+          "rgb": "242 119 13",
+          "share": 0.11
+        },
+        {
+          "hex": "#0CB6C2",
+          "rgb": "12 182 194",
+          "share": 0.08
+        },
+        {
+          "hex": "#B2D100",
+          "rgb": "178 209 0",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.hadong.go.kr/_res/portal/img/inc/2022/logo1@2x.png"
+    },
+    "kr-q50339": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00A54C",
+          "rgb": "0 165 76",
+          "share": 0.18
+        },
+        {
+          "hex": "#094399",
+          "rgb": "9 67 153",
+          "share": 0.13
+        },
+        {
+          "hex": "#6EC59F",
+          "rgb": "110 197 159",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://www.hygn.go.kr/_res/portal/img/intro/intro_tit2026_3.png"
+    },
+    "kr-q50340": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00AB4E",
+          "rgb": "0 171 78",
+          "share": 0.42
+        },
+        {
+          "hex": "#0352A1",
+          "rgb": "3 82 161",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.hampyeong.go.kr/home/www/images/intro/img_logo_t.png"
+    },
+    "kr-q50341": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D5CAB",
+          "rgb": "13 92 171",
+          "share": 0.2
+        },
+        {
+          "hex": "#00A5E5",
+          "rgb": "0 165 229",
+          "share": 0.19
+        },
+        {
+          "hex": "#84C23F",
+          "rgb": "132 194 63",
+          "share": 0.16
+        }
+      ],
+      "extracted_from": "https://www.hc.go.kr/_res/portal/img/inc/logo@2x.png"
     },
     "kr-q50342": {
       "checked_at": "2026-11-09",
@@ -3767,6 +5979,27 @@
       ],
       "extracted_from": "https://council.haeundae.go.kr/council/images/common/header_logo.png"
     },
+    "kr-q50343": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9FC92B",
+          "rgb": "159 201 43",
+          "share": 0.12
+        },
+        {
+          "hex": "#007FC8",
+          "rgb": "0 127 200",
+          "share": 0.12
+        },
+        {
+          "hex": "#E94F26",
+          "rgb": "233 79 38",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Hongseong.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q50344": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3787,6 +6020,27 @@
         }
       ],
       "extracted_from": "https://www.hongcheon.go.kr/site/lang/images/common/logo.png"
+    },
+    "kr-q42160": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#B1C918",
+          "rgb": "177 201 24",
+          "share": 0.08
+        },
+        {
+          "hex": "#F49647",
+          "rgb": "244 150 71",
+          "share": 0.08
+        },
+        {
+          "hex": "#0097D9",
+          "rgb": "0 151 217",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Flag_of_Hwaseong.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q50345": {
       "checked_at": "2026-11-09",
@@ -3848,6 +6102,17 @@
       ],
       "extracted_from": "https://www.hsg.go.kr/site/www/images/contents/cts727_img01.png"
     },
+    "kr-q7451674": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.96
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Seoul_Metropolitan_Office_of_Education_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q12615090": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3890,6 +6155,22 @@
       ],
       "extracted_from": "https://www.pen.go.kr/images/pen/template/T0003/main/logo.png"
     },
+    "kr-q16094425": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.81
+        },
+        {
+          "hex": "#002E7E",
+          "rgb": "0 46 126",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Daegu_Metropolitan_Office_of_Education_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q12613478": {
       "checked_at": "2026-11-09",
       "official": [
@@ -3920,6 +6201,48 @@
       ],
       "official_source": "https://www.ice.go.kr/ice/cm/cntnts/cntntsView.do?mi=10874&cntntsId=943"
     },
+    "kr-q16167642": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004896",
+          "rgb": "0 72 150",
+          "share": 0.23
+        },
+        {
+          "hex": "#7CBDC7",
+          "rgb": "124 189 199",
+          "share": 0.07
+        },
+        {
+          "hex": "#5B5D57",
+          "rgb": "91 93 87",
+          "share": 0.39
+        }
+      ],
+      "extracted_from": "http://www.dje.go.kr/images/newdjeV3/layout/logo.png"
+    },
+    "kr-q16164847": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#007A70",
+          "rgb": "0 122 112",
+          "share": 0.18
+        },
+        {
+          "hex": "#BF8619",
+          "rgb": "191 134 25",
+          "share": 0.09
+        },
+        {
+          "hex": "#A61A6D",
+          "rgb": "166 26 109",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://use.go.kr/resources/familysite/www/images/logo.png"
+    },
     "kr-q12602318": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -3943,6 +6266,17 @@
     },
     "kr-q12583541": {
       "checked_at": "2026-11-09"
+    },
+    "kr-q16219723": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231916",
+          "rgb": "35 25 22",
+          "share": 0.91
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Gangwon_State_Office_of_Education_Logo_%28vertical%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q16174863": {
       "checked_at": "2026-11-09",
@@ -4027,6 +6361,27 @@
         }
       ],
       "extracted_from": "https://www.gbe.kr/images/web/main/common/logo.png"
+    },
+    "kr-q12583702": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#01B5F0",
+          "rgb": "1 181 240",
+          "share": 0.14
+        },
+        {
+          "hex": "#215AA7",
+          "rgb": "33 90 167",
+          "share": 0.14
+        },
+        {
+          "hex": "#2AB642",
+          "rgb": "42 182 66",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.gne.go.kr/resources/familysite/www/images/logo.png"
     },
     "kr-q12616499": {
       "checked_at": "2026-11-09",
@@ -4140,6 +6495,17 @@
       ],
       "extracted_from": "https://www.kdhc.co.kr/static/kdhc/img/common/200129-img1.jpg"
     },
+    "kr-q6442235": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#04AAB2",
+          "rgb": "4 170 178",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.airport.kr/Web-home/og/images/og_main.jpg"
+    },
     "kr-q5770181": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -4247,6 +6613,9 @@
       ],
       "extracted_from": "https://kogas-tech.or.kr/contentsFileDown.do?file_idx=1277"
     },
+    "kr-q12622879": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q6322893": {
       "checked_at": "2026-11-09",
       "official": [
@@ -4303,6 +6672,22 @@
         }
       ],
       "official_source": "https://www.kdn.com/menu.kdn?mid=a10101070000"
+    },
+    "kr-q6431688": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E60012",
+          "rgb": "230 0 18",
+          "share": 0.65
+        },
+        {
+          "hex": "#004098",
+          "rgb": "0 64 152",
+          "share": 0.35
+        }
+      ],
+      "extracted_from": "https://www.kps.co.kr/resources/user/web/images/main/head_logo.svg"
     },
     "kr-q15615204": {
       "checked_at": "2026-11-09",
@@ -4374,6 +6759,27 @@
       ],
       "official_source": "https://www.jdcenter.com/about/symbolsystem/symbol.cs"
     },
+    "kr-q12592673": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D6FB8",
+          "rgb": "13 111 184",
+          "share": 0.79
+        },
+        {
+          "hex": "#1B8ECF",
+          "rgb": "27 142 207",
+          "share": 0.05
+        },
+        {
+          "hex": "#6DB12A",
+          "rgb": "109 177 42",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.khug.or.kr/common/image/common/logo.png"
+    },
     "kr-q12622785": {
       "checked_at": "2026-11-09",
       "official": [
@@ -4437,6 +6843,43 @@
         }
       ],
       "official_source": "https://www.koem.or.kr/site/koem/05/10501050000002019051004.jsp"
+    },
+    "kr-q12604471": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#283E80",
+          "rgb": "40 62 128",
+          "share": 0.2
+        },
+        {
+          "hex": "#6073A2",
+          "rgb": "96 115 162",
+          "share": 0.2
+        },
+        {
+          "hex": "#8191B5",
+          "rgb": "129 145 181",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://www.kodit.or.kr/images/web/kodit/intro/basa_symbol.svg"
+    },
+    "kr-q6431618": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#6C7591",
+          "rgb": "108 117 145",
+          "share": 0.22
+        },
+        {
+          "hex": "#861D43",
+          "rgb": "134 29 67",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/cd/%EC%98%88%EA%B8%88%EB%B3%B4%ED%97%98%EA%B3%B5%EC%82%AC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
     "kr-q12623695": {
       "checked_at": "2026-11-09",
@@ -4507,6 +6950,43 @@
       ],
       "official_source": "http://www.kspo.or.kr/kspo/main/contents.do?menuNo=200165"
     },
+    "kr-q6974864": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#2B2171",
+          "rgb": "43 33 113",
+          "share": 0.05
+        },
+        {
+          "hex": "#B4A745",
+          "rgb": "180 167 69",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.nps.or.kr/images/common/apple_touch_icon.png"
+    },
+    "kr-q12586333": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1AA5AD",
+          "rgb": "26 165 173",
+          "share": 0.08
+        },
+        {
+          "hex": "#7DBDBC",
+          "rgb": "125 189 188",
+          "share": 0.03
+        },
+        {
+          "hex": "#333334",
+          "rgb": "51 51 52",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://welfare.comwel.or.kr/resources/images/default/common/com_logo.gif"
+    },
     "kr-q16171854": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -4544,6 +7024,22 @@
       ],
       "extracted_from": "https://www.semas.or.kr/common/renewal/img/common/logo.png"
     },
+    "kr-q12617631": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E60020",
+          "rgb": "230 0 32",
+          "share": 0.5
+        },
+        {
+          "hex": "#003894",
+          "rgb": "0 56 148",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://kr.gobizkorea.com/gobiz_inc/images/main/KOSME_logo.svg"
+    },
     "kr-q16100494": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -4565,6 +7061,22 @@
       ],
       "extracted_from": "https://www.kca.go.kr:443/home/imgs/header/logo.png"
     },
+    "kr-q31180818": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#032570",
+          "rgb": "3 37 112",
+          "share": 0.21
+        },
+        {
+          "hex": "#2395D2",
+          "rgb": "35 149 210",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://www.fis.kr/page/kpfis/images/logo/logo_en.png"
+    },
     "kr-q14850775": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -4580,6 +7092,17 @@
         }
       ],
       "extracted_from": "https://www.posid.or.kr/images/logo_w.svg"
+    },
+    "kr-q14850774": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E60012",
+          "rgb": "230 0 18",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://www.pola.or.kr/images_new/common/logo-on.svg"
     },
     "kr-q12623167": {
       "checked_at": "2026-11-09",
@@ -4891,6 +7414,48 @@
       ],
       "official_source": "https://www.kgs.or.kr/kgs/adcc/view.do"
     },
+    "kr-q12623242": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1F3B8F",
+          "rgb": "31 59 143",
+          "share": 0.12
+        },
+        {
+          "hex": "#7685B5",
+          "rgb": "118 133 181",
+          "share": 0.08
+        },
+        {
+          "hex": "#5561A3",
+          "rgb": "85 97 163",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.keit.re.kr/error/img/logo_keit_errorpage.gif"
+    },
+    "kr-q17062696": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00186D",
+          "rgb": "0 24 109",
+          "share": 0.06
+        },
+        {
+          "hex": "#7493BD",
+          "rgb": "116 147 189",
+          "share": 0.05
+        },
+        {
+          "hex": "#3C5E99",
+          "rgb": "60 94 153",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.kiat.or.kr/images/front/logo.png"
+    },
     "kr-q12623243": {
       "checked_at": "2026-11-09",
       "official": [
@@ -5027,6 +7592,59 @@
         }
       ],
       "official_source": "https://www.knps.or.kr/portal/main/contents.do?menuNo=7070012"
+    },
+    "kr-q16094640": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#E10028",
+          "rgb": "225 0 40",
+          "share": 0.05
+        },
+        {
+          "hex": "#EF791B",
+          "rgb": "239 121 27",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://wimg.heraldcorp.com/svc/leader/logo/2026/05/21/2a3d854c-9fe3-4413-8af5-aae7562bab6b.png"
+    },
+    "kr-q12606661": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#055DAA",
+          "rgb": "5 93 170",
+          "share": 0.1
+        },
+        {
+          "hex": "#221D1E",
+          "rgb": "34 29 30",
+          "share": 0.9
+        }
+      ],
+      "extracted_from": "https://www.energy.or.kr/common/front/home/images/common/logo_top.svg"
+    },
+    "kr-q12623152": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#73B83E",
+          "rgb": "115 184 62",
+          "share": 0.2
+        },
+        {
+          "hex": "#0A3E6D",
+          "rgb": "10 62 109",
+          "share": 0.16
+        },
+        {
+          "hex": "#B5D337",
+          "rgb": "181 211 55",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://www.korad.or.kr/resources/homepage/korad/img/logo.png"
     },
     "kr-q12623633": {
       "checked_at": "2026-11-09",
@@ -5210,6 +7828,27 @@
       ],
       "extracted_from": "https://www.kalis.or.kr/common/new/assets/img/logo.png"
     },
+    "kr-q6431723": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#FBC707",
+          "rgb": "251 199 7",
+          "share": 0.04
+        },
+        {
+          "hex": "#33BDF2",
+          "rgb": "51 189 242",
+          "share": 0.04
+        },
+        {
+          "hex": "#7B7979",
+          "rgb": "123 121 121",
+          "share": 0.88
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Korea_Transportation_Safety_Authority_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
     "kr-q19162231": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5244,8 +7883,42 @@
       ],
       "official_source": "https://www.komsa.or.kr/kor/sub01_0201.do"
     },
+    "kr-w438bf76fff": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#183B99",
+          "rgb": "24 59 153",
+          "share": 0.24
+        },
+        {
+          "hex": "#14AA3C",
+          "rgb": "20 170 60",
+          "share": 0.16
+        }
+      ],
+      "extracted_from": "https://www.koroad.or.kr/static/img/common/logo.png"
+    },
     "kr-q31180819": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#6EAE59",
+          "rgb": "110 174 89",
+          "share": 0.22
+        },
+        {
+          "hex": "#87C58D",
+          "rgb": "135 197 141",
+          "share": 0.09
+        },
+        {
+          "hex": "#39756E",
+          "rgb": "57 117 110",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.fowi.or.kr/images/admin_logo.png"
     },
     "kr-q55735729": {
       "checked_at": "2026-11-09",
@@ -5346,6 +8019,27 @@
       ],
       "extracted_from": "https://www.auri.re.kr/main/img/layout/logo.png"
     },
+    "kr-q16160000": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#423D85",
+          "rgb": "66 61 133",
+          "share": 0.33
+        },
+        {
+          "hex": "#EE8D32",
+          "rgb": "238 141 50",
+          "share": 0.33
+        },
+        {
+          "hex": "#6D6970",
+          "rgb": "109 105 112",
+          "share": 0.33
+        }
+      ],
+      "extracted_from": "https://www.stepi.re.kr/images/stepiko/renewal/Logo_STEPI.svg"
+    },
     "kr-q12585920": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5378,6 +8072,67 @@
       ],
       "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Korea_Institute_for_International_Economic_Policy_Official_Logo.jpg/960px-Korea_Institute_for_International_Economic_Policy_Official_Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
     },
+    "kr-q16219554": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q12606659": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#5597E3",
+          "rgb": "85 151 227",
+          "share": 0.44
+        },
+        {
+          "hex": "#23498A",
+          "rgb": "35 73 138",
+          "share": 0.44
+        },
+        {
+          "hex": "#595757",
+          "rgb": "89 87 87",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://www.keei.re.kr/main/img/layout/logo.svg"
+    },
+    "kr-q12615656": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003B83",
+          "rgb": "0 59 131",
+          "share": 0.79
+        },
+        {
+          "hex": "#BAE3F9",
+          "rgb": "186 227 249",
+          "share": 0.07
+        },
+        {
+          "hex": "#0099DB",
+          "rgb": "0 153 219",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.kisdi.re.kr/resource/www/img/layout/logo-new.svg"
+    },
+    "kr-q16976172": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#79AF36",
+          "rgb": "121 175 54",
+          "share": 0.24
+        },
+        {
+          "hex": "#1D69A1",
+          "rgb": "29 105 161",
+          "share": 0.17
+        }
+      ],
+      "extracted_from": "https://www.kinu.or.kr/resources/homepage/main/img/logo.png"
+    },
     "kr-q626288": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5394,6 +8149,38 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/cb/KDI_Logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
+    "kr-q11284963": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0F7A99",
+          "rgb": "15 122 153",
+          "share": 0.04
+        },
+        {
+          "hex": "#30AA99",
+          "rgb": "48 170 153",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://suneung.re.kr/apple-touch-icon.png"
+    },
+    "kr-q16192315": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#564572",
+          "rgb": "86 69 114",
+          "share": 0.16
+        },
+        {
+          "hex": "#D2D8DC",
+          "rgb": "210 216 220",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "https://www.koti.re.kr/res/img/logo_gpcbooks.jpg"
+    },
     "kr-q12622983": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5404,6 +8191,27 @@
         }
       ],
       "extracted_from": "https://www.krei.re.kr/krei/images/logo_krei.png"
+    },
+    "kr-q12623175": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#A98948",
+          "rgb": "169 137 72",
+          "share": 0.08
+        },
+        {
+          "hex": "#BFA97A",
+          "rgb": "191 169 122",
+          "share": 0.06
+        },
+        {
+          "hex": "#D9CFB5",
+          "rgb": "217 207 181",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.klri.re.kr/images/common/icon_logo.png"
     },
     "kr-q16192435": {
       "checked_at": "2026-11-09",
@@ -5467,6 +8275,33 @@
       ],
       "official_source": "https://www.kipf.re.kr/kor/About_CI.do;jsessionid=4873CAC83F90DEFD5E674AD222640732"
     },
+    "kr-q12623717": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004077",
+          "rgb": "0 64 119",
+          "share": 0.23
+        },
+        {
+          "hex": "#007BC8",
+          "rgb": "0 123 200",
+          "share": 0.15
+        }
+      ],
+      "extracted_from": "https://www.pqi.or.kr/new_images/logo_res.png?v=20261109.369"
+    },
+    "kr-q12623751": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0079C6",
+          "rgb": "0 121 198",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.nypi.re.kr/resources/images/mps/layout/logo.png"
+    },
     "kr-q6431664": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5487,6 +8322,48 @@
         }
       ],
       "extracted_from": "https://www.kmi.re.kr/web/images/layout_new/logo.png"
+    },
+    "kr-q6431651": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D589E",
+          "rgb": "13 88 158",
+          "share": 0.13
+        },
+        {
+          "hex": "#5289B8",
+          "rgb": "82 137 184",
+          "share": 0.11
+        },
+        {
+          "hex": "#A3B1BD",
+          "rgb": "163 177 189",
+          "share": 0.15
+        }
+      ],
+      "extracted_from": "https://www.kipa.re.kr/img/main/main_logo.png"
+    },
+    "kr-q16171239": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#818280",
+          "rgb": "129 130 128",
+          "share": 0.15
+        },
+        {
+          "hex": "#B8C9C7",
+          "rgb": "184 201 199",
+          "share": 0.1
+        },
+        {
+          "hex": "#9B9C9A",
+          "rgb": "155 156 154",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.kei.re.kr/kor/img/common/logo.png"
     },
     "kr-q12622844": {
       "checked_at": "2026-11-09",
@@ -5517,6 +8394,9 @@
         }
       ],
       "official_source": "https://www.kofair.or.kr/home/content.do?menu_cd=000010"
+    },
+    "kr-q31176245": {
+      "checked_at": "2026-11-09"
     },
     "kr-q483855": {
       "checked_at": "2026-11-09",
@@ -5657,6 +8537,38 @@
       ],
       "extracted_from": "https://www.drugsafe.or.kr/images/egovframework/iwt/ds/ko/introduction/photo_ci_01.png;jsessionid=Z1lr4bSLFBZyjcjEXqUz5QeEVx02S7XmaSu4fSLtyVu1ZnVTTIF4xaiTkERiTPPr.webint_2_servlet_engine1"
     },
+    "kr-q19162245": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1C437A",
+          "rgb": "28 67 122",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.kosii.or.kr/kosii/common/resources/img/content/meta_img.png"
+    },
+    "kr-q12623148": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0D1D76",
+          "rgb": "13 29 118",
+          "share": 0.21
+        },
+        {
+          "hex": "#1A68A5",
+          "rgb": "26 104 165",
+          "share": 0.09
+        },
+        {
+          "hex": "#030C54",
+          "rgb": "3 12 84",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.kipa.org/_res/kipa/img/main/nm_logo.png"
+    },
     "kr-q12623705": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5745,6 +8657,17 @@
       ],
       "extracted_from": "https://www.kipi.or.kr/image/common/logo.jpg"
     },
+    "kr-q4501812": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#A1A1A1",
+          "rgb": "161 161 161",
+          "share": 0.87
+        }
+      ],
+      "extracted_from": "https://www.koreaexim.go.kr/humanframe/theme/resources/assets/img/content/logo_footer.png"
+    },
     "kr-q486332": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5808,6 +8731,44 @@
       ],
       "extracted_from": "https://www.compa.re.kr/publishing-2026/res/images/logo-footer.svg;jsessionid=241FEECECD687F41ACE751EC3975CBCD"
     },
+    "kr-q16219765": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#BFBEB3",
+          "rgb": "191 190 179",
+          "share": 0.21
+        }
+      ],
+      "extracted_from": "https://www.sciencecenter.or.kr/apple-touch-icon.png"
+    },
+    "kr-q13762021": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#90B43E",
+          "rgb": "144 180 62",
+          "share": 0.57
+        }
+      ],
+      "extracted_from": "http://www.dnsm.or.kr/images/favicon/favicon_180.png"
+    },
+    "kr-q21400278": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0080CB",
+          "rgb": "0 128 203",
+          "share": 0.14
+        },
+        {
+          "hex": "#AAABAB",
+          "rgb": "170 171 171",
+          "share": 0.3
+        }
+      ],
+      "extracted_from": "https://www.sciport.or.kr/homepage/kor/_Img/Contents/mi_pic8.png"
+    },
     "kr-q12586769": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5840,6 +8801,17 @@
       ],
       "extracted_from": "https://www.innopolis.or.kr/resources/images/mps/2025/layout/header-logo.svg"
     },
+    "kr-q14850776": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004383",
+          "rgb": "0 67 131",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.nipa.kr:443/humanframe/theme/home/assets/vendor/favicon/apple-icon-120x120.png"
+    },
     "kr-q12622848": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -5862,7 +8834,25 @@
       "extracted_from": "https://www.kistep.re.kr/main/img/sub/ci_signature0101.svg"
     },
     "kr-q65312615": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#96A09D",
+          "rgb": "150 160 157",
+          "share": 0.05
+        },
+        {
+          "hex": "#E6E9E8",
+          "rgb": "230 233 232",
+          "share": 0.05
+        },
+        {
+          "hex": "#595758",
+          "rgb": "89 87 88",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.kdata.or.kr/_img/kdata_og.jpg"
     },
     "kr-q14865193": {
       "checked_at": "2026-11-09",
@@ -5996,6 +8986,27 @@
       ],
       "extracted_from": "https://www.nile.or.kr/site/nile/ko/images/common/logo.png"
     },
+    "kr-q16182649": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#211714",
+          "rgb": "33 23 20",
+          "share": 0.16
+        },
+        {
+          "hex": "#737C34",
+          "rgb": "115 124 52",
+          "share": 0.13
+        },
+        {
+          "hex": "#8C481F",
+          "rgb": "140 72 31",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://www.nahf.or.kr/design/theme/portal/dist/images/common/logo_nahf.png"
+    },
     "kr-q16184585": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -6100,6 +9111,27 @@
         }
       ],
       "extracted_from": "https://www.cnuh.com/templates/home/images/intro/logo.jpg"
+    },
+    "kr-q12615161": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#3E5670",
+          "rgb": "62 86 112",
+          "share": 0.18
+        },
+        {
+          "hex": "#67A3BE",
+          "rgb": "103 163 190",
+          "share": 0.12
+        },
+        {
+          "hex": "#183E5D",
+          "rgb": "24 62 93",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.jbuh.co.kr/images/common/ISMS_logo.png"
     },
     "kr-q16095048": {
       "checked_at": "2026-11-09",
@@ -6409,6 +9441,22 @@
       ],
       "official_source": "https://www.nmf.or.kr/agency/sub/20181024095937402100_contents.do"
     },
+    "kr-q115648978": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.5
+        },
+        {
+          "hex": "#6C9BD2",
+          "rgb": "108 155 210",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://www.igbf.kr:443/gugak_web/img/common/gugak_logo.svg"
+    },
     "kr-q483066": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -6646,6 +9694,17 @@
         }
       ],
       "official_source": "https://ltikorea.or.kr/kr/contents/about_inst_7/view.do"
+    },
+    "kr-q12623085": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231F20",
+          "rgb": "35 31 32",
+          "share": 0.27
+        }
+      ],
+      "extracted_from": "https://wimg.heraldcorp.com/svc/leader/logo/2024/10/14/20d8cd3d-0e10-4ccc-9e42-9f9c2f74114a.png"
     },
     "kr-q12623091": {
       "checked_at": "2026-11-09",
@@ -6940,6 +9999,27 @@
       ],
       "official_source": "http://www.epis.or.kr/content.do?key=2604210128"
     },
+    "kr-q16219823": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0C498C",
+          "rgb": "12 73 140",
+          "share": 0.14
+        },
+        {
+          "hex": "#5B8AB2",
+          "rgb": "91 138 178",
+          "share": 0.11
+        },
+        {
+          "hex": "#B1D1C4",
+          "rgb": "177 209 196",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://www.ipet.re.kr/img/main/logo.jpg"
+    },
     "kr-q16164343": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -6982,6 +10062,27 @@
       ],
       "extracted_from": "https://www.hansik.or.kr/resources/images/logo.png"
     },
+    "kr-q12615121": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#099AD7",
+          "rgb": "9 154 215",
+          "share": 0.14
+        },
+        {
+          "hex": "#AA925E",
+          "rgb": "170 146 94",
+          "share": 0.07
+        },
+        {
+          "hex": "#818285",
+          "rgb": "129 130 133",
+          "share": 0.57
+        }
+      ],
+      "extracted_from": "https://www.kosti.or.kr/_static/kosti/img/main/logo_topSch.png"
+    },
     "kr-q16192376": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -6998,8 +10099,42 @@
       ],
       "extracted_from": "https://www.kidp.or.kr/images/newmenu/kidp_logo_2021.png"
     },
-    "kr-q12623050": {
-      "checked_at": "2026-11-09"
+    "kr-q12623238": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005E9A",
+          "rgb": "0 94 154",
+          "share": 0.5
+        },
+        {
+          "hex": "#ED1C24",
+          "rgb": "237 28 36",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://www.ktl.re.kr/images/common/ktl_logo.svg"
+    },
+    "kr-q16262632": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#EF6807",
+          "rgb": "239 104 7",
+          "share": 0.24
+        },
+        {
+          "hex": "#0E4297",
+          "rgb": "14 66 151",
+          "share": 0.16
+        },
+        {
+          "hex": "#494948",
+          "rgb": "73 73 72",
+          "share": 0.16
+        }
+      ],
+      "extracted_from": "https://www.kicet.re.kr/_res/portal/img/inc/logo@2x.png"
     },
     "kr-q97239822": {
       "checked_at": "2026-11-09",
@@ -7016,6 +10151,27 @@
         }
       ],
       "extracted_from": "https://www.kips.kr/images/kips/main_logo.png"
+    },
+    "kr-q16164314": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#063864",
+          "rgb": "6 56 100",
+          "share": 0.19
+        },
+        {
+          "hex": "#A93248",
+          "rgb": "169 50 72",
+          "share": 0.08
+        },
+        {
+          "hex": "#545457",
+          "rgb": "84 84 87",
+          "share": 0.17
+        }
+      ],
+      "extracted_from": "https://nibp.kr/portal/images/logo07-013066f4f9132767fabe78a13768ee6e.png"
     },
     "kr-q12585740": {
       "checked_at": "2026-11-09",
@@ -7169,6 +10325,48 @@
       ],
       "official_source": "https://www.koiha.or.kr/web/kr/koihaPR/koihaCI.do"
     },
+    "kr-q16261977": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#91CCE0",
+          "rgb": "145 204 224",
+          "share": 0.81
+        },
+        {
+          "hex": "#304684",
+          "rgb": "48 70 132",
+          "share": 0.07
+        },
+        {
+          "hex": "#5D92BE",
+          "rgb": "93 146 190",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.koda1458.kr/img/og-default.png"
+    },
+    "kr-q16192220": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#281416",
+          "rgb": "40 20 22",
+          "share": 0.08
+        },
+        {
+          "hex": "#BEBCBC",
+          "rgb": "190 188 188",
+          "share": 0.06
+        },
+        {
+          "hex": "#706C6E",
+          "rgb": "112 108 110",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.whosaeng.com/data/whosaeng_com/bn_img/2026010518395302.png"
+    },
     "kr-q16192321": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7210,6 +10408,22 @@
         }
       ],
       "extracted_from": "https://www.kordi.or.kr/images/h1_logo.jpg"
+    },
+    "kr-q30296538": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#FF671D",
+          "rgb": "255 103 29",
+          "share": 0.36
+        },
+        {
+          "hex": "#76777A",
+          "rgb": "118 119 122",
+          "share": 0.57
+        }
+      ],
+      "extracted_from": "http://www.khidi.or.kr/resources/images/kps/intro/sm-logo.png"
     },
     "kr-q12623181": {
       "checked_at": "2026-11-09",
@@ -7344,6 +10558,27 @@
       ],
       "extracted_from": "https://www.nnibr.re.kr/cmsh/nnibr.re.kr/images/content/symbol_1.gif"
     },
+    "kr-q16180179": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#467595",
+          "rgb": "70 117 149",
+          "share": 0.09
+        },
+        {
+          "hex": "#73B18D",
+          "rgb": "115 177 141",
+          "share": 0.04
+        },
+        {
+          "hex": "#2A2628",
+          "rgb": "42 38 40",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "http://www.slc.or.kr/img/common/logo.gif"
+    },
     "kr-q15279945": {
       "checked_at": "2026-11-09",
       "official": [
@@ -7468,6 +10703,27 @@
       ],
       "official_source": "https://www.kings.ac.kr/whykings/kings_ui.do"
     },
+    "kr-q12625722": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00945E",
+          "rgb": "0 148 94",
+          "share": 0.22
+        },
+        {
+          "hex": "#95D60A",
+          "rgb": "149 214 10",
+          "share": 0.04
+        },
+        {
+          "hex": "#494948",
+          "rgb": "73 73 72",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "https://www.keci.or.kr/common/images/header_logo_c.png"
+    },
     "kr-q6431684": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7489,6 +10745,27 @@
         }
       ],
       "extracted_from": "https://www.cw.or.kr/images/f-logo.svg"
+    },
+    "kr-q12590381": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0081CC",
+          "rgb": "0 129 204",
+          "share": 0.14
+        },
+        {
+          "hex": "#00653D",
+          "rgb": "0 101 61",
+          "share": 0.14
+        },
+        {
+          "hex": "#003984",
+          "rgb": "0 57 132",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/0/06/%EB%85%B8%EC%82%AC%EB%B0%9C%EC%A0%84%EC%9E%AC%EB%8B%A8_%EA%B5%AD%EB%AC%B8_CI.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q625953": {
       "checked_at": "2026-11-09",
@@ -7526,6 +10803,9 @@
         }
       ],
       "extracted_from": "https://www.socialenterprise.or.kr/assets/images/sub/gate/logo.svg"
+    },
+    "kr-q12623616": {
+      "checked_at": "2026-11-09"
     },
     "kr-q16192218": {
       "checked_at": "2026-11-09",
@@ -7626,6 +10906,27 @@
       ],
       "extracted_from": "https://www.kywa.or.kr/images/header/logo.jpg"
     },
+    "kr-q109459690": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#ED284A",
+          "rgb": "237 40 74",
+          "share": 0.08
+        },
+        {
+          "hex": "#F3723F",
+          "rgb": "243 114 63",
+          "share": 0.05
+        },
+        {
+          "hex": "#F9A422",
+          "rgb": "249 164 34",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.aviation.or.kr/contents/home/images/intro-logo.png"
+    },
     "kr-q18815349": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7636,6 +10937,27 @@
         }
       ],
       "extracted_from": "https://www.kaia.re.kr/resource/templete/kaia/images/common/logo_wh.png"
+    },
+    "kr-q55729046": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#078CB5",
+          "rgb": "7 140 181",
+          "share": 0.25
+        },
+        {
+          "hex": "#2BAD99",
+          "rgb": "43 173 153",
+          "share": 0.09
+        },
+        {
+          "hex": "#135D88",
+          "rgb": "19 93 136",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.kcesi.or.kr/resources/user/kcesi/img/common/logo_on.png"
     },
     "kr-q61359365": {
       "checked_at": "2026-11-09",
@@ -7673,6 +10995,48 @@
         }
       ],
       "extracted_from": "https://www.kohom.or.kr/common/img/common/logo.gif"
+    },
+    "kr-q15623329": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1D2088",
+          "rgb": "29 32 136",
+          "share": 0.33
+        },
+        {
+          "hex": "#0084BB",
+          "rgb": "0 132 187",
+          "share": 0.15
+        },
+        {
+          "hex": "#55B145",
+          "rgb": "85 177 69",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "https://www.gg.go.kr/site/gg/common/img/ggd_slogan_9th_v20261026.png"
+    },
+    "kr-w36da7a6394": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#141D52",
+          "rgb": "20 29 82",
+          "share": 0.09
+        },
+        {
+          "hex": "#0A4E88",
+          "rgb": "10 78 136",
+          "share": 0.09
+        },
+        {
+          "hex": "#0373B1",
+          "rgb": "3 115 177",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "http://www.kindkorea.or.kr/images/favicon/favicon_48x48.svg"
     },
     "kr-q24867026": {
       "checked_at": "2026-11-09",
@@ -7760,6 +11124,9 @@
       ],
       "official_source": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54"
     },
+    "kr-q12624539": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q12623855": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7775,6 +11142,9 @@
         }
       ],
       "extracted_from": "https://www.kiost.ac.kr/images/kor/sub04/ci_img01.jpg"
+    },
+    "kr-q6431649": {
+      "checked_at": "2026-11-09"
     },
     "kr-q12623862": {
       "checked_at": "2026-11-09",
@@ -7797,6 +11167,33 @@
       ],
       "extracted_from": "https://www.khra.kr/images/hmpg/header_logo_b.png"
     },
+    "kr-q55735764": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q12623853": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q55727512": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#B70928",
+          "rgb": "183 9 40",
+          "share": 0.26
+        },
+        {
+          "hex": "#A67C83",
+          "rgb": "166 124 131",
+          "share": 0.06
+        },
+        {
+          "hex": "#BF2C46",
+          "rgb": "191 44 70",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.gongyoung.kr/images/layout/logo.png"
+    },
     "kr-q12604470": {
       "checked_at": "2026-11-09",
       "official": [
@@ -7813,6 +11210,27 @@
       ],
       "official_source": "https://www.koreg.or.kr:443/koreg/cm/cntnts/cntntsView.do?mi=1018&cntntsId=1038"
     },
+    "kr-q55733822": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#08439A",
+          "rgb": "8 67 154",
+          "share": 0.43
+        },
+        {
+          "hex": "#D3CD3A",
+          "rgb": "211 205 58",
+          "share": 0.2
+        },
+        {
+          "hex": "#7C208C",
+          "rgb": "124 32 140",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.debc.or.kr/pb/images/ci_debc.png"
+    },
     "kr-q16189718": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7823,6 +11241,27 @@
         }
       ],
       "extracted_from": "https://www.tipa.or.kr/webroot2/images/korean/common/footer_logo_smba.png"
+    },
+    "kr-q19162080": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#231815",
+          "rgb": "35 24 21",
+          "share": 0.56
+        },
+        {
+          "hex": "#00666F",
+          "rgb": "0 102 111",
+          "share": 0.12
+        },
+        {
+          "hex": "#00A670",
+          "rgb": "0 166 112",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://www.kosi.re.kr/assets/asset/images/logo-hd-color.svg"
     },
     "kr-q16192432": {
       "checked_at": "2026-11-09",
@@ -7925,6 +11364,9 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/67/Defense_Agency_for_Technology_and_Quality_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
+    "kr-q12623296": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q12623037": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -7935,6 +11377,59 @@
         }
       ],
       "extracted_from": "https://komount.or.kr/renewal/images/h_logo.png"
+    },
+    "kr-q16169337": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#016E38",
+          "rgb": "1 110 56",
+          "share": 0.15
+        },
+        {
+          "hex": "#439C4C",
+          "rgb": "67 156 76",
+          "share": 0.14
+        },
+        {
+          "hex": "#4B4C4D",
+          "rgb": "75 76 77",
+          "share": 0.21
+        }
+      ],
+      "extracted_from": "https://www.kofpi.or.kr/resources/img/common/new_logo_on.png"
+    },
+    "kr-q16164791": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#5FA3BD",
+          "rgb": "95 163 189",
+          "share": 0.1
+        },
+        {
+          "hex": "#283339",
+          "rgb": "40 51 57",
+          "share": 0.08
+        },
+        {
+          "hex": "#9ED5EA",
+          "rgb": "158 213 234",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.apcc21.org/apcc/img/acpp_logo1.png"
+    },
+    "kr-q16171136": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00A1E9",
+          "rgb": "0 161 233",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://www.kiaps.org/assets/brand/kiaps-logo.svg"
     },
     "kr-q12622923": {
       "checked_at": "2026-11-09",
@@ -8022,6 +11517,22 @@
         }
       ],
       "extracted_from": "https://www.mtu.ac.kr/mtu/img/sub01/img0104040101.gif"
+    },
+    "kr-q486676": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0070BD",
+          "rgb": "0 112 189",
+          "share": 0.04
+        },
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 0.81
+        }
+      ],
+      "extracted_from": "https://lib.kangnam.ac.kr/Users/Knul/Images/main/sponge-logo.png"
     },
     "kr-q497259": {
       "checked_at": "2026-11-09",
@@ -8149,6 +11660,22 @@
       ],
       "extracted_from": "https://www.kduniv.ac.kr/resources/_Templet/Layout/layout_kor/Img/logo.png"
     },
+    "kr-q487836": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#237CA4",
+          "rgb": "35 124 164",
+          "share": 0.08
+        },
+        {
+          "hex": "#4A535A",
+          "rgb": "74 83 90",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://www.gnu.ac.kr/images/web/main/layout/logo.png"
+    },
     "kr-q482751": {
       "checked_at": "2026-11-09",
       "official": [
@@ -8161,6 +11688,27 @@
         }
       ],
       "official_source": "https://kscms.ks.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN027"
+    },
+    "kr-q6583844": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1C235D",
+          "rgb": "28 35 93",
+          "share": 0.17
+        },
+        {
+          "hex": "#DEDCD4",
+          "rgb": "222 220 212",
+          "share": 0.17
+        },
+        {
+          "hex": "#60627F",
+          "rgb": "96 98 127",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/%EA%B2%BD%EC%9A%B4%EB%8C%80%ED%95%99%EA%B5%90_%EB%A7%88%ED%81%AC.jpg/960px-%EA%B2%BD%EC%9A%B4%EB%8C%80%ED%95%99%EA%B5%90_%EB%A7%88%ED%81%AC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
     },
     "kr-q482661": {
       "checked_at": "2026-11-09",
@@ -8182,6 +11730,43 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/10/GinueLogo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q10855238": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#8E001C",
+          "rgb": "142 0 28",
+          "share": 0.18
+        },
+        {
+          "hex": "#FE9B1A",
+          "rgb": "254 155 26",
+          "share": 0.14
+        },
+        {
+          "hex": "#B7825E",
+          "rgb": "183 130 94",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "http://www.kiu.ac.kr/img/logo_w.png"
+    },
+    "kr-q626872": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#FFCB05",
+          "rgb": "255 203 5",
+          "share": 0.44
+        },
+        {
+          "hex": "#A4681D",
+          "rgb": "164 104 29",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Korean_National_Police_University_Emblem.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q496536": {
       "checked_at": "2026-11-09",
@@ -8234,6 +11819,38 @@
         }
       ],
       "extracted_from": "https://www.kosin.ac.kr/kr/_Intro/260630/intro_logo.png"
+    },
+    "kr-q484154": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/c/c5/A_Scriptural_Logo_of_Gongju_National_University_of_Education.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q212297": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#9C5867",
+          "rgb": "156 88 103",
+          "share": 0.13
+        },
+        {
+          "hex": "#7C1B2F",
+          "rgb": "124 27 47",
+          "share": 0.12
+        },
+        {
+          "hex": "#C6A3AB",
+          "rgb": "198 163 171",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Kwangwoon_univ_logo_03_03.jpg/960px-Kwangwoon_univ_logo_03_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
     },
     "kr-q484900": {
       "checked_at": "2026-11-09",
@@ -8313,6 +11930,22 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Korea_Armed_Forces_Nursing_Academy_Seal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q494638": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005BAB",
+          "rgb": "0 91 171",
+          "share": 0.33
+        },
+        {
+          "hex": "#00A9EA",
+          "rgb": "0 169 234",
+          "share": 0.33
+        }
+      ],
+      "extracted_from": "https://www.gknu.ac.kr/resources/homepage/main/img/logo-w.svg"
     },
     "kr-q482673": {
       "checked_at": "2026-11-09",
@@ -8446,6 +12079,38 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Pknu_title.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
+    "kr-q482952": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#006CB2",
+          "rgb": "0 108 178",
+          "share": 0.2
+        },
+        {
+          "hex": "#727171",
+          "rgb": "114 113 113",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "https://www.scnu.ac.kr/common/images/layout/logo.png"
+    },
+    "kr-q483680": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#003F8B",
+          "rgb": "0 63 139",
+          "share": 0.44
+        },
+        {
+          "hex": "#3466A4",
+          "rgb": "52 102 164",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/6/69/%EA%B5%AD%EB%A6%BD%EC%B0%BD%EC%9B%90%EB%8C%80%ED%95%99%EA%B5%90_%EB%A1%9C%EA%B3%A0.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
     "kr-q486999": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -8554,6 +12219,51 @@
         }
       ],
       "official_source": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do"
+    },
+    "kr-q5554847": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q6425829": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0C5413",
+          "rgb": "12 84 19",
+          "share": 0.19
+        },
+        {
+          "hex": "#32723B",
+          "rgb": "50 114 59",
+          "share": 0.09
+        },
+        {
+          "hex": "#020202",
+          "rgb": "2 2 2",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "http://www.kgrc.ac.kr/resources/img/logo.png"
+    },
+    "kr-q16093712": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0C4DA3",
+          "rgb": "12 77 163",
+          "share": 0.32
+        },
+        {
+          "hex": "#6A6F75",
+          "rgb": "106 111 117",
+          "share": 0.21
+        },
+        {
+          "hex": "#919DB7",
+          "rgb": "145 157 183",
+          "share": 0.1
+        }
+      ],
+      "extracted_from": "http://www.nambu.ac.kr/site/nambu/nambukr/img/mainIntro/logo.png"
     },
     "kr-q489708": {
       "checked_at": "2026-11-09",
@@ -8672,6 +12382,9 @@
         }
       ],
       "official_source": "https://www.cu.ac.kr/introduction/uisystem/uilogo"
+    },
+    "kr-q12591209": {
+      "checked_at": "2026-11-09"
     },
     "kr-q482711": {
       "checked_at": "2026-11-09",
@@ -8853,6 +12566,27 @@
       ],
       "official_source": "https://www.dongduk.ac.kr/www/contents/kor-ui01.do"
     },
+    "kr-q12593324": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005629",
+          "rgb": "0 86 41",
+          "share": 0.54
+        },
+        {
+          "hex": "#0FA13C",
+          "rgb": "15 161 60",
+          "share": 0.22
+        },
+        {
+          "hex": "#72BB2A",
+          "rgb": "114 187 42",
+          "share": 0.14
+        }
+      ],
+      "extracted_from": "https://english.tu.ac.kr/_res/tongmyong/_share/img/logo.png"
+    },
     "kr-q493506": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -8936,6 +12670,27 @@
       ],
       "extracted_from": "https://www.dima.ac.kr/inc/img/logo_w.svg"
     },
+    "kr-q5296069": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#4174D9",
+          "rgb": "65 116 217",
+          "share": 0.49
+        },
+        {
+          "hex": "#98B0DC",
+          "rgb": "152 176 220",
+          "share": 0.1
+        },
+        {
+          "hex": "#7E96C7",
+          "rgb": "126 150 199",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.dyu.ac.kr/wp-content/uploads/2018/01/logo-white-blue-trans-140.gif"
+    },
     "kr-q623798": {
       "checked_at": "2026-11-09",
       "official": [
@@ -8982,6 +12737,27 @@
       ],
       "official_source": "https://www.deu.ac.kr/www/deu-ui.do"
     },
+    "kr-q5297278": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#009480",
+          "rgb": "0 148 128",
+          "share": 0.6
+        },
+        {
+          "hex": "#1D2088",
+          "rgb": "29 32 136",
+          "share": 0.22
+        },
+        {
+          "hex": "#ADDBD6",
+          "rgb": "173 219 214",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.doowon.ac.kr/sites/style_guide/images/common/favicon.png"
+    },
     "kr-q6705649": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9018,6 +12794,9 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/5/51/Myongji_university_logo.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q12595373": {
+      "checked_at": "2026-11-09"
     },
     "kr-q6895404": {
       "checked_at": "2026-11-09",
@@ -9182,6 +12961,48 @@
       ],
       "official_source": "https://www.seoultech.ac.kr/intro/symbol/logo/symbol"
     },
+    "kr-q487613": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#020202",
+          "rgb": "2 2 2",
+          "share": 0.1
+        },
+        {
+          "hex": "#D9D9D9",
+          "rgb": "217 217 217",
+          "share": 0.05
+        },
+        {
+          "hex": "#6F6F6F",
+          "rgb": "111 111 111",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.snue.ac.kr/common/fav/apple-icon-120x120.png"
+    },
+    "kr-q11250368": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#01935F",
+          "rgb": "1 147 95",
+          "share": 0.2
+        },
+        {
+          "hex": "#BC434A",
+          "rgb": "188 67 74",
+          "share": 0.07
+        },
+        {
+          "hex": "#37AA81",
+          "rgb": "55 170 129",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://www.scu.ac.kr/assets/img/scu_logo.png"
+    },
     "kr-q488334": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9209,6 +13030,9 @@
       ],
       "extracted_from": "https://www.stu.ac.kr/dbimage/stumain/WebData/img/common/logo.png"
     },
+    "kr-q484230": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q12601315": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9224,6 +13048,51 @@
         }
       ],
       "extracted_from": "https://www.sjs.ac.kr/ht_ml_eng/img/bupum/t_logo.gif"
+    },
+    "kr-q12624192": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1B74BD",
+          "rgb": "27 116 189",
+          "share": 0.1
+        },
+        {
+          "hex": "#A5C8E6",
+          "rgb": "165 200 230",
+          "share": 0.09
+        },
+        {
+          "hex": "#4C92CB",
+          "rgb": "76 146 203",
+          "share": 0.07
+        }
+      ],
+      "extracted_from": "https://www.shyu.ac.kr/fro_end/img/gnb_logo.png"
+    },
+    "kr-q3242069": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#002777",
+          "rgb": "0 39 119",
+          "share": 0.75
+        },
+        {
+          "hex": "#8598BE",
+          "rgb": "133 152 190",
+          "share": 0.04
+        },
+        {
+          "hex": "#1D3F86",
+          "rgb": "29 63 134",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.seowon.ac.kr:443/sites/seowon/seo/temp_1590474511343100.png"
+    },
+    "kr-q488620": {
+      "checked_at": "2026-11-09"
     },
     "kr-q3181302": {
       "checked_at": "2026-11-09",
@@ -9309,6 +13178,27 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Sejong_univ.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q7446489": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#FAA134",
+          "rgb": "250 161 52",
+          "share": 0.27
+        },
+        {
+          "hex": "#2193D2",
+          "rgb": "33 147 210",
+          "share": 0.18
+        },
+        {
+          "hex": "#59595B",
+          "rgb": "89 89 91",
+          "share": 0.19
+        }
+      ],
+      "extracted_from": "https://www.sehan.ac.kr/Web-home/_UI/images/msg_img.png"
     },
     "kr-q12602960": {
       "checked_at": "2026-11-09",
@@ -9435,6 +13325,27 @@
       ],
       "extracted_from": "https://sgu.ac.kr/images/common/sgu-logo.webp"
     },
+    "kr-q626362": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#50782F",
+          "rgb": "80 120 47",
+          "share": 0.46
+        },
+        {
+          "hex": "#D45621",
+          "rgb": "212 86 33",
+          "share": 0.13
+        },
+        {
+          "hex": "#7A872A",
+          "rgb": "122 135 42",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "http://www.silla.ac.kr/ko/_Img/logo.png?v=1"
+    },
     "kr-q16097602": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9450,6 +13361,30 @@
         }
       ],
       "extracted_from": "https://www.shinhan.ac.kr/sites/kr/images/logo.png"
+    },
+    "kr-q12601429": {
+      "checked_at": "2026-11-09"
+    },
+    "kr-q493608": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#942D64",
+          "rgb": "148 45 100",
+          "share": 0.06
+        },
+        {
+          "hex": "#D7C7CC",
+          "rgb": "215 199 204",
+          "share": 0.05
+        },
+        {
+          "hex": "#A99290",
+          "rgb": "169 146 144",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://www.acts.ac.kr/images/university/logo_2023.png"
     },
     "kr-q491082": {
       "checked_at": "2026-11-09",
@@ -9530,6 +13465,17 @@
       ],
       "official_source": "https://www.anyang.ac.kr/main/introduction/symbol.do"
     },
+    "kr-q8058617": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#004EA2",
+          "rgb": "0 78 162",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "http://www.ytus.ac.kr/images/default/main/intro-logo.svg"
+    },
     "kr-q8058632": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9556,6 +13502,27 @@
         }
       ],
       "extracted_from": "http://www.youngsan.ac.kr/data/common/logo_img"
+    },
+    "kr-q12607638": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#F39800",
+          "rgb": "243 152 0",
+          "share": 0.28
+        },
+        {
+          "hex": "#00A8EB",
+          "rgb": "0 168 235",
+          "share": 0.25
+        },
+        {
+          "hex": "#231916",
+          "rgb": "35 25 22",
+          "share": 0.15
+        }
+      ],
+      "extracted_from": "https://www.jesus.ac.kr/main/img/logo.png"
     },
     "kr-q497766": {
       "checked_at": "2026-11-09",
@@ -9641,6 +13608,27 @@
       ],
       "extracted_from": "https://english.woosuk.ac.kr/en/img/logo.png"
     },
+    "kr-q625421": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005826",
+          "rgb": "0 88 38",
+          "share": 0.33
+        },
+        {
+          "hex": "#B82841",
+          "rgb": "184 40 65",
+          "share": 0.33
+        },
+        {
+          "hex": "#0E4E96",
+          "rgb": "14 78 150",
+          "share": 0.33
+        }
+      ],
+      "extracted_from": "https://www.wsu.ac.kr/site/main/images/wsu_logo.svg"
+    },
     "kr-q491717": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9677,6 +13665,22 @@
         }
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Unist_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q483656": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#194383",
+          "rgb": "25 67 131",
+          "share": 0.73
+        },
+        {
+          "hex": "#CD1719",
+          "rgb": "205 23 25",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_WonKwang_University.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     "kr-q8058582": {
       "checked_at": "2026-11-09",
@@ -9820,6 +13824,17 @@
       ],
       "official_source": "https://www.inha.ac.kr/kr/1832/subview.do"
     },
+    "kr-q6674241": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#8F94A3",
+          "rgb": "143 148 163",
+          "share": 0.24
+        }
+      ],
+      "extracted_from": "http://www.puts.ac.kr/www/main/intro/_Img/intro_flogo.png"
+    },
     "kr-q494681": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9857,6 +13872,9 @@
       ],
       "extracted_from": "https://www.jbnu.ac.kr/resources/user/web/img/sub/symbolmark_traditional_01.png"
     },
+    "kr-q482759": {
+      "checked_at": "2026-11-09"
+    },
     "kr-q487855": {
       "checked_at": "2026-11-09",
       "extracted": [
@@ -9877,6 +13895,33 @@
         }
       ],
       "extracted_from": "http://www.jejunu.ac.kr/pub/site/jejunu/images/main/logo.svg"
+    },
+    "kr-q5089726": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://t1.kakaocdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"
+    },
+    "kr-q56143": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#1C31A6",
+          "rgb": "28 49 166",
+          "share": 0.65
+        },
+        {
+          "hex": "#8996D0",
+          "rgb": "137 150 208",
+          "share": 0.05
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Chosun-University-Symbol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
     "kr-q11272217": {
       "checked_at": "2026-11-09",
@@ -9904,6 +13949,64 @@
       ],
       "official_source": "https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=220"
     },
+    "kr-q12617695": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#221815",
+          "rgb": "34 24 21",
+          "share": 0.11
+        },
+        {
+          "hex": "#787158",
+          "rgb": "120 113 88",
+          "share": 0.11
+        },
+        {
+          "hex": "#FDFF58",
+          "rgb": "253 255 88",
+          "share": 0.03
+        }
+      ],
+      "extracted_from": "https://www.sangha.ac.kr/SANGHA/images/logo_mobile.png"
+    },
+    "kr-q482692": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#EF7220",
+          "rgb": "239 114 32",
+          "share": 0.15
+        },
+        {
+          "hex": "#6D5F5E",
+          "rgb": "109 95 94",
+          "share": 0.17
+        }
+      ],
+      "extracted_from": "https://www.cue.ac.kr/resources/_Img/Common/logo.png"
+    },
+    "kr-q16098196": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#044068",
+          "rgb": "4 64 104",
+          "share": 0.28
+        },
+        {
+          "hex": "#EAD787",
+          "rgb": "234 215 135",
+          "share": 0.17
+        },
+        {
+          "hex": "#3F617E",
+          "rgb": "63 97 126",
+          "share": 0.13
+        }
+      ],
+      "extracted_from": "https://www.cha.ac.kr/wp-content/uploads/2026/07/CHA_university.png"
+    },
     "kr-q3271898": {
       "checked_at": "2026-11-09",
       "official": [
@@ -9930,6 +14033,27 @@
         }
       ],
       "official_source": "https://www.cs.ac.kr/document/intro6_2"
+    },
+    "kr-q166202": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#005AAB",
+          "rgb": "0 90 171",
+          "share": 0.29
+        },
+        {
+          "hex": "#231F20",
+          "rgb": "35 31 32",
+          "share": 0.32
+        },
+        {
+          "hex": "#87B3A2",
+          "rgb": "135 179 162",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://home.chungwoon.ac.kr/common/images/layout/logo.png"
     },
     "kr-q625945": {
       "checked_at": "2026-11-09",
@@ -10004,7 +14128,36 @@
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/0/0c/A_Scriptural_Logo_of_Chuncheon_National_University_of_Education.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
     "kr-q489488": {
-      "checked_at": "2026-11-09"
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#883B95",
+          "rgb": "136 59 149",
+          "share": 0.09
+        },
+        {
+          "hex": "#15A3B0",
+          "rgb": "21 163 176",
+          "share": 0.09
+        },
+        {
+          "hex": "#4D81B1",
+          "rgb": "77 129 177",
+          "share": 0.06
+        }
+      ],
+      "extracted_from": "https://fric.cnu.ac.kr/image/ko/local/logo.gif"
+    },
+    "kr-q491714": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#B62B5C",
+          "rgb": "182 43 92",
+          "share": 0.29
+        }
+      ],
+      "extracted_from": "https://www.cbnu.ac.kr/common/images/layout/logo.png"
     },
     "kr-q482731": {
       "checked_at": "2026-11-09",
@@ -10022,26 +14175,29 @@
       ],
       "extracted_from": "http://www.calvin.ac.kr/jsp/main/images/h_logo.png"
     },
-    "kr-q12623236": {
+    "kr-q12621827": {
       "checked_at": "2026-11-09",
       "extracted": [
         {
-          "hex": "#0D57A7",
-          "rgb": "13 87 167",
-          "share": 0.08
+          "hex": "#006938",
+          "rgb": "0 105 56",
+          "share": 0.37
         },
         {
-          "hex": "#88ABDA",
-          "rgb": "136 171 218",
-          "share": 0.08
+          "hex": "#357F5C",
+          "rgb": "53 127 92",
+          "share": 0.07
         },
         {
-          "hex": "#008FD3",
-          "rgb": "0 143 211",
-          "share": 0.08
+          "hex": "#AEC4BA",
+          "rgb": "174 196 186",
+          "share": 0.14
         }
       ],
-      "extracted_from": "https://www.tukorea.ac.kr/intro/img/logo.svg"
+      "extracted_from": "https://dorm.ptu.ac.kr/sites/style_guide/images/common/logo_c.png"
+    },
+    "kr-q12623236": {
+      "checked_at": "2026-11-09"
     },
     "kr-q491597": {
       "checked_at": "2026-11-09",
@@ -10069,6 +14225,17 @@
       ],
       "official_source": "https://www.hufs.ac.kr/hufs/11128/subview.do"
     },
+    "kr-q623817": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#A09E9A",
+          "rgb": "160 158 154",
+          "share": 0.24
+        }
+      ],
+      "extracted_from": "https://www.knuh.ac.kr/img/kr/new_layout/logo_gray.png"
+    },
     "kr-q483744": {
       "checked_at": "2026-11-09",
       "official": [
@@ -10078,6 +14245,30 @@
         }
       ],
       "official_source": "https://www.knsu.ac.kr/knsu/info/logo-and-ui001.do"
+    },
+    "kr-q6431599": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#21247E",
+          "rgb": "33 36 126",
+          "share": 0.05
+        },
+        {
+          "hex": "#6673A3",
+          "rgb": "102 115 163",
+          "share": 0.03
+        },
+        {
+          "hex": "#B4BAD8",
+          "rgb": "180 186 216",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://www.kbtus.ac.kr/resources/_Img/Common/share_thumb.jpg"
+    },
+    "kr-q626053": {
+      "checked_at": "2026-11-09"
     },
     "kr-q5642741": {
       "checked_at": "2026-11-09",
@@ -10164,6 +14355,59 @@
       ],
       "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Hanshin_Univ.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
     },
+    "kr-q40006": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#00579E",
+          "rgb": "0 87 158",
+          "share": 0.23
+        },
+        {
+          "hex": "#ABC6DB",
+          "rgb": "171 198 219",
+          "share": 0.11
+        }
+      ],
+      "extracted_from": "http://lawschool.hanyang.ac.kr/wp-content/themes/twentysixteen_child/images/src/logo.png"
+    },
+    "kr-q5648215": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#0A4697",
+          "rgb": "10 70 151",
+          "share": 0.23
+        },
+        {
+          "hex": "#B2B3B6",
+          "rgb": "178 179 182",
+          "share": 0.18
+        }
+      ],
+      "extracted_from": "https://www.hanil.ac.kr/link/2020/08/18/c2e1a29b-cda4-4d06-bdff-c53d8eb40901.png"
+    },
+    "kr-q12625125": {
+      "checked_at": "2026-11-09",
+      "extracted": [
+        {
+          "hex": "#3D3A59",
+          "rgb": "61 58 89",
+          "share": 0.1
+        },
+        {
+          "hex": "#927E70",
+          "rgb": "146 126 112",
+          "share": 0.08
+        },
+        {
+          "hex": "#D9CEBF",
+          "rgb": "217 206 191",
+          "share": 0.08
+        }
+      ],
+      "extracted_from": "https://www.uhs.ac.kr/sites/uhs/images/common/logo.jpg"
+    },
     "kr-q11286676": {
       "checked_at": "2026-11-09",
       "official": [
@@ -10189,6 +14433,9 @@
         }
       ],
       "official_source": "https://www.hoseo.ac.kr/Home/Contents.mbz?action=MAPP_1708220023"
+    },
+    "kr-q5922476": {
+      "checked_at": "2026-11-09"
     },
     "kr-q491511": {
       "checked_at": "2026-11-09",

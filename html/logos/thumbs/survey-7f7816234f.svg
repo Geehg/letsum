@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+stroke-width="6" stroke-linecap="round" viewBox="-0.17 1.88 73.31 62.21" width="400.0" height="339.5">
+<path stroke="#0F8943" d="m46,7.4h22m0,10H46m0,10h22"/>
+<path id="h" fill="#1270A5" d="m2.7,38c-2.5,0 1.7-4.4 9.3-4.8 9.7-0.2 13,8 22.4,8.3 4.6,0 7-2.2 7-.7 0,2.7-6.5,4.4-10.3,4.4-7.4,0-13.7-8.4-21.3-8.4-2.7,0-4.1,1.2-7,1.2z"/>
+<g id="v">
+<path stroke="#CD2027" d="m17.6,7v22"/>
+<path stroke="#27296F" d="m47,37v22"/></g>
+<use transform="translate(10)" xlink:href="#v"/>
+<use transform="translate(20)" xlink:href="#v"/>
+<use transform="translate(0,8)" xlink:href="#h"/>
+<use transform="translate(0,16)" xlink:href="#h"/>
+</svg> 

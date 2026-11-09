@@ -24,11 +24,15 @@ const siteFooter=absolute(home.match(/<footer>[\s\S]*?<\/footer>/)[0]);
 let colors={};
 try{colors=JSON.parse(await fs.readFile(path.join(project,'data/colors.json'),'utf8')).colors;}catch(error){if(error.code!=='ENOENT')throw error;}
 // Identification thumbnails kept on our server by tools/fetch_logo_thumbs.mjs; the catalog schema itself stays image-free.
-let thumbnails={};
+let thumbnails={},geometry={};
+try{geometry=JSON.parse(await fs.readFile(path.join(project,'data/logo-geometry.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
 try{const manifest=JSON.parse(await fs.readFile(path.join(project,'data/thumbnails.json'),'utf8'));
  for(const [id,t] of Object.entries(manifest.thumbnails)){
-  const v='?v='+t.sha256.slice(0,10);
-  thumbnails[id]={mode:t.mode,tone:t.tone||'normal',bg:t.bg,ink:t.ink,file:t.file+v,on_brand:t.on_brand?t.on_brand+v:null,source:t.source,license:t.license,author:t.author,page_url:t.page_url};
+  // Version from the file as published (normalize_logos.py rewrites files after collection).
+  let bytes;try{bytes=await fs.readFile(path.join(root,'../html',t.file));}catch{continue;}
+  const v='?v='+createHash('sha256').update(bytes).digest('hex').slice(0,10);
+  const geo=geometry[path.basename(t.file)]||{};
+  thumbnails[id]={mode:t.mode,tone:t.mode==='glyph'?'normal':geo.tone||t.tone||'normal',bg:t.bg,ink:t.ink,file:t.file+v,on_brand:t.on_brand?t.on_brand+v:null,ratio:geometry[path.basename(t.file)]?.ratio??null,source:t.source,license:t.license,author:t.author,page_url:t.page_url};
  }}catch(error){if(error.code!=='ENOENT')throw error;}
 // The logo app's own variables are scoped to .logo-app so they no longer override the site's palette (and dark mode) in the shared header.
 const scopedCss=css=>swap(css,/:root\{--paper:#f6f6f1;([\s\S]*?)--ink:#172126;([\s\S]*?)font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;/,'.logo-app{--paper:#f4f2ec;$1--ink:#15140f;$2font-family:inherit;','logo :root palette')

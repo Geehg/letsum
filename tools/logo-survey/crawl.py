@@ -23,13 +23,22 @@ CI_WORDS = re.compile(r"(\bCI\b|\bMI\b|\bUI\b|\bBI\b|상징|심벌|심볼|로고
 STRONG_CI = re.compile(r"(\bCI\b|\bMI\b|\bUI\b|상징|심벌|심볼|로고|휘장|교표|아이덴티티|identity|symbol|emblem)", re.I)
 # Certification marks, licence badges and promotional banners that sit next to logos.
 JUNK_ALT = re.compile(r"(웹\s?접근성|접근성|인증\s?마크|품질\s?인증|공공누리|KOGL|국가상징|바로가기|배너|포털|해설사|이벤트|캠페인|축제|홍보|QR|WEB ACCESSIBILITY)", re.I)
-SKIP_IMG = re.compile(r"(banner|popup|pop_|btn|button|arrow|\bbg|bg_|sns|facebook|youtube|blog|insta|twitter|naver_|top_|quick|footer_mark|wa_mark|webaccess|wa\.png|wa_|kwacc|qr|loading|spacer|blank|icon_|ico_|/ico/|/icon/|visual|slide|main_img|thumb)", re.I)
+SKIP_IMG = re.compile(r"(banner|popup|pop_|btn|button|arrow|\bbg|bg_|sns|facebook|youtube|blog|insta|twitter|naver_|top_|quick|footer_mark|wa_mark|webaccess|wa\.png|wa_|kwacc|qr|loading|spacer|blank|icon_|ico_|/ico/|/icon/|visual|slide|main_img|thumb|translate|gstatic\.com)", re.I)
+
+
+class _Redirects(urllib.request.HTTPRedirectHandler):
+    """Python 3.9's urllib does not follow 308 Permanent Redirect; treat it like 301."""
+    def http_error_308(self, req, fp, code, msg, headers):
+        return self.http_error_301(req, fp, 301, msg, headers)
+
+
+_opener = urllib.request.build_opener(_Redirects())
 
 
 def fetch(url, accept="*/*", limit=MAX_BYTES):
     """GET with redirects and normal certificate checks; sites with broken TLS are reported as errors."""
     request = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept, "Accept-Language": "ko,en;q=0.5"})
-    with urllib.request.urlopen(request, timeout=20) as response:
+    with _opener.open(request, timeout=20) as response:
         body = response.read(limit + 1)
         if len(body) > limit:
             raise ValueError("too large")
@@ -292,7 +301,7 @@ def logo_candidates(page, base, org_name, where):
         if where == "home":
             if re.search(r"logo", img["attrs"] + " " + img["context"] + " " + src, re.I):
                 s += 6
-            if img["alt"] and (org_name in img["alt"] or (len(short) > 1 and short in img["alt"])):
+            if img["alt"] and org_name and (org_name in img["alt"] or (len(short) > 1 and short in img["alt"])):
                 s += 3
             if re.search(r"(footer|foot|bottom)", img["context"] + " " + src, re.I):
                 s -= 2

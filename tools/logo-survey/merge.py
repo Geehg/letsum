@@ -59,7 +59,8 @@ name_counts = Counter(o["name"] for o in orgs)
 # The same image on several organisations' sites is a shared banner or badge, not anyone's logo.
 logo_use = Counter(r["logo"]["sha256"] for r in crawl.values() if r.get("logo"))
 rejects_file = HERE / "data" / "thumbnail-rejects.json"
-rejected = json.loads(rejects_file.read_text())["rejects"] if rejects_file.exists() else {}
+rejects_data = json.loads(rejects_file.read_text()) if rejects_file.exists() else {}
+rejected, rejected_files = rejects_data.get("rejects", {}), rejects_data.get("reject_files", {})
 records, evidence, thumb_rows, colour_rows, skipped = [], [], {}, {}, []
 for org in orgs:
     key = org.get("wikidata") or org["wiki_title"]
@@ -101,7 +102,7 @@ for org in orgs:
         "related_fonts": [],
     })
     logo = res.get("logo")
-    if logo and ((logo_use[logo["sha256"]] > 1 and logo.get("source") != "wikimedia-commons") or org_name in rejected):
+    if logo and ((logo_use[logo["sha256"]] > 1 and logo.get("source") != "wikimedia-commons") or (org_name in rejected and not logo.get("filled")) or logo.get("file", "").rsplit("/", 1)[-1] in rejected_files):
         logo = None
     if logo and logo.get("file"):
         thumb_rows[rid] = {"mode": "image", "bg": None, "ink": None, "source": logo["source"], "source_url": logo["source_url"], "page_url": logo.get("page_url"),
