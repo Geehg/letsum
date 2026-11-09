@@ -28,3 +28,19 @@
   - 카탈로그 스키마(`catalog.json`)에는 이미지 필드를 넣지 않는다(검증기가 금지). 썸네일은 빌드 때 부트스트랩에 따로 주입된다.
   - 상세 페이지에 이미지 출처·라이선스와 '상표권은 각 권리자에게 있음' 안내를 표시한다. 식별용 미리보기이며 이용 허락을 뜻하지 않는다.
 - 다크 모드: 공통 헤더·푸터는 다크로 바뀌지만 로고 본문 영역은 밝은 색 그대로다(로고 앱 CSS의 고정 색상이 많아 별도 작업 필요).
+
+## 카테고리별 전수조사·CI 컬러 (2026-11-09 추가)
+명단 → 수집 → 합치기 3단계. 결과물은 모두 다시 만들 수 있고, 자동 수집분(`kr-` 접두사)만 교체된다. 수작업 레코드는 건드리지 않는다.
+
+```bash
+python3 -I tools/logo-survey/build_orgs.py      # 1) 명단: 위키백과 목록·분류 틀 + 위키데이터(홈페이지·로고 파일·폐지 여부)
+python3 tools/logo-survey/crawl.py              # 2) 수집: 홈페이지 → CI 페이지·색상 표기·로고 (Pillow 필요해서 -I 없이)
+python3 tools/logo-survey/crawl.py --colours-only   #    색상 추출 규칙만 고쳤을 때 CI 페이지만 다시 읽기
+python3 -I tools/logo-survey/merge.py           # 3) 합치기: catalog·sources·thumbnails·colors.json
+python3 tools/logo-survey/curated_colors.py     #    수작업 레코드의 컬러
+node tools/build_pages.js                       #    페이지 생성(로고 빌드 포함)
+```
+- 범위(2차): 중앙행정기관, 광역·기초자치단체, 시도교육청, 공기업·준정부기관·기타공공기관, 대학. 명단 출처는 각 레코드의 출처 메모에 남는다.
+- 자동 수집 레코드는 `needs-review`(화면 표기 "자동 수집·검수 대기"). 사람이 원문을 대조하면 `source-reviewed`로 올린다. 이용 허락은 모두 `unknown`.
+- 컬러(`tools/logo-app/data/colors.json`): `official`은 공식 페이지 본문·이미지 대체 텍스트에 적힌 PANTONE·CMYK·RGB·HEX를 그대로 옮긴 값. HEX가 없으면 RGB/CMYK에서 환산하고 `hex_derived`로 표시(CMYK 환산은 근사). `extracted`는 공식 표기를 못 찾았을 때 로고 이미지에서 뽑은 대표색으로, 화면에 "추출값(비공식)"으로 표시한다.
+- 색상 표기가 이미지로만 된 CI 페이지는 자동으로 읽지 못한다(추출값으로 대체). TLS 인증서가 깨진 사이트는 검증을 끄지 않고 오류로 남긴다(`crawl.json`의 `errors`).

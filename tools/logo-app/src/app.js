@@ -9,7 +9,12 @@ import { renderReview, bindReview } from './review.js';
   const { catalog, taxonomy, sources, catalogSha256 } = boot;
   // Optional identification images added by the LETSUM production build (tools/fetch_logo_thumbs.mjs); absent in the standalone build.
   const thumbnails = boot.thumbnails || {};
-  const thumbSourceLabels = { 'simple-icons': 'Simple Icons', 'wikimedia-commons': 'Wikimedia Commons', 'official-page-image': '공식 페이지', 'official-site-icon': '공식 사이트 아이콘' };
+  // CI colours: values as written on the official guide page, or sampled from the logo image (marked unofficial).
+  const colors = boot.colors || {};
+  const PAGE_SIZE = 60;
+  let visibleCount = PAGE_SIZE, lastListKey = '';
+  const surveyed = record => record.id.startsWith('kr-');
+  const thumbSourceLabels = { 'simple-icons': 'Simple Icons', 'wikimedia-commons': 'Wikimedia Commons', 'official-page-image': '공식 페이지', 'official-site-logo': '공식 홈페이지', 'official-site-icon': '공식 사이트 아이콘' };
   const app = document.querySelector('#app');
   const toast = document.querySelector('#toast');
   // A missing or blocked image falls back to the typeset name instead of a broken icon.
@@ -82,7 +87,8 @@ import { renderReview, bindReview } from './review.js';
   const reviewBadge = record => {
     const reviewed = record.review.status === 'source-reviewed';
     const scopeLabel = record.review.source_scope === 'page' ? '출처 페이지 확인' : record.review.source_scope === 'search' ? '검색 결과 확인' : '출처 검토됨';
-    return `<span class="status-badge ${reviewed ? 'reviewed' : 'pending'}">${icon(reviewed ? 'check' : 'info', 13)}${h(reviewed ? scopeLabel : reviewLabels[record.review.status])}</span>`;
+    const text = reviewed ? scopeLabel : surveyed(record) && record.review.status === 'needs-review' ? '자동 수집·검수 대기' : reviewLabels[record.review.status];
+    return `<span class="status-badge ${reviewed ? 'reviewed' : 'pending'}">${icon(reviewed ? 'check' : 'info', 13)}${h(text)}</span>`;
   };
 
   function notify(message) {
@@ -175,7 +181,7 @@ import { renderReview, bindReview } from './review.js';
   }
 
   const brandStyle = thumb => thumb.bg ? ` style="--brand:${h(thumb.bg)};--brand-ink:${h(thumb.ink || '#ffffff')}"` : '';
-  const thumbAttrs = thumb => thumb ? ` data-thumb="${h(thumb.mode)}"${brandStyle(thumb)}` : '';
+  const thumbAttrs = thumb => thumb ? ` data-thumb="${h(thumb.mode)}"${thumb.tone === 'light' ? ' data-tone="light"' : ''}${brandStyle(thumb)}` : '';
   // Glyph thumbnails (single-colour SVG) sit white on the brand colour on the front and in colour on the back.
   function thumbImg(thumb, place, record) {
     if (!thumb) return '';
@@ -198,7 +204,7 @@ import { renderReview, bindReview } from './review.js';
       <div class="identity-cover biz tone-${h(record.category)}"${thumbAttrs(thumb)}><div class="biz-front">${thumbImg(thumb, 'front', record)}<div class="cover-kicker"><span>${h(kicker)}</span><button id="save-${h(record.id)}" type="button" class="bookmark-button" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 19)}</button></div>
       <div class="identity-name size-${size}" style="--w:${width}"${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</div></div>
       <div class="biz-back" aria-hidden="true"><div class="biz-head">${thumbImg(thumb, 'back', record)}<span class="biz-mark size-${size}">${h(mark)}</span><span class="biz-role"><em>${h(label(kindLabels, record.kind))}</em><b>${h(record.name)}</b></span></div>
-      <div class="biz-rows"><span><em>지역</em>${h(record.region || label(categoryLabels, record.category))}</span><span><em>형식</em>${h(formats.slice(0, 3).join(' · ') || '미확인')}</span></div><span class="biz-note">${thumb ? `이미지: ${h(thumbSourceLabels[thumb.source] || thumb.source)}` : '공식 이미지 미수록'}</span></div></div>
+      ${colorDots(record)}<div class="biz-rows"><span><em>지역</em>${h(record.region || label(categoryLabels, record.category))}</span><span><em>형식</em>${h(formats.slice(0, 3).join(' · ') || '미확인')}</span></div><span class="biz-note">${thumb ? `이미지: ${h(thumbSourceLabels[thumb.source] || thumb.source)}` : '공식 이미지 미수록'}</span></div></div>
       <div class="card-body"><div class="card-meta"><span>${h(label(categoryLabels, record.category))}</span>${record.region ? `<span>${h(record.region)}</span>` : ''}</div><h3><a href="${h(detailHref(record.id))}">${h(record.name)}</a></h3><p class="card-summary">${h(record.summary)}</p><div class="format-row">${formats.length ? formats.slice(0, 5).map(format => `<span class="format-badge">${h(format)}</span>`).join('') + '<span class="format-caption">제공 안내</span>' : '<span class="format-caption">파일 형식 미확인</span>'}</div>
       <div class="card-status">${reviewBadge(record)}<span>${h(fmtDate(record.review.checked_at))}</span></div></div>
       <div class="card-footer">${external(record.source_url, '공식 출처', 'source-button')}<a class="detail-link" href="${h(detailHref(record.id))}" aria-label="${h(record.name)} 상세정보">상세정보 ${icon('right', 16)}</a></div>
@@ -214,10 +220,14 @@ import { renderReview, bindReview } from './review.js';
     const f = readFilters(params);
     const records = filterRecords(publicRecords, { ...f, savedOnly: isSaved, savedIds: [...savedIds] });
     const stats = summarize(records);
+    // Long result lists render in pages of PAGE_SIZE; any change of route or filters starts again from the first page.
+    const listKey = location.hash.replace(/[?&]more=\d+/, '');
+    if (listKey !== lastListKey) { visibleCount = PAGE_SIZE; lastListKey = listKey; }
+    const shown = records.slice(0, visibleCount);
     const hero = isSaved ? `<section class="directory-hero compact"><div><p class="eyebrow">YOUR COLLECTION</p><h1 id="page-heading">내 보관함<span class="accent-dot">.</span></h1><p class="hero-copy">다시 찾을 공식 출처, 한곳에 모아두세요.</p></div><div class="saved-actions"><button type="button" class="button light" id="export-saved"${savedIds.size ? '' : ' disabled'}>${icon('download', 18)} 링크 목록 저장</button><p>${storageAvailable ? '이 브라우저에 저장됩니다. 계정 간 동기화는 지원하지 않습니다.' : '저장 공간에 접근할 수 없어 현재 탭에서만 유지됩니다.'}</p></div></section>` : `<section class="directory-hero"><div><p class="eyebrow"><span class="small-dot"></span> LOGO & IDENTITY DIRECTORY</p><h1 id="page-heading">필요한 로고,<br>공식 출처에서<span class="accent-dot">.</span></h1><p class="hero-copy">공공기관부터 기업·대학까지.<br class="mobile-only"> 로고와 사용 안내를 함께 찾아보세요.</p></div><div class="hero-aside"><div class="hero-stat"><strong>${totals.organizations.toLocaleString('ko-KR')}</strong><span>기관·브랜드</span></div><div class="hero-stat"><strong>${totals.records.toLocaleString('ko-KR')}</strong><span>아이덴티티 정보</span></div><p>데이터 갱신일 ${h(fmtDate(catalog.updated_at))}<br><a href="/logos/#/guide">정보 확인 기준 ${icon('arrow', 14)}</a></p></div></section>`;
     app.innerHTML = `<div class="page-container" id="main-content" tabindex="-1">${hero}<section class="search-section" aria-label="로고 검색 및 필터">${renderSearch(f, isSaved)}${renderFilters(f, isSaved)}</section><section class="results-section" aria-labelledby="results-heading"><div class="results-toolbar"><div><h2 id="results-heading" tabindex="-1">${isSaved ? '보관한 자료' : '로고·CI 둘러보기'}</h2><span id="result-count" role="status" aria-live="polite"><strong>${records.length}</strong>개 정보 <span class="result-divider">/</span> ${stats.organizations}개 기관</span></div><div class="results-controls"><label class="sr-only" for="sort-select">정렬</label><select id="sort-select" data-filter="sort"><option value="relevance"${f.sort === 'relevance' ? ' selected' : ''}>관련도순</option><option value="name"${f.sort === 'name' ? ' selected' : ''}>이름순</option><option value="checked"${f.sort === 'checked' ? ' selected' : ''}>최근 확인순</option></select><div class="view-toggle" role="group" aria-label="보기 방식"><button id="view-grid" type="button" data-view="grid" aria-label="명함 보기" title="명함 보기" aria-pressed="${f.view === 'grid'}">${icon('grid', 17)}</button><button id="view-icons" type="button" data-view="icons" aria-label="아이콘 보기" title="아이콘 보기" aria-pressed="${f.view === 'icons'}">${icon('tiles', 18)}</button><button id="view-list" type="button" data-view="list" aria-label="목록 보기" title="목록 보기" aria-pressed="${f.view === 'list'}">${icon('list', 18)}</button></div></div></div>
     ${f.q ? `<p class="query-label">“${h(f.q)}” 검색 결과</p>` : ''}
-    ${!records.length ? renderEmpty(isSaved, f) : f.view === 'icons' ? `<div class="icon-wall">${records.map(renderTile).join('')}</div><p class="icon-wall-note">아이콘은 기관명을 유형별 색으로 조판한 견본이며 공식 로고·브랜드 색상이 아닙니다.</p>` : `<div class="brand-grid ${f.view === 'list' ? 'list-view' : ''}">${records.map(renderCard).join('')}</div>`}
+    ${!records.length ? renderEmpty(isSaved, f) : f.view === 'icons' ? `<div class="icon-wall">${shown.map(renderTile).join('')}</div><p class="icon-wall-note">아이콘은 기관명을 유형별 색으로 조판한 견본이며 공식 로고·브랜드 색상이 아닙니다.</p>` : `<div class="brand-grid ${f.view === 'list' ? 'list-view' : ''}">${shown.map(renderCard).join('')}</div>`}${records.length > shown.length ? `<div class="more-wrap"><button id="show-more" type="button" class="button light">더 보기 <span>${records.length - shown.length}개 남음</span></button></div>` : ''}
     <div class="catalog-note">${icon('info', 18)}<p><strong>파일 형식은 공식 페이지의 안내 기준입니다.</strong> 원본 파일의 다운로드·검증 여부와 이용 허가는 각각 확인해야 합니다. <a href="/logos/#/guide">자세히 보기</a></p></div></section>
     ${!isSaved ? `<section class="contribute-banner"><div><span class="eyebrow">BUILD THE DIRECTORY</span><h2>아직 찾는 로고가 없나요?</h2><p>공식 링크를 문의 폼으로 보내주시면 확인 후 반영하겠습니다.</p></div><a class="button dark" href="/contact.html">링크 제보 작성 ${icon('right', 18)}</a></section>` : ''}</div>`;
     document.title = `${isSaved ? '내 보관함' : '로고·CI 찾기'} | LETSUM 로고`;
@@ -225,6 +235,10 @@ import { renderReview, bindReview } from './review.js';
   }
 
   function bindDirectory(isSaved) {
+    app.querySelector('#show-more')?.addEventListener('click', () => {
+      const y = scrollY;
+      visibleCount += PAGE_SIZE; renderRoute(); scrollTo(0, y);
+    });
     app.querySelector('#search-form').addEventListener('submit', event => { event.preventDefault(); setFilters({ q: app.querySelector('#logo-query').value.trim() }); });
     app.querySelectorAll('[data-filter]').forEach(selectElement => selectElement.addEventListener('change', () => setFilters({ [selectElement.dataset.filter]: selectElement.value })));
     app.querySelector('#history-filter').addEventListener('change', event => setFilters({ includeHistorical: event.target.checked }));
@@ -241,11 +255,32 @@ import { renderReview, bindReview } from './review.js';
     });
   }
 
+  function colorDots(record) {
+    const entry = colors[record.id];
+    const list = entry?.official || entry?.extracted || [];
+    const swatches = list.filter(color => color.hex).slice(0, 4);
+    return swatches.length ? `<div class="biz-colors" title="${entry.official ? '공식 컬러' : '로고 추출 색(비공식)'}">${swatches.map(color => `<span style="--c:${h(color.hex)}"></span>`).join('')}<small>${h(swatches[0].hex)}${entry.official ? '' : ' 추출'}</small></div>` : '';
+  }
+
+  function colorGuide(record) {
+    const entry = colors[record.id];
+    if (!entry) return '';
+    const official = Boolean(entry.official?.length);
+    const list = official ? entry.official : entry.extracted || [];
+    if (!list.length) return '';
+    const code = (kind, title, value) => value ? `<div><dt>${title}</dt><dd><button type="button" class="code-copy" data-copy-code="${h(value)}" aria-label="${h(title + ' ' + value)} 복사">${h(value)}</button></dd></div>` : '';
+    const rgbValue = color => color.rgb ? `rgb(${color.rgb.split(' ').join(', ')})` : '';
+    const sourceLink = official && entry.official_source ? external(entry.official_source, '컬러 가이드 원문', 'text-link') : '';
+    return `<section class="detail-section color-guide"><div class="section-heading"><h2>CI 컬러 가이드</h2>${sourceLink}</div>
+    <p class="section-intro">${official ? `공식 페이지에 적힌 값을 그대로 옮겼습니다(${h(fmtDate(entry.checked_at))} 확인). 값을 누르면 복사됩니다.` : '공식 페이지에서 색상 코드 표기를 찾지 못해, 로고 이미지에서 대표색을 뽑은 <strong>추출값(비공식)</strong>입니다. 인쇄·제작에는 공식 가이드를 확인해 주세요.'}</p>
+    <ul class="color-list">${list.map(color => `<li class="color-item"><span class="color-swatch" style="--c:${h(color.hex || '#ffffff')}"${color.hex ? '' : ' data-empty="true"'}></span><div class="color-meta"><p class="color-name">${h(color.label || (official ? '공식 컬러' : '추출 색'))}${official ? '' : '<span class="color-flag">추출값</span>'}${color.hex_derived ? `<span class="color-flag subtle">${color.hex_derived === 'cmyk' ? 'HEX는 CMYK 환산(근사)' : 'HEX는 RGB 환산'}</span>` : ''}</p><dl>${code('pantone', 'PANTONE', color.pantone)}${code('cmyk', 'CMYK', color.cmyk)}${code('rgb', 'RGB', rgbValue(color))}${code('hex', 'HEX', color.hex)}</dl></div></li>`).join('')}</ul></section>`;
+  }
+
   function detailThumb(record) {
     const thumb = thumbnails[record.id];
     if (!thumb) return '';
     const credit = [thumbSourceLabels[thumb.source] || thumb.source, thumb.license, thumb.author].filter(Boolean).map(h).join(' · ');
-    return `<figure class="detail-thumb" data-thumb="${h(thumb.mode)}"${brandStyle(thumb)}><div class="detail-thumb-frame">${thumbImg(thumb, 'detail', record)}</div><figcaption>식별용 미리보기 · 이미지 ${credit}${thumb.page_url ? ` · <a href="${h(safeUrl(thumb.page_url) || '#')}" target="_blank" rel="noopener noreferrer">이미지 출처</a>` : ''}<br>상표권은 각 권리자에게 있으며, 실제 사용은 공식 출처의 파일과 규정을 따르세요.</figcaption></figure>`;
+    return `<figure class="detail-thumb" data-thumb="${h(thumb.mode)}"${thumb.tone === 'light' ? ' data-tone="light"' : ''}${brandStyle(thumb)}><div class="detail-thumb-frame">${thumbImg(thumb, 'detail', record)}</div><figcaption>식별용 미리보기 · 이미지 ${credit}${thumb.page_url ? ` · <a href="${h(safeUrl(thumb.page_url) || '#')}" target="_blank" rel="noopener noreferrer">이미지 출처</a>` : ''}<br>상표권은 각 권리자에게 있으며, 실제 사용은 공식 출처의 파일과 규정을 따르세요.</figcaption></figure>`;
   }
 
   function renderDetail(record) {
@@ -254,8 +289,8 @@ import { renderReview, bindReview } from './review.js';
     const related = visibleRecords.filter(row => row.id !== record.id && row.organization_id === record.organization_id);
     app.innerHTML = `<div class="page-container detail-page" id="main-content" tabindex="-1"><nav class="breadcrumbs" aria-label="현재 위치"><a href="/logos/#/">로고·CI</a><span>/</span><a href="/logos/#/?category=${h(record.category)}">${h(label(categoryLabels, record.category))}</a><span>/</span><span aria-current="page">${h(record.organization_name)}</span></nav>
     ${detailThumb(record)}<section class="detail-heading"><div><p class="eyebrow">${h(categoryAbbreviations[record.category])}</p><h1 id="page-heading">${h(record.name)}</h1>${record.name_en ? `<p class="english-name">${h(record.name_en)}</p>` : ''}<p class="detail-lead">${h(record.summary)}</p><div class="detail-tags"><span class="tag">${h(label(kindLabels, record.kind))}</span>${record.sectors.map(sector => `<span class="tag">${h(label(sectorLabels, sector))}</span>`).join('')}${record.region ? `<span class="tag">${h(record.region)}</span>` : ''}${reviewBadge(record)}</div></div><div class="detail-actions">${external(record.source_url, '공식 출처에서 확인', 'button dark')}<button id="save-${h(record.id)}" type="button" class="button light save-detail" data-save="${h(record.id)}" aria-label="${h(record.name)} 보관하기" aria-pressed="false">${icon('bookmark', 18)} 보관하기</button><button id="copy-source" type="button" class="text-button" data-copy-source="${h(record.source_url)}">${icon('link', 16)} 공식 링크 복사</button></div></section>
-    ${historical ? '<div class="notice warning">이전 버전 자료입니다. 실제 제작물에 적용하기 전에 현재 버전을 확인해 주세요.</div>' : ''}${record.review.status === 'needs-review' ? '<div class="notice warning">수정 후 재검수가 필요한 정보입니다. 확인일과 이용 조건은 공식 출처에서 다시 확인해 주세요.</div>' : ''}
-    <div class="detail-layout"><div class="detail-main"><section class="detail-section"><div class="section-heading"><h2>로고·자료 안내</h2><span>${record.assets.length}개 자료 항목</span></div><p class="section-intro">아래 형식과 접근 조건은 공식 페이지의 안내를 정리한 정보입니다.</p>
+    ${historical ? '<div class="notice warning">이전 버전 자료입니다. 실제 제작물에 적용하기 전에 현재 버전을 확인해 주세요.</div>' : ''}${record.review.status === 'needs-review' ? `<div class="notice warning">${surveyed(record) ? '공식 홈페이지를 자동 수집해 만든 정보입니다. 로고·색상·이용 조건은 공식 출처에서 최신 내용을 확인해 주세요.' : '수정 후 재검수가 필요한 정보입니다. 확인일과 이용 조건은 공식 출처에서 다시 확인해 주세요.'}</div>` : ''}
+    <div class="detail-layout"><div class="detail-main">${colorGuide(record)}<section class="detail-section"><div class="section-heading"><h2>로고·자료 안내</h2><span>${record.assets.length}개 자료 항목</span></div><p class="section-intro">아래 형식과 접근 조건은 공식 페이지의 안내를 정리한 정보입니다.</p>
     <div class="asset-table-wrap"><table class="asset-table"><thead><tr><th scope="col">자료</th><th scope="col">파일 형식</th><th scope="col">접근 조건</th><th scope="col">확인 범위</th></tr></thead><tbody>${record.assets.length ? record.assets.map(asset => `<tr><th scope="row">${h(asset.label)}<small>${h(label(formLabels, asset.form))}</small></th><td>${asset.listed_formats.length ? asset.listed_formats.map(format => `<span class="format-badge">${h(format)}</span>`).join(' ') + '<small>공식 페이지 제공 안내</small>' : '<span class="muted">형식 미확인</span>'}</td><td>${h(accessLabels[asset.access])}</td><td><span class="asset-state">${h({ 'page-listed': '페이지 확인', 'link-checked': '링크 응답 확인', 'file-verified': '원본 파일 확인', 'not-provided': '파일 정보 미확인' }[asset.file_verification])}</span>${asset.file_verification === 'file-verified' ? `<small>${asset.size_bytes.toLocaleString('ko-KR')} bytes · ${h(asset.verified_format)}</small><details class="hash-details"><summary>SHA-256</summary><code>${h(asset.sha256)}</code></details>` : ''}</td></tr>`).join('') : '<tr><td colspan="4">등록된 자료 항목이 없습니다. 공식 출처를 확인해 주세요.</td></tr>'}</tbody></table></div>
     <div class="inline-note">${icon('info', 17)}<p>공식 이미지는 이 서비스에 수록하지 않았습니다. 원본과 세부 사용 규정은 권리자가 제공하는 페이지에서 확인해 주세요.</p></div>
     </section><section class="detail-section"><div class="section-heading"><h2>사용 전에 확인해 주세요</h2>${record.usage.policy_url ? external(record.usage.policy_url, '안내 원문', 'text-link') : ''}</div><p class="policy-summary">${h(record.usage.summary)}</p><dl class="policy-grid"><div><dt>승인 절차</dt><dd>${h(approvalLabels[record.usage.approval])}</dd></div><div><dt>재배포 조건</dt><dd>${h(policyLabels[record.usage.redistribution])}</dd></div><div><dt>미리보기 게시</dt><dd>${h(policyLabels[record.usage.preview])}</dd></div></dl><p class="small-copy">“확인 필요”는 허용을 뜻하지 않습니다. 안내가 있는 경우에도 사용 목적과 적용 범위를 원문에서 확인해 주세요.</p></section>
@@ -265,6 +300,7 @@ import { renderReview, bindReview } from './review.js';
     ${related.length ? `<section class="related-section"><div class="section-heading"><h2>같은 기관의 다른 아이덴티티</h2></div><div class="brand-grid">${related.map(renderCard).join('')}</div></section>` : ''}<a href="/logos/#/" class="back-link">${icon('back', 17)} 전체 로고·CI 보기</a></div>`;
     document.title = `${record.name} · 공식 출처와 사용 안내 | LETSUM 로고`;
     app.querySelector('[data-copy-source]')?.addEventListener('click', event => copyText(event.currentTarget.dataset.copySource, '공식 출처 링크를 복사했습니다.'));
+    app.querySelectorAll('[data-copy-code]').forEach(button => button.addEventListener('click', () => copyText(button.dataset.copyCode, `${button.dataset.copyCode} 복사했습니다.`, '색상 코드 복사', '복사할 색상 코드')));
   }
 
   function renderGuide() {
@@ -317,7 +353,7 @@ import { renderReview, bindReview } from './review.js';
     }
   }
 
-  async function copyText(value, success) {
+  async function copyText(value, success, title = '공식 링크 복사', fieldLabel = '복사할 공식 주소') {
     try {
       if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(value); notify(success); return; }
     } catch { /* Fall through to a visible, selectable text field. */ }
@@ -325,7 +361,7 @@ import { renderReview, bindReview } from './review.js';
     existing?.remove();
     const dialog = document.createElement('dialog');
     dialog.id = 'copy-dialog'; dialog.className = 'copy-dialog';
-    dialog.innerHTML = '<form method="dialog"><h2>공식 링크 복사</h2><p>아래 주소를 선택해 복사해 주세요.</p><label class="sr-only" for="copy-value">복사할 공식 주소</label><input id="copy-value" readonly><button class="button dark" value="close">닫기</button></form>';
+    dialog.innerHTML = `<form method="dialog"><h2>${h(title)}</h2><p>아래 값을 선택해 복사해 주세요.</p><label class="sr-only" for="copy-value">${h(fieldLabel)}</label><input id="copy-value" readonly><button class="button dark" value="close">닫기</button></form>`;
     document.body.append(dialog); dialog.querySelector('input').value = value;
     dialog.addEventListener('close', () => dialog.remove()); dialog.showModal();
     dialog.querySelector('input').focus(); dialog.querySelector('input').select();
