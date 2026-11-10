@@ -112,8 +112,8 @@ def discover(job, render):
             for url, label in rows:
                 found.setdefault(url, {"label": label, "page": page})
     for item in known:  # [format, url] from find_formats.py, or [url, page, label] from data/download-manual.json
-        if len(item) == 3:
-            found.setdefault(item[0], {"label": item[2], "page": item[1]})
+        if len(item) >= 3:
+            found.setdefault(item[0], {"label": item[2], "page": item[1], **(item[3] if len(item) > 3 else {})})
         else:
             found.setdefault(item[1], {"label": "", "page": page_urls[0] if page_urls else item[1]})
     return rid, found
@@ -242,10 +242,17 @@ def check(url, page, label):
     return row
 
 
+def trusted_row(url, label):
+    """A file published on an official brand page whose server refuses automated requests (bot protection)."""
+    name = urllib.parse.unquote(urllib.parse.urlsplit(url).path.rsplit("/", 1)[-1])
+    fmt = ext_of(url)
+    return {"format": fmt, "url": url, "final_url": url, "bytes": None, "filename": name, "label": label, "trusted": True} if fmt else None
+
+
 def clean_label(label, name):
     text = re.sub(r"클릭\s*시.*$", " ", label or "")
     text = re.sub(r"\s*(을|를)?\s*압축\s*(받습니다|받기|다운로드)?|(로\s*)?(다운로드|다운|download|내려받기|받기)|파일|새\s*창|열림|\(?(AI|EPS|PNG|JPE?G|ZIP|PDF|SVG)\)?|\(\s*\)", " ", text, flags=re.I)
-    text = re.sub(r"\(\s*[\d.,]+\s*[KMG]i?B\s*\)|\bOpen\b|열기", " ", text, flags=re.I)
+    text = re.sub(r"\(?\s*[\d.,]+\s*(?:[KMG]i?)?B\b\s*\)?|\bOpen\b|열기", " ", text, flags=re.I)
     text = re.sub(r"[\s·,/|]+", " ", text).strip(" -_.:")
     words = text.split(" ")
     half = len(words) // 2
@@ -291,8 +298,8 @@ def main():
     if args.reuse and cached:
         found = cached
         for rid, rows in manual.items():
-            for url, page, label in rows:
-                found.setdefault(rid, {}).setdefault(url, {"label": label, "page": page})
+            for url, page, label, *extra in rows:
+                found.setdefault(rid, {})[url] = {"label": label, "page": page, **(extra[0] if extra else {})}
     else:
         with ThreadPoolExecutor(args.workers) as pool:
             found = dict(pool.map(lambda job: discover(job, not args.no_render), jobs))
@@ -301,15 +308,15 @@ def main():
         CACHE.write_text(json.dumps({"checked_at": crawl.TODAY, "candidates": found}, ensure_ascii=False, indent=1) + "\n")
     if only is not None:
         found = {rid: rows for rid, rows in found.items() if rid in only}
-    flat = [(rid, url, meta["page"], meta["label"]) for rid, rows in found.items() for url, meta in rows.items()]
+    flat = [(rid, url, meta["page"], meta["label"], meta.get("trusted", False)) for rid, rows in found.items() for url, meta in rows.items()]
     print(f"pages {len(jobs)} · candidates {len(flat)} in {sum(1 for v in found.values() if v)} records")
     with ThreadPoolExecutor(max(args.workers, 8)) as pool:
-        checked = list(pool.map(lambda job: check(job[1], job[2], job[3]), flat))
+        checked = list(pool.map(lambda job: check(job[1], job[2], job[3]) or (trusted_row(job[1], job[3]) if job[4] else None), flat))
     out, seen = {}, set()
-    for (rid, url, page, label), hit in zip(flat, checked):
+    for (rid, url, page, label, _), hit in zip(flat, checked):
         if not hit:
             continue
-        key = (rid, hit["final_url"]) if hit["bytes"] is None else (rid, hit["filename"], hit["bytes"])
+        key = (rid, hit["filename"], hit["bytes"]) if hit["filename"] else (rid, hit["final_url"])
         if key in seen or (rid, hit["final_url"]) in seen:
             continue
         seen.update({key, (rid, hit.pop("final_url"))})

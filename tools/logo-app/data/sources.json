@@ -1037,13 +1037,13 @@
     },
     {
       "id": "kr-q20934-src",
-      "title": "인천광역시 공식 홈페이지",
-      "url": "https://www.incheon.go.kr/index",
+      "title": "인천광역시 CI·상징 안내",
+      "url": "https://www.incheon.go.kr/citybrand/CB010101",
       "publisher": "인천광역시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 위키데이터 Q20934"
     },
     {
@@ -1059,13 +1059,13 @@
     },
     {
       "id": "kr-q41154-src",
-      "title": "경상북도 공식 홈페이지",
-      "url": "http://www.gb.go.kr/eng/main/main.jsp",
+      "title": "경상북도 CI·상징 안내",
+      "url": "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064",
       "publisher": "경상북도",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 위키데이터 Q41154 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -1125,13 +1125,13 @@
     },
     {
       "id": "kr-q20921-src",
-      "title": "대전광역시 공식 홈페이지",
-      "url": "https://www.daejeon.go.kr:/error.html",
+      "title": "대전광역시 CI·상징 안내",
+      "url": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711",
       "publisher": "대전광역시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 위키데이터 Q20921"
     },
     {
@@ -1158,13 +1158,13 @@
     },
     {
       "id": "kr-q50203-src",
-      "title": "가평군 공식 홈페이지",
-      "url": "http://www.gp.go.kr/site/foreign/english/",
+      "title": "가평군 CI·상징 안내",
+      "url": "https://www.gp.go.kr/portal/contents.do?key=749",
       "publisher": "가평군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50203 · 수집 오류: home: HTTPError: HTTP Error 404: 404"
     },
     {
@@ -1202,13 +1202,13 @@
     },
     {
       "id": "kr-q50349-src",
-      "title": "강북구 공식 홈페이지",
-      "url": "http://english.gangbuk.seoul.kr/",
+      "title": "강북구 CI·상징 안내",
+      "url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
       "publisher": "강북구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50349"
     },
     {
@@ -1235,13 +1235,13 @@
     },
     {
       "id": "kr-q50204-src",
-      "title": "강진군 공식 홈페이지",
-      "url": "http://www.gangjin.go.kr/english/index.htm",
+      "title": "강진군 CI·상징 안내",
+      "url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
       "publisher": "강진군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50204 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -1411,13 +1411,13 @@
     },
     {
       "id": "kr-q42064-src",
-      "title": "과천시 공식 홈페이지",
-      "url": "http://www.gccity.go.kr/foreign/english/index.jsp",
+      "title": "과천시 CI·상징 안내",
+      "url": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000",
       "publisher": "과천시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42064 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -1554,13 +1554,13 @@
     },
     {
       "id": "kr-q50215-src",
-      "title": "군위군 공식 홈페이지",
-      "url": "http://www.gunwi.go.kr/html/english/index.html",
+      "title": "군위군 CI·상징 안내",
+      "url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
       "publisher": "군위군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50215 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -1631,24 +1631,24 @@
     },
     {
       "id": "kr-q42078-src",
-      "title": "김천시 공식 홈페이지",
-      "url": "https://www.gc.go.kr/eng/main.do",
+      "title": "김천시 CI·상징 안내",
+      "url": "https://gc.go.kr/portal/contents.do?mId=1201030000",
       "publisher": "김천시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42078"
     },
     {
       "id": "kr-q42080-src",
-      "title": "김포시 공식 홈페이지",
-      "url": "http://en.gimpo.go.kr/",
+      "title": "김포시 CI·상징 안내",
+      "url": "https://www.gimpo.go.kr/portal/contents.do?key=1232",
       "publisher": "김포시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42080 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -1730,24 +1730,24 @@
     },
     {
       "id": "kr-q42084-src",
-      "title": "남양주시 공식 홈페이지",
-      "url": "http://english.nyj.go.kr/",
+      "title": "남양주시 CI·상징 안내",
+      "url": "https://www.nyj.go.kr/www/contents.do?key=2525",
       "publisher": "남양주시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42084 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
       "id": "kr-q42087-src",
-      "title": "남원시 공식 홈페이지",
-      "url": "http://en.namwon.go.kr/en/",
+      "title": "남원시 CI·상징 안내",
+      "url": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4",
       "publisher": "남원시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42087 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -1785,13 +1785,13 @@
     },
     {
       "id": "kr-q50220-src",
-      "title": "단양군 공식 홈페이지",
-      "url": "http://english.dy21.net/",
+      "title": "단양군 CI·상징 안내",
+      "url": "https://www.danyang.go.kr/dy21/761",
       "publisher": "단양군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50220 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -1829,13 +1829,13 @@
     },
     {
       "id": "kr-q42089-src",
-      "title": "당진시 공식 홈페이지",
-      "url": "https://www.dangjin.go.kr/error/code403.jsp",
+      "title": "당진시 CI·상징 안내",
+      "url": "https://www.dangjin.go.kr/kor/sub04_01_04.do",
       "publisher": "당진시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42089"
     },
     {
@@ -1950,13 +1950,13 @@
     },
     {
       "id": "kr-q50385-src",
-      "title": "동작구 공식 홈페이지",
-      "url": "http://english.dongjak.go.kr/",
+      "title": "동작구 CI·상징 안내",
+      "url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
       "publisher": "동작구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50385 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -1983,24 +1983,24 @@
     },
     {
       "id": "kr-q42094-src",
-      "title": "목포시 공식 홈페이지",
-      "url": "http://eng.mokpo.go.kr/home/eng/",
+      "title": "목포시 CI·상징 안내",
+      "url": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
       "publisher": "목포시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42094 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
       "id": "kr-q50241-src",
-      "title": "무안군 공식 홈페이지",
-      "url": "https://muan.go.kr",
+      "title": "무안군 CI·상징 안내",
+      "url": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city",
       "publisher": "무안군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50241"
     },
     {
@@ -2016,13 +2016,13 @@
     },
     {
       "id": "kr-q42095-src",
-      "title": "문경시 공식 홈페이지",
-      "url": "http://eng.gbmg.go.kr/",
+      "title": "문경시 CI·상징 안내",
+      "url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
       "publisher": "문경시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42095 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -2071,24 +2071,24 @@
     },
     {
       "id": "kr-q50244-src",
-      "title": "보은군 공식 홈페이지",
-      "url": "http://www.boeun.go.kr/eng/sub0101.jsp",
+      "title": "보은군 CI·상징 안내",
+      "url": "https://www.boeun.go.kr/www/contents.do?key=313",
       "publisher": "보은군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50244 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
       "id": "kr-q50245-src",
-      "title": "봉화군 공식 홈페이지",
-      "url": "http://www.bonghwa.go.kr/eng/index.html",
+      "title": "봉화군 CI·상징 안내",
+      "url": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000",
       "publisher": "봉화군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50245 · 수집 오류: home: HTTPError: HTTP Error 404: 404"
     },
     {
@@ -2203,13 +2203,13 @@
     },
     {
       "id": "kr-q42100-src",
-      "title": "사천시 공식 홈페이지",
-      "url": "http://www.sacheon.go.kr/eng/",
+      "title": "사천시 CI·상징 안내",
+      "url": "https://www.sacheon.go.kr/intro/01096/03763.web",
       "publisher": "사천시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42100 · 수집 오류: home: HTTPError: HTTP Error 404: 404"
     },
     {
@@ -2225,13 +2225,13 @@
     },
     {
       "id": "kr-q50248-src",
-      "title": "산청군 공식 홈페이지",
-      "url": "https://www.sancheong.ne.kr/blog/",
+      "title": "산청군 CI·상징 안내",
+      "url": "https://www.sancheong.go.kr/www/contents.do?key=178",
       "publisher": "산청군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50248"
     },
     {
@@ -2324,13 +2324,13 @@
     },
     {
       "id": "kr-q42105-src",
-      "title": "서산시 공식 홈페이지",
-      "url": "http://eng.seosantour.net/",
+      "title": "서산시 CI·상징 안내",
+      "url": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d",
       "publisher": "서산시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42105 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -2390,35 +2390,35 @@
     },
     {
       "id": "kr-q50250-src",
-      "title": "성주군 공식 홈페이지",
-      "url": "http://www.seongju.go.kr/english/index.jsp",
+      "title": "성주군 CI·상징 안내",
+      "url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
       "publisher": "성주군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50250 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
       "id": "kr-q42109-src",
-      "title": "속초시 공식 홈페이지",
-      "url": "http://sokcho.gangwon.kr/foreign/eng/html/main.html",
+      "title": "속초시 CI·상징 안내",
+      "url": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci",
       "publisher": "속초시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42109 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
       "id": "kr-q50415-src",
-      "title": "송파구 공식 홈페이지",
-      "url": "https://www.songpa.go.kr/songpa_html/index.html",
+      "title": "송파구 CI·상징 안내",
+      "url": "https://www.songpa.go.kr/www/contents.do?key=2374&",
       "publisher": "송파구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50415"
     },
     {
@@ -2456,13 +2456,13 @@
     },
     {
       "id": "kr-q50251-src",
-      "title": "순창군 공식 홈페이지",
-      "url": "http://www.sunchang.go.kr/english/",
+      "title": "순창군 CI·상징 안내",
+      "url": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e",
       "publisher": "순창군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50251 · 수집 오류: home: HTTPError: HTTP Error 404: 404"
     },
     {
@@ -2478,13 +2478,13 @@
     },
     {
       "id": "kr-q42113-src",
-      "title": "시흥시 공식 홈페이지",
-      "url": "http://www.shcity.net/english/index.jsp",
+      "title": "시흥시 CI·상징 안내",
+      "url": "https://www.siheung.go.kr/main/contents.do?mId=0501010000",
       "publisher": "시흥시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42113 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -2588,13 +2588,13 @@
     },
     {
       "id": "kr-q42124-src",
-      "title": "양주시 공식 홈페이지",
-      "url": "http://www.yangju.go.kr/YangJu_Eng/index.asp",
+      "title": "양주시 CI·상징 안내",
+      "url": "https://www.yangju.go.kr/www/contents.do?key=346",
       "publisher": "양주시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42124 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -2610,13 +2610,13 @@
     },
     {
       "id": "kr-q50255-src",
-      "title": "양평군 공식 홈페이지",
-      "url": "http://www.yp21.net/eng/",
+      "title": "양평군 CI·상징 안내",
+      "url": "https://www.yp21.go.kr/www/contents.do?key=1846",
       "publisher": "양평군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50255 · 수집 오류: home: RemoteDisconnected: Remote end closed connection without response"
     },
     {
@@ -2709,24 +2709,24 @@
     },
     {
       "id": "kr-q50261-src",
-      "title": "영동군 공식 홈페이지",
-      "url": "http://www.yd21.go.kr/english/",
+      "title": "영동군 CI·상징 안내",
+      "url": "https://www.yd21.go.kr/kr/html/sub04/04030101.html",
       "publisher": "영동군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50261 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
       "id": "kr-q50190-src",
-      "title": "영등포구 공식 홈페이지",
-      "url": "http://english.ydp.go.kr/",
+      "title": "영등포구 CI·상징 안내",
+      "url": "https://www.ydp.go.kr/www/contents.do?key=2895&",
       "publisher": "영등포구",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50190 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -2797,13 +2797,13 @@
     },
     {
       "id": "kr-q50307-src",
-      "title": "예산군 공식 홈페이지",
-      "url": "http://www.yesan.go.kr/eng/index.jsp",
+      "title": "예산군 CI·상징 안내",
+      "url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
       "publisher": "예산군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50307 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
@@ -2819,13 +2819,13 @@
     },
     {
       "id": "kr-q42129-src",
-      "title": "오산시 공식 홈페이지",
-      "url": "http://www.osan.go.kr/en/",
+      "title": "오산시 CI·상징 안내",
+      "url": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
       "publisher": "오산시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42129 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -2973,13 +2973,13 @@
     },
     {
       "id": "kr-q50315-src",
-      "title": "음성군 공식 홈페이지",
-      "url": "http://english.es21.net/contents/english/main.php",
+      "title": "음성군 CI·상징 안내",
+      "url": "https://www.eumseong.go.kr/www/contents.do?key=410",
       "publisher": "음성군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50315 · 수집 오류: home: HTTPError: HTTP Error 400: Bad Request"
     },
     {
@@ -3006,13 +3006,13 @@
     },
     {
       "id": "kr-q42134-src",
-      "title": "의왕시 공식 홈페이지",
-      "url": "http://www.uiwang.go.kr/eng/HTML/index.html",
+      "title": "의왕시 CI·상징 안내",
+      "url": "https://www.uiwang.go.kr/UWKORINTRO0201",
       "publisher": "의왕시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42134 · 수집 오류: home: HTTPError: HTTP Error 308: Permanent Redirect"
     },
     {
@@ -3050,24 +3050,24 @@
     },
     {
       "id": "kr-q50318-src",
-      "title": "인제군 공식 홈페이지",
-      "url": "http://www.inje.go.kr/english/main.asp",
+      "title": "인제군 CI·상징 안내",
+      "url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
       "publisher": "인제군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50318 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
       "id": "kr-q50319-src",
-      "title": "임실군 공식 홈페이지",
-      "url": "http://imsil.go.kr/english/",
+      "title": "임실군 CI·상징 안내",
+      "url": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000",
       "publisher": "임실군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50319 · 수집 오류: home: HTTPError: HTTP Error 404: 404"
     },
     {
@@ -3259,13 +3259,13 @@
     },
     {
       "id": "kr-q42144-src",
-      "title": "진주시 공식 홈페이지",
-      "url": "http://english.jinju.go.kr/",
+      "title": "진주시 CI·상징 안내",
+      "url": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212",
       "publisher": "진주시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42144 · 수집 오류: home: HTTPError: HTTP Error 400: Bad Request"
     },
     {
@@ -3281,24 +3281,24 @@
     },
     {
       "id": "kr-q50328-src",
-      "title": "위키백과 — 창녕군",
-      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%85%95%EA%B5%B0",
-      "publisher": "위키백과",
+      "title": "창녕군 CI·상징 안내",
+      "url": "https://www.cng.go.kr/00004/00567/00569.web",
+      "publisher": "창녕군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "공식 홈페이지 주소를 확인하지 못해 명단 출처 문서를 근거로 둠.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50328"
     },
     {
       "id": "kr-q243327-src",
-      "title": "창원시 공식 홈페이지",
-      "url": "http://eng.changwon.go.kr/",
+      "title": "창원시 CI·상징 안내",
+      "url": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web",
       "publisher": "창원시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q243327 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -3325,35 +3325,35 @@
     },
     {
       "id": "kr-q50330-src",
-      "title": "청도군 공식 홈페이지",
-      "url": "http://english.cheongdo.go.kr/",
+      "title": "청도군 CI·상징 안내",
+      "url": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100",
       "publisher": "청도군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50330 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
       "id": "kr-q50331-src",
-      "title": "청송군 공식 홈페이지",
-      "url": "https://cs.go.kr/eng/",
+      "title": "청송군 CI·상징 안내",
+      "url": "https://www.cs.go.kr/cheongsong/00003084/00003102.web",
       "publisher": "청송군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50331"
     },
     {
       "id": "kr-q50332-src",
-      "title": "청양군 공식 홈페이지",
-      "url": "http://english.cheongyang.go.kr/",
+      "title": "청양군 CI·상징 안내",
+      "url": "http://www.cheongyang.go.kr/kor/sub05_03_01.do",
       "publisher": "청양군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50332 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -3369,13 +3369,13 @@
     },
     {
       "id": "kr-q42148-src",
-      "title": "춘천시 공식 홈페이지",
-      "url": "http://tour.chuncheon.go.kr/eng/index.asp",
+      "title": "춘천시 CI·상징 안내",
+      "url": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/",
       "publisher": "춘천시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42148 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
@@ -3413,13 +3413,13 @@
     },
     {
       "id": "kr-q50335-src",
-      "title": "태안군 공식 홈페이지",
-      "url": "http://www.taean.go.kr/english/index.asp",
+      "title": "태안군 CI·상징 안내",
+      "url": "https://www.taean.go.kr/kor/sub05_02_03.do",
       "publisher": "태안군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50335 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -3446,13 +3446,13 @@
     },
     {
       "id": "kr-q188624-src",
-      "title": "평창군 공식 홈페이지",
-      "url": "http://en.yes-pc.net/",
+      "title": "평창군 CI·상징 안내",
+      "url": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong",
       "publisher": "평창군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q188624"
     },
     {
@@ -3468,13 +3468,13 @@
     },
     {
       "id": "kr-q42155-src",
-      "title": "포천시 공식 홈페이지",
-      "url": "http://www.pcs21.net/lng/english/html/index.asp",
+      "title": "포천시 CI·상징 안내",
+      "url": "https://www.pcs21.net/www/contents.do?key=3830",
       "publisher": "포천시",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q42155 · 수집 오류: home: HTTPError: HTTP Error 404: Not Found"
     },
     {
@@ -3501,13 +3501,13 @@
     },
     {
       "id": "kr-q26212-src",
-      "title": "하동군 공식 홈페이지",
-      "url": "http://eng.hadong.go.kr/main/",
+      "title": "하동군 CI·상징 안내",
+      "url": "https://www.hadong.go.kr/intro/00567/00571.web",
       "publisher": "하동군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q26212 · 수집 오류: home: URLError: <urlopen error timed out>"
     },
     {
@@ -3578,13 +3578,13 @@
     },
     {
       "id": "kr-q50343-src",
-      "title": "홍성군 공식 홈페이지",
-      "url": "http://hsportal.hongseong.go.kr/english/",
+      "title": "홍성군 CI·상징 안내",
+      "url": "https://hongseong.go.kr/kor/sub04_010701.do",
       "publisher": "홍성군",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 위키데이터 Q50343 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -5624,13 +5624,13 @@
     },
     {
       "id": "kr-q491336-src",
-      "title": "한국교육학술정보원 공식 홈페이지",
-      "url": "https://www.keris.or.kr:443/index.do",
+      "title": "한국교육학술정보원 CI·상징 안내",
+      "url": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525",
       "publisher": "한국교육학술정보원",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 위키데이터 Q491336"
     },
     {
@@ -7351,13 +7351,13 @@
     },
     {
       "id": "kr-q56147-src",
-      "title": "가천대학교 공식 홈페이지",
-      "url": "https://www.gachon.ac.kr/english/",
+      "title": "가천대학교 CI·상징 안내",
+      "url": "https://www.gachon.ac.kr/pr/1459/subview.do",
       "publisher": "가천대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q56147"
     },
     {
@@ -7439,13 +7439,13 @@
     },
     {
       "id": "kr-q41765-src",
-      "title": "건국대학교 공식 홈페이지",
-      "url": "https://konkuk.ac.kr",
+      "title": "건국대학교 CI·상징 안내",
+      "url": "https://www.konkuk.ac.kr/konkuk/19196/subview.do",
       "publisher": "건국대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q41765 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -7494,13 +7494,13 @@
     },
     {
       "id": "kr-q487841-src",
-      "title": "경북대학교 공식 홈페이지",
-      "url": "https://www.knu.ac.kr/wbbs/wbbs/main/main.action",
+      "title": "경북대학교 CI·상징 안내",
+      "url": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194",
       "publisher": "경북대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q487841"
     },
     {
@@ -7560,13 +7560,13 @@
     },
     {
       "id": "kr-q626872-src",
-      "title": "경찰대학 공식 홈페이지",
-      "url": "https://www.police.ac.kr/error_page.html",
+      "title": "경찰대학 CI·상징 안내",
+      "url": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29",
       "publisher": "경찰대학",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q626872"
     },
     {
@@ -7813,13 +7813,13 @@
     },
     {
       "id": "kr-q486999-src",
-      "title": "국립한국교통대학교 공식 홈페이지",
-      "url": "https://www.ut.ac.kr/",
+      "title": "국립한국교통대학교 CI·상징 안내",
+      "url": "https://identity.ut.ac.kr",
       "publisher": "국립한국교통대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q486999"
     },
     {
@@ -9067,13 +9067,13 @@
     },
     {
       "id": "kr-q16098196-src",
-      "title": "차의과학대학교 공식 홈페이지",
-      "url": "http://en.cha.ac.kr/",
+      "title": "차의과학대학교 CI·상징 안내",
+      "url": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/",
       "publisher": "차의과학대학교",
       "language": "ko",
       "checked_at": "2026-11-09",
       "scope": "page",
-      "observation": "자동 수집(2026-11-09): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'CI'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q16098196 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
     },
     {
@@ -9504,6 +9504,402 @@
       "scope": "page",
       "observation": "자동 수집(2026-11-09): 공식 홈페이지 메뉴 'UI'에서 이 페이지를 찾음. 공식 색상 표기 5건을 원문 그대로 읽음.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 위키데이터 Q3954913"
+    },
+    {
+      "id": "kr-q21708200-src",
+      "title": "OpenAI 브랜드·로고 안내",
+      "url": "https://openai.com/brand/",
+      "publisher": "OpenAI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q21708200 · 수집 오류: home: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "kr-q116758847-src",
+      "title": "Anthropic 브랜드·로고 안내",
+      "url": "https://www.anthropic.com/news",
+      "publisher": "Anthropic",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q116758847"
+    },
+    {
+      "id": "kr-q15733006-src",
+      "title": "Google DeepMind 공식 홈페이지",
+      "url": "https://deepmind.google/",
+      "publisher": "Google DeepMind",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q15733006"
+    },
+    {
+      "id": "kr-q119718658-src",
+      "title": "Mistral AI 브랜드·로고 안내",
+      "url": "https://mistral.ai/brand/",
+      "publisher": "Mistral AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q119718658"
+    },
+    {
+      "id": "kr-q110363143-src",
+      "title": "Cohere 브랜드·로고 안내",
+      "url": "https://cohere.com/newsroom",
+      "publisher": "Cohere",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q110363143"
+    },
+    {
+      "id": "kr-q120599684-src",
+      "title": "xAI 공식 홈페이지",
+      "url": "https://x.ai/",
+      "publisher": "xAI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q120599684 · 수집 오류: home: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "kr-q124333951-src",
+      "title": "Perplexity 공식 홈페이지",
+      "url": "https://www.perplexity.ai/",
+      "publisher": "Perplexity",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q124333951"
+    },
+    {
+      "id": "kr-q123592234-src",
+      "title": "Stability AI 브랜드·로고 안내",
+      "url": "https://stability.ai/press",
+      "publisher": "Stability AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q123592234"
+    },
+    {
+      "id": "kr-q113070628-src",
+      "title": "Midjourney 공식 홈페이지",
+      "url": "https://www.midjourney.com/",
+      "publisher": "Midjourney",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q113070628 · 수집 오류: home: URLError: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version "
+    },
+    {
+      "id": "kr-q131577453-src",
+      "title": "DeepSeek 공식 홈페이지",
+      "url": "https://deepseek.com",
+      "publisher": "DeepSeek",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q131577453"
+    },
+    {
+      "id": "kr-q123367593-src",
+      "title": "Runway 브랜드·로고 안내",
+      "url": "https://runway.com/brand-guidelines",
+      "publisher": "Runway",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q123367593"
+    },
+    {
+      "id": "kr-q116798355-src",
+      "title": "ElevenLabs 브랜드·로고 안내",
+      "url": "https://elevenlabs.io/brand",
+      "publisher": "ElevenLabs",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q116798355"
+    },
+    {
+      "id": "kr-q115517493-src",
+      "title": "Character.AI 공식 홈페이지",
+      "url": "https://character.ai/",
+      "publisher": "Character.AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q115517493 · 수집 오류: home: HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "kr-q113030551-src",
+      "title": "AI21 Labs 공식 홈페이지",
+      "url": "https://www.ai21.com/",
+      "publisher": "AI21 Labs",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q113030551"
+    },
+    {
+      "id": "kr-q130270266-src",
+      "title": "Moonshot AI 브랜드·로고 안내",
+      "url": "https://www.kimi.ai/resources/kimi-brand",
+      "publisher": "Moonshot AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q130270266"
+    },
+    {
+      "id": "kr-q129572031-src",
+      "title": "Z.ai (Zhipu AI) 공식 홈페이지",
+      "url": "https://chat.z.ai/",
+      "publisher": "Z.ai (Zhipu AI)",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q129572031"
+    },
+    {
+      "id": "kr-q127983087-src",
+      "title": "업스테이지 브랜드·로고 안내",
+      "url": "https://www.upstage.ai/resources/brand-resource-center",
+      "publisher": "업스테이지",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q127983087"
+    },
+    {
+      "id": "kr-wbe648c77b3-src",
+      "title": "LG AI연구원 공식 홈페이지",
+      "url": "https://www.lgresearch.ai/",
+      "publisher": "LG AI연구원",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정)"
+    },
+    {
+      "id": "kr-wb6f0aca4ae-src",
+      "title": "스캐터랩 공식 홈페이지",
+      "url": "https://www.scatterlab.co.kr/ko/intro",
+      "publisher": "스캐터랩",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정)"
+    },
+    {
+      "id": "kr-w5a1baa7c62-src",
+      "title": "뤼튼테크놀로지스 공식 홈페이지",
+      "url": "https://wrtn.io/",
+      "publisher": "뤼튼테크놀로지스",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정)"
+    },
+    {
+      "id": "kr-q12602801-src",
+      "title": "솔트룩스 공식 홈페이지",
+      "url": "http://www.saltlux.com",
+      "publisher": "솔트룩스",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q12602801 · 수집 오류: home: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "id": "kr-q131188296-src",
+      "title": "마음AI 공식 홈페이지",
+      "url": "https://maum.ai/",
+      "publisher": "마음AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q131188296"
+    },
+    {
+      "id": "kr-q108943604-src",
+      "title": "Hugging Face 브랜드·로고 안내",
+      "url": "https://huggingface.co/brand",
+      "publisher": "Hugging Face",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q108943604"
+    },
+    {
+      "id": "kr-q112629176-src",
+      "title": "Scale AI 브랜드·로고 안내",
+      "url": "https://brand.scale.com/",
+      "publisher": "Scale AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q112629176"
+    },
+    {
+      "id": "kr-q18350420-src",
+      "title": "Databricks 공식 홈페이지",
+      "url": "https://www.databricks.com/",
+      "publisher": "Databricks",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q18350420"
+    },
+    {
+      "id": "kr-q135683783-src",
+      "title": "Cursor 브랜드·로고 안내",
+      "url": "https://cursor.com/en-US/brand",
+      "publisher": "Cursor",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q135683783"
+    },
+    {
+      "id": "kr-wee0090c147-src",
+      "title": "네이버클라우드 공식 홈페이지",
+      "url": "https://www.ncloud.com/",
+      "publisher": "네이버클라우드",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 수집 오류: home: URLError: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version "
+    },
+    {
+      "id": "kr-q12593799-src",
+      "title": "셀바스AI 브랜드·로고 안내",
+      "url": "https://www.selvasai.com/brand",
+      "publisher": "셀바스AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q12593799"
+    },
+    {
+      "id": "kr-q182477-src",
+      "title": "NVIDIA 브랜드·로고 안내",
+      "url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/",
+      "publisher": "NVIDIA",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q182477"
+    },
+    {
+      "id": "kr-q66604886-src",
+      "title": "Cerebras 공식 홈페이지",
+      "url": "https://www.cerebras.ai/",
+      "publisher": "Cerebras",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q66604886"
+    },
+    {
+      "id": "kr-q126050137-src",
+      "title": "Groq 공식 홈페이지",
+      "url": "https://groq.com/",
+      "publisher": "Groq",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q126050137"
+    },
+    {
+      "id": "kr-q117419137-src",
+      "title": "리벨리온 공식 홈페이지",
+      "url": "https://kr.rebellions.ai/",
+      "publisher": "리벨리온",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q117419137"
+    },
+    {
+      "id": "kr-q133254813-src",
+      "title": "퓨리오사AI 브랜드·로고 안내",
+      "url": "https://furiosa.ai/newsroom",
+      "publisher": "퓨리오사AI",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q133254813"
+    },
+    {
+      "id": "kr-q136091597-src",
+      "title": "딥엑스 공식 홈페이지",
+      "url": "https://deepx.ai/",
+      "publisher": "딥엑스",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q136091597"
+    },
+    {
+      "id": "kr-q131188279-src",
+      "title": "루닛 공식 홈페이지",
+      "url": "https://www.lunit.io/en/",
+      "publisher": "루닛",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 홈페이지는 열렸으나 CI 안내 페이지 링크를 자동으로 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정) · 위키데이터 Q131188279"
+    },
+    {
+      "id": "kr-w0f53d9a6fa-src",
+      "title": "뷰노 브랜드·로고 안내",
+      "url": "https://www.vuno.co/about/brand",
+      "publisher": "뷰노",
+      "language": "ko",
+      "checked_at": "2026-11-10",
+      "scope": "page",
+      "observation": "자동 수집(2026-11-10): 공식 홈페이지 메뉴 'Brand'에서 이 페이지를 찾음. 본문에서 색상 코드 표기는 찾지 못함.",
+      "note": "명단: LETSUM AI 기업 목록(수작업 선정)"
     }
   ]
 }

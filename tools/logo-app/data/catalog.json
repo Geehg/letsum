@@ -2029,6 +2029,1499 @@
       "related_fonts": []
     },
     {
+      "id": "kr-q113030551",
+      "organization_id": "kr-q113030551",
+      "organization_name": "AI21 Labs",
+      "name": "AI21 Labs 로고",
+      "name_en": "AI21 Labs",
+      "aliases": [
+        "AI21 랩스"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "IL",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q113030551-src"
+      ],
+      "source_url": "https://www.ai21.com/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q116758847",
+      "organization_id": "kr-q116758847",
+      "organization_name": "Anthropic",
+      "name": "Anthropic 로고",
+      "name_en": "Anthropic",
+      "aliases": [
+        "앤트로픽"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q116758847-src"
+      ],
+      "source_url": "https://www.anthropic.com/news",
+      "guideline_url": "https://www.anthropic.com/news",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q66604886",
+      "organization_id": "kr-q66604886",
+      "organization_name": "Cerebras",
+      "name": "Cerebras 로고",
+      "name_en": "Cerebras",
+      "aliases": [
+        "세레브라스 시스템즈"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q66604886-src"
+      ],
+      "source_url": "https://www.cerebras.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q115517493",
+      "organization_id": "kr-q115517493",
+      "organization_name": "Character.AI",
+      "name": "Character.AI 로고",
+      "name_en": "Character.ai",
+      "aliases": [
+        "Character.ai"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q115517493-src"
+      ],
+      "source_url": "https://character.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q110363143",
+      "organization_id": "kr-q110363143",
+      "organization_name": "Cohere",
+      "name": "Cohere 로고",
+      "name_en": "Cohere",
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "CA",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q110363143-src"
+      ],
+      "source_url": "https://cohere.com/newsroom",
+      "guideline_url": "https://cohere.com/newsroom",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q135683783",
+      "organization_id": "kr-q135683783",
+      "organization_name": "Cursor",
+      "name": "Cursor 로고",
+      "name_en": "Anysphere, Inc.",
+      "aliases": [
+        "Cursor (company)",
+        "Anysphere, Inc."
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q135683783-src"
+      ],
+      "source_url": "https://cursor.com/en-US/brand",
+      "guideline_url": "https://cursor.com/en-US/brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q18350420",
+      "organization_id": "kr-q18350420",
+      "organization_name": "Databricks",
+      "name": "Databricks 로고",
+      "name_en": "Databricks",
+      "aliases": [
+        "데이터브릭스"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q18350420-src"
+      ],
+      "source_url": "https://www.databricks.com/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q131577453",
+      "organization_id": "kr-q131577453",
+      "organization_name": "DeepSeek",
+      "name": "DeepSeek 로고",
+      "name_en": "DeepSeek",
+      "aliases": [
+        "딥시크"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "CN",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q131577453-src"
+      ],
+      "source_url": "https://deepseek.com",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q116798355",
+      "organization_id": "kr-q116798355",
+      "organization_name": "ElevenLabs",
+      "name": "ElevenLabs 로고",
+      "name_en": "ElevenLabs",
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q116798355-src"
+      ],
+      "source_url": "https://elevenlabs.io/brand",
+      "guideline_url": "https://elevenlabs.io/brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q15733006",
+      "organization_id": "kr-q15733006",
+      "organization_name": "Google DeepMind",
+      "name": "Google DeepMind 로고",
+      "name_en": "Google DeepMind",
+      "aliases": [
+        "구글 딥마인드"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "GB",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q15733006-src"
+      ],
+      "source_url": "https://deepmind.google/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q126050137",
+      "organization_id": "kr-q126050137",
+      "organization_name": "Groq",
+      "name": "Groq 로고",
+      "name_en": "Groq",
+      "aliases": [
+        "그록 (기업)"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q126050137-src"
+      ],
+      "source_url": "https://groq.com/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q108943604",
+      "organization_id": "kr-q108943604",
+      "organization_name": "Hugging Face",
+      "name": "Hugging Face 로고",
+      "name_en": "Hugging Face",
+      "aliases": [
+        "허깅 페이스"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "FR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q108943604-src"
+      ],
+      "source_url": "https://huggingface.co/brand",
+      "guideline_url": "https://huggingface.co/brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-wbe648c77b3",
+      "organization_id": "kr-wbe648c77b3",
+      "organization_name": "LG AI연구원",
+      "name": "LG AI연구원 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-wbe648c77b3-src"
+      ],
+      "source_url": "https://www.lgresearch.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q113070628",
+      "organization_id": "kr-q113070628",
+      "organization_name": "Midjourney",
+      "name": "Midjourney 로고",
+      "name_en": "Midjourney",
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q113070628-src"
+      ],
+      "source_url": "https://www.midjourney.com/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q119718658",
+      "organization_id": "kr-q119718658",
+      "organization_name": "Mistral AI",
+      "name": "Mistral AI 로고",
+      "name_en": "Mistral AI",
+      "aliases": [
+        "미스트랄 AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "FR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q119718658-src"
+      ],
+      "source_url": "https://mistral.ai/brand/",
+      "guideline_url": "https://mistral.ai/brand/",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q130270266",
+      "organization_id": "kr-q130270266",
+      "organization_name": "Moonshot AI",
+      "name": "Moonshot AI 로고",
+      "name_en": "Moonshot AI",
+      "aliases": [
+        "문샷 AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "CN",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q130270266-src"
+      ],
+      "source_url": "https://www.kimi.ai/resources/kimi-brand",
+      "guideline_url": "https://www.kimi.ai/resources/kimi-brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q182477",
+      "organization_id": "kr-q182477",
+      "organization_name": "NVIDIA",
+      "name": "NVIDIA 로고",
+      "name_en": "Nvidia",
+      "aliases": [
+        "엔비디아",
+        "Nvidia"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q182477-src"
+      ],
+      "source_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/",
+      "guideline_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/logo-brand-usage/",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q21708200",
+      "organization_id": "kr-q21708200",
+      "organization_name": "OpenAI",
+      "name": "OpenAI 로고",
+      "name_en": "OpenAI",
+      "aliases": [
+        "오픈AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q21708200-src"
+      ],
+      "source_url": "https://openai.com/brand/",
+      "guideline_url": "https://openai.com/brand/",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q124333951",
+      "organization_id": "kr-q124333951",
+      "organization_name": "Perplexity",
+      "name": "Perplexity 로고",
+      "name_en": "Perplexity AI",
+      "aliases": [
+        "퍼플렉시티 AI",
+        "Perplexity AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q124333951-src"
+      ],
+      "source_url": "https://www.perplexity.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q123367593",
+      "organization_id": "kr-q123367593",
+      "organization_name": "Runway",
+      "name": "Runway 로고",
+      "name_en": "Runway",
+      "aliases": [
+        "런웨이 (기업)"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q123367593-src"
+      ],
+      "source_url": "https://runway.com/brand-guidelines",
+      "guideline_url": "https://runway.com/brand-guidelines",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q112629176",
+      "organization_id": "kr-q112629176",
+      "organization_name": "Scale AI",
+      "name": "Scale AI 로고",
+      "name_en": "Scale AI",
+      "aliases": [
+        "스케일 AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q112629176-src"
+      ],
+      "source_url": "https://brand.scale.com/",
+      "guideline_url": "https://brand.scale.com/",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q123592234",
+      "organization_id": "kr-q123592234",
+      "organization_name": "Stability AI",
+      "name": "Stability AI 로고",
+      "name_en": "Stability AI",
+      "aliases": [
+        "스태빌리티 AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "GB",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q123592234-src"
+      ],
+      "source_url": "https://stability.ai/press",
+      "guideline_url": "https://stability.ai/press",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q129572031",
+      "organization_id": "kr-q129572031",
+      "organization_name": "Z.ai (Zhipu AI)",
+      "name": "Z.ai (Zhipu AI) 로고",
+      "name_en": "Zhipu AI",
+      "aliases": [
+        "Z.ai",
+        "Zhipu AI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "CN",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q129572031-src"
+      ],
+      "source_url": "https://chat.z.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q120599684",
+      "organization_id": "kr-q120599684",
+      "organization_name": "xAI",
+      "name": "xAI 로고",
+      "name_en": "SpaceXAI",
+      "aliases": [
+        "XAI (기업)",
+        "SpaceXAI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "US",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q120599684-src"
+      ],
+      "source_url": "https://x.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-wee0090c147",
+      "organization_id": "kr-wee0090c147",
+      "organization_name": "네이버클라우드",
+      "name": "네이버클라우드 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-wee0090c147-src"
+      ],
+      "source_url": "https://www.ncloud.com/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q136091597",
+      "organization_id": "kr-q136091597",
+      "organization_name": "딥엑스",
+      "name": "딥엑스 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q136091597-src"
+      ],
+      "source_url": "https://deepx.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q131188279",
+      "organization_id": "kr-q131188279",
+      "organization_name": "루닛",
+      "name": "루닛 로고",
+      "name_en": "Lunit",
+      "aliases": [
+        "Lunit"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital",
+        "healthcare"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q131188279-src"
+      ],
+      "source_url": "https://www.lunit.io/en/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-w5a1baa7c62",
+      "organization_id": "kr-w5a1baa7c62",
+      "organization_name": "뤼튼테크놀로지스",
+      "name": "뤼튼테크놀로지스 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-w5a1baa7c62-src"
+      ],
+      "source_url": "https://wrtn.io/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q117419137",
+      "organization_id": "kr-q117419137",
+      "organization_name": "리벨리온",
+      "name": "리벨리온 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q117419137-src"
+      ],
+      "source_url": "https://kr.rebellions.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q131188296",
+      "organization_id": "kr-q131188296",
+      "organization_name": "마음AI",
+      "name": "마음AI 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q131188296-src"
+      ],
+      "source_url": "https://maum.ai/",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-w0f53d9a6fa",
+      "organization_id": "kr-w0f53d9a6fa",
+      "organization_name": "뷰노",
+      "name": "뷰노 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital",
+        "healthcare"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-w0f53d9a6fa-src"
+      ],
+      "source_url": "https://www.vuno.co/about/brand",
+      "guideline_url": "https://www.vuno.co/about/brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q12593799",
+      "organization_id": "kr-q12593799",
+      "organization_name": "셀바스AI",
+      "name": "셀바스AI 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q12593799-src"
+      ],
+      "source_url": "https://www.selvasai.com/brand",
+      "guideline_url": "https://www.selvasai.com/brand",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q12602801",
+      "organization_id": "kr-q12602801",
+      "organization_name": "솔트룩스",
+      "name": "솔트룩스 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q12602801-src"
+      ],
+      "source_url": "http://www.saltlux.com",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-wb6f0aca4ae",
+      "organization_id": "kr-wb6f0aca4ae",
+      "organization_name": "스캐터랩",
+      "name": "스캐터랩 로고",
+      "name_en": null,
+      "aliases": [],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-wb6f0aca4ae-src"
+      ],
+      "source_url": "https://www.scatterlab.co.kr/ko/intro",
+      "guideline_url": null,
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q127983087",
+      "organization_id": "kr-q127983087",
+      "organization_name": "업스테이지",
+      "name": "업스테이지 로고",
+      "name_en": "Upstage",
+      "aliases": [
+        "Upstage"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q127983087-src"
+      ],
+      "source_url": "https://www.upstage.ai/resources/brand-resource-center",
+      "guideline_url": "https://www.upstage.ai/resources/brand-resource-center",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "kr-q133254813",
+      "organization_id": "kr-q133254813",
+      "organization_name": "퓨리오사AI",
+      "name": "퓨리오사AI 로고",
+      "name_en": "FuriosaAI",
+      "aliases": [
+        "FuriosaAI"
+      ],
+      "category": "business",
+      "kind": "organization",
+      "sectors": [
+        "ict-digital"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "공식 홈페이지의 브랜드·로고 안내 페이지입니다. 분류: AI 기업.",
+      "source_ids": [
+        "kr-q133254813-src"
+      ],
+      "source_url": "https://furiosa.ai/newsroom",
+      "guideline_url": "https://furiosa.ai/newsroom",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-10",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "kr-q4307051",
       "organization_id": "kr-q4307051",
       "organization_name": "가야대학교",
@@ -2086,12 +3579,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q56147-src"
       ],
-      "source_url": "https://www.gachon.ac.kr/english/",
-      "guideline_url": null,
+      "source_url": "https://www.gachon.ac.kr/pr/1459/subview.do",
+      "guideline_url": "https://www.gachon.ac.kr/pr/1459/subview.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2439,12 +3932,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q41765-src"
       ],
-      "source_url": "https://konkuk.ac.kr",
-      "guideline_url": null,
+      "source_url": "https://www.konkuk.ac.kr/konkuk/19196/subview.do",
+      "guideline_url": "https://www.konkuk.ac.kr/konkuk/19196/subview.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2682,12 +4175,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q487841-src"
       ],
-      "source_url": "https://www.knu.ac.kr/wbbs/wbbs/main/main.action",
-      "guideline_url": null,
+      "source_url": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194",
+      "guideline_url": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2970,12 +4463,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q626872-src"
       ],
-      "source_url": "https://www.police.ac.kr/error_page.html",
-      "guideline_url": null,
+      "source_url": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29",
+      "guideline_url": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -4058,12 +5551,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q486999-src"
       ],
-      "source_url": "https://www.ut.ac.kr/",
-      "guideline_url": null,
+      "source_url": "https://identity.ut.ac.kr",
+      "guideline_url": "https://identity.ut.ac.kr",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9522,12 +11015,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 대학.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 대학.",
       "source_ids": [
         "kr-q16098196-src"
       ],
-      "source_url": "http://en.cha.ac.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/",
+      "guideline_url": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -11405,12 +12898,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50203-src"
       ],
-      "source_url": "http://www.gp.go.kr/site/foreign/english/",
-      "guideline_url": null,
+      "source_url": "https://www.gp.go.kr/portal/contents.do?key=749",
+      "guideline_url": "https://www.gp.go.kr/portal/contents.do?key=749",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -11609,12 +13102,12 @@
       ],
       "country": "KR",
       "region": "서울특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50349-src"
       ],
-      "source_url": "http://english.gangbuk.seoul.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+      "guideline_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -11779,12 +13272,12 @@
       ],
       "country": "KR",
       "region": "전남광주통합특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50204-src"
       ],
-      "source_url": "http://www.gangjin.go.kr/english/index.htm",
-      "guideline_url": null,
+      "source_url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+      "guideline_url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -12279,12 +13772,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 광역자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 광역자치단체.",
       "source_ids": [
         "kr-q41154-src"
       ],
-      "source_url": "http://www.gb.go.kr/eng/main/main.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064",
+      "guideline_url": "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -12749,12 +14242,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42064-src"
       ],
-      "source_url": "http://www.gccity.go.kr/foreign/english/index.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000",
+      "guideline_url": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -13348,12 +14841,12 @@
       ],
       "country": "KR",
       "region": "대구광역시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50215-src"
       ],
-      "source_url": "http://www.gunwi.go.kr/html/english/index.html",
-      "guideline_url": null,
+      "source_url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+      "guideline_url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -13696,12 +15189,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42078-src"
       ],
-      "source_url": "https://www.gc.go.kr/eng/main.do",
-      "guideline_url": null,
+      "source_url": "https://gc.go.kr/portal/contents.do?mId=1201030000",
+      "guideline_url": "https://gc.go.kr/portal/contents.do?mId=1201030000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -13738,12 +15231,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42080-src"
       ],
-      "source_url": "http://en.gimpo.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.gimpo.go.kr/portal/contents.do?key=1232",
+      "guideline_url": "https://www.gimpo.go.kr/portal/contents.do?key=1232",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -13940,12 +15433,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42084-src"
       ],
-      "source_url": "http://english.nyj.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.nyj.go.kr/www/contents.do?key=2525",
+      "guideline_url": "https://www.nyj.go.kr/www/contents.do?key=2525",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -13982,12 +15475,12 @@
       ],
       "country": "KR",
       "region": "전북특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42087-src"
       ],
-      "source_url": "http://en.namwon.go.kr/en/",
-      "guideline_url": null,
+      "source_url": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4",
+      "guideline_url": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -14167,12 +15660,12 @@
       ],
       "country": "KR",
       "region": "충청북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50220-src"
       ],
-      "source_url": "http://english.dy21.net/",
-      "guideline_url": null,
+      "source_url": "https://www.danyang.go.kr/dy21/761",
+      "guideline_url": "https://www.danyang.go.kr/dy21/761",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -14353,12 +15846,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42089-src"
       ],
-      "source_url": "https://www.dangjin.go.kr/error/code403.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.dangjin.go.kr/kor/sub04_01_04.do",
+      "guideline_url": "https://www.dangjin.go.kr/kor/sub04_01_04.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -14825,12 +16318,12 @@
       ],
       "country": "KR",
       "region": "대전광역시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 광역자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 광역자치단체.",
       "source_ids": [
         "kr-q20921-src"
       ],
-      "source_url": "https://www.daejeon.go.kr:/error.html",
-      "guideline_url": null,
+      "source_url": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711",
+      "guideline_url": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15348,12 +16841,12 @@
       ],
       "country": "KR",
       "region": "서울특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50385-src"
       ],
-      "source_url": "http://english.dongjak.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+      "guideline_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15474,12 +16967,12 @@
       ],
       "country": "KR",
       "region": "전남광주통합특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42094-src"
       ],
-      "source_url": "http://eng.mokpo.go.kr/home/eng/",
-      "guideline_url": null,
+      "source_url": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
+      "guideline_url": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15516,12 +17009,12 @@
       ],
       "country": "KR",
       "region": "전남광주통합특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50241-src"
       ],
-      "source_url": "https://muan.go.kr",
-      "guideline_url": null,
+      "source_url": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city",
+      "guideline_url": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15600,12 +17093,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42095-src"
       ],
-      "source_url": "http://eng.gbmg.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+      "guideline_url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15880,12 +17373,12 @@
       ],
       "country": "KR",
       "region": "충청북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50244-src"
       ],
-      "source_url": "http://www.boeun.go.kr/eng/sub0101.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.boeun.go.kr/www/contents.do?key=313",
+      "guideline_url": "https://www.boeun.go.kr/www/contents.do?key=313",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15922,12 +17415,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50245-src"
       ],
-      "source_url": "http://www.bonghwa.go.kr/eng/index.html",
-      "guideline_url": null,
+      "source_url": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000",
+      "guideline_url": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -16668,12 +18161,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42100-src"
       ],
-      "source_url": "http://www.sacheon.go.kr/eng/",
-      "guideline_url": null,
+      "source_url": "https://www.sacheon.go.kr/intro/01096/03763.web",
+      "guideline_url": "https://www.sacheon.go.kr/intro/01096/03763.web",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -16770,12 +18263,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50248-src"
       ],
-      "source_url": "https://www.sancheong.ne.kr/blog/",
-      "guideline_url": null,
+      "source_url": "https://www.sancheong.go.kr/www/contents.do?key=178",
+      "guideline_url": "https://www.sancheong.go.kr/www/contents.do?key=178",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -16957,12 +18450,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42105-src"
       ],
-      "source_url": "http://eng.seosantour.net/",
-      "guideline_url": null,
+      "source_url": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d",
+      "guideline_url": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -17470,12 +18963,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50250-src"
       ],
-      "source_url": "http://www.seongju.go.kr/english/index.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+      "guideline_url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -17596,12 +19089,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42109-src"
       ],
-      "source_url": "http://sokcho.gangwon.kr/foreign/eng/html/main.html",
-      "guideline_url": null,
+      "source_url": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci",
+      "guideline_url": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -17638,12 +19131,12 @@
       ],
       "country": "KR",
       "region": "서울특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50415-src"
       ],
-      "source_url": "https://www.songpa.go.kr/songpa_html/index.html",
-      "guideline_url": null,
+      "source_url": "https://www.songpa.go.kr/www/contents.do?key=2374&",
+      "guideline_url": "https://www.songpa.go.kr/www/contents.do?key=2374&",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -17806,12 +19299,12 @@
       ],
       "country": "KR",
       "region": "전북특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50251-src"
       ],
-      "source_url": "http://www.sunchang.go.kr/english/",
-      "guideline_url": null,
+      "source_url": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e",
+      "guideline_url": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -17907,12 +19400,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42113-src"
       ],
-      "source_url": "http://www.shcity.net/english/index.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.siheung.go.kr/main/contents.do?mId=0501010000",
+      "guideline_url": "https://www.siheung.go.kr/main/contents.do?mId=0501010000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -18363,12 +19856,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42124-src"
       ],
-      "source_url": "http://www.yangju.go.kr/YangJu_Eng/index.asp",
-      "guideline_url": null,
+      "source_url": "https://www.yangju.go.kr/www/contents.do?key=346",
+      "guideline_url": "https://www.yangju.go.kr/www/contents.do?key=346",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -18447,12 +19940,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50255-src"
       ],
-      "source_url": "http://www.yp21.net/eng/",
-      "guideline_url": null,
+      "source_url": "https://www.yp21.go.kr/www/contents.do?key=1846",
+      "guideline_url": "https://www.yp21.go.kr/www/contents.do?key=1846",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -18899,12 +20392,12 @@
       ],
       "country": "KR",
       "region": "충청북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50261-src"
       ],
-      "source_url": "http://www.yd21.go.kr/english/",
-      "guideline_url": null,
+      "source_url": "https://www.yd21.go.kr/kr/html/sub04/04030101.html",
+      "guideline_url": "https://www.yd21.go.kr/kr/html/sub04/04030101.html",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -18941,12 +20434,12 @@
       ],
       "country": "KR",
       "region": "서울특별시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50190-src"
       ],
-      "source_url": "http://english.ydp.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.ydp.go.kr/www/contents.do?key=2895&",
+      "guideline_url": "https://www.ydp.go.kr/www/contents.do?key=2895&",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -19252,12 +20745,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50307-src"
       ],
-      "source_url": "http://www.yesan.go.kr/eng/index.jsp",
-      "guideline_url": null,
+      "source_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+      "guideline_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -19336,12 +20829,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42129-src"
       ],
-      "source_url": "http://www.osan.go.kr/en/",
-      "guideline_url": null,
+      "source_url": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
+      "guideline_url": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -20333,12 +21826,12 @@
       ],
       "country": "KR",
       "region": "충청북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50315-src"
       ],
-      "source_url": "http://english.es21.net/contents/english/main.php",
-      "guideline_url": null,
+      "source_url": "https://www.eumseong.go.kr/www/contents.do?key=410",
+      "guideline_url": "https://www.eumseong.go.kr/www/contents.do?key=410",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -20459,12 +21952,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42134-src"
       ],
-      "source_url": "http://www.uiwang.go.kr/eng/HTML/index.html",
-      "guideline_url": null,
+      "source_url": "https://www.uiwang.go.kr/UWKORINTRO0201",
+      "guideline_url": "https://www.uiwang.go.kr/UWKORINTRO0201",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -20643,12 +22136,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50318-src"
       ],
-      "source_url": "http://www.inje.go.kr/english/main.asp",
-      "guideline_url": null,
+      "source_url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
+      "guideline_url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -20685,12 +22178,12 @@
       ],
       "country": "KR",
       "region": "인천광역시",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 광역자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 광역자치단체.",
       "source_ids": [
         "kr-q20934-src"
       ],
-      "source_url": "https://www.incheon.go.kr/index",
-      "guideline_url": null,
+      "source_url": "https://www.incheon.go.kr/citybrand/CB010101",
+      "guideline_url": "https://www.incheon.go.kr/citybrand/CB010101",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -20786,12 +22279,12 @@
       ],
       "country": "KR",
       "region": "전북특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50319-src"
       ],
-      "source_url": "http://imsil.go.kr/english/",
-      "guideline_url": null,
+      "source_url": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000",
+      "guideline_url": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -21950,12 +23443,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42144-src"
       ],
-      "source_url": "http://english.jinju.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212",
+      "guideline_url": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22050,12 +23543,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50328-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%85%95%EA%B5%B0",
-      "guideline_url": null,
+      "source_url": "https://www.cng.go.kr/00004/00567/00569.web",
+      "guideline_url": "https://www.cng.go.kr/00004/00567/00569.web",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22092,12 +23585,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q243327-src"
       ],
-      "source_url": "http://eng.changwon.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web",
+      "guideline_url": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22219,12 +23712,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50330-src"
       ],
-      "source_url": "http://english.cheongdo.go.kr/",
-      "guideline_url": null,
+      "source_url": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100",
+      "guideline_url": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22261,12 +23754,12 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50331-src"
       ],
-      "source_url": "https://cs.go.kr/eng/",
-      "guideline_url": null,
+      "source_url": "https://www.cs.go.kr/cheongsong/00003084/00003102.web",
+      "guideline_url": "https://www.cs.go.kr/cheongsong/00003084/00003102.web",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22303,12 +23796,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50332-src"
       ],
-      "source_url": "http://english.cheongyang.go.kr/",
-      "guideline_url": null,
+      "source_url": "http://www.cheongyang.go.kr/kor/sub05_03_01.do",
+      "guideline_url": "http://www.cheongyang.go.kr/kor/sub05_03_01.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22387,12 +23880,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42148-src"
       ],
-      "source_url": "http://tour.chuncheon.go.kr/eng/index.asp",
-      "guideline_url": null,
+      "source_url": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/",
+      "guideline_url": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22740,12 +24233,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50335-src"
       ],
-      "source_url": "http://www.taean.go.kr/english/index.asp",
-      "guideline_url": null,
+      "source_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+      "guideline_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22884,12 +24377,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q188624-src"
       ],
-      "source_url": "http://en.yes-pc.net/",
-      "guideline_url": null,
+      "source_url": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong",
+      "guideline_url": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -22968,12 +24461,12 @@
       ],
       "country": "KR",
       "region": "경기도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q42155-src"
       ],
-      "source_url": "http://www.pcs21.net/lng/english/html/index.asp",
-      "guideline_url": null,
+      "source_url": "https://www.pcs21.net/www/contents.do?key=3830",
+      "guideline_url": "https://www.pcs21.net/www/contents.do?key=3830",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -23094,12 +24587,12 @@
       ],
       "country": "KR",
       "region": "경상남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q26212-src"
       ],
-      "source_url": "http://eng.hadong.go.kr/main/",
-      "guideline_url": null,
+      "source_url": "https://www.hadong.go.kr/intro/00567/00571.web",
+      "guideline_url": "https://www.hadong.go.kr/intro/00567/00571.web",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -23389,12 +24882,12 @@
       ],
       "country": "KR",
       "region": "충청남도",
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기초자치단체.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기초자치단체.",
       "source_ids": [
         "kr-q50343-src"
       ],
-      "source_url": "http://hsportal.hongseong.go.kr/english/",
-      "guideline_url": null,
+      "source_url": "https://hongseong.go.kr/kor/sub04_010701.do",
+      "guideline_url": "https://hongseong.go.kr/kor/sub04_010701.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -33283,12 +34776,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다. 분류: 기타공공기관.",
+      "summary": "공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다. 분류: 기타공공기관.",
       "source_ids": [
         "kr-q491336-src"
       ],
-      "source_url": "https://www.keris.or.kr:443/index.do",
-      "guideline_url": null,
+      "source_url": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525",
+      "guideline_url": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.",

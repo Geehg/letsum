@@ -14574,6 +14574,306 @@
         }
       ],
       "official_source": "https://www.hsmu.ac.kr/web/contents/HSMU10302000.do"
+    },
+    "kr-q116758847": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#1F1F1E",
+          "rgb": "31 31 30",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q15733006": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#1288C9",
+          "rgb": "18 136 201",
+          "share": 0.15
+        },
+        {
+          "hex": "#9FCFF0",
+          "rgb": "159 207 240",
+          "share": 0.13
+        },
+        {
+          "hex": "#7CBBE7",
+          "rgb": "124 187 231",
+          "share": 0.12
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/12/DeepMind_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "kr-q119718658": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#FA500F",
+          "rgb": "250 80 15",
+          "share": 0.3
+        },
+        {
+          "hex": "#FFD800",
+          "rgb": "255 216 0",
+          "share": 0.2
+        },
+        {
+          "hex": "#E10500",
+          "rgb": "225 5 0",
+          "share": 0.2
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mistral_AI_logo_%282025%E2%80%93%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q110363143": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#39594D",
+          "rgb": "57 89 77",
+          "share": 0.27
+        },
+        {
+          "hex": "#BD7FA3",
+          "rgb": "189 127 163",
+          "share": 0.15
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Cohere-Logo.png/960px-Cohere-Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "kr-q124333951": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#20808D",
+          "rgb": "32 128 141",
+          "share": 0.5
+        },
+        {
+          "hex": "#13343B",
+          "rgb": "19 52 59",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Perplexity_AI_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q123592234": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#7000E0",
+          "rgb": "112 0 224",
+          "share": 0.71
+        },
+        {
+          "hex": "#C29DEB",
+          "rgb": "194 157 235",
+          "share": 0.04
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Stability_Ai_%E2%80%94_wordmark.png/960px-Stability_Ai_%E2%80%94_wordmark.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "kr-q113070628": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#770088",
+          "rgb": "119 0 136",
+          "share": 0.09
+        },
+        {
+          "hex": "#004CFF",
+          "rgb": "0 76 255",
+          "share": 0.09
+        },
+        {
+          "hex": "#028121",
+          "rgb": "2 129 33",
+          "share": 0.09
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/10/Midjourney_Emblem_%E2%80%94_Discord.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q131577453": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#4D6BFE",
+          "rgb": "77 107 254",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/e/ec/DeepSeek_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q123367593": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Runway_Logo.png/960px-Runway_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "kr-q129572031": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#1679FF",
+          "rgb": "22 121 255",
+          "share": 0.24
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Zhipu_AI.png/960px-Zhipu_AI.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "kr-q127983087": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#5B52FF",
+          "rgb": "91 82 255",
+          "share": 0.5
+        },
+        {
+          "hex": "#9CA7FF",
+          "rgb": "156 167 255",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://cdn.prod.website-files.com/6743d5190bb2b52f38e99e37/6851098f6bb0fc681c59f3d0_DocumentParse-symbol-frame.svg"
+    },
+    "kr-wbe648c77b3": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#C00B3F",
+          "rgb": "192 11 63",
+          "share": 0.14
+        },
+        {
+          "hex": "#6D6E71",
+          "rgb": "109 110 113",
+          "share": 0.28
+        }
+      ],
+      "extracted_from": "https://www.lgresearch.ai/img/common/logo_en.png"
+    },
+    "kr-wb6f0aca4ae": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#FFC50A",
+          "rgb": "255 197 10",
+          "share": 0.18
+        },
+        {
+          "hex": "#4B4A49",
+          "rgb": "75 74 73",
+          "share": 0.24
+        }
+      ],
+      "extracted_from": "https://opening-attachments.greetinghr.com/2025-05-20/1f5d7ef8-ecc7-45f8-b01f-d1de178f3fb9/Frame1.png"
+    },
+    "kr-w5a1baa7c62": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#333333",
+          "rgb": "51 51 51",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://wrtn.io/wp-content/themes/wrtn-theme/assets/img/logo-black.svg"
+    },
+    "kr-q108943604": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#000B1B",
+          "rgb": "0 11 27",
+          "share": 0.17
+        },
+        {
+          "hex": "#FF9D00",
+          "rgb": "255 157 0",
+          "share": 0.17
+        },
+        {
+          "hex": "#FFD21E",
+          "rgb": "255 210 30",
+          "share": 0.17
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Hf-logo-with-title.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q112629176": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#080404",
+          "rgb": "8 4 4",
+          "share": 0.5
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/7/74/Scale_AI.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q18350420": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#FA4030",
+          "rgb": "250 64 48",
+          "share": 0.12
+        },
+        {
+          "hex": "#000000",
+          "rgb": "0 0 0",
+          "share": 0.26
+        }
+      ],
+      "extracted_from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Databricks_Logo.png/960px-Databricks_Logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "kr-q182477": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#76B900",
+          "rgb": "118 185 0",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/a/a4/NVIDIA_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q66604886": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#F15A29",
+          "rgb": "241 90 41",
+          "share": 1.0
+        }
+      ],
+      "extracted_from": "https://upload.wikimedia.org/wikipedia/commons/1/15/Cerebras_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    "kr-q117419137": {
+      "checked_at": "2026-11-10",
+      "extracted": [
+        {
+          "hex": "#FF7A00",
+          "rgb": "255 122 0",
+          "share": 0.69
+        },
+        {
+          "hex": "#EA002C",
+          "rgb": "234 0 44",
+          "share": 0.31
+        }
+      ],
+      "extracted_from": "https://kr.rebellions.ai/wp-content/uploads/2025/08/logo-dark-bg.svg"
     }
   }
 }

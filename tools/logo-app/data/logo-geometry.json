@@ -1,3090 +1,4022 @@
 {
  "adobe-brand.svg": {
   "ratio": 3.2817,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "409ff8c6350650cd"
  },
  "github-logo-onbrand.svg": {
   "ratio": 1.0232,
-  "tone": "light"
+  "tone": "light",
+  "sha": "b23944b895e60370"
  },
  "github-logo.svg": {
   "ratio": 1.0232,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c90fec141fd6c959"
  },
  "gok-symbol.svg": {
   "ratio": 1.1466,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3199844500203ef3"
  },
  "google-brand-onbrand.svg": {
   "ratio": 0.9774,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2bf311d077d7850d"
  },
  "google-brand.svg": {
   "ratio": 0.9774,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "33e64530184b9b59"
  },
  "goyang-city-logo.png": {
   "ratio": 3.7059,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "71554cd608bc05e3"
  },
  "hyundai-ci-onbrand.svg": {
   "ratio": 1.8467,
-  "tone": "light"
+  "tone": "light",
+  "sha": "a597dbbf917b79a4"
  },
  "hyundai-ci.svg": {
   "ratio": 1.8467,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4ac5099baabb4069"
  },
  "kaist-ui.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c92f8b2135a385f7"
  },
  "kakao-ci-onbrand.svg": {
   "ratio": 2.8962,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "14bf11d612cd4ed3"
  },
  "kakao-ci.svg": {
   "ratio": 2.8962,
-  "tone": "light"
+  "tone": "light",
+  "sha": "8f53243af3d2e752"
  },
  "kakaobank-brand.svg": {
   "ratio": 3.7857,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "589f01f86b1fca69"
  },
  "kakaogames-ci.png": {
   "ratio": 4.4048,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "35f28b0917d46d8c"
  },
  "kedi-ci.jpg": {
   "ratio": 3.8943,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fa231fa03696950b"
  },
  "kepco-ci.svg": {
   "ratio": 4.1406,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f83977eb9fd48d05"
  },
  "khnp-ci.svg": {
   "ratio": 3.985,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "75bc5018db6ac4db"
  },
  "koreatech-ui.png": {
   "ratio": 2.75,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "02bd945152d744b4"
  },
  "microsoft-brand.svg": {
   "ratio": 3.8828,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e1f420fd667655d0"
  },
  "mit-brand.svg": {
   "ratio": 1.7957,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ceb9f7c066b5029b"
  },
  "mozilla-trademarks-onbrand.svg": {
   "ratio": 0.8623,
-  "tone": "light"
+  "tone": "light",
+  "sha": "b78e0931eac86572"
  },
  "mozilla-trademarks.svg": {
   "ratio": 0.8623,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "752f09b2070872ea"
  },
  "mss-mi.svg": {
   "ratio": 1.3342,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2680e7273a4a6492"
  },
  "nasa-brand-onbrand.svg": {
   "ratio": 3.1176,
-  "tone": "light"
+  "tone": "light",
+  "sha": "cde143c49eb827fa"
  },
  "nasa-brand.svg": {
   "ratio": 3.1176,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1bb51e33ce79fe90"
  },
  "naver-api-hub-bi-onbrand.svg": {
   "ratio": 1.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "044fe1c742bac90c"
  },
  "naver-api-hub-bi.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2e0170c0e5370846"
  },
  "naver-brand-onbrand.svg": {
   "ratio": 1.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "044fe1c742bac90c"
  },
  "naver-brand.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2e0170c0e5370846"
  },
  "nhis-ci.png": {
   "ratio": 2.6607,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4d29b2b71cfcbd91"
  },
  "postech-ui.svg": {
   "ratio": 7.3061,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "248263f0f67912c2"
  },
  "samsung-logo-onbrand.svg": {
   "ratio": 4.9533,
-  "tone": "light"
+  "tone": "light",
+  "sha": "f63b35497e98a0b5"
  },
  "samsung-logo.svg": {
   "ratio": 4.9533,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b98f8d84ce37859b"
  },
  "seoul-city-emblem.png": {
   "ratio": 0.9398,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9261f02aeddb968e"
  },
  "seoul-my-soul.png": {
   "ratio": 1.5294,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f49d4b06ba08830c"
  },
  "snu-ui.png": {
   "ratio": 0.9565,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6137ee40a1885a35"
  },
  "survey-00518a4107.png": {
   "ratio": 3.5256,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5964a49afad2e429"
  },
  "survey-0079d0113a.svg": {
   "ratio": 1.9183,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "84ab6b257c40357e"
  },
  "survey-00cbeac14a.png": {
   "ratio": 3.8447,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fa445c3e98469896"
  },
  "survey-00dc1442cb.svg": {
   "ratio": 3.2716,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "656d6319e096aaec"
  },
  "survey-01603c17c3.png": {
   "ratio": 3.4,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "794eaa28c2de54ff"
  },
  "survey-02315de091.svg": {
   "ratio": 0.947,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "820f5fdefe754a57"
  },
  "survey-02406da16e.png": {
   "ratio": 3.0482,
-  "tone": "light"
+  "tone": "light",
+  "sha": "1758fbfa6017b9b8"
  },
  "survey-027e8ad30f.png": {
   "ratio": 4.8481,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5890354c8da13fe3"
  },
  "survey-04724e9a8c.png": {
   "ratio": 5.9778,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6676d10aff1e217a"
  },
  "survey-0493aaa4e9.jpg": {
   "ratio": 1.7402,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "92df85fb3b54e6dd"
  },
  "survey-054f4f305d.jpg": {
   "ratio": 5.5179,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9849bf4540053685"
  },
  "survey-05c30edaac.png": {
   "ratio": 3.2281,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2267fcf5c2e08790"
  },
  "survey-05f89a5284.svg": {
   "ratio": 2.3509,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1f53b85bb6531c80"
  },
  "survey-061d10b31c.png": {
   "ratio": 3.717,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1852635ae4428f19"
  },
  "survey-06a27093f1.png": {
   "ratio": 3.6098,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b701335d02659f43"
  },
  "survey-07a65d2fe2.png": {
   "ratio": 4.2321,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "11dbcde63da41aff"
  },
  "survey-07be3f5352.png": {
   "ratio": 3.7879,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f92ccc3b724ab15b"
  },
  "survey-08426df4cb.png": {
   "ratio": 4.2632,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8f88ae0d0415506b"
  },
  "survey-085fb47caf.svg": {
   "ratio": 0.924,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "95ee2ee224e5b1df"
  },
  "survey-08e225d620.png": {
   "ratio": 3.6481,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "248f9da7a5b0c22d"
  },
  "survey-095cb382f5.png": {
   "ratio": 4.8235,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6c9771606d0e4f52"
  },
  "survey-09891c121e.png": {
   "ratio": 3.5893,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cd91e87b80e3e300"
  },
  "survey-09a34fd71a.jpg": {
   "ratio": 3.3793,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "13cae1043b81cd31"
  },
  "survey-0a1aabd2d6.jpg": {
   "ratio": 0.8075,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "269d17269ca62d86"
  },
  "survey-0a3ac40c9e.png": {
   "ratio": 2.5694,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "28b00cf0f5e7e14f"
  },
  "survey-0ab3b05531.png": {
   "ratio": 5.9767,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0bbbd6b26be91846"
  },
  "survey-0ac5cfe751.png": {
   "ratio": 3.9474,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "79481e03ca498c2a"
  },
  "survey-0b56946dc5.svg": {
   "ratio": 1.4393,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f1d5cc79e0ae0a39"
  },
  "survey-0b6578b174.png": {
   "ratio": 2.5918,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a0a37d0a6ec47e49"
  },
  "survey-0bcbb707e5.png": {
   "ratio": 1.3981,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cc3ae07177c7bac3"
  },
  "survey-0bce39093e.svg": {
   "ratio": 2.9121,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4413fceed6ae1c36"
+ },
+ "survey-0c351cab96.png": {
+  "ratio": 2.0748,
+  "tone": "light",
+  "sha": "f6802adaff451801"
  },
  "survey-0c580d4aa1.png": {
   "ratio": 5.5294,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fc23e1e515e13bb5"
  },
  "survey-0d1485558c.svg": {
   "ratio": 1.0288,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3c817c207afffe5e"
+ },
+ "survey-0d5bd5811c.svg": {
+  "ratio": 1.1861,
+  "tone": "normal",
+  "sha": "26139f3ccf7728c6"
  },
  "survey-0d5e143c3f.png": {
   "ratio": 2.8462,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "43e224501a6c69f7"
  },
  "survey-0dc474ea1c.png": {
   "ratio": 2.807,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2f9a45f99199dc80"
  },
  "survey-0de729fba6.png": {
   "ratio": 1.9118,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "baca680d748ff1f1"
+ },
+ "survey-0e08125fa0.png": {
+  "ratio": 2.5559,
+  "tone": "normal",
+  "sha": "adfa39c8ccb55f0c"
  },
  "survey-0e10b49a44.png": {
   "ratio": 2.0462,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9481a45d9d618a43"
  },
  "survey-0e440380ed.svg": {
   "ratio": 4.5887,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3da31efd53243a38"
+ },
+ "survey-0e6715d9d5.svg": {
+  "ratio": 2.7746,
+  "tone": "normal",
+  "sha": "68fb41117abc26e2"
  },
  "survey-0e6d02a33e.png": {
   "ratio": 6.05,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "257350e177361049"
  },
  "survey-0eaea81c3d.png": {
   "ratio": 1.4521,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "31c531091606b313"
  },
  "survey-0f0bd2b68c.svg": {
   "ratio": 2.0701,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6788cff3b33c850c"
  },
  "survey-0fec492733.svg": {
   "ratio": 5.2736,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b0049ec514dd45e1"
  },
  "survey-106ba94e18.svg": {
   "ratio": 4.1732,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6d1205282938d19b"
+ },
+ "survey-110e56552f.svg": {
+  "ratio": 2.6427,
+  "tone": "normal",
+  "sha": "df4394130b766891"
  },
  "survey-11255a143c.svg": {
   "ratio": 1.0081,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "62aedc0da31f1c85"
  },
  "survey-113b1e91ff.svg": {
   "ratio": 0.925,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "587cf684407e0a79"
  },
  "survey-11555b9987.png": {
   "ratio": 2.0284,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "662c2b0865dac8d5"
  },
  "survey-1195551aa1.png": {
   "ratio": 4.7904,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "de3557e077d2fc12"
  },
  "survey-1261668c98.png": {
   "ratio": 4.2667,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "272afdce81c427d3"
  },
  "survey-12d63a33b6.png": {
   "ratio": 4.2222,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fae1194e5987991c"
  },
  "survey-12e8345199.png": {
   "ratio": 3.5577,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1b6fa799b081b7a6"
  },
  "survey-138ec59ded.svg": {
   "ratio": 2.3348,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fc62dd7ddd071d64"
  },
  "survey-13bd8cb32b.png": {
   "ratio": 1.8333,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "244a7b36a2b8f7d1"
  },
  "survey-14381d7e8c.jpg": {
   "ratio": 1.3293,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9dd445c7b2540b67"
  },
  "survey-151a8e5621.png": {
   "ratio": 6.0753,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4abe221598c497fe"
  },
  "survey-15b9730a68.png": {
   "ratio": 4.0526,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f4a2b7b9827607c2"
  },
  "survey-160c476fe8.png": {
   "ratio": 5.2031,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba53e65b62a59596"
  },
  "survey-1674e4a5c8.png": {
   "ratio": 3.913,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "410eee03eb067752"
  },
  "survey-16e4f50f09.svg": {
   "ratio": 1.3779,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6b841cb624d4d30a"
  },
  "survey-1739a02c83.svg": {
   "ratio": 4.1897,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "27fee83b96a89da8"
  },
  "survey-1792665cf7.png": {
   "ratio": 1.2381,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cb161c569de2e8bb"
  },
  "survey-17feaa73b3.jpg": {
   "ratio": 5.0541,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d8b91f6759ac65bf"
  },
  "survey-18bbf87245.png": {
   "ratio": 3.9583,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "802712d4ea2b173d"
  },
  "survey-1a041c91cb.png": {
   "ratio": 3.0725,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0d75635d2841d161"
  },
  "survey-1a1c6dee7a.svg": {
   "ratio": 5.4082,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6b10c97c58a00af4"
+ },
+ "survey-1ada126ad9.svg": {
+  "ratio": 1.1948,
+  "tone": "normal",
+  "sha": "d98e4813a5f555cc"
  },
  "survey-1af92e80c3.png": {
   "ratio": 1.0074,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "950fc7e3f010a2f5"
  },
  "survey-1b2941a603.png": {
   "ratio": 2.8868,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fdcce46f20b5cb02"
  },
  "survey-1bcce14390.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "693e8f2226394a52"
  },
  "survey-1c041e9dbb.png": {
   "ratio": 3.2879,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a9a619b79b7dd0d0"
+ },
+ "survey-1c3062ee1b.svg": {
+  "ratio": 2.6661,
+  "tone": "normal",
+  "sha": "e89c3a359f93bc07"
  },
  "survey-1c5a02fb57.png": {
   "ratio": 4.2857,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a03f561595652b6d"
  },
  "survey-1cd8a9e66e.png": {
   "ratio": 4.5294,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "36798922018add40"
  },
  "survey-1d5d2b16ab.png": {
   "ratio": 3.5099,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5db14ccb7782d0fe"
  },
  "survey-1d78636874.png": {
   "ratio": 3.2373,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d8eba0984bb4a391"
+ },
+ "survey-1de787e439.svg": {
+  "ratio": 2.1171,
+  "tone": "normal",
+  "sha": "9c0db7a0b7ed8bdd"
  },
  "survey-1e71b62ec8.png": {
   "ratio": 1.1222,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "867dd0a5f0063375"
  },
  "survey-1f70667560.png": {
   "ratio": 4.5238,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8ad93fc081d47c2f"
  },
  "survey-1fd8d0e12d.png": {
   "ratio": 2.7895,
-  "tone": "light"
+  "tone": "light",
+  "sha": "77187b55268a8f84"
  },
  "survey-20533f138e.png": {
   "ratio": 4.5254,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "005ed89b4d9d4c7e"
  },
  "survey-21141c7259.png": {
   "ratio": 3.1607,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9ca5a9dce840c37f"
  },
  "survey-21bbfcad40.png": {
   "ratio": 2.0909,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2b5d89ea69ef5785"
  },
  "survey-21bc434959.png": {
   "ratio": 4.5161,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0b2ebb69847345a2"
  },
  "survey-223d136079.png": {
   "ratio": 2.6543,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9e6d3bcc31fabb05"
  },
  "survey-2244a8fd09.png": {
   "ratio": 1.3148,
-  "tone": "light"
+  "tone": "light",
+  "sha": "1c9460e8bfebbdd5"
  },
  "survey-22e1bf09af.svg": {
   "ratio": 0.9676,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4e202d727b623b17"
  },
  "survey-23877ed7ba.png": {
   "ratio": 3.1224,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cffef271096109ff"
  },
  "survey-23ca565efb.png": {
   "ratio": 0.9957,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fb9b9f53aee1a973"
  },
  "survey-23f3604950.png": {
   "ratio": 3.0645,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bda3a9b43a821b94"
  },
  "survey-23fb2f29a3.svg": {
   "ratio": 6.4242,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6090d96ba199ccc6"
  },
  "survey-24364fee63.svg": {
   "ratio": 3.7857,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "173e6e7c12a98cb0"
  },
  "survey-24a325383b.png": {
   "ratio": 3.8103,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "07aa17249afe47db"
  },
  "survey-25ca0fef42.png": {
   "ratio": 1.1869,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e0ebb0ae34654dcf"
  },
  "survey-25f84ed3dc.png": {
   "ratio": 3.8026,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d7f5106d3eb3d87e"
  },
  "survey-2612b61dc4.png": {
   "ratio": 1.3279,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "79090f56936dcddd"
  },
  "survey-26404da4fa.png": {
   "ratio": 1.6421,
-  "tone": "light"
+  "tone": "light",
+  "sha": "c41b58fa2ff1fb0a"
  },
  "survey-2650d8a5c9.png": {
   "ratio": 3.7969,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f66ed708681e1363"
  },
  "survey-26c6836d10.png": {
   "ratio": 3.4364,
-  "tone": "light"
+  "tone": "light",
+  "sha": "fbb0cc85eec19142"
  },
  "survey-271f6dec53.png": {
   "ratio": 1.0114,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a653a7b24f9e7cb7"
  },
  "survey-2723633fdc.png": {
   "ratio": 2.8169,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "400b8591dd28c6bb"
  },
  "survey-27ec1f011f.svg": {
   "ratio": 1.1042,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1657b473434a26b4"
  },
  "survey-28abc1773e.png": {
   "ratio": 0.9559,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "13296bf2e27a41db"
  },
  "survey-28d1696303.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1324168c2572b1e8"
  },
  "survey-28ed3b9ea9.png": {
   "ratio": 3.0333,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b0695e05c61ff2ab"
  },
  "survey-2920887541.png": {
   "ratio": 4.4706,
-  "tone": "light"
+  "tone": "light",
+  "sha": "a8fc515bad8172de"
  },
  "survey-29346e0f15.png": {
   "ratio": 4.8953,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6e4d2049688c3bb1"
  },
  "survey-2962c017b5.png": {
   "ratio": 4.4915,
-  "tone": "light"
+  "tone": "light",
+  "sha": "80e9a93cc77d3009"
  },
  "survey-296a26a997.png": {
   "ratio": 3.0308,
-  "tone": "light"
+  "tone": "light",
+  "sha": "f08d00053336be44"
  },
  "survey-29c903b9f1.png": {
   "ratio": 3.2453,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "350eda5e3c8af835"
  },
  "survey-29d0411a3a.png": {
   "ratio": 3.2857,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ad6f8e6120166c99"
  },
  "survey-29fbbec60e.png": {
   "ratio": 4.0816,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "06cdf1665c185dc9"
  },
  "survey-2a889831df.png": {
   "ratio": 3.8085,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6abd52c10357ba82"
  },
  "survey-2b8f0877b9.png": {
   "ratio": 4.4559,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e314781596180afb"
  },
  "survey-2b9e374399.svg": {
   "ratio": 4.24,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1261c64ea4daf043"
  },
  "survey-2c030ecc4a.png": {
   "ratio": 1.0268,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "702dd05d93049232"
  },
  "survey-2c0c4f2f0f.jpg": {
   "ratio": 5.1802,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f9db6735a3223a83"
  },
  "survey-2c4ec02a79.png": {
   "ratio": 4.9231,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "51f4c9800013c7a3"
  },
  "survey-2caeaed85d.png": {
   "ratio": 1.0112,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "080f8bec75fae9d9"
  },
  "survey-2cd7bb406f.png": {
   "ratio": 3.0926,
-  "tone": "light"
+  "tone": "light",
+  "sha": "eb85aab331d7e6a9"
+ },
+ "survey-2d493ec16c.svg": {
+  "ratio": 3.8839,
+  "tone": "normal",
+  "sha": "07a82a3e6ff14331"
  },
  "survey-2d8ba523ac.svg": {
   "ratio": 0.7233,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "93cf5f4518508535"
  },
  "survey-2f20c10d7f.svg": {
   "ratio": 6.1417,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4b8bf524f1e2dbff"
  },
  "survey-2f37036207.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ef7aed273ffe5615"
  },
  "survey-2fb1612b80.png": {
   "ratio": 5.1333,
-  "tone": "light"
+  "tone": "light",
+  "sha": "723da710b9772258"
  },
  "survey-2fc8b6e7ef.png": {
   "ratio": 2.2692,
-  "tone": "light"
+  "tone": "light",
+  "sha": "195bbd9381466683"
  },
  "survey-2ff9e1ee46.svg": {
   "ratio": 1.168,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1a991f97c6c7bd4b"
  },
  "survey-300fdc35ca.svg": {
   "ratio": 3.7857,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2755059b9b75c296"
  },
  "survey-30250d8682.png": {
   "ratio": 2.9054,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8fa44cf4f46d041e"
  },
  "survey-302a55b51e.svg": {
   "ratio": 2.4293,
-  "tone": "light"
+  "tone": "light",
+  "sha": "d2cd6254fabf0124"
  },
  "survey-30d1ab107a.png": {
   "ratio": 5.7,
-  "tone": "light"
+  "tone": "light",
+  "sha": "d8018834a6616e62"
  },
  "survey-3156cf9822.png": {
   "ratio": 2.2621,
-  "tone": "light"
+  "tone": "light",
+  "sha": "3b94ff58b2e3f011"
  },
  "survey-319a6d5efa.png": {
   "ratio": 4.377,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba63045fccc4b0d8"
+ },
+ "survey-31b9dec1ce.svg": {
+  "ratio": 3.5656,
+  "tone": "normal",
+  "sha": "617a9f288828e39a"
  },
  "survey-31e7ebb1e3.png": {
   "ratio": 4.6618,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3e86b76e85a36220"
  },
  "survey-31fe1657be.png": {
   "ratio": 0.9982,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1d8d07cb38483bae"
  },
  "survey-32e067a58c.png": {
   "ratio": 6.5041,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "642708101a5f8cfb"
  },
  "survey-32fb232039.png": {
   "ratio": 4.1728,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f31cd12180dccf6d"
  },
  "survey-33e62998ce.svg": {
   "ratio": 1.6144,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e1a659547c593627"
  },
  "survey-341cef826a.png": {
   "ratio": 2.5036,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "75439cd48f482541"
  },
  "survey-3421102b4c.png": {
   "ratio": 4.3333,
-  "tone": "light"
+  "tone": "light",
+  "sha": "691019312d66bb17"
  },
  "survey-3424bcfdb0.png": {
   "ratio": 1.3158,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "825484274fc59585"
+ },
+ "survey-347489d5fe.svg": {
+  "ratio": 3.5279,
+  "tone": "normal",
+  "sha": "b06eda9da38585be"
  },
  "survey-347f6621b8.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "18ea4fb184151626"
+ },
+ "survey-348190f4b5.svg": {
+  "ratio": 3.9765,
+  "tone": "normal",
+  "sha": "f2c8f17072ccc5de"
  },
  "survey-35fa4e7a31.png": {
   "ratio": 1.2923,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7e4c39c5e261a8d7"
  },
  "survey-3676cae98d.png": {
   "ratio": 3.4348,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a55f2238c1501b7d"
  },
  "survey-36da7a6394.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4eec5f3417ccb77c"
  },
  "survey-36e4658337.png": {
   "ratio": 3.7,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5415f6b7e3e351b4"
  },
  "survey-37be9a2a28.png": {
   "ratio": 5.2,
-  "tone": "light"
+  "tone": "light",
+  "sha": "efbc09f871e8e70a"
  },
  "survey-37d48bd275.svg": {
   "ratio": 1.003,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "405a0b6bd348e91e"
  },
  "survey-38af95d39a.png": {
   "ratio": 2.6939,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9ac2f75455cb64a7"
  },
  "survey-38db3e5c2c.jpg": {
   "ratio": 4.2,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "398d9791a0afa823"
  },
  "survey-3947c5590f.jpg": {
   "ratio": 1.6735,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3d011e11399ec9f4"
  },
  "survey-394bfa126c.png": {
   "ratio": 3.2794,
-  "tone": "light"
+  "tone": "light",
+  "sha": "7c0289fec38cfefd"
+ },
+ "survey-3a3456ca2f.svg": {
+  "ratio": 5.5394,
+  "tone": "normal",
+  "sha": "c7b55aa910b47de1"
  },
  "survey-3a4c3a8314.png": {
   "ratio": 3.0085,
-  "tone": "light"
+  "tone": "light",
+  "sha": "a98500086410cc7a"
  },
  "survey-3aee6fc60c.png": {
   "ratio": 2.9091,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "399bd8b331001170"
  },
  "survey-3b473fd11f.svg": {
   "ratio": 4.1897,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "76535c548b821005"
  },
  "survey-3b51736e8f.png": {
   "ratio": 2.1304,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1b7e7620cd04711c"
  },
  "survey-3b9565cd51.svg": {
   "ratio": 0.8101,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0da0b82ee7675c32"
  },
  "survey-3beed56113.png": {
   "ratio": 2.1887,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "379fceb6d3ed6faf"
  },
  "survey-3bfde56a6f.svg": {
   "ratio": 1.0288,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba578a18d2928195"
  },
  "survey-3c7757ad86.png": {
   "ratio": 3.2241,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "00d4164676a66e2a"
  },
  "survey-3cf4b6eeae.svg": {
   "ratio": 3.6542,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f15605a583fab30c"
  },
  "survey-3cff524d27.png": {
   "ratio": 3.5789,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d4a64cc5e7aba0c0"
  },
  "survey-3d1b81e628.png": {
   "ratio": 3.8889,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bf0b281173c3f59a"
  },
  "survey-3d28f26224.svg": {
   "ratio": 2.0183,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c9b232ef6fe2f054"
  },
  "survey-3d3ca56a1e.png": {
   "ratio": 3.9211,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "55cff1d864b4c16c"
  },
  "survey-3d7b6ada9b.png": {
   "ratio": 1.2311,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "76f99aae8c737a17"
  },
  "survey-3d84609ff9.png": {
   "ratio": 2.8889,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "90e2396ed66b01c0"
  },
  "survey-3dc737cd1d.png": {
   "ratio": 4.463,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e8e8abacaeefbcee"
  },
  "survey-3e40466fba.svg": {
   "ratio": 1.2223,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "98f4ec2adf461612"
  },
  "survey-3e7fd748d5.png": {
   "ratio": 2.6667,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "19207ef7a764e834"
  },
  "survey-3f310e0ccf.png": {
   "ratio": 1.956,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "92843df192c1cad1"
  },
  "survey-3f6463bd68.png": {
   "ratio": 3.2179,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e5e146b840a06185"
  },
  "survey-3f8d512ec3.svg": {
   "ratio": 0.8151,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b1d18029436f6353"
  },
  "survey-3ff536ed9b.png": {
   "ratio": 2.8462,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a3cc82f3de7b801e"
  },
  "survey-406f08cfa4.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f2f315d5fc01ed7b"
  },
  "survey-41a18f30fe.png": {
   "ratio": 3.1489,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "60e0cff23a464e9a"
  },
  "survey-41f33776c3.svg": {
   "ratio": 3.2276,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7cd69c7086ad77d8"
  },
  "survey-424eaf1d0c.svg": {
   "ratio": 4.7042,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c3bf5cd0925ff4bd"
  },
  "survey-4291e8c06a.png": {
   "ratio": 1.1158,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d693a4fc7691de7f"
  },
  "survey-42b12343fc.png": {
   "ratio": 4.9778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "96dffc1808fb5226"
  },
  "survey-432f24e1d9.png": {
   "ratio": 5.234,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ffabfab7bfc5c55c"
  },
  "survey-437e5ab03d.png": {
   "ratio": 6.0278,
-  "tone": "light"
+  "tone": "light",
+  "sha": "137ef9c1cdefb023"
  },
  "survey-438bf76fff.png": {
   "ratio": 4.9583,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7818118d9b74d89c"
  },
  "survey-43996323f3.jpg": {
   "ratio": 1.5811,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8c5cd5397090c321"
  },
  "survey-43a4afa161.svg": {
   "ratio": 0.6672,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "66046fdda9727941"
  },
  "survey-440836cb18.png": {
   "ratio": 4.7368,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "417dc7b3b7ce5283"
  },
  "survey-443b4bdd06.png": {
   "ratio": 3.717,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0b5fec4b130feaec"
  },
  "survey-44944c0ec7.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9cd1d71811fd18d5"
  },
  "survey-44b5aa8671.svg": {
   "ratio": 2.6998,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "77b0019a329c2766"
  },
  "survey-4561f43a65.png": {
   "ratio": 3.9831,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c4746e05bdfa37a3"
  },
  "survey-45a1fefc5e.svg": {
   "ratio": 1.4573,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "64a952379c933398"
  },
  "survey-45c33b4c03.svg": {
   "ratio": 4.4726,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fc905c18a1f9ec03"
  },
  "survey-4607905fe7.png": {
   "ratio": 3.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b82e1939746da7e0"
  },
  "survey-461588c316.svg": {
   "ratio": 0.7342,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "45204b15a7d56c85"
  },
  "survey-465739db07.png": {
   "ratio": 4.975,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1af7dfc43fcd8350"
  },
  "survey-47ed1e3518.png": {
   "ratio": 4.8545,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "252210883feeb3d1"
  },
  "survey-47f9441bb2.png": {
   "ratio": 1.3118,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b5700998998b193d"
  },
  "survey-4861e7f3fc.png": {
   "ratio": 1.4573,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "393dae7b8ae1eb76"
  },
  "survey-48ac734081.png": {
   "ratio": 1.5331,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "992bee897519eeb2"
  },
  "survey-49395821b6.svg": {
   "ratio": 1.4573,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5f5e9d79be93999b"
  },
  "survey-49461b3c04.jpg": {
   "ratio": 2.3164,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "21c13e3206078a15"
  },
  "survey-499d7e7d87.png": {
   "ratio": 2.6232,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "31ed40a8567ecc59"
  },
  "survey-49cf2473ca.png": {
   "ratio": 2.8466,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2d0e76ff1ee9c934"
  },
  "survey-49d5ae854e.svg": {
   "ratio": 1.6071,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2931a8ae7ad82c94"
  },
  "survey-4a0a1d46ec.svg": {
   "ratio": 0.8881,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4429e55c1f2ae94f"
  },
  "survey-4a0adbf174.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "be28da7067d742cf"
  },
  "survey-4a73c6a1f7.svg": {
   "ratio": 5.0962,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e2cd97a167377c24"
  },
  "survey-4a7f9c0f13.png": {
   "ratio": 4.9714,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "824210ae631af90f"
  },
  "survey-4a8ea38a5d.png": {
   "ratio": 5.0968,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ca1de95e84e86a47"
  },
  "survey-4a911abe60.svg": {
   "ratio": 2.6589,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "43d738120893a674"
  },
  "survey-4aac3cb601.png": {
   "ratio": 2.5522,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7a9d5d87c3d28a09"
  },
  "survey-4ac97b1b48.png": {
   "ratio": 3.6731,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "111fc4d80d1a00b4"
  },
  "survey-4b2567d480.png": {
   "ratio": 2.8274,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "690690ebc7eaf7f0"
  },
  "survey-4b946c2d33.png": {
   "ratio": 2.9211,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "20e638f0bbed5154"
  },
  "survey-4caa87bc31.png": {
   "ratio": 2.8182,
-  "tone": "light"
+  "tone": "light",
+  "sha": "31e60c2ab66672f0"
  },
  "survey-4cd7a93361.svg": {
   "ratio": 1.5035,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b16a78637060aafe"
  },
  "survey-4d2ea1a589.svg": {
   "ratio": 1.2704,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4b22d2e930bb0922"
  },
  "survey-4d7cd3c136.png": {
   "ratio": 1.7298,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5d4f17a497be078c"
  },
  "survey-4d92fc59f1.svg": {
   "ratio": 2.0307,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "86bf0832a07fdecb"
  },
  "survey-4d986ab55d.svg": {
   "ratio": 0.817,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d5ff0b8a461b160a"
  },
  "survey-4dbc96da53.svg": {
   "ratio": 1.161,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1c49c98fc5907ff5"
  },
  "survey-4df3c6cbe8.png": {
   "ratio": 1.0889,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d1f80da37073fb4a"
  },
  "survey-4e8f199dd9.svg": {
   "ratio": 5.3657,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1895fd75e62b0e9a"
  },
  "survey-4ed27fbfcf.png": {
   "ratio": 2.5574,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8dd100c35fac081a"
  },
  "survey-4fa2f04d11.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6d8a61e18eb4bd44"
  },
  "survey-4fa7d9d8ee.svg": {
   "ratio": 4.8624,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d6270fb97e7fa8cc"
  },
  "survey-4fe1b1f888.png": {
   "ratio": 3.2692,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0de8d4e5ef18ed4c"
  },
  "survey-5008a4a0a8.png": {
   "ratio": 0.7565,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e8d1cf5b389e2070"
  },
  "survey-50109f7f2a.png": {
   "ratio": 2.7759,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f73935c10a0578c1"
  },
  "survey-5023247200.png": {
   "ratio": 2.9714,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2077381bac6965b1"
  },
  "survey-50668cbbba.png": {
   "ratio": 4.4458,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a0dd1b292423fcf5"
  },
  "survey-516ad8df69.jpg": {
   "ratio": 1.6691,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a975c554a72c8a7d"
  },
  "survey-519f737031.png": {
   "ratio": 3.88,
-  "tone": "light"
+  "tone": "light",
+  "sha": "0cdca2e2b2882caf"
  },
  "survey-5200aa168a.png": {
   "ratio": 2.7391,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "11cd1abac06fc648"
  },
  "survey-5202e8f136.png": {
   "ratio": 1.2581,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "49109af00402484a"
  },
  "survey-5230c83ccf.svg": {
   "ratio": 4.3835,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "24e183ae00eadd1f"
  },
  "survey-529952ac01.svg": {
   "ratio": 3.3457,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9471b5a5b2e8b94b"
  },
  "survey-52b725c783.svg": {
   "ratio": 3.8406,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b213cb406ddfca18"
  },
  "survey-53292442aa.svg": {
   "ratio": 0.9626,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e8a287847775db21"
  },
  "survey-5356465efb.png": {
   "ratio": 2.1375,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "245c00426abd2350"
  },
  "survey-535ba675e4.png": {
   "ratio": 3.2623,
-  "tone": "light"
+  "tone": "light",
+  "sha": "e95919b0e15b3424"
  },
  "survey-53d675b97c.png": {
   "ratio": 3.1957,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fe5d23d38b940fe1"
  },
  "survey-53e6fd3131.png": {
   "ratio": 3.78,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ec4f3703f48c6927"
  },
  "survey-53ef855ca8.png": {
   "ratio": 3.7195,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4ce0d62db28902da"
  },
  "survey-5479c8d83a.png": {
   "ratio": 3.6122,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8d0c65209197953e"
  },
  "survey-551193cd33.png": {
   "ratio": 2.5472,
-  "tone": "light"
+  "tone": "light",
+  "sha": "a8f45129e7499675"
  },
  "survey-554840dc9e.svg": {
   "ratio": 2.1992,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f2b6d5bd2fbd693e"
  },
  "survey-560c5264d9.png": {
   "ratio": 1.5267,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "224932152b90a88c"
  },
  "survey-567fa9a037.svg": {
   "ratio": 5.5497,
-  "tone": "light"
+  "tone": "light",
+  "sha": "d388932fc5e8d225"
  },
  "survey-5698a40973.png": {
   "ratio": 2.5122,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a0b84043901081b9"
  },
  "survey-56b9e96bf1.png": {
   "ratio": 0.9474,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6bc94e3681147a1e"
  },
  "survey-574de19a20.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a0d5638cb0fe16a7"
  },
  "survey-58c6c5e352.png": {
   "ratio": 3.1316,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2372d88cc0457a73"
  },
  "survey-58ebd71e49.png": {
   "ratio": 2.8947,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8d685aefb43b188d"
  },
  "survey-597922b538.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d43299a3c3e65719"
  },
  "survey-59eb5f1b87.png": {
   "ratio": 5.18,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "54c05004fc138c94"
  },
  "survey-5a11e622d6.png": {
   "ratio": 3.451,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2dc10b380962037e"
+ },
+ "survey-5a1baa7c62.svg": {
+  "ratio": 2.865,
+  "tone": "light",
+  "sha": "9eca26f35080fbe9"
  },
  "survey-5aae91b7d9.png": {
   "ratio": 1.5021,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2fef99ad071ea652"
  },
  "survey-5ac96fe256.svg": {
   "ratio": 0.7731,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "00fb3daf78477ac1"
  },
  "survey-5ad63913fa.svg": {
   "ratio": 2.3013,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ae33407092aa9743"
  },
  "survey-5adc4667b2.png": {
   "ratio": 5.1591,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e0a195f7bf2b178a"
  },
  "survey-5ae8b7dc4b.png": {
   "ratio": 4.84,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3da412478c3da7f4"
  },
  "survey-5b5c7eee2e.png": {
   "ratio": 5.3818,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d4067d5eb53469b0"
  },
  "survey-5c0b6cc5d8.png": {
   "ratio": 1.0588,
-  "tone": "light"
+  "tone": "light",
+  "sha": "29de342ba37cf04e"
  },
  "survey-5c9b46a694.png": {
   "ratio": 3.6429,
-  "tone": "light"
+  "tone": "light",
+  "sha": "faac6f5d66ea7c7d"
  },
  "survey-5cb7aee3ea.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "992f93a7c97ab739"
  },
  "survey-5d0d79f686.png": {
   "ratio": 1.4305,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e4d63f326dab49de"
  },
  "survey-5d8a381faa.png": {
   "ratio": 4.2143,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "427765961f5e7eb7"
  },
  "survey-5db1a433e4.png": {
   "ratio": 1.0227,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "87701b6ff9dea62d"
  },
  "survey-5ebf1a8653.jpg": {
   "ratio": 5.0426,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "693c6ea81a930b49"
  },
  "survey-5ec38268cd.png": {
   "ratio": 2.0426,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bc0fe9d3cec9944f"
  },
  "survey-5edd85bd7c.png": {
   "ratio": 4.6304,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "638b4628ac158b60"
  },
  "survey-5edf6b4399.png": {
   "ratio": 3.65,
-  "tone": "light"
+  "tone": "light",
+  "sha": "cf1eee3aba4bb16d"
  },
  "survey-5f1bf1c919.png": {
   "ratio": 3.3913,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0a93cb73aea94e70"
  },
  "survey-601d6ab567.svg": {
   "ratio": 1.0378,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "149469414332ea1e"
  },
  "survey-60a5622feb.png": {
   "ratio": 3.5,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "81ad569a3b3bc854"
  },
  "survey-60f5189bd7.png": {
   "ratio": 3.9773,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7bcda93f47f50d52"
  },
  "survey-61808da567.png": {
   "ratio": 2.4648,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d85702e1529c8202"
  },
  "survey-6183b5b006.png": {
   "ratio": 5.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "26aa05ccd8216b1b"
  },
  "survey-626796c840.jpg": {
   "ratio": 2.7536,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a9f75343f8dcb5f7"
  },
  "survey-626dfe6cc7.png": {
   "ratio": 4.8,
-  "tone": "light"
+  "tone": "light",
+  "sha": "aafe23ae66c8e492"
  },
  "survey-62c3966105.svg": {
   "ratio": 2.0436,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b1b933e73eeda9a8"
  },
  "survey-62ce5b8d6f.png": {
   "ratio": 1.3548,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "00e3ab3c1b93ec56"
  },
  "survey-62d7538e45.png": {
   "ratio": 1.8095,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "60b941abe26090cd"
  },
  "survey-6333d0ec68.png": {
   "ratio": 3.5758,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "251dad071d477174"
  },
  "survey-633f965f66.svg": {
   "ratio": 1.6149,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4b8e2066f52816ce"
+ },
+ "survey-63512f93c5.svg": {
+  "ratio": 4.3351,
+  "tone": "normal",
+  "sha": "94ac8b5eba38dac7"
  },
  "survey-636290d586.svg": {
   "ratio": 1.7124,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ca710c87f429f2f6"
  },
  "survey-63f2eeee58.svg": {
   "ratio": 2.9833,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1cb85e6ad6be7419"
  },
  "survey-64c0742cd9.svg": {
   "ratio": 2.0424,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d647b5947960e25c"
  },
  "survey-650f39f1ab.svg": {
   "ratio": 2.0038,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5216b356f0e1705a"
  },
  "survey-651f61bf88.png": {
   "ratio": 3.037,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b45c68a229e533d3"
  },
  "survey-6543bd97ee.svg": {
   "ratio": 0.943,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "76e34c1c9b697f6d"
  },
  "survey-665b5a31fb.png": {
   "ratio": 3.549,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e2aa3643ee8c73f5"
  },
  "survey-6662f5aa37.png": {
   "ratio": 3.9107,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "018cfb07df59e709"
  },
  "survey-6677b14607.png": {
   "ratio": 2.2609,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1b3c242c05ba2d69"
  },
  "survey-6679b7b13e.png": {
   "ratio": 3.0774,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f3c638fb6c48dcdc"
  },
  "survey-67caebf2c5.png": {
   "ratio": 1.9326,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "669e07ac53badaf0"
  },
  "survey-681280f642.png": {
   "ratio": 4.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "0835f3966acdce69"
  },
  "survey-685246c3e4.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d25b671a5448a548"
  },
  "survey-688bf67ccb.svg": {
   "ratio": 0.991,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "df9eb004ef14fbb8"
  },
  "survey-697dd8a27d.jpg": {
   "ratio": 2.7869,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "de0a870773412226"
  },
  "survey-69c824024e.png": {
   "ratio": 5.7944,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "81274815d9f0b8aa"
  },
  "survey-69d23dedd7.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b3062417a1831347"
  },
  "survey-69f4530b55.png": {
   "ratio": 3.9535,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2edc96210c8547eb"
  },
  "survey-6b28df0e63.jpg": {
   "ratio": 3.0682,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "87e3b3503fcff83b"
  },
  "survey-6ba664255c.svg": {
   "ratio": 1.6792,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6974320e8fdcfd3b"
  },
  "survey-6bbc975a3b.svg": {
   "ratio": 3.4304,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6ff76b2d07210e06"
  },
  "survey-6bf968073f.png": {
   "ratio": 4.2542,
-  "tone": "light"
+  "tone": "light",
+  "sha": "53e23738d6ba299c"
  },
  "survey-6c1c2d8e67.png": {
   "ratio": 1.8148,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4a26769bfb283fd6"
  },
  "survey-6c5ce14488.png": {
   "ratio": 2.3621,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f1b2d9c7cdb64423"
  },
  "survey-6c61c7aaad.png": {
   "ratio": 1.0759,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5e4c79292c660b03"
  },
  "survey-6cbf2e5d2c.svg": {
   "ratio": 1.062,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "34a71c37f900e560"
  },
  "survey-6cc06f7e42.png": {
   "ratio": 4.5882,
-  "tone": "light"
+  "tone": "light",
+  "sha": "641144ef1fb9ff0e"
  },
  "survey-6cfab48436.png": {
   "ratio": 3.4107,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "111838d9c6b585e7"
  },
  "survey-6d44847413.png": {
   "ratio": 1.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "54c6eacb2c82a6db"
  },
  "survey-6dde38c74d.png": {
   "ratio": 4.5306,
-  "tone": "light"
+  "tone": "light",
+  "sha": "5de020bd6d95b017"
  },
  "survey-6e045c1643.png": {
   "ratio": 3.1429,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "22e2e37f56696194"
  },
  "survey-6eabc1790c.svg": {
   "ratio": 3.4642,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3866842bf4e0b931"
  },
  "survey-6f2f35936a.svg": {
   "ratio": 3.3229,
-  "tone": "light"
+  "tone": "light",
+  "sha": "510ee24f08a116b2"
  },
  "survey-6f5103fe18.png": {
   "ratio": 1.7067,
-  "tone": "light"
+  "tone": "light",
+  "sha": "77cfb2404a69c69b"
  },
  "survey-6f9df1dc26.png": {
   "ratio": 3.9675,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ffe5dc0424cc29f0"
  },
  "survey-700cc8f995.svg": {
   "ratio": 3.4528,
-  "tone": "light"
+  "tone": "light",
+  "sha": "88e4bbfaa13cac54"
  },
  "survey-70641db6bc.png": {
   "ratio": 1.4643,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ee45f3a3f7fcdc4a"
  },
  "survey-70db87acbf.svg": {
   "ratio": 5.1667,
-  "tone": "light"
+  "tone": "light",
+  "sha": "ffd91ff47eb0f5a5"
  },
  "survey-71583383b6.png": {
   "ratio": 3.157,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a80eee3c2871350b"
  },
  "survey-7162f515f2.png": {
   "ratio": 3.4,
-  "tone": "light"
+  "tone": "light",
+  "sha": "4519e634d173fef1"
  },
  "survey-72159a802d.svg": {
   "ratio": 4.0613,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f9b1f3e4b8d15b15"
  },
  "survey-72be728226.png": {
   "ratio": 2.8214,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "362703b9c077b19a"
  },
  "survey-7420da7a63.png": {
   "ratio": 4.5769,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "06376b58b3a76f75"
  },
  "survey-743bc5950d.png": {
   "ratio": 4.2679,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "965083f94965a2b6"
  },
  "survey-7462727063.png": {
   "ratio": 3.4259,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c537520f804eeea6"
  },
  "survey-74b8e1682c.png": {
   "ratio": 0.9927,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0a92a2552161e59d"
  },
  "survey-74c3fee1c0.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e8eb8a7c086ebb3b"
  },
  "survey-74c89da4d9.png": {
   "ratio": 2.48,
-  "tone": "light"
+  "tone": "light",
+  "sha": "971ee05084ba0b38"
  },
  "survey-74e48a0e3f.png": {
   "ratio": 2.9615,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "50f393c7da9d33a6"
  },
  "survey-74e6015847.png": {
   "ratio": 6.1724,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "21bffe2336871cf9"
  },
  "survey-7518f8a8d5.svg": {
   "ratio": 1.6324,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c9b35d03a06d0823"
  },
  "survey-75533bb82a.png": {
   "ratio": 3.63,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "145505e4639f338e"
  },
  "survey-760fb8495e.png": {
   "ratio": 4.1667,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d92559537d660cbe"
  },
  "survey-7638f3e7be.png": {
   "ratio": 5.3654,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "78195e3cad06462f"
  },
  "survey-767af775e8.png": {
   "ratio": 2.7697,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "20c941cdf8463a41"
  },
  "survey-76d7613f51.svg": {
   "ratio": 0.8917,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "88d59f2ce73436f6"
  },
  "survey-7784cf37b5.jpg": {
   "ratio": 6.1538,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c96e8e509a1acb48"
  },
  "survey-779c9adc83.svg": {
   "ratio": 1.3342,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8e6b6c429114fffc"
  },
  "survey-77b5d57f3e.png": {
   "ratio": 4.25,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "90d58a972b13db40"
  },
  "survey-786a28795f.png": {
   "ratio": 4.0312,
-  "tone": "light"
+  "tone": "light",
+  "sha": "631f257da6a556b0"
  },
  "survey-7883a61093.jpg": {
   "ratio": 3.98,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "70453be9f9ad6e86"
  },
  "survey-78a6858b12.png": {
   "ratio": 1.6625,
-  "tone": "light"
+  "tone": "light",
+  "sha": "f9a79f78dd4d2539"
  },
  "survey-78c64a6cbc.svg": {
   "ratio": 0.7422,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "06d9e4d90085de2d"
  },
  "survey-795088e8bb.svg": {
   "ratio": 0.9749,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c115ec52f2f7ae24"
  },
  "survey-7a0ff80d39.svg": {
   "ratio": 5.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "81863c333781f280"
  },
  "survey-7a14730997.svg": {
   "ratio": 0.9775,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "848c356e5ea4abd3"
  },
  "survey-7a68797cf8.svg": {
   "ratio": 2.5895,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "62eaab8295c12fa8"
  },
  "survey-7acad8f016.png": {
   "ratio": 3.1622,
-  "tone": "light"
+  "tone": "light",
+  "sha": "96f9c00bd9470e4a"
  },
  "survey-7b4789719c.svg": {
   "ratio": 4.4167,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "74297f1d643f9b88"
  },
  "survey-7b597497cb.svg": {
   "ratio": 1.0384,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f268a610ad5b24d9"
  },
  "survey-7ba2a7ea23.svg": {
   "ratio": 3.436,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5a9b7c7b0642fbcb"
  },
  "survey-7ccc1f8467.png": {
   "ratio": 1.5569,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "15a014c7816cd6f8"
  },
  "survey-7cd52bd814.svg": {
   "ratio": 2.711,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "998b35bac1c76870"
  },
  "survey-7d2ce0ff3e.svg": {
   "ratio": 2.9072,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9f98b94b89ab9e08"
  },
  "survey-7d51c7f097.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "819a122d5844eba3"
  },
  "survey-7d660ec465.svg": {
   "ratio": 1.7463,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1781854061e1d3a6"
  },
  "survey-7dd54bae22.jpg": {
   "ratio": 1.8372,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c89becdce3379b9b"
  },
  "survey-7df2ec427d.png": {
   "ratio": 0.9783,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f22ff6cfcf4ec843"
  },
  "survey-7e32474b62.svg": {
   "ratio": 2.9609,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "91d94250714f2c5c"
  },
  "survey-7e35bf6f47.svg": {
   "ratio": 4.0769,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3e3049aa67d0dab0"
  },
  "survey-7e42f3a816.png": {
   "ratio": 4.8193,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "93f75cf53c1dbb63"
  },
  "survey-7eb44470f5.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "dcf28bc15714e014"
  },
  "survey-7f7816234f.svg": {
   "ratio": 1.1784,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "02110b8a96efb907"
  },
  "survey-7f85d8da20.png": {
   "ratio": 3.7193,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b3884bece7dfaa71"
  },
  "survey-806cd38baf.png": {
   "ratio": 5.1818,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b593e22b7e84aee1"
  },
  "survey-8112ae06b6.svg": {
   "ratio": 1.3731,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d047b63d04143a7c"
  },
  "survey-8228c71740.png": {
   "ratio": 3.6552,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f117aff6ad7a60bd"
  },
  "survey-828a55d921.svg": {
   "ratio": 1.0192,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f051dd716d79f492"
  },
  "survey-82f299f913.jpg": {
   "ratio": 1.1842,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8f6da51e74963b05"
  },
  "survey-83087023ed.svg": {
   "ratio": 3.4983,
-  "tone": "light"
+  "tone": "light",
+  "sha": "cf77c3e329d7d516"
  },
  "survey-8333fe89df.png": {
   "ratio": 5.7857,
-  "tone": "light"
+  "tone": "light",
+  "sha": "c8e0537170ddd9c2"
  },
  "survey-83cf310af6.svg": {
   "ratio": 7.2109,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0363c9642bd95e5f"
  },
  "survey-83e5f828f8.svg": {
   "ratio": 0.9674,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2087b90e5a005844"
  },
  "survey-83ef4d2591.svg": {
   "ratio": 6.3055,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "877135a1f991825f"
  },
  "survey-852d783ff4.png": {
   "ratio": 4.0769,
-  "tone": "light"
+  "tone": "light",
+  "sha": "d8503747170a2e51"
  },
  "survey-85317a4c26.png": {
   "ratio": 4.2727,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8702997b2db71aeb"
  },
  "survey-86a7c637d9.png": {
   "ratio": 4.5385,
-  "tone": "light"
+  "tone": "light",
+  "sha": "54c25d94cfa6e5fb"
  },
  "survey-87b0f35e09.png": {
   "ratio": 2.9825,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "212f13ab21b822b0"
  },
  "survey-87de14d389.png": {
   "ratio": 4.8,
-  "tone": "light"
+  "tone": "light",
+  "sha": "4826d8fee24f11ed"
  },
  "survey-87ef8822af.svg": {
   "ratio": 1.6879,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fb6210620f3cebfd"
  },
  "survey-8800fba6d6.svg": {
   "ratio": 4.8182,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9e6f388100715cc9"
  },
  "survey-88277b708c.png": {
   "ratio": 3.9524,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2cabbf0c19138c72"
  },
  "survey-884975f578.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6e3f6afb4ad389a2"
  },
  "survey-884baed995.svg": {
   "ratio": 0.7661,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "520495984f81133d"
  },
  "survey-88c3776e2f.png": {
   "ratio": 3.1273,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "08061e26359bd094"
  },
  "survey-88d8c5be51.png": {
   "ratio": 3.8246,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2c3f88bc958bdef5"
  },
  "survey-89d004858c.png": {
   "ratio": 3.3636,
-  "tone": "light"
+  "tone": "light",
+  "sha": "8b135b3a60a22b67"
  },
  "survey-89e2402fab.png": {
   "ratio": 4.12,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "53eeae10673337fe"
  },
  "survey-8a5bd04b4a.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "622684e623d4d9f2"
  },
  "survey-8b6e491312.png": {
   "ratio": 2.4937,
-  "tone": "light"
+  "tone": "light",
+  "sha": "968159237e0eba34"
  },
  "survey-8b6f2e55e8.png": {
   "ratio": 1.5,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "152fc89df26aeb33"
  },
  "survey-8b8e81d64e.png": {
   "ratio": 2.5283,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "725e4c1ab7df410b"
  },
  "survey-8bde88e519.png": {
   "ratio": 1.5926,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "13c4fff07dec1fce"
  },
  "survey-8c183f6d71.svg": {
   "ratio": 1.2864,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "37114729d717b4e4"
  },
  "survey-8c8cd90be7.png": {
   "ratio": 1.4251,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0e6943a32f90471c"
  },
  "survey-8cb1c32939.svg": {
   "ratio": 2.5948,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "81cbfa8f060dee52"
  },
  "survey-8d4b3e1c22.png": {
   "ratio": 5.4815,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ee2ca94628a44ae1"
  },
  "survey-8d6995b127.png": {
   "ratio": 0.9714,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "052ed94761308e0e"
  },
  "survey-8d7a089a28.jpg": {
   "ratio": 1.2662,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "18f82225da95d6ee"
  },
  "survey-8dc7b37f41.png": {
   "ratio": 1.0939,
-  "tone": "light"
+  "tone": "light",
+  "sha": "313a7769ccefa570"
  },
  "survey-8ddb78ff19.png": {
   "ratio": 1.7931,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "69b39bfd264f3e42"
  },
  "survey-8deda8e19e.svg": {
   "ratio": 1.111,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3310a6efac2ee528"
  },
  "survey-8eb4b70cb7.svg": {
   "ratio": 1.7124,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "df6a0aba8d8b1e86"
  },
  "survey-8ecd1ba1d9.png": {
   "ratio": 3.4239,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "531b50b49751f02c"
  },
  "survey-8f1e240ab0.svg": {
   "ratio": 1.534,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6ffd0b2e550e84ad"
  },
  "survey-8f3b726095.jpg": {
   "ratio": 4.253,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "69765076dfbfd023"
  },
  "survey-8f7ee8bff7.png": {
   "ratio": 5.2241,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4b15238ce76ed8df"
  },
  "survey-8f9292ed75.png": {
   "ratio": 2.4444,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "84abed2d8e8a5ee8"
  },
  "survey-8fde917dd9.png": {
   "ratio": 1.016,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bea83ba7b30e40c5"
  },
  "survey-90643293a0.png": {
   "ratio": 4.3621,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2e5a685dbc3991a6"
  },
  "survey-90d3d5e8e7.svg": {
   "ratio": 5.3266,
-  "tone": "light"
+  "tone": "light",
+  "sha": "f998cf24e5f71f2d"
  },
  "survey-90ff4bb2a6.png": {
   "ratio": 1.5595,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ee4e9791f861daa6"
+ },
+ "survey-912f3c1de1.png": {
+  "ratio": 4.6243,
+  "tone": "normal",
+  "sha": "2eed318bb7c10be1"
  },
  "survey-92306961e4.svg": {
   "ratio": 6.3095,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bfa6bd973876c6ca"
  },
  "survey-923abc4abc.png": {
   "ratio": 2.9355,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "73aa9d663c358fc9"
  },
  "survey-923f21bff7.png": {
   "ratio": 4.4583,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d458ba30e97e695c"
  },
  "survey-938c1f2e33.png": {
   "ratio": 2.8654,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b1f2f244730276c5"
  },
  "survey-93b2d1134d.png": {
   "ratio": 4.875,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5314c285e4804bd5"
  },
  "survey-93e5590694.png": {
   "ratio": 3.8,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "13ce3f2df07cbc24"
  },
  "survey-944fff0cfa.png": {
   "ratio": 3.2192,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6a379c800c4bb06e"
  },
  "survey-949a112e1a.png": {
   "ratio": 3.5398,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7a4c35b1e79461d9"
  },
  "survey-95a47dc80c.png": {
   "ratio": 3.7656,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d9b50f7fd1e37b89"
  },
  "survey-95c1528a44.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "49f321f58a3994db"
  },
  "survey-97a0b5d9f5.png": {
   "ratio": 2.7148,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "da075d9865c22700"
  },
  "survey-9823c20365.svg": {
   "ratio": 4.6491,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e89314e5c48e8836"
  },
  "survey-983ab4e0a3.png": {
   "ratio": 3.5672,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba61411cc2075631"
  },
  "survey-9863db2cab.png": {
   "ratio": 1.6898,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6ad3481bd1f4caa4"
  },
  "survey-9967d7c9b0.svg": {
   "ratio": 4.5924,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bd83919a9a1e7d96"
  },
  "survey-9a271b5c64.png": {
   "ratio": 1.0054,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "26f411fd98a43e9d"
  },
  "survey-9a6425e652.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "54ad9a67246e1fad"
  },
  "survey-9a970298d2.png": {
   "ratio": 3.5455,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "aa688f39b6c50f85"
  },
  "survey-9b97900d8d.png": {
   "ratio": 4.6296,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "493a51be399a365f"
  },
  "survey-9c416eabbd.png": {
   "ratio": 5.9211,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ce1a24e82d08a07f"
  },
  "survey-9c653ff3d0.svg": {
   "ratio": 1.51,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cdad0bbb2a9744d5"
  },
  "survey-9c8b2ba608.png": {
   "ratio": 1.3231,
-  "tone": "light"
+  "tone": "light",
+  "sha": "717402eb760672f6"
  },
  "survey-9caa6a3e90.png": {
   "ratio": 3.6818,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ed027b092541523f"
  },
  "survey-9d13d86d96.png": {
   "ratio": 4.587,
-  "tone": "light"
+  "tone": "light",
+  "sha": "88e14dda892d7adb"
  },
  "survey-9d22e63c90.svg": {
   "ratio": 2.6575,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b09f8af071fdea74"
  },
  "survey-9d793339ec.png": {
   "ratio": 1.7183,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "336a7a29ba80fe7e"
  },
  "survey-9dc80348e5.png": {
   "ratio": 3.4694,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d7d474716bb237c7"
  },
  "survey-9e232a1223.png": {
   "ratio": 3.1961,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c5ee4b3b1eaad406"
  },
  "survey-9e2d64dc1a.png": {
   "ratio": 3.1351,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "190b227421ee9636"
  },
  "survey-9e50d5a870.svg": {
   "ratio": 3.7722,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c35ed639cd771945"
  },
  "survey-9e53c83d3d.svg": {
   "ratio": 0.8291,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c03dbf8645079fa4"
  },
  "survey-9eb0f92950.png": {
   "ratio": 1.8684,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8f6d802e3c3ae8de"
  },
  "survey-9eb4bbbe1f.png": {
   "ratio": 5.06,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "69c24547c935d271"
  },
  "survey-9ec64833fe.svg": {
   "ratio": 1.0105,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9e4764d42cb5f263"
  },
  "survey-9f8f8de0d6.jpg": {
   "ratio": 4.9107,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d5a03f3e67db1dd1"
  },
  "survey-a0890029a7.png": {
   "ratio": 2.4,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "eacc0f30560275ec"
  },
  "survey-a0dd18e7e3.svg": {
   "ratio": 0.9041,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d3c690a2b3bab631"
  },
  "survey-a0fcf01370.png": {
   "ratio": 2.8333,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6d8c20939d21717c"
  },
  "survey-a1718429fc.png": {
   "ratio": 4.0909,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3302d957adcf4048"
  },
  "survey-a18a4a17ec.svg": {
   "ratio": 3.5738,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5344ce2f1f3cc5a2"
  },
  "survey-a1b4484fc6.jpg": {
   "ratio": 1.1912,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6a32005ce8012a73"
  },
  "survey-a1b9981232.png": {
   "ratio": 1.8043,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d8888997f59f4f4e"
  },
  "survey-a1dba98122.png": {
   "ratio": 2.8608,
-  "tone": "light"
+  "tone": "light",
+  "sha": "7432869940978fb5"
  },
  "survey-a2580eff18.png": {
   "ratio": 3.3143,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a8b6c1c2f99791af"
  },
  "survey-a2a4f17b08.png": {
   "ratio": 3.463,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f71d02f93c383271"
  },
  "survey-a391066b59.svg": {
   "ratio": 0.8816,
-  "tone": "light"
+  "tone": "light",
+  "sha": "ed444b7a9ebeac58"
  },
  "survey-a44cba7b37.svg": {
   "ratio": 3.9552,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2d183cd34f7fa242"
  },
  "survey-a44fe75cc5.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "18ad6f6d60ccc2aa"
  },
  "survey-a54c2e4e3f.png": {
   "ratio": 4.4923,
-  "tone": "light"
+  "tone": "light",
+  "sha": "d5764ad576956b66"
  },
  "survey-a594421b7b.svg": {
   "ratio": 2.5861,
-  "tone": "light"
+  "tone": "light",
+  "sha": "1dafdd1981e475c7"
  },
  "survey-a5b3e5fe5d.svg": {
   "ratio": 0.6864,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8772b05ace9c3074"
  },
  "survey-a5f3b763cb.svg": {
   "ratio": 3.349,
-  "tone": "light"
+  "tone": "light",
+  "sha": "b04c95b4cf3b078d"
  },
  "survey-a6d3f7275d.svg": {
   "ratio": 2.2505,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "07349aac14cc9e60"
  },
  "survey-a7c3f21813.png": {
   "ratio": 4.2553,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ea77eb6055f61fe3"
  },
  "survey-a7dfafb014.svg": {
   "ratio": 4.1182,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b9cc8a32f7bd839f"
  },
  "survey-a83d1861b0.svg": {
   "ratio": 1.001,
-  "tone": "light"
+  "tone": "light",
+  "sha": "23ac424ad1067896"
  },
  "survey-a95850f2ed.png": {
   "ratio": 3.3273,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "64b82679e9ca3df5"
  },
  "survey-a9f5897f45.jpg": {
   "ratio": 4.7643,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9cbed9510ef90870"
  },
  "survey-a9fdf95e9e.png": {
   "ratio": 1.5036,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "32e17eca27cace7d"
  },
  "survey-aa48556ddc.svg": {
   "ratio": 3.4194,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "aba0dee789c074f0"
  },
  "survey-aa61326d69.svg": {
   "ratio": 1.5133,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fc90253ba706b729"
  },
  "survey-aa9c12aa9e.png": {
   "ratio": 4.6964,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "907c0b6fb58fafc5"
+ },
+ "survey-aaa978adc9.svg": {
+  "ratio": 6.1149,
+  "tone": "normal",
+  "sha": "9adb0e837ae56b0a"
  },
  "survey-ab59bb6c76.svg": {
   "ratio": 0.6882,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1c2afde8a74847b3"
  },
  "survey-ab5eb9a776.jpg": {
   "ratio": 1.1064,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6db52b835ec81da1"
  },
  "survey-ab87f7bdff.png": {
   "ratio": 5.6111,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0fdca81ffcbb3ac2"
  },
  "survey-abb4274af4.png": {
   "ratio": 3.1111,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "42e6d4db61fb2a60"
  },
  "survey-abb94dcce0.svg": {
   "ratio": 0.5509,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "75dd821050120ef6"
  },
  "survey-ac0fc80e67.svg": {
   "ratio": 3.3347,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "74a18ba53bac2747"
  },
  "survey-ac189f54e0.png": {
   "ratio": 4.3684,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "25b3bf831aa3093c"
  },
  "survey-ac30021d5d.png": {
   "ratio": 2.7424,
-  "tone": "light"
+  "tone": "light",
+  "sha": "24575aafcef3d688"
  },
  "survey-ac5a3434e5.svg": {
   "ratio": 2.0307,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b0aabeee3241326f"
  },
  "survey-ad44dce09b.png": {
   "ratio": 3.6649,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0395e5d0c89a2f74"
  },
  "survey-ad5aa792e3.png": {
   "ratio": 2.8356,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e43f07619825207f"
  },
  "survey-ad8c351211.svg": {
   "ratio": 0.6897,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5c7a5b301996c543"
  },
  "survey-ade9a3155a.svg": {
   "ratio": 3.2959,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "caa6eacf1ecf5d9c"
  },
  "survey-adfd556e12.png": {
   "ratio": 3.7778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "de3d786022e1c4bc"
  },
  "survey-ae0ba8624a.svg": {
   "ratio": 3.3347,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "30aa48f2d05a4265"
  },
  "survey-ae628298e6.png": {
   "ratio": 3.3774,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "37211900b79d2b66"
  },
  "survey-aea103d450.png": {
   "ratio": 3.2152,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f456bceb74b2dfdf"
  },
  "survey-aec3b2adae.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6e5f7006468f2355"
  },
  "survey-afcdb1b809.png": {
   "ratio": 1.16,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5eabd02dc3947945"
  },
  "survey-b07f6e0907.png": {
   "ratio": 2.4138,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "27dd9ae1f9ecccfe"
  },
  "survey-b13139cebf.jpg": {
   "ratio": 3.8056,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cc23cd35a44c109d"
  },
  "survey-b13712f358.png": {
   "ratio": 4.1562,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a6233ec3c7a92764"
  },
  "survey-b1738156df.png": {
   "ratio": 0.8167,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d4dbb1ddd50ddc45"
  },
  "survey-b1748c5590.png": {
   "ratio": 3.1,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "19fb2467f0a5d562"
  },
  "survey-b1d7da2557.png": {
   "ratio": 3.0075,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "463115157bd0e6bb"
  },
  "survey-b1e95e43c3.png": {
   "ratio": 1.803,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "88bd88ce8d45f9fe"
  },
  "survey-b2011ce9d0.png": {
   "ratio": 3.3636,
-  "tone": "light"
+  "tone": "light",
+  "sha": "253287edc80ec4f6"
  },
  "survey-b290375089.svg": {
   "ratio": 3.1454,
-  "tone": "light"
+  "tone": "light",
+  "sha": "ed1381cc91da4666"
  },
  "survey-b295c41548.svg": {
   "ratio": 3.6552,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fb8b38ef8d1e54ac"
+ },
+ "survey-b29f91dab4.svg": {
+  "ratio": 5.7672,
+  "tone": "normal",
+  "sha": "b833e014f6101091"
  },
  "survey-b2c11e707f.png": {
   "ratio": 3.4118,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2206ced4ca9cc3e0"
  },
  "survey-b325745876.png": {
   "ratio": 3.7708,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba0247600a671474"
  },
  "survey-b355347d27.png": {
   "ratio": 4.0923,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e94551e57a141ad4"
  },
  "survey-b41702ac8c.png": {
   "ratio": 1.0136,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "707e11adfaea754f"
+ },
+ "survey-b4542c25a4.png": {
+  "ratio": 1.7137,
+  "tone": "normal",
+  "sha": "cea9dd6860149ffe"
  },
  "survey-b4c3d98cdf.svg": {
   "ratio": 3.75,
-  "tone": "light"
+  "tone": "light",
+  "sha": "77ddc2ab68995eed"
  },
  "survey-b541219b96.png": {
   "ratio": 2.8906,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fee0586c764d63ae"
  },
  "survey-b6035c4129.png": {
   "ratio": 2.2161,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "83556195919cbb52"
  },
  "survey-b645d763b1.svg": {
   "ratio": 2.9494,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7c9579905a7b2b3b"
  },
  "survey-b6bb330aa6.svg": {
   "ratio": 3.7439,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c6b96fa09ff3ec85"
+ },
+ "survey-b6f0aca4ae.png": {
+  "ratio": 5.8824,
+  "tone": "normal",
+  "sha": "7c5333f50c4efc7a"
  },
  "survey-b73e919475.svg": {
   "ratio": 3.0814,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "06c88d1100d9de12"
  },
  "survey-b76d7a6157.svg": {
   "ratio": 1.0105,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f5ff95efc0f1ac4f"
  },
  "survey-b78885c5ea.png": {
   "ratio": 3.2397,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8790f9e6ffe93e3d"
  },
  "survey-b7bee5be31.png": {
   "ratio": 6.5957,
-  "tone": "light"
+  "tone": "light",
+  "sha": "9bded822bfd662ad"
  },
  "survey-b7dbc44a56.webp": {
   "ratio": 3.4188,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6d3f75a40615b9a8"
  },
  "survey-b8b5197f01.png": {
   "ratio": 1.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6abbd82663c9551f"
  },
  "survey-b8c291d50a.png": {
   "ratio": 4.6143,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e0b59794cee99e07"
  },
  "survey-b91f09b70d.jpg": {
   "ratio": 1.5988,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "23a78d4e9903843f"
  },
  "survey-b95846158a.png": {
   "ratio": 5.0169,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b562d644dfd6ceec"
  },
  "survey-b9d6668c89.svg": {
   "ratio": 1.0384,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ad68773b9b2422cb"
  },
  "survey-ba3854b788.svg": {
   "ratio": 0.8601,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4a76acaefe249a88"
  },
  "survey-ba93dd4491.png": {
   "ratio": 3.9615,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0d63b0816ca7390d"
  },
  "survey-baa0c11c96.svg": {
   "ratio": 4.1897,
-  "tone": "light"
+  "tone": "light",
+  "sha": "108db51bb4bc6644"
  },
  "survey-bab11660c8.jpg": {
   "ratio": 0.9904,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0e9d6cb664af2cc9"
  },
  "survey-bac16031ca.png": {
   "ratio": 2.4795,
-  "tone": "light"
+  "tone": "light",
+  "sha": "f9de3fe808d246f4"
  },
  "survey-bb3aff39cf.svg": {
   "ratio": 3.6776,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8d3fea87bd56a998"
  },
  "survey-bb40885118.png": {
   "ratio": 5.2549,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0895e060bd99d9a4"
  },
  "survey-bb4111a803.svg": {
   "ratio": 0.9577,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9e31949b66aadadc"
  },
  "survey-bba7e16079.png": {
   "ratio": 3.2969,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8b8d9120a9b41375"
  },
  "survey-bc08936edb.png": {
   "ratio": 2.8929,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "39a2cf12a7e4b885"
  },
  "survey-bc66ba5687.png": {
   "ratio": 4.6,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d6f7e164605b5a49"
  },
  "survey-bca4cffbb6.png": {
   "ratio": 7.2727,
-  "tone": "light"
+  "tone": "light",
+  "sha": "60b69a71b3f11459"
  },
  "survey-bcfd8eceab.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e4d88ce840ae357a"
  },
  "survey-bd2633e9a0.png": {
   "ratio": 3.7037,
-  "tone": "light"
+  "tone": "light",
+  "sha": "2d362a3ad5fe5eee"
  },
  "survey-bd4d7bc87f.png": {
   "ratio": 0.7821,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f10889e7acb80845"
  },
  "survey-bddbd04fb1.png": {
   "ratio": 1.5802,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "50d71cd96061a02c"
+ },
+ "survey-be648c77b3.png": {
+  "ratio": 5.15,
+  "tone": "normal",
+  "sha": "5a967bdda3fd6782"
  },
  "survey-beeaa81c4a.svg": {
   "ratio": 2.8042,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "79069b005282d998"
  },
  "survey-bef43bc1f0.png": {
   "ratio": 4.2295,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b1cbf7f7c360dcff"
  },
  "survey-bf2ceceec1.svg": {
   "ratio": 1.6825,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6d33a94a5534cc63"
  },
  "survey-bf4ed8460e.svg": {
   "ratio": 5.4922,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "03e6e01cbefcb5d6"
  },
  "survey-bf9d476a4e.png": {
   "ratio": 3.4912,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ba923c998cd1e09c"
+ },
+ "survey-c0261acaed.svg": {
+  "ratio": 5.3328,
+  "tone": "normal",
+  "sha": "00c6daadf4cc85b7"
  },
  "survey-c0530c728f.svg": {
   "ratio": 3.2026,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3e774d4a3408701e"
  },
  "survey-c0d1246803.svg": {
   "ratio": 2.4883,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4da83562fa93f17e"
  },
  "survey-c15f8a0440.png": {
   "ratio": 6.3286,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9f3e63f2635d5d0e"
  },
  "survey-c1aaa647c1.png": {
   "ratio": 1.7101,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e22222794adf04c5"
  },
  "survey-c1bdd0508a.png": {
   "ratio": 3.5325,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bd6dc0364405249c"
+ },
+ "survey-c1e4551a24.png": {
+  "ratio": 4.1026,
+  "tone": "normal",
+  "sha": "8b8a3d0278dd6ad7"
  },
  "survey-c26034dd93.png": {
   "ratio": 3.4861,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1ea509cc5de2d10e"
  },
  "survey-c28f72eff5.png": {
   "ratio": 2.6833,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f0f826592b5a06a2"
  },
  "survey-c2c8314768.svg": {
   "ratio": 1.0183,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "425b275022cbe4a4"
  },
  "survey-c323f333f8.png": {
   "ratio": 1.8929,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d094906a8ddbad08"
  },
  "survey-c348664545.png": {
   "ratio": 2.5758,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5c225c3687480e69"
  },
  "survey-c3e4572a17.jpg": {
   "ratio": 3.3913,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "682e8b8b45bb7d23"
  },
  "survey-c437bef839.svg": {
   "ratio": 0.8791,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "419a3dc483d2b7e2"
  },
  "survey-c46b5ee445.png": {
   "ratio": 3.8154,
-  "tone": "light"
+  "tone": "light",
+  "sha": "3dd419e4e366853d"
  },
  "survey-c4f61280f5.png": {
   "ratio": 5.0435,
-  "tone": "light"
+  "tone": "light",
+  "sha": "3c5090fb18ea4ee4"
  },
  "survey-c50071de1d.png": {
   "ratio": 2.7353,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ec9cd6a98da4851a"
  },
  "survey-c53b9bfc99.png": {
   "ratio": 1.9486,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5c3da3d826b576cb"
  },
  "survey-c55bc6b6c3.png": {
   "ratio": 3.6533,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f92092aaf9237248"
  },
  "survey-c57a578996.svg": {
   "ratio": 0.6814,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "26050d1ad52418a3"
  },
  "survey-c586e10d3e.jpg": {
   "ratio": 4.5674,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8bd6650fbd8edddd"
  },
  "survey-c58c5e5d1f.png": {
   "ratio": 5.26,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "304f989659d75359"
  },
  "survey-c58fec109d.png": {
   "ratio": 1.6165,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "693e0e7d53318853"
  },
  "survey-c598e15ff5.png": {
   "ratio": 3.2397,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8790f9e6ffe93e3d"
  },
  "survey-c5f4d3798f.svg": {
   "ratio": 0.6772,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a4b1f1a0c6ffec1c"
  },
  "survey-c618bad580.jpg": {
   "ratio": 4.0321,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a3fa4fa084556168"
  },
  "survey-c6451180ac.png": {
   "ratio": 1.0693,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "118f787aa443f19a"
  },
  "survey-c6ecd90603.png": {
   "ratio": 3.24,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "89307738d7cbf91a"
  },
  "survey-c73d036917.png": {
   "ratio": 3.3623,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6eae50edd3c3e816"
  },
  "survey-c7403f7d40.svg": {
   "ratio": 2.5178,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1768ad583e016b82"
  },
  "survey-c787e56570.jpg": {
   "ratio": 4.5674,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0fe013aa10ba2e91"
  },
  "survey-c7cdd6c01b.jpg": {
   "ratio": 3.7843,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7b6617323794c623"
  },
  "survey-c802999872.png": {
   "ratio": 3.6224,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0461ad8a9f49edc7"
  },
  "survey-c8a2bceee1.png": {
   "ratio": 3.3971,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3ff6626148b804a4"
  },
  "survey-c8eefa2eb4.png": {
   "ratio": 2.9155,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9fed0c7f614f18b6"
  },
  "survey-c9034aa484.png": {
   "ratio": 4.25,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4d66e01ec01565f1"
  },
  "survey-c98293596c.png": {
   "ratio": 3.0984,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "be50195841319395"
  },
  "survey-cac6b9e088.png": {
   "ratio": 2.8947,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2371dc78708dd11a"
  },
  "survey-cbb10b1c0d.png": {
   "ratio": 2.125,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b23684d3e3ab9e26"
  },
  "survey-cc0d2f71a9.png": {
   "ratio": 4.0938,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7f8584e1b18e3e49"
  },
  "survey-ccacdbddc2.png": {
   "ratio": 5.1429,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3e28764538b34441"
+ },
+ "survey-cd42ff9717.svg": {
+  "ratio": 4.5522,
+  "tone": "light",
+  "sha": "483a9a8cf4a6bce0"
  },
  "survey-cd93d7a76e.jpg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3f2b33441f7c544b"
  },
  "survey-cdda526394.png": {
   "ratio": 4.5397,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2d52347d81a0f330"
+ },
+ "survey-cddfb0f9aa.svg": {
+  "ratio": 4.7058,
+  "tone": "light",
+  "sha": "fea938b6430f0e28"
  },
  "survey-cdeaf0250d.png": {
   "ratio": 3.8913,
-  "tone": "light"
+  "tone": "light",
+  "sha": "1277bc80e937297f"
  },
  "survey-ce5eaaf597.svg": {
   "ratio": 5.3535,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b4a61255fbea55e2"
  },
  "survey-cfe52f2781.svg": {
   "ratio": 1.217,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e0a7a14e66bae162"
  },
  "survey-d053936c8f.svg": {
   "ratio": 1.6144,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3a8957d4542cdae4"
  },
  "survey-d0621363c4.png": {
   "ratio": 4.2258,
-  "tone": "light"
+  "tone": "light",
+  "sha": "3290a319b6249ecf"
  },
  "survey-d0c72e39e8.png": {
   "ratio": 4.4324,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6dcdf4af6084f46e"
  },
  "survey-d0e09150a4.png": {
   "ratio": 7.3824,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b889f2ece059cf52"
  },
  "survey-d10388e47f.svg": {
   "ratio": 4.6288,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "84ed05e2f1eef65f"
  },
  "survey-d135d9fb7f.jpg": {
   "ratio": 4.9118,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d9156c55c42e264f"
  },
  "survey-d1c05ae4d0.png": {
   "ratio": 4.9437,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b3e5f6f8ba7102be"
  },
  "survey-d2a11c3b78.jpg": {
   "ratio": 1.8992,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1c089a14fc463900"
  },
  "survey-d461bac9e6.png": {
   "ratio": 2.9032,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "45cf7ca9e951ecbb"
  },
  "survey-d4ae33eea6.png": {
   "ratio": 3.7778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8ecd816c34baa323"
  },
  "survey-d4d07fc5c6.jpg": {
   "ratio": 6.234,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fe40925cc2a80c94"
  },
  "survey-d4e05a7295.png": {
   "ratio": 5.3611,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e36ea96c76d13582"
  },
  "survey-d51fb8a017.png": {
   "ratio": 3.5588,
-  "tone": "light"
+  "tone": "light",
+  "sha": "ec9b44712a4b8b72"
  },
  "survey-d541e596a7.png": {
   "ratio": 5.9245,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6cddda8bd7613d8d"
  },
  "survey-d596892cde.png": {
   "ratio": 4.6481,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b96d28d7a8280160"
  },
  "survey-d6119f13fd.png": {
   "ratio": 3.8148,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d520868871adb622"
  },
  "survey-d655c55433.png": {
   "ratio": 3.2925,
-  "tone": "light"
+  "tone": "light",
+  "sha": "10c1c3037461f486"
  },
  "survey-d6babb6abe.png": {
   "ratio": 0.8286,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c08ccb7a18d1b071"
  },
  "survey-d6edf74606.png": {
   "ratio": 1.475,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8b5d3eb33253597a"
+ },
+ "survey-d75548f841.svg": {
+  "ratio": 0.8671,
+  "tone": "light",
+  "sha": "8dd7dd4070f53b99"
  },
  "survey-d7872c93d8.png": {
   "ratio": 4.5143,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ebd1672912b8bc80"
  },
  "survey-d817166994.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "38cf1e49ae337e66"
  },
  "survey-d8cacfb913.png": {
   "ratio": 1.0159,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2e1c53dfd26d93c5"
  },
  "survey-d965da512a.png": {
   "ratio": 3.617,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d394551d24814aee"
  },
  "survey-d9a95150ed.svg": {
   "ratio": 1.4205,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1ae5a08a23a12f0c"
  },
  "survey-d9c4d2c0d3.png": {
   "ratio": 3.9024,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "de1c95b0867e836a"
  },
  "survey-d9c6b21e46.png": {
   "ratio": 2.5052,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "347c5b572e440707"
  },
  "survey-dac271b714.png": {
   "ratio": 2.9778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "74c6d40da655fe56"
  },
  "survey-dad641d434.jpg": {
   "ratio": 2.8663,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bea1058576df156c"
  },
  "survey-dad746b8f1.png": {
   "ratio": 3.5091,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "376939c8a98f4d5f"
  },
  "survey-db0efa517e.png": {
   "ratio": 4.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "61191ef040dec422"
  },
  "survey-db6cb887aa.png": {
   "ratio": 1.5266,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "2efd2dc1a8e01bf8"
  },
  "survey-db7ec99643.jpg": {
   "ratio": 1.0013,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "910fd796c14cb329"
  },
  "survey-dbf60765b8.png": {
   "ratio": 2.6061,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b075b047e66d7dce"
  },
  "survey-dc5723ee67.png": {
   "ratio": 4.3535,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d340d194b4083dd7"
  },
  "survey-dc8931891c.png": {
   "ratio": 1.0972,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b7dc134adee8e8df"
  },
  "survey-dcc2e9ab53.svg": {
   "ratio": 1.3342,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e769db5314a2ad2f"
  },
  "survey-dd23ad3fef.png": {
   "ratio": 4.0278,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5dc887f86e012625"
  },
  "survey-dd380bbe64.jpg": {
   "ratio": 0.8621,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "79a9c98326241206"
  },
  "survey-dd600d7982.png": {
   "ratio": 2.2264,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f53a97fc5523da10"
  },
  "survey-dd65e36dde.png": {
   "ratio": 5.1,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d66416ebc59d53a0"
  },
  "survey-ddb9ebb519.svg": {
   "ratio": 0.9725,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e3036b8f3c81f9bd"
  },
  "survey-ddc2a0418a.jpg": {
   "ratio": 4.7778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "301ab51a90c3ac9b"
  },
  "survey-de0939fdf7.svg": {
   "ratio": 0.6043,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "da56f53987548c48"
  },
  "survey-de5b8e379e.png": {
   "ratio": 3.775,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "64d0b03f9491b36e"
  },
  "survey-dea0a63eb3.png": {
   "ratio": 5.2154,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1408ff9a201a6e12"
  },
  "survey-dec9ef6a01.png": {
   "ratio": 4.3261,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "21d2e8856ddc5469"
  },
  "survey-df1dc45274.png": {
   "ratio": 2.4691,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f1bd08918bdbce88"
  },
  "survey-df2126fcd7.png": {
   "ratio": 3.1607,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "84bb867b304f4a23"
  },
  "survey-df2cc530bb.png": {
   "ratio": 4.7619,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "261d826cda66fe49"
  },
  "survey-df859621b3.svg": {
   "ratio": 3.97,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3824ed193620547d"
  },
  "survey-dfe3e73ce8.png": {
   "ratio": 2.1778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9ca0b9a4004a818c"
  },
  "survey-e041954997.png": {
   "ratio": 3.2821,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3ede17de891a064a"
  },
  "survey-e08bc258a7.png": {
   "ratio": 3.7167,
-  "tone": "light"
+  "tone": "light",
+  "sha": "9143fb39b567cc85"
  },
  "survey-e0c775d58b.png": {
   "ratio": 2.7941,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "71cda7e79894b132"
  },
  "survey-e11fe85be1.png": {
   "ratio": 4.7937,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "286cc6fcb4c6c360"
  },
  "survey-e238ee3119.png": {
   "ratio": 3.1395,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b4ae5b948d9f8c34"
  },
  "survey-e276341a79.svg": {
   "ratio": 6.3855,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "41b4c5a4f1186149"
  },
  "survey-e370a3b0a7.png": {
   "ratio": 1.494,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d458f9397172997a"
  },
  "survey-e375d1214b.png": {
   "ratio": 2.3043,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b4e8419b06fa4b16"
  },
  "survey-e3b95063f6.jpg": {
   "ratio": 1.3391,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "995a1fd0831b7be6"
  },
  "survey-e41113df33.svg": {
   "ratio": 1.5727,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "86b1f05a24c6a1ca"
+ },
+ "survey-e4b41ef32d.png": {
+  "ratio": 4.1026,
+  "tone": "normal",
+  "sha": "271f04c0944169ce"
  },
  "survey-e4b9e0dbcd.svg": {
   "ratio": 1.119,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "333b015dbfc1bbc8"
  },
  "survey-e4ee3c837d.png": {
   "ratio": 3.5455,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "819c996f06553d36"
  },
  "survey-e50a438af4.svg": {
   "ratio": 0.8396,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9dda6bb7e19891ab"
  },
  "survey-e5133d432d.jpg": {
   "ratio": 3.0933,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "444fde4fde9cc967"
  },
  "survey-e5426bb21d.png": {
   "ratio": 2.9672,
-  "tone": "light"
+  "tone": "light",
+  "sha": "037c3832904a9f90"
  },
  "survey-e5ba3f2291.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e34d01b639ea7e36"
  },
  "survey-e650e91e41.png": {
   "ratio": 4.617,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e4ac6dd841931b1a"
  },
  "survey-e6a9a7c1b8.png": {
   "ratio": 3.2759,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6465059ed801ff47"
  },
  "survey-e7154add07.png": {
   "ratio": 3.625,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3884dd039433490a"
  },
  "survey-e774fdcce7.svg": {
   "ratio": 0.9191,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "b4829a7e6b07136b"
  },
  "survey-e782cb573e.svg": {
   "ratio": 3.1235,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ae45b923138dade9"
  },
  "survey-e832d64fec.png": {
   "ratio": 3.1351,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "38cee07096edd407"
  },
  "survey-e8668145f1.svg": {
   "ratio": 1.3251,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "74955f700300e692"
  },
  "survey-e8fabc4fda.png": {
   "ratio": 2.7234,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e6c0af6fbddd304a"
  },
  "survey-e96051161a.jpg": {
   "ratio": 2.974,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "523cc422f67bd730"
  },
  "survey-ea04147bd4.png": {
   "ratio": 4.0208,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bd6498824799fc33"
  },
  "survey-ea2e06b0e8.svg": {
   "ratio": 1.333,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "72b44674d1180c3e"
+ },
+ "survey-ea5a356886.svg": {
+  "ratio": 3.2212,
+  "tone": "normal",
+  "sha": "e265a6bbecde279c"
  },
  "survey-ea6d665494.svg": {
   "ratio": 0.976,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a6b91c26e597d8b9"
  },
  "survey-eaaa5e3819.png": {
   "ratio": 2.4465,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6b4e27e8c4fbc55e"
  },
  "survey-eb3b57024b.png": {
   "ratio": 3.3714,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "41b3966ca92b23f3"
  },
  "survey-eb8096a080.jpg": {
   "ratio": 2.381,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0f58f374661ebded"
  },
  "survey-eb9f3fe901.png": {
   "ratio": 3.2742,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f6934f583b7aca97"
  },
  "survey-ecb07c85cd.png": {
   "ratio": 1.016,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "0299185d032c4367"
  },
  "survey-ece504db4a.svg": {
   "ratio": 6.7776,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "774eea5c69785ebe"
  },
  "survey-ed0dd0b8fb.png": {
   "ratio": 1.9123,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "646a7a5d8dff1880"
  },
  "survey-ee2840ae48.png": {
   "ratio": 5.9583,
-  "tone": "light"
+  "tone": "light",
+  "sha": "6140d583600b9364"
  },
  "survey-ee5b1868a8.png": {
   "ratio": 3.6458,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "374b5b3cb4e5ec78"
  },
  "survey-ee9932ece7.jpg": {
   "ratio": 3.7447,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "07039b25e47a6cd2"
  },
  "survey-ee9bd83448.svg": {
   "ratio": 1.3438,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5509d4eeda98e0c9"
  },
  "survey-eea9c7e5ff.png": {
   "ratio": 1.6736,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ae7bfc852602f985"
  },
  "survey-eec1d50c33.svg": {
   "ratio": 1.8221,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "954099f2b2a14b86"
  },
  "survey-ef693bfe6f.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8e9c1be2e607d3f2"
  },
  "survey-f078326f46.png": {
   "ratio": 3.6462,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e963e3e4c18f75f3"
  },
  "survey-f07e0b4afa.png": {
   "ratio": 0.765,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ca91deac84731440"
  },
  "survey-f0bd78d754.png": {
   "ratio": 3.9778,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7dff1f48da2d7a37"
  },
  "survey-f10fa7ce73.png": {
   "ratio": 5.1356,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "57e34bd94c49fa4c"
  },
  "survey-f12af38bb0.svg": {
   "ratio": 1.0214,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "700a53754d7e7881"
  },
  "survey-f1826f0f49.png": {
   "ratio": 3.6078,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6ba4dc9ae25b5290"
  },
  "survey-f227bab106.png": {
   "ratio": 2.6618,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7a5c6815956bf985"
  },
  "survey-f247dd6367.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7b8d13febffb7c8b"
  },
  "survey-f258b84910.png": {
   "ratio": 3.1124,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "baf24066b2ba1dd8"
  },
  "survey-f31cf4189d.svg": {
   "ratio": 2.9813,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "74f1f9b1fd5c2e07"
  },
  "survey-f34744eaef.jpg": {
   "ratio": 1.0595,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e8e1087edf22668f"
  },
  "survey-f39e09b902.png": {
   "ratio": 2.5465,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c23e543b850f9dca"
  },
  "survey-f3a4200a19.svg": {
   "ratio": 3.2632,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "28763bd990c53f21"
  },
  "survey-f3cd1714b9.svg": {
   "ratio": 3.3619,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "047cebb6d7517302"
  },
  "survey-f4ba672c8a.png": {
   "ratio": 1.0443,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "6ad44a6499d4b45a"
  },
  "survey-f57862fb1c.svg": {
   "ratio": 2.0994,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4cf2fa9040e64c68"
  },
  "survey-f6109eca03.png": {
   "ratio": 3.0517,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "d7e673c2d595b1de"
  },
  "survey-f61b0bfc34.svg": {
   "ratio": 3.1602,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "e145d6c5ce2e7be7"
  },
  "survey-f666665584.svg": {
   "ratio": 1.4201,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c43603f9e5d64587"
  },
  "survey-f6d533c430.png": {
   "ratio": 1.3348,
-  "tone": "light"
+  "tone": "light",
+  "sha": "55b777793a95f4a0"
  },
  "survey-f7177e8eaa.png": {
   "ratio": 2.873,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ea0e29750b07186d"
  },
  "survey-f74396e556.svg": {
   "ratio": 3.2983,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a433a1f580ba3b2e"
  },
  "survey-f76047cffb.jpg": {
   "ratio": 4.9821,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "8ba9dabeb0829366"
  },
  "survey-f79d22cba8.png": {
   "ratio": 3.4766,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "4598f92c839e6970"
  },
  "survey-f7d52aed0c.png": {
   "ratio": 3.05,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "45397fee85321412"
+ },
+ "survey-f87e333f97.svg": {
+  "ratio": 1.3809,
+  "tone": "normal",
+  "sha": "812ac6804f8afc9a"
  },
  "survey-f9173c96dc.png": {
   "ratio": 3.6199,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ea212a3d3a8db51e"
  },
  "survey-f9231b49ac.png": {
   "ratio": 3.1512,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "cab05a4357f79915"
  },
  "survey-f95fda7f7b.svg": {
   "ratio": 6.0579,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f70c8c78705da1d1"
  },
  "survey-f97ce23ff1.png": {
   "ratio": 3.4335,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "13ad257770330c7e"
  },
  "survey-f99491fc08.png": {
   "ratio": 4.4186,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fca2a7138dd9259e"
  },
  "survey-f9a2d6cc08.svg": {
   "ratio": 0.6842,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "677715719b57ca0f"
  },
  "survey-f9af58dea1.svg": {
   "ratio": 1.0482,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "814965b717e04ce2"
  },
  "survey-f9d7035901.svg": {
   "ratio": 0.8481,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f230958c9cad66d4"
  },
  "survey-f9e7241c5b.svg": {
   "ratio": 1.0706,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ffe9cb366e25da85"
  },
  "survey-fa041c0412.jpg": {
   "ratio": 6.2353,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "9345163d44be527d"
  },
  "survey-fa4963601c.png": {
   "ratio": 2.0645,
-  "tone": "light"
+  "tone": "light",
+  "sha": "01906339617f35ad"
  },
  "survey-fa921d661e.svg": {
   "ratio": 1.004,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "c3821e5967c7cc6a"
  },
  "survey-fac077c02f.png": {
   "ratio": 3.7551,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "a25db3daaa313edf"
  },
  "survey-fad80bee86.png": {
   "ratio": 2.5283,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "bf8e4b33c83cc594"
  },
  "survey-faec584606.png": {
   "ratio": 3.9556,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "5d6a6764e5064aa0"
  },
  "survey-fb39a1d793.png": {
   "ratio": 4.0426,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "f88b9c76dd50c08f"
  },
  "survey-fbd1b7f5d6.jpg": {
   "ratio": 0.8962,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "46dabac4aaf4640a"
  },
  "survey-fbd40285e1.png": {
   "ratio": 1.5926,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "3b2c90fb9fc4da76"
  },
  "survey-fc4fed8888.png": {
   "ratio": 3.2273,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "dd55d1e026f85ea1"
  },
  "survey-fc7e9cdcda.svg": {
   "ratio": 0.961,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "ceaeb666d26738ab"
  },
  "survey-fcee629712.png": {
   "ratio": 1.1728,
-  "tone": "light"
+  "tone": "light",
+  "sha": "53f1d2cbfe98237e"
+ },
+ "survey-fcfaf66ab2.svg": {
+  "ratio": 3.2421,
+  "tone": "normal",
+  "sha": "30e9eac0d6e65df6"
  },
  "survey-fd1333b08f.png": {
   "ratio": 3.6866,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "84b88e31adc8d99d"
  },
  "survey-fd79d75e90.png": {
   "ratio": 1.1823,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "51c0a7aada68e912"
+ },
+ "survey-fe9c0af3db.svg": {
+  "ratio": 3.4429,
+  "tone": "light",
+  "sha": "0687a7609cd794b6"
  },
  "survey-fea804902f.jpg": {
   "ratio": 2.525,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "1c52c75121c570fa"
+ },
+ "survey-fec763e98f.png": {
+  "ratio": 3.7621,
+  "tone": "normal",
+  "sha": "a4a76bad7802854f"
  },
  "survey-fedd3e7547.svg": {
   "ratio": 3.8839,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "fb446903e7960e93"
  },
  "survey-ff0ec487c3.png": {
   "ratio": 0.9928,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "08fc63fa9b0465e0"
  },
  "survey-ffd1621313.svg": {
   "ratio": 0.6672,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "25452dd369fc292f"
  },
  "unesco-logo.svg": {
   "ratio": 1.0406,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "7d5c25359c75b226"
  },
  "wikimedia-foundation-mark-onbrand.svg": {
   "ratio": 1.0,
-  "tone": "light"
+  "tone": "light",
+  "sha": "bcb856c251ddf871"
  },
  "wikimedia-foundation-mark.svg": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "deb76397659812a8"
  },
  "yonsei-ui.png": {
   "ratio": 1.0,
-  "tone": "normal"
+  "tone": "normal",
+  "sha": "23d96e704a52c401"
  }
 }

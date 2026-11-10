@@ -278,6 +278,96 @@
     ]
    }
   ],
+  "kr-q108943604": [
+   {
+    "format": "AI",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.ai?download=true",
+    "bytes": 100387,
+    "filename": "hf-logo.ai"
+   },
+   {
+    "format": "AI",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.ai?download=true",
+    "bytes": 99079,
+    "filename": "hf-logo-with-title.ai"
+   },
+   {
+    "format": "AI",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.ai?download=true",
+    "bytes": 76255,
+    "filename": "hf-logo-monochrome.ai"
+   },
+   {
+    "format": "AI",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.ai?download=true",
+    "bytes": 90121,
+    "filename": "hf-logo-pirate.ai"
+   },
+   {
+    "format": "SVG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg?download=true",
+    "bytes": 35286,
+    "filename": "hf-logo.svg"
+   },
+   {
+    "format": "SVG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.svg?download=true",
+    "bytes": 46913,
+    "filename": "hf-logo-with-title.svg"
+   },
+   {
+    "format": "SVG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.svg?download=true",
+    "bytes": 7890,
+    "filename": "hf-logo-monochrome.svg"
+   },
+   {
+    "format": "SVG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.svg?download=true",
+    "bytes": 10608,
+    "filename": "hf-logo-pirate.svg"
+   },
+   {
+    "format": "PNG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png?download=true",
+    "bytes": 185450,
+    "filename": "hf-logo.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.png?download=true",
+    "bytes": 91529,
+    "filename": "hf-logo-with-title.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.png?download=true",
+    "bytes": 63427,
+    "filename": "hf-logo-monochrome.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.png?download=true",
+    "bytes": 23251,
+    "filename": "hf-logo-pirate.png"
+   }
+  ],
+  "kr-q110363143": [
+   {
+    "format": "ZIP",
+    "url": "https://cdn.sanity.io/files/rjtqmwfu/web3-prod/32f7d09e898b78e0b96c6de7969586824ce4bb71.zip",
+    "bytes": 18306974,
+    "filename": "Cohere_Press_Kit.zip",
+    "label": "press kit",
+    "inner": [
+     "AI",
+     "SVG",
+     "PDF",
+     "PNG",
+     "JPG"
+    ]
+   }
+  ],
   "kr-q11232850": [
    {
     "format": "ZIP",
@@ -314,6 +404,20 @@
     "filename": "KSPO_CI_PDF.zip",
     "inner": [
      "PDF"
+    ]
+   }
+  ],
+  "kr-q112629176": [
+   {
+    "format": "ZIP",
+    "url": "https://brand.scale.com/scale-logos.zip",
+    "bytes": 1413577,
+    "filename": "scale-logos.zip",
+    "label": "Logo files",
+    "inner": [
+     "AI",
+     "SVG",
+     "PNG"
     ]
    }
   ],
@@ -497,6 +601,104 @@
     "bytes": 922587,
     "filename": "ci_guideBook_new.pdf",
     "label": "CI 슬로건 가이드북"
+   }
+  ],
+  "kr-q116758847": [
+   {
+    "format": "ZIP",
+    "url": "https://www.anthropic.com/press-kit",
+    "bytes": 26465941,
+    "filename": "Anthropic media resources.zip",
+    "label": "Anthropic 미디어 자료(로고 포함)",
+    "inner": [
+     "SVG",
+     "PDF",
+     "PNG",
+     "JPG"
+    ]
+   }
+  ],
+  "kr-q116798355": [
+   {
+    "format": "SVG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-black.svg",
+    "bytes": 3446,
+    "filename": "elevenlabs-logo-black.svg",
+    "label": "ElevenLabs Logo black"
+   },
+   {
+    "format": "SVG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-white.svg",
+    "bytes": 3446,
+    "filename": "elevenlabs-logo-white.svg",
+    "label": "ElevenLabs Logo white"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/45748ad8-5ef9-4843-b060-c73caa462fb0/elevenlabs-logos.zip",
+    "bytes": 41028,
+    "filename": "elevenlabs-logos.zip",
+    "label": "all",
+    "inner": [
+     "SVG",
+     "PNG"
+    ]
+   },
+   {
+    "format": "SVG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/a2ea339b-8b5e-41bb-b706-24eda8a4c9e3/elevenlabs-symbol.svg",
+    "bytes": 209,
+    "filename": "elevenlabs-symbol.svg",
+    "label": "ElevenLabs Symbol"
+   },
+   {
+    "format": "PNG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-black.png",
+    "bytes": 19333,
+    "filename": "elevenlabs-logo-black.png",
+    "label": "ElevenLabs Logo black"
+   },
+   {
+    "format": "PNG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-white.png",
+    "bytes": 19966,
+    "filename": "elevenlabs-logo-white.png",
+    "label": "ElevenLabs Logo white"
+   },
+   {
+    "format": "PNG",
+    "url": "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/a2ea339b-8b5e-41bb-b706-24eda8a4c9e3/elevenlabs-symbol.png",
+    "bytes": 13319,
+    "filename": "elevenlabs-symbol.png",
+    "label": "ElevenLabs Symbol"
+   }
+  ],
+  "kr-q119718658": [
+   {
+    "format": "ZIP",
+    "url": "https://cms.globalaegis.net/api/documents/file/Mistral_Brandkit_2026.zip",
+    "filename": "Mistral_Brandkit_2026.zip",
+    "label": "브랜드 키트",
+    "trusted": true
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cms.globalaegis.net/api/documents/file/Mistral_Logos_2026.zip",
+    "filename": "Mistral_Logos_2026.zip",
+    "label": "로고 모음",
+    "trusted": true
+   }
+  ],
+  "kr-q123367593": [
+   {
+    "format": "ZIP",
+    "url": "https://runway.com/assets/Runway-Brand-Guidelines.zip",
+    "bytes": 41202,
+    "filename": "Runway-Brand-Guidelines.zip",
+    "inner": [
+     "SVG",
+     "PNG"
+    ]
    }
   ],
   "kr-q12582495": [
@@ -1755,6 +1957,126 @@
     "bytes": 54082,
     "filename": "PNG_20211115.zip",
     "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "kr-q133254813": [
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e05c29107a2b5d9d586_Furiosa_AI_h_rgb.zip",
+    "bytes": 41419,
+    "filename": "6ad65e05c29107a2b5d9d586_Furiosa_AI_h_rgb.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e6e3a8f972081059918_Furiosa_AI_symbol_rgb.zip",
+    "bytes": 38078,
+    "filename": "6ad65e6e3a8f972081059918_Furiosa_AI_symbol_rgb.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "SVG",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e80d1d10766ca51a275_Furiosa_AI_symbol_rgb.svg",
+    "bytes": 37419,
+    "filename": "6ad65e80d1d10766ca51a275_Furiosa_AI_symbol_rgb.svg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e329cccaf2f7ee68985_Furiosa_AI_h_rgb%20PNG.zip",
+    "bytes": 25213,
+    "filename": "6ad65e329cccaf2f7ee68985_Furiosa_AI_h_rgb PNG.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e9d1c0f283eb8fc8ec2_Furiosa_AI_symbol_rgb%20PNG.zip",
+    "bytes": 7619,
+    "filename": "6ad65e9d1c0f283eb8fc8ec2_Furiosa_AI_symbol_rgb PNG.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6768fa8f5eb2ba998e8d1_Furiosa%20RNGD%20Card%20Frontal.zip",
+    "bytes": 8512455,
+    "filename": "6ac6768fa8f5eb2ba998e8d1_Furiosa RNGD Card Frontal.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6792fb866ff638984318e_Furiosa%20RNGD%20Board%20Frontal.zip",
+    "bytes": 10101353,
+    "filename": "6ac6792fb866ff638984318e_Furiosa RNGD Board Frontal.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6795aef65aee021f16a1c_Furiosa%20RNGD%20Card%20Angle.zip",
+    "bytes": 1710207,
+    "filename": "6ac6795aef65aee021f16a1c_Furiosa RNGD Card Angle.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6796cad07690aeba86106_Furiosa%20RNGD%20Card%20Closeup.zip",
+    "bytes": 5360919,
+    "filename": "6ac6796cad07690aeba86106_Furiosa RNGD Card Closeup.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a1166577d5f32384a32_Furiosa%20RNGD%20Card%20Hero%201.zip",
+    "bytes": 5729770,
+    "filename": "6ac67a1166577d5f32384a32_Furiosa RNGD Card Hero 1.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a1e3f0d29063b2c4daa_Furiosa%20RNGD%20Card%20Hero%202.zip",
+    "bytes": 540227,
+    "filename": "6ac67a1e3f0d29063b2c4daa_Furiosa RNGD Card Hero 2.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a33ee146019be58aad8_Furiosa%20NXT%20Server%20Frontal.zip",
+    "bytes": 7983322,
+    "filename": "6ac67a33ee146019be58aad8_Furiosa NXT Server Frontal.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "kr-q135683783": [
+   {
+    "format": "ZIP",
+    "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/brand/cursor-brand-assets.zip",
+    "bytes": 1900360,
+    "filename": "cursor-brand-assets.zip",
+    "label": "brand assets ⤓",
+    "inner": [
+     "SVG",
      "PNG"
     ]
    }

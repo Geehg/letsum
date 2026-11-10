@@ -25,7 +25,7 @@ let groups=null;
 try{groups=JSON.parse(await fs.readFile(path.join(project,'data/groups.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
 let rank={},downloads={};
 try{for(const [id,row] of Object.entries(JSON.parse(await fs.readFile(path.join(project,'data/popularity.json'),'utf8')).records))rank[id]=row.score;}catch(error){if(error.code!=='ENOENT')throw error;}
-try{for(const [id,rows] of Object.entries(JSON.parse(await fs.readFile(path.join(project,'data/downloads.json'),'utf8')).downloads))downloads[id]=rows.map(({format,inner,label,url,bytes,filename})=>({format,inner:inner||null,label:label||null,url,bytes:bytes||null,filename:filename||null}));}catch(error){if(error.code!=='ENOENT')throw error;}
+try{for(const [id,rows] of Object.entries(JSON.parse(await fs.readFile(path.join(project,'data/downloads.json'),'utf8')).downloads))downloads[id]=rows.map(({format,inner,label,url,bytes,filename,trusted})=>({format,inner:inner||null,label:label||null,url,bytes:bytes||null,filename:filename||null,trusted:Boolean(trusted)}));}catch(error){if(error.code!=='ENOENT')throw error;}
 let colors={};
 try{colors=JSON.parse(await fs.readFile(path.join(project,'data/colors.json'),'utf8')).colors;}catch(error){if(error.code!=='ENOENT')throw error;}
 // Identification thumbnails kept on our server by tools/fetch_logo_thumbs.mjs; the catalog schema itself stays image-free.

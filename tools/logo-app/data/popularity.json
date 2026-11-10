@@ -111,6 +111,12 @@
    "pageviews": 6906,
    "sitelinks": 5
   },
+  "kr-q108943604": {
+   "score": 4.542,
+   "wiki_title": "허깅 페이스",
+   "pageviews": 4428,
+   "sitelinks": 30
+  },
   "kr-q109459690": {
    "score": 3.111,
    "wiki_title": "국립항공박물관",
@@ -122,6 +128,12 @@
    "wiki_title": "대한민국 중대범죄수사청",
    "pageviews": 1278,
    "sitelinks": 4
+  },
+  "kr-q110363143": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
   },
   "kr-q11232850": {
    "score": 4.063,
@@ -171,6 +183,12 @@
    "pageviews": 2277,
    "sitelinks": 3
   },
+  "kr-q112629176": {
+   "score": 3.808,
+   "wiki_title": "스케일 AI",
+   "pageviews": 1125,
+   "sitelinks": 17
+  },
   "kr-q11272217": {
    "score": 4.043,
    "wiki_title": "중부대학교",
@@ -207,11 +225,29 @@
    "pageviews": 3493,
    "sitelinks": 4
   },
+  "kr-q113030551": {
+   "score": 2.613,
+   "wiki_title": "AI21 랩스",
+   "pageviews": 146,
+   "sitelinks": 4
+  },
+  "kr-q113070628": {
+   "score": 5.04,
+   "wiki_title": "Midjourney",
+   "pageviews": 11319,
+   "sitelinks": 43
+  },
   "kr-q114364248": {
    "score": 4.344,
    "wiki_title": "제물포구",
    "pageviews": 8406,
    "sitelinks": 4
+  },
+  "kr-q115517493": {
+   "score": 3.909,
+   "wiki_title": "Character.ai",
+   "pageviews": 1226,
+   "sitelinks": 22
   },
   "kr-q115648978": {
    "score": 3.418,
@@ -231,17 +267,65 @@
    "pageviews": 4634,
    "sitelinks": 10
   },
+  "kr-q116758847": {
+   "score": 5.885,
+   "wiki_title": "앤트로픽",
+   "pageviews": 63805,
+   "sitelinks": 62
+  },
+  "kr-q116798355": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-q117419137": {
+   "score": 3.63,
+   "wiki_title": "리벨리온",
+   "pageviews": 2802,
+   "sitelinks": 1
+  },
   "kr-q119041656": {
    "score": 3.576,
    "wiki_title": "대한민국 재외동포청",
    "pageviews": 2478,
    "sitelinks": 1
   },
+  "kr-q119718658": {
+   "score": 4.126,
+   "wiki_title": "미스트랄 AI",
+   "pageviews": 1546,
+   "sitelinks": 35
+  },
+  "kr-q120599684": {
+   "score": 4.692,
+   "wiki_title": "XAI (기업)",
+   "pageviews": 5220,
+   "sitelinks": 41
+  },
+  "kr-q123367593": {
+   "score": 3.801,
+   "wiki_title": "런웨이 (기업)",
+   "pageviews": 1348,
+   "sitelinks": 12
+  },
+  "kr-q123592234": {
+   "score": 3.24,
+   "wiki_title": "스태빌리티 AI",
+   "pageviews": 402,
+   "sitelinks": 10
+  },
   "kr-q124215730": {
    "score": 4.309,
    "wiki_title": "대한민국 우주항공청",
    "pageviews": 4364,
    "sitelinks": 12
+  },
+  "kr-q124333951": {
+   "score": 5.041,
+   "wiki_title": "퍼플렉시티 AI",
+   "pageviews": 10898,
+   "sitelinks": 46
   },
   "kr-q12580675": {
    "score": 3.194,
@@ -459,6 +543,12 @@
    "pageviews": 3498,
    "sitelinks": 1
   },
+  "kr-q12593799": {
+   "score": 3.557,
+   "wiki_title": "셀바스AI",
+   "pageviews": 2370,
+   "sitelinks": 1
+  },
   "kr-q12595373": {
    "score": 4.012,
    "wiki_title": "목원대학교",
@@ -513,6 +603,12 @@
    "pageviews": 9153,
    "sitelinks": 2
   },
+  "kr-q12602801": {
+   "score": 3.66,
+   "wiki_title": "솔트룩스",
+   "pageviews": 3006,
+   "sitelinks": 1
+  },
   "kr-q12602960": {
    "score": 3.393,
    "wiki_title": "송원대학교",
@@ -530,6 +626,12 @@
    "wiki_title": "신용보증기금",
    "pageviews": 2754,
    "sitelinks": 1
+  },
+  "kr-q126050137": {
+   "score": 4.174,
+   "wiki_title": "그록 (기업)",
+   "pageviews": 3192,
+   "sitelinks": 12
   },
   "kr-q12606659": {
    "score": 2.97,
@@ -1209,11 +1311,65 @@
    "pageviews": 2057,
    "sitelinks": 1
   },
+  "kr-q127983087": {
+   "score": 4.84,
+   "wiki_title": "업스테이지",
+   "pageviews": 30135,
+   "sitelinks": 3
+  },
+  "kr-q129572031": {
+   "score": 4.093,
+   "wiki_title": "Z.ai",
+   "pageviews": 2043,
+   "sitelinks": 19
+  },
+  "kr-q130270266": {
+   "score": 4.299,
+   "wiki_title": "문샷 AI",
+   "pageviews": 3286,
+   "sitelinks": 19
+  },
   "kr-q130628": {
    "score": 3.871,
    "wiki_title": "국립해양박물관",
    "pageviews": 1399,
    "sitelinks": 15
+  },
+  "kr-q131188279": {
+   "score": 3.863,
+   "wiki_title": "루닛",
+   "pageviews": 4804,
+   "sitelinks": 1
+  },
+  "kr-q131188296": {
+   "score": 3.44,
+   "wiki_title": "마음AI",
+   "pageviews": 1809,
+   "sitelinks": 1
+  },
+  "kr-q131577453": {
+   "score": 5.022,
+   "wiki_title": "딥시크",
+   "pageviews": 7521,
+   "sitelinks": 80
+  },
+  "kr-q133254813": {
+   "score": 4.931,
+   "wiki_title": "퓨리오사AI",
+   "pageviews": 56231,
+   "sitelinks": 1
+  },
+  "kr-q135683783": {
+   "score": 3.088,
+   "wiki_title": "커서",
+   "pageviews": 253,
+   "sitelinks": 12
+  },
+  "kr-q136091597": {
+   "score": 4.305,
+   "wiki_title": "딥엑스",
+   "pageviews": 13298,
+   "sitelinks": 1
   },
   "kr-q136541284": {
    "score": 3.714,
@@ -1340,6 +1496,12 @@
    "wiki_title": "코레일네트웍스",
    "pageviews": 717,
    "sitelinks": 1
+  },
+  "kr-q15733006": {
+   "score": 4.646,
+   "wiki_title": "구글 딥마인드",
+   "pageviews": 3905,
+   "sitelinks": 56
   },
   "kr-q16092702": {
    "score": 4.048,
@@ -1821,6 +1983,18 @@
    "pageviews": 14721,
    "sitelinks": 28
   },
+  "kr-q182477": {
+   "score": 6.152,
+   "wiki_title": "엔비디아",
+   "pageviews": 102342,
+   "sitelinks": 79
+  },
+  "kr-q18350420": {
+   "score": 4.09,
+   "wiki_title": "데이터브릭스",
+   "pageviews": 2632,
+   "sitelinks": 12
+  },
   "kr-q18444140": {
    "score": 3.72,
    "wiki_title": "대한민국 인사혁신처",
@@ -2000,6 +2174,12 @@
    "wiki_title": "국립부산과학관",
    "pageviews": 327,
    "sitelinks": 2
+  },
+  "kr-q21708200": {
+   "score": 5.564,
+   "wiki_title": "오픈AI",
+   "pageviews": 23265,
+   "sitelinks": 98
   },
   "kr-q243327": {
    "score": 5.506,
@@ -4809,6 +4989,12 @@
    "pageviews": 759,
    "sitelinks": 9
   },
+  "kr-q66604886": {
+   "score": 3.386,
+   "wiki_title": "세레브라스 시스템즈",
+   "pageviews": 489,
+   "sitelinks": 13
+  },
   "kr-q6674241": {
    "score": 3.933,
    "wiki_title": "장로회신학대학교",
@@ -4947,6 +5133,12 @@
    "pageviews": 6355,
    "sitelinks": 4
   },
+  "kr-w0f53d9a6fa": {
+   "score": 1.871,
+   "wiki_title": "부노 (동음이의)",
+   "pageviews": 39,
+   "sitelinks": 1
+  },
   "kr-w36da7a6394": {
    "score": 3.164,
    "wiki_title": "한국해외인프라도시개발지원공사",
@@ -4964,6 +5156,12 @@
    "wiki_title": null,
    "pageviews": null,
    "sitelinks": null
+  },
+  "kr-w5a1baa7c62": {
+   "score": 3.337,
+   "wiki_title": "뤼튼테크놀로지스",
+   "pageviews": 2162,
+   "sitelinks": 0
   },
   "kr-w686ce46db0": {
    "score": 0,
@@ -5037,6 +5235,18 @@
    "pageviews": null,
    "sitelinks": null
   },
+  "kr-wb6f0aca4ae": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-wbe648c77b3": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
   "kr-wd2e0cda30c": {
    "score": 0,
    "wiki_title": null,
@@ -5054,6 +5264,12 @@
    "wiki_title": null,
    "pageviews": null,
    "sitelinks": null
+  },
+  "kr-wee0090c147": {
+   "score": 4.31,
+   "wiki_title": "네이버 MYBOX",
+   "pageviews": 13459,
+   "sitelinks": 1
   },
   "microsoft-brand": {
    "score": 5.623,

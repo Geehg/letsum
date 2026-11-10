@@ -3,10 +3,11 @@
 Raster images: crop transparent or flat-colour margins, keep a 3% margin, cap the long side at 800px.
 SVG images: measure the drawn area with headless Chrome (getBBox) and rewrite the viewBox to it.
 Ratios go to tools/logo-app/data/logo-geometry.json, which the logo build uses to size every logo to a similar area.
-Idempotent: running it again on trimmed files changes nothing. GIFs are rewritten as PNG (references updated).
+Idempotent: files whose content hash matches the one recorded in logo-geometry.json are skipped (re-measuring or
+re-encoding them would shift the frame by fractions of a pixel and degrade JPEGs). GIFs are rewritten as PNG (references updated).
 Usage: python3 tools/logo-survey/normalize_logos.py   (not -I: needs Pillow; needs Google Chrome for SVGs)
 """
-import io, json, re, subprocess, sys, tempfile, html as htmllib
+import hashlib, io, json, re, subprocess, sys, tempfile, html as htmllib
 from pathlib import Path
 from PIL import Image, ImageChops
 
@@ -164,11 +165,17 @@ def svg_tone(path):
 
 def main():
     geometry_file = APP / "logo-geometry.json"
+    previous = json.loads(geometry_file.read_text()) if geometry_file.exists() else {}
+    digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()[:16]
     geometry = {}
     renamed = {}
     svgs = []
     for path in sorted(THUMBS.iterdir()):
         suffix = path.suffix.lower()
+        known = previous.get(path.name)
+        if known and known.get("sha") == digest(path):
+            geometry[path.name] = known
+            continue
         if suffix == ".svg":
             svgs.append(path)
         elif suffix in (".png", ".jpg", ".jpeg", ".gif", ".webp"):
@@ -179,7 +186,7 @@ def main():
                 continue
             if done:
                 out, ratio, tone = done
-                geometry[out.name] = {"ratio": round(ratio, 4), "tone": tone}
+                geometry[out.name] = {"ratio": round(ratio, 4), "tone": tone, "sha": digest(out)}
                 if out != path:
                     renamed[path.name] = out.name
     boxes = measure_svgs(svgs) if svgs else {}
@@ -188,7 +195,7 @@ def main():
         if box:
             ratio = rewrite_svg(path, box)
             if ratio:
-                geometry[path.name] = {"ratio": round(ratio, 4), "tone": svg_tone(path)}
+                geometry[path.name] = {"ratio": round(ratio, 4), "tone": svg_tone(path), "sha": digest(path)}
         else:
             print("  unmeasured", path.name)
     # Point manifests at renamed (GIF → PNG) files.

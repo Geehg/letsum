@@ -83,3 +83,10 @@ python3 -I tools/logo-survey/popularity.py      # 기본 정렬(인지도순) �
 
 - 카드 앞면 우상단은 공식 출처 아이콘(↗, 새 창). 하단의 공식 출처·상세정보 줄은 없고 제목 링크로 상세 이동.
 - 뒷면은 이름·컬러만. 보관함(로컬 저장·링크 목록 JSON 내보내기)은 삭제.
+
+## AI 분야 (2026-11-10)
+
+- `python3 -I tools/logo-survey/ai_orgs.py`: 수작업 선정 AI 기업 36곳(생성형 AI·모델 22, 플랫폼 6, 반도체·인프라 6, 의료 AI 2)을 위키백과·위키데이터로 확인해 orgs.json에 `group: "AI 기업"`, `ai_field`, `country`로 추가. 이후 `crawl.py --only <이름들>` → `merge.py` → `classify.py`(대분류 AI) → `check_downloads.py --only @tools/logo-survey/data/ai-ids.json` → `normalize_logos.py` → `popularity.py`.
+- 해외 기업 브랜드 페이지는 `/brand`, `/press`, `/media-kit` 등에서 찾아 crawl.json `ci_page`로 기록. 위키데이터 로고가 다른 회사(모회사·제휴사)인 경우는 공식 브랜드 페이지 파일로 교체(Cursor, 리벨리온, 셀바스AI). xAI는 SpaceX 통합 후 공식 사이트가 SpaceX 브랜드를 쓰므로 그 로고를 유지.
+- download-manual.json의 `{"trusted": true}`: 공식 브랜드 페이지에 다운로드로 게시됐지만 봇 차단(403)으로 자동 확인이 안 되는 파일(Mistral). 화면에 "자동 확인 차단"으로 표시.
+- 아이콘 보기 타일 하단 라벨은 소분류 이름.

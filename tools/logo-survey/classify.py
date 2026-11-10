@@ -20,6 +20,7 @@ GROUPS = [
     ("research", "연구기관", [("science", "과학·기술 연구"), ("social", "인문·사회 연구")]),
     ("education", "대학·교육", [("national", "국립·공립대학"), ("private", "사립대학"), ("institute", "과학기술원·특수대학"), ("teachers", "교육대학"), ("foreign", "해외 대학")]),
     ("medical", "의료기관", [("university-hospital", "대학병원"), ("public-hospital", "국립·공공병원")]),
+    ("ai", "AI", [("model", "생성형 AI·모델"), ("platform", "AI 플랫폼·서비스"), ("chip", "AI 반도체·인프라"), ("health", "의료 AI")]),
     ("business", "기업·브랜드", [("it", "IT·플랫폼"), ("manufacturing", "제조")]),
     ("global", "국제기구·비영리", [("international", "국제기구"), ("nonprofit", "비영리단체")]),
 ]
@@ -63,6 +64,8 @@ def survey_id(org):
 
 def classify(org, record):
     name, group = org["name"], org["group"]
+    if group == "AI 기업":
+        return "ai/" + org["ai_field"]
     if group == "중앙행정기관":
         if name in INDEPENDENT:
             return "government/independent"

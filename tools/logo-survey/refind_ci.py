@@ -108,7 +108,7 @@ def survey(job):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--top", type=int, default=300)
+    parser.add_argument("--top", type=int, default=300, help="how many records by recognition to consider (use a large number for all)")
     parser.add_argument("--workers", type=int, default=5)
     args = parser.parse_args()
     records = json.loads((APP / "catalog.json").read_text())["records"]
@@ -126,6 +126,7 @@ def main():
         jobs.append((record["id"], record["organization_name"], [res.get("website_final"), org.get("website"), record["source_url"], *official_sites(org)]))
     with ThreadPoolExecutor(args.workers) as pool:
         results = dict(pool.map(survey, jobs))
+    data = json.loads(crawl_file.read_text())  # re-read: other steps may have written crawl.json meanwhile
     hits = 0
     for record in top:
         pages = results.get(record["id"]) or []

@@ -42,6 +42,8 @@ SECTOR_RULES = [
 def sectors_for(org):
     if org["group"] in ("시도교육청", "대학"):
         return ["education"]
+    if org["group"] == "AI 기업":
+        return ["ict-digital"] + (["healthcare"] if org.get("ai_field") == "health" else [])
     found = [sector for sector, pattern in SECTOR_RULES if re.search(pattern, org["name"])][:2]
     if org["category"] in ("national-government", "local-government") and "administration" not in found:
         found = ["administration", *found][:2]
@@ -86,11 +88,11 @@ for org in orgs:
     region = region_for(org)
     ci = res.get("ci_page")
     home = res.get("website_final") or org.get("website")
-    wiki = "https://ko.wikipedia.org/wiki/" + urllib.parse.quote(org["wiki_title"].replace(" ", "_"))
+    wiki = f"https://{org.get('wiki_lang') or 'ko'}.wikipedia.org/wiki/" + urllib.parse.quote(org["wiki_title"].replace(" ", "_"))
     url = ci or home or wiki
     official = res.get("colors_official") or []
     if ci:
-        title, publisher = f"{org_name} CI·상징 안내", org_name
+        title, publisher = (f"{org_name} 브랜드·로고 안내" if org["group"] == "AI 기업" else f"{org_name} CI·상징 안내"), org_name
         observation = f"자동 수집({res.get('checked_at', TODAY)}): 공식 홈페이지 메뉴 '{res.get('ci_link_text') or 'CI'}'에서 이 페이지를 찾음." + (f" 공식 색상 표기 {len(official)}건을 원문 그대로 읽음." if official else " 본문에서 색상 코드 표기는 찾지 못함.")
     elif home:
         title, publisher = f"{org_name} 공식 홈페이지", org_name
@@ -100,13 +102,13 @@ for org in orgs:
         observation = "공식 홈페이지 주소를 확인하지 못해 명단 출처 문서를 근거로 둠."
     src_id = rid + "-src"
     evidence.append({"id": src_id, "title": title, "url": url, "publisher": publisher, "language": "ko", "checked_at": res.get("checked_at", TODAY),
-                     "scope": "page", "observation": observation, "note": f"명단: 위키백과 {org['roster']}" + (f" · 위키데이터 {org['wikidata']}" if org.get("wikidata") else "") + (f" · 수집 오류: {res['errors'][0]}" if res.get("errors") else "")})
-    label = "상징·CI" if org["category"] == "local-government" and org["group"] != "시도교육청" else ("UI" if org["group"] == "대학" else "CI")
-    summary = (f"공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다." if ci else "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다.") + f" 분류: {org['group']}."
+                     "scope": "page", "observation": observation, "note": (f"명단: {org['roster']}" if org["group"] == "AI 기업" else f"명단: 위키백과 {org['roster']}") + (f" · 위키데이터 {org['wikidata']}" if org.get("wikidata") else "") + (f" · 수집 오류: {res['errors'][0]}" if res.get("errors") else "")})
+    label = "상징·CI" if org["category"] == "local-government" and org["group"] != "시도교육청" else ("UI" if org["group"] == "대학" else "로고" if org["group"] == "AI 기업" else "CI")
+    summary = (f"공식 홈페이지의 브랜드·로고 안내 페이지입니다." if ci and org["group"] == "AI 기업" else f"공식 홈페이지의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다." if ci else "공식 홈페이지 정보입니다. CI 안내 페이지는 자동 수집에서 찾지 못했습니다.") + f" 분류: {org['group']}."
     aliases = [a for a in dict.fromkeys([org["name"], org["wiki_title"].replace("대한민국 ", ""), org.get("name_en")]) if a and a != org_name]
     records.append({
         "id": rid, "organization_id": rid, "organization_name": org_name, "name": f"{org_name} {label}", "name_en": org.get("name_en"),
-        "aliases": aliases, "category": org["category"], "kind": "organization", "sectors": sectors_for(org), "country": "KR", "region": region,
+        "aliases": aliases, "category": org["category"], "kind": "organization", "sectors": sectors_for(org), "country": org.get("country") or "KR", "region": region,
         "summary": summary, "source_ids": [src_id], "source_url": url, "guideline_url": ci, "assets": formats_asset(rid, org_name, src_id, res.get("formats")),
         "usage": {"summary": "자동 수집 자료입니다. 이용 조건은 공식 페이지 원문에서 확인해 주세요.", "approval": "unknown", "redistribution": "unknown", "preview": "unknown", "policy_url": None},
         "version": {"status": "unconfirmed", "introduced_at": None, "label": None},

@@ -1,5 +1,5 @@
 {
- "note": "자동 탐색이 놓친 공식 로고 파일(브라우저로 공식 페이지에서 직접 확인). check_downloads.py가 다른 후보와 똑같이 파일 서명으로 검증한다. 만료되는 서명 URL·로그인·교직원 전용 자료는 넣지 않는다.",
+ "note": "자동 탐색이 놓친 공식 로고 파일(브라우저로 공식 페이지에서 직접 확인). check_downloads.py가 다른 후보와 똑같이 파일 서명으로 검증한다. 만료되는 서명 URL·로그인·교직원 전용 자료는 넣지 않는다. 4번째 값 {\"trusted\": true}는 공식 브랜드 페이지에 다운로드로 게시됐지만 자동 요청을 봇 차단(403)하는 파일: 확장자로 형식을 적고 사람이 받으면 열리는 것을 전제로 한다.",
  "files": {
   "kakao-ci": [
    [
@@ -45,6 +45,31 @@
     "https://www.nasa.gov/wp-content/uploads/2023/07/nasa-insignia-lockup-2line-left.png",
     "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
     "인시그니아 조합 두 줄"
+   ]
+  ],
+  "kr-q116758847": [
+   [
+    "https://www.anthropic.com/press-kit",
+    "https://www.anthropic.com/news",
+    "Anthropic 미디어 자료(로고 포함)"
+   ]
+  ],
+  "kr-q119718658": [
+   [
+    "https://cms.globalaegis.net/api/documents/file/Mistral_Logos_2026.zip",
+    "https://mistral.ai/brand/",
+    "로고 모음",
+    {
+     "trusted": true
+    }
+   ],
+   [
+    "https://cms.globalaegis.net/api/documents/file/Mistral_Brandkit_2026.zip",
+    "https://mistral.ai/brand/",
+    "브랜드 키트",
+    {
+     "trusted": true
+    }
    ]
   ]
  }

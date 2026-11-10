@@ -196,7 +196,7 @@ import { renderReview, bindReview } from './review.js';
   function downloadRow(record) {
     const files = downloads[record.id] || [];
     if (!files.length) return '';
-    return `<div class="logo-dlrow">${files.map(file => `<a class="logo-dl" href="${h(safeUrl(file.url) || '#')}" target="_blank" rel="noopener noreferrer">${FORMAT_ICONS[fileFormats(file)[0]] || ''}<span><b>⬇ ${h(fileFormats(file).join('·'))}${file.label ? ` <em>${h(file.label)}</em>` : ' 파일 받기'}</b><small>${h([file.inner?.length ? 'ZIP 압축' : '', file.filename, fileSize(file.bytes), domain(file.url)].filter(Boolean).join(' · '))}</small></span></a>`).join('')}</div><p class="small-copy dl-note">파일은 LETSUM이 아니라 공식 사이트에서 바로 내려받습니다. 사용 조건과 규정은 공식 출처 원문을 따릅니다.</p>`;
+    return `<div class="logo-dlrow">${files.map(file => `<a class="logo-dl" href="${h(safeUrl(file.url) || '#')}" target="_blank" rel="noopener noreferrer">${FORMAT_ICONS[fileFormats(file)[0]] || ''}<span><b>⬇ ${h(fileFormats(file).join('·'))}${file.label ? ` <em>${h(file.label)}</em>` : ' 파일 받기'}</b><small>${h([file.inner?.length || file.format === 'ZIP' ? 'ZIP 압축' : '', file.filename, fileSize(file.bytes), domain(file.url), file.trusted ? '공식 브랜드 페이지 게시(자동 확인 차단)' : ''].filter(Boolean).join(' · '))}</small></span></a>`).join('')}</div><p class="small-copy dl-note">파일은 LETSUM이 아니라 공식 사이트에서 바로 내려받습니다. 사용 조건과 규정은 공식 출처 원문을 따릅니다.</p>`;
   }
 
   function cardMark(record) {
@@ -229,7 +229,7 @@ import { renderReview, bindReview } from './review.js';
   function renderTile(record) {
     const { mark, size, latin, width } = cardMark(record);
     const thumb = thumbnails[record.id];
-    return `<a class="icon-tile tone-${h(record.category)}" href="${h(detailHref(record.id))}" data-record="${h(record.id)}"${thumbAttrs(thumb)}><span class="tile-face size-${size}" style="--w:${width}" aria-hidden="true">${thumbImg(thumb, 'front', record)}<b${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</b></span><span class="tile-name">${h(record.name)}</span><span class="tile-kind">${h(label(categoryLabels, record.category))}</span></a>`;
+    return `<a class="icon-tile tone-${h(record.category)}" href="${h(detailHref(record.id))}" data-record="${h(record.id)}"${thumbAttrs(thumb)}><span class="tile-face size-${size}" style="--w:${width}" aria-hidden="true">${thumbImg(thumb, 'front', record)}<b${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</b></span><span class="tile-name">${h(record.name)}</span><span class="tile-kind">${h((browse && subLabel(...groupOf(record.id))) || label(categoryLabels, record.category))}</span></a>`;
   }
 
   function renderCard(record) {

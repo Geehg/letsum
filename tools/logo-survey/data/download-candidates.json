@@ -9552,6 +9552,230 @@
     "label": "로고 다운로드",
     "page": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/"
    }
-  }
+  },
+  "kr-q21708200": {},
+  "kr-q116758847": {
+   "https://www.anthropic.com/press-kit": {
+    "label": "Anthropic 미디어 자료(로고 포함)",
+    "page": "https://www.anthropic.com/news"
+   }
+  },
+  "kr-q119718658": {
+   "https://cms.globalaegis.net/api/documents/file/Mistral_Brandkit_2026.zip": {
+    "label": "Download our brand kit (.zip)",
+    "page": "https://mistral.ai/brand/"
+   },
+   "https://cms.globalaegis.net/api/documents/file/Mistral_Logos_2026.zip": {
+    "label": "Download Collection",
+    "page": "https://mistral.ai/brand/"
+   },
+   "https://cms.globalaegis.net/api/documents/file/Mistral_Models_2026.zip": {
+    "label": "Download Collection",
+    "page": "https://mistral.ai/brand/"
+   },
+   "https://cms.globalaegis.net/api/documents/file/Mistral_Product_Shots_2026.zip": {
+    "label": "Download Product Shots",
+    "page": "https://mistral.ai/brand/"
+   }
+  },
+  "kr-q110363143": {
+   "https://cdn.sanity.io/files/rjtqmwfu/web3-prod/32f7d09e898b78e0b96c6de7969586824ce4bb71.zip": {
+    "label": "Download press kit",
+    "page": "https://cohere.com/newsroom"
+   }
+  },
+  "kr-q123592234": {
+   "https://drive.google.com/file/d/1NUVhoPd_TavV7kMl9y3AiTJchMPz0Eao/view": {
+    "label": "Brand Resources",
+    "page": "https://stability.ai/press"
+   }
+  },
+  "kr-q123367593": {
+   "https://runway.com/assets/Runway-Brand-Guidelines.zip": {
+    "label": "Download",
+    "page": "https://runway.com/brand-guidelines"
+   }
+  },
+  "kr-q116798355": {
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-black.png": {
+    "label": "ElevenLabs Logo black (PNG) 18.88 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-black.svg": {
+    "label": "ElevenLabs Logo black (SVG) 3.37 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-white.png": {
+    "label": "ElevenLabs Logo white (PNG) 19.5 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/0b9cd3e1-9fad-4a5b-b3a0-c96b0a1f1d2b/elevenlabs-logo-white.svg": {
+    "label": "ElevenLabs Logo white (SVG) 3.37 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/45748ad8-5ef9-4843-b060-c73caa462fb0/elevenlabs-logos.zip": {
+    "label": "Download all 40.07 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/a2ea339b-8b5e-41bb-b706-24eda8a4c9e3/elevenlabs-symbol.png": {
+    "label": "ElevenLabs Symbol (PNG) 13.01 KB",
+    "page": "https://elevenlabs.io/brand"
+   },
+   "https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/a2ea339b-8b5e-41bb-b706-24eda8a4c9e3/elevenlabs-symbol.svg": {
+    "label": "ElevenLabs Symbol (SVG) 209 B",
+    "page": "https://elevenlabs.io/brand"
+   }
+  },
+  "kr-q130270266": {
+   "https://www.kimi.ai/products/download": {
+    "label": "Downloads",
+    "page": "https://www.kimi.ai/resources/kimi-brand"
+   },
+   "https://appsupport.kimi.ai/api/app/pkg/latest/macos/download": {
+    "label": "Download Download",
+    "page": "https://www.kimi.ai/resources/kimi-brand"
+   }
+  },
+  "kr-q127983087": {},
+  "kr-q108943604": {
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg?download=true": {
+    "label": ".svg",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png?download=true": {
+    "label": ".png",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.ai?download=true": {
+    "label": ".ai",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.svg?download=true": {
+    "label": ".svg",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.png?download=true": {
+    "label": ".png",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.ai?download=true": {
+    "label": ".ai",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.svg?download=true": {
+    "label": ".svg",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.png?download=true": {
+    "label": ".png",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-monochrome.ai?download=true": {
+    "label": ".ai",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.svg?download=true": {
+    "label": ".svg",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.png?download=true": {
+    "label": ".png",
+    "page": "https://huggingface.co/brand"
+   },
+   "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-pirate.ai?download=true": {
+    "label": ".ai",
+    "page": "https://huggingface.co/brand"
+   }
+  },
+  "kr-q112629176": {
+   "https://brand.scale.com/scale-logos.zip": {
+    "label": "Logo files",
+    "page": "https://brand.scale.com/"
+   }
+  },
+  "kr-q135683783": {
+   "https://cursor.com/download": {
+    "label": "Download",
+    "page": "https://cursor.com/en-US/brand"
+   },
+   "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/brand/cursor-brand-assets.zip": {
+    "label": "Download brand assets ⤓",
+    "page": "https://cursor.com/en-US/brand"
+   },
+   "https://cursor.com/en-US/download": {
+    "label": "Download",
+    "page": "https://cursor.com/en-US/brand"
+   }
+  },
+  "kr-q12593799": {
+   "https://drive.google.com/file/d/1a-UX1DlhE3w6UyzdZ6zAlPDnFk1t67Fk/view?usp=sharing": {
+    "label": "AI 다운로드",
+    "page": "https://www.selvasai.com/brand"
+   },
+   "https://drive.google.com/file/d/1BDJoJnWgt2IG2Y4p05PNjQk4si7GThwS/view?usp=sharing": {
+    "label": "PN ​ ​ G 다운로드",
+    "page": "https://www.selvasai.com/brand"
+   }
+  },
+  "kr-q182477": {},
+  "kr-q133254813": {
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e329cccaf2f7ee68985_Furiosa_AI_h_rgb%20PNG.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e05c29107a2b5d9d586_Furiosa_AI_h_rgb.zip": {
+    "label": "AI",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e80d1d10766ca51a275_Furiosa_AI_symbol_rgb.svg": {
+    "label": "SVG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e9d1c0f283eb8fc8ec2_Furiosa_AI_symbol_rgb%20PNG.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ad65e6e3a8f972081059918_Furiosa_AI_symbol_rgb.zip": {
+    "label": "AI",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6768fa8f5eb2ba998e8d1_Furiosa%20RNGD%20Card%20Frontal.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6792fb866ff638984318e_Furiosa%20RNGD%20Board%20Frontal.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6795aef65aee021f16a1c_Furiosa%20RNGD%20Card%20Angle.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac6796cad07690aeba86106_Furiosa%20RNGD%20Card%20Closeup.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a1166577d5f32384a32_Furiosa%20RNGD%20Card%20Hero%201.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a1e3f0d29063b2c4daa_Furiosa%20RNGD%20Card%20Hero%202.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a33ee146019be58aad8_Furiosa%20NXT%20Server%20Frontal.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a48f2e7601e45675428_Furiosa%20NXT%20Server%20Closeup.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   },
+   "https://cdn.prod.website-files.com/69289527195a1f9e06ade556/6ac67a5d60e6f5c295b89be7_Furiosa%20NXT%20Server%20Detail.zip": {
+    "label": "PNG",
+    "page": "https://furiosa.ai/newsroom"
+   }
+  },
+  "kr-w0f53d9a6fa": {}
  }
 }
