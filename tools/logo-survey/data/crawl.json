@@ -677,7 +677,10 @@
    ],
    "ci_page": "https://www.mois.go.kr:443/frt/sub/a06/b08/nationalIcon/screen.do",
    "ci_link_text": "국가상징 페이지로 이동- 국가상징",
-   "ci_found_by": "rendered-home"
+   "ci_found_by": "rendered-home",
+   "ci_pages_extra": [
+    "https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do"
+   ]
   },
   "Q11233101": {
    "name": "국가데이터처",
@@ -1732,7 +1735,10 @@
     "bytes": 4419,
     "tone": "normal",
     "file": "/logos/thumbs/survey-1c041e9dbb.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.mogef.go.kr/mi/amo/mi_amo_f004.do"
+   ]
   },
   "Q11232933": {
    "name": "방위사업청",
@@ -2247,7 +2253,10 @@
    ],
    "ci_page": "https://state.gwd.go.kr",
    "ci_link_text": "로고링크",
-   "ci_found_by": "rendered-home"
+   "ci_found_by": "rendered-home",
+   "ci_pages_extra": [
+    "https://state.gwd.go.kr/portal/introduce/symbol/flag"
+   ]
   },
   "Q20937": {
    "name": "경기도",
@@ -2498,7 +2507,12 @@
      "rgb": "28 55 141",
      "share": 0.19
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711"
+   ],
+   "ci_page": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711",
+   "ci_found_by": "refind"
   },
   "Q20934": {
    "name": "인천광역시",
@@ -2530,7 +2544,12 @@
      "rgb": "96 97 99",
      "share": 0.22
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.incheon.go.kr/citybrand/CB010101"
+   ],
+   "ci_page": "https://www.incheon.go.kr/citybrand/CB010101",
+   "ci_found_by": "refind"
   },
   "Q41151": {
    "name": "경상남도",
@@ -2595,7 +2614,12 @@
      "rgb": "3 31 63",
      "share": 1.0
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064"
+   ],
+   "ci_page": "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064",
+   "ci_found_by": "refind"
   },
   "Q50203": {
    "name": "가평군",
@@ -2621,7 +2645,14 @@
     "tone": "light",
     "file": "/logos/thumbs/survey-c73d036917.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gp.go.kr/portal/contents.do?key=749",
+    "https://www.gp.go.kr/portal/contents.do?key=2489",
+    "https://www.gp.go.kr/portal/contents.do?key=713"
+   ],
+   "ci_page": "https://www.gp.go.kr/portal/contents.do?key=749",
+   "ci_found_by": "refind"
   },
   "Q42056": {
    "name": "강릉시",
@@ -2698,7 +2729,13 @@
      "rgb": "42 87 165",
      "share": 0.18
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+    "https://www.gangbuk.go.kr/portal/main/contents.do?menuNo=200798"
+   ],
+   "ci_page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+   "ci_found_by": "refind"
   },
   "Q41066": {
    "name": "충청북도",
@@ -2806,7 +2843,14 @@
      "rgb": "135 123 110",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+    "https://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+    "https://www.gangjin.go.kr/www/gangjin_story/symbol"
+   ],
+   "ci_page": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+   "ci_found_by": "refind"
   },
   "Q50205": {
    "name": "강화군",
@@ -3095,6 +3139,9 @@
      "rgb": "0 153 210",
      "share": 0.19
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
    ]
   },
   "Q50207": {
@@ -3537,7 +3584,14 @@
      "rgb": "0 127 200",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gccity.go.kr/portal/contents.do?mId=0511020000",
+    "https://www.gccity.go.kr/portal/contents.do?mId=0511000000",
+    "https://www.gccity.go.kr:443/portal/contents.do?mId=0511020000"
+   ],
+   "ci_page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000",
+   "ci_found_by": "refind"
   },
   "Q624460": {
    "name": "농림축산식품부",
@@ -3746,6 +3800,9 @@
      "rgb": "245 132 48",
      "share": 0.14
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.jeju.go.kr/jeju/symbol/brane.htm"
    ]
   },
   "Q41278": {
@@ -4029,7 +4086,10 @@
     "bytes": 18142,
     "tone": "normal",
     "file": "/logos/thumbs/survey-5ad63913fa.svg"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gjcity.go.kr/portal/contents.do?mId=0102020000"
+   ]
   },
   "Q42074": {
    "name": "군산시",
@@ -4201,7 +4261,11 @@
     "files": [],
     "page": "https://www.bsgangseo.go.kr/portal/contents.do?mid=0601020000",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.bsgangseo.go.kr/portal/contents.do?mid=0601020100",
+    "https://www.bsgangseo.go.kr/portal/contents.do?mid=0601020000"
+   ]
   },
   "Q50215": {
    "name": "군위군",
@@ -4244,7 +4308,12 @@
      "rgb": "0 127 200",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&"
+   ],
+   "ci_page": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+   "ci_found_by": "refind"
   },
   "Q50213": {
    "name": "괴산군",
@@ -4464,7 +4533,12 @@
      "rgb": "0 127 200",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   ],
+   "ci_page": "https://www.gimpo.go.kr/portal/contents.do?key=1232",
+   "ci_found_by": "refind"
   },
   "Q50216": {
    "name": "금산군",
@@ -4554,7 +4628,13 @@
      "rgb": "217 152 62",
      "share": 0.16
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://gc.go.kr/portal/contents.do?mId=1201030000",
+    "https://www.gc.go.kr:443/portal/contents.do?mId=1201030000"
+   ],
+   "ci_page": "https://gc.go.kr/portal/contents.do?mId=1201030000",
+   "ci_found_by": "refind"
   },
   "Q50353": {
    "name": "관악구",
@@ -4826,7 +4906,12 @@
     "bytes": 7410,
     "tone": "normal",
     "file": "/logos/thumbs/survey-25ca0fef42.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gumi.go.kr/portal/contents.do?mid=0507010800",
+    "https://www.gumi.go.kr/portal/contents.do?mid=0502010000",
+    "https://www.gumi.go.kr/portal/contents.do?mid=0502000000"
+   ]
   },
   "Q42087": {
    "name": "남원시",
@@ -4864,7 +4949,13 @@
      "rgb": "221 0 66",
      "share": 0.33
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4",
+    "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5c67c02b2"
+   ],
+   "ci_page": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4",
+   "ci_found_by": "refind"
   },
   "Q42071": {
    "name": "구리시",
@@ -5122,7 +5213,12 @@
      "rgb": "234 157 25",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.nyj.go.kr/www/contents.do?key=2525"
+   ],
+   "ci_page": "https://www.nyj.go.kr/www/contents.do?key=2525",
+   "ci_found_by": "refind"
   },
   "Q50240": {
    "name": "담양군",
@@ -5246,7 +5342,12 @@
      "rgb": "17 17 17",
      "share": 0.38
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   ],
+   "ci_page": "https://www.dangjin.go.kr/kor/sub04_01_04.do",
+   "ci_found_by": "refind"
   },
   "Q42083": {
    "name": "나주시",
@@ -5780,7 +5881,12 @@
      "rgb": "90 42 0",
      "share": 0.2
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   ],
+   "ci_page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+   "ci_found_by": "refind"
   },
   "Q42093": {
    "name": "동해시",
@@ -5857,6 +5963,9 @@
      "rgb": "35 31 32",
      "share": 0.53
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.gimhae.go.kr/01025.web"
    ]
   },
   "Q42088": {
@@ -5953,7 +6062,14 @@
      "rgb": "217 25 32",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "http://www.muan.go.kr/www/abountmuan/symbol/brand/city",
+    "http://www.muan.go.kr/www/abountmuan/symbol/brand",
+    "http://www.muan.go.kr/www/abountmuan/symbol/emblem"
+   ],
+   "ci_page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city",
+   "ci_found_by": "refind"
   },
   "Q42094": {
    "name": "목포시",
@@ -5996,7 +6112,14 @@
      "rgb": "99 86 104",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
+    "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand",
+    "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   ],
+   "ci_page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
+   "ci_found_by": "refind"
   },
   "Q42095": {
    "name": "문경시",
@@ -6034,7 +6157,12 @@
      "rgb": "72 55 41",
      "share": 0.37
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   ],
+   "ci_page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+   "ci_found_by": "refind"
   },
   "Q50374": {
    "name": "도봉구",
@@ -6087,7 +6215,10 @@
     ],
     "page": "https://www.dobong.go.kr/Contents.asp?code=10009553",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.dobong.go.kr/Contents.asp?code=10009551"
+   ]
   },
   "Q50378": {
    "name": "동구",
@@ -6330,7 +6461,14 @@
      "rgb": "0 167 97",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000",
+    "https://www.bonghwa.go.kr/portal/contents.do?mid=0402010000",
+    "https://www.bonghwa.go.kr/portal/contents.do?mid=0402000000"
+   ],
+   "ci_page": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000",
+   "ci_found_by": "refind"
   },
   "Q50377": {
    "name": "동구",
@@ -6533,7 +6671,13 @@
      "rgb": "130 179 165",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.boeun.go.kr/www/contents.do?key=313",
+    "https://www.boeun.go.kr/www/contents.do?key=315"
+   ],
+   "ci_page": "https://www.boeun.go.kr/www/contents.do?key=313",
+   "ci_found_by": "refind"
   },
   "Q42099": {
    "name": "부천시",
@@ -6642,6 +6786,9 @@
      "rgb": "42 94 174",
      "share": 0.2
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
    ]
   },
   "Q50247": {
@@ -6893,7 +7040,14 @@
      "rgb": "242 90 34",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.sacheon.go.kr/intro/01096/03763.web",
+    "https://www.sacheon.go.kr/intro/01096/02416.web",
+    "https://www.sacheon.go.kr/02416.web"
+   ],
+   "ci_page": "https://www.sacheon.go.kr/intro/01096/03763.web",
+   "ci_found_by": "refind"
   },
   "Q42092": {
    "name": "동두천시",
@@ -7391,7 +7545,12 @@
      "rgb": "103 97 97",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d"
+   ],
+   "ci_page": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d",
+   "ci_found_by": "refind"
   },
   "Q50395": {
    "name": "북구",
@@ -7737,7 +7896,12 @@
      "rgb": "108 156 120",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.sancheong.go.kr/www/contents.do?key=178"
+   ],
+   "ci_page": "https://www.sancheong.go.kr/www/contents.do?key=178",
+   "ci_found_by": "refind"
   },
   "Q42108": {
    "name": "성남시",
@@ -8015,7 +8179,14 @@
      "rgb": "33 187 239",
      "share": 0.18
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.songpa.go.kr/www/contents.do?key=2374&",
+    "https://www.songpa.go.kr/www/contents.do?key=2374",
+    "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   ],
+   "ci_page": "https://www.songpa.go.kr/www/contents.do?key=2374&",
+   "ci_found_by": "refind"
   },
   "Q50251": {
    "name": "순창군",
@@ -8059,7 +8230,13 @@
      "rgb": "44 183 211",
      "share": 0.09
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e",
+    "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac98098b94f34"
+   ],
+   "ci_page": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e",
+   "ci_found_by": "refind"
   },
   "Q42113": {
    "name": "시흥시",
@@ -8103,7 +8280,12 @@
      "rgb": "67 44 34",
      "share": 0.1
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   ],
+   "ci_page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000",
+   "ci_found_by": "refind"
   },
   "Q42114": {
    "name": "아산시",
@@ -8180,7 +8362,12 @@
      "rgb": "0 153 218",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci"
+   ],
+   "ci_page": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci",
+   "ci_found_by": "refind"
   },
   "Q50249": {
    "name": "서천군",
@@ -8234,7 +8421,12 @@
     ],
     "page": "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=4CF5D64950353BFD8716A6A88CBF07D1",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=F509067B14E9FE16EFD6A75BFED7A93A",
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=E6BA0F5CBB2149C98EE629BCC685D70E",
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=2B55FF0C7B1DCA4CDD78D81F721C374A"
+   ]
   },
   "Q50252": {
    "name": "신안군",
@@ -8499,7 +8691,13 @@
      "rgb": "105 106 108",
      "share": 0.29
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.yangju.go.kr/www/contents.do?key=346",
+    "https://www.yangju.go.kr/www/contents.do?key=338"
+   ],
+   "ci_page": "https://www.yangju.go.kr/www/contents.do?key=346",
+   "ci_found_by": "refind"
   },
   "Q50220": {
    "name": "단양군",
@@ -8542,7 +8740,12 @@
      "rgb": "217 25 32",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.danyang.go.kr/dy21/761"
+   ],
+   "ci_page": "https://www.danyang.go.kr/dy21/761",
+   "ci_found_by": "refind"
   },
   "Q50420": {
    "name": "양천구",
@@ -8681,7 +8884,12 @@
      "rgb": "128 161 145",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.yp21.go.kr/www/contents.do?key=1846"
+   ],
+   "ci_page": "https://www.yp21.go.kr/www/contents.do?key=1846",
+   "ci_found_by": "refind"
   },
   "Q50254": {
    "name": "양양군",
@@ -8913,7 +9121,12 @@
      "rgb": "25 25 23",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.yd21.go.kr/kr/html/sub04/04030101.html"
+   ],
+   "ci_page": "https://www.yd21.go.kr/kr/html/sub04/04030101.html",
+   "ci_found_by": "refind"
   },
   "Q50383": {
    "name": "동래구",
@@ -9009,7 +9222,13 @@
      "rgb": "109 110 113",
      "share": 0.31
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.ydp.go.kr/www/contents.do?key=2895&",
+    "https://www.ydp.go.kr/www/contents.do?key=2895"
+   ],
+   "ci_page": "https://www.ydp.go.kr/www/contents.do?key=2895&",
+   "ci_found_by": "refind"
   },
   "Q50263": {
    "name": "영양군",
@@ -9332,7 +9551,12 @@
      "rgb": "204 195 159",
      "share": 0.09
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.osan.go.kr/portal/contents.do?mId=0501010000"
+   ],
+   "ci_page": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
+   "ci_found_by": "refind"
   },
   "Q50422": {
    "name": "연제구",
@@ -9652,7 +9876,12 @@
     ],
     "page": "https://www.suncheon.go.kr/kr/info/0003/0001/0004/",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.suncheon.go.kr/kr/info/0003;jsessionid=0534FF59CB0770E05BB62BE6AA2A71E2",
+    "https://www.suncheon.go.kr/kr/info/0003/0001",
+    "https://www.suncheon.go.kr/kr/info/0003"
+   ]
   },
   "Q50429": {
    "name": "용산구",
@@ -9990,7 +10219,12 @@
      "rgb": "0 158 150",
      "share": 0.13
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.eumseong.go.kr/www/contents.do?key=410"
+   ],
+   "ci_page": "https://www.eumseong.go.kr/www/contents.do?key=410",
+   "ci_found_by": "refind"
   },
   "Q42125": {
    "name": "여수시",
@@ -10180,7 +10414,12 @@
      "rgb": "163 216 180",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.uiwang.go.kr/UWKORINTRO0201"
+   ],
+   "ci_page": "https://www.uiwang.go.kr/UWKORINTRO0201",
+   "ci_found_by": "refind"
   },
   "Q50423": {
    "name": "영도구",
@@ -10355,7 +10594,12 @@
     "tone": "light",
     "file": "/logos/thumbs/survey-5c0b6cc5d8.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.inje.go.kr/portal/inje-news/inje/symbol"
+   ],
+   "ci_page": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
+   "ci_found_by": "refind"
   },
   "Q50319": {
    "name": "임실군",
@@ -10399,7 +10643,13 @@
      "rgb": "255 0 43",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000",
+    "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002000000"
+   ],
+   "ci_page": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000",
+   "ci_found_by": "refind"
   },
   "Q50320": {
    "name": "장성군",
@@ -10599,7 +10849,12 @@
     "files": [],
     "page": "https://www.icheon.go.kr/portal/contents.do?mid=0502040200",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.icheon.go.kr/portal/contents.do?mid=0502040201",
+    "https://www.icheon.go.kr/portal/contents.do?mid=0502040200",
+    "https://www.icheon.go.kr/portal/contents.do?mid=0502040100"
+   ]
   },
   "Q50323": {
    "name": "정선군",
@@ -11190,7 +11445,13 @@
      "rgb": "136 133 84",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212",
+    "https://www.jinju.go.kr/00135/01109/01119.web"
+   ],
+   "ci_page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212",
+   "ci_found_by": "refind"
   },
   "Q50242": {
    "name": "무주군",
@@ -11274,7 +11535,12 @@
      "rgb": "246 139 31",
      "share": 0.17
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.cng.go.kr/00004/00567/00569.web"
+   ],
+   "ci_page": "https://www.cng.go.kr/00004/00567/00569.web",
+   "ci_found_by": "refind"
   },
   "Q243327": {
    "name": "창원시",
@@ -11318,7 +11584,14 @@
      "rgb": "0 93 163",
      "share": 0.16
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.changwon.go.kr/cwportal/10671/10708/10711.web",
+    "https://www.changwon.go.kr/cwportal/10671/10708/10710.web",
+    "https://www.changwon.go.kr/cwportal/10671/10708/10709.web"
+   ],
+   "ci_page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web",
+   "ci_found_by": "refind"
   },
   "Q50324": {
    "name": "증평군",
@@ -11447,7 +11720,13 @@
      "rgb": "233 79 38",
      "share": 0.11
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100",
+    "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020000"
+   ],
+   "ci_page": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100",
+   "ci_found_by": "refind"
   },
   "Q50331": {
    "name": "청송군",
@@ -11490,7 +11769,13 @@
      "rgb": "149 205 121",
      "share": 0.2
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.cs.go.kr/cheongsong/00003084/00003102.web",
+    "https://www.cs.go.kr/00002607/00003084/00003102.web"
+   ],
+   "ci_page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web",
+   "ci_found_by": "refind"
   },
   "Q50332": {
    "name": "청양군",
@@ -11534,7 +11819,12 @@
      "rgb": "233 79 38",
      "share": 0.1
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   ],
+   "ci_page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do",
+   "ci_found_by": "refind"
   },
   "Q36929": {
    "name": "종로구",
@@ -11778,7 +12068,12 @@
      "rgb": "233 79 38",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.taean.go.kr/kor/sub05_02_03.do"
+   ],
+   "ci_page": "https://www.taean.go.kr/kor/sub05_02_03.do",
+   "ci_found_by": "refind"
   },
   "Q42152": {
    "name": "통영시",
@@ -11923,6 +12218,9 @@
      "rgb": "91 87 100",
      "share": 0.21
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.cheonan.go.kr/kor/sub04_01_05.do"
    ]
   },
   "Q188624": {
@@ -11966,7 +12264,14 @@
      "rgb": "205 32 39",
      "share": 0.25
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong",
+    "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-symbol",
+    "https://www.pc.go.kr/portal"
+   ],
+   "ci_page": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong",
+   "ci_found_by": "refind"
   },
   "Q42155": {
    "name": "포천시",
@@ -12010,7 +12315,13 @@
      "rgb": "188 210 227",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.pcs21.net/www/contents.do?key=3830",
+    "https://www.pcs21.net/www/contents.do?key=3820"
+   ],
+   "ci_page": "https://www.pcs21.net/www/contents.do?key=3830",
+   "ci_found_by": "refind"
   },
   "Q42131": {
    "name": "원주시",
@@ -12126,6 +12437,10 @@
      "rgb": "4 165 243",
      "share": 0.18
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.pyeongtaek.go.kr/pyeongtaek/contents.do?mid=0502010000",
+    "https://www.pyeongtaek.go.kr/pyeongtaek/contents.do?mid=0502000000"
    ]
   },
   "Q42140": {
@@ -12447,7 +12762,12 @@
      "rgb": "233 79 38",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://hongseong.go.kr/kor/sub04_010701.do"
+   ],
+   "ci_page": "https://hongseong.go.kr/kor/sub04_010701.do",
+   "ci_found_by": "refind"
   },
   "Q50404": {
    "name": "서구",
@@ -12611,6 +12931,11 @@
      "rgb": "180 156 80",
      "share": 0.11
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.chilgok.go.kr/portal/contents.do?mId=0404030000",
+    "https://www.chilgok.go.kr/portal/contents.do?mId=0404000000",
+    "https://www.chilgok.go.kr/portal/contents.do?mId=0404040000"
    ]
   },
   "Q50340": {
@@ -12910,7 +13235,12 @@
      "rgb": "34 34 34",
      "share": 0.44
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   ],
+   "ci_page": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+   "ci_found_by": "refind"
   },
   "Q15431233": {
    "name": "부산광역시교육청",
@@ -13083,6 +13413,10 @@
      "rgb": "103 204 229",
      "share": 0.13
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.pohang.go.kr/portal/contents.do?mid=0406010000",
+    "https://www.pohang.go.kr/portal/contents.do?mid=0406000000"
    ]
   },
   "Q16167642": {
@@ -13596,7 +13930,12 @@
      "rgb": "233 79 38",
      "share": 0.11
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.yesan.go.kr/kor/sub05_02_01.do"
+   ],
+   "ci_page": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+   "ci_found_by": "refind"
   },
   "Q50345": {
    "name": "화순군",
@@ -14793,7 +15132,12 @@
      "rgb": "0 144 223",
      "share": 0.5
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   ],
+   "ci_page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/",
+   "ci_found_by": "refind"
   },
   "Q6328582": {
    "name": "한국전력기술",
@@ -15703,7 +16047,12 @@
      "rgb": "178 209 0",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.hadong.go.kr/intro/00567/00571.web"
+   ],
+   "ci_page": "https://www.hadong.go.kr/intro/00567/00571.web",
+   "ci_found_by": "refind"
   },
   "Q16100494": {
    "name": "한국소비자원",
@@ -24272,7 +24621,12 @@
     "wikidata: HTTP Error 429: Too Many Requests",
     "commons: none",
     "site: none"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   ],
+   "ci_page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525",
+   "ci_found_by": "refind"
   },
   "Q12585892": {
    "name": "한국전력국제원자력대학원대학교",
@@ -26616,7 +26970,13 @@
     "bytes": 3818,
     "tone": "light",
     "file": "/logos/thumbs/survey-7162f515f2.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gachon.ac.kr/pr/1459/subview.do",
+    "https://www.gachon.ac.kr/kor/807/subview.do"
+   ],
+   "ci_page": "https://www.gachon.ac.kr/pr/1459/subview.do",
+   "ci_found_by": "refind"
   },
   "Q486676": {
    "name": "강남대학교",
@@ -26990,7 +27350,13 @@
      "rgb": "157 200 181",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.konkuk.ac.kr/konkuk/19196/subview.do",
+    "https://www.konkuk.ac.kr/konkuk/2105/subview.do"
+   ],
+   "ci_page": "https://www.konkuk.ac.kr/konkuk/19196/subview.do",
+   "ci_found_by": "refind"
   },
   "Q6583844": {
    "name": "경운대학교",
@@ -27194,7 +27560,12 @@
      "rgb": "164 104 29",
      "share": 0.14
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   ],
+   "ci_page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29",
+   "ci_found_by": "refind"
   },
   "Q487841": {
    "name": "경북대학교",
@@ -27214,7 +27585,13 @@
     "bytes": 4568,
     "tone": "light",
     "file": "/logos/thumbs/survey-535ba675e4.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194",
+    "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04_02&menu_idx=195"
+   ],
+   "ci_page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194",
+   "ci_found_by": "refind"
   },
   "Q497259": {
    "name": "강원대학교",
@@ -27386,7 +27763,10 @@
    ],
    "ci_page": "https://www.kw.ac.kr/ko/life/symbol02.jsp",
    "ci_link_text": "광운상징물",
-   "ci_found_by": "rendered-home"
+   "ci_found_by": "rendered-home",
+   "ci_pages_extra": [
+    "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   ]
   },
   "Q496536": {
    "name": "경희대학교",
@@ -27425,6 +27805,9 @@
      "rgb": "169 139 118",
      "share": 0.04
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200025"
    ]
   },
   "Q5623305": {
@@ -28842,7 +29225,12 @@
      "rgb": "161 126 127",
      "share": 0.11
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://identity.ut.ac.kr"
+   ],
+   "ci_page": "https://identity.ut.ac.kr",
+   "ci_found_by": "refind"
   },
   "Q482673": {
    "name": "국립공주대학교",
@@ -29296,7 +29684,10 @@
     "bytes": 10452,
     "tone": "light",
     "file": "/logos/thumbs/survey-2962c017b5.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.dankook.ac.kr/web/kor/-ui-"
+   ]
   },
   "Q12591780": {
    "name": "대전신학대학교",
@@ -29710,6 +30101,9 @@
      "rgb": "163 152 144",
      "share": 0.34
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.dongguk.edu/page/1563"
    ]
   },
   "Q5297278": {
@@ -30962,7 +31356,12 @@
     ],
     "page": "https://www.sogang.ac.kr/ko/symbol/ui",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.sogang.ac.kr/ko/symbol/ui",
+    "https://www.sogang.ac.kr/ko/symbol/symbol-tower",
+    "https://www.sogang.ac.kr/ko/symbol/ui-guide"
+   ]
   },
   "Q7446489": {
    "name": "세한대학교",
@@ -31629,6 +32028,9 @@
      "rgb": "183 204 222",
      "share": 0.11
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.sungshin.ac.kr/main_kor/10910/subview.do"
    ]
   },
   "Q493608": {
@@ -32536,7 +32938,10 @@
     "bytes": 65062,
     "tone": "normal",
     "file": "/logos/thumbs/survey-b4c3d98cdf.svg"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.ewha.ac.kr/ewha/intro/ui-si01.do"
+   ]
   },
   "Q6674241": {
    "name": "장로회신학대학교",
@@ -33180,7 +33585,12 @@
      "rgb": "63 97 126",
      "share": 0.13
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/"
+   ],
+   "ci_page": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/",
+   "ci_found_by": "refind"
   },
   "Q482692": {
    "name": "진주교육대학교",
@@ -34094,7 +34504,11 @@
     ],
     "page": "https://www.knou.ac.kr/knou/167/subview.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.knou.ac.kr/knou/167/subview.do",
+    "https://www.knou.ac.kr/knou/174/subview.do"
+   ]
   },
   "Q623604": {
    "name": "한동대학교",

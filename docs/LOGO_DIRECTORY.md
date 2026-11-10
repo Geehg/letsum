@@ -63,6 +63,8 @@ python3 tools/logo-survey/find_formats.py   # CI 페이지(없으면 Chrome 렌�
 python3 -I tools/logo-survey/merge.py
 python3 -I tools/logo-survey/classify.py    # 화면용 대분류·소분류(tools/logo-app/data/groups.json). 스키마 category와 별개
 python3 -I tools/logo-survey/check_downloads.py  # 다운로드 전수조사: 알려진 CI 페이지 전부(정적 HTML+Chrome 렌더링)와 수작업 레코드 페이지에서 다운로드 버튼·파일 링크·다운로드 엔드포인트·eGov fn_egov_downFile·onclick 파일 URL을 후보로 모으고(data/download-candidates.json, --reuse로 재사용), 익명 요청 첫 바이트의 파일 서명으로 확인. ZIP은 HTTP Range로 끝부분만 읽어 내부 형식(inner) 확인, 로고 형식이 없는 ZIP(글꼴 등)·인증서·서식류는 제외 → tools/logo-app/data/downloads.json. 정책: 공식 사이트가 공개한 파일만 원 서버로 연결(보관 안 함), 로그인·신청·승인 필요 파일은 연결하지 않음
+python3 -I tools/logo-survey/refind_ci.py --top 300  # 인지도 상위 중 다운로드 없는 기관의 CI 페이지 재탐색: 영문·관광 서브도메인 대신 국문 메인 도메인(www.)과 위키백과 공식 링크에서 홈·사이트맵 메뉴를 렌더링해 상징·CI 메뉴를 찾고 다운로드 후보가 있는 페이지를 crawl.json ci_pages_extra에 저장(대상 id는 data/refind-ids.json) → check_downloads.py --only @tools/logo-survey/data/refind-ids.json
+# data/download-manual.json: 자동 탐색이 놓친 공식 파일을 브라우저로 확인해 적은 시드(검증은 동일). 만료 서명 URL·로그인·교직원 전용·세션 필요 링크는 넣지 않음
 python3 -I tools/logo-survey/popularity.py      # 기본 정렬(인지도순) 점수 → tools/logo-app/data/popularity.json. 점수 = log10(한국어 위키백과 최근 12개월 조회수+10) + 0.6×log10(위키백과 언어판 수+1). 모든 카테고리에서 검색어가 없으면 이 순서, 검색어가 있으면 관련도 다음 기준
 ```
 - 대분류: 중앙정부 · 지방정부 · 금융 · 공공기관 · 연구기관 · 대학·교육 · 의료기관 · 기업·브랜드 · 국제기구·비영리. 소분류는 classify.py의 GROUPS. 배정은 명단 그룹·기관명 규칙(공공기관은 이름 핵심어로 분야 판정), 수작업 레코드는 CURATED.

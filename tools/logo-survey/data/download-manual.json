@@ -1,0 +1,51 @@
+{
+ "note": "자동 탐색이 놓친 공식 로고 파일(브라우저로 공식 페이지에서 직접 확인). check_downloads.py가 다른 후보와 똑같이 파일 서명으로 검증한다. 만료되는 서명 URL·로그인·교직원 전용 자료는 넣지 않는다.",
+ "files": {
+  "kakao-ci": [
+   [
+    "https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/mediakit/47e79e4a019300001.png?download&x-content-disposition-filename=kakao.png",
+    "https://www.kakaocorp.com/page/detail/11340",
+    "카카오 로고"
+   ]
+  ],
+  "wikimedia-foundation-mark": [
+   [
+    "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia_Foundation_logo_-_vertical.svg",
+    "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines",
+    "재단 로고 세로형"
+   ],
+   [
+    "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia_Foundation_logo_-_horizontal.svg",
+    "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines",
+    "재단 로고 가로형"
+   ],
+   [
+    "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia-logo_black.svg",
+    "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines",
+    "위키미디어 로고 검정"
+   ]
+  ],
+  "nasa-brand": [
+   [
+    "https://www.nasa.gov/wp-content/uploads/2023/07/insignia-spherecentered.svg",
+    "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
+    "인시그니아(구 중심)"
+   ],
+   [
+    "https://www.nasa.gov/wp-content/uploads/2023/07/insignia-objectcentered.svg",
+    "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
+    "인시그니아(객체 중심)"
+   ],
+   [
+    "https://www.nasa.gov/wp-content/uploads/2023/07/nasa-insignia-lockup-singleline-left.png",
+    "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
+    "인시그니아 조합 한 줄"
+   ],
+   [
+    "https://www.nasa.gov/wp-content/uploads/2023/07/nasa-insignia-lockup-2line-left.png",
+    "https://www.nasa.gov/nasa-brand-center/brand-guidelines/",
+    "인시그니아 조합 두 줄"
+   ]
+  ]
+ }
+}

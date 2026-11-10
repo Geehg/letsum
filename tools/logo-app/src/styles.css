@@ -196,3 +196,10 @@ a.format-badge.is-download:hover,a.format-badge.is-download:focus-visible{backgr
 .logo-dl:hover,.logo-dl:focus-visible{background:#15140f;color:#fff}
 .dl-note{margin:0 0 14px}
 .logo-dl b em{font-style:normal;font-weight:500;margin-left:4px}
+.origin-bar{display:inline-flex;gap:0;margin:0 0 14px;border:1px solid #15140f;border-radius:999px;overflow:hidden;background:#fff}
+.origin-button{padding:8px 18px;background:transparent;color:#15140f;font-size:14px;font-weight:700;line-height:1.2;border-left:1px solid #15140f}
+.origin-button:first-child{border-left:0}
+.origin-button span{font-weight:500;opacity:.6;margin-left:3px;font-size:12px}
+.origin-button.active{background:#15140f;color:#fff}
+.origin-button.active span{opacity:.8}
+.origin-button:focus-visible{outline:2px solid #15140f;outline-offset:2px}

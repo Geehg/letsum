@@ -119,7 +119,20 @@
     "page": "https://www.mnd.go.kr/mnd/322/subview.do"
    }
   },
-  "kr-q488954": {},
+  "kr-q488954": {
+   "https://www.mois.go.kr/cmm/fms/FileDown/FILE_00133979DwRxJNO.mp3": {
+    "label": "1. 애국가 1절.mp3",
+    "page": "https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do"
+   },
+   "https://www.mois.go.kr/cmm/fms/FileDown/FILE_00134023Jhudoih.mp3": {
+    "label": "2. 애국가 1절~4절.mp3",
+    "page": "https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do"
+   },
+   "https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000010805&fileSn=0": {
+    "label": "아름다운 무궁화 가꾸기",
+    "page": "https://www.mois.go.kr/frt/sub/popup/p_taegugki_banner/screen.do"
+   }
+  },
   "kr-q488980": {
    "https://www.mpva.go.kr/downloadContentsFile.do?key=233&fileNo=10002": {
     "label": "파일 다운로드",
@@ -286,6 +299,10 @@
    "https://www.mogef.go.kr:443/mi/amo/mogef_logo_성평등가족부.zip": {
     "label": "MI 다운로드 MI 다운로드",
     "page": "https://www.mogef.go.kr:443/mi/amo/mi_amo_f004.do"
+   },
+   "https://www.mogef.go.kr/mi/amo/mogef_logo_성평등가족부.zip": {
+    "label": "MI 다운로드 MI 다운로드",
+    "page": "https://www.mogef.go.kr/mi/amo/mi_amo_f004.do"
    }
   },
   "kr-q625097": {
@@ -351,7 +368,24 @@
     "page": "https://www.gg.go.kr/contents/contents.do?ciIdx=677&menuId=2455"
    }
   },
-  "kr-q41071": {},
+  "kr-q41071": {
+   "https://state.gwd.go.kr/egf/bp/common/front/221563/download": {
+    "label": "강원특별자치도 CI PDF파일 다운로드",
+    "page": "https://state.gwd.go.kr/portal/introduce/symbol/flag"
+   },
+   "https://state.gwd.go.kr/egf/bp/common/front/229760/download": {
+    "label": "강원특별자치도 CI AI파일 다운로드",
+    "page": "https://state.gwd.go.kr/portal/introduce/symbol/flag"
+   },
+   "https://state.gwd.go.kr/egf/bp/common/front/265156/download": {
+    "label": "강원특별자치도 CI(단색) PDF파일 다운로드",
+    "page": "https://state.gwd.go.kr/portal/introduce/symbol/flag"
+   },
+   "https://state.gwd.go.kr/egf/bp/common/front/265157/download": {
+    "label": "강원특별자치도 CI(단색) AI파일 다운로드",
+    "page": "https://state.gwd.go.kr/portal/introduce/symbol/flag"
+   }
+  },
   "kr-q16520": {
    "https://busan.go.kr/comm/getFile?srvcId=BBSTY3&upperNo=1744549&fileTy=ATTACH&fileNo=1&bsadmn=Y": {
     "label": "다운로드 시그니처 다운로드",
@@ -379,7 +413,104 @@
    }
   },
   "kr-q138870299": {},
-  "kr-q41070": {},
+  "kr-q41070": {
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS1_01_JPG.zip": {
+    "label": "JPG 다운로드 심벌마크 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS1_01_AI.zip": {
+    "label": "AI 다운로드 심벌마크 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS1_01_PSD.zip": {
+    "label": "PSD 다운로드 심벌마크 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS4_01_JPG.zip": {
+    "label": "JPG 다운로드 대표 캐릭터 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS4_01_AI.zip": {
+    "label": "AI 다운로드 대표 캐릭터 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS4_01_PSD.zip": {
+    "label": "PSD 다운로드 대표 캐릭터 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_01_JPG.zip": {
+    "label": "JPG 다운로드 국문 상하조합 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_01_AI.zip": {
+    "label": "AI 다운로드 국문 상하조합 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_01_PSD.zip": {
+    "label": "PSD 다운로드 국문 상하조합 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_02_JPG.zip": {
+    "label": "JPG 다운로드 영문 상하조합 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_02_AI.zip": {
+    "label": "AI 다운로드 영문 상하조합 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_02_PSD.zip": {
+    "label": "PSD 다운로드 영문 상하조합 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_04_JPG.zip": {
+    "label": "JPG 다운로드 국문 좌우조합 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_04_AI.zip": {
+    "label": "AI 다운로드 국문 좌우조합 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_04_PSD.zip": {
+    "label": "PSD 다운로드 국문 좌우조합 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_05_JPG.zip": {
+    "label": "JPG 다운로드 영문 좌우조합 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_05_AI.zip": {
+    "label": "AI 다운로드 영문 좌우조합 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS2_05_PSD.zip": {
+    "label": "PSD 다운로드 영문 좌우조합 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS3_08_JPG.zip": {
+    "label": "JPG 다운로드 엠블럼 JPG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS3_08_AI.zip": {
+    "label": "AI 다운로드 엠블럼 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/BS3_08_PSD.zip": {
+    "label": "PSD 다운로드 엠블럼 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/2026vision_png.zip": {
+    "label": "PNG 다운로드 도정비전 PNG 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/2026vision_ai.zip": {
+    "label": "AI 다운로드 도정비전 AI 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   },
+   "https://www.chungnam.go.kr/downloadUtil.do?filename=CNCI/2026vision_psd.zip": {
+    "label": "PSD 다운로드 도정비전 PSD 다운로드",
+    "page": "https://www.chungnam.go.kr/cnportal/main/contents.do?menuNo=500932"
+   }
+  },
   "kr-q20927": {
    "https://www.daegu.go.kr/cmsh/daegu.go.kr/health/file/2021_test_submission.hwp": {
     "label": "시험의뢰서 양식 내려받기 새 창",
@@ -448,7 +579,12 @@
     "page": "https://www.ulsan.go.kr/u/rep/contents.ulsan?mId=001005005001000000"
    }
   },
-  "kr-q41164": {},
+  "kr-q41164": {
+   "https://www.jeju.go.kr/download.htm?act=download&seq=60048&no=2": {
+    "label": "일러스트 다운로드",
+    "page": "https://www.jeju.go.kr/jeju/symbol/brane.htm"
+   }
+  },
   "kr-q20398": {
    "https://www.gangnam.go.kr/assets/images/logo/gn_ci_2026.zip": {
     "label": "일러스트 다운로드",
@@ -643,14 +779,6 @@
    "https://www.gjcity.go.kr/portal/자연체동영상B2.zip": {
     "label": "B-2 동영상 다운받기",
     "page": "https://www.gjcity.go.kr/portal/contents.do?mId=0102020000"
-   },
-   "https://www.gjcity.go.kr/common/img/common/2025_wa.pdf": {
-    "label": "웹 접근성 품질인증 마크 획득 새창열림",
-    "page": "https://www.gjcity.go.kr/portal/contents.do?mId=0102020000"
-   },
-   "https://www.gjcity.go.kr/common/img/common/2024_wa.pdf": {
-    "label": "pdf 파일보기 새창열림",
-    "page": "https://www.gjcity.go.kr/portal/contents.do?mId=0102020000"
    }
   },
   "kr-q50355": {
@@ -821,7 +949,32 @@
     "page": "https://www.gimje.go.kr/index.gimje?menuCd=DOM_000000101004002000"
    }
   },
-  "kr-q42082": {},
+  "kr-q42082": {
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data03.zip": {
+    "label": "기본형 파일 다운로드 파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   },
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data04.zip": {
+    "label": "한글병기 파일 다운로드 zip파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   },
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data05.zip": {
+    "label": "기본형 파일 다운로드 zip파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   },
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data06.zip": {
+    "label": "한글병기 파일 다운로드 zip파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   },
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data1.zip": {
+    "label": "기본형 파일 다운로드 파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   },
+   "https://www.gimhae.go.kr/_res/portal/data/zip/pp01025_data2.zip": {
+    "label": "영문일체형 파일 다운로드 zip파일 다운로드",
+    "page": "https://www.gimhae.go.kr/01025.web"
+   }
+  },
   "kr-q42083": {
    "https://www.naju.go.kr/www/introduction/symbol/mark/screen_print.jpg?page=1": {
     "label": "jpg이미지 다운로드 새창이동",
@@ -1481,7 +1634,64 @@
     "page": "https://www.boseong.go.kr/www/introduce/intro/represent"
    }
   },
-  "kr-q50390": {},
+  "kr-q50390": {
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3784667&command=update&fileSid=129566": {
+    "label": "CI 일러스트 파일 다운로드 부산진구 마크 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3781612&command=update&fileSid=129188": {
+    "label": "CI 이미지 파일 다운로드 부산진구 마크 일러스트 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790828&command=update&fileSid=130679": {
+    "label": "BI 일러스트 파일 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3781612&command=update&fileSid=129187": {
+    "label": "BI 이미지 파일 다운로드 부산진구 도시브랜드 일러스트 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/upload/kor/brand-new.pdf": {
+    "label": "표준 매뉴얼 PDF 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/upload/kor/Application-ai.zip": {
+    "label": "기본 및 활용 일러스트 파일 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/upload/kor/Application-jpg.zip": {
+    "label": "기본 및 활용 이미지 파일 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790831&command=update&fileSid=132109": {
+    "label": "워드마크 1 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790833&command=update&fileSid=132110": {
+    "label": "워드마크 2 다운로드 부산진구 도시브랜드 일러스트 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790834&command=update&fileSid=132111": {
+    "label": "워드마크 3 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790835&command=update&fileSid=132112": {
+    "label": "워드마크 4 다운로드 부산진구 도시브랜드 일러스트 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790829&command=update&fileSid=132107": {
+    "label": "워드마크 블록 1 다운로드 부산진구 도시브랜드 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/board/download.busanjin?boardId=BBS_0000192&paging=ok&startPage=1&dataSid=3790830&command=update&fileSid=132108": {
+    "label": "워드마크 블록 2 다운로드 부산진구 도시브랜드 일러스트 다운로드",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   },
+   "https://www.busanjin.go.kr/upload/kor/busanjin_song.zip": {
+    "label": "다운로드 작곡 - 김영도(음대교수) 작곡 - 차대진 [1절] 황령산 저 높이 아침 해 떠오르면 거리마다 곳곳마다 활기찬 걸음걸이 여기는 부산진구 구가:부산진구의 노래 ",
+    "page": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000103003004000"
+   }
+  },
   "kr-q50391": {
    "https://www.icbp.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=94&fileno=4": {
     "label": "파일 다운받기 새창",
@@ -2299,7 +2509,28 @@
     "page": "https://www.jincheon.go.kr/home/main.do"
    }
   },
-  "kr-q42146": {},
+  "kr-q42146": {
+   "https://www.cheonan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001513Jr1&fileSn=0": {
+    "label": "원본 다운로드",
+    "page": "https://www.cheonan.go.kr/kor/sub04_01_05.do"
+   },
+   "https://www.cheonan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001514Ms7&fileSn=0": {
+    "label": "원본 다운로드",
+    "page": "https://www.cheonan.go.kr/kor/sub04_01_05.do"
+   },
+   "https://www.cheonan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001515Gq9&fileSn=0": {
+    "label": "원본 다운로드",
+    "page": "https://www.cheonan.go.kr/kor/sub04_01_05.do"
+   },
+   "https://www.cheonan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001516Kx8&fileSn=0": {
+    "label": "원본 다운로드",
+    "page": "https://www.cheonan.go.kr/kor/sub04_01_05.do"
+   },
+   "https://www.cheonan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000001517Bv9&fileSn=0": {
+    "label": "원본 다운로드",
+    "page": "https://www.cheonan.go.kr/kor/sub04_01_05.do"
+   }
+  },
   "kr-q50334": {
    "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
     "label": "Internet Explorer 다운로드 받기",
@@ -4902,7 +5133,16 @@
     "page": "https://www.ginue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN183"
    }
   },
-  "kr-q496536": {},
+  "kr-q496536": {
+   "https://www.khu.ac.kr/resources/user/download/khsong1.zip": {
+    "label": "download",
+    "page": "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200025"
+   },
+   "https://www.khu.ac.kr/resources/user/download/khsong2.zip": {
+    "label": "download",
+    "page": "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200025"
+   }
+  },
   "kr-q483402": {
    "https://www.kmu.ac.kr/upload/down/03/KMU_AI_guideline.pdf": {
     "label": "AI 활용 가이드라인",
@@ -4919,7 +5159,48 @@
     "page": "https://www.korea.ac.kr/ko/378/subview.do"
    }
   },
-  "kr-q212297": {},
+  "kr-q212297": {
+   "https://www.kw.ac.kr/ko/life/01_seal_png.zip": {
+    "label": "PNG 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/01_seal_ai.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/02_logo_png.zip": {
+    "label": "PNG 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/02_logo_ai.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/03_seal_logo_png.zip": {
+    "label": "PNG 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/03_seal_logo_ai.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/04_communicationmark_png.zip": {
+    "label": "PNG 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/04_communicationmark_ai.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/05_90th_anniversary_emblem_png.zip": {
+    "label": "PNG 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   },
+   "https://www.kw.ac.kr/ko/life/05_90th_anniversary_emblem_ai.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.kw.ac.kr/ko/life/symbol01.jsp"
+   }
+  },
   "kr-q624374": {
    "https://www.gwangju.ac.kr/download?real_name=symbol_mark2.zip&file_name=심볼.zip": {
     "label": "심볼마크 다운로드",
@@ -5328,7 +5609,12 @@
     "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do"
    }
   },
-  "kr-q491127": {},
+  "kr-q491127": {
+   "https://www.dankook.ac.kr/web/kor/ui_download": {
+    "label": "다운로드",
+    "page": "https://www.dankook.ac.kr/web/kor/-ui-"
+   }
+  },
   "kr-q489708": {
    "https://daegu.ac.kr/data/pdf/lecture/2026_1/2026_ACC_MANUAL.pdf": {
     "label": "학사안내 매뉴얼 새 창 열림",
@@ -5857,7 +6143,20 @@
     "page": "http://www.duksung.ac.kr/contents/contents.do?ciIdx=290&menuId=1199"
    }
   },
-  "kr-q487804": {},
+  "kr-q487804": {
+   "https://www.dongguk.edu/resources/files/dongguk120/AI.zip": {
+    "label": "AI 다운로드",
+    "page": "https://www.dongguk.edu/page/1563"
+   },
+   "https://www.dongguk.edu/resources/files/dongguk120/PNG.zip": {
+    "label": "PNG 다운로드",
+    "page": "https://www.dongguk.edu/page/1563"
+   },
+   "https://www.dongguk.edu/resources/files/dongguk120/JPG.zip": {
+    "label": "JPG 다운로드",
+    "page": "https://www.dongguk.edu/page/1563"
+   }
+  },
   "kr-q488100": {
    "https://dongduk.ac.kr/afile/fileDownload/Zcrmn": {
     "label": "UI 다운로드 다운로드",
@@ -6189,6 +6488,18 @@
    "https://www.sogang.ac.kr/file-fe/1.%20교장(Seal).zip": {
     "label": "PNG 다운로드",
     "page": "https://www.sogang.ac.kr/ko/symbol/ui"
+   },
+   "https://www.sogang.ac.kr/file-fe/emblem.ai": {
+    "label": "AI 다운로드(zip)",
+    "page": "https://www.sogang.ac.kr/ko/symbol/symbol-tower"
+   },
+   "https://www.sogang.ac.kr/file-fe/emblem.zip": {
+    "label": "PNG 다운로드",
+    "page": "https://www.sogang.ac.kr/ko/symbol/symbol-tower"
+   },
+   "https://www.sogang.ac.kr/intro/symbol/data/Sogang_UI_renewal.pdf": {
+    "label": "다운로드",
+    "page": "https://www.sogang.ac.kr/ko/symbol/ui-guide"
    }
   },
   "kr-q482678": {
@@ -6219,7 +6530,12 @@
     "page": "https://www.skku.edu/skku/about/symbol/symbol_01.do"
    }
   },
-  "kr-q7640246": {},
+  "kr-q7640246": {
+   "https://www.sungshin.ac.kr/sites/main_kor/file/music.zip": {
+    "label": "악보 다운로드",
+    "page": "https://www.sungshin.ac.kr/main_kor/10910/subview.do"
+   }
+  },
   "kr-q6858616": {
    "https://www.semyung.ac.kr/gonet/FileDownload.do?fileName=UI_JPG_01.zip&code=download/kor/sub01/": {
     "label": "JPG DOWNLOAD",
@@ -6546,7 +6862,12 @@
     "page": "https://www.u1.ac.kr/ipsi/index.do"
    }
   },
-  "kr-q41114": {},
+  "kr-q41114": {
+   "https://www.ewha.ac.kr/cms/fileDownload.do?path=%2F_res%2Fewha%2Fetc%2Fsymbol-mark.png": {
+    "label": "심벌마크 PNG 다운로드 다운로드",
+    "page": "https://www.ewha.ac.kr/ewha/intro/ui-si01.do"
+   }
+  },
   "kr-q482659": {
    "https://www.inje.ac.kr/kor/Download.asp?setDir=AboutInje&fName=UI_Inje_Authority_Mark&fExt=zip": {
     "label": "다운로드(PNG, JPG) 다운로드",
@@ -6837,6 +7158,10 @@
     "label": "공무원행동강령",
     "page": "https://www.knou.ac.kr/knou/167/subview.do"
    },
+   "https://www.knou.ac.kr/sites/knou/download/emblem2020.zip": {
+    "label": "엠블럼 다운로드",
+    "page": "https://www.knou.ac.kr/knou/174/subview.do"
+   },
    "https://www.knou.ac.kr/sites/knou/download/UI+서식류_251222.zip": {
     "label": "",
     "page": "https://www.knou.ac.kr/knou/167/subview.do"
@@ -7053,7 +7378,7 @@
   },
   "kakao-ci": {
    "https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/mediakit/47e79e4a019300001.png?download&x-content-disposition-filename=kakao.png": {
-    "label": "kakao kakao.png 다운로드",
+    "label": "카카오 로고",
     "page": "https://www.kakaocorp.com/page/detail/11340"
    }
   },
@@ -7342,16 +7667,29 @@
    }
   },
   "unesco-logo": {},
-  "nasa-brand": {},
+  "nasa-brand": {
+   "https://www.nasa.gov/wp-content/uploads/2023/07/insignia-spherecentered.svg": {
+    "label": "인시그니아(구 중심)",
+    "page": "https://www.nasa.gov/nasa-brand-center/brand-guidelines/"
+   },
+   "https://www.nasa.gov/wp-content/uploads/2023/07/insignia-objectcentered.svg": {
+    "label": "인시그니아(객체 중심)",
+    "page": "https://www.nasa.gov/nasa-brand-center/brand-guidelines/"
+   },
+   "https://www.nasa.gov/wp-content/uploads/2023/07/nasa-insignia-lockup-singleline-left.png": {
+    "label": "인시그니아 조합 한 줄",
+    "page": "https://www.nasa.gov/nasa-brand-center/brand-guidelines/"
+   },
+   "https://www.nasa.gov/wp-content/uploads/2023/07/nasa-insignia-lockup-2line-left.png": {
+    "label": "인시그니아 조합 두 줄",
+    "page": "https://www.nasa.gov/nasa-brand-center/brand-guidelines/"
+   }
+  },
   "mozilla-trademarks": {},
   "naver-api-hub-bi": {},
   "microsoft-brand": {
    "https://www.microsoft.com/en-us/download": {
     "label": "Free downloads & security",
-    "page": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
-   },
-   "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/mscle/documents/presentations/Trademarks_List_FY27Q2.pdf": {
-    "label": "Microsoft Trademarks (PDF) Download the Microsoft Trademarks PDF",
     "page": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
    },
    "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/mscle/documents/legal/intellectualproperty/trademarks/Microsoft_logo_third_party_usage_guidance_.pdf": {
@@ -7434,8 +7772,1786 @@
    "https://foundation.wikimedia.org/wiki/File:Wikipedia-logo-v2-en.svg": {
     "label": "",
     "page": "https://foundation.wikimedia.org/wiki/Wikimedia_visual_identity_guidelines"
+   },
+   "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia_Foundation_logo_-_vertical.svg": {
+    "label": "재단 로고 세로형",
+    "page": "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines"
+   },
+   "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia_Foundation_logo_-_horizontal.svg": {
+    "label": "재단 로고 가로형",
+    "page": "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines"
+   },
+   "https://foundation.wikimedia.org/wiki/Special:FilePath/Wikimedia-logo_black.svg": {
+    "label": "위키미디어 로고 검정",
+    "page": "https://foundation.wikimedia.org/wiki/Legal:Visual_identity_guidelines"
    }
   },
-  "kakaogames-ci": {}
+  "kakaogames-ci": {},
+  "kr-q20934": {
+   "https://www.incheon.go.kr/comm/getFile?srvcId=MEDIA&upperNo=100197&fileTy=MEDIA&fileNo=2": {
+    "label": "브랜드 디자인 가이드라인 (pdf) 다운로드",
+    "page": "https://www.incheon.go.kr/citybrand/CB010101"
+   },
+   "https://www.incheon.go.kr/comm/getFile?srvcId=MEDIA&upperNo=100196&fileTy=MEDIA&fileNo=1": {
+    "label": "이미지파일 (AI, JPG) 다운로드",
+    "page": "https://www.incheon.go.kr/citybrand/CB010101"
+   }
+  },
+  "kr-q41154": {
+   "https://www.gb.go.kr/resources/templates/front/assets/images/sub/content/gb_mark.zip": {
+    "label": "심볼마크 내려받기 심볼마크 압축 파일 내려받기",
+    "page": "https://www.gb.go.kr/page/link.do?mn=10182&pageNo=10064"
+   }
+  },
+  "kr-q20921": {
+   "https://www.daejeon.go.kr/data/drh/sub06/daejeon_symbol.zip": {
+    "label": "대전 심벌마크 AI 파일 다운로드 클릭시 대전 마크 다운로드를 새창으로 진행합니다.",
+    "page": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=1711"
+   }
+  },
+  "kr-q50203": {
+   "https://www.gp.go.kr/site/portal/download/logo.zip": {
+    "label": "심볼마크 다운로드 심볼마크 다운로드",
+    "page": "https://www.gp.go.kr/portal/contents.do?key=749"
+   },
+   "https://www.gp.go.kr/site/portal/download/2024/character.zip": {
+    "label": "캐릭터 다운로드 캐릭터 다운로드",
+    "page": "https://www.gp.go.kr/portal/contents.do?key=749"
+   },
+   "https://www.gp.go.kr/site/portal/download/2025/cts2489_file01.zip": {
+    "label": "일러스트 다운로드 일러스트 다운로드",
+    "page": "https://www.gp.go.kr/portal/contents.do?key=2489"
+   },
+   "https://www.gp.go.kr/site/portal/download/2025/cts2489_file02.zip": {
+    "label": "이미지 다운로드 이미지 다운로드",
+    "page": "https://www.gp.go.kr/portal/contents.do?key=2489"
+   },
+   "https://www.gp.go.kr/site/portal/download/song.mp3": {
+    "label": "다운로드 가평군민의 노래 다운로드",
+    "page": "https://www.gp.go.kr/portal/contents.do?key=713"
+   }
+  },
+  "kr-q50349": {
+   "https://www.gangbuk.go.kr/static/files/portal/휘장(PNG).zip": {
+    "label": "휘장(PNG) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/휘장디자인메뉴얼(PDF).pdf": {
+    "label": "휘장(PDF) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/비전브랜드(PNG).zip": {
+    "label": "비전브랜드(PNG) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/강북구_비전브랜드_manual.pdf": {
+    "label": "비전브랜드(PDF) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/영문슬로건(PNG).zip": {
+    "label": "영문슬로건(PNG) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/강북구_영문슬로건_manual.pdf": {
+    "label": "영문슬로건(PDF) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/대표캐릭터(PNG).zip": {
+    "label": "대표캐릭터(PNG) 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/portal/cmmn/file/fileDown.do?atchFileId=fbe43c6102f8491b86d71640f1e113a7&fileSn=1": {
+    "label": "대표캐릭터(PDF) 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/SNS캐릭터(PNG).zip": {
+    "label": "SNS캐릭터(PNG) 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/portal/cmmn/file/fileDown.do?atchFileId=fbe43c6102f8491b86d71640f1e113a7&fileSn=1f": {
+    "label": "SNS캐릭터(PDF) 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/jpg_azalea_gangbuk_simbol_2.zip": {
+    "label": "파일 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/jpg_tree_gangbuk_simbol_2.zip": {
+    "label": "파일 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/jpg_magpie_gangbuk_simbol_2.zip": {
+    "label": "파일 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/강북구_개청_30주년_엠블럼_자료(PNG).zip": {
+    "label": "30주년엠블럼(PNG) 다운로드",
+    "page": "https://www.gangbuk.go.kr/portal/main/contents.do?menuNo=200798"
+   },
+   "https://www.gangbuk.go.kr/static/files/portal/강북구_개청30주년_엠블럼_매뉴얼.pdf": {
+    "label": "30주년엠블럼(PDF) 다운로드 새창열림",
+    "page": "https://www.gangbuk.go.kr/portal/main/contents.do?menuNo=200798"
+   }
+  },
+  "kr-q50204": {
+   "https://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic/screen_print.jpg?page=1": {
+    "label": "JPG이미지 다운로드 새창열림",
+    "page": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic"
+   },
+   "https://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic/screen_print.pdf?page=1": {
+    "label": "PDF파일 다운로드 새창열림",
+    "page": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic"
+   },
+   "https://www.gangjin.go.kr/contents/23038/ci.zip": {
+    "label": "강진군 CI 다운로드 (새 창) 새 창 열림",
+    "page": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic"
+   },
+   "https://www.gangjin.go.kr/www/gangjin_story/symbol/screen_print.jpg?page=1": {
+    "label": "JPG이미지 다운로드 새창열림",
+    "page": "https://www.gangjin.go.kr/www/gangjin_story/symbol"
+   },
+   "https://www.gangjin.go.kr/www/gangjin_story/symbol/screen_print.pdf?page=1": {
+    "label": "PDF파일 다운로드 새창열림",
+    "page": "https://www.gangjin.go.kr/www/gangjin_story/symbol"
+   }
+  },
+  "kr-q42064": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr:443/portal/Ai.zip": {
+    "label": "AI 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr:443/portal/PNG.zip": {
+    "label": "이미지 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr:443/portal/manual(40th).pdf": {
+    "label": "매뉴얼 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr/portal/Ai.zip": {
+    "label": "AI 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr/portal/PNG.zip": {
+    "label": "이미지 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr/portal/manual(40th).pdf": {
+    "label": "매뉴얼 다운로드",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511020000"
+   },
+   "https://www.gccity.go.kr:443/portal/guho(jpg).zip": {
+    "label": "파일 다운받기(JPG)",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511000000"
+   },
+   "https://www.gccity.go.kr:443/portal/guho(ai).zip": {
+    "label": "파일 다운받기(AI)",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511000000"
+   },
+   "https://www.gccity.go.kr/portal/guho(jpg).zip": {
+    "label": "파일 다운받기(JPG)",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511000000"
+   },
+   "https://www.gccity.go.kr/portal/guho(ai).zip": {
+    "label": "파일 다운받기(AI)",
+    "page": "https://www.gccity.go.kr/portal/contents.do?mId=0511000000"
+   }
+  },
+  "kr-q50215": {
+   "https://www.gunwi.go.kr/design2023/ko/file/gunwi3.zip": {
+    "label": "원본파일 다운로드 브랜드슬로건 원본 zip파일 다운로드",
+    "page": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&"
+   },
+   "https://www.gunwi.go.kr/design2023/ko/file/gunwi4.zip": {
+    "label": "원본파일 다운로드 심볼마크 원본 zip파일 다운로드",
+    "page": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&"
+   },
+   "https://www.gunwi.go.kr/design2023/ko/file/gunwi5.zip": {
+    "label": "원본파일 다운로드 장군이 원본 zip파일 다운로드",
+    "page": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&"
+   }
+  },
+  "kr-q42078": {
+   "https://www.gc.go.kr:443/download/main/sub01/symbol.zip": {
+    "label": "심벌마크 다운로드 심벌마크 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://www.gc.go.kr:443/download/main/sub01/citybrand.Zip": {
+    "label": "도시브랜드 다운로드 도시브랜드 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://www.gc.go.kr:443/download/main/sub01/character01.zip": {
+    "label": "농악캐릭터(금동이, 금송이) 다운로드 농악캐릭터(금동이, 금송이) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://www.gc.go.kr:443/download/main/sub01/character02.zip": {
+    "label": "포토 캐릭터(새코미, 달코미) 다운로드 포토 캐릭터(새코미, 달코미) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://www.gc.go.kr:443/download/main/sub01/character03.zip": {
+    "label": "SNS 캐릭터(오삼이) 다운로드 SNS 캐릭터(오삼이) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://gc.go.kr/download/main/sub01/symbol.zip": {
+    "label": "심벌마크 다운로드 심벌마크 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://gc.go.kr/download/main/sub01/citybrand.Zip": {
+    "label": "도시브랜드 다운로드 도시브랜드 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://gc.go.kr/download/main/sub01/character01.zip": {
+    "label": "농악캐릭터(금동이, 금송이) 다운로드 농악캐릭터(금동이, 금송이) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://gc.go.kr/download/main/sub01/character02.zip": {
+    "label": "포토 캐릭터(새코미, 달코미) 다운로드 포토 캐릭터(새코미, 달코미) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   },
+   "https://gc.go.kr/download/main/sub01/character03.zip": {
+    "label": "SNS 캐릭터(오삼이) 다운로드 SNS 캐릭터(오삼이) 다운로드",
+    "page": "https://gc.go.kr/portal/contents.do?mId=1201030000"
+   }
+  },
+  "kr-q42080": {
+   "https://www.gimpo.go.kr/site/portal/images/contents/CI.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/2020gimpo_ci.pdf": {
+    "label": "PDF 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/2020gimpo_ci.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/BI.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/2020gimpo_bi.pdf": {
+    "label": "PDF 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/2020gimpo_bi.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_png.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_ai.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_s_png.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_s_ai.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_l01_png.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_l01_ai.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_l02_png.zip": {
+    "label": "PNG 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   },
+   "https://www.gimpo.go.kr/site/portal/images/contents/cts1232_bi_l02_ai.zip": {
+    "label": "일러스트(ai) 다운로드 새창",
+    "page": "https://www.gimpo.go.kr/portal/contents.do?key=1232"
+   }
+  },
+  "kr-q42084": {
+   "https://www.nyj.go.kr/downloadContentsFile.do?key=2525&fileNo=326": {
+    "label": "다운로드",
+    "page": "https://www.nyj.go.kr/www/contents.do?key=2525"
+   }
+  },
+  "kr-q42087": {
+   "https://www.namwon.go.kr/resource/www/files/sub05/CI_ai.zip": {
+    "label": "AI 다운로드",
+    "page": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4"
+   },
+   "https://www.namwon.go.kr/resource/www/files/sub05/CI_jpg.zip": {
+    "label": "JPG 다운로드",
+    "page": "https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4"
+   }
+  },
+  "kr-q50220": {
+   "https://www.danyang.go.kr/File/Download/87f53a7e82848db2041844deca99ce7a": {
+    "label": "심볼마크(단마크) 다운로드",
+    "page": "https://www.danyang.go.kr/dy21/761"
+   },
+   "https://www.danyang.go.kr/File/Download/6f81aaa2ffe27176d14c1a48d398469a": {
+    "label": "심볼마크(가로형) 다운로드",
+    "page": "https://www.danyang.go.kr/dy21/761"
+   },
+   "https://www.danyang.go.kr/File/Download/4fe1b988cc81f67bef0b77cdff9571ff": {
+    "label": "심볼마크(세로형) 다운로드",
+    "page": "https://www.danyang.go.kr/dy21/761"
+   }
+  },
+  "kr-q42089": {
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_SymbolMark.jpg&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_SymbolMark.ai&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_LogoType.jpg&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_LogoType.ai&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Signature.jpg&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Signature.ai&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Character.jpg&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Character.ai&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Port.jpg&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Port.ai&code=download/sub04/": {
+    "label": "다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   },
+   "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=dangjin_network.pdf&code=download": {
+    "label": "행정전화번호부 다운로드",
+    "page": "https://www.dangjin.go.kr/kor/sub04_01_04.do"
+   }
+  },
+  "kr-q50385": {
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=84f8a154bd30fb71c7ac578c37a85e687b41e6ff240929f910a213b8c1cd55f7&fileSn=1&bbsId=B0001202": {
+    "label": "휘장(CI)모음 다운로드(ZIP)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc906bbf857973e55d8899000093361604e&fileSn=2&bbsId=B0001202": {
+    "label": "2023 BI 모음(PNG)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc906bbf857973e55d8899000093361604e&fileSn=1&bbsId=B0001202": {
+    "label": "2023 BI 모음(AI)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=01f58ece6912d1a947363fcae3c1c052013d06aa800417ce9a3c2c400284d7a9&fileSn=2&bbsId=B0001202": {
+    "label": "슬로건 다운로드(PNG)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=01f58ece6912d1a947363fcae3c1c052013d06aa800417ce9a3c2c400284d7a9&fileSn=1&bbsId=B0001202": {
+    "label": "슬로건 다운로드(AI)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc96a6e2818a9ea7aa2fc4f8fcbb8c24fca&fileSn=1&bbsId=B0001202": {
+    "label": "캐릭터 다운로드(PNG)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc98f186ee4a84c61b6bdb22d7d87e962ad&fileSn=1&bbsId=B0001202": {
+    "label": "캐릭터 다운로드(AI)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=46af5f89e7b3f9cfc9c3ea58d21117a344b61151f1afd6c235196891bca8eb15&fileSn=1&bbsId=B0001202": {
+    "label": "다운로드(PNG)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=46af5f89e7b3f9cfc9c3ea58d21117a344b61151f1afd6c235196891bca8eb15&fileSn=2&bbsId=B0001202": {
+    "label": "다운로드(AI)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=&atchFileId=52fd792849b7340f20e82e0a58b391be54685e4da1e72e611ec819d06eed566e&fileSn=7&bbsId=B0001202": {
+    "label": "로야 전체다운로드(JPG)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   },
+   "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=&atchFileId=52fd792849b7340f20e82e0a58b391be54685e4da1e72e611ec819d06eed566e&fileSn=8&bbsId=B0001202": {
+    "label": "로야전체 다운로드(AI)",
+    "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650"
+   }
+  },
+  "kr-q42094": {
+   "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol/screen_print.jpg?page=1": {
+    "label": "이미지 파일로 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol/screen_print.pdf?page=1": {
+    "label": "PDF 파일로 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "https://www.mokpo.go.kr/contents/13436/symbolmark_2024.zip": {
+    "label": "목포시 상징표시 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "https://www.mokpo.go.kr/contents/13436/mascot_2022.zip": {
+    "label": "목포시 마스코트 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol/screen_print.jpg?page=1": {
+    "label": "이미지 파일로 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol/screen_print.pdf?page=1": {
+    "label": "PDF 파일로 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "http://www.mokpo.go.kr/contents/13436/symbolmark_2024.zip": {
+    "label": "목포시 상징표시 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "http://www.mokpo.go.kr/contents/13436/mascot_2022.zip": {
+    "label": "목포시 마스코트 다운로드 새창",
+    "page": "http://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol"
+   },
+   "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand/screen_print.jpg?page=1": {
+    "label": "이미지 파일로 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand/screen_print.pdf?page=1": {
+    "label": "PDF 파일로 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/contents/20310/brand_width.png?build_20261110008": {
+    "label": "가로형 낭만항구 romantic port mokpo 목포 가로형 디자인 png 파일 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/contents/20310/brand_column.png?build_20261110008": {
+    "label": "세로형 낭만항구 romantic port mokpo 목포 세로형 디자인 png 파일 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/contents/20310/brand_png.png?build_20261110008": {
+    "label": "그래픽 낭만항구 romantic port mokpo 목포 그래픽 디자인 png 파일 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/contents/20310/guideline.zip": {
+    "label": "도시브랜드 가이드라인 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   },
+   "https://www.mokpo.go.kr/contents/20310/brand_ci.zip": {
+    "label": "도시브랜드 AI 파일 다운로드 새창",
+    "page": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/brand"
+   }
+  },
+  "kr-q50241": {
+   "https://www.muan.go.kr/www/abountmuan/symbol/brand/city/screen_print.jpg?page=1": {
+    "label": "jpg이미지파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "https://www.muan.go.kr/www/abountmuan/symbol/brand/city/screen_print.pdf?page%3D1": {
+    "label": "PDF 파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "https://www.muan.go.kr/contents/31287/city_bi_1_a.zip": {
+    "label": "브랜드 파일 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "https://www.muan.go.kr/contents/31287/bi_manual.pdf": {
+    "label": "도시브랜드 매뉴얼 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "https://www.muan.go.kr/contents/31287/city_bi_2.zip": {
+    "label": "브랜드 파일 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "http://www.muan.go.kr/www/abountmuan/symbol/brand/city/screen_print.jpg?page=1": {
+    "label": "jpg이미지파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "http://www.muan.go.kr/www/abountmuan/symbol/brand/city/screen_print.pdf?page%3D1": {
+    "label": "PDF 파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "http://www.muan.go.kr/contents/31287/city_bi_1_a.zip": {
+    "label": "브랜드 파일 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "http://www.muan.go.kr/contents/31287/bi_manual.pdf": {
+    "label": "도시브랜드 매뉴얼 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "http://www.muan.go.kr/contents/31287/city_bi_2.zip": {
+    "label": "브랜드 파일 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand/city"
+   },
+   "https://www.muan.go.kr/www/abountmuan/symbol/brand/screen_print.jpg?page=1": {
+    "label": "jpg이미지파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand"
+   },
+   "https://www.muan.go.kr/www/abountmuan/symbol/brand/screen_print.pdf?page%3D1": {
+    "label": "PDF 파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand"
+   },
+   "http://www.muan.go.kr/www/abountmuan/symbol/brand/screen_print.jpg?page=1": {
+    "label": "jpg이미지파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand"
+   },
+   "http://www.muan.go.kr/www/abountmuan/symbol/brand/screen_print.pdf?page%3D1": {
+    "label": "PDF 파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/brand"
+   },
+   "https://www.muan.go.kr/www/abountmuan/symbol/emblem/screen_print.jpg?page=1": {
+    "label": "jpg이미지파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/emblem"
+   },
+   "https://www.muan.go.kr/www/abountmuan/symbol/emblem/screen_print.pdf?page%3D1": {
+    "label": "PDF 파일 새 창으로 열림",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/emblem"
+   },
+   "https://www.muan.go.kr/contents/27244/symbol_box.zip": {
+    "label": "무안군 CI 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/emblem"
+   },
+   "https://www.muan.go.kr/contents/27244/qrcode.zip": {
+    "label": "무안군 QR코드 다운로드 새창열기",
+    "page": "http://www.muan.go.kr/www/abountmuan/symbol/emblem"
+   }
+  },
+  "kr-q42095": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   },
+   "https://www.gbmg.go.kr/portal/mg_logo.zip": {
+    "label": "원본파일 다운",
+    "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   },
+   "https://www.gbmg.go.kr/portal/logo_img.zip": {
+    "label": "이미지파일 다운",
+    "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   },
+   "https://www.gbmg.go.kr/portal/slogan_ai.ai": {
+    "label": "원본파일 다운",
+    "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   },
+   "https://www.gbmg.go.kr/portal/slogan_img.zip": {
+    "label": "이미지파일 다운",
+    "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000"
+   }
+  },
+  "kr-q50244": {
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=142": {
+    "label": "AI 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=141": {
+    "label": "JPG 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=144": {
+    "label": "AI 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=143": {
+    "label": "JPG 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=147": {
+    "label": "정이 AI 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=145": {
+    "label": "정이 JPG 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=148": {
+    "label": "송이 AI 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=313&fileNo=146": {
+    "label": "송이 JPG 다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=313"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=315&fileNo=169": {
+    "label": "다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=315"
+   },
+   "https://www.boeun.go.kr/downloadContentsFile.do?key=315&fileNo=170": {
+    "label": "다운로드",
+    "page": "https://www.boeun.go.kr/www/contents.do?key=315"
+   }
+  },
+  "kr-q50245": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402020000"
+   }
+  },
+  "kr-q42100": {
+   "https://www.sacheon.go.kr/portal/img/sub/intro/character2019_ai.zip": {
+    "label": "캐릭터 AI 다운로드 새 창, ai파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/character2019_jpg.zip": {
+    "label": "캐릭터 JPG 다운로드 새 창, jpg파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c1.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c2.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c3.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c4.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c5.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c6.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c7.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c8.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/character2020_ai.zip": {
+    "label": "이모티콘 AI 다운로드 새 창, ai파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/character2020_jpg.zip": {
+    "label": "이모티콘 JPG 다운로드 새 창, jpg파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c9.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c10.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c11.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c12.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c13.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c14.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c15.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c16.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c17.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c18.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c19.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c20.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c21.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c22.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c23.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/data/zip/character2019_c24.zip": {
+    "label": "새 창, ZIP파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/03763.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/01_04_symbol_city_ai.zip": {
+    "label": "심벌 AI 다운로드 새 창, Ai파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/02416.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/01_04_symbol_city_jpg.zip": {
+    "label": "심벌 JPG 다운로드 새 창, JPG 파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/02416.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/01_04_symbol_ai.zip": {
+    "label": "시기 AI 다운받기 새 창, Ai파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/02416.web"
+   },
+   "https://www.sacheon.go.kr/portal/img/sub/intro/01_04_symbol_jpg.zip": {
+    "label": "시기 JPG 다운받기 새 창, JPG 파일 다운로드",
+    "page": "https://www.sacheon.go.kr/intro/01096/02416.web"
+   }
+  },
+  "kr-q50248": {
+   "https://www.sancheong.go.kr/DATA/download/www/mark.ps01.zip": {
+    "label": "다운로드",
+    "page": "https://www.sancheong.go.kr/www/contents.do?key=178"
+   },
+   "https://www.sancheong.go.kr/DATA/download/www/mark_jpg01.zip": {
+    "label": "다운로드",
+    "page": "https://www.sancheong.go.kr/www/contents.do?key=178"
+   }
+  },
+  "kr-q42105": {
+   "https://www.cnssed.go.kr/editor/editor.action/%EC%84%9C%EC%82%B0%EA%B5%90%EC%9C%A1%EC%A7%80%EC%9B%90%EC%B2%AD%EB%A1%9C%EA%B3%A0%ED%83%80%EC%9E%85_2026.zip/39d06b063535d0e038b91acd03619bc7/%EC%84%9C%EC%82%B0%EA%B5%90%EC%9C%A1%EC%A7%80%EC%9B%90%EC%B2%AD%EB%A1%9C%EA%B3%A0%ED%83%80%EC%9E%85_2026.zip?q=e573a66cd3e73a5247876cd0446ffa218ec5959151a699579071269bed9323fc": {
+    "label": "서산교육지원청로고타입 다운로드 서산교육지원청로고타입",
+    "page": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d"
+   },
+   "https://www.cnssed.go.kr/editor/editor.action/%EC%84%9C%EC%82%B0%EA%B5%90%EC%9C%A1%EC%A7%80%EC%9B%90%EC%B2%AD%EB%A1%9C%EA%B3%A0%ED%83%80%EC%9E%85_2026.zip/5067921b148aa25d3c94c261174c698d/%EC%84%9C%EC%82%B0%EA%B5%90%EC%9C%A1%EC%A7%80%EC%9B%90%EC%B2%AD%EB%A1%9C%EA%B3%A0%ED%83%80%EC%9E%85_2026.zip?q=e573a66cd3e73a5247876cd0446ffa218ec5959151a699579071269bed9323fc": {
+    "label": "서산교육지원청로고타입 다운로드 서산교육지원청로고타입",
+    "page": "https://www.cnssed.go.kr/editor/editor.action?q=ad47c8f1403f71194d85c2a72f66e32005c5819dd4e50dd048825f87f7bf937d"
+   }
+  },
+  "kr-q50250": {
+   "https://www.sj.go.kr/download/S0001/down2.zip": {
+    "label": "다운받기 심벌마크 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/logo2.zip": {
+    "label": "ai파일다운 심벌마크 ai파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/fun_seongju.zip": {
+    "label": "다운받기 브랜드 슬로건 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/clean_bs2.zip": {
+    "label": "ai파일다운 브랜드 슬로건 ai파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/down4.zip": {
+    "label": "다운받기 성주는 참하다 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/down3.zip": {
+    "label": "다운받기 참별미소 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/chambyeoli_down.zip": {
+    "label": "다운받기 참별이 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/chambyeoli_ai.zip": {
+    "label": "ai파일다운 참별이 ai파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/download/S0001/down5.zip": {
+    "label": "다운받기 별의별맛 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   },
+   "https://www.sj.go.kr/programs/board/board_download.do?file_uid=364734": {
+    "label": "다운로드 성주의 노래 파일 다운로드",
+    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&"
+   }
+  },
+  "kr-q42109": {
+   "https://www.sokcho.go.kr/page/sokchoportal/download/CI_guide.pdf": {
+    "label": "CI 디자인 가이드 다운로드",
+    "page": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci"
+   },
+   "https://www.sokcho.go.kr/page/sokchoportal/download/CI_AI.zip": {
+    "label": "AI 파일 다운로드",
+    "page": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci"
+   },
+   "https://www.sokcho.go.kr/page/sokchoportal/download/CI_JPG.zip": {
+    "label": "JPG파일 다운로드",
+    "page": "https://www.sokcho.go.kr/sc/portal/sokchocity/symbol/ci"
+   }
+  },
+  "kr-q50415": {
+   "https://www.songpa.go.kr/common/download.jsp?saveFile=/www/cts2371_file.pdf&downName=cts2371_file.pdf": {
+    "label": "CI디자인 가이드 CI디자인 가이드 다운로드",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2374&"
+   },
+   "https://www.songpa.go.kr/common/download.jsp?saveFile=/www/cts2374_file.ai&downName=cts2374_file.ai": {
+    "label": "국제관광도시송파 마스코트(ai) 다운로드 국제관광도시송파 마스코트(ai) 다운로드",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2374&"
+   },
+   "https://www.songpa.go.kr/common/download.jsp?saveFile=/www/cts2374_file2.jpg&downName=cts2374_file2.jpg": {
+    "label": "국제관광도시송파 마스코트(jpg) 다운로드 국제관광도시송파 마스코트(jpg) 다운로드",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2374&"
+   },
+   "https://www.songpa.go.kr/common/download.jsp?saveFile=/www/cts2374_file3.ai&downName=cts2374_file3.ai": {
+    "label": "국제관광도시송파 엠블럼(ai) 다운로드 국제관광도시송파 엠블럼(ai) 다운로드",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2374&"
+   },
+   "https://www.songpa.go.kr/common/download.jsp?saveFile=/www/cts2374_file4.jpg&downName=cts2374_file4.jpg": {
+    "label": "국제관광도시송파 엠블럼(jpg) 다운로드 국제관광도시송파 엠블럼(jpg) 다운로드",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2374&"
+   },
+   "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2024/04/11/cb552f73-8023-40eb-ab32-a7f76d338c53717F9C2G20B7A0D6.pdf&downName=★ 송파구 CI 및 캐릭터 디자인 가이드라인 .pdf": {
+    "label": "송파구 CI 및 캐릭터 디자인 가이드라인",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   },
+   "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2023/01/02/20fa3017-38b4-4ac0-a381-3c3cde47b9ec161B1B920010E2C8.ai&downName=%ec%86%a1%ed%8c%8c%ea%b5%ac+CI+%ec%84%b8%eb%a1%9c%ed%98%95.ai": {
+    "label": "송파구청 세로형 CI 다운로드(ai) 송파구청 세로형 CI 다운로드(ai)",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   },
+   "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2023/01/02/162ef47e-f8d1-47eb-bc54-58f14d6cd1f7369BA81431F3C400.jpg&downName=%ec%86%a1%ed%8c%8c%ea%b5%ac+CI+%ec%84%b8%eb%a1%9c%ed%98%95.jpg": {
+    "label": "송파구청 세로형 CI 다운로드(jpg) 송파구청 세로형 CI 다운로드(jpg)",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   },
+   "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2023/01/02/7612e952-b5c3-467e-a658-14214097b4128D08EC41C369CCB7.ai&downName=%ec%86%a1%ed%8c%8c%ea%b5%ac+CI+%ea%b0%80%eb%a1%9c%ed%98%95.ai": {
+    "label": "송파구청 가로형 CI 다운로드(ai) 송파구청 가로형 CI 다운로드(ai)",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   },
+   "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2023/01/02/2cdb2e66-76de-4899-9a79-9904dd93a1ef1AGADD38EF819DC0.jpg&downName=%ec%86%a1%ed%8c%8c%ea%b5%ac+CI+%ea%b0%80%eb%a1%9c%ed%98%95.jpg": {
+    "label": "송파구청 가로형 CI 다운로드(jpg) 송파구청 가로형 CI 다운로드(jpg)",
+    "page": "https://www.songpa.go.kr/www/contents.do?key=2371&"
+   }
+  },
+  "kr-q50251": {
+   "https://www.sunchang.go.kr/resource/www/download/down_symbol01.zip": {
+    "label": "전체 다운로드",
+    "page": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e"
+   },
+   "https://www.sunchang.go.kr/resource/www/download/down_symbol02.zip": {
+    "label": "다운로드",
+    "page": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e"
+   },
+   "https://www.sunchang.go.kr/resource/www/download/down_symbol03.zip": {
+    "label": "다운로드",
+    "page": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e"
+   },
+   "https://www.sunchang.go.kr/resource/www/download/down_symbol04.zip": {
+    "label": "다운로드",
+    "page": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac9835e554f7e"
+   }
+  },
+  "kr-q42113": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   },
+   "https://www.siheung.go.kr/main/guide.pdf": {
+    "label": "시흥시 상징물 가이드라인 시흥시 상징물 가이드라인 다운로드",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   },
+   "https://www.siheung.go.kr/main/symbolic_mark.zip": {
+    "label": "상징마크 다운로드 파일 다운로드",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   },
+   "https://www.siheung.go.kr/main/emblem.zip": {
+    "label": "엠블럼 다운로드 파일 다운로드",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   },
+   "https://www.siheung.go.kr/main/torohearo.zip": {
+    "label": "캐릭터 다운로드 파일 다운로드",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   },
+   "https://www.siheung.go.kr/main/city_brand.zip": {
+    "label": "도시브랜드 다운로드 파일 다운로드",
+    "page": "https://www.siheung.go.kr/main/contents.do?mId=0501010000"
+   }
+  },
+  "kr-q42124": {
+   "https://www.yangju.go.kr/www/downloadContentsFile.do?fileNm=cts346_file01.jpg": {
+    "label": "jpg 파일 다운로드",
+    "page": "https://www.yangju.go.kr/www/contents.do?key=346"
+   },
+   "https://www.yangju.go.kr/www/downloadContentsFile.do?fileNm=cts346_file02.zip": {
+    "label": "ai 파일 다운로드",
+    "page": "https://www.yangju.go.kr/www/contents.do?key=346"
+   },
+   "https://www.yangju.go.kr/www/downloadContentsFile.do?fileNm=cts338_file01.jpg": {
+    "label": "jpg 파일 다운로드",
+    "page": "https://www.yangju.go.kr/www/contents.do?key=338"
+   },
+   "https://www.yangju.go.kr/www/downloadContentsFile.do?fileNm=cts338_file02.zip": {
+    "label": "ai 파일 다운로드",
+    "page": "https://www.yangju.go.kr/www/contents.do?key=338"
+   }
+  },
+  "kr-q50255": {
+   "https://www.yp21.go.kr/downloadContentsFile.do?key=1846&fileNo=596": {
+    "label": "양평군 디자인표준편람 다운로드",
+    "page": "https://www.yp21.go.kr/www/contents.do?key=1846"
+   },
+   "https://www.yp21.go.kr/downloadContentsFile.do?key=1846&fileNo=597": {
+    "label": "양평군 CI(AI 파일) 다운로드",
+    "page": "https://www.yp21.go.kr/www/contents.do?key=1846"
+   },
+   "https://www.yp21.go.kr/downloadContentsFile.do?key=1846&fileNo=598": {
+    "label": "양평군 CI(JPG 파일) 다운로드",
+    "page": "https://www.yp21.go.kr/www/contents.do?key=1846"
+   },
+   "https://www.yp21.go.kr/downloadContentsFile.do?key=1846&fileNo=599": {
+    "label": "양평군 BI(AI 파일) 다운로드",
+    "page": "https://www.yp21.go.kr/www/contents.do?key=1846"
+   },
+   "https://www.yp21.go.kr/downloadContentsFile.do?key=1846&fileNo=600": {
+    "label": "양평군 BI (JPG 파일) 다운로드",
+    "page": "https://www.yp21.go.kr/www/contents.do?key=1846"
+   }
+  },
+  "kr-q50261": {
+   "https://www.yd21.go.kr/_prog/download/?file_id=4u4p98nd3fff89agrjg3sejnxk4n9d": {
+    "label": "심벌마크 다운로드",
+    "page": "https://www.yd21.go.kr/kr/html/sub04/04030101.html"
+   },
+   "https://www.yd21.go.kr/_prog/download/?file_id=2gsgmgpv92m2u5xowt80fyhnsw1x0a": {
+    "label": "조합형(국문,한문,영문) 다운로드",
+    "page": "https://www.yd21.go.kr/kr/html/sub04/04030101.html"
+   },
+   "https://www.yd21.go.kr/_prog/download/?file_id=eb6oejq45c1r2yj057dvejjwmnuuxu": {
+    "label": "조합형(한글2) 다운로드",
+    "page": "https://www.yd21.go.kr/kr/html/sub04/04030101.html"
+   }
+  },
+  "kr-q50190": {
+   "https://www.ydp.go.kr/DATA/download/www/cts2895_file1.zip": {
+    "label": "심벌마크 다운로드",
+    "page": "https://www.ydp.go.kr/www/contents.do?key=2895&"
+   },
+   "https://www.ydp.go.kr/DATA/download/www/cts2895_file2.zip": {
+    "label": "심벌마크의 색상활용 다운로드",
+    "page": "https://www.ydp.go.kr/www/contents.do?key=2895&"
+   },
+   "https://www.ydp.go.kr/DATA/download/www/cts2895_file3.zip": {
+    "label": "로고타입 다운로드",
+    "page": "https://www.ydp.go.kr/www/contents.do?key=2895&"
+   },
+   "https://www.ydp.go.kr/DATA/download/www/cts2895_file4.zip": {
+    "label": "시그니처 좌우조합 다운로드",
+    "page": "https://www.ydp.go.kr/www/contents.do?key=2895&"
+   },
+   "https://www.ydp.go.kr/DATA/download/www/cts2895_file5.pdf": {
+    "label": "CI 활용방안 다운로드",
+    "page": "https://www.ydp.go.kr/www/contents.do?key=2895&"
+   }
+  },
+  "kr-q50307": {
+   "https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008704Ml7&fileSn=0": {
+    "label": "JPG 다운로드",
+    "page": "https://www.yesan.go.kr/kor/sub05_02_01.do"
+   },
+   "https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008701Jd6&fileSn=0": {
+    "label": "AI 다운로드",
+    "page": "https://www.yesan.go.kr/kor/sub05_02_01.do"
+   },
+   "https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008833Iy9&fileSn=0": {
+    "label": "AI 다운로드",
+    "page": "https://www.yesan.go.kr/kor/sub05_02_01.do"
+   }
+  },
+  "kr-q42129": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.osan.go.kr/portal/contents.do?mId=0501010000"
+   },
+   "https://www.osan.go.kr/portal/Downfiles/02/info_account.hwp": {
+    "label": "신청양식다운로드",
+    "page": "https://www.osan.go.kr/portal/contents.do?mId=0501010000"
+   }
+  },
+  "kr-q50315": {
+   "https://www.eumseong.go.kr/downloadContentsFile.do?key=410&atchNo=309": {
+    "label": "다운로드",
+    "page": "https://www.eumseong.go.kr/www/contents.do?key=410"
+   },
+   "https://www.eumseong.go.kr/downloadContentsFile.do?key=410&atchNo=306": {
+    "label": "다운로드",
+    "page": "https://www.eumseong.go.kr/www/contents.do?key=410"
+   },
+   "https://www.eumseong.go.kr/downloadContentsFile.do?key=410&atchNo=307": {
+    "label": "다운로드",
+    "page": "https://www.eumseong.go.kr/www/contents.do?key=410"
+   },
+   "https://www.eumseong.go.kr/downloadContentsFile.do?key=410&atchNo=308": {
+    "label": "다운로드",
+    "page": "https://www.eumseong.go.kr/www/contents.do?key=410"
+   }
+  },
+  "kr-q42134": {
+   "https://www.uiwang.go.kr/comm/getFile?srvcId=MEDIA&upperNo=367&fileTy=MEDIA&fileNo=1": {
+    "label": "CI 가이드 다운로드",
+    "page": "https://www.uiwang.go.kr/UWKORINTRO0201"
+   },
+   "https://www.uiwang.go.kr/comm/getFile?srvcId=MEDIA&upperNo=3599&fileTy=MEDIA&fileNo=1": {
+    "label": "다운로드(응용형)",
+    "page": "https://www.uiwang.go.kr/UWKORINTRO0201"
+   },
+   "https://www.uiwang.go.kr/comm/getFile?srvcId=MEDIA&upperNo=1455&fileTy=MEDIA&fileNo=1": {
+    "label": "다운로드(기본형)",
+    "page": "https://www.uiwang.go.kr/UWKORINTRO0201"
+   }
+  },
+  "kr-q50318": {
+   "https://www.inje.go.kr/file/know/inje_mark.zip": {
+    "label": "군기 다운로드 군기 다운로드",
+    "page": "https://www.inje.go.kr/portal/inje-news/inje/symbol"
+   },
+   "https://www.inje.go.kr/file/know/inje_sudal.zip": {
+    "label": "인제군 마스코트 다운로드 인제군 마스코트 다운로드",
+    "page": "https://www.inje.go.kr/portal/inje-news/inje/symbol"
+   }
+  },
+  "kr-q50319": {
+   "https://www.imsil.go.kr/images/01_potal/file/sub05/symbol_ai.zip": {
+    "label": "AI로 다운로드",
+    "page": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000"
+   },
+   "https://www.imsil.go.kr/images/01_potal/file/sub05/symbol_jpg.zip": {
+    "label": "JPG로 다운로드",
+    "page": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002001000"
+   }
+  },
+  "kr-q42144": {
+   "https://www.mois.go.kr/cmm/fms/FileDown/FILE_00133979DwRxJNO.mp3": {
+    "label": "1. 애국가 1절.mp3",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.mois.go.kr/cmm/fms/FileDown/FILE_00134023Jhudoih.mp3": {
+    "label": "2. 애국가 1절~4절.mp3",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000010805&fileSn=0": {
+    "label": "아름다운 무궁화 가꾸기",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.jinju.go.kr/cmm/fms/FileDown/FILE_00133979DwRxJNO.mp3": {
+    "label": "1. 애국가 1절.mp3",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.jinju.go.kr/cmm/fms/FileDown/FILE_00134023Jhudoih.mp3": {
+    "label": "2. 애국가 1절~4절.mp3",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.jinju.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000010805&fileSn=0": {
+    "label": "아름다운 무궁화 가꾸기",
+    "page": "https://www.jinju.go.kr/modules/pnb/banner/link.do?sno=212"
+   },
+   "https://www.jinju.go.kr/_res/portal/data/jinju_logo_2020.zip": {
+    "label": "일러스트 파일 다운로드",
+    "page": "https://www.jinju.go.kr/00135/01109/01119.web"
+   }
+  },
+  "kr-q50328": {
+   "https://www.cng.go.kr/_res/portal/data/zip/cn_symbol_jpg2022.zip": {
+    "label": "JPG 심벌마크 다운로드",
+    "page": "https://www.cng.go.kr/00004/00567/00569.web"
+   },
+   "https://www.cng.go.kr/_res/portal/data/zip/cn_symbol_ai2022.zip": {
+    "label": "AI 심벌마크 다운로드",
+    "page": "https://www.cng.go.kr/00004/00567/00569.web"
+   }
+  },
+  "kr-q243327": {
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/0503010500_zip01.zip": {
+    "label": "AI파일 다운로드 AI파일 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/0503010500_zip02.zip": {
+    "label": "JPG파일 다운로드 JPG파일 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/0503010500_zip04.zip": {
+    "label": "AI파일 다운로드 AI파일 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/0503010500_zip05.zip": {
+    "label": "JPG파일 다운로드 JPG파일 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/img/sub/logo_img01_01.png": {
+    "label": "이미지 확대보기 새 창",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/img/sub/logo_img01_02.png": {
+    "label": "이미지 확대보기 새 창",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10711.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/img_symbol2_01.zip": {
+    "label": "창원시 명칭결합 심벌마크 창원시 명칭결합 심벌마크 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10710.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/zip/img_symbol2_02.zip": {
+    "label": "창원특례시 명칭결합 심벌마크 창원특례시 명칭결합 심벌마크 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10710.web"
+   },
+   "https://www.changwon.go.kr/cwportal/_res/cwportal/data/ect/changwon_symbol.ai": {
+    "label": "창원시 심벌마크(AI) 창원시 심벌마크(AI) 다운로드",
+    "page": "https://www.changwon.go.kr/cwportal/10671/10708/10710.web"
+   }
+  },
+  "kr-q50330": {
+   "http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie": {
+    "label": "Internet Explorer 다운로드 받기",
+    "page": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020100"
+   }
+  },
+  "kr-q50331": {
+   "https://www.cs.go.kr/upload/data/zip/cheongsong03_2.zip": {
+    "label": "AI 심벌마크 다운로드,AI",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cs_logo_01.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cs_logo_02.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cs_logo_00.zip": {
+    "label": "PNG 청송군 브랜드 기본형 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cheongsong.zip": {
+    "label": "AI 심벌마크 다운로드,AI",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cheongsong_jpg01.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/simbol_png.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cheongsong02.zip": {
+    "label": "AI 심벌마크 다운로드,AI",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cheongsong03.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cs_slogan01.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/cs_slogan02.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/geopark_ai.zip": {
+    "label": "AI 심벌마크 다운로드,AI",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/geopark_jpg.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/geopark_png.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/slow_01.zip": {
+    "label": "AI 심벌마크 다운로드,AI",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/slow_02.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/slow_03.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/qr_png_s.zip": {
+    "label": "PNG 심벌마크 다운로드,PNG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   },
+   "https://www.cs.go.kr/upload/data/zip/qr_jpg_s.zip": {
+    "label": "JPG 심벌마크 다운로드,JPG",
+    "page": "https://www.cs.go.kr/cheongsong/00003084/00003102.web"
+   }
+  },
+  "kr-q50332": {
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/ci_00.jpg&oriFileName=기본형.jpg&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/simbol.ai&oriFileName=기본형.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/cy_01.gif&oriFileName=type_01.gif&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/BS_203.ai&oriFileName=type_01.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/cy_02.gif&oriFileName=type_02.gif&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "https://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/BS_203.ai&oriFileName=type_02.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/ci_00.jpg&oriFileName=기본형.jpg&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/simbol.ai&oriFileName=기본형.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/cy_01.gif&oriFileName=type_01.gif&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/BS_203.ai&oriFileName=type_01.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/cy_02.gif&oriFileName=type_02.gif&code=download/": {
+    "label": "JPG 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   },
+   "http://www.cheongyang.go.kr/gonet/FileDownload.do?fileName=/downfile/BS_203.ai&oriFileName=type_02.ai&code=download/": {
+    "label": "AI 다운로드",
+    "page": "http://www.cheongyang.go.kr/kor/sub05_03_01.do"
+   }
+  },
+  "kr-q42148": {
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000002124&fileSn=1": {
+    "label": "기본형 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000002124&fileSn=3": {
+    "label": "패턴형 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000002124&fileSn=2": {
+    "label": "공공디자인 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000002124&fileSn=0": {
+    "label": "엠블럼 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000001822&fileSn=0": {
+    "label": "가이드라인 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000001822&fileSn=1": {
+    "label": "옥내형 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000001822&fileSn=2": {
+    "label": "옥외용 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000001822&fileSn=3": {
+    "label": "옥외용(약식) 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   },
+   "https://www.chuncheon.go.kr/_cmm/fms/FileDown.do?atchFileId=FILE_000000000001822&fileSn=4": {
+    "label": "다운로드 다운로드",
+    "page": "https://www.chuncheon.go.kr/cityhall/about-chuncheon/introduction/brand/"
+   }
+  },
+  "kr-q50335": {
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=taean_symbol.jpg&code=download/kor/sub05/": {
+    "label": "JPG 다운로드 시그니처 JPG파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   },
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=taean_symbol.ai&code=download/kor/sub05/": {
+    "label": "AI 다운로드 시그니처 ai파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   },
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=taean_symbol_vertical.jpg&code=download/kor/sub05/": {
+    "label": "JPG 다운로드 세로형 시그니처 JPG파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   },
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=taean_symbol_vertical.ai&code=download/kor/sub05/": {
+    "label": "AI 다운로드 세로형 시그니처 ai파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   },
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=mascot.jpg&code=download/kor/sub05/": {
+    "label": "JPG 다운로드 마스코트 JPG파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   },
+   "https://www.taean.go.kr/gonet/FileDownload.do?fileName=mascot.ai&code=download/kor/sub05/": {
+    "label": "AI 다운로드 마스코트 ai파일 다운로드",
+    "page": "https://www.taean.go.kr/kor/sub05_02_03.do"
+   }
+  },
+  "kr-q188624": {
+   "https://www.pc.go.kr/contents/portal/download/intro/pcgunminsong_01.mp3": {
+    "label": "평창 군민의 노래 독창 다운로드",
+    "page": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong"
+   },
+   "https://www.pc.go.kr/contents/portal/download/intro/pcgunminsong_02.mp3": {
+    "label": "평창 군민의 노래 합창 다운로드",
+    "page": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong"
+   },
+   "https://www.pc.go.kr/portal/useguide/useguide-viewerdownload": {
+    "label": "뷰어다운로드",
+    "page": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-logosong"
+   },
+   "https://www.pc.go.kr/page/portal/download/intro/symbol.jpg": {
+    "label": "상징 표시 다운로드",
+    "page": "https://www.pc.go.kr/portal/intro/intro-summary/intro-summary-symbol"
+   }
+  },
+  "kr-q42155": {
+   "https://www.pocheon.go.kr/downloadContentsFile.do?key=3830&fileNo=180": {
+    "label": "시승격 20주년 엠블럼 AI 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3830"
+   },
+   "https://www.pocheon.go.kr/downloadContentsFile.do?key=3830&fileNo=181": {
+    "label": "시승격 20주년 엠블럼 PDF 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3830"
+   },
+   "https://www.pcs21.net/downloadContentsFile.do?key=3830&fileNo=180": {
+    "label": "시승격 20주년 엠블럼 AI 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3830"
+   },
+   "https://www.pcs21.net/downloadContentsFile.do?key=3830&fileNo=181": {
+    "label": "시승격 20주년 엠블럼 PDF 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3830"
+   },
+   "https://www.pocheon.go.kr/downloadContentsFile.do?key=3820&fileNo=165": {
+    "label": "도시브랜드 AI 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3820"
+   },
+   "https://www.pocheon.go.kr/downloadContentsFile.do?key=3820&fileNo=166": {
+    "label": "도시브랜드 JPG 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3820"
+   },
+   "https://www.pcs21.net/downloadContentsFile.do?key=3820&fileNo=165": {
+    "label": "도시브랜드 AI 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3820"
+   },
+   "https://www.pcs21.net/downloadContentsFile.do?key=3820&fileNo=166": {
+    "label": "도시브랜드 JPG 다운로드 다운로드",
+    "page": "https://www.pcs21.net/www/contents.do?key=3820"
+   }
+  },
+  "kr-q26212": {
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/01_ai.zip": {
+    "label": "AI AI파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/01_jpg.zip": {
+    "label": "JPG JPG파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/01_all.zip": {
+    "label": "전체 전체파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/symbol/00573.zip": {
+    "label": "AI AI파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/symbol/00573_02.zip": {
+    "label": "JPG JPG파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/05_ai.zip": {
+    "label": "AI AI파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/05_jpg.zip": {
+    "label": "JPG JPG파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   },
+   "https://www.hadong.go.kr/_res/portal/data/zip/web00581/05_all.zip": {
+    "label": "전체 전체파일다운로드",
+    "page": "https://www.hadong.go.kr/intro/00567/00571.web"
+   }
+  },
+  "kr-q50343": {
+   "https://hongseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000170763Pz2&fileSn=0": {
+    "label": "AI 다운로드",
+    "page": "https://hongseong.go.kr/kor/sub04_010701.do"
+   },
+   "https://hongseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000170764Gb2&fileSn=0": {
+    "label": "JPG 다운로드",
+    "page": "https://hongseong.go.kr/kor/sub04_010701.do"
+   }
+  },
+  "kr-q491336": {
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c296222014cd10a4a20431ce242cd861": {
+    "label": "칼라 CI 다운로드 CI 국문 A (상하)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=9bb301a6cf8407f78e60f097e6b88b89": {
+    "label": "흑백 CI 다운로드 CI 국문 A (상하)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=b8bcbb6dbbb139432fc350721099d433": {
+    "label": "칼라 CI 다운로드 CI 국문 B (좌우)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=9b979871346c888eda415a72d52a04c1": {
+    "label": "흑백 CI 다운로드 CI 국문 B (좌우)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=839cf3516caf2cf1226fdddedbb296cf": {
+    "label": "칼라 CI 다운로드 CI 영문 A (상하)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=9e27e5dcdbe049f8a60e1787a78abcc4": {
+    "label": "흑백 CI 다운로드 CI 영문 A (상하)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=4a7cd9e24b286961f4e731a97cc5d3e7": {
+    "label": "칼라 CI 다운로드 CI 영문 B (좌우)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=b8d30913e12272c75d03c8969da06d48": {
+    "label": "흑백 CI 다운로드 CI 영문 B (좌우)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c17d44c01b62f096856de0af20f8d558": {
+    "label": "칼라 CI 다운로드 CI 국영문 A (상하)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=206ec4fcba6565c3dd266093305517ff": {
+    "label": "흑백 CI 다운로드 CI 국영문 A (상하)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c5bbd59b536fcb2aec4e54426230e85c": {
+    "label": "칼라 CI 다운로드 CI 국영문 B (좌우)형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=ad61cdc5b1c62724a32d0bb4fce5f541": {
+    "label": "흑백 CI 다운로드 CI 국영문 B (좌우)형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=e8b59819df22d66999df56359e4785cf": {
+    "label": "칼라 CI 다운로드 CI 기본형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c2cdbe989269321542ee3a2f7b06c88b": {
+    "label": "흑백 CI 다운로드 CI 기본형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=ee394721c986d42bb808a5f44281410e": {
+    "label": "칼라 CI 다운로드 CI 홈페이지형 칼라 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=3e7de8e3a76c70fb013b001610e7da54": {
+    "label": "흑백 CI 다운로드 CI 홈페이지형 흑백 CI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=4a8b6d0ca196a55bfce322ff7b70a25a": {
+    "label": "전체 AI 다운로드 전체 AI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=385177881b2d7ef66651fcf792bd9ba6": {
+    "label": "AI다운로드 국문 슬로건 AI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=6c6eb312ff0e7fbe5a7c8708a081b352": {
+    "label": "PNG다운로드 국문 슬로건 PNG 다운로드",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c0f9b62846b96264578840c24faec7f3": {
+    "label": "JPG다운로드 국문 슬로건 JPG 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=ccbe0dddd865349d76443584de177a74": {
+    "label": "AI다운로드 영문 슬로건 AI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=159f93c56d0d17824a9d6ea4e9906763": {
+    "label": "PNG다운로드 영문 슬로건 PNG 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=e1b19268c6042145b3aa223c0a66ed22": {
+    "label": "JPG다운로드 영문 슬로건 JPG 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=c9fd559a30f4a4b45f2d9c851817be9b": {
+    "label": "AI다운로드 국영문조합형 슬로건 AI 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=ebfc7c72b1a02e958596fae0c7ea448f": {
+    "label": "PNG다운로드 국영문조합형 슬로건 PNG 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   },
+   "https://www.keris.or.kr/main/cf/fileDownload.do?fileKey=df7aab363baf4e6c5b2ead19d56de7e2": {
+    "label": "JPG다운로드 국영문조합형 슬로건 JPG 다운로드 - 새 창 열림",
+    "page": "https://www.keris.or.kr/main/cm/cntnts/cntntsView.do?mi=1229&cntntsId=1525"
+   }
+  },
+  "kr-q56147": {
+   "https://www.gachon.ac.kr/sites/kor/file/logo_ai.zip": {
+    "label": "AI파일 다운로드",
+    "page": "https://www.gachon.ac.kr/pr/1459/subview.do"
+   },
+   "https://www.gachon.ac.kr/sites/kor/file/logo_jpg.zip": {
+    "label": "이미지 다운로드",
+    "page": "https://www.gachon.ac.kr/pr/1459/subview.do"
+   }
+  },
+  "kr-q41765": {
+   "https://www.konkuk.ac.kr/sites/konkuk/down/konkuk_guide_freshman_2026.pdf": {
+    "label": "신입생용(2026학번) 새창열기",
+    "page": "https://www.konkuk.ac.kr/konkuk/19196/subview.do"
+   },
+   "https://www.konkuk.ac.kr/sites/konkuk/down/konkuk_guide_students_2026.pdf": {
+    "label": "재학생용(~2025학번) 새창열기",
+    "page": "https://www.konkuk.ac.kr/konkuk/19196/subview.do"
+   },
+   "https://www.konkuk.ac.kr/sites/konkuk/down/konkuk_guide_freshman_2026_eng.pdf": {
+    "label": "For New Students(ENG) 새창열기",
+    "page": "https://www.konkuk.ac.kr/konkuk/19196/subview.do"
+   },
+   "https://www.konkuk.ac.kr/sites/konkuk/down/KONKUK_WAVE_2031_UI.zip": {
+    "label": "KONKUK WAVE 2031 전용 엠블럼 ZIP 파일",
+    "page": "https://www.konkuk.ac.kr/konkuk/19196/subview.do"
+   }
+  },
+  "kr-q487841": {
+   "https://knu.ac.kr/wbbs/wbbs/download/ui_manual_2023.pdf": {
+    "label": "UI관리지침 (새창)UI관리지침 홈페이지 연결",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/ui_manual_2023.pdf": {
+    "label": "UI 관리지침 다운로드 (새창)경북대학교 UI 관리지침 매뉴얼 pdf파일보기",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbol_jpg.zip": {
+    "label": "JPG 다운로드 Communication Logo Mark JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbol_eps.zip": {
+    "label": "EPS 다운로드 Communication Logo Mark EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbol.hwp": {
+    "label": "HWP 다운로드 Communication Logo Mark HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbolcolor_jpg.zip": {
+    "label": "JPG 다운로드 심벌마크 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbolcolor_eps.zip": {
+    "label": "EPS 다운로드 심벌마크 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/symbolcolor.hwp": {
+    "label": "HWP 다운로드 심벌마크 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/logotype_jpg.zip": {
+    "label": "JPG 다운로드 로고 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/logotype_eps.zip": {
+    "label": "EPS 다운로드 로고 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/logotype.hwp": {
+    "label": "HWP 다운로드 로고 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem_jpg.zip": {
+    "label": "JPG 다운로드 로고 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem_eps.zip": {
+    "label": "EPS 다운로드 로고 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem.hwp": {
+    "label": "HWP 다운로드 로고 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/ui_Slogan2020.zip": {
+    "label": "PNG 다운로드 다시 뜨겁게! 다시 자랑스럽게! RE;MAKE KNU 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/ui_Slogan_ai.zip": {
+    "label": "AI 다운로드 다시 뜨겁게! 다시 자랑스럽게! RE;MAKE KNU AI파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_jpg.zip": {
+    "label": "JPG 다운로드 시그니처 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_eps.zip": {
+    "label": "EPS 다운로드 시그니처 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature.hwp": {
+    "label": "HWP 다운로드 시그니처 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem_plus_png.zip": {
+    "label": "JPG 다운로드 엠블럼+로고타입 조합 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem_plus_ai.zip": {
+    "label": "AI 다운로드 엠블럼+로고타입 조합 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/emblem_plus.hwp": {
+    "label": "HWP 다운로드 엠블럼+로고타입 조합 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_logo_jpg.zip": {
+    "label": "JPG 다운로드 시그니처 로고타입 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_logo_eps.zip": {
+    "label": "EPS 다운로드 시그니처 로고타입 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_logo.hwp": {
+    "label": "HWP 다운로드 시그니처 로고타입 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_eng_jpg.zip": {
+    "label": "JPG 다운로드 영문 시그니처 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_eng_eps.zip": {
+    "label": "EPS 다운로드 영문 시그니처 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_eng.hwp": {
+    "label": "HWP 다운로드 영문 시그니처 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_chn_jpg.zip": {
+    "label": "JPG 다운로드 한문 시그니처 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_chn_eps.zip": {
+    "label": "EPS 다운로드 한문 시그니처 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_chn.hwp": {
+    "label": "HWP 다운로드 한문 시그니처 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_ver_jpg.zip": {
+    "label": "JPG 다운로드 세로형 시그니처 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_ver_eps.zip": {
+    "label": "EPS 다운로드 세로형 시그니처 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/signature_ver.hwp": {
+    "label": "HWP 다운로드 세로형 시그니처 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/sangju_jpg.zip": {
+    "label": "JPG 다운로드 상주캠퍼스 시그니처 JPG파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/sangju_eps.zip": {
+    "label": "EPS 다운로드 상주캠퍼스 시그니처 EPS파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/sangju.hwp": {
+    "label": "HWP 다운로드 상주캠퍼스 시그니처 HWP파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04&menu_idx=194"
+   },
+   "https://www.knu.ac.kr/wbbs/wbbs/download/knu_song.zip": {
+    "label": "교가MP3파일 다운로드 교가MP3파일 다운로드",
+    "page": "https://www.knu.ac.kr/wbbs/wbbs/contents/index.action?menu_url=intro/about04_02&menu_idx=195"
+   }
+  },
+  "kr-q626872": {
+   "https://www.police.ac.kr/police/police/html/etc/viewerDownload.do?mdex=police151": {
+    "label": "뷰어 다운로드",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/symbolmark_AI.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/symbolmark_jpg.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/logotype_AI.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/logotype_jpg.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/signature2_AI.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   },
+   "https://www.police.ac.kr/pds/contents/police/signature2_jpg.zip": {
+    "label": "",
+    "page": "https://www.police.ac.kr/police/police/html/intro/sym/ci.do?mdex=police29"
+   }
+  },
+  "kr-q486999": {
+   "https://identity.ut.ac.kr/wp-content/uploads/2025/08/KNUT_UI_Guide_Basic_Sytetm.zip?ver=202508": {
+    "label": "UI 기본시스템 다운로드",
+    "page": "https://identity.ut.ac.kr"
+   },
+   "https://identity.ut.ac.kr/wp-content/uploads/2025/08/KNUT_UI_Guide_Application_Sytetm.zip?ver=202508": {
+    "label": "UI 응용시스템 다운로드",
+    "page": "https://identity.ut.ac.kr"
+   }
+  },
+  "kr-q16098196": {
+   "https://www.cha.ac.kr/wp-content/uploads/2026/07/차의과학대학교-로고_260722.zip": {
+    "label": "로고 다운로드",
+    "page": "https://www.cha.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ec%9d%b4%eb%85%90%ea%b3%bc-%eb%b9%84%ec%a0%84/%eb%8c%80%ed%95%99%ec%83%81%ec%a7%95/"
+   }
+  }
  }
 }

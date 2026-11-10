@@ -24,6 +24,9 @@ import { renderReview, bindReview } from './review.js';
   const groupOf = id => (browse?.assign?.[id] || '').split('/');
   const groupLabel = id => browse?.groups.find(g => g.id === id)?.label || '';
   const subLabel = (group, sub) => browse?.groups.find(g => g.id === group)?.subs.find(s => s.id === sub)?.label || '';
+  // 국내/해외: Korean organisations (country KR) versus the rest (foreign companies, universities, agencies and international bodies).
+  const originOf = record => record.country === 'KR' ? 'kr' : 'global';
+  const inOrigin = (record, origin) => origin === 'all' || originOf(record) === origin;
   const PAGE_SIZE = 60;
   let visibleCount = PAGE_SIZE, lastListKey = '';
   const surveyed = record => record.id.startsWith('kr-');
@@ -141,6 +144,7 @@ import { renderReview, bindReview } from './review.js';
     return {
       q: (params.get('q') || '').slice(0, 200),
       category: valid('category', taxonomy.categories.map(item => item.id)),
+      origin: valid('origin', ['kr', 'global']),
       group: browse ? valid('group', browse.groups.map(item => item.id)) : 'all',
       sub: browse ? valid('sub', browse.groups.flatMap(item => item.subs.map(s => s.id))) : 'all',
       sector: valid('sector', taxonomy.sectors.map(item => item.id)),
@@ -157,7 +161,7 @@ import { renderReview, bindReview } from './review.js';
     const current = readFilters(routeInfo().params);
     const next = { ...current, ...changes };
     const params = new URLSearchParams();
-    for (const key of ['q', 'category', 'group', 'sub', 'sector', 'format', 'region', 'access', 'sort', 'view']) {
+    for (const key of ['q', 'origin', 'category', 'group', 'sub', 'sector', 'format', 'region', 'access', 'sort', 'view']) {
       const value = next[key];
       if (value && value !== 'all' && !(key === 'sort' && value === 'relevance') && !(key === 'view' && value === 'grid')) params.set(key, value);
     }
@@ -176,7 +180,7 @@ import { renderReview, bindReview } from './review.js';
   function renderGroupBar(f, collection) {
     const count = (group, sub) => collection.filter(record => { const [g, s] = groupOf(record.id); return g === group && (!sub || s === sub); }).length;
     const active = browse.groups.find(g => g.id === f.group);
-    const bar = `<div class="category-bar group-bar" role="group" aria-label="대분류"><button id="group-all" type="button" data-group="all" class="category-button ${f.group === 'all' ? 'active' : ''}" aria-pressed="${f.group === 'all'}">전체 <span>${collection.length}</span></button>${browse.groups.map(g => `<button id="group-${h(g.id)}" type="button" data-group="${h(g.id)}" class="category-button ${f.group === g.id ? 'active' : ''}" aria-pressed="${f.group === g.id}">${h(g.label)} <span>${count(g.id)}</span></button>`).join('')}</div>`;
+    const bar = `<div class="category-bar group-bar" role="group" aria-label="대분류"><button id="group-all" type="button" data-group="all" class="category-button ${f.group === 'all' ? 'active' : ''}" aria-pressed="${f.group === 'all'}">전체 <span>${collection.length}</span></button>${browse.groups.filter(g => count(g.id) || f.group === g.id).map(g => `<button id="group-${h(g.id)}" type="button" data-group="${h(g.id)}" class="category-button ${f.group === g.id ? 'active' : ''}" aria-pressed="${f.group === g.id}">${h(g.label)} <span>${count(g.id)}</span></button>`).join('')}</div>`;
     const subs = active ? `<div class="sub-bar" role="group" aria-label="${h(active.label)} 소분류"><button type="button" data-sub="all" class="sub-chip ${f.sub === 'all' ? 'active' : ''}" aria-pressed="${f.sub === 'all'}">${h(active.label)} 전체</button>${active.subs.filter(s => count(active.id, s.id)).map(s => `<button id="sub-${h(s.id)}" type="button" data-sub="${h(s.id)}" class="sub-chip ${f.sub === s.id ? 'active' : ''}" aria-pressed="${f.sub === s.id}">${h(s.label)} <span>${count(active.id, s.id)}</span></button>`).join('')}</div>` : '';
     return bar + subs;
   }
@@ -185,7 +189,10 @@ import { renderReview, bindReview } from './review.js';
     const collection = publicRecords.filter(record => (!isSaved || savedIds.has(record.id)) && (f.includeHistorical || record.version.status !== 'historical'));
     const counts = new Map(taxonomy.categories.map(item => [item.id, collection.filter(record => record.category === item.id).length]));
     const regions = [...new Set(publicRecords.map(record => record.region).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ko'));
-    return `${browse ? renderGroupBar(f, collection) : `<div class="category-bar" role="group" aria-label="기관 유형"><button id="category-all" type="button" data-category="all" class="category-button ${f.category === 'all' ? 'active' : ''}" aria-pressed="${f.category === 'all'}">전체 <span>${collection.length}</span></button>${taxonomy.categories.map(item => `<button id="category-${h(item.id)}" type="button" data-category="${h(item.id)}" class="category-button ${f.category === item.id ? 'active' : ''}" aria-pressed="${f.category === item.id}">${h(item.label)} <span>${counts.get(item.id)}</span></button>`).join('')}</div>`}
+    const originCount = origin => collection.filter(record => inOrigin(record, origin)).length;
+    const originBar = `<div class="origin-bar" role="group" aria-label="국내·해외">${[['all', '전체'], ['kr', '국내'], ['global', '해외']].map(([id, text]) => `<button id="origin-${id}" type="button" data-origin="${id}" class="origin-button ${f.origin === id ? 'active' : ''}" aria-pressed="${f.origin === id}">${text} <span>${originCount(id)}</span></button>`).join('')}</div>`;
+    const scoped = collection.filter(record => inOrigin(record, f.origin));
+    return `${originBar}${browse ? renderGroupBar(f, scoped) : `<div class="category-bar" role="group" aria-label="기관 유형"><button id="category-all" type="button" data-category="all" class="category-button ${f.category === 'all' ? 'active' : ''}" aria-pressed="${f.category === 'all'}">전체 <span>${collection.length}</span></button>${taxonomy.categories.map(item => `<button id="category-${h(item.id)}" type="button" data-category="${h(item.id)}" class="category-button ${f.category === item.id ? 'active' : ''}" aria-pressed="${f.category === item.id}">${h(item.label)} <span>${counts.get(item.id)}</span></button>`).join('')}</div>`}
     <div class="filter-bar"><div class="filter-label">${icon('filter', 18)} <span>상세 필터</span></div><div class="filter-selects">
     ${select('sector', '분야', taxonomy.sectors, f.sector)}
     ${select('format', '형식 안내', taxonomy.formats.map(id => ({id, label:id})), f.format)}
@@ -264,7 +271,7 @@ import { renderReview, bindReview } from './review.js';
       <div class="identity-name size-${size}" style="--w:${width}"${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</div></div>
       <div class="biz-back" aria-hidden="true"><div class="biz-head">${thumbImg(thumb, 'back', record)}<span class="biz-mark size-${size}">${h(mark)}</span><span class="biz-role"><em>${h(label(kindLabels, record.kind))}</em><b>${h(record.name)}</b></span></div>
       ${colorDots(record)}<div class="biz-rows">${record.region ? `<span><em>지역</em>${h(record.region)}</span>` : ''}${formats.length ? `<span><em>형식</em>${h(formats.slice(0, 3).join(' · '))}</span>` : ''}</div><span class="biz-note">${thumb ? `이미지: ${h(thumbSourceLabels[thumb.source] || thumb.source)}` : '공식 이미지 미수록'}</span></div></div>
-      <div class="card-body"><div class="card-meta"><span>${h(browse ? [groupLabel(groupOf(record.id)[0]), subLabel(...groupOf(record.id))].filter(Boolean).join(' · ') : label(categoryLabels, record.category))}</span>${record.region ? `<span>${h(record.region)}</span>` : ''}</div><h3><a href="${h(detailHref(record.id))}">${h(record.name)}</a></h3>${formats.length ? `<div class="format-row">${formats.slice(0, 6).map(format => formatBadge(format, record)).join('')}<span class="format-caption">${downloads[record.id]?.length ? '바로 받기' : '제공 안내'}</span></div>` : ''}</div>
+      <div class="card-body"><div class="card-meta"><span>${h(browse ? [groupLabel(groupOf(record.id)[0]), subLabel(...groupOf(record.id))].filter(Boolean).join(' · ') : label(categoryLabels, record.category))}</span>${record.region ? `<span>${h(record.region)}</span>` : originOf(record) === 'global' ? '<span>해외</span>' : ''}</div><h3><a href="${h(detailHref(record.id))}">${h(record.name)}</a></h3>${formats.length ? `<div class="format-row">${formats.slice(0, 6).map(format => formatBadge(format, record)).join('')}<span class="format-caption">${downloads[record.id]?.length ? '바로 받기' : '제공 안내'}</span></div>` : ''}</div>
       <div class="card-footer">${external(record.source_url, '공식 출처', 'source-button')}<a class="detail-link" href="${h(detailHref(record.id))}" aria-label="${h(record.name)} 상세정보">상세정보 ${icon('right', 16)}</a></div>
     </article>`;
   }
@@ -277,6 +284,7 @@ import { renderReview, bindReview } from './review.js';
   function renderDirectory(isSaved, params) {
     const f = readFilters(params);
     const records = filterRecords(publicRecords, { ...f, rank, formatsOf: allFormats, savedOnly: isSaved, savedIds: [...savedIds] })
+      .filter(record => inOrigin(record, f.origin))
       .filter(record => f.group === 'all' || (groupOf(record.id)[0] === f.group && (f.sub === 'all' || groupOf(record.id)[1] === f.sub)));
     const stats = summarize(records);
     // Long result lists render in pages of PAGE_SIZE; any change of route or filters starts again from the first page.
@@ -303,11 +311,12 @@ import { renderReview, bindReview } from './review.js';
     app.querySelector('#history-filter').addEventListener('change', event => setFilters({ includeHistorical: event.target.checked }));
     app.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => setFilters({ category: button.dataset.category })));
     app.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => setFilters({ group: button.dataset.group, sub: 'all', category: 'all' })));
+    app.querySelectorAll('[data-origin]').forEach(button => button.addEventListener('click', () => setFilters({ origin: button.dataset.origin, group: 'all', sub: 'all', category: 'all' })));
     app.querySelectorAll('[data-sub]').forEach(button => button.addEventListener('click', () => setFilters({ sub: button.dataset.sub })));
     app.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => setFilters({ view: button.dataset.view })));
     app.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => setFilters({ q: button.dataset.query })));
     app.querySelectorAll('[data-reset]').forEach(button => button.addEventListener('click', () => {
-      setFilters({ q: '', category: 'all', group: 'all', sub: 'all', sector: 'all', format: 'all', region: 'all', access: 'all', includeHistorical: false, sort: 'relevance', view: 'grid' }, isSaved ? '/saved' : '/');
+      setFilters({ q: '', origin: 'all', category: 'all', group: 'all', sub: 'all', sector: 'all', format: 'all', region: 'all', access: 'all', includeHistorical: false, sort: 'relevance', view: 'grid' }, isSaved ? '/saved' : '/');
     }));
     app.querySelector('#export-saved')?.addEventListener('click', () => {
       const records = [...savedIds].map(id => publicRecord(id)).filter(Boolean);

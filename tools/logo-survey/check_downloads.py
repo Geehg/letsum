@@ -23,10 +23,10 @@ APP = Path(__file__).parent.parent / "logo-app" / "data"
 CACHE = crawl.DATA / "download-candidates.json"
 ORDER = ["AI", "EPS", "SVG", "PDF", "PNG", "JPG", "ZIP"]
 EXT = {"ai": "AI", "eps": "EPS", "svg": "SVG", "pdf": "PDF", "png": "PNG", "jpg": "JPG", "jpeg": "JPG", "zip": "ZIP"}
-CI_HINT = re.compile(r"((?<![a-z])(?:CI|MI|UI|BI)(?![a-z])|로고|심벌|심볼|상징|시그니처|엠블럼|엠블렘|휘장|교표|마크|워드마크|logo|symbol|emblem|signature|identity|wordmark|brand|가이드|매뉴얼|guide|manual)", re.I)
+CI_HINT = re.compile(r"((?<![a-z])(?:CI|MI|UI|BI)(?![a-z])|로고|심벌|심볼|상징|시그니처|엠블럼|엠블렘|휘장|교표|마크|워드마크|logo|symbol|emblem|signature|identity|wordmark|brand|insignia|lockup|logotype|가이드|매뉴얼|guide|manual)", re.I)
 DOWN_TEXT = re.compile(r"(다운|download|받기|내려받|저장)", re.I)
 DOWN_URL = re.compile(r"(download|filedown|file_down|downfile|down_file|atchfile|attach|getfile|fileid|filesn|/down\.|dn\.do|fms/|/file/)", re.I)
-NOT_LOGO = re.compile(r"(개인정보|약관|채용|공고|입찰|보도자료|서식|신청서|계약|결과|회의록|예산|공시|규정집|법령|브로슈어|리플렛|홍보책자|책자|홍보물|소식지|인증서|웹와치|접근성|편지지|메모지|봉투|명함|글꼴|폰트|서체|font|\.ttf|\.otf|연보|annual|privacy|recruit)", re.I)
+NOT_LOGO = re.compile(r"(개인정보|약관|채용|공고|입찰|보도자료|서식|신청서|계약|결과|회의록|예산|공시|규정집|법령|브로슈어|리플렛|홍보책자|책자|홍보물|소식지|교가|khsong|신입생|freshman|인증서|웹와치|접근성|편지지|메모지|봉투|명함|글꼴|폰트|서체|font|\.ttf|\.otf|연보|annual|privacy|recruit)", re.I)
 TAG = re.compile(r"<(a|button)\b([^>]*)>(.*?)</\1\s*>|<(area|input|span|div|li|img|td|p|dd)\b([^>]*\bon(?:click|mousedown)\b[^>]*)>", re.S | re.I)
 ATTR = re.compile(r"""([\w:-]+)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)""")
 EGOV = re.compile(r"""fn_egov_downFile\(\s*['"]([^'"]+)['"]\s*,\s*['"]?(\d+)""")
@@ -111,8 +111,11 @@ def discover(job, render):
                 continue
             for url, label in rows:
                 found.setdefault(url, {"label": label, "page": page})
-    for fmt, url in known:
-        found.setdefault(url, {"label": "", "page": page_urls[0] if page_urls else url})
+    for item in known:  # [format, url] from find_formats.py, or [url, page, label] from data/download-manual.json
+        if len(item) == 3:
+            found.setdefault(item[0], {"label": item[2], "page": item[1]})
+        else:
+            found.setdefault(item[1], {"label": "", "page": page_urls[0] if page_urls else item[1]})
     return rid, found
 
 
@@ -240,7 +243,8 @@ def check(url, page, label):
 
 
 def clean_label(label, name):
-    text = re.sub(r"(로\s*)?(다운로드|다운|download|내려받기|받기)|파일|새\s*창|열림|\(?(AI|EPS|PNG|JPE?G|ZIP|PDF|SVG)\)?", " ", label or "", flags=re.I)
+    text = re.sub(r"클릭\s*시.*$", " ", label or "")
+    text = re.sub(r"\s*(을|를)?\s*압축\s*(받습니다|받기|다운로드)?|(로\s*)?(다운로드|다운|download|내려받기|받기)|파일|새\s*창|열림|\(?(AI|EPS|PNG|JPE?G|ZIP|PDF|SVG)\)?|\(\s*\)", " ", text, flags=re.I)
     text = re.sub(r"\(\s*[\d.,]+\s*[KMG]i?B\s*\)|\bOpen\b|열기", " ", text, flags=re.I)
     text = re.sub(r"[\s·,/|]+", " ", text).strip(" -_.:")
     words = text.split(" ")
@@ -257,6 +261,7 @@ def main():
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--no-render", action="store_true")
     parser.add_argument("--reuse", action="store_true", help="skip discovery and reuse data/download-candidates.json")
+    parser.add_argument("--only", help="comma-separated record ids, or @file with a JSON list; other records keep their results")
     args = parser.parse_args()
     orgs = json.loads((crawl.DATA / "orgs.json").read_text())["orgs"]
     results = json.loads((crawl.DATA / "crawl.json").read_text())["results"]
@@ -267,7 +272,7 @@ def main():
         rid = "kr-" + (org["wikidata"].lower() if org.get("wikidata") else "w" + hashlib.sha1(org["wiki_title"].encode()).hexdigest()[:10])
         res = results.get(crawl.org_key(org)) or {}
         known = (res.get("formats") or {}).get("files", [])
-        pages = [p for p in dict.fromkeys([res.get("ci_page"), (res.get("formats") or {}).get("page")]) if p]
+        pages = [p for p in dict.fromkeys([res.get("ci_page"), (res.get("formats") or {}).get("page"), *res.get("ci_pages_extra", [])]) if p]
         if rid in ids and (pages or known):
             jobs.append((rid, pages, known))
     for record in records:
@@ -275,12 +280,27 @@ def main():
             pages = [p for p in dict.fromkeys([record.get("guideline_url"), record.get("source_url")]) if p]
             known = [[a["listed_formats"][0] if a["listed_formats"] else "", a["download_url"]] for a in record["assets"] if a.get("download_url")]
             jobs.append((record["id"], pages, known))
-    if args.reuse and CACHE.exists():
-        found = json.loads(CACHE.read_text())["candidates"]
+    manual_file = crawl.DATA / "download-manual.json"
+    manual = json.loads(manual_file.read_text())["files"] if manual_file.exists() else {}
+    jobs = [(rid, pages, known + manual.get(rid, [])) for rid, pages, known in jobs]
+    only = None
+    if args.only:
+        only = set(json.loads(Path(args.only[1:]).read_text()) if args.only.startswith("@") else args.only.split(","))
+        jobs = [job for job in jobs if job[0] in only]
+    cached = json.loads(CACHE.read_text())["candidates"] if CACHE.exists() else {}
+    if args.reuse and cached:
+        found = cached
+        for rid, rows in manual.items():
+            for url, page, label in rows:
+                found.setdefault(rid, {}).setdefault(url, {"label": label, "page": page})
     else:
         with ThreadPoolExecutor(args.workers) as pool:
             found = dict(pool.map(lambda job: discover(job, not args.no_render), jobs))
+        if only is not None:
+            found = {**cached, **found}
         CACHE.write_text(json.dumps({"checked_at": crawl.TODAY, "candidates": found}, ensure_ascii=False, indent=1) + "\n")
+    if only is not None:
+        found = {rid: rows for rid, rows in found.items() if rid in only}
     flat = [(rid, url, meta["page"], meta["label"]) for rid, rows in found.items() for url, meta in rows.items()]
     print(f"pages {len(jobs)} · candidates {len(flat)} in {sum(1 for v in found.values() if v)} records")
     with ThreadPoolExecutor(max(args.workers, 8)) as pool:
@@ -297,6 +317,9 @@ def main():
     for rid, rows in out.items():  # logo files first, the guide PDF last; at most 12 per organisation
         rows.sort(key=lambda r: (r["format"] == "PDF", ORDER.index((r.get("inner") or [r["format"]])[0])))
         out[rid] = rows[:12]
+    if only is not None:  # keep every other record's verified files
+        previous = json.loads((APP / "downloads.json").read_text())["downloads"]
+        out = {**{rid: rows for rid, rows in previous.items() if rid not in only}, **out}
     data = {"note": "공식 CI 페이지에서 공개된 로고 파일 중 로그인·신청 없이 바로 내려받아지는 것(파일 서명으로 확인, ZIP은 내부 형식까지). tools/logo-survey/check_downloads.py가 생성.",
             "checked_at": time.strftime("%Y-%m-%d"), "downloads": dict(sorted(out.items()))}
     (APP / "downloads.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
