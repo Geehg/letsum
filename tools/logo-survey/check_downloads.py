@@ -26,7 +26,7 @@ EXT = {"ai": "AI", "eps": "EPS", "svg": "SVG", "pdf": "PDF", "png": "PNG", "jpg"
 CI_HINT = re.compile(r"((?<![a-z])(?:CI|MI|UI|BI)(?![a-z])|로고|심벌|심볼|상징|시그니처|엠블럼|엠블렘|휘장|교표|마크|워드마크|logo|symbol|emblem|signature|identity|wordmark|brand|insignia|lockup|logotype|가이드|매뉴얼|guide|manual)", re.I)
 DOWN_TEXT = re.compile(r"(다운|download|받기|내려받|저장)", re.I)
 DOWN_URL = re.compile(r"(download|filedown|file_down|downfile|down_file|atchfile|attach|getfile|fileid|filesn|/down\.|dn\.do|fms/|/file/)", re.I)
-NOT_LOGO = re.compile(r"(개인정보|약관|채용|공고|입찰|보도자료|서식|신청서|계약|결과|회의록|예산|공시|규정집|법령|브로슈어|리플렛|홍보책자|책자|홍보물|소식지|교가|khsong|신입생|freshman|인증서|웹와치|접근성|편지지|메모지|봉투|명함|글꼴|폰트|서체|font|\.ttf|\.otf|연보|annual|privacy|recruit)", re.I)
+NOT_LOGO = re.compile(r"(개인정보|약관|채용|공고|입찰|보도자료|서식|신청서|계약|결과|회의록|예산|공시|규정집|법령|브로슈어|리플렛|홍보책자|책자|홍보물|소식지|교가|khsong|악보|akbo|가림막|sns_background|배경화면|wallpaper|신입생|freshman|인증서|웹와치|접근성|편지지|메모지|봉투|명함|글꼴|폰트|서체|font|\.ttf|\.otf|연보|annual|privacy|recruit)", re.I)
 TAG = re.compile(r"<(a|button)\b([^>]*)>(.*?)</\1\s*>|<(area|input|span|div|li|img|td|p|dd)\b([^>]*\bon(?:click|mousedown)\b[^>]*)>", re.S | re.I)
 ATTR = re.compile(r"""([\w:-]+)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)""")
 EGOV = re.compile(r"""fn_egov_downFile\(\s*['"]([^'"]+)['"]\s*,\s*['"]?(\d+)""")

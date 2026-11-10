@@ -345,7 +345,10 @@
     "files": [],
     "page": "https://www.mpm.go.kr/mpm/about/abotMpm/aboutMi/",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.mpm.go.kr/mpm/about/abotMpm/aboutMi"
+   ]
   },
   "Q484160": {
    "name": "방송미디어통신위원회",
@@ -964,7 +967,10 @@
     ],
     "page": "https://www.moj.go.kr/moj/262/subview.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.moj.go.kr/moj/262/subview.do"
+   ]
   },
   "Q12583260": {
    "name": "개인정보보호위원회",
@@ -1165,7 +1171,12 @@
      "rgb": "87 87 87",
      "share": 0.62
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.oka.go.kr/web/content.do?menu_cd=000071"
+   ],
+   "ci_page": "https://www.oka.go.kr/web/content.do?menu_cd=000071",
+   "ci_found_by": "refind"
   },
   "Q140800179": {
    "name": "공소청",
@@ -1201,7 +1212,12 @@
      "rgb": "97 95 102",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.moleg.go.kr/menu.es?mid=a10701040000"
+   ],
+   "ci_page": "https://www.moleg.go.kr/menu.es?mid=a10701040000",
+   "ci_found_by": "refind"
   },
   "Q488980": {
    "name": "국가보훈부",
@@ -1349,7 +1365,12 @@
      "rgb": "87 87 87",
      "share": 0.73
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.mcee.go.kr/home/web/index.do?menuId=10211"
+   ],
+   "ci_page": "https://www.mcee.go.kr/home/web/index.do?menuId=10211",
+   "ci_found_by": "refind"
   },
   "Q482878": {
    "name": "경찰청",
@@ -1454,7 +1475,12 @@
     ],
     "page": "https://www.kasa.go.kr/kor/sub06_03.do;jsessionid=qrNN32IM-Ioh9_T084B1OHXTnn7n7f28GC4TWvQI.homepage10",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kasa.go.kr/kor/sub06_03.do;jsessionid=tmHeshK-MGbqr4YAUDpPHq983jDU_BvrZoxLvfm4.homepage10",
+    "https://www.kasa.go.kr/kor/sub06_03.do;jsessionid=kjeWL-6UTNAMFz1kR4W4o9VPwxBfA8ybLGGQqv_U.homepage10",
+    "https://www.kasa.go.kr/kor/sub06_03.do;jsessionid=gYRVK14ekyCY-6jWMzKP6El3xFEO0J9waLtjUnwZ.homepage20"
+   ]
   },
   "Q491047": {
    "name": "산업통상부",
@@ -1573,6 +1599,11 @@
      "rgb": "213 185 49",
      "share": 0.06
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.nfa.go.kr/nfa/introduce/symbolinfo;jsessionid=vwrNTBMVHLk+EPd+MXU4X8Vg.nfa12",
+    "https://www.nfa.go.kr/nfa/introduce/symbolinfo;jsessionid=eJIddOToHit0yw0kEJK+tq4R.nfa12",
+    "https://www.nfa.go.kr/nfa/introduce/symbolinfo/symbol;jsessionid=vwrNTBMVHLk+EPd+MXU4X8Vg.nfa12"
    ]
   },
   "Q488764": {
@@ -2147,7 +2178,10 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-5cb7aee3ea.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.saemangeum.go.kr/sda/main.do"
+   ]
   },
   "Q12618419": {
    "name": "질병관리청",
@@ -3002,7 +3036,12 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-32e067a58c.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp"
+   ],
+   "ci_page": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+   "ci_found_by": "refind"
   },
   "Q42059": {
    "name": "경산시",
@@ -5506,7 +5545,12 @@
      "rgb": "213 227 240",
      "share": 0.11
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dalseo.daegu.kr/index.do?menu_id=10000300"
+   ],
+   "ci_page": "https://www.dalseo.daegu.kr/index.do?menu_id=10000300",
+   "ci_found_by": "refind"
   },
   "Q50362": {
    "name": "남구",
@@ -6297,7 +6341,11 @@
     "files": [],
     "page": "https://dong.daegu.kr/portal/contents.do?mid=0601010100",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.dong.daegu.kr/portal/contents.do?mid=0601010100",
+    "https://www.dong.daegu.kr/portal/contents.do?mid=0601010000"
+   ]
   },
   "Q50239": {
    "name": "달성군",
@@ -7449,7 +7497,13 @@
      "rgb": "48 48 49",
      "share": 0.18
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
+    "https://www.seohae.go.kr/open_content/main/part/smarteco/bi.jsp"
+   ],
+   "ci_page": "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
+   "ci_found_by": "refind"
   },
   "Q50394": {
    "name": "북구",
@@ -7676,7 +7730,10 @@
     ],
     "page": "https://www.seogu.go.kr/kor/sub05_01_04.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.seogu.go.kr/kor/sub05_01_04.do"
+   ]
   },
   "Q50411": {
    "name": "성동구",
@@ -8423,9 +8480,9 @@
     "checked_at": "2026-11-10"
    },
    "ci_pages_extra": [
-    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=F509067B14E9FE16EFD6A75BFED7A93A",
-    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=E6BA0F5CBB2149C98EE629BCC685D70E",
-    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=2B55FF0C7B1DCA4CDD78D81F721C374A"
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=7CF0ED4471417525DB41D89321156EE7",
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=719A068FBD33CB507D2D55214B28F8AD",
+    "https://www.seocheon.go.kr/kor/sub05_02_02.do;jsessionid=28312AA3608880FE897834C39CDE8C2A"
    ]
   },
   "Q50252": {
@@ -8647,7 +8704,10 @@
    ],
    "ci_page": "https://www.suyeong.go.kr/index.suyeong?menuCd=DOM_000000104002005001",
    "ci_link_text": "수영 CI(이미지)",
-   "ci_found_by": "rendered-home"
+   "ci_found_by": "rendered-home",
+   "ci_pages_extra": [
+    "https://www.suyeong.go.kr/index.suyeong?menuCd=DOM_000000104002005002"
+   ]
   },
   "Q42124": {
    "name": "양주시",
@@ -9588,7 +9648,10 @@
     "files": [],
     "page": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.yeonje.go.kr/portal/contents.do?mId=0201020000"
+   ]
   },
   "Q50306": {
    "name": "영월군",
@@ -9732,7 +9795,13 @@
      "rgb": "99 97 97",
      "share": 0.31
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.jemulpo.go.kr/main/area/economy/market_cobrand.jsp",
+    "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp"
+   ],
+   "ci_page": "https://www.jemulpo.go.kr/main/area/economy/market_cobrand.jsp",
+   "ci_found_by": "refind"
   },
   "Q50312": {
    "name": "완주군",
@@ -9878,7 +9947,7 @@
     "checked_at": "2026-11-10"
    },
    "ci_pages_extra": [
-    "https://www.suncheon.go.kr/kr/info/0003;jsessionid=0534FF59CB0770E05BB62BE6AA2A71E2",
+    "https://www.suncheon.go.kr/kr/info/0003;jsessionid=975995CDBC4418660A8E5C54B9023527",
     "https://www.suncheon.go.kr/kr/info/0003/0001",
     "https://www.suncheon.go.kr/kr/info/0003"
    ]
@@ -11150,7 +11219,12 @@
      "rgb": "52 52 52",
      "share": 0.22
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000"
+   ],
+   "ci_page": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+   "ci_found_by": "refind"
   },
   "Q50441": {
    "name": "중구",
@@ -12810,7 +12884,13 @@
      "rgb": "110 185 43",
      "share": 0.18
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dgs.go.kr/portal/contents.do?mid=0101050000",
+    "https://www.dgs.go.kr/main.do"
+   ],
+   "ci_page": "https://www.dgs.go.kr/portal/contents.do?mid=0101050000",
+   "ci_found_by": "refind"
   },
   "Q42160": {
    "name": "화성시",
@@ -13293,7 +13373,11 @@
     ],
     "page": "https://www.pen.go.kr/main/cm/cntnts/cntntsView.do?mi=30727&cntntsId=363",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.pen.go.kr/main/cm/cntnts/cntntsView.do?mi=30728&cntntsId=348",
+    "https://www.pen.go.kr/main/cm/cntnts/cntntsView.do?mi=30727&cntntsId=363"
+   ]
   },
   "Q16164847": {
    "name": "울산광역시교육청",
@@ -13510,7 +13594,12 @@
      "rgb": "35 25 22",
      "share": 0.91
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gwe.go.kr/main/sub.do?key=bTIzMDcyMTEyMDE3Mjk="
+   ],
+   "ci_page": "https://www.gwe.go.kr/main/sub.do?key=bTIzMDcyMTEyMDE3Mjk=",
+   "ci_found_by": "refind"
   },
   "Q12615090": {
    "name": "전남광주통합특별시교육청",
@@ -14348,7 +14437,11 @@
     "files": [],
     "page": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+    "https://www.kdhc.co.kr/kdhc/main/main.do"
+   ]
   },
   "Q12623697": {
    "name": "한국중부발전",
@@ -14551,7 +14644,10 @@
     ],
     "page": "https://www.iwest.co.kr/iwest/index.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.iwest.co.kr/iwest/index.do"
+   ]
   },
   "Q489325": {
    "name": "한국도로공사",
@@ -14588,7 +14684,12 @@
      "rgb": "0 125 194",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.archives.go.kr/next/neworgan/miIntro.do"
+   ],
+   "ci_page": "https://www.archives.go.kr/next/neworgan/miIntro.do",
+   "ci_found_by": "refind"
   },
   "Q6431646": {
    "name": "한국수력원자력",
@@ -14693,7 +14794,12 @@
      "rgb": "127 151 202",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.komir.or.kr/kor/contents/29"
+   ],
+   "ci_page": "https://www.komir.or.kr/kor/contents/29",
+   "ci_found_by": "refind"
   },
   "Q491489": {
    "name": "한국가스공사",
@@ -14793,7 +14899,10 @@
     "files": [],
     "page": "https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=440",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=440"
+   ]
   },
   "Q16192199": {
    "name": "한국가스기술공사",
@@ -14972,7 +15081,10 @@
     "files": [],
     "page": "https://www.jdcenter.com/about/symbolsystem/symbol.cs",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.jdcenter.com/about/symbolsystem/symbol.cs"
+   ]
   },
   "Q6322893": {
    "name": "한국수자원공사",
@@ -15726,7 +15838,12 @@
      "rgb": "35 149 210",
      "share": 0.09
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.fis.kr/ko/intro/ci"
+   ],
+   "ci_page": "https://www.fis.kr/ko/intro/ci",
+   "ci_found_by": "refind"
   },
   "Q16171854": {
    "name": "기술보증기금",
@@ -15934,6 +16051,9 @@
      "rgb": "250 166 25",
      "share": 0.18
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.posid.or.kr/introduction/ci.do"
    ]
   },
   "Q14850774": {
@@ -15966,7 +16086,13 @@
      "rgb": "230 0 18",
      "share": 1.0
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.pola.or.kr/web/content.do?proFn=ci",
+    "https://www.pola.or.kr/web/main/mainPage.do"
+   ],
+   "ci_page": "https://www.pola.or.kr/web/content.do?proFn=ci",
+   "ci_found_by": "refind"
   },
   "Q12623167": {
    "name": "한국방송통신전파진흥원",
@@ -16513,7 +16639,13 @@
      "rgb": "85 97 163",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.keit.re.kr/menu.es?mid=a10106020000",
+    "https://www.keit.re.kr/menu.es?mid=a10106010000"
+   ],
+   "ci_page": "https://www.keit.re.kr/menu.es?mid=a10106020000",
+   "ci_found_by": "refind"
   },
   "Q17062696": {
    "name": "한국산업기술진흥원",
@@ -16956,7 +17088,12 @@
      "rgb": "181 211 55",
      "share": 0.13
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.korad.or.kr/korad/html.do?menu_idx=64"
+   ],
+   "ci_page": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+   "ci_found_by": "refind"
   },
   "Q7332190": {
    "name": "한국농수산식품유통공사",
@@ -17697,7 +17834,12 @@
      "rgb": "207 211 189",
      "share": 0.07
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.koagi.or.kr/www/intrd/ci.jsp"
+   ],
+   "ci_page": "https://www.koagi.or.kr/www/intrd/ci.jsp",
+   "ci_found_by": "refind"
   },
   "Q16172629": {
    "name": "한국해양교통안전공단",
@@ -17901,7 +18043,12 @@
      "rgb": "80 63 90",
      "share": 0.16
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kiet.re.kr/introduce/ci"
+   ],
+   "ci_page": "https://www.kiet.re.kr/introduce/ci",
+   "ci_found_by": "refind"
   },
   "Q12623633": {
    "name": "한국전기안전공사",
@@ -17955,7 +18102,10 @@
     ],
     "page": "https://www.kesco.or.kr/contents/selectContents.do?contents_id=PRC00000",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kesco.or.kr/contents/selectContents.do?contents_id=PRC00000"
+   ]
   },
   "Q12615656": {
    "name": "정보통신정책연구원",
@@ -18074,7 +18224,12 @@
      "rgb": "89 87 87",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.keei.re.kr/menu.es?mid=a10308030000"
+   ],
+   "ci_page": "https://www.keei.re.kr/menu.es?mid=a10308030000",
+   "ci_found_by": "refind"
   },
   "Q6431831": {
    "name": "한국교육개발원",
@@ -18198,7 +18353,12 @@
      "rgb": "48 170 153",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kice.re.kr/sub/info.do?m=060304&s=kice"
+   ],
+   "ci_page": "https://www.kice.re.kr/sub/info.do?m=060304&s=kice",
+   "ci_found_by": "refind"
   },
   "Q16093925": {
    "name": "경제·인문사회연구회",
@@ -18407,7 +18567,12 @@
      "rgb": "109 105 112",
      "share": 0.33
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.stepi.re.kr/site/stepiko/06/10605010000002020102915.jsp"
+   ],
+   "ci_page": "https://www.stepi.re.kr/site/stepiko/06/10605010000002020102915.jsp",
+   "ci_found_by": "refind"
   },
   "Q11285042": {
    "name": "한국방송광고진흥공사",
@@ -18440,7 +18605,12 @@
      "rgb": "101 98 99",
      "share": 0.7
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kobaco.co.kr/site/main/content/kobaco_ci"
+   ],
+   "ci_page": "https://www.kobaco.co.kr/site/main/content/kobaco_ci",
+   "ci_found_by": "refind"
   },
   "Q6431688": {
    "name": "한전KPS",
@@ -18516,7 +18686,12 @@
      "rgb": "0 123 200",
      "share": 0.15
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.krivet.re.kr/kor/sub.do?menuSn=36"
+   ],
+   "ci_page": "https://www.krivet.re.kr/kor/sub.do?menuSn=36",
+   "ci_found_by": "refind"
   },
   "Q12622952": {
    "name": "한국노동연구원",
@@ -19121,7 +19296,12 @@
     "bytes": 2703,
     "tone": "normal",
     "file": "/logos/thumbs/survey-05c30edaac.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kinac.re.kr/menu?menuId=MN0000000642"
+   ],
+   "ci_page": "https://www.kinac.re.kr/menu?menuId=MN0000000642",
+   "ci_found_by": "refind"
   },
   "Q16171123": {
    "name": "한국형사·법무정책연구원",
@@ -19172,7 +19352,12 @@
     "bytes": 4385,
     "tone": "light",
     "file": "/logos/thumbs/survey-cdeaf0250d.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://m.foodinfo.or.kr/portal/bbs/selectBoardList.do?bbsId=10000000000000000470&catId=104&bbsView=HTML&goMenuNo=9000001195&topMenuNo=9000001117&upperMenuNo=9000001193"
+   ],
+   "ci_page": "https://m.foodinfo.or.kr/portal/bbs/selectBoardList.do?bbsId=10000000000000000470&catId=104&bbsView=HTML&goMenuNo=9000001195&topMenuNo=9000001117&upperMenuNo=9000001193",
+   "ci_found_by": "refind"
   },
   "Q12623054": {
    "name": "한국마약퇴치운동본부",
@@ -20203,7 +20388,10 @@
     ],
     "page": "https://www.kdata.or.kr/kr/main.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kdata.or.kr/kr/contents/ci/view.do"
+   ]
   },
   "Q12623488": {
    "name": "한국원자력의학원",
@@ -20230,7 +20418,12 @@
      "rgb": "0 113 188",
      "share": 0.26
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kirams.re.kr/kirams/conts/115008000000000.do"
+   ],
+   "ci_page": "https://www.kirams.re.kr/kirams/conts/115008000000000.do",
+   "ci_found_by": "refind"
   },
   "Q10855215": {
    "name": "경북대학교병원",
@@ -20401,7 +20594,12 @@
      "rgb": "140 72 31",
      "share": 0.13
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.nahf.or.kr/web/portal/contents/AA010404"
+   ],
+   "ci_page": "https://www.nahf.or.kr/web/portal/contents/AA010404",
+   "ci_found_by": "refind"
   },
   "Q12586769": {
    "name": "기초과학연구원",
@@ -20469,6 +20667,9 @@
      "rgb": "0 130 155",
      "share": 0.21
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.wiset.or.kr/kor/sub01_05_01.do"
    ]
   },
   "Q16094640": {
@@ -20631,7 +20832,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (4)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.jejunuh.co.kr/main/sub05_06_01.do"
+   ],
+   "ci_page": "https://www.jejunuh.co.kr/main/sub05_06_01.do",
+   "ci_found_by": "refind"
   },
   "Q12615161": {
    "name": "전북대학교병원",
@@ -21044,7 +21250,10 @@
     "files": [],
     "page": "https://www.aks.ac.kr/com/cmm/EgovContentView.do?menuNo=5010174000&lang=kor",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.aks.ac.kr/com/cmm/EgovContentView.do?menuNo=5010174000&lang=kor"
+   ]
   },
   "Q12615669": {
    "name": "정부법무공단",
@@ -21076,7 +21285,12 @@
      "rgb": "200 185 180",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kgls.or.kr/intro/ci.html"
+   ],
+   "ci_page": "https://www.kgls.or.kr/intro/ci.html",
+   "ci_found_by": "refind"
   },
   "Q16192428": {
    "name": "한국법무보호복지공단",
@@ -21645,7 +21859,10 @@
     ],
     "page": "https://www.nmf.or.kr/agency/sub/20181024095937402100_contents.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.nmf.or.kr/agency/sub/20181024095937402100_contents.do"
+   ]
   },
   "Q483066": {
    "name": "국제방송교류재단",
@@ -21672,7 +21889,12 @@
      "rgb": "238 52 57",
      "share": 1.0
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://company.arirang.com/intro/ci"
+   ],
+   "ci_page": "https://company.arirang.com/intro/ci",
+   "ci_found_by": "refind"
   },
   "Q6431898": {
    "name": "대한장애인체육회",
@@ -21718,7 +21940,14 @@
     "bytes": 2476,
     "tone": "normal",
     "file": "/logos/thumbs/survey-9d13d86d96.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://i815.or.kr/2018/introduction/ci.do;jsessionid=9C4CADAE8F547A58DDD8EE901460CBB2",
+    "https://i815.or.kr/2018/introduction/ci.do;jsessionid=58D1099E5714DBE176A4F3C57F5E59E3",
+    "https://i815.or.kr/2018/introduction/ci.do;jsessionid=0430B4892029EC5E5EBA40741E1C10CE"
+   ],
+   "ci_page": "https://i815.or.kr/2018/introduction/ci.do;jsessionid=9C4CADAE8F547A58DDD8EE901460CBB2",
+   "ci_found_by": "refind"
   },
   "Q483838": {
    "name": "게임물관리위원회",
@@ -22845,7 +23074,12 @@
      "rgb": "129 130 133",
      "share": 0.57
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kosti.or.kr/cms/content/view/375"
+   ],
+   "ci_page": "https://www.kosti.or.kr/cms/content/view/375",
+   "ci_found_by": "refind"
   },
   "Q31180844": {
    "name": "한국저작권보호원",
@@ -22899,7 +23133,10 @@
     ],
     "page": "https://www.kcopa.or.kr/lay1/S1T9C197/contents.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kcopa.or.kr/lay1/S1T9C197/contents.do"
+   ]
   },
   "Q12590543": {
    "name": "농림수산식품교육문화정보원",
@@ -23119,7 +23356,12 @@
      "rgb": "73 73 72",
      "share": 0.16
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kicet.re.kr/00015/00031.web"
+   ],
+   "ci_page": "https://www.kicet.re.kr/00015/00031.web",
+   "ci_found_by": "refind"
   },
   "Q16164314": {
    "name": "국가생명윤리정책원",
@@ -23163,7 +23405,12 @@
      "rgb": "84 84 87",
      "share": 0.17
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.nibp.kr/page/portal103"
+   ],
+   "ci_page": "https://www.nibp.kr/page/portal103",
+   "ci_found_by": "refind"
   },
   "Q12582495": {
    "name": "가축위생방역지원본부",
@@ -23321,7 +23568,10 @@
     ],
     "page": "https://www.foodpolis.kr/web/index.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.foodpolis.kr/web/index.do"
+   ]
   },
   "Q12585740": {
    "name": "국립암센터",
@@ -23523,7 +23773,13 @@
      "rgb": "112 108 110",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.khealth.or.kr/menu?menuId=MENU01758",
+    "https://www.khealth.or.kr/menu?menuId=MENU00919"
+   ],
+   "ci_page": "https://www.khealth.or.kr/menu?menuId=MENU01758",
+   "ci_found_by": "refind"
   },
   "Q12623050": {
    "name": "한국로봇산업진흥원",
@@ -23707,7 +23963,11 @@
     "files": [],
     "page": "https://www.nmc.or.kr:443/nmc/contents/symbol",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.nmc.or.kr/nmc/contents/symbol",
+    "https://www.nmc.or.kr/"
+   ]
   },
   "Q12591211": {
    "name": "대구경북첨단의료산업진흥재단",
@@ -23752,7 +24012,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (2)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.neca.re.kr/lay1/S1T268C22/contents.do"
+   ],
+   "ci_page": "https://www.neca.re.kr/lay1/S1T268C22/contents.do",
+   "ci_found_by": "refind"
   },
   "Q12585886": {
    "name": "국제식물검역인증원",
@@ -24018,6 +24283,9 @@
      "rgb": "171 160 174",
      "share": 0.07
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.koddi.or.kr/intro/identity.jsp"
    ]
   },
   "국립호남권생물자원관": {
@@ -24388,7 +24656,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (3)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.ketep.re.kr/board?menuId=MENU002010104000000&boardId=BOARD00087"
+   ],
+   "ci_page": "https://www.ketep.re.kr/board?menuId=MENU002010104000000&boardId=BOARD00087",
+   "ci_found_by": "refind"
   },
   "Q16180044": {
    "name": "건설근로자공제회",
@@ -24766,7 +25039,12 @@
      "rgb": "105 98 84",
      "share": 0.5
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.bloodinfo.net/knrcbs/cm/cntnts/cntntsView.do?mi=1175&cntntsId=1035"
+   ],
+   "ci_page": "https://www.bloodinfo.net/knrcbs/cm/cntnts/cntntsView.do?mi=1175&cntntsId=1035",
+   "ci_found_by": "refind"
   },
   "Q6431684": {
    "name": "한전원자력연료",
@@ -25025,7 +25303,12 @@
      "rgb": "0 57 132",
      "share": 0.14
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.nosa.or.kr/portal/nosa/FoundnIntro/founInfo/CI"
+   ],
+   "ci_page": "https://www.nosa.or.kr/portal/nosa/FoundnIntro/founInfo/CI",
+   "ci_found_by": "refind"
   },
   "Q55729046": {
    "name": "대한건설기계안전관리원",
@@ -25066,7 +25349,12 @@
      "rgb": "19 93 136",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kcesi.or.kr/home/kcesiIntro/manager/insttCi.jsp"
+   ],
+   "ci_page": "https://www.kcesi.or.kr/home/kcesiIntro/manager/insttCi.jsp",
+   "ci_found_by": "refind"
   },
   "Q12623616": {
    "name": "한국잡월드",
@@ -25251,7 +25539,12 @@
      "rgb": "85 177 69",
      "share": 0.11
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gg.go.kr/contents/contents.do?ciIdx=677&menuId=2455"
+   ],
+   "ci_page": "https://www.gg.go.kr/contents/contents.do?ciIdx=677&menuId=2455",
+   "ci_found_by": "refind"
   },
   "Q16176710": {
    "name": "코레일유통",
@@ -25323,7 +25616,12 @@
      "rgb": "3 115 177",
      "share": 0.09
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kindkorea.or.kr/introduce/ci"
+   ],
+   "ci_page": "https://www.kindkorea.or.kr/introduce/ci",
+   "ci_found_by": "refind"
   },
   "Q12623746": {
    "name": "한국청소년상담복지개발원",
@@ -25609,7 +25907,10 @@
     "bytes": 3690,
     "tone": "normal",
     "file": "/logos/thumbs/survey-0ab3b05531.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.e-policy.or.kr/web/lay1/S1T12C152/contents.do"
+   ]
   },
   "Q12617454": {
    "name": "주택관리공단",
@@ -25751,7 +26052,12 @@
     "bytes": 5561,
     "tone": "normal",
     "file": "/logos/thumbs/survey-8f9292ed75.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp"
+   ],
+   "ci_page": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+   "ci_found_by": "refind"
   },
   "Q61359365": {
    "name": "새만금개발공사",
@@ -25985,7 +26291,10 @@
     ],
     "page": "https://www.kihf.or.kr/web/lay1/S1T842C822/contents.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kihf.or.kr/web/lay1/S1T842C822/contents.do"
+   ]
   },
   "Q55733822": {
    "name": "장애인기업종합지원센터",
@@ -26069,7 +26378,12 @@
      "rgb": "191 44 70",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.gongyoung.kr/gongyoung/cm/conts/contsView.do?mi=1027&contsId=1007"
+   ],
+   "ci_page": "https://www.gongyoung.kr/gongyoung/cm/conts/contsView.do?mi=1027&contsId=1007",
+   "ci_found_by": "refind"
   },
   "Q12609155": {
    "name": "울산항만공사",
@@ -26178,7 +26492,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (4)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kodma.or.kr/content.do?key=2409260005"
+   ],
+   "ci_page": "https://www.kodma.or.kr/content.do?key=2409260005",
+   "ci_found_by": "refind"
   },
   "Q16167803": {
    "name": "한국어촌어항공단",
@@ -26538,7 +26857,12 @@
      "rgb": "0 166 112",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kosi.re.kr/front/contentDisplay?menuFrontNo=1396076229586768264721974615749146733&documentId=21492"
+   ],
+   "ci_page": "https://www.kosi.re.kr/front/contentDisplay?menuFrontNo=1396076229586768264721974615749146733&documentId=21492",
+   "ci_found_by": "refind"
   },
   "Q12599736": {
    "name": "한국치산기술협회",
@@ -26857,7 +27181,10 @@
     "files": [],
     "page": "https://www.kofpi.or.kr/intro/intro_12.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kofpi.or.kr/intro/intro_12.do"
+   ]
   },
   "Q626610": {
    "name": "국방과학연구소",
@@ -27096,7 +27423,12 @@
      "rgb": "35 24 21",
      "share": 0.12
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dtaq.re.kr/ko/info/ci.jsp"
+   ],
+   "ci_page": "https://www.dtaq.re.kr/ko/info/ci.jsp",
+   "ci_found_by": "refind"
   },
   "Q12589451": {
    "name": "가톨릭꽃동네대학교",
@@ -28012,7 +28344,12 @@
      "rgb": "167 167 167",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kwu.ac.kr/mod/page/view.do?MID=KWU_C01050201"
+   ],
+   "ci_page": "https://www.kwu.ac.kr/mod/page/view.do?MID=KWU_C01050201",
+   "ci_found_by": "refind"
   },
   "Q16092702": {
    "name": "경동대학교",
@@ -28183,6 +28520,9 @@
      "rgb": "155 172 171",
      "share": 0.19
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.kyungnam.ac.kr/ko/4332/subview.do"
    ]
   },
   "Q39997": {
@@ -28310,7 +28650,12 @@
      "rgb": "177 209 196",
      "share": 0.09
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.ipet.re.kr/Introduce/Introci.asp"
+   ],
+   "ci_page": "https://www.ipet.re.kr/Introduce/Introci.asp",
+   "ci_found_by": "refind"
   },
   "Q482952": {
    "name": "국립순천대학교",
@@ -28618,7 +28963,10 @@
     "bytes": 3725,
     "tone": "light",
     "file": "/logos/thumbs/survey-78a6858b12.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gwangju.ac.kr/page/?site=gwangju&mn=588"
+   ]
   },
   "Q5562681": {
    "name": "김천대학교",
@@ -28644,7 +28992,12 @@
     "tone": "light",
     "file": "/logos/thumbs/survey-944fff0cfa.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.gimcheon.ac.kr/site/gimcheon/html/sub1/010301.html"
+   ],
+   "ci_page": "https://www.gimcheon.ac.kr/site/gimcheon/html/sub1/010301.html",
+   "ci_found_by": "refind"
   },
   "Q483402": {
    "name": "계명대학교",
@@ -28934,7 +29287,10 @@
     ],
     "page": "https://www.dgist.ac.kr/eng/sub01_02_04_01.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.dgist.ac.kr/eng/sub01_02_04_01.do"
+   ]
   },
   "Q12624539": {
    "name": "한국항로표지기술원",
@@ -29024,7 +29380,13 @@
      "rgb": "93 146 190",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.koda1458.kr/agency/intro/ci",
+    "https://www.koda1458.kr/data/promotions/song"
+   ],
+   "ci_page": "https://www.koda1458.kr/agency/intro/ci",
+   "ci_found_by": "refind"
   },
   "Q482711": {
    "name": "대구교육대학교",
@@ -29623,7 +29985,12 @@
      "rgb": "114 187 42",
      "share": 0.14
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.tu.ac.kr/tuhome/sub01_02_06_01.do"
+   ],
+   "ci_page": "https://www.tu.ac.kr/tuhome/sub01_02_06_01.do",
+   "ci_found_by": "refind"
   },
   "Q5208190": {
    "name": "대구한의대학교",
@@ -29814,7 +30181,13 @@
      "rgb": "249 228 232",
      "share": 0.23
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.dongseo.ac.kr/kr/index.php?pCode=symbol",
+    "https://www.dongseo.ac.kr/kr/index.php?pCode=MN2000432"
+   ],
+   "ci_page": "https://www.dongseo.ac.kr/kr/index.php?pCode=symbol",
+   "ci_found_by": "refind"
   },
   "Q487177": {
    "name": "국민대학교",
@@ -30034,7 +30407,10 @@
     ],
     "page": "https://www.dsu.ac.kr/kr/index.php?pCode=uisymbol",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.dsu.ac.kr/kr/index.php?pCode=uisymbol"
+   ]
   },
   "Q12595373": {
    "name": "목원대학교",
@@ -30168,7 +30544,10 @@
     ],
     "page": "https://www.doowon.ac.kr/kr/1711/subview.do",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.doowon.ac.kr/kr/1711/subview.do"
+   ]
   },
   "Q624072": {
    "name": "대전대학교",
@@ -30725,7 +31104,13 @@
      "rgb": "111 111 111",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
+    "https://www.snue.ac.kr/snue/cm/cntnts/cntntsView.do?mi=3653&cntntsId=3427"
+   ],
+   "ci_page": "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
+   "ci_found_by": "refind"
   },
   "Q6895404": {
    "name": "목포가톨릭대학교",
@@ -31046,7 +31431,13 @@
      "rgb": "29 63 134",
      "share": 0.03
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.seowon.ac.kr/seowon/458/subview.do",
+    "https://www.seowon.ac.kr/seowon/287/subview.do"
+   ],
+   "ci_page": "https://www.seowon.ac.kr/seowon/458/subview.do",
+   "ci_found_by": "refind"
   },
   "Q488620": {
    "name": "선문대학교",
@@ -31145,7 +31536,10 @@
     "files": [],
     "page": "https://www.kobc.or.kr/ebz/kor/contents.do?mId=0101040000",
     "checked_at": "2026-11-10"
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.kobc.or.kr/ebz/kor/contents.do?mId=0101040000"
+   ]
   },
   "Q53122": {
    "name": "부산대학교",
@@ -31221,7 +31615,14 @@
      "rgb": "191 90 91",
      "share": 0.06
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.swu.ac.kr/swu/794/subview.do",
+    "https://www.swu.ac.kr/swu/795/subview.do",
+    "https://www.swu.ac.kr/swu/800/subview.do"
+   ],
+   "ci_page": "https://www.swu.ac.kr/swu/794/subview.do",
+   "ci_found_by": "refind"
   },
   "Q624993": {
    "name": "삼육대학교",
@@ -31308,7 +31709,12 @@
     "bytes": 17336,
     "tone": "light",
     "file": "/logos/thumbs/survey-f6d533c430.png"
-   }
+   },
+   "ci_pages_extra": [
+    "https://skhu.ac.kr/skhu/840/subview.do"
+   ],
+   "ci_page": "https://skhu.ac.kr/skhu/840/subview.do",
+   "ci_found_by": "refind"
   },
   "Q374457": {
    "name": "서강대학교",
@@ -32073,7 +32479,12 @@
      "rgb": "169 146 144",
      "share": 0.05
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.acts.ac.kr/design/contents10.asp?code=151410&left=acts5_1"
+   ],
+   "ci_page": "https://www.acts.ac.kr/design/contents10.asp?code=151410&left=acts5_1",
+   "ci_found_by": "refind"
   },
   "Q8058617": {
    "name": "영남신학대학교",
@@ -32511,7 +32922,12 @@
      "rgb": "14 78 150",
      "share": 0.33
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.wsu.ac.kr/page/index.jsp?code=intro0603a"
+   ],
+   "ci_page": "https://www.wsu.ac.kr/page/index.jsp?code=intro0603a",
+   "ci_found_by": "refind"
   },
   "Q16097602": {
    "name": "신한대학교",
@@ -32545,6 +32961,10 @@
      "rgb": "29 200 189",
      "share": 0.21
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.shinhan.ac.kr/kr/89/subview.do",
+    "https://www.shinhan.ac.kr/kr/88/subview.do"
    ]
   },
   "Q16096864": {
@@ -32646,7 +33066,12 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-37d48bd275.svg",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.eulji.ac.kr/?menuno=3075"
+   ],
+   "ci_page": "https://www.eulji.ac.kr/?menuno=3075",
+   "ci_found_by": "refind"
   },
   "Q482648": {
    "name": "용인대학교",
@@ -33263,7 +33688,13 @@
    "fill_tried": [
     "commons: none",
     "sites: none (4)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.mmu.ac.kr/main/menu/symbol",
+    "https://www.mmu.ac.kr/main/contents/word"
+   ],
+   "ci_page": "https://www.mmu.ac.kr/main/menu/symbol",
+   "ci_found_by": "refind"
   },
   "Q482699": {
    "name": "전주교육대학교",
@@ -33954,7 +34385,12 @@
      "rgb": "174 196 186",
      "share": 0.14
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://ptu.ac.kr/www/433/subview.do"
+   ],
+   "ci_page": "https://ptu.ac.kr/www/433/subview.do",
+   "ci_found_by": "refind"
   },
   "Q625945": {
    "name": "청주대학교",
@@ -33993,6 +34429,9 @@
      "rgb": "72 123 186",
      "share": 0.1
     }
+   ],
+   "ci_pages_extra": [
+    "https://www.cju.ac.kr/www/contents.do?key=8508&"
    ]
   },
   "Q482713": {
@@ -34205,7 +34644,12 @@
     "tone": "normal",
     "file": "/logos/thumbs/survey-2650d8a5c9.png",
     "filled": true
-   }
+   },
+   "ci_pages_extra": [
+    "https://www.bible.ac.kr/ko/intro/ui"
+   ],
+   "ci_page": "https://www.bible.ac.kr/ko/intro/ui",
+   "ci_found_by": "refind"
   },
   "Q3271898": {
    "name": "창신대학교",
@@ -34449,7 +34893,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (4)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.kau.ac.kr/intro/ui.php"
+   ],
+   "ci_page": "https://www.kau.ac.kr/intro/ui.php",
+   "ci_found_by": "refind"
   },
   "Q491597": {
    "name": "한국방송통신대학교",
@@ -34943,7 +35392,13 @@
      "rgb": "178 179 182",
      "share": 0.18
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.hanil.ac.kr/portal/default/contents/contents_view.do?menuId=M0006000700010000",
+    "https://www.hanil.ac.kr/portal/default/contents/contents_view.do?menuId=M0006000300090001"
+   ],
+   "ci_page": "https://www.hanil.ac.kr/portal/default/contents/contents_view.do?menuId=M0006000700010000",
+   "ci_found_by": "refind"
   },
   "Q12625125": {
    "name": "협성대학교",
@@ -34987,7 +35442,13 @@
      "rgb": "217 206 191",
      "share": 0.08
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.uhs.ac.kr/uhs/83/subview.do",
+    "https://www.uhs.ac.kr/uhs/82/subview.do"
+   ],
+   "ci_page": "https://www.uhs.ac.kr/uhs/83/subview.do",
+   "ci_found_by": "refind"
   },
   "Q624295": {
    "name": "한서대학교",
@@ -35087,7 +35548,12 @@
      "rgb": "0 0 0",
      "share": 0.14
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.howon.ac.kr/web/_univ/index.html?sm=ci"
+   ],
+   "ci_page": "https://www.howon.ac.kr/web/_univ/index.html?sm=ci",
+   "ci_found_by": "refind"
   },
   "Q482765": {
    "name": "한성대학교",
@@ -35572,7 +36038,14 @@
      "rgb": "131 199 208",
      "share": 0.04
     }
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.unist.ac.kr/unist/introduction/ui.do",
+    "https://www.unist.ac.kr/unist/introduction/template.do",
+    "https://www.unist.ac.kr/unist/introduction/download.do"
+   ],
+   "ci_page": "https://www.unist.ac.kr/unist/introduction/ui.do",
+   "ci_found_by": "refind"
   },
   "Q494681": {
    "name": "전남대학교",
@@ -35624,7 +36097,12 @@
    "fill_tried": [
     "commons: none",
     "sites: none (3)"
-   ]
+   ],
+   "ci_pages_extra": [
+    "https://www.jeju.ac.kr/introduction/introduction/symbol.htm"
+   ],
+   "ci_page": "https://www.jeju.ac.kr/introduction/introduction/symbol.htm",
+   "ci_found_by": "refind"
   },
   "Q489488": {
    "name": "충남대학교",
