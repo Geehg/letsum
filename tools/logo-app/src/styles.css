@@ -203,3 +203,8 @@ a.format-badge.is-download:hover,a.format-badge.is-download:focus-visible{backgr
 .origin-button.active{background:#15140f;color:#fff}
 .origin-button.active span{opacity:.8}
 .origin-button:focus-visible{outline:2px solid #15140f;outline-offset:2px}
+/* Front: the logo is centred in the whole face (equal top and bottom margins); the kicker row sits over it. */
+.logo-box-front{top:27px;bottom:27px}
+.biz .cover-kicker{position:relative;z-index:1}
+/* Back: name and colours only (region, formats and image credit removed). */
+.biz-back{aspect-ratio:auto}
