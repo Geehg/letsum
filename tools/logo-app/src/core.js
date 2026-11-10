@@ -103,7 +103,7 @@ export function filterRecords(records, filters = {}) {
     if (f.savedOnly && !saved.has(record.id)) return false;
     if (!selected(f.category, [record.category]) || !selected(f.sector, record.sectors ?? []) || !selected(f.region, [record.region])) return false;
     const requestedFormats = Array.isArray(f.format) ? f.format.map(x => String(x).toUpperCase()) : f.format === 'all' ? 'all' : String(f.format).toUpperCase();
-    if (!selected(requestedFormats, getFormats(record)) || !selected(f.access, (record.assets ?? []).map(asset => asset.access))) return false;
+    if (!selected(requestedFormats, (f.formatsOf || getFormats)(record)) || !selected(f.access, (record.assets ?? []).map(asset => asset.access))) return false;
     return true;
   }).map(record => ({ record, score: searchScore(record, f.q) })).filter(item => item.score > 0);
   scored.sort((a, b) => {

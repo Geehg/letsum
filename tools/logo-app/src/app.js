@@ -14,10 +14,11 @@ import { renderReview, bindReview } from './review.js';
   // Official logo files that download directly (tools/logo-survey/check_downloads.py), and the recognition score used for the default order (popularity.py).
   const downloads = boot.downloads || {};
   const rank = boot.rank || {};
-  // A ZIP named after one format (ci_ai.zip) stands for that format; a file of the format itself is preferred.
-  const fileFormat = file => file.contains || file.format;
-  const firstDownload = (record, format) => { const files = downloads[record.id] || [], want = String(format).toUpperCase(); return files.find(file => file.format === want && !file.contains) || files.find(file => fileFormat(file) === want) || files.find(file => file.format === want); };
-  const allFormats = record => [...new Set([...getFormats(record), ...(downloads[record.id] || []).map(fileFormat)])];
+  // A ZIP stands for the formats packed inside it (read from the archive's directory); a file of the format itself is preferred.
+  const fileFormats = file => file.inner?.length ? file.inner : [file.format];
+  const firstDownload = (record, format) => { const files = downloads[record.id] || [], want = String(format).toUpperCase(); return files.find(file => file.format === want && !file.inner?.length) || files.find(file => fileFormats(file).includes(want)) || files.find(file => file.format === want); };
+  const FORMAT_ORDER = ['AI', 'EPS', 'SVG', 'PDF', 'PNG', 'JPG', 'WEBP', 'ZIP'];
+  const allFormats = record => [...new Set([...getFormats(record), ...(downloads[record.id] || []).flatMap(fileFormats)])].sort((a, b) => FORMAT_ORDER.indexOf(a) - FORMAT_ORDER.indexOf(b));
   // Browse groups (대분류/소분류) from tools/logo-survey/classify.py; the standalone build falls back to categories.
   const browse = boot.groups?.groups?.length ? boot.groups : null;
   const groupOf = id => (browse?.assign?.[id] || '').split('/');
@@ -217,7 +218,7 @@ import { renderReview, bindReview } from './review.js';
   function downloadRow(record) {
     const files = downloads[record.id] || [];
     if (!files.length) return '';
-    return `<div class="logo-dlrow">${files.map(file => `<a class="logo-dl" href="${h(safeUrl(file.url) || '#')}" target="_blank" rel="noopener noreferrer">${FORMAT_ICONS[fileFormat(file)] || ''}<span><b>⬇ ${h(fileFormat(file))} 파일 받기</b><small>${h([file.contains ? 'ZIP 압축' : '', domain(file.url), file.filename, fileSize(file.bytes)].filter(Boolean).join(' · '))}</small></span></a>`).join('')}</div><p class="small-copy dl-note">파일은 LETSUM이 아니라 공식 사이트에서 바로 내려받습니다. 사용 조건과 규정은 공식 출처 원문을 따릅니다.</p>`;
+    return `<div class="logo-dlrow">${files.map(file => `<a class="logo-dl" href="${h(safeUrl(file.url) || '#')}" target="_blank" rel="noopener noreferrer">${FORMAT_ICONS[fileFormats(file)[0]] || ''}<span><b>⬇ ${h(fileFormats(file).join('·'))}${file.label ? ` <em>${h(file.label)}</em>` : ' 파일 받기'}</b><small>${h([file.inner?.length ? 'ZIP 압축' : '', file.filename, fileSize(file.bytes), domain(file.url)].filter(Boolean).join(' · '))}</small></span></a>`).join('')}</div><p class="small-copy dl-note">파일은 LETSUM이 아니라 공식 사이트에서 바로 내려받습니다. 사용 조건과 규정은 공식 출처 원문을 따릅니다.</p>`;
   }
 
   function cardMark(record) {
@@ -275,7 +276,7 @@ import { renderReview, bindReview } from './review.js';
 
   function renderDirectory(isSaved, params) {
     const f = readFilters(params);
-    const records = filterRecords(publicRecords, { ...f, rank, savedOnly: isSaved, savedIds: [...savedIds] })
+    const records = filterRecords(publicRecords, { ...f, rank, formatsOf: allFormats, savedOnly: isSaved, savedIds: [...savedIds] })
       .filter(record => f.group === 'all' || (groupOf(record.id)[0] === f.group && (f.sub === 'all' || groupOf(record.id)[1] === f.sub)));
     const stats = summarize(records);
     // Long result lists render in pages of PAGE_SIZE; any change of route or filters starts again from the first page.

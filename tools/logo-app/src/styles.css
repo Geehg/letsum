@@ -195,3 +195,4 @@ a.format-badge.is-download:hover,a.format-badge.is-download:focus-visible{backgr
 .logo-dl small{font-size:11px;opacity:.7;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .logo-dl:hover,.logo-dl:focus-visible{background:#15140f;color:#fff}
 .dl-note{margin:0 0 14px}
+.logo-dl b em{font-style:normal;font-weight:500;margin-left:4px}
