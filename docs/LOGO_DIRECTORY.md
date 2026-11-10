@@ -90,3 +90,22 @@ python3 -I tools/logo-survey/popularity.py      # 기본 정렬(인지도순) �
 - 해외 기업 브랜드 페이지는 `/brand`, `/press`, `/media-kit` 등에서 찾아 crawl.json `ci_page`로 기록. 위키데이터 로고가 다른 회사(모회사·제휴사)인 경우는 공식 브랜드 페이지 파일로 교체(Cursor, 리벨리온, 셀바스AI). xAI는 SpaceX 통합 후 공식 사이트가 SpaceX 브랜드를 쓰므로 그 로고를 유지.
 - download-manual.json의 `{"trusted": true}`: 공식 브랜드 페이지에 다운로드로 게시됐지만 봇 차단(403)으로 자동 확인이 안 되는 파일(Mistral). 화면에 "자동 확인 차단"으로 표시.
 - 아이콘 보기 타일 하단 라벨은 소분류 이름.
+
+## 마스코트 디렉터리 (/mascots/, 2026-11-11)
+
+로고모음과 같은 앱(tools/logo-app/src)을 마스코트 데이터(tools/mascot-app/data)로 빌드한다. 공용 빌드는 `tools/build_directory.mjs`,
+진입점은 `tools/build_logos.mjs` / `tools/build_mascots.mjs`(build_pages.js가 순서대로 실행). 마스코트 쪽 문구는 build_mascots.mjs의
+swaps(로고→캐릭터 등)로 바꾸며, 앱 문구가 바뀌어 swap 대상이 사라지면 빌드가 실패한다. swap은 공용 헤더·푸터에는 적용하지 않는다.
+
+```bash
+python3 tools/logo-survey/mascot_survey.py --workers 8      # 기관 홈·사이트맵·CI 페이지에서 캐릭터/마스코트 메뉴 탐색 → 캐릭터 페이지·이름·이미지·파일 후보 (data/mascot-crawl.json, html/mascots/thumbs/m-*)
+python3 tools/logo-survey/mascot_survey.py --refresh        # 찾은 캐릭터 페이지를 다시 읽어 이름(페이지에서 3회 이상 나오는 따옴표 이름)과 이미지(배너 제외, 투명 PNG 우선)만 재계산
+python3 -I tools/logo-survey/mascot_wiki.py                 # 한국어 위키백과 마스코트 분류(대한민국·올림픽·축구·야구·기업·철도 등) + 브랜드 마스코트(EXTRA) → data/mascot-wiki.json, 공용 라이선스 이미지만
+python3 -I tools/logo-survey/merge_mascots.py               # 카탈로그·출처·썸네일·다운로드(파일 서명 검증)·분류·인지도 → tools/mascot-app/data/
+python3 tools/logo-survey/normalize_logos.py --thumbs html/mascots/thumbs --geometry tools/mascot-app/data/mascot-geometry.json --manifest tools/mascot-app/data/thumbnails.json --also tools/logo-survey/data/mascot-crawl.json tools/logo-survey/data/mascot-wiki.json
+node tools/build_mascots.mjs
+```
+
+- 대분류: 지자체 캐릭터·공공기관·대학·행사·올림픽·스포츠 구단·기업·브랜드·해외·기타. 애니메이션·게임 IP 자체(뽀로로 등)는 마스코트가 아니므로 제외.
+- 정렬: 위키백과 문서가 있는 마스코트는 조회수, 기관 캐릭터는 그 기관의 로고모음 인지도 점수.
+- 레코드 종류(kind)에 `mascot`, `character` 추가(core.js KIND_IDS·두 taxonomy 공통).

@@ -408,3 +408,4 @@ require("./build_navigation.js").build();
 require("./build_ui_language.js");
 // Logo pages copy the finished home header, footer and stylesheets, so they are built last.
 require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_logos.mjs")], {stdio:"inherit"});
+require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_mascots.mjs")], {stdio:"inherit"});

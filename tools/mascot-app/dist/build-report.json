@@ -1,0 +1,1805 @@
+{
+  "built_at": "2026-11-10T16:39:34.834Z",
+  "catalog_version": "0.1.0",
+  "catalog_sha256": "157bace4abd2ebd47651b8ed4c5dbdd5ab2403e39531eb7cc5a0818d18f7e188",
+  "canonical_base_url": "https://letsum.app/mascots/",
+  "html_pages": [
+    {
+      "file": "index.html",
+      "route": "/"
+    },
+    {
+      "file": "review.html",
+      "route": "/review"
+    },
+    {
+      "file": "brands/mw-82e5338505/index.html",
+      "route": "/brand/mw-82e5338505"
+    },
+    {
+      "file": "brands/mw-dd4841dda4/index.html",
+      "route": "/brand/mw-dd4841dda4"
+    },
+    {
+      "file": "brands/mw-e2ace1dafa/index.html",
+      "route": "/brand/mw-e2ace1dafa"
+    },
+    {
+      "file": "brands/mc-q50203/index.html",
+      "route": "/brand/mc-q50203"
+    },
+    {
+      "file": "brands/mc-q50348/index.html",
+      "route": "/brand/mc-q50348"
+    },
+    {
+      "file": "brands/mc-q50191/index.html",
+      "route": "/brand/mc-q50191"
+    },
+    {
+      "file": "brands/mc-q50192/index.html",
+      "route": "/brand/mc-q50192"
+    },
+    {
+      "file": "brands/mc-q41071/index.html",
+      "route": "/brand/mc-q41071"
+    },
+    {
+      "file": "brands/mc-q12583260/index.html",
+      "route": "/brand/mc-q12583260"
+    },
+    {
+      "file": "brands/mc-q16179935/index.html",
+      "route": "/brand/mc-q16179935"
+    },
+    {
+      "file": "brands/mc-q41765/index.html",
+      "route": "/brand/mc-q41765"
+    },
+    {
+      "file": "brands/mc-q139779/index.html",
+      "route": "/brand/mc-q139779"
+    },
+    {
+      "file": "brands/mc-q20937/index.html",
+      "route": "/brand/mc-q20937"
+    },
+    {
+      "file": "brands/mc-q16092702/index.html",
+      "route": "/brand/mc-q16092702"
+    },
+    {
+      "file": "brands/mc-q487841/index.html",
+      "route": "/brand/mc-q487841"
+    },
+    {
+      "file": "brands/mc-q487836/index.html",
+      "route": "/brand/mc-q487836"
+    },
+    {
+      "file": "brands/mc-q482751/index.html",
+      "route": "/brand/mc-q482751"
+    },
+    {
+      "file": "brands/mc-q496536/index.html",
+      "route": "/brand/mc-q496536"
+    },
+    {
+      "file": "brands/mc-q42061/index.html",
+      "route": "/brand/mc-q42061"
+    },
+    {
+      "file": "brands/mw-64b09c6c96/index.html",
+      "route": "/brand/mw-64b09c6c96"
+    },
+    {
+      "file": "brands/mw-decec75783/index.html",
+      "route": "/brand/mw-decec75783"
+    },
+    {
+      "file": "brands/mc-q497259/index.html",
+      "route": "/brand/mc-q497259"
+    },
+    {
+      "file": "brands/mc-q140800179/index.html",
+      "route": "/brand/mc-q140800179"
+    },
+    {
+      "file": "brands/mc-q42064/index.html",
+      "route": "/brand/mc-q42064"
+    },
+    {
+      "file": "brands/mc-q50353/index.html",
+      "route": "/brand/mc-q50353"
+    },
+    {
+      "file": "brands/mc-q42066/index.html",
+      "route": "/brand/mc-q42066"
+    },
+    {
+      "file": "brands/mc-q624374/index.html",
+      "route": "/brand/mc-q624374"
+    },
+    {
+      "file": "brands/mc-q42069/index.html",
+      "route": "/brand/mc-q42069"
+    },
+    {
+      "file": "brands/mc-q50355/index.html",
+      "route": "/brand/mc-q50355"
+    },
+    {
+      "file": "brands/mw-d00a42e520/index.html",
+      "route": "/brand/mw-d00a42e520"
+    },
+    {
+      "file": "brands/mc-q42073/index.html",
+      "route": "/brand/mc-q42073"
+    },
+    {
+      "file": "brands/mc-q488980/index.html",
+      "route": "/brand/mc-q488980"
+    },
+    {
+      "file": "brands/mc-q482688/index.html",
+      "route": "/brand/mc-q482688"
+    },
+    {
+      "file": "brands/mc-q625165/index.html",
+      "route": "/brand/mc-q625165"
+    },
+    {
+      "file": "brands/mc-q31180820/index.html",
+      "route": "/brand/mc-q31180820"
+    },
+    {
+      "file": "brands/mc-q623828/index.html",
+      "route": "/brand/mc-q623828"
+    },
+    {
+      "file": "brands/mc-q21400278/index.html",
+      "route": "/brand/mc-q21400278"
+    },
+    {
+      "file": "brands/mc-q11250418/index.html",
+      "route": "/brand/mc-q11250418"
+    },
+    {
+      "file": "brands/mw-19eba90d6a/index.html",
+      "route": "/brand/mw-19eba90d6a"
+    },
+    {
+      "file": "brands/mc-q624134/index.html",
+      "route": "/brand/mc-q624134"
+    },
+    {
+      "file": "brands/mc-q50216/index.html",
+      "route": "/brand/mc-q50216"
+    },
+    {
+      "file": "brands/mc-q483189/index.html",
+      "route": "/brand/mc-q483189"
+    },
+    {
+      "file": "brands/mc-q42078/index.html",
+      "route": "/brand/mc-q42078"
+    },
+    {
+      "file": "brands/mc-q20921/index.html",
+      "route": "/brand/mc-q20921"
+    },
+    {
+      "file": "brands/mc-q16192452/index.html",
+      "route": "/brand/mc-q16192452"
+    },
+    {
+      "file": "brands/mc-q16261977/index.html",
+      "route": "/brand/mc-q16261977"
+    },
+    {
+      "file": "brands/mc-q482651/index.html",
+      "route": "/brand/mc-q482651"
+    },
+    {
+      "file": "brands/mw-b59240edaa/index.html",
+      "route": "/brand/mw-b59240edaa"
+    },
+    {
+      "file": "brands/mc-q50364/index.html",
+      "route": "/brand/mc-q50364"
+    },
+    {
+      "file": "brands/mc-q42084/index.html",
+      "route": "/brand/mc-q42084"
+    },
+    {
+      "file": "brands/mc-q42087/index.html",
+      "route": "/brand/mc-q42087"
+    },
+    {
+      "file": "brands/mw-11233f8186/index.html",
+      "route": "/brand/mw-11233f8186"
+    },
+    {
+      "file": "brands/mw-d20f1d9873/index.html",
+      "route": "/brand/mw-d20f1d9873"
+    },
+    {
+      "file": "brands/mc-q42144/index.html",
+      "route": "/brand/mc-q42144"
+    },
+    {
+      "file": "brands/mc-q42088/index.html",
+      "route": "/brand/mc-q42088"
+    },
+    {
+      "file": "brands/mc-q11232895/index.html",
+      "route": "/brand/mc-q11232895"
+    },
+    {
+      "file": "brands/mc-q482735/index.html",
+      "route": "/brand/mc-q482735"
+    },
+    {
+      "file": "brands/mw-6bbdcb6673/index.html",
+      "route": "/brand/mw-6bbdcb6673"
+    },
+    {
+      "file": "brands/mw-f94ca07b86/index.html",
+      "route": "/brand/mw-f94ca07b86"
+    },
+    {
+      "file": "brands/mw-8b54041be0/index.html",
+      "route": "/brand/mw-8b54041be0"
+    },
+    {
+      "file": "brands/mc-q50220/index.html",
+      "route": "/brand/mc-q50220"
+    },
+    {
+      "file": "brands/mc-q50370/index.html",
+      "route": "/brand/mc-q50370"
+    },
+    {
+      "file": "brands/mc-q42089/index.html",
+      "route": "/brand/mc-q42089"
+    },
+    {
+      "file": "brands/mc-q20927/index.html",
+      "route": "/brand/mc-q20927"
+    },
+    {
+      "file": "brands/mc-q489708/index.html",
+      "route": "/brand/mc-q489708"
+    },
+    {
+      "file": "brands/mc-q50371/index.html",
+      "route": "/brand/mc-q50371"
+    },
+    {
+      "file": "brands/mc-q7314493/index.html",
+      "route": "/brand/mc-q7314493"
+    },
+    {
+      "file": "brands/mc-q624575/index.html",
+      "route": "/brand/mc-q624575"
+    },
+    {
+      "file": "brands/mw-0a76fb88e6/index.html",
+      "route": "/brand/mw-0a76fb88e6"
+    },
+    {
+      "file": "brands/mw-9f8d62cdff/index.html",
+      "route": "/brand/mw-9f8d62cdff"
+    },
+    {
+      "file": "brands/mc-q626811/index.html",
+      "route": "/brand/mc-q626811"
+    },
+    {
+      "file": "brands/mc-q41164/index.html",
+      "route": "/brand/mc-q41164"
+    },
+    {
+      "file": "brands/mc-q50375/index.html",
+      "route": "/brand/mc-q50375"
+    },
+    {
+      "file": "brands/mc-q50376/index.html",
+      "route": "/brand/mc-q50376"
+    },
+    {
+      "file": "brands/mc-q50377/index.html",
+      "route": "/brand/mc-q50377"
+    },
+    {
+      "file": "brands/mc-q50382/index.html",
+      "route": "/brand/mc-q50382"
+    },
+    {
+      "file": "brands/mc-q488100/index.html",
+      "route": "/brand/mc-q488100"
+    },
+    {
+      "file": "brands/mc-q50383/index.html",
+      "route": "/brand/mc-q50383"
+    },
+    {
+      "file": "brands/mc-q12593324/index.html",
+      "route": "/brand/mc-q12593324"
+    },
+    {
+      "file": "brands/mc-q626783/index.html",
+      "route": "/brand/mc-q626783"
+    },
+    {
+      "file": "brands/mc-q623798/index.html",
+      "route": "/brand/mc-q623798"
+    },
+    {
+      "file": "brands/mw-f9c43eb75c/index.html",
+      "route": "/brand/mw-f9c43eb75c"
+    },
+    {
+      "file": "brands/mc-q42092/index.html",
+      "route": "/brand/mc-q42092"
+    },
+    {
+      "file": "brands/mc-q42100/index.html",
+      "route": "/brand/mc-q42100"
+    },
+    {
+      "file": "brands/mw-e2e39ae455/index.html",
+      "route": "/brand/mw-e2e39ae455"
+    },
+    {
+      "file": "brands/mw-cc30fc8d87/index.html",
+      "route": "/brand/mw-cc30fc8d87"
+    },
+    {
+      "file": "brands/mw-680150c601/index.html",
+      "route": "/brand/mw-680150c601"
+    },
+    {
+      "file": "brands/mc-q42109/index.html",
+      "route": "/brand/mc-q42109"
+    },
+    {
+      "file": "brands/mw-0ec92aa810/index.html",
+      "route": "/brand/mw-0ec92aa810"
+    },
+    {
+      "file": "brands/mw-f28cb27c0e/index.html",
+      "route": "/brand/mw-f28cb27c0e"
+    },
+    {
+      "file": "brands/mw-750668932a/index.html",
+      "route": "/brand/mw-750668932a"
+    },
+    {
+      "file": "brands/mw-1cbeebdf35/index.html",
+      "route": "/brand/mw-1cbeebdf35"
+    },
+    {
+      "file": "brands/mw-feee2ea46e/index.html",
+      "route": "/brand/mw-feee2ea46e"
+    },
+    {
+      "file": "brands/mw-d472582b28/index.html",
+      "route": "/brand/mw-d472582b28"
+    },
+    {
+      "file": "brands/mw-acece89c8d/index.html",
+      "route": "/brand/mw-acece89c8d"
+    },
+    {
+      "file": "brands/mw-8a6b29523f/index.html",
+      "route": "/brand/mw-8a6b29523f"
+    },
+    {
+      "file": "brands/mw-fbd0ba117e/index.html",
+      "route": "/brand/mw-fbd0ba117e"
+    },
+    {
+      "file": "brands/mw-6fb29a9a62/index.html",
+      "route": "/brand/mw-6fb29a9a62"
+    },
+    {
+      "file": "brands/mw-ff6df24b2e/index.html",
+      "route": "/brand/mw-ff6df24b2e"
+    },
+    {
+      "file": "brands/mw-0144403ec0/index.html",
+      "route": "/brand/mw-0144403ec0"
+    },
+    {
+      "file": "brands/mc-q11232850/index.html",
+      "route": "/brand/mc-q11232850"
+    },
+    {
+      "file": "brands/mw-ef2b338c32/index.html",
+      "route": "/brand/mw-ef2b338c32"
+    },
+    {
+      "file": "brands/mw-9ca4ade017/index.html",
+      "route": "/brand/mw-9ca4ade017"
+    },
+    {
+      "file": "brands/mw-c7c2056c05/index.html",
+      "route": "/brand/mw-c7c2056c05"
+    },
+    {
+      "file": "brands/mw-37b4ca8f2a/index.html",
+      "route": "/brand/mw-37b4ca8f2a"
+    },
+    {
+      "file": "brands/mc-q56147/index.html",
+      "route": "/brand/mc-q56147"
+    },
+    {
+      "file": "brands/mw-ebb6e39576/index.html",
+      "route": "/brand/mw-ebb6e39576"
+    },
+    {
+      "file": "brands/mw-a5795f3331/index.html",
+      "route": "/brand/mw-a5795f3331"
+    },
+    {
+      "file": "brands/mw-05ae5fad69/index.html",
+      "route": "/brand/mw-05ae5fad69"
+    },
+    {
+      "file": "brands/mw-bebdb4f44e/index.html",
+      "route": "/brand/mw-bebdb4f44e"
+    },
+    {
+      "file": "brands/mc-q11232933/index.html",
+      "route": "/brand/mc-q11232933"
+    },
+    {
+      "file": "brands/mw-0dbade02ba/index.html",
+      "route": "/brand/mw-0dbade02ba"
+    },
+    {
+      "file": "brands/mc-q624046/index.html",
+      "route": "/brand/mc-q624046"
+    },
+    {
+      "file": "brands/mc-q42128/index.html",
+      "route": "/brand/mc-q42128"
+    },
+    {
+      "file": "brands/mc-q12623602/index.html",
+      "route": "/brand/mc-q12623602"
+    },
+    {
+      "file": "brands/mc-q624072/index.html",
+      "route": "/brand/mc-q624072"
+    },
+    {
+      "file": "brands/mc-q50243/index.html",
+      "route": "/brand/mc-q50243"
+    },
+    {
+      "file": "brands/mc-q50244/index.html",
+      "route": "/brand/mc-q50244"
+    },
+    {
+      "file": "brands/mc-q16520/index.html",
+      "route": "/brand/mc-q16520"
+    },
+    {
+      "file": "brands/mc-q53122/index.html",
+      "route": "/brand/mc-q53122"
+    },
+    {
+      "file": "brands/mc-q50390/index.html",
+      "route": "/brand/mc-q50390"
+    },
+    {
+      "file": "brands/mc-q50391/index.html",
+      "route": "/brand/mc-q50391"
+    },
+    {
+      "file": "brands/mc-q50393/index.html",
+      "route": "/brand/mc-q50393"
+    },
+    {
+      "file": "brands/mc-q50394/index.html",
+      "route": "/brand/mc-q50394"
+    },
+    {
+      "file": "brands/mc-q482905/index.html",
+      "route": "/brand/mc-q482905"
+    },
+    {
+      "file": "brands/mw-e71ca11fc9/index.html",
+      "route": "/brand/mw-e71ca11fc9"
+    },
+    {
+      "file": "brands/mw-9d5c98d159/index.html",
+      "route": "/brand/mw-9d5c98d159"
+    },
+    {
+      "file": "brands/mw-b65bd7fe75/index.html",
+      "route": "/brand/mw-b65bd7fe75"
+    },
+    {
+      "file": "brands/mw-7e878d8f93/index.html",
+      "route": "/brand/mw-7e878d8f93"
+    },
+    {
+      "file": "brands/mw-f710cfa4b1/index.html",
+      "route": "/brand/mw-f710cfa4b1"
+    },
+    {
+      "file": "brands/mw-40d97dc92d/index.html",
+      "route": "/brand/mw-40d97dc92d"
+    },
+    {
+      "file": "brands/mc-q50400/index.html",
+      "route": "/brand/mc-q50400"
+    },
+    {
+      "file": "brands/mc-q624993/index.html",
+      "route": "/brand/mc-q624993"
+    },
+    {
+      "file": "brands/mw-da871e7259/index.html",
+      "route": "/brand/mw-da871e7259"
+    },
+    {
+      "file": "brands/mc-q50404/index.html",
+      "route": "/brand/mc-q50404"
+    },
+    {
+      "file": "brands/mc-q50406/index.html",
+      "route": "/brand/mc-q50406"
+    },
+    {
+      "file": "brands/mc-q50249/index.html",
+      "route": "/brand/mc-q50249"
+    },
+    {
+      "file": "brands/mc-q482678/index.html",
+      "route": "/brand/mc-q482678"
+    },
+    {
+      "file": "brands/mc-q484230/index.html",
+      "route": "/brand/mc-q484230"
+    },
+    {
+      "file": "brands/mc-q7451674/index.html",
+      "route": "/brand/mc-q7451674"
+    },
+    {
+      "file": "brands/mc-q3242069/index.html",
+      "route": "/brand/mc-q3242069"
+    },
+    {
+      "file": "brands/mc-q50408/index.html",
+      "route": "/brand/mc-q50408"
+    },
+    {
+      "file": "brands/mc-q41085/index.html",
+      "route": "/brand/mc-q41085"
+    },
+    {
+      "file": "brands/mc-q42108/index.html",
+      "route": "/brand/mc-q42108"
+    },
+    {
+      "file": "brands/mw-82f47bc108/index.html",
+      "route": "/brand/mw-82f47bc108"
+    },
+    {
+      "file": "brands/mc-q6858616/index.html",
+      "route": "/brand/mc-q6858616"
+    },
+    {
+      "file": "brands/mw-b97d3d1153/index.html",
+      "route": "/brand/mw-b97d3d1153"
+    },
+    {
+      "file": "brands/mw-f5ee7c36c8/index.html",
+      "route": "/brand/mw-f5ee7c36c8"
+    },
+    {
+      "file": "brands/mc-q50245/index.html",
+      "route": "/brand/mc-q50245"
+    },
+    {
+      "file": "brands/mc-q50331/index.html",
+      "route": "/brand/mc-q50331"
+    },
+    {
+      "file": "brands/mc-q50415/index.html",
+      "route": "/brand/mc-q50415"
+    },
+    {
+      "file": "brands/mc-q50417/index.html",
+      "route": "/brand/mc-q50417"
+    },
+    {
+      "file": "brands/mc-q20714/index.html",
+      "route": "/brand/mc-q20714"
+    },
+    {
+      "file": "brands/mw-b4f07dcf88/index.html",
+      "route": "/brand/mw-b4f07dcf88"
+    },
+    {
+      "file": "brands/mc-q50251/index.html",
+      "route": "/brand/mc-q50251"
+    },
+    {
+      "file": "brands/mc-q42112/index.html",
+      "route": "/brand/mc-q42112"
+    },
+    {
+      "file": "brands/mw-b77fa5473d/index.html",
+      "route": "/brand/mw-b77fa5473d"
+    },
+    {
+      "file": "brands/mc-q489331/index.html",
+      "route": "/brand/mc-q489331"
+    },
+    {
+      "file": "brands/mw-466d31b2bb/index.html",
+      "route": "/brand/mw-466d31b2bb"
+    },
+    {
+      "file": "brands/mw-4d8895bd31/index.html",
+      "route": "/brand/mw-4d8895bd31"
+    },
+    {
+      "file": "brands/mc-q41154/index.html",
+      "route": "/brand/mc-q41154"
+    },
+    {
+      "file": "brands/mw-6463e71b8d/index.html",
+      "route": "/brand/mw-6463e71b8d"
+    },
+    {
+      "file": "brands/mw-053b002255/index.html",
+      "route": "/brand/mw-053b002255"
+    },
+    {
+      "file": "brands/mc-q42077/index.html",
+      "route": "/brand/mc-q42077"
+    },
+    {
+      "file": "brands/mw-47fff037e1/index.html",
+      "route": "/brand/mw-47fff037e1"
+    },
+    {
+      "file": "brands/mc-q491082/index.html",
+      "route": "/brand/mc-q491082"
+    },
+    {
+      "file": "brands/mw-85e9e066ab/index.html",
+      "route": "/brand/mw-85e9e066ab"
+    },
+    {
+      "file": "brands/mw-7adf7d3e87/index.html",
+      "route": "/brand/mw-7adf7d3e87"
+    },
+    {
+      "file": "brands/mc-q482648/index.html",
+      "route": "/brand/mc-q482648"
+    },
+    {
+      "file": "brands/mw-94478368bb/index.html",
+      "route": "/brand/mw-94478368bb"
+    },
+    {
+      "file": "brands/mc-q42117/index.html",
+      "route": "/brand/mc-q42117"
+    },
+    {
+      "file": "brands/mw-e6abc7db47/index.html",
+      "route": "/brand/mw-e6abc7db47"
+    },
+    {
+      "file": "brands/mc-q374457/index.html",
+      "route": "/brand/mc-q374457"
+    },
+    {
+      "file": "brands/mc-q42124/index.html",
+      "route": "/brand/mc-q42124"
+    },
+    {
+      "file": "brands/mc-q50241/index.html",
+      "route": "/brand/mc-q50241"
+    },
+    {
+      "file": "brands/mc-q50255/index.html",
+      "route": "/brand/mc-q50255"
+    },
+    {
+      "file": "brands/mc-q6431646/index.html",
+      "route": "/brand/mc-q6431646"
+    },
+    {
+      "file": "brands/mc-q39988/index.html",
+      "route": "/brand/mc-q39988"
+    },
+    {
+      "file": "brands/mc-q50261/index.html",
+      "route": "/brand/mc-q50261"
+    },
+    {
+      "file": "brands/mc-q50190/index.html",
+      "route": "/brand/mc-q50190"
+    },
+    {
+      "file": "brands/mc-q50306/index.html",
+      "route": "/brand/mc-q50306"
+    },
+    {
+      "file": "brands/mw-3cf61d7200/index.html",
+      "route": "/brand/mw-3cf61d7200"
+    },
+    {
+      "file": "brands/mc-q50309/index.html",
+      "route": "/brand/mc-q50309"
+    },
+    {
+      "file": "brands/mw-ab4e3048aa/index.html",
+      "route": "/brand/mw-ab4e3048aa"
+    },
+    {
+      "file": "brands/mc-q50310/index.html",
+      "route": "/brand/mc-q50310"
+    },
+    {
+      "file": "brands/mc-q50367/index.html",
+      "route": "/brand/mc-q50367"
+    },
+    {
+      "file": "brands/mc-q494681/index.html",
+      "route": "/brand/mc-q494681"
+    },
+    {
+      "file": "brands/mc-q50429/index.html",
+      "route": "/brand/mc-q50429"
+    },
+    {
+      "file": "brands/mw-1b45ab5125/index.html",
+      "route": "/brand/mw-1b45ab5125"
+    },
+    {
+      "file": "brands/mc-q41278/index.html",
+      "route": "/brand/mc-q41278"
+    },
+    {
+      "file": "brands/mc-q491717/index.html",
+      "route": "/brand/mc-q491717"
+    },
+    {
+      "file": "brands/mc-q33625595/index.html",
+      "route": "/brand/mc-q33625595"
+    },
+    {
+      "file": "brands/mc-q483656/index.html",
+      "route": "/brand/mc-q483656"
+    },
+    {
+      "file": "brands/mw-c4ba5f0b27/index.html",
+      "route": "/brand/mw-c4ba5f0b27"
+    },
+    {
+      "file": "brands/mw-2f98e8e015/index.html",
+      "route": "/brand/mw-2f98e8e015"
+    },
+    {
+      "file": "brands/mw-e8396a5e85/index.html",
+      "route": "/brand/mw-e8396a5e85"
+    },
+    {
+      "file": "brands/mc-q50315/index.html",
+      "route": "/brand/mc-q50315"
+    },
+    {
+      "file": "brands/mc-q16726591/index.html",
+      "route": "/brand/mc-q16726591"
+    },
+    {
+      "file": "brands/mc-q488334/index.html",
+      "route": "/brand/mc-q488334"
+    },
+    {
+      "file": "brands/mc-q50319/index.html",
+      "route": "/brand/mc-q50319"
+    },
+    {
+      "file": "brands/mc-q42136/index.html",
+      "route": "/brand/mc-q42136"
+    },
+    {
+      "file": "brands/mc-q483420/index.html",
+      "route": "/brand/mc-q483420"
+    },
+    {
+      "file": "brands/mc-q482659/index.html",
+      "route": "/brand/mc-q482659"
+    },
+    {
+      "file": "brands/mc-q20934/index.html",
+      "route": "/brand/mc-q20934"
+    },
+    {
+      "file": "brands/mc-q488851/index.html",
+      "route": "/brand/mc-q488851"
+    },
+    {
+      "file": "brands/mc-q19161980/index.html",
+      "route": "/brand/mc-q19161980"
+    },
+    {
+      "file": "brands/mw-4fc985229e/index.html",
+      "route": "/brand/mw-4fc985229e"
+    },
+    {
+      "file": "brands/mw-62186598ca/index.html",
+      "route": "/brand/mw-62186598ca"
+    },
+    {
+      "file": "brands/mc-q50321/index.html",
+      "route": "/brand/mc-q50321"
+    },
+    {
+      "file": "brands/mc-q12623621/index.html",
+      "route": "/brand/mc-q12623621"
+    },
+    {
+      "file": "brands/mc-q42140/index.html",
+      "route": "/brand/mc-q42140"
+    },
+    {
+      "file": "brands/mc-q42141/index.html",
+      "route": "/brand/mc-q42141"
+    },
+    {
+      "file": "brands/mc-q6176555/index.html",
+      "route": "/brand/mc-q6176555"
+    },
+    {
+      "file": "brands/mc-q487855/index.html",
+      "route": "/brand/mc-q487855"
+    },
+    {
+      "file": "brands/mc-q12616442/index.html",
+      "route": "/brand/mc-q12616442"
+    },
+    {
+      "file": "brands/mc-q50439/index.html",
+      "route": "/brand/mc-q50439"
+    },
+    {
+      "file": "brands/mw-79021e9e2b/index.html",
+      "route": "/brand/mw-79021e9e2b"
+    },
+    {
+      "file": "brands/mc-q50324/index.html",
+      "route": "/brand/mc-q50324"
+    },
+    {
+      "file": "brands/mc-q482661/index.html",
+      "route": "/brand/mc-q482661"
+    },
+    {
+      "file": "brands/mc-q50328/index.html",
+      "route": "/brand/mc-q50328"
+    },
+    {
+      "file": "brands/mc-q3271898/index.html",
+      "route": "/brand/mc-q3271898"
+    },
+    {
+      "file": "brands/mc-q42146/index.html",
+      "route": "/brand/mc-q42146"
+    },
+    {
+      "file": "brands/mc-q50330/index.html",
+      "route": "/brand/mc-q50330"
+    },
+    {
+      "file": "brands/mc-q50332/index.html",
+      "route": "/brand/mc-q50332"
+    },
+    {
+      "file": "brands/mc-q12622975/index.html",
+      "route": "/brand/mc-q12622975"
+    },
+    {
+      "file": "brands/mc-q5115985/index.html",
+      "route": "/brand/mc-q5115985"
+    },
+    {
+      "file": "brands/mw-311374686b/index.html",
+      "route": "/brand/mw-311374686b"
+    },
+    {
+      "file": "brands/mc-q41070/index.html",
+      "route": "/brand/mc-q41070"
+    },
+    {
+      "file": "brands/mc-q491714/index.html",
+      "route": "/brand/mc-q491714"
+    },
+    {
+      "file": "brands/mc-q41066/index.html",
+      "route": "/brand/mc-q41066"
+    },
+    {
+      "file": "brands/mc-q16174863/index.html",
+      "route": "/brand/mc-q16174863"
+    },
+    {
+      "file": "brands/mw-7d291e6de4/index.html",
+      "route": "/brand/mw-7d291e6de4"
+    },
+    {
+      "file": "brands/mc-q50334/index.html",
+      "route": "/brand/mc-q50334"
+    },
+    {
+      "file": "brands/mw-ddf922e1de/index.html",
+      "route": "/brand/mw-ddf922e1de"
+    },
+    {
+      "file": "brands/mw-998e5b1b90/index.html",
+      "route": "/brand/mw-998e5b1b90"
+    },
+    {
+      "file": "brands/mw-31591d9b32/index.html",
+      "route": "/brand/mw-31591d9b32"
+    },
+    {
+      "file": "brands/mw-1d8ccc593f/index.html",
+      "route": "/brand/mw-1d8ccc593f"
+    },
+    {
+      "file": "brands/mw-f4a8865c8f/index.html",
+      "route": "/brand/mw-f4a8865c8f"
+    },
+    {
+      "file": "brands/mw-d1e4d98c82/index.html",
+      "route": "/brand/mw-d1e4d98c82"
+    },
+    {
+      "file": "brands/mw-a83f17c5ea/index.html",
+      "route": "/brand/mw-a83f17c5ea"
+    },
+    {
+      "file": "brands/mc-q12623242/index.html",
+      "route": "/brand/mc-q12623242"
+    },
+    {
+      "file": "brands/mw-93a6fce45f/index.html",
+      "route": "/brand/mw-93a6fce45f"
+    },
+    {
+      "file": "brands/mc-q15623329/index.html",
+      "route": "/brand/mc-q15623329"
+    },
+    {
+      "file": "brands/mc-q6431749/index.html",
+      "route": "/brand/mc-q6431749"
+    },
+    {
+      "file": "brands/mw-ce117c189c/index.html",
+      "route": "/brand/mw-ce117c189c"
+    },
+    {
+      "file": "brands/mw-b81b34c6dd/index.html",
+      "route": "/brand/mw-b81b34c6dd"
+    },
+    {
+      "file": "brands/mw-89565d9b3f/index.html",
+      "route": "/brand/mw-89565d9b3f"
+    },
+    {
+      "file": "brands/mc-q482673/index.html",
+      "route": "/brand/mc-q482673"
+    },
+    {
+      "file": "brands/mw-7813201a16/index.html",
+      "route": "/brand/mw-7813201a16"
+    },
+    {
+      "file": "brands/mw-82c702a15e/index.html",
+      "route": "/brand/mw-82c702a15e"
+    },
+    {
+      "file": "brands/mw-d6711c8053/index.html",
+      "route": "/brand/mw-d6711c8053"
+    },
+    {
+      "file": "brands/mw-39a33fbb12/index.html",
+      "route": "/brand/mw-39a33fbb12"
+    },
+    {
+      "file": "brands/mw-fd206b047a/index.html",
+      "route": "/brand/mw-fd206b047a"
+    },
+    {
+      "file": "brands/mw-64a9155c0d/index.html",
+      "route": "/brand/mw-64a9155c0d"
+    },
+    {
+      "file": "brands/mc-q42082/index.html",
+      "route": "/brand/mc-q42082"
+    },
+    {
+      "file": "brands/mw-308b9b9316/index.html",
+      "route": "/brand/mw-308b9b9316"
+    },
+    {
+      "file": "brands/mc-q42152/index.html",
+      "route": "/brand/mc-q42152"
+    },
+    {
+      "file": "brands/mw-1e993a56ed/index.html",
+      "route": "/brand/mw-1e993a56ed"
+    },
+    {
+      "file": "brands/mc-q42153/index.html",
+      "route": "/brand/mc-q42153"
+    },
+    {
+      "file": "brands/mw-2717c70cca/index.html",
+      "route": "/brand/mw-2717c70cca"
+    },
+    {
+      "file": "brands/mw-d9f7df90f0/index.html",
+      "route": "/brand/mw-d9f7df90f0"
+    },
+    {
+      "file": "brands/mc-q188624/index.html",
+      "route": "/brand/mc-q188624"
+    },
+    {
+      "file": "brands/mc-q42154/index.html",
+      "route": "/brand/mc-q42154"
+    },
+    {
+      "file": "brands/mw-f47002f414/index.html",
+      "route": "/brand/mw-f47002f414"
+    },
+    {
+      "file": "brands/mc-q42080/index.html",
+      "route": "/brand/mc-q42080"
+    },
+    {
+      "file": "brands/mw-aeb9cf07ba/index.html",
+      "route": "/brand/mw-aeb9cf07ba"
+    },
+    {
+      "file": "brands/mc-q42155/index.html",
+      "route": "/brand/mc-q42155"
+    },
+    {
+      "file": "brands/mc-q42094/index.html",
+      "route": "/brand/mc-q42094"
+    },
+    {
+      "file": "brands/mw-5d717c55d9/index.html",
+      "route": "/brand/mw-5d717c55d9"
+    },
+    {
+      "file": "brands/mc-q56148/index.html",
+      "route": "/brand/mc-q56148"
+    },
+    {
+      "file": "brands/mw-fe1c981c8a/index.html",
+      "route": "/brand/mw-fe1c981c8a"
+    },
+    {
+      "file": "brands/mc-q41790/index.html",
+      "route": "/brand/mc-q41790"
+    },
+    {
+      "file": "brands/mw-99dc134319/index.html",
+      "route": "/brand/mw-99dc134319"
+    },
+    {
+      "file": "brands/mw-b72c6c0e85/index.html",
+      "route": "/brand/mw-b72c6c0e85"
+    },
+    {
+      "file": "brands/mw-40d09b410a/index.html",
+      "route": "/brand/mw-40d09b410a"
+    },
+    {
+      "file": "brands/mc-q243327/index.html",
+      "route": "/brand/mc-q243327"
+    },
+    {
+      "file": "brands/mw-4bd4fe94ec/index.html",
+      "route": "/brand/mw-4bd4fe94ec"
+    },
+    {
+      "file": "brands/mw-918aaaba48/index.html",
+      "route": "/brand/mw-918aaaba48"
+    },
+    {
+      "file": "brands/mw-b2fca44210/index.html",
+      "route": "/brand/mw-b2fca44210"
+    },
+    {
+      "file": "brands/mw-55ba30f720/index.html",
+      "route": "/brand/mw-55ba30f720"
+    },
+    {
+      "file": "brands/mc-q16192199/index.html",
+      "route": "/brand/mc-q16192199"
+    },
+    {
+      "file": "brands/mc-q626288/index.html",
+      "route": "/brand/mc-q626288"
+    },
+    {
+      "file": "brands/mc-q16192220/index.html",
+      "route": "/brand/mc-q16192220"
+    },
+    {
+      "file": "brands/mc-q12622825/index.html",
+      "route": "/brand/mc-q12622825"
+    },
+    {
+      "file": "brands/mc-q12622844/index.html",
+      "route": "/brand/mc-q12622844"
+    },
+    {
+      "file": "brands/mc-q5770181/index.html",
+      "route": "/brand/mc-q5770181"
+    },
+    {
+      "file": "brands/mc-q484445/index.html",
+      "route": "/brand/mc-q484445"
+    },
+    {
+      "file": "brands/mc-q484090/index.html",
+      "route": "/brand/mc-q484090"
+    },
+    {
+      "file": "brands/mc-q11284963/index.html",
+      "route": "/brand/mc-q11284963"
+    },
+    {
+      "file": "brands/mc-q491336/index.html",
+      "route": "/brand/mc-q491336"
+    },
+    {
+      "file": "brands/mc-q19162231/index.html",
+      "route": "/brand/mc-q19162231"
+    },
+    {
+      "file": "brands/mc-q12622955/index.html",
+      "route": "/brand/mc-q12622955"
+    },
+    {
+      "file": "brands/mc-q12590582/index.html",
+      "route": "/brand/mc-q12590582"
+    },
+    {
+      "file": "brands/mc-q12623148/index.html",
+      "route": "/brand/mc-q12623148"
+    },
+    {
+      "file": "brands/mc-q491597/index.html",
+      "route": "/brand/mc-q491597"
+    },
+    {
+      "file": "brands/mc-q12623180/index.html",
+      "route": "/brand/mc-q12623180"
+    },
+    {
+      "file": "brands/mc-q16100482/index.html",
+      "route": "/brand/mc-q16100482"
+    },
+    {
+      "file": "brands/mc-q12622785/index.html",
+      "route": "/brand/mc-q12622785"
+    },
+    {
+      "file": "brands/mc-q31180819/index.html",
+      "route": "/brand/mc-q31180819"
+    },
+    {
+      "file": "brands/mc-q16262625/index.html",
+      "route": "/brand/mc-q16262625"
+    },
+    {
+      "file": "brands/mc-q15279945/index.html",
+      "route": "/brand/mc-q15279945"
+    },
+    {
+      "file": "brands/mc-q12623270/index.html",
+      "route": "/brand/mc-q12623270"
+    },
+    {
+      "file": "brands/mc-q6431623/index.html",
+      "route": "/brand/mc-q6431623"
+    },
+    {
+      "file": "brands/mc-q16167803/index.html",
+      "route": "/brand/mc-q16167803"
+    },
+    {
+      "file": "brands/mc-q12606661/index.html",
+      "route": "/brand/mc-q12606661"
+    },
+    {
+      "file": "brands/mc-q208736/index.html",
+      "route": "/brand/mc-q208736"
+    },
+    {
+      "file": "brands/mc-q12623488/index.html",
+      "route": "/brand/mc-q12623488"
+    },
+    {
+      "file": "brands/mc-q12623568/index.html",
+      "route": "/brand/mc-q12623568"
+    },
+    {
+      "file": "brands/mc-q12623571/index.html",
+      "route": "/brand/mc-q12623571"
+    },
+    {
+      "file": "brands/mc-q12623622/index.html",
+      "route": "/brand/mc-q12623622"
+    },
+    {
+      "file": "brands/mc-q12623625/index.html",
+      "route": "/brand/mc-q12623625"
+    },
+    {
+      "file": "brands/mc-q31180818/index.html",
+      "route": "/brand/mc-q31180818"
+    },
+    {
+      "file": "brands/mc-q31180844/index.html",
+      "route": "/brand/mc-q31180844"
+    },
+    {
+      "file": "brands/mc-q12623629/index.html",
+      "route": "/brand/mc-q12623629"
+    },
+    {
+      "file": "brands/mc-q12623633/index.html",
+      "route": "/brand/mc-q12623633"
+    },
+    {
+      "file": "brands/mc-q6328582/index.html",
+      "route": "/brand/mc-q6328582"
+    },
+    {
+      "file": "brands/mc-q60376/index.html",
+      "route": "/brand/mc-q60376"
+    },
+    {
+      "file": "brands/mc-q12623697/index.html",
+      "route": "/brand/mc-q12623697"
+    },
+    {
+      "file": "brands/mc-q52854854/index.html",
+      "route": "/brand/mc-q52854854"
+    },
+    {
+      "file": "brands/mc-q12623746/index.html",
+      "route": "/brand/mc-q12623746"
+    },
+    {
+      "file": "brands/mc-q12623754/index.html",
+      "route": "/brand/mc-q12623754"
+    },
+    {
+      "file": "brands/mc-q483744/index.html",
+      "route": "/brand/mc-q483744"
+    },
+    {
+      "file": "brands/mc-q11664005/index.html",
+      "route": "/brand/mc-q11664005"
+    },
+    {
+      "file": "brands/mc-q6431586/index.html",
+      "route": "/brand/mc-q6431586"
+    },
+    {
+      "file": "brands/mc-q12623855/index.html",
+      "route": "/brand/mc-q12623855"
+    },
+    {
+      "file": "brands/mc-q16172629/index.html",
+      "route": "/brand/mc-q16172629"
+    },
+    {
+      "file": "brands/mc-q12623895/index.html",
+      "route": "/brand/mc-q12623895"
+    },
+    {
+      "file": "brands/mc-q12625722/index.html",
+      "route": "/brand/mc-q12625722"
+    },
+    {
+      "file": "brands/mc-q12624295/index.html",
+      "route": "/brand/mc-q12624295"
+    },
+    {
+      "file": "brands/mc-q6431688/index.html",
+      "route": "/brand/mc-q6431688"
+    },
+    {
+      "file": "brands/mc-q50342/index.html",
+      "route": "/brand/mc-q50342"
+    },
+    {
+      "file": "brands/mc-q42113/index.html",
+      "route": "/brand/mc-q42113"
+    },
+    {
+      "file": "brands/mc-q50403/index.html",
+      "route": "/brand/mc-q50403"
+    },
+    {
+      "file": "brands/mc-q8684/index.html",
+      "route": "/brand/mc-q8684"
+    },
+    {
+      "file": "brands/mw-03ddf4018c/index.html",
+      "route": "/brand/mw-03ddf4018c"
+    },
+    {
+      "file": "brands/mc-q50374/index.html",
+      "route": "/brand/mc-q50374"
+    },
+    {
+      "file": "brands/mc-q11626082/index.html",
+      "route": "/brand/mc-q11626082"
+    },
+    {
+      "file": "brands/mw-7092324fb7/index.html",
+      "route": "/brand/mw-7092324fb7"
+    },
+    {
+      "file": "brands/mc-q12625125/index.html",
+      "route": "/brand/mc-q12625125"
+    },
+    {
+      "file": "brands/mc-q11286676/index.html",
+      "route": "/brand/mc-q11286676"
+    },
+    {
+      "file": "brands/mw-abf85d4ad3/index.html",
+      "route": "/brand/mw-abf85d4ad3"
+    },
+    {
+      "file": "brands/mc-q50343/index.html",
+      "route": "/brand/mc-q50343"
+    },
+    {
+      "file": "brands/mc-q491511/index.html",
+      "route": "/brand/mc-q491511"
+    },
+    {
+      "file": "brands/mc-q50344/index.html",
+      "route": "/brand/mc-q50344"
+    },
+    {
+      "file": "brands/mc-q50345/index.html",
+      "route": "/brand/mc-q50345"
+    },
+    {
+      "file": "brands/mc-q50346/index.html",
+      "route": "/brand/mc-q50346"
+    },
+    {
+      "file": "brands/mw-71f051614e/index.html",
+      "route": "/brand/mw-71f051614e"
+    },
+    {
+      "file": "brands/mw-3368122ad8/index.html",
+      "route": "/brand/mw-3368122ad8"
+    },
+    {
+      "file": "brands/mw-bd100cb107/index.html",
+      "route": "/brand/mw-bd100cb107"
+    },
+    {
+      "file": "brands/mw-8aec0d99d4/index.html",
+      "route": "/brand/mw-8aec0d99d4"
+    },
+    {
+      "file": "brands/mc-q482692/index.html",
+      "route": "/brand/mc-q482692"
+    },
+    {
+      "file": "brands/mc-q625961/index.html",
+      "route": "/brand/mc-q625961"
+    },
+    {
+      "file": "brands/mw-f9b8ab93a2/index.html",
+      "route": "/brand/mw-f9b8ab93a2"
+    },
+    {
+      "file": "brands/mw-f229b6a7d5/index.html",
+      "route": "/brand/mw-f229b6a7d5"
+    },
+    {
+      "file": "brands/mc-q39997/index.html",
+      "route": "/brand/mc-q39997"
+    },
+    {
+      "file": "brands/mw-2664ecf740/index.html",
+      "route": "/brand/mw-2664ecf740"
+    },
+    {
+      "file": "brands/mw-689b1c2153/index.html",
+      "route": "/brand/mw-689b1c2153"
+    }
+  ],
+  "public_records": 357,
+  "warnings": [
+    "record mc-q11232850: needs review; research metadata does not authorize publication",
+    "record mc-q11232895: needs review; research metadata does not authorize publication",
+    "record mc-q11232933: needs review; research metadata does not authorize publication",
+    "record mc-q11250418: needs review; research metadata does not authorize publication",
+    "record mc-q11284963: needs review; research metadata does not authorize publication",
+    "record mc-q11286676: needs review; research metadata does not authorize publication",
+    "record mc-q11626082: needs review; research metadata does not authorize publication",
+    "record mc-q11664005: needs review; research metadata does not authorize publication",
+    "record mc-q12583260: needs review; research metadata does not authorize publication",
+    "record mc-q12590582: needs review; research metadata does not authorize publication",
+    "record mc-q12593324: needs review; research metadata does not authorize publication",
+    "record mc-q12606661: needs review; research metadata does not authorize publication",
+    "record mc-q12616442: needs review; research metadata does not authorize publication",
+    "record mc-q12622785: needs review; research metadata does not authorize publication",
+    "record mc-q12622825: needs review; research metadata does not authorize publication",
+    "record mc-q12622844: needs review; research metadata does not authorize publication",
+    "record mc-q12622955: needs review; research metadata does not authorize publication",
+    "record mc-q12622975: needs review; research metadata does not authorize publication",
+    "record mc-q12623148: needs review; research metadata does not authorize publication",
+    "record mc-q12623180: needs review; research metadata does not authorize publication",
+    "record mc-q12623242: needs review; research metadata does not authorize publication",
+    "record mc-q12623270: needs review; research metadata does not authorize publication",
+    "record mc-q12623488: needs review; research metadata does not authorize publication",
+    "record mc-q12623568: needs review; research metadata does not authorize publication",
+    "record mc-q12623571: needs review; research metadata does not authorize publication",
+    "record mc-q12623602: needs review; research metadata does not authorize publication",
+    "record mc-q12623621: needs review; research metadata does not authorize publication",
+    "record mc-q12623622: needs review; research metadata does not authorize publication",
+    "record mc-q12623625: needs review; research metadata does not authorize publication",
+    "record mc-q12623629: needs review; research metadata does not authorize publication",
+    "record mc-q12623633: needs review; research metadata does not authorize publication",
+    "record mc-q12623697: needs review; research metadata does not authorize publication",
+    "record mc-q12623746: needs review; research metadata does not authorize publication",
+    "record mc-q12623754: needs review; research metadata does not authorize publication",
+    "record mc-q12623855: needs review; research metadata does not authorize publication",
+    "record mc-q12623895: needs review; research metadata does not authorize publication",
+    "record mc-q12624295: needs review; research metadata does not authorize publication",
+    "record mc-q12625125: needs review; research metadata does not authorize publication",
+    "record mc-q12625722: needs review; research metadata does not authorize publication",
+    "record mc-q139779: needs review; research metadata does not authorize publication",
+    "record mc-q140800179: needs review; research metadata does not authorize publication",
+    "record mc-q15279945: needs review; research metadata does not authorize publication",
+    "record mc-q15623329: needs review; research metadata does not authorize publication",
+    "record mc-q16092702: needs review; research metadata does not authorize publication",
+    "record mc-q16100482: needs review; research metadata does not authorize publication",
+    "record mc-q16167803: needs review; research metadata does not authorize publication",
+    "record mc-q16172629: needs review; research metadata does not authorize publication",
+    "record mc-q16174863: needs review; research metadata does not authorize publication",
+    "record mc-q16179935: needs review; research metadata does not authorize publication",
+    "record mc-q16192199: needs review; research metadata does not authorize publication",
+    "record mc-q16192220: needs review; research metadata does not authorize publication",
+    "record mc-q16192452: needs review; research metadata does not authorize publication",
+    "record mc-q16261977: needs review; research metadata does not authorize publication",
+    "record mc-q16262625: needs review; research metadata does not authorize publication",
+    "record mc-q16520: needs review; research metadata does not authorize publication",
+    "record mc-q16726591: needs review; research metadata does not authorize publication",
+    "record mc-q188624: needs review; research metadata does not authorize publication",
+    "record mc-q19161980: needs review; research metadata does not authorize publication",
+    "record mc-q19162231: needs review; research metadata does not authorize publication",
+    "record mc-q20714: needs review; research metadata does not authorize publication",
+    "record mc-q208736: needs review; research metadata does not authorize publication",
+    "record mc-q20921: needs review; research metadata does not authorize publication",
+    "record mc-q20927: needs review; research metadata does not authorize publication",
+    "record mc-q20934: needs review; research metadata does not authorize publication",
+    "record mc-q20937: needs review; research metadata does not authorize publication",
+    "record mc-q21400278: needs review; research metadata does not authorize publication",
+    "record mc-q243327: needs review; research metadata does not authorize publication",
+    "record mc-q31180818: needs review; research metadata does not authorize publication",
+    "record mc-q31180819: needs review; research metadata does not authorize publication",
+    "record mc-q31180820: needs review; research metadata does not authorize publication",
+    "record mc-q31180844: needs review; research metadata does not authorize publication",
+    "record mc-q3242069: needs review; research metadata does not authorize publication",
+    "record mc-q3271898: needs review; research metadata does not authorize publication",
+    "record mc-q33625595: needs review; research metadata does not authorize publication",
+    "record mc-q374457: needs review; research metadata does not authorize publication",
+    "record mc-q39988: needs review; research metadata does not authorize publication",
+    "record mc-q39997: needs review; research metadata does not authorize publication",
+    "record mc-q41066: needs review; research metadata does not authorize publication",
+    "record mc-q41070: needs review; research metadata does not authorize publication",
+    "record mc-q41071: needs review; research metadata does not authorize publication",
+    "record mc-q41085: needs review; research metadata does not authorize publication",
+    "record mc-q41154: needs review; research metadata does not authorize publication",
+    "record mc-q41164: needs review; research metadata does not authorize publication",
+    "record mc-q41278: needs review; research metadata does not authorize publication",
+    "record mc-q41765: needs review; research metadata does not authorize publication",
+    "record mc-q41790: needs review; research metadata does not authorize publication",
+    "record mc-q42061: needs review; research metadata does not authorize publication",
+    "record mc-q42064: needs review; research metadata does not authorize publication",
+    "record mc-q42066: needs review; research metadata does not authorize publication",
+    "record mc-q42069: needs review; research metadata does not authorize publication",
+    "record mc-q42073: needs review; research metadata does not authorize publication",
+    "record mc-q42077: needs review; research metadata does not authorize publication",
+    "record mc-q42078: needs review; research metadata does not authorize publication",
+    "record mc-q42080: needs review; research metadata does not authorize publication",
+    "record mc-q42082: needs review; research metadata does not authorize publication",
+    "record mc-q42084: needs review; research metadata does not authorize publication",
+    "record mc-q42087: needs review; research metadata does not authorize publication",
+    "record mc-q42088: needs review; research metadata does not authorize publication",
+    "record mc-q42089: needs review; research metadata does not authorize publication",
+    "record mc-q42092: needs review; research metadata does not authorize publication",
+    "record mc-q42094: needs review; research metadata does not authorize publication",
+    "record mc-q42100: needs review; research metadata does not authorize publication",
+    "record mc-q42108: needs review; research metadata does not authorize publication",
+    "record mc-q42109: needs review; research metadata does not authorize publication",
+    "record mc-q42112: needs review; research metadata does not authorize publication",
+    "record mc-q42113: needs review; research metadata does not authorize publication",
+    "record mc-q42117: needs review; research metadata does not authorize publication",
+    "record mc-q42124: needs review; research metadata does not authorize publication",
+    "record mc-q42128: needs review; research metadata does not authorize publication",
+    "record mc-q42136: needs review; research metadata does not authorize publication",
+    "record mc-q42140: needs review; research metadata does not authorize publication",
+    "record mc-q42141: needs review; research metadata does not authorize publication",
+    "record mc-q42144: needs review; research metadata does not authorize publication",
+    "record mc-q42146: needs review; research metadata does not authorize publication",
+    "record mc-q42152: needs review; research metadata does not authorize publication",
+    "record mc-q42153: needs review; research metadata does not authorize publication",
+    "record mc-q42154: needs review; research metadata does not authorize publication",
+    "record mc-q42155: needs review; research metadata does not authorize publication",
+    "record mc-q482648: needs review; research metadata does not authorize publication",
+    "record mc-q482651: needs review; research metadata does not authorize publication",
+    "record mc-q482659: needs review; research metadata does not authorize publication",
+    "record mc-q482661: needs review; research metadata does not authorize publication",
+    "record mc-q482673: needs review; research metadata does not authorize publication",
+    "record mc-q482678: needs review; research metadata does not authorize publication",
+    "record mc-q482688: needs review; research metadata does not authorize publication",
+    "record mc-q482692: needs review; research metadata does not authorize publication",
+    "record mc-q482735: needs review; research metadata does not authorize publication",
+    "record mc-q482751: needs review; research metadata does not authorize publication",
+    "record mc-q482905: needs review; research metadata does not authorize publication",
+    "record mc-q483189: needs review; research metadata does not authorize publication",
+    "record mc-q483420: needs review; research metadata does not authorize publication",
+    "record mc-q483656: needs review; research metadata does not authorize publication",
+    "record mc-q483744: needs review; research metadata does not authorize publication",
+    "record mc-q484090: needs review; research metadata does not authorize publication",
+    "record mc-q484230: needs review; research metadata does not authorize publication",
+    "record mc-q484445: needs review; research metadata does not authorize publication",
+    "record mc-q487836: needs review; research metadata does not authorize publication",
+    "record mc-q487841: needs review; research metadata does not authorize publication",
+    "record mc-q487855: needs review; research metadata does not authorize publication",
+    "record mc-q488100: needs review; research metadata does not authorize publication",
+    "record mc-q488334: needs review; research metadata does not authorize publication",
+    "record mc-q488851: needs review; research metadata does not authorize publication",
+    "record mc-q488980: needs review; research metadata does not authorize publication",
+    "record mc-q489331: needs review; research metadata does not authorize publication",
+    "record mc-q489708: needs review; research metadata does not authorize publication",
+    "record mc-q491082: needs review; research metadata does not authorize publication",
+    "record mc-q491336: needs review; research metadata does not authorize publication",
+    "record mc-q491511: needs review; research metadata does not authorize publication",
+    "record mc-q491597: needs review; research metadata does not authorize publication",
+    "record mc-q491714: needs review; research metadata does not authorize publication",
+    "record mc-q491717: needs review; research metadata does not authorize publication",
+    "record mc-q494681: needs review; research metadata does not authorize publication",
+    "record mc-q496536: needs review; research metadata does not authorize publication",
+    "record mc-q497259: needs review; research metadata does not authorize publication",
+    "record mc-q50190: needs review; research metadata does not authorize publication",
+    "record mc-q50191: needs review; research metadata does not authorize publication",
+    "record mc-q50192: needs review; research metadata does not authorize publication",
+    "record mc-q50203: needs review; research metadata does not authorize publication",
+    "record mc-q50216: needs review; research metadata does not authorize publication",
+    "record mc-q50220: needs review; research metadata does not authorize publication",
+    "record mc-q50241: needs review; research metadata does not authorize publication",
+    "record mc-q50243: needs review; research metadata does not authorize publication",
+    "record mc-q50244: needs review; research metadata does not authorize publication",
+    "record mc-q50245: needs review; research metadata does not authorize publication",
+    "record mc-q50249: needs review; research metadata does not authorize publication",
+    "record mc-q50251: needs review; research metadata does not authorize publication",
+    "record mc-q50255: needs review; research metadata does not authorize publication",
+    "record mc-q50261: needs review; research metadata does not authorize publication",
+    "record mc-q50306: needs review; research metadata does not authorize publication",
+    "record mc-q50309: needs review; research metadata does not authorize publication",
+    "record mc-q50310: needs review; research metadata does not authorize publication",
+    "record mc-q50315: needs review; research metadata does not authorize publication",
+    "record mc-q50319: needs review; research metadata does not authorize publication",
+    "record mc-q50321: needs review; research metadata does not authorize publication",
+    "record mc-q50324: needs review; research metadata does not authorize publication",
+    "record mc-q50328: needs review; research metadata does not authorize publication",
+    "record mc-q50330: needs review; research metadata does not authorize publication",
+    "record mc-q50331: needs review; research metadata does not authorize publication",
+    "record mc-q50332: needs review; research metadata does not authorize publication",
+    "record mc-q50334: needs review; research metadata does not authorize publication",
+    "record mc-q50342: needs review; research metadata does not authorize publication",
+    "record mc-q50343: needs review; research metadata does not authorize publication",
+    "record mc-q50344: needs review; research metadata does not authorize publication",
+    "record mc-q50345: needs review; research metadata does not authorize publication",
+    "record mc-q50346: needs review; research metadata does not authorize publication",
+    "record mc-q50348: needs review; research metadata does not authorize publication",
+    "record mc-q50353: needs review; research metadata does not authorize publication",
+    "record mc-q50355: needs review; research metadata does not authorize publication",
+    "record mc-q50364: needs review; research metadata does not authorize publication",
+    "record mc-q50367: needs review; research metadata does not authorize publication",
+    "record mc-q50370: needs review; research metadata does not authorize publication",
+    "record mc-q50371: needs review; research metadata does not authorize publication",
+    "record mc-q50374: needs review; research metadata does not authorize publication",
+    "record mc-q50375: needs review; research metadata does not authorize publication",
+    "record mc-q50376: needs review; research metadata does not authorize publication",
+    "record mc-q50377: needs review; research metadata does not authorize publication",
+    "record mc-q50382: needs review; research metadata does not authorize publication",
+    "record mc-q50383: needs review; research metadata does not authorize publication",
+    "record mc-q50390: needs review; research metadata does not authorize publication",
+    "record mc-q50391: needs review; research metadata does not authorize publication",
+    "record mc-q50393: needs review; research metadata does not authorize publication",
+    "record mc-q50394: needs review; research metadata does not authorize publication",
+    "record mc-q50400: needs review; research metadata does not authorize publication",
+    "record mc-q50403: needs review; research metadata does not authorize publication",
+    "record mc-q50404: needs review; research metadata does not authorize publication",
+    "record mc-q50406: needs review; research metadata does not authorize publication",
+    "record mc-q50408: needs review; research metadata does not authorize publication",
+    "record mc-q50415: needs review; research metadata does not authorize publication",
+    "record mc-q50417: needs review; research metadata does not authorize publication",
+    "record mc-q50429: needs review; research metadata does not authorize publication",
+    "record mc-q50439: needs review; research metadata does not authorize publication",
+    "record mc-q5115985: needs review; research metadata does not authorize publication",
+    "record mc-q52854854: needs review; research metadata does not authorize publication",
+    "record mc-q53122: needs review; research metadata does not authorize publication",
+    "record mc-q56147: needs review; research metadata does not authorize publication",
+    "record mc-q56148: needs review; research metadata does not authorize publication",
+    "record mc-q5770181: needs review; research metadata does not authorize publication",
+    "record mc-q60376: needs review; research metadata does not authorize publication",
+    "record mc-q6176555: needs review; research metadata does not authorize publication",
+    "record mc-q623798: needs review; research metadata does not authorize publication",
+    "record mc-q623828: needs review; research metadata does not authorize publication",
+    "record mc-q624046: needs review; research metadata does not authorize publication",
+    "record mc-q624072: needs review; research metadata does not authorize publication",
+    "record mc-q624134: needs review; research metadata does not authorize publication",
+    "record mc-q624374: needs review; research metadata does not authorize publication",
+    "record mc-q624575: needs review; research metadata does not authorize publication",
+    "record mc-q624993: needs review; research metadata does not authorize publication",
+    "record mc-q625165: needs review; research metadata does not authorize publication",
+    "record mc-q625961: needs review; research metadata does not authorize publication",
+    "record mc-q626288: needs review; research metadata does not authorize publication",
+    "record mc-q626783: needs review; research metadata does not authorize publication",
+    "record mc-q626811: needs review; research metadata does not authorize publication",
+    "record mc-q6328582: needs review; research metadata does not authorize publication",
+    "record mc-q6431586: needs review; research metadata does not authorize publication",
+    "record mc-q6431623: needs review; research metadata does not authorize publication",
+    "record mc-q6431646: needs review; research metadata does not authorize publication",
+    "record mc-q6431688: needs review; research metadata does not authorize publication",
+    "record mc-q6431749: needs review; research metadata does not authorize publication",
+    "record mc-q6858616: needs review; research metadata does not authorize publication",
+    "record mc-q7314493: needs review; research metadata does not authorize publication",
+    "record mc-q7451674: needs review; research metadata does not authorize publication",
+    "record mc-q8684: needs review; research metadata does not authorize publication",
+    "record mw-0144403ec0: needs review; research metadata does not authorize publication",
+    "record mw-03ddf4018c: needs review; research metadata does not authorize publication",
+    "record mw-053b002255: needs review; research metadata does not authorize publication",
+    "record mw-05ae5fad69: needs review; research metadata does not authorize publication",
+    "record mw-0a76fb88e6: needs review; research metadata does not authorize publication",
+    "record mw-0dbade02ba: needs review; research metadata does not authorize publication",
+    "record mw-0ec92aa810: needs review; research metadata does not authorize publication",
+    "record mw-11233f8186: needs review; research metadata does not authorize publication",
+    "record mw-19eba90d6a: needs review; research metadata does not authorize publication",
+    "record mw-1b45ab5125: needs review; research metadata does not authorize publication",
+    "record mw-1cbeebdf35: needs review; research metadata does not authorize publication",
+    "record mw-1d8ccc593f: needs review; research metadata does not authorize publication",
+    "record mw-1e993a56ed: needs review; research metadata does not authorize publication",
+    "record mw-2664ecf740: needs review; research metadata does not authorize publication",
+    "record mw-2717c70cca: needs review; research metadata does not authorize publication",
+    "record mw-2f98e8e015: needs review; research metadata does not authorize publication",
+    "record mw-308b9b9316: needs review; research metadata does not authorize publication",
+    "record mw-311374686b: needs review; research metadata does not authorize publication",
+    "record mw-31591d9b32: needs review; research metadata does not authorize publication",
+    "record mw-3368122ad8: needs review; research metadata does not authorize publication",
+    "record mw-37b4ca8f2a: needs review; research metadata does not authorize publication",
+    "record mw-39a33fbb12: needs review; research metadata does not authorize publication",
+    "record mw-3cf61d7200: needs review; research metadata does not authorize publication",
+    "record mw-40d09b410a: needs review; research metadata does not authorize publication",
+    "record mw-40d97dc92d: needs review; research metadata does not authorize publication",
+    "record mw-466d31b2bb: needs review; research metadata does not authorize publication",
+    "record mw-47fff037e1: needs review; research metadata does not authorize publication",
+    "record mw-4bd4fe94ec: needs review; research metadata does not authorize publication",
+    "record mw-4d8895bd31: needs review; research metadata does not authorize publication",
+    "record mw-4fc985229e: needs review; research metadata does not authorize publication",
+    "record mw-55ba30f720: needs review; research metadata does not authorize publication",
+    "record mw-5d717c55d9: needs review; research metadata does not authorize publication",
+    "record mw-62186598ca: needs review; research metadata does not authorize publication",
+    "record mw-6463e71b8d: needs review; research metadata does not authorize publication",
+    "record mw-64a9155c0d: needs review; research metadata does not authorize publication",
+    "record mw-64b09c6c96: needs review; research metadata does not authorize publication",
+    "record mw-680150c601: needs review; research metadata does not authorize publication",
+    "record mw-689b1c2153: needs review; research metadata does not authorize publication",
+    "record mw-6bbdcb6673: needs review; research metadata does not authorize publication",
+    "record mw-6fb29a9a62: needs review; research metadata does not authorize publication",
+    "record mw-7092324fb7: needs review; research metadata does not authorize publication",
+    "record mw-71f051614e: needs review; research metadata does not authorize publication",
+    "record mw-750668932a: needs review; research metadata does not authorize publication",
+    "record mw-7813201a16: needs review; research metadata does not authorize publication",
+    "record mw-79021e9e2b: needs review; research metadata does not authorize publication",
+    "record mw-7adf7d3e87: needs review; research metadata does not authorize publication",
+    "record mw-7d291e6de4: needs review; research metadata does not authorize publication",
+    "record mw-7e878d8f93: needs review; research metadata does not authorize publication",
+    "record mw-82c702a15e: needs review; research metadata does not authorize publication",
+    "record mw-82e5338505: needs review; research metadata does not authorize publication",
+    "record mw-82f47bc108: needs review; research metadata does not authorize publication",
+    "record mw-85e9e066ab: needs review; research metadata does not authorize publication",
+    "record mw-89565d9b3f: needs review; research metadata does not authorize publication",
+    "record mw-8a6b29523f: needs review; research metadata does not authorize publication",
+    "record mw-8aec0d99d4: needs review; research metadata does not authorize publication",
+    "record mw-8b54041be0: needs review; research metadata does not authorize publication",
+    "record mw-918aaaba48: needs review; research metadata does not authorize publication",
+    "record mw-93a6fce45f: needs review; research metadata does not authorize publication",
+    "record mw-94478368bb: needs review; research metadata does not authorize publication",
+    "record mw-998e5b1b90: needs review; research metadata does not authorize publication",
+    "record mw-99dc134319: needs review; research metadata does not authorize publication",
+    "record mw-9ca4ade017: needs review; research metadata does not authorize publication",
+    "record mw-9d5c98d159: needs review; research metadata does not authorize publication",
+    "record mw-9f8d62cdff: needs review; research metadata does not authorize publication",
+    "record mw-a5795f3331: needs review; research metadata does not authorize publication",
+    "record mw-a83f17c5ea: needs review; research metadata does not authorize publication",
+    "record mw-ab4e3048aa: needs review; research metadata does not authorize publication",
+    "record mw-abf85d4ad3: needs review; research metadata does not authorize publication",
+    "record mw-acece89c8d: needs review; research metadata does not authorize publication",
+    "record mw-aeb9cf07ba: needs review; research metadata does not authorize publication",
+    "record mw-b2fca44210: needs review; research metadata does not authorize publication",
+    "record mw-b4f07dcf88: needs review; research metadata does not authorize publication",
+    "record mw-b59240edaa: needs review; research metadata does not authorize publication",
+    "record mw-b65bd7fe75: needs review; research metadata does not authorize publication",
+    "record mw-b72c6c0e85: needs review; research metadata does not authorize publication",
+    "record mw-b77fa5473d: needs review; research metadata does not authorize publication",
+    "record mw-b81b34c6dd: needs review; research metadata does not authorize publication",
+    "record mw-b97d3d1153: needs review; research metadata does not authorize publication",
+    "record mw-bd100cb107: needs review; research metadata does not authorize publication",
+    "record mw-bebdb4f44e: needs review; research metadata does not authorize publication",
+    "record mw-c4ba5f0b27: needs review; research metadata does not authorize publication",
+    "record mw-c7c2056c05: needs review; research metadata does not authorize publication",
+    "record mw-cc30fc8d87: needs review; research metadata does not authorize publication",
+    "record mw-ce117c189c: needs review; research metadata does not authorize publication",
+    "record mw-d00a42e520: needs review; research metadata does not authorize publication",
+    "record mw-d1e4d98c82: needs review; research metadata does not authorize publication",
+    "record mw-d20f1d9873: needs review; research metadata does not authorize publication",
+    "record mw-d472582b28: needs review; research metadata does not authorize publication",
+    "record mw-d6711c8053: needs review; research metadata does not authorize publication",
+    "record mw-d9f7df90f0: needs review; research metadata does not authorize publication",
+    "record mw-da871e7259: needs review; research metadata does not authorize publication",
+    "record mw-dd4841dda4: needs review; research metadata does not authorize publication",
+    "record mw-ddf922e1de: needs review; research metadata does not authorize publication",
+    "record mw-decec75783: needs review; research metadata does not authorize publication",
+    "record mw-e2ace1dafa: needs review; research metadata does not authorize publication",
+    "record mw-e2e39ae455: needs review; research metadata does not authorize publication",
+    "record mw-e6abc7db47: needs review; research metadata does not authorize publication",
+    "record mw-e71ca11fc9: needs review; research metadata does not authorize publication",
+    "record mw-e8396a5e85: needs review; research metadata does not authorize publication",
+    "record mw-ebb6e39576: needs review; research metadata does not authorize publication",
+    "record mw-ef2b338c32: needs review; research metadata does not authorize publication",
+    "record mw-f229b6a7d5: needs review; research metadata does not authorize publication",
+    "record mw-f28cb27c0e: needs review; research metadata does not authorize publication",
+    "record mw-f47002f414: needs review; research metadata does not authorize publication",
+    "record mw-f4a8865c8f: needs review; research metadata does not authorize publication",
+    "record mw-f5ee7c36c8: needs review; research metadata does not authorize publication",
+    "record mw-f710cfa4b1: needs review; research metadata does not authorize publication",
+    "record mw-f94ca07b86: needs review; research metadata does not authorize publication",
+    "record mw-f9b8ab93a2: needs review; research metadata does not authorize publication",
+    "record mw-f9c43eb75c: needs review; research metadata does not authorize publication",
+    "record mw-fbd0ba117e: needs review; research metadata does not authorize publication",
+    "record mw-fd206b047a: needs review; research metadata does not authorize publication",
+    "record mw-fe1c981c8a: needs review; research metadata does not authorize publication",
+    "record mw-feee2ea46e: needs review; research metadata does not authorize publication",
+    "record mw-ff6df24b2e: needs review; research metadata does not authorize publication"
+  ],
+  "scope": "Static local files only. No production deployment."
+}

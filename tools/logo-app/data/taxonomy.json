@@ -189,6 +189,14 @@
     {
       "id": "anniversary",
       "label": "기념 브랜드"
+    },
+    {
+      "id": "mascot",
+      "label": "마스코트"
+    },
+    {
+      "id": "character",
+      "label": "캐릭터"
     }
   ]
 }

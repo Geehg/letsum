@@ -43,13 +43,14 @@ export function fallbackHtml(catalog, route, taxonomy) {
   return `<section class="static-fallback" id="main-content" tabindex="-1"><h1>LETSUM 로고·CI</h1><p>공공기관·기업·대학의 공식 로고와 사용 안내를 찾는 디렉터리입니다.</p><p>${escapeHtml(catalog.scope_note)}</p><ul>${records.map(record => `<li><h2>${escapeHtml(record.name)}</h2><p>${escapeHtml(record.summary)}</p>${officialLink(record.source_url, '공식 자료 보기')}</li>`).join('')}</ul></section>`;
 }
 
-export async function buildSite({ root = PROJECT_ROOT, output = path.join(root, 'dist'), baseUrl = null } = {}) {
+export async function buildSite({ root = PROJECT_ROOT, srcRoot = root, output = path.join(root, 'dist'), baseUrl = null } = {}) {
+  // srcRoot: where src/ lives (the mascot directory reuses the logo app's source with its own data/).
   assertInside(root, output);
   const { catalog, sources, taxonomy } = await loadData(root);
   const validation = validateCatalog(catalog, sources, taxonomy);
   if (validation.errors.length) throw new Error(`Build refused: invalid catalog\n${validation.errors.join('\n')}`);
   if (baseUrl && (!safeUrl(baseUrl) || new URL(baseUrl).search || new URL(baseUrl).hash)) throw new Error('Explicit base URL must be an HTTP(S) URL without query or fragment');
-  const files = await Promise.all(['shell.html', 'styles.css', 'review.css', 'core.js', 'review.js', 'app.js'].map(name => readFile(path.join(root, 'src', name), 'utf8')));
+  const files = await Promise.all(['shell.html', 'styles.css', 'review.css', 'core.js', 'review.js', 'app.js'].map(name => readFile(path.join(srcRoot, 'src', name), 'utf8')));
   const [shell, styles, reviewStyles, core, review, app] = files;
   for (const placeholder of ['__TITLE__', '__DESCRIPTION__', '__STYLE__', '__DATA__', '__SCRIPT__', '__FALLBACK__', '__CANONICAL__']) {
     if (!shell.includes(placeholder)) throw new Error(`Missing shell placeholder: ${placeholder}`);

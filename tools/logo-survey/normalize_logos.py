@@ -164,7 +164,16 @@ def svg_tone(path):
 
 
 def main():
-    geometry_file = APP / "logo-geometry.json"
+    global THUMBS
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--thumbs", default=str(THUMBS), help="thumbnail folder (default: html/logos/thumbs)")
+    parser.add_argument("--geometry", default=str(APP / "logo-geometry.json"))
+    parser.add_argument("--manifest", default=str(APP / "thumbnails.json"))
+    parser.add_argument("--also", nargs="*", default=[str(CRAWL)], help="other files whose thumbnail paths follow GIF→PNG renames")
+    args = parser.parse_args()
+    THUMBS = Path(args.thumbs)
+    geometry_file = Path(args.geometry)
     previous = json.loads(geometry_file.read_text()) if geometry_file.exists() else {}
     digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()[:16]
     geometry = {}
@@ -200,10 +209,11 @@ def main():
             print("  unmeasured", path.name)
     # Point manifests at renamed (GIF → PNG) files.
     if renamed:
-        for file in (APP / "thumbnails.json", CRAWL):
+        prefix = f"/{THUMBS.parent.name}/thumbs/"
+        for file in [Path(args.manifest), *map(Path, args.also)]:
             text = file.read_text()
             for old, new in renamed.items():
-                text = text.replace("/logos/thumbs/" + old, "/logos/thumbs/" + new)
+                text = text.replace(prefix + old, prefix + new)
             file.write_text(text)
     geometry_file.write_text(json.dumps(dict(sorted(geometry.items())), indent=1) + "\n")
     print(f"normalized {len(geometry)} logos ({len(svgs)} svg, {len(renamed)} gif→png)")

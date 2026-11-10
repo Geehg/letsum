@@ -1,0 +1,1191 @@
+{
+ "note": "기본 정렬용 점수: 위키백과 문서가 있는 마스코트는 최근 12개월 조회수, 기관 캐릭터는 해당 기관의 인지도 점수.",
+ "records": {
+  "mc-q11232850": {
+   "score": 4.063
+  },
+  "mc-q11232895": {
+   "score": 3.824
+  },
+  "mc-q11232933": {
+   "score": 4.066
+  },
+  "mc-q11250418": {
+   "score": 3.721
+  },
+  "mc-q11284963": {
+   "score": 3.899
+  },
+  "mc-q11286676": {
+   "score": 3.964
+  },
+  "mc-q11626082": {
+   "score": 3.541
+  },
+  "mc-q11664005": {
+   "score": 4.292
+  },
+  "mc-q12583260": {
+   "score": 3.77
+  },
+  "mc-q12590582": {
+   "score": 3.206
+  },
+  "mc-q12593324": {
+   "score": 3.726
+  },
+  "mc-q12606661": {
+   "score": 3.316
+  },
+  "mc-q12616442": {
+   "score": 3.337
+  },
+  "mc-q12622785": {
+   "score": 3.734
+  },
+  "mc-q12622825": {
+   "score": 3.1
+  },
+  "mc-q12622844": {
+   "score": 3.215
+  },
+  "mc-q12622955": {
+   "score": 3.59
+  },
+  "mc-q12622975": {
+   "score": 3.612
+  },
+  "mc-q12623148": {
+   "score": 2.829
+  },
+  "mc-q12623180": {
+   "score": 3.089
+  },
+  "mc-q12623242": {
+   "score": 3.292
+  },
+  "mc-q12623270": {
+   "score": 3.586
+  },
+  "mc-q12623488": {
+   "score": 3.184
+  },
+  "mc-q12623568": {
+   "score": 3.591
+  },
+  "mc-q12623571": {
+   "score": 2.876
+  },
+  "mc-q12623602": {
+   "score": 3.483
+  },
+  "mc-q12623621": {
+   "score": 3.042
+  },
+  "mc-q12623622": {
+   "score": 3.601
+  },
+  "mc-q12623625": {
+   "score": 3.966
+  },
+  "mc-q12623629": {
+   "score": 3.478
+  },
+  "mc-q12623633": {
+   "score": 3.396
+  },
+  "mc-q12623697": {
+   "score": 3.542
+  },
+  "mc-q12623746": {
+   "score": 3.68
+  },
+  "mc-q12623754": {
+   "score": 3.159
+  },
+  "mc-q12623855": {
+   "score": 3.473
+  },
+  "mc-q12623895": {
+   "score": 3.46
+  },
+  "mc-q12624295": {
+   "score": 3.586
+  },
+  "mc-q12625125": {
+   "score": 3.849
+  },
+  "mc-q12625722": {
+   "score": 2.816
+  },
+  "mc-q139779": {
+   "score": 4.31
+  },
+  "mc-q140800179": {
+   "score": 4.067
+  },
+  "mc-q15279945": {
+   "score": 2.993
+  },
+  "mc-q15623329": {
+   "score": 3.042
+  },
+  "mc-q16092702": {
+   "score": 4.048
+  },
+  "mc-q16100482": {
+   "score": 3.112
+  },
+  "mc-q16167803": {
+   "score": 2.912
+  },
+  "mc-q16172629": {
+   "score": 3.267
+  },
+  "mc-q16174863": {
+   "score": 3.379
+  },
+  "mc-q16179935": {
+   "score": 3.997
+  },
+  "mc-q16192199": {
+   "score": 3.181
+  },
+  "mc-q16192220": {
+   "score": 3.083
+  },
+  "mc-q16192452": {
+   "score": 2.992
+  },
+  "mc-q16261977": {
+   "score": 2.962
+  },
+  "mc-q16262625": {
+   "score": 3.963
+  },
+  "mc-q16520": {
+   "score": 6.02
+  },
+  "mc-q16726591": {
+   "score": 3.508
+  },
+  "mc-q188624": {
+   "score": 5.021
+  },
+  "mc-q19161980": {
+   "score": 2.73
+  },
+  "mc-q19162231": {
+   "score": 3.223
+  },
+  "mc-q20714": {
+   "score": 5.575
+  },
+  "mc-q208736": {
+   "score": 4.885
+  },
+  "mc-q20921": {
+   "score": 5.742
+  },
+  "mc-q20927": {
+   "score": 5.885
+  },
+  "mc-q20934": {
+   "score": 5.811
+  },
+  "mc-q20937": {
+   "score": 5.911
+  },
+  "mc-q21400278": {
+   "score": 2.814
+  },
+  "mc-q243327": {
+   "score": 5.506
+  },
+  "mc-q31180818": {
+   "score": 3.211
+  },
+  "mc-q31180819": {
+   "score": 3.279
+  },
+  "mc-q31180820": {
+   "score": 2.519
+  },
+  "mc-q31180844": {
+   "score": 2.783
+  },
+  "mc-q3242069": {
+   "score": 4.033
+  },
+  "mc-q3271898": {
+   "score": 3.458
+  },
+  "mc-q33625595": {
+   "score": 3.885
+  },
+  "mc-q374457": {
+   "score": 4.798
+  },
+  "mc-q39988": {
+   "score": 0
+  },
+  "mc-q39997": {
+   "score": 5.334
+  },
+  "mc-q41066": {
+   "score": 5.399
+  },
+  "mc-q41070": {
+   "score": 5.545
+  },
+  "mc-q41071": {
+   "score": 5.572
+  },
+  "mc-q41085": {
+   "score": 5.304
+  },
+  "mc-q41154": {
+   "score": 5.631
+  },
+  "mc-q41164": {
+   "score": 5.581
+  },
+  "mc-q41278": {
+   "score": 5.825
+  },
+  "mc-q41765": {
+   "score": 4.889
+  },
+  "mc-q41790": {
+   "score": 5.248
+  },
+  "mc-q42061": {
+   "score": 0
+  },
+  "mc-q42064": {
+   "score": 4.763
+  },
+  "mc-q42066": {
+   "score": 4.983
+  },
+  "mc-q42069": {
+   "score": 5.196
+  },
+  "mc-q42073": {
+   "score": 5.152
+  },
+  "mc-q42077": {
+   "score": 4.795
+  },
+  "mc-q42078": {
+   "score": 4.96
+  },
+  "mc-q42080": {
+   "score": 5.109
+  },
+  "mc-q42082": {
+   "score": 5.034
+  },
+  "mc-q42084": {
+   "score": 5.15
+  },
+  "mc-q42087": {
+   "score": 4.78
+  },
+  "mc-q42088": {
+   "score": 5.096
+  },
+  "mc-q42089": {
+   "score": 5.119
+  },
+  "mc-q42092": {
+   "score": 4.996
+  },
+  "mc-q42094": {
+   "score": 5.264
+  },
+  "mc-q42100": {
+   "score": 4.969
+  },
+  "mc-q42108": {
+   "score": 5.317
+  },
+  "mc-q42109": {
+   "score": 4.879
+  },
+  "mc-q42112": {
+   "score": 4.616
+  },
+  "mc-q42113": {
+   "score": 4.965
+  },
+  "mc-q42117": {
+   "score": 5.444
+  },
+  "mc-q42124": {
+   "score": 5.036
+  },
+  "mc-q42128": {
+   "score": 4.821
+  },
+  "mc-q42136": {
+   "score": 4.996
+  },
+  "mc-q42140": {
+   "score": 5.288
+  },
+  "mc-q42141": {
+   "score": 4.956
+  },
+  "mc-q42144": {
+   "score": 5.245
+  },
+  "mc-q42146": {
+   "score": 5.166
+  },
+  "mc-q42152": {
+   "score": 5.069
+  },
+  "mc-q42153": {
+   "score": 5.208
+  },
+  "mc-q42154": {
+   "score": 5.411
+  },
+  "mc-q42155": {
+   "score": 5.113
+  },
+  "mc-q482648": {
+   "score": 4.388
+  },
+  "mc-q482651": {
+   "score": 4.253
+  },
+  "mc-q482659": {
+   "score": 4.427
+  },
+  "mc-q482661": {
+   "score": 3.951
+  },
+  "mc-q482673": {
+   "score": 4.241
+  },
+  "mc-q482678": {
+   "score": 5.141
+  },
+  "mc-q482688": {
+   "score": 3.954
+  },
+  "mc-q482692": {
+   "score": 3.542
+  },
+  "mc-q482735": {
+   "score": 4.532
+  },
+  "mc-q482751": {
+   "score": 4.345
+  },
+  "mc-q482905": {
+   "score": 4.148
+  },
+  "mc-q483189": {
+   "score": 4.724
+  },
+  "mc-q483420": {
+   "score": 4.047
+  },
+  "mc-q483656": {
+   "score": 4.721
+  },
+  "mc-q483744": {
+   "score": 4.38
+  },
+  "mc-q484090": {
+   "score": 4.655
+  },
+  "mc-q484230": {
+   "score": 4.341
+  },
+  "mc-q484445": {
+   "score": 3.944
+  },
+  "mc-q487836": {
+   "score": 4.431
+  },
+  "mc-q487841": {
+   "score": 4.966
+  },
+  "mc-q487855": {
+   "score": 4.106
+  },
+  "mc-q488100": {
+   "score": 4.46
+  },
+  "mc-q488334": {
+   "score": 4.832
+  },
+  "mc-q488851": {
+   "score": 5.091
+  },
+  "mc-q488980": {
+   "score": 4.297
+  },
+  "mc-q489331": {
+   "score": 4.627
+  },
+  "mc-q489708": {
+   "score": 4.375
+  },
+  "mc-q491082": {
+   "score": 4.883
+  },
+  "mc-q491336": {
+   "score": 4.503
+  },
+  "mc-q491511": {
+   "score": 4.793
+  },
+  "mc-q491597": {
+   "score": 4.985
+  },
+  "mc-q491714": {
+   "score": 4.557
+  },
+  "mc-q491717": {
+   "score": 4.491
+  },
+  "mc-q494681": {
+   "score": 4.692
+  },
+  "mc-q496536": {
+   "score": 5.227
+  },
+  "mc-q497259": {
+   "score": 4.839
+  },
+  "mc-q50190": {
+   "score": 4.81
+  },
+  "mc-q50191": {
+   "score": 4.565
+  },
+  "mc-q50192": {
+   "score": 4.892
+  },
+  "mc-q50203": {
+   "score": 4.782
+  },
+  "mc-q50216": {
+   "score": 4.959
+  },
+  "mc-q50220": {
+   "score": 4.712
+  },
+  "mc-q50241": {
+   "score": 4.667
+  },
+  "mc-q50243": {
+   "score": 4.587
+  },
+  "mc-q50244": {
+   "score": 4.935
+  },
+  "mc-q50245": {
+   "score": 4.684
+  },
+  "mc-q50249": {
+   "score": 4.949
+  },
+  "mc-q50251": {
+   "score": 4.511
+  },
+  "mc-q50255": {
+   "score": 4.836
+  },
+  "mc-q50261": {
+   "score": 4.841
+  },
+  "mc-q50306": {
+   "score": 5.109
+  },
+  "mc-q50309": {
+   "score": 4.668
+  },
+  "mc-q50310": {
+   "score": 4.541
+  },
+  "mc-q50315": {
+   "score": 4.918
+  },
+  "mc-q50319": {
+   "score": 4.611
+  },
+  "mc-q50321": {
+   "score": 4.755
+  },
+  "mc-q50324": {
+   "score": 4.517
+  },
+  "mc-q50328": {
+   "score": 4.622
+  },
+  "mc-q50330": {
+   "score": 4.713
+  },
+  "mc-q50331": {
+   "score": 4.651
+  },
+  "mc-q50332": {
+   "score": 4.752
+  },
+  "mc-q50334": {
+   "score": 4.801
+  },
+  "mc-q50342": {
+   "score": 4.711
+  },
+  "mc-q50343": {
+   "score": 5.14
+  },
+  "mc-q50344": {
+   "score": 4.71
+  },
+  "mc-q50345": {
+   "score": 4.6
+  },
+  "mc-q50346": {
+   "score": 4.95
+  },
+  "mc-q50348": {
+   "score": 5.004
+  },
+  "mc-q50353": {
+   "score": 4.754
+  },
+  "mc-q50355": {
+   "score": 4.721
+  },
+  "mc-q50364": {
+   "score": 4.267
+  },
+  "mc-q50367": {
+   "score": 4.482
+  },
+  "mc-q50370": {
+   "score": 4.439
+  },
+  "mc-q50371": {
+   "score": 4.19
+  },
+  "mc-q50374": {
+   "score": 4.825
+  },
+  "mc-q50375": {
+   "score": 3.659
+  },
+  "mc-q50376": {
+   "score": 4.266
+  },
+  "mc-q50377": {
+   "score": 4.204
+  },
+  "mc-q50382": {
+   "score": 4.713
+  },
+  "mc-q50383": {
+   "score": 4.612
+  },
+  "mc-q50390": {
+   "score": 4.605
+  },
+  "mc-q50391": {
+   "score": 4.499
+  },
+  "mc-q50393": {
+   "score": 4.229
+  },
+  "mc-q50394": {
+   "score": 4.744
+  },
+  "mc-q50400": {
+   "score": 4.699
+  },
+  "mc-q50403": {
+   "score": 3.727
+  },
+  "mc-q50404": {
+   "score": 3.999
+  },
+  "mc-q50406": {
+   "score": 4.385
+  },
+  "mc-q50408": {
+   "score": 4.811
+  },
+  "mc-q50415": {
+   "score": 5.186
+  },
+  "mc-q50417": {
+   "score": 4.375
+  },
+  "mc-q50429": {
+   "score": 4.977
+  },
+  "mc-q50439": {
+   "score": 4.117
+  },
+  "mc-q5115985": {
+   "score": 4.087
+  },
+  "mc-q52854854": {
+   "score": 3.389
+  },
+  "mc-q53122": {
+   "score": 4.975
+  },
+  "mc-q56147": {
+   "score": 4.913
+  },
+  "mc-q56148": {
+   "score": 4.602
+  },
+  "mc-q5770181": {
+   "score": 4.079
+  },
+  "mc-q60376": {
+   "score": 4.023
+  },
+  "mc-q6176555": {
+   "score": 3.603
+  },
+  "mc-q623798": {
+   "score": 4.208
+  },
+  "mc-q623828": {
+   "score": 4.111
+  },
+  "mc-q624046": {
+   "score": 3.787
+  },
+  "mc-q624072": {
+   "score": 4.204
+  },
+  "mc-q624134": {
+   "score": 4.183
+  },
+  "mc-q624374": {
+   "score": 4.106
+  },
+  "mc-q624575": {
+   "score": 4.354
+  },
+  "mc-q624993": {
+   "score": 4.378
+  },
+  "mc-q625165": {
+   "score": 4.276
+  },
+  "mc-q625961": {
+   "score": 4.22
+  },
+  "mc-q626288": {
+   "score": 3.945
+  },
+  "mc-q626783": {
+   "score": 4.607
+  },
+  "mc-q626811": {
+   "score": 4.079
+  },
+  "mc-q6328582": {
+   "score": 3.873
+  },
+  "mc-q6431586": {
+   "score": 4.404
+  },
+  "mc-q6431623": {
+   "score": 4.024
+  },
+  "mc-q6431646": {
+   "score": 0
+  },
+  "mc-q6431688": {
+   "score": 3.638
+  },
+  "mc-q6431749": {
+   "score": 0
+  },
+  "mc-q6858616": {
+   "score": 4.257
+  },
+  "mc-q7314493": {
+   "score": 4.433
+  },
+  "mc-q7451674": {
+   "score": 3.854
+  },
+  "mc-q8684": {
+   "score": 0
+  },
+  "mw-0144403ec0": {
+   "score": 2.605,
+   "pageviews": 393
+  },
+  "mw-03ddf4018c": {
+   "score": 3.288,
+   "pageviews": 1933
+  },
+  "mw-053b002255": {
+   "score": 3.379,
+   "pageviews": 2386
+  },
+  "mw-05ae5fad69": {
+   "score": 2.362,
+   "pageviews": 220
+  },
+  "mw-0a76fb88e6": {
+   "score": 2.292,
+   "pageviews": 186
+  },
+  "mw-0dbade02ba": {
+   "score": 2.064,
+   "pageviews": 106
+  },
+  "mw-0ec92aa810": {
+   "score": 1.748,
+   "pageviews": 46
+  },
+  "mw-11233f8186": {
+   "score": 1.845,
+   "pageviews": 60
+  },
+  "mw-19eba90d6a": {
+   "score": 3.319,
+   "pageviews": 2074
+  },
+  "mw-1b45ab5125": {
+   "score": 1.732,
+   "pageviews": 44
+  },
+  "mw-1cbeebdf35": {
+   "score": 2.161,
+   "pageviews": 135
+  },
+  "mw-1d8ccc593f": {
+   "score": 1.903,
+   "pageviews": 70
+  },
+  "mw-1e993a56ed": {
+   "score": 2.968,
+   "pageviews": 920
+  },
+  "mw-2664ecf740": {
+   "score": 3.297,
+   "pageviews": 1972
+  },
+  "mw-2717c70cca": {
+   "score": 3.379,
+   "pageviews": 2382
+  },
+  "mw-2f98e8e015": {
+   "score": 1.833,
+   "pageviews": 58
+  },
+  "mw-308b9b9316": {
+   "score": 4.221,
+   "pageviews": 16627
+  },
+  "mw-311374686b": {
+   "score": 3.15,
+   "pageviews": 1404
+  },
+  "mw-31591d9b32": {
+   "score": 2.27,
+   "pageviews": 176
+  },
+  "mw-3368122ad8": {
+   "score": 2.934,
+   "pageviews": 849
+  },
+  "mw-37b4ca8f2a": {
+   "score": 2.477,
+   "pageviews": 290
+  },
+  "mw-39a33fbb12": {
+   "score": 3.017,
+   "pageviews": 1029
+  },
+  "mw-3cf61d7200": {
+   "score": 1.929,
+   "pageviews": 75
+  },
+  "mw-40d09b410a": {
+   "score": 2.314,
+   "pageviews": 196
+  },
+  "mw-40d97dc92d": {
+   "score": 2.744,
+   "pageviews": 545
+  },
+  "mw-466d31b2bb": {
+   "score": 2.068,
+   "pageviews": 107
+  },
+  "mw-47fff037e1": {
+   "score": 2.38,
+   "pageviews": 230
+  },
+  "mw-4bd4fe94ec": {
+   "score": 4.531,
+   "pageviews": 33942
+  },
+  "mw-4d8895bd31": {
+   "score": 1.771,
+   "pageviews": 49
+  },
+  "mw-4fc985229e": {
+   "score": 2.045,
+   "pageviews": 101
+  },
+  "mw-55ba30f720": {
+   "score": 4.396,
+   "pageviews": 24854
+  },
+  "mw-5d717c55d9": {
+   "score": 2.607,
+   "pageviews": 395
+  },
+  "mw-62186598ca": {
+   "score": 2.143,
+   "pageviews": 129
+  },
+  "mw-6463e71b8d": {
+   "score": 2.358,
+   "pageviews": 218
+  },
+  "mw-64a9155c0d": {
+   "score": 2.775,
+   "pageviews": 585
+  },
+  "mw-64b09c6c96": {
+   "score": 1.556,
+   "pageviews": 26
+  },
+  "mw-680150c601": {
+   "score": 3.309,
+   "pageviews": 2026
+  },
+  "mw-689b1c2153": {
+   "score": 3.525,
+   "pageviews": 3339
+  },
+  "mw-6bbdcb6673": {
+   "score": 2.843,
+   "pageviews": 687
+  },
+  "mw-6fb29a9a62": {
+   "score": 2.255,
+   "pageviews": 170
+  },
+  "mw-7092324fb7": {
+   "score": 4.037,
+   "pageviews": 10881
+  },
+  "mw-71f051614e": {
+   "score": 2.591,
+   "pageviews": 380
+  },
+  "mw-750668932a": {
+   "score": 2.215,
+   "pageviews": 154
+  },
+  "mw-7813201a16": {
+   "score": 1.505,
+   "pageviews": 22
+  },
+  "mw-79021e9e2b": {
+   "score": 2.876,
+   "pageviews": 742
+  },
+  "mw-7adf7d3e87": {
+   "score": 1.914,
+   "pageviews": 72
+  },
+  "mw-7d291e6de4": {
+   "score": 2.14,
+   "pageviews": 128
+  },
+  "mw-7e878d8f93": {
+   "score": 2.083,
+   "pageviews": 111
+  },
+  "mw-82c702a15e": {
+   "score": 2.876,
+   "pageviews": 741
+  },
+  "mw-82e5338505": {
+   "score": 2.146,
+   "pageviews": 130
+  },
+  "mw-82f47bc108": {
+   "score": 2.117,
+   "pageviews": 121
+  },
+  "mw-85e9e066ab": {
+   "score": 3.006,
+   "pageviews": 1003
+  },
+  "mw-89565d9b3f": {
+   "score": 2.188,
+   "pageviews": 144
+  },
+  "mw-8a6b29523f": {
+   "score": 2.365,
+   "pageviews": 222
+  },
+  "mw-8aec0d99d4": {
+   "score": 3.368,
+   "pageviews": 2323
+  },
+  "mw-8b54041be0": {
+   "score": 3.509,
+   "pageviews": 3216
+  },
+  "mw-918aaaba48": {
+   "score": 3.392,
+   "pageviews": 2456
+  },
+  "mw-93a6fce45f": {
+   "score": 2.305,
+   "pageviews": 192
+  },
+  "mw-94478368bb": {
+   "score": 2.836,
+   "pageviews": 675
+  },
+  "mw-998e5b1b90": {
+   "score": 4.317,
+   "pageviews": 20748
+  },
+  "mw-99dc134319": {
+   "score": 2.587,
+   "pageviews": 376
+  },
+  "mw-9ca4ade017": {
+   "score": 1.863,
+   "pageviews": 63
+  },
+  "mw-9d5c98d159": {
+   "score": 3.038,
+   "pageviews": 1081
+  },
+  "mw-9f8d62cdff": {
+   "score": 3.066,
+   "pageviews": 1155
+  },
+  "mw-a5795f3331": {
+   "score": 2.412,
+   "pageviews": 248
+  },
+  "mw-a83f17c5ea": {
+   "score": 3.467,
+   "pageviews": 2919
+  },
+  "mw-ab4e3048aa": {
+   "score": 2.745,
+   "pageviews": 546
+  },
+  "mw-abf85d4ad3": {
+   "score": 3.172,
+   "pageviews": 1475
+  },
+  "mw-acece89c8d": {
+   "score": 2.255,
+   "pageviews": 170
+  },
+  "mw-aeb9cf07ba": {
+   "score": 2.455,
+   "pageviews": 275
+  },
+  "mw-b2fca44210": {
+   "score": 1.74,
+   "pageviews": 45
+  },
+  "mw-b4f07dcf88": {
+   "score": 3.458,
+   "pageviews": 2862
+  },
+  "mw-b59240edaa": {
+   "score": 2.561,
+   "pageviews": 354
+  },
+  "mw-b65bd7fe75": {
+   "score": 2.199,
+   "pageviews": 148
+  },
+  "mw-b72c6c0e85": {
+   "score": 1.964,
+   "pageviews": 82
+  },
+  "mw-b77fa5473d": {
+   "score": 2.371,
+   "pageviews": 225
+  },
+  "mw-b81b34c6dd": {
+   "score": 1.959,
+   "pageviews": 81
+  },
+  "mw-b97d3d1153": {
+   "score": 3.311,
+   "pageviews": 2035
+  },
+  "mw-bd100cb107": {
+   "score": 2.061,
+   "pageviews": 105
+  },
+  "mw-bebdb4f44e": {
+   "score": 2.494,
+   "pageviews": 302
+  },
+  "mw-c4ba5f0b27": {
+   "score": 1.929,
+   "pageviews": 75
+  },
+  "mw-c7c2056c05": {
+   "score": 2.56,
+   "pageviews": 353
+  },
+  "mw-cc30fc8d87": {
+   "score": 1.519,
+   "pageviews": 23
+  },
+  "mw-ce117c189c": {
+   "score": 2.017,
+   "pageviews": 94
+  },
+  "mw-d00a42e520": {
+   "score": 3.255,
+   "pageviews": 1787
+  },
+  "mw-d1e4d98c82": {
+   "score": 2.559,
+   "pageviews": 352
+  },
+  "mw-d20f1d9873": {
+   "score": 2.292,
+   "pageviews": 186
+  },
+  "mw-d472582b28": {
+   "score": 3.006,
+   "pageviews": 1003
+  },
+  "mw-d6711c8053": {
+   "score": 3.388,
+   "pageviews": 2436
+  },
+  "mw-d9f7df90f0": {
+   "score": 3.941,
+   "pageviews": 8714
+  },
+  "mw-da871e7259": {
+   "score": 2.59,
+   "pageviews": 379
+  },
+  "mw-dd4841dda4": {
+   "score": 1.881,
+   "pageviews": 66
+  },
+  "mw-ddf922e1de": {
+   "score": 1.949,
+   "pageviews": 79
+  },
+  "mw-decec75783": {
+   "score": 2.204,
+   "pageviews": 150
+  },
+  "mw-e2ace1dafa": {
+   "score": 2.09,
+   "pageviews": 113
+  },
+  "mw-e2e39ae455": {
+   "score": 2.673,
+   "pageviews": 461
+  },
+  "mw-e6abc7db47": {
+   "score": 2.433,
+   "pageviews": 261
+  },
+  "mw-e71ca11fc9": {
+   "score": 2.633,
+   "pageviews": 420
+  },
+  "mw-e8396a5e85": {
+   "score": 2.164,
+   "pageviews": 136
+  },
+  "mw-ebb6e39576": {
+   "score": 3.523,
+   "pageviews": 3327
+  },
+  "mw-ef2b338c32": {
+   "score": 1.806,
+   "pageviews": 54
+  },
+  "mw-f229b6a7d5": {
+   "score": 2.893,
+   "pageviews": 772
+  },
+  "mw-f28cb27c0e": {
+   "score": 2.079,
+   "pageviews": 110
+  },
+  "mw-f47002f414": {
+   "score": 3.074,
+   "pageviews": 1176
+  },
+  "mw-f4a8865c8f": {
+   "score": 3.647,
+   "pageviews": 4427
+  },
+  "mw-f5ee7c36c8": {
+   "score": 1.964,
+   "pageviews": 82
+  },
+  "mw-f710cfa4b1": {
+   "score": 3.121,
+   "pageviews": 1312
+  },
+  "mw-f94ca07b86": {
+   "score": 2.52,
+   "pageviews": 321
+  },
+  "mw-f9b8ab93a2": {
+   "score": 2.577,
+   "pageviews": 368
+  },
+  "mw-f9c43eb75c": {
+   "score": 3.035,
+   "pageviews": 1073
+  },
+  "mw-fbd0ba117e": {
+   "score": 3.185,
+   "pageviews": 1521
+  },
+  "mw-fd206b047a": {
+   "score": 2.617,
+   "pageviews": 404
+  },
+  "mw-fe1c981c8a": {
+   "score": 3.321,
+   "pageviews": 2084
+  },
+  "mw-feee2ea46e": {
+   "score": 2.207,
+   "pageviews": 151
+  },
+  "mw-ff6df24b2e": {
+   "score": 3.643,
+   "pageviews": 4385
+  }
+ }
+}

@@ -1,0 +1,1880 @@
+{
+ "note": "공식 캐릭터 페이지의 캐릭터 파일 중 바로 내려받아지는 것(파일 서명 확인).",
+ "checked_at": "2026-11-11",
+ "downloads": {
+  "mc-q42094": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.go.kr/contents/13436/mascot_2022.zip",
+    "bytes": 1055352,
+    "filename": "mascot_2022.zip",
+    "label": "목포시 마스코트",
+    "inner": [
+     "EPS",
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q42061": [
+   {
+    "format": "ZIP",
+    "url": "https://www.goyang.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=487&resrceVer=1&fileSn=1",
+    "bytes": 46396623,
+    "filename": "2022년 고양고양이 일러스트 27종(ai_ png 파일).zip",
+    "label": "고양이 캐릭터 일러스트 원본 전체"
+   }
+  ],
+  "mc-q624046": [
+   {
+    "format": "ZIP",
+    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135382&seq=1",
+    "filename": "법제처_새령이_AI.zip",
+    "label": "(원본) 법제처 캐릭터 (원본)",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135383&seq=1",
+    "filename": "법제처_새령이_JPG.zip",
+    "label": "(이미지) 법제처 캐릭터 (이미지)",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q483420": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kipo.go.kr/ko/kpoContFileDown.do?seq=72&fileNum=1",
+    "filename": "지식재산캐릭터-미리이피.zip",
+    "label": "지식재산처 캐릭터"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipo.go.kr/ko/kpoContFileDown.do?seq=72&fileNum=2",
+    "filename": "지식재산처_카피캐쳐.zip",
+    "label": "카피캐쳐 캐릭터"
+   }
+  ],
+  "mc-q11232850": [
+   {
+    "format": "ZIP",
+    "url": "http://www.customs.go.kr/common/nttFileDownload.do?fileKey=3fe0bf64be34f3d00f11b9cbeacfac02",
+    "filename": "홈페이지 게시용 마타 이미지 16종_250926.zip",
+    "label": "관세청 캐릭터 마타"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.customs.go.kr/common/nttFileDownload.do?fileKey=766c50df3cc7beef4b74800492ac85d5",
+    "filename": "나래나루.zip",
+    "label": "관세청 캐릭터 나루나래"
+   }
+  ],
+  "mc-q140800179": [
+   {
+    "format": "ZIP",
+    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135382&seq=1",
+    "filename": "법제처_새령이_AI.zip",
+    "label": "(원본) 법제처 캐릭터 (원본)",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135383&seq=1",
+    "filename": "법제처_새령이_JPG.zip",
+    "label": "(이미지) 법제처 캐릭터 (이미지)",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q11232933": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dapa.go.kr/dapa/files/05/character_ai.zip",
+    "bytes": 613261,
+    "filename": "character_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dapa.go.kr/dapa/files/05/character_png.zip",
+    "bytes": 1574869,
+    "filename": "character_png.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q33625595": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character/file/20241122.zip",
+    "bytes": 73047143,
+    "filename": "20241122.zip",
+    "label": "소방청 캐릭터 영웅이",
+    "inner": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character/file/20240802_2.zip",
+    "bytes": 14334274,
+    "filename": "20240802_2.zip",
+    "label": "소방청 캐릭터 일구",
+    "inner": [
+     "AI",
+     "PDF",
+     "ZIP"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character/file/20250217.zip",
+    "bytes": 19819171,
+    "filename": "20250217.zip",
+    "label": "소방청 캐릭터 일구",
+    "inner": [
+     "AI",
+     "PDF"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character/file/20251202_2.zip",
+    "bytes": 285855914,
+    "filename": "20251202_2.zip",
+    "label": "소방청 캐릭터 영웅이",
+    "inner": [
+     "AI",
+     "PDF",
+     "PNG",
+     "JPG",
+     "ZIP"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character/file/20251202_1.zip",
+    "bytes": 55794197,
+    "filename": "20251202_1.zip",
+    "label": "소방청 캐릭터 일구",
+    "inner": [
+     "AI",
+     "PDF",
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q8684": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seoul.go.kr/upload/seoul/symbol/Haechi_AI_v1.1.zip",
+    "bytes": 620998228,
+    "filename": "Haechi_AI_v1.1.zip",
+    "label": "해치 일러스트 (2D 3D) 받습니다",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q16520": [
+   {
+    "format": "ZIP",
+    "url": "https://www.busan.go.kr/PageDownload.do?savename=bubi.zip",
+    "filename": "bubi.zip",
+    "label": "마스코트"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.busan.go.kr/PageDownload.do?savename=pr_character.zip",
+    "filename": "pr_character.zip",
+    "label": "마스코트 응용동작"
+   }
+  ],
+  "mc-q20934": [
+   {
+    "format": "PDF",
+    "url": "https://www.incheon.go.kr/comm/getFile?srvcId=MEDIA&upperNo=100138&fileTy=MEDIA&fileNo=1",
+    "filename": "인천시_캐릭터_디자인가이드라인.pdf",
+    "label": "인천 캐릭터 가이드북"
+   }
+  ],
+  "mc-q50348": [
+   {
+    "format": "AI",
+    "url": "https://www.gangdong.go.kr/web/newportal/file/download/uu/2cb625d9862e4ec58a1a59f1b5f60123",
+    "filename": "1-1. 강동하다.ai",
+    "label": "움스프렌즈 (강동하다) 캐릭터"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.gangdong.go.kr/web/newportal/file/download/uu/408d1a09cb72493c99a2b9f38b7a732b",
+    "filename": "2-1. 환영인사.ai",
+    "label": "움스프렌즈 (환영인사) 캐릭터"
+   }
+  ],
+  "mc-q50203": [
+   {
+    "format": "PDF",
+    "url": "https://www.gp.go.kr/site/portal/download/2026/cts2421_file01_2603.pdf",
+    "bytes": 10960607,
+    "filename": "cts2421_file01_2603.pdf",
+    "label": "갓평이 송송이 캐릭터 매뉴얼"
+   }
+  ],
+  "mc-q50192": [
+   {
+    "format": "PDF",
+    "url": "https://www.gangseo.seoul.kr/comm/getFile?srvcId=MEDIA&upperNo=7&fileTy=MEDIA&fileNo=VevYBmOpHGk2RoVnk6iVUg%3d%3d",
+    "filename": "강서구 새로미 캐릭터 개발 매뉴얼.pdf.pdf",
+    "label": "캐릭터 메뉴얼 가이드북"
+   }
+  ],
+  "mc-q42066": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gm.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=137&resrceVer=1&fileSn=1",
+    "bytes": 9378361,
+    "filename": "02 chr.zip",
+    "label": "광명시 캐릭터 ▶",
+    "inner": [
+     "EPS",
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50355": [
+   {
+    "format": "PDF",
+    "url": "https://www.gwangjin.go.kr/portal/cmmn/file/fileDown.do?atchFileId=f4b42e992b6e9cd69df3cd21cbfe40ae2eebd6dae476aa26058a373777837744&fileSn=2",
+    "bytes": 17364662,
+    "filename": "2021광이진이매뉴얼.pdf",
+    "label": "캐릭터 매뉴얼 가이드북"
+   }
+  ],
+  "mc-q50353": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gwanak.go.kr/images/gwanak/m5/culture/event/gweastar_character_img.zip",
+    "bytes": 2265248,
+    "filename": "gweastar_character_img.zip",
+    "label": "이미지",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gwanak.go.kr/images/gwanak/m5/culture/event/gweastar_character_ai.zip",
+    "bytes": 7985291,
+    "filename": "gweastar_character_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q42082": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gimhae.go.kr/_res/portal/data/zip/p01047_data1_2025.zip",
+    "bytes": 670411,
+    "filename": "p01047_data1_2025.zip",
+    "label": "토더기 사용 설명서"
+   }
+  ],
+  "mc-q42080": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gimpo.go.kr/site/portal/download/cts1235_file00.zip",
+    "bytes": 6375634,
+    "filename": "cts1235_file00.zip",
+    "label": "캐릭터 매뉴얼",
+    "inner": [
+     "PDF"
+    ]
+   }
+  ],
+  "mc-q42087": [
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_04_ai.zip",
+    "bytes": 13203405,
+    "filename": "character_04_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_04_jpg.zip",
+    "bytes": 1479304,
+    "filename": "character_04_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_01_ai.zip",
+    "bytes": 1212746,
+    "filename": "character_01_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_01_jpg.zip",
+    "bytes": 803648,
+    "filename": "character_01_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_02_ai.zip",
+    "bytes": 743466,
+    "filename": "character_02_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_02_jpg.zip",
+    "bytes": 2867360,
+    "filename": "character_02_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_03_ai.zip",
+    "bytes": 91039,
+    "filename": "character_03_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.namwon.go.kr/resource/www/files/sub05/character_03_jpg.zip",
+    "bytes": 1412436,
+    "filename": "character_03_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50367": [
+   {
+    "format": "AI",
+    "url": "https://www.namdong.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=348&fileno=1",
+    "bytes": 1388533,
+    "filename": "새랑이와_게랑이.ai",
+    "label": "(캐릭터)"
+   }
+  ],
+  "mc-q42084": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nyj.go.kr/downloadContentsFile.do?key=2527&fileNo=737",
+    "bytes": 36353427,
+    "filename": "홈피게시（정약용캐릭터）.zip",
+    "label": "정약용 캐릭터 전체"
+   }
+  ],
+  "mc-q42089": [
+   {
+    "format": "AI",
+    "url": "https://www.dangjin.go.kr/withrun/FileDownload.do?fileName=DangjnCity_Character.ai&code=download/sub04/",
+    "bytes": 1046310,
+    "filename": "DangjnCity_Character.ai"
+   }
+  ],
+  "mc-q50371": [
+   {
+    "format": "ZIP",
+    "url": "https://www.daedeok.go.kr/document/dpt/dpt01/duck.zip",
+    "bytes": 721973,
+    "filename": "duck.zip",
+    "label": "캐릭터 활용을 위한 디자인 덕구-더기더기모음",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50220": [
+   {
+    "format": "AI",
+    "url": "https://www.danyang.go.kr/File/Download/dee375218e30a370b28da1b7ab9513fa",
+    "bytes": 445618,
+    "filename": "온달장군평강공주.ai",
+    "label": "캐릭터(온달장군과평강공주)"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.danyang.go.kr/File/Download/e58c6a36399eea5f2cc51198a1d7c41c",
+    "bytes": 268178,
+    "filename": "다소미 기본형.ai",
+    "label": "캐릭터(용감한 쏘가리 [다소미])"
+   }
+  ],
+  "mc-q50375": [
+   {
+    "format": "ZIP",
+    "url": "https://www.donggu.kr/download.es?filename=1497414824705.zip&filenameOrg=%EC%BA%90%EB%A6%AD%ED%84%B0%EB%B0%8F%EC%8B%AC%EB%B3%BC.zip&f_path=board&bid=ATT&type=board&list_no=10376&seq=1",
+    "bytes": 551944,
+    "filename": "캐릭터및심볼.zip",
+    "label": "캐릭터 기본형",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50243": [
+   {
+    "format": "ZIP",
+    "url": "https://www.boseong.go.kr/contents/18947/sy_2.zip",
+    "bytes": 26798,
+    "filename": "sy_2.zip",
+    "label": "마스코트",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50241": [
+   {
+    "format": "ZIP",
+    "url": "https://www.muan.go.kr/contents/27267/character_muani_191217.zip",
+    "bytes": 7074502,
+    "filename": "character_muani_191217.zip",
+    "label": "무안군 마스코트",
+    "inner": [
+     "AI",
+     "PDF",
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.muan.go.kr/contents/27267/character_muani_191217.zip",
+    "bytes": 7074502,
+    "filename": "character_muani_191217.zip",
+    "label": "무안군 마스코트",
+    "inner": [
+     "AI",
+     "PDF",
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q42100": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/img/sub/intro/character2019_ai.zip",
+    "bytes": 14274617,
+    "filename": "character2019_ai.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/img/sub/intro/character2019_jpg.zip",
+    "bytes": 1395747,
+    "filename": "character2019_jpg.zip",
+    "label": "캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c1.zip",
+    "bytes": 162598,
+    "filename": "character2019_c1.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c2.zip",
+    "bytes": 149899,
+    "filename": "character2019_c2.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c3.zip",
+    "bytes": 152693,
+    "filename": "character2019_c3.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c4.zip",
+    "bytes": 152719,
+    "filename": "character2019_c4.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c5.zip",
+    "bytes": 173442,
+    "filename": "character2019_c5.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c6.zip",
+    "bytes": 160708,
+    "filename": "character2019_c6.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c7.zip",
+    "bytes": 129207,
+    "filename": "character2019_c7.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/data/zip/character2019_c8.zip",
+    "bytes": 165779,
+    "filename": "character2019_c8.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/img/sub/intro/character2020_ai.zip",
+    "bytes": 17710356,
+    "filename": "character2020_ai.zip",
+    "label": "이모티콘",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sacheon.go.kr/portal/img/sub/intro/character2020_jpg.zip",
+    "bytes": 16832226,
+    "filename": "character2020_jpg.zip",
+    "label": "이모티콘",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50403": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seogu.gwangju.kr/boardDownload.es?bid=ATT&list_no=35474&seq=1",
+    "bytes": 138252,
+    "filename": "ch2.zip",
+    "label": "해오리",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.seogu.gwangju.kr/boardDownload.es?bid=ATT&list_no=35475&seq=1",
+    "bytes": 1186670,
+    "filename": "mascot.zip",
+    "label": "해온이",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50400": [
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_jpg.zip",
+    "bytes": 92405,
+    "filename": "gowooni_jpg.zip",
+    "label": "DOWN 캐릭터 기본형",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_ai.zip",
+    "bytes": 2469982,
+    "filename": "gowooni_ai.zip",
+    "label": "DOWN 캐릭터 기본형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_logo_jpg.zip",
+    "bytes": 131358,
+    "filename": "gowooni_logo_jpg.zip",
+    "label": "DOWN 캐릭터 로고",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_logo_ai.zip",
+    "bytes": 2555985,
+    "filename": "gowooni_logo_ai.zip",
+    "label": "DOWN 캐릭터 로고",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_all.zip",
+    "bytes": 3929878,
+    "filename": "gowooni_all.zip",
+    "label": "DOWN 로고 시그니쳐 슬로건 캐릭터 조합형",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.saha.go.kr/portal/Downfiles/gowooni_all_ai.zip",
+    "bytes": 37494791,
+    "filename": "gowooni_all_ai.zip",
+    "label": "DOWN 로고 시그니쳐 슬로건 캐릭터 조합형",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q42109": [
+   {
+    "format": "PDF",
+    "url": "https://www.sokcho.go.kr/bo/egf/bp/content/file/101/download",
+    "filename": "캐릭터디자인가이드.pdf",
+    "label": "캐릭터 디자인 가이드"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sokcho.go.kr/page/portal/download/sokchocity/character_AI.zip",
+    "bytes": 331285210,
+    "filename": "character_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50415": [
+   {
+    "format": "AI",
+    "url": "https://www.songpa.go.kr/common/downloadAttch2.jsp?saveFile=/bbs/369/2023/01/02/d1e7971b-bc83-4c82-b153-06df2d3ed1c1172899EGE8CB2C47.ai&downName=%ed%95%98%ed%95%98%ed%98%b8%ed%98%b8+%ec%ba%90%eb%a6%ad%ed%84%b0.ai",
+    "bytes": 79845,
+    "filename": "하하호호 캐릭터.ai",
+    "label": "송파구청 캐릭터"
+   }
+  ],
+  "mc-q50251": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sunchang.go.kr/resource/www/download/character.zip",
+    "filename": "character.zip",
+    "inner": [
+     "EPS"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sunchang.go.kr/resource/www/download/character02.zip",
+    "filename": "character02.zip",
+    "inner": [
+     "AI",
+     "PDF",
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50255": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yp21.go.kr/downloadContentsFile.do?key=1847&fileNo=594",
+    "bytes": 14532758,
+    "filename": "yp_character_jpg.zip",
+    "label": "물사랑이 행복이 캐릭터 )",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.yp21.go.kr/site/www/download/cst1847_char_02_gl.pdf",
+    "bytes": 1698662,
+    "filename": "cst1847_char_02_gl.pdf",
+    "label": "양춘이 캐릭터 디자인 가이드라인"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.yp21.go.kr/site/www/download/cst1847_char_02_ai.ai",
+    "bytes": 2830429,
+    "filename": "cst1847_char_02_ai.ai",
+    "label": "양춘이 캐릭터 )"
+   }
+  ],
+  "mc-q42124": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yangju.go.kr/www/downloadContentsFile.do?fileNm=cts2704_file.zip",
+    "bytes": 3577199,
+    "filename": "cts2704_file.zip",
+    "label": "양주시청 별산 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50261": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yd21.go.kr/_prog/download/?file_id=z1y3p9ui188r80hwtnqdxbag26nzdc",
+    "bytes": 1060224,
+    "filename": "영동_캐릭터.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI",
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q42128": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yc.go.kr/portal/img/sub04/character10_down.zip",
+    "bytes": 431735,
+    "filename": "character10_down.zip",
+    "label": "별의 도시 영천 캐릭터 별이와 빛이",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yc.go.kr/portal/img/sub04/character09_down.zip",
+    "bytes": 136505,
+    "filename": "character09_down.zip",
+    "label": "한방캐릭터 한이와 약이 리뉴얼",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q42112": [
+   {
+    "format": "ZIP",
+    "url": "https://www.suncheon.go.kr/kr/img/contents/info/mascot_guide.zip",
+    "bytes": 2028859,
+    "filename": "mascot_guide.zip",
+    "label": "(사용지침) 을 합니다",
+    "inner": [
+     "PDF"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.suncheon.go.kr/kr/img/contents/info/mascot_jpg.zip",
+    "bytes": 968640,
+    "filename": "mascot_jpg.zip",
+    "label": "을 합니다",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.suncheon.go.kr/kr/img/contents/info/mascot_ai.zip",
+    "bytes": 2935386,
+    "filename": "mascot_ai.zip",
+    "label": "을 합니다",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q42141": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jeongeup.go.kr/images/01_potal/down/character.zip",
+    "bytes": 1190539,
+    "filename": "character.zip",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q42140": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jeonju.go.kr/resource/district/file/character.zip",
+    "bytes": 141146,
+    "filename": "character.zip",
+    "label": "캐릭터"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jeonju.go.kr/resource/district/file/singi.zip",
+    "bytes": 400626,
+    "filename": "singi.zip",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q50328": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cng.go.kr/_res/portal/data/zip/cn_character_jpg2022.zip",
+    "bytes": 646589,
+    "filename": "cn_character_jpg2022.zip",
+    "label": "캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cng.go.kr/_res/portal/data/zip/cn_character_ai2022.zip",
+    "bytes": 8375430,
+    "filename": "cn_character_ai2022.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cng.go.kr/_res/portal/data/zip/cn_upo_jpg202209.zip",
+    "bytes": 22123960,
+    "filename": "cn_upo_jpg202209.zip",
+    "label": "캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cng.go.kr/_res/portal/data/zip/cn_upo_ai202209.zip",
+    "bytes": 65072746,
+    "filename": "cn_upo_ai202209.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q42155": [
+   {
+    "format": "ZIP",
+    "url": "https://www.pocheon.go.kr/downloadContentsFile.do?key=3822&fileNo=167",
+    "bytes": 623026,
+    "filename": "OhsungAndhanum_ai.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.pocheon.go.kr/downloadContentsFile.do?key=3822&fileNo=168",
+    "bytes": 515355,
+    "filename": "OhsungAndhanum_png.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.pcs21.net/downloadContentsFile.do?key=3822&fileNo=167",
+    "bytes": 623026,
+    "filename": "OhsungAndhanum_ai.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.pcs21.net/downloadContentsFile.do?key=3822&fileNo=168",
+    "bytes": 515355,
+    "filename": "OhsungAndhanum_png.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q243327": [
+   {
+    "format": "ZIP",
+    "url": "https://www.changwon.go.kr/cwportal/_res/cwportal/data/character_2022/character_png.zip",
+    "bytes": 1583006,
+    "filename": "character_png.zip",
+    "label": "‘피우미’ 활용형 이미지 모음 창원시 캐릭터…",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.changwon.go.kr/cwportal/_res/cwportal/data/character_2022/character_AI.zip",
+    "bytes": 4461928,
+    "filename": "character_AI.zip",
+    "label": "‘피우미’ 활용형 이미지 모음 창원특례시 명칭결합…",
+    "inner": [
+     "AI",
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q50345": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hwasun.go.kr/fileDownload.do?filename=hwasun_mascot.zip&f_path=/html/download/&pathType=A",
+    "filename": "hwasun_mascot.zip",
+    "label": "화순마스코트"
+   }
+  ],
+  "mc-q7451674": [
+   {
+    "format": "PDF",
+    "url": "https://www.sen.go.kr/resources/www/data/character_manual.pdf",
+    "bytes": 5788689,
+    "filename": "character_manual.pdf",
+    "label": "바로보기"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.sen.go.kr/resources/www/data/character_design.ai",
+    "bytes": 9867842,
+    "filename": "character_design.ai"
+   }
+  ],
+  "mc-q11250418": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_pdf.zip",
+    "bytes": 1937975,
+    "filename": "character_pdf.zip",
+    "label": "캐릭터 가이드",
+    "inner": [
+     "PDF"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_ai.zip",
+    "bytes": 3591342,
+    "filename": "character_ai.zip",
+    "label": "캐릭터 가이드",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_png.zip",
+    "bytes": 5729477,
+    "filename": "character_png.zip",
+    "label": "캐릭터 이미지",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q12623602": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kamco.or.kr/portal/Downfiles/emo/emot6_new_002.zip",
+    "bytes": 150892,
+    "filename": "emot6_new_002.zip",
+    "label": "이미지 파란배경의 마스코트 패턴 이미지",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kamco.or.kr/portal/Downfiles/emo/emot6_new_003.zip",
+    "bytes": 133869,
+    "filename": "emot6_new_003.zip",
+    "label": "이미지 빨간배경의 마스코트 패턴 이미지",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kamco.or.kr/portal/Downfiles/emo/emot6_new_004.zip",
+    "bytes": 171447,
+    "filename": "emot6_new_004.zip",
+    "label": "이미지 회색배경의 마스코트 패턴 이미지",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q12622975": [
+   {
+    "format": "AI",
+    "url": "https://www.ekr.or.kr/down/krc_character.ai",
+    "bytes": 1120822,
+    "filename": "krc_character.ai"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.ekr.or.kr/down/krc_character_usage.ai",
+    "bytes": 9472883,
+    "filename": "krc_character_usage.ai"
+   }
+  ],
+  "mc-q16262625": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hrdkorea.or.kr/design3/image/character/Character_JPG.zip",
+    "bytes": 82922187,
+    "filename": "Character_JPG.zip",
+    "label": "이루미와 해냄이",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q12623622": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kead.or.kr/cmm/fms/downloadDirect.do?key=E6168A5AEF6AC24AD16C",
+    "bytes": 8972304,
+    "filename": "한국장애인고용공단_캐릭터.zip",
+    "label": "캐릭터 매뉴얼",
+    "inner": [
+     "AI",
+     "PDF"
+    ]
+   }
+  ],
+  "mc-q16172629": [
+   {
+    "format": "ZIP",
+    "url": "https://www.komsa.or.kr/thumbnail/dwld/kor/sub010202_character.zip",
+    "bytes": 1937202,
+    "filename": "sub010202_character.zip",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q19162231": [
+   {
+    "format": "ZIP",
+    "url": "https://www.lx.or.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000000041323S5nux&fileSn=0",
+    "filename": "2D랜디.zip",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q11284963": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kice.re.kr/boardCnts/fileDown.do?fileSeq=2ca3805d66af8f38d3d1c98e3bc3f45b",
+    "filename": "kice_캐릭터.zip",
+    "label": "전체 캐릭터 전체 하기"
+   }
+  ],
+  "mc-q12623242": [
+   {
+    "format": "ZIP",
+    "url": "https://www.keit.re.kr/main/images/korean/sub/keit_character_png.zip",
+    "bytes": 840259,
+    "filename": "keit_character_png.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q12622844": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kofair.or.kr/static/file/character.zip",
+    "bytes": 220374,
+    "filename": "character.zip",
+    "label": "Character",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q16726591": [
+   {
+    "format": "AI",
+    "url": "https://www.koiha.or.kr/web/download/media/KOIHA_character.ai",
+    "bytes": 1665900,
+    "filename": "KOIHA_character.ai",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q16167803": [
+   {
+    "format": "ZIP",
+    "url": "https://www.fipa.or.kr/upload/cntnts/Fiparang.zip",
+    "bytes": 31365,
+    "filename": "Fiparang.zip",
+    "label": "FiPA 캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q487841": [
+   {
+    "format": "PDF",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/KNU_Character(Mark)_Manual.pdf",
+    "bytes": 4074949,
+    "filename": "KNU_Character(Mark)_Manual.pdf",
+    "label": "캐릭터마크 NEW 캐릭터 관리지침 ( )경북대학교…"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/Character_Manual.pdf",
+    "bytes": 19456124,
+    "filename": "Character_Manual.pdf",
+    "label": "기존 캐릭터 관리지침 ( )경북대학교 기존 캐릭터…"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/ch_mark_color.zip",
+    "bytes": 31654,
+    "filename": "ch_mark_color.zip",
+    "label": "경북대학교 캐릭터마크 색상별",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/ch_mark_color_ai.zip",
+    "bytes": 1373286,
+    "filename": "ch_mark_color_ai.zip",
+    "label": "경북대학교 캐릭터마크 색상별",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/ch_mark_app_png.zip",
+    "bytes": 111988,
+    "filename": "ch_mark_app_png.zip",
+    "label": "경북대학교 캐릭터마크 응용형",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/ch_mark_app_ai.zip",
+    "bytes": 3924252,
+    "filename": "ch_mark_app_ai.zip",
+    "label": "경북대학교 캐릭터마크 응용형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/new_ch_png.zip",
+    "bytes": 24499,
+    "filename": "new_ch_png.zip",
+    "label": "new 캐릭터 기본형",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/new_ch_ai.zip",
+    "bytes": 1677513,
+    "filename": "new_ch_ai.zip",
+    "label": "new 캐릭터 기본형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/new_ch_app_png.zip",
+    "bytes": 345429,
+    "filename": "new_ch_app_png.zip",
+    "label": "경북대학교 응용형 캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knu.ac.kr/wbbs/wbbs/download/new_ch_app_ai.zip",
+    "bytes": 8854479,
+    "filename": "new_ch_app_ai.zip",
+    "label": "경북대학교 응용형 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q496536": [
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_01_AI.zip",
+    "bytes": 1248048,
+    "filename": "Character_01_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_01_JPG.zip",
+    "bytes": 124319,
+    "filename": "Character_01_JPG.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_01_PNG.zip",
+    "bytes": 39550,
+    "filename": "Character_01_PNG.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_02_AI.zip",
+    "bytes": 1243681,
+    "filename": "Character_02_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_02_JPG.zip",
+    "bytes": 83617,
+    "filename": "Character_02_JPG.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_02_PNG.zip",
+    "bytes": 34790,
+    "filename": "Character_02_PNG.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_03_AI.zip",
+    "bytes": 381444,
+    "filename": "Character_03_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_03_JPG.zip",
+    "bytes": 644531,
+    "filename": "Character_03_JPG.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_04_AI.zip",
+    "bytes": 2517373,
+    "filename": "Character_04_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_04_JPG.zip",
+    "bytes": 204735,
+    "filename": "Character_04_JPG.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.khu.ac.kr/resources/user/download/Character_04_PNG.zip",
+    "bytes": 68454,
+    "filename": "Character_04_PNG.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q139779": [
+   {
+    "format": "PDF",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=KYUYOU_manual.pdf&code=/downfile/kor/sub01/",
+    "bytes": 1399923,
+    "filename": "KYUYOU_manual.pdf",
+    "label": "건양대학교 캐릭터 가이드북(뀨 TMI)"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_ai(2023).zip&code=/downfile/kor/sub01/",
+    "bytes": 2335001,
+    "filename": "Character_ai(2023).zip",
+    "label": "(신규)",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_png(2023).zip&code=/downfile/kor/sub01/",
+    "bytes": 3919356,
+    "filename": "Character_png(2023).zip",
+    "label": "(신규) 투명배경",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_jpg(2023).zip&code=/downfile/kor/sub01/",
+    "bytes": 7159204,
+    "filename": "Character_jpg(2023).zip",
+    "label": "(신규) 흰배경",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_ai.zip&code=/downfile/kor/sub01/",
+    "bytes": 1520064,
+    "filename": "Character_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_png.zip&code=/downfile/kor/sub01/",
+    "bytes": 1069820,
+    "filename": "Character_png.zip",
+    "label": "투명배경",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.konyang.ac.kr/gonet/FileDownload.do?fileName=Character_jpg.zip&code=/downfile/kor/sub01/",
+    "bytes": 1872868,
+    "filename": "Character_jpg.zip",
+    "label": "흰배경",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q482688": [
+   {
+    "format": "AI",
+    "url": "https://www.kunsan.ac.kr:443/board/download.kunsan?boardId=CNT_ATCHDOWN&dataSid=1329101&fileSid=121748",
+    "bytes": 21408923,
+    "filename": "2023군산대캐릭터-메뉴얼-최종2.ai",
+    "label": "캐릭터"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.kunsan.ac.kr/board/download.kunsan?boardId=CNT_ATCHDOWN&dataSid=1329101&fileSid=121748",
+    "bytes": 21408923,
+    "filename": "2023군산대캐릭터-메뉴얼-최종2.ai",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q39997": [
+   {
+    "format": "PDF",
+    "url": "https://www.korea.ac.kr/sites/ko/files/kubuddy_guide.pdf",
+    "bytes": 819054,
+    "filename": "kubuddy_guide.pdf",
+    "label": "고려대학교 KU BUDDY 캐릭터 가이드"
+   }
+  ],
+  "mc-q489708": [
+   {
+    "format": "ZIP",
+    "url": "https://www.daegu.ac.kr/resources/UI/2010_charactor_jpg.zip",
+    "bytes": 579048,
+    "filename": "2010_charactor_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.daegu.ac.kr/resources/UI/2010_charactor_ai.zip",
+    "bytes": 182907,
+    "filename": "2010_charactor_ai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.daegu.ac.kr/resources/UI/2010_charactor_png.zip",
+    "bytes": 285990,
+    "filename": "2010_charactor_png.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q624575": [
+   {
+    "format": "PDF",
+    "url": "https://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/DSWU_character_guide.pdf",
+    "bytes": 18556679,
+    "filename": "DSWU_character_guide.pdf",
+    "label": "덕새 및 복단이 기본 매뉴얼"
+   }
+  ],
+  "mc-q625961": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_01_ai.zip",
+    "bytes": 1346138,
+    "filename": "character_basic_01_ai.zip",
+    "label": "테두리가 있는 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_01_jpg.zip",
+    "bytes": 2303821,
+    "filename": "character_basic_01_jpg.zip",
+    "label": "테두리가 있는 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_01_png.zip",
+    "bytes": 424304,
+    "filename": "character_basic_01_png.zip",
+    "label": "테두리가 있는 캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_02_ai.zip",
+    "bytes": 1298779,
+    "filename": "character_basic_02_ai.zip",
+    "label": "테두리가 없는 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_02_png.zip",
+    "bytes": 289858,
+    "filename": "character_basic_02_png.zip",
+    "label": "테두리가 없는 캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_03_ai.zip",
+    "bytes": 25727315,
+    "filename": "character_basic_03_ai.zip",
+    "label": "입체형 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_03_jpg.zip",
+    "bytes": 1434741,
+    "filename": "character_basic_03_jpg.zip",
+    "label": "입체형 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_basic_03_png.zip",
+    "bytes": 1354033,
+    "filename": "character_basic_03_png.zip",
+    "label": "입체형 캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_application_01_ai.zip",
+    "bytes": 4086402,
+    "filename": "character_application_01_ai.zip",
+    "label": "전체 디쿠의 감정 표현 버전",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_application_01_jpg.zip",
+    "bytes": 8945394,
+    "filename": "character_application_01_jpg.zip",
+    "label": "전체 디쿠의 감정 표현 버전",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_application_01_png.zip",
+    "bytes": 1865255,
+    "filename": "character_application_01_png.zip",
+    "label": "전체 디쿠의 감정 표현 버전",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/character_application_02_ai.zip",
+    "bytes": 3064917,
+    "filename": "character_application_02_ai.zip",
+    "label": "전체 디쿠의 행복한 대학 생활 버전",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q623798": [
+   {
+    "format": "AI",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/deu-character.ai",
+    "bytes": 4843042,
+    "filename": "deu-character.ai"
+   }
+  ],
+  "mc-q624993": [
+   {
+    "format": "ZIP",
+    "url": "https://www.syu.ac.kr/wp-content/uploads/2023/03/character_AI.zip",
+    "bytes": 531796,
+    "filename": "character_AI.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.syu.ac.kr/wp-content/uploads/2023/03/character_JPG.zip",
+    "bytes": 403153,
+    "filename": "character_JPG.zip",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q482678": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seoultech.ac.kr/storage/www/intro/symbol/logo/character/character.zip",
+    "bytes": 3858742,
+    "filename": "character.zip"
+   }
+  ],
+  "mc-q374457": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sogang.ac.kr/file-fe/character_manual.zip",
+    "bytes": 2002533,
+    "filename": "character_manual.zip",
+    "label": "캐릭터 매뉴얼 보기",
+    "inner": [
+     "AI",
+     "PDF"
+    ]
+   }
+  ],
+  "mc-q484230": [
+   {
+    "format": "AI",
+    "url": "https://www.swu.ac.kr/sites/swu/files/06Charater.ai.ai",
+    "bytes": 256070,
+    "filename": "06Charater.ai.ai",
+    "label": "일러스트"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.swu.ac.kr/sites/swu/files/07UseOfCharater.ai.ai",
+    "bytes": 401322,
+    "filename": "07UseOfCharater.ai.ai",
+    "label": "일러스트"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.swu.ac.kr/sites/swu/files/07UseOfCharater.zip",
+    "bytes": 3510275,
+    "filename": "07UseOfCharater.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "AI",
+    "url": "https://www.swu.ac.kr/sites/swu/files/08CharaterApplication.ai.ai",
+    "bytes": 640089,
+    "filename": "08CharaterApplication.ai.ai",
+    "label": "일러스트"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.swu.ac.kr/sites/swu/files/08CharaterApplication.zip",
+    "bytes": 3127957,
+    "filename": "08CharaterApplication.zip",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q3242069": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seowon.ac.kr/sites/seowon/file/about/Character01.zip",
+    "bytes": 344675,
+    "filename": "Character01.zip",
+    "label": "을 띄웁니다",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.seowon.ac.kr/sites/seowon/file/about/Character02.zip",
+    "bytes": 798597,
+    "filename": "Character02.zip",
+    "label": "을 띄웁니다",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.seowon.ac.kr/sites/seowon/file/about/Character03.zip",
+    "bytes": 256798,
+    "filename": "Character03.zip",
+    "label": "을 띄웁니다",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q482648": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/charactor_03_basis.zip",
+    "bytes": 933195,
+    "filename": "charactor_03_basis.zip",
+    "label": "기본형 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/charactor_04_apply.zip",
+    "bytes": 35144213,
+    "filename": "charactor_04_apply.zip",
+    "label": "학과 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q483656": [
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2024/05/1.%EC%9B%90%EA%B4%91%EB%8C%80-%EC%BA%90%EB%A6%AD%ED%84%B0-%EA%B8%B0%EB%B3%B8%ED%98%95.ai.zip",
+    "bytes": 454006,
+    "filename": "1.원광대-캐릭터-기본형.ai.zip",
+    "label": "캐릭터 기본형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2024/05/2.%EC%9B%90%EA%B4%91%EB%8C%80-%EC%BA%90%EB%A6%AD%ED%84%B0-%EA%B8%B0%EB%B3%B8%ED%98%95-PNG.zip",
+    "bytes": 229310,
+    "filename": "2.원광대-캐릭터-기본형-PNG.zip",
+    "label": "캐릭터 기본형",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2024/05/5.%EC%9B%90%EA%B4%91%EB%8C%80-%EC%A0%84%EC%B2%B4-%EC%BA%90%EB%A6%AD%ED%84%B0-%EC%9D%91%EC%9A%A9%ED%98%95.ai.zip",
+    "bytes": 1651602,
+    "filename": "5.원광대-전체-캐릭터-응용형.ai.zip",
+    "label": "전체 캐릭터 응용형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2024/05/3.%EC%9B%90%EA%B4%91%EB%8C%80-%EB%8C%80%ED%95%99%ED%98%81%EC%8B%A0%EC%82%AC%EC%97%85-%EC%BA%90%EB%A6%AD%ED%84%B0-%EA%B8%B0%EB%B3%B8%ED%98%95.ai.zip",
+    "bytes": 458336,
+    "filename": "3.원광대-대학혁신사업-캐릭터-기본형.ai.zip",
+    "label": "대학혁신사업 캐릭터 기본형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2024/05/4.%EC%9B%90%EA%B4%91%EB%8C%80-%EB%8C%80%ED%95%99%ED%98%81%EC%8B%A0%EC%82%AC%EC%97%85-%EC%BA%90%EB%A6%AD%ED%84%B0-%EA%B8%B0%EB%B3%B8%ED%98%95-PNG.zip",
+    "bytes": 122599,
+    "filename": "4.원광대-대학혁신사업-캐릭터-기본형-PNG.zip",
+    "label": "대학혁신사업 캐릭터 기본형",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q487855": [
+   {
+    "format": "PDF",
+    "url": "https://www.jejunu.ac.kr/cs/download.htm?act=download&seq=240073&no=1",
+    "bytes": 3642019,
+    "filename": "240710_제주대학교_Character Guide.pdf",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q3271898": [
+   {
+    "format": "AI",
+    "url": "https://www.cs.ac.kr/assets/images/character/character_emotion_ai.ai",
+    "bytes": 2160429,
+    "filename": "character_emotion_ai.ai"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/character/character_emotion_png.zip",
+    "bytes": 204328,
+    "filename": "character_emotion_png.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "AI",
+    "url": "https://www.cs.ac.kr/assets/images/character/character_dept_ai.ai",
+    "bytes": 5997787,
+    "filename": "character_dept_ai.ai"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/character/character_dept_png.zip",
+    "bytes": 214214,
+    "filename": "character_dept_png.zip",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.cs.ac.kr/assets/images/character/character_guide.pdf",
+    "bytes": 1289557,
+    "filename": "character_guide.pdf",
+    "label": "창신대학교 캐릭터 가이드"
+   }
+  ],
+  "mc-q208736": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hufs.ac.kr/sites/hufs/files/boo_png.zip",
+    "bytes": 678435,
+    "filename": "boo_png.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG",
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hufs.ac.kr/sites/hufs/files/boo_ai.zip",
+    "bytes": 2416386,
+    "filename": "boo_ai.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ]
+ }
+}

@@ -13,13 +13,9 @@ exports.build=function(){
  html=html.replace('</body>','<script src="/js/symbols.js?v=integrated1"></script><script src="/js/collections.js?v=1"></script></body>');
  fs.writeFileSync(db,html);
  fs.writeFileSync(path.join(root,'symbols.html'),'<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>특수기호 — 딩벳&특수 | LETSUM</title><link rel="canonical" href="https://letsum.app/dingbat/"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url=/dingbat/?view=symbols"></head><body><p><a href="/dingbat/?view=symbols">특수기호 통합 페이지로 이동</a></p><script>location.replace("/dingbat/?view=symbols"+location.hash)</script></body></html>');
- // The mascot menu is intentionally a clearly marked preparation page.
- let home=fs.readFileSync(path.join(root,'index.html'),'utf8');
- const head=home.match(/<head>[\s\S]*?<\/head>/)[0].replace('<head>','<head><base href="/">').replace(/<title>.*?<\/title>/,'<title>마스코트 준비 중 | LETSUM</title>').replace(/<link rel="canonical"[^>]*>/,'<link rel="canonical" href="https://letsum.app/mascots/">').replace('</head>','<meta name="robots" content="noindex,follow"></head>');
- fs.mkdirSync(path.join(root,'mascots'),{recursive:true});
- fs.writeFileSync(path.join(root,'mascots/index.html'),'<!doctype html><html lang="ko">'+head+'<body>'+home.match(/<header>[\s\S]*?<\/header>/)[0].replace(/<label class="hd-search">([\s\S]*?)<\/label>/,'<form class="hd-search" role="search" action="/index.html">$1</form>')+'<main class="wrap" style="padding-top:60px;padding-bottom:100px"><p>LETSUM · MASCOT</p><h1>마스코트</h1><p>공식 출처와 사용 조건을 확인하는 마스코트 모음을 준비하고 있습니다.</p><p>현재 공개된 자료는 없습니다. 먼저 로고모음에서 기관·기업의 공식 자료를 찾아보세요.</p><a class="tbtn" href="/logos/">로고모음 둘러보기 →</a></main>'+home.match(/<footer>[\s\S]*?<\/footer>/)[0]+'<script src="/js/common.js" data-base="/"></script><script src="/js/pv.js?v=2" defer></script></body></html>');
+ // /mascots/ is the mascot directory built by tools/build_mascots.mjs (run from build_pages.js after the logos).
  const files=fs.readdirSync(root).filter(n=>n.endsWith('.html')&&n!=='admin.html');
- for(const dir of ['font','topics','en','dingbat','mascots'])for(const name of fs.readdirSync(path.join(root,dir)))if(name.endsWith('.html'))files.push(dir+'/'+name);
+ for(const dir of ['font','topics','en','dingbat'])for(const name of fs.readdirSync(path.join(root,dir)))if(name.endsWith('.html'))files.push(dir+'/'+name);
  for(const name of files){const file=path.join(root,name);let s=fs.readFileSync(file,'utf8');
  const active=name==='index.html'?'/':name.startsWith('en/')?'/en/':name.startsWith('dingbat/')?'/dingbat/':name.startsWith('mascots/')?'/mascots/':name==='typing.html'?'/typing.html':null;
  s=s.replace(/<nav class="main">[\s\S]*?<\/nav>/,old=>'<nav class="main">'+links(active)+(old.match(/<button[^>]*id="projBtn"[\s\S]*?<\/button>/)?.[0]||'')+'</nav>');
