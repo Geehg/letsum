@@ -53,9 +53,19 @@ const scopedCss=css=>swap(css,/:root\{--paper:#f6f6f1;([\s\S]*?)--ink:#172126;([
 .logo-rights{max-width:1280px;margin:0 auto;padding:0 24px 8px;font-size:12px;color:var(--muted);line-height:1.7}
 .logo-rights a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.logo-app .header-inner{padding:16px 20px}.logo-app .primary-nav>a{padding:10px 16px;font-size:13px}.logo-app .page-container,.logo-rights{padding-left:20px;padding-right:20px}}`;
+// Detail-only data (source evidence, image credits, full colour specs) leaves the shared bootstrap and is attached to each detail page, so the list loads less.
+const credits={},colorsFull=colors,colorsLight={};
+for(const [id,t] of Object.entries(thumbnails)){const {source,license,author,page_url,...rest}=t;thumbnails[id]=rest;credits[id]={source,license,author,page_url};}
+for(const [id,c] of Object.entries(colorsFull)){const light={};for(const key of ['official','extracted'])if(c[key])light[key]=c[key].filter(x=>x.hex).slice(0,4).map(x=>({hex:x.hex}));colorsLight[id]=light;}
+const loadingCss=`.logo-js #app>.static-fallback{display:none}
+.logo-js #app:has(>.static-fallback){min-height:80vh;max-width:1280px;margin:0 auto;padding:40px 24px}
+.logo-js #app:has(>.static-fallback)::before{content:"";display:block;height:70vh;border-radius:14px;background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.55) 50%,transparent 100%) 0 0/40% 100% no-repeat,linear-gradient(#e7e4dc,#e7e4dc) 0 0/58% 64px no-repeat,linear-gradient(#ecE9e1,#ecE9e1) 0 96px/100% 72px no-repeat,repeating-linear-gradient(90deg,#ece9e1 0 calc(25% - 14px),transparent calc(25% - 14px) 25%) 0 200px/100% 220px no-repeat;animation:logo-shimmer 1.2s linear infinite}
+@keyframes logo-shimmer{to{background-position:250% 0,0 0,0 96px,0 200px}}
+@media(max-width:700px){.logo-js #app:has(>.static-fallback)::before{background:linear-gradient(#e7e4dc,#e7e4dc) 0 0/80% 48px no-repeat,linear-gradient(#ece9e1,#ece9e1) 0 80px/100% 60px no-repeat,repeating-linear-gradient(90deg,#ece9e1 0 calc(50% - 7px),transparent calc(50% - 7px) 50%) 0 170px/100% 200px no-repeat}}
+@media(prefers-reduced-motion:reduce){.logo-js #app:has(>.static-fallback)::before{animation:none}}`;
 for(const page of result.html_pages){
  if(page.route==='/review')continue;
- let html=await fs.readFile(path.join(project,'dist',page.file),'utf8');
+ let html=await fs.readFile(path.join(project,'dist',page.file),'utf8'),bootSrc='',appSrc='';
  html=html.replace(/(https:\/\/letsum.app\/logos\/brands\/[^\"]+\/)index.html/g,'$1');
  html=html.replace(/\s*<meta name="color-scheme" content="light">/,'');
  html=swap(html,/<style>([\s\S]*?)<\/style>/,(_,css)=>`${siteHead}\n<link rel="stylesheet" href="${asset(scopedCss(css),'css')}">`,'inline style');
@@ -63,8 +73,17 @@ for(const page of result.html_pages){
  html=swap(html,/\s*<a class="font-link"[\s\S]*?<\/a>/,'','font link');
  html=swap(html,'<header class="site-header">',siteHeader+'<div class="logo-app"><header class="site-header" aria-label="로고모음 메뉴">','logo header');
  html=swap(html,/<footer class="site-footer">[\s\S]*?<\/footer>/,'<p class="logo-rights">상표와 로고의 권리는 각 권리자에게 있습니다. 공식 페이지의 이용 조건을 확인해 주세요. · <a href="#/guide">정보 확인 기준</a> · <a href="/contact.html">링크 제보</a></p></div>'+siteFooter,'logo footer');
- html=html.replace(/<script>window.__LETSUM_BOOTSTRAP__ = ([\s\S]*?);<\/script>/,(_,json)=>{const data=JSON.parse(json),route=data.initialRoute;delete data.initialRoute;data.production=true;data.thumbnails=thumbnails;data.colors=colors;data.groups=groups;data.rank=rank;data.downloads=downloads;return `<script src="${asset('window.__LETSUM_BOOTSTRAP__='+JSON.stringify(data).replace(/</g,'\\u003c')+';','js')}"></script><script>window.__LETSUM_BOOTSTRAP__.initialRoute=${JSON.stringify(route)};</script>`});
- html=html.replace(/<script type="module">([\s\S]*?)<\/script>/,(_,js)=>`<script type="module" src="${asset(js,'js')}"></script>`);
+ html=html.replace(/<script>window.__LETSUM_BOOTSTRAP__ = ([\s\S]*?);<\/script>/,(_,json)=>{const data=JSON.parse(json),route=data.initialRoute;delete data.initialRoute;data.production=true;data.thumbnails=thumbnails;data.colors=colorsLight;const pageSources=data.sources;data.sources={...pageSources,sources:[]};data.groups=groups;data.rank=rank;data.downloads=downloads;const id=route.startsWith('/brand/')?route.slice(7):null,record=id&&data.catalog.records.find(r=>r.id===id);
+  const extra=record?{sources:pageSources.sources.filter(s=>record.source_ids.includes(s.id)),credit:credits[id]||null,colors:colorsFull[id]||null}:null;
+  const inline=`var B=window.__LETSUM_BOOTSTRAP__;B.initialRoute=${JSON.stringify(route)};`+(extra?`var X=${JSON.stringify(extra).replace(/</g,'\\u003c')};B.sources.sources=X.sources;if(X.credit&&B.thumbnails[${JSON.stringify(id)}])Object.assign(B.thumbnails[${JSON.stringify(id)}],X.credit);if(X.colors)B.colors[${JSON.stringify(id)}]=X.colors;`:'');
+  bootSrc=asset('window.__LETSUM_BOOTSTRAP__='+JSON.stringify(data).replace(/</g,'\\u003c')+';','js');
+  return `<script src="${bootSrc}"></script><script>${inline}</script>`});
+ html=html.replace(/<script type="module">([\s\S]*?)<\/script>/,(_,js)=>{appSrc=asset(js,'js');return `<script type="module" src="${appSrc}"></script>`;});
+ // While the app script loads, show a text-free skeleton instead of the no-JavaScript fallback list; the list returns if the app never starts.
+ html=swap(html,'</head>',`<script>document.documentElement.classList.add('logo-js')</script>\n<link rel="preload" href="${bootSrc}" as="script">\n<link rel="modulepreload" href="${appSrc}">\n<style>${loadingCss}</style>\n</head>`,'head end');
+ html=html.replace('</body>',`<script>setTimeout(function(){if(document.querySelector('#app>.static-fallback'))document.documentElement.classList.remove('logo-js')},10000)</script></body>`);
+ // The fallback (no JavaScript, search engines) keeps names and official links only — no machine-collected notes.
+ html=html.replace(/(<li><h2>[^<]*<\/h2>)<p>[^<]*<\/p>/g,'$1').replace(/<p>공식 페이지 본문을 확인한 초기 안내 데이터[^<]*<\/p>/,'').replace(/<p>공식 홈페이지(?:의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다| 정보입니다)[^<]*<\/p>/g,'');
  html=html.replace(/href="#\//g,'href="/logos/#/');
  html=html.replace('</body>','<script src="/js/common.js" data-base="/"></script><script src="/js/pv.js?v=2" defer></script></body>');
  const dest=path.join(out,page.file);await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,html);
