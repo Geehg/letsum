@@ -1,0 +1,3261 @@
+{
+ "note": "공식 CI 페이지의 로고 파일 링크 중 바로 내려받아지는 것(파일 서명으로 확인). tools/logo-survey/check_downloads.py가 생성.",
+ "checked_at": "2026-11-10",
+ "downloads": {
+  "kr-q11232933": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dapa.go.kr/dapa/files/05/ci_ai.zip",
+    "bytes": 5080533,
+    "filename": "ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dapa.go.kr/dapa/files/05/ci_png.zip",
+    "bytes": 41065,
+    "filename": "ci_png.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q11250418": [
+   {
+    "format": "ZIP",
+    "url": "http://www.kspo.or.kr/kspo/cmmn/file/fileDown.do?atchFileId=090b2d421a103feaeec18c05970d018ef57e1cf407ab5e4494ebe1e3877577ff&fileSn=1",
+    "bytes": 206448042,
+    "filename": "KSPO_CI_PDF.zip",
+    "contains": "PDF"
+   }
+  ],
+  "kr-q11286676": [
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hnsm_AI.zip",
+    "bytes": 193449,
+    "filename": "hnsm_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hnsm_JPG.zip",
+    "bytes": 6547,
+    "filename": "hnsm_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hnsn_AI.zip",
+    "bytes": 278739,
+    "filename": "hnsn_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hnsn1_JPG.zip",
+    "bytes": 18300,
+    "filename": "hnsn1_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hnsn2_JPG.zip",
+    "bytes": 34037,
+    "filename": "hnsn2_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hneb_AI.zip",
+    "bytes": 203836,
+    "filename": "hneb_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.honam.ac.kr/img/contents/A01/hneb_JPG.zip",
+    "bytes": 71529,
+    "filename": "hneb_JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q115648978": [
+   {
+    "format": "ZIP",
+    "url": "https://www.igbf.kr/gugak_web/img/common/igbf_ci.zip",
+    "bytes": 29217585,
+    "filename": "igbf_ci.zip"
+   }
+  ],
+  "kr-q11664005": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/ci/CI_basic_v2_new.zip",
+    "bytes": 613670,
+    "filename": "CI_basic_v2_new.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/bi/bi_basic_v2.zip",
+    "bytes": 423667,
+    "filename": "bi_basic_v2.zip"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.kocca.kr/about/ci/ci_guideBook_new.pdf",
+    "bytes": 922587,
+    "filename": "ci_guideBook_new.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/ci/kocca_ci_new_k_.zip",
+    "bytes": 144880,
+    "filename": "kocca_ci_new_k_.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/ci/kocca_ci_new_e.zip",
+    "bytes": 149685,
+    "filename": "kocca_ci_new_e.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/ci/kocca_ci_new_c.zip",
+    "bytes": 160249,
+    "filename": "kocca_ci_new_c.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/ci/kocca_ci_new_j.zip",
+    "bytes": 158561,
+    "filename": "kocca_ci_new_j.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kocca.kr/about/bi/kocca_bi_k_v2.zip",
+    "bytes": 130256,
+    "filename": "kocca_bi_k_v2.zip"
+   }
+  ],
+  "kr-q12582495": [
+   {
+    "format": "PNG",
+    "url": "https://www.lhca.or.kr/resources/eng/images/layout/logo-bk.png",
+    "bytes": 9408,
+    "filename": "logo-bk.png"
+   }
+  ],
+  "kr-q12582630": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mtu.ac.kr/mtu/file/mtu_ui.zip",
+    "bytes": 2373505,
+    "filename": "mtu_ui.zip"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.mtu.ac.kr/mtu/file/mtu_uibook.pdf",
+    "bytes": 6902480,
+    "filename": "mtu_uibook.pdf"
+   }
+  ],
+  "kr-q12583702": [
+   {
+    "format": "PDF",
+    "url": "https://www.gne.go.kr/component/resrce/file/ND_resrceFileDownload.do?dataSn=1021&chgCycl=1&fileSn=1",
+    "bytes": 953098,
+    "filename": "경상남도교육청 CI 규정집.pdf\""
+   }
+  ],
+  "kr-q12583724": [
+   {
+    "format": "PDF",
+    "url": "https://www.gbe.kr/main/cf/fileDownload.do?fileKey=e222516e166c749cc7c6222205dcf514&mi=17868",
+    "bytes": null,
+    "filename": "2021 정보공개 운영 매뉴얼.pdf"
+   }
+  ],
+  "kr-q12585886": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ipab.or.kr/resources/homepage/kor/_Date/PQA_logo_ai.zip",
+    "bytes": 1017380,
+    "filename": "PQA_logo_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ipab.or.kr/resources/homepage/kor/_Date/PQA_logo_jpg.zip",
+    "bytes": 408834,
+    "filename": "PQA_logo_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q12585892": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_01_jpg.zip",
+    "bytes": 59382,
+    "filename": "kings_ui_01_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_06_png.zip",
+    "bytes": 67503,
+    "filename": "kings_ui_06_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_01_ai.zip",
+    "bytes": 288403,
+    "filename": "kings_ui_01_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_01_gif.zip",
+    "bytes": 6594,
+    "filename": "kings_ui_01_gif.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_02_jpg.zip",
+    "bytes": 133568,
+    "filename": "kings_ui_02_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_02_png.zip",
+    "bytes": 131141,
+    "filename": "kings_ui_02_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_02_ai.zip",
+    "bytes": 310900,
+    "filename": "kings_ui_02_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kings.ac.kr/uploads/download/kings_ui_03_jpg.zip",
+    "bytes": 98976,
+    "filename": "kings_ui_03_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q12585920": [
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_ai_all.zip",
+    "bytes": 308667,
+    "filename": "ci_ai_all.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_jpg_all.zip",
+    "bytes": 500336,
+    "filename": "ci_jpg_all.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_5.zip",
+    "bytes": 80281,
+    "filename": "ci_5.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_41.zip",
+    "bytes": 196554,
+    "filename": "ci_41.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_2.zip",
+    "bytes": 82770,
+    "filename": "ci_2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_11.zip",
+    "bytes": 118670,
+    "filename": "ci_11.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_3.zip",
+    "bytes": 65545,
+    "filename": "ci_3.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krihs.re.kr/main/file/ci_21.zip",
+    "bytes": 117352,
+    "filename": "ci_21.zip"
+   }
+  ],
+  "kr-q12589840": [
+   {
+    "format": "AI",
+    "url": "https://sonosa.or.kr/usr/file/logo.ai",
+    "bytes": 205970,
+    "filename": "logo.ai"
+   }
+  ],
+  "kr-q12590543": [
+   {
+    "format": "AI",
+    "url": "http://www.epis.or.kr/resource/www/images/home/kor/user/sub/EPIS_CI.ai",
+    "bytes": 1233608,
+    "filename": "EPIS_CI.ai"
+   }
+  ],
+  "kr-q12592578": [
+   {
+    "format": "ZIP",
+    "url": "https://www.klac.or.kr/generalFileDownload.do?codeId=GNR009&codeValue=GNR00901",
+    "bytes": null,
+    "filename": "klac_CI.zip"
+   }
+  ],
+  "kr-q12608990": [
+   {
+    "format": "ZIP",
+    "url": "https://www.poma.or.kr/_res/poma_facility/poma/img/content/BS02-Logotype.zip",
+    "bytes": 1150342,
+    "filename": "BS02-Logotype.zip"
+   }
+  ],
+  "kr-q12613460": [
+   {
+    "format": "ZIP",
+    "url": "https://www.iccu.ac.kr/sc_ai/ui.zip",
+    "bytes": 9763535,
+    "filename": "ui.zip"
+   }
+  ],
+  "kr-q12613478": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ice.go.kr/common/nttFileDownload.do?fileKey=677db2d6ff42f8935ace77e4518242e2",
+    "bytes": null,
+    "filename": "nttFileDownload.do"
+   }
+  ],
+  "kr-q12613559": [
+   {
+    "format": "PNG",
+    "url": "https://www.icpa.or.kr/file/commonFileDownload.do?path=!@$*CJELQSRnZjbVLK3l7dJljVJhvBUdRArBXx5SPmaLKkw=!@$*",
+    "bytes": null,
+    "filename": "CI_symbolMark_01.png"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.icpa.or.kr/data/Character_JPG_01.zip",
+    "bytes": 1255199,
+    "filename": "Character_JPG_01.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.icpa.or.kr/data/Character_AI_01.zip",
+    "bytes": 1806625,
+    "filename": "Character_AI_01.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q12615104": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jbe.go.kr/board/download.jbe?boardId=BBS_CONTENT_FILE&dataSid=1157768&fileSid=722348",
+    "bytes": 8875392,
+    "filename": "이미지(jpg_png).zip"
+   }
+  ],
+  "kr-q12616499": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jje.go.kr/board/download.jje?boardId=BBS_0000578&menuCd=DOM_000000108008000000&paging=ok&startPage=1&dataSid=1222192&command=update&fileSid=1262711",
+    "bytes": 21723794,
+    "filename": "제주특별자치도교육청심벌마크(AI).zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q12617454": [
+   {
+    "format": "PDF",
+    "url": "https://www.kohom.or.kr/common/download.do;jsessionid=AFE4A1146A49A6FAE765D87D407C1F57?f=Z%2FWMJwpAbnLY%2BeY%2BS%2Bax%2BczNn%2BlPk3c8I0RuYg2N0I%2BqFSCNjRs7BdN13a4pzKLSoI3WXldZJQiw%0AOjPr%2FrlD6TmzQQ9XqiRLtQ1W5qJYqPhyOz%2BofX878w0Wx%2FawAbJZSZ4uTiB3BYamjyphZrp1hg%3D%3D",
+    "bytes": 167779,
+    "filename": "°³ÀÎÁ¤º¸Ã³¸®¹æÄ§ ½Å±¸Á¶¹® ´ëºñÇ¥_26.09.22.pdf"
+   }
+  ],
+  "kr-q12618419": [
+   {
+    "format": "AI",
+    "url": "https://www.kdca.go.kr/sites/kdca/download/KDCA_logo.ai",
+    "bytes": 1283287,
+    "filename": "KDCA_logo.ai"
+   }
+  ],
+  "kr-q12622844": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kofair.or.kr/static/file/ci.zip",
+    "bytes": 1296602,
+    "filename": "ci.zip"
+   }
+  ],
+  "kr-q12622848": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kistep.re.kr/boardDownload.es?bid=ATT&list_no=84&seq=2",
+    "bytes": 13674330,
+    "filename": "wordmark_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q12622923": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kmiti.or.kr/_img/web/kmiti_CI.zip",
+    "bytes": 9963891,
+    "filename": "kmiti_CI.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kmiti.or.kr/_img/web/kmiti_character.zip",
+    "bytes": 43764575,
+    "filename": "kmiti_character.zip"
+   }
+  ],
+  "kr-q12622955": [
+   {
+    "format": "JPG",
+    "url": "https://www.kordi.or.kr/downFile/kordi_logo_ci.jpg",
+    "bytes": 199807,
+    "filename": "kordi_logo_ci.jpg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kordi.or.kr/downFile/kordi_logo_ci.zip",
+    "bytes": 95987,
+    "filename": "kordi_logo_ci.zip"
+   }
+  ],
+  "kr-q12622975": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ekr.or.kr/down/ci_logo_jpg.zip",
+    "bytes": 33627080,
+    "filename": "ci_logo_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ekr.or.kr/down/ci_logo_ai.zip",
+    "bytes": 84765129,
+    "filename": "ci_logo_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q12622983": [
+   {
+    "format": "ZIP",
+    "url": "https://www.krei.re.kr/DATA/document/krei_jpg.zip",
+    "bytes": 152009,
+    "filename": "krei_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krei.re.kr/DATA/document/krei_ai.zip",
+    "bytes": 476828,
+    "filename": "krei_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.krei.re.kr/DATA/document/krei_character.zip",
+    "bytes": 778641,
+    "filename": "krei_character.zip"
+   }
+  ],
+  "kr-q12623033": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/symbol_01_jpg.zip",
+    "bytes": 122637,
+    "filename": "symbol_01_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/symbol_01_ai.zip",
+    "bytes": 208421,
+    "filename": "symbol_01_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/symbol_02_jpg.zip",
+    "bytes": 137692,
+    "filename": "symbol_02_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/symbol_02_ai.zip",
+    "bytes": 227811,
+    "filename": "symbol_02_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/new_signature_01_jpg.zip",
+    "bytes": 1167871,
+    "filename": "new_signature_01_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/new_signature_01.zip",
+    "bytes": 206296,
+    "filename": "new_signature_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/new_signature_02_jpg.zip",
+    "bytes": 458459,
+    "filename": "new_signature_02_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ewp.co.kr/kor/download/ci/new_signature_02.zip",
+    "bytes": 205878,
+    "filename": "new_signature_02.zip"
+   }
+  ],
+  "kr-q12623037": [
+   {
+    "format": "ZIP",
+    "url": "https://komount.or.kr/renewal/images/ci_ai_file.zip",
+    "bytes": 1188029,
+    "filename": "ci_ai_file.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://komount.or.kr/renewal/images/ci_png_file.zip",
+    "bytes": 423079,
+    "filename": "ci_png_file.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://komount.or.kr/renewal/images/ci_jpg_file.zip",
+    "bytes": 1012538,
+    "filename": "ci_jpg_file.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q12623091": [
+   {
+    "format": "ZIP",
+    "url": "https://arte.or.kr/2024_new/images/download/ci.zip",
+    "bytes": 491584,
+    "filename": "ci.zip"
+   }
+  ],
+  "kr-q12623217": [
+   {
+    "format": "ZIP",
+    "url": "https://www.bokji.net/images/down/SSN_CI.zip",
+    "bytes": 187103,
+    "filename": "SSN_CI.zip"
+   }
+  ],
+  "kr-q12623270": [
+   {
+    "format": "JPG",
+    "url": "https://www.iwest.co.kr/sites/iwest/images/elec_bill_20260427.jpg",
+    "bytes": 132019,
+    "filename": "elec_bill_20260427.jpg"
+   }
+  ],
+  "kr-q12623490": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kins.re.kr/humanframe/theme/kins_kor/assets/file/KinsCI.zip",
+    "bytes": 2468107,
+    "filename": "KinsCI.zip"
+   }
+  ],
+  "kr-q12623629": [
+   {
+    "format": "PDF",
+    "url": "https://www.copyright.or.kr/pdf/family_friendly.pdf",
+    "bytes": 87210,
+    "filename": "family_friendly.pdf"
+   }
+  ],
+  "kr-q12623707": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kiip.re.kr/images/contents/KIIP_LOGO.zip",
+    "bytes": 599919,
+    "filename": "KIIP_LOGO.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kiip.re.kr/images/contents/CI_ai.zip",
+    "bytes": 27831030,
+    "filename": "CI_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kiip.re.kr/images/contents/CI_JPG.zip",
+    "bytes": 12638487,
+    "filename": "CI_JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q12623746": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kyci.or.kr/fileup/intro/logo02_png.zip",
+    "bytes": 48087,
+    "filename": "logo02_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kyci.or.kr/fileup/intro/logo02_ai.zip",
+    "bytes": 153069,
+    "filename": "logo02_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q12623799": [
+   {
+    "format": "JPG",
+    "url": "https://www.lh.or.kr/boardDownload.es?bid=ATT&list_no=571701&seq=1",
+    "bytes": 322327,
+    "filename": "22-BS01-1-01 워드마크.jpg"
+   }
+  ],
+  "kr-q12623804": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kipi.or.kr/down/kipi_ci.zip",
+    "bytes": 351533,
+    "filename": "kipi_ci.zip"
+   }
+  ],
+  "kr-q12624642": [
+   {
+    "format": "ZIP",
+    "url": "https://www.koem.or.kr/common/files/Download.do?cfIdx=CF00000045&cfGroup=COMMON",
+    "bytes": 2132923,
+    "filename": "AI.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q14850773": [
+   {
+    "format": "ZIP",
+    "url": "https://www.innopolis.or.kr/resources/down/BRAND_MANUAL.zip",
+    "bytes": 779712160,
+    "filename": "BRAND_MANUAL.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.innopolis.or.kr/resources/down/CI_AI.zip",
+    "bytes": 90788959,
+    "filename": "CI_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.innopolis.or.kr/resources/down/CI_jpg.zip",
+    "bytes": 117261949,
+    "filename": "CI_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q15302850": [
+   {
+    "format": "ZIP",
+    "url": "http://www.cne.go.kr:80/boardCnts/fileDown.do?m=0203&s=apple&fileSeq=df36a9a9ceb6d6d5e0c81828e67d94af",
+    "bytes": 1050124,
+    "filename": "01-symbol-mark-ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q16092702": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kduniv.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDc0MzY4LFk=",
+    "bytes": null,
+    "filename": "심볼마크+및+로고타입_png.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q16164343": [
+   {
+    "format": "PDF",
+    "url": "https://www.foodpolis.kr/resources/user/web/img/brochure/equip_2026.pdf",
+    "bytes": 18195339,
+    "filename": "equip_2026.pdf"
+   }
+  ],
+  "kr-q16164791": [
+   {
+    "format": "ZIP",
+    "url": "https://www.apcc21.org/apcc/files/APCC_CI_ai_2.zip",
+    "bytes": 11710033,
+    "filename": "APCC_CI_ai_2.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.apcc21.org/apcc/files/APCC_CI_JPG_v2.zip",
+    "bytes": 1008291,
+    "filename": "APCC_CI_JPG_v2.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q16165021": [
+   {
+    "format": "PNG",
+    "url": "https://www.nmf.or.kr/images/user/main/web_mark.png",
+    "bytes": 224354,
+    "filename": "web_mark.png"
+   }
+  ],
+  "kr-q16167642": [
+   {
+    "format": "ZIP",
+    "url": "http://www.dje.go.kr/upload/dje/file/ci_ai.zip",
+    "bytes": 1260651,
+    "filename": "ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.dje.go.kr/upload/dje/file/ci_png.zip",
+    "bytes": 1909932,
+    "filename": "ci_png.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q16167803": [
+   {
+    "format": "ZIP",
+    "url": "https://www.fipa.or.kr/upload/cntnts/fipa_ci.zip",
+    "bytes": 3552466,
+    "filename": "fipa_ci.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.fipa.or.kr/upload/cntnts/Fiparang.zip",
+    "bytes": 31365,
+    "filename": "Fiparang.zip"
+   }
+  ],
+  "kr-q16170345": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ksponco.or.kr/attachFiles/download/kspo/symbol.zip",
+    "bytes": 101715,
+    "filename": "symbol.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ksponco.or.kr/attachFiles/download/kspo/signature.zip",
+    "bytes": 311229,
+    "filename": "signature.zip"
+   }
+  ],
+  "kr-q16172629": [
+   {
+    "format": "ZIP",
+    "url": "https://www.komsa.or.kr/thumbnail/dwld/kor/CI.zip",
+    "bytes": 6019041,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q16181880": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kipro.or.kr/attachments/ci/kipro_ci_logo.zip",
+    "bytes": 2113943,
+    "filename": "kipro_ci_logo.zip"
+   }
+  ],
+  "kr-q16192199": [
+   {
+    "format": "PDF",
+    "url": "https://kogas-tech.or.kr/contentsFileDown.do?file_idx=1322",
+    "bytes": 1505069,
+    "filename": "CI.pdf"
+   }
+  ],
+  "kr-q16192274": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kcdf.or.kr/com/file/filedown?_ci=28104&_ck=3edde380c9234f50916a3bd8d6e33a98",
+    "bytes": null,
+    "filename": "[AI] 한국공예디자인문화진흥원CI.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q16192321": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kofih.org/direct_download.do?path=/upload/sample/&file_nm=KOFIH_CI_JPG.zip&rfile_nm=KOFIH_CI_JPG.zip",
+    "bytes": 1322589,
+    "filename": "KOFIH_CI_JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q16192432": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kvic.or.kr/resources/upload/CI.zip",
+    "bytes": 2949656,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q16192434": [
+   {
+    "format": "ZIP",
+    "url": "http://www.ssis.or.kr/download.do?uuid=321ce025-8a4a-457a-a6e7-50471dfbc755",
+    "bytes": 241418,
+    "filename": "SSiS_JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q16262642": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kalis.or.kr/www/brd/m_588/down.do?brd_id=file_all02&seq=1&data_tp=A&file_seq=1",
+    "bytes": 4206,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q16726591": [
+   {
+    "format": "ZIP",
+    "url": "https://www.koiha.or.kr/web/download/media/KOIHACI.zip",
+    "bytes": 381094,
+    "filename": "KOIHACI.zip"
+   }
+  ],
+  "kr-q18169": [
+   {
+    "format": "PDF",
+    "url": "https://info.korail.com/crosseditor_u/binary/images/000022/ISMS-P_cert.pdf",
+    "bytes": 455326,
+    "filename": "ISMS-P_cert.pdf"
+   }
+  ],
+  "kr-q18459": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=3641&resrceVer=1&fileSn=1",
+    "bytes": 1025103,
+    "filename": "ì´ë¯¸ì§.zip"
+   }
+  ],
+  "kr-q18685317": [
+   {
+    "format": "ZIP",
+    "url": "http://www.kcpi.co.kr/assets/images/ci_download.zip",
+    "bytes": 596480,
+    "filename": "ci_download.zip"
+   }
+  ],
+  "kr-q18815834": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/ci_01.zip",
+    "bytes": 1041170,
+    "filename": "ci_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/ci_jpg.zip",
+    "bytes": 507272,
+    "filename": "ci_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/ci_png.zip",
+    "bytes": 106217,
+    "filename": "ci_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/simbol_01.zip",
+    "bytes": 324429,
+    "filename": "simbol_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/simbol_jpg.zip",
+    "bytes": 4412,
+    "filename": "simbol_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/simbol_png.zip",
+    "bytes": 2040,
+    "filename": "simbol_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/logo_01.zip",
+    "bytes": 1043721,
+    "filename": "logo_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kipf.re.kr/thumbnail/kor/logo_jpg.zip",
+    "bytes": 479199,
+    "filename": "logo_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q19162233": [
+   {
+    "format": "PDF",
+    "url": "https://www.kcgp.or.kr/resources/attach/ii/KCGP_Identity_Design_Guidelines.pdf",
+    "bytes": 40296724,
+    "filename": "KCGP_Identity_Design_Guidelines.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kcgp.or.kr/resources/attach/ii/KCGP_logo.zip",
+    "bytes": 76333677,
+    "filename": "KCGP_logo.zip"
+   }
+  ],
+  "kr-q20398": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gangnam.go.kr/assets/images/logo/gn_ci_2026.zip",
+    "bytes": 1405690,
+    "filename": "gn_ci_2026.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gangnam.go.kr/assets/images/logo/gn_ci_png_2026.zip",
+    "bytes": 156253,
+    "filename": "gn_ci_png_2026.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gangnam.go.kr/assets/images/logo/gn_slogan_2026.zip?20260714",
+    "bytes": 475371,
+    "filename": "gn_slogan_2026.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gangnam.go.kr/assets/images/logo/gn_slogan_png_2026.zip?20260714",
+    "bytes": 41707,
+    "filename": "gn_slogan_png_2026.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q208736": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hufs.ac.kr/sites/hufs/files/UI_gif.zip",
+    "bytes": 850830,
+    "filename": "UI_gif.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hufs.ac.kr/sites/hufs/files/HUFS_UI.zip",
+    "bytes": 13474099,
+    "filename": "HUFS_UI.zip"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.hufs.ac.kr/sites/hufs/files/HUFS_UI.pdf",
+    "bytes": 18957702,
+    "filename": "HUFS_UI.pdf"
+   }
+  ],
+  "kr-q20937": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gg.go.kr/uploads/CONTENTS/site/gg/2021_signature_ai.zip",
+    "bytes": 2659812,
+    "filename": "2021_signature_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gg.go.kr/uploads/CONTENTS/site/gg/2021_signature_jpg.zip",
+    "bytes": 120271,
+    "filename": "2021_signature_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q24867026": [
+   {
+    "format": "PNG",
+    "url": "https://www.mabik.re.kr/images/kor/sub06/mabik_symbol.png",
+    "bytes": 31856,
+    "filename": "mabik_symbol.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.mabik.re.kr/images/kor/sub06/mabik_signature.png",
+    "bytes": 68648,
+    "filename": "mabik_signature.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.mabik.re.kr/images/kor/sub06/mabik_slogan.png",
+    "bytes": 10689,
+    "filename": "mabik_slogan.png"
+   }
+  ],
+  "kr-q24867044": [
+   {
+    "format": "ZIP",
+    "url": "https://kcmf.or.kr/resource/kcmf/site/www/down/ci.zip",
+    "bytes": 163605982,
+    "filename": "ci.zip"
+   }
+  ],
+  "kr-q27951951": [
+   {
+    "format": "ZIP",
+    "url": "https://cio.go.kr/assets/CI.zip",
+    "bytes": 12714247,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q31180819": [
+   {
+    "format": "ZIP",
+    "url": "https://www.fowi.or.kr/download/CI01.zip",
+    "bytes": 48524451,
+    "filename": "CI01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.fowi.or.kr/download/CI02.zip",
+    "bytes": 24232629,
+    "filename": "CI02.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.fowi.or.kr/download/CI03.zip",
+    "bytes": 24321272,
+    "filename": "CI03.zip"
+   }
+  ],
+  "kr-q31180820": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nnibr.re.kr/cmsh/nnibr.re.kr/file/logo_20260123.zip",
+    "bytes": 6435968,
+    "filename": "logo_20260123.zip"
+   }
+  ],
+  "kr-q3271898": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_symbol_ai.zip",
+    "bytes": 1039848,
+    "filename": "changshin_symbol_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_symbol_jpg.zip",
+    "bytes": 140339,
+    "filename": "changshin_symbol_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/logo_type_ai.zip",
+    "bytes": 2052181,
+    "filename": "logo_type_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/logo_type_jpg.zip",
+    "bytes": 295625,
+    "filename": "logo_type_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_signature1_ai.zip",
+    "bytes": 1079313,
+    "filename": "changshin_signature1_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_signature1_jpg.zip",
+    "bytes": 436556,
+    "filename": "changshin_signature1_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_signature2_ai.zip",
+    "bytes": 1061251,
+    "filename": "changshin_signature2_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cs.ac.kr/assets/images/intro/changshin_signature2_jpg.zip",
+    "bytes": 453393,
+    "filename": "changshin_signature2_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q39997": [
+   {
+    "format": "ZIP",
+    "url": "https://www.korea.ac.kr/sites/ko/files/tiger.zip",
+    "bytes": 94884,
+    "filename": "tiger.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.korea.ac.kr/sites/ko/files/koreanpine.zip",
+    "bytes": 22906,
+    "filename": "koreanpine.zip"
+   }
+  ],
+  "kr-q41085": [
+   {
+    "format": "ZIP",
+    "url": "https://www.skku.edu/_res/skku/etc/ai_1.zip",
+    "bytes": null,
+    "filename": "ai_1.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.skku.edu/_res/skku/etc/jpg_1.zip",
+    "bytes": null,
+    "filename": "jpg_1.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q41278": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ulsan.go.kr/u/enc/media/data.ulsan?mediaId=RLE5SA9wSu9fEl%2BS2i5thyEKuc7XhEumhnP%2FRr%2FJpRY%3D",
+    "bytes": 168428,
+    "filename": "ì¸ì°ê´ì­ì ì¬ë²ë§í¬(JPG).zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q42060": [
+   {
+    "format": "PNG",
+    "url": "https://gyeryong.go.kr/site/kr/img/sub04/00brx.png",
+    "bytes": 12885,
+    "filename": "00brx.png"
+   }
+  ],
+  "kr-q42077": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/ci_jpg.zip",
+    "bytes": 82862,
+    "filename": "ci_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/ci_ai.zip",
+    "bytes": 22266,
+    "filename": "ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/font.zip",
+    "bytes": 393388,
+    "filename": "font.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/signature.zip",
+    "bytes": 262662,
+    "filename": "signature.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/emblem_ai.zip",
+    "bytes": 96597,
+    "filename": "emblem_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gimje.go.kr/images/01_potal/file/sub01/emblem.zip",
+    "bytes": 238366,
+    "filename": "emblem.zip"
+   }
+  ],
+  "kr-q42083": [
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/20140917_symbol.zip",
+    "bytes": 274723,
+    "filename": "20140917_symbol.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character01.zip",
+    "bytes": 3798314,
+    "filename": "character01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character02.zip",
+    "bytes": 3209502,
+    "filename": "character02.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character03.zip",
+    "bytes": 6796908,
+    "filename": "character03.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/najuo.zip",
+    "bytes": 574639,
+    "filename": "najuo.zip"
+   }
+  ],
+  "kr-q42088": [
+   {
+    "format": "AI",
+    "url": "https://www.nonsan.go.kr/_prog/download/?file_id=05xgk37t3w0yivbns8ndo7b04ewwhy",
+    "bytes": 1306018,
+    "filename": "BS01.ai"
+   }
+  ],
+  "kr-q42092": [
+   {
+    "format": "ZIP",
+    "url": "http://www.ddc.go.kr/site/ddc/download/AI_010101.zip",
+    "bytes": 632265,
+    "filename": "AI_010101.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.ddc.go.kr/site/ddc/download/AI_010201.zip",
+    "bytes": 847084,
+    "filename": "AI_010201.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.ddc.go.kr/site/ddc/download/AI_010301.zip",
+    "bytes": 1284719,
+    "filename": "AI_010301.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q42098": [
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down1_jpg.zip",
+    "bytes": 6074223,
+    "filename": "symbol_down1_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down1_ai.zip",
+    "bytes": 27036171,
+    "filename": "symbol_down1_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/boryeong_manual.pdf",
+    "bytes": 2623738,
+    "filename": "boryeong_manual.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol2020_jpg.zip",
+    "bytes": 13414832,
+    "filename": "symbol2020_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol2020_ai.zip",
+    "bytes": 164001826,
+    "filename": "symbol2020_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol2020_manual.pdf",
+    "bytes": 5244775,
+    "filename": "symbol2020_manual.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down2_jpg.zip",
+    "bytes": 2284212,
+    "filename": "symbol_down2_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down2_ai.zip",
+    "bytes": 11253819,
+    "filename": "symbol_down2_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q42108": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seongnam.go.kr/humanframe/file/Ci_AI.zip",
+    "bytes": 15234795,
+    "filename": "Ci_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.seongnam.go.kr/humanframe/file/Ci_pdf.pdf",
+    "bytes": 5612751,
+    "filename": "Ci_pdf.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.seongnam.go.kr/humanframe/file/Ci_JPG.zip",
+    "bytes": 17045529,
+    "filename": "Ci_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.seongnam.go.kr/humanframe/file/ci-img-01.png",
+    "bytes": 4838,
+    "filename": "ci-img-01.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.seongnam.go.kr/humanframe/file/ci-img-02.png",
+    "bytes": 4152,
+    "filename": "ci-img-02.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.seongnam.go.kr/humanframe/file/ci-img-03.png",
+    "bytes": 5187,
+    "filename": "ci-img-03.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.seongnam.go.kr/humanframe/file/ci-img-04.png",
+    "bytes": 5808,
+    "filename": "ci-img-04.png"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.seongnam.go.kr/humanframe/file/ci-img-05.png",
+    "bytes": 5908,
+    "filename": "ci-img-05.png"
+   }
+  ],
+  "kr-q42117": [
+   {
+    "format": "AI",
+    "url": "https://www.ansan.go.kr/common/file/directFileDown.do?path=Globals.cntsDownload&file_nm=cts2263_file1.ai",
+    "bytes": 2266717,
+    "filename": "cts2263_file1.ai"
+   }
+  ],
+  "kr-q42125": [
+   {
+    "format": "ZIP",
+    "url": "https://yeosu.go.kr/contents/3221/yeosu_ci_ai.zip",
+    "bytes": 176089,
+    "filename": "yeosu_ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://yeosu.go.kr/contents/3221/yeosu_ci_jpg.zip",
+    "bytes": 287013,
+    "filename": "yeosu_ci_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q42128": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yc.go.kr/portal/img/sub04/ci.zip",
+    "bytes": 84254,
+    "filename": "ci.zip"
+   }
+  ],
+  "kr-q42140": [
+   {
+    "format": "PDF",
+    "url": "https://www.jeonju.go.kr/images/www/dust/guidebook.pdf?subPath=",
+    "bytes": 8855785,
+    "filename": "guidebook.pdf"
+   }
+  ],
+  "kr-q42141": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jeongeup.go.kr/images/01_potal/down/symbol.zip",
+    "bytes": 8158444,
+    "filename": "symbol.zip"
+   }
+  ],
+  "kr-q42153": [
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/paju_symbol_ai.zip",
+    "bytes": 70719,
+    "filename": "paju_symbol_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/paju_logomark_jpg.zip",
+    "bytes": 15734,
+    "filename": "paju_logomark_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/logomark_ai.zip",
+    "bytes": 164041,
+    "filename": "logomark_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/logomark_jpg.zip",
+    "bytes": 46277,
+    "filename": "logomark_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/logotype_ai.zip",
+    "bytes": 185071,
+    "filename": "logotype_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.paju.go.kr/resources/download/logotype_jpg.zip",
+    "bytes": 139536,
+    "filename": "logotype_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q482648": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/UI.zip",
+    "bytes": 1951882,
+    "filename": "UI.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_01_kor.zip",
+    "bytes": 135692,
+    "filename": "logo_01_kor.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_02_eng.zip",
+    "bytes": 151378,
+    "filename": "logo_02_eng.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/logo_03_chi.zip",
+    "bytes": 144231,
+    "filename": "logo_03_chi.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_01_kor.zip",
+    "bytes": 211564,
+    "filename": "si_01_kor.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_02_eng.zip",
+    "bytes": 374760,
+    "filename": "si_02_eng.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_03_chi.zip",
+    "bytes": 230232,
+    "filename": "si_03_chi.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yongin.ac.kr/css/yonginUser/lib/file/si_04_all.zip",
+    "bytes": 701497,
+    "filename": "si_04_all.zip"
+   }
+  ],
+  "kr-q482659": [
+   {
+    "format": "ZIP",
+    "url": "https://www.inje.ac.kr/kor/Download.asp?setDir=AboutInje&fName=UI_Inje_Authority_Mark&fExt=zip",
+    "bytes": null,
+    "filename": "UI_Inje_Authority_Mark.zip"
+   }
+  ],
+  "kr-q482673": [
+   {
+    "format": "AI",
+    "url": "https://www.kongju.ac.kr/sites/KNU/download/kongju_symbol.ai",
+    "bytes": 336052,
+    "filename": "kongju_symbol.ai"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kongju.ac.kr/sites/KNU/download/kongju_symbol_jpg,png.zip",
+    "bytes": 178586,
+    "filename": "kongju_symbol_jpg,png.zip"
+   }
+  ],
+  "kr-q482680": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol1_jpg.zip",
+    "bytes": 48675,
+    "filename": "ui_symbol1_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol1_ai.zip",
+    "bytes": 96246,
+    "filename": "ui_symbol1_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol2_jpg.zip",
+    "bytes": 236437,
+    "filename": "ui_symbol2_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol2_ai.zip",
+    "bytes": 261871,
+    "filename": "ui_symbol2_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol3_jpg.zip",
+    "bytes": 50429,
+    "filename": "ui_symbol3_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol3_ai.zip",
+    "bytes": 173802,
+    "filename": "ui_symbol3_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol4_jpg.zip",
+    "bytes": 48828,
+    "filename": "ui_symbol4_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/files/ui_symbol4_ai.zip",
+    "bytes": 48828,
+    "filename": "ui_symbol4_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q482688": [
+   {
+    "format": "AI",
+    "url": "https://www.kunsan.ac.kr/board/download.kunsan?boardId=CNT_ATCHDOWN&dataSid=79956&fileSid=44520",
+    "bytes": 371067,
+    "filename": "±º»ê´ëÇÐ±³BS4-01.ai"
+   }
+  ],
+  "kr-q482692": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cue.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDg1LFk=",
+    "bytes": null,
+    "filename": "cue_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q482711": [
+   {
+    "format": "ZIP",
+    "url": "http://www.dnue.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDQ3NzUsWQ==",
+    "bytes": null,
+    "filename": "대구교대로고(JPG파일).zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "JPG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_01b.jpg",
+    "bytes": 74695,
+    "filename": "logo6_01b.jpg"
+   },
+   {
+    "format": "JPG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_02b.jpg",
+    "bytes": 90328,
+    "filename": "logo6_02b.jpg"
+   },
+   {
+    "format": "JPG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo6_03b.jpg",
+    "bytes": 75140,
+    "filename": "logo6_03b.jpg"
+   },
+   {
+    "format": "PNG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0101.png",
+    "bytes": 8869,
+    "filename": "logo4_0101.png"
+   },
+   {
+    "format": "PNG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0102.png",
+    "bytes": 10143,
+    "filename": "logo4_0102.png"
+   },
+   {
+    "format": "PNG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0103.png",
+    "bytes": 9877,
+    "filename": "logo4_0103.png"
+   },
+   {
+    "format": "PNG",
+    "url": "http://www.dnue.ac.kr/resources/homepage/kor/_Img/Content/logo4_0104.png",
+    "bytes": 9120,
+    "filename": "logo4_0104.png"
+   }
+  ],
+  "kr-q482751": [
+   {
+    "format": "JPG",
+    "url": "https://kscms.ks.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDI2NixZ",
+    "bytes": null,
+    "filename": "KS_University_300dpi_small.jpg"
+   }
+  ],
+  "kr-q482765": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hansung.ac.kr/sites/hansung/files/LOGOTYPE.zip",
+    "bytes": 4313672,
+    "filename": "LOGOTYPE.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hansung.ac.kr/sites/hansung/files/HSUCOLOR.zip",
+    "bytes": 1609727,
+    "filename": "HSUCOLOR.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hansung.ac.kr/sites/hansung/files/hansung-character.zip",
+    "bytes": 2053951,
+    "filename": "hansung-character.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hansung.ac.kr/sites/hansung/files/UI1.zip",
+    "bytes": 74988420,
+    "filename": "UI1.zip"
+   }
+  ],
+  "kr-q482819": [
+   {
+    "format": "PNG",
+    "url": "http://www.smu.ac.kr/cms/fileDownload.do?path=%2F_res%2Fkor%2Fetc%2Fimg-symbol.png",
+    "bytes": 3656,
+    "filename": "img-symbol.png"
+   }
+  ],
+  "kr-q483402": [
+   {
+    "format": "PDF",
+    "url": "https://www.kmu.ac.kr/upload/down/03/KMU_AI_guideline.pdf",
+    "bytes": 3301799,
+    "filename": "KMU_AI_guideline.pdf"
+   }
+  ],
+  "kr-q483656": [
+   {
+    "format": "ZIP",
+    "url": "https://www.wku.ac.kr/image/wku/01/%EC%9B%90%EA%B4%91%EB%8C%80%ED%95%99%EA%B5%90%20UI.202304.1.zip",
+    "bytes": 8928931,
+    "filename": "원광대학교 UI.202304.1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2023/02/WKU-Communication-Mark-AI.JPG.PNG.zip",
+    "bytes": 2748335,
+    "filename": "WKU-Communication-Mark-AI.JPG.PNG.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://image.wku.ac.kr/2023/02/WKU-signature-Amblem-AI.JPG.PNG.zip",
+    "bytes": 1299381,
+    "filename": "WKU-signature-Amblem-AI.JPG.PNG.zip"
+   }
+  ],
+  "kr-q483838": [
+   {
+    "format": "ZIP",
+    "url": "https://www.grac.or.kr/download/CI.zip",
+    "bytes": 702634,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q484160": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kmcc.go.kr/download.do?fileNm=kmcc_ci.zip",
+    "bytes": 13148260,
+    "filename": "kmcc_ci.zip"
+   }
+  ],
+  "kr-q484445": [
+   {
+    "format": "ZIP",
+    "url": "https://knto.or.kr/comm/getFile?srvcId=MEDIA&upperNo=YxUpliyEYhtCYer%5eL%5elDfA%3d%3d&fileTy=MEDIA&fileNo=A7cA47NMuphXyZ24sPQ%5eLw%3d%3d",
+    "bytes": null,
+    "filename": "CI_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q484775": [
+   {
+    "format": "AI",
+    "url": "https://www.gnue.ac.kr/groups/www/images/sub01/emblem_ul_24.ai",
+    "bytes": 155627,
+    "filename": "emblem_ul_24.ai"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.gnue.ac.kr/groups/www/images/sub01/emblem_ul_24.JPG",
+    "bytes": 743842,
+    "filename": "emblem_ul_24.JPG"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.gnue.ac.kr/groups/www/images/sub01/100logo_width_01.ai",
+    "bytes": 940358,
+    "filename": "100logo_width_01.ai"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.gnue.ac.kr/groups/www/images/sub01/100logo_01.ai",
+    "bytes": 958446,
+    "filename": "100logo_01.ai"
+   }
+  ],
+  "kr-q484900": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gist.ac.kr/download/?file_id=3uzmkiilfj905ge3vi923rhx3w0mkf",
+    "bytes": 110865,
+    "filename": "symboltype_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q487177": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/symbol_jpg.zip",
+    "bytes": 127540,
+    "filename": "symbol_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/symbol_ai.zip",
+    "bytes": 173324,
+    "filename": "symbol_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/emblem_jpg.zip",
+    "bytes": 197096,
+    "filename": "emblem_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/emblem_ai02.zip",
+    "bytes": 461931,
+    "filename": "emblem_ai02.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/Logotype_KMU_JPG.zip",
+    "bytes": 2626657,
+    "filename": "Logotype_KMU_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/Logotype_KMU_AI.zip",
+    "bytes": 1275141,
+    "filename": "Logotype_KMU_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/Signature_KMU_JPG.zip",
+    "bytes": 553261,
+    "filename": "Signature_KMU_JPG.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/Signature_KMU_AI.zip",
+    "bytes": 1372013,
+    "filename": "Signature_KMU_AI.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q487836": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gnu.ac.kr/common/fileDownload.do?fileKey=4627",
+    "bytes": null,
+    "filename": "ai_메뉴얼 관리지침 및 심벌마크 대의.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q488480": [
+   {
+    "format": "AI",
+    "url": "https://www.kcg.go.kr/upload/kcg/pm/logo.ai",
+    "bytes": 1057740,
+    "filename": "logo.ai"
+   }
+  ],
+  "kr-q488542": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mnd.go.kr/sites/mnd/files/mnd_symbol.zip",
+    "bytes": 10405976,
+    "filename": "mnd_symbol.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mnd.go.kr/sites/mnd/files/mnd_standard_pdf.zip",
+    "bytes": 815602,
+    "filename": "mnd_standard_pdf.zip",
+    "contains": "PDF"
+   }
+  ],
+  "kr-q488744": [
+   {
+    "format": "JPG",
+    "url": "https://www.mcst.go.kr/site/images/sub/about/mi003.jpg",
+    "bytes": 74141,
+    "filename": "mi003.jpg"
+   }
+  ],
+  "kr-q488851": [
+   {
+    "format": "ZIP",
+    "url": "https://www.inha.ac.kr/sites/kr/files/CharacterLogo.zip",
+    "bytes": 481387,
+    "filename": "CharacterLogo.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.inha.ac.kr/sites/kr/files/CharacterLogo2.zip",
+    "bytes": 274073,
+    "filename": "CharacterLogo2.zip"
+   }
+  ],
+  "kr-q489004": [
+   {
+    "format": "ZIP",
+    "url": "https://www.knoc.co.kr/cip_down/identifier/KNOC_CI_STANDARDS_MANUAL.zip",
+    "bytes": 191473586,
+    "filename": "KNOC_CI_STANDARDS_MANUAL.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knoc.co.kr/cip_down/signature/BS2_SIGNATURE_ai.zip",
+    "bytes": 2230653,
+    "filename": "BS2_SIGNATURE_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knoc.co.kr/cip_down/signature/BS2_SIGNATURE_jpg.zip",
+    "bytes": 1550606,
+    "filename": "BS2_SIGNATURE_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q489331": [
+   {
+    "format": "ZIP",
+    "url": "https://ssu.ac.kr/download.php?data=1iZBAEYP01G24N2v6wVl9lozjEyUUmlYu%2BBI6hqOXoVdywSODYt2DoTmplO0nDJVjg4FKy2gZzvoUav9pxlrV74Jz602h7BJvSVxRiJNlZI9lP6Xl%2FXBbPw3XL1s1Gt7",
+    "bytes": 253387,
+    "filename": "signature_eps.zip",
+    "contains": "EPS"
+   }
+  ],
+  "kr-q489488": [
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse01.zip",
+    "bytes": 1082409,
+    "filename": "horse01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse02.zip",
+    "bytes": 1986301,
+    "filename": "horse02.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse03.zip",
+    "bytes": 2382182,
+    "filename": "horse03.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse04.zip",
+    "bytes": 2320215,
+    "filename": "horse04.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse05.zip",
+    "bytes": 3167373,
+    "filename": "horse05.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://plus.cnu.ac.kr/Upl/kr/simbol/horse06.zip",
+    "bytes": 1625568,
+    "filename": "horse06.zip"
+   }
+  ],
+  "kr-q489708": [
+   {
+    "format": "ZIP",
+    "url": "https://daegu.ac.kr/resources/UI/2010_basic_symbol_jpg.zip",
+    "bytes": 1238241,
+    "filename": "2010_basic_symbol_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://daegu.ac.kr/resources/UI/2010_basic_symbol_ai.zip",
+    "bytes": 5752976,
+    "filename": "2010_basic_symbol_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://daegu.ac.kr/resources/UI/2010_basic_symbol_png.zip",
+    "bytes": 1058983,
+    "filename": "2010_basic_symbol_png.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q490117": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hoseo.ac.kr/File/Download.do?dir=down&savename=logo_20260611.zip&realname=%ED%98%B8%EC%84%9C%EB%8C%80%ED%95%99%EA%B5%90_%EB%A1%9C%EA%B3%A0_%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.zip",
+    "bytes": null,
+    "filename": "호서대학교_로고_다운로드.zip"
+   }
+  ],
+  "kr-q491511": [
+   {
+    "format": "AI",
+    "url": "https://www.hongik.ac.kr/cms/etcResourceDown.do?site=%24cms%24NYJyA&key=%24cms%24BYewdg5glg1g+gZwJ4FsBGIA2KCGAneAQQEkA6HKIA",
+    "bytes": 261377,
+    "filename": "hongik_symbolmark_AI.ai"
+   }
+  ],
+  "kr-q491714": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cbnu.ac.kr/downloadContentsFile.do?key=598&fileNo=661",
+    "bytes": 225177,
+    "filename": "1863_file01_png.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q498288": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kf.or.kr/upload/kf/logo_ai.zip",
+    "bytes": 24721,
+    "filename": "logo_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kf.or.kr/upload/kf/logo_jpg.zip",
+    "bytes": 35038,
+    "filename": "logo_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q50192": [
+   {
+    "format": "JPG",
+    "url": "https://www.gangseo.seoul.kr/comm/getImage?srvcId=MEDIA&upperNo=l6SxiEQ36g5T0HW43TzC1g%3d%3d&fileTy=MEDIA&fileNo=LSoB2EPQB8nXK8VH1oiCcw%3d%3d",
+    "bytes": 14905,
+    "filename": "getImage"
+   }
+  ],
+  "kr-q50216": [
+   {
+    "format": "ZIP",
+    "url": "https://www.geumsan.go.kr/_prog/download/?file_id=j4v6d2insaby42g4e8wi7hhkid8304",
+    "bytes": 688919,
+    "filename": "kr_logo.zip"
+   }
+  ],
+  "kr-q50239": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/symbol.zip",
+    "bytes": 530624,
+    "filename": "symbol.zip"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/symbol2024.png",
+    "bytes": 1322020,
+    "filename": "symbol2024.png"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/images/country/logo.zip",
+    "bytes": 1304037,
+    "filename": "logo.zip"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/images/country/logo2024.png",
+    "bytes": 643764,
+    "filename": "logo2024.png"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli.zip",
+    "bytes": 4511428,
+    "filename": "biseuli.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli2.zip",
+    "bytes": 30426368,
+    "filename": "biseuli2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/Bird.zip",
+    "bytes": 4822187,
+    "filename": "Bird.zip"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/Bird.png",
+    "bytes": 1257104,
+    "filename": "Bird.png"
+   }
+  ],
+  "kr-q50243": [
+   {
+    "format": "PDF",
+    "url": "https://www.boseong.go.kr/download/companion_animal_guide.pdf",
+    "bytes": 1351175,
+    "filename": "companion_animal_guide.pdf"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.boseong.go.kr/www/introduce/intro/represent/screen_print.jpg?page=1",
+    "bytes": null,
+    "filename": "screen_print.jpg"
+   }
+  ],
+  "kr-q50313": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/symbol_j.zip",
+    "bytes": 75464,
+    "filename": "symbol_j.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/symbol_e_cs2ver.zip",
+    "bytes": 269415,
+    "filename": "symbol_e_cs2ver.zip"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.ulju.ulsan.kr/ulju/media/uj_uljuinfo/symbo/design_guide.pdf",
+    "bytes": 11860493,
+    "filename": "design_guide.pdf"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.ulju.ulsan.kr/ulju/media/uj_lifeguide/down/SocialWelfareFacilities_260910.pdf",
+    "bytes": 409434,
+    "filename": "SocialWelfareFacilities_260910.pdf"
+   }
+  ],
+  "kr-q50322": [
+   {
+    "format": "JPG",
+    "url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol/screen_print.jpg?page=1",
+    "bytes": 1476917,
+    "filename": "screen_print.jpg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_AI.zip",
+    "bytes": 132376,
+    "filename": "jh_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_JPG.jpg?build_20261109001",
+    "bytes": 60062,
+    "filename": "jh_JPG.jpg"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_png.png?build_20261109001",
+    "bytes": 29140,
+    "filename": "jh_png.png"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_logo_AI_2605.zip",
+    "bytes": 2594225,
+    "filename": "jh_logo_AI_2605.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_logo_JPG_2025.zip",
+    "bytes": 686467,
+    "filename": "jh_logo_JPG_2025.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_logo_png_2025.zip",
+    "bytes": 290996,
+    "filename": "jh_logo_png_2025.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_C_AI_2025_2.zip",
+    "bytes": 28072532,
+    "filename": "jh_C_AI_2025_2.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q50324": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jp.go.kr/kor/gonet/FileDownload.do?fileName=jp_logo.zip&code=download/kor/",
+    "bytes": 1039176,
+    "filename": "jp_logo.zip"
+   }
+  ],
+  "kr-q50327": [
+   {
+    "format": "PNG",
+    "url": "http://www.jincheon.go.kr/upload/icd/00000003/2026/1789975504232_bTbob2ekfepB4OCuBinu.png",
+    "bytes": 1423858,
+    "filename": "1789975504232_bTbob2ekfepB4OCuBinu.png"
+   }
+  ],
+  "kr-q50346": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ihc.go.kr/DATA/download/www/cts123_logo.zip",
+    "bytes": 692982,
+    "filename": "cts123_logo.zip"
+   }
+  ],
+  "kr-q50348": [
+   {
+    "format": "JPG",
+    "url": "https://www.gangdong.go.kr/web/newportal/file/download/uu/f6b83809ac0a4c4fb2436afc4656e57f",
+    "bytes": null,
+    "filename": "구정목표BI (JPG).jpg"
+   }
+  ],
+  "kr-q50353": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gwanak.go.kr/common/files/Download.do?cfIdx=CF00093299&cfGroup=COMMON&cfRename=c2ace335-a83c-42c7-b036-f9d242663a90.zip",
+    "bytes": null,
+    "filename": "휘장(CI)_JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q50354": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_01.zip",
+    "bytes": 386512,
+    "filename": "0602010100_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_03.zip",
+    "bytes": 333115,
+    "filename": "0602010100_03.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_04.zip",
+    "bytes": 2458178,
+    "filename": "0602010100_04.zip"
+   }
+  ],
+  "kr-q50355": [
+   {
+    "format": "AI",
+    "url": "https://www.gwangjin.go.kr/portal/cmmn/file/fileDown.do?atchFileId=3fd879a5aa70bb48e900ecfd02fc3b200921e6e64db3b5f19c7681ac4812d2b4&fileSn=1",
+    "bytes": 223551,
+    "filename": "광진구CI.ai"
+   }
+  ],
+  "kr-q50358": [
+   {
+    "format": "JPG",
+    "url": "https://www.geumjeong.go.kr/download/gj_mark(2023).jpg",
+    "bytes": 13758,
+    "filename": "gj_mark(2023).jpg"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.geumjeong.go.kr/download/gj_mark.ai",
+    "bytes": 55977,
+    "filename": "gj_mark.ai"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.geumjeong.go.kr/download/gj_BS.png",
+    "bytes": 3772,
+    "filename": "gj_BS.png"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.geumjeong.go.kr/download/gj_30th_img.zip",
+    "bytes": 107300,
+    "filename": "gj_30th_img.zip"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.geumjeong.go.kr/download/gj_30th.ai",
+    "bytes": 1618215,
+    "filename": "gj_30th.ai"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.geumjeong.go.kr/new_img/geumjeong/sub/gj_character.jpg",
+    "bytes": 80851,
+    "filename": "gj_character.jpg"
+   }
+  ],
+  "kr-q50362": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/ci_ai.zip",
+    "bytes": 154461,
+    "filename": "ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/ci_jpg.zip",
+    "bytes": 16308,
+    "filename": "ci_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/dreampia_ai.zip",
+    "bytes": 5332625,
+    "filename": "dreampia_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/dreampia_img.zip",
+    "bytes": 148818,
+    "filename": "dreampia_img.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan01.zip",
+    "bytes": 1643660,
+    "filename": "nam_slogan01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan02.zip",
+    "bytes": 1783634,
+    "filename": "nam_slogan02.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan-a01.zip",
+    "bytes": 1229919,
+    "filename": "nam_slogan-a01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/nam_slogan-a02.zip",
+    "bytes": 112566,
+    "filename": "nam_slogan-a02.zip"
+   }
+  ],
+  "kr-q50364": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ulsannamgu.go.kr/aboutNamgu/file/ci.zip",
+    "bytes": 1437448,
+    "filename": "ci.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.ulsannamgu.go.kr/aboutNamgu/file/mark02_jpg.zip",
+    "bytes": 8807,
+    "filename": "mark02_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q50365": [
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/markai.zip",
+    "bytes": 43897,
+    "filename": "markai.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/markjpg.zip",
+    "bytes": 66120,
+    "filename": "markjpg.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/signature.zip",
+    "bytes": 1033046,
+    "filename": "signature.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/signature_jpg.zip",
+    "bytes": 550009,
+    "filename": "signature_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/mascotai.zip",
+    "bytes": 48529,
+    "filename": "mascotai.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/mascot.zip",
+    "bytes": 243251,
+    "filename": "mascot.zip"
+   }
+  ],
+  "kr-q50367": [
+   {
+    "format": "ZIP",
+    "url": "https://www.namdong.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=508&fileno=2",
+    "bytes": 314509,
+    "filename": "2026_남동구청_슬로건.zip"
+   }
+  ],
+  "kr-q50371": [
+   {
+    "format": "AI",
+    "url": "https://www.daedeok.go.kr/document/dpt/dpt05/Signature_AI.ai",
+    "bytes": 20087660,
+    "filename": "Signature_AI.ai"
+   }
+  ],
+  "kr-q50382": [
+   {
+    "format": "AI",
+    "url": "https://www.ddm.go.kr/downloadContentsFile.do?key=269&fileNo=35151",
+    "bytes": 1217255,
+    "filename": "CI(íì¥)-AI.ai"
+   }
+  ],
+  "kr-q50383": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dongnae.go.kr/board/download.dongnae?boardId=BBS_0000241&menuCd=null&startPage=1&dataSid=848015&command=update&fileSid=316300",
+    "bytes": 24542512,
+    "filename": "½Éº¼¹×·Î°í(ai).zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q50393": [
+   {
+    "format": "ZIP",
+    "url": "https://www.buk.daegu.kr/cmsh/buk.daegu.kr/file/bukgu_symbol.zip",
+    "bytes": 654380,
+    "filename": "bukgu_symbol.zip"
+   }
+  ],
+  "kr-q50394": [
+   {
+    "format": "ZIP",
+    "url": "https://www.bsbukgu.go.kr/board/download.bsbukgu?boardId=BBS_0000001&paging=ok&startPage=1&dataSid=443&command=update&fileSid=680",
+    "bytes": 76853,
+    "filename": "whi_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q50398": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down1_1.zip",
+    "bytes": 40385,
+    "filename": "s4_1_7_down1_1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down1_2.zip",
+    "bytes": 17995,
+    "filename": "s4_1_7_down1_2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_1.zip",
+    "bytes": 172940,
+    "filename": "s4_1_7_down2_1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_2.zip",
+    "bytes": 230452,
+    "filename": "s4_1_7_down2_2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down2_3.zip",
+    "bytes": 2095958,
+    "filename": "s4_1_7_down2_3.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down3_1.zip",
+    "bytes": 159994,
+    "filename": "s4_1_7_down3_1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sasang.go.kr/down/sasang/s4_1_7_down3_2.zip",
+    "bytes": 32375,
+    "filename": "s4_1_7_down3_2.zip"
+   }
+  ],
+  "kr-q50400": [
+   {
+    "format": "ZIP",
+    "url": "http://www.saha.go.kr/portal/Downfiles/symbol_jpg_2022.zip",
+    "bytes": 144582,
+    "filename": "symbol_jpg_2022.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.saha.go.kr/portal/Downfiles/symbol_ai_2022.zip",
+    "bytes": 2271986,
+    "filename": "symbol_ai_2022.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "AI",
+    "url": "http://www.saha.go.kr/portal/Downfiles/ms9_ai_goals.ai",
+    "bytes": 110392,
+    "filename": "ms9_ai_goals.ai"
+   }
+  ],
+  "kr-q50403": [
+   {
+    "format": "ZIP",
+    "url": "https://www.seogu.gwangju.kr/boardDownload.es?bid=ATT&list_no=35486&seq=1",
+    "bytes": 69625,
+    "filename": "logo.zip"
+   }
+  ],
+  "kr-q50406": [
+   {
+    "format": "PNG",
+    "url": "https://www.bsseogu.go.kr/customuser/download/filedown.bsseogu?filename=/eng/01/seogu_logo.png",
+    "bytes": null,
+    "filename": "seogu_logo.png"
+   }
+  ],
+  "kr-q50408": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sdm.go.kr/fileUpload/work/wesdm/general/ci_jpg.zip",
+    "bytes": 60104,
+    "filename": "ci_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_png.zip",
+    "bytes": 77853,
+    "filename": "seodaemun_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_ai.zip",
+    "bytes": 62547,
+    "filename": "seodaemun_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q50421": [
+   {
+    "format": "AI",
+    "url": "https://www.yeonsu.go.kr:443/shareEtc/download.asp?filename=symbol_2023.ai&filepath=file_main",
+    "bytes": 216243,
+    "filename": "symbol_2023.ai"
+   }
+  ],
+  "kr-q50423": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down1.zip",
+    "bytes": 86680,
+    "filename": "p00559_down1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down2.zip",
+    "bytes": 70187,
+    "filename": "p00559_down2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down3.zip",
+    "bytes": 134901,
+    "filename": "p00559_down3.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yeongdo.go.kr/_res/portal/data/zip/p00559_down4.zip",
+    "bytes": 100745,
+    "filename": "p00559_down4.zip"
+   }
+  ],
+  "kr-q50431": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011042Wi4&fileSn=0",
+    "bytes": null,
+    "filename": "CI_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q50439": [
+   {
+    "format": "ZIP",
+    "url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000040400Bn3&fileSn=0",
+    "bytes": null,
+    "filename": "ì¤êµ¬ì²­__ë§í¬ (ìì ).zip"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.djjunggu.go.kr/thumbnail/fileInfo/FI_202011080257177990_02.jpg",
+    "bytes": 404620,
+    "filename": "FI_202011080257177990_02.jpg"
+   }
+  ],
+  "kr-q50442": [
+   {
+    "format": "JPG",
+    "url": "https://www.junggu.ulsan.kr/images/domain/junggu/file/symbol.jpg",
+    "bytes": 95801,
+    "filename": "symbol.jpg"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.junggu.ulsan.kr/images/domain/junggu/file/brand.jpg",
+    "bytes": 199411,
+    "filename": "brand.jpg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.junggu.ulsan.kr/images/domain/junggu/file/brand_ai.zip",
+    "bytes": 146736,
+    "filename": "brand_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q5053266": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cup.ac.kr/common/front/home/file/cup_symbol(ai).zip",
+    "bytes": 1002393,
+    "filename": "cup_symbol(ai).zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cup.ac.kr/common/front/home/file/cup_symbol(jpg).zip",
+    "bytes": 349288,
+    "filename": "cup_symbol(jpg).zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q5115985": [
+   {
+    "format": "ZIP",
+    "url": "https://www.chugye.ac.kr/mbs/university/download/UI.zip",
+    "bytes": 3865213,
+    "filename": "UI.zip"
+   }
+  ],
+  "kr-q5208186": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dgau.ac.kr/file/s1241/dgau_logo.zip",
+    "bytes": 76430,
+    "filename": "dgau_logo.zip"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.dgau.ac.kr/file/s1241/dgau_vertical_logo.jpg",
+    "bytes": 51263,
+    "filename": "dgau_vertical_logo.jpg"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.dgau.ac.kr/file/s1241/dgau_horizontal_logo.jpg",
+    "bytes": 34528,
+    "filename": "dgau_horizontal_logo.jpg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dgau.ac.kr/file/s1241/dgau_20th_logo.zip",
+    "bytes": 7777322,
+    "filename": "dgau_20th_logo.zip"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.dgau.ac.kr/file/s1241/dgau_20th_logo.jpg",
+    "bytes": 249870,
+    "filename": "dgau_20th_logo.jpg"
+   }
+  ],
+  "kr-q5296069": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/SYMBOL_MARK.zip",
+    "bytes": 807839,
+    "filename": "SYMBOL_MARK.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/LOGO_(KOREA).zip",
+    "bytes": 721242,
+    "filename": "LOGO_(KOREA).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/LOGO_(ENGLISH).zip",
+    "bytes": 735175,
+    "filename": "LOGO_(ENGLISH).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/LOGO_(CHINESE).zip",
+    "bytes": 794090,
+    "filename": "LOGO_(CHINESE).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(KOREA).zip",
+    "bytes": 787733,
+    "filename": "Signature_A_File_(KOREA).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(ENGLISH).zip",
+    "bytes": 792584,
+    "filename": "Signature_A_File_(ENGLISH).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/Signature_A_File_(CHINESE).zip",
+    "bytes": 858216,
+    "filename": "Signature_A_File_(CHINESE).zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dyu.ac.kr/downfile/logo/Signature_B_File_(KOREA_A).zip",
+    "bytes": 769872,
+    "filename": "Signature_B_File_(KOREA_A).zip"
+   }
+  ],
+  "kr-q60376": [
+   {
+    "format": "ZIP",
+    "url": "https://english.komsco.com/attach/f51d587df22ea812977ddd26bafbb2dc/9a9db098b587ee18b321c826f3707a49",
+    "bytes": 129428,
+    "filename": "komsco_wordmark.zip"
+   }
+  ],
+  "kr-q61359365": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sdco.or.kr/kor/file/CI.zip",
+    "bytes": 3537647,
+    "filename": "CI.zip"
+   }
+  ],
+  "kr-q623798": [
+   {
+    "format": "ZIP",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/symbol_ai.zip",
+    "bytes": 718577,
+    "filename": "symbol_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/colorsystem.zip",
+    "bytes": 34179,
+    "filename": "colorsystem.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/logotype_jpg.zip",
+    "bytes": 46873,
+    "filename": "logotype_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/signature_jpg.zip",
+    "bytes": 182985,
+    "filename": "signature_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/signature_ai.zip",
+    "bytes": 1614204,
+    "filename": "signature_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/signature_guide.pdf",
+    "bytes": 288381,
+    "filename": "signature_guide.pdf"
+   }
+  ],
+  "kr-q623851": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jbnu.ac.kr/file/sub/ui.zip",
+    "bytes": 15432816,
+    "filename": "ui.zip"
+   }
+  ],
+  "kr-q624022": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kr.or.kr/file/download.do?fileId=87f9e4820a81755cb3afd11a35db51bf3dddb30f4abc1d594bbd11237b9c5b2cc64776e584dc41d5438034599eed16ec&seqNo=1dbb64ac3b223d235939abd6087e29b21238354bdf7a0291771d376c5fdee1a0",
+    "bytes": 2825025,
+    "filename": "png 다운로드.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q624046": [
+   {
+    "format": "ZIP",
+    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135379&seq=1",
+    "bytes": null,
+    "filename": "법제처_상징_AI.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q624189": [
+   {
+    "format": "AI",
+    "url": "https://www.anyang.ac.kr/cms/etcResourceDown.do?site=$cms$LYQwlgdkA&key=$cms$AwRgBICXOLWdgMi4N3OBv2gdAQwJZA",
+    "bytes": 2724365,
+    "filename": "01_캐릭터컬러.ai"
+   }
+  ],
+  "kr-q624460": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mafra.go.kr/sites/home/download/signature.zip",
+    "bytes": 11137070,
+    "filename": "signature.zip"
+   }
+  ],
+  "kr-q624575": [
+   {
+    "format": "PDF",
+    "url": "http://www.duksung.ac.kr/uploads/CONTENTS/site/duksung/duksung_UIS_manual_book.pdf",
+    "bytes": 27355026,
+    "filename": "duksung_UIS_manual_book.pdf"
+   }
+  ],
+  "kr-q624993": [
+   {
+    "format": "ZIP",
+    "url": "https://www.syu.ac.kr/wp-content/uploads/2023/02/syu_ui.zip",
+    "bytes": 1986551,
+    "filename": "syu_ui.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.syu.ac.kr/wp-content/uploads/2018/07/syu_ui_jpg.zip",
+    "bytes": 1137671,
+    "filename": "syu_ui_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q625097": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mof.go.kr/data/mof_MI.zip",
+    "bytes": 5472722,
+    "filename": "mof_MI.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mof.go.kr/data/mof_character2.zip",
+    "bytes": 30563994,
+    "filename": "mof_character2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mof.go.kr/data/mof_fonts.zip",
+    "bytes": 1530334,
+    "filename": "mof_fonts.zip"
+   }
+  ],
+  "kr-q625548": [
+   {
+    "format": "PNG",
+    "url": "https://d3ahhveld6u9g3.cloudfront.net/images/sub/symbol.png",
+    "bytes": 831261,
+    "filename": "symbol.png"
+   }
+  ],
+  "kr-q625952": [
+   {
+    "format": "ZIP",
+    "url": "http://www.bu.ac.kr/sites/web/files/baekseok_Signature_ai.zip",
+    "bytes": 7485584,
+    "filename": "baekseok_Signature_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "http://www.bu.ac.kr/sites/web/files/baekseok_Signature_50th_ai.zip",
+    "bytes": 1384324,
+    "filename": "baekseok_Signature_50th_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q625961": [
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_ai.zip",
+    "bytes": 425380,
+    "filename": "uilogo_symbol_mark_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_jpg.zip",
+    "bytes": 673811,
+    "filename": "uilogo_symbol_mark_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_symbol_mark_png.zip",
+    "bytes": 210182,
+    "filename": "uilogo_symbol_mark_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_korean.zip",
+    "bytes": 458958,
+    "filename": "uilogo_logotype_korean.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_english_01.zip",
+    "bytes": 833094,
+    "filename": "uilogo_logotype_english_01.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_english_02.zip",
+    "bytes": 881932,
+    "filename": "uilogo_logotype_english_02.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_03.zip",
+    "bytes": 874502,
+    "filename": "uilogo_logotype_03.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.cu.ac.kr/download/uisystem/uilogo_logotype_04_ai.zip",
+    "bytes": 494977,
+    "filename": "uilogo_logotype_04_ai.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q626053": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hannam.ac.kr/data/about/hannam-symbol-gif.zip",
+    "bytes": 601904,
+    "filename": "hannam-symbol-gif.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hannam.ac.kr/data/about/hannam-55-V.I.zip",
+    "bytes": 8265149,
+    "filename": "hannam-55-V.I.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.hannam.ac.kr/data/about/hannam-logo-eps.zip",
+    "bytes": 509915,
+    "filename": "hannam-logo-eps.zip",
+    "contains": "EPS"
+   }
+  ],
+  "kr-q626288": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/logo_CI_ai.zip",
+    "bytes": 5856656,
+    "filename": "logo_CI_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/logo_CI_jpg.zip",
+    "bytes": 1092224,
+    "filename": "logo_CI_jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/signature2.ai.zip",
+    "bytes": 2009319,
+    "filename": "signature2.ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/signature2.jpg.zip",
+    "bytes": 59290,
+    "filename": "signature2.jpg.zip",
+    "contains": "JPG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/keu-di_AI.zip",
+    "bytes": 551372,
+    "filename": "keu-di_AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kdi.re.kr/res/ci/keu-di_PNG.zip",
+    "bytes": 1008386,
+    "filename": "keu-di_PNG.zip",
+    "contains": "PNG"
+   }
+  ],
+  "kr-q6322893": [
+   {
+    "format": "PDF",
+    "url": "https://www.kwater.or.kr/download/water/k-water_ci_guide.pdf",
+    "bytes": 14879275,
+    "filename": "k-water_ci_guide.pdf"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/k-water_ci_ai.zip",
+    "bytes": 4273308,
+    "filename": "k-water_ci_ai.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/k-water_ci_png.zip",
+    "bytes": 62285,
+    "filename": "k-water_ci_png.zip",
+    "contains": "PNG"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/ci_ai02.zip",
+    "bytes": 145798,
+    "filename": "ci_ai02.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/ci_jpg02.zip",
+    "bytes": 207390,
+    "filename": "ci_jpg02.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q6328582": [
+   {
+    "format": "ZIP",
+    "url": "http://www.kepco-enc.com/boardDownload.es?bid=ATT&list_no=141&seq=1",
+    "bytes": 5147014,
+    "filename": "CI_jpg.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q6431684": [
+   {
+    "format": "ZIP",
+    "url": "https://www.knfc.co.kr/UploadFiles/down/KNF-AI.zip",
+    "bytes": 978153,
+    "filename": "KNF-AI.zip",
+    "contains": "AI"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.knfc.co.kr/UploadFiles/down/KNF-JPG.zip",
+    "bytes": 195547,
+    "filename": "KNF-JPG.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q6647741": [
+   {
+    "format": "AI",
+    "url": "https://ltikorea.or.kr/upload/kr/KLTI_Logo_ai.ai",
+    "bytes": 1156031,
+    "filename": "KLTI_Logo_ai.ai"
+   },
+   {
+    "format": "JPG",
+    "url": "https://ltikorea.or.kr/upload/kr/KLTI_Logo.jpg",
+    "bytes": 199188,
+    "filename": "KLTI_Logo.jpg"
+   }
+  ],
+  "kr-q6858616": [
+   {
+    "format": "ZIP",
+    "url": "https://www.semyung.ac.kr/gonet/FileDownload.do?fileName=UI_JPG_01.zip&code=download/kor/sub01/",
+    "bytes": 81472,
+    "filename": "UI_JPG_01.zip",
+    "contains": "JPG"
+   }
+  ],
+  "kr-q6895404": [
+   {
+    "format": "AI",
+    "url": "https://www.mcu.ac.kr/home/mcu/down/mcu_symbol.ai",
+    "bytes": 1259917,
+    "filename": "mcu_symbol.ai"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.mcu.ac.kr/home/mcu/down/mcu_symbol.png",
+    "bytes": 14474,
+    "filename": "mcu_symbol.png"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.mcu.ac.kr/home/mcu/down/mcu_logo.ai",
+    "bytes": 1256501,
+    "filename": "mcu_logo.ai"
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.mcu.ac.kr/home/mcu/down/mcu_logo.png",
+    "bytes": 34859,
+    "filename": "mcu_logo.png"
+   }
+  ],
+  "kr-q6973584": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nile.or.kr/usr/wap/downloadFile.do?app=39409&seq=59670&atchFileSeq=59658&fileColumn=atchFileSeq&fileSn=0",
+    "bytes": 1018059,
+    "filename": "nile_logo_AI.zip",
+    "contains": "AI"
+   }
+  ],
+  "kr-q7446489": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sehan.ac.kr/sites/sehan/files/symbolmark.zip",
+    "bytes": 2829786,
+    "filename": "symbolmark.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sehan.ac.kr/sites/sehan/files/logotype.zip",
+    "bytes": 1992342,
+    "filename": "logotype.zip"
+   }
+  ],
+  "kr-q7451674": [
+   {
+    "format": "ZIP",
+    "url": "https://www.sen.go.kr/resources/www/data/senLogoAi.zip",
+    "bytes": 4616737,
+    "filename": "senLogoAi.zip"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.sen.go.kr/resources/www/data/symbol_01_01_2.jpg",
+    "bytes": 714075,
+    "filename": "symbol_01_01_2.jpg"
+   },
+   {
+    "format": "JPG",
+    "url": "https://www.sen.go.kr/resources/www/data/symbol_01_02_2.jpg",
+    "bytes": 684983,
+    "filename": "symbol_01_02_2.jpg"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sen.go.kr/resources/www/data/symbol_02_1.zip",
+    "bytes": 360558,
+    "filename": "symbol_02_1.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sen.go.kr/resources/www/data/symbol_02_2.zip",
+    "bytes": 2335016,
+    "filename": "symbol_02_2.zip"
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.sen.go.kr/resources/www/data/symbol_03_1.zip",
+    "bytes": 1794746,
+    "filename": "symbol_03_1.zip"
+   }
+  ],
+  "kr-q8058582": [
+   {
+    "format": "PDF",
+    "url": "https://www.u1.ac.kr/_res/u1/ipsi/etc/u1_ipsi_jungsi_2027.pdf",
+    "bytes": 1116178,
+    "filename": "u1_ipsi_jungsi_2027.pdf"
+   }
+  ],
+  "kr-q8058632": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ysu.ac.kr/kor/ajx_json/UploadMgr/downloadRun.do?qcode=VXBsb2FkTWdyLDM2MTk3MCxZ",
+    "bytes": null,
+    "filename": "영산대_대표UI.zip"
+   }
+  ],
+  "kr-q85981820": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ncrc.or.kr/upload/ncrc/ncrc_ci_ai.zip",
+    "bytes": 13633483,
+    "filename": "ncrc_ci_ai.zip",
+    "contains": "AI"
+   }
+  ]
+ }
+}

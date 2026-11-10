@@ -1,0 +1,5155 @@
+{
+ "note": "기본 정렬용 인지도 점수: 한국어 위키백과 최근 12개월 조회수(수요)와 위키백과 언어판 수(규모·인지도). tools/logo-survey/popularity.py가 생성.",
+ "period": "2025-11~2026-10",
+ "updated_at": "2026-11-10",
+ "records": {
+  "adobe-brand": {
+   "score": 4.753,
+   "wiki_title": "어도비 (기업)",
+   "pageviews": 3953,
+   "sitelinks": 83
+  },
+  "github-logo": {
+   "score": 5.225,
+   "wiki_title": "깃허브",
+   "pageviews": 12381,
+   "sitelinks": 76
+  },
+  "gok-symbol": {
+   "score": 4.734,
+   "wiki_title": "대한민국 정부",
+   "pageviews": 9246,
+   "sitelinks": 18
+  },
+  "google-brand": {
+   "score": 6.585,
+   "wiki_title": "구글",
+   "pageviews": 164991,
+   "sitelinks": 189
+  },
+  "goyang-city-logo": {
+   "score": 5.469,
+   "wiki_title": "고양시",
+   "pageviews": 26561,
+   "sitelinks": 54
+  },
+  "hyundai-ci": {
+   "score": 5.537,
+   "wiki_title": "현대자동차",
+   "pageviews": 25587,
+   "sitelinks": 75
+  },
+  "kaist-ui": {
+   "score": 5.162,
+   "wiki_title": "한국과학기술원",
+   "pageviews": 16893,
+   "sitelinks": 35
+  },
+  "kakao-ci": {
+   "score": 5.429,
+   "wiki_title": "카카오",
+   "pageviews": 15809,
+   "sitelinks": 111
+  },
+  "kakaobank-brand": {
+   "score": 4.155,
+   "wiki_title": "카카오뱅크",
+   "pageviews": 5427,
+   "sitelinks": 4
+  },
+  "kakaogames-ci": {
+   "score": 3.743,
+   "wiki_title": "카카오게임즈",
+   "pageviews": 1303,
+   "sitelinks": 10
+  },
+  "kedi-ci": {
+   "score": 3.464,
+   "wiki_title": "한국교육개발원",
+   "pageviews": 1494,
+   "sitelinks": 2
+  },
+  "kepco-ci": {
+   "score": 4.746,
+   "wiki_title": "한국전력공사",
+   "pageviews": 9218,
+   "sitelinks": 19
+  },
+  "khnp-ci": {
+   "score": 4.382,
+   "wiki_title": "한국수력원자력",
+   "pageviews": 5414,
+   "sitelinks": 11
+  },
+  "koreatech-ui": {
+   "score": 4.548,
+   "wiki_title": "한국기술교육대학교",
+   "pageviews": 18271,
+   "sitelinks": 2
+  },
+  "kr-q1075658": {
+   "score": 3.718,
+   "wiki_title": "초당대학교",
+   "pageviews": 2266,
+   "sitelinks": 3
+  },
+  "kr-q10855215": {
+   "score": 3.825,
+   "wiki_title": "경북대학교병원",
+   "pageviews": 3447,
+   "sitelinks": 2
+  },
+  "kr-q10855238": {
+   "score": 3.822,
+   "wiki_title": "경일대학교",
+   "pageviews": 3421,
+   "sitelinks": 2
+  },
+  "kr-q10856070": {
+   "score": 4.307,
+   "wiki_title": "남서울대학교",
+   "pageviews": 6906,
+   "sitelinks": 5
+  },
+  "kr-q109459690": {
+   "score": 3.111,
+   "wiki_title": "국립항공박물관",
+   "pageviews": 658,
+   "sitelinks": 2
+  },
+  "kr-q109460207": {
+   "score": 3.529,
+   "wiki_title": "대한민국 중대범죄수사청",
+   "pageviews": 1278,
+   "sitelinks": 4
+  },
+  "kr-q11232850": {
+   "score": 4.063,
+   "wiki_title": "대한민국 관세청",
+   "pageviews": 4396,
+   "sitelinks": 4
+  },
+  "kr-q11232895": {
+   "score": 3.824,
+   "wiki_title": "대한민국 농촌진흥청",
+   "pageviews": 2265,
+   "sitelinks": 5
+  },
+  "kr-q11232933": {
+   "score": 4.066,
+   "wiki_title": "대한민국 방위사업청",
+   "pageviews": 2915,
+   "sitelinks": 9
+  },
+  "kr-q11233063": {
+   "score": 3.898,
+   "wiki_title": "대한민국 조달청",
+   "pageviews": 3432,
+   "sitelinks": 3
+  },
+  "kr-q11233101": {
+   "score": 4.064,
+   "wiki_title": "대한민국 국가데이터처",
+   "pageviews": 3593,
+   "sitelinks": 6
+  },
+  "kr-q11250368": {
+   "score": 3.775,
+   "wiki_title": "서울기독대학교",
+   "pageviews": 3068,
+   "sitelinks": 2
+  },
+  "kr-q11250404": {
+   "score": 3.732,
+   "wiki_title": "서울신학대학교",
+   "pageviews": 2339,
+   "sitelinks": 3
+  },
+  "kr-q11250418": {
+   "score": 3.721,
+   "wiki_title": "국민체육진흥공단",
+   "pageviews": 2277,
+   "sitelinks": 3
+  },
+  "kr-q11272217": {
+   "score": 4.043,
+   "wiki_title": "중부대학교",
+   "pageviews": 4190,
+   "sitelinks": 4
+  },
+  "kr-q11284963": {
+   "score": 3.899,
+   "wiki_title": "한국교육과정평가원",
+   "pageviews": 4087,
+   "sitelinks": 2
+  },
+  "kr-q11285016": {
+   "score": 4.242,
+   "wiki_title": "한국마사회",
+   "pageviews": 7593,
+   "sitelinks": 3
+  },
+  "kr-q11285042": {
+   "score": 3.613,
+   "wiki_title": "한국방송광고진흥공사",
+   "pageviews": 1774,
+   "sitelinks": 3
+  },
+  "kr-q11285146": {
+   "score": 3.56,
+   "wiki_title": "한국언론진흥재단",
+   "pageviews": 1867,
+   "sitelinks": 2
+  },
+  "kr-q11286676": {
+   "score": 3.964,
+   "wiki_title": "호남대학교",
+   "pageviews": 3493,
+   "sitelinks": 4
+  },
+  "kr-q114364248": {
+   "score": 4.344,
+   "wiki_title": "제물포구",
+   "pageviews": 8406,
+   "sitelinks": 4
+  },
+  "kr-q115648978": {
+   "score": 3.418,
+   "wiki_title": "국악방송",
+   "pageviews": 1716,
+   "sitelinks": 1
+  },
+  "kr-q11626082": {
+   "score": 3.541,
+   "wiki_title": "대한민국 행정중심복합도시건설청",
+   "pageviews": 1312,
+   "sitelinks": 4
+  },
+  "kr-q11664005": {
+   "score": 4.292,
+   "wiki_title": "한국콘텐츠진흥원",
+   "pageviews": 4634,
+   "sitelinks": 10
+  },
+  "kr-q119041656": {
+   "score": 3.576,
+   "wiki_title": "대한민국 재외동포청",
+   "pageviews": 2478,
+   "sitelinks": 1
+  },
+  "kr-q124215730": {
+   "score": 4.309,
+   "wiki_title": "대한민국 우주항공청",
+   "pageviews": 4364,
+   "sitelinks": 12
+  },
+  "kr-q12580675": {
+   "score": 3.194,
+   "wiki_title": "88관광개발",
+   "pageviews": 1022,
+   "sitelinks": 1
+  },
+  "kr-q12582495": {
+   "score": 2.804,
+   "wiki_title": "가축위생방역지원본부",
+   "pageviews": 410,
+   "sitelinks": 1
+  },
+  "kr-q12582630": {
+   "score": 3.802,
+   "wiki_title": "감리교신학대학교",
+   "pageviews": 4176,
+   "sitelinks": 1
+  },
+  "kr-q12582831": {
+   "score": 3.542,
+   "wiki_title": "강원대학교치과병원",
+   "pageviews": 2288,
+   "sitelinks": 1
+  },
+  "kr-q12583025": {
+   "score": 4.117,
+   "wiki_title": "강원랜드",
+   "pageviews": 4460,
+   "sitelinks": 5
+  },
+  "kr-q12583260": {
+   "score": 3.77,
+   "wiki_title": "대한민국 개인정보보호위원회",
+   "pageviews": 2231,
+   "sitelinks": 4
+  },
+  "kr-q12583410": {
+   "score": 2.699,
+   "wiki_title": "건축공간연구원",
+   "pageviews": 320,
+   "sitelinks": 1
+  },
+  "kr-q12583541": {
+   "score": 3.963,
+   "wiki_title": "경기도교육청",
+   "pageviews": 3986,
+   "sitelinks": 3
+  },
+  "kr-q12583702": {
+   "score": 3.44,
+   "wiki_title": "경상남도교육청",
+   "pageviews": 1806,
+   "sitelinks": 1
+  },
+  "kr-q12583723": {
+   "score": 3.694,
+   "wiki_title": "경상국립대학교병원",
+   "pageviews": 3250,
+   "sitelinks": 1
+  },
+  "kr-q12583724": {
+   "score": 3.503,
+   "wiki_title": "경상북도교육청",
+   "pageviews": 2093,
+   "sitelinks": 1
+  },
+  "kr-q12584356": {
+   "score": 2.846,
+   "wiki_title": "고용노동연수원",
+   "pageviews": 453,
+   "sitelinks": 1
+  },
+  "kr-q12584672": {
+   "score": 3.665,
+   "wiki_title": "공무원연금공단",
+   "pageviews": 3038,
+   "sitelinks": 1
+  },
+  "kr-q12585152": {
+   "score": 3.373,
+   "wiki_title": "광주여자대학교",
+   "pageviews": 1547,
+   "sitelinks": 1
+  },
+  "kr-q12585691": {
+   "score": 3.658,
+   "wiki_title": "국립공원공단",
+   "pageviews": 2994,
+   "sitelinks": 1
+  },
+  "kr-q12585740": {
+   "score": 3.515,
+   "wiki_title": "국립암센터",
+   "pageviews": 2151,
+   "sitelinks": 1
+  },
+  "kr-q12585766": {
+   "score": 3.855,
+   "wiki_title": "국립중앙의료원",
+   "pageviews": 3698,
+   "sitelinks": 2
+  },
+  "kr-q12585886": {
+   "score": 2.878,
+   "wiki_title": "국제식물검역인증원",
+   "pageviews": 488,
+   "sitelinks": 1
+  },
+  "kr-q12585892": {
+   "score": 3.623,
+   "wiki_title": "한국전력국제원자력대학원대학교",
+   "pageviews": 2759,
+   "sitelinks": 1
+  },
+  "kr-q12585920": {
+   "score": 3.115,
+   "wiki_title": "국토연구원",
+   "pageviews": 850,
+   "sitelinks": 1
+  },
+  "kr-q12586274": {
+   "score": 3.454,
+   "wiki_title": "그랜드코리아레저",
+   "pageviews": 1868,
+   "sitelinks": 1
+  },
+  "kr-q12586333": {
+   "score": 3.822,
+   "wiki_title": "근로복지공단",
+   "pageviews": 4370,
+   "sitelinks": 1
+  },
+  "kr-q12586769": {
+   "score": 3.917,
+   "wiki_title": "기초과학연구원",
+   "pageviews": 2561,
+   "sitelinks": 6
+  },
+  "kr-q12589451": {
+   "score": 3.506,
+   "wiki_title": "가톨릭꽃동네대학교",
+   "pageviews": 2105,
+   "sitelinks": 1
+  },
+  "kr-q12589840": {
+   "score": 2.806,
+   "wiki_title": "남북교류협력지원협회",
+   "pageviews": 412,
+   "sitelinks": 1
+  },
+  "kr-q12590381": {
+   "score": 2.859,
+   "wiki_title": "노사발전재단",
+   "pageviews": 467,
+   "sitelinks": 1
+  },
+  "kr-q12590543": {
+   "score": 3.273,
+   "wiki_title": "농림수산식품교육문화정보원",
+   "pageviews": 1226,
+   "sitelinks": 1
+  },
+  "kr-q12590582": {
+   "score": 3.206,
+   "wiki_title": "한국농업기술진흥원",
+   "pageviews": 1051,
+   "sitelinks": 1
+  },
+  "kr-q12590587": {
+   "score": 2.971,
+   "wiki_title": "농업정책보험금융원",
+   "pageviews": 607,
+   "sitelinks": 1
+  },
+  "kr-q12591209": {
+   "score": 4.307,
+   "wiki_title": "대구경북과학기술원",
+   "pageviews": 6912,
+   "sitelinks": 5
+  },
+  "kr-q12591211": {
+   "score": 3.218,
+   "wiki_title": "대구경북첨단의료산업진흥재단",
+   "pageviews": 1081,
+   "sitelinks": 1
+  },
+  "kr-q12591707": {
+   "score": 2.861,
+   "wiki_title": "대전가톨릭대학교",
+   "pageviews": 469,
+   "sitelinks": 1
+  },
+  "kr-q12591780": {
+   "score": 3.071,
+   "wiki_title": "대전신학대학교",
+   "pageviews": 767,
+   "sitelinks": 1
+  },
+  "kr-q12592578": {
+   "score": 3.712,
+   "wiki_title": "대한법률구조공단",
+   "pageviews": 3392,
+   "sitelinks": 1
+  },
+  "kr-q12592673": {
+   "score": 3.703,
+   "wiki_title": "주택도시보증공사",
+   "pageviews": 3318,
+   "sitelinks": 1
+  },
+  "kr-q12593324": {
+   "score": 3.726,
+   "wiki_title": "동명대학교",
+   "pageviews": 3498,
+   "sitelinks": 1
+  },
+  "kr-q12595373": {
+   "score": 4.012,
+   "wiki_title": "목원대학교",
+   "pageviews": 3905,
+   "sitelinks": 4
+  },
+  "kr-q12598795": {
+   "score": 3.413,
+   "wiki_title": "부산대학교병원",
+   "pageviews": 1696,
+   "sitelinks": 1
+  },
+  "kr-q12599707": {
+   "score": 3.739,
+   "wiki_title": "사립학교교직원연금공단",
+   "pageviews": 3607,
+   "sitelinks": 1
+  },
+  "kr-q12599736": {
+   "score": 2.873,
+   "wiki_title": "한국치산기술협회",
+   "pageviews": 483,
+   "sitelinks": 1
+  },
+  "kr-q12601207": {
+   "score": 3.491,
+   "wiki_title": "서울대학교치과병원",
+   "pageviews": 2034,
+   "sitelinks": 1
+  },
+  "kr-q12601315": {
+   "score": 3.615,
+   "wiki_title": "서울장신대학교",
+   "pageviews": 2711,
+   "sitelinks": 1
+  },
+  "kr-q12601429": {
+   "score": 4.153,
+   "wiki_title": "서일대학교",
+   "pageviews": 9377,
+   "sitelinks": 1
+  },
+  "kr-q12602318": {
+   "score": 3.496,
+   "wiki_title": "세종특별자치시교육청",
+   "pageviews": 2058,
+   "sitelinks": 1
+  },
+  "kr-q12602503": {
+   "score": 4.248,
+   "wiki_title": "소상공인시장진흥공단",
+   "pageviews": 9153,
+   "sitelinks": 2
+  },
+  "kr-q12602960": {
+   "score": 3.393,
+   "wiki_title": "송원대학교",
+   "pageviews": 1622,
+   "sitelinks": 1
+  },
+  "kr-q12604470": {
+   "score": 3.402,
+   "wiki_title": "신용보증재단중앙회",
+   "pageviews": 1653,
+   "sitelinks": 1
+  },
+  "kr-q12604471": {
+   "score": 3.622,
+   "wiki_title": "신용보증기금",
+   "pageviews": 2754,
+   "sitelinks": 1
+  },
+  "kr-q12606659": {
+   "score": 2.97,
+   "wiki_title": "에너지경제연구원",
+   "pageviews": 606,
+   "sitelinks": 1
+  },
+  "kr-q12606661": {
+   "score": 3.316,
+   "wiki_title": "한국에너지공단",
+   "pageviews": 1355,
+   "sitelinks": 1
+  },
+  "kr-q12607638": {
+   "score": 3.134,
+   "wiki_title": "예수대학교",
+   "pageviews": 889,
+   "sitelinks": 1
+  },
+  "kr-q12607644": {
+   "score": 2.949,
+   "wiki_title": "예술경영지원센터",
+   "pageviews": 577,
+   "sitelinks": 1
+  },
+  "kr-q12607921": {
+   "score": 3.077,
+   "wiki_title": "오송첨단의료산업진흥재단",
+   "pageviews": 778,
+   "sitelinks": 1
+  },
+  "kr-q12608990": {
+   "score": 3.072,
+   "wiki_title": "우체국시설관리단",
+   "pageviews": 769,
+   "sitelinks": 1
+  },
+  "kr-q12609155": {
+   "score": 2.682,
+   "wiki_title": "울산항만공사",
+   "pageviews": 307,
+   "sitelinks": 1
+  },
+  "kr-q12610722": {
+   "score": 2.577,
+   "wiki_title": "한국의료기기안전정보원",
+   "pageviews": 239,
+   "sitelinks": 1
+  },
+  "kr-q12613460": {
+   "score": 3.766,
+   "wiki_title": "인천가톨릭대학교",
+   "pageviews": 2213,
+   "sitelinks": 4
+  },
+  "kr-q12613478": {
+   "score": 3.379,
+   "wiki_title": "인천광역시교육청",
+   "pageviews": 1569,
+   "sitelinks": 1
+  },
+  "kr-q12613559": {
+   "score": 3.104,
+   "wiki_title": "인천항만공사",
+   "pageviews": 829,
+   "sitelinks": 1
+  },
+  "kr-q12615057": {
+   "score": 3.553,
+   "wiki_title": "전남대학교병원",
+   "pageviews": 2349,
+   "sitelinks": 1
+  },
+  "kr-q12615090": {
+   "score": 2.959,
+   "wiki_title": "전남광주통합특별시교육청",
+   "pageviews": 590,
+   "sitelinks": 1
+  },
+  "kr-q12615104": {
+   "score": 3.51,
+   "wiki_title": "전북특별자치도교육청",
+   "pageviews": 2127,
+   "sitelinks": 1
+  },
+  "kr-q12615121": {
+   "score": 2.828,
+   "wiki_title": "무역안보관리원",
+   "pageviews": 434,
+   "sitelinks": 1
+  },
+  "kr-q12615161": {
+   "score": 3.261,
+   "wiki_title": "전북대학교병원",
+   "pageviews": 1193,
+   "sitelinks": 1
+  },
+  "kr-q12615274": {
+   "score": 3.082,
+   "wiki_title": "전쟁기념사업회",
+   "pageviews": 786,
+   "sitelinks": 1
+  },
+  "kr-q12615656": {
+   "score": 2.989,
+   "wiki_title": "정보통신정책연구원",
+   "pageviews": 494,
+   "sitelinks": 2
+  },
+  "kr-q12615669": {
+   "score": 2.94,
+   "wiki_title": "정부법무공단",
+   "pageviews": 565,
+   "sitelinks": 1
+  },
+  "kr-q12616442": {
+   "score": 3.337,
+   "wiki_title": "제주대학교병원",
+   "pageviews": 1424,
+   "sitelinks": 1
+  },
+  "kr-q12616499": {
+   "score": 3.176,
+   "wiki_title": "제주특별자치도교육청",
+   "pageviews": 980,
+   "sitelinks": 1
+  },
+  "kr-q12617454": {
+   "score": 3.505,
+   "wiki_title": "주택관리공단",
+   "pageviews": 2101,
+   "sitelinks": 1
+  },
+  "kr-q12617631": {
+   "score": 3.904,
+   "wiki_title": "중소벤처기업진흥공단",
+   "pageviews": 5280,
+   "sitelinks": 1
+  },
+  "kr-q12617695": {
+   "score": 3.448,
+   "wiki_title": "중앙승가대학교",
+   "pageviews": 1441,
+   "sitelinks": 2
+  },
+  "kr-q12617713": {
+   "score": 4.271,
+   "wiki_title": "중원대학교",
+   "pageviews": 9653,
+   "sitelinks": 2
+  },
+  "kr-q12618419": {
+   "score": 4.321,
+   "wiki_title": "대한민국 질병관리청",
+   "pageviews": 4110,
+   "sitelinks": 14
+  },
+  "kr-q12620023": {
+   "score": 3.058,
+   "wiki_title": "축산물품질평가원",
+   "pageviews": 744,
+   "sitelinks": 1
+  },
+  "kr-q12620109": {
+   "score": 3.484,
+   "wiki_title": "충남대학교병원",
+   "pageviews": 2002,
+   "sitelinks": 1
+  },
+  "kr-q12620544": {
+   "score": 3.062,
+   "wiki_title": "코레일테크",
+   "pageviews": 751,
+   "sitelinks": 1
+  },
+  "kr-q12620943": {
+   "score": 2.841,
+   "wiki_title": "태권도진흥재단",
+   "pageviews": 447,
+   "sitelinks": 1
+  },
+  "kr-q12621827": {
+   "score": 4.272,
+   "wiki_title": "평택대학교",
+   "pageviews": 5804,
+   "sitelinks": 6
+  },
+  "kr-q12622776": {
+   "score": 3.638,
+   "wiki_title": "한국가스안전공사",
+   "pageviews": 2857,
+   "sitelinks": 1
+  },
+  "kr-q12622785": {
+   "score": 3.734,
+   "wiki_title": "한국부동산원",
+   "pageviews": 3568,
+   "sitelinks": 1
+  },
+  "kr-q12622825": {
+   "score": 3.1,
+   "wiki_title": "한국고용정보원",
+   "pageviews": 821,
+   "sitelinks": 1
+  },
+  "kr-q12622829": {
+   "score": 3.217,
+   "wiki_title": "한국고전번역원",
+   "pageviews": 1077,
+   "sitelinks": 1
+  },
+  "kr-q12622844": {
+   "score": 3.215,
+   "wiki_title": "한국공정거래조정원",
+   "pageviews": 1073,
+   "sitelinks": 1
+  },
+  "kr-q12622848": {
+   "score": 3.134,
+   "wiki_title": "한국과학기술기획평가원",
+   "pageviews": 888,
+   "sitelinks": 1
+  },
+  "kr-q12622856": {
+   "score": 3.179,
+   "wiki_title": "한국과학창의재단",
+   "pageviews": 986,
+   "sitelinks": 1
+  },
+  "kr-q12622879": {
+   "score": 3.568,
+   "wiki_title": "한국광해광업공단",
+   "pageviews": 1902,
+   "sitelinks": 2
+  },
+  "kr-q12622923": {
+   "score": 2.809,
+   "wiki_title": "한국기상산업기술원",
+   "pageviews": 415,
+   "sitelinks": 1
+  },
+  "kr-q12622947": {
+   "score": 3.765,
+   "wiki_title": "한국남동발전",
+   "pageviews": 3832,
+   "sitelinks": 1
+  },
+  "kr-q12622949": {
+   "score": 3.623,
+   "wiki_title": "한국남부발전",
+   "pageviews": 2757,
+   "sitelinks": 1
+  },
+  "kr-q12622952": {
+   "score": 3.118,
+   "wiki_title": "한국노동연구원",
+   "pageviews": 668,
+   "sitelinks": 2
+  },
+  "kr-q12622955": {
+   "score": 3.59,
+   "wiki_title": "한국노인인력개발원",
+   "pageviews": 2557,
+   "sitelinks": 1
+  },
+  "kr-q12622975": {
+   "score": 3.612,
+   "wiki_title": "한국농어촌공사",
+   "pageviews": 2688,
+   "sitelinks": 1
+  },
+  "kr-q12622983": {
+   "score": 3.107,
+   "wiki_title": "한국농촌경제연구원",
+   "pageviews": 834,
+   "sitelinks": 1
+  },
+  "kr-q12623033": {
+   "score": 3.756,
+   "wiki_title": "한국동서발전",
+   "pageviews": 2938,
+   "sitelinks": 2
+  },
+  "kr-q12623037": {
+   "score": 2.65,
+   "wiki_title": "한국등산·트레킹지원센터",
+   "pageviews": 285,
+   "sitelinks": 1
+  },
+  "kr-q12623050": {
+   "score": 3.2,
+   "wiki_title": "한국로봇산업진흥원",
+   "pageviews": 1035,
+   "sitelinks": 1
+  },
+  "kr-q12623054": {
+   "score": 3.254,
+   "wiki_title": "한국마약퇴치운동본부",
+   "pageviews": 1173,
+   "sitelinks": 1
+  },
+  "kr-q12623072": {
+   "score": 3.399,
+   "wiki_title": "한국무역보험공사",
+   "pageviews": 1645,
+   "sitelinks": 1
+  },
+  "kr-q12623085": {
+   "score": 3.201,
+   "wiki_title": "한국문화관광연구원",
+   "pageviews": 1039,
+   "sitelinks": 1
+  },
+  "kr-q12623091": {
+   "score": 3.34,
+   "wiki_title": "한국문화예술교육진흥원",
+   "pageviews": 1435,
+   "sitelinks": 1
+  },
+  "kr-q12623100": {
+   "score": 3.079,
+   "wiki_title": "국가유산진흥원",
+   "pageviews": 781,
+   "sitelinks": 1
+  },
+  "kr-q12623148": {
+   "score": 2.829,
+   "wiki_title": "한국발명진흥회",
+   "pageviews": 435,
+   "sitelinks": 1
+  },
+  "kr-q12623152": {
+   "score": 3.217,
+   "wiki_title": "한국원자력환경공단",
+   "pageviews": 1077,
+   "sitelinks": 1
+  },
+  "kr-q12623167": {
+   "score": 3.468,
+   "wiki_title": "한국방송통신전파진흥원",
+   "pageviews": 1926,
+   "sitelinks": 1
+  },
+  "kr-q12623175": {
+   "score": 2.935,
+   "wiki_title": "한국법제연구원",
+   "pageviews": 558,
+   "sitelinks": 1
+  },
+  "kr-q12623178": {
+   "score": 4.248,
+   "wiki_title": "한국보건복지인재원",
+   "pageviews": 11662,
+   "sitelinks": 1
+  },
+  "kr-q12623180": {
+   "score": 3.089,
+   "wiki_title": "한국보건의료연구원",
+   "pageviews": 800,
+   "sitelinks": 1
+  },
+  "kr-q12623181": {
+   "score": 4.406,
+   "wiki_title": "한국보건의료인국가시험원",
+   "pageviews": 16788,
+   "sitelinks": 1
+  },
+  "kr-q12623182": {
+   "score": 3.695,
+   "wiki_title": "한국보육진흥원",
+   "pageviews": 3260,
+   "sitelinks": 1
+  },
+  "kr-q12623217": {
+   "score": 3.262,
+   "wiki_title": "한국사회복지협의회",
+   "pageviews": 1195,
+   "sitelinks": 1
+  },
+  "kr-q12623236": {
+   "score": 4.375,
+   "wiki_title": "한국공학대학교",
+   "pageviews": 12254,
+   "sitelinks": 2
+  },
+  "kr-q12623238": {
+   "score": 3.615,
+   "wiki_title": "한국산업기술시험원",
+   "pageviews": 2708,
+   "sitelinks": 1
+  },
+  "kr-q12623242": {
+   "score": 3.292,
+   "wiki_title": "한국산업기술기획평가원",
+   "pageviews": 1282,
+   "sitelinks": 1
+  },
+  "kr-q12623243": {
+   "score": 3.165,
+   "wiki_title": "한국산업단지공단",
+   "pageviews": 954,
+   "sitelinks": 1
+  },
+  "kr-q12623244": {
+   "score": 4.592,
+   "wiki_title": "한국산업안전보건공단",
+   "pageviews": 20192,
+   "sitelinks": 2
+  },
+  "kr-q12623270": {
+   "score": 3.586,
+   "wiki_title": "한국서부발전",
+   "pageviews": 1984,
+   "sitelinks": 2
+  },
+  "kr-q12623276": {
+   "score": 2.927,
+   "wiki_title": "한국석유관리원",
+   "pageviews": 548,
+   "sitelinks": 1
+  },
+  "kr-q12623296": {
+   "score": 3.253,
+   "wiki_title": "한국소방산업기술원",
+   "pageviews": 1171,
+   "sitelinks": 1
+  },
+  "kr-q12623315": {
+   "score": 2.785,
+   "wiki_title": "한국수산자원공단",
+   "pageviews": 392,
+   "sitelinks": 1
+  },
+  "kr-q12623391": {
+   "score": 3.837,
+   "wiki_title": "한국양성평등교육진흥원",
+   "pageviews": 4525,
+   "sitelinks": 1
+  },
+  "kr-q12623411": {
+   "score": 2.684,
+   "wiki_title": "한국에너지기술평가원",
+   "pageviews": 309,
+   "sitelinks": 1
+  },
+  "kr-q12623419": {
+   "score": 2.788,
+   "wiki_title": "한국여성정책연구원",
+   "pageviews": 395,
+   "sitelinks": 1
+  },
+  "kr-q12623488": {
+   "score": 3.184,
+   "wiki_title": "한국원자력의학원",
+   "pageviews": 998,
+   "sitelinks": 1
+  },
+  "kr-q12623489": {
+   "score": 3.016,
+   "wiki_title": "한국에너지정보문화재단",
+   "pageviews": 674,
+   "sitelinks": 1
+  },
+  "kr-q12623490": {
+   "score": 3.174,
+   "wiki_title": "한국원자력안전기술원",
+   "pageviews": 763,
+   "sitelinks": 2
+  },
+  "kr-q12623491": {
+   "score": 3.175,
+   "wiki_title": "한국원자력통제기술원",
+   "pageviews": 978,
+   "sitelinks": 1
+  },
+  "kr-q12623568": {
+   "score": 3.591,
+   "wiki_title": "한국의료분쟁조정중재원",
+   "pageviews": 2562,
+   "sitelinks": 1
+  },
+  "kr-q12623571": {
+   "score": 2.876,
+   "wiki_title": "한국의약품안전관리원",
+   "pageviews": 486,
+   "sitelinks": 1
+  },
+  "kr-q12623602": {
+   "score": 3.483,
+   "wiki_title": "한국자산관리공사",
+   "pageviews": 1994,
+   "sitelinks": 1
+  },
+  "kr-q12623616": {
+   "score": 3.4,
+   "wiki_title": "한국잡월드",
+   "pageviews": 1083,
+   "sitelinks": 3
+  },
+  "kr-q12623621": {
+   "score": 3.042,
+   "wiki_title": "한국장애인개발원",
+   "pageviews": 716,
+   "sitelinks": 1
+  },
+  "kr-q12623622": {
+   "score": 3.601,
+   "wiki_title": "한국장애인고용공단",
+   "pageviews": 2620,
+   "sitelinks": 1
+  },
+  "kr-q12623625": {
+   "score": 3.966,
+   "wiki_title": "한국장학재단",
+   "pageviews": 6089,
+   "sitelinks": 1
+  },
+  "kr-q12623629": {
+   "score": 3.478,
+   "wiki_title": "한국저작권위원회",
+   "pageviews": 1299,
+   "sitelinks": 3
+  },
+  "kr-q12623633": {
+   "score": 3.396,
+   "wiki_title": "한국전기안전공사",
+   "pageviews": 1633,
+   "sitelinks": 1
+  },
+  "kr-q12623695": {
+   "score": 3.366,
+   "wiki_title": "한국주택금융공사",
+   "pageviews": 1523,
+   "sitelinks": 1
+  },
+  "kr-q12623697": {
+   "score": 3.542,
+   "wiki_title": "한국중부발전",
+   "pageviews": 1790,
+   "sitelinks": 2
+  },
+  "kr-q12623705": {
+   "score": 3.061,
+   "wiki_title": "한국지식재산보호원",
+   "pageviews": 750,
+   "sitelinks": 1
+  },
+  "kr-q12623707": {
+   "score": 2.585,
+   "wiki_title": "한국지식재산연구원",
+   "pageviews": 244,
+   "sitelinks": 1
+  },
+  "kr-q12623708": {
+   "score": 3.569,
+   "wiki_title": "한국지역난방공사",
+   "pageviews": 1602,
+   "sitelinks": 3
+  },
+  "kr-q12623717": {
+   "score": 3.269,
+   "wiki_title": "한국직업능력연구원",
+   "pageviews": 1216,
+   "sitelinks": 1
+  },
+  "kr-q12623746": {
+   "score": 3.68,
+   "wiki_title": "한국청소년상담복지개발원",
+   "pageviews": 3151,
+   "sitelinks": 1
+  },
+  "kr-q12623751": {
+   "score": 2.905,
+   "wiki_title": "한국청소년정책연구원",
+   "pageviews": 520,
+   "sitelinks": 1
+  },
+  "kr-q12623754": {
+   "score": 3.159,
+   "wiki_title": "한국청소년활동진흥원",
+   "pageviews": 941,
+   "sitelinks": 1
+  },
+  "kr-q12623766": {
+   "score": 2.911,
+   "wiki_title": "한국출판문화산업진흥원",
+   "pageviews": 527,
+   "sitelinks": 1
+  },
+  "kr-q12623799": {
+   "score": 4.112,
+   "wiki_title": "한국토지주택공사",
+   "pageviews": 4020,
+   "sitelinks": 6
+  },
+  "kr-q12623804": {
+   "score": 2.949,
+   "wiki_title": "한국특허정보원",
+   "pageviews": 576,
+   "sitelinks": 1
+  },
+  "kr-q12623853": {
+   "score": 2.566,
+   "wiki_title": "해양수산과학기술진흥원",
+   "pageviews": 233,
+   "sitelinks": 1
+  },
+  "kr-q12623855": {
+   "score": 3.473,
+   "wiki_title": "한국해양과학기술원",
+   "pageviews": 1528,
+   "sitelinks": 2
+  },
+  "kr-q12623862": {
+   "score": 2.716,
+   "wiki_title": "한국해양조사협회",
+   "pageviews": 333,
+   "sitelinks": 1
+  },
+  "kr-q12623895": {
+   "score": 3.46,
+   "wiki_title": "한국환경공단",
+   "pageviews": 1891,
+   "sitelinks": 1
+  },
+  "kr-q12623900": {
+   "score": 3.212,
+   "wiki_title": "한국환경산업기술원",
+   "pageviews": 1066,
+   "sitelinks": 1
+  },
+  "kr-q12624157": {
+   "score": 3.248,
+   "wiki_title": "한식진흥원",
+   "pageviews": 664,
+   "sitelinks": 4
+  },
+  "kr-q12624192": {
+   "score": 3.682,
+   "wiki_title": "서울한영대학교",
+   "pageviews": 3160,
+   "sitelinks": 1
+  },
+  "kr-q12624295": {
+   "score": 3.586,
+   "wiki_title": "한전KDN",
+   "pageviews": 1983,
+   "sitelinks": 2
+  },
+  "kr-q12624539": {
+   "score": 2.587,
+   "wiki_title": "한국항로표지기술원",
+   "pageviews": 245,
+   "sitelinks": 1
+  },
+  "kr-q12624642": {
+   "score": 3.012,
+   "wiki_title": "해양환경공단",
+   "pageviews": 669,
+   "sitelinks": 1
+  },
+  "kr-q12625125": {
+   "score": 3.849,
+   "wiki_title": "협성대학교",
+   "pageviews": 2680,
+   "sitelinks": 4
+  },
+  "kr-q12625722": {
+   "score": 2.816,
+   "wiki_title": "한국환경보전원",
+   "pageviews": 422,
+   "sitelinks": 1
+  },
+  "kr-q127811913": {
+   "score": 3.496,
+   "wiki_title": "국방기술품질원",
+   "pageviews": 2057,
+   "sitelinks": 1
+  },
+  "kr-q130628": {
+   "score": 3.871,
+   "wiki_title": "국립해양박물관",
+   "pageviews": 1399,
+   "sitelinks": 15
+  },
+  "kr-q136541284": {
+   "score": 3.714,
+   "wiki_title": "대한민국 기후에너지환경부",
+   "pageviews": 3404,
+   "sitelinks": 1
+  },
+  "kr-q13762021": {
+   "score": 3.0,
+   "wiki_title": "국립대구과학관",
+   "pageviews": 650,
+   "sitelinks": 1
+  },
+  "kr-q138836588": {
+   "score": 4.074,
+   "wiki_title": "대한민국 기획예산처",
+   "pageviews": 4505,
+   "sitelinks": 4
+  },
+  "kr-q138870299": {
+   "score": 5.0,
+   "wiki_title": "전남광주통합특별시",
+   "pageviews": 28732,
+   "sitelinks": 7
+  },
+  "kr-q139779": {
+   "score": 4.31,
+   "wiki_title": "건양대학교",
+   "pageviews": 5859,
+   "sitelinks": 7
+  },
+  "kr-q140403575": {
+   "score": 4.144,
+   "wiki_title": "서해구",
+   "pageviews": 5297,
+   "sitelinks": 4
+  },
+  "kr-q140800179": {
+   "score": 4.067,
+   "wiki_title": "대한민국 공소청",
+   "pageviews": 4437,
+   "sitelinks": 4
+  },
+  "kr-q14545096": {
+   "score": 3.523,
+   "wiki_title": "민주화운동기념사업회",
+   "pageviews": 1715,
+   "sitelinks": 2
+  },
+  "kr-q14850773": {
+   "score": 3.035,
+   "wiki_title": "연구개발특구진흥재단",
+   "pageviews": 705,
+   "sitelinks": 1
+  },
+  "kr-q14850774": {
+   "score": 2.946,
+   "wiki_title": "우체국물류지원단",
+   "pageviews": 573,
+   "sitelinks": 1
+  },
+  "kr-q14850775": {
+   "score": 2.869,
+   "wiki_title": "우체국금융개발원",
+   "pageviews": 478,
+   "sitelinks": 1
+  },
+  "kr-q14850776": {
+   "score": 3.446,
+   "wiki_title": "정보통신산업진흥원",
+   "pageviews": 1436,
+   "sitelinks": 2
+  },
+  "kr-q14850777": {
+   "score": 3.103,
+   "wiki_title": "한국우편사업진흥원",
+   "pageviews": 646,
+   "sitelinks": 2
+  },
+  "kr-q14865193": {
+   "score": 2.652,
+   "wiki_title": "한국여성과학기술인육성재단",
+   "pageviews": 286,
+   "sitelinks": 1
+  },
+  "kr-q15279945": {
+   "score": 2.993,
+   "wiki_title": "한국상하수도협회",
+   "pageviews": 639,
+   "sitelinks": 1
+  },
+  "kr-q15302850": {
+   "score": 3.293,
+   "wiki_title": "충청남도교육청",
+   "pageviews": 1284,
+   "sitelinks": 1
+  },
+  "kr-q15431233": {
+   "score": 3.5,
+   "wiki_title": "부산광역시교육청",
+   "pageviews": 2076,
+   "sitelinks": 1
+  },
+  "kr-q15615204": {
+   "score": 3.936,
+   "wiki_title": "에스알",
+   "pageviews": 3745,
+   "sitelinks": 3
+  },
+  "kr-q15619524": {
+   "score": 3.365,
+   "wiki_title": "대한민국 새만금개발청",
+   "pageviews": 999,
+   "sitelinks": 3
+  },
+  "kr-q15621831": {
+   "score": 3.487,
+   "wiki_title": "대한민국 원자력안전위원회",
+   "pageviews": 1325,
+   "sitelinks": 3
+  },
+  "kr-q15623329": {
+   "score": 3.042,
+   "wiki_title": "코레일네트웍스",
+   "pageviews": 717,
+   "sitelinks": 1
+  },
+  "kr-q16092702": {
+   "score": 4.048,
+   "wiki_title": "경동대학교",
+   "pageviews": 4851,
+   "sitelinks": 3
+  },
+  "kr-q16093043": {
+   "score": 3.198,
+   "wiki_title": "광신대학교",
+   "pageviews": 1032,
+   "sitelinks": 1
+  },
+  "kr-q16093712": {
+   "score": 3.606,
+   "wiki_title": "남부대학교",
+   "pageviews": 2079,
+   "sitelinks": 2
+  },
+  "kr-q16093925": {
+   "score": 2.68,
+   "wiki_title": "경제·인문사회연구회",
+   "pageviews": 306,
+   "sitelinks": 1
+  },
+  "kr-q16094112": {
+   "score": 3.471,
+   "wiki_title": "대신대학교",
+   "pageviews": 1940,
+   "sitelinks": 1
+  },
+  "kr-q16094425": {
+   "score": 3.4,
+   "wiki_title": "대구광역시교육청",
+   "pageviews": 1646,
+   "sitelinks": 1
+  },
+  "kr-q16094640": {
+   "score": 3.356,
+   "wiki_title": "국립생태원",
+   "pageviews": 1488,
+   "sitelinks": 1
+  },
+  "kr-q16094775": {
+   "score": 2.513,
+   "wiki_title": "한국원산지정보원",
+   "pageviews": 205,
+   "sitelinks": 1
+  },
+  "kr-q16095044": {
+   "score": 3.188,
+   "wiki_title": "강원대학교병원",
+   "pageviews": 1006,
+   "sitelinks": 1
+  },
+  "kr-q16095048": {
+   "score": 3.591,
+   "wiki_title": "충북대학교병원",
+   "pageviews": 2560,
+   "sitelinks": 1
+  },
+  "kr-q16096165": {
+   "score": 3.042,
+   "wiki_title": "수원가톨릭대학교",
+   "pageviews": 717,
+   "sitelinks": 1
+  },
+  "kr-q16096864": {
+   "score": 3.583,
+   "wiki_title": "웅지세무대학교",
+   "pageviews": 2514,
+   "sitelinks": 1
+  },
+  "kr-q16097602": {
+   "score": 4.183,
+   "wiki_title": "신한대학교",
+   "pageviews": 10044,
+   "sitelinks": 1
+  },
+  "kr-q16097918": {
+   "score": 4.055,
+   "wiki_title": "세종학당재단",
+   "pageviews": 2425,
+   "sitelinks": 12
+  },
+  "kr-q16097938": {
+   "score": 3.664,
+   "wiki_title": "제주국제대학교",
+   "pageviews": 1748,
+   "sitelinks": 4
+  },
+  "kr-q16098196": {
+   "score": 4.467,
+   "wiki_title": "차의과학대학교",
+   "pageviews": 12748,
+   "sitelinks": 3
+  },
+  "kr-q16098986": {
+   "score": 3.377,
+   "wiki_title": "호남신학대학교",
+   "pageviews": 1028,
+   "sitelinks": 3
+  },
+  "kr-q16100482": {
+   "score": 3.112,
+   "wiki_title": "한국보훈복지의료공단",
+   "pageviews": 844,
+   "sitelinks": 1
+  },
+  "kr-q16100494": {
+   "score": 3.599,
+   "wiki_title": "한국소비자원",
+   "pageviews": 2613,
+   "sitelinks": 1
+  },
+  "kr-q16160000": {
+   "score": 3.094,
+   "wiki_title": "과학기술정책연구원",
+   "pageviews": 809,
+   "sitelinks": 1
+  },
+  "kr-q16164314": {
+   "score": 2.665,
+   "wiki_title": "국가생명윤리정책원",
+   "pageviews": 295,
+   "sitelinks": 1
+  },
+  "kr-q16164343": {
+   "score": 3.196,
+   "wiki_title": "한국식품산업클러스터진흥원",
+   "pageviews": 1025,
+   "sitelinks": 1
+  },
+  "kr-q16164791": {
+   "score": 2.838,
+   "wiki_title": "APEC기후센터",
+   "pageviews": 290,
+   "sitelinks": 3
+  },
+  "kr-q16164847": {
+   "score": 3.369,
+   "wiki_title": "울산광역시교육청",
+   "pageviews": 1533,
+   "sitelinks": 1
+  },
+  "kr-q16165021": {
+   "score": 2.815,
+   "wiki_title": "국립박물관문화재단",
+   "pageviews": 421,
+   "sitelinks": 1
+  },
+  "kr-q16167642": {
+   "score": 3.198,
+   "wiki_title": "대전광역시교육청",
+   "pageviews": 1032,
+   "sitelinks": 1
+  },
+  "kr-q16167803": {
+   "score": 2.912,
+   "wiki_title": "한국어촌어항공단",
+   "pageviews": 529,
+   "sitelinks": 1
+  },
+  "kr-q16167978": {
+   "score": 3.196,
+   "wiki_title": "한국여성인권진흥원",
+   "pageviews": 803,
+   "sitelinks": 2
+  },
+  "kr-q16168232": {
+   "score": 3.352,
+   "wiki_title": "한국예술인복지재단",
+   "pageviews": 1473,
+   "sitelinks": 1
+  },
+  "kr-q16169337": {
+   "score": 2.765,
+   "wiki_title": "한국임업진흥원",
+   "pageviews": 374,
+   "sitelinks": 1
+  },
+  "kr-q16169603": {
+   "score": 3.631,
+   "wiki_title": "한국전력거래소",
+   "pageviews": 2202,
+   "sitelinks": 2
+  },
+  "kr-q16170345": {
+   "score": 2.683,
+   "wiki_title": "한국체육산업개발",
+   "pageviews": 308,
+   "sitelinks": 1
+  },
+  "kr-q16171123": {
+   "score": 2.978,
+   "wiki_title": "한국형사·법무정책연구원",
+   "pageviews": 617,
+   "sitelinks": 1
+  },
+  "kr-q16171136": {
+   "score": 2.877,
+   "wiki_title": "차세대수치예보모델개발사업단",
+   "pageviews": 487,
+   "sitelinks": 1
+  },
+  "kr-q16171239": {
+   "score": 3.204,
+   "wiki_title": "한국환경연구원",
+   "pageviews": 1045,
+   "sitelinks": 1
+  },
+  "kr-q16171854": {
+   "score": 3.424,
+   "wiki_title": "기술보증기금",
+   "pageviews": 1743,
+   "sitelinks": 1
+  },
+  "kr-q16172629": {
+   "score": 3.267,
+   "wiki_title": "한국해양교통안전공단",
+   "pageviews": 1210,
+   "sitelinks": 1
+  },
+  "kr-q16174863": {
+   "score": 3.379,
+   "wiki_title": "충청북도교육청",
+   "pageviews": 1570,
+   "sitelinks": 1
+  },
+  "kr-q16176066": {
+   "score": 3.063,
+   "wiki_title": "여수광양항만공사",
+   "pageviews": 753,
+   "sitelinks": 1
+  },
+  "kr-q16176710": {
+   "score": 3.434,
+   "wiki_title": "코레일유통",
+   "pageviews": 1782,
+   "sitelinks": 1
+  },
+  "kr-q16179935": {
+   "score": 3.997,
+   "wiki_title": "건강보험심사평가원",
+   "pageviews": 5122,
+   "sitelinks": 2
+  },
+  "kr-q16180044": {
+   "score": 3.753,
+   "wiki_title": "건설근로자공제회",
+   "pageviews": 3728,
+   "sitelinks": 1
+  },
+  "kr-q16180179": {
+   "score": 3.164,
+   "wiki_title": "수도권매립지관리공사",
+   "pageviews": 953,
+   "sitelinks": 1
+  },
+  "kr-q16180220": {
+   "score": 3.733,
+   "wiki_title": "영화진흥위원회",
+   "pageviews": 1273,
+   "sitelinks": 10
+  },
+  "kr-q16181880": {
+   "score": 2.967,
+   "wiki_title": "한국특허기술진흥원",
+   "pageviews": 601,
+   "sitelinks": 1
+  },
+  "kr-q16182649": {
+   "score": 3.48,
+   "wiki_title": "동북아역사재단",
+   "pageviews": 1306,
+   "sitelinks": 3
+  },
+  "kr-q16184585": {
+   "score": 3.361,
+   "wiki_title": "부산대학교치과병원",
+   "pageviews": 1504,
+   "sitelinks": 1
+  },
+  "kr-q16189718": {
+   "score": 2.998,
+   "wiki_title": "중소기업기술정보진흥원",
+   "pageviews": 646,
+   "sitelinks": 1
+  },
+  "kr-q16189722": {
+   "score": 2.992,
+   "wiki_title": "한국중소벤처기업유통원",
+   "pageviews": 637,
+   "sitelinks": 1
+  },
+  "kr-q16191268": {
+   "score": 3.166,
+   "wiki_title": "북한이탈주민지원재단",
+   "pageviews": 958,
+   "sitelinks": 1
+  },
+  "kr-q16192199": {
+   "score": 3.181,
+   "wiki_title": "한국가스기술공사",
+   "pageviews": 990,
+   "sitelinks": 1
+  },
+  "kr-q16192218": {
+   "score": 3.291,
+   "wiki_title": "한국건강가정진흥원",
+   "pageviews": 1278,
+   "sitelinks": 1
+  },
+  "kr-q16192220": {
+   "score": 3.083,
+   "wiki_title": "한국건강증진개발원",
+   "pageviews": 788,
+   "sitelinks": 1
+  },
+  "kr-q16192274": {
+   "score": 3.102,
+   "wiki_title": "한국공예디자인문화진흥원",
+   "pageviews": 825,
+   "sitelinks": 1
+  },
+  "kr-q16192315": {
+   "score": 3.328,
+   "wiki_title": "한국교통연구원",
+   "pageviews": 917,
+   "sitelinks": 3
+  },
+  "kr-q16192317": {
+   "score": 3.444,
+   "wiki_title": "한국국방연구원",
+   "pageviews": 1825,
+   "sitelinks": 1
+  },
+  "kr-q16192321": {
+   "score": 3.029,
+   "wiki_title": "한국국제보건의료재단",
+   "pageviews": 695,
+   "sitelinks": 1
+  },
+  "kr-q16192376": {
+   "score": 3.169,
+   "wiki_title": "한국디자인진흥원",
+   "pageviews": 964,
+   "sitelinks": 1
+  },
+  "kr-q16192401": {
+   "score": 3.404,
+   "wiki_title": "한국문화예술위원회",
+   "pageviews": 1664,
+   "sitelinks": 1
+  },
+  "kr-q16192428": {
+   "score": 3.329,
+   "wiki_title": "한국법무보호복지공단",
+   "pageviews": 1397,
+   "sitelinks": 1
+  },
+  "kr-q16192432": {
+   "score": 3.005,
+   "wiki_title": "한국벤처투자",
+   "pageviews": 658,
+   "sitelinks": 1
+  },
+  "kr-q16192434": {
+   "score": 3.624,
+   "wiki_title": "한국사회보장정보원",
+   "pageviews": 2765,
+   "sitelinks": 1
+  },
+  "kr-q16192435": {
+   "score": 3.255,
+   "wiki_title": "한국보건사회연구원",
+   "pageviews": 1177,
+   "sitelinks": 1
+  },
+  "kr-q16192452": {
+   "score": 2.992,
+   "wiki_title": "한국사학진흥재단",
+   "pageviews": 637,
+   "sitelinks": 1
+  },
+  "kr-q16192455": {
+   "score": 2.934,
+   "wiki_title": "한국사회적기업진흥원",
+   "pageviews": 557,
+   "sitelinks": 1
+  },
+  "kr-q16192503": {
+   "score": 2.878,
+   "wiki_title": "식품안전정보원",
+   "pageviews": 488,
+   "sitelinks": 1
+  },
+  "kr-q16219554": {
+   "score": 3.406,
+   "wiki_title": "산업연구원",
+   "pageviews": 1669,
+   "sitelinks": 1
+  },
+  "kr-q16219723": {
+   "score": 3.486,
+   "wiki_title": "강원특별자치도교육청",
+   "pageviews": 2010,
+   "sitelinks": 1
+  },
+  "kr-q16219765": {
+   "score": 2.91,
+   "wiki_title": "국립광주과학관",
+   "pageviews": 526,
+   "sitelinks": 1
+  },
+  "kr-q16219823": {
+   "score": 2.707,
+   "wiki_title": "농림식품기술기획평가원",
+   "pageviews": 326,
+   "sitelinks": 1
+  },
+  "kr-q16261977": {
+   "score": 2.962,
+   "wiki_title": "한국장기조직기증원",
+   "pageviews": 595,
+   "sitelinks": 1
+  },
+  "kr-q16262625": {
+   "score": 3.963,
+   "wiki_title": "한국산업인력공단",
+   "pageviews": 6045,
+   "sitelinks": 1
+  },
+  "kr-q16262632": {
+   "score": 3.156,
+   "wiki_title": "한국세라믹기술원",
+   "pageviews": 935,
+   "sitelinks": 1
+  },
+  "kr-q16262642": {
+   "score": 3.222,
+   "wiki_title": "국토안전관리원",
+   "pageviews": 1089,
+   "sitelinks": 1
+  },
+  "kr-q16520": {
+   "score": 6.02,
+   "wiki_title": "부산광역시",
+   "pageviews": 56959,
+   "sitelinks": 127
+  },
+  "kr-q166202": {
+   "score": 4.363,
+   "wiki_title": "청운대학교",
+   "pageviews": 7869,
+   "sitelinks": 5
+  },
+  "kr-q16726591": {
+   "score": 3.508,
+   "wiki_title": "의료기관평가인증원",
+   "pageviews": 2114,
+   "sitelinks": 1
+  },
+  "kr-q16976172": {
+   "score": 3.474,
+   "wiki_title": "통일연구원",
+   "pageviews": 916,
+   "sitelinks": 6
+  },
+  "kr-q17062696": {
+   "score": 3.393,
+   "wiki_title": "한국산업기술진흥원",
+   "pageviews": 1270,
+   "sitelinks": 2
+  },
+  "kr-q18169": {
+   "score": 5.046,
+   "wiki_title": "한국철도공사",
+   "pageviews": 14721,
+   "sitelinks": 28
+  },
+  "kr-q18444140": {
+   "score": 3.72,
+   "wiki_title": "대한민국 인사혁신처",
+   "pageviews": 1989,
+   "sitelinks": 4
+  },
+  "kr-q18444594": {
+   "score": 4.4,
+   "wiki_title": "검단구",
+   "pageviews": 9549,
+   "sitelinks": 4
+  },
+  "kr-q18459": {
+   "score": 5.311,
+   "wiki_title": "용인시",
+   "pageviews": 20026,
+   "sitelinks": 47
+  },
+  "kr-q18685317": {
+   "score": 3.003,
+   "wiki_title": "한국문화진흥",
+   "pageviews": 654,
+   "sitelinks": 1
+  },
+  "kr-q18734051": {
+   "score": 2.7,
+   "wiki_title": "한국문화정보원",
+   "pageviews": 321,
+   "sitelinks": 1
+  },
+  "kr-q18815349": {
+   "score": 2.962,
+   "wiki_title": "국토교통과학기술진흥원",
+   "pageviews": 594,
+   "sitelinks": 1
+  },
+  "kr-q18815834": {
+   "score": 2.91,
+   "wiki_title": "한국조세재정연구원",
+   "pageviews": 526,
+   "sitelinks": 1
+  },
+  "kr-q18815839": {
+   "score": 3.168,
+   "wiki_title": "항공안전기술원",
+   "pageviews": 961,
+   "sitelinks": 1
+  },
+  "kr-q188624": {
+   "score": 5.021,
+   "wiki_title": "평창군",
+   "pageviews": 7804,
+   "sitelinks": 75
+  },
+  "kr-q18998554": {
+   "score": 2.998,
+   "wiki_title": "국방전직교육원",
+   "pageviews": 647,
+   "sitelinks": 1
+  },
+  "kr-q19161842": {
+   "score": 2.563,
+   "wiki_title": "과학기술사업화진흥원",
+   "pageviews": 231,
+   "sitelinks": 1
+  },
+  "kr-q19161980": {
+   "score": 2.73,
+   "wiki_title": "일제강제동원피해자지원재단",
+   "pageviews": 344,
+   "sitelinks": 1
+  },
+  "kr-q19162080": {
+   "score": 2.751,
+   "wiki_title": "중소벤처기업연구원",
+   "pageviews": 362,
+   "sitelinks": 1
+  },
+  "kr-q19162231": {
+   "score": 3.223,
+   "wiki_title": "한국국토정보공사",
+   "pageviews": 1093,
+   "sitelinks": 1
+  },
+  "kr-q19162233": {
+   "score": 3.201,
+   "wiki_title": "한국도박문제예방치유원",
+   "pageviews": 1038,
+   "sitelinks": 1
+  },
+  "kr-q19162234": {
+   "score": 3.683,
+   "wiki_title": "한국원자력안전재단",
+   "pageviews": 3168,
+   "sitelinks": 1
+  },
+  "kr-q19162236": {
+   "score": 3.305,
+   "wiki_title": "한국식품안전관리인증원",
+   "pageviews": 1322,
+   "sitelinks": 1
+  },
+  "kr-q19162245": {
+   "score": 2.597,
+   "wiki_title": "한국통계정보원",
+   "pageviews": 251,
+   "sitelinks": 1
+  },
+  "kr-q20395": {
+   "score": 5.084,
+   "wiki_title": "서초구",
+   "pageviews": 16770,
+   "sitelinks": 26
+  },
+  "kr-q20398": {
+   "score": 5.215,
+   "wiki_title": "강남구",
+   "pageviews": 15151,
+   "sitelinks": 52
+  },
+  "kr-q20714": {
+   "score": 5.575,
+   "wiki_title": "수원시",
+   "pageviews": 27128,
+   "sitelinks": 79
+  },
+  "kr-q208736": {
+   "score": 4.885,
+   "wiki_title": "한국외국어대학교",
+   "pageviews": 10604,
+   "sitelinks": 26
+  },
+  "kr-q20921": {
+   "score": 5.742,
+   "wiki_title": "대전광역시",
+   "pageviews": 36894,
+   "sitelinks": 90
+  },
+  "kr-q20927": {
+   "score": 5.885,
+   "wiki_title": "대구광역시",
+   "pageviews": 49311,
+   "sitelinks": 96
+  },
+  "kr-q20929": {
+   "score": 5.533,
+   "wiki_title": "세종특별자치시",
+   "pageviews": 29248,
+   "sitelinks": 59
+  },
+  "kr-q20934": {
+   "score": 5.811,
+   "wiki_title": "인천광역시",
+   "pageviews": 38802,
+   "sitelinks": 108
+  },
+  "kr-q20937": {
+   "score": 5.911,
+   "wiki_title": "경기도",
+   "pageviews": 61125,
+   "sitelinks": 74
+  },
+  "kr-q20944511": {
+   "score": 3.767,
+   "wiki_title": "강서대학교",
+   "pageviews": 3844,
+   "sitelinks": 1
+  },
+  "kr-q212297": {
+   "score": 4.533,
+   "wiki_title": "광운대학교",
+   "pageviews": 8561,
+   "sitelinks": 9
+  },
+  "kr-q21400278": {
+   "score": 2.814,
+   "wiki_title": "국립부산과학관",
+   "pageviews": 327,
+   "sitelinks": 2
+  },
+  "kr-q243327": {
+   "score": 5.506,
+   "wiki_title": "창원시",
+   "pageviews": 26966,
+   "sitelinks": 61
+  },
+  "kr-q24867013": {
+   "score": 2.979,
+   "wiki_title": "한국나노기술원",
+   "pageviews": 618,
+   "sitelinks": 1
+  },
+  "kr-q24867026": {
+   "score": 2.975,
+   "wiki_title": "국립해양생물자원관",
+   "pageviews": 613,
+   "sitelinks": 1
+  },
+  "kr-q24867044": {
+   "score": 2.797,
+   "wiki_title": "시청자미디어재단",
+   "pageviews": 403,
+   "sitelinks": 1
+  },
+  "kr-q24867060": {
+   "score": 2.901,
+   "wiki_title": "한국특허전략개발원",
+   "pageviews": 515,
+   "sitelinks": 1
+  },
+  "kr-q26123": {
+   "score": 4.759,
+   "wiki_title": "남해군",
+   "pageviews": 8525,
+   "sitelinks": 23
+  },
+  "kr-q26212": {
+   "score": 4.606,
+   "wiki_title": "하동군",
+   "pageviews": 6147,
+   "sitelinks": 22
+  },
+  "kr-q276612": {
+   "score": 4.032,
+   "wiki_title": "대한민국 통일부",
+   "pageviews": 1829,
+   "sitelinks": 18
+  },
+  "kr-q27951951": {
+   "score": 3.934,
+   "wiki_title": "대한민국 고위공직자범죄수사처",
+   "pageviews": 2456,
+   "sitelinks": 7
+  },
+  "kr-q30294686": {
+   "score": 3.936,
+   "wiki_title": "한국성서대학교",
+   "pageviews": 5686,
+   "sitelinks": 1
+  },
+  "kr-q30296538": {
+   "score": 3.187,
+   "wiki_title": "한국보건산업진흥원",
+   "pageviews": 1005,
+   "sitelinks": 1
+  },
+  "kr-q31094": {
+   "score": 5.196,
+   "wiki_title": "충주시",
+   "pageviews": 16187,
+   "sitelinks": 43
+  },
+  "kr-q31176245": {
+   "score": 3.719,
+   "wiki_title": "서민금융진흥원",
+   "pageviews": 3446,
+   "sitelinks": 1
+  },
+  "kr-q31180818": {
+   "score": 3.211,
+   "wiki_title": "한국재정정보원",
+   "pageviews": 1062,
+   "sitelinks": 1
+  },
+  "kr-q31180819": {
+   "score": 3.279,
+   "wiki_title": "한국산림복지진흥원",
+   "pageviews": 1243,
+   "sitelinks": 1
+  },
+  "kr-q31180820": {
+   "score": 2.519,
+   "wiki_title": "국립낙동강생물자원관",
+   "pageviews": 208,
+   "sitelinks": 1
+  },
+  "kr-q31180844": {
+   "score": 2.783,
+   "wiki_title": "한국저작권보호원",
+   "pageviews": 390,
+   "sitelinks": 1
+  },
+  "kr-q31180849": {
+   "score": 3.171,
+   "wiki_title": "경북대학교치과병원",
+   "pageviews": 969,
+   "sitelinks": 1
+  },
+  "kr-q3181302": {
+   "score": 4.252,
+   "wiki_title": "성결대학교",
+   "pageviews": 6797,
+   "sitelinks": 4
+  },
+  "kr-q3242069": {
+   "score": 4.033,
+   "wiki_title": "서원대학교",
+   "pageviews": 3670,
+   "sitelinks": 5
+  },
+  "kr-q3271898": {
+   "score": 3.458,
+   "wiki_title": "창신대학교",
+   "pageviews": 1474,
+   "sitelinks": 2
+  },
+  "kr-q33366149": {
+   "score": 4.309,
+   "wiki_title": "대한민국 과학기술정보통신부",
+   "pageviews": 5110,
+   "sitelinks": 9
+  },
+  "kr-q33492783": {
+   "score": 4.271,
+   "wiki_title": "대한민국 대통령경호처",
+   "pageviews": 5801,
+   "sitelinks": 6
+  },
+  "kr-q33625595": {
+   "score": 3.885,
+   "wiki_title": "대한민국 소방청",
+   "pageviews": 2909,
+   "sitelinks": 4
+  },
+  "kr-q36929": {
+   "score": 5.095,
+   "wiki_title": "종로구",
+   "pageviews": 15008,
+   "sitelinks": 33
+  },
+  "kr-q374457": {
+   "score": 4.798,
+   "wiki_title": "서강대학교",
+   "pageviews": 10730,
+   "sitelinks": 18
+  },
+  "kr-q3954913": {
+   "score": 3.732,
+   "wiki_title": "화성의과학대학교",
+   "pageviews": 3549,
+   "sitelinks": 1
+  },
+  "kr-q39997": {
+   "score": 5.334,
+   "wiki_title": "고려대학교",
+   "pageviews": 22249,
+   "sitelinks": 43
+  },
+  "kr-q40006": {
+   "score": 5.087,
+   "wiki_title": "한양대학교",
+   "pageviews": 16176,
+   "sitelinks": 28
+  },
+  "kr-q41066": {
+   "score": 5.399,
+   "wiki_title": "충청북도",
+   "pageviews": 20483,
+   "sitelinks": 64
+  },
+  "kr-q41070": {
+   "score": 5.545,
+   "wiki_title": "충청남도",
+   "pageviews": 28665,
+   "sitelinks": 64
+  },
+  "kr-q41071": {
+   "score": 5.572,
+   "wiki_title": "강원특별자치도",
+   "pageviews": 31690,
+   "sitelinks": 60
+  },
+  "kr-q41085": {
+   "score": 5.304,
+   "wiki_title": "성균관대학교",
+   "pageviews": 25184,
+   "sitelinks": 31
+  },
+  "kr-q41114": {
+   "score": 4.954,
+   "wiki_title": "이화여자대학교",
+   "pageviews": 11928,
+   "sitelinks": 28
+  },
+  "kr-q41151": {
+   "score": 5.629,
+   "wiki_title": "경상남도",
+   "pageviews": 35099,
+   "sitelinks": 63
+  },
+  "kr-q41154": {
+   "score": 5.631,
+   "wiki_title": "경상북도",
+   "pageviews": 35211,
+   "sitelinks": 63
+  },
+  "kr-q41157": {
+   "score": 5.5,
+   "wiki_title": "전북특별자치도",
+   "pageviews": 26595,
+   "sitelinks": 61
+  },
+  "kr-q41164": {
+   "score": 5.581,
+   "wiki_title": "제주특별자치도",
+   "pageviews": 28999,
+   "sitelinks": 72
+  },
+  "kr-q41278": {
+   "score": 5.825,
+   "wiki_title": "울산광역시",
+   "pageviews": 45840,
+   "sitelinks": 86
+  },
+  "kr-q41738": {
+   "score": 4.857,
+   "wiki_title": "가톨릭대학교",
+   "pageviews": 13631,
+   "sitelinks": 15
+  },
+  "kr-q41765": {
+   "score": 4.889,
+   "wiki_title": "건국대학교",
+   "pageviews": 12462,
+   "sitelinks": 20
+  },
+  "kr-q41790": {
+   "score": 5.248,
+   "wiki_title": "중앙대학교",
+   "pageviews": 24476,
+   "sitelinks": 26
+  },
+  "kr-q42056": {
+   "score": 5.156,
+   "wiki_title": "강릉시",
+   "pageviews": 13510,
+   "sitelinks": 50
+  },
+  "kr-q42057": {
+   "score": 5.124,
+   "wiki_title": "거제시",
+   "pageviews": 13727,
+   "sitelinks": 43
+  },
+  "kr-q42059": {
+   "score": 4.933,
+   "wiki_title": "경산시",
+   "pageviews": 9650,
+   "sitelinks": 37
+  },
+  "kr-q42060": {
+   "score": 4.762,
+   "wiki_title": "계룡시",
+   "pageviews": 7216,
+   "sitelinks": 31
+  },
+  "kr-q42062": {
+   "score": 5.128,
+   "wiki_title": "공주시",
+   "pageviews": 14663,
+   "sitelinks": 39
+  },
+  "kr-q42064": {
+   "score": 4.763,
+   "wiki_title": "과천시",
+   "pageviews": 6630,
+   "sitelinks": 36
+  },
+  "kr-q42066": {
+   "score": 4.983,
+   "wiki_title": "광명시",
+   "pageviews": 10654,
+   "sitelinks": 38
+  },
+  "kr-q42067": {
+   "score": 4.809,
+   "wiki_title": "광양시",
+   "pageviews": 7145,
+   "sitelinks": 38
+  },
+  "kr-q42069": {
+   "score": 5.196,
+   "wiki_title": "광주시 (경기도)",
+   "pageviews": 16905,
+   "sitelinks": 40
+  },
+  "kr-q42071": {
+   "score": 4.905,
+   "wiki_title": "구리시",
+   "pageviews": 8783,
+   "sitelinks": 39
+  },
+  "kr-q42073": {
+   "score": 5.152,
+   "wiki_title": "구미시",
+   "pageviews": 14434,
+   "sitelinks": 44
+  },
+  "kr-q42074": {
+   "score": 5.051,
+   "wiki_title": "군산시",
+   "pageviews": 12104,
+   "sitelinks": 40
+  },
+  "kr-q42075": {
+   "score": 4.873,
+   "wiki_title": "군포시",
+   "pageviews": 7696,
+   "sitelinks": 43
+  },
+  "kr-q42077": {
+   "score": 4.795,
+   "wiki_title": "김제시",
+   "pageviews": 7645,
+   "sitelinks": 32
+  },
+  "kr-q42078": {
+   "score": 4.96,
+   "wiki_title": "김천시",
+   "pageviews": 9958,
+   "sitelinks": 39
+  },
+  "kr-q42080": {
+   "score": 5.109,
+   "wiki_title": "김포시",
+   "pageviews": 13092,
+   "sitelinks": 44
+  },
+  "kr-q42082": {
+   "score": 5.034,
+   "wiki_title": "김해시",
+   "pageviews": 11307,
+   "sitelinks": 42
+  },
+  "kr-q42083": {
+   "score": 4.903,
+   "wiki_title": "나주시",
+   "pageviews": 9992,
+   "sitelinks": 31
+  },
+  "kr-q42084": {
+   "score": 5.15,
+   "wiki_title": "남양주시",
+   "pageviews": 15446,
+   "sitelinks": 39
+  },
+  "kr-q42087": {
+   "score": 4.78,
+   "wiki_title": "남원시",
+   "pageviews": 7673,
+   "sitelinks": 30
+  },
+  "kr-q42088": {
+   "score": 5.096,
+   "wiki_title": "논산시",
+   "pageviews": 14507,
+   "sitelinks": 35
+  },
+  "kr-q42089": {
+   "score": 5.119,
+   "wiki_title": "당진시",
+   "pageviews": 16127,
+   "sitelinks": 32
+  },
+  "kr-q42092": {
+   "score": 4.996,
+   "wiki_title": "동두천시",
+   "pageviews": 10819,
+   "sitelinks": 39
+  },
+  "kr-q42093": {
+   "score": 4.965,
+   "wiki_title": "동해시",
+   "pageviews": 11099,
+   "sitelinks": 33
+  },
+  "kr-q42094": {
+   "score": 5.264,
+   "wiki_title": "목포시",
+   "pageviews": 18947,
+   "sitelinks": 43
+  },
+  "kr-q42095": {
+   "score": 4.971,
+   "wiki_title": "문경시",
+   "pageviews": 11681,
+   "sitelinks": 31
+  },
+  "kr-q42096": {
+   "score": 4.866,
+   "wiki_title": "밀양시",
+   "pageviews": 9346,
+   "sitelinks": 30
+  },
+  "kr-q42097": {
+   "score": 5.451,
+   "wiki_title": "경주시",
+   "pageviews": 25258,
+   "sitelinks": 55
+  },
+  "kr-q42098": {
+   "score": 4.885,
+   "wiki_title": "보령시",
+   "pageviews": 8922,
+   "sitelinks": 35
+  },
+  "kr-q42099": {
+   "score": 5.21,
+   "wiki_title": "부천시",
+   "pageviews": 15483,
+   "sitelinks": 49
+  },
+  "kr-q42100": {
+   "score": 4.969,
+   "wiki_title": "사천시",
+   "pageviews": 11621,
+   "sitelinks": 31
+  },
+  "kr-q42102": {
+   "score": 4.933,
+   "wiki_title": "삼척시",
+   "pageviews": 10316,
+   "sitelinks": 33
+  },
+  "kr-q42105": {
+   "score": 4.957,
+   "wiki_title": "서산시",
+   "pageviews": 10551,
+   "sitelinks": 35
+  },
+  "kr-q42108": {
+   "score": 5.317,
+   "wiki_title": "성남시",
+   "pageviews": 17791,
+   "sitelinks": 59
+  },
+  "kr-q42109": {
+   "score": 4.879,
+   "wiki_title": "속초시",
+   "pageviews": 9285,
+   "sitelinks": 32
+  },
+  "kr-q42112": {
+   "score": 4.616,
+   "wiki_title": "순천시 (전남광주통합특별시)",
+   "pageviews": 4885,
+   "sitelinks": 34
+  },
+  "kr-q42113": {
+   "score": 4.965,
+   "wiki_title": "시흥시",
+   "pageviews": 10556,
+   "sitelinks": 36
+  },
+  "kr-q42114": {
+   "score": 5.123,
+   "wiki_title": "아산시",
+   "pageviews": 14094,
+   "sitelinks": 41
+  },
+  "kr-q42116": {
+   "score": 5.235,
+   "wiki_title": "안동시",
+   "pageviews": 15492,
+   "sitelinks": 54
+  },
+  "kr-q42117": {
+   "score": 5.444,
+   "wiki_title": "안산시",
+   "pageviews": 24549,
+   "sitelinks": 56
+  },
+  "kr-q42119": {
+   "score": 5.186,
+   "wiki_title": "안성시",
+   "pageviews": 15413,
+   "sitelinks": 45
+  },
+  "kr-q42120": {
+   "score": 5.056,
+   "wiki_title": "안양시",
+   "pageviews": 11583,
+   "sitelinks": 44
+  },
+  "kr-q42123": {
+   "score": 5.056,
+   "wiki_title": "양산시",
+   "pageviews": 13251,
+   "sitelinks": 35
+  },
+  "kr-q42124": {
+   "score": 5.036,
+   "wiki_title": "양주시",
+   "pageviews": 12226,
+   "sitelinks": 37
+  },
+  "kr-q42125": {
+   "score": 5.163,
+   "wiki_title": "여수시",
+   "pageviews": 15018,
+   "sitelinks": 43
+  },
+  "kr-q42126": {
+   "score": 4.957,
+   "wiki_title": "영주시",
+   "pageviews": 10199,
+   "sitelinks": 37
+  },
+  "kr-q42128": {
+   "score": 4.821,
+   "wiki_title": "영천시",
+   "pageviews": 7833,
+   "sitelinks": 34
+  },
+  "kr-q42129": {
+   "score": 5.02,
+   "wiki_title": "오산시",
+   "pageviews": 11120,
+   "sitelinks": 41
+  },
+  "kr-q42131": {
+   "score": 5.162,
+   "wiki_title": "원주시",
+   "pageviews": 15200,
+   "sitelinks": 42
+  },
+  "kr-q42134": {
+   "score": 4.849,
+   "wiki_title": "의왕시",
+   "pageviews": 7947,
+   "sitelinks": 37
+  },
+  "kr-q42135": {
+   "score": 4.965,
+   "wiki_title": "의정부시",
+   "pageviews": 9789,
+   "sitelinks": 41
+  },
+  "kr-q42136": {
+   "score": 4.996,
+   "wiki_title": "이천시",
+   "pageviews": 10824,
+   "sitelinks": 39
+  },
+  "kr-q42137": {
+   "score": 5.177,
+   "wiki_title": "익산시",
+   "pageviews": 16425,
+   "sitelinks": 39
+  },
+  "kr-q42140": {
+   "score": 5.288,
+   "wiki_title": "전주시",
+   "pageviews": 17521,
+   "sitelinks": 54
+  },
+  "kr-q42141": {
+   "score": 4.956,
+   "wiki_title": "정읍시",
+   "pageviews": 10885,
+   "sitelinks": 33
+  },
+  "kr-q42143": {
+   "score": 5.145,
+   "wiki_title": "제천시",
+   "pageviews": 16261,
+   "sitelinks": 35
+  },
+  "kr-q42144": {
+   "score": 5.245,
+   "wiki_title": "진주시",
+   "pageviews": 18920,
+   "sitelinks": 40
+  },
+  "kr-q42146": {
+   "score": 5.166,
+   "wiki_title": "천안시",
+   "pageviews": 16526,
+   "sitelinks": 37
+  },
+  "kr-q42147": {
+   "score": 5.291,
+   "wiki_title": "청주시",
+   "pageviews": 19130,
+   "sitelinks": 47
+  },
+  "kr-q42148": {
+   "score": 5.13,
+   "wiki_title": "춘천시",
+   "pageviews": 13218,
+   "sitelinks": 47
+  },
+  "kr-q42150": {
+   "score": 4.932,
+   "wiki_title": "태백시",
+   "pageviews": 9778,
+   "sitelinks": 36
+  },
+  "kr-q42152": {
+   "score": 5.069,
+   "wiki_title": "통영시",
+   "pageviews": 14386,
+   "sitelinks": 32
+  },
+  "kr-q42153": {
+   "score": 5.208,
+   "wiki_title": "파주시",
+   "pageviews": 16216,
+   "sitelinks": 45
+  },
+  "kr-q42154": {
+   "score": 5.411,
+   "wiki_title": "평택시",
+   "pageviews": 27331,
+   "sitelinks": 41
+  },
+  "kr-q42155": {
+   "score": 5.113,
+   "wiki_title": "포천시",
+   "pageviews": 15096,
+   "sitelinks": 35
+  },
+  "kr-q42157": {
+   "score": 5.296,
+   "wiki_title": "포항시",
+   "pageviews": 19379,
+   "sitelinks": 47
+  },
+  "kr-q42159": {
+   "score": 4.868,
+   "wiki_title": "하남시",
+   "pageviews": 7824,
+   "sitelinks": 41
+  },
+  "kr-q42160": {
+   "score": 5.515,
+   "wiki_title": "화성시",
+   "pageviews": 31658,
+   "sitelinks": 48
+  },
+  "kr-q42163": {
+   "score": 4.989,
+   "wiki_title": "상주시",
+   "pageviews": 10977,
+   "sitelinks": 37
+  },
+  "kr-q4307051": {
+   "score": 3.468,
+   "wiki_title": "가야대학교",
+   "pageviews": 1508,
+   "sitelinks": 2
+  },
+  "kr-q4403855": {
+   "score": 4.38,
+   "wiki_title": "서울대학교병원",
+   "pageviews": 6873,
+   "sitelinks": 7
+  },
+  "kr-q4409074": {
+   "score": 4.482,
+   "wiki_title": "한국산업은행",
+   "pageviews": 6500,
+   "sitelinks": 12
+  },
+  "kr-q4501812": {
+   "score": 3.983,
+   "wiki_title": "한국수출입은행",
+   "pageviews": 2983,
+   "sitelinks": 6
+  },
+  "kr-q482648": {
+   "score": 4.388,
+   "wiki_title": "용인대학교",
+   "pageviews": 6527,
+   "sitelinks": 8
+  },
+  "kr-q482651": {
+   "score": 4.253,
+   "wiki_title": "배재대학교",
+   "pageviews": 6100,
+   "sitelinks": 5
+  },
+  "kr-q482654": {
+   "score": 4.211,
+   "wiki_title": "총신대학교",
+   "pageviews": 5053,
+   "sitelinks": 6
+  },
+  "kr-q482658": {
+   "score": 4.456,
+   "wiki_title": "을지대학교",
+   "pageviews": 10875,
+   "sitelinks": 4
+  },
+  "kr-q482659": {
+   "score": 4.427,
+   "wiki_title": "인제대학교",
+   "pageviews": 8298,
+   "sitelinks": 6
+  },
+  "kr-q482661": {
+   "score": 3.951,
+   "wiki_title": "경인교육대학교",
+   "pageviews": 3392,
+   "sitelinks": 4
+  },
+  "kr-q482669": {
+   "score": 4.305,
+   "wiki_title": "국립한밭대학교",
+   "pageviews": 6265,
+   "sitelinks": 6
+  },
+  "kr-q482673": {
+   "score": 4.241,
+   "wiki_title": "국립공주대학교",
+   "pageviews": 4987,
+   "sitelinks": 7
+  },
+  "kr-q482677": {
+   "score": 3.429,
+   "wiki_title": "청주교육대학교",
+   "pageviews": 907,
+   "sitelinks": 5
+  },
+  "kr-q482678": {
+   "score": 5.141,
+   "wiki_title": "서울과학기술대학교",
+   "pageviews": 29700,
+   "sitelinks": 12
+  },
+  "kr-q482680": {
+   "score": 3.952,
+   "wiki_title": "국립목포대학교",
+   "pageviews": 3045,
+   "sitelinks": 5
+  },
+  "kr-q482688": {
+   "score": 3.954,
+   "wiki_title": "국립군산대학교",
+   "pageviews": 2786,
+   "sitelinks": 6
+  },
+  "kr-q482692": {
+   "score": 3.542,
+   "wiki_title": "진주교육대학교",
+   "pageviews": 1316,
+   "sitelinks": 4
+  },
+  "kr-q482699": {
+   "score": 3.342,
+   "wiki_title": "전주교육대학교",
+   "pageviews": 621,
+   "sitelinks": 7
+  },
+  "kr-q482711": {
+   "score": 3.696,
+   "wiki_title": "대구교육대학교",
+   "pageviews": 1685,
+   "sitelinks": 5
+  },
+  "kr-q482712": {
+   "score": 4.3,
+   "wiki_title": "대한민국 기상청",
+   "pageviews": 4484,
+   "sitelinks": 11
+  },
+  "kr-q482713": {
+   "score": 4.622,
+   "wiki_title": "한경국립대학교",
+   "pageviews": 14284,
+   "sitelinks": 5
+  },
+  "kr-q482716": {
+   "score": 4.372,
+   "wiki_title": "성공회대학교",
+   "pageviews": 8963,
+   "sitelinks": 4
+  },
+  "kr-q482724": {
+   "score": 4.087,
+   "wiki_title": "한림대학교",
+   "pageviews": 4161,
+   "sitelinks": 5
+  },
+  "kr-q482730": {
+   "score": 4.758,
+   "wiki_title": "국립부경대학교",
+   "pageviews": 13587,
+   "sitelinks": 10
+  },
+  "kr-q482731": {
+   "score": 3.944,
+   "wiki_title": "칼빈대학교",
+   "pageviews": 2993,
+   "sitelinks": 5
+  },
+  "kr-q482735": {
+   "score": 4.532,
+   "wiki_title": "숙명여자대학교",
+   "pageviews": 9768,
+   "sitelinks": 7
+  },
+  "kr-q482737": {
+   "score": 4.051,
+   "wiki_title": "고신대학교",
+   "pageviews": 4270,
+   "sitelinks": 4
+  },
+  "kr-q482751": {
+   "score": 4.345,
+   "wiki_title": "경성대학교",
+   "pageviews": 6874,
+   "sitelinks": 6
+  },
+  "kr-q482756": {
+   "score": 4.229,
+   "wiki_title": "수원대학교",
+   "pageviews": 4852,
+   "sitelinks": 7
+  },
+  "kr-q482759": {
+   "score": 4.044,
+   "wiki_title": "전주대학교",
+   "pageviews": 3764,
+   "sitelinks": 5
+  },
+  "kr-q482765": {
+   "score": 4.415,
+   "wiki_title": "한성대학교",
+   "pageviews": 7455,
+   "sitelinks": 7
+  },
+  "kr-q482789": {
+   "score": 4.257,
+   "wiki_title": "대한민국 법무부",
+   "pageviews": 3702,
+   "sitelinks": 13
+  },
+  "kr-q482819": {
+   "score": 4.781,
+   "wiki_title": "상명대학교",
+   "pageviews": 15174,
+   "sitelinks": 9
+  },
+  "kr-q482878": {
+   "score": 4.601,
+   "wiki_title": "대한민국 경찰청",
+   "pageviews": 7853,
+   "sitelinks": 14
+  },
+  "kr-q482905": {
+   "score": 4.148,
+   "wiki_title": "대한민국 식품의약품안전처",
+   "pageviews": 4360,
+   "sitelinks": 6
+  },
+  "kr-q482921": {
+   "score": 4.368,
+   "wiki_title": "대한민국 보건복지부",
+   "pageviews": 5524,
+   "sitelinks": 10
+  },
+  "kr-q482952": {
+   "score": 4.403,
+   "wiki_title": "국립순천대학교",
+   "pageviews": 7246,
+   "sitelinks": 7
+  },
+  "kr-q483032": {
+   "score": 4.81,
+   "wiki_title": "명지대학교",
+   "pageviews": 15309,
+   "sitelinks": 10
+  },
+  "kr-q483066": {
+   "score": 3.57,
+   "wiki_title": "국제방송교류재단",
+   "pageviews": 1056,
+   "sitelinks": 7
+  },
+  "kr-q483189": {
+   "score": 4.724,
+   "wiki_title": "경기대학교",
+   "pageviews": 14177,
+   "sitelinks": 8
+  },
+  "kr-q483273": {
+   "score": 4.04,
+   "wiki_title": "대한민국 산림청",
+   "pageviews": 3136,
+   "sitelinks": 7
+  },
+  "kr-q483402": {
+   "score": 4.485,
+   "wiki_title": "계명대학교",
+   "pageviews": 8170,
+   "sitelinks": 8
+  },
+  "kr-q483420": {
+   "score": 4.047,
+   "wiki_title": "대한민국 지식재산처",
+   "pageviews": 3792,
+   "sitelinks": 5
+  },
+  "kr-q483656": {
+   "score": 4.721,
+   "wiki_title": "원광대학교",
+   "pageviews": 13211,
+   "sitelinks": 9
+  },
+  "kr-q483680": {
+   "score": 4.397,
+   "wiki_title": "국립창원대학교",
+   "pageviews": 7758,
+   "sitelinks": 6
+  },
+  "kr-q483744": {
+   "score": 4.38,
+   "wiki_title": "한국체육대학교",
+   "pageviews": 5677,
+   "sitelinks": 10
+  },
+  "kr-q483838": {
+   "score": 3.981,
+   "wiki_title": "게임물관리위원회",
+   "pageviews": 1953,
+   "sitelinks": 13
+  },
+  "kr-q483855": {
+   "score": 4.586,
+   "wiki_title": "중소기업은행",
+   "pageviews": 8662,
+   "sitelinks": 11
+  },
+  "kr-q484090": {
+   "score": 4.655,
+   "wiki_title": "한국교원대학교",
+   "pageviews": 11336,
+   "sitelinks": 9
+  },
+  "kr-q484108": {
+   "score": 4.362,
+   "wiki_title": "울산과학기술원",
+   "pageviews": 6606,
+   "sitelinks": 7
+  },
+  "kr-q484154": {
+   "score": 3.741,
+   "wiki_title": "공주교육대학교",
+   "pageviews": 1869,
+   "sitelinks": 5
+  },
+  "kr-q484160": {
+   "score": 4.292,
+   "wiki_title": "대한민국 방송미디어통신위원회",
+   "pageviews": 5233,
+   "sitelinks": 8
+  },
+  "kr-q484230": {
+   "score": 4.341,
+   "wiki_title": "서울여자대학교",
+   "pageviews": 6287,
+   "sitelinks": 7
+  },
+  "kr-q484445": {
+   "score": 3.944,
+   "wiki_title": "한국관광공사",
+   "pageviews": 2516,
+   "sitelinks": 7
+  },
+  "kr-q484477": {
+   "score": 3.817,
+   "wiki_title": "춘천교육대학교",
+   "pageviews": 2033,
+   "sitelinks": 6
+  },
+  "kr-q484622": {
+   "score": 4.593,
+   "wiki_title": "순천향대학교",
+   "pageviews": 11228,
+   "sitelinks": 7
+  },
+  "kr-q484775": {
+   "score": 3.817,
+   "wiki_title": "광주교육대학교",
+   "pageviews": 1876,
+   "sitelinks": 7
+  },
+  "kr-q484900": {
+   "score": 4.337,
+   "wiki_title": "광주과학기술원",
+   "pageviews": 5149,
+   "sitelinks": 10
+  },
+  "kr-q485566": {
+   "score": 5.383,
+   "wiki_title": "대한민국 국가정보원",
+   "pageviews": 35881,
+   "sitelinks": 23
+  },
+  "kr-q485570": {
+   "score": 4.594,
+   "wiki_title": "울릉군",
+   "pageviews": 5303,
+   "sitelinks": 27
+  },
+  "kr-q486332": {
+   "score": 3.851,
+   "wiki_title": "한국투자공사",
+   "pageviews": 1771,
+   "sitelinks": 9
+  },
+  "kr-q486676": {
+   "score": 4.416,
+   "wiki_title": "강남대학교",
+   "pageviews": 8878,
+   "sitelinks": 5
+  },
+  "kr-q486999": {
+   "score": 4.736,
+   "wiki_title": "국립한국교통대학교",
+   "pageviews": 16925,
+   "sitelinks": 6
+  },
+  "kr-q487170": {
+   "score": 4.411,
+   "wiki_title": "부산외국어대학교",
+   "pageviews": 6108,
+   "sitelinks": 10
+  },
+  "kr-q487177": {
+   "score": 4.565,
+   "wiki_title": "국민대학교",
+   "pageviews": 6953,
+   "sitelinks": 15
+  },
+  "kr-q487613": {
+   "score": 4.059,
+   "wiki_title": "서울교육대학교",
+   "pageviews": 3277,
+   "sitelinks": 7
+  },
+  "kr-q487804": {
+   "score": 4.941,
+   "wiki_title": "동국대학교",
+   "pageviews": 12962,
+   "sitelinks": 23
+  },
+  "kr-q487836": {
+   "score": 4.431,
+   "wiki_title": "경상국립대학교",
+   "pageviews": 7206,
+   "sitelinks": 8
+  },
+  "kr-q487841": {
+   "score": 4.966,
+   "wiki_title": "경북대학교",
+   "pageviews": 18209,
+   "sitelinks": 14
+  },
+  "kr-q487855": {
+   "score": 4.106,
+   "wiki_title": "제주대학교",
+   "pageviews": 3021,
+   "sitelinks": 10
+  },
+  "kr-q488100": {
+   "score": 4.46,
+   "wiki_title": "동덕여자대학교",
+   "pageviews": 7241,
+   "sitelinks": 9
+  },
+  "kr-q488334": {
+   "score": 4.832,
+   "wiki_title": "서울시립대학교",
+   "pageviews": 11603,
+   "sitelinks": 18
+  },
+  "kr-q488480": {
+   "score": 4.48,
+   "wiki_title": "대한민국 해양경찰청",
+   "pageviews": 6796,
+   "sitelinks": 11
+  },
+  "kr-q488486": {
+   "score": 4.473,
+   "wiki_title": "대한민국 재정경제부",
+   "pageviews": 6682,
+   "sitelinks": 11
+  },
+  "kr-q488542": {
+   "score": 4.608,
+   "wiki_title": "대한민국 국방부",
+   "pageviews": 7976,
+   "sitelinks": 14
+  },
+  "kr-q488620": {
+   "score": 4.685,
+   "wiki_title": "선문대학교",
+   "pageviews": 16520,
+   "sitelinks": 5
+  },
+  "kr-q488744": {
+   "score": 4.497,
+   "wiki_title": "대한민국 문화체육관광부",
+   "pageviews": 5941,
+   "sitelinks": 15
+  },
+  "kr-q488764": {
+   "score": 3.92,
+   "wiki_title": "대한민국 국가유산청",
+   "pageviews": 1964,
+   "sitelinks": 10
+  },
+  "kr-q488851": {
+   "score": 5.091,
+   "wiki_title": "인하대학교",
+   "pageviews": 24270,
+   "sitelinks": 14
+  },
+  "kr-q488949": {
+   "score": 4.365,
+   "wiki_title": "대한민국 고용노동부",
+   "pageviews": 6185,
+   "sitelinks": 8
+  },
+  "kr-q488954": {
+   "score": 4.501,
+   "wiki_title": "대한민국 행정안전부",
+   "pageviews": 7506,
+   "sitelinks": 10
+  },
+  "kr-q488977": {
+   "score": 4.484,
+   "wiki_title": "대한민국 성평등가족부",
+   "pageviews": 6248,
+   "sitelinks": 13
+  },
+  "kr-q488980": {
+   "score": 4.297,
+   "wiki_title": "대한민국 국가보훈부",
+   "pageviews": 6156,
+   "sitelinks": 6
+  },
+  "kr-q489004": {
+   "score": 4.014,
+   "wiki_title": "한국석유공사",
+   "pageviews": 2025,
+   "sitelinks": 14
+  },
+  "kr-q489325": {
+   "score": 4.335,
+   "wiki_title": "한국도로공사",
+   "pageviews": 6207,
+   "sitelinks": 7
+  },
+  "kr-q489331": {
+   "score": 4.627,
+   "wiki_title": "숭실대학교",
+   "pageviews": 8338,
+   "sitelinks": 14
+  },
+  "kr-q489488": {
+   "score": 4.653,
+   "wiki_title": "충남대학교",
+   "pageviews": 9652,
+   "sitelinks": 12
+  },
+  "kr-q489708": {
+   "score": 4.375,
+   "wiki_title": "대구대학교",
+   "pageviews": 6799,
+   "sitelinks": 7
+  },
+  "kr-q490117": {
+   "score": 4.426,
+   "wiki_title": "호서대학교",
+   "pageviews": 7640,
+   "sitelinks": 7
+  },
+  "kr-q490606": {
+   "score": 4.101,
+   "wiki_title": "예술의전당",
+   "pageviews": 2981,
+   "sitelinks": 10
+  },
+  "kr-q490746": {
+   "score": 4.632,
+   "wiki_title": "국립한국해양대학교",
+   "pageviews": 11463,
+   "sitelinks": 8
+  },
+  "kr-q491047": {
+   "score": 4.398,
+   "wiki_title": "대한민국 산업통상부",
+   "pageviews": 6682,
+   "sitelinks": 8
+  },
+  "kr-q491082": {
+   "score": 4.883,
+   "wiki_title": "아주대학교",
+   "pageviews": 15046,
+   "sitelinks": 14
+  },
+  "kr-q491127": {
+   "score": 5.166,
+   "wiki_title": "단국대학교",
+   "pageviews": 25020,
+   "sitelinks": 18
+  },
+  "kr-q491336": {
+   "score": 4.503,
+   "wiki_title": "한국교육학술정보원",
+   "pageviews": 12115,
+   "sitelinks": 4
+  },
+  "kr-q491489": {
+   "score": 4.17,
+   "wiki_title": "한국가스공사",
+   "pageviews": 2792,
+   "sitelinks": 15
+  },
+  "kr-q491511": {
+   "score": 4.793,
+   "wiki_title": "홍익대학교",
+   "pageviews": 13956,
+   "sitelinks": 11
+  },
+  "kr-q491597": {
+   "score": 4.985,
+   "wiki_title": "한국방송통신대학교",
+   "pageviews": 20744,
+   "sitelinks": 12
+  },
+  "kr-q491711": {
+   "score": 4.852,
+   "wiki_title": "세종대학교",
+   "pageviews": 11783,
+   "sitelinks": 19
+  },
+  "kr-q491714": {
+   "score": 4.557,
+   "wiki_title": "충북대학교",
+   "pageviews": 9042,
+   "sitelinks": 9
+  },
+  "kr-q491717": {
+   "score": 4.491,
+   "wiki_title": "울산대학교",
+   "pageviews": 7338,
+   "sitelinks": 10
+  },
+  "kr-q493506": {
+   "score": 3.946,
+   "wiki_title": "동서대학교",
+   "pageviews": 3005,
+   "sitelinks": 5
+  },
+  "kr-q493608": {
+   "score": 3.8,
+   "wiki_title": "아신대학교",
+   "pageviews": 2391,
+   "sitelinks": 4
+  },
+  "kr-q494638": {
+   "score": 4.783,
+   "wiki_title": "국립경국대학교",
+   "pageviews": 16223,
+   "sitelinks": 8
+  },
+  "kr-q494681": {
+   "score": 4.692,
+   "wiki_title": "전남대학교",
+   "pageviews": 9677,
+   "sitelinks": 14
+  },
+  "kr-q495807": {
+   "score": 3.56,
+   "wiki_title": "대외경제정책연구원",
+   "pageviews": 1120,
+   "sitelinks": 6
+  },
+  "kr-q496116": {
+   "score": 3.917,
+   "wiki_title": "대한무역투자진흥공사",
+   "pageviews": 3138,
+   "sitelinks": 4
+  },
+  "kr-q496536": {
+   "score": 5.227,
+   "wiki_title": "경희대학교",
+   "pageviews": 24447,
+   "sitelinks": 24
+  },
+  "kr-q497259": {
+   "score": 4.839,
+   "wiki_title": "강원대학교",
+   "pageviews": 14150,
+   "sitelinks": 13
+  },
+  "kr-q497488": {
+   "score": 4.817,
+   "wiki_title": "인천대학교",
+   "pageviews": 12914,
+   "sitelinks": 14
+  },
+  "kr-q497766": {
+   "score": 3.972,
+   "wiki_title": "예원예술대학교",
+   "pageviews": 3563,
+   "sitelinks": 4
+  },
+  "kr-q498288": {
+   "score": 3.928,
+   "wiki_title": "한국국제교류재단",
+   "pageviews": 1660,
+   "sitelinks": 14
+  },
+  "kr-q498532": {
+   "score": 2.968,
+   "wiki_title": "영산선학대학교",
+   "pageviews": 394,
+   "sitelinks": 3
+  },
+  "kr-q5001269": {
+   "score": 3.259,
+   "wiki_title": "부산항만공사",
+   "pageviews": 930,
+   "sitelinks": 2
+  },
+  "kr-q5001270": {
+   "score": 3.199,
+   "wiki_title": "부산장신대학교",
+   "pageviews": 679,
+   "sitelinks": 3
+  },
+  "kr-q50190": {
+   "score": 4.81,
+   "wiki_title": "영등포구",
+   "pageviews": 8739,
+   "sitelinks": 27
+  },
+  "kr-q50191": {
+   "score": 4.565,
+   "wiki_title": "강서구 (부산광역시)",
+   "pageviews": 5592,
+   "sitelinks": 22
+  },
+  "kr-q50192": {
+   "score": 4.892,
+   "wiki_title": "강서구 (서울특별시)",
+   "pageviews": 10778,
+   "sitelinks": 26
+  },
+  "kr-q50203": {
+   "score": 4.782,
+   "wiki_title": "가평군",
+   "pageviews": 8771,
+   "sitelinks": 24
+  },
+  "kr-q50204": {
+   "score": 4.71,
+   "wiki_title": "강진군",
+   "pageviews": 7430,
+   "sitelinks": 24
+  },
+  "kr-q50205": {
+   "score": 4.552,
+   "wiki_title": "강화군",
+   "pageviews": 6501,
+   "sitelinks": 16
+  },
+  "kr-q50206": {
+   "score": 4.902,
+   "wiki_title": "거창군",
+   "pageviews": 12479,
+   "sitelinks": 21
+  },
+  "kr-q50207": {
+   "score": 4.656,
+   "wiki_title": "고령군",
+   "pageviews": 6556,
+   "sitelinks": 24
+  },
+  "kr-q50208": {
+   "score": 4.654,
+   "wiki_title": "고성군 (경상남도)",
+   "pageviews": 6854,
+   "sitelinks": 22
+  },
+  "kr-q50209": {
+   "score": 4.575,
+   "wiki_title": "고성군 (강원특별자치도)",
+   "pageviews": 5191,
+   "sitelinks": 26
+  },
+  "kr-q50210": {
+   "score": 4.677,
+   "wiki_title": "고창군",
+   "pageviews": 7055,
+   "sitelinks": 23
+  },
+  "kr-q50211": {
+   "score": 4.685,
+   "wiki_title": "고흥군",
+   "pageviews": 7564,
+   "sitelinks": 21
+  },
+  "kr-q50212": {
+   "score": 4.506,
+   "wiki_title": "곡성군",
+   "pageviews": 5147,
+   "sitelinks": 20
+  },
+  "kr-q50213": {
+   "score": 4.749,
+   "wiki_title": "괴산군",
+   "pageviews": 7749,
+   "sitelinks": 26
+  },
+  "kr-q50214": {
+   "score": 4.449,
+   "wiki_title": "구례군",
+   "pageviews": 4280,
+   "sitelinks": 22
+  },
+  "kr-q50215": {
+   "score": 4.745,
+   "wiki_title": "군위군",
+   "pageviews": 8048,
+   "sitelinks": 24
+  },
+  "kr-q50216": {
+   "score": 4.959,
+   "wiki_title": "금산군",
+   "pageviews": 12884,
+   "sitelinks": 25
+  },
+  "kr-q50217": {
+   "score": 4.836,
+   "wiki_title": "기장군",
+   "pageviews": 9917,
+   "sitelinks": 24
+  },
+  "kr-q50220": {
+   "score": 4.712,
+   "wiki_title": "단양군",
+   "pageviews": 7278,
+   "sitelinks": 25
+  },
+  "kr-q50239": {
+   "score": 4.677,
+   "wiki_title": "달성군",
+   "pageviews": 8677,
+   "sitelinks": 16
+  },
+  "kr-q50240": {
+   "score": 4.541,
+   "wiki_title": "담양군",
+   "pageviews": 5585,
+   "sitelinks": 20
+  },
+  "kr-q50241": {
+   "score": 4.667,
+   "wiki_title": "무안군",
+   "pageviews": 6721,
+   "sitelinks": 24
+  },
+  "kr-q50242": {
+   "score": 4.582,
+   "wiki_title": "무주군",
+   "pageviews": 5666,
+   "sitelinks": 23
+  },
+  "kr-q50243": {
+   "score": 4.587,
+   "wiki_title": "보성군",
+   "pageviews": 5462,
+   "sitelinks": 25
+  },
+  "kr-q50244": {
+   "score": 4.935,
+   "wiki_title": "보은군",
+   "pageviews": 11912,
+   "sitelinks": 26
+  },
+  "kr-q50245": {
+   "score": 4.684,
+   "wiki_title": "봉화군",
+   "pageviews": 7165,
+   "sitelinks": 23
+  },
+  "kr-q50246": {
+   "score": 4.764,
+   "wiki_title": "부안군",
+   "pageviews": 8215,
+   "sitelinks": 25
+  },
+  "kr-q50247": {
+   "score": 4.951,
+   "wiki_title": "부여군",
+   "pageviews": 12091,
+   "sitelinks": 27
+  },
+  "kr-q50248": {
+   "score": 4.675,
+   "wiki_title": "산청군",
+   "pageviews": 7400,
+   "sitelinks": 21
+  },
+  "kr-q50249": {
+   "score": 4.949,
+   "wiki_title": "서천군",
+   "pageviews": 13196,
+   "sitelinks": 23
+  },
+  "kr-q50250": {
+   "score": 4.535,
+   "wiki_title": "성주군",
+   "pageviews": 5216,
+   "sitelinks": 22
+  },
+  "kr-q50251": {
+   "score": 4.511,
+   "wiki_title": "순창군",
+   "pageviews": 4937,
+   "sitelinks": 22
+  },
+  "kr-q50252": {
+   "score": 4.826,
+   "wiki_title": "신안군",
+   "pageviews": 10468,
+   "sitelinks": 21
+  },
+  "kr-q50253": {
+   "score": 4.847,
+   "wiki_title": "양구군",
+   "pageviews": 11003,
+   "sitelinks": 21
+  },
+  "kr-q50254": {
+   "score": 4.673,
+   "wiki_title": "양양군",
+   "pageviews": 6983,
+   "sitelinks": 23
+  },
+  "kr-q50255": {
+   "score": 4.836,
+   "wiki_title": "양평군",
+   "pageviews": 9936,
+   "sitelinks": 24
+  },
+  "kr-q50257": {
+   "score": 5.035,
+   "wiki_title": "여주시",
+   "pageviews": 12423,
+   "sitelinks": 36
+  },
+  "kr-q50258": {
+   "score": 4.807,
+   "wiki_title": "연천군",
+   "pageviews": 9071,
+   "sitelinks": 25
+  },
+  "kr-q50259": {
+   "score": 4.05,
+   "wiki_title": "영광군 (전남광주통합특별시)",
+   "pageviews": 1795,
+   "sitelinks": 20
+  },
+  "kr-q50260": {
+   "score": 4.81,
+   "wiki_title": "영덕군",
+   "pageviews": 9830,
+   "sitelinks": 22
+  },
+  "kr-q50261": {
+   "score": 4.841,
+   "wiki_title": "영동군",
+   "pageviews": 9593,
+   "sitelinks": 26
+  },
+  "kr-q50262": {
+   "score": 4.605,
+   "wiki_title": "영암군",
+   "pageviews": 5695,
+   "sitelinks": 25
+  },
+  "kr-q50263": {
+   "score": 5.039,
+   "wiki_title": "영양군",
+   "pageviews": 16658,
+   "sitelinks": 22
+  },
+  "kr-q50306": {
+   "score": 5.109,
+   "wiki_title": "영월군",
+   "pageviews": 17770,
+   "sitelinks": 26
+  },
+  "kr-q50307": {
+   "score": 4.779,
+   "wiki_title": "예산군",
+   "pageviews": 8308,
+   "sitelinks": 26
+  },
+  "kr-q50308": {
+   "score": 4.669,
+   "wiki_title": "예천군",
+   "pageviews": 7107,
+   "sitelinks": 22
+  },
+  "kr-q50309": {
+   "score": 4.668,
+   "wiki_title": "옥천군",
+   "pageviews": 6738,
+   "sitelinks": 24
+  },
+  "kr-q50310": {
+   "score": 4.541,
+   "wiki_title": "옹진군 (인천광역시)",
+   "pageviews": 6132,
+   "sitelinks": 17
+  },
+  "kr-q50311": {
+   "score": 4.623,
+   "wiki_title": "완도군",
+   "pageviews": 6563,
+   "sitelinks": 21
+  },
+  "kr-q50312": {
+   "score": 4.733,
+   "wiki_title": "완주군",
+   "pageviews": 8019,
+   "sitelinks": 23
+  },
+  "kr-q50313": {
+   "score": 4.692,
+   "wiki_title": "울주군",
+   "pageviews": 8404,
+   "sitelinks": 18
+  },
+  "kr-q50314": {
+   "score": 5.094,
+   "wiki_title": "울진군",
+   "pageviews": 18418,
+   "sitelinks": 23
+  },
+  "kr-q50315": {
+   "score": 4.918,
+   "wiki_title": "음성군",
+   "pageviews": 10746,
+   "sitelinks": 29
+  },
+  "kr-q50316": {
+   "score": 4.818,
+   "wiki_title": "의령군",
+   "pageviews": 10900,
+   "sitelinks": 19
+  },
+  "kr-q50317": {
+   "score": 4.817,
+   "wiki_title": "의성군",
+   "pageviews": 9737,
+   "sitelinks": 23
+  },
+  "kr-q50318": {
+   "score": 4.954,
+   "wiki_title": "인제군",
+   "pageviews": 13701,
+   "sitelinks": 22
+  },
+  "kr-q50319": {
+   "score": 4.611,
+   "wiki_title": "임실군",
+   "pageviews": 6209,
+   "sitelinks": 22
+  },
+  "kr-q50320": {
+   "score": 4.598,
+   "wiki_title": "장성군",
+   "pageviews": 6192,
+   "sitelinks": 21
+  },
+  "kr-q50321": {
+   "score": 4.755,
+   "wiki_title": "장수군",
+   "pageviews": 8883,
+   "sitelinks": 21
+  },
+  "kr-q50322": {
+   "score": 4.6,
+   "wiki_title": "장흥군",
+   "pageviews": 6400,
+   "sitelinks": 20
+  },
+  "kr-q50323": {
+   "score": 4.728,
+   "wiki_title": "정선군",
+   "pageviews": 7395,
+   "sitelinks": 26
+  },
+  "kr-q50324": {
+   "score": 4.517,
+   "wiki_title": "증평군",
+   "pageviews": 4543,
+   "sitelinks": 26
+  },
+  "kr-q50325": {
+   "score": 4.61,
+   "wiki_title": "진도군",
+   "pageviews": 6547,
+   "sitelinks": 20
+  },
+  "kr-q50326": {
+   "score": 4.752,
+   "wiki_title": "진안군",
+   "pageviews": 8833,
+   "sitelinks": 21
+  },
+  "kr-q50327": {
+   "score": 4.899,
+   "wiki_title": "진천군",
+   "pageviews": 11202,
+   "sitelinks": 25
+  },
+  "kr-q50328": {
+   "score": 4.622,
+   "wiki_title": "창녕군",
+   "pageviews": 6205,
+   "sitelinks": 23
+  },
+  "kr-q50329": {
+   "score": 4.501,
+   "wiki_title": "철원군 (대한민국)",
+   "pageviews": 4197,
+   "sitelinks": 28
+  },
+  "kr-q50330": {
+   "score": 4.713,
+   "wiki_title": "청도군",
+   "pageviews": 7654,
+   "sitelinks": 23
+  },
+  "kr-q50331": {
+   "score": 4.651,
+   "wiki_title": "청송군",
+   "pageviews": 6487,
+   "sitelinks": 24
+  },
+  "kr-q50332": {
+   "score": 4.752,
+   "wiki_title": "청양군",
+   "pageviews": 8171,
+   "sitelinks": 24
+  },
+  "kr-q50334": {
+   "score": 4.801,
+   "wiki_title": "칠곡군",
+   "pageviews": 9390,
+   "sitelinks": 23
+  },
+  "kr-q50335": {
+   "score": 4.929,
+   "wiki_title": "태안군",
+   "pageviews": 12016,
+   "sitelinks": 25
+  },
+  "kr-q50338": {
+   "score": 5.008,
+   "wiki_title": "함안군",
+   "pageviews": 15526,
+   "sitelinks": 22
+  },
+  "kr-q50339": {
+   "score": 4.743,
+   "wiki_title": "함양군",
+   "pageviews": 8891,
+   "sitelinks": 20
+  },
+  "kr-q50340": {
+   "score": 4.616,
+   "wiki_title": "함평군",
+   "pageviews": 6450,
+   "sitelinks": 21
+  },
+  "kr-q50341": {
+   "score": 4.644,
+   "wiki_title": "합천군",
+   "pageviews": 6706,
+   "sitelinks": 22
+  },
+  "kr-q50342": {
+   "score": 4.711,
+   "wiki_title": "해남군",
+   "pageviews": 8257,
+   "sitelinks": 20
+  },
+  "kr-q50343": {
+   "score": 5.14,
+   "wiki_title": "홍성군",
+   "pageviews": 18692,
+   "sitelinks": 27
+  },
+  "kr-q50344": {
+   "score": 4.71,
+   "wiki_title": "홍천군",
+   "pageviews": 7602,
+   "sitelinks": 23
+  },
+  "kr-q50345": {
+   "score": 4.6,
+   "wiki_title": "화순군",
+   "pageviews": 6056,
+   "sitelinks": 22
+  },
+  "kr-q50346": {
+   "score": 4.95,
+   "wiki_title": "화천군",
+   "pageviews": 12322,
+   "sitelinks": 26
+  },
+  "kr-q50347": {
+   "score": 4.562,
+   "wiki_title": "횡성군",
+   "pageviews": 4935,
+   "sitelinks": 27
+  },
+  "kr-q50348": {
+   "score": 5.004,
+   "wiki_title": "강동구",
+   "pageviews": 13378,
+   "sitelinks": 28
+  },
+  "kr-q50349": {
+   "score": 4.719,
+   "wiki_title": "강북구",
+   "pageviews": 6799,
+   "sitelinks": 29
+  },
+  "kr-q50352": {
+   "score": 4.601,
+   "wiki_title": "계양구",
+   "pageviews": 8178,
+   "sitelinks": 13
+  },
+  "kr-q50353": {
+   "score": 4.754,
+   "wiki_title": "관악구",
+   "pageviews": 7370,
+   "sitelinks": 29
+  },
+  "kr-q50354": {
+   "score": 4.549,
+   "wiki_title": "광산구",
+   "pageviews": 6956,
+   "sitelinks": 14
+  },
+  "kr-q50355": {
+   "score": 4.721,
+   "wiki_title": "광진구",
+   "pageviews": 6959,
+   "sitelinks": 28
+  },
+  "kr-q50356": {
+   "score": 4.93,
+   "wiki_title": "구로구",
+   "pageviews": 11287,
+   "sitelinks": 28
+  },
+  "kr-q50358": {
+   "score": 4.367,
+   "wiki_title": "금정구",
+   "pageviews": 3630,
+   "sitelinks": 21
+  },
+  "kr-q50359": {
+   "score": 4.879,
+   "wiki_title": "금천구",
+   "pageviews": 9817,
+   "sitelinks": 29
+  },
+  "kr-q50361": {
+   "score": 3.612,
+   "wiki_title": "남구 (전남광주통합특별시)",
+   "pageviews": 869,
+   "sitelinks": 12
+  },
+  "kr-q50362": {
+   "score": 4.008,
+   "wiki_title": "남구 (대구광역시)",
+   "pageviews": 1998,
+   "sitelinks": 14
+  },
+  "kr-q50363": {
+   "score": 4.37,
+   "wiki_title": "남구 (부산광역시)",
+   "pageviews": 3767,
+   "sitelinks": 20
+  },
+  "kr-q50364": {
+   "score": 4.267,
+   "wiki_title": "남구 (울산광역시)",
+   "pageviews": 3633,
+   "sitelinks": 14
+  },
+  "kr-q50365": {
+   "score": 4.739,
+   "wiki_title": "미추홀구",
+   "pageviews": 10799,
+   "sitelinks": 14
+  },
+  "kr-q50367": {
+   "score": 4.482,
+   "wiki_title": "남동구",
+   "pageviews": 5537,
+   "sitelinks": 16
+  },
+  "kr-q50368": {
+   "score": 4.953,
+   "wiki_title": "노원구",
+   "pageviews": 11888,
+   "sitelinks": 28
+  },
+  "kr-q50370": {
+   "score": 4.439,
+   "wiki_title": "달서구",
+   "pageviews": 5202,
+   "sitelinks": 15
+  },
+  "kr-q50371": {
+   "score": 4.19,
+   "wiki_title": "대덕구",
+   "pageviews": 3167,
+   "sitelinks": 13
+  },
+  "kr-q50374": {
+   "score": 4.825,
+   "wiki_title": "도봉구",
+   "pageviews": 8510,
+   "sitelinks": 30
+  },
+  "kr-q50375": {
+   "score": 3.659,
+   "wiki_title": "동구 (전남광주통합특별시)",
+   "pageviews": 889,
+   "sitelinks": 14
+  },
+  "kr-q50376": {
+   "score": 4.266,
+   "wiki_title": "동구 (대구광역시)",
+   "pageviews": 3625,
+   "sitelinks": 14
+  },
+  "kr-q50377": {
+   "score": 4.204,
+   "wiki_title": "동구 (대전광역시)",
+   "pageviews": 3276,
+   "sitelinks": 13
+  },
+  "kr-q50378": {
+   "score": 4.34,
+   "wiki_title": "동구 (부산광역시)",
+   "pageviews": 3321,
+   "sitelinks": 22
+  },
+  "kr-q50379": {
+   "score": 4.175,
+   "wiki_title": "동구 (울산광역시)",
+   "pageviews": 2935,
+   "sitelinks": 14
+  },
+  "kr-q50382": {
+   "score": 4.713,
+   "wiki_title": "동대문구",
+   "pageviews": 6698,
+   "sitelinks": 29
+  },
+  "kr-q50383": {
+   "score": 4.612,
+   "wiki_title": "동래구",
+   "pageviews": 5925,
+   "sitelinks": 24
+  },
+  "kr-q50385": {
+   "score": 4.915,
+   "wiki_title": "동작구",
+   "pageviews": 10073,
+   "sitelinks": 32
+  },
+  "kr-q50388": {
+   "score": 4.955,
+   "wiki_title": "마포구",
+   "pageviews": 11482,
+   "sitelinks": 30
+  },
+  "kr-q50390": {
+   "score": 4.605,
+   "wiki_title": "부산진구",
+   "pageviews": 5979,
+   "sitelinks": 23
+  },
+  "kr-q50391": {
+   "score": 4.499,
+   "wiki_title": "부평구",
+   "pageviews": 6208,
+   "sitelinks": 14
+  },
+  "kr-q50392": {
+   "score": 3.781,
+   "wiki_title": "북구 (전남광주통합특별시)",
+   "pageviews": 1230,
+   "sitelinks": 13
+  },
+  "kr-q50393": {
+   "score": 4.229,
+   "wiki_title": "북구 (대구광역시)",
+   "pageviews": 3198,
+   "sitelinks": 15
+  },
+  "kr-q50394": {
+   "score": 4.744,
+   "wiki_title": "북구 (부산광역시)",
+   "pageviews": 8439,
+   "sitelinks": 22
+  },
+  "kr-q50395": {
+   "score": 4.055,
+   "wiki_title": "북구 (울산광역시)",
+   "pageviews": 2319,
+   "sitelinks": 13
+  },
+  "kr-q50398": {
+   "score": 4.38,
+   "wiki_title": "사상구",
+   "pageviews": 3961,
+   "sitelinks": 19
+  },
+  "kr-q50400": {
+   "score": 4.699,
+   "wiki_title": "사하구",
+   "pageviews": 8034,
+   "sitelinks": 20
+  },
+  "kr-q50403": {
+   "score": 3.727,
+   "wiki_title": "서구 (전남광주통합특별시)",
+   "pageviews": 1086,
+   "sitelinks": 13
+  },
+  "kr-q50404": {
+   "score": 3.999,
+   "wiki_title": "서구 (대구광역시)",
+   "pageviews": 2036,
+   "sitelinks": 13
+  },
+  "kr-q50405": {
+   "score": 4.265,
+   "wiki_title": "서구 (대전광역시)",
+   "pageviews": 3771,
+   "sitelinks": 13
+  },
+  "kr-q50406": {
+   "score": 4.385,
+   "wiki_title": "서구 (부산광역시)",
+   "pageviews": 3899,
+   "sitelinks": 20
+  },
+  "kr-q50408": {
+   "score": 4.811,
+   "wiki_title": "서대문구",
+   "pageviews": 8569,
+   "sitelinks": 28
+  },
+  "kr-q50411": {
+   "score": 5.063,
+   "wiki_title": "성동구",
+   "pageviews": 15327,
+   "sitelinks": 28
+  },
+  "kr-q50412": {
+   "score": 4.757,
+   "wiki_title": "성북구",
+   "pageviews": 7732,
+   "sitelinks": 27
+  },
+  "kr-q50415": {
+   "score": 5.186,
+   "wiki_title": "송파구",
+   "pageviews": 21236,
+   "sitelinks": 26
+  },
+  "kr-q50416": {
+   "score": 4.42,
+   "wiki_title": "수성구",
+   "pageviews": 5170,
+   "sitelinks": 14
+  },
+  "kr-q50417": {
+   "score": 4.375,
+   "wiki_title": "수영구",
+   "pageviews": 3702,
+   "sitelinks": 21
+  },
+  "kr-q50420": {
+   "score": 4.64,
+   "wiki_title": "양천구",
+   "pageviews": 5772,
+   "sitelinks": 28
+  },
+  "kr-q50421": {
+   "score": 4.411,
+   "wiki_title": "연수구",
+   "pageviews": 5061,
+   "sitelinks": 14
+  },
+  "kr-q50422": {
+   "score": 4.421,
+   "wiki_title": "연제구",
+   "pageviews": 4003,
+   "sitelinks": 22
+  },
+  "kr-q50423": {
+   "score": 4.414,
+   "wiki_title": "영도구",
+   "pageviews": 4053,
+   "sitelinks": 21
+  },
+  "kr-q50429": {
+   "score": 4.977,
+   "wiki_title": "용산구",
+   "pageviews": 11229,
+   "sitelinks": 34
+  },
+  "kr-q50431": {
+   "score": 4.601,
+   "wiki_title": "유성구",
+   "pageviews": 8183,
+   "sitelinks": 13
+  },
+  "kr-q50432": {
+   "score": 4.804,
+   "wiki_title": "은평구",
+   "pageviews": 8612,
+   "sitelinks": 27
+  },
+  "kr-q50438": {
+   "score": 4.207,
+   "wiki_title": "중구 (대구광역시)",
+   "pageviews": 2934,
+   "sitelinks": 16
+  },
+  "kr-q50439": {
+   "score": 4.117,
+   "wiki_title": "중구 (대전광역시)",
+   "pageviews": 2469,
+   "sitelinks": 15
+  },
+  "kr-q50440": {
+   "score": 4.312,
+   "wiki_title": "중구 (부산광역시)",
+   "pageviews": 3288,
+   "sitelinks": 20
+  },
+  "kr-q50441": {
+   "score": 4.947,
+   "wiki_title": "중구 (서울특별시)",
+   "pageviews": 10841,
+   "sitelinks": 32
+  },
+  "kr-q50442": {
+   "score": 4.12,
+   "wiki_title": "중구 (울산광역시)",
+   "pageviews": 2698,
+   "sitelinks": 13
+  },
+  "kr-q50444": {
+   "score": 4.721,
+   "wiki_title": "중랑구",
+   "pageviews": 7106,
+   "sitelinks": 27
+  },
+  "kr-q50449": {
+   "score": 4.588,
+   "wiki_title": "해운대구",
+   "pageviews": 5355,
+   "sitelinks": 26
+  },
+  "kr-q5053266": {
+   "score": 3.862,
+   "wiki_title": "부산가톨릭대학교",
+   "pageviews": 2476,
+   "sitelinks": 5
+  },
+  "kr-q5089726": {
+   "score": 3.429,
+   "wiki_title": "제주한라대학교",
+   "pageviews": 1379,
+   "sitelinks": 2
+  },
+  "kr-q5115985": {
+   "score": 4.087,
+   "wiki_title": "추계예술대학교",
+   "pageviews": 5310,
+   "sitelinks": 3
+  },
+  "kr-q5208186": {
+   "score": 3.347,
+   "wiki_title": "대구예술대학교",
+   "pageviews": 957,
+   "sitelinks": 3
+  },
+  "kr-q5208190": {
+   "score": 4.002,
+   "wiki_title": "대구한의대학교",
+   "pageviews": 4363,
+   "sitelinks": 3
+  },
+  "kr-q5208233": {
+   "score": 4.41,
+   "wiki_title": "대진대학교",
+   "pageviews": 8768,
+   "sitelinks": 5
+  },
+  "kr-q52854854": {
+   "score": 3.389,
+   "wiki_title": "한국지능정보사회진흥원",
+   "pageviews": 1605,
+   "sitelinks": 1
+  },
+  "kr-q5295691": {
+   "score": 4.44,
+   "wiki_title": "동아방송예술대학교",
+   "pageviews": 11973,
+   "sitelinks": 3
+  },
+  "kr-q5296030": {
+   "score": 3.872,
+   "wiki_title": "동신대학교",
+   "pageviews": 3234,
+   "sitelinks": 3
+  },
+  "kr-q5296069": {
+   "score": 3.797,
+   "wiki_title": "동양대학교",
+   "pageviews": 2719,
+   "sitelinks": 3
+  },
+  "kr-q5297278": {
+   "score": 3.829,
+   "wiki_title": "두원공과대학교",
+   "pageviews": 2924,
+   "sitelinks": 3
+  },
+  "kr-q53122": {
+   "score": 4.975,
+   "wiki_title": "부산대학교",
+   "pageviews": 13676,
+   "sitelinks": 24
+  },
+  "kr-q5434550": {
+   "score": 3.833,
+   "wiki_title": "극동대학교",
+   "pageviews": 2951,
+   "sitelinks": 3
+  },
+  "kr-q5554847": {
+   "score": 3.831,
+   "wiki_title": "금강대학교",
+   "pageviews": 2096,
+   "sitelinks": 6
+  },
+  "kr-q5562681": {
+   "score": 3.753,
+   "wiki_title": "김천대학교",
+   "pageviews": 2918,
+   "sitelinks": 2
+  },
+  "kr-q55727512": {
+   "score": 3.109,
+   "wiki_title": "공영쇼핑",
+   "pageviews": 838,
+   "sitelinks": 1
+  },
+  "kr-q55729046": {
+   "score": 3.228,
+   "wiki_title": "대한건설기계안전관리원",
+   "pageviews": 1106,
+   "sitelinks": 1
+  },
+  "kr-q55733822": {
+   "score": 2.911,
+   "wiki_title": "장애인기업종합지원센터",
+   "pageviews": 528,
+   "sitelinks": 1
+  },
+  "kr-q55735729": {
+   "score": 2.844,
+   "wiki_title": "한국수목원정원관리원",
+   "pageviews": 451,
+   "sitelinks": 1
+  },
+  "kr-q55735736": {
+   "score": 3.073,
+   "wiki_title": "한국에너지재단",
+   "pageviews": 770,
+   "sitelinks": 1
+  },
+  "kr-q55735764": {
+   "score": 2.967,
+   "wiki_title": "한국해양진흥공사",
+   "pageviews": 601,
+   "sitelinks": 1
+  },
+  "kr-q56143": {
+   "score": 4.558,
+   "wiki_title": "조선대학교",
+   "pageviews": 11231,
+   "sitelinks": 6
+  },
+  "kr-q56147": {
+   "score": 4.913,
+   "wiki_title": "가천대학교",
+   "pageviews": 23469,
+   "sitelinks": 7
+  },
+  "kr-q56148": {
+   "score": 4.602,
+   "wiki_title": "영남대학교",
+   "pageviews": 9477,
+   "sitelinks": 10
+  },
+  "kr-q5623305": {
+   "score": 3.345,
+   "wiki_title": "광주가톨릭대학교",
+   "pageviews": 832,
+   "sitelinks": 4
+  },
+  "kr-q5642741": {
+   "score": 3.966,
+   "wiki_title": "한라대학교",
+   "pageviews": 3508,
+   "sitelinks": 4
+  },
+  "kr-q5648215": {
+   "score": 3.772,
+   "wiki_title": "한일장신대학교",
+   "pageviews": 2564,
+   "sitelinks": 3
+  },
+  "kr-q5770181": {
+   "score": 4.079,
+   "wiki_title": "한국공항공사",
+   "pageviews": 3438,
+   "sitelinks": 7
+  },
+  "kr-q5922476": {
+   "score": 4.023,
+   "wiki_title": "호원대학교",
+   "pageviews": 4579,
+   "sitelinks": 3
+  },
+  "kr-q60376": {
+   "score": 4.023,
+   "wiki_title": "한국조폐공사",
+   "pageviews": 2638,
+   "sitelinks": 9
+  },
+  "kr-q61359365": {
+   "score": 2.907,
+   "wiki_title": "새만금개발공사",
+   "pageviews": 523,
+   "sitelinks": 1
+  },
+  "kr-q6176555": {
+   "score": 3.603,
+   "wiki_title": "제주국제자유도시개발센터",
+   "pageviews": 1516,
+   "sitelinks": 4
+  },
+  "kr-q623604": {
+   "score": 4.525,
+   "wiki_title": "한동대학교",
+   "pageviews": 9616,
+   "sitelinks": 7
+  },
+  "kr-q623679": {
+   "score": 3.617,
+   "wiki_title": "한국인터넷진흥원",
+   "pageviews": 1567,
+   "sitelinks": 4
+  },
+  "kr-q623798": {
+   "score": 4.208,
+   "wiki_title": "동의대학교",
+   "pageviews": 5502,
+   "sitelinks": 5
+  },
+  "kr-q623817": {
+   "score": 4.228,
+   "wiki_title": "한국전통문화대학교",
+   "pageviews": 6425,
+   "sitelinks": 4
+  },
+  "kr-q623828": {
+   "score": 4.111,
+   "wiki_title": "국립목포해양대학교",
+   "pageviews": 4004,
+   "sitelinks": 6
+  },
+  "kr-q623851": {
+   "score": 4.465,
+   "wiki_title": "전북대학교",
+   "pageviews": 5975,
+   "sitelinks": 13
+  },
+  "kr-q624022": {
+   "score": 4.128,
+   "wiki_title": "국가철도공단",
+   "pageviews": 3844,
+   "sitelinks": 7
+  },
+  "kr-q624027": {
+   "score": 4.507,
+   "wiki_title": "서경대학교",
+   "pageviews": 10949,
+   "sitelinks": 5
+  },
+  "kr-q624046": {
+   "score": 3.787,
+   "wiki_title": "대한민국 법제처",
+   "pageviews": 1894,
+   "sitelinks": 6
+  },
+  "kr-q624072": {
+   "score": 4.204,
+   "wiki_title": "대전대학교",
+   "pageviews": 6087,
+   "sitelinks": 4
+  },
+  "kr-q624134": {
+   "score": 4.183,
+   "wiki_title": "대한민국 국민권익위원회",
+   "pageviews": 4732,
+   "sitelinks": 6
+  },
+  "kr-q624189": {
+   "score": 4.454,
+   "wiki_title": "안양대학교",
+   "pageviews": 8159,
+   "sitelinks": 7
+  },
+  "kr-q624295": {
+   "score": 4.208,
+   "wiki_title": "한서대학교",
+   "pageviews": 6142,
+   "sitelinks": 4
+  },
+  "kr-q624374": {
+   "score": 4.106,
+   "wiki_title": "광주대학교",
+   "pageviews": 4342,
+   "sitelinks": 5
+  },
+  "kr-q624438": {
+   "score": 4.116,
+   "wiki_title": "대한민국 감사원",
+   "pageviews": 3488,
+   "sitelinks": 8
+  },
+  "kr-q624457": {
+   "score": 3.882,
+   "wiki_title": "대한민국 병무청",
+   "pageviews": 2593,
+   "sitelinks": 5
+  },
+  "kr-q624460": {
+   "score": 3.981,
+   "wiki_title": "대한민국 농림축산식품부",
+   "pageviews": 2739,
+   "sitelinks": 7
+  },
+  "kr-q624479": {
+   "score": 4.242,
+   "wiki_title": "대한민국 공정거래위원회",
+   "pageviews": 5003,
+   "sitelinks": 7
+  },
+  "kr-q624507": {
+   "score": 4.072,
+   "wiki_title": "대한민국 국가인권위원회",
+   "pageviews": 4019,
+   "sitelinks": 5
+  },
+  "kr-q624561": {
+   "score": 4.339,
+   "wiki_title": "한신대학교",
+   "pageviews": 8306,
+   "sitelinks": 4
+  },
+  "kr-q624575": {
+   "score": 4.354,
+   "wiki_title": "덕성여자대학교",
+   "pageviews": 7706,
+   "sitelinks": 5
+  },
+  "kr-q624674": {
+   "score": 4.106,
+   "wiki_title": "대한민국 금융위원회",
+   "pageviews": 3965,
+   "sitelinks": 6
+  },
+  "kr-q624717": {
+   "score": 4.199,
+   "wiki_title": "대한민국 국세청",
+   "pageviews": 5387,
+   "sitelinks": 5
+  },
+  "kr-q624993": {
+   "score": 4.378,
+   "wiki_title": "삼육대학교",
+   "pageviews": 8139,
+   "sitelinks": 5
+  },
+  "kr-q625097": {
+   "score": 4.193,
+   "wiki_title": "대한민국 해양수산부",
+   "pageviews": 3504,
+   "sitelinks": 11
+  },
+  "kr-q625111": {
+   "score": 4.429,
+   "wiki_title": "상지대학교",
+   "pageviews": 10203,
+   "sitelinks": 4
+  },
+  "kr-q625159": {
+   "score": 4.187,
+   "wiki_title": "국군간호사관학교",
+   "pageviews": 5848,
+   "sitelinks": 4
+  },
+  "kr-q625165": {
+   "score": 4.276,
+   "wiki_title": "국립금오공과대학교",
+   "pageviews": 6431,
+   "sitelinks": 5
+  },
+  "kr-q625421": {
+   "score": 3.914,
+   "wiki_title": "우송대학교",
+   "pageviews": 3110,
+   "sitelinks": 4
+  },
+  "kr-q625548": {
+   "score": 3.676,
+   "wiki_title": "신경주대학교",
+   "pageviews": 2054,
+   "sitelinks": 3
+  },
+  "kr-q625679": {
+   "score": 4.228,
+   "wiki_title": "한국국제협력단",
+   "pageviews": 4002,
+   "sitelinks": 10
+  },
+  "kr-q625945": {
+   "score": 4.353,
+   "wiki_title": "청주대학교",
+   "pageviews": 7001,
+   "sitelinks": 6
+  },
+  "kr-q625952": {
+   "score": 4.816,
+   "wiki_title": "백석대학교",
+   "pageviews": 20369,
+   "sitelinks": 6
+  },
+  "kr-q625953": {
+   "score": 4.524,
+   "wiki_title": "한국폴리텍대학",
+   "pageviews": 12701,
+   "sitelinks": 4
+  },
+  "kr-q625961": {
+   "score": 4.22,
+   "wiki_title": "대구가톨릭대학교",
+   "pageviews": 5652,
+   "sitelinks": 5
+  },
+  "kr-q626053": {
+   "score": 4.318,
+   "wiki_title": "한남대학교",
+   "pageviews": 6464,
+   "sitelinks": 6
+  },
+  "kr-q626067": {
+   "score": 4.137,
+   "wiki_title": "한세대학교",
+   "pageviews": 5212,
+   "sitelinks": 4
+  },
+  "kr-q626288": {
+   "score": 3.945,
+   "wiki_title": "한국개발연구원",
+   "pageviews": 2994,
+   "sitelinks": 5
+  },
+  "kr-q626362": {
+   "score": 4.321,
+   "wiki_title": "신라대학교",
+   "pageviews": 7139,
+   "sitelinks": 5
+  },
+  "kr-q626458": {
+   "score": 4.274,
+   "wiki_title": "가톨릭관동대학교",
+   "pageviews": 6397,
+   "sitelinks": 5
+  },
+  "kr-q626534": {
+   "score": 4.383,
+   "wiki_title": "한국학중앙연구원",
+   "pageviews": 6064,
+   "sitelinks": 9
+  },
+  "kr-q626610": {
+   "score": 4.569,
+   "wiki_title": "국방과학연구소",
+   "pageviews": 8775,
+   "sitelinks": 10
+  },
+  "kr-q626710": {
+   "score": 3.873,
+   "wiki_title": "영상물등급위원회",
+   "pageviews": 1987,
+   "sitelinks": 8
+  },
+  "kr-q626783": {
+   "score": 4.607,
+   "wiki_title": "동아대학교",
+   "pageviews": 10810,
+   "sitelinks": 8
+  },
+  "kr-q626811": {
+   "score": 4.079,
+   "wiki_title": "독립기념관 (대한민국)",
+   "pageviews": 4084,
+   "sitelinks": 5
+  },
+  "kr-q626872": {
+   "score": 4.49,
+   "wiki_title": "경찰대학",
+   "pageviews": 9600,
+   "sitelinks": 6
+  },
+  "kr-q6322893": {
+   "score": 3.64,
+   "wiki_title": "한국수자원공사",
+   "pageviews": 1888,
+   "sitelinks": 3
+  },
+  "kr-q6328582": {
+   "score": 3.873,
+   "wiki_title": "한국전력기술",
+   "pageviews": 2834,
+   "sitelinks": 4
+  },
+  "kr-q6425829": {
+   "score": 3.791,
+   "wiki_title": "나주대학교",
+   "pageviews": 2341,
+   "sitelinks": 4
+  },
+  "kr-q6431586": {
+   "score": 4.404,
+   "wiki_title": "한국항공대학교",
+   "pageviews": 9653,
+   "sitelinks": 4
+  },
+  "kr-q6431599": {
+   "score": 3.689,
+   "wiki_title": "한국침례신학대학교",
+   "pageviews": 2115,
+   "sitelinks": 3
+  },
+  "kr-q6431618": {
+   "score": 3.636,
+   "wiki_title": "예금보험공사",
+   "pageviews": 1871,
+   "sitelinks": 3
+  },
+  "kr-q6431623": {
+   "score": 4.024,
+   "wiki_title": "한국승강기안전공단",
+   "pageviews": 5451,
+   "sitelinks": 2
+  },
+  "kr-q6431649": {
+   "score": 3.688,
+   "wiki_title": "한국해양수산연수원",
+   "pageviews": 2510,
+   "sitelinks": 2
+  },
+  "kr-q6431651": {
+   "score": 3.299,
+   "wiki_title": "한국행정연구원",
+   "pageviews": 748,
+   "sitelinks": 4
+  },
+  "kr-q6431664": {
+   "score": 3.194,
+   "wiki_title": "한국해양수산개발원",
+   "pageviews": 671,
+   "sitelinks": 3
+  },
+  "kr-q6431679": {
+   "score": 4.025,
+   "wiki_title": "나사렛대학교",
+   "pageviews": 5466,
+   "sitelinks": 2
+  },
+  "kr-q6431684": {
+   "score": 3.369,
+   "wiki_title": "한전원자력연료",
+   "pageviews": 1008,
+   "sitelinks": 3
+  },
+  "kr-q6431688": {
+   "score": 3.638,
+   "wiki_title": "한전KPS",
+   "pageviews": 2238,
+   "sitelinks": 2
+  },
+  "kr-q6431703": {
+   "score": 3.815,
+   "wiki_title": "한국연구재단",
+   "pageviews": 2834,
+   "sitelinks": 3
+  },
+  "kr-q6431723": {
+   "score": 3.965,
+   "wiki_title": "한국교통안전공단",
+   "pageviews": 4765,
+   "sitelinks": 2
+  },
+  "kr-q6431840": {
+   "score": 3.55,
+   "wiki_title": "한국영상자료원",
+   "pageviews": 1010,
+   "sitelinks": 7
+  },
+  "kr-q6431898": {
+   "score": 3.627,
+   "wiki_title": "대한장애인체육회",
+   "pageviews": 1435,
+   "sitelinks": 5
+  },
+  "kr-q6442235": {
+   "score": 3.89,
+   "wiki_title": "인천국제공항공사",
+   "pageviews": 3368,
+   "sitelinks": 3
+  },
+  "kr-q6452737": {
+   "score": 4.211,
+   "wiki_title": "경남대학교",
+   "pageviews": 6175,
+   "sitelinks": 4
+  },
+  "kr-q65312615": {
+   "score": 3.292,
+   "wiki_title": "한국데이터산업진흥원",
+   "pageviews": 1282,
+   "sitelinks": 1
+  },
+  "kr-q6583844": {
+   "score": 3.867,
+   "wiki_title": "경운대학교",
+   "pageviews": 3799,
+   "sitelinks": 2
+  },
+  "kr-q6647741": {
+   "score": 3.486,
+   "wiki_title": "한국문학번역원",
+   "pageviews": 759,
+   "sitelinks": 9
+  },
+  "kr-q6674241": {
+   "score": 3.933,
+   "wiki_title": "장로회신학대학교",
+   "pageviews": 3253,
+   "sitelinks": 4
+  },
+  "kr-q6705649": {
+   "score": 3.633,
+   "wiki_title": "루터대학교",
+   "pageviews": 2210,
+   "sitelinks": 2
+  },
+  "kr-q6858616": {
+   "score": 4.257,
+   "wiki_title": "세명대학교",
+   "pageviews": 7861,
+   "sitelinks": 3
+  },
+  "kr-q6895404": {
+   "score": 3.174,
+   "wiki_title": "목포가톨릭대학교",
+   "pageviews": 640,
+   "sitelinks": 3
+  },
+  "kr-q6973584": {
+   "score": 4.098,
+   "wiki_title": "국가평생교육진흥원",
+   "pageviews": 6474,
+   "sitelinks": 2
+  },
+  "kr-q6974864": {
+   "score": 4.349,
+   "wiki_title": "국민연금공단",
+   "pageviews": 5971,
+   "sitelinks": 8
+  },
+  "kr-q7314493": {
+   "score": 4.433,
+   "wiki_title": "대한적십자사",
+   "pageviews": 6097,
+   "sitelinks": 11
+  },
+  "kr-q7332190": {
+   "score": 4.12,
+   "wiki_title": "한국농수산식품유통공사",
+   "pageviews": 6805,
+   "sitelinks": 2
+  },
+  "kr-q7446489": {
+   "score": 4.104,
+   "wiki_title": "세한대학교",
+   "pageviews": 6558,
+   "sitelinks": 2
+  },
+  "kr-q7451674": {
+   "score": 3.854,
+   "wiki_title": "서울특별시교육청",
+   "pageviews": 3686,
+   "sitelinks": 2
+  },
+  "kr-q7640246": {
+   "score": 4.499,
+   "wiki_title": "성신여자대학교",
+   "pageviews": 9054,
+   "sitelinks": 7
+  },
+  "kr-q7878055": {
+   "score": 3.734,
+   "wiki_title": "위덕대학교",
+   "pageviews": 2349,
+   "sitelinks": 3
+  },
+  "kr-q8034064": {
+   "score": 4.196,
+   "wiki_title": "우석대학교",
+   "pageviews": 6829,
+   "sitelinks": 3
+  },
+  "kr-q8058582": {
+   "score": 3.762,
+   "wiki_title": "유원대학교",
+   "pageviews": 2507,
+   "sitelinks": 3
+  },
+  "kr-q8058617": {
+   "score": 3.244,
+   "wiki_title": "영남신학대학교",
+   "pageviews": 897,
+   "sitelinks": 2
+  },
+  "kr-q8058632": {
+   "score": 3.812,
+   "wiki_title": "영산대학교",
+   "pageviews": 2815,
+   "sitelinks": 3
+  },
+  "kr-q85981820": {
+   "score": 3.19,
+   "wiki_title": "국가아동권리보장원",
+   "pageviews": 1011,
+   "sitelinks": 1
+  },
+  "kr-q85988270": {
+   "score": 2.726,
+   "wiki_title": "한국한의약진흥원",
+   "pageviews": 341,
+   "sitelinks": 1
+  },
+  "kr-q9398575": {
+   "score": 4.43,
+   "wiki_title": "대한민국 국토교통부",
+   "pageviews": 6055,
+   "sitelinks": 11
+  },
+  "kr-q9404048": {
+   "score": 4.264,
+   "wiki_title": "대한민국 교육부",
+   "pageviews": 3756,
+   "sitelinks": 13
+  },
+  "kr-q9405654": {
+   "score": 4.541,
+   "wiki_title": "대한민국 외교부",
+   "pageviews": 6344,
+   "sitelinks": 16
+  },
+  "kr-q97239822": {
+   "score": 3.12,
+   "wiki_title": "한국제품안전관리원",
+   "pageviews": 860,
+   "sitelinks": 1
+  },
+  "kr-q97339644": {
+   "score": 4.223,
+   "wiki_title": "영종구",
+   "pageviews": 6355,
+   "sitelinks": 4
+  },
+  "kr-w36da7a6394": {
+   "score": 3.164,
+   "wiki_title": "한국해외인프라도시개발지원공사",
+   "pageviews": 1449,
+   "sitelinks": 0
+  },
+  "kr-w438bf76fff": {
+   "score": 3.618,
+   "wiki_title": "한국도로교통공단",
+   "pageviews": 4140,
+   "sitelinks": 0
+  },
+  "kr-w532419bf0c": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w686ce46db0": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w6b06c7011d": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w74e97ba067": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w75591ab54c": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w76f21f5f67": {
+   "score": 2.464,
+   "wiki_title": "재외동포협력센터",
+   "pageviews": 281,
+   "sitelinks": 0
+  },
+  "kr-w81f91bb775": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w84fbaed231": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w87ca19c557": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w8a3de5971a": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-w932472a167": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-wac61ef32fd": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-wad9eb625c5": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-wd2e0cda30c": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-we01f7f3f25": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "kr-we1f04ae651": {
+   "score": 0,
+   "wiki_title": null,
+   "pageviews": null,
+   "sitelinks": null
+  },
+  "microsoft-brand": {
+   "score": 5.623,
+   "wiki_title": "마이크로소프트",
+   "pageviews": 19392,
+   "sitelinks": 167
+  },
+  "mit-brand": {
+   "score": 5.135,
+   "wiki_title": "매사추세츠 공과대학교",
+   "pageviews": 8215,
+   "sitelinks": 107
+  },
+  "mozilla-trademarks": {
+   "score": 3.77,
+   "wiki_title": "모질라 재단",
+   "pageviews": 528,
+   "sitelinks": 53
+  },
+  "mss-mi": {
+   "score": 4.123,
+   "wiki_title": "대한민국 중소벤처기업부",
+   "pageviews": 3540,
+   "sitelinks": 8
+  },
+  "nasa-brand": {
+   "score": 5.067,
+   "wiki_title": "미국 항공 우주국",
+   "pageviews": 5562,
+   "sitelinks": 158
+  },
+  "naver-api-hub-bi": {
+   "score": 6.385,
+   "wiki_title": "네이버",
+   "pageviews": 322076,
+   "sitelinks": 28
+  },
+  "naver-brand": {
+   "score": 6.385,
+   "wiki_title": "네이버",
+   "pageviews": 322076,
+   "sitelinks": 28
+  },
+  "nhis-ci": {
+   "score": 4.411,
+   "wiki_title": "국민건강보험공단",
+   "pageviews": 16993,
+   "sitelinks": 1
+  },
+  "postech-ui": {
+   "score": 4.637,
+   "wiki_title": "포항공과대학교",
+   "pageviews": 6964,
+   "sitelinks": 20
+  },
+  "samsung-logo": {
+   "score": 5.857,
+   "wiki_title": "삼성전자",
+   "pageviews": 60990,
+   "sitelinks": 60
+  },
+  "seoul-city-emblem": {
+   "score": 6.524,
+   "wiki_title": "서울특별시",
+   "pageviews": 130071,
+   "sitelinks": 223
+  },
+  "seoul-my-soul": {
+   "score": 6.524,
+   "wiki_title": "서울특별시",
+   "pageviews": 130071,
+   "sitelinks": 223
+  },
+  "snu-ui": {
+   "score": 5.581,
+   "wiki_title": "서울대학교",
+   "pageviews": 34409,
+   "sitelinks": 54
+  },
+  "unesco-logo": {
+   "score": 5.252,
+   "wiki_title": "유네스코",
+   "pageviews": 7493,
+   "sitelinks": 196
+  },
+  "wikimedia-foundation-mark": {
+   "score": 5.103,
+   "wiki_title": "위키미디어 재단",
+   "pageviews": 5522,
+   "sitelinks": 184
+  },
+  "yonsei-ui": {
+   "score": 5.494,
+   "wiki_title": "연세대학교",
+   "pageviews": 34075,
+   "sitelinks": 39
+  }
+ }
+}

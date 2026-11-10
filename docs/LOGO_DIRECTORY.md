@@ -62,6 +62,8 @@ python3 -I tools/logo-survey/merge.py
 python3 tools/logo-survey/find_formats.py   # CI 페이지(없으면 Chrome 렌더링 홈에서 CI 메뉴 재탐색)에서 AI·EPS·SVG·PDF·PNG·JPG·ZIP 표기·다운로드 링크 → page-listed 자료 항목
 python3 -I tools/logo-survey/merge.py
 python3 -I tools/logo-survey/classify.py    # 화면용 대분류·소분류(tools/logo-app/data/groups.json). 스키마 category와 별개
+python3 -I tools/logo-survey/check_downloads.py  # find_formats가 찾은 파일 링크를 실제 요청해 파일 서명(PK·%PDF·%!PS·PNG·JPG·SVG)으로 바로 받기 가능 여부 확인 → tools/logo-app/data/downloads.json. 형식 배지·상세 '파일 받기' 버튼이 공식 사이트 파일로 직접 연결(폰트 페이지와 같은 방식, LETSUM은 파일을 보관하지 않음). ci_ai.zip처럼 이름에 형식이 하나 있는 ZIP은 그 형식(contains)으로 연결
+python3 -I tools/logo-survey/popularity.py      # 기본 정렬(인지도순) 점수 → tools/logo-app/data/popularity.json. 점수 = log10(한국어 위키백과 최근 12개월 조회수+10) + 0.6×log10(위키백과 언어판 수+1). 모든 카테고리에서 검색어가 없으면 이 순서, 검색어가 있으면 관련도 다음 기준
 ```
 - 대분류: 중앙정부 · 지방정부 · 금융 · 공공기관 · 연구기관 · 대학·교육 · 의료기관 · 기업·브랜드 · 국제기구·비영리. 소분류는 classify.py의 GROUPS. 배정은 명단 그룹·기관명 규칙(공공기관은 이름 핵심어로 분야 판정), 수작업 레코드는 CURATED.
 - 화면: 대분류 바 아래 소분류 칩(`?group=…&sub=…`). groups.json이 없는 단독 빌드(테스트)는 기존 category 바.

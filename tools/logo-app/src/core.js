@@ -112,6 +112,11 @@ export function filterRecords(records, filters = {}) {
       const older = Date.parse(a.record.review?.checked_at ?? '') || 0;
       if (recent !== older) return recent - older;
     } else if (f.sort === 'relevance' && normalizeText(f.q) && a.score !== b.score) return b.score - a.score;
+    // Default order: better-known organisations first (recognition score supplied by the production build), then by name.
+    if (f.sort === 'relevance' && f.rank) {
+      const known = (f.rank[b.record.id] ?? 0) - (f.rank[a.record.id] ?? 0);
+      if (known) return known;
+    }
     return collation.compare(a.record.name, b.record.name) || String(a.record.id).localeCompare(String(b.record.id));
   });
   return scored.map(item => item.record);

@@ -184,3 +184,14 @@
 /* File-type icon inside format badges. */
 .format-badge{display:inline-flex;align-items:center;gap:5px}
 .format-icon{flex:none;display:block;border-radius:3.5px}
+a.format-badge.is-download{border-color:#15140f;color:#15140f;background:#fff;text-decoration:none;transition:background .15s,color .15s}
+a.format-badge.is-download:hover,a.format-badge.is-download:focus-visible{background:#15140f;color:#fff}
+.format-badge .dl-arrow{font-weight:700;margin-left:-1px}
+.logo-dlrow{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 8px}
+.logo-dl{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #15140f;border-radius:8px;background:#fff;color:#15140f;line-height:1.25;transition:background .15s,color .15s}
+.logo-dl .format-icon{width:22px;height:22px}
+.logo-dl span{display:flex;flex-direction:column;gap:2px}
+.logo-dl b{font-size:14px}
+.logo-dl small{font-size:11px;opacity:.7;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.logo-dl:hover,.logo-dl:focus-visible{background:#15140f;color:#fff}
+.dl-note{margin:0 0 14px}
