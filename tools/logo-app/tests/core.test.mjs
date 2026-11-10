@@ -36,13 +36,12 @@ test('public filtering excludes draft and archived; historical is opt-in; needs-
   assert.deepEqual(new Set(filterRecords(records).map(row => row.id)), new Set(['ganada-university', 'review']));
   assert.equal(filterRecords(records, { includeHistorical: true }).length, 3);
 });
-test('filter axes combine, saved selection works, sorting does not mutate data', () => {
+test('filter axes combine and sorting does not mutate data', () => {
   const first = recordFixture({ id: 'first', name: '나 로고', review: { checked_at: '2026-11-08' } });
   const second = recordFixture({ id: 'second', name: '가 로고', region: '경기', review: { checked_at: '2026-11-09' } });
   const records = [first, second], before = JSON.stringify(records);
   assert.equal(filterRecords(records, { region: '경기', category: 'education', format: 'AI' })[0].id, 'second');
   assert.equal(filterRecords(records, { region: '경기', category: 'business' }).length, 0);
-  assert.deepEqual(filterRecords(records, { savedOnly: true, savedIds: ['first'] }).map(row => row.id), ['first']);
   assert.equal(filterRecords(records, { sort: 'name' })[0].id, 'second');
   assert.equal(filterRecords(records, { sort: 'checked' })[0].id, 'second');
   assert.equal(JSON.stringify(records), before);

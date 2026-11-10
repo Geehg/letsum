@@ -3,12 +3,11 @@ import assert from 'node:assert/strict';
 import { dataFixture, recordFixture } from './helpers.mjs';
 import { runPublicUi } from './public-ui-fixture.mjs';
 function cardHtml(html, id) { return html.match(new RegExp(`<article[^>]+data-record="${id}"[\\s\\S]*?<\\/article>`))?.[0] ?? ''; }
-function categoryCount(html, id) { return Number(html.match(new RegExp(`<button[^>]+data-category="${id}"[^>]*>[\\s\\S]*?<span>(\\d+)<\\/span><\\/button>`))?.[1]); }
-async function savedFixture() {
+async function hiddenFixture() {
   return dataFixture([
-    recordFixture({ id: 'saved-education' }),
-    recordFixture({ id: 'unsaved-education', organization_id: 'other-university', organization_name: '다른대학교', name: '다른대학교 로고' }),
-    recordFixture({ id: 'saved-business', organization_id: 'test-company', organization_name: '테스트회사', name: '테스트회사 CI', category: 'business' }),
+    recordFixture({ id: 'shown-education' }),
+    recordFixture({ id: 'other-education', organization_id: 'other-university', organization_name: '다른대학교', name: '다른대학교 로고' }),
+    recordFixture({ id: 'shown-business', organization_id: 'test-company', organization_name: '테스트회사', name: '테스트회사 CI', category: 'business' }),
     recordFixture({ id: 'hidden-draft', organization_id: 'draft-org', review: { status: 'draft', checked_at: null, source_scope: null } }),
     recordFixture({ id: 'hidden-archived', organization_id: 'archived-org', review: { status: 'archived' } })
   ]);
@@ -21,22 +20,6 @@ test('detail pages distinguish search-scope evidence from a page read', async ()
   const heading = ui.app.innerHTML.match(/<section class="detail-heading">[\s\S]*?<\/section>/)?.[0] ?? '';
   assert.match(heading, /검색 결과 확인/);
   assert.equal(heading.includes('출처 페이지 확인'), false);
-});
-test('initial bookmarks exclude missing, draft and archived records', async () => {
-  const data = await savedFixture();
-  const ui = await runPublicUi(data, { route: '/saved', saved: ['saved-education', 'saved-business', 'hidden-draft', 'hidden-archived', 'missing'] });
-  assert.equal(ui.savedCount.textContent, '2');
-  assert.match(ui.app.innerHTML, /data-record="saved-education"/);
-  assert.match(ui.app.innerHTML, /data-record="saved-business"/);
-  assert.equal(ui.app.innerHTML.includes('data-record="hidden-draft"'), false);
-  assert.equal(ui.app.innerHTML.includes('data-record="hidden-archived"'), false);
-});
-test('saved category counts describe the saved collection instead of the full catalog', async () => {
-  const data = await savedFixture();
-  const ui = await runPublicUi(data, { route: '/saved', saved: ['saved-education', 'saved-business'] });
-  assert.equal(categoryCount(ui.app.innerHTML, 'all'), 2);
-  assert.equal(categoryCount(ui.app.innerHTML, 'education'), 1);
-  assert.equal(categoryCount(ui.app.innerHTML, 'business'), 1);
 });
 test('catalog update date is not presented as a global source verification date', async () => {
   const data = await dataFixture([recordFixture({ review: { checked_at: '2020-01-02' } })]);
@@ -62,23 +45,6 @@ test('public markup escapes record and query HTML and refuses executable link UR
   assert.equal(query.app.innerHTML.includes('<img src=x'), false);
   assert.match(query.app.innerHTML, /&lt;img/);
 });
-test('saved link export contains only public bookmarks and no permission grant', async () => {
-  const data = await savedFixture();
-  const ui = await runPublicUi(data, { route: '/saved', saved: ['saved-education', 'hidden-draft', 'hidden-archived'] });
-  ui.app.querySelector('#export-saved').click();
-  assert.equal(ui.objectUrls.length, 1);
-  const output = JSON.parse(await ui.objectUrls[0].blob.text());
-  assert.deepEqual(output.records.map(record => record.id), ['saved-education']);
-  assert.match(output.note, /이용 허가를 포함하지 않습니다/);
-});
-for (const failure of ['create', 'click']) {
-  test(`saved export reports a ${failure} failure without claiming a successful save`, async () => {
-    const ui = await runPublicUi(await dataFixture(), { route: '/saved', saved: ['ganada-university'], downloadFailure: failure });
-    assert.doesNotThrow(() => ui.app.querySelector('#export-saved').click());
-    assert.match(ui.toast.textContent, /실패|저장하지 못|저장할 수 없|다운로드.*못/);
-    assert.equal(/저장했습니다|저장을 시작|다운로드를 시작/.test(ui.toast.textContent), false);
-  });
-}
 test('suggestion export reports download failure instead of claiming submission or saving', async () => {
   const ui = await runPublicUi(await dataFixture(), { route: '/suggest', downloadFailure: 'create' });
   const form = ui.app.querySelector('#suggest-form');
@@ -87,4 +53,18 @@ test('suggestion export reports download failure instead of claiming submission 
   const message = `${ui.toast.textContent} ${ui.app.querySelector('#suggest-error').textContent}`;
   assert.match(message, /실패|저장하지 못|저장할 수 없|다운로드.*못/);
   assert.equal(/제보 파일을 저장했습니다/.test(message), false);
+});
+test('bookmarks are gone: no save buttons, cards link to the official source, the old /saved route shows the directory', async () => {
+  const ui = await runPublicUi(await dataFixture(), { route: '/saved' });
+  assert.equal(ui.app.innerHTML.includes('data-save'), false);
+  assert.equal(ui.app.innerHTML.includes('card-footer'), false);
+  assert.match(ui.app.innerHTML, /class="bookmark-button source-icon" href="https:/);
+  assert.match(ui.app.innerHTML, /로고·CI 둘러보기/);
+});
+test('the directory leaves out draft and archived records', async () => {
+  const ui = await runPublicUi(await hiddenFixture(), { route: '/' });
+  assert.match(ui.app.innerHTML, /data-record="shown-education"/);
+  assert.match(ui.app.innerHTML, /data-record="shown-business"/);
+  assert.equal(ui.app.innerHTML.includes('data-record="hidden-draft"'), false);
+  assert.equal(ui.app.innerHTML.includes('data-record="hidden-archived"'), false);
 });

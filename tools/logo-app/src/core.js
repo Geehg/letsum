@@ -95,12 +95,10 @@ function selected(value, candidates) {
 }
 
 export function filterRecords(records, filters = {}) {
-  const f = { q: '', category: 'all', sector: 'all', format: 'all', region: 'all', access: 'all', includeHistorical: false, sort: 'relevance', savedOnly: false, savedIds: [], ...filters };
-  const saved = new Set(f.savedIds ?? []);
+  const f = { q: '', category: 'all', sector: 'all', format: 'all', region: 'all', access: 'all', includeHistorical: false, sort: 'relevance', ...filters };
   const scored = (Array.isArray(records) ? records : []).filter(record => {
     if (['draft', 'archived'].includes(record.review?.status)) return false;
     if (!f.includeHistorical && record.version?.status === 'historical') return false;
-    if (f.savedOnly && !saved.has(record.id)) return false;
     if (!selected(f.category, [record.category]) || !selected(f.sector, record.sectors ?? []) || !selected(f.region, [record.region])) return false;
     const requestedFormats = Array.isArray(f.format) ? f.format.map(x => String(x).toUpperCase()) : f.format === 'all' ? 'all' : String(f.format).toUpperCase();
     if (!selected(requestedFormats, (f.formatsOf || getFormats)(record)) || !selected(f.access, (record.assets ?? []).map(asset => asset.access))) return false;
