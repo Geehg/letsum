@@ -120,3 +120,10 @@ node tools/build_mascots.mjs
 - 공개 다운로드가 없는 곳은 연결하지 않고 이유를 자산 항목에 적는다: Google(Partner Marketing Hub 가입·승인 후 제공 → access "request"), NVIDIA(서면 허가 필요), 세종·수원(사용허가 신청), 서울대 고해상도(동의 절차).
 - SEOUL MY SOUL: 출처를 소개 페이지(/newbrand/)에서 파일이 있는 `/seoul/brand.do`로 교체.
 - Google 썸네일: Simple Icons 단색 글리프 대신 Commons의 4색 G(퍼블릭 도메인)를 먼저 쓴다(thumbnail-sources.json).
+
+## 티스토리 글 초안 (2026-11-12)
+- `python3 -I tools/tistory/build_drafts.py [--top 20]` — 인지도 순 상위 N개 기관의 글 초안을 `tools/tistory/out/`(커밋 안 함)에 만든다.
+  기관별 HTML(티스토리 HTML 편집기에 붙여 넣기), 대표 이미지(`img/`, SVG는 qlmanage로 PNG 변환), 관리 목록 `posts.csv`, 한눈에 보는 `preview.html`.
+- 파일은 블로그에 올리지 않고 원래 배포처 주소로만 연결한다. 소개 문장은 검수된 기록의 summary만, 색상은 공식 표기와 추출 참고값을 구분한다.
+- 위키미디어 공용 이미지는 출처·라이선스 문구를 글에 넣는다. 직접 쓰는 한두 줄 자리는 HTML 주석으로 표시돼 있다.
+- 자동 게시는 하지 않는다(티스토리 Open API 종료, 대량 게시는 스팸 판정 위험). 하루 몇 건씩 직접 올린다.

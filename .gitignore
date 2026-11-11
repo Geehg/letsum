@@ -31,3 +31,4 @@ worker/.dev.vars
 tools/.letsum_admin_key
 .letsum_admin_key
 tools/state/og_fonts/
+tools/tistory/out/
