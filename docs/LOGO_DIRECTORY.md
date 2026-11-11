@@ -125,5 +125,5 @@ node tools/build_mascots.mjs
 - `python3 -I tools/tistory/build_drafts.py [--top 20]` — 인지도 순 상위 N개 기관의 글 초안을 `tools/tistory/out/`(커밋 안 함)에 만든다.
   기관별 HTML(티스토리 HTML 편집기에 붙여 넣기), 대표 이미지(`img/`, SVG는 qlmanage로 PNG 변환), 관리 목록 `posts.csv`, 한눈에 보는 `preview.html`.
 - 파일은 블로그에 올리지 않고 원래 배포처 주소로만 연결한다. 소개 문장은 검수된 기록의 summary만, 색상은 공식 표기와 추출 참고값을 구분한다.
-- 위키미디어 공용 이미지는 출처·라이선스 문구를 글에 넣는다. 직접 쓰는 한두 줄 자리는 HTML 주석으로 표시돼 있다.
+- 썸네일이 작은 곳은 `tools/tistory/images.json`(손으로 관리)에 공식 배포 파일·공용 이미지에서 고른 큰 이미지를 지정하고 `tools/tistory/images/<기록 id>.png`에 둔다(여백 정리·최대 1200px). 위키미디어 공용 이미지는 출처·라이선스 문구를 글에 넣는다. 직접 쓰는 한두 줄 자리는 HTML 주석으로 표시돼 있다.
 - 자동 게시는 하지 않는다(티스토리 Open API 종료, 대량 게시는 스팸 판정 위험). 하루 몇 건씩 직접 올린다.

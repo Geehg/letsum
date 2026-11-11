@@ -5,7 +5,7 @@
 - 소개 문장은 검수된 기록(review.status = source-reviewed)의 summary만 쓴다. 자동 수집 문구는 쓰지 않는다.
 - 색상은 공식 표기(colors.official)와 로고 이미지에서 뽑은 참고값(extracted)을 구분해 적는다.
 - 파일은 블로그에 올리지 않고 원래 배포처 주소(downloads.json, 로그인·신청 없이 받아지는 것으로 확인된 것)로만 연결한다.
-- 대표 이미지는 로고 모음 썸네일을 복사(SVG는 macOS qlmanage로 PNG 변환)하고, 출처·라이선스 문구를 글에 넣는다.
+- 대표 이미지는 images.json에 고른 큰 이미지가 있으면 그것을, 없으면 로고 모음 썸네일을 복사(SVG는 macOS qlmanage로 PNG 변환)하고, 출처·라이선스 문구를 글에 넣는다.
 - 글 끝에 렛섬 상세 페이지 링크. 직접 쓰는 한두 줄 자리는 HTML 주석으로 표시(그대로 올려도 화면에 안 보임).
 출력: tools/tistory/out/ (커밋하지 않음) — NN-기관.html, img/, posts.csv, preview.html
 사용법: python3 -I tools/tistory/build_drafts.py [--top 20]
@@ -16,7 +16,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "tools/logo-app/data"
 HTML_ROOT = ROOT / "html"
-OUT = Path(__file__).resolve().parent / "out"
+HERE = Path(__file__).resolve().parent
+OUT = HERE / "out"
+PICKED = json.loads((HERE / "images.json").read_text())["images"]  # 작은 썸네일 대신 쓸 큰 이미지(손으로 고름)
 SITE = "https://letsum.app"
 
 CATEGORY = {"national-government": "중앙행정기관", "local-government": "지방자치단체", "public-institution": "공공기관",
@@ -73,6 +75,17 @@ def has_ai(items):
 
 
 def image_for(rec, thumbs, img_dir, slug):
+    pick = PICKED.get(rec["id"])
+    if pick and (HERE / "images" / f"{rec['id']}.png").exists():
+        dest = img_dir / f"{slug}.png"
+        shutil.copy(HERE / "images" / f"{rec['id']}.png", dest)
+        if pick["source"] == "wikimedia-commons":
+            credit = f"이미지: 위키미디어 공용 <a href=\"{esc(pick['page_url'])}\">{esc(pick['page_url'].rsplit('/', 1)[-1])}</a> · {esc(pick['license'])}"
+            credit += f" · 저작자 {esc(pick['author'])}" if pick.get("author") else ""
+        else:
+            credit = (f"이미지: <a href=\"{esc(rec['source_url'])}\">{esc(rec['organization_name'])} 공식 배포 파일</a>"
+                      "(식별 목적 인용, 권리는 권리자에게 있음)")
+        return {"file": dest.name, "credit": credit, "small": False}
     t = thumbs.get(rec["id"])
     if not t or not t.get("file"):
         return None

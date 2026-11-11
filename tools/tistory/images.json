@@ -1,0 +1,12 @@
+{
+ "_설명": "티스토리 초안 대표 이미지 교체(손으로 관리). 로고 모음 썸네일이 작을 때 공식 배포 파일이나 공용 이미지에서 골라 여백만 정리·축소(최대 1200px)한 파일을 tools/tistory/images/<기록 id>.png에 둔다. build_drafts.py가 썸네일 대신 이것을 쓰고 아래 출처를 글에 적는다. 2026-11-12 눈으로 확인.",
+ "images": {
+  "seoul-my-soul": {"source": "official-file", "url": "https://www.seoul.go.kr/upload/seoul/brand/seoul-brand-png.zip", "member": "EN_Basic_1.png"},
+  "kr-q20927": {"source": "official-file", "url": "https://www.daegu.go.kr/cmsh/daegu.go.kr/images/content/introduction/new_colorful-logo(png).zip", "member": "new_colorful-logo.png"},
+  "kr-q20934": {"source": "wikimedia-commons", "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Emblem_of_Incheon.svg", "page_url": "https://commons.wikimedia.org/wiki/File:Emblem_of_Incheon.svg", "license": "Public domain", "author": "Incheon Metropolitan City Government"},
+  "kr-q20921": {"source": "official-file", "url": "https://www.daejeon.go.kr/data/drh/sub06/daejeon_symbol.zip", "member": "대전광역시 심벌마크.png"},
+  "kr-q41151": {"source": "official-file", "url": "https://www.gyeongnam.go.kr/01_potal/file/05/marklogo.zip", "member": "marklogo.ai(PNG로 렌더링)"},
+  "snu-ui": {"source": "official-file", "url": "https://identity.snu.ac.kr/webdata/uploads/kor/image/2022/09/snu_ui_download.png"},
+  "kr-q20714": {"source": "wikimedia-commons", "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Suwon_%282022%29.svg", "page_url": "https://commons.wikimedia.org/wiki/File:Flag_of_Suwon_(2022).svg", "license": "Public domain", "author": null, "note": "수원시 시기(2022)"}
+ }
+}
