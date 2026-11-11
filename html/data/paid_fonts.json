@@ -1,0 +1,77 @@
+{
+ "_설명": "검색어가 유료(또는 프로그램 번들) 폰트 이름으로 보일 때 홈 검색 결과 위에 띄우는 안내. 손으로 관리. re = 정규화한 검색어(소문자, 공백·하이픈·점 제거)에 거는 정규식. url은 판매처 공식 첫 화면만(개별 상품 페이지·제휴 링크 금지). LETSUM에 등록된 무료 폰트 이름과 겹치지 않게 패턴을 좁힐 것(예: '휴먼'은 나눔휴먼·온글잎 휴먼유진이 있어 쓰지 않는다). 판매처 주소는 2026-11-11 접속 확인. label_en·note_en = 영문 페이지(/en/)용 문구.",
+ "rules": [
+  {
+   "id": "sandoll",
+   "label": "산돌 서체",
+   "re": "^(sd|산돌|sandoll)|단편선|^단편$|네오고딕|neogothic|산돌고딕|산돌명조|^고딕neo|applesd",
+   "vendor": "산돌구름",
+   "url": "https://www.sandollcloud.com/",
+   "note": "산돌 서체는 일부 무료 배포본을 빼면 대부분 유료(구독·구매)입니다.",
+   "label_en": "Sandoll typeface",
+   "note_en": "Most Sandoll typefaces are paid (subscription or purchase), apart from a few free releases."
+  },
+  {
+   "id": "yoon",
+   "label": "윤디자인 서체",
+   "re": "^(윤고딕|윤명조|윤굴림|윤디자인|yoongothic|yoonmyungjo|yoondesign)",
+   "vendor": "폰코(윤디자인)",
+   "url": "https://www.font.co.kr/",
+   "note": "윤고딕·윤명조 등 윤디자인 서체는 유료입니다.",
+   "label_en": "Yoon Design typeface",
+   "note_en": "Yoon Design typefaces such as Yoon Gothic and Yoon Myungjo are paid."
+  },
+  {
+   "id": "rix",
+   "label": "폰트릭스 서체",
+   "re": "^(rix|릭스|폰트릭스|fontrix)",
+   "vendor": "RixFont클라우드(폰트릭스)",
+   "url": "https://www.rixfontcloud.com/",
+   "note": "Rix 계열 서체는 유료입니다.",
+   "label_en": "Fontrix typeface",
+   "note_en": "Rix typefaces are paid."
+  },
+  {
+   "id": "asiafont",
+   "label": "아시아폰트 서체",
+   "re": "^(아시아폰트|asiafont)",
+   "vendor": "아시아폰트",
+   "url": "https://www.asiafont.com/",
+   "note": "아시아폰트 서체는 유료입니다.",
+   "label_en": "Asiafont typeface",
+   "note_en": "Asiafont typefaces are paid."
+  },
+  {
+   "id": "hanyang",
+   "label": "HY(한양정보통신) 서체",
+   "re": "^(hy(견|헤드라인|중고딕|신명조|견명조|그래픽|엽서|궁서|얕은샘물|나무|목각|강|동녘|울릉도|태백|바다|수평선|크리스탈|백송|둥근고딕|gothic|headline)|한양정보통신|한양서체)",
+   "vendor": "한양정보통신",
+   "url": "https://www.hanyang.co.kr/",
+   "bundled": true,
+   "note": "HY 서체는 유료이며, 프로그램에 함께 깔린 것은 그 프로그램 사용권 범위에서만 쓸 수 있습니다. (무료 공개판 '고딕 A1'은 LETSUM에 있어요.)",
+   "label_en": "HY (Hanyang) typeface",
+   "note_en": "HY typefaces are paid; copies bundled with software may only be used within that software's license. (The free release Gothic A1 is on LETSUM.)"
+  },
+  {
+   "id": "hancom",
+   "label": "휴먼·한컴 번들 서체",
+   "re": "^(휴먼(명조|고딕|옛체|엑스포|둥근헤드라인|매직|아미|가는샘|중간샘|굵은샘|각진|모음|편지)|한컴(윤고딕|윤체|바탕|돋움|산뜻|쿨재즈|백제|훈민|솔잎|말랑))",
+   "vendor": "한컴",
+   "url": "https://www.hancom.com/",
+   "bundled": true,
+   "note": "휴먼명조·휴먼고딕 같은 휴먼 서체와 한컴 서체는 한컴오피스에 들어 있는 번들 글꼴로, 한컴오피스 사용권 범위에서만 쓸 수 있습니다. 따로 쓰려면 제작사 라이선스를 구매해야 합니다. (함초롬바탕·돋움처럼 무료로 공개된 것은 예외)",
+   "label_en": "Hancom bundled typeface",
+   "note_en": "Human and Hancom typefaces come bundled with Hancom Office and may only be used within its license; using them elsewhere needs a separate license. (Free releases such as Hamchorom are an exception.)"
+  },
+  {
+   "id": "myfonts",
+   "label": "해외 상용 서체",
+   "re": "^(helvetica|futura|avenir|frutiger|univers|proximanova|gillsans|dinnext|tradegothic|neuehaas|optima|brandongrotesque|sofiapro)",
+   "vendor": "MyFonts",
+   "url": "https://www.myfonts.com/",
+   "note": "해외 상용 서체로, 제작사 라이선스(데스크톱·웹·앱 별도)를 구매해야 합니다.",
+   "label_en": "commercial typeface",
+   "note_en": "This is a commercial typeface; desktop, web and app licenses are sold separately."
+  }
+ ]
+}

@@ -2425,3 +2425,14 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
  .sp-corridor .sp-station-title{font-size:24px}
  .sp-corridor .sp-cta{margin:5px 0}
 }
+/* 검색 보조: 다른 표기로 찾은 결과 · 유료 폰트 안내 · 비슷한 이름 제안 */
+.sq-note{border-left:3px solid var(--ink);padding:8px 12px;margin:0 0 12px;font-size:14px;color:var(--ink2)}
+.paid-note{border:1.5px solid var(--ink);padding:12px 16px;margin:0 0 14px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.6}
+.paid-note p{margin:0}
+.paid-note .pn-h{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.paid-note .pn-tag{font-size:11.5px;font-weight:700;background:var(--ink);color:var(--paper,#fff);padding:1px 7px}
+.paid-note .pn-act{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.paid-note .pn-act small,.paid-note .pn-alt{font-size:12.5px;color:var(--ink3)}
+.sq-sugg{margin:0 0 6px;padding:14px 0 4px;text-align:center}
+.sq-sugg p{margin:0 0 8px;font-weight:700;font-size:15px}
+.sq-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}

@@ -358,6 +358,99 @@
       nameIdx[id] = parts.filter(Boolean).map(nk).join("|");
     });
   });
+
+  // ---------- 검색 보조: 유료 폰트 안내 · 다른 표기·오타 제안 (규칙·브라우저 계산만, data/paid_fonts.json) ----------
+  let PAID = [];
+  const paidLoad = fetch("data/paid_fonts.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
+    PAID = ((j && j.rules) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
+  });
+  const paidRule = (q) => { const k = nk(q); return k.length >= 2 ? PAID.find((r) => r.rx.test(k)) || null : null; };
+  // 한/영 전환을 잊고 친 검색어(qksekf → 반달)를 두벌식 자판 기준으로 되돌림
+  const JUNG = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ", JONG = " ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ";
+  const KEYS = { q: "ㅂ", w: "ㅈ", e: "ㄷ", r: "ㄱ", t: "ㅅ", y: "ㅛ", u: "ㅕ", i: "ㅑ", o: "ㅐ", p: "ㅔ", a: "ㅁ", s: "ㄴ", d: "ㅇ", f: "ㄹ", g: "ㅎ", h: "ㅗ", j: "ㅓ", k: "ㅏ", l: "ㅣ",
+    z: "ㅋ", x: "ㅌ", c: "ㅊ", v: "ㅍ", b: "ㅠ", n: "ㅜ", m: "ㅡ", Q: "ㅃ", W: "ㅉ", E: "ㄸ", R: "ㄲ", T: "ㅆ", O: "ㅒ", P: "ㅖ" };
+  const VV = { "ㅗㅏ": "ㅘ", "ㅗㅐ": "ㅙ", "ㅗㅣ": "ㅚ", "ㅜㅓ": "ㅝ", "ㅜㅔ": "ㅞ", "ㅜㅣ": "ㅟ", "ㅡㅣ": "ㅢ" };
+  const CC = { "ㄱㅅ": "ㄳ", "ㄴㅈ": "ㄵ", "ㄴㅎ": "ㄶ", "ㄹㄱ": "ㄺ", "ㄹㅁ": "ㄻ", "ㄹㅂ": "ㄼ", "ㄹㅅ": "ㄽ", "ㄹㅌ": "ㄾ", "ㄹㅍ": "ㄿ", "ㄹㅎ": "ㅀ", "ㅂㅅ": "ㅄ" };
+  function fromQwerty(s) {
+    if (!/^[a-z ]{2,}$/i.test(s)) return "";
+    let out = "", cho = "", jung = "", jong = "";
+    const flush = () => { out += cho && jung ? String.fromCharCode(0xac00 + (CHO.indexOf(cho) * 21 + JUNG.indexOf(jung)) * 28 + JONG.indexOf(jong || " ")) : cho + jung; cho = jung = jong = ""; };
+    for (const ch of s) {
+      if (ch === " ") { flush(); out += " "; continue; }
+      const x = KEYS[ch] || KEYS[ch.toLowerCase()];
+      if (JUNG.includes(x)) {
+        if (cho && !jung) jung = x;
+        else if (jung && !jong && VV[jung + x]) jung = VV[jung + x];
+        else if (jong) { const pair = Object.keys(CC).find((k) => CC[k] === jong); let mv; if (pair) { jong = pair[0]; mv = pair[1]; } else { mv = jong; jong = ""; } flush(); cho = mv; jung = x; }
+        else { flush(); out += x; }
+      } else if (cho && jung && !jong && JONG.includes(x)) jong = x;
+      else if (jong && CC[jong + x]) jong = CC[jong + x];
+      else { flush(); cho = x; }
+    }
+    flush();
+    return /[가-힣]/.test(out) ? out : "";
+  }
+  // 굵기·확장자·'체/폰트' 같은 덧붙은 말을 떼어 낸 검색어(온글잎 아라라체 regular → 온글잎 아라라)
+  const relax = (q) => String(q).replace(/(extra|ultra|semi|demi)?\s?(thin|light|regular|normal|book|medium|bold|heavy|black)|italic|otf|ttf|woff2?/gi, " ")
+    .replace(/레귤러|볼드|라이트|미디엄|상업용|무료/g, " ").replace(/(폰트|글꼴|서체|fonts?)\s*$/i, "").replace(/\s+/g, " ").trim().replace(/체$/, "").trim();
+  // 같은 뜻 다른 말 → 사이트 분류·태그 이름
+  const SYN = [[/^(필기체|필기|손글씨체|손글씨폰트|손편지체|handwriting|script)$/, "손글씨"], [/^(바탕|바탕체|명조체|세리프|serif)$/, "명조"], [/^(돋움|돋움체|고딕체|산세리프|sans|sansserif)$/, "고딕"],
+    [/^(고어|옛글|옛글자|옛한글체|아래아|중세국어)$/, "옛한글"], [/^(날카로운|샤프|sharp|각진체|각진글씨|각진고딕)$/, "각진"], [/^(둥근체|라운드|round|rounded|동글|동글체)$/, "둥근"],
+    [/^(도트|도트체|8비트|비트맵|pixel)$/, "픽셀"], [/^(코딩|코딩용|mono|monospace|모노)$/, "고정폭"], [/^(궁서체)$/, "궁서"], [/^(귀여운체|귀염|큐트|cute)$/, "귀여운"], [/^(굵은체|두꺼운|헤비)$/, "굵은"], [/^(얇은|가는체)$/, "가는"]];
+  const synOf = (q) => { const k = nk(q); const hit = SYN.find(([rx]) => rx.test(k)); return hit ? hit[1] : ""; };
+  // 붙여 쓴 분류·태그 낱말 나누기(가는각진 → 가는, 각진). 띄어 쓴 검색어는 그대로 나눔
+  let tagWords = null;
+  function tokensOf(q) {
+    const parts = String(q).toLowerCase().split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) return parts;
+    if (!tagWords) tagWords = [...new Set(FONTS.flatMap((f) => [...f.tags, ...f.mood, f.category]).map(nk).filter((t) => t.length >= 2))].sort((a, b) => b.length - a.length);
+    const out = []; let rest = nk(q);
+    while (rest) { const t = tagWords.find((w) => rest.startsWith(w)); if (!t) return []; out.push(t); rest = rest.slice(t.length); }
+    return out;
+  }
+  const altQueries = (q) => { const r = relax(q); return [...new Set([r, synOf(r || q), fromQwerty(q)])].filter((a) => a && a.length >= 1 && a.toLowerCase() !== q.toLowerCase()); };
+  // 비슷한 이름: 자모로 풀어 두 글자씩 겹치는 정도(Dice)로 비교 — 오타·띄어쓰기·받침 실수에 강함
+  const jamo = (s) => [...s].map((ch) => { const c = ch.charCodeAt(0) - 0xac00; return c < 0 || c > 11171 ? ch : CHO[Math.floor(c / 588)] + JUNG[Math.floor((c % 588) / 28)] + (c % 28 ? JONG[c % 28] : ""); }).join("");
+  const grams = (s) => { const t = " " + s + " ", g = new Map(); for (let i = 0; i < t.length - 1; i++) { const k = t.slice(i, i + 2); g.set(k, (g.get(k) || 0) + 1); } return g; };
+  const dice = (a, b) => { let n = 0, tot = 0; a.forEach((v, k) => { n += Math.min(v, b.get(k) || 0); tot += v; }); b.forEach((v) => { tot += v; }); return tot ? (2 * n) / tot : 0; };
+  let simIdx = null;
+  function similarFonts(q, limit = 6) {
+    const key = jamo(nk(relax(q) || q)); if (key.length < 3) return [];
+    if (!simIdx) simIdx = FONTS.map((f) => {
+      const vs = new Set([f.name, f.en, f.name.replace(/체$/, ""), f.name.replace(/^(온글잎|학교안심|나눔손글씨|나눔|KCC|HS|GS)\s*/, ""), ...f.name.split(/\s+/).filter((w) => w.length >= 2)]);
+      return { f, vs: [...vs].map((v) => jamo(nk(v))).filter((v) => v.length >= 2).map((v) => [v, grams(v)]) };
+    });
+    const gq = grams(key);
+    return simIdx.map(({ f, vs }) => ({ f, s: Math.max(...vs.map(([v, g]) => dice(gq, g) + (v.includes(key) || key.includes(v) && v.length >= 4 ? 0.25 : 0))) }))
+      .filter((x) => x.s >= 0.5).sort((a, b) => b.s - a.s || (a.f.intro ? 1 : 0) - (b.f.intro ? 1 : 0) || b.f.pop - a.f.pop).slice(0, limit).map((x) => x.f);
+  }
+  function searchAssist(list) {
+    const q = state.q; if (!q || isChoQuery(q)) return "";
+    const uiEn = /^en/.test(document.documentElement.lang || ""); const T = (ko, en) => (uiEn ? en : ko); // 화면 언어(한국어/English 버튼) 기준
+    let html = "";
+    if (state.qUsed) html += `<div class="sq-note">${T(`‘${esc(q)}’(으)로는 찾은 폰트가 없어 <b>‘${esc(state.qUsed)}’</b>(으)로 찾은 결과입니다.`, `No fonts matched “${esc(q)}”, so these are results for <b>“${esc(state.qUsed)}”</b>.`)}</div>`;
+    const rule = paidRule(q);
+    const note = rule ? esc(uiEn ? rule.note_en || rule.note : rule.note) : "";
+    const freeHit = rule && list.some((f) => nk(f.name + f.en).includes(nk(q)));
+    const go = rule ? `${esc(rule.vendor)} ${T("바로가기", "")} ↗` : "";
+    if (rule && freeHit) html += `<div class="paid-note"><p>${T("아래는 무료로 공개된 폰트만 보여 드립니다.", "Only free releases are listed below.")} ${note} ${T("유료 서체는 라이선스를 구매한 뒤 판매처를 통해 이용할 수 있어요.", "Paid typefaces can be used after buying a license from the vendor.")} <a href="${esc(rule.url)}" target="_blank" rel="noopener nofollow">${go}</a></p></div>`;
+    if (rule && !freeHit) {
+      const cat = /명조|바탕|serif|myeong/i.test(q) ? "명조" : /고딕|돋움|sans|gothic|helvetica|futura|avenir|frutiger|univers/i.test(q) ? "고딕" : /손글씨|필기|script/i.test(q) ? "손글씨" : "";
+      const alts = cat ? FONTS.filter((f) => f.category === cat && !f.intro).sort((a, b) => b.pop - a.pop).slice(0, 5) : [];
+      html += `<div class="paid-note"><p class="pn-h"><span class="pn-tag">${rule.bundled ? T("유료·번들", "Paid · bundled") : T("유료", "Paid")}</span> ${T(`‘${esc(q)}’은(는) ${esc(rule.label)}로 보입니다`, `“${esc(q)}” looks like a ${esc(rule.label_en || rule.label)}`)}</p>
+        <p>${note} ${T(`LETSUM은 상업용 무료 폰트만 소개하므로 여기서는 받을 수 없어요. <b>${esc(rule.label)}류는 유료이므로 라이선스를 구매한 뒤 판매처를 통해 이용할 수 있습니다.</b>`, `LETSUM lists only fonts that are free for commercial use, so it is not available here. <b>It is a paid typeface: buy a license and get it from the vendor.</b>`)}</p>
+        <p class="pn-act"><a class="btn sm" href="${esc(rule.url)}" target="_blank" rel="noopener nofollow">${go}</a><small>${T("쓰려는 곳(인쇄·웹·영상·앱·로고)이 라이선스 범위에 드는지 판매처에서 꼭 확인하세요.", "Check with the vendor that your use (print, web, video, app, logo) is covered by the license.")}</small></p>
+        ${alts.length ? `<p class="pn-alt">${T(`비슷한 무료 ${cat}`, "Similar free fonts")}: ${alts.map((f) => `<button class="linklike" data-open="${f.id}">${esc(f.name)}</button>`).join(" · ")}</p>` : ""}</div>`;
+    }
+    if (!list.length && !rule) {
+      const sims = similarFonts(q);
+      const toks = tokensOf(relax(q) || q).map((t) => synOf(t) || t).filter((t) => filterBy(t.toLowerCase()).length);
+      if (toks.length >= 2) html += `<div class="sq-sugg"><p>${T("낱말을 모두 갖춘 폰트는 없어요. 하나씩 찾아 보세요.", "No font matches every word. Try them one at a time.")}</p><div class="sq-chips">${toks.map((t) => `<button class="fbtn" data-sq="${esc(t)}">${esc(t)} <small>${filterBy(t.toLowerCase()).length}</small></button>`).join("")}</div></div>`;
+      if (sims.length) html += `<div class="sq-sugg"><p>${T("혹시 이 폰트를 찾으셨나요?", "Did you mean one of these?")}</p><div class="sq-chips">${sims.map((f) => `<button class="fbtn" data-open="${f.id}">${esc(f.name)}</button>`).join("")}</div></div>`;
+    }
+    return html;
+  }
+
   // 설치 후 대표 이름이 LETSUM 표기와 다르면 알려 줄 이름(아니면 "")
   // 띄어쓰기만 무시하고 비교 — 'TTF'·'체'·영문 이름처럼 작은 차이도 글꼴 목록에서 찾기 어렵게 만들므로 알려 준다
   function instName(f) {
@@ -533,8 +626,19 @@
   // ---------- 필터링 ----------
   function matrixOk(f, keys) { return keys.every((k) => f.matrix[k] === "ok"); }
   function filtered() {
-    const q = state.q.toLowerCase();
-    let list = FONTS.filter((f) => {
+    state.qUsed = "";
+    let list = filterBy(state.q.toLowerCase());
+    // 결과가 없으면 덧붙은 말 떼기 → 같은 뜻 다른 말 → 한/영 오타 순으로 다시 찾아 본다
+    if (!list.length && state.q && !isChoQuery(state.q)) for (const alt of altQueries(state.q)) { const l = filterBy(alt.toLowerCase()); if (l.length) { state.qUsed = alt; list = l; break; } }
+    // 그래도 없으면 낱말마다 따로 찾아 모두 맞는 폰트(가는각진 → 가는 + 각진)
+    if (!list.length && state.q && !isChoQuery(state.q)) {
+      const toks = tokensOf(relax(state.q) || state.q);
+      if (toks.length >= 2) { const sets = toks.map((t) => new Set(filterBy((synOf(t) || t).toLowerCase()))); const l = [...sets[0]].filter((f) => sets.every((st) => st.has(f))); if (l.length) { state.qUsed = toks.map((t) => synOf(t) || t).join(" + "); list = l; } }
+    }
+    return sortList(list);
+  }
+  function filterBy(q) {
+    return FONTS.filter((f) => {
       if (state.only && !state.only.has(f.id)) return false;
       if (state.cat !== "전체" && f.category !== state.cat) return false;
       if (state.mood.size && ![...state.mood].some((m) => f.mood.includes(m))) return false;
@@ -552,6 +656,8 @@
       }
       return true;
     });
+  }
+  function sortList(list) {
     const s = state.sort;
     if (s === "rec" && state.rank && state.only) return list.sort((a, b) => state.rank.get(a.id) - state.rank.get(b.id)); // 용도 추천 순
     const introLast = (cmp) => (a, b) => (a.intro ? 1 : 0) - (b.intro ? 1 : 0) || cmp(a, b); // 미리보기가 되는 폰트 먼저
@@ -988,7 +1094,8 @@
     const more = list.length > shownN ? `<div class="more-sentinel" id="moreSentinel"><button class="btn ghost" id="moreBtn">더 보기 <small>${shownN} / ${list.length}종</small></button>${shownN >= AUTO_MAX ? `<p class="more-help">찾는 폰트가 따로 있나요? <button class="linklike" data-more="wiz">용도로 고르기</button> · <button class="linklike" data-more="filter">필터로 좁히기</button> · <button class="linklike" data-more="search">이름으로 검색</button></p>` : ""}</div>` : "";
     const hits = state.q && !isChoQuery(state.q) ? list.slice(0, 3).map((f) => [f, nameHit(f, state.q)]).filter(([f, h]) => h && !(f.name + f.en).toLowerCase().includes(state.q.toLowerCase())) : [];
     const hitBar = hits.length ? `<div class="name-hit">${hits.map(([f, h]) => `<p><span class="nh-k">${esc(h.lab)}</span> <code>${esc(h.val)}</code> → <button class="linklike" data-open="${f.id}"><b>${esc(f.name)}</b>${h.w ? ` ${WN[h.w] || h.w}(${h.w})` : ""}</button></p>`).join("")}<small>프로그램에 보이는 이름이 LETSUM 표기와 달라도 찾아 드려요.</small></div>` : "";
-    if (!list.length) mount.innerHTML = `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? "<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요.</small>" : ""}</div>`;
+    const assist = append ? "" : searchAssist(list);
+    if (!list.length) mount.innerHTML = assist + `<div class="empty">조건에 맞는 폰트가 없습니다. 필터를 줄여 보세요.${state.q ? `<br><small>포토샵 '글꼴 누락' 창의 이름은 하이픈(-) 앞부분만 넣어 보세요. ${/^en/.test(document.documentElement.lang || "") ? "" : `찾는 무료 폰트가 아직 없다면 <a href="submit.html">등록을 제보</a>해 주세요.`}</small>` : ""}</div>`;
     else if (state.view === "list") mount.innerHTML = part.map(rowHTML).join("") + more;
     else if (state.view === "grid") mount.innerHTML = `<div class="grid">${part.map(cardHTML).join("")}</div>` + more;
     else if (state.view === "feed") {
@@ -998,6 +1105,8 @@
     }
     else mount.innerHTML = `<div class="ctxgrid">${part.map(ctxHTML).join("")}</div>` + more;
     if (hitBar && !append) mount.insertAdjacentHTML("afterbegin", hitBar);
+    if (assist && list.length) mount.insertAdjacentHTML("afterbegin", assist);
+    if (assist) mount.querySelectorAll("[data-sq]").forEach((b) => b.addEventListener("click", () => { $("#qTop").value = b.dataset.sq; state.q = b.dataset.sq; render(); }));
     if (!append) renderActive(); bind(mount); observeFaces(mount);
     if (state.view === "feed") bindFeed(mount);
     if (append) {
@@ -1985,6 +2094,8 @@ import "@fontsource/${f.id}/400.css";</pre>
   const brandLoad = Promise.all([getJSON("data/brand_auto.json"), getJSON("/api/brand")]).then(([a, b]) => { BRAND_AUTO = a || {}; BRAND_ADMIN = b || {}; });
   Promise.race([Promise.all([brandLoad, namesLoad]), new Promise((r) => setTimeout(r, 800))]).then(renderNew);
   // 이름표가 늦게 오면 카드·열린 상세를 다시 그림
+  paidLoad.then(() => { if (state.q) render(); });
+  document.addEventListener("ls:ui-language", () => { if (state.q) render(); }); // 검색 안내 문구를 바뀐 화면 언어로
   namesLoad.then(() => { render(); const m = location.hash.match(/^#f=([\w-]+)/); if (m && overlay.classList.contains("open") && $("#nameSec")) openDetail(m[1]); });
   $("#previewText").value = state.text; { const src = $("#textSrc"); if (src) src.textContent = srcLabel(curSample); }
   // 관리자가 고친 예시 문장 목록을 받아 두고(다음 방문용), 이번 방문 문장이 그 목록에 없으면 목록에서 다시 고른다(직접 입력 전일 때만)
