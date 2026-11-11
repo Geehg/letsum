@@ -32,6 +32,7 @@ import { failureStatement, failureReport } from './preview-diagnostics.js';
 //       POST /api/admin/comment { commentId, action: hide|show|delete }
 import { account, accountCleanup } from "./account.js"; // 필사독서 선택 회원(type.letsum.app)
 import { localeResponse } from "./locale.js";
+import { AI_BOT_RE } from "./ai_bots.js";
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const LIMIT = { commentsPer10m: 5, commentsPerDay: 30, likesPerMin: 30, body: 500, name: 20, shotBytes: 700 * 1024, shotsPerDay: 3, shotsPer10m: 1, pendingMax: 300, caption: 100 };
 // 이용 지표로 받는 행동(이외는 무시). v는 폰트 id나 보기 이름 같은 짧은 값만.
@@ -467,6 +468,8 @@ async function admin(url, req, env) {
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    // AI 봇은 API도 거절(목록: tools/state/ai_bots.json → tools/build_ai_block.py)
+    if (AI_BOT_RE.test(req.headers.get("user-agent") || "")) return bad("허용되지 않은 접근", 403);
     // IP별 과다 요청 차단(대량 수집·비밀번호 대입 방지). 바인딩이 없으면(로컬 등) 건너뜀
     const rip = req.headers.get("cf-connecting-ip") || "0.0.0.0";
     const rl = url.pathname.startsWith("/api/admin/") ? env.ADMIN_RL : env.API_RL;

@@ -1,0 +1,92 @@
+{
+ "_설명": "AI 봇 차단 목록(손으로 관리). tools/build_ai_block.py가 이 목록으로 html/robots.txt·html/type/robots.txt의 봇 규칙, nginx/default.conf의 차단 map(403), worker/src/ai_bots.js(API 403)를 만든다. robots_only = User-Agent 문자열이 아니라 robots.txt 전용 이름(서버 차단 대상 아님). 검색엔진(Googlebot·Bingbot·Yeti·Daumoa)과 링크 미리보기(kakaotalk-scrap·facebookexternalhit·Twitterbot·Slackbot·Discordbot)는 넣지 않는다. 2026-11-11 각 회사 공개 문서의 봇 이름 기준.",
+ "groups": [
+  {
+   "label": "AI 학습용 수집",
+   "bots": [
+    "GPTBot",
+    "ClaudeBot",
+    "Claude-Web",
+    "anthropic-ai",
+    "CCBot",
+    "Bytespider",
+    "Amazonbot",
+    "meta-externalagent",
+    "FacebookBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "Diffbot",
+    "ImagesiftBot",
+    "Omgilibot",
+    "Omgili",
+    "Timpibot",
+    "AI2Bot",
+    "Ai2Bot-Dolma",
+    "PanguBot",
+    "Kangaroo Bot",
+    "img2dataset",
+    "Webzio-Extended",
+    "ICC-Crawler",
+    "Cotoyogi",
+    "Google-CloudVertexBot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "Brightbot",
+    "Sidetrade indexer bot",
+    "Novellum",
+    "iaskspider",
+    "QualifiedBot",
+    "aiHitBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "Crawl4AI",
+    "Scrapy"
+   ]
+  },
+  {
+   "label": "AI 검색·답변용 수집과 사용자 요청 대리 접속",
+   "bots": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ChatGPT Agent",
+    "Claude-User",
+    "Claude-SearchBot",
+    "PerplexityBot",
+    "Perplexity-User",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "PhindBot",
+    "meta-externalfetcher",
+    "Gemini-Deep-Research",
+    "GoogleAgent-Mariner",
+    "LinerBot",
+    "Andibot",
+    "bigsur.ai",
+    "Devin",
+    "Manus-User"
+   ]
+  },
+  {
+   "label": "AI 학습 거부 표시(robots.txt 전용 이름)",
+   "robots_only": true,
+   "bots": [
+    "Google-Extended",
+    "Applebot-Extended"
+   ]
+  },
+  {
+   "label": "대량 수집(SEO 분석)",
+   "bots": [
+    "AhrefsBot",
+    "SemrushBot",
+    "MJ12bot",
+    "DotBot",
+    "PetalBot",
+    "DataForSeoBot",
+    "BLEXBot",
+    "serpstatbot"
+   ]
+  }
+ ]
+}

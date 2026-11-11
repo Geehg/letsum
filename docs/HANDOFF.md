@@ -734,3 +734,10 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 ## 2026-11-06 문의 직접 전송
 - 공통 푸터 운영 이메일 대신 광고제휴 및 문의 버튼, /contact.html 폼, 받는이 렛섬운영 담당자. Cloudflare 무료 이메일 라우팅 검증 수신처로만 전송, 회신은 작성자 Reply-To.
 - 문의 본문 DB 저장 없이 7일 해시·접수 상태로 중복/과다 전송 차단. 결과 불명확 시 자동 재전송 금지, 입력 내용 보존. 개인정보 안내·영문 UI 추가. 마이그레이션0010 및 docs/CONTACT.md 참고.
+
+## AI 봇 차단 (2026-11-11)
+- 목록 `tools/state/ai_bots.json`(손으로 관리) → `python3 -I tools/build_ai_block.py`가 robots.txt 두 개·nginx map·워커 정규식을 함께 만든다.
+- 1단계 robots.txt: 지키는 봇(GPTBot·ClaudeBot·Google-Extended 등)에게 수집 거부를 알림.
+- 2단계 nginx(`nginx/default.conf`): 목록의 User-Agent면 robots.txt를 뺀 모든 주소에 403. 검색엔진(Googlebot·Bingbot·Yeti·Daumoa)과 링크 미리보기(kakaotalk-scrap·facebookexternalhit 등)는 통과. NAS '받아와 재배포'로 반영.
+- 3단계 워커(`/api/*`): 같은 목록이면 403. `cd worker && npx wrangler deploy`로 반영.
+- 한계: Cloudflare가 엣지에 캐시한 파일(이미지 등)은 NAS까지 오지 않아 2단계를 거치지 않고, User-Agent를 브라우저로 위장한 봇은 이름으로 못 막는다 → Cloudflare 대시보드(letsum.app) › Security › Bots에서 'Block AI bots'(모든 페이지)와 'AI Labyrinth'를 켜 두는 것이 가장 강한 단계(운영자 설정).
