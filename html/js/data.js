@@ -38,6 +38,7 @@ const LICENSE_INFO = {
   "양진체 이용조건": {"full": "양진체 이용조건", "short": "양진체 무료 이용", "note": "개인·기업 상업 이용 가능. 폰트 파일을 수정해 판매하는 행위와 양진체만으로 구성한 스티커팩·이모티콘팩 등 상품 판매 금지. 제작자가 제공한 공식 웹폰트 코드를 사용합니다. 파일 내부 OFL 문구와 별개로 현행 제작자 이용 안내를 표시합니다.", "url": "https://www.supernovice.org/font"},
   "롯데리아 촵딱체 이용조건": {"full": "롯데리아 촵딱체 이용조건", "short": "롯데리아 무료 이용", "note": "개인·기업 무료. 인쇄·웹·영상·웹사이트 및 프로그램 서버 내 임베딩 허용. BI/CI(회사명·브랜드명·상품명·로고·슬로건) 사용 금지. 파일 판매·임의 수정 및 개작 재배포 금지. 미리보기는 공식 원본을 서버에서 사용하며 파일 다운로드는 공식 배포처로 연결합니다.", "url": "https://lotteriafont.com/download/lotteria_font_license.pdf"},
   "안성탕면체 이용조건": {"full": "안성탕면체 이용조건", "short": "농심 무료 이용", "note": "개인·기업 누구나 인쇄·출판·영상·온라인에 사용 가능. 글꼴 파일 판매·수정·재배포 금지, 배포 형태 그대로 사용. 사용 이미지는 농심 프로모션에 활용될 수 있으며 제외 요청 가능.", "url": "https://brand.nongshim.com/resources/images/ansung/fonts/file/LICENSE.pdf"},
+  "메모먼트 꾹꾹체 이용조건": {"full": "메모먼트 꾹꾹체 라이선스(공식 배포 페이지 원문)", "short": "메모먼트 무료 이용", "note": "개인·기업 모두 상업 이용 무료. 인쇄·웹·포장·영상·임베딩·BI/CI(로고) 사용 가능. 폰트 파일 자체의 수정·편집·재배포, 유료 판매·재판매·공유, 메모먼트 동의 없이 다른 사이트·블로그에 파일을 올리는 행위는 금지. LETSUM은 소개와 공식 배포처 링크만 제공합니다.", "url": "https://www.sandollcloud.com/free-font/22692/Memoment-Kkukkkuk"},
   "원스토어 무료 글꼴 안내": {"full": "원스토어 무료 글꼴 안내", "short": "원스토어 무료 이용", "note": "공식 배포 페이지와 2021-05-17 발표에서 개인·기업 상업 이용 가능한 무료 글꼴로 안내. 현행 다운로드 ZIP에는 별도 이용약관이 없어 임베딩·BI/CI·수정·재배포의 세부 허용 범위는 미확인. LETSUM은 소개용 견본과 공식 다운로드 링크만 제공합니다.", "url": "https://onestorecorp.com/about/brand/"},
 
   "KT Y 유니버스·클로버·최애체 이용조건": {"full": "KT Y 유니버스·클로버·최애체 공식 매뉴얼 이용조건", "short": "KT Y 무료 이용", "note": "개인·기업 무료. 인쇄·웹·영상·임베딩·패키지 상업 이용과 원본 재배포 허용. BI/CI(로고) 사용, 파일 수정 및 유료 판매 금지. 수정·재배포의 조건부 표시는 원본 재배포만 허용한다는 뜻입니다.", "url": "https://www.yspotlight.co.kr/download/font"},
@@ -6682,6 +6683,17 @@ const FONTS = [
     released: "2026-04-06", releasedSrc: "제작자 공식 발행일", releasedUrl: "https://blog.naver.com/hp0/224242936430",
     pair: "playfair", pop: 40, added: "2026-11-06",
     desc: "1970년대 책의 명조를 바탕으로 각진 획을 구성한 서체입니다. 한글 2,781자를 지원하며 한자는 지원하지 않습니다. 제작자는 Light 단일 굵기로 소개하지만 파일 내부 표기는 Regular(400)입니다. 상업 이용·웹 임베딩·수정·공유가 가능하며 폰트 파일 자체의 유료 판매는 금지됩니다. 재배포 시 저작권 고지와 OFL 라이선스를 유지해야 합니다." },
+  { id: "k-memoment-kkukkkuk", name: "메모먼트 꾹꾹체", en: "Memoment Kkukkkuk", family: "'LS k-memoment-kkukkkuk', sans-serif",
+    designer: "메모먼트", holder: "메모먼트", category: "디스플레이",
+    tags: ["제목", "굵은", "썸네일", "SNS"], mood: ["발랄한", "강렬한"], weights: [400], formats: ["OTF", "TTF"],
+    cov: 0, glyphs: "배포처 확인",
+    intro: true,
+    introReason: "라이선스가 폰트 파일의 수정·재배포와 다른 사이트 업로드를 금지하고, 공식 배포처(산돌구름)에서 프로그램으로 활성화해 쓰는 폰트라 LETSUM은 웹폰트·견본을 만들지 않고 정보와 공식 링크만 제공합니다.",
+    dl: { page: "https://www.sandollcloud.com/free-font/22692/Memoment-Kkukkkuk", srcName: "산돌구름(메모먼트 공식 배포)" },
+    license: "메모먼트 꾹꾹체 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "ok", bici: "ok", package: "ok", ofl: "no" }, verified: "2026-11-11", status: "verified",
+    released: "2025", releasedSrc: "산돌구름 제품 정보(출시 연도)", releasedUrl: "https://www.sandollcloud.com/free-font/22692/Memoment-Kkukkkuk",
+    pair: "inter", pop: 30, added: "2026-11-11",
+    desc: "꾹꾹 눌러 쓴 듯 획이 두껍고 가장자리가 살짝 거친 제목용 글씨. 썸네일·SNS 이미지·짧은 문구에서 또렷하게 읽힙니다." },
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)
