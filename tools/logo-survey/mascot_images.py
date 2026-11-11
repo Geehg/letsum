@@ -111,7 +111,9 @@ def main():
     args = ap.parse_args()
     data = json.loads(OUT.read_text())
     only = {s.strip() for s in args.only.split(",") if s.strip()}
-    todo = [(k, r) for k, r in data["results"].items() if r.get("found") and r.get("page") and ((r["name"] in only) if only else not r.get("image"))]
+    # Rows from hand-found pages (mascot_hints.py) were picked by eye, an empty image there is deliberate.
+    todo = [(k, r) for k, r in data["results"].items() if r.get("found") and r.get("page") and r.get("page_source") != "hand-found"
+            and ((r["name"] in only) if only else not r.get("image"))]
     print(f"pages to read: {len(todo)}")
     with ThreadPoolExecutor(args.workers) as pool:
         picks = list(pool.map(lambda kr: pick(kr[1]["page"]), todo))

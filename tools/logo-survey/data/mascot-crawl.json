@@ -539,7 +539,18 @@
      "캐릭터파일 다운받기 해양수산부 마스코트 해랑이 캐릭터 압축파일 다운받기"
     ]
    ],
-   "words": 6
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-7a14730997.png",
+    "source_url": "https://www.mof.go.kr/images/sub/05/050103_haerang7.png",
+    "page_url": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+    "alt": "Welcome이라는 현수막 아래의 두 팔 벌린 해랑이",
+    "sha256": "737f1cf78b2b22c4025577679a2cea3c8bcac3a234e0bb4f2b6f83ee53c13b9c",
+    "bytes": 19279,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q482712": {
    "name": "기상청",
@@ -709,7 +720,27 @@
    "name": "경상남도",
    "group": "광역자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137009000000",
+   "names": [
+    "벼리",
+    "경남이",
+    "경이"
+   ],
+   "words": 48,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-9a271b5c64.png",
+    "source_url": "https://www.gyeongnam.go.kr/01_potal/images/content/mascot.png",
+    "page_url": "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137009000000",
+    "alt": "도정홍보 캐릭터 ",
+    "sha256": "ae8c9084a6af31c2addc96a01d88bad55f90a648a66983bd85797445a0dae6f2",
+    "bytes": 27562,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q11626082": {
    "name": "행정중심복합도시건설청",
@@ -935,7 +966,25 @@
    "name": "세종특별자치시",
    "group": "광역자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.sejong.go.kr/kor/sub01_0305.do",
+   "names": [
+    "충녕"
+   ],
+   "words": 70,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-7d660ec465.jpg",
+    "source_url": "https://www.sejong.go.kr/images/kor/sub01/sub010301_character1.jpg",
+    "page_url": "https://www.sejong.go.kr/kor/sub01_0305.do",
+    "alt": "세종시(젊은세종 충녕) 캐릭터",
+    "sha256": "7e3deb9fa99efc56863da120cc9bb0e8c6ddf8b4548ba148b84a830e7bb41a40",
+    "bytes": 60236,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q20398": {
    "name": "강남구",
@@ -1016,13 +1065,49 @@
    "name": "강화군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ganghwa.go.kr/open_content/main/ganghwa/info/symbol_character.jsp",
+   "names": [
+    "강돌이"
+   ],
+   "words": 22,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-465739db07.png",
+    "source_url": "https://www.ganghwa.go.kr/main/img/contents/pic_char01.png",
+    "page_url": "https://www.ganghwa.go.kr/open_content/main/ganghwa/info/symbol_character.jsp",
+    "alt": "강돌이",
+    "sha256": "b4760794c854bfca041b16d847cd106d3cda44445932914c6715989cb6ac50f3",
+    "bytes": 136630,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42057": {
    "name": "거제시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.geoje.go.kr/index.geoje?menuCd=DOM_000008905001015003",
+   "names": [
+    "몽꾸"
+   ],
+   "words": 24,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-b645d763b1.png",
+    "source_url": "https://www.geoje.go.kr/image/new/Potal_/_Img/content/mongkku.png",
+    "page_url": "https://www.geoje.go.kr/index.geoje?menuCd=DOM_000008905001015003",
+    "alt": "몽꾸가 손을 흔드는 이미지",
+    "sha256": "bea35b2508731a82726f72a2b51a457d16cd848eabf71fb0dde1124656e16d30",
+    "bytes": 26751,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50203": {
    "name": "가평군",
@@ -1108,7 +1193,15 @@
    "name": "거창군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.geochang.go.kr/00314/00317/00329.web",
+   "names": [
+    "아림",
+    "아름"
+   ],
+   "words": 4,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50204": {
    "name": "강진군",
@@ -1124,7 +1217,26 @@
    "name": "경주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=3531",
+   "names": [
+    "금이",
+    "관이"
+   ],
+   "words": 58,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-fea804902f.jpg",
+    "source_url": "https://www.gyeongju.go.kr/design/downfiles/ci/20220905/ci_cc_01.jpg",
+    "page_url": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=3531",
+    "alt": "기본형(평면)_왕과 왕비",
+    "sha256": "5cb4e809670d7764a04aad37ff21f2585f4b183cf53ab6c8ad51b85b89d5600a",
+    "bytes": 139749,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50352": {
    "name": "계양구",
@@ -1161,7 +1273,25 @@
    "name": "고성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.goseong.go.kr/index.goseong?menuCd=DOM_000000106002007000",
+   "names": [
+    "고룡이"
+   ],
+   "words": 6,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-6b28df0e63.jpg",
+    "source_url": "https://www.goseong.go.kr/document/03/ci/ci1/11.jpg",
+    "page_url": "https://www.goseong.go.kr/index.goseong?menuCd=DOM_000000106002007000",
+    "alt": "",
+    "sha256": "4d1da405e089af5aee2a17dd33dd8f57f72a43ecc14293c3e79e78c12109f33a",
+    "bytes": 267941,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q20921": {
    "name": "대전광역시",
@@ -1195,7 +1325,14 @@
    "name": "고흥군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.goheung.go.kr/contentsView.do?pageId=www109",
+   "names": [
+    "흥이"
+   ],
+   "words": 12,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42060": {
    "name": "계룡시",
@@ -1222,7 +1359,15 @@
    "name": "공주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gongju.go.kr/brand/sub02_01.do",
+   "names": [
+    "고마곰",
+    "공주"
+   ],
+   "words": 138,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50212": {
    "name": "곡성군",
@@ -1284,13 +1429,39 @@
    "name": "광양시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://gwangyang.go.kr/menu.es?mid=a11303070200",
+   "names": [
+    "매돌이",
+    "해아"
+   ],
+   "words": 33,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-f4ba672c8a.png",
+    "source_url": "https://gwangyang.go.kr/kor/images/sub/sub06/sub0603_07_img01_40.png",
+    "page_url": "https://gwangyang.go.kr/menu.es?mid=a11303070200",
+    "alt": "SNS 캐릭터 매돌이",
+    "sha256": "79897e49147e3ee095936aafbc2d92942814a8e0de3603d3ab7ddbdddac041ad",
+    "bytes": 18406,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50209": {
    "name": "고성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gwgs.go.kr/kor2/sub04_050306.do",
+   "names": [
+    "금강동이"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50354": {
    "name": "광산구",
@@ -1346,7 +1517,26 @@
    "name": "괴산군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.goesan.go.kr/www/contents.do?key=255",
+   "names": [
+    "꺽정이",
+    "운총이"
+   ],
+   "words": 18,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-8deda8e19e.png",
+    "source_url": "https://www.goesan.go.kr/site/www/images/contents/character_01.png",
+    "page_url": "https://www.goesan.go.kr/www/contents.do?key=255",
+    "alt": "괴산군청 대표 마스코트 기본형",
+    "sha256": "887df5b96da7014c91d95ccad2bd14c118a6f66d3e5b19ae020d729b156cf2fa",
+    "bytes": 21728,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42064": {
    "name": "과천시",
@@ -1377,7 +1567,26 @@
    "name": "구례군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gurye.go.kr/kr/subPage.do?menuNo=116007001001",
+   "names": [
+    "산유",
+    "수유"
+   ],
+   "words": 32,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-d655c55433.png",
+    "source_url": "https://www.gurye.go.kr/images/homepage/www/kr/content/img_character01.png",
+    "page_url": "https://www.gurye.go.kr/kr/subPage.do?menuNo=116007001001",
+    "alt": "대표 캐릭터 산유 수유",
+    "sha256": "b455f7cbaddd9a6303af1b92f468f4c8d32e56d97fe0f1124c2a251247a89eee",
+    "bytes": 105210,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42069": {
    "name": "광주시",
@@ -1446,31 +1655,105 @@
    "name": "군산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gunsan.go.kr/main/m361",
+   "names": [
+    "밝음이"
+   ],
+   "words": 20,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42071": {
    "name": "구리시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.guri.go.kr/www/contents.do?key=7917",
+   "names": [
+    "와구리",
+    "뽀구리",
+    "아리미"
+   ],
+   "words": 20,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-7e32474b62.jpg",
+    "source_url": "https://www.guri.go.kr/site/www/images/contents/cts7917_img03.jpg",
+    "page_url": "https://www.guri.go.kr/www/contents.do?key=7917",
+    "alt": "인사, 안내·환영, 감사 인사, 노점 먹거리, 카페, 식당, 최고, 금지·경고, 마스크 착용 안내, 노래, 신발, 의류, 구매 욕구, 행사, 공지, 분식, 주점, 제과, 수산물, 과일, 채소, 사랑, 미용, 정육 등 24가지 상황별 동작을 하는 와구리 캐릭터 일러스트 모음",
+    "sha256": "894e4652705a4c7ba9762c6204b3fa191e9ae91925f216e48d8aa97b5df36f1b",
+    "bytes": 82178,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50356": {
    "name": "구로구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.guro.go.kr/www/contents.do?key=4582",
+   "names": [
+    "구스",
+    "로이",
+    "지유",
+    "아로"
+   ],
+   "words": 19,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-ee9bd83448.png",
+    "source_url": "https://www.guro.go.kr/site/www/images/contents/char_0.png",
+    "page_url": "https://www.guro.go.kr/www/contents.do?key=4582",
+    "alt": "구로프렌즈 - 좌측 로이(Roii), 가운데 구스(Guse), 우측 상단 지유(GU), 우측 하단 아로(RO)",
+    "sha256": "9896533a1fb2b7da6d7b49a74937894ac22ab6884b6e2e8399587359f793d930",
+    "bytes": 173128,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42075": {
    "name": "군포시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gunpo.go.kr/www/contents.do?key=3943",
+   "names": [
+    "포근",
+    "포유"
+   ],
+   "words": 2,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-4d7cd3c136.jpg",
+    "source_url": "https://www.gunpo.go.kr/site/www/images/contents/cts3943_img3_02.jpg",
+    "page_url": "https://www.gunpo.go.kr/www/contents.do?key=3943",
+    "alt": "기본형(합체형) / 응용형 / 조합형 포근 포유 이미지",
+    "sha256": "81d8f19965809e2b2b73016298dffc60a77452a871a8c071b4e209f1ae400d89",
+    "bytes": 34700,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50359": {
    "name": "금천구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.geumcheon.go.kr/portal/contents.do?key=440",
+   "names": [
+    "금나래"
+   ],
+   "words": 24,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42073": {
    "name": "구미시",
@@ -1496,7 +1779,27 @@
    "name": "기장군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gijang.go.kr/index.gijang?menuCd=DOM_000000105003007000",
+   "names": [
+    "기장아재",
+    "다시미",
+    "메르치"
+   ],
+   "words": 10,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-560c5264d9.png",
+    "source_url": "https://www.gijang.go.kr/images/portal/sub/Character_01.png",
+    "page_url": "https://www.gijang.go.kr/index.gijang?menuCd=DOM_000000105003007000",
+    "alt": "기장아재",
+    "sha256": "70281cf8c8d81f82d9eb78db7ad06f758a8da4910294c3ae3fd8336e2b3f93bb",
+    "bytes": 39657,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50353": {
    "name": "관악구",
@@ -1685,13 +1988,51 @@
    "name": "남구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000002804004000000",
+   "names": [
+    "망고",
+    "피피",
+    "뱅크"
+   ],
+   "words": 46,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-23ca565efb.jpg",
+    "source_url": "https://www.bsnamgu.go.kr/images/egovframework/media/2022_car03.jpg",
+    "page_url": "https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000002804004000000",
+    "alt": "남구 캐릭터 소개",
+    "sha256": "a6fafd1bafe896682b7e0898d147e707483600eb14eb8aafecdb35cca379a521",
+    "bytes": 71329,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q26123": {
    "name": "남해군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.namhae.go.kr/portal/Index.do?c=WW0502040000",
+   "names": [
+    "해랑이"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-dec9ef6a01.png",
+    "source_url": "https://www.namhae.go.kr/portal/img/sub/05/haerang_img1.png",
+    "page_url": "https://www.namhae.go.kr/portal/Index.do?c=WW0502040000",
+    "alt": "해랑이와 친구들",
+    "sha256": "63ac0d52df821567012e2015274d0b68c92f2d573cfb6d22309a3b4bbcd83e34",
+    "bytes": 104973,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42087": {
    "name": "남원시",
@@ -2124,7 +2465,15 @@
    "name": "동해시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://dh.go.kr/www/contents.do?key=507",
+   "names": [
+    "파도동자",
+    "해별이"
+   ],
+   "words": 4,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42092": {
    "name": "동두천시",
@@ -2158,7 +2507,25 @@
    "name": "마포구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.mapo.go.kr/site/main/content/mapo040102",
+   "names": [
+    "마포동이"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-1261668c98.png",
+    "source_url": "https://www.mapo.go.kr/design/theme/mapo/images/sub/character_big.png",
+    "page_url": "https://www.mapo.go.kr/site/main/content/mapo040102",
+    "alt": "캐릭터 큰 이미지",
+    "sha256": "6a27f3c7a3858e7cf10fcaeacb895a223b66da58c5be7af15c5970812672b4b2",
+    "bytes": 32736,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50375": {
    "name": "동구",
@@ -2266,7 +2633,18 @@
    "page": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
    "names": [],
    "files": [],
-   "words": 8
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-2612b61dc4.png",
+    "source_url": "https://www.miryang.go.kr/img/egovframework/web/sub-img/my-cr-png.png",
+    "page_url": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+    "alt": "밀양시CI",
+    "sha256": "466cbc670c87eacfc14c4e089623ac418949fac79dfe9fca528617fc3433d5f8",
+    "bytes": 10929,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42098": {
    "name": "보령시",
@@ -2354,13 +2732,40 @@
    "name": "부여군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.buyeo.go.kr/html/kr/intro/intro_050406.html",
+   "names": [
+    "금동이",
+    "금용이",
+    "금황이"
+   ],
+   "words": 24,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-5db1a433e4.png",
+    "source_url": "https://www.buyeo.go.kr/images/kr/intro/img_intro_050401_13.gif",
+    "page_url": "https://www.buyeo.go.kr/html/kr/intro/intro_050406.html",
+    "alt": "금동이와 향이 이미지",
+    "sha256": "ba951fb9648d3fdc7c44a56e74df958ef0ec4b6a84f6784daaf2c24229714fbd",
+    "bytes": 8975,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42099": {
    "name": "부천시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148009002006001",
+   "names": [
+    "부천핸썹"
+   ],
+   "words": 8,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50391": {
    "name": "부평구",
@@ -2628,13 +3033,53 @@
    "name": "상주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.sangju.go.kr/page/10063/10422.tc",
+   "names": [
+    "감돌이",
+    "감순이"
+   ],
+   "words": 105,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-9863db2cab.jpg",
+    "source_url": "https://www.sangju.go.kr/resources/templates/front/assets/images/subpage/dori01.jpg",
+    "page_url": "https://www.sangju.go.kr/page/10063/10422.tc",
+    "alt": "도리/수니 상주시 마스코트 캐릭터",
+    "sha256": "908b002983284d8164a4da73d0381c3f3187efb901644861e5cbf9eb93a14876",
+    "bytes": 192182,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50248": {
    "name": "산청군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.sancheong.go.kr/tour/contents.do?key=6418",
+   "names": [
+    "산이",
+    "얼수",
+    "솜이",
+    "흥이"
+   ],
+   "words": 12,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-90ff4bb2a6.jpg",
+    "source_url": "https://www.sancheong.go.kr/site/tour/images/contents/cts6418_img01.jpg",
+    "page_url": "https://www.sancheong.go.kr/tour/contents.do?key=6418",
+    "alt": "산 너머 친구들 캐릭터",
+    "sha256": "182f14162177be1acf6b2fc502d2017f505de8ea683f8cc141dee9c4c375e989",
+    "bytes": 215659,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50242": {
    "name": "무주군",
@@ -2733,7 +3178,26 @@
    "name": "서산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.seosan.go.kr/www/contents.do?key=1372",
+   "names": [
+    "가티",
+    "오슈"
+   ],
+   "words": 8,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-0c580d4aa1.png",
+    "source_url": "https://www.seosan.go.kr/site/www/images/contents/cnt1372_img1.gif",
+    "page_url": "https://www.seosan.go.kr/www/contents.do?key=1372",
+    "alt": "가창오리와 장다리물떼새",
+    "sha256": "56e828fcba9ff7c379b383569d69f95535abb343a695b02e0ffb4b79b7797bd0",
+    "bytes": 11692,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q20395": {
    "name": "서초구",
@@ -2827,7 +3291,14 @@
    "name": "성동구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://sd.go.kr/main/contents.do?key=1382",
+   "names": [
+    "미소"
+   ],
+   "words": 6,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42108": {
    "name": "성남시",
@@ -2854,7 +3325,14 @@
    "name": "수성구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.suseong.kr/index.do?menu_id=00042282",
+   "names": [
+    "뚜비"
+   ],
+   "words": 32,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50244": {
    "name": "보은군",
@@ -2996,13 +3474,52 @@
    "name": "신안군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.shinan.go.kr/home/www/about/typifier/typifier_02/page.wscms",
+   "names": [
+    "홍도리"
+   ],
+   "words": 6,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-3cff524d27.png",
+    "source_url": "https://www.shinan.go.kr/images/eng/contents/hhn_img_03.gif",
+    "page_url": "https://www.shinan.go.kr/home/www/about/typifier/typifier_02/page.wscms",
+    "alt": "마스코트",
+    "sha256": "c294868590bd98269ce17f8efb0ae2ab22ff357ca14efc1eeaf67d9757ee5278",
+    "bytes": 8595,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42116": {
    "name": "안동시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.andong.go.kr/portal/contents.do?mId=0301030300",
+   "names": [
+    "양반",
+    "연이낭자",
+    "또기",
+    "어진할배"
+   ],
+   "words": 16,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-ee5b1868a8.png",
+    "source_url": "https://www.andong.go.kr/andong/img/sub03/character01.png",
+    "page_url": "https://www.andong.go.kr/portal/contents.do?mId=0301030300",
+    "alt": "양반 캐릭터",
+    "sha256": "64b5f91561e342206043036f1c2692ba53443c99638128b04c9ac9e560c4bbc0",
+    "bytes": 20239,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50251": {
    "name": "순창군",
@@ -3037,25 +3554,87 @@
    "name": "아산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.asan.go.kr/main/ongung/character/",
+   "names": [
+    "온궁이",
+    "온양이"
+   ],
+   "words": 34,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-e4b9e0dbcd.png",
+    "source_url": "https://www.asan.go.kr/main/ongung/character/asset/img/intro_img.png",
+    "page_url": "https://www.asan.go.kr/main/ongung/character/",
+    "alt": "온궁이와 온양이.",
+    "sha256": "10d2e06a96b04cd2d0b7d22be4d8a35f8b2f6ec69cfc9b4b6e8b35a83a44b6df",
+    "bytes": 40500,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42119": {
    "name": "안성시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.anseong.go.kr/tourPortal/baudeogi/contents.do?mId=0107030200",
+   "names": [
+    "바우덕이"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42120": {
    "name": "안양시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.anyang.go.kr/main/contents.do?key=301",
+   "names": [
+    "포동이"
+   ],
+   "words": 12,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-f247dd6367.png",
+    "source_url": "https://www.anyang.go.kr/DATA/contents/main/20260422032021183Jmkg6W.gif",
+    "page_url": "https://www.anyang.go.kr/main/contents.do?key=301",
+    "alt": "포동이 사진",
+    "sha256": "def9e61c5c9c86d4f1477a102ce3db2699fcad00c911633b24dff0299d2b66d0",
+    "bytes": 166324,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50254": {
    "name": "양양군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yangyang.go.kr/gw/portal/yyc_yyintro_symbolic_cibi",
+   "names": [
+    "해키"
+   ],
+   "words": 8,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-9e45e8c9db.jpg",
+    "source_url": "https://www.yangyang.go.kr/site/erms/images/executive06/sub06_03_01_04.jpg",
+    "page_url": "https://www.yangyang.go.kr/gw/portal/yyc_yyintro_symbolic_cibi",
+    "alt": "캐릭터 : 해키",
+    "sha256": "8bf6aba4af898a20b2bc1f7857f59e01cc2cccb6cfe8fd7807dbafaed24a5686",
+    "bytes": 10949,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42123": {
    "name": "양산시",
@@ -3073,7 +3652,26 @@
    "name": "양천구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yangcheon.go.kr/site/yangcheon/04/10402040100002016111903.jsp",
+   "names": [
+    "해누리",
+    "해우리"
+   ],
+   "words": 10,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-0b19b524ee.png",
+    "source_url": "https://www.yangcheon.go.kr/images/yangcheon/m4/m1040204_img2_new1.gif?u=20240702",
+    "page_url": "https://www.yangcheon.go.kr/site/yangcheon/04/10402040100002016111903.jsp",
+    "alt": "마스코트 : 해누리",
+    "sha256": "8b6ca63b3bee28204959df2529eed5163cc41b6f373b42b66e592325ed00c951",
+    "bytes": 4603,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50253": {
    "name": "양구군",
@@ -3173,7 +3771,26 @@
    "name": "여수시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://yeosu.go.kr/tour/information/character",
+   "names": [
+    "장군이",
+    "오동이"
+   ],
+   "words": 23,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-5479c8d83a.jpg",
+    "source_url": "https://yeosu.go.kr/tour/contents/2155/character_02.jpg",
+    "page_url": "https://yeosu.go.kr/tour/information/character",
+    "alt": "반갑습니다. 어서오세요",
+    "sha256": "e26a634274838090067b623acec7d42232022d9ea81b3d9e83b8309de2891881",
+    "bytes": 56694,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50259": {
    "name": "영광군",
@@ -3185,7 +3802,26 @@
    "name": "영덕군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yd.go.kr/?p=855",
+   "names": [
+    "키니",
+    "토리"
+   ],
+   "words": 20,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-9b80ace727.jpg",
+    "source_url": "https://www.yd.go.kr/img/sub/character_01.jpg",
+    "page_url": "https://www.yd.go.kr/?p=855",
+    "alt": "키니와 토리",
+    "sha256": "458f05edefb746f143de337893e57f4b2ea5bfad775fab662b6c332af3918a11",
+    "bytes": 12860,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42124": {
    "name": "양주시",
@@ -3245,7 +3881,26 @@
    "name": "연천군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yeoncheon.go.kr/www/contents.do?key=3411",
+   "names": [
+    "고롱이",
+    "미롱이"
+   ],
+   "words": 14,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-d1647cc26d.jpg",
+    "source_url": "https://www.yeoncheon.go.kr/site/www/images/contents/cts3411_character01_250404.jpg",
+    "page_url": "https://www.yeoncheon.go.kr/www/contents.do?key=3411",
+    "alt": "고롱이 미롱이 캐릭터 이미지",
+    "sha256": "f058dbe493c94a381bc72af5ccb36f3ce3a1355aba6de94ec863c51cdf5135b4",
+    "bytes": 184328,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50263": {
    "name": "영양군",
@@ -3289,7 +3944,25 @@
    "name": "영주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yeongju.go.kr/open_content/main/page.do?mnu_uid=10453",
+   "names": [
+    "영주도령"
+   ],
+   "words": 8,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-c28f72eff5.png",
+    "source_url": "https://www.yeongju.go.kr/design/main/img/sub02/motion_all_dolyeong.gif",
+    "page_url": "https://www.yeongju.go.kr/open_content/main/page.do?mnu_uid=10453",
+    "alt": "영주도령 캐릭터 모션모음",
+    "sha256": "612e1b39be24069c43944d43de8664a28057b14abc18741e0a08723695307f5c",
+    "bytes": 118638,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50306": {
    "name": "영월군",
@@ -3341,13 +4014,50 @@
    "name": "예천군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ycg.kr/open.content/ko/organization/symbol/flag.ci/",
+   "names": [
+    "효동이",
+    "효심이"
+   ],
+   "words": 10,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-87b0f35e09.png",
+    "source_url": "https://www.ycg.kr/images/open.content/ko/organization/symbol/flag.ci/charater-m.png",
+    "page_url": "https://www.ycg.kr/open.content/ko/organization/symbol/flag.ci/",
+    "alt": "캐릭터",
+    "sha256": "1439399e6b34bbd0737db11ea7e49877f1a5e9c539a46e7bb858d5f023d6bb48",
+    "bytes": 26468,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50421": {
    "name": "연수구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yeonsu.go.kr/main/yeonsu/intro/logo.asp",
+   "names": [
+    "학"
+   ],
+   "words": 54,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-4aac3cb601.png",
+    "source_url": "https://www.yeonsu.go.kr/main/images/contents/yeonsu/logo_character02.gif",
+    "page_url": "https://www.yeonsu.go.kr/main/yeonsu/intro/logo.asp",
+    "alt": "연수구 기본캐릭터 흑백",
+    "sha256": "8f062447721205b0c8ce388a98251af0dc1d04c3f26afdb465109939b9503707",
+    "bytes": 6950,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42128": {
    "name": "영천시",
@@ -3431,13 +4141,41 @@
    "name": "완주군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.wanju.go.kr/index.9is?contentUid=ff8080818b024d8e018b274f7ebe2d05",
+   "names": [
+    "완돌이",
+    "완순이",
+    "완주언니",
+    "완주오빠"
+   ],
+   "words": 10,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-dd23ad3fef.jpg",
+    "source_url": "https://www.wanju.go.kr/www/images/sub05/symbol_img0402.jpg",
+    "page_url": "https://www.wanju.go.kr/index.9is?contentUid=ff8080818b024d8e018b274f7ebe2d05",
+    "alt": "",
+    "sha256": "418438cfc02770ef4b111551131493b0e593fbb4529b4bbe5cf3a61067e86353",
+    "bytes": 108515,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42129": {
    "name": "오산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
+   "names": [
+    "까산이"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50310": {
    "name": "옹진군",
@@ -3573,7 +4311,25 @@
    "name": "울진군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.uljin.go.kr/index.uljin?menuCd=DOM_000000104003001000",
+   "names": [
+    "피오"
+   ],
+   "words": 18,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-0d1485558c.png",
+    "source_url": "https://www.uljin.go.kr/images/01_potal/sub04/uj_character.png",
+    "page_url": "https://www.uljin.go.kr/index.uljin?menuCd=DOM_000000104003001000",
+    "alt": "캐릭터 : 피오",
+    "sha256": "219ea6ce1dcd269a54bac506f7233fae2baac7edd62d92c6a78a2a2011deedb7",
+    "bytes": 37951,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q485570": {
    "name": "울릉군",
@@ -3604,7 +4360,14 @@
    "name": "은평구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ep.go.kr/iframe/selectBbsNttView.do?key=51&bbsNo=42&nttNo=120738",
+   "names": [
+    "파발이"
+   ],
+   "words": 12,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50313": {
    "name": "울주군",
@@ -3684,7 +4447,25 @@
    "name": "원주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.wonju.go.kr/eco/contents.do?key=656",
+   "names": [
+    "에코엔젤"
+   ],
+   "words": 14,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-3d84609ff9.jpg",
+    "source_url": "https://www.wonju.go.kr/site/eco/images/contents/cts656_img1.jpg",
+    "page_url": "https://www.wonju.go.kr/eco/contents.do?key=656",
+    "alt": "원주 청정환경 캐릭터 Eco Anjel",
+    "sha256": "c5c56d95aeb987c4f44047d1465456b384d130d761fdd0adbc3fba058d827da3",
+    "bytes": 25404,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50431": {
    "name": "유성구",
@@ -3719,13 +4500,29 @@
    "name": "익산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.iksan.go.kr/trans/index.iksan?menuCd=DOM_000005001003003000",
+   "names": [
+    "서동",
+    "선화공주"
+   ],
+   "words": 0,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42134": {
    "name": "의왕시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.uiwang.go.kr/UWKORINTRO0206",
+   "names": [
+    "느티",
+    "까비"
+   ],
+   "words": 20,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50250": {
    "name": "성주군",
@@ -3752,7 +4549,27 @@
    "name": "장성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jangseong.go.kr/home/www/healing/healing_08/healing_08_01/healing_08_01_02",
+   "names": [
+    "단풍동자",
+    "성장이",
+    "장성이"
+   ],
+   "words": 26,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-3f310e0ccf.png",
+    "source_url": "https://www.jangseong.go.kr/images/www/contents/sym_ma01.gif",
+    "page_url": "https://www.jangseong.go.kr/home/www/healing/healing_08/healing_08_01/healing_08_01_02",
+    "alt": "마스코트 단풍동자 일러스트",
+    "sha256": "93e07a441cf6a3c6710a9423789f41164fa560359618a640e4f2e18e844e9a5e",
+    "bytes": 24842,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50322": {
    "name": "장흥군",
@@ -3802,7 +4619,26 @@
    "name": "정선군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jeongseon.go.kr/tour/jeongseontour/character",
+   "names": [
+    "와와군",
+    "산아리"
+   ],
+   "words": 14,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-b8c291d50a.png",
+    "source_url": "https://www.jeongseon.go.kr/page/tour/img/sub/character_02.png",
+    "page_url": "https://www.jeongseon.go.kr/tour/jeongseontour/character",
+    "alt": "와와군",
+    "sha256": "973f29de0f967cc2a4af15f7001ca6c69ab65dfb2bb4757e4978653bb7afc991",
+    "bytes": 24129,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50321": {
    "name": "장수군",
@@ -3838,7 +4674,28 @@
    "name": "제천시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jecheon.go.kr/www/contents.do?key=319",
+   "names": [
+    "박달이",
+    "금봉이",
+    "제제",
+    "천천이"
+   ],
+   "words": 46,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-3b9565cd51.jpg",
+    "source_url": "https://www.jecheon.go.kr/site/www/images/contents/cst_319_img13_1.jpg",
+    "page_url": "https://www.jecheon.go.kr/www/contents.do?key=319",
+    "alt": "제제 캐릭터",
+    "sha256": "2fed2e41fb31317cb4ec229279ee08ebc2c26617f8b93b8cf074d047e7c1488e",
+    "bytes": 55949,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50319": {
    "name": "임실군",
@@ -3857,7 +4714,26 @@
    "name": "의정부시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ui4u.go.kr/portal/contents.do?mId=0501020000",
+   "names": [
+    "의돌이",
+    "랑이"
+   ],
+   "words": 8,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-9eb0f92950.jpg",
+    "source_url": "https://www.ui4u.go.kr/portal/img/content/sub05/img_con0501020000_8.jpg",
+    "page_url": "https://www.ui4u.go.kr/portal/contents.do?mId=0501020000",
+    "alt": "의정부시 마스코트",
+    "sha256": "cbd463a3da5e3d3378e2c935e3c792f7bec8dc8cab0ab421bad6e1cf49a84a61",
+    "bytes": 13058,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50438": {
    "name": "중구",
@@ -3869,7 +4745,25 @@
    "name": "중구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.junggu.seoul.kr/ci/ca.html",
+   "names": [
+    "하티"
+   ],
+   "words": 6,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-de0939fdf7.png",
+    "source_url": "https://www.junggu.seoul.kr/ci/img/img3_1.png",
+    "page_url": "https://www.junggu.seoul.kr/ci/ca.html",
+    "alt": "기본형",
+    "sha256": "19ac17a570dec0ccba5b082a872da2cdb68c70ae68034210f7aaaaebf0b3a46f",
+    "bytes": 16205,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q42141": {
    "name": "정읍시",
@@ -3925,25 +4819,90 @@
    "name": "의령군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.uiryeong.go.kr/index.uiryeong?menuCd=DOM_000000205001001006",
+   "names": [
+    "범이",
+    "꺽쇠"
+   ],
+   "words": 2,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50326": {
    "name": "진안군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jinan.go.kr/index.jinan?menuCd=DOM_000000104002002002",
+   "names": [
+    "마이용",
+    "빠망"
+   ],
+   "words": 14,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-62c3966105.png",
+    "source_url": "https://www.jinan.go.kr/2018/images/01.potal/contents/01/020201-img2.gif",
+    "page_url": "https://www.jinan.go.kr/index.jinan?menuCd=DOM_000000104002002002",
+    "alt": "빨간망아지 빠망",
+    "sha256": "dfcec09723e3d617a3ba3f75a8301124316e28e06cc45e23ff39f532a77e1fa6",
+    "bytes": 13470,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50444": {
    "name": "중랑구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jungnang.go.kr/portal/main/contents.do?menuNo=200456",
+   "names": [
+    "랑랑이",
+    "똘배"
+   ],
+   "words": 34,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-78c64a6cbc.png",
+    "source_url": "https://www.jungnang.go.kr/portal/images/contents/07/02/04/0702040102_002.png",
+    "page_url": "https://www.jungnang.go.kr/portal/main/contents.do?menuNo=200456",
+    "alt": "응용형 캐릭터 20가지 모음",
+    "sha256": "e17470225fe06941e5690039a6841d2593c914e4e00090f096abd89bfe5cab12",
+    "bytes": 330167,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50325": {
    "name": "진도군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://jindo.go.kr/home/sub.cs?m=174",
+   "names": [
+    "황구",
+    "백구"
+   ],
+   "words": 2,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-4ed27fbfcf.jpg",
+    "source_url": "https://jindo.go.kr/themes/home/images/content/symbolImg3.jpg",
+    "page_url": "https://jindo.go.kr/home/sub.cs?m=174",
+    "alt": "",
+    "sha256": "e0a01cb88f65eb56398cecc06bd915764845fa057b7c3af24141f0ef5c67e0a7",
+    "bytes": 43301,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50440": {
    "name": "중구",
@@ -4112,7 +5071,26 @@
    "name": "청주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.cheongju.go.kr/www/contents.do?key=561",
+   "names": [
+    "생이",
+    "명이"
+   ],
+   "words": 16,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-0079d0113a.png",
+    "source_url": "https://www.cheongju.go.kr/www/images/contents/cts_561_img.gif",
+    "page_url": "https://www.cheongju.go.kr/www/contents.do?key=561",
+    "alt": "청주시캐릭터 생이, 명이",
+    "sha256": "8ed7518b1e9327b21743bc21f767e6a741c0a1a76692cca2844d826058ae5bcf",
+    "bytes": 53844,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50330": {
    "name": "청도군",
@@ -4167,7 +5145,25 @@
    "name": "태백시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.taebaek.go.kr/www/contents.do?key=388",
+   "names": [
+    "태붐이"
+   ],
+   "words": 38,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-59aee9a092.png",
+    "source_url": "https://www.taebaek.go.kr/www/images/contents/cts388_img1.gif",
+    "page_url": "https://www.taebaek.go.kr/www/contents.do?key=388",
+    "alt": "씨컴스 기본형 이미지",
+    "sha256": "95e5ee0d214aeead7d8fd1b7a057fdcb1ccf87265cec6d97f94379f22eaf6d04",
+    "bytes": 14019,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50332": {
    "name": "청양군",
@@ -4227,7 +5223,16 @@
    "name": "춘천시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.chuncheon.go.kr/tour/guide/official-character/",
+   "names": [
+    "봄내크루",
+    "소양이",
+    "꽁지"
+   ],
+   "words": 32,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q42152": {
    "name": "통영시",
@@ -4346,7 +5351,15 @@
    "name": "하남시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hanam.go.kr/www/brandHanam.do?key=6263",
+   "names": [
+    "하남이",
+    "방울이"
+   ],
+   "words": 2,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q188624": {
    "name": "평창군",
@@ -4382,19 +5395,74 @@
    "name": "함안군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.haman.go.kr/00571/00595/00612.web",
+   "names": [
+    "우돌이",
+    "하마니"
+   ],
+   "words": 12,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-1fd8d0e12d.jpg",
+    "source_url": "https://www.haman.go.kr/_res/portal/img/sub/05/symbol/web03658_img05.jpg",
+    "page_url": "https://www.haman.go.kr/00571/00595/00612.web",
+    "alt": "",
+    "sha256": "6e1eccefc790c68bec8641002d0df8d0ed53d527b479e42bc8b7f1a508662a52",
+    "bytes": 52170,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50339": {
    "name": "함양군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hygn.go.kr/00432/00844/00858.web",
+   "names": [
+    "우리두리"
+   ],
+   "words": 47,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-f9173c96dc.png",
+    "source_url": "https://www.hygn.go.kr/_res/portal/img/sub/05/cip07img01.png",
+    "page_url": "https://www.hygn.go.kr/00432/00844/00858.web",
+    "alt": "함양 마스코트 우리두리",
+    "sha256": "cf1ddf3fff6ac2656a0e18ae5b2fd2d448b6fa3c8fe7919145517e7c51a9c586",
+    "bytes": 52355,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50317": {
    "name": "의성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.usc.go.kr/ko/page.do?mnu_uid=396",
+   "names": [
+    "의동이"
+   ],
+   "words": 10,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-45a1fefc5e.png",
+    "source_url": "https://www.usc.go.kr/design/ko/img/content/img_emblem_char02.gif",
+    "page_url": "https://www.usc.go.kr/ko/page.do?mnu_uid=396",
+    "alt": "차남 의성옥사과",
+    "sha256": "cd89e898f7edee2ec197959e263b3add636de0795642371957c77d261ad195ee",
+    "bytes": 6596,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q243327": {
    "name": "창원시",
@@ -4446,7 +5514,25 @@
    "name": "함평군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hampyeong.go.kr/contentsView.do?pageId=www331",
+   "names": [
+    "함평천지"
+   ],
+   "words": 30,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-74e48a0e3f.jpg",
+    "source_url": "https://www.hampyeong.go.kr/home/www/images/sub/06010203_01.jpg",
+    "page_url": "https://www.hampyeong.go.kr/contentsView.do?pageId=www331",
+    "alt": "함평군의 마스코트 이미지입니다.",
+    "sha256": "72f3e6663586f03418e37fafad91d5883c0e0f4e46b7ca4220d6e0e4c1685565",
+    "bytes": 25900,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q50342": {
    "name": "해남군",
@@ -4462,7 +5548,15 @@
    "name": "해운대구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.haeundae.go.kr/index.do?menuCd=DOM_000000101003002000",
+   "names": [
+    "써니",
+    "퍼니"
+   ],
+   "words": 30,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q50335": {
    "name": "태안군",
@@ -4624,7 +5718,26 @@
    "name": "하동군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hadong.go.kr/intro/00567/00576.web",
+   "names": [
+    "서희",
+    "길상"
+   ],
+   "words": 34,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-3a4c3a8314.jpg",
+    "source_url": "https://www.hadong.go.kr/_res/portal/img/sub/web00576_img01.jpg",
+    "page_url": "https://www.hadong.go.kr/intro/00567/00576.web",
+    "alt": "서희와 길상 기본형",
+    "sha256": "379c9b1ac98f574c1256f312fd6390c4d15f9de51a3b66d7202a60df35a84f62",
+    "bytes": 30623,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q7451674": {
    "name": "서울특별시교육청",
@@ -4665,7 +5778,25 @@
    "name": "화성시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol02.jsp",
+   "names": [
+    "코리요"
+   ],
+   "words": 18,
+   "page_source": "hand-found",
+   "files": [],
+   "image": {
+    "file": "/mascots/thumbs/m-688bf67ccb.jpg",
+    "source_url": "https://www.hscity.go.kr/webcontent/resrce/1/2021/5/18/02d48b20-8176-4b99-be76-553d87cb9418.jpg",
+    "page_url": "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol02.jsp",
+    "alt": "코리요 캐릭터",
+    "sha256": "887b43a1f876114f1c831ff85cbc546242d871785dfa92cbff92c203ca44b845",
+    "bytes": 50533,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_hints.py"
+   }
   },
   "Q16164847": {
    "name": "울산광역시교육청",
@@ -4689,7 +5820,15 @@
    "name": "철원군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.cwg.go.kr/www/contents.do?key=235",
+   "names": [
+    "철루미",
+    "철궁이"
+   ],
+   "words": 20,
+   "page_source": "hand-found",
+   "files": []
   },
   "Q15302850": {
    "name": "충청남도교육청",

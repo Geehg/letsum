@@ -101,6 +101,7 @@ swaps(로고→캐릭터 등)로 바꾸며, 앱 문구가 바뀌어 swap 대상�
 python3 tools/logo-survey/mascot_survey.py --workers 8      # 기관 홈·사이트맵·CI 페이지에서 캐릭터/마스코트 메뉴 탐색 → 캐릭터 페이지·이름·이미지·파일 후보 (data/mascot-crawl.json, html/mascots/thumbs/m-*)
 python3 tools/logo-survey/mascot_survey.py --refresh        # 찾은 캐릭터 페이지를 다시 읽어 이름(페이지에서 3회 이상 나오는 따옴표 이름)과 이미지(배너 제외, 투명 PNG 우선)만 재계산
 python3 tools/logo-survey/mascot_images.py               # 캐릭터 페이지는 찾았는데 이미지가 없는 곳: 페이지의 모든 그림(img·srcset·CSS 배경)을 Referer 붙여 받아 크기·비율로 고름. 눈으로 보고 캐릭터가 아니면 data/mascot-image-reject.json에 넣어 다음 실행에서 제외
+python3 tools/logo-survey/mascot_hints.py                # 자동 탐색이 놓친 기관 캐릭터 페이지(스크립트 메뉴·관광/브랜드 하위 사이트): data/mascot-pages-manual.json(기관 도메인 한정 웹 검색으로 찾아 확인한 페이지·캐릭터 이름, 필요하면 눈으로 고른 image/null)을 읽어 mascot-crawl.json 행을 채움. 이 행(page_source "hand-found")은 mascot_images.py가 건드리지 않음
 python3 -I tools/logo-survey/mascot_wiki.py                 # 한국어 위키백과 마스코트 분류(대한민국·올림픽·축구·야구·기업·철도 등) + 브랜드 마스코트(EXTRA) → data/mascot-wiki.json, 공용 라이선스 이미지만
 python3 -I tools/logo-survey/merge_mascots.py               # 카탈로그·출처·썸네일·다운로드(파일 서명 검증)·분류·인지도 → tools/mascot-app/data/
 python3 tools/logo-survey/normalize_logos.py --thumbs html/mascots/thumbs --geometry tools/mascot-app/data/mascot-geometry.json --manifest tools/mascot-app/data/thumbnails.json --also tools/logo-survey/data/mascot-crawl.json tools/logo-survey/data/mascot-wiki.json tools/logo-survey/data/mascots-manual.json

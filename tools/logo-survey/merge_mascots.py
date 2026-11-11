@@ -119,9 +119,10 @@ def main():
         rid = "mc-" + org_id(org)[3:]
         name = " · ".join(names[:3]) if names else f"{org['name']} 캐릭터"
         names_seen.update(names)
-        summary = f"{org['name']}의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다." + (f" 페이지에 적힌 캐릭터 이름: {', '.join(names[:3])}." if names else "")
+        hand = row.get("page_source") == "hand-found"
+        summary = f"{org['name']}의 공식 캐릭터 소개 페이지를 " + ("공식 누리집에서 찾아 확인했습니다." if hand else "자동 수집으로 찾았습니다.") + (f" 페이지에 적힌 캐릭터 이름: {', '.join(names[:3])}." if names else "")
         add(rid, org["name"], name, [*names, f"{org['name']} 캐릭터", f"{org['name']} 마스코트"], group, org.get("country") or "KR", org.get("region"), summary, row["page"],
-            (f"명단: {org['roster']}" if org["group"] in ("기업", "스포츠 구단") else f"명단: 위키백과 {org['roster']}") + " · 캐릭터 페이지 자동 탐색", row.get("image"), row.get("files"), logo_rank.get(org_id(org), {}).get("score", 0), checked=row.get("checked_at", TODAY))
+            (f"명단: {org['roster']}" if org["group"] in ("기업", "스포츠 구단") else f"명단: 위키백과 {org['roster']}") + (" · 캐릭터 페이지 수작업 확인" if hand else " · 캐릭터 페이지 자동 탐색"), row.get("image"), row.get("files"), logo_rank.get(org_id(org), {}).get("score", 0), checked=row.get("checked_at", TODAY))
     # 2. Well-known mascots (Korean Wikipedia).
     for row in wiki:
         if row["title"] in names_seen or row["title"] in manual_orgs:
@@ -136,7 +137,7 @@ def main():
             0, kind="mascot", name_en=row.get("name_en"))
     # 3. Hand-checked company and brand characters.
     for row in manual:
-        add(row["id"], row["organization"], row["name"], row.get("aliases", []), row["group"], row.get("country", "KR"), None, row["summary"], row["page"],
+        add(row["id"], row["organization"], row["name"], row.get("aliases", []), row["group"], row.get("country", "KR"), row.get("region"), row["summary"], row["page"],
             "수작업 확인(공식 페이지)", row.get("image"), row.get("files"), row.get("score", 0), kind=row.get("kind", "character"), name_en=row.get("name_en"))
 
     # Downloads: same signature checks as the logo directory.

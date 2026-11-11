@@ -1,0 +1,652 @@
+{
+ "note": "손으로 찾은 기관 캐릭터 페이지(공식 누리집 도메인 한정 웹 검색 → 페이지 확인, 2026-11-11). mascot_hints.py가 이 페이지를 읽어 캐릭터 이미지를 고르고 mascot-crawl.json의 해당 기관 행을 채운다. names = 공식 페이지에 적힌 캐릭터 이름. image = 페이지의 여러 그림 가운데 눈으로 고른 캐릭터 그림(null이면 알맞은 그림 없음).",
+ "pages": [
+  {
+   "name": "경상남도",
+   "region": "경상남도",
+   "page": "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137009000000",
+   "names": [
+    "벼리",
+    "경남이",
+    "경이"
+   ]
+  },
+  {
+   "name": "세종특별자치시",
+   "region": "세종특별자치시",
+   "page": "https://www.sejong.go.kr/kor/sub01_0305.do",
+   "names": [
+    "충녕"
+   ]
+  },
+  {
+   "name": "경주시",
+   "region": "경상북도",
+   "page": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=3531",
+   "names": [
+    "금이",
+    "관이"
+   ],
+   "image": "https://www.gyeongju.go.kr/design/downfiles/ci/20220905/ci_cc_01.jpg"
+  },
+  {
+   "name": "마포구",
+   "region": "서울특별시",
+   "page": "https://www.mapo.go.kr/site/main/content/mapo040102",
+   "names": [
+    "마포동이"
+   ]
+  },
+  {
+   "name": "부천시",
+   "region": "경기도",
+   "page": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148009002006001",
+   "names": [
+    "부천핸썹"
+   ],
+   "image": null
+  },
+  {
+   "name": "강화군",
+   "region": "인천광역시",
+   "page": "https://www.ganghwa.go.kr/open_content/main/ganghwa/info/symbol_character.jsp",
+   "names": [
+    "강돌이"
+   ]
+  },
+  {
+   "name": "거제시",
+   "region": "경상남도",
+   "page": "https://www.geoje.go.kr/index.geoje?menuCd=DOM_000008905001015003",
+   "names": [
+    "몽꾸"
+   ]
+  },
+  {
+   "name": "거창군",
+   "region": "경상남도",
+   "page": "https://www.geochang.go.kr/00314/00317/00329.web",
+   "names": [
+    "아림",
+    "아름"
+   ],
+   "image": null
+  },
+  {
+   "name": "고성군",
+   "region": "경상남도",
+   "page": "https://www.goseong.go.kr/index.goseong?menuCd=DOM_000000106002007000",
+   "names": [
+    "고룡이"
+   ],
+   "image": "https://www.goseong.go.kr/document/03/ci/ci1/11.jpg"
+  },
+  {
+   "name": "고성군",
+   "region": "강원특별자치도",
+   "page": "https://www.gwgs.go.kr/kor2/sub04_050306.do",
+   "names": [
+    "금강동이"
+   ],
+   "image": null
+  },
+  {
+   "name": "고흥군",
+   "region": "전남광주통합특별시",
+   "page": "https://www.goheung.go.kr/contentsView.do?pageId=www109",
+   "names": [
+    "흥이"
+   ]
+  },
+  {
+   "name": "공주시",
+   "region": "충청남도",
+   "page": "https://www.gongju.go.kr/brand/sub02_01.do",
+   "names": [
+    "고마곰",
+    "공주"
+   ],
+   "image": null
+  },
+  {
+   "name": "광양시",
+   "region": "전남광주통합특별시",
+   "page": "https://gwangyang.go.kr/menu.es?mid=a11303070200",
+   "names": [
+    "매돌이",
+    "해아"
+   ]
+  },
+  {
+   "name": "괴산군",
+   "region": "충청북도",
+   "page": "https://www.goesan.go.kr/www/contents.do?key=255",
+   "names": [
+    "꺽정이",
+    "운총이"
+   ]
+  },
+  {
+   "name": "구례군",
+   "region": "전남광주통합특별시",
+   "page": "https://www.gurye.go.kr/kr/subPage.do?menuNo=116007001001",
+   "names": [
+    "산유",
+    "수유"
+   ]
+  },
+  {
+   "name": "구로구",
+   "region": "서울특별시",
+   "page": "https://www.guro.go.kr/www/contents.do?key=4582",
+   "names": [
+    "구스",
+    "로이",
+    "지유",
+    "아로"
+   ]
+  },
+  {
+   "name": "구리시",
+   "region": "경기도",
+   "page": "https://www.guri.go.kr/www/contents.do?key=7917",
+   "names": [
+    "와구리",
+    "뽀구리",
+    "아리미"
+   ]
+  },
+  {
+   "name": "군산시",
+   "region": "전북특별자치도",
+   "page": "https://www.gunsan.go.kr/main/m361",
+   "names": [
+    "밝음이"
+   ]
+  },
+  {
+   "name": "군포시",
+   "region": "경기도",
+   "page": "https://www.gunpo.go.kr/www/contents.do?key=3943",
+   "names": [
+    "포근",
+    "포유"
+   ],
+   "image": "https://www.gunpo.go.kr/site/www/images/contents/cts3943_img3_02.jpg"
+  },
+  {
+   "name": "금천구",
+   "region": "서울특별시",
+   "page": "https://www.geumcheon.go.kr/portal/contents.do?key=440",
+   "names": [
+    "금나래"
+   ]
+  },
+  {
+   "name": "기장군",
+   "region": "부산광역시",
+   "page": "https://www.gijang.go.kr/index.gijang?menuCd=DOM_000000105003007000",
+   "names": [
+    "기장아재",
+    "다시미",
+    "메르치"
+   ]
+  },
+  {
+   "name": "남구",
+   "region": "부산광역시",
+   "page": "https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000002804004000000",
+   "names": [
+    "망고",
+    "피피",
+    "뱅크"
+   ],
+   "image": "https://www.bsnamgu.go.kr/images/egovframework/media/2022_car03.jpg"
+  },
+  {
+   "name": "남해군",
+   "region": "경상남도",
+   "page": "https://www.namhae.go.kr/portal/Index.do?c=WW0502040000",
+   "names": [
+    "해랑이"
+   ]
+  },
+  {
+   "name": "동해시",
+   "region": "강원특별자치도",
+   "page": "https://dh.go.kr/www/contents.do?key=507",
+   "names": [
+    "파도동자",
+    "해별이"
+   ]
+  },
+  {
+   "name": "부여군",
+   "region": "충청남도",
+   "page": "https://www.buyeo.go.kr/html/kr/intro/intro_050406.html",
+   "names": [
+    "금동이",
+    "금용이",
+    "금황이"
+   ]
+  },
+  {
+   "name": "산청군",
+   "region": "경상남도",
+   "page": "https://www.sancheong.go.kr/tour/contents.do?key=6418",
+   "names": [
+    "산이",
+    "얼수",
+    "솜이",
+    "흥이"
+   ]
+  },
+  {
+   "name": "상주시",
+   "region": "경상북도",
+   "page": "https://www.sangju.go.kr/page/10063/10422.tc",
+   "names": [
+    "감돌이",
+    "감순이"
+   ]
+  },
+  {
+   "name": "서산시",
+   "region": "충청남도",
+   "page": "https://www.seosan.go.kr/www/contents.do?key=1372",
+   "names": [
+    "가티",
+    "오슈"
+   ],
+   "image": "https://www.seosan.go.kr/site/www/images/contents/cnt1372_img1.gif"
+  },
+  {
+   "name": "성동구",
+   "region": "서울특별시",
+   "page": "https://sd.go.kr/main/contents.do?key=1382",
+   "names": [
+    "미소"
+   ]
+  },
+  {
+   "name": "수성구",
+   "region": "대구광역시",
+   "page": "https://www.suseong.kr/index.do?menu_id=00042282",
+   "names": [
+    "뚜비"
+   ]
+  },
+  {
+   "name": "신안군",
+   "region": "전남광주통합특별시",
+   "page": "https://www.shinan.go.kr/home/www/about/typifier/typifier_02/page.wscms",
+   "names": [
+    "홍도리"
+   ]
+  },
+  {
+   "name": "아산시",
+   "region": "충청남도",
+   "page": "https://www.asan.go.kr/main/ongung/character/",
+   "names": [
+    "온궁이",
+    "온양이"
+   ]
+  },
+  {
+   "name": "안동시",
+   "region": "경상북도",
+   "page": "https://www.andong.go.kr/portal/contents.do?mId=0301030300",
+   "names": [
+    "양반",
+    "연이낭자",
+    "또기",
+    "어진할배"
+   ],
+   "image": "https://www.andong.go.kr/andong/img/sub03/character01.png"
+  },
+  {
+   "name": "안성시",
+   "region": "경기도",
+   "page": "https://www.anseong.go.kr/tourPortal/baudeogi/contents.do?mId=0107030200",
+   "names": [
+    "바우덕이"
+   ]
+  },
+  {
+   "name": "안양시",
+   "region": "경기도",
+   "page": "https://www.anyang.go.kr/main/contents.do?key=301",
+   "names": [
+    "포동이"
+   ]
+  },
+  {
+   "name": "양양군",
+   "region": "강원특별자치도",
+   "page": "https://www.yangyang.go.kr/gw/portal/yyc_yyintro_symbolic_cibi",
+   "names": [
+    "해키"
+   ],
+   "image": "https://www.yangyang.go.kr/site/erms/images/executive06/sub06_03_01_04.jpg"
+  },
+  {
+   "name": "양천구",
+   "region": "서울특별시",
+   "page": "https://www.yangcheon.go.kr/site/yangcheon/04/10402040100002016111903.jsp",
+   "names": [
+    "해누리",
+    "해우리"
+   ],
+   "image": "https://www.yangcheon.go.kr/images/yangcheon/m4/m1040204_img2_new1.gif?u=20240702"
+  },
+  {
+   "name": "여수시",
+   "region": "전남광주통합특별시",
+   "page": "https://yeosu.go.kr/tour/information/character",
+   "names": [
+    "장군이",
+    "오동이"
+   ]
+  },
+  {
+   "name": "연수구",
+   "region": "인천광역시",
+   "page": "https://www.yeonsu.go.kr/main/yeonsu/intro/logo.asp",
+   "names": [
+    "학"
+   ]
+  },
+  {
+   "name": "연천군",
+   "region": "경기도",
+   "page": "https://www.yeoncheon.go.kr/www/contents.do?key=3411",
+   "names": [
+    "고롱이",
+    "미롱이"
+   ]
+  },
+  {
+   "name": "영덕군",
+   "region": "경상북도",
+   "page": "https://www.yd.go.kr/?p=855",
+   "names": [
+    "키니",
+    "토리"
+   ]
+  },
+  {
+   "name": "영주시",
+   "region": "경상북도",
+   "page": "https://www.yeongju.go.kr/open_content/main/page.do?mnu_uid=10453",
+   "names": [
+    "영주도령"
+   ]
+  },
+  {
+   "name": "예천군",
+   "region": "경상북도",
+   "page": "https://www.ycg.kr/open.content/ko/organization/symbol/flag.ci/",
+   "names": [
+    "효동이",
+    "효심이"
+   ]
+  },
+  {
+   "name": "오산시",
+   "region": "경기도",
+   "page": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
+   "names": [
+    "까산이"
+   ],
+   "image": null
+  },
+  {
+   "name": "완주군",
+   "region": "전북특별자치도",
+   "page": "https://www.wanju.go.kr/index.9is?contentUid=ff8080818b024d8e018b274f7ebe2d05",
+   "names": [
+    "완돌이",
+    "완순이",
+    "완주언니",
+    "완주오빠"
+   ],
+   "image": "https://www.wanju.go.kr/www/images/sub05/symbol_img0402.jpg"
+  },
+  {
+   "name": "울진군",
+   "region": "경상북도",
+   "page": "https://www.uljin.go.kr/index.uljin?menuCd=DOM_000000104003001000",
+   "names": [
+    "피오"
+   ]
+  },
+  {
+   "name": "의령군",
+   "region": "경상남도",
+   "page": "https://www.uiryeong.go.kr/index.uiryeong?menuCd=DOM_000000205001001006",
+   "names": [
+    "범이",
+    "꺽쇠"
+   ],
+   "image": null
+  },
+  {
+   "name": "의성군",
+   "region": "경상북도",
+   "page": "https://www.usc.go.kr/ko/page.do?mnu_uid=396",
+   "names": [
+    "의동이"
+   ]
+  },
+  {
+   "name": "의왕시",
+   "region": "경기도",
+   "page": "https://www.uiwang.go.kr/UWKORINTRO0206",
+   "names": [
+    "느티",
+    "까비"
+   ]
+  },
+  {
+   "name": "의정부시",
+   "region": "경기도",
+   "page": "https://www.ui4u.go.kr/portal/contents.do?mId=0501020000",
+   "names": [
+    "의돌이",
+    "랑이"
+   ]
+  },
+  {
+   "name": "익산시",
+   "region": "전북특별자치도",
+   "page": "https://www.iksan.go.kr/trans/index.iksan?menuCd=DOM_000005001003003000",
+   "names": [
+    "서동",
+    "선화공주"
+   ]
+  },
+  {
+   "name": "장성군",
+   "region": "전남광주통합특별시",
+   "page": "https://www.jangseong.go.kr/home/www/healing/healing_08/healing_08_01/healing_08_01_02",
+   "names": [
+    "단풍동자",
+    "성장이",
+    "장성이"
+   ]
+  },
+  {
+   "name": "정선군",
+   "region": "강원특별자치도",
+   "page": "https://www.jeongseon.go.kr/tour/jeongseontour/character",
+   "names": [
+    "와와군",
+    "산아리"
+   ]
+  },
+  {
+   "name": "제천시",
+   "region": "충청북도",
+   "page": "https://www.jecheon.go.kr/www/contents.do?key=319",
+   "names": [
+    "박달이",
+    "금봉이",
+    "제제",
+    "천천이"
+   ]
+  },
+  {
+   "name": "중구",
+   "region": "서울특별시",
+   "page": "https://www.junggu.seoul.kr/ci/ca.html",
+   "names": [
+    "하티"
+   ],
+   "image": "https://www.junggu.seoul.kr/ci/img/img3_1.png"
+  },
+  {
+   "name": "중랑구",
+   "region": "서울특별시",
+   "page": "https://www.jungnang.go.kr/portal/main/contents.do?menuNo=200456",
+   "names": [
+    "랑랑이",
+    "똘배"
+   ]
+  },
+  {
+   "name": "진도군",
+   "region": "전남광주통합특별시",
+   "page": "https://jindo.go.kr/home/sub.cs?m=174",
+   "names": [
+    "황구",
+    "백구"
+   ],
+   "image": "https://jindo.go.kr/themes/home/images/content/symbolImg3.jpg"
+  },
+  {
+   "name": "진안군",
+   "region": "전북특별자치도",
+   "page": "https://www.jinan.go.kr/index.jinan?menuCd=DOM_000000104002002002",
+   "names": [
+    "마이용",
+    "빠망"
+   ]
+  },
+  {
+   "name": "철원군",
+   "region": "강원특별자치도",
+   "page": "https://www.cwg.go.kr/www/contents.do?key=235",
+   "names": [
+    "철루미",
+    "철궁이"
+   ]
+  },
+  {
+   "name": "청주시",
+   "region": "충청북도",
+   "page": "https://www.cheongju.go.kr/www/contents.do?key=561",
+   "names": [
+    "생이",
+    "명이"
+   ]
+  },
+  {
+   "name": "춘천시",
+   "region": "강원특별자치도",
+   "page": "https://www.chuncheon.go.kr/tour/guide/official-character/",
+   "names": [
+    "봄내크루",
+    "소양이",
+    "꽁지"
+   ],
+   "image": null
+  },
+  {
+   "name": "태백시",
+   "region": "강원특별자치도",
+   "page": "https://www.taebaek.go.kr/www/contents.do?key=388",
+   "names": [
+    "태붐이"
+   ]
+  },
+  {
+   "name": "은평구",
+   "region": "서울특별시",
+   "page": "https://www.ep.go.kr/iframe/selectBbsNttView.do?key=51&bbsNo=42&nttNo=120738",
+   "names": [
+    "파발이"
+   ]
+  },
+  {
+   "name": "하남시",
+   "region": "경기도",
+   "page": "https://www.hanam.go.kr/www/brandHanam.do?key=6263",
+   "names": [
+    "하남이",
+    "방울이"
+   ],
+   "image": null
+  },
+  {
+   "name": "하동군",
+   "region": "경상남도",
+   "page": "https://www.hadong.go.kr/intro/00567/00576.web",
+   "names": [
+    "서희",
+    "길상"
+   ]
+  },
+  {
+   "name": "함안군",
+   "region": "경상남도",
+   "page": "https://www.haman.go.kr/00571/00595/00612.web",
+   "names": [
+    "우돌이",
+    "하마니"
+   ],
+   "image": "https://www.haman.go.kr/_res/portal/img/sub/05/symbol/web03658_img05.jpg"
+  },
+  {
+   "name": "함양군",
+   "region": "경상남도",
+   "page": "https://www.hygn.go.kr/00432/00844/00858.web",
+   "names": [
+    "우리두리"
+   ]
+  },
+  {
+   "name": "함평군",
+   "region": "전남광주통합특별시",
+   "page": "https://www.hampyeong.go.kr/contentsView.do?pageId=www331",
+   "names": [
+    "함평천지"
+   ]
+  },
+  {
+   "name": "해운대구",
+   "region": "부산광역시",
+   "page": "https://www.haeundae.go.kr/index.do?menuCd=DOM_000000101003002000",
+   "names": [
+    "써니",
+    "퍼니"
+   ]
+  },
+  {
+   "name": "화성시",
+   "region": "경기도",
+   "page": "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol02.jsp",
+   "names": [
+    "코리요"
+   ]
+  },
+  {
+   "name": "원주시",
+   "region": "강원특별자치도",
+   "page": "https://www.wonju.go.kr/eco/contents.do?key=656",
+   "names": [
+    "에코엔젤"
+   ]
+  }
+ ]
+}

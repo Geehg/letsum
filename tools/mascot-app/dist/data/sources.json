@@ -200,6 +200,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q41151-src",
+      "title": "벼리 · 경남이 · 경이 공식 안내",
+      "url": "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137009000000",
+      "publisher": "경상남도",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "경상남도의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 벼리, 경남이, 경이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q11626082-src",
       "title": "행복이 · 약속 공식 안내",
       "url": "https://www.naacc.go.kr/WEB/contents/N6010400000.do",
@@ -310,6 +321,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q20929-src",
+      "title": "충녕 공식 안내",
+      "url": "https://www.sejong.go.kr/kor/sub01_0305.do",
+      "publisher": "세종특별자치시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "세종특별자치시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 충녕.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50348-src",
       "title": "강동구 캐릭터 공식 안내",
       "url": "https://www.gangdong.go.kr/web/newportal/contents/gdp_004_001_005_004",
@@ -319,6 +341,28 @@
       "scope": "page",
       "observation": "강동구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50205-src",
+      "title": "강돌이 공식 안내",
+      "url": "https://www.ganghwa.go.kr/open_content/main/ganghwa/info/symbol_character.jsp",
+      "publisher": "강화군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "강화군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 강돌이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42057-src",
+      "title": "몽꾸 공식 안내",
+      "url": "https://www.geoje.go.kr/index.geoje?menuCd=DOM_000008905001015003",
+      "publisher": "거제시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "거제시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 몽꾸.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50203-src",
@@ -354,6 +398,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50206-src",
+      "title": "아림 · 아름 공식 안내",
+      "url": "https://www.geochang.go.kr/00314/00317/00329.web",
+      "publisher": "거창군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "거창군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 아림, 아름.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50204-src",
       "title": "강진군 캐릭터 공식 안내",
       "url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
@@ -363,6 +418,17 @@
       "scope": "page",
       "observation": "강진군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42097-src",
+      "title": "금이 · 관이 공식 안내",
+      "url": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=3531",
+      "publisher": "경주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "경주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 금이, 관이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50352-src",
@@ -376,6 +442,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50208-src",
+      "title": "고룡이 공식 안내",
+      "url": "https://www.goseong.go.kr/index.goseong?menuCd=DOM_000000106002007000",
+      "publisher": "고성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "고성군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 고룡이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q20921-src",
       "title": "꿈돌이 공식 안내",
       "url": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=7637",
@@ -387,6 +464,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50211-src",
+      "title": "흥이 공식 안내",
+      "url": "https://www.goheung.go.kr/contentsView.do?pageId=www109",
+      "publisher": "고흥군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "고흥군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 흥이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42060-src",
       "title": "계룡시 캐릭터 공식 안내",
       "url": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
@@ -396,6 +484,17 @@
       "scope": "page",
       "observation": "계룡시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42062-src",
+      "title": "고마곰 공식 안내",
+      "url": "https://www.gongju.go.kr/brand/sub02_01.do",
+      "publisher": "공주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "공주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 고마곰.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q41164-src",
@@ -420,6 +519,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42067-src",
+      "title": "매돌이 · 해아 공식 안내",
+      "url": "https://gwangyang.go.kr/menu.es?mid=a11303070200",
+      "publisher": "광양시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "광양시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 매돌이, 해아.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50209-src",
+      "title": "금강동이 공식 안내",
+      "url": "https://www.gwgs.go.kr/kor2/sub04_050306.do",
+      "publisher": "고성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "고성군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 금강동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50354-src",
       "title": "광산구 캐릭터 공식 안내",
       "url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
@@ -442,6 +563,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50213-src",
+      "title": "꺽정이 · 운총이 공식 안내",
+      "url": "https://www.goesan.go.kr/www/contents.do?key=255",
+      "publisher": "괴산군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "괴산군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 꺽정이, 운총이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42064-src",
       "title": "과천시 캐릭터 공식 안내",
       "url": "https://www.gccity.go.kr:443/portal/contents.do?mId=0511020600",
@@ -451,6 +583,17 @@
       "scope": "page",
       "observation": "과천시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50214-src",
+      "title": "산유 · 수유 공식 안내",
+      "url": "https://www.gurye.go.kr/kr/subPage.do?menuNo=116007001001",
+      "publisher": "구례군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "구례군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 산유, 수유.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q42069-src",
@@ -475,6 +618,61 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42074-src",
+      "title": "밝음이 공식 안내",
+      "url": "https://www.gunsan.go.kr/main/m361",
+      "publisher": "군산시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "군산시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 밝음이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42071-src",
+      "title": "와구리 · 뽀구리 · 아리미 공식 안내",
+      "url": "https://www.guri.go.kr/www/contents.do?key=7917",
+      "publisher": "구리시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "구리시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 와구리, 뽀구리, 아리미.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50356-src",
+      "title": "구스 · 로이 · 지유 공식 안내",
+      "url": "https://www.guro.go.kr/www/contents.do?key=4582",
+      "publisher": "구로구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "구로구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 구스, 로이, 지유.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42075-src",
+      "title": "포근 · 포유 공식 안내",
+      "url": "https://www.gunpo.go.kr/www/contents.do?key=3943",
+      "publisher": "군포시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "군포시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 포근, 포유.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50359-src",
+      "title": "금나래 공식 안내",
+      "url": "https://www.geumcheon.go.kr/portal/contents.do?key=440",
+      "publisher": "금천구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "금천구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 금나래.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42073-src",
       "title": "구미시 캐릭터 공식 안내",
       "url": "https://www.gumi.go.kr/portal/contents.do?mid=0502040000",
@@ -484,6 +682,17 @@
       "scope": "page",
       "observation": "구미시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50217-src",
+      "title": "기장아재 · 다시미 · 메르치 공식 안내",
+      "url": "https://www.gijang.go.kr/index.gijang?menuCd=DOM_000000105003007000",
+      "publisher": "기장군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "기장군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 기장아재, 다시미, 메르치.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50353-src",
@@ -572,6 +781,28 @@
       "scope": "page",
       "observation": "김포시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 포미, 포수.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50363-src",
+      "title": "망고 · 피피 · 뱅크 공식 안내",
+      "url": "https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000002804004000000",
+      "publisher": "남구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "남구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 망고, 피피, 뱅크.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q26123-src",
+      "title": "해랑이 공식 안내",
+      "url": "https://www.namhae.go.kr/portal/Index.do?c=WW0502040000",
+      "publisher": "남해군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "남해군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 해랑이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q42087-src",
@@ -750,6 +981,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42093-src",
+      "title": "파도동자 · 해별이 공식 안내",
+      "url": "https://dh.go.kr/www/contents.do?key=507",
+      "publisher": "동해시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "동해시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 파도동자, 해별이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42092-src",
       "title": "디디씨 공식 안내",
       "url": "https://www.ddc.go.kr/ddc/contents.do?key=76",
@@ -759,6 +1001,17 @@
       "scope": "page",
       "observation": "동두천시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 디디씨.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50388-src",
+      "title": "마포동이 공식 안내",
+      "url": "https://www.mapo.go.kr/site/main/content/mapo040102",
+      "publisher": "마포구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "마포구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 마포동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50375-src",
@@ -849,6 +1102,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50247-src",
+      "title": "금동이 · 금용이 · 금황이 공식 안내",
+      "url": "https://www.buyeo.go.kr/html/kr/intro/intro_050406.html",
+      "publisher": "부여군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "부여군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 금동이, 금용이, 금황이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42099-src",
+      "title": "부천핸썹 공식 안내",
+      "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148009002006001",
+      "publisher": "부천시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "부천시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 부천핸썹.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50391-src",
       "title": "부평구 캐릭터 공식 안내",
       "url": "https://www.icbp.go.kr/main/introduction/symbol/symbol_character.jsp",
@@ -937,6 +1212,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42163-src",
+      "title": "감돌이 · 감순이 공식 안내",
+      "url": "https://www.sangju.go.kr/page/10063/10422.tc",
+      "publisher": "상주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "상주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 감돌이, 감순이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50248-src",
+      "title": "산이 · 얼수 · 솜이 공식 안내",
+      "url": "https://www.sancheong.go.kr/tour/contents.do?key=6418",
+      "publisher": "산청군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "산청군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 산이, 얼수, 솜이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50245-src",
       "title": "솔봉이 · 솔향이 공식 안내",
       "url": "https://www.bonghwa.go.kr/portal/contents.do?mid=0402050000",
@@ -992,15 +1289,15 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
-      "id": "mc-q20395-src",
-      "title": "서초구 캐릭터 공식 안내",
-      "url": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
-      "publisher": "서초구",
+      "id": "mc-q42105-src",
+      "title": "가티 · 오슈 공식 안내",
+      "url": "https://www.seosan.go.kr/www/contents.do?key=1372",
+      "publisher": "서산시",
       "language": "ko",
       "checked_at": "2026-11-11",
       "scope": "page",
-      "observation": "서초구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+      "observation": "서산시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 가티, 오슈.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50408-src",
@@ -1025,6 +1322,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50411-src",
+      "title": "미소 공식 안내",
+      "url": "https://sd.go.kr/main/contents.do?key=1382",
+      "publisher": "성동구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "성동구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 미소.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42108-src",
       "title": "성남시 캐릭터 공식 안내",
       "url": "https://www.seongnam.go.kr/cn04020201",
@@ -1034,6 +1342,17 @@
       "scope": "page",
       "observation": "성남시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50416-src",
+      "title": "뚜비 공식 안내",
+      "url": "https://www.suseong.kr/index.do?menu_id=00042282",
+      "publisher": "수성구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "수성구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 뚜비.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50244-src",
@@ -1091,6 +1410,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50252-src",
+      "title": "홍도리 공식 안내",
+      "url": "https://www.shinan.go.kr/home/www/about/typifier/typifier_02/page.wscms",
+      "publisher": "신안군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "신안군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 홍도리.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42116-src",
+      "title": "양반 · 연이낭자 · 또기 공식 안내",
+      "url": "https://www.andong.go.kr/portal/contents.do?mId=0301030300",
+      "publisher": "안동시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "안동시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 양반, 연이낭자, 또기.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50251-src",
       "title": "순창군 캐릭터 공식 안내",
       "url": "https://www.sunchang.go.kr/index.do?menuUid=ff8080819a2f0e3b019ac983974e4f86",
@@ -1102,6 +1443,50 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42114-src",
+      "title": "온궁이 · 온양이 공식 안내",
+      "url": "https://www.asan.go.kr/main/ongung/character/",
+      "publisher": "아산시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "아산시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 온궁이, 온양이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42119-src",
+      "title": "바우덕이 공식 안내",
+      "url": "https://www.anseong.go.kr/tourPortal/baudeogi/contents.do?mId=0107030200",
+      "publisher": "안성시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "안성시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 바우덕이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42120-src",
+      "title": "포동이 공식 안내",
+      "url": "https://www.anyang.go.kr/main/contents.do?key=301",
+      "publisher": "안양시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "안양시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 포동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50254-src",
+      "title": "해키 공식 안내",
+      "url": "https://www.yangyang.go.kr/gw/portal/yyc_yyintro_symbolic_cibi",
+      "publisher": "양양군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "양양군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 해키.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42123-src",
       "title": "양이와 산이 공식 안내",
       "url": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
@@ -1111,6 +1496,17 @@
       "scope": "page",
       "observation": "양산시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 양이와 산이.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50420-src",
+      "title": "해누리 · 해우리 공식 안내",
+      "url": "https://www.yangcheon.go.kr/site/yangcheon/04/10402040100002016111903.jsp",
+      "publisher": "양천구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "양천구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 해누리, 해우리.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50253-src",
@@ -1168,6 +1564,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42125-src",
+      "title": "장군이 · 오동이 공식 안내",
+      "url": "https://yeosu.go.kr/tour/information/character",
+      "publisher": "여수시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "여수시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 장군이, 오동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50260-src",
+      "title": "키니 · 토리 공식 안내",
+      "url": "https://www.yd.go.kr/?p=855",
+      "publisher": "영덕군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "영덕군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 키니, 토리.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q42124-src",
       "title": "양주시 캐릭터 공식 안내",
       "url": "https://www.yangju.go.kr/www/contents.do?key=2704",
@@ -1190,6 +1608,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50258-src",
+      "title": "고롱이 · 미롱이 공식 안내",
+      "url": "https://www.yeoncheon.go.kr/www/contents.do?key=3411",
+      "publisher": "연천군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "연천군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 고롱이, 미롱이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50423-src",
       "title": "영도구 캐릭터 공식 안내",
       "url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
@@ -1199,6 +1628,17 @@
       "scope": "page",
       "observation": "영도구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42126-src",
+      "title": "영주도령 공식 안내",
+      "url": "https://www.yeongju.go.kr/open_content/main/page.do?mnu_uid=10453",
+      "publisher": "영주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "영주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 영주도령.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50306-src",
@@ -1221,6 +1661,28 @@
       "scope": "page",
       "observation": "영동군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50308-src",
+      "title": "효동이 · 효심이 공식 안내",
+      "url": "https://www.ycg.kr/open.content/ko/organization/symbol/flag.ci/",
+      "publisher": "예천군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "예천군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 효동이, 효심이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50421-src",
+      "title": "학 공식 안내",
+      "url": "https://www.yeonsu.go.kr/main/yeonsu/intro/logo.asp",
+      "publisher": "연수구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "연수구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 학.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q42128-src",
@@ -1254,6 +1716,28 @@
       "scope": "page",
       "observation": "예산군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50312-src",
+      "title": "완돌이 · 완순이 · 완주언니 공식 안내",
+      "url": "https://www.wanju.go.kr/index.9is?contentUid=ff8080818b024d8e018b274f7ebe2d05",
+      "publisher": "완주군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "완주군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 완돌이, 완순이, 완주언니.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42129-src",
+      "title": "까산이 공식 안내",
+      "url": "https://www.osan.go.kr/portal/contents.do?mId=0501010000",
+      "publisher": "오산시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "오산시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 까산이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50310-src",
@@ -1322,6 +1806,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50314-src",
+      "title": "피오 공식 안내",
+      "url": "https://www.uljin.go.kr/index.uljin?menuCd=DOM_000000104003001000",
+      "publisher": "울진군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울진군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 피오.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q485570-src",
       "title": "울릉군 캐릭터 공식 안내",
       "url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
@@ -1331,6 +1826,17 @@
       "scope": "page",
       "observation": "울릉군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50432-src",
+      "title": "파발이 공식 안내",
+      "url": "https://www.ep.go.kr/iframe/selectBbsNttView.do?key=51&bbsNo=42&nttNo=120738",
+      "publisher": "은평구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "은평구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 파발이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50313-src",
@@ -1366,6 +1872,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42131-src",
+      "title": "에코엔젤 공식 안내",
+      "url": "https://www.wonju.go.kr/eco/contents.do?key=656",
+      "publisher": "원주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "원주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 에코엔젤.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50431-src",
       "title": "유성구 캐릭터 공식 안내",
       "url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
@@ -1377,6 +1894,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42137-src",
+      "title": "서동 · 선화공주 공식 안내",
+      "url": "https://www.iksan.go.kr/trans/index.iksan?menuCd=DOM_000005001003003000",
+      "publisher": "익산시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "익산시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 서동, 선화공주.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q42134-src",
+      "title": "느티 · 까비 공식 안내",
+      "url": "https://www.uiwang.go.kr/UWKORINTRO0206",
+      "publisher": "의왕시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "의왕시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 느티, 까비.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50250-src",
       "title": "성주군 캐릭터 공식 안내",
       "url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
@@ -1386,6 +1925,17 @@
       "scope": "page",
       "observation": "성주군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50320-src",
+      "title": "단풍동자 · 성장이 · 장성이 공식 안내",
+      "url": "https://www.jangseong.go.kr/home/www/healing/healing_08/healing_08_01/healing_08_01_02",
+      "publisher": "장성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "장성군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 단풍동자, 성장이, 장성이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50322-src",
@@ -1410,6 +1960,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50323-src",
+      "title": "와와군 · 산아리 공식 안내",
+      "url": "https://www.jeongseon.go.kr/tour/jeongseontour/character",
+      "publisher": "정선군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "정선군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 와와군, 산아리.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50321-src",
       "title": "장수군 캐릭터 공식 안내",
       "url": "https://www.jangsu.go.kr/index.jangsu?menuCd=DOM_000000103002006004",
@@ -1432,6 +1993,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42143-src",
+      "title": "박달이 · 금봉이 · 제제 공식 안내",
+      "url": "https://www.jecheon.go.kr/www/contents.do?key=319",
+      "publisher": "제천시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "제천시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 박달이, 금봉이, 제제.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50319-src",
       "title": "이미 · 시리 공식 안내",
       "url": "https://www.imsil.go.kr/index.imsil?menuCd=DOM_000000105002002000",
@@ -1441,6 +2013,28 @@
       "scope": "page",
       "observation": "임실군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 이미, 시리.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42135-src",
+      "title": "의돌이 · 랑이 공식 안내",
+      "url": "https://www.ui4u.go.kr/portal/contents.do?mId=0501020000",
+      "publisher": "의정부시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "의정부시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 의돌이, 랑이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50441-src",
+      "title": "하티 공식 안내",
+      "url": "https://www.junggu.seoul.kr/ci/ca.html",
+      "publisher": "중구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "중구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 하티.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q42141-src",
@@ -1463,6 +2057,50 @@
       "scope": "page",
       "observation": "전주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50316-src",
+      "title": "범이 · 꺽쇠 공식 안내",
+      "url": "https://www.uiryeong.go.kr/index.uiryeong?menuCd=DOM_000000205001001006",
+      "publisher": "의령군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "의령군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 범이, 꺽쇠.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50326-src",
+      "title": "마이용 · 빠망 공식 안내",
+      "url": "https://www.jinan.go.kr/index.jinan?menuCd=DOM_000000104002002002",
+      "publisher": "진안군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "진안군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 마이용, 빠망.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50444-src",
+      "title": "랑랑이 · 똘배 공식 안내",
+      "url": "https://www.jungnang.go.kr/portal/main/contents.do?menuNo=200456",
+      "publisher": "중랑구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "중랑구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 랑랑이, 똘배.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50325-src",
+      "title": "황구 · 백구 공식 안내",
+      "url": "https://jindo.go.kr/home/sub.cs?m=174",
+      "publisher": "진도군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "진도군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 황구, 백구.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50440-src",
@@ -1542,6 +2180,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42147-src",
+      "title": "생이 · 명이 공식 안내",
+      "url": "https://www.cheongju.go.kr/www/contents.do?key=561",
+      "publisher": "청주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "청주시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 생이, 명이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50330-src",
       "title": "청도군 캐릭터 공식 안내",
       "url": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020200",
@@ -1564,6 +2213,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42150-src",
+      "title": "태붐이 공식 안내",
+      "url": "https://www.taebaek.go.kr/www/contents.do?key=388",
+      "publisher": "태백시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "태백시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 태붐이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50332-src",
       "title": "청양군 캐릭터 공식 안내",
       "url": "http://www.cheongyang.go.kr/kor/sub05_03_04_01.do",
@@ -1573,6 +2233,17 @@
       "scope": "page",
       "observation": "청양군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42148-src",
+      "title": "봄내크루 · 소양이 · 꽁지 공식 안내",
+      "url": "https://www.chuncheon.go.kr/tour/guide/official-character/",
+      "publisher": "춘천시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "춘천시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 봄내크루, 소양이, 꽁지.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q42152-src",
@@ -1630,6 +2301,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42159-src",
+      "title": "하남이 · 방울이 공식 안내",
+      "url": "https://www.hanam.go.kr/www/brandHanam.do?key=6263",
+      "publisher": "하남시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "하남시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 하남이, 방울이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q188624-src",
       "title": "평창군 캐릭터 공식 안내",
       "url": "https://www.pc.go.kr/portal/participation/upright/emblem",
@@ -1652,6 +2334,39 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50338-src",
+      "title": "우돌이 · 하마니 공식 안내",
+      "url": "https://www.haman.go.kr/00571/00595/00612.web",
+      "publisher": "함안군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "함안군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 우돌이, 하마니.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50339-src",
+      "title": "우리두리 공식 안내",
+      "url": "https://www.hygn.go.kr/00432/00844/00858.web",
+      "publisher": "함양군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "함양군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 우리두리.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50317-src",
+      "title": "의동이 공식 안내",
+      "url": "https://www.usc.go.kr/ko/page.do?mnu_uid=396",
+      "publisher": "의성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "의성군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 의동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q243327-src",
       "title": "피우미 · 벚꽃 공식 안내",
       "url": "https://www.changwon.go.kr/cwportal/10671/10708/10920.web",
@@ -1663,6 +2378,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50340-src",
+      "title": "함평천지 공식 안내",
+      "url": "https://www.hampyeong.go.kr/contentsView.do?pageId=www331",
+      "publisher": "함평군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "함평군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 함평천지.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q50342-src",
       "title": "해남군 캐릭터 공식 안내",
       "url": "http://www.haenam.go.kr/eng/index.9is?contentUid=18e3368f5d745106015d87f809360b5e",
@@ -1672,6 +2398,17 @@
       "scope": "page",
       "observation": "해남군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50449-src",
+      "title": "써니 · 퍼니 공식 안내",
+      "url": "https://www.haeundae.go.kr/index.do?menuCd=DOM_000000101003002000",
+      "publisher": "해운대구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "해운대구의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 써니, 퍼니.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q50335-src",
@@ -1751,6 +2488,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q26212-src",
+      "title": "서희 · 길상 공식 안내",
+      "url": "https://www.hadong.go.kr/intro/00567/00576.web",
+      "publisher": "하동군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "하동군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 서희, 길상.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
       "id": "mc-q7451674-src",
       "title": "서울특별시교육청 캐릭터 공식 안내",
       "url": "https://www.sen.go.kr/www/office/symbol/character.jsp",
@@ -1760,6 +2508,28 @@
       "scope": "page",
       "observation": "서울특별시교육청의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 교육청 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42160-src",
+      "title": "코리요 공식 안내",
+      "url": "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol02.jsp",
+      "publisher": "화성시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "화성시의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 코리요.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
+    },
+    {
+      "id": "mc-q50329-src",
+      "title": "철루미 · 철궁이 공식 안내",
+      "url": "https://www.cwg.go.kr/www/contents.do?key=235",
+      "publisher": "철원군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "철원군의 공식 캐릭터 소개 페이지를 공식 누리집에서 찾아 확인했습니다. 페이지에 적힌 캐릭터 이름: 철루미, 철궁이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 수작업 확인"
     },
     {
       "id": "mc-q16174863-src",
@@ -4971,6 +5741,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "메신저 라인 스티커에서 시작한 캐릭터 브랜드 라인프렌즈(브라운·코니·샐리 등). 이미지는 LINE FRIENDS 공식 사이트 IP 페이지에서 가져왔습니다.",
+      "note": "수작업 확인(공식 페이지)"
+    },
+    {
+      "id": "mm-seocho-seorang-src",
+      "title": "서랑이 공식 안내",
+      "url": "https://seochofamily.com/bbs/board.php?bo_table=SCF_4050_2&wr_id=129&me_code=4050",
+      "publisher": "서초구가족센터",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서울 서초구가족센터의 마스코트. '서초가족의 사랑'을 뜻하는 이름으로, 분홍 장미의 아기 요정입니다. 센터 누리집 홍보 게시글(2025년 12월)에서 소개했습니다. 서초구청에는 따로 공식 캐릭터 페이지가 없습니다.",
       "note": "수작업 확인(공식 페이지)"
     }
   ]

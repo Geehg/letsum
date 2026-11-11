@@ -206,12 +206,6 @@
   "mc-q16520": [
    {
     "format": "ZIP",
-    "url": "https://www.busan.go.kr/PageDownload.do?savename=bubi.zip",
-    "filename": "bubi.zip",
-    "label": "마스코트"
-   },
-   {
-    "format": "ZIP",
     "url": "https://www.busan.go.kr/PageDownload.do?savename=pr_character.zip",
     "filename": "pr_character.zip",
     "label": "마스코트 응용동작"
@@ -943,16 +937,6 @@
    }
   ],
   "mc-q50255": [
-   {
-    "format": "ZIP",
-    "url": "https://www.yp21.go.kr/downloadContentsFile.do?key=1847&fileNo=594",
-    "bytes": 14532758,
-    "filename": "yp_character_jpg.zip",
-    "label": "물사랑이 행복이 캐릭터 )",
-    "inner": [
-     "JPG"
-    ]
-   },
    {
     "format": "PDF",
     "url": "https://www.yp21.go.kr/site/www/download/cst1847_char_02_gl.pdf",

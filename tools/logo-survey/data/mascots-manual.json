@@ -188,6 +188,35 @@
    "replaces": [
     "브라운 (라인프렌즈)"
    ]
+  },
+  {
+   "id": "mm-seocho-seorang",
+   "organization": "서초구가족센터",
+   "name": "서랑이",
+   "aliases": [
+    "서랑이",
+    "서초구 캐릭터",
+    "서초구가족센터 마스코트",
+    "서초 캐릭터"
+   ],
+   "group": "local/district",
+   "summary": "서울 서초구가족센터의 마스코트. '서초가족의 사랑'을 뜻하는 이름으로, 분홍 장미의 아기 요정입니다. 센터 누리집 홍보 게시글(2025년 12월)에서 소개했습니다. 서초구청에는 따로 공식 캐릭터 페이지가 없습니다.",
+   "page": "https://seochofamily.com/bbs/board.php?bo_table=SCF_4050_2&wr_id=129&me_code=4050",
+   "image": {
+    "file": "/mascots/thumbs/mm-seocho-seorang.jpg",
+    "source": "official-page-image",
+    "source_url": "https://seochofamily.com/data/editor/2512/20251231100740_70fd847a02029058035bf67c1c4431f5_hh5q.jpg",
+    "page_url": "https://seochofamily.com/bbs/board.php?bo_table=SCF_4050_2&wr_id=129&me_code=4050",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음) · 소개 그림에서 캐릭터 부분만 잘라 씀",
+    "author": null,
+    "sha256": "8bdd82f5b85eaf0338ff56238f5389c95e23c6f98f7ca0d0dac907cf88d55c0f",
+    "bytes": 49306
+   },
+   "score": 3.0,
+   "replaces": [
+    "서초구"
+   ],
+   "region": "서울특별시"
   }
  ]
 }
