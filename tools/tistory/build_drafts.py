@@ -8,7 +8,10 @@
 - 대표 이미지는 images.json에 고른 큰 이미지가 있으면 그것을, 없으면 로고 모음 썸네일을 복사(SVG는 macOS qlmanage로 PNG 변환)하고, 출처·라이선스 문구를 글에 넣는다.
 - 글 끝에 렛섬 상세 페이지 링크. 직접 쓰는 한두 줄 자리는 HTML 주석으로 표시(그대로 올려도 화면에 안 보임).
 출력: tools/tistory/out/ (커밋하지 않음) — NN-기관.html, img/, posts.csv, preview.html
-사용법: python3 -I tools/tistory/build_drafts.py [--top 20]
+매일 게시(tools/tistory/DAILY.md): --next 20 은 posted.json에 없는 기관 중 인지도 상위 20곳을 고르고, 글쓰기 화면이
+GitHub raw로 읽어 갈 upload/posts.json·upload/<기록 id>.png도 그 20건으로 바꾼다. 게시가 끝나면 --mark-posted id,id,…로
+posted.json(게시 기록, 커밋)에 남긴다.
+사용법: python3 -I tools/tistory/build_drafts.py [--top 20 | --next 20 | --mark-posted id,id]
 """
 import argparse, csv, html, json, re, shutil, subprocess, tempfile
 from pathlib import Path
@@ -18,6 +21,9 @@ DATA = ROOT / "tools/logo-app/data"
 HTML_ROOT = ROOT / "html"
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
+POSTED = HERE / "posted.json"
+UPLOAD = HERE / "upload"
+BLOG = "https://leicax.tistory.com"
 PICKED = json.loads((HERE / "images.json").read_text())["images"]  # 작은 썸네일 대신 쓸 큰 이미지(손으로 고름)
 SITE = "https://letsum.app"
 
@@ -173,7 +179,7 @@ def post(org, recs, ctx, n):
     h.append("<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>")
     tags = [name, f"{name} CI", f"{name} 로고", f"{name} 로고 다운로드"] + ([f"{name} AI 파일"] if has_ai(all_dl) else []) + [cat, "CI", "로고", "로고 다운로드"]
     (OUT / f"{slug}.html").write_text("\n".join(h) + "\n")
-    return {"slug": slug, "title": title, "tags": ", ".join(dict.fromkeys(tags)), "image": f"img/{image['file']}" if image else "",
+    return {"id": recs[0]["id"], "org": name, "slug": slug, "title": title, "tag_list": list(dict.fromkeys(tags)), "tags": ", ".join(dict.fromkeys(tags)), "image": f"img/{image['file']}" if image else "",
             "image_note": "작음(가로 300px 미만) — 공식 파일 속 큰 이미지로 바꾸길 권장" if image and image["small"] else "",
             "downloads": len(all_dl), "letsum": f"{SITE}/logos/brands/{recs[0]['id']}/", "body": "\n".join(h)}
 
@@ -181,7 +187,24 @@ def post(org, recs, ctx, n):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--top", type=int, default=20)
+    ap.add_argument("--next", type=int, default=0)
+    ap.add_argument("--mark-posted", default="")
     args = ap.parse_args()
+    posted = json.loads(POSTED.read_text()) if POSTED.exists() else {"note": "티스토리 게시 기록(build_drafts.py --mark-posted가 추가). id = 로고 모음 기록 id.", "posted": []}
+    if args.mark_posted:
+        batch = {p["id"]: p for p in json.loads((UPLOAD / "posts.json").read_text())}
+        done = {p["id"] for p in posted["posted"]}
+        import datetime, urllib.parse
+        for rid in [x.strip() for x in args.mark_posted.split(",") if x.strip()]:
+            if rid in done:
+                continue
+            p = batch[rid]
+            slug = re.sub(r"\s+", "-", re.sub(r"[()]", "", p["title"]).strip())
+            posted["posted"].append({"id": rid, "org": p["org"], "title": p["title"], "url": f"{BLOG}/entry/{urllib.parse.quote(slug)}",
+                                     "date": datetime.date.today().isoformat()})
+        POSTED.write_text(json.dumps(posted, ensure_ascii=False, indent=1) + "\n")
+        print(f"게시 기록 {len(posted['posted'])}건")
+        return
     records = load("catalog.json", "records")
     pop = load("popularity.json", "records")
     ctx = {"colors": load("colors.json", "colors"), "downloads": load("downloads.json", "downloads"), "thumbs": load("thumbnails.json", "thumbnails")}
@@ -193,7 +216,12 @@ def main():
         o["score"] = max(o["score"], (pop.get(r["id"]) or {}).get("score", 0))
     for o in orgs.values():  # 인지도·다운로드 많은 기록 먼저
         o["recs"].sort(key=lambda r: (-(pop.get(r["id"]) or {}).get("score", 0), -len(ctx["downloads"].get(r["id"], []))))
-    ranked = sorted(orgs.values(), key=lambda o: -o["score"])[:args.top]
+    ranked = sorted(orgs.values(), key=lambda o: -o["score"])
+    if args.next:
+        done = {p["id"] for p in posted["posted"]}
+        ranked = [o for o in ranked if o["recs"][0]["id"] not in done][:args.next]
+    else:
+        ranked = ranked[:args.top]
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -206,6 +234,21 @@ def main():
         w.writerow(["순번", "제목", "본문 파일", "대표 이미지", "이미지 메모", "태그", "공식 다운로드 수", "렛섬 링크", "게시일", "글 주소"])
         for i, p in enumerate(posts, 1):
             w.writerow([i, p["title"], f"{p['slug']}.html", p["image"], p["image_note"], p["tags"], p["downloads"], p["letsum"], "", ""])
+
+    if args.next:  # 글쓰기 화면이 읽어 갈 오늘 묶음
+        shutil.rmtree(UPLOAD, ignore_errors=True)
+        UPLOAD.mkdir()
+        (UPLOAD / "README.md").write_text("티스토리 게시용 오늘 묶음(build_drafts.py --next가 생성). 글쓰기 화면이 GitHub raw 주소로 posts.json과 <기록 id>.png를 읽는다.\n")
+        items = []
+        for p in posts:
+            src = OUT / p["image"] if p["image"] else None
+            if src and src.suffix == ".png":
+                shutil.copy(src, UPLOAD / f"{p['id']}.png")
+            elif src:  # JPG·GIF 썸네일은 PNG로 이름만 맞추지 않고 그대로 확장자 유지
+                shutil.copy(src, UPLOAD / f"{p['id']}{src.suffix}")
+            body = re.sub(r"<p>\[대표 이미지: [^\]]*\]</p>", "<p>@@IMAGE@@</p>", p["body"])
+            items.append({"id": p["id"], "org": p["org"], "title": p["title"], "tags": p["tag_list"], "image": (UPLOAD / f"{p['id']}{src.suffix}").name if src else None, "body": body})
+        (UPLOAD / "posts.json").write_text(json.dumps(items, ensure_ascii=False, indent=1) + "\n")
 
     toc = "".join(f"<li><a href=\"#{p['slug']}\">{esc(p['title'])}</a></li>" for p in posts)
     body = "".join(f"<article id=\"{p['slug']}\"><h2>{esc(p['title'])}</h2><p class=meta>본문: {p['slug']}.html · 태그: {esc(p['tags'])}</p>"

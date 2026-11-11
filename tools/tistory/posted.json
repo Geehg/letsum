@@ -1,0 +1,165 @@
+{
+ "note": "티스토리 게시 기록(build_drafts.py --mark-posted가 추가). id = 로고 모음 기록 id.",
+ "posted": [
+  {
+   "id": "google-brand",
+   "org": "Google",
+   "title": "Google CI 로고 소개 (공식 안내)",
+   "url": "https://leicax.tistory.com/entry/Google-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 58
+  },
+  {
+   "id": "seoul-my-soul",
+   "org": "서울특별시",
+   "title": "서울특별시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 59
+  },
+  {
+   "id": "naver-brand",
+   "org": "네이버",
+   "title": "네이버 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EB%84%A4%EC%9D%B4%EB%B2%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 60
+  },
+  {
+   "id": "kr-q182477",
+   "org": "NVIDIA",
+   "title": "NVIDIA CI 로고 소개 (공식 안내)",
+   "url": "https://leicax.tistory.com/entry/NVIDIA-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 61
+  },
+  {
+   "id": "kr-q16520",
+   "org": "부산광역시",
+   "title": "부산광역시 CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 62
+  },
+  {
+   "id": "kr-q20937",
+   "org": "경기도",
+   "title": "경기도 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EA%B2%BD%EA%B8%B0%EB%8F%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 63
+  },
+  {
+   "id": "kr-q116758847",
+   "org": "Anthropic",
+   "title": "Anthropic CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/Anthropic-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 64
+  },
+  {
+   "id": "kr-q20927",
+   "org": "대구광역시",
+   "title": "대구광역시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 65
+  },
+  {
+   "id": "samsung-logo",
+   "org": "삼성전자",
+   "title": "삼성전자 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 66
+  },
+  {
+   "id": "kr-q41278",
+   "org": "울산광역시",
+   "title": "울산광역시 CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 67
+  },
+  {
+   "id": "kr-q20934",
+   "org": "인천광역시",
+   "title": "인천광역시 CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 68
+  },
+  {
+   "id": "kr-q20921",
+   "org": "대전광역시",
+   "title": "대전광역시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 69
+  },
+  {
+   "id": "kr-q41154",
+   "org": "경상북도",
+   "title": "경상북도 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 70
+  },
+  {
+   "id": "kr-q41151",
+   "org": "경상남도",
+   "title": "경상남도 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EA%B2%BD%EC%83%81%EB%82%A8%EB%8F%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 71
+  },
+  {
+   "id": "microsoft-brand",
+   "org": "Microsoft",
+   "title": "Microsoft CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/Microsoft-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 72
+  },
+  {
+   "id": "snu-ui",
+   "org": "서울대학교",
+   "title": "서울대학교 CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 73
+  },
+  {
+   "id": "kr-q41164",
+   "org": "제주특별자치도",
+   "title": "제주특별자치도 CI 로고 소개 (공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 74
+  },
+  {
+   "id": "kr-q20714",
+   "org": "수원시",
+   "title": "수원시 CI 로고 소개 (공식 안내)",
+   "url": "https://leicax.tistory.com/entry/%EC%88%98%EC%9B%90%EC%8B%9C-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 75
+  },
+  {
+   "id": "kr-q41071",
+   "org": "강원특별자치도",
+   "title": "강원특별자치도 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+   "url": "https://leicax.tistory.com/entry/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-AI-%ED%8C%8C%EC%9D%BC-%EA%B3%B5%EC%8B%9D-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 76
+  },
+  {
+   "id": "kr-q21708200",
+   "org": "OpenAI",
+   "title": "OpenAI CI 로고 소개 (공식 안내)",
+   "url": "https://leicax.tistory.com/entry/OpenAI-CI-%EB%A1%9C%EA%B3%A0-%EC%86%8C%EA%B0%9C-%EA%B3%B5%EC%8B%9D-%EC%95%88%EB%82%B4",
+   "date": "2026-11-12",
+   "entry": 77
+  }
+ ]
+}
