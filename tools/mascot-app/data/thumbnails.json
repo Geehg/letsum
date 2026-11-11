@@ -231,15 +231,15 @@
    "bg": null,
    "ink": null,
    "source": "official-page-image",
-   "source_url": "https://www.incheon.go.kr/comm/getImage?srvcId=MEDIA&upperNo=103972&fileTy=MEDIA&fileNo=1",
+   "source_url": "https://www.incheon.go.kr/data/editor/20200521/202005211613538181.jpg",
    "page_url": "https://www.incheon.go.kr/citybrand/CB010401",
    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
    "author": null,
    "fetched_at": "2026-11-11",
    "tone": "normal",
-   "file": "/mascots/thumbs/m-93e5590694.png",
-   "sha256": "80293a1c3c0958e5cbfc5a7c75013ad82d4759e62e89c5d81921a6d980fbe1f5",
-   "bytes": 1610368
+   "file": "/mascots/thumbs/m-93e5590694.jpg",
+   "sha256": "e11a75eb46911f943035543246ba7e48bb407440e619c3d5101bd4d6811edd75",
+   "bytes": 85932
   },
   "mc-q50348": {
    "mode": "image",
@@ -271,6 +271,36 @@
    "sha256": "af52a8a8839af8dc7a9d942471e3219345dd33ac3cd265f67a08534d3eb260b5",
    "bytes": 24733
   },
+  "mc-q18444594": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.geomdan.go.kr/main/img/contents/geomdan/character-img01.png",
+   "page_url": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-32e067a58c.png",
+   "sha256": "8611ed5110cbf59cf53cda1fc63749b5692168458e04f2a8f559d6be69999908",
+   "bytes": 68513
+  },
+  "mc-q50352": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.gyeyang.go.kr/open_content/main/images/contents/gyeyang/symbol_character.gif",
+   "page_url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-923abc4abc.png",
+   "sha256": "94ba794f035dcf7a2429da92ab2d1b15d3c24be16cf49763f258cb4e10f0644c",
+   "bytes": 9635
+  },
   "mc-q20921": {
    "mode": "image",
    "bg": null,
@@ -285,6 +315,36 @@
    "file": "/mascots/thumbs/m-faec584606.png",
    "sha256": "677b219e71cb52a52cd31ed4a4885dd89230978f6eef4757098c869102d8e265",
    "bytes": 41886
+  },
+  "mc-q50349": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.gangbuk.go.kr/static/portal/img/sub_gb_04/GB-04-026_02.png",
+   "page_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-d9a95150ed.png",
+   "sha256": "10eb602fa8ffabd2119d95dca1c78eda377135ba2c7cd4287ecef0fd6b6969a2",
+   "bytes": 22430
+  },
+  "mc-q50354": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.gwangsan.go.kr/home/www/images/sub/img_mascot.png",
+   "page_url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-71583383b6.png",
+   "sha256": "250c1d9d93db5062c092f901793c17cdaa690b6d48e664b9a30d2a7373298b71",
+   "bytes": 32522
   },
   "mc-q42066": {
    "mode": "image",
@@ -375,6 +435,21 @@
    "file": "/mascots/thumbs/m-d0c72e39e8.jpg",
    "sha256": "d149ea25ae174aeedbf61a9ea5325b4eae90b470f25d851be0b1d9185a34963b",
    "bytes": 25652
+  },
+  "mc-q50358": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.geumjeong.go.kr/new_img/geumjeong/sub/s4_2_2_3_img01.png",
+   "page_url": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-06a27093f1.png",
+   "sha256": "cbe9e368d903b0cf889aa2abecec86c2a1d8ac8e47c05876a57e7143f906cb95",
+   "bytes": 43076
   },
   "mc-q42077": {
    "mode": "image",
@@ -480,6 +555,21 @@
    "file": "/mascots/thumbs/m-633f965f66.png",
    "sha256": "44c08ac6b38ac4de5c2070adfc1a72821ca48726c28c319fc67ffde5f68540f0",
    "bytes": 87041
+  },
+  "mc-q50362": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img01.jpg",
+   "page_url": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-c7cdd6c01b.jpg",
+   "sha256": "996e9cadac618d7581140357cf2dcbb503ca6be752327185c68c668896e070bd",
+   "bytes": 36606
   },
   "mc-q42089": {
    "mode": "image",
@@ -601,6 +691,21 @@
    "sha256": "6c2618ef547ab3fa9042e3f10d328f28885d754248f6c249ae9292d39417f4ab",
    "bytes": 89749
   },
+  "mc-q50385": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.dongjak.go.kr/static/portal/img/05/dongjak_character.png",
+   "page_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-76d7613f51.png",
+   "sha256": "919326259c017a3311da6cad63687ebf28272ec2058aabf05d75ccef9482d0b2",
+   "bytes": 10846
+  },
   "mc-q50383": {
    "mode": "image",
    "bg": null,
@@ -616,6 +721,21 @@
    "sha256": "f92d621b6a35ef05dd42fdee66d002685c7d9a43e2aa98c7498a35000279a16d",
    "bytes": 326659
   },
+  "mc-q42098": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.brcn.go.kr/images/kor/sub06/simbol-14.jpg",
+   "page_url": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-41a18f30fe.jpg",
+   "sha256": "b069ce41559609fb303a709da9a422e799bfb1532c6056466d69534a17a8ca8f",
+   "bytes": 38586
+  },
   "mc-q50243": {
    "mode": "image",
    "bg": null,
@@ -628,7 +748,7 @@
    "fetched_at": "2026-11-11",
    "tone": "normal",
    "file": "/mascots/thumbs/m-dd380bbe64.png",
-   "sha256": "06cb215ea1388cc01123a914bd25e9681c815f0692808465755ca26b42742222",
+   "sha256": "f5fb105e260ae1464cd3b70396b190da10b7d6df4bbc170a694ec87825aefeff",
    "bytes": 8788
   },
   "mc-q50391": {
@@ -675,6 +795,36 @@
    "file": "/mascots/thumbs/m-9f8f8de0d6.png",
    "sha256": "a2638c2c065504c4a487f297942ce02da4d92273865502f8da55516349fd3012",
    "bytes": 37243
+  },
+  "mc-q50398": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.sasang.go.kr/img/sasang/sub/s4_1_7_img17.jpg",
+   "page_url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-6f5103fe18.jpg",
+   "sha256": "95f829ab62a743aee820da565a876b2b3c0558f756b4a99539048b428f3c7faf",
+   "bytes": 30511
+  },
+  "mc-q50395": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.bukgu.ulsan.kr/images/contents/carrick_2020.png",
+   "page_url": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-f31cf4189d.png",
+   "sha256": "f76b28ab15b1ea7c1ebcf07074b8d1b9b9e626aa453ccd8f2178aeb711eeba08",
+   "bytes": 21249
   },
   "mc-q50393": {
    "mode": "image",
@@ -901,6 +1051,36 @@
    "sha256": "616304ed67b90f1e42e85200cfb557f57aca7cc80d24a24508808b0a2182dd56",
    "bytes": 55231
   },
+  "mc-q50422": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "http://www.yeonje.go.kr/portal/img/02/character01.png",
+   "page_url": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-26c6836d10.png",
+   "sha256": "84d0aa0a7ec1ab0122a2f6cad3b2f2e330a0a89e58ce0429de9b3e93a1dbd979",
+   "bytes": 35097
+  },
+  "mc-q50423": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.yeongdo.go.kr/_res/portal/img/sub/p00556_img0101.png",
+   "page_url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-12e8345199.png",
+   "sha256": "043b26103a14084293abe679b6c248357ff2a53be723340580feda8fc657e4b7",
+   "bytes": 37874
+  },
   "mc-q50261": {
    "mode": "image",
    "bg": null,
@@ -931,6 +1111,21 @@
    "sha256": "55b7238d93f9b5bafcaeedcc66230b10b50fccca6ba8508ad1f995e9ac899f31",
    "bytes": 13304
   },
+  "mc-q50307": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.yesan.go.kr/images/kor/sub05/ys_character.png",
+   "page_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-4d2ea1a589.png",
+   "sha256": "f7ec05be9da20f925d6153ffd7cfe9928cc9e796329a99b7416be9cc010141c2",
+   "bytes": 11431
+  },
   "mc-q50310": {
    "mode": "image",
    "bg": null,
@@ -945,6 +1140,21 @@
    "file": "/mascots/thumbs/m-394bfa126c.png",
    "sha256": "a7717378581593426b4a3aa52ce513fa504b1f108cc5a1247d28ce0a78e76e60",
    "bytes": 707
+  },
+  "mc-q114364248": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.jemulpo.go.kr/main/img/contents/symbol-character.png",
+   "page_url": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-25f84ed3dc.png",
+   "sha256": "0a379ea1b8459800d088be15f677843f99bb38e191a6293a80319f4a81aa8a65",
+   "bytes": 218806
   },
   "mc-q50309": {
    "mode": "image",
@@ -976,6 +1186,21 @@
    "sha256": "04181528da1ac7a945758a4234769e8683f617bcef6bddea2cece4ee130a775a",
    "bytes": 36008
   },
+  "mc-q18459": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.yongin.go.kr/resources/user/web/images/sub/intro/intro0104_img7.jpg",
+   "page_url": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-3aee6fc60c.png",
+   "sha256": "16ab9a30da7f23c997f5a913978191bf743f153dbd86a1c4e5e242000dfe2de6",
+   "bytes": 26094
+  },
   "mc-q50404": {
    "mode": "image",
    "bg": null,
@@ -991,6 +1216,36 @@
    "sha256": "3d6516fd3b63fb48be5606f9950939a1865432890e90ad4f32b508abaf0c35fc",
    "bytes": 72526
   },
+  "mc-q485570": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.ulleung.go.kr/design/ko/img/content/character_img_231117.png",
+   "page_url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-0de729fba6.png",
+   "sha256": "dda9ce4dc70d55328efa588346c6a8c7947cb75da2545a77b3605d9a478b3784",
+   "bytes": 11303
+  },
+  "mc-q50313": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.ulju.ulsan.kr/ulju/images/sub/mascot_img02.jpg",
+   "page_url": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-fd79d75e90.jpg",
+   "sha256": "c33d31b78d2d03064762215c3939878e3522f032944c653af3d5a45813593891",
+   "bytes": 421518
+  },
   "mc-q50315": {
    "mode": "image",
    "bg": null,
@@ -1005,6 +1260,36 @@
    "file": "/mascots/thumbs/m-b2c11e707f.jpg",
    "sha256": "0af5d607baf33c8cbeb850d1ca660e69055b9dec8f01e0d0c21baa0ee24649c6",
    "bytes": 143278
+  },
+  "mc-q50431": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.yuseong.go.kr/images/kor/sub06/district_character.png",
+   "page_url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-49cf2473ca.png",
+   "sha256": "acdaf0071b3c3719ab624f49cdd8adca31a195ff615ac2b5561e16741f79b67e",
+   "bytes": 127631
+  },
+  "mc-q50322": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.jangheung.go.kr/contents/14296/character_img04.png?build_20261109001",
+   "page_url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-443b4bdd06.png",
+   "sha256": "7b5a2277951b6bd3af3f6f080e00599c9198f2d4bbfedde7ef3a13305ddc46a8",
+   "bytes": 41460
   },
   "mc-q42136": {
    "mode": "image",
@@ -1035,6 +1320,51 @@
    "file": "/mascots/thumbs/m-8b8e81d64e.jpg",
    "sha256": "6d8f6de02609d047048a5d353e5c849c52a3f8b3a1b41570095a8102b4e422bf",
    "bytes": 34065
+  },
+  "mc-q50440": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.bsjunggu.go.kr/img/junggu/s5_3_1_img3.gif",
+   "page_url": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-7420da7a63.png",
+   "sha256": "86d97d8053670d9a60af300312e165b9584823d319c045670cdfbe1a15b781d6",
+   "bytes": 12958
+  },
+  "mc-q50327": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.jincheon.go.kr/home/images/www_2023/family-site-deco.png",
+   "page_url": "https://www.jincheon.go.kr/home/main.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-0d5e143c3f.png",
+   "sha256": "b13df46ce6f20ac47983743082dbf5f7fcc7cc6c5b83e9670bfcf38e7f8ac8f7",
+   "bytes": 50706
+  },
+  "mc-q50442": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.junggu.ulsan.kr/images/domain/junggu/junggu/junggu_img06.jpg",
+   "page_url": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-ff0ec487c3.jpg",
+   "sha256": "4505886de1b26a5bd5bd7a8dc16aacc34474f970c15c9463056db182ef96fa74",
+   "bytes": 19681
   },
   "mc-q50328": {
    "mode": "image",
@@ -1156,6 +1486,21 @@
    "sha256": "88558565760f88fa9a727c377717cbe1beefc486cfbe01723cf32a1b429f6e97",
    "bytes": 42215
   },
+  "mc-q50335": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.taean.go.kr/images/kor/sub05/cha_img.gif",
+   "page_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-9e53c83d3d.png",
+   "sha256": "e113eec59cae628bdf351003cbb236de6557ddcf3e39499e9f65272b97edb552",
+   "bytes": 9688
+  },
   "mc-q50344": {
    "mode": "image",
    "bg": null,
@@ -1170,6 +1515,36 @@
    "file": "/mascots/thumbs/m-e11fe85be1.jpg",
    "sha256": "0564728e5976153e6a25e889205a7363724b476a925429834be5c6a965033c50",
    "bytes": 46433
+  },
+  "mc-q42157": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.pohang.go.kr/portal/img/sub/04/img_0601_05.png",
+   "page_url": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-0dc474ea1c.png",
+   "sha256": "5b2ca8aec6d20299f0632af6893ae5aecb123bb725675b1bc3dd21634cdb8eb5",
+   "bytes": 28894
+  },
+  "mc-q50347": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.hsg.go.kr/site/www/images/contents/cts727_img02.png",
+   "page_url": "https://www.hsg.go.kr/www/contents.do?key=727&",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-36e4658337.png",
+   "sha256": "c69a9cebb05df40bb1e96540018591da139c9d7b6d4cb3502673456984742ebd",
+   "bytes": 19211
   },
   "mc-q50345": {
    "mode": "image",
@@ -1245,6 +1620,21 @@
    "file": "/mascots/thumbs/m-504da56654.png",
    "sha256": "acddf5771c9da9dabc5bf3d89f4f67d068395323d6be09f5808d11aea20c155f",
    "bytes": 58352
+  },
+  "mc-q12623708": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kdhc.co.kr/static/kdhc/img/common/200129-img4.jpg",
+   "page_url": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-82f299f913.jpg",
+   "sha256": "bbe421e9047ebc5b16d6a926e0475b7fb2f2c17e323b9da0ae8331fd32075528",
+   "bytes": 9829
   },
   "mc-q12623697": {
    "mode": "image",
@@ -1456,6 +1846,21 @@
    "sha256": "c8953047c616a370ecc774934977d7668c96aa3fe4d76616642fd68b24ce9863",
    "bytes": 94944
   },
+  "mc-q12622776": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kgs.or.kr/asset/img/org/ci_char.png",
+   "page_url": "https://www.kgs.or.kr/kgs/adcc/view.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-7b4789719c.png",
+   "sha256": "39290fc3ef4179c25f55d3e915c3eae7f348d80f675dc653dcb054dc0d02d8c6",
+   "bytes": 132626
+  },
   "mc-q16179935": {
    "mode": "image",
    "bg": null,
@@ -1485,6 +1890,21 @@
    "file": "/mascots/thumbs/m-bb3aff39cf.png",
    "sha256": "f19eb3264e9356880516b93363bfcc5985e63444e31c0c04b36445c99f6d3ba6",
    "bytes": 25587
+  },
+  "mc-q12623152": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.korad.or.kr/data/menuResources/h2/64/201810181332_9HO2Rwe.png",
+   "page_url": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-18bbf87245.png",
+   "sha256": "c75a151c4614bbb55dd759cfd58c62d6255332f4d437de0a6358b0bf2d08e3ee",
+   "bytes": 50258
   },
   "mc-q12623895": {
    "mode": "image",
@@ -1545,6 +1965,21 @@
    "file": "/mascots/thumbs/m-6eabc1790c.svg",
    "sha256": "ea88300d494014c4761331cc0b2e2b0aed11094b7b23f927d26e4c603cf03d5c",
    "bytes": 68992
+  },
+  "mc-q16262642": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kalis.or.kr/common/images/contents/character1.png",
+   "page_url": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-9e232a1223.png",
+   "sha256": "827d9b2f3bfd4112d05deb21596fbd3c6f18c0385fb2478321320c110fcef610",
+   "bytes": 51604
   },
   "mc-q16172629": {
    "mode": "image",
@@ -1641,7 +2076,7 @@
    "bg": null,
    "ink": null,
    "source": "official-page-image",
-   "source_url": "https://www.drugsafe.or.kr/images/egovframework/iwt/ds/ko/introduction/EgovKidsCharacter1.png;jsessionid=Q7Spo6FL5C7m6D1ri4EWpOrauOqSDCcBIa0QK1FUV2GZt8ElThST1LiBZobY9ad4.webint_2_servlet_engine1",
+   "source_url": "https://www.drugsafe.or.kr/images/egovframework/iwt/ds/ko/introduction/EgovKidsCharacter1.png;jsessionid=a0F0rw5cgpKpcCliALKKS1ycnVpcHscrI8X57lvoay3gfjLOTAPhzO5kVtTccUHk.webint_2_servlet_engine1",
    "page_url": "https://www.drugsafe.or.kr/iwt/ds/ko/introduction/EgovKidsCharacter.do;jsessionid=Q7Spo6FL5C7m6D1ri4EWpOrauOqSDCcBIa0QK1FUV2GZt8ElThST1LiBZobY9ad4.webint_2_servlet_engine1",
    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
    "author": null,
@@ -1650,6 +2085,21 @@
    "file": "/mascots/thumbs/m-223d136079.png",
    "sha256": "a120ba0b04aad20f743f820e3ce88b049b6e60821e3e8b36d9d03b08461f9b16",
    "bytes": 377348
+  },
+  "mc-q12623804": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kipi.or.kr/image/sub/ci_img07.jpg",
+   "page_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-7883a61093.jpg",
+   "sha256": "dea7931e6ffd0f2d70ea17996681fb505923563aab2e778bbe2085da172e4f98",
+   "bytes": 17821
   },
   "mc-q626288": {
    "mode": "image",
@@ -1695,6 +2145,21 @@
    "file": "/mascots/thumbs/m-ad5aa792e3.jpg",
    "sha256": "c5003fa1f16b4047f3c9579a7827f9f4128adc0483ba5d4267e8c6ce5fb3e9c4",
    "bytes": 233131
+  },
+  "mc-q12599707": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.tp.or.kr/asset/tp-kr/images/tp_img/download_img.png",
+   "page_url": "https://www.tp.or.kr/tp-kr/index.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-f39e09b902.png",
+   "sha256": "2695534372f781f6d86e6fef1e4f1ab1cfff58eff23dd8b0922e7b6eb7159fb3",
+   "bytes": 80730
   },
   "mc-q16192452": {
    "mode": "image",
@@ -1770,6 +2235,21 @@
    "file": "/mascots/thumbs/m-2a889831df.png",
    "sha256": "5a1e067d81ccdf353caec959c53180fd3ee60f93b31a38d6d7e997e68423ded2",
    "bytes": 151539
+  },
+  "mc-q16219823": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.ipet.re.kr/images/sub/Introci_img7_26.png",
+   "page_url": "https://www.ipet.re.kr/Introduce/Introci.asp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-f76047cffb.png",
+   "sha256": "b372b076b9d5a404699e9b28c8284e780a1eedb24c43c26b385bccaedcc3ae69",
+   "bytes": 355033
   },
   "mc-q7314493": {
    "mode": "image",
@@ -1921,6 +2401,36 @@
    "sha256": "0b0304b31d9c16c5d76195afbc924fa9a057638c98ebef44dbaab6bc1f4fb48c",
    "bytes": 608065
   },
+  "mc-q24867026": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.mabik.re.kr/images/kor/sub06/mabik_characte01.png",
+   "page_url": "https://www.mabik.re.kr/kor/sub06_03.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-76f220e663.png",
+   "sha256": "33e2be9199883f8670a4dbb5feaeb695c2abc1fc63e59296906a190ecc57fb61",
+   "bytes": 14489
+  },
+  "mc-q12613559": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.icpa.or.kr/images/contents/page7/img_ci23_01.gif",
+   "page_url": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-50109f7f2a.png",
+   "sha256": "d1ac0527737d78075bbde17701487d95de8702bc5b67b93f9126c0c7b183bcb3",
+   "bytes": 12959
+  },
   "mc-q31180844": {
    "mode": "image",
    "bg": null,
@@ -1935,6 +2445,21 @@
    "file": "/mascots/thumbs/m-852d783ff4.png",
    "sha256": "28fb9f8281d3653cfbf1080e29fe3761f1f6f42828cd0edebdf62f289e56cc74",
    "bytes": 87804
+  },
+  "mc-q12622923": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kmiti.or.kr/_img/web/pc/cont/character.png",
+   "page_url": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-21bbfcad40.png",
+   "sha256": "8e6827ef9e654da1e1a4a45ae88035c57ca006d81c26e11fc12898bd6c7a1ad6",
+   "bytes": 345042
   },
   "mc-q12623855": {
    "mode": "image",
@@ -1980,6 +2505,21 @@
    "file": "/mascots/thumbs/m-535ba675e4.png",
    "sha256": "f8cb026aae63fce78a83bff5f479b3b4379e671ccd5d7b6eb0abe11b69a9493f",
    "bytes": 354254
+  },
+  "mc-q12623315": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.fira.or.kr/newfira/images/web/overview/soopy02.png",
+   "page_url": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-8f9292ed75.png",
+   "sha256": "e0cd0466411c5065f9f0a668a31bd848f4d80958437110e2775c4f5c13d7397d",
+   "bytes": 76203
   },
   "mc-q483189": {
    "mode": "image",
@@ -2086,6 +2626,21 @@
    "sha256": "1ab0078e5380e75d02c41578b2cf6902cf6f174b673e13e59eba56fd72e052ca",
    "bytes": 38440
   },
+  "mc-q487177": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.kookmin.ac.kr/content/05sub/style0005/images/sub/kmu_ui_char_img_c.jpg",
+   "page_url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-5adc4667b2.jpg",
+   "sha256": "862cae21ad3b684aebe531f1d5494a2703b840b7a75ccd39ef56511e034fb0a2",
+   "bytes": 30299
+  },
   "mc-q625165": {
    "mode": "image",
    "bg": null,
@@ -2145,6 +2700,21 @@
    "file": "/mascots/thumbs/m-f078326f46.jpg",
    "sha256": "cdcbfc77d46973bdeb4ecf0bf6493667c20e52786fc28865cb3b87da4de10c77",
    "bytes": 78386
+  },
+  "mc-q625952": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "http://www.bu.ac.kr/sites/web/images/ui_5.png",
+   "page_url": "http://www.bu.ac.kr/web/3414/subview.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-bef43bc1f0.png",
+   "sha256": "f8df9df892f39da7bd2b2335909ae276d69ee97681f274be84298a41c38b1130",
+   "bytes": 14820
   },
   "mc-q625961": {
    "mode": "image",
@@ -2326,6 +2896,21 @@
    "sha256": "2a8e0f7f872af4e91db244cd8f7aa7e3a1257d39bfd84159f2787c6826a9d00c",
    "bytes": 27281
   },
+  "mc-q484108": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.unist.ac.kr/_res/unist/unist/img/content/img-ui-down04.png",
+   "page_url": "https://www.unist.ac.kr/unist/introduction/download.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-8a5bd04b4a.png",
+   "sha256": "c01f490a136f968e1b15915fce0841def3c1acfcb3d1ba6e6015bad2e962835b",
+   "bytes": 18770
+  },
   "mc-q483656": {
    "mode": "image",
    "bg": null,
@@ -2491,6 +3076,21 @@
    "sha256": "831206c2462414814e62db20e8e509632ccbd259b586788d25db87cee857e165",
    "bytes": 205934
   },
+  "mc-q482765": {
+   "mode": "image",
+   "bg": null,
+   "ink": null,
+   "source": "official-page-image",
+   "source_url": "https://www.hansung.ac.kr/sites/hansung/images/sub/img-ui-chars.png",
+   "page_url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+   "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+   "author": null,
+   "fetched_at": "2026-11-11",
+   "tone": "normal",
+   "file": "/mascots/thumbs/m-f34744eaef.png",
+   "sha256": "ab8cc21470eceed287f754d1e2668252bd2923cb1e1ecc92b5f419c1eb9972ed",
+   "bytes": 75213
+  },
   "mc-q491511": {
    "mode": "image",
    "bg": null,
@@ -2586,7 +3186,7 @@
    "bg": null,
    "ink": null,
    "source": "official-page-image",
-   "source_url": "https://www.jejuskfc.com/uploadfile/club_mascot/20260630050835703_f0e32c463eed4e86.null;jsessionid=78EA76E0ABDCC6FD3DF3F1282F4286D2.was2",
+   "source_url": "https://www.jejuskfc.com/uploadfile/club_mascot/20260630050835703_f0e32c463eed4e86.null;jsessionid=20B9D8E1871C9D18E4D681936996C378.was2",
    "page_url": "https://www.jejuskfc.com/club/introduction/mascot",
    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
    "author": null,

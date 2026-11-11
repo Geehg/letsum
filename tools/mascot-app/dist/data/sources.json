@@ -343,6 +343,39 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q18444594-src",
+      "title": "검단구 캐릭터 공식 안내",
+      "url": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+      "publisher": "검단구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "검단구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50204-src",
+      "title": "강진군 캐릭터 공식 안내",
+      "url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+      "publisher": "강진군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "강진군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50352-src",
+      "title": "계양구 캐릭터 공식 안내",
+      "url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+      "publisher": "계양구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "계양구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q20921-src",
       "title": "꿈돌이 공식 안내",
       "url": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=7637",
@@ -354,6 +387,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42060-src",
+      "title": "계룡시 캐릭터 공식 안내",
+      "url": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+      "publisher": "계룡시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "계룡시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q41164-src",
       "title": "돌이 · 소리 공식 안내",
       "url": "https://www.jeju.go.kr/jeju/symbol/character.htm",
@@ -363,6 +407,28 @@
       "scope": "page",
       "observation": "제주특별자치도의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 돌이, 소리.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록(광역 열) + 단층제 광역 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50349-src",
+      "title": "강북구 캐릭터 공식 안내",
+      "url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+      "publisher": "강북구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "강북구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50354-src",
+      "title": "광산구 캐릭터 공식 안내",
+      "url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+      "publisher": "광산구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "광산구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
       "id": "mc-q42066-src",
@@ -442,6 +508,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50215-src",
+      "title": "군위군 캐릭터 공식 안내",
+      "url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+      "publisher": "군위군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "군위군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50216-src",
       "title": "금산군 캐릭터 공식 안내",
       "url": "https://www.geumsan.go.kr/kr/html/sub04/040204.html",
@@ -450,6 +527,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "금산군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50358-src",
+      "title": "금정구 캐릭터 공식 안내",
+      "url": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+      "publisher": "금정구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "금정구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -541,6 +629,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50362-src",
+      "title": "남구 캐릭터 공식 안내",
+      "url": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+      "publisher": "남구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "남구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50370-src",
       "title": "달서구 캐릭터 공식 안내",
       "url": "https://www.dalseo.daegu.kr/index.do?menu_id=00004525",
@@ -618,6 +717,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50239-src",
+      "title": "달성군 캐릭터 공식 안내",
+      "url": "https://www.dalseong.daegu.kr/index.do?menu_id=00000258",
+      "publisher": "달성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "달성군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50377-src",
       "title": "동구 캐릭터 공식 안내",
       "url": "https://www.donggu.go.kr/dg/kor/contents/984",
@@ -626,6 +736,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "동구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42083-src",
+      "title": "홍돌이 · 나주오 공식 안내",
+      "url": "https://www.naju.go.kr/www/introduction/symbol/mark",
+      "publisher": "나주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "나주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 홍돌이, 나주오.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -651,6 +772,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50385-src",
+      "title": "동작구 캐릭터 공식 안내",
+      "url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+      "publisher": "동작구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "동작구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50365-src",
+      "title": "미추홀구 캐릭터 공식 안내",
+      "url": "https://www.michuhol.go.kr/main/content.do?sq=9",
+      "publisher": "미추홀구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "미추홀구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50383-src",
       "title": "동래구 캐릭터 공식 안내",
       "url": "https://www.dongnae.go.kr/index.dongnae?menuCd=DOM_000000107001011000",
@@ -659,6 +802,39 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "동래구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42096-src",
+      "title": "밀양시 캐릭터 공식 안내",
+      "url": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+      "publisher": "밀양시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "밀양시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42098-src",
+      "title": "보령시 캐릭터 공식 안내",
+      "url": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+      "publisher": "보령시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "보령시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42095-src",
+      "title": "문경시 캐릭터 공식 안내",
+      "url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+      "publisher": "문경시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "문경시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -717,6 +893,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50398-src",
+      "title": "사상구 캐릭터 공식 안내",
+      "url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+      "publisher": "사상구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "사상구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50395-src",
+      "title": "북구 캐릭터 공식 안내",
+      "url": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+      "publisher": "북구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "북구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50393-src",
       "title": "북구 캐릭터 공식 안내",
       "url": "https://www.buk.daegu.kr/index.do?menu_id=00004123",
@@ -761,6 +959,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q140403575-src",
+      "title": "동동이 공식 안내",
+      "url": "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
+      "publisher": "서해구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서해구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 동동이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50405-src",
+      "title": "서구 캐릭터 공식 안내",
+      "url": "https://www.seogu.go.kr/kor/sub05_01_04.do",
+      "publisher": "서구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50406-src",
       "title": "서구 캐릭터 공식 안내",
       "url": "https://www.bsseogu.go.kr/index.bsseogu?menuCd=DOM_000000104001012000",
@@ -769,6 +989,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "서구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q20395-src",
+      "title": "서초구 캐릭터 공식 안내",
+      "url": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
+      "publisher": "서초구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서초구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -871,6 +1102,28 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q42123-src",
+      "title": "양이와 산이 공식 안내",
+      "url": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
+      "publisher": "양산시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "양산시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 양이와 산이.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50253-src",
+      "title": "양구군 캐릭터 공식 안내",
+      "url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
+      "publisher": "양구군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "양구군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q42113-src",
       "title": "해로&토로 공식 안내",
       "url": "https://www.siheung.go.kr/main/contents.do?mId=0501010000",
@@ -893,6 +1146,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50257-src",
+      "title": "여주시 캐릭터 공식 안내",
+      "url": "https://www.yeoju.go.kr/english/contents.do?key=1814",
+      "publisher": "여주시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "여주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50255-src",
       "title": "양평군 캐릭터 공식 안내",
       "url": "https://www.yp21.go.kr/www/contents.do?key=1847",
@@ -912,6 +1176,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "양주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50422-src",
+      "title": "연제구 캐릭터 공식 안내",
+      "url": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+      "publisher": "연제구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "연제구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50423-src",
+      "title": "영도구 캐릭터 공식 안내",
+      "url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+      "publisher": "영도구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "영도구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -959,6 +1245,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50307-src",
+      "title": "예산군 캐릭터 공식 안내",
+      "url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+      "publisher": "예산군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "예산군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50310-src",
       "title": "옹진군 캐릭터 공식 안내",
       "url": "https://www.ongjin.go.kr/open_content/main/introduction/present/mascot.jsp",
@@ -967,6 +1264,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "옹진군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q114364248-src",
+      "title": "제물포구 캐릭터 공식 안내",
+      "url": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+      "publisher": "제물포구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "제물포구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -992,6 +1300,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q18459-src",
+      "title": "용인시 캐릭터 공식 안내",
+      "url": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+      "publisher": "용인시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "용인시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50404-src",
       "title": "서구 캐릭터 공식 안내",
       "url": "https://www.dgs.go.kr/portal/contents.do?mid=0101060000",
@@ -1000,6 +1319,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "서구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q485570-src",
+      "title": "울릉군 캐릭터 공식 안내",
+      "url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+      "publisher": "울릉군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울릉군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50313-src",
+      "title": "울주군 캐릭터 공식 안내",
+      "url": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+      "publisher": "울주군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울주군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1022,6 +1363,50 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "순천시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50431-src",
+      "title": "유성구 캐릭터 공식 안내",
+      "url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+      "publisher": "유성구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "유성구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50250-src",
+      "title": "성주군 캐릭터 공식 안내",
+      "url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+      "publisher": "성주군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "성주군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50322-src",
+      "title": "장흥군 캐릭터 공식 안내",
+      "url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+      "publisher": "장흥군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "장흥군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50318-src",
+      "title": "인제군 캐릭터 공식 안내",
+      "url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
+      "publisher": "인제군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "인제군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1080,6 +1465,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50440-src",
+      "title": "중구 캐릭터 공식 안내",
+      "url": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+      "publisher": "중구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50439-src",
       "title": "중구 캐릭터 공식 안내",
       "url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000051814Iz5&fileSn=0",
@@ -1088,6 +1484,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50327-src",
+      "title": "진천군 캐릭터 공식 안내",
+      "url": "https://www.jincheon.go.kr/home/main.do",
+      "publisher": "진천군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "진천군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50442-src",
+      "title": "울산큰애기 공식 안내",
+      "url": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+      "publisher": "중구",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 울산큰애기.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1256,6 +1674,17 @@
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q50335-src",
+      "title": "태안군 캐릭터 공식 안내",
+      "url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+      "publisher": "태안군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "태안군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q50344-src",
       "title": "홍천군 캐릭터 공식 안내",
       "url": "https://www.hongcheon.go.kr/eng/contents.do?key=1339",
@@ -1264,6 +1693,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "홍천군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q42157-src",
+      "title": "포항시 캐릭터 공식 안내",
+      "url": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
+      "publisher": "포항시",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "포항시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q50347-src",
+      "title": "횡성군 캐릭터 공식 안내",
+      "url": "https://www.hsg.go.kr/www/contents.do?key=727&",
+      "publisher": "횡성군",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "횡성군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 기초자치단체 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1344,6 +1795,17 @@
       "note": "명단: 위키백과 틀:대한민국의 시장형 공기업 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q12623708-src",
+      "title": "한국지역난방공사 캐릭터 공식 안내",
+      "url": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+      "publisher": "한국지역난방공사",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국지역난방공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 시장형 공기업 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12623697-src",
       "title": "한국중부발전 캐릭터 공식 안내",
       "url": "https://www.komipo.co.kr/kor/content/50/main.do?mnCd=FN02010802",
@@ -1363,6 +1825,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국조폐공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 준시장형 공기업 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q6322893-src",
+      "title": "한국수자원공사 캐릭터 공식 안내",
+      "url": "https://www.kwater.or.kr/water/sub01/sub06/explPage.do?s_mid=129",
+      "publisher": "한국수자원공사",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국수자원공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 준시장형 공기업 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1542,6 +2015,17 @@
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q12622776-src",
+      "title": "한국가스안전공사 캐릭터 공식 안내",
+      "url": "https://www.kgs.or.kr/kgs/adcc/view.do",
+      "publisher": "한국가스안전공사",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국가스안전공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q16179935-src",
       "title": "건강보험심사평가원 캐릭터 공식 안내",
       "url": "https://www.hira.or.kr/dummy.do?pgmid=HIRAA040003000200",
@@ -1561,6 +2045,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국에너지공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12623152-src",
+      "title": "한국원자력환경공단 캐릭터 공식 안내",
+      "url": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+      "publisher": "한국원자력환경공단",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국원자력환경공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12623900-src",
+      "title": "한국환경산업기술원 캐릭터 공식 안내",
+      "url": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
+      "publisher": "한국환경산업기술원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국환경산업기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1597,6 +2103,17 @@
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q624022-src",
+      "title": "레일로 공식 안내",
+      "url": "https://www.kr.or.kr/sub/info.do?m=060105",
+      "publisher": "국가철도공단",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국가철도공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 레일로.",
+      "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12623622-src",
       "title": "한국장애인고용공단 캐릭터 공식 안내",
       "url": "https://www.kead.or.kr/character/cntntsPage.do?menuId=MENU0845",
@@ -1605,6 +2122,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국장애인고용공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q16262642-src",
+      "title": "국토안전관리원 캐릭터 공식 안내",
+      "url": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+      "publisher": "국토안전관리원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국토안전관리원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 위탁집행형 준정부기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1663,6 +2191,28 @@
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q24867044-src",
+      "title": "시청자미디어재단 캐릭터 공식 안내",
+      "url": "https://kcmf.or.kr/KCMF/contents/KCMF060700.do",
+      "publisher": "시청자미디어재단",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "시청자미디어재단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12622983-src",
+      "title": "한국농촌경제연구원 캐릭터 공식 안내",
+      "url": "https://www.krei.re.kr/krei/page/38",
+      "publisher": "한국농촌경제연구원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국농촌경제연구원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12623242-src",
       "title": "케박사 · 아로 공식 안내",
       "url": "https://www.keit.re.kr/menu.es?mid=a10106030000",
@@ -1685,6 +2235,17 @@
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q12623491-src",
+      "title": "든든이 · 투명이 공식 안내",
+      "url": "https://www.kinac.re.kr/menu?menuId=MN0000000642",
+      "publisher": "한국원자력통제기술원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국원자력통제기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 든든이, 투명이.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12623571-src",
       "title": "한국의약품안전관리원 캐릭터 공식 안내",
       "url": "https://www.drugsafe.or.kr/iwt/ds/ko/introduction/EgovKidsCharacter.do;jsessionid=Q7Spo6FL5C7m6D1ri4EWpOrauOqSDCcBIa0QK1FUV2GZt8ElThST1LiBZobY9ad4.webint_2_servlet_engine1",
@@ -1693,6 +2254,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국의약품안전관리원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12623804-src",
+      "title": "한국특허정보원 캐릭터 공식 안내",
+      "url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+      "publisher": "한국특허정보원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국특허정보원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1737,6 +2309,28 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국원자력의학원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q6973584-src",
+      "title": "배움이 공식 안내",
+      "url": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
+      "publisher": "국가평생교육진흥원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국가평생교육진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 배움이.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12599707-src",
+      "title": "사립학교교직원연금공단 캐릭터 공식 안내",
+      "url": "https://www.tp.or.kr/tp-kr/index.do",
+      "publisher": "사립학교교직원연금공단",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "사립학교교직원연금공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1814,6 +2408,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국저작권위원회의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q16219823-src",
+      "title": "농림식품기술기획평가원 캐릭터 공식 안내",
+      "url": "https://www.ipet.re.kr/Introduce/Introci.asp",
+      "publisher": "농림식품기술기획평가원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "농림식품기술기획평가원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1982,6 +2587,28 @@
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q24867026-src",
+      "title": "국립해양생물자원관 캐릭터 공식 안내",
+      "url": "https://www.mabik.re.kr/kor/sub06_03.do",
+      "publisher": "국립해양생물자원관",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국립해양생물자원관의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12613559-src",
+      "title": "인천항만공사 캐릭터 공식 안내",
+      "url": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+      "publisher": "인천항만공사",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "인천항만공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q31180844-src",
       "title": "한국저작권보호원 캐릭터 공식 안내",
       "url": "https://www.kcopa.or.kr/lay1/S1T9C469/sublink.do",
@@ -1990,6 +2617,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국저작권보호원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12609155-src",
+      "title": "울산항만공사 캐릭터 공식 안내",
+      "url": "https://www.upa.or.kr/portal/contents.do?mid=0505000000",
+      "publisher": "울산항만공사",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울산항만공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2004,6 +2642,17 @@
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q12623100-src",
+      "title": "모두의 풍속도 공식 안내",
+      "url": "https://www.kh.or.kr/kha",
+      "publisher": "국가유산진흥원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국가유산진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 모두의 풍속도.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12590582-src",
       "title": "한국농업기술진흥원 캐릭터 공식 안내",
       "url": "https://www.koat.or.kr/koat/character.do",
@@ -2012,6 +2661,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국농업기술진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12622923-src",
+      "title": "한국기상산업기술원 캐릭터 공식 안내",
+      "url": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+      "publisher": "한국기상산업기술원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국기상산업기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2057,6 +2717,17 @@
       "scope": "page",
       "observation": "경북대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12623315-src",
+      "title": "수피 공식 안내",
+      "url": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+      "publisher": "한국수산자원공단",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한국수산자원공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 수피.",
+      "note": "명단: 위키백과 틀:대한민국의 기타공공기관 · 캐릭터 페이지 자동 탐색"
     },
     {
       "id": "mc-q483189-src",
@@ -2147,6 +2818,17 @@
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q482680-src",
+      "title": "국립목포대학교 캐릭터 공식 안내",
+      "url": "https://www.mokpo.ac.kr/www/2070/subview.do",
+      "publisher": "국립목포대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국립목포대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q482673-src",
       "title": "크눙이 공식 안내",
       "url": "https://www.kongju.ac.kr/KNU/16666/subview.do",
@@ -2180,6 +2862,17 @@
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q487177-src",
+      "title": "국민대학교 캐릭터 공식 안내",
+      "url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+      "publisher": "국민대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "국민대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q625165-src",
       "title": "국립금오공과대학교 캐릭터 공식 안내",
       "url": "https://www.kumoh.ac.kr/ko/sub01_01_02_02.do",
@@ -2199,6 +2892,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "고려대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: KU BUDDY.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q491127-src",
+      "title": "단국대학교 캐릭터 공식 안내",
+      "url": "https://www.dankook.ac.kr/web/kor/-ui-",
+      "publisher": "단국대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "단국대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2265,6 +2969,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "덕성여자대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 덕새.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q625952-src",
+      "title": "백석대학교 캐릭터 공식 안내",
+      "url": "http://www.bu.ac.kr/web/3414/subview.do",
+      "publisher": "백석대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "백석대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2342,6 +3057,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "서울과학기술대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q487613-src",
+      "title": "새록이 공식 안내",
+      "url": "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
+      "publisher": "서울교육대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서울교육대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 새록이.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2463,6 +3189,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "용인대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 안뇽이.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q484108-src",
+      "title": "울산과학기술원 캐릭터 공식 안내",
+      "url": "https://www.unist.ac.kr/unist/introduction/download.do",
+      "publisher": "울산과학기술원",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울산과학기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -2650,6 +3387,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국방송통신대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q482765-src",
+      "title": "한성대학교 캐릭터 공식 안내",
+      "url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+      "publisher": "한성대학교",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "한성대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {

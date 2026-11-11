@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-11-11T00:08:15.540Z",
+  "built_at": "2026-11-11T00:38:23.102Z",
   "catalog_version": "0.1.0",
-  "catalog_sha256": "2bed23c044c76660dffd28ee4536801e836a4bf40b3fb77f59e02c2b5f0819b7",
+  "catalog_sha256": "73f24abf2775c95c807e14a65d8e87c0a8c06c153201a875ef0b38c9decccdb9",
   "canonical_base_url": "https://letsum.app/mascots/",
   "html_pages": [
     {
@@ -33,6 +33,10 @@
       "route": "/brand/mc-q50348"
     },
     {
+      "file": "brands/mc-q50349/index.html",
+      "route": "/brand/mc-q50349"
+    },
+    {
       "file": "brands/mc-q50191/index.html",
       "route": "/brand/mc-q50191"
     },
@@ -49,6 +53,10 @@
       "route": "/brand/mc-q41071"
     },
     {
+      "file": "brands/mc-q50204/index.html",
+      "route": "/brand/mc-q50204"
+    },
+    {
       "file": "brands/mc-q12583260/index.html",
       "route": "/brand/mc-q12583260"
     },
@@ -63,6 +71,10 @@
     {
       "file": "brands/mc-q139779/index.html",
       "route": "/brand/mc-q139779"
+    },
+    {
+      "file": "brands/mc-q18444594/index.html",
+      "route": "/brand/mc-q18444594"
     },
     {
       "file": "brands/mc-q20937/index.html",
@@ -91,6 +103,14 @@
     {
       "file": "brands/mc-q496536/index.html",
       "route": "/brand/mc-q496536"
+    },
+    {
+      "file": "brands/mc-q42060/index.html",
+      "route": "/brand/mc-q42060"
+    },
+    {
+      "file": "brands/mc-q50352/index.html",
+      "route": "/brand/mc-q50352"
     },
     {
       "file": "brands/mc-q483748/index.html",
@@ -129,6 +149,10 @@
       "route": "/brand/mc-q42066"
     },
     {
+      "file": "brands/mc-q50354/index.html",
+      "route": "/brand/mc-q50354"
+    },
+    {
       "file": "brands/mc-q624374/index.html",
       "route": "/brand/mc-q624374"
     },
@@ -165,6 +189,10 @@
       "route": "/brand/mc-q31180820"
     },
     {
+      "file": "brands/mc-q482680/index.html",
+      "route": "/brand/mc-q482680"
+    },
+    {
       "file": "brands/mc-q623828/index.html",
       "route": "/brand/mc-q623828"
     },
@@ -173,8 +201,24 @@
       "route": "/brand/mc-q21400278"
     },
     {
+      "file": "brands/mc-q24867026/index.html",
+      "route": "/brand/mc-q24867026"
+    },
+    {
+      "file": "brands/mc-q487177/index.html",
+      "route": "/brand/mc-q487177"
+    },
+    {
       "file": "brands/mc-q11250418/index.html",
       "route": "/brand/mc-q11250418"
+    },
+    {
+      "file": "brands/mc-q16262642/index.html",
+      "route": "/brand/mc-q16262642"
+    },
+    {
+      "file": "brands/mc-q50215/index.html",
+      "route": "/brand/mc-q50215"
     },
     {
       "file": "brands/mw-19eba90d6a/index.html",
@@ -187,6 +231,10 @@
     {
       "file": "brands/mc-q50216/index.html",
       "route": "/brand/mc-q50216"
+    },
+    {
+      "file": "brands/mc-q50358/index.html",
+      "route": "/brand/mc-q50358"
     },
     {
       "file": "brands/mc-q483189/index.html",
@@ -225,6 +273,10 @@
       "route": "/brand/mw-b59240edaa"
     },
     {
+      "file": "brands/mc-q50362/index.html",
+      "route": "/brand/mc-q50362"
+    },
+    {
       "file": "brands/mc-q50364/index.html",
       "route": "/brand/mc-q50364"
     },
@@ -253,6 +305,10 @@
       "route": "/brand/mc-q42088"
     },
     {
+      "file": "brands/mc-q16219823/index.html",
+      "route": "/brand/mc-q16219823"
+    },
+    {
       "file": "brands/mc-q11232895/index.html",
       "route": "/brand/mc-q11232895"
     },
@@ -273,12 +329,20 @@
       "route": "/brand/mw-8b54041be0"
     },
     {
+      "file": "brands/mc-q491127/index.html",
+      "route": "/brand/mc-q491127"
+    },
+    {
       "file": "brands/mc-q50220/index.html",
       "route": "/brand/mc-q50220"
     },
     {
       "file": "brands/mc-q50370/index.html",
       "route": "/brand/mc-q50370"
+    },
+    {
+      "file": "brands/mc-q50239/index.html",
+      "route": "/brand/mc-q50239"
     },
     {
       "file": "brands/mc-q42089/index.html",
@@ -345,6 +409,10 @@
       "route": "/brand/mc-q488100"
     },
     {
+      "file": "brands/mc-q140403575/index.html",
+      "route": "/brand/mc-q140403575"
+    },
+    {
       "file": "brands/mc-q50383/index.html",
       "route": "/brand/mc-q50383"
     },
@@ -361,8 +429,16 @@
       "route": "/brand/mc-q623798"
     },
     {
+      "file": "brands/mc-q50385/index.html",
+      "route": "/brand/mc-q50385"
+    },
+    {
       "file": "brands/mw-f9c43eb75c/index.html",
       "route": "/brand/mw-f9c43eb75c"
+    },
+    {
+      "file": "brands/mc-q12623491/index.html",
+      "route": "/brand/mc-q12623491"
     },
     {
       "file": "brands/mc-q42092/index.html",
@@ -407,6 +483,10 @@
     {
       "file": "brands/mw-feee2ea46e/index.html",
       "route": "/brand/mw-feee2ea46e"
+    },
+    {
+      "file": "brands/mc-q624022/index.html",
+      "route": "/brand/mc-q624022"
     },
     {
       "file": "brands/mw-d472582b28/index.html",
@@ -457,12 +537,20 @@
       "route": "/brand/mw-c7c2056c05"
     },
     {
+      "file": "brands/mc-q12623100/index.html",
+      "route": "/brand/mc-q12623100"
+    },
+    {
       "file": "brands/mw-37b4ca8f2a/index.html",
       "route": "/brand/mw-37b4ca8f2a"
     },
     {
       "file": "brands/mc-q56147/index.html",
       "route": "/brand/mc-q56147"
+    },
+    {
+      "file": "brands/mc-q42095/index.html",
+      "route": "/brand/mc-q42095"
     },
     {
       "file": "brands/mw-ebb6e39576/index.html",
@@ -477,12 +565,28 @@
       "route": "/brand/mw-05ae5fad69"
     },
     {
+      "file": "brands/mc-q50365/index.html",
+      "route": "/brand/mc-q50365"
+    },
+    {
+      "file": "brands/mc-q42096/index.html",
+      "route": "/brand/mc-q42096"
+    },
+    {
       "file": "brands/mw-bebdb4f44e/index.html",
       "route": "/brand/mw-bebdb4f44e"
     },
     {
       "file": "brands/mc-q11232933/index.html",
       "route": "/brand/mc-q11232933"
+    },
+    {
+      "file": "brands/mc-q6973584/index.html",
+      "route": "/brand/mc-q6973584"
+    },
+    {
+      "file": "brands/mc-q625952/index.html",
+      "route": "/brand/mc-q625952"
     },
     {
       "file": "brands/mw-0dbade02ba/index.html",
@@ -499,6 +603,10 @@
     {
       "file": "brands/mc-q12623602/index.html",
       "route": "/brand/mc-q12623602"
+    },
+    {
+      "file": "brands/mc-q42098/index.html",
+      "route": "/brand/mc-q42098"
     },
     {
       "file": "brands/mc-q624072/index.html",
@@ -545,6 +653,10 @@
       "route": "/brand/mc-q50394"
     },
     {
+      "file": "brands/mc-q50395/index.html",
+      "route": "/brand/mc-q50395"
+    },
+    {
       "file": "brands/mc-q482905/index.html",
       "route": "/brand/mc-q482905"
     },
@@ -569,8 +681,16 @@
       "route": "/brand/mw-f710cfa4b1"
     },
     {
+      "file": "brands/mc-q12599707/index.html",
+      "route": "/brand/mc-q12599707"
+    },
+    {
       "file": "brands/mw-40d97dc92d/index.html",
       "route": "/brand/mw-40d97dc92d"
+    },
+    {
+      "file": "brands/mc-q50398/index.html",
+      "route": "/brand/mc-q50398"
     },
     {
       "file": "brands/mc-q50400/index.html",
@@ -581,12 +701,20 @@
       "route": "/brand/mc-q624993"
     },
     {
+      "file": "brands/mc-q487613/index.html",
+      "route": "/brand/mc-q487613"
+    },
+    {
       "file": "brands/mw-da871e7259/index.html",
       "route": "/brand/mw-da871e7259"
     },
     {
       "file": "brands/mc-q50404/index.html",
       "route": "/brand/mc-q50404"
+    },
+    {
+      "file": "brands/mc-q50405/index.html",
+      "route": "/brand/mc-q50405"
     },
     {
       "file": "brands/mc-q50406/index.html",
@@ -617,6 +745,10 @@
       "route": "/brand/mc-q3242069"
     },
     {
+      "file": "brands/mc-q20395/index.html",
+      "route": "/brand/mc-q20395"
+    },
+    {
       "file": "brands/mc-q50408/index.html",
       "route": "/brand/mc-q50408"
     },
@@ -631,6 +763,10 @@
     {
       "file": "brands/mc-q42108/index.html",
       "route": "/brand/mc-q42108"
+    },
+    {
+      "file": "brands/mc-q50250/index.html",
+      "route": "/brand/mc-q50250"
     },
     {
       "file": "brands/mw-82f47bc108/index.html",
@@ -677,6 +813,10 @@
       "route": "/brand/mc-q20714"
     },
     {
+      "file": "brands/mc-q12623315/index.html",
+      "route": "/brand/mc-q12623315"
+    },
+    {
       "file": "brands/mw-b4f07dcf88/index.html",
       "route": "/brand/mw-b4f07dcf88"
     },
@@ -707,6 +847,10 @@
     {
       "file": "brands/mw-4d8895bd31/index.html",
       "route": "/brand/mw-4d8895bd31"
+    },
+    {
+      "file": "brands/mc-q24867044/index.html",
+      "route": "/brand/mc-q24867044"
     },
     {
       "file": "brands/mc-q41154/index.html",
@@ -765,6 +909,14 @@
       "route": "/brand/mc-q374457"
     },
     {
+      "file": "brands/mc-q50253/index.html",
+      "route": "/brand/mc-q50253"
+    },
+    {
+      "file": "brands/mc-q42123/index.html",
+      "route": "/brand/mc-q42123"
+    },
+    {
       "file": "brands/mc-q42124/index.html",
       "route": "/brand/mc-q42124"
     },
@@ -781,8 +933,20 @@
       "route": "/brand/mc-q6431646"
     },
     {
+      "file": "brands/mc-q50257/index.html",
+      "route": "/brand/mc-q50257"
+    },
+    {
       "file": "brands/mc-q39988/index.html",
       "route": "/brand/mc-q39988"
+    },
+    {
+      "file": "brands/mc-q50422/index.html",
+      "route": "/brand/mc-q50422"
+    },
+    {
+      "file": "brands/mc-q50423/index.html",
+      "route": "/brand/mc-q50423"
     },
     {
       "file": "brands/mc-q50261/index.html",
@@ -795,6 +959,10 @@
     {
       "file": "brands/mc-q50306/index.html",
       "route": "/brand/mc-q50306"
+    },
+    {
+      "file": "brands/mc-q50307/index.html",
+      "route": "/brand/mc-q50307"
     },
     {
       "file": "brands/mc-q625852/index.html",
@@ -829,12 +997,24 @@
       "route": "/brand/mc-q50429"
     },
     {
+      "file": "brands/mc-q18459/index.html",
+      "route": "/brand/mc-q18459"
+    },
+    {
       "file": "brands/mw-1b45ab5125/index.html",
       "route": "/brand/mw-1b45ab5125"
     },
     {
+      "file": "brands/mc-q485570/index.html",
+      "route": "/brand/mc-q485570"
+    },
+    {
       "file": "brands/mc-q129673/index.html",
       "route": "/brand/mc-q129673"
+    },
+    {
+      "file": "brands/mc-q484108/index.html",
+      "route": "/brand/mc-q484108"
     },
     {
       "file": "brands/mc-q41278/index.html",
@@ -843,6 +1023,18 @@
     {
       "file": "brands/mc-q491717/index.html",
       "route": "/brand/mc-q491717"
+    },
+    {
+      "file": "brands/mc-q50442/index.html",
+      "route": "/brand/mc-q50442"
+    },
+    {
+      "file": "brands/mc-q12609155/index.html",
+      "route": "/brand/mc-q12609155"
+    },
+    {
+      "file": "brands/mc-q50313/index.html",
+      "route": "/brand/mc-q50313"
     },
     {
       "file": "brands/mc-q33625595/index.html",
@@ -869,6 +1061,10 @@
       "route": "/brand/mw-e8396a5e85"
     },
     {
+      "file": "brands/mc-q50431/index.html",
+      "route": "/brand/mc-q50431"
+    },
+    {
       "file": "brands/mc-q50315/index.html",
       "route": "/brand/mc-q50315"
     },
@@ -893,6 +1089,10 @@
       "route": "/brand/mc-q483420"
     },
     {
+      "file": "brands/mc-q50318/index.html",
+      "route": "/brand/mc-q50318"
+    },
+    {
       "file": "brands/mc-q482659/index.html",
       "route": "/brand/mc-q482659"
     },
@@ -907,6 +1107,10 @@
     {
       "file": "brands/mc-q20934/index.html",
       "route": "/brand/mc-q20934"
+    },
+    {
+      "file": "brands/mc-q12613559/index.html",
+      "route": "/brand/mc-q12613559"
     },
     {
       "file": "brands/mc-q488851/index.html",
@@ -933,6 +1137,10 @@
       "route": "/brand/mc-q12623621"
     },
     {
+      "file": "brands/mc-q50322/index.html",
+      "route": "/brand/mc-q50322"
+    },
+    {
       "file": "brands/mc-q482566/index.html",
       "route": "/brand/mc-q482566"
     },
@@ -943,6 +1151,10 @@
     {
       "file": "brands/mc-q42141/index.html",
       "route": "/brand/mc-q42141"
+    },
+    {
+      "file": "brands/mc-q114364248/index.html",
+      "route": "/brand/mc-q114364248"
     },
     {
       "file": "brands/mc-q482617/index.html",
@@ -965,6 +1177,10 @@
       "route": "/brand/mc-q50439"
     },
     {
+      "file": "brands/mc-q50440/index.html",
+      "route": "/brand/mc-q50440"
+    },
+    {
       "file": "brands/mw-79021e9e2b/index.html",
       "route": "/brand/mw-79021e9e2b"
     },
@@ -975,6 +1191,10 @@
     {
       "file": "brands/mc-q482661/index.html",
       "route": "/brand/mc-q482661"
+    },
+    {
+      "file": "brands/mc-q50327/index.html",
+      "route": "/brand/mc-q50327"
     },
     {
       "file": "brands/mc-q50328/index.html",
@@ -1117,6 +1337,10 @@
       "route": "/brand/mw-fd206b047a"
     },
     {
+      "file": "brands/mc-q50335/index.html",
+      "route": "/brand/mc-q50335"
+    },
+    {
       "file": "brands/mw-64a9155c0d/index.html",
       "route": "/brand/mw-64a9155c0d"
     },
@@ -1177,6 +1401,10 @@
       "route": "/brand/mc-q42094"
     },
     {
+      "file": "brands/mc-q42157/index.html",
+      "route": "/brand/mc-q42157"
+    },
+    {
       "file": "brands/mw-5d717c55d9/index.html",
       "route": "/brand/mw-5d717c55d9"
     },
@@ -1229,6 +1457,10 @@
       "route": "/brand/mc-q16192199"
     },
     {
+      "file": "brands/mc-q12622776/index.html",
+      "route": "/brand/mc-q12622776"
+    },
+    {
       "file": "brands/mc-q626288/index.html",
       "route": "/brand/mc-q626288"
     },
@@ -1269,12 +1501,20 @@
       "route": "/brand/mc-q19162231"
     },
     {
+      "file": "brands/mc-q12622923/index.html",
+      "route": "/brand/mc-q12622923"
+    },
+    {
       "file": "brands/mc-q12622955/index.html",
       "route": "/brand/mc-q12622955"
     },
     {
       "file": "brands/mc-q12590582/index.html",
       "route": "/brand/mc-q12590582"
+    },
+    {
+      "file": "brands/mc-q12622983/index.html",
+      "route": "/brand/mc-q12622983"
     },
     {
       "file": "brands/mc-q12623148/index.html",
@@ -1313,6 +1553,10 @@
       "route": "/brand/mc-q12623270"
     },
     {
+      "file": "brands/mc-q6322893/index.html",
+      "route": "/brand/mc-q6322893"
+    },
+    {
       "file": "brands/mc-q6431623/index.html",
       "route": "/brand/mc-q6431623"
     },
@@ -1331,6 +1575,10 @@
     {
       "file": "brands/mc-q12623488/index.html",
       "route": "/brand/mc-q12623488"
+    },
+    {
+      "file": "brands/mc-q12623152/index.html",
+      "route": "/brand/mc-q12623152"
     },
     {
       "file": "brands/mc-q12623568/index.html",
@@ -1381,6 +1629,10 @@
       "route": "/brand/mc-q52854854"
     },
     {
+      "file": "brands/mc-q12623708/index.html",
+      "route": "/brand/mc-q12623708"
+    },
+    {
       "file": "brands/mc-q12623746/index.html",
       "route": "/brand/mc-q12623746"
     },
@@ -1395,6 +1647,10 @@
     {
       "file": "brands/mc-q11664005/index.html",
       "route": "/brand/mc-q11664005"
+    },
+    {
+      "file": "brands/mc-q12623804/index.html",
+      "route": "/brand/mc-q12623804"
     },
     {
       "file": "brands/mc-q6431586/index.html",
@@ -1415,6 +1671,14 @@
     {
       "file": "brands/mc-q12625722/index.html",
       "route": "/brand/mc-q12625722"
+    },
+    {
+      "file": "brands/mc-q12623900/index.html",
+      "route": "/brand/mc-q12623900"
+    },
+    {
+      "file": "brands/mc-q482765/index.html",
+      "route": "/brand/mc-q482765"
     },
     {
       "file": "brands/mc-q12624295/index.html",
@@ -1477,6 +1741,10 @@
       "route": "/brand/mw-abf85d4ad3"
     },
     {
+      "file": "brands/mc-q42083/index.html",
+      "route": "/brand/mc-q42083"
+    },
+    {
       "file": "brands/mc-q50343/index.html",
       "route": "/brand/mc-q50343"
     },
@@ -1495,6 +1763,10 @@
     {
       "file": "brands/mc-q50346/index.html",
       "route": "/brand/mc-q50346"
+    },
+    {
+      "file": "brands/mc-q50347/index.html",
+      "route": "/brand/mc-q50347"
     },
     {
       "file": "brands/mw-71f051614e/index.html",
@@ -1545,7 +1817,7 @@
       "route": "/brand/mw-689b1c2153"
     }
   ],
-  "public_records": 383,
+  "public_records": 451,
   "warnings": [
     "record mc-q104099625: needs review; research metadata does not authorize publication",
     "record mc-q11232850: needs review; research metadata does not authorize publication",
@@ -1554,25 +1826,36 @@
     "record mc-q11250418: needs review; research metadata does not authorize publication",
     "record mc-q11284963: needs review; research metadata does not authorize publication",
     "record mc-q11286676: needs review; research metadata does not authorize publication",
+    "record mc-q114364248: needs review; research metadata does not authorize publication",
     "record mc-q11626082: needs review; research metadata does not authorize publication",
     "record mc-q11664005: needs review; research metadata does not authorize publication",
     "record mc-q12583260: needs review; research metadata does not authorize publication",
     "record mc-q12590582: needs review; research metadata does not authorize publication",
     "record mc-q12593324: needs review; research metadata does not authorize publication",
     "record mc-q12598719: needs review; research metadata does not authorize publication",
+    "record mc-q12599707: needs review; research metadata does not authorize publication",
     "record mc-q12605671: needs review; research metadata does not authorize publication",
     "record mc-q12606661: needs review; research metadata does not authorize publication",
+    "record mc-q12609155: needs review; research metadata does not authorize publication",
+    "record mc-q12613559: needs review; research metadata does not authorize publication",
     "record mc-q12616442: needs review; research metadata does not authorize publication",
+    "record mc-q12622776: needs review; research metadata does not authorize publication",
     "record mc-q12622785: needs review; research metadata does not authorize publication",
     "record mc-q12622825: needs review; research metadata does not authorize publication",
     "record mc-q12622844: needs review; research metadata does not authorize publication",
+    "record mc-q12622923: needs review; research metadata does not authorize publication",
     "record mc-q12622955: needs review; research metadata does not authorize publication",
     "record mc-q12622975: needs review; research metadata does not authorize publication",
+    "record mc-q12622983: needs review; research metadata does not authorize publication",
+    "record mc-q12623100: needs review; research metadata does not authorize publication",
     "record mc-q12623148: needs review; research metadata does not authorize publication",
+    "record mc-q12623152: needs review; research metadata does not authorize publication",
     "record mc-q12623180: needs review; research metadata does not authorize publication",
     "record mc-q12623242: needs review; research metadata does not authorize publication",
     "record mc-q12623270: needs review; research metadata does not authorize publication",
+    "record mc-q12623315: needs review; research metadata does not authorize publication",
     "record mc-q12623488: needs review; research metadata does not authorize publication",
+    "record mc-q12623491: needs review; research metadata does not authorize publication",
     "record mc-q12623568: needs review; research metadata does not authorize publication",
     "record mc-q12623571: needs review; research metadata does not authorize publication",
     "record mc-q12623602: needs review; research metadata does not authorize publication",
@@ -1582,16 +1865,20 @@
     "record mc-q12623629: needs review; research metadata does not authorize publication",
     "record mc-q12623633: needs review; research metadata does not authorize publication",
     "record mc-q12623697: needs review; research metadata does not authorize publication",
+    "record mc-q12623708: needs review; research metadata does not authorize publication",
     "record mc-q12623746: needs review; research metadata does not authorize publication",
     "record mc-q12623754: needs review; research metadata does not authorize publication",
+    "record mc-q12623804: needs review; research metadata does not authorize publication",
     "record mc-q12623855: needs review; research metadata does not authorize publication",
     "record mc-q12623895: needs review; research metadata does not authorize publication",
+    "record mc-q12623900: needs review; research metadata does not authorize publication",
     "record mc-q12624295: needs review; research metadata does not authorize publication",
     "record mc-q12625125: needs review; research metadata does not authorize publication",
     "record mc-q12625722: needs review; research metadata does not authorize publication",
     "record mc-q129673: needs review; research metadata does not authorize publication",
     "record mc-q131858907: needs review; research metadata does not authorize publication",
     "record mc-q139779: needs review; research metadata does not authorize publication",
+    "record mc-q140403575: needs review; research metadata does not authorize publication",
     "record mc-q140800179: needs review; research metadata does not authorize publication",
     "record mc-q15279945: needs review; research metadata does not authorize publication",
     "record mc-q15623329: needs review; research metadata does not authorize publication",
@@ -1604,15 +1891,20 @@
     "record mc-q16192199: needs review; research metadata does not authorize publication",
     "record mc-q16192220: needs review; research metadata does not authorize publication",
     "record mc-q16192452: needs review; research metadata does not authorize publication",
+    "record mc-q16219823: needs review; research metadata does not authorize publication",
     "record mc-q16261725: needs review; research metadata does not authorize publication",
     "record mc-q16261977: needs review; research metadata does not authorize publication",
     "record mc-q16262625: needs review; research metadata does not authorize publication",
+    "record mc-q16262642: needs review; research metadata does not authorize publication",
     "record mc-q16520: needs review; research metadata does not authorize publication",
     "record mc-q16726591: needs review; research metadata does not authorize publication",
     "record mc-q169985: needs review; research metadata does not authorize publication",
+    "record mc-q18444594: needs review; research metadata does not authorize publication",
+    "record mc-q18459: needs review; research metadata does not authorize publication",
     "record mc-q188624: needs review; research metadata does not authorize publication",
     "record mc-q19161980: needs review; research metadata does not authorize publication",
     "record mc-q19162231: needs review; research metadata does not authorize publication",
+    "record mc-q20395: needs review; research metadata does not authorize publication",
     "record mc-q20714: needs review; research metadata does not authorize publication",
     "record mc-q208736: needs review; research metadata does not authorize publication",
     "record mc-q20921: needs review; research metadata does not authorize publication",
@@ -1621,6 +1913,8 @@
     "record mc-q20937: needs review; research metadata does not authorize publication",
     "record mc-q21400278: needs review; research metadata does not authorize publication",
     "record mc-q243327: needs review; research metadata does not authorize publication",
+    "record mc-q24867026: needs review; research metadata does not authorize publication",
+    "record mc-q24867044: needs review; research metadata does not authorize publication",
     "record mc-q31180818: needs review; research metadata does not authorize publication",
     "record mc-q31180819: needs review; research metadata does not authorize publication",
     "record mc-q31180820: needs review; research metadata does not authorize publication",
@@ -1641,6 +1935,7 @@
     "record mc-q41278: needs review; research metadata does not authorize publication",
     "record mc-q41765: needs review; research metadata does not authorize publication",
     "record mc-q41790: needs review; research metadata does not authorize publication",
+    "record mc-q42060: needs review; research metadata does not authorize publication",
     "record mc-q42061: needs review; research metadata does not authorize publication",
     "record mc-q42064: needs review; research metadata does not authorize publication",
     "record mc-q42066: needs review; research metadata does not authorize publication",
@@ -1650,18 +1945,23 @@
     "record mc-q42078: needs review; research metadata does not authorize publication",
     "record mc-q42080: needs review; research metadata does not authorize publication",
     "record mc-q42082: needs review; research metadata does not authorize publication",
+    "record mc-q42083: needs review; research metadata does not authorize publication",
     "record mc-q42084: needs review; research metadata does not authorize publication",
     "record mc-q42087: needs review; research metadata does not authorize publication",
     "record mc-q42088: needs review; research metadata does not authorize publication",
     "record mc-q42089: needs review; research metadata does not authorize publication",
     "record mc-q42092: needs review; research metadata does not authorize publication",
     "record mc-q42094: needs review; research metadata does not authorize publication",
+    "record mc-q42095: needs review; research metadata does not authorize publication",
+    "record mc-q42096: needs review; research metadata does not authorize publication",
+    "record mc-q42098: needs review; research metadata does not authorize publication",
     "record mc-q42100: needs review; research metadata does not authorize publication",
     "record mc-q42108: needs review; research metadata does not authorize publication",
     "record mc-q42109: needs review; research metadata does not authorize publication",
     "record mc-q42112: needs review; research metadata does not authorize publication",
     "record mc-q42113: needs review; research metadata does not authorize publication",
     "record mc-q42117: needs review; research metadata does not authorize publication",
+    "record mc-q42123: needs review; research metadata does not authorize publication",
     "record mc-q42124: needs review; research metadata does not authorize publication",
     "record mc-q42128: needs review; research metadata does not authorize publication",
     "record mc-q42136: needs review; research metadata does not authorize publication",
@@ -1673,6 +1973,7 @@
     "record mc-q42153: needs review; research metadata does not authorize publication",
     "record mc-q42154: needs review; research metadata does not authorize publication",
     "record mc-q42155: needs review; research metadata does not authorize publication",
+    "record mc-q42157: needs review; research metadata does not authorize publication",
     "record mc-q425690: needs review; research metadata does not authorize publication",
     "record mc-q482540: needs review; research metadata does not authorize publication",
     "record mc-q482562: needs review; research metadata does not authorize publication",
@@ -1684,10 +1985,12 @@
     "record mc-q482661: needs review; research metadata does not authorize publication",
     "record mc-q482673: needs review; research metadata does not authorize publication",
     "record mc-q482678: needs review; research metadata does not authorize publication",
+    "record mc-q482680: needs review; research metadata does not authorize publication",
     "record mc-q482688: needs review; research metadata does not authorize publication",
     "record mc-q482692: needs review; research metadata does not authorize publication",
     "record mc-q482735: needs review; research metadata does not authorize publication",
     "record mc-q482751: needs review; research metadata does not authorize publication",
+    "record mc-q482765: needs review; research metadata does not authorize publication",
     "record mc-q482905: needs review; research metadata does not authorize publication",
     "record mc-q483189: needs review; research metadata does not authorize publication",
     "record mc-q483420: needs review; research metadata does not authorize publication",
@@ -1695,10 +1998,14 @@
     "record mc-q483744: needs review; research metadata does not authorize publication",
     "record mc-q483748: needs review; research metadata does not authorize publication",
     "record mc-q484090: needs review; research metadata does not authorize publication",
+    "record mc-q484108: needs review; research metadata does not authorize publication",
     "record mc-q484230: needs review; research metadata does not authorize publication",
     "record mc-q484445: needs review; research metadata does not authorize publication",
     "record mc-q484569: needs review; research metadata does not authorize publication",
     "record mc-q484584: needs review; research metadata does not authorize publication",
+    "record mc-q485570: needs review; research metadata does not authorize publication",
+    "record mc-q487177: needs review; research metadata does not authorize publication",
+    "record mc-q487613: needs review; research metadata does not authorize publication",
     "record mc-q487836: needs review; research metadata does not authorize publication",
     "record mc-q487841: needs review; research metadata does not authorize publication",
     "record mc-q487855: needs review; research metadata does not authorize publication",
@@ -1710,6 +2017,7 @@
     "record mc-q489331: needs review; research metadata does not authorize publication",
     "record mc-q489708: needs review; research metadata does not authorize publication",
     "record mc-q491082: needs review; research metadata does not authorize publication",
+    "record mc-q491127: needs review; research metadata does not authorize publication",
     "record mc-q491325: needs review; research metadata does not authorize publication",
     "record mc-q491336: needs review; research metadata does not authorize publication",
     "record mc-q491511: needs review; research metadata does not authorize publication",
@@ -1724,37 +2032,56 @@
     "record mc-q50191: needs review; research metadata does not authorize publication",
     "record mc-q50192: needs review; research metadata does not authorize publication",
     "record mc-q50203: needs review; research metadata does not authorize publication",
+    "record mc-q50204: needs review; research metadata does not authorize publication",
+    "record mc-q50215: needs review; research metadata does not authorize publication",
     "record mc-q50216: needs review; research metadata does not authorize publication",
     "record mc-q50220: needs review; research metadata does not authorize publication",
+    "record mc-q50239: needs review; research metadata does not authorize publication",
     "record mc-q50241: needs review; research metadata does not authorize publication",
     "record mc-q50243: needs review; research metadata does not authorize publication",
     "record mc-q50244: needs review; research metadata does not authorize publication",
     "record mc-q50245: needs review; research metadata does not authorize publication",
     "record mc-q50249: needs review; research metadata does not authorize publication",
+    "record mc-q50250: needs review; research metadata does not authorize publication",
     "record mc-q50251: needs review; research metadata does not authorize publication",
+    "record mc-q50253: needs review; research metadata does not authorize publication",
     "record mc-q50255: needs review; research metadata does not authorize publication",
+    "record mc-q50257: needs review; research metadata does not authorize publication",
     "record mc-q50261: needs review; research metadata does not authorize publication",
     "record mc-q50306: needs review; research metadata does not authorize publication",
+    "record mc-q50307: needs review; research metadata does not authorize publication",
     "record mc-q50309: needs review; research metadata does not authorize publication",
     "record mc-q50310: needs review; research metadata does not authorize publication",
+    "record mc-q50313: needs review; research metadata does not authorize publication",
     "record mc-q50315: needs review; research metadata does not authorize publication",
+    "record mc-q50318: needs review; research metadata does not authorize publication",
     "record mc-q50319: needs review; research metadata does not authorize publication",
     "record mc-q50321: needs review; research metadata does not authorize publication",
+    "record mc-q50322: needs review; research metadata does not authorize publication",
     "record mc-q50324: needs review; research metadata does not authorize publication",
+    "record mc-q50327: needs review; research metadata does not authorize publication",
     "record mc-q50328: needs review; research metadata does not authorize publication",
     "record mc-q50330: needs review; research metadata does not authorize publication",
     "record mc-q50331: needs review; research metadata does not authorize publication",
     "record mc-q50332: needs review; research metadata does not authorize publication",
     "record mc-q50334: needs review; research metadata does not authorize publication",
+    "record mc-q50335: needs review; research metadata does not authorize publication",
     "record mc-q50342: needs review; research metadata does not authorize publication",
     "record mc-q50343: needs review; research metadata does not authorize publication",
     "record mc-q50344: needs review; research metadata does not authorize publication",
     "record mc-q50345: needs review; research metadata does not authorize publication",
     "record mc-q50346: needs review; research metadata does not authorize publication",
+    "record mc-q50347: needs review; research metadata does not authorize publication",
     "record mc-q50348: needs review; research metadata does not authorize publication",
+    "record mc-q50349: needs review; research metadata does not authorize publication",
+    "record mc-q50352: needs review; research metadata does not authorize publication",
     "record mc-q50353: needs review; research metadata does not authorize publication",
+    "record mc-q50354: needs review; research metadata does not authorize publication",
     "record mc-q50355: needs review; research metadata does not authorize publication",
+    "record mc-q50358: needs review; research metadata does not authorize publication",
+    "record mc-q50362: needs review; research metadata does not authorize publication",
     "record mc-q50364: needs review; research metadata does not authorize publication",
+    "record mc-q50365: needs review; research metadata does not authorize publication",
     "record mc-q50367: needs review; research metadata does not authorize publication",
     "record mc-q50370: needs review; research metadata does not authorize publication",
     "record mc-q50371: needs review; research metadata does not authorize publication",
@@ -1764,19 +2091,28 @@
     "record mc-q50377: needs review; research metadata does not authorize publication",
     "record mc-q50382: needs review; research metadata does not authorize publication",
     "record mc-q50383: needs review; research metadata does not authorize publication",
+    "record mc-q50385: needs review; research metadata does not authorize publication",
     "record mc-q50390: needs review; research metadata does not authorize publication",
     "record mc-q50391: needs review; research metadata does not authorize publication",
     "record mc-q50393: needs review; research metadata does not authorize publication",
     "record mc-q50394: needs review; research metadata does not authorize publication",
+    "record mc-q50395: needs review; research metadata does not authorize publication",
+    "record mc-q50398: needs review; research metadata does not authorize publication",
     "record mc-q50400: needs review; research metadata does not authorize publication",
     "record mc-q50403: needs review; research metadata does not authorize publication",
     "record mc-q50404: needs review; research metadata does not authorize publication",
+    "record mc-q50405: needs review; research metadata does not authorize publication",
     "record mc-q50406: needs review; research metadata does not authorize publication",
     "record mc-q50408: needs review; research metadata does not authorize publication",
     "record mc-q50415: needs review; research metadata does not authorize publication",
     "record mc-q50417: needs review; research metadata does not authorize publication",
+    "record mc-q50422: needs review; research metadata does not authorize publication",
+    "record mc-q50423: needs review; research metadata does not authorize publication",
     "record mc-q50429: needs review; research metadata does not authorize publication",
+    "record mc-q50431: needs review; research metadata does not authorize publication",
     "record mc-q50439: needs review; research metadata does not authorize publication",
+    "record mc-q50440: needs review; research metadata does not authorize publication",
+    "record mc-q50442: needs review; research metadata does not authorize publication",
     "record mc-q5115985: needs review; research metadata does not authorize publication",
     "record mc-q52854854: needs review; research metadata does not authorize publication",
     "record mc-q53122: needs review; research metadata does not authorize publication",
@@ -1787,6 +2123,7 @@
     "record mc-q6176555: needs review; research metadata does not authorize publication",
     "record mc-q623798: needs review; research metadata does not authorize publication",
     "record mc-q623828: needs review; research metadata does not authorize publication",
+    "record mc-q624022: needs review; research metadata does not authorize publication",
     "record mc-q624046: needs review; research metadata does not authorize publication",
     "record mc-q624072: needs review; research metadata does not authorize publication",
     "record mc-q624134: needs review; research metadata does not authorize publication",
@@ -1797,11 +2134,13 @@
     "record mc-q625097: needs review; research metadata does not authorize publication",
     "record mc-q625165: needs review; research metadata does not authorize publication",
     "record mc-q625852: needs review; research metadata does not authorize publication",
+    "record mc-q625952: needs review; research metadata does not authorize publication",
     "record mc-q625961: needs review; research metadata does not authorize publication",
     "record mc-q626288: needs review; research metadata does not authorize publication",
     "record mc-q626783: needs review; research metadata does not authorize publication",
     "record mc-q626785: needs review; research metadata does not authorize publication",
     "record mc-q626811: needs review; research metadata does not authorize publication",
+    "record mc-q6322893: needs review; research metadata does not authorize publication",
     "record mc-q6328582: needs review; research metadata does not authorize publication",
     "record mc-q6431586: needs review; research metadata does not authorize publication",
     "record mc-q6431623: needs review; research metadata does not authorize publication",
@@ -1810,6 +2149,7 @@
     "record mc-q6431749: needs review; research metadata does not authorize publication",
     "record mc-q6684915: needs review; research metadata does not authorize publication",
     "record mc-q6858616: needs review; research metadata does not authorize publication",
+    "record mc-q6973584: needs review; research metadata does not authorize publication",
     "record mc-q7314493: needs review; research metadata does not authorize publication",
     "record mc-q7451674: needs review; research metadata does not authorize publication",
     "record mc-q8684: needs review; research metadata does not authorize publication",

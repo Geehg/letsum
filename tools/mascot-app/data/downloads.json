@@ -206,6 +206,12 @@
   "mc-q16520": [
    {
     "format": "ZIP",
+    "url": "https://www.busan.go.kr/PageDownload.do?savename=bubi.zip",
+    "filename": "bubi.zip",
+    "label": "마스코트"
+   },
+   {
+    "format": "ZIP",
     "url": "https://www.busan.go.kr/PageDownload.do?savename=pr_character.zip",
     "filename": "pr_character.zip",
     "label": "마스코트 응용동작"
@@ -248,6 +254,28 @@
     "url": "https://www.gangseo.seoul.kr/comm/getFile?srvcId=MEDIA&upperNo=7&fileTy=MEDIA&fileNo=VevYBmOpHGk2RoVnk6iVUg%3d%3d",
     "filename": "강서구 새로미 캐릭터 개발 매뉴얼.pdf.pdf",
     "label": "캐릭터 메뉴얼 가이드북"
+   }
+  ],
+  "mc-q50352": [
+   {
+    "format": "AI",
+    "url": "https://www.gyeyang.go.kr/open_content/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=199&fileno=3",
+    "bytes": 1157025,
+    "filename": "계양구-캐릭터(신비_기본형).ai",
+    "label": "캐릭터 신비"
+   }
+  ],
+  "mc-q50354": [
+   {
+    "format": "ZIP",
+    "url": "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_03.zip",
+    "bytes": 333115,
+    "filename": "0602010100_03.zip",
+    "label": "광산구 마스코트 광산이",
+    "inner": [
+     "AI",
+     "JPG"
+    ]
    }
   ],
   "mc-q42066": [
@@ -406,6 +434,28 @@
     "label": "정약용 캐릭터 전체"
    }
   ],
+  "mc-q50362": [
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img01.zip",
+    "bytes": 280518,
+    "filename": "cnm_img01.zip",
+    "label": "남구 대표캐릭터(기본형)",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img02.zip",
+    "bytes": 4784556,
+    "filename": "cnm_img02.zip",
+    "label": "남구 대표캐릭터(매뉴얼북)",
+    "inner": [
+     "PDF"
+    ]
+   }
+  ],
   "mc-q42089": [
    {
     "format": "AI",
@@ -442,6 +492,61 @@
     "label": "캐릭터(용감한 쏘가리 [다소미])"
    }
   ],
+  "mc-q50239": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli.zip",
+    "bytes": 4511428,
+    "filename": "biseuli.zip",
+    "label": "캐릭터 비슬이",
+    "inner": [
+     "AI",
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli2.zip",
+    "bytes": 30426368,
+    "filename": "biseuli2.zip",
+    "label": "캐릭터 비슬이",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q42083": [
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character01.zip",
+    "bytes": 3798314,
+    "filename": "character01.zip",
+    "label": "배돌이 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character02.zip",
+    "bytes": 3209502,
+    "filename": "character02.zip",
+    "label": "버들낭자 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.naju.go.kr/contents/459/character03.zip",
+    "bytes": 6796908,
+    "filename": "character03.zip",
+    "label": "홍돌이 캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
   "mc-q50375": [
    {
     "format": "ZIP",
@@ -452,6 +557,94 @@
     "inner": [
      "JPG"
     ]
+   }
+  ],
+  "mc-q50385": [
+   {
+    "format": "ZIP",
+    "url": "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc96a6e2818a9ea7aa2fc4f8fcbb8c24fca&fileSn=1&bbsId=B0001202",
+    "bytes": 12500915,
+    "filename": "fileDown.do",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc98f186ee4a84c61b6bdb22d7d87e962ad&fileSn=1&bbsId=B0001202",
+    "bytes": 14973572,
+    "filename": "fileDown.do",
+    "label": "캐릭터"
+   }
+  ],
+  "mc-q50365": [
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/mascotai.zip",
+    "bytes": 48529,
+    "filename": "mascotai.zip",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.michuhol.go.kr/downloads/namgu/mascot.zip",
+    "bytes": 243251,
+    "filename": "mascot.zip",
+    "inner": [
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q42098": [
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down4_jpg.zip",
+    "bytes": 6027099,
+    "filename": "symbol_down4_jpg.zip",
+    "label": "캐릭터 기본형",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down4_ai.zip",
+    "bytes": 111551131,
+    "filename": "symbol_down4_ai.zip",
+    "label": "캐릭터 기본형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down5_jpg.zip",
+    "bytes": 4046698,
+    "filename": "symbol_down5_jpg.zip",
+    "label": "캐릭터 응용형",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/symbol_down5_ai.zip",
+    "bytes": 272666960,
+    "filename": "symbol_down5_ai.zip",
+    "label": "캐릭터 응용형",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "PDF",
+    "url": "https://www.brcn.go.kr/download/kor/sub06/boryeong_character_manual.pdf",
+    "bytes": 7091581,
+    "filename": "boryeong_character_manual.pdf",
+    "label": "캐릭터 메뉴얼"
    }
   ],
   "mc-q50243": [
@@ -490,6 +683,22 @@
      "PDF",
      "PNG"
     ]
+   }
+  ],
+  "mc-q50395": [
+   {
+    "format": "AI",
+    "url": "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character.ai",
+    "bytes": 1115734,
+    "filename": "bukcu_character.ai",
+    "label": "쇠부리(메인캐릭터)와 참나리(서브캐릭터)"
+   },
+   {
+    "format": "AI",
+    "url": "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character_echo.ai",
+    "bytes": 1123172,
+    "filename": "bukcu_character_echo.ai",
+    "label": "쇠부리(에코버전)"
    }
   ],
   "mc-q42100": [
@@ -735,6 +944,16 @@
   ],
   "mc-q50255": [
    {
+    "format": "ZIP",
+    "url": "https://www.yp21.go.kr/downloadContentsFile.do?key=1847&fileNo=594",
+    "bytes": 14532758,
+    "filename": "yp_character_jpg.zip",
+    "label": "물사랑이 행복이 캐릭터 )",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
     "format": "PDF",
     "url": "https://www.yp21.go.kr/site/www/download/cst1847_char_02_gl.pdf",
     "bytes": 1698662,
@@ -796,6 +1015,39 @@
     ]
    }
   ],
+  "mc-q114364248": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jemulpo.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=26&fileno=3",
+    "bytes": 4502494,
+    "filename": "제물포구_캐릭터.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
+  "mc-q18459": [
+   {
+    "format": "PDF",
+    "url": "https://www.yongin.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=2588&resrceVer=1&fileSn=1",
+    "bytes": 2126684,
+    "filename": "용인시 캐릭터 조아용 매뉴얼북(2022).pdf",
+    "label": "캐릭터매뉴얼 용인시 캐릭터 조아용 매뉴얼북(2022)"
+   }
+  ],
+  "mc-q485570": [
+   {
+    "format": "ZIP",
+    "url": "https://www.ulleung.go.kr/design/file/ko/symbol_character.zip",
+    "bytes": 1060284,
+    "filename": "symbol_character.zip",
+    "label": "울릉군 캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
   "mc-q42112": [
    {
     "format": "ZIP",
@@ -828,6 +1080,62 @@
     ]
    }
   ],
+  "mc-q50431": [
+   {
+    "format": "ZIP",
+    "url": "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011195Wg6&fileSn=0",
+    "filename": "jpg.zip",
+    "label": "구캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011194Ur1&fileSn=0",
+    "filename": "AI.zip",
+    "label": "구캐릭터",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q50322": [
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_C_AI_2025_2.zip",
+    "bytes": 28072532,
+    "filename": "jh_C_AI_2025_2.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.jangheung.go.kr/contents/14296/jh_C_JPG_2025_2.zip",
+    "bytes": 4206527,
+    "filename": "jh_C_JPG_2025_2.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG",
+     "JPG"
+    ]
+   }
+  ],
+  "mc-q50318": [
+   {
+    "format": "ZIP",
+    "url": "https://www.inje.go.kr/file/know/inje_sudal.zip",
+    "bytes": 261831,
+    "filename": "inje_sudal.zip",
+    "label": "인제군 마스코트",
+    "inner": [
+     "AI",
+     "EPS"
+    ]
+   }
+  ],
   "mc-q42141": [
    {
     "format": "ZIP",
@@ -851,6 +1159,28 @@
     "bytes": 400626,
     "filename": "singi.zip",
     "label": "캐릭터"
+   }
+  ],
+  "mc-q50440": [
+   {
+    "format": "ZIP",
+    "url": "https://www.bsjunggu.go.kr/down/bsjunggu/character_jpg.zip",
+    "bytes": 246013,
+    "filename": "character_jpg.zip",
+    "inner": [
+     "PNG",
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.bsjunggu.go.kr/down/bsjunggu/character.zip",
+    "bytes": 267010,
+    "filename": "character.zip",
+    "inner": [
+     "AI",
+     "JPG"
+    ]
    }
   ],
   "mc-q50328": [
@@ -960,6 +1290,15 @@
     ]
    }
   ],
+  "mc-q50335": [
+   {
+    "format": "AI",
+    "url": "https://www.taean.go.kr/gonet/FileDownload.do?fileName=mascot.ai&code=download/kor/sub05/",
+    "bytes": 3694575,
+    "filename": "mascot.ai",
+    "label": "마스코트"
+   }
+  ],
   "mc-q50345": [
    {
     "format": "ZIP",
@@ -981,6 +1320,28 @@
     "url": "https://www.sen.go.kr/resources/www/data/character_design.ai",
     "bytes": 9867842,
     "filename": "character_design.ai"
+   }
+  ],
+  "mc-q6322893": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/ci_ai02.zip",
+    "bytes": 145798,
+    "filename": "ci_ai02.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kwater.or.kr/download/water/ci_jpg02.zip",
+    "bytes": 207390,
+    "filename": "ci_jpg02.zip",
+    "label": "캐릭터",
+    "inner": [
+     "JPG"
+    ]
    }
   ],
   "mc-q11250418": [
@@ -1061,6 +1422,48 @@
     "filename": "krc_character_usage.ai"
    }
   ],
+  "mc-q12623152": [
+   {
+    "format": "ZIP",
+    "url": "https://www.korad.or.kr/data/menuResources/h2/64/201812051927_cznD6s7.zip",
+    "bytes": 465170,
+    "filename": "201812051927_cznD6s7.zip",
+    "label": "캐릭터",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.korad.or.kr/data/menuResources/h2/64/201812051927_xLr0vbe.zip",
+    "bytes": 1735482,
+    "filename": "201812051927_xLr0vbe.zip",
+    "label": "캐릭터 일러스트",
+    "inner": [
+     "AI"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.korad.or.kr/data/menuResources/h2/64/202601271458_v2tfMl7.zip",
+    "bytes": 11039660,
+    "filename": "202601271458_v2tfMl7.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.korad.or.kr/data/menuResources/h2/64/202601271459_tK7s5kw.zip",
+    "bytes": 3283825,
+    "filename": "202601271459_tK7s5kw.zip",
+    "label": "캐릭터 일러스트",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
   "mc-q16262625": [
    {
     "format": "ZIP",
@@ -1070,6 +1473,28 @@
     "label": "이루미와 해냄이",
     "inner": [
      "JPG"
+    ]
+   }
+  ],
+  "mc-q624022": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kr.or.kr/boardCnts/fileDown.do?fileSeq=f99a673e15ac7fb71421e15377b68b02",
+    "bytes": 376839,
+    "filename": "레일로_레일리(PNG).zip",
+    "label": "레일로",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kr.or.kr/boardCnts/fileDown.do?fileSeq=f762304d8cd7f39a06d7fbb356e8db82",
+    "bytes": 53418247,
+    "filename": "레일로_레일리(AI).zip",
+    "label": "레일로",
+    "inner": [
+     "AI"
     ]
    }
   ],
@@ -1113,6 +1538,17 @@
     "label": "전체 캐릭터 전체 하기"
    }
   ],
+  "mc-q12622983": [
+   {
+    "format": "ZIP",
+    "url": "https://www.krei.re.kr/DATA/document/krei_character.zip",
+    "bytes": 778641,
+    "filename": "krei_character.zip",
+    "inner": [
+     "PNG"
+    ]
+   }
+  ],
   "mc-q12623242": [
    {
     "format": "ZIP",
@@ -1145,6 +1581,35 @@
     "label": "캐릭터"
    }
   ],
+  "mc-q12613559": [
+   {
+    "format": "ZIP",
+    "url": "https://www.icpa.or.kr/data/Character_JPG_01.zip",
+    "bytes": 1255199,
+    "filename": "Character_JPG_01.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.icpa.or.kr/data/Character_AI_01.zip",
+    "bytes": 1806625,
+    "filename": "Character_AI_01.zip",
+    "inner": [
+     "AI"
+    ]
+   }
+  ],
+  "mc-q12609155": [
+   {
+    "format": "ZIP",
+    "url": "https://www.upa.or.kr/file/direct/download.do?filename=Character.zip&path=/file",
+    "bytes": 15208513,
+    "filename": "Character.zip",
+    "label": "캐릭터"
+   }
+  ],
   "mc-q16167803": [
    {
     "format": "ZIP",
@@ -1154,6 +1619,20 @@
     "label": "FiPA 캐릭터",
     "inner": [
      "PNG"
+    ]
+   }
+  ],
+  "mc-q12622923": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kmiti.or.kr/_img/web/kmiti_character.zip",
+    "bytes": 43764575,
+    "filename": "kmiti_character.zip",
+    "label": "캐릭터 CI",
+    "inner": [
+     "AI",
+     "PNG",
+     "JPG"
     ]
    }
   ],
@@ -1251,6 +1730,15 @@
     "inner": [
      "AI"
     ]
+   }
+  ],
+  "mc-q12623315": [
+   {
+    "format": "ZIP",
+    "url": "https://www.fira.or.kr/newfira/download/overview/soopy.zip",
+    "bytes": 8200740,
+    "filename": "soopy.zip",
+    "label": "[ ]수피(SOOPY) 캐릭터"
    }
   ],
   "mc-q496536": [
@@ -1422,6 +1910,35 @@
     ]
    }
   ],
+  "mc-q482680": [
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_basic_PNG.zip",
+    "bytes": 325393,
+    "filename": "mnu_char_basic_PNG.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_appl_PNG.zip",
+    "bytes": 553208,
+    "filename": "mnu_char_appl_PNG.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
+   },
+   {
+    "format": "PNG",
+    "url": "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_logo.png",
+    "bytes": 37601,
+    "filename": "mnu_char_logo.png",
+    "label": "캐릭터"
+   }
+  ],
   "mc-q482688": [
    {
     "format": "AI",
@@ -1436,6 +1953,26 @@
     "bytes": 21408923,
     "filename": "2023군산대캐릭터-메뉴얼-최종2.ai",
     "label": "캐릭터"
+   }
+  ],
+  "mc-q487177": [
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/character_jpg.zip",
+    "bytes": 489783,
+    "filename": "character_jpg.zip",
+    "inner": [
+     "JPG"
+    ]
+   },
+   {
+    "format": "ZIP",
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/character_ai.zip",
+    "bytes": 1098053,
+    "filename": "character_ai.zip",
+    "inner": [
+     "AI"
+    ]
    }
   ],
   "mc-q39997": [
@@ -1607,6 +2144,14 @@
     ]
    }
   ],
+  "mc-q623798": [
+   {
+    "format": "AI",
+    "url": "https://www.deu.ac.kr/_res/deu/www/etc/deu-character.ai",
+    "bytes": 4843042,
+    "filename": "deu-character.ai"
+   }
+  ],
   "mc-q624993": [
    {
     "format": "ZIP",
@@ -1633,6 +2178,18 @@
     "url": "https://www.seoultech.ac.kr/storage/www/intro/symbol/logo/character/character.zip",
     "bytes": 3858742,
     "filename": "character.zip"
+   }
+  ],
+  "mc-q487613": [
+   {
+    "format": "ZIP",
+    "url": "https://www.snue.ac.kr/images/web/snue/sub/snue_character.zip",
+    "bytes": 9233565,
+    "filename": "snue_character.zip",
+    "label": "캐릭터",
+    "inner": [
+     "PNG"
+    ]
    }
   ],
   "mc-q374457": [
@@ -1863,6 +2420,19 @@
     "label": "캐릭터",
     "inner": [
      "AI"
+    ]
+   }
+  ],
+  "mc-q482765": [
+   {
+    "format": "ZIP",
+    "url": "https://www.hansung.ac.kr/sites/hansung/files/hansung-character.zip",
+    "bytes": 2053951,
+    "filename": "hansung-character.zip",
+    "label": "캐릭터",
+    "inner": [
+     "AI",
+     "PNG"
     ]
    }
   ],

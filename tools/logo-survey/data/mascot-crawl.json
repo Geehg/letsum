@@ -58,7 +58,7 @@
   },
   "Q486737": {
    "name": "한국전력공사",
-   "group": "기업",
+   "group": "시장형 공기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -871,12 +871,12 @@
    ],
    "words": 38,
    "image": {
-    "file": "/mascots/thumbs/m-93e5590694.png",
-    "source_url": "https://www.incheon.go.kr/comm/getImage?srvcId=MEDIA&upperNo=103972&fileTy=MEDIA&fileNo=1",
+    "file": "/mascots/thumbs/m-93e5590694.jpg",
+    "source_url": "https://www.incheon.go.kr/data/editor/20200521/202005211613538181.jpg",
     "page_url": "https://www.incheon.go.kr/citybrand/CB010401",
-    "alt": "캐릭터 활용 날짜판",
-    "sha256": "80293a1c3c0958e5cbfc5a7c75013ad82d4759e62e89c5d81921a6d980fbe1f5",
-    "bytes": 1610368,
+    "alt": "인천캐릭터 버미 종이모형",
+    "sha256": "e11a75eb46911f943035543246ba7e48bb407440e619c3d5101bd4d6811edd75",
+    "bytes": 85932,
     "source": "official-page-image",
     "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
    }
@@ -1086,7 +1086,7 @@
    ],
    "words": 10,
    "image": {
-    "file": "/mascots/thumbs/m-923abc4abc.gif",
+    "file": "/mascots/thumbs/m-923abc4abc.png",
     "source_url": "https://www.gyeyang.go.kr/open_content/main/images/contents/gyeyang/symbol_character.gif",
     "page_url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
     "alt": "계양구 캐릭터 신비 이미지",
@@ -2065,7 +2065,7 @@
    ],
    "words": 16,
    "image": {
-    "file": "/mascots/thumbs/m-c9034aa484.gif",
+    "file": "/mascots/thumbs/m-c9034aa484.png",
     "source_url": "https://www.donggu.kr/main/img/contents/character02.gif",
     "page_url": "https://www.donggu.kr/menu.es?mid=a10503010200",
     "alt": "환희, 안내, 무등산 사랑, 방문환영, 체육대회, 신속한 민원업무, 환경보호 금남이",
@@ -2234,7 +2234,7 @@
     "source_url": "https://www.boseong.go.kr/www/introduce/intro/represent/mascot/4u4fk5/screen_qr.png",
     "page_url": "https://www.boseong.go.kr/www/introduce/intro/represent/mascot",
     "alt": "보성군 마스코트 페이지 QRCODE(http://www.boseong.go.kr/www/4u4fk5@)",
-    "sha256": "06cb215ea1388cc01123a914bd25e9681c815f0692808465755ca26b42742222",
+    "sha256": "f5fb105e260ae1464cd3b70396b190da10b7d6df4bbc170a694ec87825aefeff",
     "bytes": 8788,
     "source": "official-page-image",
     "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
@@ -2359,13 +2359,58 @@
    "name": "사상구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+   "names": [],
+   "files": [],
+   "words": 3,
+   "image": {
+    "file": "/mascots/thumbs/m-6f5103fe18.jpg",
+    "source_url": "https://www.sasang.go.kr/img/sasang/sub/s4_1_7_img17.jpg",
+    "page_url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+    "alt": "캐릭터",
+    "sha256": "95f829ab62a743aee820da565a876b2b3c0558f756b4a99539048b428f3c7faf",
+    "bytes": 30511,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50395": {
    "name": "북구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character.png",
+     "PNG파일다운 쇠부리(메인캐릭터)와 참나리(서브캐릭터) PNG 파일 다운로드"
+    ],
+    [
+     "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character.ai",
+     "AI파일다운 쇠부리(메인캐릭터)와 참나리(서브캐릭터) AI 파일 다운로드"
+    ],
+    [
+     "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character_echo.png",
+     "PNG파일다운 쇠부리(에코버전) PNG 파일 다운로드"
+    ],
+    [
+     "https://www.bukgu.ulsan.kr/download_url.jsp?url=/down/bukcu_character_echo.ai",
+     "AI파일다운 쇠부리(에코버전) AI 파일 다운로드"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-f31cf4189d.png",
+    "source_url": "https://www.bukgu.ulsan.kr/images/contents/carrick_2020.png",
+    "page_url": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+    "alt": "북구청 캐릭터 쇠부리와 참나리",
+    "sha256": "f76b28ab15b1ea7c1ebcf07074b8d1b9b9e626aa453ccd8f2178aeb711eeba08",
+    "bytes": 21249,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50393": {
    "name": "북구",
@@ -2546,13 +2591,23 @@
    "name": "서해구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
+   "names": [
+    "동동이"
+   ],
+   "files": [],
+   "words": 10
   },
   "Q50405": {
    "name": "서구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.seogu.go.kr/kor/sub05_01_04.do",
+   "names": [],
+   "files": [],
+   "words": 6
   },
   "Q50406": {
    "name": "서구",
@@ -2574,7 +2629,11 @@
    "name": "서초구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
+   "names": [],
+   "files": [],
+   "words": 2
   },
   "Q50408": {
    "name": "서대문구",
@@ -2881,7 +2940,13 @@
    "name": "양산시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
+   "names": [
+    "양이와 산이"
+   ],
+   "files": [],
+   "words": 8
   },
   "Q50420": {
    "name": "양천구",
@@ -2893,7 +2958,11 @@
    "name": "양구군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
+   "names": [],
+   "files": [],
+   "words": 9
   },
   "Q42113": {
    "name": "시흥시",
@@ -2946,7 +3015,11 @@
    "name": "여주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yeoju.go.kr/english/contents.do?key=1814",
+   "names": [],
+   "files": [],
+   "words": 24
   },
   "Q50255": {
    "name": "양평군",
@@ -3022,7 +3095,30 @@
    "name": "연제구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+   "names": [],
+   "files": [
+    [
+     "http://www.yeonje.go.kr/portal/character-img.zip",
+     "이미지파일 다운로드 연제의 캐릭터 이미지파일 다운로드 새창으로 열림"
+    ],
+    [
+     "http://www.yeonje.go.kr/portal/character-ai.ai",
+     "AI파일 다운로드 연제의 캐릭터 AI 다운로드 새창으로 열림"
+    ]
+   ],
+   "words": 2,
+   "image": {
+    "file": "/mascots/thumbs/m-26c6836d10.png",
+    "source_url": "http://www.yeonje.go.kr/portal/img/02/character01.png",
+    "page_url": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+    "alt": "솔이",
+    "sha256": "84d0aa0a7ec1ab0122a2f6cad3b2f2e330a0a89e58ce0429de9b3e93a1dbd979",
+    "bytes": 35097,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50258": {
    "name": "연천군",
@@ -3040,7 +3136,21 @@
    "name": "영도구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+   "names": [],
+   "files": [],
+   "words": 16,
+   "image": {
+    "file": "/mascots/thumbs/m-12e8345199.png",
+    "source_url": "https://www.yeongdo.go.kr/_res/portal/img/sub/p00556_img0101.png",
+    "page_url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+    "alt": "1999 Yeongdo Character",
+    "sha256": "043b26103a14084293abe679b6c248357ff2a53be723340580feda8fc657e4b7",
+    "bytes": 37874,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50262": {
    "name": "영암군",
@@ -3152,7 +3262,21 @@
    "name": "예산군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+   "names": [],
+   "files": [],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-4d2ea1a589.png",
+    "source_url": "https://www.yesan.go.kr/images/kor/sub05/ys_character.png",
+    "page_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+    "alt": "예산군의 캐릭터 이미지",
+    "sha256": "f7ec05be9da20f925d6153ffd7cfe9928cc9e796329a99b7416be9cc010141c2",
+    "bytes": 11431,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50311": {
    "name": "완도군",
@@ -3196,7 +3320,26 @@
    "name": "제물포구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+   "names": [],
+   "files": [
+    [
+     "https://www.jemulpo.go.kr/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=26&fileno=3",
+     "캐릭터 다운 받기"
+    ]
+   ],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-25f84ed3dc.png",
+    "source_url": "https://www.jemulpo.go.kr/main/img/contents/symbol-character.png",
+    "page_url": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+    "alt": "캐릭터 동이 이미지",
+    "sha256": "0a379ea1b8459800d088be15f677843f99bb38e191a6293a80319f4a81aa8a65",
+    "bytes": 218806,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50309": {
    "name": "옥천군",
@@ -3242,7 +3385,26 @@
    "name": "용인시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+   "names": [],
+   "files": [
+    [
+     "https://www.yongin.go.kr/component/resrce/file/ND_resrceFileDownload.do?resrceSn=2588&resrceVer=1&fileSn=1",
+     "캐릭터매뉴얼다운 용인시 캐릭터 조아용 매뉴얼북(2022).pdf 파일받기"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-3aee6fc60c.png",
+    "source_url": "https://www.yongin.go.kr/resources/user/web/images/sub/intro/intro0104_img7.jpg",
+    "page_url": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+    "alt": "캐릭터 :조아용",
+    "sha256": "16ab9a30da7f23c997f5a913978191bf743f153dbd86a1c4e5e242000dfe2de6",
+    "bytes": 26094,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50404": {
    "name": "서구",
@@ -3274,7 +3436,26 @@
    "name": "울릉군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+   "names": [],
+   "files": [
+    [
+     "https://www.ulleung.go.kr/design/file/ko/symbol_character.zip",
+     "다운로드 울릉군 캐릭터 zip파일 다운로드"
+    ]
+   ],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-0de729fba6.png",
+    "source_url": "https://www.ulleung.go.kr/design/ko/img/content/character_img_231117.png",
+    "page_url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+    "alt": "울릉군 군 캐릭터 오기동이와 해호랑",
+    "sha256": "dda9ce4dc70d55328efa588346c6a8c7947cb75da2545a77b3605d9a478b3784",
+    "bytes": 11303,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50432": {
    "name": "은평구",
@@ -3286,7 +3467,21 @@
    "name": "울주군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+   "names": [],
+   "files": [],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-fd79d75e90.jpg",
+    "source_url": "https://www.ulju.ulsan.kr/ulju/images/sub/mascot_img02.jpg",
+    "page_url": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+    "alt": "마스코트 응용형-한글",
+    "sha256": "c33d31b78d2d03064762215c3939878e3522f032944c653af3d5a45813593891",
+    "bytes": 421518,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50315": {
    "name": "음성군",
@@ -3341,7 +3536,30 @@
    "name": "유성구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011195Wg6&fileSn=0",
+     "구캐릭터 다운로드(jpg)"
+    ],
+    [
+     "https://www.yuseong.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000011194Ur1&fileSn=0",
+     "구캐릭터 다운로드(ai)"
+    ]
+   ],
+   "words": 14,
+   "image": {
+    "file": "/mascots/thumbs/m-49cf2473ca.png",
+    "source_url": "https://www.yuseong.go.kr/images/kor/sub06/district_character.png",
+    "page_url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+    "alt": "유성이 구캐릭터",
+    "sha256": "acdaf0071b3c3719ab624f49cdd8adca31a195ff615ac2b5561e16741f79b67e",
+    "bytes": 127631,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q42137": {
    "name": "익산시",
@@ -3359,7 +3577,11 @@
    "name": "성주군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+   "names": [],
+   "files": [],
+   "words": 6
   },
   "Q50320": {
    "name": "장성군",
@@ -3371,13 +3593,45 @@
    "name": "장흥군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+   "names": [],
+   "files": [
+    [
+     "https://www.jangheung.go.kr/contents/14296/jh_C_AI_2025_2.zip",
+     "캐릭터 AI파일 다운로드 새창"
+    ],
+    [
+     "https://www.jangheung.go.kr/contents/14296/jh_C_JPG_2025_2.zip",
+     "캐릭터 JPG파일 다운로드 새창"
+    ]
+   ],
+   "words": 22,
+   "image": {
+    "file": "/mascots/thumbs/m-443b4bdd06.png",
+    "source_url": "https://www.jangheung.go.kr/contents/14296/character_img04.png?build_20261109001",
+    "page_url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+    "alt": "장흥군 깃발을 들고 행진하고 있는 우표,진비,동비 캐릭터",
+    "sha256": "7b5a2277951b6bd3af3f6f080e00599c9198f2d4bbfedde7ef3a13305ddc46a8",
+    "bytes": 41460,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50318": {
    "name": "인제군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
+   "names": [],
+   "files": [
+    [
+     "https://www.inje.go.kr/file/know/inje_sudal.zip",
+     "인제군 마스코트 다운로드 인제군 마스코트 다운로드"
+    ]
+   ],
+   "words": 12
   },
   "Q50323": {
    "name": "정선군",
@@ -3530,7 +3784,30 @@
    "name": "중구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+   "names": [],
+   "files": [
+    [
+     "https://www.bsjunggu.go.kr/down/bsjunggu/character_jpg.zip",
+     "JPG 다운로드 새창열림"
+    ],
+    [
+     "https://www.bsjunggu.go.kr/down/bsjunggu/character.zip",
+     "AI 다운로드 새창열림"
+    ]
+   ],
+   "words": 3,
+   "image": {
+    "file": "/mascots/thumbs/m-7420da7a63.png",
+    "source_url": "https://www.bsjunggu.go.kr/img/junggu/s5_3_1_img3.gif",
+    "page_url": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+    "alt": "자갈치 아지매와 물고기 캐릭터",
+    "sha256": "86d97d8053670d9a60af300312e165b9584823d319c045670cdfbe1a15b781d6",
+    "bytes": 12958,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50439": {
    "name": "중구",
@@ -3546,13 +3823,43 @@
    "name": "진천군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.jincheon.go.kr/home/main.do",
+   "names": [],
+   "files": [],
+   "words": 4,
+   "image": {
+    "file": "/mascots/thumbs/m-0d5e143c3f.png",
+    "source_url": "https://www.jincheon.go.kr/home/images/www_2023/family-site-deco.png",
+    "page_url": "https://www.jincheon.go.kr/home/main.do",
+    "alt": "진천 캐릭터",
+    "sha256": "b13df46ce6f20ac47983743082dbf5f7fcc7cc6c5b83e9670bfcf38e7f8ac8f7",
+    "bytes": 50706,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50442": {
    "name": "중구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+   "names": [
+    "울산큰애기"
+   ],
+   "files": [],
+   "words": 2,
+   "image": {
+    "file": "/mascots/thumbs/m-ff0ec487c3.jpg",
+    "source_url": "https://www.junggu.ulsan.kr/images/domain/junggu/junggu/junggu_img06.jpg",
+    "page_url": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+    "alt": "울산큰애기 캐릭터 이미지",
+    "sha256": "4505886de1b26a5bd5bd7a8dc16aacc34474f970c15c9463056db182ef96fa74",
+    "bytes": 19681,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50328": {
    "name": "창녕군",
@@ -3963,7 +4270,30 @@
    "name": "태안군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.taean.go.kr/kor/sub05_02_03.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.taean.go.kr/gonet/FileDownload.do?fileName=mascot.jpg&code=download/kor/sub05/",
+     "JPG 다운로드 마스코트 JPG파일 다운로드"
+    ],
+    [
+     "https://www.taean.go.kr/gonet/FileDownload.do?fileName=mascot.ai&code=download/kor/sub05/",
+     "AI 다운로드 마스코트 ai파일 다운로드"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-9e53c83d3d.png",
+    "source_url": "https://www.taean.go.kr/images/kor/sub05/cha_img.gif",
+    "page_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+    "alt": "태안군 마스코트 태랑이",
+    "sha256": "e113eec59cae628bdf351003cbb236de6557ddcf3e39499e9f65272b97edb552",
+    "bytes": 9688,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50344": {
    "name": "홍천군",
@@ -3989,13 +4319,41 @@
    "name": "포항시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
+   "names": [],
+   "files": [],
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-0dc474ea1c.png",
+    "source_url": "https://www.pohang.go.kr/portal/img/sub/04/img_0601_05.png",
+    "page_url": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
+    "alt": "캐릭터",
+    "sha256": "5b2ca8aec6d20299f0632af6893ae5aecb123bb725675b1bc3dd21634cdb8eb5",
+    "bytes": 28894,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50347": {
    "name": "횡성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hsg.go.kr/www/contents.do?key=727&",
+   "names": [],
+   "files": [],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-36e4658337.png",
+    "source_url": "https://www.hsg.go.kr/site/www/images/contents/cts727_img02.png",
+    "page_url": "https://www.hsg.go.kr/www/contents.do?key=727&",
+    "alt": "마스코트 한우리 이미지",
+    "sha256": "c69a9cebb05df40bb1e96540018591da139c9d7b6d4cb3502673456984742ebd",
+    "bytes": 19211,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50346": {
    "name": "화천군",
@@ -4181,7 +4539,7 @@
   },
   "Q12583025": {
    "name": "강원랜드",
-   "group": "기업",
+   "group": "시장형 공기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -4276,7 +4634,21 @@
    "name": "한국지역난방공사",
    "group": "시장형 공기업",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+   "names": [],
+   "files": [],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-82f299f913.jpg",
+    "source_url": "https://www.kdhc.co.kr/static/kdhc/img/common/200129-img4.jpg",
+    "page_url": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+    "alt": "캐릭터(따소미) 이미지",
+    "sha256": "bbe421e9047ebc5b16d6a926e0475b7fb2f2c17e323b9da0ae8331fd32075528",
+    "bytes": 9829,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q12623697": {
    "name": "한국중부발전",
@@ -4342,7 +4714,20 @@
    "name": "한국수자원공사",
    "group": "준시장형 공기업",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kwater.or.kr/water/sub01/sub06/explPage.do?s_mid=129",
+   "names": [],
+   "files": [
+    [
+     "https://www.kwater.or.kr/download/water/ci_ai02.zip",
+     "캐릭터 AI파일 다운로드"
+    ],
+    [
+     "https://www.kwater.or.kr/download/water/ci_jpg02.zip",
+     "캐릭터 JPG파일 다운로드"
+    ]
+   ],
+   "words": 8
   },
   "Q16192199": {
    "name": "한국가스기술공사",
@@ -4533,7 +4918,7 @@
   },
   "Q6974864": {
    "name": "국민연금공단",
-   "group": "기업",
+   "group": "기금관리형 준정부기관",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -4862,7 +5247,21 @@
    "name": "한국가스안전공사",
    "group": "위탁집행형 준정부기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kgs.or.kr/kgs/adcc/view.do",
+   "names": [],
+   "files": [],
+   "words": 4,
+   "image": {
+    "file": "/mascots/thumbs/m-7b4789719c.png",
+    "source_url": "https://www.kgs.or.kr/asset/img/org/ci_char.png",
+    "page_url": "https://www.kgs.or.kr/kgs/adcc/view.do",
+    "alt": "캐릭터-안전이, 행복이",
+    "sha256": "39290fc3ef4179c25f55d3e915c3eae7f348d80f675dc653dcb054dc0d02d8c6",
+    "bytes": 132626,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q12623695": {
    "name": "한국주택금융공사",
@@ -4932,7 +5331,38 @@
    "name": "한국원자력환경공단",
    "group": "위탁집행형 준정부기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+   "names": [],
+   "files": [
+    [
+     "https://www.korad.or.kr/data/menuResources/h2/64/201812051927_cznD6s7.zip",
+     "JPEG 다운로드 캐릭터 jpeg 압축파일 다운로드"
+    ],
+    [
+     "https://www.korad.or.kr/data/menuResources/h2/64/201812051927_xLr0vbe.zip",
+     "AI 다운로드 캐릭터 일러스트 압축파일 다운로드"
+    ],
+    [
+     "https://www.korad.or.kr/data/menuResources/h2/64/202601271458_v2tfMl7.zip",
+     "JPEG 다운로드 캐릭터 jpeg 압축파일 다운로드"
+    ],
+    [
+     "https://www.korad.or.kr/data/menuResources/h2/64/202601271459_tK7s5kw.zip",
+     "AI 다운로드 캐릭터 일러스트 압축파일 다운로드"
+    ]
+   ],
+   "words": 18,
+   "image": {
+    "file": "/mascots/thumbs/m-18bbf87245.png",
+    "source_url": "https://www.korad.or.kr/data/menuResources/h2/64/201810181332_9HO2Rwe.png",
+    "page_url": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+    "alt": "캐릭터",
+    "sha256": "c75a151c4614bbb55dd759cfd58c62d6255332f4d437de0a6358b0bf2d08e3ee",
+    "bytes": 50258,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16169603": {
    "name": "한국전력거래소",
@@ -4944,7 +5374,11 @@
    "name": "한국환경산업기술원",
    "group": "위탁집행형 준정부기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
+   "names": [],
+   "files": [],
+   "words": 2
   },
   "Q12623244": {
    "name": "한국산업안전보건공단",
@@ -5070,7 +5504,22 @@
    "name": "국가철도공단",
    "group": "위탁집행형 준정부기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kr.or.kr/sub/info.do?m=060105",
+   "names": [
+    "레일로"
+   ],
+   "files": [
+    [
+     "https://www.kr.or.kr/boardCnts/fileDown.do?fileSeq=f99a673e15ac7fb71421e15377b68b02",
+     "PNG 다운로드 레일로 PNG 다운로드"
+    ],
+    [
+     "https://www.kr.or.kr/boardCnts/fileDown.do?fileSeq=f762304d8cd7f39a06d7fbb356e8db82",
+     "AI다운로드 레일로 AI 다운로드"
+    ]
+   ],
+   "words": 2
   },
   "Q12623622": {
    "name": "한국장애인고용공단",
@@ -5131,7 +5580,21 @@
    "name": "국토안전관리원",
    "group": "위탁집행형 준정부기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+   "names": [],
+   "files": [],
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-9e232a1223.png",
+    "source_url": "https://www.kalis.or.kr/common/images/contents/character1.png",
+    "page_url": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+    "alt": "캐릭터1",
+    "sha256": "827d9b2f3bfd4112d05deb21596fbd3c6f18c0385fb2478321320c110fcef610",
+    "bytes": 51604,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16172629": {
    "name": "한국해양교통안전공단",
@@ -5319,7 +5782,11 @@
    "name": "시청자미디어재단",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://kcmf.or.kr/KCMF/contents/KCMF060700.do",
+   "names": [],
+   "files": [],
+   "words": 8
   },
   "Q16192435": {
    "name": "한국보건사회연구원",
@@ -5367,7 +5834,16 @@
    "name": "한국농촌경제연구원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.krei.re.kr/krei/page/38",
+   "names": [],
+   "files": [
+    [
+     "https://www.krei.re.kr/DATA/document/krei_character.zip",
+     "PNG 다운로드"
+    ]
+   ],
+   "words": 4
   },
   "Q12623419": {
    "name": "한국여성정책연구원",
@@ -5377,7 +5853,7 @@
   },
   "Q483855": {
    "name": "중소기업은행",
-   "group": "기업",
+   "group": "기타공공기관",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5389,7 +5865,7 @@
   },
   "Q4409074": {
    "name": "한국산업은행",
-   "group": "기업",
+   "group": "기타공공기관",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5472,7 +5948,19 @@
    "name": "한국원자력통제기술원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kinac.re.kr/menu?menuId=MN0000000642",
+   "names": [
+    "든든이",
+    "투명이"
+   ],
+   "files": [
+    [
+     "https://www.kinac.re.kr/fileDownload?fileGubun=common&menuId=attachFileMgr&userFileName=KINAC_캐릭터(png).zip&systemFileName=1729580423081.zip",
+     "다운로드"
+    ]
+   ],
+   "words": 6
   },
   "Q12610722": {
    "name": "한국의료기기안전정보원",
@@ -5497,7 +5985,7 @@
    "words": 20,
    "image": {
     "file": "/mascots/thumbs/m-223d136079.png",
-    "source_url": "https://www.drugsafe.or.kr/images/egovframework/iwt/ds/ko/introduction/EgovKidsCharacter1.png;jsessionid=Q7Spo6FL5C7m6D1ri4EWpOrauOqSDCcBIa0QK1FUV2GZt8ElThST1LiBZobY9ad4.webint_2_servlet_engine1",
+    "source_url": "https://www.drugsafe.or.kr/images/egovframework/iwt/ds/ko/introduction/EgovKidsCharacter1.png;jsessionid=a0F0rw5cgpKpcCliALKKS1ycnVpcHscrI8X57lvoay3gfjLOTAPhzO5kVtTccUHk.webint_2_servlet_engine1",
     "page_url": "https://www.drugsafe.or.kr/iwt/ds/ko/introduction/EgovKidsCharacter.do;jsessionid=Q7Spo6FL5C7m6D1ri4EWpOrauOqSDCcBIa0QK1FUV2GZt8ElThST1LiBZobY9ad4.webint_2_servlet_engine1",
     "alt": "Main Character",
     "sha256": "a120ba0b04aad20f743f820e3ce88b049b6e60821e3e8b36d9d03b08461f9b16",
@@ -5540,7 +6028,21 @@
    "name": "한국특허정보원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+   "names": [],
+   "files": [],
+   "words": 4,
+   "image": {
+    "file": "/mascots/thumbs/m-7883a61093.jpg",
+    "source_url": "https://www.kipi.or.kr/image/sub/ci_img07.jpg",
+    "page_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+    "alt": "칼라 캐릭터",
+    "sha256": "dea7931e6ffd0f2d70ea17996681fb505923563aab2e778bbe2085da172e4f98",
+    "bytes": 17821,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q31176245": {
    "name": "서민금융진흥원",
@@ -5570,7 +6072,7 @@
   },
   "Q4501812": {
    "name": "한국수출입은행",
-   "group": "기업",
+   "group": "기타공공기관",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5603,7 +6105,7 @@
   },
   "Q486332": {
    "name": "한국투자공사",
-   "group": "기업",
+   "group": "기타공공기관",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5782,7 +6284,18 @@
    "name": "국가평생교육진흥원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
+   "names": [
+    "배움이"
+   ],
+   "files": [
+    [
+     "https://www.nile.or.kr/usr/wap/\\\"\\/usr\\/wap\\/downloadFile.do?app=39409&seq=59670&atchFileSeq=59658&fileColumn=atchFileSeq&fileSn=0\\",
+     "CI 다운로드 (AI) CI 다운로드 (JPG, PNG) \\n \\n \\n\\n 캐릭터 소개 \\n\\n \\n \\n \\n\\n \\n 배움이 \\n\\n 국가 \\\"파일"
+    ]
+   ],
+   "words": 6
   },
   "Q16182649": {
    "name": "동북아역사재단",
@@ -5800,7 +6313,21 @@
    "name": "사립학교교직원연금공단",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.tp.or.kr/tp-kr/index.do",
+   "names": [],
+   "files": [],
+   "words": 4,
+   "image": {
+    "file": "/mascots/thumbs/m-f39e09b902.png",
+    "source_url": "https://www.tp.or.kr/asset/tp-kr/images/tp_img/download_img.png",
+    "page_url": "https://www.tp.or.kr/tp-kr/index.do",
+    "alt": "사학연금 모바일 캐릭터",
+    "sha256": "2695534372f781f6d86e6fef1e4f1ab1cfff58eff23dd8b0922e7b6eb7159fb3",
+    "bytes": 80730,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16184585": {
    "name": "부산대학교치과병원",
@@ -6198,7 +6725,30 @@
    "name": "농림식품기술기획평가원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.ipet.re.kr/Introduce/Introci.asp",
+   "names": [],
+   "files": [
+    [
+     "https://www.ipet.re.kr/Introduce/농이평이(캐릭터)턴어라운드(원본).ai",
+     "AI다운로드 캐릭터AI다운로드"
+    ],
+    [
+     "https://www.ipet.re.kr/Introduce/농이평이 PNG.zip",
+     "PNG다운로드 캐릭터PNG다운로드"
+    ]
+   ],
+   "words": 4,
+   "image": {
+    "file": "/mascots/thumbs/m-f76047cffb.png",
+    "source_url": "https://www.ipet.re.kr/images/sub/Introci_img7_26.png",
+    "page_url": "https://www.ipet.re.kr/Introduce/Introci.asp",
+    "alt": "농이 평이 농림식품기술기획평가원 대표 캐릭터인 농이와 평이를 통하여 변화와 혁신을 주도하는 평가원의 정체성을 표현하였다.농이는 농림식품 과학기술을 상징하고, 평이는 기관의 주요기능인 R&D 기획평가를 상징한다.",
+    "sha256": "b372b076b9d5a404699e9b28c8284e780a1eedb24c43c26b385bccaedcc3ae69",
+    "bytes": 355033,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16192376": {
    "name": "한국디자인진흥원",
@@ -6882,13 +7432,50 @@
    "name": "국립해양생물자원관",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.mabik.re.kr/kor/sub06_03.do",
+   "names": [],
+   "files": [],
+   "words": 18,
+   "image": {
+    "file": "/mascots/thumbs/m-76f220e663.png",
+    "source_url": "https://www.mabik.re.kr/images/kor/sub06/mabik_characte01.png",
+    "page_url": "https://www.mabik.re.kr/kor/sub06_03.do",
+    "alt": "마빅 1호",
+    "sha256": "33e2be9199883f8670a4dbb5feaeb695c2abc1fc63e59296906a190ecc57fb61",
+    "bytes": 14489,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q12613559": {
    "name": "인천항만공사",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+   "names": [],
+   "files": [
+    [
+     "https://www.icpa.or.kr/data/Character_JPG_01.zip",
+     "새창"
+    ],
+    [
+     "https://www.icpa.or.kr/data/Character_AI_01.zip",
+     "새창"
+    ]
+   ],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-50109f7f2a.png",
+    "source_url": "https://www.icpa.or.kr/images/contents/page7/img_ci23_01.gif",
+    "page_url": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+    "alt": "캐릭터 이미지 왼쪽에서 오른쪽으로 순서대로 해룡이, 해벗이, 해린이",
+    "sha256": "d1ac0527737d78075bbde17701487d95de8702bc5b67b93f9126c0c7b183bcb3",
+    "bytes": 12959,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q31180844": {
    "name": "한국저작권보호원",
@@ -6920,7 +7507,16 @@
    "name": "울산항만공사",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.upa.or.kr/portal/contents.do?mid=0505000000",
+   "names": [],
+   "files": [
+    [
+     "https://www.upa.or.kr/file/direct/download.do?filename=Character.zip&path=/file",
+     "캐릭터 다운로드 다운로드"
+    ]
+   ],
+   "words": 10
   },
   "Q6431649": {
    "name": "한국해양수산연수원",
@@ -7049,7 +7645,13 @@
    "name": "국가유산진흥원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kh.or.kr/kha",
+   "names": [
+    "모두의 풍속도"
+   ],
+   "files": [],
+   "words": 20
   },
   "Q16094775": {
    "name": "한국원산지정보원",
@@ -7107,7 +7709,26 @@
    "name": "한국기상산업기술원",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.kmiti.or.kr/_img/web/kmiti_character.zip",
+     "캐릭터 다운로드 CI 다운로드"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-21bbfcad40.png",
+    "source_url": "https://www.kmiti.or.kr/_img/web/pc/cont/character.png",
+    "page_url": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+    "alt": "kmi 캐릭터 이미지",
+    "sha256": "8e6827ef9e654da1e1a4a45ae88035c57ca006d81c26e11fc12898bd6c7a1ad6",
+    "bytes": 345042,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16169337": {
    "name": "한국임업진흥원",
@@ -7285,7 +7906,28 @@
    "name": "한국수산자원공단",
    "group": "기타공공기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+   "names": [
+    "수피"
+   ],
+   "files": [
+    [
+     "https://www.fira.or.kr/newfira/download/overview/soopy.zip",
+     "다운로드 [새창]수피(SOOPY) 캐릭터 파일"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-8f9292ed75.png",
+    "source_url": "https://www.fira.or.kr/newfira/images/web/overview/soopy02.png",
+    "page_url": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+    "alt": "수피(SOOPY) 캐릭터 변형 4가지 버전",
+    "sha256": "e0cd0466411c5065f9f0a668a31bd848f4d80958437110e2775c4f5c13d7397d",
+    "bytes": 76203,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q6452737": {
    "name": "경남대학교",
@@ -7589,7 +8231,24 @@
    "name": "국립목포대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.mokpo.ac.kr/www/2070/subview.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_basic_PNG.zip",
+     "PNG 다운로드 캐릭터"
+    ],
+    [
+     "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_appl_PNG.zip",
+     "PNG 다운로드 캐릭터"
+    ],
+    [
+     "https://www.mokpo.ac.kr/sites/www/images/sub/mnu_char_logo.png",
+     "PNG 다운로드 캐릭터"
+    ]
+   ],
+   "words": 22
   },
   "Q484900": {
    "name": "광주과학기술원",
@@ -7731,7 +8390,30 @@
    "name": "국민대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.kookmin.ac.kr/content/05sub/style0005/file/character_jpg.zip",
+     "JPG 다운로드"
+    ],
+    [
+     "https://www.kookmin.ac.kr/content/05sub/style0005/file/character_ai.zip",
+     "AI 다운로드"
+    ]
+   ],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-5adc4667b2.jpg",
+    "source_url": "https://www.kookmin.ac.kr/content/05sub/style0005/images/sub/kmu_ui_char_img_c.jpg",
+    "page_url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+    "alt": "국민대 캐릭터 c형",
+    "sha256": "862cae21ad3b684aebe531f1d5494a2703b840b7a75ccd39ef56511e034fb0a2",
+    "bytes": 30299,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q16093712": {
    "name": "남부대학교",
@@ -7814,7 +8496,11 @@
    "name": "단국대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.dankook.ac.kr/web/kor/-ui-",
+   "names": [],
+   "files": [],
+   "words": 6
   },
   "Q5208186": {
    "name": "대구예술대학교",
@@ -8031,7 +8717,21 @@
    "name": "백석대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "http://www.bu.ac.kr/web/3414/subview.do",
+   "names": [],
+   "files": [],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-bef43bc1f0.png",
+    "source_url": "http://www.bu.ac.kr/sites/web/images/ui_5.png",
+    "page_url": "http://www.bu.ac.kr/web/3414/subview.do",
+    "alt": "캐릭터",
+    "sha256": "f8df9df892f39da7bd2b2335909ae276d69ee97681f274be84298a41c38b1130",
+    "bytes": 14820,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q5297278": {
    "name": "두원공과대학교",
@@ -8295,7 +8995,18 @@
    "name": "서울교육대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
+   "names": [
+    "새록이"
+   ],
+   "files": [
+    [
+     "https://www.snue.ac.kr/images/web/snue/sub/snue_character.zip",
+     "캐릭터 다운로드 다운로드"
+    ]
+   ],
+   "words": 12
   },
   "Q488620": {
    "name": "선문대학교",
@@ -8690,7 +9401,21 @@
    "name": "울산과학기술원",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.unist.ac.kr/unist/introduction/download.do",
+   "names": [],
+   "files": [],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-8a5bd04b4a.png",
+    "source_url": "https://www.unist.ac.kr/_res/unist/unist/img/content/img-ui-down04.png",
+    "page_url": "https://www.unist.ac.kr/unist/introduction/download.do",
+    "alt": "마스코트",
+    "sha256": "c01f490a136f968e1b15915fce0841def3c1acfcb3d1ba6e6015bad2e962835b",
+    "bytes": 18770,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q7878055": {
    "name": "위덕대학교",
@@ -9326,7 +10051,30 @@
    "name": "한성대학교",
    "group": "대학",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.hansung.ac.kr/sites/hansung/files/hansung-character.zip",
+     "캐릭터 파일 다운로드"
+    ],
+    [
+     "https://www.hansung.ac.kr/sites/hansung/files/상상부기 프렌즈 ai.zip",
+     "캐릭터 파일 다운로드"
+    ]
+   ],
+   "words": 14,
+   "image": {
+    "file": "/mascots/thumbs/m-f34744eaef.png",
+    "source_url": "https://www.hansung.ac.kr/sites/hansung/images/sub/img-ui-chars.png",
+    "page_url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+    "alt": "상상부기 캐릭터들 - 상찌, 한성냥이, 상상부기, 꼬꼬&꾸꾸",
+    "sha256": "ab8cc21470eceed287f754d1e2668252bd2923cb1e1ecc92b5f419c1eb9972ed",
+    "bytes": 75213,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q626067": {
    "name": "한세대학교",
@@ -11143,7 +11891,7 @@
    "words": 26,
    "image": {
     "file": "/mascots/thumbs/m-136b9fcead.png",
-    "source_url": "https://www.jejuskfc.com/uploadfile/club_mascot/20260630050835703_f0e32c463eed4e86.null;jsessionid=78EA76E0ABDCC6FD3DF3F1282F4286D2.was2",
+    "source_url": "https://www.jejuskfc.com/uploadfile/club_mascot/20260630050835703_f0e32c463eed4e86.null;jsessionid=20B9D8E1871C9D18E4D681936996C378.was2",
     "page_url": "https://www.jejuskfc.com/club/introduction/mascot",
     "alt": "",
     "sha256": "d2924a995cf835310d5a48c4dcb05d8fac5be401e69db8fc5cd7b84c7bc3b13c",

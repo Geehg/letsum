@@ -300,6 +300,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q114364248",
+      "organization_id": "mc-q114364248",
+      "organization_name": "제물포구",
+      "name": "제물포구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "제물포구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "인천광역시",
+      "summary": "제물포구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q114364248-src"
+      ],
+      "source_url": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+      "guideline_url": "https://www.jemulpo.go.kr/main/introduce/guide/symbol.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q11626082",
       "organization_id": "mc-q11626082",
       "organization_name": "행정중심복합도시건설청",
@@ -555,6 +597,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12599707",
+      "organization_id": "mc-q12599707",
+      "organization_name": "사립학교교직원연금공단",
+      "name": "사립학교교직원연금공단 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "사립학교교직원연금공단 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "사립학교교직원연금공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12599707-src"
+      ],
+      "source_url": "https://www.tp.or.kr/tp-kr/index.do",
+      "guideline_url": "https://www.tp.or.kr/tp-kr/index.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12605671",
       "organization_id": "mc-q12605671",
       "organization_name": "인천 신한은행 에스버드 WBT",
@@ -639,6 +723,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12609155",
+      "organization_id": "mc-q12609155",
+      "organization_name": "울산항만공사",
+      "name": "울산항만공사 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "울산항만공사 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "울산항만공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12609155-src"
+      ],
+      "source_url": "https://www.upa.or.kr/portal/contents.do?mid=0505000000",
+      "guideline_url": "https://www.upa.or.kr/portal/contents.do?mid=0505000000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12613559",
+      "organization_id": "mc-q12613559",
+      "organization_name": "인천항만공사",
+      "name": "인천항만공사 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "인천항만공사 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "인천항만공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12613559-src"
+      ],
+      "source_url": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+      "guideline_url": "https://www.icpa.or.kr/content/view.do?menuKey=121&contentKey=54",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12616442",
       "organization_id": "mc-q12616442",
       "organization_name": "제주대학교병원",
@@ -660,6 +828,48 @@
       ],
       "source_url": "https://www.jejunuh.co.kr/main/sub05_06_02.do",
       "guideline_url": "https://www.jejunuh.co.kr/main/sub05_06_02.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12622776",
+      "organization_id": "mc-q12622776",
+      "organization_name": "한국가스안전공사",
+      "name": "한국가스안전공사 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국가스안전공사 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국가스안전공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12622776-src"
+      ],
+      "source_url": "https://www.kgs.or.kr/kgs/adcc/view.do",
+      "guideline_url": "https://www.kgs.or.kr/kgs/adcc/view.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -807,6 +1017,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12622923",
+      "organization_id": "mc-q12622923",
+      "organization_name": "한국기상산업기술원",
+      "name": "한국기상산업기술원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국기상산업기술원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국기상산업기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12622923-src"
+      ],
+      "source_url": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+      "guideline_url": "https://www.kmiti.or.kr/kr/contents/introduce_10/view.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12622955",
       "organization_id": "mc-q12622955",
       "organization_name": "한국노인인력개발원",
@@ -892,6 +1144,91 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12622983",
+      "organization_id": "mc-q12622983",
+      "organization_name": "한국농촌경제연구원",
+      "name": "한국농촌경제연구원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국농촌경제연구원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국농촌경제연구원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12622983-src"
+      ],
+      "source_url": "https://www.krei.re.kr/krei/page/38",
+      "guideline_url": "https://www.krei.re.kr/krei/page/38",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12623100",
+      "organization_id": "mc-q12623100",
+      "organization_name": "국가유산진흥원",
+      "name": "모두의 풍속도",
+      "name_en": null,
+      "aliases": [
+        "국가유산진흥원 캐릭터",
+        "국가유산진흥원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국가유산진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 모두의 풍속도.",
+      "source_ids": [
+        "mc-q12623100-src"
+      ],
+      "source_url": "https://www.kh.or.kr/kha",
+      "guideline_url": "https://www.kh.or.kr/kha",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12623148",
       "organization_id": "mc-q12623148",
       "organization_name": "한국발명진흥회",
@@ -913,6 +1250,48 @@
       ],
       "source_url": "https://www.kipa.org/kipa/intro/kw_0819_01.jsp",
       "guideline_url": "https://www.kipa.org/kipa/intro/kw_0819_01.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12623152",
+      "organization_id": "mc-q12623152",
+      "organization_name": "한국원자력환경공단",
+      "name": "한국원자력환경공단 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국원자력환경공단 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국원자력환경공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12623152-src"
+      ],
+      "source_url": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
+      "guideline_url": "https://www.korad.or.kr/korad/html.do?menu_idx=64",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -1063,6 +1442,49 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12623315",
+      "organization_id": "mc-q12623315",
+      "organization_name": "한국수산자원공단",
+      "name": "수피",
+      "name_en": null,
+      "aliases": [
+        "한국수산자원공단 캐릭터",
+        "한국수산자원공단 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국수산자원공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 수피.",
+      "source_ids": [
+        "mc-q12623315-src"
+      ],
+      "source_url": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+      "guideline_url": "https://www.fira.or.kr/newfira/web/overview/overview02_04.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12623488",
       "organization_id": "mc-q12623488",
       "organization_name": "한국원자력의학원",
@@ -1084,6 +1506,51 @@
       ],
       "source_url": "https://www.kirams.re.kr/kirams/board/character.do",
       "guideline_url": "https://www.kirams.re.kr/kirams/board/character.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12623491",
+      "organization_id": "mc-q12623491",
+      "organization_name": "한국원자력통제기술원",
+      "name": "든든이 · 투명이",
+      "name_en": null,
+      "aliases": [
+        "든든이",
+        "투명이",
+        "한국원자력통제기술원 캐릭터",
+        "한국원자력통제기술원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국원자력통제기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 든든이, 투명이.",
+      "source_ids": [
+        "mc-q12623491-src"
+      ],
+      "source_url": "https://www.kinac.re.kr/menu?menuId=MN0000000642",
+      "guideline_url": "https://www.kinac.re.kr/menu?menuId=MN0000000642",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -1490,6 +1957,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12623708",
+      "organization_id": "mc-q12623708",
+      "organization_name": "한국지역난방공사",
+      "name": "한국지역난방공사 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국지역난방공사 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국지역난방공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12623708-src"
+      ],
+      "source_url": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+      "guideline_url": "https://www.kdhc.co.kr/kdhc/main/contents.do?menuNo=200129",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12623746",
       "organization_id": "mc-q12623746",
       "organization_name": "한국청소년상담복지개발원",
@@ -1574,6 +2083,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q12623804",
+      "organization_id": "mc-q12623804",
+      "organization_name": "한국특허정보원",
+      "name": "한국특허정보원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국특허정보원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국특허정보원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12623804-src"
+      ],
+      "source_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+      "guideline_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q12623855",
       "organization_id": "mc-q12623855",
       "organization_name": "한국해양과학기술원",
@@ -1637,6 +2188,48 @@
       ],
       "source_url": "https://www.keco.or.kr/web/lay1/S1T34C62/contents.do",
       "guideline_url": "https://www.keco.or.kr/web/lay1/S1T34C62/contents.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12623900",
+      "organization_id": "mc-q12623900",
+      "organization_name": "한국환경산업기술원",
+      "name": "한국환경산업기술원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국환경산업기술원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국환경산업기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12623900-src"
+      ],
+      "source_url": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
+      "guideline_url": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -1889,6 +2482,49 @@
       ],
       "source_url": "https://www.konyang.ac.kr/kor/sub01_02_06_04.do",
       "guideline_url": "https://www.konyang.ac.kr/kor/sub01_02_06_04.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q140403575",
+      "organization_id": "mc-q140403575",
+      "organization_name": "서해구",
+      "name": "동동이",
+      "name_en": null,
+      "aliases": [
+        "서해구 캐릭터",
+        "서해구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "인천광역시",
+      "summary": "서해구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 동동이.",
+      "source_ids": [
+        "mc-q140403575-src"
+      ],
+      "source_url": "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
+      "guideline_url": "https://www.seohae.go.kr/open_content/main/seogu/info/symbol.jsp",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2415,6 +3051,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q16219823",
+      "organization_id": "mc-q16219823",
+      "organization_name": "농림식품기술기획평가원",
+      "name": "농림식품기술기획평가원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "농림식품기술기획평가원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "농림식품기술기획평가원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q16219823-src"
+      ],
+      "source_url": "https://www.ipet.re.kr/Introduce/Introci.asp",
+      "guideline_url": "https://www.ipet.re.kr/Introduce/Introci.asp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q16261725",
       "organization_id": "mc-q16261725",
       "organization_name": "서울 이랜드 FC",
@@ -2521,6 +3199,48 @@
       ],
       "source_url": "https://www.hrdkorea.or.kr/3/2/2/2",
       "guideline_url": "https://www.hrdkorea.or.kr/3/2/2/2",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q16262642",
+      "organization_id": "mc-q16262642",
+      "organization_name": "국토안전관리원",
+      "name": "국토안전관리원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "국토안전관리원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국토안전관리원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q16262642-src"
+      ],
+      "source_url": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
+      "guideline_url": "https://www.kalis.or.kr/wpge/m_79/introduce/introduce06.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2671,6 +3391,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q18444594",
+      "organization_id": "mc-q18444594",
+      "organization_name": "검단구",
+      "name": "검단구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "검단구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "인천광역시",
+      "summary": "검단구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q18444594-src"
+      ],
+      "source_url": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+      "guideline_url": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q18459",
+      "organization_id": "mc-q18459",
+      "organization_name": "용인시",
+      "name": "용인시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "용인시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경기도",
+      "summary": "용인시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q18459-src"
+      ],
+      "source_url": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+      "guideline_url": "https://www.yongin.go.kr/home/yiIf/yiIfProd/yiIfProd04.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q188624",
       "organization_id": "mc-q188624",
       "organization_name": "평창군",
@@ -2776,6 +3580,48 @@
       ],
       "source_url": "https://www.lx.or.kr/kor/sub06_04_05_04.do",
       "guideline_url": "https://www.lx.or.kr/kor/sub06_04_05_04.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q20395",
+      "organization_id": "mc-q20395",
+      "organization_name": "서초구",
+      "name": "서초구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "서초구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "서울특별시",
+      "summary": "서초구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q20395-src"
+      ],
+      "source_url": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
+      "guideline_url": "https://www.seocho.go.kr/site/seocho/05/10502050000002015070810.jsp",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -3119,6 +3965,90 @@
       ],
       "source_url": "https://www.changwon.go.kr/cwportal/10671/10708/10920.web",
       "guideline_url": "https://www.changwon.go.kr/cwportal/10671/10708/10920.web",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q24867026",
+      "organization_id": "mc-q24867026",
+      "organization_name": "국립해양생물자원관",
+      "name": "국립해양생물자원관 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "국립해양생물자원관 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국립해양생물자원관의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q24867026-src"
+      ],
+      "source_url": "https://www.mabik.re.kr/kor/sub06_03.do",
+      "guideline_url": "https://www.mabik.re.kr/kor/sub06_03.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q24867044",
+      "organization_id": "mc-q24867044",
+      "organization_name": "시청자미디어재단",
+      "name": "시청자미디어재단 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "시청자미디어재단 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "시청자미디어재단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q24867044-src"
+      ],
+      "source_url": "https://kcmf.or.kr/KCMF/contents/KCMF060700.do",
+      "guideline_url": "https://kcmf.or.kr/KCMF/contents/KCMF060700.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -3996,6 +4926,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q42060",
+      "organization_id": "mc-q42060",
+      "organization_name": "계룡시",
+      "name": "계룡시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "계룡시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "충청남도",
+      "summary": "계룡시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q42060-src"
+      ],
+      "source_url": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+      "guideline_url": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q42061",
       "organization_id": "mc-q42061",
       "organization_name": "고양시",
@@ -4379,6 +5351,51 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q42083",
+      "organization_id": "mc-q42083",
+      "organization_name": "나주시",
+      "name": "홍돌이 · 나주오",
+      "name_en": null,
+      "aliases": [
+        "홍돌이",
+        "나주오",
+        "나주시 캐릭터",
+        "나주시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "전남광주통합특별시",
+      "summary": "나주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 홍돌이, 나주오.",
+      "source_ids": [
+        "mc-q42083-src"
+      ],
+      "source_url": "https://www.naju.go.kr/www/introduction/symbol/mark",
+      "guideline_url": "https://www.naju.go.kr/www/introduction/symbol/mark",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q42084",
       "organization_id": "mc-q42084",
       "organization_name": "남양주시",
@@ -4612,6 +5629,132 @@
       ],
       "source_url": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
       "guideline_url": "https://www.mokpo.go.kr/www/introduce/mokpo_symbol/symbol",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q42095",
+      "organization_id": "mc-q42095",
+      "organization_name": "문경시",
+      "name": "문경시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "문경시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상북도",
+      "summary": "문경시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q42095-src"
+      ],
+      "source_url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+      "guideline_url": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q42096",
+      "organization_id": "mc-q42096",
+      "organization_name": "밀양시",
+      "name": "밀양시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "밀양시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상남도",
+      "summary": "밀양시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q42096-src"
+      ],
+      "source_url": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+      "guideline_url": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q42098",
+      "organization_id": "mc-q42098",
+      "organization_name": "보령시",
+      "name": "보령시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "보령시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "충청남도",
+      "summary": "보령시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q42098-src"
+      ],
+      "source_url": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+      "guideline_url": "https://www.brcn.go.kr/kor/sub06_01_01.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -4869,6 +6012,49 @@
       ],
       "source_url": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001546",
       "guideline_url": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001546",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q42123",
+      "organization_id": "mc-q42123",
+      "organization_name": "양산시",
+      "name": "양이와 산이",
+      "name_en": null,
+      "aliases": [
+        "양산시 캐릭터",
+        "양산시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상남도",
+      "summary": "양산시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 양이와 산이.",
+      "source_ids": [
+        "mc-q42123-src"
+      ],
+      "source_url": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
+      "guideline_url": "https://www.yangsan.go.kr/portal/contents.do?mid=0502000000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -5334,6 +6520,48 @@
       ],
       "source_url": "https://www.pcs21.net/www/contents.do?key=3822",
       "guideline_url": "https://www.pcs21.net/www/contents.do?key=3822",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q42157",
+      "organization_id": "mc-q42157",
+      "organization_name": "포항시",
+      "name": "포항시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "포항시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상북도",
+      "summary": "포항시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q42157-src"
+      ],
+      "source_url": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
+      "guideline_url": "https://www.pohang.go.kr/portal/contents.do?mid=0406000000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -5821,6 +7049,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q482680",
+      "organization_id": "mc-q482680",
+      "organization_name": "국립목포대학교",
+      "name": "국립목포대학교 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "국립목포대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국립목포대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482680-src"
+      ],
+      "source_url": "https://www.mokpo.ac.kr/www/2070/subview.do",
+      "guideline_url": "https://www.mokpo.ac.kr/www/2070/subview.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q482688",
       "organization_id": "mc-q482688",
       "organization_name": "국립군산대학교",
@@ -5972,6 +7242,48 @@
       ],
       "source_url": "http://kscms.ks.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN193",
       "guideline_url": "http://kscms.ks.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN193",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q482765",
+      "organization_id": "mc-q482765",
+      "organization_name": "한성대학교",
+      "name": "한성대학교 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한성대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한성대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482765-src"
+      ],
+      "source_url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
+      "guideline_url": "https://www.hansung.ac.kr/hansung/6188/subview.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -6290,6 +7602,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q484108",
+      "organization_id": "mc-q484108",
+      "organization_name": "울산과학기술원",
+      "name": "울산과학기술원 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "울산과학기술원 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "울산과학기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q484108-src"
+      ],
+      "source_url": "https://www.unist.ac.kr/unist/introduction/download.do",
+      "guideline_url": "https://www.unist.ac.kr/unist/introduction/download.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q484230",
       "organization_id": "mc-q484230",
       "organization_name": "서울여자대학교",
@@ -6437,6 +7791,133 @@
       ],
       "source_url": "https://www.dhcfc.kr/cl/mas.php",
       "guideline_url": "https://www.dhcfc.kr/cl/mas.php",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q485570",
+      "organization_id": "mc-q485570",
+      "organization_name": "울릉군",
+      "name": "울릉군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "울릉군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상북도",
+      "summary": "울릉군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q485570-src"
+      ],
+      "source_url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+      "guideline_url": "https://www.ulleung.go.kr/ko/page.do?mnu_uid=454&",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q487177",
+      "organization_id": "mc-q487177",
+      "organization_name": "국민대학교",
+      "name": "국민대학교 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "국민대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국민대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q487177-src"
+      ],
+      "source_url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+      "guideline_url": "https://www.kookmin.ac.kr/comm/menu/user/0a4f7cf187cc3164678352bc3f4575b3/content/index.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q487613",
+      "organization_id": "mc-q487613",
+      "organization_name": "서울교육대학교",
+      "name": "새록이",
+      "name_en": null,
+      "aliases": [
+        "서울교육대학교 캐릭터",
+        "서울교육대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "서울교육대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 새록이.",
+      "source_ids": [
+        "mc-q487613-src"
+      ],
+      "source_url": "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
+      "guideline_url": "https://www.snue.ac.kr/snue/mm/menu/schoolSymbol.do?mi=1318",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -6901,6 +8382,48 @@
       ],
       "source_url": "https://www.ajou.ac.kr/kr/intro/character.do",
       "guideline_url": "https://www.ajou.ac.kr/kr/intro/character.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q491127",
+      "organization_id": "mc-q491127",
+      "organization_name": "단국대학교",
+      "name": "단국대학교 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "단국대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "단국대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q491127-src"
+      ],
+      "source_url": "https://www.dankook.ac.kr/web/kor/-ui-",
+      "guideline_url": "https://www.dankook.ac.kr/web/kor/-ui-",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -7518,6 +9041,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50204",
+      "organization_id": "mc-q50204",
+      "organization_name": "강진군",
+      "name": "강진군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "강진군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "전남광주통합특별시",
+      "summary": "강진군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50204-src"
+      ],
+      "source_url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+      "guideline_url": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50215",
+      "organization_id": "mc-q50215",
+      "organization_name": "군위군",
+      "name": "군위군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "군위군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "대구광역시",
+      "summary": "군위군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50215-src"
+      ],
+      "source_url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+      "guideline_url": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50216",
       "organization_id": "mc-q50216",
       "organization_name": "금산군",
@@ -7581,6 +9188,48 @@
       ],
       "source_url": "https://www.danyang.go.kr/dy21/764",
       "guideline_url": "https://www.danyang.go.kr/dy21/764",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50239",
+      "organization_id": "mc-q50239",
+      "organization_name": "달성군",
+      "name": "달성군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "달성군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "대구광역시",
+      "summary": "달성군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50239-src"
+      ],
+      "source_url": "https://www.dalseong.daegu.kr/index.do?menu_id=00000258",
+      "guideline_url": "https://www.dalseong.daegu.kr/index.do?menu_id=00000258",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -7819,6 +9468,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50250",
+      "organization_id": "mc-q50250",
+      "organization_name": "성주군",
+      "name": "성주군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "성주군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경상북도",
+      "summary": "성주군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50250-src"
+      ],
+      "source_url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+      "guideline_url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50251",
       "organization_id": "mc-q50251",
       "organization_name": "순창군",
@@ -7861,6 +9552,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50253",
+      "organization_id": "mc-q50253",
+      "organization_name": "양구군",
+      "name": "양구군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "양구군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "강원특별자치도",
+      "summary": "양구군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50253-src"
+      ],
+      "source_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
+      "guideline_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50255",
       "organization_id": "mc-q50255",
       "organization_name": "양평군",
@@ -7882,6 +9615,48 @@
       ],
       "source_url": "https://www.yp21.go.kr/www/contents.do?key=1847",
       "guideline_url": "https://www.yp21.go.kr/www/contents.do?key=1847",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50257",
+      "organization_id": "mc-q50257",
+      "organization_name": "여주시",
+      "name": "여주시 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "여주시 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "경기도",
+      "summary": "여주시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50257-src"
+      ],
+      "source_url": "https://www.yeoju.go.kr/english/contents.do?key=1814",
+      "guideline_url": "https://www.yeoju.go.kr/english/contents.do?key=1814",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -7987,6 +9762,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50307",
+      "organization_id": "mc-q50307",
+      "organization_name": "예산군",
+      "name": "예산군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "예산군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "충청남도",
+      "summary": "예산군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50307-src"
+      ],
+      "source_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+      "guideline_url": "https://www.yesan.go.kr/kor/sub05_02_01.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50309",
       "organization_id": "mc-q50309",
       "organization_name": "옥천군",
@@ -8071,6 +9888,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50313",
+      "organization_id": "mc-q50313",
+      "organization_name": "울주군",
+      "name": "울주군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "울주군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "울산광역시",
+      "summary": "울주군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50313-src"
+      ],
+      "source_url": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+      "guideline_url": "https://www.ulju.ulsan.kr/ulju/contents.do?mId=0705010000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50315",
       "organization_id": "mc-q50315",
       "organization_name": "음성군",
@@ -8092,6 +9951,48 @@
       ],
       "source_url": "https://www.eumseong.go.kr/www/contents.do?key=412",
       "guideline_url": "https://www.eumseong.go.kr/www/contents.do?key=412",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50318",
+      "organization_id": "mc-q50318",
+      "organization_name": "인제군",
+      "name": "인제군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "인제군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "강원특별자치도",
+      "summary": "인제군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50318-src"
+      ],
+      "source_url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
+      "guideline_url": "https://www.inje.go.kr/portal/inje-news/inje/symbol",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -8200,6 +10101,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50322",
+      "organization_id": "mc-q50322",
+      "organization_name": "장흥군",
+      "name": "장흥군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "장흥군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "전남광주통합특별시",
+      "summary": "장흥군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50322-src"
+      ],
+      "source_url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+      "guideline_url": "https://www.jangheung.go.kr/www/jeongnamjin/jangheung_intro/symbol",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50324",
       "organization_id": "mc-q50324",
       "organization_name": "증평군",
@@ -8221,6 +10164,48 @@
       ],
       "source_url": "https://www.jp.go.kr/kor/sub01_07_03.do",
       "guideline_url": "https://www.jp.go.kr/kor/sub01_07_03.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50327",
+      "organization_id": "mc-q50327",
+      "organization_name": "진천군",
+      "name": "진천군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "진천군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "충청북도",
+      "summary": "진천군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50327-src"
+      ],
+      "source_url": "https://www.jincheon.go.kr/home/main.do",
+      "guideline_url": "https://www.jincheon.go.kr/home/main.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -8456,6 +10441,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50335",
+      "organization_id": "mc-q50335",
+      "organization_name": "태안군",
+      "name": "태안군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "태안군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "충청남도",
+      "summary": "태안군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50335-src"
+      ],
+      "source_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+      "guideline_url": "https://www.taean.go.kr/kor/sub05_02_03.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50342",
       "organization_id": "mc-q50342",
       "organization_name": "해남군",
@@ -8666,6 +10693,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50347",
+      "organization_id": "mc-q50347",
+      "organization_name": "횡성군",
+      "name": "횡성군 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "횡성군 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "강원특별자치도",
+      "summary": "횡성군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50347-src"
+      ],
+      "source_url": "https://www.hsg.go.kr/www/contents.do?key=727&",
+      "guideline_url": "https://www.hsg.go.kr/www/contents.do?key=727&",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50348",
       "organization_id": "mc-q50348",
       "organization_name": "강동구",
@@ -8687,6 +10756,90 @@
       ],
       "source_url": "https://www.gangdong.go.kr/web/newportal/contents/gdp_004_001_005_004",
       "guideline_url": "https://www.gangdong.go.kr/web/newportal/contents/gdp_004_001_005_004",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50349",
+      "organization_id": "mc-q50349",
+      "organization_name": "강북구",
+      "name": "강북구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "강북구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "서울특별시",
+      "summary": "강북구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50349-src"
+      ],
+      "source_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+      "guideline_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50352",
+      "organization_id": "mc-q50352",
+      "organization_name": "계양구",
+      "name": "계양구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "계양구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "인천광역시",
+      "summary": "계양구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50352-src"
+      ],
+      "source_url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+      "guideline_url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -8750,6 +10903,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50354",
+      "organization_id": "mc-q50354",
+      "organization_name": "광산구",
+      "name": "광산구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "광산구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "전남광주통합특별시",
+      "summary": "광산구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50354-src"
+      ],
+      "source_url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+      "guideline_url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50355",
       "organization_id": "mc-q50355",
       "organization_name": "광진구",
@@ -8792,6 +10987,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50358",
+      "organization_id": "mc-q50358",
+      "organization_name": "금정구",
+      "name": "금정구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "금정구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "부산광역시",
+      "summary": "금정구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50358-src"
+      ],
+      "source_url": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+      "guideline_url": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50362",
+      "organization_id": "mc-q50362",
+      "organization_name": "남구",
+      "name": "남구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "남구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "대구광역시",
+      "summary": "남구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50362-src"
+      ],
+      "source_url": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+      "guideline_url": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50364",
       "organization_id": "mc-q50364",
       "organization_name": "남구",
@@ -8813,6 +11092,48 @@
       ],
       "source_url": "https://www.ulsannamgu.go.kr/aboutNamgu/namguCharacter.jsp",
       "guideline_url": "https://www.ulsannamgu.go.kr/aboutNamgu/namguCharacter.jsp",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50365",
+      "organization_id": "mc-q50365",
+      "organization_name": "미추홀구",
+      "name": "미추홀구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "미추홀구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "인천광역시",
+      "summary": "미추홀구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50365-src"
+      ],
+      "source_url": "https://www.michuhol.go.kr/main/content.do?sq=9",
+      "guideline_url": "https://www.michuhol.go.kr/main/content.do?sq=9",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9214,6 +11535,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50385",
+      "organization_id": "mc-q50385",
+      "organization_name": "동작구",
+      "name": "동작구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "동작구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "서울특별시",
+      "summary": "동작구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50385-src"
+      ],
+      "source_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+      "guideline_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50390",
       "organization_id": "mc-q50390",
       "organization_name": "부산진구",
@@ -9382,6 +11745,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50395",
+      "organization_id": "mc-q50395",
+      "organization_name": "북구",
+      "name": "북구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "북구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "울산광역시",
+      "summary": "북구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50395-src"
+      ],
+      "source_url": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+      "guideline_url": "https://www.bukgu.ulsan.kr/lay1/S1T37C42/contents.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50398",
+      "organization_id": "mc-q50398",
+      "organization_name": "사상구",
+      "name": "사상구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "사상구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "부산광역시",
+      "summary": "사상구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50398-src"
+      ],
+      "source_url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+      "guideline_url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000104001007000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50400",
       "organization_id": "mc-q50400",
       "organization_name": "사하구",
@@ -9490,6 +11937,48 @@
       ],
       "source_url": "https://www.dgs.go.kr/portal/contents.do?mid=0101060000",
       "guideline_url": "https://www.dgs.go.kr/portal/contents.do?mid=0101060000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50405",
+      "organization_id": "mc-q50405",
+      "organization_name": "서구",
+      "name": "서구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "서구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "대전광역시",
+      "summary": "서구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50405-src"
+      ],
+      "source_url": "https://www.seogu.go.kr/kor/sub05_01_04.do",
+      "guideline_url": "https://www.seogu.go.kr/kor/sub05_01_04.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9680,6 +12169,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50422",
+      "organization_id": "mc-q50422",
+      "organization_name": "연제구",
+      "name": "연제구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "연제구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "부산광역시",
+      "summary": "연제구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50422-src"
+      ],
+      "source_url": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+      "guideline_url": "http://www.yeonje.go.kr/portal/contents.do?mId=0201020000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50423",
+      "organization_id": "mc-q50423",
+      "organization_name": "영도구",
+      "name": "영도구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "영도구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "부산광역시",
+      "summary": "영도구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50423-src"
+      ],
+      "source_url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+      "guideline_url": "https://www.yeongdo.go.kr/00492/00550/00556.web",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50429",
       "organization_id": "mc-q50429",
       "organization_name": "용산구",
@@ -9722,6 +12295,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q50431",
+      "organization_id": "mc-q50431",
+      "organization_name": "유성구",
+      "name": "유성구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "유성구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "대전광역시",
+      "summary": "유성구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50431-src"
+      ],
+      "source_url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+      "guideline_url": "https://www.yuseong.go.kr/kor/sub06_01_04_01.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q50439",
       "organization_id": "mc-q50439",
       "organization_name": "중구",
@@ -9743,6 +12358,91 @@
       ],
       "source_url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000051814Iz5&fileSn=0",
       "guideline_url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000051814Iz5&fileSn=0",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50440",
+      "organization_id": "mc-q50440",
+      "organization_name": "중구",
+      "name": "중구 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "중구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "부산광역시",
+      "summary": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q50440-src"
+      ],
+      "source_url": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+      "guideline_url": "https://www.bsjunggu.go.kr/index.junggu?menuCd=DOM_000000105003001000",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q50442",
+      "organization_id": "mc-q50442",
+      "organization_name": "중구",
+      "name": "울산큰애기",
+      "name_en": null,
+      "aliases": [
+        "중구 캐릭터",
+        "중구 마스코트"
+      ],
+      "category": "local-government",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": "울산광역시",
+      "summary": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 울산큰애기.",
+      "source_ids": [
+        "mc-q50442-src"
+      ],
+      "source_url": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
+      "guideline_url": "https://www.junggu.ulsan.kr/index.ulsan?menuCd=DOM_000000103001001000",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -10167,6 +12867,49 @@
       ],
       "source_url": "https://www.mmu.ac.kr/main/contents/character",
       "guideline_url": "https://www.mmu.ac.kr/main/contents/character",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q624022",
+      "organization_id": "mc-q624022",
+      "organization_name": "국가철도공단",
+      "name": "레일로",
+      "name_en": null,
+      "aliases": [
+        "국가철도공단 캐릭터",
+        "국가철도공단 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국가철도공단의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 레일로.",
+      "source_ids": [
+        "mc-q624022-src"
+      ],
+      "source_url": "https://www.kr.or.kr/sub/info.do?m=060105",
+      "guideline_url": "https://www.kr.or.kr/sub/info.do?m=060105",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -10615,6 +13358,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q625952",
+      "organization_id": "mc-q625952",
+      "organization_name": "백석대학교",
+      "name": "백석대학교 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "백석대학교 마스코트"
+      ],
+      "category": "education",
+      "kind": "character",
+      "sectors": [
+        "education"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "백석대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q625952-src"
+      ],
+      "source_url": "http://www.bu.ac.kr/web/3414/subview.do",
+      "guideline_url": "http://www.bu.ac.kr/web/3414/subview.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q625961",
       "organization_id": "mc-q625961",
       "organization_name": "대구가톨릭대학교",
@@ -10808,6 +13593,48 @@
       ],
       "source_url": "https://i815.or.kr/2018/introduction/ci.do;jsessionid=9B1FBE40AB6A84B800B1171B26BBFEBB",
       "guideline_url": "https://i815.or.kr/2018/introduction/ci.do;jsessionid=9B1FBE40AB6A84B800B1171B26BBFEBB",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q6322893",
+      "organization_id": "mc-q6322893",
+      "organization_name": "한국수자원공사",
+      "name": "한국수자원공사 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "한국수자원공사 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "한국수자원공사의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q6322893-src"
+      ],
+      "source_url": "https://www.kwater.or.kr/water/sub01/sub06/explPage.do?s_mid=129",
+      "guideline_url": "https://www.kwater.or.kr/water/sub01/sub06/explPage.do?s_mid=129",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -11150,6 +13977,49 @@
       ],
       "source_url": "https://www.semyung.ac.kr/kor/sub01_04_05_05.do",
       "guideline_url": "https://www.semyung.ac.kr/kor/sub01_04_05_05.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q6973584",
+      "organization_id": "mc-q6973584",
+      "organization_name": "국가평생교육진흥원",
+      "name": "배움이",
+      "name_en": null,
+      "aliases": [
+        "국가평생교육진흥원 캐릭터",
+        "국가평생교육진흥원 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "국가평생교육진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 배움이.",
+      "source_ids": [
+        "mc-q6973584-src"
+      ],
+      "source_url": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
+      "guideline_url": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
