@@ -42,6 +42,9 @@ def strip_tags(text):
     return re.sub(r"\s+", " ", htmllib.unescape(re.sub(r"<[^>]+>", " ", text or ""))).strip()
 
 
+GOFILE = re.compile(r"""goFile\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]""")
+
+
 def candidates(markup, base):
     """[(url, label)] of download candidates in one page's markup."""
     out = []
@@ -62,7 +65,11 @@ def candidates(markup, base):
                 urls.append(attrs[key])
         for file_id, sn in EGOV.findall(script):
             urls.append(f"/cmm/fms/FileDown.do?atchFileId={urllib.parse.quote(file_id)}&fileSn={sn}")
-        urls += QUOTED.findall(script)
+        direct = GOFILE.findall(script)  # goFile('a.ai','/portal/...') → POST form /file/direct/download.do (GET works too)
+        for name, path in direct:
+            urls.append("/file/direct/download.do?" + urllib.parse.urlencode({"filename": name, "path": path}))
+        if not direct:
+            urls += QUOTED.findall(script)
         for raw_url in urls:
             url = crawl.absolute(base, raw_url)
             if not url or not url.startswith("http"):
@@ -165,9 +172,64 @@ def filename(headers, url):
     return urllib.parse.unquote(urllib.parse.urlsplit(url).path.rsplit("/", 1)[-1])[:120] or None
 
 
+class CurlResponse:
+    """Minimal urllib-like response from curl (same User-Agent and headers), for government servers that reset
+    Python's TLS handshake but serve the same file to curl."""
+    def __init__(self, url, headers, limit):
+        import subprocess
+        args = ["curl", "-sSL", "--max-time", "40", "--max-filesize", str(limit), "-D", "-", "-o", "-"]
+        for k, v in headers.items():
+            args += ["-H", f"{k}: {v}"]
+        out = subprocess.run(args + [url], capture_output=True, timeout=60).stdout
+        blocks, body = [], out
+        while body.startswith(b"HTTP/"):
+            head, _, body = body.partition(b"\r\n\r\n")
+            blocks.append(head.decode("latin-1"))
+        if not blocks:
+            raise OSError("curl: no response")
+        lines = blocks[-1].split("\r\n")
+        self.status = int(lines[0].split()[1])
+        self.headers = _Headers({k.strip().lower(): v.strip() for k, _, v in (l.partition(":") for l in lines[1:])})
+        self.url = url
+        for block in blocks[:-1]:
+            for line in block.split("\r\n"):
+                if line.lower().startswith("location:"):
+                    self.url = urllib.parse.urljoin(self.url, line.split(":", 1)[1].strip())
+        self._body = body
+
+    def read(self, n=-1):
+        return self._body if n < 0 else self._body[:n]
+
+    def geturl(self):
+        return self.url
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+class _Headers(dict):
+    def get(self, key, default=None):
+        return super().get(key.lower(), default)
+
+    def get_all(self, key, default=None):
+        value = super().get(key.lower())
+        return [value] if value is not None else default
+
+
 def request(url, page, extra=None):
     headers = {"User-Agent": crawl.UA, "Accept": "*/*", "Referer": page or url, **(extra or {})}
-    return crawl._opener.open(urllib.request.Request(url, headers=headers), timeout=25)
+    try:
+        return crawl._opener.open(urllib.request.Request(url, headers=headers), timeout=25)
+    except urllib.error.HTTPError:
+        raise
+    except Exception:  # TLS reset / protocol error: retry the same request with curl
+        response = CurlResponse(url, headers, 13 * 1024 * 1024)
+        if response.status >= 400:
+            raise OSError(f"HTTP {response.status}")
+        return response
 
 
 def zip_names(data):
@@ -287,6 +349,11 @@ def main():
             pages = [p for p in dict.fromkeys([record.get("guideline_url"), record.get("source_url")]) if p]
             known = [[a["listed_formats"][0] if a["listed_formats"] else "", a["download_url"]] for a in record["assets"] if a.get("download_url")]
             jobs.append((record["id"], pages, known))
+    extra_file = crawl.DATA / "ci-pages-manual.json"  # CI pages found by hand for records whose crawl missed them
+    extra_pages = json.loads(extra_file.read_text())["pages"] if extra_file.exists() else {}
+    listed = {rid for rid, _, _ in jobs}
+    jobs = [(rid, list(dict.fromkeys(pages + extra_pages.get(rid, []))), known) for rid, pages, known in jobs]
+    jobs += [(rid, pages, []) for rid, pages in extra_pages.items() if rid not in listed and rid in ids]
     manual_file = crawl.DATA / "download-manual.json"
     manual = json.loads(manual_file.read_text())["files"] if manual_file.exists() else {}
     jobs = [(rid, pages, known + manual.get(rid, [])) for rid, pages, known in jobs]
@@ -297,15 +364,16 @@ def main():
     cached = json.loads(CACHE.read_text())["candidates"] if CACHE.exists() else {}
     if args.reuse and cached:
         found = cached
-        for rid, rows in manual.items():
-            for url, page, label, *extra in rows:
-                found.setdefault(rid, {})[url] = {"label": label, "page": page, **(extra[0] if extra else {})}
     else:
         with ThreadPoolExecutor(args.workers) as pool:
             found = dict(pool.map(lambda job: discover(job, not args.no_render), jobs))
         if only is not None:
             found = {**cached, **found}
         CACHE.write_text(json.dumps({"checked_at": crawl.TODAY, "candidates": found}, ensure_ascii=False, indent=1) + "\n")
+    for rid, rows in manual.items():  # hand-listed files keep their page, label and trusted flag in either mode
+        if only is None or rid in only:
+            for url, page, label, *extra in rows:
+                found.setdefault(rid, {})[url] = {"label": label, "page": page, **(extra[0] if extra else {})}
     if only is not None:
         found = {rid: rows for rid, rows in found.items() if rid in only}
     flat = [(rid, url, meta["page"], meta["label"], meta.get("trusted", False)) for rid, rows in found.items() for url, meta in rows.items()]

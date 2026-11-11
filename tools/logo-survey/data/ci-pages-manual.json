@@ -1,0 +1,60 @@
+{
+ "note": "자동 탐색이 놓친 기관의 공식 CI·상징 페이지(기관 도메인 한정 웹 검색으로 찾아 확인, 2026-11-11). check_downloads.py가 이 페이지도 읽어 다운로드 후보를 모은다(파일은 서명으로 검증).",
+ "pages": {
+  "kr-q41151": [
+   "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000137005001000",
+   "https://www.gyeongnam.go.kr/index.gyeong?menuCd=DOM_000000106002002006"
+  ],
+  "kr-q20929": [
+   "https://www.sejong.go.kr/kor/sub01_0301.do"
+  ],
+  "kr-q42137": [
+   "https://www.iksan.go.kr/index.iksan?menuCd=DOM_000002005001001001",
+   "https://www.iksan.go.kr/index.do?menuUid=ff8080819a39930e019a4de8c1ae0afd"
+  ],
+  "kr-q42147": [
+   "https://www.cheongju.go.kr/www/contents.do?key=17008"
+  ],
+  "kr-q31094": [
+   "https://www.chungju.go.kr/www/contents.do?key=475"
+  ],
+  "kr-q41066": [
+   "https://www.chungbuk.go.kr/brand/contents.do?key=4714",
+   "https://www.chungbuk.go.kr/www/contents.do?key=4812"
+  ],
+  "kr-q42097": [
+   "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=280",
+   "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=1095"
+  ],
+  "kr-q42099": [
+   "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148009002001"
+  ],
+  "kr-q42116": [
+   "https://www.andong.go.kr/portal/contents.do?mId=0301030000",
+   "https://www.andong.go.kr/portal/contents.do?mId=0301030600"
+  ],
+  "kr-q42119": [
+   "https://www.anseong.go.kr/portal/contents.do?mId=0604010000"
+  ],
+  "kr-q41157": [
+   "https://www.jeonbuk.go.kr/index.jeonbuk?menuCd=DOM_000000101002007000",
+   "https://www.jeonbuk.go.kr/index.jeonbuk?menuCd=DOM_000000101002010000"
+  ],
+  "kr-q42160": [
+   "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol01.jsp",
+   "https://www.hscity.go.kr/www/intro/gnrlSttus/ctyhllSymbol/ctyhllSymbol04.jsp"
+  ],
+  "kr-q496536": [
+   "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200029",
+   "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200031",
+   "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200032",
+   "https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200033"
+  ],
+  "kr-q41790": [
+   "https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=230"
+  ],
+  "yonsei-ui": [
+   "https://www.yonsei.ac.kr/sc/336/subview.do"
+  ]
+ }
+}

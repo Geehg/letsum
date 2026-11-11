@@ -272,6 +272,10 @@
     ],
     "google-brand": [
       {
+        "type": "commons",
+        "file": "File:Google \"G\" logo.svg"
+      },
+      {
         "type": "simple-icons",
         "slug": "google"
       }

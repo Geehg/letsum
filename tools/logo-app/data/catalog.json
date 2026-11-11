@@ -155,21 +155,24 @@
       "source_ids": [
         "seoul-brand"
       ],
-      "source_url": "https://www.seoul.go.kr/newbrand/",
-      "guideline_url": "https://www.seoul.go.kr/newbrand/",
+      "source_url": "https://www.seoul.go.kr/seoul/brand.do",
+      "guideline_url": "https://www.seoul.go.kr/seoul/brand.do",
       "assets": [
         {
           "id": "seoul-my-soul-asset-1",
-          "label": "도시브랜드 국문·영문 조합",
+          "label": "SEOUL MY SOUL 기본형·가로형·세로형",
           "form": "signature",
-          "listed_formats": [],
+          "listed_formats": [
+            "AI",
+            "PNG"
+          ],
           "verified_format": null,
           "size_bytes": null,
           "sha256": null,
           "download_url": null,
-          "access": "information",
+          "access": "public",
           "source_id": "seoul-brand",
-          "file_verification": "not-provided"
+          "file_verification": "page-listed"
         }
       ],
       "usage": {
@@ -177,7 +180,7 @@
         "approval": "not-stated",
         "redistribution": "unknown",
         "preview": "unknown",
-        "policy_url": "https://www.seoul.go.kr/newbrand/"
+        "policy_url": "https://www.seoul.go.kr/seoul/brand.do"
       },
       "version": {
         "status": "unconfirmed",
@@ -186,7 +189,7 @@
       },
       "review": {
         "status": "source-reviewed",
-        "checked_at": "2026-11-09",
+        "checked_at": "2026-11-11",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -1882,14 +1885,14 @@
       "assets": [
         {
           "id": "google-brand-asset-1",
-          "label": "브랜드 요소 사용 가이드",
+          "label": "Google 로고 파일(Partner Marketing Hub 가입·승인 후 제공)",
           "form": "guide",
           "listed_formats": [],
           "verified_format": null,
           "size_bytes": null,
           "sha256": null,
           "download_url": null,
-          "access": "information",
+          "access": "request",
           "source_id": "google-brand",
           "file_verification": "not-provided"
         }
@@ -1908,7 +1911,7 @@
       },
       "review": {
         "status": "source-reviewed",
-        "checked_at": "2026-11-09",
+        "checked_at": "2026-11-11",
         "source_scope": "page"
       },
       "related_fonts": []

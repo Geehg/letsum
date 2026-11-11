@@ -25,14 +25,14 @@
     },
     {
       "id": "seoul-brand",
-      "title": "서울 신규 브랜드 소개",
-      "url": "https://www.seoul.go.kr/newbrand/",
+      "title": "서울 브랜드(SEOUL MY SOUL)",
+      "url": "https://www.seoul.go.kr/seoul/brand.do",
       "publisher": "서울특별시",
       "language": "ko",
-      "checked_at": "2026-11-09",
+      "checked_at": "2026-11-11",
       "scope": "page",
-      "observation": "SEOUL MY SOUL 브랜드 의미, 국문·영문 기본형 및 가로·세로 활용 이미지 확인. 해당 페이지에서 원본 파일 다운로드 형식은 확인하지 못함.",
-      "note": "공식 웹페이지 본문 확인. 원본 파일의 다운로드·형식·무결성은 미검증."
+      "observation": "SEOUL MY SOUL 디자인 기본형·컬러 규정과 AI·PNG 압축파일, 디자인 규정 PDF 다운로드 확인. 소개 페이지(/newbrand/)에는 파일이 없음.",
+      "note": "공식 웹페이지 본문 확인. 파일은 check_downloads.py가 서명으로 검증."
     },
     {
       "id": "goyang-ci",
@@ -359,9 +359,9 @@
       "url": "https://about.google/brand-resource-center/guidance/",
       "publisher": "Google",
       "language": "en",
-      "checked_at": "2026-11-09",
+      "checked_at": "2026-11-11",
       "scope": "page",
-      "observation": "허가 금지·사전 요청·요청 불필요 용도를 구분한 공식 안내 확인. 제휴 오인·상품 적용 제한 및 교육 자료 등의 예시 확인.",
+      "observation": "허가 금지·사전 요청·요청 불필요 용도를 구분한 공식 안내 확인. 제휴 오인·상품 적용 제한 및 교육 자료 등의 예시 확인. 로고 파일은 Partner Marketing Hub(partnermarketinghub.withgoogle.com) 가입 신청·승인 후 제공되어 공개 다운로드 없음(2026-11-11 확인).",
       "note": "공식 웹페이지 본문 확인. 원본 파일의 다운로드·형식·무결성은 미검증."
     },
     {

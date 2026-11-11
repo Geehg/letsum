@@ -113,3 +113,10 @@ node tools/build_mascots.mjs
 - 대분류: 지자체 캐릭터·공공기관·대학·행사·올림픽·스포츠 구단·기업·브랜드·해외·기타. 애니메이션·게임 IP 자체(뽀로로 등)는 마스코트가 아니므로 제외.
 - 정렬: 위키백과 문서가 있는 마스코트는 조회수, 기관 캐릭터는 그 기관의 로고모음 인지도 점수.
 - 레코드 종류(kind)에 `mascot`, `character` 추가(core.js KIND_IDS·두 taxonomy 공통).
+
+## 다운로드 보강 (2026-11-11)
+- `tools/logo-survey/data/ci-pages-manual.json`(손으로 관리): 자동 탐색이 홈페이지만 잡았거나 엉뚱한 페이지를 잡은 기관의 공식 CI 페이지(기관 도메인 한정 웹 검색으로 찾아 확인). check_downloads.py가 이 페이지도 읽는다.
+- check_downloads.py: ① 파이썬 TLS 연결이 끊기는 관공서 서버는 같은 헤더(우리 User-Agent)로 curl 재요청 ② `goFile('파일명','경로')` 버튼(POST `/file/direct/download.do`)을 GET 주소로 바꿔 후보에 넣음(광주시 등 같은 CMS) ③ download-manual.json의 trusted 표시가 전체 조사에서도 유지되게 수정. 브라우저 User-Agent로 위장한 재요청은 하지 않는다(봇 차단 우회 금지) — 그런 서버(예: 천안시 FileDown)는 연결하지 않는다.
+- 공개 다운로드가 없는 곳은 연결하지 않고 이유를 자산 항목에 적는다: Google(Partner Marketing Hub 가입·승인 후 제공 → access "request"), NVIDIA(서면 허가 필요), 세종·수원(사용허가 신청), 서울대 고해상도(동의 절차).
+- SEOUL MY SOUL: 출처를 소개 페이지(/newbrand/)에서 파일이 있는 `/seoul/brand.do`로 교체.
+- Google 썸네일: Simple Icons 단색 글리프 대신 Commons의 4색 G(퍼블릭 도메인)를 먼저 쓴다(thumbnail-sources.json).
