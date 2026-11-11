@@ -35,6 +35,8 @@ WIKI_GROUP = {"olympic": "event/olympic", "worldcup": "event/worldcup", "basebal
               "railway": "business/transport", "city": "world/city", "organisation": "world/other", "other": "world/other", "country": "world/other"}
 CATEGORY_OF = {"local": "local-government", "public": "public-organization", "education": "education", "event": "nonprofit", "sports": "business", "business": "business", "world": "nonprofit"}
 SECTOR_OF = {"local": ["administration"], "public": ["administration"], "education": ["education"], "event": ["sports"], "sports": ["sports"], "business": ["culture-arts"], "world": ["culture-arts"]}
+# Pages the survey took for character pages that are not (a drama's cast list, a product catalogue).
+SURVEY_REJECT = {"SBS", "아카데미과학", "김해 FC 2008", "화천 국민체육진흥공단 WFC", "경주 한국수력원자력 FC", "수원 FCW", "파주 프런티어 FC"}
 USAGE = {"summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.", "approval": "unknown", "redistribution": "unknown", "preview": "unknown", "policy_url": None}
 
 
@@ -73,6 +75,10 @@ def verify(files, page):
 
 def main():
     orgs = json.loads((HERE / "data" / "orgs.json").read_text())["orgs"]
+    companies_file = HERE / "data" / "companies.json"
+    orgs += json.loads(companies_file.read_text())["orgs"] if companies_file.exists() else []
+    clubs_file = HERE / "data" / "clubs.json"
+    orgs += json.loads(clubs_file.read_text())["orgs"] if clubs_file.exists() else []
     survey = json.loads((HERE / "data" / "mascot-crawl.json").read_text())["results"]
     wiki = json.loads((HERE / "data" / "mascot-wiki.json").read_text())["mascots"] if (HERE / "data" / "mascot-wiki.json").exists() else []
     manual = json.loads((HERE / "data" / "mascots-manual.json").read_text())["mascots"] if (HERE / "data" / "mascots-manual.json").exists() else []
@@ -101,19 +107,21 @@ def main():
 
     # 1. Organisations' own characters.
     by_key = {crawl.org_key(o): o for o in orgs}
+    manual_orgs = {m["organization"] for m in manual}
+    manual_orgs |= {"KB금융그룹" if "KB금융그룹" in manual_orgs else None, "우리금융그룹" if "우리은행" in manual_orgs else None} - {None}
     for key, row in survey.items():
         org = by_key.get(key)
-        if not org or not row.get("found"):
+        if not org or not row.get("found") or org["name"] in SURVEY_REJECT or org["name"] in manual_orgs:
             continue
         names = [n for n in row.get("names", []) if n not in org["name"]]
-        group = ORG_GROUP.get(org["group"]) or (LOCAL_SUFFIX.get(org["name"][-1], "local/city") if org["group"] == "기초자치단체" else
+        group = "business/brand" if org["group"] == "기업" else f"sports/{org['sport']}" if org["group"] == "스포츠 구단" else ORG_GROUP.get(org["group"]) or (LOCAL_SUFFIX.get(org["name"][-1], "local/city") if org["group"] == "기초자치단체" else
                                                "public/research" if re.search(r"연구|병원|의료|금융|은행|보증|보험|연금|기금", org["name"]) else "public/institution")
         rid = "mc-" + org_id(org)[3:]
         name = " · ".join(names[:3]) if names else f"{org['name']} 캐릭터"
         names_seen.update(names)
         summary = f"{org['name']}의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다." + (f" 페이지에 적힌 캐릭터 이름: {', '.join(names[:3])}." if names else "")
         add(rid, org["name"], name, [*names, f"{org['name']} 캐릭터", f"{org['name']} 마스코트"], group, org.get("country") or "KR", org.get("region"), summary, row["page"],
-            f"명단: 위키백과 {org['roster']} · 캐릭터 페이지 자동 탐색", row.get("image"), row.get("files"), logo_rank.get(org_id(org), {}).get("score", 0), checked=row.get("checked_at", TODAY))
+            (f"명단: {org['roster']}" if org["group"] in ("기업", "스포츠 구단") else f"명단: 위키백과 {org['roster']}") + " · 캐릭터 페이지 자동 탐색", row.get("image"), row.get("files"), logo_rank.get(org_id(org), {}).get("score", 0), checked=row.get("checked_at", TODAY))
     # 2. Well-known mascots (Korean Wikipedia).
     for row in wiki:
         if row["title"] in names_seen:
@@ -147,6 +155,12 @@ def main():
     for rid, pv in views.items():
         if rid in rank:
             rank[rid] = {"score": round(math.log10(pv + 10), 3), "pageviews": pv}
+    # Company characters: the company's Korean Wikipedia pageviews and number of language editions.
+    company_rows = [(("mc-" + org_id(o)[3:]), o) for o in orgs if o["group"] in ("기업", "스포츠 구단") and ("mc-" + org_id(o)[3:]) in rank]
+    with ThreadPoolExecutor(4) as pool:
+        company_views = list(pool.map(lambda pair: pop.pageviews(pair[1]["wiki_title"], start.strftime("%Y%m%d"), end.strftime("%Y%m%d")), company_rows))
+    for (rid, o), pv in zip(company_rows, company_views):
+        rank[rid] = {"score": round(math.log10(pv + 10) + 0.6 * math.log10(o.get("sitelinks", 0) + 1), 3), "pageviews": pv}
 
     APP.mkdir(parents=True, exist_ok=True)
     catalog = {"schema_version": "1.0", "version": "0.1.0", "updated_at": TODAY, "scope_note": "기관·기업·행사의 공식 캐릭터·마스코트 안내를 모은 자료입니다. 이미지는 식별용 미리보기이며 이용 조건은 공식 출처 원문을 따릅니다.",

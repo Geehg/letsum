@@ -1,0 +1,57 @@
+{
+ "note": "공식 캐릭터 소개 페이지를 직접 확인한 기업 캐릭터(merge_mascots.py가 병합).",
+ "mascots": [
+  {
+   "id": "mm-kb-starfriends",
+   "organization": "KB금융그룹",
+   "name": "스타프렌즈",
+   "aliases": [
+    "키키",
+    "아거",
+    "비비",
+    "라무",
+    "콜리",
+    "KB 스타프렌즈",
+    "KB국민은행 캐릭터"
+   ],
+   "group": "business/brand",
+   "summary": "KB금융그룹의 대표 캐릭터. 각자의 별에서 꿈을 찾아 지구로 온 다섯 친구(키키·아거·비비·라무·콜리)로, 광고와 여러 매체에 쓰입니다.",
+   "page": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+   "image": {
+    "file": "/mascots/thumbs/mm-6dc743c577.jpg",
+    "source": "official-page-image",
+    "source_url": "https://kbfg.com/kor/images/about/pc/img_character_logo.jpg",
+    "page_url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "9ffb82fcc61c585587741e5389b02b15613bc92d39cbc28919cd2fff7faa5333",
+    "bytes": 55352
+   },
+   "score": 5.0
+  },
+  {
+   "id": "mm-woori-wibee",
+   "organization": "우리은행",
+   "name": "위비프렌즈",
+   "aliases": [
+    "위비",
+    "우리은행 캐릭터",
+    "Wibee"
+   ],
+   "group": "business/brand",
+   "summary": "우리은행의 캐릭터 위비와 친구들(위비프렌즈). 우리은행 공식 사이트의 캐릭터 소개 페이지에서 확인했습니다.",
+   "page": "https://spot.wooribank.com/pot/Dream?withyou=BPBKI0057",
+   "image": {
+    "file": "/mascots/thumbs/mm-b3426b2576.svg",
+    "source": "official-page-image",
+    "source_url": "https://spot.wooribank.com/img/section/nbp/images/ba-1401-wibee.svg",
+    "page_url": "https://spot.wooribank.com/pot/Dream?withyou=BPBKI0057",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "b48504a9dab99f754bb31e5d1453a8f3717a57c53be706f3940605ba211293df",
+    "bytes": 5228
+   },
+   "score": 5.0
+  }
+ ]
+}

@@ -134,6 +134,7 @@ def survey(org):
         break
     for ci in [res.get("ci_page"), *res.get("ci_pages_extra", [])]:
         if ci:
+            scored.setdefault(ci, 4)  # symbol/CI pages often carry the character on a tab of their own
             for markup, base in pages_of(ci):
                 for url, sc in score_links(markup, base, ci)[0].items():
                     scored[url] = max(scored.get(url, 0), sc)
@@ -176,9 +177,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--only", default="")
+    parser.add_argument("--orgs", default=str(crawl.DATA / "orgs.json"), help="roster file (data/companies.json for companies)")
     parser.add_argument("--names-only", "--refresh", dest="names_only", action="store_true", help="re-read the character pages already found and recompute names and image")
     args = parser.parse_args()
-    orgs = [o for o in json.loads((crawl.DATA / "orgs.json").read_text())["orgs"] if o["group"] != "AI 기업"]
+    orgs = [o for o in json.loads(Path(args.orgs).read_text())["orgs"] if o["group"] != "AI 기업"]
     if args.only:
         wanted = set(args.only.split(","))
         orgs = [o for o in orgs if o["name"] in wanted]

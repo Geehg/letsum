@@ -5,6 +5,48 @@
   "scope_note": "기관·기업·행사의 공식 캐릭터·마스코트 안내를 모은 자료입니다. 이미지는 식별용 미리보기이며 이용 조건은 공식 출처 원문을 따릅니다.",
   "records": [
     {
+      "id": "mc-q104099625",
+      "organization_id": "mc-q104099625",
+      "organization_name": "김천 상무 FC",
+      "name": "김천 상무 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "김천 상무 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "김천 상무 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q104099625-src"
+      ],
+      "source_url": "https://www.gimcheonfc.com/fc/ci.php",
+      "guideline_url": "https://www.gimcheonfc.com/fc/ci.php",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q11232850",
       "organization_id": "mc-q11232850",
       "organization_name": "관세청",
@@ -450,6 +492,90 @@
       ],
       "source_url": "https://www.tu.ac.kr/tuhome/sub01_01_06.do",
       "guideline_url": "https://www.tu.ac.kr/tuhome/sub01_01_06.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12598719",
+      "organization_id": "mc-q12598719",
+      "organization_name": "부산-김해경전철 (기업)",
+      "name": "부산-김해경전철 (기업) 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "부산-김해경전철 (기업) 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "부산-김해경전철 (기업)의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12598719-src"
+      ],
+      "source_url": "https://www.bglrt.com/00030/00057/00581.web",
+      "guideline_url": "https://www.bglrt.com/00030/00057/00581.web",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q12605671",
+      "organization_id": "mc-q12605671",
+      "organization_name": "인천 신한은행 에스버드 WBT",
+      "name": "인천 신한은행 에스버드 WBT 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "인천 신한은행 에스버드 WBT 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "인천 신한은행 에스버드 WBT의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q12605671-src"
+      ],
+      "source_url": "https://www.sbirds.com/intro/emblem.do",
+      "guideline_url": "https://www.sbirds.com/intro/emblem.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -1658,6 +1784,90 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q129673",
+      "organization_id": "mc-q129673",
+      "organization_name": "울산 HD FC",
+      "name": "울산 HD FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "울산 HD FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "울산 HD FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q129673-src"
+      ],
+      "source_url": "https://www.uhdfc.com/fc/mascot.php",
+      "guideline_url": "https://www.uhdfc.com/fc/mascot.php",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q131858907",
+      "organization_id": "mc-q131858907",
+      "organization_name": "기장 군민 FC",
+      "name": "기장 군민 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "기장 군민 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "기장 군민 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q131858907-src"
+      ],
+      "source_url": "https://www.gijangunited.com/bbs/content.php?co_id=mascot",
+      "guideline_url": "https://www.gijangunited.com/bbs/content.php?co_id=mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q139779",
       "organization_id": "mc-q139779",
       "organization_name": "건양대학교",
@@ -2205,6 +2415,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q16261725",
+      "organization_id": "mc-q16261725",
+      "organization_name": "서울 이랜드 FC",
+      "name": "서울 이랜드 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "서울 이랜드 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "서울 이랜드 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q16261725-src"
+      ],
+      "source_url": "https://www.seoulelandfc.com/sefc/mascot",
+      "guideline_url": "https://www.seoulelandfc.com/sefc/mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q16261977",
       "organization_id": "mc-q16261977",
       "organization_name": "한국장기조직기증원",
@@ -2353,6 +2605,51 @@
       ],
       "source_url": "https://www.koiha.or.kr/web/kr/koihaPR/prChar.do",
       "guideline_url": "https://www.koiha.or.kr/web/kr/koihaPR/prChar.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q169985",
+      "organization_id": "mc-q169985",
+      "organization_name": "FC 포항 스틸러스",
+      "name": "쇠돌이 · 쇠순이",
+      "name_en": null,
+      "aliases": [
+        "쇠돌이",
+        "쇠순이",
+        "FC 포항 스틸러스 캐릭터",
+        "FC 포항 스틸러스 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "FC 포항 스틸러스의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 쇠돌이, 쇠순이.",
+      "source_ids": [
+        "mc-q169985-src"
+      ],
+      "source_url": "https://www.steelers.co.kr/club/mascot",
+      "guideline_url": "https://www.steelers.co.kr/club/mascot",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -3122,6 +3419,48 @@
       ],
       "source_url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character;jsessionid=2RJo+qn71qbfs+e6QrR45myc.nfa11",
       "guideline_url": "https://www.nfa.go.kr/nfa/introduce/symbolinfo/character;jsessionid=2RJo+qn71qbfs+e6QrR45myc.nfa11",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q3455793",
+      "organization_id": "mc-q3455793",
+      "organization_name": "수원 FC",
+      "name": "수원 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "수원 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "수원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q3455793-src"
+      ],
+      "source_url": "https://www.suwonfc.com/?p=38",
+      "guideline_url": "https://www.suwonfc.com/?p=38",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -5016,6 +5355,216 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q425690",
+      "organization_id": "mc-q425690",
+      "organization_name": "경남 FC",
+      "name": "경남 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "경남 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "경남 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q425690-src"
+      ],
+      "source_url": "https://www.gyeongnamfc.com/fc/mascot.php",
+      "guideline_url": "https://www.gyeongnamfc.com/fc/mascot.php",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q482540",
+      "organization_id": "mc-q482540",
+      "organization_name": "성남 FC",
+      "name": "성남 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "성남 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "성남 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482540-src"
+      ],
+      "source_url": "https://www.seongnamfc.com/aboutSFC/mascot",
+      "guideline_url": "https://www.seongnamfc.com/aboutSFC/mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q482562",
+      "organization_id": "mc-q482562",
+      "organization_name": "인천 유나이티드 FC",
+      "name": "인천 유나이티드 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "인천 유나이티드 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "인천 유나이티드 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482562-src"
+      ],
+      "source_url": "https://www.incheonutd.com/club/intro.php",
+      "guideline_url": "https://www.incheonutd.com/club/intro.php",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q482566",
+      "organization_id": "mc-q482566",
+      "organization_name": "전남 드래곤즈 FC",
+      "name": "전남 드래곤즈 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "전남 드래곤즈 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "전남 드래곤즈 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482566-src"
+      ],
+      "source_url": "https://www.dragons.co.kr/club/mascot",
+      "guideline_url": "https://www.dragons.co.kr/club/mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q482617",
+      "organization_id": "mc-q482617",
+      "organization_name": "제주 SK FC",
+      "name": "제주 SK FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "제주 SK FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "제주 SK FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q482617-src"
+      ],
+      "source_url": "https://www.jejuskfc.com/club/introduction/mascot",
+      "guideline_url": "https://www.jejuskfc.com/club/introduction/mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q482648",
       "organization_id": "mc-q482648",
       "organization_name": "용인대학교",
@@ -5657,6 +6206,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q483748",
+      "organization_id": "mc-q483748",
+      "organization_name": "고양 소노 스카이거너스 BC",
+      "name": "고양 소노 스카이거너스 BC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "고양 소노 스카이거너스 BC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "고양 소노 스카이거너스 BC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q483748-src"
+      ],
+      "source_url": "https://skygunners.kbl.or.kr/team/mascot",
+      "guideline_url": "https://skygunners.kbl.or.kr/team/mascot",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q484090",
       "organization_id": "mc-q484090",
       "organization_name": "한국교원대학교",
@@ -5762,6 +6353,90 @@
       ],
       "source_url": "https://knto.or.kr/brandstory",
       "guideline_url": "https://knto.or.kr/brandstory",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q484569",
+      "organization_id": "mc-q484569",
+      "organization_name": "강원 FC",
+      "name": "강원 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "강원 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "강원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q484569-src"
+      ],
+      "source_url": "https://gangwon-fc.com/club/emblem",
+      "guideline_url": "https://gangwon-fc.com/club/emblem",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q484584",
+      "organization_id": "mc-q484584",
+      "organization_name": "대전 하나 시티즌 FC",
+      "name": "대전 하나 시티즌 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "대전 하나 시티즌 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "대전 하나 시티즌 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q484584-src"
+      ],
+      "source_url": "https://www.dhcfc.kr/cl/mas.php",
+      "guideline_url": "https://www.dhcfc.kr/cl/mas.php",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -5994,6 +6669,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q488480",
+      "organization_id": "mc-q488480",
+      "organization_name": "해양경찰청",
+      "name": "해양경찰청 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "해양경찰청 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "해양경찰청의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q488480-src"
+      ],
+      "source_url": "https://www.kcg.go.kr/kcg/si/sub/info.do?page=2823&mi=2823",
+      "guideline_url": "https://www.kcg.go.kr/kcg/si/sub/info.do?page=2823&mi=2823",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q488851",
       "organization_id": "mc-q488851",
       "organization_name": "인하대학교",
@@ -6184,6 +6901,48 @@
       ],
       "source_url": "https://www.ajou.ac.kr/kr/intro/character.do",
       "guideline_url": "https://www.ajou.ac.kr/kr/intro/character.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q491325",
+      "organization_id": "mc-q491325",
+      "organization_name": "신한금융지주",
+      "name": "신한금융지주 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "신한금융지주 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "신한금융지주의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q491325-src"
+      ],
+      "source_url": "https://www.shinhangroup.com/kr/about/identity/character",
+      "guideline_url": "https://www.shinhangroup.com/kr/about/identity/character",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -6440,6 +7199,48 @@
       ],
       "source_url": "https://www.jnu.ac.kr/MainIntro/Symbol/JnuCharacter",
       "guideline_url": "https://www.jnu.ac.kr/MainIntro/Symbol/JnuCharacter",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q495027",
+      "organization_id": "mc-q495027",
+      "organization_name": "부산 아이파크 FC",
+      "name": "부산 아이파크 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "부산 아이파크 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "부산 아이파크 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q495027-src"
+      ],
+      "source_url": "https://www.busanipark.com/club/emblem.php",
+      "guideline_url": "https://www.busanipark.com/club/emblem.php",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9603,6 +10404,48 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q624762",
+      "organization_id": "mc-q624762",
+      "organization_name": "FC 강릉",
+      "name": "FC 강릉 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "FC 강릉 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "FC 강릉의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q624762-src"
+      ],
+      "source_url": "https://www.gncityfc.com/sub/sub1/sub9.html",
+      "guideline_url": "https://www.gncityfc.com/sub/sub1/sub9.html",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q624993",
       "organization_id": "mc-q624993",
       "organization_name": "삼육대학교",
@@ -9645,6 +10488,49 @@
       "related_fonts": []
     },
     {
+      "id": "mc-q625097",
+      "organization_id": "mc-q625097",
+      "organization_name": "해양수산부",
+      "name": "해랑이",
+      "name_en": null,
+      "aliases": [
+        "해양수산부 캐릭터",
+        "해양수산부 마스코트"
+      ],
+      "category": "public-organization",
+      "kind": "character",
+      "sectors": [
+        "administration"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "해양수산부의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 해랑이.",
+      "source_ids": [
+        "mc-q625097-src"
+      ],
+      "source_url": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+      "guideline_url": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mc-q625165",
       "organization_id": "mc-q625165",
       "organization_name": "국립금오공과대학교",
@@ -9666,6 +10552,48 @@
       ],
       "source_url": "https://www.kumoh.ac.kr/ko/sub01_01_02_02.do",
       "guideline_url": "https://www.kumoh.ac.kr/ko/sub01_01_02_02.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q625852",
+      "organization_id": "mc-q625852",
+      "organization_name": "오뚜기",
+      "name": "오뚜기 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "오뚜기 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "오뚜기의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q625852-src"
+      ],
+      "source_url": "https://www.ottogi.co.kr/brand/goods",
+      "guideline_url": "https://www.ottogi.co.kr/brand/goods",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9796,6 +10724,48 @@
       ],
       "source_url": "https://www.donga.ac.kr/about/symbols/ui/character",
       "guideline_url": "https://www.donga.ac.kr/about/symbols/ui/character",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q626785",
+      "organization_id": "mc-q626785",
+      "organization_name": "충북 청주 FC",
+      "name": "충북 청주 FC 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "충북 청주 FC 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "sports"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "충북 청주 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q626785-src"
+      ],
+      "source_url": "https://www.chfc.kr/fc/msc.php",
+      "guideline_url": "https://www.chfc.kr/fc/msc.php",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9996,10 +10966,10 @@
         "한국수력원자력 캐릭터",
         "한국수력원자력 마스코트"
       ],
-      "category": "public-organization",
+      "category": "business",
       "kind": "character",
       "sectors": [
-        "administration"
+        "culture-arts"
       ],
       "country": "KR",
       "region": null,
@@ -10096,6 +11066,48 @@
       ],
       "source_url": "https://www.koreatech.ac.kr/menu.es?mid=a10101030600",
       "guideline_url": "https://www.koreatech.ac.kr/menu.es?mid=a10101030600",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mc-q6684915",
+      "organization_id": "mc-q6684915",
+      "organization_name": "롯데웰푸드",
+      "name": "롯데웰푸드 캐릭터",
+      "name_en": null,
+      "aliases": [
+        "롯데웰푸드 마스코트"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "롯데웰푸드의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "source_ids": [
+        "mc-q6684915-src"
+      ],
+      "source_url": "https://www.lottewellfood.com/brand/character",
+      "guideline_url": "https://www.lottewellfood.com/brand/character",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -10265,6 +11277,98 @@
       ],
       "source_url": "https://www.seoul.go.kr/seoul/symbol.do",
       "guideline_url": "https://www.seoul.go.kr/seoul/symbol.do",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-kb-starfriends",
+      "organization_id": "mm-kb-starfriends",
+      "organization_name": "KB금융그룹",
+      "name": "스타프렌즈",
+      "name_en": null,
+      "aliases": [
+        "키키",
+        "아거",
+        "비비",
+        "라무",
+        "콜리",
+        "KB 스타프렌즈",
+        "KB국민은행 캐릭터"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "KB금융그룹의 대표 캐릭터. 각자의 별에서 꿈을 찾아 지구로 온 다섯 친구(키키·아거·비비·라무·콜리)로, 광고와 여러 매체에 쓰입니다.",
+      "source_ids": [
+        "mm-kb-starfriends-src"
+      ],
+      "source_url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+      "guideline_url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-woori-wibee",
+      "organization_id": "mm-woori-wibee",
+      "organization_name": "우리은행",
+      "name": "위비프렌즈",
+      "name_en": null,
+      "aliases": [
+        "위비",
+        "우리은행 캐릭터",
+        "Wibee"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "우리은행의 캐릭터 위비와 친구들(위비프렌즈). 우리은행 공식 사이트의 캐릭터 소개 페이지에서 확인했습니다.",
+      "source_ids": [
+        "mm-woori-wibee-src"
+      ],
+      "source_url": "https://spot.wooribank.com/pot/Dream?withyou=BPBKI0057",
+      "guideline_url": "https://spot.wooribank.com/pot/Dream?withyou=BPBKI0057",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",

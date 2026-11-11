@@ -58,7 +58,7 @@
   },
   "Q486737": {
    "name": "한국전력공사",
-   "group": "시장형 공기업",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -506,7 +506,18 @@
    "name": "해양수산부",
    "group": "중앙행정기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+   "names": [
+    "해랑이"
+   ],
+   "files": [
+    [
+     "https://www.mof.go.kr/data/mof_character2.zip",
+     "캐릭터파일 다운받기 해양수산부 마스코트 해랑이 캐릭터 압축파일 다운받기"
+    ]
+   ],
+   "words": 6
   },
   "Q482712": {
    "name": "기상청",
@@ -596,7 +607,11 @@
    "name": "해양경찰청",
    "group": "중앙행정기관",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.kcg.go.kr/kcg/si/sub/info.do?page=2823&mi=2823",
+   "names": [],
+   "files": [],
+   "words": 2
   },
   "Q11232895": {
    "name": "농촌진흥청",
@@ -1018,7 +1033,21 @@
    "name": "검단구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+   "names": [],
+   "files": [],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-32e067a58c.png",
+    "source_url": "https://www.geomdan.go.kr/main/img/contents/geomdan/character-img01.png",
+    "page_url": "https://www.geomdan.go.kr/main/geomdan/info/symbol.jsp",
+    "alt": ".검단구 캐릭터",
+    "sha256": "8611ed5110cbf59cf53cda1fc63749b5692168458e04f2a8f559d6be69999908",
+    "bytes": 68513,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50206": {
    "name": "거창군",
@@ -1030,7 +1059,11 @@
    "name": "강진군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "http://www.gangjin.go.kr/www/gangjin_story/symbol/symbolic",
+   "names": [],
+   "files": [],
+   "words": 8
   },
   "Q42097": {
    "name": "경주시",
@@ -1042,7 +1075,26 @@
    "name": "계양구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+   "names": [],
+   "files": [
+    [
+     "https://www.gyeyang.go.kr/open_content/bbs/bbsMsgFileDown.do?bcd=file&msg_seq=199&fileno=3",
+     "캐릭터 신비 AI파일 다운로드"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-923abc4abc.gif",
+    "source_url": "https://www.gyeyang.go.kr/open_content/main/images/contents/gyeyang/symbol_character.gif",
+    "page_url": "https://www.gyeyang.go.kr/open_content/main/gyeyang/current/symbol.jsp",
+    "alt": "계양구 캐릭터 신비 이미지",
+    "sha256": "94ba794f035dcf7a2429da92ab2d1b15d3c24be16cf49763f258cb4e10f0644c",
+    "bytes": 9635,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50207": {
    "name": "고령군",
@@ -1094,7 +1146,11 @@
    "name": "계룡시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+   "names": [],
+   "files": [],
+   "words": 10
   },
   "Q42062": {
    "name": "공주시",
@@ -1125,7 +1181,38 @@
    "name": "강북구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+   "names": [],
+   "files": [
+    [
+     "https://www.gangbuk.go.kr/static/files/portal/대표캐릭터(PNG).zip",
+     "대표캐릭터(PNG) 다운로드"
+    ],
+    [
+     "https://www.gangbuk.go.kr/portal/cmmn/file/fileDown.do?atchFileId=fbe43c6102f8491b86d71640f1e113a7&fileSn=1",
+     "대표캐릭터(PDF) 다운로드"
+    ],
+    [
+     "https://www.gangbuk.go.kr/static/files/portal/SNS캐릭터(PNG).zip",
+     "SNS캐릭터(PNG) 다운로드"
+    ],
+    [
+     "https://www.gangbuk.go.kr/portal/cmmn/file/fileDown.do?atchFileId=fbe43c6102f8491b86d71640f1e113a7&fileSn=1f",
+     "SNS캐릭터(PDF) 다운로드"
+    ]
+   ],
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-d9a95150ed.png",
+    "source_url": "https://www.gangbuk.go.kr/static/portal/img/sub_gb_04/GB-04-026_02.png",
+    "page_url": "https://www.gangbuk.go.kr/portal/bbs/B0000051/list.do?menuNo=200099",
+    "alt": "하로 캐릭터(Ha Ro)",
+    "sha256": "10eb602fa8ffabd2119d95dca1c78eda377135ba2c7cd4287ecef0fd6b6969a2",
+    "bytes": 22430,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q42067": {
    "name": "광양시",
@@ -1143,7 +1230,26 @@
    "name": "광산구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+   "names": [],
+   "files": [
+    [
+     "https://www.gwangsan.go.kr/home/www/down/file477/0602010100_03.zip",
+     "광산구 마스코트 광산이 다운받기 클릭시 다운로드"
+    ]
+   ],
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-71583383b6.png",
+    "source_url": "https://www.gwangsan.go.kr/home/www/images/sub/img_mascot.png",
+    "page_url": "https://www.gwangsan.go.kr/contentsView.do?pageId=www487",
+    "alt": "광산구 마스코트 광산이",
+    "sha256": "250c1d9d93db5062c092f901793c17cdaa690b6d48e664b9a30d2a7373298b71",
+    "bytes": 32522,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q42066": {
    "name": "광명시",
@@ -1368,7 +1474,11 @@
    "name": "군위군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gunwi.go.kr/ko/page.do?mnu_uid=191&",
+   "names": [],
+   "files": [],
+   "words": 2
   },
   "Q50216": {
    "name": "금산군",
@@ -1384,7 +1494,21 @@
    "name": "금정구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+   "names": [],
+   "files": [],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-06a27093f1.png",
+    "source_url": "https://www.geumjeong.go.kr/new_img/geumjeong/sub/s4_2_2_3_img01.png",
+    "page_url": "https://www.geumjeong.go.kr/index.geumj;jsessionid=8608AC376DC0EA609831ECA07C790B30.tomcat1?menuCd=DOM_000000127002002001",
+    "alt": "금정구캐릭터 금정이",
+    "sha256": "cbe9e368d903b0cf889aa2abecec86c2a1d8ac8e47c05876a57e7143f906cb95",
+    "bytes": 43076,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q42077": {
    "name": "김제시",
@@ -1636,7 +1760,30 @@
    "name": "남구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+   "names": [],
+   "files": [
+    [
+     "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img01.zip",
+     "남구 대표캐릭터(기본형) ai파일로 다운받기"
+    ],
+    [
+     "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img02.zip",
+     "남구 대표캐릭터(매뉴얼북) 파일로 다운받기"
+    ]
+   ],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-c7cdd6c01b.jpg",
+    "source_url": "https://www.nam.daegu.kr/cmsh/nam.daegu.kr/images/contents/cnm_img01.jpg",
+    "page_url": "https://www.nam.daegu.kr/index.do?menu_id=00000938",
+    "alt": "남구 대표캐릭터 너미&마지",
+    "sha256": "996e9cadac618d7581140357cf2dcbb503ca6be752327185c68c668896e070bd",
+    "bytes": 36606,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50370": {
    "name": "달서구",
@@ -1812,7 +1959,20 @@
    "name": "달성군",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.dalseong.daegu.kr/index.do?menu_id=00000258",
+   "names": [],
+   "files": [
+    [
+     "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli.zip",
+     "AI파일 캐릭터/비슬이"
+    ],
+    [
+     "https://www.dalseong.daegu.kr/cmsh/dalseong.daegu.kr/images/country/image/biseuli2.zip",
+     "png파일 캐릭터/비슬이"
+    ]
+   ],
+   "words": 8
   },
   "Q50377": {
    "name": "동구",
@@ -1828,7 +1988,27 @@
    "name": "나주시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.naju.go.kr/www/introduction/symbol/mark",
+   "names": [
+    "홍돌이",
+    "나주오"
+   ],
+   "files": [
+    [
+     "https://www.naju.go.kr/contents/459/character01.zip",
+     "배돌이 캐릭터 다운로드 zip파일 다운로드 새창열기"
+    ],
+    [
+     "https://www.naju.go.kr/contents/459/character02.zip",
+     "버들낭자 캐릭터 다운로드 zip파일 다운로드 새창열기"
+    ],
+    [
+     "https://www.naju.go.kr/contents/459/character03.zip",
+     "홍돌이 캐릭터 다운로드 zip파일 다운로드 새창열기"
+    ]
+   ],
+   "words": 48
   },
   "Q42093": {
    "name": "동해시",
@@ -1885,7 +2065,7 @@
    ],
    "words": 16,
    "image": {
-    "file": "/mascots/thumbs/m-c9034aa484.png",
+    "file": "/mascots/thumbs/m-c9034aa484.gif",
     "source_url": "https://www.donggu.kr/main/img/contents/character02.gif",
     "page_url": "https://www.donggu.kr/menu.es?mid=a10503010200",
     "alt": "환희, 안내, 무등산 사랑, 방문환영, 체육대회, 신속한 민원업무, 환경보호 금남이",
@@ -1899,13 +2079,49 @@
    "name": "동작구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+   "names": [],
+   "files": [
+    [
+     "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc96a6e2818a9ea7aa2fc4f8fcbb8c24fca&fileSn=1&bbsId=B0001202",
+     "캐릭터 다운로드(PNG)"
+    ],
+    [
+     "https://www.dongjak.go.kr/portal/cmmn/file/fileDown.do?menuNo=100264&atchFileId=ae3ec91af6ed6a31a8a0adaaca7a7cc98f186ee4a84c61b6bdb22d7d87e962ad&fileSn=1&bbsId=B0001202",
+     "캐릭터 다운로드(AI)"
+    ]
+   ],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-76d7613f51.png",
+    "source_url": "https://www.dongjak.go.kr/static/portal/img/05/dongjak_character.png",
+    "page_url": "https://www.dongjak.go.kr/portal/main/contents.do?menuNo=200650",
+    "alt": "동작이와 국화씨 캐릭터",
+    "sha256": "919326259c017a3311da6cad63687ebf28272ec2058aabf05d75ccef9482d0b2",
+    "bytes": 10846,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q50365": {
    "name": "미추홀구",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.michuhol.go.kr/main/content.do?sq=9",
+   "names": [],
+   "files": [
+    [
+     "https://www.michuhol.go.kr/downloads/namgu/mascotai.zip",
+     "AI 파일 다운로드"
+    ],
+    [
+     "https://www.michuhol.go.kr/downloads/namgu/mascot.zip",
+     "JPG 파일 다운로드"
+    ]
+   ],
+   "words": 8
   },
   "Q50383": {
    "name": "동래구",
@@ -1936,19 +2152,62 @@
    "name": "밀양시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.miryang.go.kr/web/index.do?mnNo=40301000000",
+   "names": [],
+   "files": [],
+   "words": 8
   },
   "Q42098": {
    "name": "보령시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.brcn.go.kr/download/kor/sub06/symbol_down4_jpg.zip",
+     "캐릭터 기본형 다운로드 캐릭터 기본형 JPG다운로드"
+    ],
+    [
+     "https://www.brcn.go.kr/download/kor/sub06/symbol_down4_ai.zip",
+     "캐릭터 기본형 다운로드 캐릭터 기본형 AI다운로드"
+    ],
+    [
+     "https://www.brcn.go.kr/download/kor/sub06/symbol_down5_jpg.zip",
+     "캐릭터 응용형 다운로드 캐릭터 응용형 JPG다운로드"
+    ],
+    [
+     "https://www.brcn.go.kr/download/kor/sub06/symbol_down5_ai.zip",
+     "캐릭터 응용형 다운로드 캐릭터 응용형 AI다운로드"
+    ],
+    [
+     "https://www.brcn.go.kr/download/kor/sub06/boryeong_character_manual.pdf",
+     "캐릭터 메뉴얼 다운로드 캐릭터 메뉴얼 PDF다운로드"
+    ]
+   ],
+   "words": 16,
+   "image": {
+    "file": "/mascots/thumbs/m-41a18f30fe.jpg",
+    "source_url": "https://www.brcn.go.kr/images/kor/sub06/simbol-14.jpg",
+    "page_url": "https://www.brcn.go.kr/kor/sub06_01_01.do",
+    "alt": "마스코트 머돌이와 머순이",
+    "sha256": "b069ce41559609fb303a709da9a422e799bfb1532c6056466d69534a17a8ca8f",
+    "bytes": 38586,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
   },
   "Q42095": {
    "name": "문경시",
    "group": "기초자치단체",
    "checked_at": "2026-11-11",
-   "found": false
+   "found": true,
+   "page": "https://www.gbmg.go.kr/portal/contents.do?mId=0501010000",
+   "names": [],
+   "files": [],
+   "words": 8
   },
   "Q50246": {
    "name": "부안군",
@@ -3922,7 +4181,7 @@
   },
   "Q12583025": {
    "name": "강원랜드",
-   "group": "시장형 공기업",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -3964,7 +4223,7 @@
   },
   "Q6431646": {
    "name": "한국수력원자력",
-   "group": "시장형 공기업",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": true,
    "page": "https://www.khnp.co.kr/main/contents.do?key=4808",
@@ -4274,7 +4533,7 @@
   },
   "Q6974864": {
    "name": "국민연금공단",
-   "group": "기금관리형 준정부기관",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5118,7 +5377,7 @@
   },
   "Q483855": {
    "name": "중소기업은행",
-   "group": "기타공공기관",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5130,7 +5389,7 @@
   },
   "Q4409074": {
    "name": "한국산업은행",
-   "group": "기타공공기관",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5311,7 +5570,7 @@
   },
   "Q4501812": {
    "name": "한국수출입은행",
-   "group": "기타공공기관",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -5344,7 +5603,7 @@
   },
   "Q486332": {
    "name": "한국투자공사",
-   "group": "기타공공기관",
+   "group": "기업",
    "checked_at": "2026-11-11",
    "found": false
   },
@@ -9167,6 +9426,2441 @@
   "Q482724": {
    "name": "한림대학교",
    "group": "대학",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q259340": {
+   "name": "세븐일레븐",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q162345": {
+   "name": "LG전자",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q35349": {
+   "name": "기아",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q321772": {
+   "name": "대우그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483938": {
+   "name": "SM 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q50595": {
+   "name": "YG 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482539": {
+   "name": "휠라",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q20718": {
+   "name": "삼성전자",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483238": {
+   "name": "JYP 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q928831": {
+   "name": "SBS",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://programs.sbs.co.kr/culture/hotelpenni/cast/90724",
+   "names": [],
+   "files": [],
+   "words": 5
+  },
+  "Q370719": {
+   "name": "SK하이닉스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495372": {
+   "name": "한국거래소",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q59243": {
+   "name": "현대자동차그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q221869": {
+   "name": "KG모빌리티",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q494168": {
+   "name": "르노코리아",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16161254": {
+   "name": "하이브",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493094": {
+   "name": "한국타이어앤테크놀로지",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55931": {
+   "name": "현대자동차",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483231": {
+   "name": "HD현대중공업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q498917": {
+   "name": "타타대우상용차",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489247": {
+   "name": "네이버 주식회사",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482642": {
+   "name": "제주항공",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4035237": {
+   "name": "블루홀 스튜디오",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q486976": {
+   "name": "LG화학",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484449": {
+   "name": "큐브엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q485908": {
+   "name": "KT",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q56063989": {
+   "name": "CJ ENM",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q152517": {
+   "name": "현대로템",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12581039": {
+   "name": "FNC 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483914": {
+   "name": "평화자동차",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q283856": {
+   "name": "드림어스 컴퍼니",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q488470": {
+   "name": "한국항공우주산업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q625975": {
+   "name": "카카오엠",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624080": {
+   "name": "삼성생명보험",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16174772": {
+   "name": "RBW",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q17684312": {
+   "name": "카카오",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q21451523": {
+   "name": "제네시스 (자동차 회사)",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489202": {
+   "name": "한화그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489243": {
+   "name": "삼성중공업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q142054": {
+   "name": "구몬학습",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q494904": {
+   "name": "한진해운",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q497860": {
+   "name": "한화오션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16180845": {
+   "name": "젤리피쉬엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q625647": {
+   "name": "넷마블",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493163": {
+   "name": "팬택계열",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q249525": {
+   "name": "롯데리아",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q311636": {
+   "name": "코원시스템",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q31180504": {
+   "name": "스튜디오드래곤",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q211165": {
+   "name": "아시아나항공",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483006": {
+   "name": "LG디스플레이",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12620655": {
+   "name": "쿠팡",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490787": {
+   "name": "신세계백화점",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489238": {
+   "name": "STX기업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q497534": {
+   "name": "현대모비스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q496606": {
+   "name": "국민은행",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q637440": {
+   "name": "라자드",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483946": {
+   "name": "포스코",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493145": {
+   "name": "SK텔레콤",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q10854462": {
+   "name": "CJ E&M",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q1149165": {
+   "name": "삼양옵틱스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q499194": {
+   "name": "삼성물산",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q494272": {
+   "name": "하이트진로",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q185564": {
+   "name": "S-Oil",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626409": {
+   "name": "LG유플러스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q106341957": {
+   "name": "카카오엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q562686": {
+   "name": "프로토자동차",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483971": {
+   "name": "스톤뮤직 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489905": {
+   "name": "롯데백화점",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q625852": {
+   "name": "오뚜기",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.ottogi.co.kr/brand/goods",
+   "names": [],
+   "files": [],
+   "words": 7,
+   "image": {
+    "file": "/mascots/thumbs/m-cc500f761d.png",
+    "source_url": "https://www.otoki.com/images/brands/character_relationship.png",
+    "page_url": "https://www.ottogi.co.kr/brand/goods",
+    "alt": "Yellows\r\n                        CHABI 화살표 TTOGI 푸드 메이트 #두근두근\r\n                        TTOGI 화살표 CHABI 귀여운 푸드파이터 #애교가득 #병아리\r\n                        CHABI 화살표 MAYO 푹신한 자가용\r\n                        MAYO 양쪽화살표 TTOGI EVERYTHING! #베스트 프랜드",
+    "sha256": "7e3d36f1de29861d50224404b96dedb0079b94cbf7c4565fc4a08a4f5ac72767",
+    "bytes": 435242,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q483190": {
+   "name": "KR모터스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6451272": {
+   "name": "CJ제일제당",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q13424955": {
+   "name": "판타지오",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6502960": {
+   "name": "현대제철",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q106504531": {
+   "name": "에어프레미아",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q487590": {
+   "name": "YTN",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483280": {
+   "name": "우정사업본부",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495548": {
+   "name": "커즈와일 뮤직 시스템스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q497254": {
+   "name": "효성",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q20943680": {
+   "name": "지니뮤직",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484143": {
+   "name": "그라비티",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5005884": {
+   "name": "씨제스엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489195": {
+   "name": "HJ중공업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q2998661": {
+   "name": "삼성엔지니어링",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490142": {
+   "name": "아모레퍼시픽",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q496538": {
+   "name": "위니아전자",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q265176": {
+   "name": "한화솔라원",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483687": {
+   "name": "휴맥스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q563107": {
+   "name": "한화에어로스페이스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489809": {
+   "name": "현대건설",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5012265": {
+   "name": "CJ엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7413176": {
+   "name": "삼양식품",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6458668": {
+   "name": "LIG 디펜스&에어로스페이스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490480": {
+   "name": "게임파크",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493167": {
+   "name": "VK 모바일",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624041": {
+   "name": "GS25",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q625573": {
+   "name": "넥센타이어",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7102776": {
+   "name": "오리온",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12580836": {
+   "name": "CU",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q145156": {
+   "name": "잘만테크",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16176002": {
+   "name": "이니스프리",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q196405": {
+   "name": "서울특별시 도시철도공사",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q487230": {
+   "name": "신한은행",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55736867": {
+   "name": "대림오토바이",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6326643": {
+   "name": "KCC (기업)",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q485718": {
+   "name": "소리바다",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q488993": {
+   "name": "이스트소프트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6872554": {
+   "name": "미래에셋금융그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q11133743": {
+   "name": "키이스트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q31180108": {
+   "name": "웨이크원",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q2819232": {
+   "name": "애이콤프로덕션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q21120876": {
+   "name": "삼성SDI",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q47488519": {
+   "name": "카카오게임즈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q52112789": {
+   "name": "한화비전",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6684915": {
+   "name": "롯데웰푸드",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.lottewellfood.com/brand/character",
+   "names": [],
+   "files": [],
+   "words": 26,
+   "image": {
+    "file": "/mascots/thumbs/m-a84fdd7676.png",
+    "source_url": "https://www.lottewellfood.com/images/brand/character_malrang_on.png",
+    "page_url": "https://www.lottewellfood.com/brand/character",
+    "alt": "말랑이",
+    "sha256": "cf5b4fc72d0cae2a6339a0e2e3793d46db3b4e803bebfed9914a5c42613d56bf",
+    "bytes": 88552,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q109464416": {
+   "name": "LG에너지솔루션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q17278347": {
+   "name": "팬 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484047": {
+   "name": "하나은행",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q492581": {
+   "name": "두산에너빌리티",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q494657": {
+   "name": "서울반도체",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490435": {
+   "name": "하이트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495088": {
+   "name": "게임빌",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493997": {
+   "name": "현대위아",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q326720": {
+   "name": "롯데호텔앤리조트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q623647": {
+   "name": "G마켓",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624076": {
+   "name": "삼성카드",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q765895": {
+   "name": "롯데하이마트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q491990": {
+   "name": "한화생명보험",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4041558": {
+   "name": "Invista",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5089641": {
+   "name": "제일기획",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6897937": {
+   "name": "모나미",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4958352": {
+   "name": "브레이브 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7410538": {
+   "name": "삼성SDS",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16983765": {
+   "name": "Prologis",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q51570147": {
+   "name": "롯데지주",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q43083084": {
+   "name": "젠틀몬스터",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q491325": {
+   "name": "신한금융지주",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.shinhangroup.com/kr/about/identity/character",
+   "names": [],
+   "files": [],
+   "words": 11
+  },
+  "Q24859550": {
+   "name": "라인프렌즈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q28197221": {
+   "name": "마루기획",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55735496": {
+   "name": "펄어비스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484117": {
+   "name": "우리금융그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.woorifg.com/kor/company/ci/character/contentsid/621/index.do",
+   "names": [],
+   "files": [],
+   "words": 8
+  },
+  "Q55726679": {
+   "name": "Gen.G e스포츠",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q402131": {
+   "name": "안랩",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q492345": {
+   "name": "포스코인터내셔널",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489456": {
+   "name": "LS전선",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490424": {
+   "name": "대원미디어",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482973": {
+   "name": "현대해상화재보험",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q497382": {
+   "name": "판도라TV",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q719505": {
+   "name": "한국선급",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q615140": {
+   "name": "디알무비",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5962649": {
+   "name": "HD현대오일뱅크",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7387008": {
+   "name": "SNT중공업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q11237413": {
+   "name": "로드 FC",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6987076": {
+   "name": "내가네트워크",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q15283673": {
+   "name": "NH농협은행",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12581339": {
+   "name": "KB금융그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.kbfg.com/kor/about/corporate/character/star-friends.htm",
+   "names": [
+    "스타프렌즈",
+    "콜리",
+    "키키"
+   ],
+   "files": [],
+   "words": 42
+  },
+  "Q19794485": {
+   "name": "YMC엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16174973": {
+   "name": "에뛰드",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q21057587": {
+   "name": "YG플러스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q18577819": {
+   "name": "블랑 & 에클레어",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489566": {
+   "name": "안다미로",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489661": {
+   "name": "S-LCD",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q488915": {
+   "name": "에릭슨엘지",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16167317": {
+   "name": "C9 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7509507": {
+   "name": "iHQ",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q496183": {
+   "name": "동국제강",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q492569": {
+   "name": "호텔신라",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q489774": {
+   "name": "교보문고",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5889167": {
+   "name": "홈플러스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626638": {
+   "name": "HD현대",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483657": {
+   "name": "KNN",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495824": {
+   "name": "HDC영창",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624440": {
+   "name": "더페이스샵",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4671376": {
+   "name": "아카데미과학",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.academy.co.kr/product/list.html?cate_no=29",
+   "names": [],
+   "files": [],
+   "words": 9
+  },
+  "Q7390664": {
+   "name": "네이트커뮤니케이션즈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7810767": {
+   "name": "티맥스소프트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7535345": {
+   "name": "스킨푸드",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16166104": {
+   "name": "삼성디스플레이",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12580769": {
+   "name": "에스엠컬처앤콘텐츠",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12609514": {
+   "name": "웰메이드스타엠",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16184260": {
+   "name": "HD현대인프라코어",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16172809": {
+   "name": "SK이노베이션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16219421": {
+   "name": "LG이노텍",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624648": {
+   "name": "KT스카이라이프",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q18648265": {
+   "name": "블러썸 엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q108537188": {
+   "name": "시프트업",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16767532": {
+   "name": "삼성바이오로직스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q493085": {
+   "name": "손오공",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482747": {
+   "name": "소프트맥스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490964": {
+   "name": "KTF",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q625875": {
+   "name": "한국야쿠르트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624341": {
+   "name": "광주방송",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624791": {
+   "name": "문화일보",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q2706638": {
+   "name": "Sky Electronics",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626084": {
+   "name": "게임파크 홀딩스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q563007": {
+   "name": "씨티엔티",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5962562": {
+   "name": "현대캐피탈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5295831": {
+   "name": "DB그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q27300": {
+   "name": "동우애니메이션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5208189": {
+   "name": "TBC",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5381780": {
+   "name": "네오리스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4941248": {
+   "name": "본촌치킨",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6045102": {
+   "name": "놀유니버스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6089418": {
+   "name": "이수그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5150442": {
+   "name": "컴투스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7398316": {
+   "name": "새롬 애니메이션",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7674768": {
+   "name": "태광그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12580821": {
+   "name": "CJ푸드빌",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5646759": {
+   "name": "락앤락",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6451885": {
+   "name": "교촌",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12594201": {
+   "name": "롯데케미칼",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12620571": {
+   "name": "코리안리재보험",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12593747": {
+   "name": "드림티엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12611298": {
+   "name": "이디야커피",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16176298": {
+   "name": "캠프모바일",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16256202": {
+   "name": "한국인삼공사",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55736184": {
+   "name": "스튜디오 산타클로스엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6684902": {
+   "name": "롯데캐피탈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16935507": {
+   "name": "네이처리퍼블릭",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482665": {
+   "name": "한컴",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q96406620": {
+   "name": "스튜디오N",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q496593": {
+   "name": "잉카인터넷",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q497825": {
+   "name": "OCI",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12620832": {
+   "name": "킹콩엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12598719": {
+   "name": "부산-김해경전철 (기업)",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.bglrt.com/00030/00057/00581.web",
+   "names": [],
+   "files": [
+    [
+     "https://www.bglrt.com/_res/default/data/zip/character_zip.zip",
+     "다운로드"
+    ]
+   ],
+   "words": 20,
+   "image": {
+    "file": "/mascots/thumbs/m-9bf7d0a406.png",
+    "source_url": "https://www.bglrt.com/_res/default/img/sub/p00581_img05.png",
+    "page_url": "https://www.bglrt.com/00030/00057/00581.web",
+    "alt": "캐릭터 로고(흑백)",
+    "sha256": "966576ea1ce4943c7f77978bc5e084d85259bb52b83b06964340393bc1ff83cc",
+    "bytes": 36405,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q624203": {
+   "name": "TG삼보컴퓨터",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626144": {
+   "name": "서울우유협동조합",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626452": {
+   "name": "대우건설",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4668069": {
+   "name": "미샤",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5295830": {
+   "name": "DB손해보험",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5001259": {
+   "name": "부산은행",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5295832": {
+   "name": "KG스틸",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5192364": {
+   "name": "쿠쿠전자",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5321417": {
+   "name": "이랜드그룹",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q3517277": {
+   "name": "텔레칩스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16171192": {
+   "name": "금호석유화학",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5511827": {
+   "name": "지앤지엔터테인먼트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5648211": {
+   "name": "한일시멘트",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6460119": {
+   "name": "LS엠트론",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5930964": {
+   "name": "펜타시큐리티",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6684905": {
+   "name": "롯데칠성음료",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7641750": {
+   "name": "선우앤컴퍼니",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5962586": {
+   "name": "아이파크현대산업개발",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q11673309": {
+   "name": "고려해운",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q10854619": {
+   "name": "LG CNS",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q11286389": {
+   "name": "현대엘리베이터 (주)",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7879923": {
+   "name": "울산방송",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12599539": {
+   "name": "빙그레",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12622086": {
+   "name": "풍산 (기업)",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16177018": {
+   "name": "소프트캠프",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5017149": {
+   "name": "카페베네",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q18142418": {
+   "name": "탐앤탐스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16175734": {
+   "name": "셀트리온",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q20445830": {
+   "name": "데브시스터즈",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55643246": {
+   "name": "올리브영",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q33570421": {
+   "name": "카카오뱅크",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q120998343": {
+   "name": "메가MGC커피",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q110118012": {
+   "name": "포켓돌스튜디오",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q494136": {
+   "name": "SK",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q498856": {
+   "name": "SK텔레텍",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q85846910": {
+   "name": "페리지항공우주",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5642737": {
+   "name": "한라홀딩스",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6748120": {
+   "name": "만도",
+   "group": "기업",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482406": {
+   "name": "FC 서울",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482449": {
+   "name": "수원 삼성 블루윙즈 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483152": {
+   "name": "전북 현대 모터스 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482562": {
+   "name": "인천 유나이티드 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.incheonutd.com/club/intro.php",
+   "names": [],
+   "files": [],
+   "words": 6
+  },
+  "Q169985": {
+   "name": "FC 포항 스틸러스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.steelers.co.kr/club/mascot",
+   "names": [
+    "쇠돌이",
+    "쇠순이"
+   ],
+   "files": [
+    [
+     "https://www.steelers.co.kr/dist/images2/download/mascot_pdf.zip",
+     "마스코트 다운로드"
+    ],
+    [
+     "https://www.steelers.co.kr/dist/images2/download/mascot_ai.zip",
+     "AI파일 다운로드"
+    ]
+   ],
+   "words": 30,
+   "image": {
+    "file": "/mascots/thumbs/m-40b7d43f64.jpg",
+    "source_url": "https://www.steelers.co.kr/dist/images2/mascot1.jpg",
+    "page_url": "https://www.steelers.co.kr/club/mascot",
+    "alt": "",
+    "sha256": "2d7b56cec8137ec7ad036edb567ee3f8f5df5bafbf0581945a9fac38a940ef07",
+    "bytes": 74862,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q482617": {
+   "name": "제주 SK FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.jejuskfc.com/club/introduction/mascot",
+   "names": [],
+   "files": [],
+   "words": 26,
+   "image": {
+    "file": "/mascots/thumbs/m-136b9fcead.png",
+    "source_url": "https://www.jejuskfc.com/uploadfile/club_mascot/20260630050835703_f0e32c463eed4e86.null;jsessionid=78EA76E0ABDCC6FD3DF3F1282F4286D2.was2",
+    "page_url": "https://www.jejuskfc.com/club/introduction/mascot",
+    "alt": "",
+    "sha256": "d2924a995cf835310d5a48c4dcb05d8fac5be401e69db8fc5cd7b84c7bc3b13c",
+    "bytes": 414273,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q168364": {
+   "name": "광주 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q482540": {
+   "name": "성남 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.seongnamfc.com/aboutSFC/mascot",
+   "names": [],
+   "files": [],
+   "words": 15,
+   "image": {
+    "file": "/mascots/thumbs/m-9bd1a6e5d1.jpg",
+    "source_url": "https://www.seongnamfc.com/resources/images/page/img_5_3_2_mo.jpg",
+    "page_url": "https://www.seongnamfc.com/aboutSFC/mascot",
+    "alt": "마스코트 이미지",
+    "sha256": "6ddc1010d2e2d4396221eb73a25eb41641b7cf4d4f9a78f9d282cf7ff8e54226",
+    "bytes": 51112,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q495027": {
+   "name": "부산 아이파크 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.busanipark.com/club/emblem.php",
+   "names": [],
+   "files": [],
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-75b20830f0.png",
+    "source_url": "https://www.busanipark.com/new_img/sub/mascot_2022.png",
+    "page_url": "https://www.busanipark.com/club/emblem.php",
+    "alt": "",
+    "sha256": "ba574afbffae539882b2670482bfdb586d976b7a5be7ff8ed7172112cdf8cb9d",
+    "bytes": 207188,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q129673": {
+   "name": "울산 HD FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.uhdfc.com/fc/mascot.php",
+   "names": [],
+   "files": [],
+   "words": 10
+  },
+  "Q487215": {
+   "name": "두산 베어스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q104099625": {
+   "name": "김천 상무 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.gimcheonfc.com/fc/ci.php",
+   "names": [],
+   "files": [],
+   "words": 10
+  },
+  "Q483044": {
+   "name": "대구 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q3455793": {
+   "name": "수원 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.suwonfc.com/?p=38",
+   "names": [],
+   "files": [],
+   "words": 12
+  },
+  "Q490418": {
+   "name": "삼성 라이온즈",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q425690": {
+   "name": "경남 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.gyeongnamfc.com/fc/mascot.php",
+   "names": [],
+   "files": [
+    [
+     "https://www.gyeongnamfc.com/images/sub/mascot_down_ai_1.ai",
+     ""
+    ],
+    [
+     "https://www.gyeongnamfc.com/images/sub/mascot_down_ai_2.ai",
+     ""
+    ]
+   ],
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-922c13acc7.jpg",
+    "source_url": "https://www.gyeongnamfc.com/images/sub/mascot_top.jpg",
+    "page_url": "https://www.gyeongnamfc.com/fc/mascot.php",
+    "alt": "",
+    "sha256": "4c274e19e12e593f4f5b26613c4e4e00a33bd2d5e340f5207d62899f17503883",
+    "bytes": 345098,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q490046": {
+   "name": "한화 이글스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q16261725": {
+   "name": "서울 이랜드 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.seoulelandfc.com/sefc/mascot",
+   "names": [],
+   "files": [],
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-c5ac7c7ff2.png",
+    "source_url": "https://cdn.seoulelandfc.com/upload/ck_editor/20260325/cf4425c78f00fb08_202603251704012991.png",
+    "page_url": "https://www.seoulelandfc.com/sefc/mascot",
+    "alt": "마스코트",
+    "sha256": "23b5fbde649cec7c15d3ebdf282a775fdcf017c16b3bf9befb705e708de687db",
+    "bytes": 112759,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q495346": {
+   "name": "롯데 자이언츠",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484584": {
+   "name": "대전 하나 시티즌 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.dhcfc.kr/cl/mas.php",
+   "names": [],
+   "files": [],
+   "words": 8
+  },
+  "Q105636368": {
+   "name": "SSG 랜더스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484569": {
+   "name": "강원 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://gangwon-fc.com/club/emblem",
+   "names": [],
+   "files": [],
+   "words": 4
+  },
+  "Q490377": {
+   "name": "LG 트윈스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5962677": {
+   "name": "인천 현대제철 레드엔젤스 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q27952107": {
+   "name": "안산 그리너스 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q76816708": {
+   "name": "충남 아산 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490621": {
+   "name": "KIA 타이거즈",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q486862": {
+   "name": "NC 다이노스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490137": {
+   "name": "키움 히어로즈",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q1833814": {
+   "name": "FC 안양",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490947": {
+   "name": "울산 현대모비스 피버스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q490749": {
+   "name": "서울 SK 나이츠 BC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484762": {
+   "name": "창원 LG 세이커스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q4982682": {
+   "name": "부천 FC 1995",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q485191": {
+   "name": "수원 KT 소닉붐",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495903": {
+   "name": "천안 시티 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q485411": {
+   "name": "부산 KCC 이지스 BC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q3023347": {
+   "name": "KT 위즈",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q485398": {
+   "name": "안양 정관장 레드부스터스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483074": {
+   "name": "서울 삼성 썬더스 BC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484120": {
+   "name": "원주 DB 프로미",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q484557": {
+   "name": "대구 한국가스공사 페가수스 BC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483748": {
+   "name": "고양 소노 스카이거너스 BC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://skygunners.kbl.or.kr/team/mascot",
+   "names": [],
+   "files": [],
+   "words": 5
+  },
+  "Q482566": {
+   "name": "전남 드래곤즈 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.dragons.co.kr/club/mascot",
+   "names": [],
+   "files": [],
+   "words": 2,
+   "image": {
+    "file": "/mascots/thumbs/m-99586f5f31.png",
+    "source_url": "https://www.dragons.co.kr/img/mascot_4.fe36bfda.png",
+    "page_url": "https://www.dragons.co.kr/club/mascot",
+    "alt": "dragons30",
+    "sha256": "bf37b02c78ee6360ac805abdaa2d013f283e7adaac8f3afa4eb0fd5875234b2f",
+    "bytes": 384627,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q626281": {
+   "name": "삼성 갤럭시",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12589091": {
+   "name": "김포 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q28802449": {
+   "name": "경주 한국수력원자력 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5116368": {
+   "name": "세종 스포츠토토 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q9210123": {
+   "name": "서울 시청 아마조네스 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7125327": {
+   "name": "파주 프런티어 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.pajufrontier.com/club/uniform.php",
+   "names": [],
+   "files": [],
+   "words": 16,
+   "image": {
+    "file": "/mascots/thumbs/m-fd469822ba.png",
+    "source_url": "https://www.pajufrontier.com/club/img/unifrom_mascot.png",
+    "page_url": "https://www.pajufrontier.com/club/uniform.php",
+    "alt": "파주 프런티어 FC 마스코트",
+    "sha256": "82ce09ebeafd1e6ab03e931d396546d370be881ba7160870026165414ad75a70",
+    "bytes": 55841,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q626785": {
+   "name": "충북 청주 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.chfc.kr/fc/msc.php",
+   "names": [],
+   "files": [],
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-cda6586bee.jpg",
+    "source_url": "https://www.chfc.kr/images/sub/mascot_01.jpg",
+    "page_url": "https://www.chfc.kr/fc/msc.php",
+    "alt": "",
+    "sha256": "9e54959e37bc178da814ffb201cd635488ce18e34ae59fc83805ee2803bea72f",
+    "bytes": 412390,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q9213729": {
+   "name": "화천 국민체육진흥공단 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.kspo.or.kr/kspo/main/contents.do?menuNo=200442",
+   "names": [],
+   "files": [
+    [
+     "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_pdf.zip",
+     "캐릭터 가이드(PDF)"
+    ],
+    [
+     "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_ai.zip",
+     "캐릭터 가이드(AI)"
+    ],
+    [
+     "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_png.zip",
+     "캐릭터 이미지"
+    ]
+   ],
+   "words": 32,
+   "image": {
+    "file": "/mascots/thumbs/m-a8278096ba.png",
+    "source_url": "https://www.kspo.or.kr/static/kspo_new/images/sub/character/character_whitetiger.png",
+    "page_url": "https://www.kspo.or.kr/kspo/main/contents.do?menuNo=200442",
+    "alt": "",
+    "sha256": "106f1392c5a3b83b4d9b96ea62deaa146ad8d87c6dcc047c83182060ddc8671c",
+    "bytes": 38805,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q483579": {
+   "name": "대전 코레일 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q483733": {
+   "name": "부산 교통공사 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q15700191": {
+   "name": "화성 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q7650613": {
+   "name": "수원 FCW",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.suwonfc.com/?p=38",
+   "names": [],
+   "files": [],
+   "words": 12
+  },
+  "Q5001273": {
+   "name": "문경 상무 WFC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624914": {
+   "name": "포천 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q626789": {
+   "name": "창원 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q624762": {
+   "name": "FC 강릉",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.gncityfc.com/sub/sub1/sub9.html",
+   "names": [],
+   "files": [],
+   "words": 15,
+   "image": {
+    "file": "/mascots/thumbs/m-1407280332.png",
+    "source_url": "https://www.gncityfc.com/image/sub/mascot_img01.png",
+    "page_url": "https://www.gncityfc.com/sub/sub1/sub9.html",
+    "alt": "까모",
+    "sha256": "cd68ce6cdd8225c242826b276ffcd24eac3a2f867690f6c2e09f95f5dc7bf8d8",
+    "bytes": 81487,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q624792": {
+   "name": "경주 한국수력원자력 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.khnp.co.kr/main/contents.do?key=4808",
+   "names": [
+    "에너지",
+    "웅찌"
+   ],
+   "files": [],
+   "words": 20
+  },
+  "Q624769": {
+   "name": "평창 유나이티드 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q5116241": {
+   "name": "춘천 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q55836091": {
+   "name": "시흥 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q60915208": {
+   "name": "울산 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q495864": {
+   "name": "김해 FC 2008",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.gimhae.go.kr/01545/01855/01902.web",
+   "names": [],
+   "files": [],
+   "words": 44,
+   "image": {
+    "file": "/mascots/thumbs/m-5194506f1a.png",
+    "source_url": "https://www.gimhae.go.kr/_res/depart/img/sub/p01902_img14.png",
+    "page_url": "https://www.gimhae.go.kr/01545/01855/01902.web",
+    "alt": "마스코트 응용형",
+    "sha256": "24c2e82e88a7405451f4232d9be85fddcd593c79fe1a6b1f1f5519f6b99bcbad",
+    "bytes": 8032,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q492589": {
+   "name": "고양 원더스",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q22974438": {
+   "name": "양평 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q3277003": {
+   "name": "서울 중랑 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12605671": {
+   "name": "인천 신한은행 에스버드 WBT",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.sbirds.com/intro/emblem.do",
+   "names": [],
+   "files": [
+    [
+     "https://www.sbirds.com/content/html/intro/images/mascot.zip",
+     ""
+    ]
+   ],
+   "words": 8
+  },
+  "Q12619256": {
+   "name": "청주 KB 스타즈 WBC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q31180555": {
+   "name": "평택 시티즌 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12620046": {
+   "name": "아산 우리은행 우리원 WPBC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q47484807": {
+   "name": "여주 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q81093119": {
+   "name": "진주 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q105241864": {
+   "name": "거제 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q110507497": {
+   "name": "전북 현대 모터스 FC N",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q6729375": {
+   "name": "매탄고등학교 축구부",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q104879210": {
+   "name": "당진 시민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q134596379": {
+   "name": "남양주 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q134603649": {
+   "name": "세종 SA FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q131858907": {
+   "name": "기장 군민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": true,
+   "page": "https://www.gijangunited.com/bbs/content.php?co_id=mascot",
+   "names": [],
+   "files": [],
+   "words": 14,
+   "image": {
+    "file": "/mascots/thumbs/m-887d1ce809.png",
+    "source_url": "https://www.gijangunited.com/theme/gijangunited/img/mascot.png",
+    "page_url": "https://www.gijangunited.com/bbs/content.php?co_id=mascot",
+    "alt": "",
+    "sha256": "595a2b06d5d282511833f938f33599530e0accec11d67b72ebaf0ff186de866e",
+    "bytes": 263828,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)"
+   }
+  },
+  "Q138381939": {
+   "name": "WK리그 챔피언십",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q138642064": {
+   "name": "함안 군민 FC",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q9212676": {
+   "name": "FC 목포",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q8055014": {
+   "name": "용인 삼성생명 블루밍스 WBT",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q12598989": {
+   "name": "부천 하나은행 WBT",
+   "group": "스포츠 구단",
+   "checked_at": "2026-11-11",
+   "found": false
+  },
+  "Q137510040": {
+   "name": "용인 FC",
+   "group": "스포츠 구단",
    "checked_at": "2026-11-11",
    "found": false
   }

@@ -8,7 +8,7 @@ import {createHash} from 'node:crypto';
 import {buildSite} from './logo-app/scripts/build.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url));
 export async function buildDirectory(cfg){
-const {project,srcRoot=path.join(root,'logo-app'),base,out,label,menuLabel,rights,geometryFile='logo-geometry.json',swaps=[]}=cfg;
+const {project,srcRoot=path.join(root,'logo-app'),base,out,label,menuLabel,rights,geometryFile='logo-geometry.json',swaps=[],extraCss=''}=cfg;
 // Every swap must match somewhere (a renamed string in the app fails the build instead of silently showing logo text).
 const used=new Set();
 function applySwaps(text,where,optional=false){for(const [i,[from,to]] of swaps.entries()){const next=text.split(from).join(to);if(next!==text)used.add(i);text=next;}return text;}
@@ -59,7 +59,7 @@ const scopedCss=css=>swap(css,/:root\{--paper:#f6f6f1;([\s\S]*?)--ink:#172126;([
 .logo-app .page-container{max-width:1280px;padding-left:24px;padding-right:24px}
 .logo-rights{max-width:1280px;margin:0 auto;padding:0 24px 8px;font-size:12px;color:var(--muted);line-height:1.7}
 .logo-rights a{text-decoration:underline;text-underline-offset:3px}
-@media(max-width:600px){.logo-app .header-inner{padding:16px 20px}.logo-app .primary-nav>a{padding:10px 16px;font-size:13px}.logo-app .page-container,.logo-rights{padding-left:20px;padding-right:20px}}`;
+@media(max-width:600px){.logo-app .header-inner{padding:16px 20px}.logo-app .primary-nav>a{padding:10px 16px;font-size:13px}.logo-app .page-container,.logo-rights{padding-left:20px;padding-right:20px}}${extraCss?'\n'+extraCss:''}`;
 // Detail-only data (source evidence, image credits, full colour specs) leaves the shared bootstrap and is attached to each detail page, so the list loads less.
 const credits={},colorsFull=colors,colorsLight={};
 for(const [id,t] of Object.entries(thumbnails)){const {source,license,author,page_url,...rest}=t;thumbnails[id]=rest;credits[id]={source,license,author,page_url};}

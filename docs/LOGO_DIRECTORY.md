@@ -106,6 +106,8 @@ python3 tools/logo-survey/normalize_logos.py --thumbs html/mascots/thumbs --geom
 node tools/build_mascots.mjs
 ```
 
+- 기업·구단: `data/companies.json`(위키데이터 국내 기업 270곳)·`data/clubs.json`(프로스포츠 구단 88곳)을 `mascot_survey.py --orgs <파일>`로 같은 방식 탐색. 기업 사이트에 캐릭터 페이지가 드문 경우가 많아 `data/mascots-manual.json`(공식 캐릭터 페이지 직접 확인, 예: KB 스타프렌즈·우리은행 위비프렌즈)으로 보강. 오탐(드라마 출연진·상품 목록 등)은 merge_mascots.py `SURVEY_REJECT`.
+- 썸네일: 마스코트는 카드·타일에서 캐릭터를 프레임 높이의 약 1.5배로 위에서부터 보여 줌(상반신 중심), 상세는 전체 모습(build_mascots.mjs extraCss).
 - 대분류: 지자체 캐릭터·공공기관·대학·행사·올림픽·스포츠 구단·기업·브랜드·해외·기타. 애니메이션·게임 IP 자체(뽀로로 등)는 마스코트가 아니므로 제외.
 - 정렬: 위키백과 문서가 있는 마스코트는 조회수, 기관 캐릭터는 그 기관의 로고모음 인지도 점수.
 - 레코드 종류(kind)에 `mascot`, `character` 추가(core.js KIND_IDS·두 taxonomy 공통).

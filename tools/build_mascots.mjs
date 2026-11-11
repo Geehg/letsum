@@ -28,5 +28,17 @@ const swaps=[
  ['로고·CI','마스코트'],
  ['로고','캐릭터'],
 ];
+// Characters are drawn about 1.5 times the thumbnail height from the top (head and upper body show; wide group images stay
+// nearly whole within 118% of the width);
+// the detail page shows the whole character in a larger square frame.
+const extraCss=`.biz[data-thumb="image"] .biz-front .logo-box-front,.icon-tile[data-thumb="image"] .logo-box-front{inset:0;left:0;right:0;top:0;bottom:0;overflow:hidden;border-radius:inherit}
+.biz[data-thumb="image"] .biz-front{overflow:hidden}
+.biz[data-thumb="image"] .logo-box-front img,.icon-tile[data-thumb="image"] .logo-box-front img{position:absolute;left:50%;top:7%;transform:translateX(-50%);height:150%!important;width:auto;max-width:118%;max-height:none;object-fit:contain;object-position:50% 0}
+.icon-tile[data-thumb="image"] .logo-box-front img{top:8%;height:132%!important;max-width:112%}
+.biz[data-thumb="image"] .cover-kicker>span{background:#ffffffe0;color:#15140f;padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+.icon-tile[data-thumb="image"] .tile-face{padding:0;overflow:hidden}
+.detail-thumb-frame{width:300px;aspect-ratio:1}
+.logo-box-detail{inset:5%}
+.logo-box-detail img{height:100%!important;width:100%;object-fit:contain}`;
 await buildDirectory({project:path.join(root,'mascot-app'),base:'/mascots/',out:path.join(root,'../html/mascots'),label:'Mascot directory',menuLabel:'마스코트 메뉴',
- rights:'캐릭터와 마스코트의 권리는 각 권리자에게 있습니다. 미리보기는 식별용이며, 사용 전 공식 페이지의 이용 조건을 확인해 주세요.',geometryFile:'mascot-geometry.json',swaps});
+ rights:'캐릭터와 마스코트의 권리는 각 권리자에게 있습니다. 미리보기는 식별용이며, 사용 전 공식 페이지의 이용 조건을 확인해 주세요.',geometryFile:'mascot-geometry.json',swaps,extraCss});

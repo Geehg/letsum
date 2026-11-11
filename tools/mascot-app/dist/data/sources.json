@@ -134,6 +134,17 @@
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q625097-src",
+      "title": "해랑이 공식 안내",
+      "url": "https://www.mof.go.kr/page/ko/selectPage.do?menuSeq=413&pageSeq=481&listUpdtDt=2026-11-06++10%3A00",
+      "publisher": "해양수산부",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "해양수산부의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 해랑이.",
+      "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mc-q12583260-src",
       "title": "개인정보보호위원회 캐릭터 공식 안내",
       "url": "https://pipc.go.kr/np/default/page.do?mCode=F010010030",
@@ -153,6 +164,17 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "소방청의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 웅이, 영이.",
+      "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q488480-src",
+      "title": "해양경찰청 캐릭터 공식 안내",
+      "url": "https://www.kcg.go.kr/kcg/si/sub/info.do?page=2823&mi=2823",
+      "publisher": "해양경찰청",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "해양경찰청의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
       "note": "명단: 위키백과 틀:대한민국 행정부/조직도 · 캐릭터 페이지 자동 탐색"
     },
     {
@@ -1308,7 +1330,7 @@
       "checked_at": "2026-11-11",
       "scope": "page",
       "observation": "한국수력원자력의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 에너지, 웅찌.",
-      "note": "명단: 위키백과 틀:대한민국의 시장형 공기업 · 캐릭터 페이지 자동 탐색"
+      "note": "명단: 위키데이터 국내 기업(위키백과 언어판 5개 이상) · 캐릭터 페이지 자동 탐색"
     },
     {
       "id": "mc-q12623270-src",
@@ -2664,6 +2686,248 @@
       "note": "명단: 위키백과 대한민국의 대학 목록 · 캐릭터 페이지 자동 탐색"
     },
     {
+      "id": "mc-q625852-src",
+      "title": "오뚜기 캐릭터 공식 안내",
+      "url": "https://www.ottogi.co.kr/brand/goods",
+      "publisher": "오뚜기",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "오뚜기의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 기업(위키백과 언어판 5개 이상) · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q6684915-src",
+      "title": "롯데웰푸드 캐릭터 공식 안내",
+      "url": "https://www.lottewellfood.com/brand/character",
+      "publisher": "롯데웰푸드",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "롯데웰푸드의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 기업(위키백과 언어판 5개 이상) · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q491325-src",
+      "title": "신한금융지주 캐릭터 공식 안내",
+      "url": "https://www.shinhangroup.com/kr/about/identity/character",
+      "publisher": "신한금융지주",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "신한금융지주의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 기업(위키백과 언어판 5개 이상) · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12598719-src",
+      "title": "부산-김해경전철 (기업) 캐릭터 공식 안내",
+      "url": "https://www.bglrt.com/00030/00057/00581.web",
+      "publisher": "부산-김해경전철 (기업)",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "부산-김해경전철 (기업)의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 기업(위키백과 언어판 5개 이상) · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q482562-src",
+      "title": "인천 유나이티드 FC 캐릭터 공식 안내",
+      "url": "https://www.incheonutd.com/club/intro.php",
+      "publisher": "인천 유나이티드 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "인천 유나이티드 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q169985-src",
+      "title": "쇠돌이 · 쇠순이 공식 안내",
+      "url": "https://www.steelers.co.kr/club/mascot",
+      "publisher": "FC 포항 스틸러스",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "FC 포항 스틸러스의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 쇠돌이, 쇠순이.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q482617-src",
+      "title": "제주 SK FC 캐릭터 공식 안내",
+      "url": "https://www.jejuskfc.com/club/introduction/mascot",
+      "publisher": "제주 SK FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "제주 SK FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q482540-src",
+      "title": "성남 FC 캐릭터 공식 안내",
+      "url": "https://www.seongnamfc.com/aboutSFC/mascot",
+      "publisher": "성남 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "성남 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q495027-src",
+      "title": "부산 아이파크 FC 캐릭터 공식 안내",
+      "url": "https://www.busanipark.com/club/emblem.php",
+      "publisher": "부산 아이파크 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "부산 아이파크 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q129673-src",
+      "title": "울산 HD FC 캐릭터 공식 안내",
+      "url": "https://www.uhdfc.com/fc/mascot.php",
+      "publisher": "울산 HD FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "울산 HD FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q104099625-src",
+      "title": "김천 상무 FC 캐릭터 공식 안내",
+      "url": "https://www.gimcheonfc.com/fc/ci.php",
+      "publisher": "김천 상무 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "김천 상무 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q3455793-src",
+      "title": "수원 FC 캐릭터 공식 안내",
+      "url": "https://www.suwonfc.com/?p=38",
+      "publisher": "수원 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "수원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q425690-src",
+      "title": "경남 FC 캐릭터 공식 안내",
+      "url": "https://www.gyeongnamfc.com/fc/mascot.php",
+      "publisher": "경남 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "경남 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q16261725-src",
+      "title": "서울 이랜드 FC 캐릭터 공식 안내",
+      "url": "https://www.seoulelandfc.com/sefc/mascot",
+      "publisher": "서울 이랜드 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "서울 이랜드 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q484584-src",
+      "title": "대전 하나 시티즌 FC 캐릭터 공식 안내",
+      "url": "https://www.dhcfc.kr/cl/mas.php",
+      "publisher": "대전 하나 시티즌 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "대전 하나 시티즌 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q484569-src",
+      "title": "강원 FC 캐릭터 공식 안내",
+      "url": "https://gangwon-fc.com/club/emblem",
+      "publisher": "강원 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "강원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q483748-src",
+      "title": "고양 소노 스카이거너스 BC 캐릭터 공식 안내",
+      "url": "https://skygunners.kbl.or.kr/team/mascot",
+      "publisher": "고양 소노 스카이거너스 BC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "고양 소노 스카이거너스 BC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q482566-src",
+      "title": "전남 드래곤즈 FC 캐릭터 공식 안내",
+      "url": "https://www.dragons.co.kr/club/mascot",
+      "publisher": "전남 드래곤즈 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "전남 드래곤즈 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q626785-src",
+      "title": "충북 청주 FC 캐릭터 공식 안내",
+      "url": "https://www.chfc.kr/fc/msc.php",
+      "publisher": "충북 청주 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "충북 청주 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q624762-src",
+      "title": "FC 강릉 캐릭터 공식 안내",
+      "url": "https://www.gncityfc.com/sub/sub1/sub9.html",
+      "publisher": "FC 강릉",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "FC 강릉의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q12605671-src",
+      "title": "인천 신한은행 에스버드 WBT 캐릭터 공식 안내",
+      "url": "https://www.sbirds.com/intro/emblem.do",
+      "publisher": "인천 신한은행 에스버드 WBT",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "인천 신한은행 에스버드 WBT의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
+      "id": "mc-q131858907-src",
+      "title": "기장 군민 FC 캐릭터 공식 안내",
+      "url": "https://www.gijangunited.com/bbs/content.php?co_id=mascot",
+      "publisher": "기장 군민 FC",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "기장 군민 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "note": "명단: 위키데이터 국내 프로스포츠 구단 · 캐릭터 페이지 자동 탐색"
+    },
+    {
       "id": "mw-82e5338505-src",
       "title": "위키백과 — 2010년 동계 올림픽과 패럴림픽 마스코트",
       "url": "https://ko.wikipedia.org/wiki/2010%EB%85%84_%EB%8F%99%EA%B3%84_%EC%98%AC%EB%A6%BC%ED%94%BD%EA%B3%BC_%ED%8C%A8%EB%9F%B4%EB%A6%BC%ED%94%BD_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8",
@@ -3927,6 +4191,28 @@
       "scope": "page",
       "observation": "힘찬이에 관한 위키백과 문서입니다.",
       "note": "위키백과 분류 기반 수집"
+    },
+    {
+      "id": "mm-kb-starfriends-src",
+      "title": "스타프렌즈 공식 안내",
+      "url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+      "publisher": "KB금융그룹",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "KB금융그룹의 대표 캐릭터. 각자의 별에서 꿈을 찾아 지구로 온 다섯 친구(키키·아거·비비·라무·콜리)로, 광고와 여러 매체에 쓰입니다.",
+      "note": "수작업 확인(공식 페이지)"
+    },
+    {
+      "id": "mm-woori-wibee-src",
+      "title": "위비프렌즈 공식 안내",
+      "url": "https://spot.wooribank.com/pot/Dream?withyou=BPBKI0057",
+      "publisher": "우리은행",
+      "language": "ko",
+      "checked_at": "2026-11-11",
+      "scope": "page",
+      "observation": "우리은행의 캐릭터 위비와 친구들(위비프렌즈). 우리은행 공식 사이트의 캐릭터 소개 페이지에서 확인했습니다.",
+      "note": "수작업 확인(공식 페이지)"
     }
   ]
 }
