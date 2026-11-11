@@ -107,7 +107,7 @@ def main():
 
     # 1. Organisations' own characters.
     by_key = {crawl.org_key(o): o for o in orgs}
-    manual_orgs = {m["organization"] for m in manual}
+    manual_orgs = {m["organization"] for m in manual} | {r for m in manual for r in m.get("replaces", [])}
     manual_orgs |= {"KB금융그룹" if "KB금융그룹" in manual_orgs else None, "우리금융그룹" if "우리은행" in manual_orgs else None} - {None}
     for key, row in survey.items():
         org = by_key.get(key)
@@ -124,7 +124,7 @@ def main():
             (f"명단: {org['roster']}" if org["group"] in ("기업", "스포츠 구단") else f"명단: 위키백과 {org['roster']}") + " · 캐릭터 페이지 자동 탐색", row.get("image"), row.get("files"), logo_rank.get(org_id(org), {}).get("score", 0), checked=row.get("checked_at", TODAY))
     # 2. Well-known mascots (Korean Wikipedia).
     for row in wiki:
-        if row["title"] in names_seen:
+        if row["title"] in names_seen or row["title"] in manual_orgs:
             continue
         rid = "mw-" + hashlib.sha1(row["title"].encode()).hexdigest()[:10]
         group = wiki_group(row)

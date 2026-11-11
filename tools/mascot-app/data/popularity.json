@@ -614,10 +614,6 @@
   "mc-q491127": {
    "score": 5.166
   },
-  "mc-q491325": {
-   "score": 4.112,
-   "pageviews": 3243
-  },
   "mc-q491336": {
    "score": 4.503
   },
@@ -1026,8 +1022,23 @@
   "mc-q8684": {
    "score": 0
   },
+  "mm-hitejinro-toad": {
+   "score": 4.6
+  },
   "mm-kb-starfriends": {
    "score": 5.0
+  },
+  "mm-linefriends": {
+   "score": 4.6
+  },
+  "mm-lotte-bellygom": {
+   "score": 4.4
+  },
+  "mm-seoulmetro-ddota": {
+   "score": 4.3
+  },
+  "mm-shinhan-friends": {
+   "score": 4.5
   },
   "mm-woori-wibee": {
    "score": 5.0
@@ -1163,10 +1174,6 @@
   "mw-62186598ca": {
    "score": 2.143,
    "pageviews": 129
-  },
-  "mw-6463e71b8d": {
-   "score": 2.358,
-   "pageviews": 218
   },
   "mw-64a9155c0d": {
    "score": 2.775,
@@ -1412,17 +1419,9 @@
    "score": 2.09,
    "pageviews": 113
   },
-  "mw-e2e39ae455": {
-   "score": 2.673,
-   "pageviews": 461
-  },
   "mw-e6abc7db47": {
    "score": 2.433,
    "pageviews": 261
-  },
-  "mw-e71ca11fc9": {
-   "score": 2.633,
-   "pageviews": 420
   },
   "mw-e8396a5e85": {
    "score": 2.164,

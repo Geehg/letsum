@@ -1,5 +1,5 @@
 {
- "note": "공식 캐릭터 소개 페이지를 직접 확인한 기업 캐릭터(merge_mascots.py가 병합).",
+ "note": "공식 캐릭터 소개 페이지를 직접 확인한 기업 캐릭터(merge_mascots.py가 병합). replaces: 이 항목으로 대신할 자동 수집 기관명·위키백과 문서명.",
  "mascots": [
   {
    "id": "mm-kb-starfriends",
@@ -52,6 +52,142 @@
     "bytes": 5228
    },
    "score": 5.0
+  },
+  {
+   "id": "mm-hitejinro-toad",
+   "organization": "하이트진로",
+   "name": "진로 두꺼비",
+   "aliases": [
+    "두꺼비",
+    "꺼비",
+    "진로 두꺼비",
+    "하이트진로 캐릭터"
+   ],
+   "group": "business/brand",
+   "summary": "하이트진로 소주 '진로'의 상징 캐릭터. 라벨의 두꺼비 심볼에서 나온 캐릭터로 광고·팝업스토어·굿즈에 쓰입니다. 이미지는 하이트진로 공식 사이트 진로 브랜드 페이지의 인쇄광고입니다.",
+   "page": "https://www.hitejinro.com/brand/view.asp?brandcd2=B11",
+   "image": {
+    "file": "/mascots/thumbs/mm-e037448067.png",
+    "source": "official-page-image",
+    "source_url": "https://file.hitejinro.com/hitejinro2016/upFiles/brand/KR/PRINT/20230615_30057456.png",
+    "page_url": "https://www.hitejinro.com/brand/view.asp?brandcd2=B11",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "9b4301cd3a745aa8fd5fe9ddf91079e2fe150d86db1363796a05d981ecf648b6",
+    "bytes": 118187,
+    "note": "공식 인쇄광고에서 캐릭터 부분만 잘라 미리보기로 사용"
+   },
+   "score": 4.6
+  },
+  {
+   "id": "mm-lotte-bellygom",
+   "organization": "롯데홈쇼핑",
+   "name": "벨리곰",
+   "aliases": [
+    "Belly Gom",
+    "롯데홈쇼핑 캐릭터"
+   ],
+   "group": "business/brand",
+   "summary": "롯데홈쇼핑이 2018년 사내 벤처 프로그램으로 만든 분홍색 곰 캐릭터. 이미지는 벨리곰 공식 스토어 소개 페이지에서 가져왔습니다.",
+   "page": "https://www.bellygom.com/shopinfo/company.html",
+   "image": {
+    "file": "/mascots/thumbs/mm-c2ea9512b5.jpg",
+    "source": "official-page-image",
+    "source_url": "https://www.bellygom.com/web/upload/_dj/img/250331/company_img2.jpg",
+    "page_url": "https://www.bellygom.com/shopinfo/company.html",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "3c163e132faf86efb096d940f68bb0b3a665236a6c282af7b09b88291c38d452",
+    "bytes": 2418751
+   },
+   "score": 4.4
+  },
+  {
+   "id": "mm-seoulmetro-ddota",
+   "organization": "서울교통공사",
+   "name": "또타",
+   "aliases": [
+    "또타",
+    "서울교통공사 캐릭터",
+    "서울 지하철 캐릭터"
+   ],
+   "group": "business/transport",
+   "summary": "서울교통공사(서울 지하철)의 공식 캐릭터. 공사 소개 › 공사 이미지 › 캐릭터 페이지에 기본형과 응용형이 게시되어 있습니다.",
+   "page": "http://www.seoulmetro.co.kr/kr/page.do?menuIdx=508",
+   "image": {
+    "file": "/mascots/thumbs/mm-d30d1f362f.jpg",
+    "source": "official-page-image",
+    "source_url": "http://www.seoulmetro.co.kr/images/introduction/smu6_006_03.jpg",
+    "page_url": "http://www.seoulmetro.co.kr/kr/page.do?menuIdx=508",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "3ca1901dc97858324af8f624b117947c02752a90da3ac48c580483d269048ff9",
+    "bytes": 42677
+   },
+   "score": 4.3,
+   "replaces": [
+    "또타"
+   ]
+  },
+  {
+   "id": "mm-shinhan-friends",
+   "organization": "신한금융그룹",
+   "name": "신한프렌즈",
+   "aliases": [
+    "SOL",
+    "쏠",
+    "몰리",
+    "리노",
+    "신한 쏠프렌즈",
+    "신한금융 캐릭터"
+   ],
+   "group": "business/brand",
+   "summary": "신한금융그룹의 대표 캐릭터. 북극성에 사는 여행작가 북극곰 SOL과 탐험가 친구들로, 신한금융그룹 공식 사이트 캐릭터 페이지에 소개되어 있습니다.",
+   "page": "https://www.shinhangroup.com/kr/about/identity/character",
+   "image": {
+    "file": "/mascots/thumbs/mm-1046c6367f.png",
+    "source": "official-page-image",
+    "source_url": "https://www.shinhangroup.com/resources/publish/kr/images/about/character_friends.png",
+    "page_url": "https://www.shinhangroup.com/kr/about/identity/character",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "078648435ca2ade698d07215409db10d1fa713feae9e8ff8ed26ed1872443dbb",
+    "bytes": 230016
+   },
+   "score": 4.5,
+   "replaces": [
+    "신한금융지주",
+    "신한프렌즈"
+   ]
+  },
+  {
+   "id": "mm-linefriends",
+   "organization": "IPX(라인프렌즈)",
+   "name": "라인프렌즈 · 브라운",
+   "aliases": [
+    "브라운",
+    "코니",
+    "샐리",
+    "LINE FRIENDS",
+    "라인프렌즈"
+   ],
+   "group": "business/brand",
+   "summary": "메신저 라인 스티커에서 시작한 캐릭터 브랜드 라인프렌즈(브라운·코니·샐리 등). 이미지는 LINE FRIENDS 공식 사이트 IP 페이지에서 가져왔습니다.",
+   "page": "https://linefriends.com/ko-kr/characters-list/ip-linefriends",
+   "image": {
+    "file": "/mascots/thumbs/mm-c12274828a.png",
+    "source": "official-page-image",
+    "source_url": "https://cdn.prod.website-files.com/69311b39f8f16a9fc0469883/69e6065a3057d776e7575820_IP_LF1.avif",
+    "page_url": "https://linefriends.com/ko-kr/characters-list/ip-linefriends",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "author": null,
+    "sha256": "122be94a28803d0b9c82d4afa1f07059acfa819935fc71b10e7a0f1b0a4098a7",
+    "bytes": 294847
+   },
+   "score": 4.6,
+   "replaces": [
+    "브라운 (라인프렌즈)"
+   ]
   }
  ]
 }

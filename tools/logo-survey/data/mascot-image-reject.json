@@ -1,0 +1,305 @@
+{
+ "note": "mascot_images.py가 고른 그림 중 눈으로 보고 캐릭터가 아니라고 판정한 것(재실행 때 건너뜀).",
+ "rejected": [
+  {
+   "name": "목포시",
+   "url": "https://admin.chatty.kr/work/chat/uploaded_files/1787286968-7476.png"
+  },
+  {
+   "name": "국가보훈부",
+   "url": "https://www.mpva.go.kr/DATA/mpva/download/20260701010914164_FSIgmV_Phk9CJ_00Pnax7n.png"
+  },
+  {
+   "name": "해양수산부",
+   "url": "https://www.mof.go.kr/images/layout/mark.png"
+  },
+  {
+   "name": "개인정보보호위원회",
+   "url": "https://www.pipc.go.kr/np/resources/images/subCommon/infoBoxBg.png"
+  },
+  {
+   "name": "해양경찰청",
+   "url": "https://www.kcg.go.kr/images/web/kcg/sub/0504_sbimg1.png"
+  },
+  {
+   "name": "행정중심복합도시건설청",
+   "url": "https://www.naacc.go.kr/resource/templete/naacc/img/sub/img_sub060104_01_01_m.jpg"
+  },
+  {
+   "name": "강진군",
+   "url": "https://www.gangjin.go.kr/contents/23038/sym_c_2025_1.jpg"
+  },
+  {
+   "name": "제주특별자치도",
+   "url": "https://www.jeju.go.kr/pub/site/jejunet/2023/images/common/kakao_ch.svg"
+  },
+  {
+   "name": "광진구",
+   "url": "https://www.gwangjin.go.kr/static/portal/img/bookmarkOff.svg"
+  },
+  {
+   "name": "남구",
+   "url": "https://www.ulsannamgu.go.kr/images/main/h_donation.jpg"
+  },
+  {
+   "name": "미추홀구",
+   "url": "https://www.michuhol.go.kr/main/images/sub/sq=9/simbol1.png"
+  },
+  {
+   "name": "밀양시",
+   "url": "https://chatty.kr/_ai_/play.png"
+  },
+  {
+   "name": "서구",
+   "url": "https://www.seogu.go.kr/images/common/webwatch-mark.png"
+  },
+  {
+   "name": "서구",
+   "url": "https://www.bsseogu.go.kr/img/portal/common_2025/gohyang.png"
+  },
+  {
+   "name": "서초구",
+   "url": "https://www.seocho.go.kr/images/seocho_2025/layout/i_sunny.svg"
+  },
+  {
+   "name": "성남시",
+   "url": "https://www.seongnam.go.kr/humanframe/theme/global/assets/images/common/cleanair_map.png"
+  },
+  {
+   "name": "양산시",
+   "url": "https://www.yangsan.go.kr/portal/img/sub/05/img_0201_01.png"
+  },
+  {
+   "name": "양구군",
+   "url": "https://www.yanggu.go.kr/resources/images/fnc_images/sub/sub_02_05_01_img01.png"
+  },
+  {
+   "name": "영월군",
+   "url": "https://www.yw.go.kr/DATA/bbs/21/thumb/t_863F5559-BA8B-47C8-9215-36DC2D3F8CCA.jpg"
+  },
+  {
+   "name": "영등포구",
+   "url": "https://www.ydp.go.kr/site/www/images/common/wa2025.png"
+  },
+  {
+   "name": "청도군",
+   "url": "https://www.cheongdo.go.kr/portal/img/sub/sub04/img0401020201_11.png"
+  },
+  {
+   "name": "통영시",
+   "url": "https://www.tongyeong.go.kr/_res/portal/img/inc/gn2onjung.png"
+  },
+  {
+   "name": "칠곡군",
+   "url": "https://www.chilgok.go.kr/portal/images/content/04/sub0301_img01.png"
+  },
+  {
+   "name": "한국수자원공사",
+   "url": "https://www.kwater.or.kr/web/images/cust/w_07_01_06_2_04_2025.jpg"
+  },
+  {
+   "name": "한전KDN",
+   "url": "https://www.kdn.com/korean/img/sub/story_2.png"
+  },
+  {
+   "name": "시청자미디어재단",
+   "url": "https://kcmf.or.kr/resource/kcmf/site/www/images/sub/ci_img1.png"
+  },
+  {
+   "name": "한국농촌경제연구원",
+   "url": "https://www.krei.re.kr/krei/images/sub/ci01.png"
+  },
+  {
+   "name": "한국어촌어항공단",
+   "url": "https://www.fipa.or.kr/asset/fipa/images/BI_Image_m.png"
+  },
+  {
+   "name": "국가유산진흥원",
+   "url": "https://www.kh.or.kr/_static/chf1/img/main/img_main_bottom_bn_01.png"
+  },
+  {
+   "name": "한국농업기술진흥원",
+   "url": "https://www.koat.or.kr/images/home/20260430_wapdf.png"
+  },
+  {
+   "name": "국립목포대학교",
+   "url": "https://www.mokpo.ac.kr/sites/www/atchmnfl_mngr/imageSlide/16/temp_1791338297279100.jpg"
+  },
+  {
+   "name": "대구대학교",
+   "url": "https://www.daegu.ac.kr/resources/images/site/layout/70th.svg"
+  },
+  {
+   "name": "서강대학교",
+   "url": "https://www.sogang.ac.kr/_nuxt/Layer_1.9ed5ccdb.svg"
+  },
+  {
+   "name": "세명대학교",
+   "url": "https://www.semyung.ac.kr/images/kor/sub01/bs12_sem_05.png"
+  },
+  {
+   "name": "서원대학교",
+   "url": "https://www.seowon.ac.kr/sites/seowon/atchmnfl_mngr/imageSlide/54/temp_1758174001737100.png"
+  },
+  {
+   "name": "제주대학교",
+   "url": "https://www.jejunu.ac.kr/pub/site/jejunu/images/mobile/open.svg"
+  },
+  {
+   "name": "SBS",
+   "url": "https://img2.sbs.co.kr/img/sbs_cms/WE/2026/10/26/uMJ1793003138753-666-968.png"
+  },
+  {
+   "name": "신한금융지주",
+   "url": "https://www.shinhangroup.com/resources/publish/kr/images/common/kbpi.png"
+  },
+  {
+   "name": "KB금융그룹",
+   "url": "https://www.kbfg.com/kor/images/about/mo/img_character_logo.jpg"
+  },
+  {
+   "name": "아카데미과학",
+   "url": "https://www.academy.co.kr/web/product/medium/202611/8bc699f6f27c9ace430b5158b91a9f0a.jpg"
+  },
+  {
+   "name": "인천 유나이티드 FC",
+   "url": "https://www.incheonutd.com/img/2018/emb/md/K18.png"
+  },
+  {
+   "name": "울산 HD FC",
+   "url": "https://www.uhdfc.com/images/sub/mascot_03_231214.jpg"
+  },
+  {
+   "name": "김천 상무 FC",
+   "url": "https://www.gimcheonfc.com/images/sub/ci_img_01_m.jpg"
+  },
+  {
+   "name": "대전 하나 시티즌 FC",
+   "url": "https://dhcfc.kr/data/news/yxtVIm.png"
+  },
+  {
+   "name": "강원 FC",
+   "url": "https://gangwon-fc.com/resources/images/player/2026/20160098_detail_1.png"
+  },
+  {
+   "name": "고양 소노 스카이거너스 BC",
+   "url": "https://skygunners.kbl.or.kr/assets/img/ico/ic-top.svg"
+  },
+  {
+   "name": "목포시",
+   "url": "https://mokpo.han.kr/chat/images/doubao.png"
+  },
+  {
+   "name": "국가보훈부",
+   "url": "https://www.mpva.go.kr/site/mpva/images/contents/cst_233_img_3.jpg"
+  },
+  {
+   "name": "해양수산부",
+   "url": "https://www.mof.go.kr/images/sub/05/050103_font.png"
+  },
+  {
+   "name": "해양경찰청",
+   "url": "https://www.kcg.go.kr/images/web/kcg/sub/0504_sbimg2.png"
+  },
+  {
+   "name": "행정중심복합도시건설청",
+   "url": "https://www.naacc.go.kr/resource/templete/naacc/new/images/common/flag.svg"
+  },
+  {
+   "name": "강진군",
+   "url": "https://www.gangjin.go.kr/contents/23038/sym_c_2025_2.jpg"
+  },
+  {
+   "name": "제주특별자치도",
+   "url": "https://www.jeju.go.kr/pub/modules/booking/closed.svg"
+  },
+  {
+   "name": "미추홀구",
+   "url": "https://www.michuhol.go.kr/main/images/sub/sq=9/simbol2.png"
+  },
+  {
+   "name": "밀양시",
+   "url": "https://www.miryang.go.kr/img/egovframework/web/sub-img/my-ci-png.png"
+  },
+  {
+   "name": "서초구",
+   "url": "https://www.seocho.go.kr/images/seocho_2025/layout/img_mark_20260923.png"
+  },
+  {
+   "name": "양산시",
+   "url": "https://www.yangsan.go.kr/portal/img/sub/05/img_0201_02.png"
+  },
+  {
+   "name": "양구군",
+   "url": "https://www.yanggu.go.kr/resources/images/fnc_images/sub/sub_02_05_01_img02.png"
+  },
+  {
+   "name": "칠곡군",
+   "url": "https://www.chilgok.go.kr/portal/images/content/04/sub0301_img02.png"
+  },
+  {
+   "name": "한전KDN",
+   "url": "https://www.kdn.com/korean/img/sub/story_3.png"
+  },
+  {
+   "name": "한국농촌경제연구원",
+   "url": "https://www.krei.re.kr/krei/images/sub/ci03.png"
+  },
+  {
+   "name": "한국어촌어항공단",
+   "url": "https://www.fipa.or.kr/asset/fipa/images/img_ci02_m.jpg"
+  },
+  {
+   "name": "국가유산진흥원",
+   "url": "https://www.kh.or.kr/_static/chf1/img/main/khmall_list10.jpg"
+  },
+  {
+   "name": "한국농업기술진흥원",
+   "url": "https://www.koat.or.kr/data/main/main_theme_1.png"
+  },
+  {
+   "name": "국립목포대학교",
+   "url": "https://www.mokpo.ac.kr/sites/www/images/sub/con_colorRule_01_01.jpg"
+  },
+  {
+   "name": "대구대학교",
+   "url": "https://www.daegu.ac.kr/resources/images/site/layout/m_search_close.svg"
+  },
+  {
+   "name": "서강대학교",
+   "url": "https://www.sogang.ac.kr/_nuxt/link-out.48a3c9f9.svg"
+  },
+  {
+   "name": "서원대학교",
+   "url": "https://www.seowon.ac.kr/sites/seowon/atchmnfl_mngr/imageSlide/54/temp_1793665348698100.png"
+  },
+  {
+   "name": "제주대학교",
+   "url": "https://www.jejunu.ac.kr/pub/site/jejunu/images/mobile/close.svg"
+  },
+  {
+   "name": "SBS",
+   "url": "https://cdn.taboola.com/static/91/91a25024-792d-4b52-84e6-ad1478c3f552.gif"
+  },
+  {
+   "name": "아카데미과학",
+   "url": "https://www.academy.co.kr/web/product/tiny/202611/ee042fda51330982b92eb17e49fccaa4.jpg"
+  },
+  {
+   "name": "인천 유나이티드 FC",
+   "url": "https://www.incheonutd.com/img/2018/emb/md/K01.png"
+  },
+  {
+   "name": "김천 상무 FC",
+   "url": "https://www.gimcheonfc.com/images/sub/ci_img_04_m_250220.jpg"
+  },
+  {
+   "name": "대전 하나 시티즌 FC",
+   "url": "https://dhcfc.kr/data/news/7gS769.jpg"
+  },
+  {
+   "name": "강원 FC",
+   "url": "https://gangwon-fc.com/resources/images/team_emblem/A12.png"
+  }
+ ]
+}

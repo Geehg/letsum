@@ -54,7 +54,18 @@
      "고양이 캐릭터 일러스트 원본 전체 다운로드"
     ]
    ],
-   "words": 24
+   "words": 24,
+   "image": {
+    "file": "/mascots/thumbs/m-03b6e9a6a6.png",
+    "source_url": "https://www.goyang.go.kr/webcontent/upload/intra/bbs/2026/10/14/be3aca9b-e176-424d-83f2-54cf540ce196.png",
+    "page_url": "https://www.goyang.go.kr/www/user/bbs/BD_selectBbsList.do?q_bbsCode=1054",
+    "alt": "가와지볍씨 (2).png",
+    "sha256": "8855ce35f7f43cad6d38058e5e81c0a975a4d8d939b9248368a1fa5314263235",
+    "bytes": 11538,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q486737": {
    "name": "한국전력공사",
@@ -464,7 +475,18 @@
      "다운로드"
     ]
    ],
-   "words": 29
+   "words": 29,
+   "image": {
+    "file": "/mascots/thumbs/m-53292442aa.svg",
+    "source_url": "https://www.dapa.go.kr/dapa/images/sub/05/cts0504-img08.svg",
+    "page_url": "https://www.dapa.go.kr/dapa/index.do?menuSeq=3444",
+    "alt": "위풍이",
+    "sha256": "60986adac91e6e7197ee6c02780492caff156dea0cd1b44fe6c3bdb2890554b7",
+    "bytes": 80209,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q488949": {
    "name": "고용노동부",
@@ -533,7 +555,18 @@
    "page": "https://pipc.go.kr/np/default/page.do?mCode=F010010030",
    "names": [],
    "files": [],
-   "words": 10
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-6ba664255c.png",
+    "source_url": "https://www.pipc.go.kr/np/resources/images/subCommon/infoBoxBg2.png",
+    "page_url": "https://pipc.go.kr/np/default/page.do?mCode=F010010030",
+    "alt": "",
+    "sha256": "0b6b94b6f2ec97142ba8027c6fb261d5bb279a414a0de92c1dd9b6b06055691c",
+    "bytes": 14259,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q33625595": {
    "name": "소방청",
@@ -805,7 +838,18 @@
      "도달쑤캐릭터기본형 AI 다운로드"
     ]
    ],
-   "words": 18
+   "words": 18,
+   "image": {
+    "file": "/mascots/thumbs/m-4fa2f04d11.png",
+    "source_url": "https://www.daegu.go.kr/cmsh/daegu.go.kr/images/content/introduction/sudal/2020/emot_1131.gif",
+    "page_url": "https://www.daegu.go.kr/index.do?menu_id=00936490",
+    "alt": "새해가 밝았어요",
+    "sha256": "19e0a4753eb80f45c179dce5b50ac44c3c625d9f081e63efe543d3f564eb1b08",
+    "bytes": 235724,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q41278": {
    "name": "울산광역시",
@@ -996,7 +1040,18 @@
      "갓평이 송송이 캐릭터 매뉴얼 다운로드 새창"
     ]
    ],
-   "words": 64
+   "words": 64,
+   "image": {
+    "file": "/mascots/thumbs/m-c73d036917.jpg",
+    "source_url": "https://www.gp.go.kr/site/portal/images/contents/cts2421_img01.jpg",
+    "page_url": "https://www.gp.go.kr/portal/contents.do?key=2421",
+    "alt": "갓평이 & 송송이, Gadpyeongyi&Songsongyi",
+    "sha256": "2f04966cff51ccf354270ce7941a178cb1d313c5d6bb90fc0f73b3409421b5f8",
+    "bytes": 89272,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50192": {
    "name": "강서구",
@@ -1150,7 +1205,18 @@
    "page": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
    "names": [],
    "files": [],
-   "words": 10
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-fcee629712.jpg",
+    "source_url": "https://gyeryong.go.kr/kr/img/sub04/s040203_img01.jpg",
+    "page_url": "https://gyeryong.go.kr/kr/html/sub04/040203.html",
+    "alt": "계룡이&행복이 이모티콘",
+    "sha256": "7ac1e4475e1294e8f38e4e507439454d9e5be7bf22f1a9d43231bf87bb152543",
+    "bytes": 1846405,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42062": {
    "name": "공주시",
@@ -1363,7 +1429,18 @@
      "캐릭터 매뉴얼 가이드북 다운로드"
     ]
    ],
-   "words": 2
+   "words": 2,
+   "image": {
+    "file": "/mascots/thumbs/m-f9af58dea1.jpg",
+    "source_url": "https://www.gwangjin.go.kr/editorUpload/images/000157/20220222161559821_RFTU3V1L.jpg",
+    "page_url": "https://www.gwangjin.go.kr/portal/main/contents.do?menuNo=201497",
+    "alt": "",
+    "sha256": "ccdb8e961aba7d37303f338f11dfd8bec1c29730f766c8f3a92c78478aa542b0",
+    "bytes": 1213871,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42074": {
    "name": "군산시",
@@ -1488,7 +1565,18 @@
    "page": "https://www.geumsan.go.kr/kr/html/sub04/040204.html",
    "names": [],
    "files": [],
-   "words": 22
+   "words": 22,
+   "image": {
+    "file": "/mascots/thumbs/m-d6babb6abe.png",
+    "source_url": "https://www.geumsan.go.kr/kr/img/sub04/sub040204_img01.png",
+    "page_url": "https://www.geumsan.go.kr/kr/html/sub04/040204.html",
+    "alt": "삼신령, 삼동이 이미지",
+    "sha256": "f75c5ee0d0751e5e9e6cdb8a1aca26d82e9837f1dbdde7e51f113dc738448e08",
+    "bytes": 13139,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50358": {
    "name": "금정구",
@@ -1793,7 +1881,18 @@
    "page": "https://www.dalseo.daegu.kr/index.do?menu_id=00004525",
    "names": [],
    "files": [],
-   "words": 16
+   "words": 16,
+   "image": {
+    "file": "/mascots/thumbs/m-17feaa73b3.jpg",
+    "source_url": "https://www.dalseo.daegu.kr/cmsh/dalseo.daegu.kr/images/content/chs3_001.jpg",
+    "page_url": "https://www.dalseo.daegu.kr/index.do?menu_id=00004525",
+    "alt": "",
+    "sha256": "696ce9ac3b7f52e68149240302b85563b155c618eaa395741b72809d869092e0",
+    "bytes": 179925,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42089": {
    "name": "당진시",
@@ -1982,7 +2081,18 @@
    "page": "https://www.donggu.go.kr/dg/kor/contents/984",
    "names": [],
    "files": [],
-   "words": 13
+   "words": 13,
+   "image": {
+    "file": "/mascots/thumbs/m-6679b7b13e.jpg",
+    "source_url": "https://www.donggu.go.kr/dg/upload/cefccdf2fe1ee429a9b3ce31ece6341ce1.jpg",
+    "page_url": "https://www.donggu.go.kr/dg/kor/contents/984",
+    "alt": "신인동 만세돌이 사진",
+    "sha256": "2d5434329cb64de049a33babadf27cebba4e65ffa13767496e20a8dc0d22f676",
+    "bytes": 49017,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42083": {
    "name": "나주시",
@@ -2727,7 +2837,18 @@
    "page": "https://www.seongnam.go.kr/cn04020201",
    "names": [],
    "files": [],
-   "words": 8
+   "words": 8,
+   "image": {
+    "file": "/mascots/thumbs/m-4a911abe60.png",
+    "source_url": "https://www.seongnam.go.kr/humanframe/theme/global/assets/images/common/cleanair_img3.png",
+    "page_url": "https://www.seongnam.go.kr/cn04020201",
+    "alt": "",
+    "sha256": "4878e43f04a756ef141b22547b6f3837a13139f31fa30a491d642cbde6039b7a",
+    "bytes": 41106,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50416": {
    "name": "수성구",
@@ -3178,7 +3299,18 @@
    "page": "https://www.yw.go.kr/www/selectBbsNttList.do?bbsNo=21&key=1458",
    "names": [],
    "files": [],
-   "words": 10
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-8b6e491312.jpg",
+    "source_url": "https://www.yw.go.kr/DATA/bbs/21/thumb/t_1DB536BD-5358-13B6-91CF-4B630F483342.jpg",
+    "page_url": "https://www.yw.go.kr/www/selectBbsNttList.do?bbsNo=21&key=1458",
+    "alt": "동강이 이미지",
+    "sha256": "90ca6d13f1fcea253f94b19e55ce7380d8a664c867b188ed344af0f12faa4ca6",
+    "bytes": 15305,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50261": {
    "name": "영동군",
@@ -3256,7 +3388,18 @@
    "page": "https://www.ydp.go.kr/www/contents.do?key=2897&",
    "names": [],
    "files": [],
-   "words": 12
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-cac6b9e088.png",
+    "source_url": "https://www.ydp.go.kr/site/www/images/contents/cts2897_img1-2.png",
+    "page_url": "https://www.ydp.go.kr/www/contents.do?key=2897&",
+    "alt": "영롱이 3D 이미지",
+    "sha256": "2f9c24aaa5de719c445568e1a099c18c3da521e413f1078d46512aed10e88b7b",
+    "bytes": 51560,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50307": {
    "name": "예산군",
@@ -3524,7 +3667,18 @@
      "다운로드(AI) 파일을 다운로드 합니다"
     ]
    ],
-   "words": 24
+   "words": 24,
+   "image": {
+    "file": "/mascots/thumbs/m-b1e95e43c3.png",
+    "source_url": "https://www.suncheon.go.kr/kr/img/contents/info/mc05.png",
+    "page_url": "https://www.suncheon.go.kr/kr/info/0003/0001/0005",
+    "alt": "화이팅 하는 루미 꾸미",
+    "sha256": "b5bbe246932b99a0bc9ef2b81ac8d0da3fdace8a41ab867184fcfefc34936696",
+    "bytes": 18171,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42131": {
    "name": "원주시",
@@ -3581,7 +3735,18 @@
    "page": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
    "names": [],
    "files": [],
-   "words": 6
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-fad80bee86.png",
+    "source_url": "https://www.sj.go.kr/download/S0001/chambyeoli.png",
+    "page_url": "https://www.sj.go.kr/page.do?mnu_uid=1014&",
+    "alt": "성주군 참별이 Chambyeoli",
+    "sha256": "1f9d2b03bae3b7a1a99a6985659538df08dd04c1fba123f88f3285ed35b84e33",
+    "bytes": 11589,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50320": {
    "name": "장성군",
@@ -3906,7 +4071,18 @@
    "page": "https://www.jp.go.kr/kor/sub01_07_03.do",
    "names": [],
    "files": [],
-   "words": 12
+   "words": 12,
+   "image": {
+    "file": "/mascots/thumbs/m-c323f333f8.jpg",
+    "source_url": "https://www.jp.go.kr/images/kor/sub04/sub04_02_04_img01.jpg",
+    "page_url": "https://www.jp.go.kr/kor/sub01_07_03.do",
+    "alt": "그네타기",
+    "sha256": "46a04260d59a2b41907671e65f474aacb2321ddedb9eef77306f09c095d88ef8",
+    "bytes": 28847,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q50331": {
    "name": "청송군",
@@ -3946,7 +4122,18 @@
    "page": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020200",
    "names": [],
    "files": [],
-   "words": 14
+   "words": 14,
+   "image": {
+    "file": "/mascots/thumbs/m-7b597497cb.png",
+    "source_url": "https://www.cheongdo.go.kr/portal/img/sub/sub04/img0401020201_01.png",
+    "page_url": "https://www.cheongdo.go.kr/portal/contents.do?mid=0401020200",
+    "alt": "바우 이미지",
+    "sha256": "efc05652366c3d204c185728d53d4ed5a143389025fabbf150291baa869034cd",
+    "bytes": 14190,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42144": {
    "name": "진주시",
@@ -4023,7 +4210,18 @@
      "AI 다운로드 다운로드"
     ]
    ],
-   "words": 30
+   "words": 30,
+   "image": {
+    "file": "/mascots/thumbs/m-a0dd18e7e3.jpg",
+    "source_url": "https://www.cheongyang.go.kr/images/kor/sub05/sub05_04_04_02.jpg",
+    "page_url": "http://www.cheongyang.go.kr/kor/sub05_03_04_01.do",
+    "alt": "고추도령 구기낭자 응용형A",
+    "sha256": "487b39f73fc84defb02d74b1347fbafbcf8f492d75c32d5ed46e7fb4b92f3618",
+    "bytes": 157646,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q42148": {
    "name": "춘천시",
@@ -4781,7 +4979,18 @@
      "PNG 다운로드"
     ]
    ],
-   "words": 17
+   "words": 17,
+   "image": {
+    "file": "/mascots/thumbs/m-33e62998ce.png",
+    "source_url": "https://www.airport.co.kr/type/common/img/kacKor/introKAC/kac_chracter2.png",
+    "page_url": "https://www.airport.co.kr/www/cms/frCon/index.do?MENU_ID=440&CONTENTS_NO=3",
+    "alt": "포티2",
+    "sha256": "ad7a5c59a048de79876dc794e2a1b174b79ce4ac358376d9e970556278548ca6",
+    "bytes": 47322,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q15615204": {
    "name": "에스알",
@@ -6295,7 +6504,18 @@
      "CI 다운로드 (AI) CI 다운로드 (JPG, PNG) \\n \\n \\n\\n 캐릭터 소개 \\n\\n \\n \\n \\n\\n \\n 배움이 \\n\\n 국가 \\\"파일"
     ]
    ],
-   "words": 6
+   "words": 6,
+   "image": {
+    "file": "/mascots/thumbs/m-93b2d1134d.png",
+    "source_url": "https://www.nile.or.kr/site/nile/ko/images/sub/sub_symb_char1.png",
+    "page_url": "https://www.nile.or.kr/usr/wap/detail.do;jsessionid=73037B016639A86FCF4E996A1CE01E55?app=13309&seq=11&lang=ko",
+    "alt": "배움이",
+    "sha256": "d89148a50ec8cb6d70e5c5aad2b26ef8868ff6a4f9db3c634448cd41a32a2667",
+    "bytes": 17449,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q16182649": {
    "name": "동북아역사재단",
@@ -7999,7 +8219,18 @@
     "지누"
    ],
    "files": [],
-   "words": 22
+   "words": 22,
+   "image": {
+    "file": "/mascots/thumbs/m-3d1b81e628.png",
+    "source_url": "https://www.ginue.ac.kr/resources/_Img/A_2.png",
+    "page_url": "http://www.ginue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN346",
+    "alt": "기본형 남학생",
+    "sha256": "a1ae7cc935da3573aaf76aaaa16c728307457523d147022f8ffba4226d7c3b99",
+    "bytes": 39334,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q482751": {
    "name": "경성대학교",
@@ -8112,7 +8343,18 @@
    "page": "https://www.konkuk.ac.kr/konkuk/2256/subview.do",
    "names": [],
    "files": [],
-   "words": 25
+   "words": 25,
+   "image": {
+    "file": "/mascots/thumbs/m-b1d7da2557.png",
+    "source_url": "https://www.konkuk.ac.kr/sites/konkuk/images/sub/basic_1.png",
+    "page_url": "https://www.konkuk.ac.kr/konkuk/2256/subview.do",
+    "alt": "쿠",
+    "sha256": "85c5906cb0507b7993bcc451156d65dc84663729547c4b3cf43bd855fba7c68f",
+    "bytes": 26339,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q5623305": {
    "name": "광주가톨릭대학교",
@@ -8863,7 +9105,18 @@
      "AI 다운로드 다운로드"
     ]
    ],
-   "words": 18
+   "words": 18,
+   "image": {
+    "file": "/mascots/thumbs/m-8d6995b127.png",
+    "source_url": "https://www.deu.ac.kr/_res/deu/www/img/sub/char-03.png",
+    "page_url": "https://www.deu.ac.kr/www/deu-character.do",
+    "alt": "",
+    "sha256": "d9d2f2dd40d06984ad3eb60463a41f2de8d5d842a9bf8c1c23985140f4d51c92",
+    "bytes": 35985,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q482651": {
    "name": "배재대학교",
@@ -9163,7 +9416,18 @@
     "슝슝이"
    ],
    "files": [],
-   "words": 16
+   "words": 16,
+   "image": {
+    "file": "/mascots/thumbs/m-7df2ec427d.png",
+    "source_url": "https://ssu.ac.kr/wp-content/uploads/2023/02/char_intro02_ver2-300x240.png",
+    "page_url": "https://ssu.ac.kr/%ed%95%99%ea%b5%90%ec%86%8c%ea%b0%9c/%ed%95%99%ea%b5%90%ec%83%81%ec%a7%95/%eb%a7%88%ec%8a%a4%ec%bd%94%ed%8a%b8/%ec%86%8c%ea%b0%9c/",
+    "alt": "",
+    "sha256": "cd4fae6954ce4f8f7d800d4c2f7c199bab43000768de9d756d5d6d69b6b59adb",
+    "bytes": 32167,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q625548": {
    "name": "신경주대학교",
@@ -9281,7 +9545,18 @@
    "page": "https://www.semyung.ac.kr/kor/sub01_04_05_05.do",
    "names": [],
    "files": [],
-   "words": 10
+   "words": 10,
+   "image": {
+    "file": "/mascots/thumbs/m-db7ec99643.png",
+    "source_url": "https://www.semyung.ac.kr/images/kor/sub01/bs12_sem_01.png",
+    "page_url": "https://www.semyung.ac.kr/kor/sub01_04_05_05.do",
+    "alt": "세묭&솔멩",
+    "sha256": "d8731ddf2f01ff1487579351fe1cffb407c3433182475b6dbc8a409efb729bfc",
+    "bytes": 132183,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q16097602": {
    "name": "신한대학교",
@@ -9770,7 +10045,18 @@
      "캐릭터 다운로드 캐릭터 다운로드"
     ]
    ],
-   "words": 14
+   "words": 14,
+   "image": {
+    "file": "/mascots/thumbs/m-dd600d7982.png",
+    "source_url": "https://www.chugye.ac.kr:443/mbs/university/images/editor//20220405_170135402_84549.png",
+    "page_url": "https://www.chugye.ac.kr/mbs/university/subview.jsp?id=university_010503000000",
+    "alt": "쿠리 소개",
+    "sha256": "65c6a1342892df42f1060fafd3fd3b9983de52d72aa881d46aa55248e8dad0aa",
+    "bytes": 282165,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q3271898": {
    "name": "창신대학교",
@@ -10163,7 +10449,18 @@
    "page": "https://www.honam.ac.kr/HoDuck_College",
    "names": [],
    "files": [],
-   "words": 22
+   "words": 22,
+   "image": {
+    "file": "/mascots/thumbs/m-1b2941a603.png",
+    "source_url": "https://www.honam.ac.kr/img/contents/hoduck/hoduk_dept5.png",
+    "page_url": "https://www.honam.ac.kr/HoDuck_College",
+    "alt": "호덕이 응용형(단과대학별)",
+    "sha256": "e11758e5a75fdcbb25fc5374492802523c0fb83ba0141a50b8f9ee0dba86d2e8",
+    "bytes": 20952,
+    "source": "official-page-image",
+    "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+    "picked_by": "mascot_images.py"
+   }
   },
   "Q5642741": {
    "name": "한라대학교",

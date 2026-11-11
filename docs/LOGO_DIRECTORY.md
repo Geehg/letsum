@@ -100,13 +100,14 @@ swaps(로고→캐릭터 등)로 바꾸며, 앱 문구가 바뀌어 swap 대상�
 ```bash
 python3 tools/logo-survey/mascot_survey.py --workers 8      # 기관 홈·사이트맵·CI 페이지에서 캐릭터/마스코트 메뉴 탐색 → 캐릭터 페이지·이름·이미지·파일 후보 (data/mascot-crawl.json, html/mascots/thumbs/m-*)
 python3 tools/logo-survey/mascot_survey.py --refresh        # 찾은 캐릭터 페이지를 다시 읽어 이름(페이지에서 3회 이상 나오는 따옴표 이름)과 이미지(배너 제외, 투명 PNG 우선)만 재계산
+python3 tools/logo-survey/mascot_images.py               # 캐릭터 페이지는 찾았는데 이미지가 없는 곳: 페이지의 모든 그림(img·srcset·CSS 배경)을 Referer 붙여 받아 크기·비율로 고름. 눈으로 보고 캐릭터가 아니면 data/mascot-image-reject.json에 넣어 다음 실행에서 제외
 python3 -I tools/logo-survey/mascot_wiki.py                 # 한국어 위키백과 마스코트 분류(대한민국·올림픽·축구·야구·기업·철도 등) + 브랜드 마스코트(EXTRA) → data/mascot-wiki.json, 공용 라이선스 이미지만
 python3 -I tools/logo-survey/merge_mascots.py               # 카탈로그·출처·썸네일·다운로드(파일 서명 검증)·분류·인지도 → tools/mascot-app/data/
-python3 tools/logo-survey/normalize_logos.py --thumbs html/mascots/thumbs --geometry tools/mascot-app/data/mascot-geometry.json --manifest tools/mascot-app/data/thumbnails.json --also tools/logo-survey/data/mascot-crawl.json tools/logo-survey/data/mascot-wiki.json
+python3 tools/logo-survey/normalize_logos.py --thumbs html/mascots/thumbs --geometry tools/mascot-app/data/mascot-geometry.json --manifest tools/mascot-app/data/thumbnails.json --also tools/logo-survey/data/mascot-crawl.json tools/logo-survey/data/mascot-wiki.json tools/logo-survey/data/mascots-manual.json
 node tools/build_mascots.mjs
 ```
 
-- 기업·구단: `data/companies.json`(위키데이터 국내 기업 270곳)·`data/clubs.json`(프로스포츠 구단 88곳)을 `mascot_survey.py --orgs <파일>`로 같은 방식 탐색. 기업 사이트에 캐릭터 페이지가 드문 경우가 많아 `data/mascots-manual.json`(공식 캐릭터 페이지 직접 확인, 예: KB 스타프렌즈·우리은행 위비프렌즈)으로 보강. 오탐(드라마 출연진·상품 목록 등)은 merge_mascots.py `SURVEY_REJECT`.
+- 기업·구단: `data/companies.json`(위키데이터 국내 기업 270곳)·`data/clubs.json`(프로스포츠 구단 88곳)을 `mascot_survey.py --orgs <파일>`로 같은 방식 탐색. 기업 사이트에 캐릭터 페이지가 드문 경우가 많아 `data/mascots-manual.json`(공식 캐릭터 페이지 직접 확인, 예: KB 스타프렌즈·우리은행 위비프렌즈·진로 두꺼비·벨리곰·신한프렌즈·라인프렌즈·또타)으로 보강. `replaces`에 적은 기관명·위키백과 문서명은 자동 수집 항목 대신 이 항목을 씀. 오탐(드라마 출연진·상품 목록 등)은 merge_mascots.py `SURVEY_REJECT`.
 - 썸네일: 마스코트는 카드·타일에서 캐릭터를 프레임 높이의 약 1.5배로 위에서부터 보여 줌(상반신 중심), 상세는 전체 모습(build_mascots.mjs extraCss).
 - 대분류: 지자체 캐릭터·공공기관·대학·행사·올림픽·스포츠 구단·기업·브랜드·해외·기타. 애니메이션·게임 IP 자체(뽀로로 등)는 마스코트가 아니므로 제외.
 - 정렬: 위키백과 문서가 있는 마스코트는 조회수, 기관 캐릭터는 그 기관의 로고모음 인지도 점수.

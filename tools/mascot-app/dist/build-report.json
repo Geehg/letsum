@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-11-11T00:38:23.102Z",
+  "built_at": "2026-11-11T03:19:42.792Z",
   "catalog_version": "0.1.0",
-  "catalog_sha256": "73f24abf2775c95c807e14a65d8e87c0a8c06c153201a875ef0b38c9decccdb9",
+  "catalog_sha256": "005715297d2552c04f24f3d22c9edbabc4daa55a37b991f360808d3ed593d0c7",
   "canonical_base_url": "https://letsum.app/mascots/",
   "html_pages": [
     {
@@ -449,8 +449,8 @@
       "route": "/brand/mc-q42100"
     },
     {
-      "file": "brands/mw-e2e39ae455/index.html",
-      "route": "/brand/mw-e2e39ae455"
+      "file": "brands/mm-seoulmetro-ddota/index.html",
+      "route": "/brand/mm-seoulmetro-ddota"
     },
     {
       "file": "brands/mw-cc30fc8d87/index.html",
@@ -459,6 +459,10 @@
     {
       "file": "brands/mw-680150c601/index.html",
       "route": "/brand/mw-680150c601"
+    },
+    {
+      "file": "brands/mm-linefriends/index.html",
+      "route": "/brand/mm-linefriends"
     },
     {
       "file": "brands/mc-q42109/index.html",
@@ -597,6 +601,10 @@
       "route": "/brand/mc-q624046"
     },
     {
+      "file": "brands/mm-lotte-bellygom/index.html",
+      "route": "/brand/mm-lotte-bellygom"
+    },
+    {
       "file": "brands/mc-q42128/index.html",
       "route": "/brand/mc-q42128"
     },
@@ -659,10 +667,6 @@
     {
       "file": "brands/mc-q482905/index.html",
       "route": "/brand/mc-q482905"
-    },
-    {
-      "file": "brands/mw-e71ca11fc9/index.html",
-      "route": "/brand/mw-e71ca11fc9"
     },
     {
       "file": "brands/mw-9d5c98d159/index.html",
@@ -857,12 +861,8 @@
       "route": "/brand/mc-q41154"
     },
     {
-      "file": "brands/mc-q491325/index.html",
-      "route": "/brand/mc-q491325"
-    },
-    {
-      "file": "brands/mw-6463e71b8d/index.html",
-      "route": "/brand/mw-6463e71b8d"
+      "file": "brands/mm-shinhan-friends/index.html",
+      "route": "/brand/mm-shinhan-friends"
     },
     {
       "file": "brands/mw-053b002255/index.html",
@@ -1191,6 +1191,10 @@
     {
       "file": "brands/mc-q482661/index.html",
       "route": "/brand/mc-q482661"
+    },
+    {
+      "file": "brands/mm-hitejinro-toad/index.html",
+      "route": "/brand/mm-hitejinro-toad"
     },
     {
       "file": "brands/mc-q50327/index.html",
@@ -1817,7 +1821,7 @@
       "route": "/brand/mw-689b1c2153"
     }
   ],
-  "public_records": 451,
+  "public_records": 452,
   "warnings": [
     "record mc-q104099625: needs review; research metadata does not authorize publication",
     "record mc-q11232850: needs review; research metadata does not authorize publication",
@@ -2018,7 +2022,6 @@
     "record mc-q489708: needs review; research metadata does not authorize publication",
     "record mc-q491082: needs review; research metadata does not authorize publication",
     "record mc-q491127: needs review; research metadata does not authorize publication",
-    "record mc-q491325: needs review; research metadata does not authorize publication",
     "record mc-q491336: needs review; research metadata does not authorize publication",
     "record mc-q491511: needs review; research metadata does not authorize publication",
     "record mc-q491597: needs review; research metadata does not authorize publication",
@@ -2153,7 +2156,12 @@
     "record mc-q7314493: needs review; research metadata does not authorize publication",
     "record mc-q7451674: needs review; research metadata does not authorize publication",
     "record mc-q8684: needs review; research metadata does not authorize publication",
+    "record mm-hitejinro-toad: needs review; research metadata does not authorize publication",
     "record mm-kb-starfriends: needs review; research metadata does not authorize publication",
+    "record mm-linefriends: needs review; research metadata does not authorize publication",
+    "record mm-lotte-bellygom: needs review; research metadata does not authorize publication",
+    "record mm-seoulmetro-ddota: needs review; research metadata does not authorize publication",
+    "record mm-shinhan-friends: needs review; research metadata does not authorize publication",
     "record mm-woori-wibee: needs review; research metadata does not authorize publication",
     "record mw-0144403ec0: needs review; research metadata does not authorize publication",
     "record mw-03ddf4018c: needs review; research metadata does not authorize publication",
@@ -2188,7 +2196,6 @@
     "record mw-55ba30f720: needs review; research metadata does not authorize publication",
     "record mw-5d717c55d9: needs review; research metadata does not authorize publication",
     "record mw-62186598ca: needs review; research metadata does not authorize publication",
-    "record mw-6463e71b8d: needs review; research metadata does not authorize publication",
     "record mw-64a9155c0d: needs review; research metadata does not authorize publication",
     "record mw-64b09c6c96: needs review; research metadata does not authorize publication",
     "record mw-680150c601: needs review; research metadata does not authorize publication",
@@ -2250,9 +2257,7 @@
     "record mw-ddf922e1de: needs review; research metadata does not authorize publication",
     "record mw-decec75783: needs review; research metadata does not authorize publication",
     "record mw-e2ace1dafa: needs review; research metadata does not authorize publication",
-    "record mw-e2e39ae455: needs review; research metadata does not authorize publication",
     "record mw-e6abc7db47: needs review; research metadata does not authorize publication",
-    "record mw-e71ca11fc9: needs review; research metadata does not authorize publication",
     "record mw-e8396a5e85: needs review; research metadata does not authorize publication",
     "record mw-ebb6e39576: needs review; research metadata does not authorize publication",
     "record mw-ef2b338c32: needs review; research metadata does not authorize publication",

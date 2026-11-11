@@ -8445,48 +8445,6 @@
       "related_fonts": []
     },
     {
-      "id": "mc-q491325",
-      "organization_id": "mc-q491325",
-      "organization_name": "신한금융지주",
-      "name": "신한금융지주 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "신한금융지주 마스코트"
-      ],
-      "category": "business",
-      "kind": "character",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "신한금융지주의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q491325-src"
-      ],
-      "source_url": "https://www.shinhangroup.com/kr/about/identity/character",
-      "guideline_url": "https://www.shinhangroup.com/kr/about/identity/character",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mc-q491336",
       "organization_id": "mc-q491336",
       "organization_name": "한국교육학술정보원",
@@ -14168,6 +14126,50 @@
       "related_fonts": []
     },
     {
+      "id": "mm-hitejinro-toad",
+      "organization_id": "mm-hitejinro-toad",
+      "organization_name": "하이트진로",
+      "name": "진로 두꺼비",
+      "name_en": null,
+      "aliases": [
+        "두꺼비",
+        "꺼비",
+        "하이트진로 캐릭터"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "하이트진로 소주 '진로'의 상징 캐릭터. 라벨의 두꺼비 심볼에서 나온 캐릭터로 광고·팝업스토어·굿즈에 쓰입니다. 이미지는 하이트진로 공식 사이트 진로 브랜드 페이지의 인쇄광고입니다.",
+      "source_ids": [
+        "mm-hitejinro-toad-src"
+      ],
+      "source_url": "https://www.hitejinro.com/brand/view.asp?brandcd2=B11",
+      "guideline_url": "https://www.hitejinro.com/brand/view.asp?brandcd2=B11",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
       "id": "mm-kb-starfriends",
       "organization_id": "mm-kb-starfriends",
       "organization_name": "KB금융그룹",
@@ -14195,6 +14197,185 @@
       ],
       "source_url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
       "guideline_url": "https://kbfg.com/kor/about/corporate/character/star-friends.htm",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-linefriends",
+      "organization_id": "mm-linefriends",
+      "organization_name": "IPX(라인프렌즈)",
+      "name": "라인프렌즈 · 브라운",
+      "name_en": null,
+      "aliases": [
+        "브라운",
+        "코니",
+        "샐리",
+        "LINE FRIENDS",
+        "라인프렌즈"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "메신저 라인 스티커에서 시작한 캐릭터 브랜드 라인프렌즈(브라운·코니·샐리 등). 이미지는 LINE FRIENDS 공식 사이트 IP 페이지에서 가져왔습니다.",
+      "source_ids": [
+        "mm-linefriends-src"
+      ],
+      "source_url": "https://linefriends.com/ko-kr/characters-list/ip-linefriends",
+      "guideline_url": "https://linefriends.com/ko-kr/characters-list/ip-linefriends",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-lotte-bellygom",
+      "organization_id": "mm-lotte-bellygom",
+      "organization_name": "롯데홈쇼핑",
+      "name": "벨리곰",
+      "name_en": null,
+      "aliases": [
+        "Belly Gom",
+        "롯데홈쇼핑 캐릭터"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "롯데홈쇼핑이 2018년 사내 벤처 프로그램으로 만든 분홍색 곰 캐릭터. 이미지는 벨리곰 공식 스토어 소개 페이지에서 가져왔습니다.",
+      "source_ids": [
+        "mm-lotte-bellygom-src"
+      ],
+      "source_url": "https://www.bellygom.com/shopinfo/company.html",
+      "guideline_url": "https://www.bellygom.com/shopinfo/company.html",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-seoulmetro-ddota",
+      "organization_id": "mm-seoulmetro-ddota",
+      "organization_name": "서울교통공사",
+      "name": "또타",
+      "name_en": null,
+      "aliases": [
+        "서울교통공사 캐릭터",
+        "서울 지하철 캐릭터"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "서울교통공사(서울 지하철)의 공식 캐릭터. 공사 소개 › 공사 이미지 › 캐릭터 페이지에 기본형과 응용형이 게시되어 있습니다.",
+      "source_ids": [
+        "mm-seoulmetro-ddota-src"
+      ],
+      "source_url": "http://www.seoulmetro.co.kr/kr/page.do?menuIdx=508",
+      "guideline_url": "http://www.seoulmetro.co.kr/kr/page.do?menuIdx=508",
+      "assets": [],
+      "usage": {
+        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
+        "approval": "unknown",
+        "redistribution": "unknown",
+        "preview": "unknown",
+        "policy_url": null
+      },
+      "version": {
+        "status": "unconfirmed",
+        "introduced_at": null,
+        "label": null
+      },
+      "review": {
+        "status": "needs-review",
+        "checked_at": "2026-11-11",
+        "source_scope": "page"
+      },
+      "related_fonts": []
+    },
+    {
+      "id": "mm-shinhan-friends",
+      "organization_id": "mm-shinhan-friends",
+      "organization_name": "신한금융그룹",
+      "name": "신한프렌즈",
+      "name_en": null,
+      "aliases": [
+        "SOL",
+        "쏠",
+        "몰리",
+        "리노",
+        "신한 쏠프렌즈",
+        "신한금융 캐릭터"
+      ],
+      "category": "business",
+      "kind": "character",
+      "sectors": [
+        "culture-arts"
+      ],
+      "country": "KR",
+      "region": null,
+      "summary": "신한금융그룹의 대표 캐릭터. 북극성에 사는 여행작가 북극곰 SOL과 탐험가 친구들로, 신한금융그룹 공식 사이트 캐릭터 페이지에 소개되어 있습니다.",
+      "source_ids": [
+        "mm-shinhan-friends-src"
+      ],
+      "source_url": "https://www.shinhangroup.com/kr/about/identity/character",
+      "guideline_url": "https://www.shinhangroup.com/kr/about/identity/character",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15615,46 +15796,6 @@
         "mw-62186598ca-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%BF%A0%EB%AF%B8",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-6463e71b8d",
-      "organization_id": "mw-6463e71b8d",
-      "organization_name": "신한프렌즈",
-      "name": "신한프렌즈",
-      "name_en": null,
-      "aliases": [],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "신한프렌즈(영어: Shinhan Friends)는 신한금융지주가 2018년 4월 출시한 대표 캐릭터들이다.",
-      "source_ids": [
-        "mw-6463e71b8d-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%ED%95%9C%ED%94%84%EB%A0%8C%EC%A6%88",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -18232,46 +18373,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-e2e39ae455",
-      "organization_id": "mw-e2e39ae455",
-      "organization_name": "또타",
-      "name": "또타",
-      "name_en": null,
-      "aliases": [],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "또타는 서울교통공사의 마스코트이다.",
-      "source_ids": [
-        "mw-e2e39ae455-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%98%90%ED%83%80",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-e6abc7db47",
       "organization_id": "mw-e6abc7db47",
       "organization_name": "알렉스 키드",
@@ -18292,48 +18393,6 @@
         "mw-e6abc7db47-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%A0%89%EC%8A%A4_%ED%82%A4%EB%93%9C",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-e71ca11fc9",
-      "organization_id": "mw-e71ca11fc9",
-      "organization_name": "브라운 (라인프렌즈)",
-      "name": "브라운",
-      "name_en": null,
-      "aliases": [
-        "브라운 (라인프렌즈)"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "브라운은 라인프렌즈에서 제작한 동물 캐릭터이다.",
-      "source_ids": [
-        "mw-e71ca11fc9-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%B8%8C%EB%9D%BC%EC%9A%B4_%28%EB%9D%BC%EC%9D%B8%ED%94%84%EB%A0%8C%EC%A6%88%29",
       "guideline_url": null,
       "assets": [],
       "usage": {
