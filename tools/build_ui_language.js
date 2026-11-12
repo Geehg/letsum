@@ -2,7 +2,11 @@
 const fs = require("node:fs"), path = require("node:path"), crypto = require("node:crypto");
 const root = path.join(__dirname, "..", "html");
 const dictionary = JSON.parse(fs.readFileSync(path.join(__dirname, "i18n", "en.json"), "utf8"));
-const runtime = fs.readFileSync(path.join(__dirname, "i18n", "runtime.js"), "utf8").replace("/* UI_DICTIONARY */ {}", JSON.stringify(dictionary));
+// 사전은 따로 떼어 영어로 볼 때만 받는다(js/ui-language-en.json). 주소의 ?v=는 사전 내용으로 정한다.
+const dictionaryJSON = JSON.stringify(dictionary);
+fs.writeFileSync(path.join(root, "js", "ui-language-en.json"), dictionaryJSON);
+const dictionaryVersion = crypto.createHash("sha256").update(dictionaryJSON).digest("hex").slice(0, 10);
+const runtime = fs.readFileSync(path.join(__dirname, "i18n", "runtime.js"), "utf8").replace("/* UI_DICTIONARY_URL */", `/js/ui-language-en.json?v=${dictionaryVersion}`);
 fs.writeFileSync(path.join(root, "js", "ui-language.js"), runtime);
 const version = crypto.createHash("sha256").update(runtime).update(fs.readFileSync(path.join(root, "css", "ui-language.css"))).digest("hex").slice(0, 10);
 const files = ["mascots/index.html", "pairing.html", "submit.html", "contact.html", "about.html", "index.html", "en/index.html", "dingbat/index.html", "guide.html", "subset.html", "symbols.html", "typing.html", "notice.html", "privacy.html", "terms.html", "404.html"];

@@ -3,7 +3,15 @@
 (function () {
   "use strict";
   if (window.LSUI) return;
-  const words = /* UI_DICTIONARY */ {};
+  // 영어 사전(약 150KB)은 영어로 볼 때만 받는다 — 한국어 방문자(대부분)는 받지 않고, 화면 표시도 막지 않는다.
+  let words = {}, wordsState = "none", wordsP = null;
+  const WORDS_URL = "/* UI_DICTIONARY_URL */";
+  function loadWords() {
+    if (wordsP) return wordsP;
+    wordsState = "loading";
+    return wordsP = fetch(WORDS_URL, { credentials: "omit" }).then(r => { if (!r.ok) throw new Error("http-" + r.status); return r.json(); })
+      .then(d => { words = d; }).catch(() => {}).then(() => { wordsState = "ready"; delete document.documentElement.dataset.uiWait; apply(); });
+  }
   const valid = value => value === "ko" || value === "en";
   const read = (storage, key) => { try { return window[storage].getItem(key); } catch (_) { return null; } };
   const write = (storage, key, value) => { try { window[storage].setItem(key, value); } catch (_) {} };
@@ -26,10 +34,12 @@
   let observer, ready = false;
 
   function syncPreferenceURL() {
-    if (!valid(preference) || preference === "ko") return; // 기본 언어(한국어)는 주소에 붙이지 않는다 — 공유 링크·검색 주소가 ?ui=ko로 갈라지지 않게
+    if (!valid(preference)) return;
     const url = new URL(location.href);
-    if (url.searchParams.get("ui") === preference) return;
-    url.searchParams.set("ui", preference);
+    // 기본 언어(한국어)는 주소에 붙이지 않는다 — 공유 링크·검색 주소가 ?ui=ko로 갈라지지 않게. 영어에서 돌아오면 ?ui=en도 지운다.
+    if (preference === "ko") { if (!url.searchParams.has("ui")) return; url.searchParams.delete("ui"); }
+    else if (url.searchParams.get("ui") === preference) return;
+    else url.searchParams.set("ui", preference);
     try { history.replaceState(history.state, "", url); } catch (_) {}
   }
   // A returning visitor's saved English choice gets an explicit, shareable URL.
@@ -155,6 +165,8 @@
   function apply() {
     document.documentElement.lang = language;
     document.documentElement.dataset.uiLanguage = language;
+    // 사전이 오기 전에는 번역하지 않는다(규칙만으로 반쯤 번역된 글을 원문으로 착각하지 않게)
+    if (language === "en" && wordsState !== "ready") { loadWords(); return; }
     if (!ready) return;
     observer.disconnect();
     translate(document);
@@ -172,9 +184,11 @@
   }
   function localURL(value) {
     const url = new URL(value, document.baseURI);
-    if (valid(preference) && url.origin === location.origin) url.searchParams.set("ui", preference);
+    if (preference === "en" && url.origin === location.origin) url.searchParams.set("ui", preference);
     return url.href;
   }
+  // 영어로 시작하는 방문자: 사전이 올 때까지 본문을 잠깐 숨긴다(한국어가 보였다 바뀌지 않게). 늦어도 2.5초 뒤에는 보인다.
+  if (language === "en") { document.documentElement.dataset.uiWait = ""; setTimeout(() => { delete document.documentElement.dataset.uiWait; }, 2500); }
   window.LSUI = { get language() { return language; }, t: s => language === "en" ? english(s) : s, english, choose, localURL };
   apply();
   if (!valid(preference) && !cached) {
@@ -221,7 +235,7 @@
     // Preserve a manual choice through same-origin navigation even if storage is blocked.
     document.addEventListener("click", event => {
       const a = event.target.closest?.("a[href]");
-      if (!a || !valid(preference) || a.hasAttribute("download") || a.getAttribute("href").startsWith("#")) return;
+      if (!a || preference !== "en" || a.hasAttribute("download") || a.getAttribute("href").startsWith("#")) return;
       const url = new URL(a.href);
       if (url.origin === location.origin && !/^\/(api|admin|type)(\/|\.|$)/.test(url.pathname) && /(?:\/|\.html)$/.test(url.pathname)) {
         url.searchParams.set("ui", preference); a.href = url.href;
