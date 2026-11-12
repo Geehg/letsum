@@ -26,7 +26,7 @@
   let observer, ready = false;
 
   function syncPreferenceURL() {
-    if (!valid(preference)) return;
+    if (!valid(preference) || preference === "ko") return; // 기본 언어(한국어)는 주소에 붙이지 않는다 — 공유 링크·검색 주소가 ?ui=ko로 갈라지지 않게
     const url = new URL(location.href);
     if (url.searchParams.get("ui") === preference) return;
     url.searchParams.set("ui", preference);

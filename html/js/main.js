@@ -68,9 +68,7 @@
     }
   }
   function ensureGoogleFont(f, priority) {
-    // The small Korean catalogue also supports the full-catalogue glyph filter.
-    // Latin/dingbat catalogues have hundreds of families: load only the ones in use.
-    if (!LAT) return fontsCssReady.then(() => true);
+    // 미리보기는 화면에 보이는 폰트만 폰트별 시트로 받는다(굵기 전부). 한글 목록의 글자 지원 검사는 아래 fontsCssReady(굵기 1개 묶음)를 따로 쓴다.
     let sheet = googleSheets.get(f.id);
     if (sheet?.status === 'failed' && priority) { sheet.link.remove(); googleSheets.delete(f.id); sheet = null; }
     if (sheet) { sheet.used = ++faceClock; return sheet.promise; }
@@ -191,9 +189,13 @@
     return s;
   })();
 
-  const fontsCssReady = new Promise((resolve) => {
+  // 처음 필요할 때(글자 지원 검사) 한 번만 만든다 — 첫 화면 그리기와 경쟁하지 않게
+  let fontsCssP = null;
+  const fontsCssReady = () => fontsCssP || (fontsCssP = new Promise((resolve) => {
     if (LAT) { resolve(); return; }
-    const fam = FONTS.filter(isGF).map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + f.weights.join(";")).join("&");
+    // 글자 지원·옛한글·한자 검사용 — 굵기는 하나(400에 가장 가까운 것)만. 전 굵기를 한 번에 부르면 CSS가 5MB를 넘는다.
+    const oneW = (f) => f.weights.reduce((a, w) => (Math.abs(w - 400) < Math.abs(a - 400) ? w : a), f.weights[0]);
+    const fam = FONTS.filter(isGF).map((f) => "family=" + f.en.replace(/ /g, "+") + ":wght@" + oneW(f)).join("&");
     if (!fam) { resolve(); return; }
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -201,7 +203,7 @@
     link.onload = link.onerror = () => resolve();
     setTimeout(resolve, 8000);
     document.head.appendChild(link);
-  });
+  }));
 
   // ---------- 예시 문장 ----------
   // 접속·새로고침마다 무작위. 관리자가 고친 목록(/api/samples)을 지난 방문에 받아 둔 것이 있으면 그것을, 없으면 data.js 기본 30개
@@ -248,7 +250,7 @@
 
   async function detectAll() {
     if (LAT) return;
-    await fontsCssReady;
+    await fontsCssReady();
     const gf = FONTS.filter(isGF);
     await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, "ᄒᆞᆫ漢가나다ㅣㅡ").catch(() => {})));
     await document.fonts.load('44px "Inter"', "ᄒᆞᆫ漢가").catch(() => {});
@@ -334,7 +336,7 @@
       });
       covState[f.id] = coverage[f.id].length ? "miss" : "ok";
     });
-    await fontsCssReady;
+    await fontsCssReady();
     const txt = chars.join(""); const gf = FONTS.filter(isGF);
     await Promise.all(gf.map((f) => document.fonts.load(`400 44px "${f.en}"`, txt).catch(() => {})));
     gf.forEach((f) => {
@@ -1156,7 +1158,7 @@
   // 주제 바로가기(홈 소개 아래 칩): 다른 페이지로 가지 않고 이 화면에서 그 주제 목록만 거른다. 주소 ?topic=<slug>로 새로고침·공유해도 유지.
   // 칩의 href(/topics/…)는 검색엔진용 소개 페이지 그대로 둔다(스크립트가 클릭만 가로챔).
   let TOPIC_DATA = null;
-  const topicLoad = () => TOPIC_DATA ? Promise.resolve(TOPIC_DATA) : fetch("data/topics.json?v=" + Date.now().toString(36).slice(0, 5)).then((r) => (r.ok ? r.json() : {})).then((j) => (TOPIC_DATA = j)).catch(() => ({}));
+  const topicLoad = () => TOPIC_DATA ? Promise.resolve(TOPIC_DATA) : fetch("data/topics.json").then((r) => (r.ok ? r.json() : {})).then((j) => (TOPIC_DATA = j)).catch(() => ({}));
   function topicTextBack() { // 주제를 해제하면, 주제 문장을 그대로 쓰고 있을 때만 원래 문장으로 되돌린다
     if (topicLines && topicLines.lines.includes(state.text) && beforeTopic != null) { const b = beforeTopic; topicLines = null; beforeTopic = null; setText(b); }
     topicLines = null; beforeTopic = null;
@@ -1300,10 +1302,10 @@
   // ---------- 다운로드 경로 (3단계: 자체 미러 → 원 배포처 직링크 → 배포처 페이지) ----------
   // links.json은 tools/watch_sources.py가 매주 직링크 응답을 점검해 쓴다. 없으면 링크가 살아 있다고 본다.
   let links = {};
-  fetch("data/links.json?v=" + Date.now()).then((r) => (r.ok ? r.json() : {})).then((j) => { links = j || {}; }).catch(() => {});
+  fetch("data/links.json").then((r) => (r.ok ? r.json() : {})).then((j) => { links = j || {}; }).catch(() => {});
   // 배포처가 형식별(TTF·OTF·WOFF2·ZIP)로 따로 주는 직링크 — tools/collect_dl_files.py가 만든다. 2개 이상이면 다운로드 버튼이 '골라 받기' 메뉴가 된다.
   let dlFiles = {};
-  fetch("data/dl_files.json?v=" + Date.now()).then((r) => (r.ok ? r.json() : {})).then((j) => { dlFiles = j || {}; if (Object.keys(dlFiles).length) render(); }).catch(() => {});
+  fetch("data/dl_files.json").then((r) => (r.ok ? r.json() : {})).then((j) => { dlFiles = j || {}; if (Object.keys(dlFiles).length) render(); }).catch(() => {});
   // 형식 골라 받기 메뉴(.dlm): 누르면 열고 닫기, 밖을 누르거나 Esc면 닫기. 마우스를 올리면 CSS가 연다.
   document.addEventListener("click", (e) => {
     const b = e.target.closest(".dlm-btn");
@@ -2141,5 +2143,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   const q0 = new URLSearchParams(location.search).get("q");
   if (q0) { $("#qTop").value = q0; state.q = q0.trim(); render(); if (window.lsSearch) window.lsSearch(state.q, filtered().length); setTimeout(() => $("#results")?.scrollIntoView({ block: "start" }), 50); }
   if (location.hash === "#vault") { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} openProjects(); }
-  detectAll().then(() => { render(); runCoverage(); });
+  // 옛한글·한자·글자 지원 검사는 첫 화면을 다 그린 뒤에 시작한다(Google Fonts 한글 38종 검사용 CSS가 크다)
+  const kickDetect = () => setTimeout(() => detectAll().then(() => { render(); runCoverage(); }), 0);
+  if (document.readyState === "complete") kickDetect(); else addEventListener("load", kickDetect, { once: true });
 })();
