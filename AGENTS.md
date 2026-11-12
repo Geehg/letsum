@@ -46,6 +46,7 @@ tools/run.sh finish "커밋 메시지"    # 검증 통과해야 커밋·푸시, 
 | `tools/state/catalog.json`의 `review` 필드만 | `tools/state/webfonts.json` ← build_webfonts.py |
 | `tools/state/holder_domains.json` — 배포 주체 → 공식 사이트(아이콘용), `tools/state/cdn_fonts.json` — 배포처 공식 웹폰트 주소, `html/data/paid_fonts.json` — 검색어가 유료·번들 폰트일 때 띄우는 판매처 안내(판매처 공식 첫 화면 주소만, 등록된 무료 폰트 이름과 겹치지 않게) | `html/data/coverage.json`, data.js의 `cov`·`glyphs` 앞부분·`old`·`hanja` ← build_coverage.py (실제 그려진 글자 기준) |
 | `tools/state/ai_bots.json` — 차단할 AI 봇 이름(검색엔진·링크 미리보기 봇은 넣지 않음) | `html/robots.txt`·`html/type/robots.txt`의 봇 규칙, `nginx/default.conf`의 ai-bots map, `worker/src/ai_bots.js` ← build_ai_block.py |
+| `tools/state/dl_files_manual.json` — 형식별 다운로드 메뉴 보정(자동으로 못 찾는 원 배포처 직링크 추가·잘못 잡힌 링크 제외) | `html/data/dl_files.json`(배포처 형식별 직링크 — 다운로드 버튼의 '형식 골라 받기' 메뉴) ← collect_dl_files.py |
 |  | `html/data/avatars.json`, `html/img/src/` ← fetch_icons.py |
 |  | `html/data/evidence.json`(확인 근거·원본 출처·폰트 버전) ← build_evidence.py — license_check·license_manual·webfonts를 바꾸면 다시 실행 |
 | `html/js/data.js` — 새 폰트 수동 추가 시 (템플릿: docs/HANDOFF.md) | data.js의 `released*` ← release_dates.py |

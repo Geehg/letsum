@@ -16,6 +16,13 @@
   }
   const q = document.getElementById("qTop");
   if (q) q.closest("form").addEventListener("submit", (e) => { e.preventDefault(); const v = q.value.trim(); location.href = localizedURL(home + (v ? "?q=" + encodeURIComponent(v) : "")); });
+  // 형식 골라 받기 메뉴(.dlm): 누르면 열고 닫기, 밖을 누르거나 Esc면 닫기. 마우스를 올리면 CSS가 연다.
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".dlm-btn");
+    document.querySelectorAll(".dlm-list:not([hidden])").forEach((l) => { if (!b || l !== b.nextElementSibling) { l.hidden = true; l.previousElementSibling.setAttribute("aria-expanded", "false"); } });
+    if (b) { e.preventDefault(); const l = b.nextElementSibling; l.hidden = !l.hidden; b.setAttribute("aria-expanded", String(!l.hidden)); }
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.querySelectorAll(".dlm-list:not([hidden])").forEach((l) => { l.hidden = true; l.previousElementSibling.setAttribute("aria-expanded", "false"); }); });
   // 폰트 상세 페이지: 받기를 누르면 운영체제별 설치 순서와 '설치 후 보이는 이름'을 알려 준다(홈 main.js와 같은 안내)
   const inst = document.getElementById("instData");
   if (inst) document.addEventListener("click", (e) => {

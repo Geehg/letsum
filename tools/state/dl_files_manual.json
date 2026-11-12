@@ -1,0 +1,144 @@
+{
+ "_설명": "형식별 다운로드 메뉴(html/data/dl_files.json) 손 보정. tools/collect_dl_files.py가 읽는다. add = 페이지 구조상 자동으로 못 찾는 원 배포처 직링크({url, fmt, file}), exclude = 잘못 잡힌 링크(주소), exclude_re/keep_re = 주소 정규식으로 빼기/이것만 남기기(다른 언어판·사이트 자체 파일이 섞일 때). 원 배포처 주소만.",
+ "k-puradak-gentle-gothic": {
+  "add": [
+   {
+    "url": "https://puradakchicken.com/_proc/fontDwn.asp?regDiv=0",
+    "fmt": "TTF",
+    "file": "Puradak Gentle Gothic.ttf"
+   },
+   {
+    "url": "https://puradakchicken.com/_proc/fontDwn.asp?regDiv=1",
+    "fmt": "OTF",
+    "file": "Puradak Gentle Gothic OTF.otf"
+   }
+  ]
+ },
+ "k-line-seed-kr": {
+  "keep_re": [
+   "_KR\\.zip$"
+  ]
+ },
+ "k-integrated-code-fire-kr": {
+  "keep_re": [
+   "_Korea\\.zip$"
+  ]
+ },
+ "k-tenten-kr": {
+  "keep_re": [
+   "TentenKR-"
+  ]
+ },
+ "k-gnu-unifont": {
+  "keep_re": [
+   "/unifont-[0-9.]+\\.otf$"
+  ]
+ },
+ "k-x10y12pxdenkichiphangul": {
+  "exclude_re": [
+   "Astr_opsz"
+  ]
+ },
+ "k-sb-aggro": {
+  "exclude_re": [
+   "SBX_CI_"
+  ]
+ },
+ "k-chosun-sinmyeongjo": {
+  "keep_re": [
+   "/ChosunSm\\.zip$"
+  ]
+ },
+ "k-chosun-gulmyeongjo": {
+  "keep_re": [
+   "/ChosunKm\\.zip$"
+  ]
+ },
+ "k-chosun-gagothic": {
+  "keep_re": [
+   "/ChosunSg\\.zip$"
+  ]
+ },
+ "k-chosun-gulgothic": {
+  "keep_re": [
+   "/ChosunKg\\.zip$"
+  ]
+ },
+ "k-chosun-gyeongothic": {
+  "keep_re": [
+   "/ChosunBg\\.zip$"
+  ]
+ },
+ "k-chosun-gulim": {
+  "keep_re": [
+   "/ChosunGu\\.zip$"
+  ]
+ },
+ "k-chosun-gungseo": {
+  "keep_re": [
+   "/ChosunGs\\.zip$"
+  ]
+ },
+ "k-chosun-logo": {
+  "keep_re": [
+   "/ChosunLo\\.zip$"
+  ]
+ },
+ "k-chosun-ilbo-myeongjo": {
+  "keep_re": [
+   "/ChosunNm\\.zip$"
+  ]
+ },
+ "k-chosun-100": {
+  "keep_re": [
+   "ChosunCentennial_"
+  ]
+ },
+ "k-myungwon-jaemin4": {
+  "keep_re": [
+   "/kmu_(win|mac)4\\.zip$"
+  ]
+ },
+ "k-kmu80-haeong": {
+  "add": [
+   {
+    "url": "https://www.kookmin.ac.kr/content/05sub/style0005/file/KMU80SungkokHaeong_01.zip",
+    "fmt": "전체 묶음(ZIP)",
+    "file": "KMU80SungkokHaeong_01.zip"
+   }
+  ],
+  "keep_re": [
+   "KMU80SungkokHaeong"
+  ]
+ },
+ "k-kmu80-sungkok": {
+  "keep_re": [
+   "KMU80SungkokHaeong"
+  ]
+ },
+ "k-ygot-jalnan2": {
+  "keep_re": [
+   "uK4mTd9JFejCoAXNZyXHV6glsI\\.zip$"
+  ]
+ },
+ "k-ygot-jalnan-gothic": {
+  "keep_re": [
+   "nDlVcfwW7fVXLTZeKX4WdTVY1Yk\\.zip$"
+  ]
+ },
+ "k-paperlogy": {
+  "exclude_re": [
+   "Paperlogy-1\\.000\\.zip$"
+  ]
+ },
+ "k-binggrae2": {
+  "exclude_re": [
+   "/Binggrae_(TTF|OTF)\\.zip$"
+  ]
+ },
+ "k-fusion-pixel-12": {
+  "keep_re": [
+   "-12px-(monospaced|proportional)-(otf|ttf|otf\\.woff2)-v"
+  ]
+ }
+}

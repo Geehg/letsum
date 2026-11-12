@@ -17,6 +17,8 @@ const namesHTML = (f) => { const n = NAMES[f.id]; if (!n) return ""; return `<h2
   <table class="spec"><tr><th>굵기</th><th>Windows 앱 글꼴 목록</th><th>Mac 서체 관리자·포토샵</th><th>포토샵 '글꼴 누락'(PostScript)</th></tr>
   ${Object.entries(n.w || {}).map(([w, v]) => `<tr><td>${WN[w] || w} (${w})</td><td>${esc(v.win)}</td><td>${esc(v.fam)} / ${esc(v.sty)}</td><td>${esc(v.ps)}</td></tr>`).join("\n  ")}</table>
   ${n.file ? `<p class="note">배포처 파일 이름: ${esc(n.file)}</p>` : ""}`; };
+// 배포처 형식별 직링크(tools/collect_dl_files.py) — 2개 이상이면 다운로드 버튼이 '형식 골라 받기' 메뉴가 된다
+const DL_FILES = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "data", "dl_files.json"), "utf8")); } catch (e) { return {}; } })();
 const REASONS = (() => { try { const j = JSON.parse(fs.readFileSync(path.join(__dirname, "state", "reasons.json"), "utf8")); delete j._; return j; } catch (e) { return {}; } })();
 fs.writeFileSync(path.join(ROOT, "data", "reasons.json"), JSON.stringify(REASONS));
 const taxonomy = require("../html/js/font-taxonomy.js");
@@ -57,7 +59,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
-<link rel="stylesheet" href="../css/style.css?v=90">
+<link rel="stylesheet" href="../css/style.css?v=94">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -82,8 +84,10 @@ function page(f, en, db) {
     : en ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>The quick brown fox jumps over the lazy dog<br>Reading is always time well spent<br><span style="font-size:28px">ABC abc 0123456789 · $4.50</span></div>`
     : `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>`}
   <div class="dlrow">
-    ${dl.zip ? `<a class="btn" data-dl="zip" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
-    <a class="btn${dl.zip ? " ghost" : ""}" data-dl="page" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
+    ${(() => { const files = f.intro ? [] : DL_FILES[f.id] || []; const zip = dl.zip || (files[0] && files[0].url); if (!zip) return "";
+      if (files.length < 2) return `<a class="btn" data-dl="zip" href="${esc(zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>`;
+      return `<span class="dlm"><button type="button" class="btn dlm-btn" aria-haspopup="true" aria-expanded="false">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · ${esc([...new Set(files.map((x) => x.fmt.replace(/\(.*\)/, "")))].join("·"))} 중 골라 받기</small><span class="dlm-car" aria-hidden="true">▾</span></button><span class="dlm-list" role="menu" hidden><span class="dlm-h">${esc(dl.srcName)} · 형식 골라 받기</span>${files.map((x) => `<a role="menuitem" data-dl="zip" href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.fmt)}${x.w ? ` · ${esc(x.w)}` : ""}</b><small>${esc(x.file || "")}</small></a>`).join("")}</span></span>`; })()}
+    <a class="btn${dl.zip || (!f.intro && DL_FILES[f.id]) ? " ghost" : ""}" data-dl="page" href="${esc(dl.page)}" target="_blank" rel="noopener">${dl.zip || (!f.intro && DL_FILES[f.id]) ? "원 배포처 페이지 ↗" : `⬇ ${esc(dl.srcName)}에서 받기 ↗ <small>이용 범위 확인 후 다운로드</small>`}</a>
     <a class="btn ghost" href="${home}#f=${f.id}">${f.intro ? "홈에서 보기 →" : "홈에서 테스트·비교 →"}</a>
   </div>
   <p class="note" style="margin-top:8px">파일은 LETSUM이 아니라 원 배포처에서 내려받습니다. ${f.downloadNote ? esc(f.downloadNote) : "이용 조건은 배포처 원문을 따릅니다."}${dl.mirror ? ` 배포처 링크가 열리지 않으면 <a href="${esc(dl.mirror)}" class="linklike">LETSUM 보관본(원본 그대로)</a>을 받을 수 있습니다.` : ""} 설치·PPT 적용 방법은 홈의 상세 보기에 있습니다.</p>
@@ -224,7 +228,7 @@ function topicPage(t, list) {
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
-<link rel="stylesheet" href="../css/style.css?v=90">
+<link rel="stylesheet" href="../css/style.css?v=94">
 </head>
 <body>
 <header>

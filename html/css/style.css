@@ -2436,3 +2436,22 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
 .sq-sugg{margin:0 0 6px;padding:14px 0 4px;text-align:center}
 .sq-sugg p{margin:0 0 8px;font-weight:700;font-size:15px}
 .sq-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+/* 형식 골라 받기 메뉴(.dlm) — 마우스를 올리거나 누르면 배포처의 형식별 파일(TTF·OTF·WOFF2·ZIP) 목록을 펼친다 */
+.dlm{position:relative;display:inline-flex}
+.dlm-btn{cursor:pointer;font:inherit}
+.dlrow .dlm-btn{flex-direction:column;align-items:flex-start;gap:2px;line-height:1.2;position:relative;padding-right:30px}
+.dlm-car{font-size:11px;margin-left:4px;opacity:.8}
+.dlrow .dlm-car{position:absolute;right:12px;top:50%;transform:translateY(-50%);margin:0}
+.dlm-list{position:absolute;left:0;top:100%;z-index:60;min-width:240px;max-width:min(360px,calc(100vw - 32px));margin-top:0;padding:6px;border-radius:12px;background:var(--paper,#fff);color:var(--ink,#111);border:1px solid var(--line,rgba(0,0,0,.15));box-shadow:0 10px 30px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:2px;text-align:left;max-height:min(60vh,420px);overflow:auto}
+.dlm-list[hidden]{display:none}
+.dlm-list::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px}
+.dlm-h{font-size:11px;font-weight:600;opacity:.65;padding:4px 8px 6px}
+.dlm-list a{display:flex;flex-direction:column;gap:1px;padding:7px 10px;border-radius:8px;color:inherit;text-decoration:none;font-size:13px;line-height:1.25}
+.dlm-list a b{font-weight:700}
+.dlm-list a small{font-size:11px;opacity:.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dlm-list a:hover,.dlm-list a:focus-visible{background:var(--lime,#d8ff4f);color:var(--lime-ink,#111)}
+.ig-right .dlm-list{left:auto;right:0}
+.sp-cta .dlm-list{bottom:auto}
+@media (hover:hover) and (pointer:fine){.dlm:hover .dlm-list[hidden],.dlm:focus-within .dlm-list[hidden]{display:flex}}
+.ig:has(.dlm),.feed-mode .ig:has(.dlm){overflow:visible}
+.ig:has(.dlm:hover),.ig:has(.dlm:focus-within),.ig:has(.dlm-list:not([hidden])){position:relative;z-index:30}

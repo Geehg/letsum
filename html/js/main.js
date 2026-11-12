@@ -992,7 +992,7 @@
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
         <span class="ig-right">
-          ${dl.ok ? `<a class="ig-pill dl" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener" title="${esc(dl.srcName)}에서 파일 바로 받기">${IC.down}다운로드</a>` : ""}
+          ${dl.ok ? dlBtn(f, dl, "ig-pill dl", `${IC.down}다운로드`, dl.files.length > 1 ? `${dl.srcName}에서 형식 골라 받기` : `${dl.srcName}에서 파일 바로 받기`) : ""}
           <button class="ig-pill" data-lic-open="${f.id}" title="${esc(licInfo(f).full)} — 사용 범위 보기">라이선스</button>
           <a class="ig-pill" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
         </span>
@@ -1295,14 +1295,33 @@
   // links.json은 tools/watch_sources.py가 매주 직링크 응답을 점검해 쓴다. 없으면 링크가 살아 있다고 본다.
   let links = {};
   fetch("data/links.json?v=" + Date.now()).then((r) => (r.ok ? r.json() : {})).then((j) => { links = j || {}; }).catch(() => {});
+  // 배포처가 형식별(TTF·OTF·WOFF2·ZIP)로 따로 주는 직링크 — tools/collect_dl_files.py가 만든다. 2개 이상이면 다운로드 버튼이 '골라 받기' 메뉴가 된다.
+  let dlFiles = {};
+  fetch("data/dl_files.json?v=" + Date.now()).then((r) => (r.ok ? r.json() : {})).then((j) => { dlFiles = j || {}; if (Object.keys(dlFiles).length) render(); }).catch(() => {});
+  // 형식 골라 받기 메뉴(.dlm): 누르면 열고 닫기, 밖을 누르거나 Esc면 닫기. 마우스를 올리면 CSS가 연다.
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".dlm-btn");
+    document.querySelectorAll(".dlm-list:not([hidden])").forEach((l) => { if (!b || l !== b.nextElementSibling) { l.hidden = true; l.previousElementSibling.setAttribute("aria-expanded", "false"); } });
+    if (b) { e.preventDefault(); const l = b.nextElementSibling; l.hidden = !l.hidden; b.setAttribute("aria-expanded", String(!l.hidden)); }
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.querySelectorAll(".dlm-list:not([hidden])").forEach((l) => { l.hidden = true; l.previousElementSibling.setAttribute("aria-expanded", "false"); }); });
+
   // 원칙: 파일은 원 배포처 링크로 받게 한다. LETSUM 보관본(mirror)은 배포처 링크가 끊겼을 때만 대체로 보여준다.
   function dlFor(f) {
     const gfam = f.en.replace(/ /g, "+");
     const o = f.dl || {};
-    const zip = o.zip || (isGF(f) ? `https://fonts.google.com/download?family=${gfam}` : null);
+    const files = f.intro ? [] : dlFiles[f.id] || [];
+    const zip = o.zip || (files[0] && files[0].url) || (isGF(f) ? `https://fonts.google.com/download?family=${gfam}` : null);
     const page = o.page || `https://fonts.google.com/specimen/${gfam}`;
     const st = links[f.id];
-    return { zip, page, ok: !!zip && !(st && st.ok === false), checked: st && st.checked, srcName: o.srcName || (isGF(f) ? "Google Fonts" : "공유마당"), mirror: o.mirror || null };
+    return { zip, page, files, ok: files.length > 0 || (!!zip && !(st && st.ok === false)), checked: st && st.checked, srcName: o.srcName || (isGF(f) ? "Google Fonts" : "공유마당"), mirror: o.mirror || null };
+  }
+  // 다운로드 버튼: 형식별 링크가 2개 이상이면 '형식 골라 받기' 메뉴(마우스를 올리거나 누르면 펼침), 아니면 바로 받기 링크
+  function dlBtn(f, dl, cls, inner, title) {
+    const fs = dl.files || [];
+    const t = title ? ` title="${esc(title)}"` : "";
+    if (fs.length < 2) return `<a class="${cls}" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener"${t}>${inner}</a>`;
+    return `<span class="dlm"><button type="button" class="${cls} dlm-btn" aria-haspopup="true" aria-expanded="false"${t}>${inner}<span class="dlm-car" aria-hidden="true">▾</span></button><span class="dlm-list" role="menu" hidden><span class="dlm-h">${esc(dl.srcName)} · 형식 골라 받기</span>${fs.map((x) => `<a role="menuitem" data-dl="zip" data-fid="${f.id}" href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.fmt)}${x.w ? ` · ${esc(x.w)}` : ""}</b><small>${esc(x.file || "")}</small></a>`).join("")}</span></span>`;
   }
   // 사용 조건 확인 기록: 이 폰트를 고를 때 LETSUM에서 확인한 조건·출처·확인일을 텍스트로 남긴다.
   // 사용 권리를 보증하는 문서가 아니라 '언제 무엇을 확인했는지'의 메모다.
@@ -1487,7 +1506,7 @@
 
       <div class="m-sec"><h3>받기</h3>
         <div class="dlrow">
-          ${dl.ok ? `<a class="btn" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small></a>` : ""}
+          ${dl.ok ? dlBtn(f, dl, "btn", dl.files.length > 1 ? `⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · ${esc([...new Set(dl.files.map((x) => x.fmt.replace(/\(.*\)/, "")))].join("·"))} 중 골라 받기</small>` : `⬇ 원 배포처에서 받기 <small>${esc(dl.srcName)} · 자동 다운로드 시작 · TTF/OTF 설치용</small>`) : ""}
           <a class="btn ghost" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">원 배포처 페이지 ↗</a>
           ${!dl.ok && dl.mirror ? `<a class="btn ghost" href="${esc(dl.mirror)}" rel="noopener">보관본 받기 <small>배포처 링크 끊김 시 대체 · 원본 그대로</small></a>` : ""}
           <button class="btn ghost" id="proofBtn" title="이 폰트의 라이선스·사용 범위·출처·LETSUM 확인일을 A4 확인서(PDF)로 받습니다">📑 라이선스 확인서 (PDF)</button>
@@ -1825,7 +1844,7 @@ import "@fontsource/${f.id}/400.css";</pre>
           <p class="sp-type" style="${f.intro ? "" : `font-family:${f.family}`}" data-line="${esc(f.intro ? f.desc : line)}"></p>
           <div class="sp-cta">
             <button class="sp-btn" data-open="${f.id}">자세히 보기</button>
-            ${dl.ok ? `<a class="sp-btn ac" data-dl="zip" data-fid="${f.id}" href="${esc(dl.zip)}" target="_blank" rel="noopener">⬇ 다운로드</a>` : `<a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
+            ${dl.ok ? dlBtn(f, dl, "sp-btn ac", "⬇ 다운로드") : `<a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
             ${f.intro ? '<span class="sp-chip">소개 전용 · 미리보기 미제공</span>' : ""}
           </div>
         </div>
