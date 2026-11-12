@@ -7857,5 +7857,23 @@
   "evidence": "공식 배포 페이지 '라이선스 원문': 비상업적·상업적 용도 모두 자유롭게 활용(예: SNS 이미지, 판매용 이모티콘, 기업 로고). 금지: 폰트 파일 자체(OTF, TTF 등) 수정·편집·재배포, 파일 유료 판매·재판매·공유, 메모먼트 사전 동의 없이 타 웹사이트·블로그에 파일 업로드·배포. 라이선스 요약표: 인쇄출판·웹사이트·포장지·영상·임베딩·BI/CI 사용 가능, OFL 비해당. 제작사 사이트(about.memoment.kr/kkukkkuk)는 인증서 오류로 열리지 않아 배포 페이지 원문으로 확인. 문의 meo@memoment.kr",
   "page": "https://www.sandollcloud.com/free-font/22692/Memoment-Kkukkkuk",
   "checked": "2026-11-11"
+ },
+ "k-pinkfong-babyshark": {
+  "license": "핑크퐁 아기상어 서체 이용조건",
+  "evidence": "더핑크퐁컴퍼니 공식 서체 페이지 '라이선스' 원문 직접 확인: 개인·기업 무료. 금지: 영상 관련 작업물(자막·타이틀·썸네일·크레딧), 유료 판매, 임의 수정·재배포, 미풍양속 저해, 불법 사이트·허위 과장광고 등 브랜드 훼손 용도. 모든 권리 더핑크퐁컴퍼니, 크레딧 표기 권장, 사전 고지 없이 변경될 수 있음. 공식 페이지 표기 Light·Regular·Bold, 한글 11,172자 포함 13,200자. 산돌구름 배포 페이지(free-font/22456) 원문 동일.",
+  "page": "https://pinkfong-babyshark-font.thepinkfong.com/ko/",
+  "checked": "2026-11-12"
+ },
+ "k-puradak-gentle-gothic": {
+  "license": "푸라닭 젠틀고딕체 이용조건",
+  "evidence": "공식 페이지(puradakchicken.com/company/font.asp, 내려받기 /_proc/fontDwn.asp TTF·OTF)는 이미지로만 안내되어 라이선스 문구는 산돌구름 배포 페이지(free-font/17694) '라이선스 원문'으로 확인: 지식재산권 ㈜아이더스에프앤비. 자유롭게 수정·변경해 영리·비영리, 개인·기업 사용 가능. 폰트 파일(otf/ttf) 유상 판매 금지. 사용 범위에 영상·웹·패키지·로고·간판 포함. '지식재산권 안내 및 라이선스' 전문 표시 시 번들·재배포 허용. Copyright © 2024 IDUS FNB, Reserved Font Name 'Puradak Gentle Gothic, Puradak Gentle Gothic OTF'.",
+  "page": "https://puradakchicken.com/company/font.asp",
+  "checked": "2026-11-12"
+ },
+ "k-insungit-cute-lively": {
+  "license": "귀염발랄체 이용조건",
+  "evidence": "산돌구름 배포 페이지(free-font/17895, 제작사 링크 blog.naver.com/insung_it/222845799846 — 브라우저 제한으로 직접 열지 못함) '라이선스 원문': 저작권 인성아이티(제작 클로이). 개인·단체·기업 상업·개인 이용 자유, 단 출처 표시 필수(제작·판매 사이트·제품 설명서·게시물). 유상 판매 금지, 글꼴 모양 무단 수정 금지(색·두께·자간 조정 가능). 출처 없이 유상 판매·무상 배포 시 법적 조치 가능.",
+  "page": "https://www.sandollcloud.com/free-font/17895/Insung-IT-Cute-lively-Jisu",
+  "checked": "2026-11-12"
  }
 }

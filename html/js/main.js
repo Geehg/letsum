@@ -652,7 +652,7 @@
       if (state.liveOnly && f.intro) return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
-        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!FontTaxonomy.matches(f, q) && !hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q))))) return false; }
+        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!FontTaxonomy.matches(f, q) && !hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q)) || nk((f.holder || "") + f.name).includes(nk(q))))) return false; }
       }
       return true;
     });
