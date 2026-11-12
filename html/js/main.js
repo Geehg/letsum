@@ -992,7 +992,7 @@
         <button class="ig-ic" data-share="${f.id}" aria-label="공유" title="링크 공유">${IC.share}</button>
         ${f.intro ? "" : `<button class="ig-ic${cmp.has(f.id) ? " on" : ""}" data-cmp="${f.id}" aria-label="비교에 저장" title="저장 — 비교에 담기">${IC.save}</button>`}
         <span class="ig-right">
-          ${dl.ok ? dlBtn(f, dl, "ig-pill dl", `${IC.down}다운로드`, dl.files.length > 1 ? `${dl.srcName}에서 형식 골라 받기` : `${dl.srcName}에서 파일 바로 받기`) : ""}
+          ${dl.ok ? dlBtn(f, dl, "ig-pill dl", "퀵다운", dl.files.length > 1 ? `${dl.srcName}에서 형식 골라 받기` : `${dl.srcName}에서 파일 바로 받기`) : ""}
           <button class="ig-pill" data-lic-open="${f.id}" title="${esc(licInfo(f).full)} — 사용 범위 보기">라이선스</button>
           <a class="ig-pill" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener" title="원 배포처 페이지(${esc(dl.srcName)})">받기 ↗</a>
         </span>
@@ -1844,7 +1844,7 @@ import "@fontsource/${f.id}/400.css";</pre>
           <p class="sp-type" style="${f.intro ? "" : `font-family:${f.family}`}" data-line="${esc(f.intro ? f.desc : line)}"></p>
           <div class="sp-cta">
             <button class="sp-btn" data-open="${f.id}">자세히 보기</button>
-            ${dl.ok ? dlBtn(f, dl, "sp-btn ac", "⬇ 다운로드") : `<a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
+            ${dl.ok ? dlBtn(f, dl, "sp-btn ac", "⬇ 퀵다운") : `<a class="sp-btn ac" data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">받기 ↗</a>`}
             ${f.intro ? '<span class="sp-chip">소개 전용 · 미리보기 미제공</span>' : ""}
           </div>
         </div>
