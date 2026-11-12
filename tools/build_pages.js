@@ -29,6 +29,18 @@ const { TOPICS, TOPICS_EN, Q } = require("./seo_topics");
 const byPop = (a, b) => (b.pop || 0) - (a.pop || 0) || String(a.name).localeCompare(String(b.name), "ko");
 const TOPIC_LISTS = [...TOPICS.map((t) => [t, FONTS.filter(t.filter).sort(byPop)]), ...TOPICS_EN.map((t) => [t, (t.db ? FONTS_DB : FONTS_EN).filter(t.filter).sort(byPop)])].filter(([, l]) => l.length >= 3);
 const topicsOf = (f) => TOPIC_LISTS.filter(([, l]) => l.includes(f)).map(([t]) => t);
+// 비슷한 폰트(상세 페이지 아래 링크 8개) — 같은 목록(한글·영문·딩벳) 안에서 분류·태그·분위기가 겹치는 폰트.
+// 점수가 같으면 인기순이 아니라 id 해시로 고르게 섞는다(인기 폰트에만 링크가 몰리지 않고, 검색엔진이 모든 상세 페이지를 따라갈 수 있게).
+const RELATED_N = 8, RELATED_SAME_HOLDER = 3;
+const relHash = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0; };
+const relatedOf = (f, list) => {
+  const tags = new Set(f.tags || []), mood = new Set(f.mood || []);
+  const scored = list.filter((g) => g.id !== f.id).map((g) => ({ g, s: (g.category === f.category ? 3 : 0) + Math.min(3, (g.tags || []).filter((t) => tags.has(t)).length) + Math.min(2, (g.mood || []).filter((m) => mood.has(m)).length), h: relHash(f.id + "|" + g.id) }))
+    .filter((x) => x.s > 0).sort((a, b) => b.s - a.s || a.h - b.h);
+  const out = [], perHolder = {};
+  for (const { g } of scored) { if (out.length >= RELATED_N) break; const k = g.holder || ""; if ((perHolder[k] || 0) >= RELATED_SAME_HOLDER) continue; perHolder[k] = (perHolder[k] || 0) + 1; out.push(g); }
+  return out;
+};
 const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>');
 
@@ -109,7 +121,7 @@ ${!en && !db ? `<tr><th>한자 지원 여부</th><td>${taxonomy.hanja(f, coverag
   ${f.intro ? "" : gf || (en && f.dl && f.dl.srcName === "Google Fonts") ? `<h2>웹폰트</h2>
   <pre class="code">&lt;link href="https://fonts.googleapis.com/css2?family=${gfam}:wght@${f.weights.join(";")}&amp;display=swap" rel="stylesheet"&gt;
 font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p>${f.matrix.embed === "ok" ? "원 배포처에서 받은 파일을 직접 호스팅하세요(라이선스상 웹 임베딩 허용)." : f.matrix.embed === "no" ? "<b>이 폰트는 웹폰트·앱 임베딩이 허용되지 않습니다.</b> 이미지·인쇄물·영상 등 위 표에서 허용된 방식으로만 쓰세요." : "<b>웹폰트·앱 임베딩은 조건부입니다.</b> " + esc((LICENSE_INFO[f.license] || {}).note || "") + " — 직접 호스팅하기 전에 라이선스 원문을 확인하세요."} 이 페이지의 미리보기 웹폰트는 LETSUM 미리보기 전용입니다.</p>`}
-  ${topicsOf(f).length ? `<h2>이 폰트가 포함된 목록</h2>\n  <p class="tp-links">${topicsOf(f).map((t) => `<a href="../topics/${t.slug}.html">${esc(t.short)}</a>`).join("")}</p>` : ""}
+  ${(() => { const rel = relatedOf(f, db ? FONTS_DB : en ? FONTS_EN : FONTS); return rel.length ? `<h2>비슷한 폰트</h2>\n  <p class="tp-links rel-links">${rel.map((g) => `<a href="${g.id}.html">${esc(g.name)} <span>${esc(g.category)}</span></a>`).join("")}</p>\n  ` : ""; })()}${topicsOf(f).length ? `<h2>이 폰트가 포함된 목록</h2>\n  <p class="tp-links">${topicsOf(f).map((t) => `<a href="../topics/${t.slug}.html">${esc(t.short)}</a>`).join("")}</p>` : ""}
   <p class="disclaimer">※ 위 사용 범위는 참고용으로, 정확한 사용 범위는 이용 전 폰트 저작권자에게 확인하시기 바랍니다. 모든 폰트의 저작권은 각 저작권자에게 있으며, 다운로드는 원 배포처로 연결합니다.</p>
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
@@ -325,7 +337,7 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
 const urls = [`${SITE}/contact.html`, `${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/typing.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
-fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지.
 // 봇 목록은 tools/state/ai_bots.json 하나에서만 관리한다(build_ai_block.py와 같은 형식으로 쓴다 — 여기에 봇 이름을 적지 말 것).
 const AI_BOT_GROUPS = JSON.parse(fs.readFileSync(path.join(__dirname, "state", "ai_bots.json"), "utf8")).groups;
@@ -350,3 +362,41 @@ require("./build_ui_language.js");
 // Logo pages copy the finished home header, footer and stylesheets, so they are built last.
 require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_logos.mjs")], {stdio:"inherit"});
 require("node:child_process").execFileSync(process.execPath, [path.join(__dirname,"build_mascots.mjs")], {stdio:"inherit"});
+
+// 사이트맵 lastmod = 그 페이지 내용이 실제로 바뀐 날. 빌드할 때마다 전부 '오늘'로 찍으면 검색엔진이 날짜를 믿지 않는다.
+// 모든 빌드(로고·내비게이션·언어)가 끝난 최종 파일의 해시를 tools/state/sitemap_lastmod.json에 두고, 해시가 바뀐 페이지만 오늘 날짜로 바꾼다.
+// 처음 보는 페이지: 작업 트리에서 바뀌지 않았으면 그 파일의 마지막 커밋 날짜, 바뀌었거나 새 파일이면 오늘.
+{
+  const cp = require("node:child_process"), crypto = require("crypto");
+  const SP = path.join(__dirname, "state", "sitemap_lastmod.json");
+  const prev = (() => { try { return JSON.parse(fs.readFileSync(SP, "utf8")); } catch (e) { return {}; } })();
+  const repo = path.join(__dirname, "..");
+  const git = (args) => { try { return cp.execFileSync("git", args, { cwd: repo, encoding: "utf8", maxBuffer: 1 << 28 }); } catch (e) { return null; } };
+  // 캐시 무효화 꼬리표(?v=…)와 주제 페이지의 '목록 갱신 날짜'는 내용 변경으로 보지 않는다
+  const norm = (s) => s.replace(/\?v=[\w.-]+/g, "").replace(/목록 갱신 \d{4}-\d{2}-\d{2}/g, "");
+  const fileOf = (u) => { const p = u.replace(SITE + "/", ""); return "html/" + (p === "" || p.endsWith("/") ? p + "index.html" : p); };
+  const mp = path.join(ROOT, "sitemap.xml"); let xml = fs.readFileSync(mp, "utf8");
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  let seed = null; // 처음 보는 페이지가 있을 때만 git 기록을 한 번 읽는다
+  const seedDate = (rel) => {
+    if (!seed) {
+      seed = { dirty: new Set(), last: {} };
+      const st = git(["status", "--porcelain", "--untracked-files=all", "--", "html"]);
+      if (st === null) seed.nogit = true; else st.split("\n").filter(Boolean).forEach((l) => seed.dirty.add(l.slice(3).replace(/^"|"$/g, "")));
+      const lg = seed.nogit ? null : git(["log", "--format=@%cs", "--name-only", "--", "html"]);
+      let d = null; (lg || "").split("\n").forEach((l) => { if (l.startsWith("@")) d = l.slice(1); else if (l && d && !(l in seed.last)) seed.last[l] = d; });
+    }
+    return !seed.nogit && !seed.dirty.has(rel) && seed.last[rel] ? seed.last[rel] : today;
+  };
+  const next = {}; let changed = 0, kept = 0, fresh = 0;
+  for (const u of locs) {
+    const rel = fileOf(u), fp = path.join(repo, rel); if (!fs.existsSync(fp)) continue;
+    const h = crypto.createHash("sha1").update(norm(fs.readFileSync(fp, "utf8"))).digest("hex").slice(0, 16);
+    const p = prev[u];
+    if (p && p[0] === h) { next[u] = p; kept++; } else if (p) { next[u] = [h, today]; changed++; } else { next[u] = [h, seedDate(rel)]; fresh++; }
+  }
+  xml = xml.replace(/<url><loc>([^<]+)<\/loc>(?:<lastmod>[^<]*<\/lastmod>)?<\/url>/g, (m, u) => next[u] ? `<url><loc>${u}</loc><lastmod>${next[u][1]}</lastmod></url>` : `<url><loc>${u}</loc></url>`);
+  fs.writeFileSync(mp, xml);
+  fs.writeFileSync(SP, JSON.stringify(Object.fromEntries(Object.keys(next).sort().map((k) => [k, next[k]])), null, 0).replace(/\],"/g, '],\n"') + "\n");
+  console.log(`sitemap lastmod: 그대로 ${kept} · 내용 바뀜 ${changed} · 처음 기록 ${fresh}`);
+}
