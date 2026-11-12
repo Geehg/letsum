@@ -5044,7 +5044,8 @@ const FONTS = [
     tags: ["붓글씨", "제목", "교육"], mood: ["강렬한", "고전적"], weights: [300, 500, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
     intro: true, specimen: "img/specimen/k-ebs-jusigyeong.png",
-    introReason: "배포처가 준 원본 파일(TTF·OTF)을 브라우저가 열지 못하고(파일 내부 표 손상), 라이선스상 사전 승인 없는 수정이 금지돼 고칠 수 없습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.",
+    outline: { 300: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/300.ttf", 500: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/500.ttf", 700: "https://letsum.app/fonts-hosted/k-ebs-jusigyeong/700.ttf" },
+    introReason: "배포처가 준 원본 파일의 부속 글자 간격 표(kern)가 브라우저 검사를 통과하지 못해 웹폰트로는 열리지 않습니다. 이용조건상 파일을 고칠 수 없어, 원본 파일을 그대로 읽어 글자 윤곽으로 입력 문장을 그려 보여 드립니다(파일 수정·변환 없음). PC에 설치하면 정상으로 쓸 수 있습니다.",
     dl: { page: "https://about.ebs.co.kr/kor/organization/font?tabVal=jusigyeong", srcName: "EBS(공식)" },
     license: "EBS 서체 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "cond", package: "ok", ofl: "no" }, verified: "2026-10-17", status: "verified",
 
@@ -5195,7 +5196,8 @@ const FONTS = [
     tags: ["본문", "제목", "UI"], mood: ["단정한"], weights: [300, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
     intro: true, specimen: "img/specimen/k-healthset-gothic.png",
-    introReason: "배포처가 준 원본 파일(TTF·OTF)을 브라우저가 열지 못하고(파일 내부 표 손상), 수정 허용 여부가 원문에 없어 고치지 않았습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.",
+    outline: { 300: "https://letsum.app/fonts-hosted/k-healthset-gothic/300.ttf", 700: "https://letsum.app/fonts-hosted/k-healthset-gothic/700.ttf" },
+    introReason: "배포처가 준 원본 파일의 부속 글자 간격 표(kern)가 브라우저 검사를 통과하지 못해 웹폰트로는 열리지 않습니다. 이용조건상 파일을 고칠 수 없어, 원본 파일을 그대로 읽어 글자 윤곽으로 입력 문장을 그려 보여 드립니다(파일 수정·변환 없음). PC에 설치하면 정상으로 쓸 수 있습니다.",
     dl: { page: "https://hangria.com", srcName: "한그리아(공식)" },
     license: "한그리아 헬스셋 이용조건", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "cond", package: "ok", ofl: "no" }, verified: "2026-10-17", status: "verified",
 
@@ -5686,7 +5688,8 @@ const FONTS = [
     tags: ["본문", "신문"], mood: ["차분한", "고전적"], weights: [400], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: true,
     intro: true, specimen: "img/specimen/k-chosun-ilbo-myeongjo.png",
-    introReason: "배포처가 준 원본 파일(TTF)을 브라우저가 열지 못하고(파일 내부 표 문제), 라이선스상 수정이 금지돼 고칠 수 없습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.",
+    outline: { 400: "https://geehg.github.io/letsum-mirror/webfonts/k-chosun-ilbo-myeongjo/400.ttf" },
+    introReason: "배포처가 준 원본 파일의 부속 세로쓰기 정보 표(vhea)가 브라우저 검사를 통과하지 못해 웹폰트로는 열리지 않습니다. 이용조건상 파일을 고칠 수 없어, 원본 파일을 그대로 읽어 글자 윤곽으로 입력 문장을 그려 보여 드립니다(파일 수정·변환 없음). PC에 설치하면 정상으로 쓸 수 있습니다.",
     dl: { page: "https://event.chosun.com/100/100font.html", srcName: "조선일보(공식)" },
     license: "조선일보 서체 이용 안내", matrix: { print: "ok", web: "ok", video: "ok", embed: "ok", bici: "ok", package: "ok", ofl: "no" }, verified: "2026-10-18", status: "verified",
 
@@ -5777,7 +5780,8 @@ const FONTS = [
     tags: ["제목", "본문", "교육"], mood: ["단정한"], weights: [300, 700], formats: ["TTF", "OTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
     intro: true, specimen: "img/specimen/k-gwe-modu.png",
-    introReason: "배포처가 준 원본 파일(TTF·OTF 모두)을 브라우저가 열지 못하고, 이용조건상 변형할 수 없어 고칠 수 없습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
+    outline: { 300: "https://letsum.app/fonts-hosted/k-gwe-modu/300.ttf", 700: "https://letsum.app/fonts-hosted/k-gwe-modu/700.ttf" },
+    introReason: "배포처가 준 원본 파일의 부속 글자 간격 표(kern)가 브라우저 검사를 통과하지 못해 웹폰트로는 열리지 않습니다. 이용조건상 파일을 고칠 수 없어, 원본 파일을 그대로 읽어 글자 윤곽으로 입력 문장을 그려 보여 드립니다(파일 수정·변환 없음). PC에 설치하면 정상으로 쓸 수 있습니다.", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
     dl: { page: "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=", srcName: "강원특별자치도교육청(공식)" },
     license: "강원교육서체 저작권 안내", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "ok", package: "ok", ofl: "no" }, verified: "2026-10-19", status: "verified",
 
@@ -5788,7 +5792,8 @@ const FONTS = [
     tags: ["손글씨", "교육"], mood: ["귀여운", "따뜻한"], weights: [500], formats: ["TTF", "OTF"],
     cov: 10714, glyphs: "한글 10,714자", old: false, hanja: false,
     intro: true, specimen: "img/specimen/k-gwe-saeeum.png",
-    introReason: "배포처가 준 원본 파일(TTF·OTF 모두)을 브라우저가 열지 못하고, 이용조건상 변형할 수 없어 고칠 수 없습니다. 원본 폰트로 만든 견본 이미지만 보여 드립니다. PC에 설치하면 정상으로 쓸 수 있습니다.", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
+    outline: { 500: "https://letsum.app/fonts-hosted/k-gwe-saeeum/500.ttf" },
+    introReason: "배포처가 준 원본 파일의 부속 글자 간격 표(kern)가 브라우저 검사를 통과하지 못해 웹폰트로는 열리지 않습니다. 이용조건상 파일을 고칠 수 없어, 원본 파일을 그대로 읽어 글자 윤곽으로 입력 문장을 그려 보여 드립니다(파일 수정·변환 없음). PC에 설치하면 정상으로 쓸 수 있습니다.", hostedNote: "원본 파일을 변환 없이 LETSUM 서버에서 화면 표시용으로만 사용(재배포 금지 라이선스)",
     dl: { page: "https://www.gwe.go.kr/main/content.do?key=bTIzMDcyMTEyMDc3MTU=", srcName: "강원특별자치도교육청(공식)" },
     license: "강원교육서체 저작권 안내", matrix: { print: "ok", web: "ok", video: "ok", embed: "cond", bici: "ok", package: "ok", ofl: "no" }, verified: "2026-10-19", status: "verified",
 

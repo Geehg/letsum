@@ -20,7 +20,12 @@
   // 웹폰트 두 종류: Google Fonts(한 번에 CSS 링크) / LETSUM 미리보기 웹폰트(f.webfont — 화면에 보일 때만 @font-face 선언)
   const isGF = (f) => !f.webfont && !f.intro;
   // 소개 전용(intro): 라이선스상 미리보기 웹폰트를 만들 수 없는 폰트 — 견본 이미지(specimen)가 있으면 그것만, 없으면 안내 상자
-  const introBox = (f, cls) => f.specimen
+  // outline: 브라우저가 웹폰트로 열지 못하는 원본 파일 — 원본 글자 윤곽으로 입력 문장을 그린다(outline-preview.js, 파일 수정 없음)
+  const OL_SIZE = { big: [44, 4], ctx: [36, 4], slide: [32, 3] };
+  const olWeight = (f) => { const ws = Object.keys(f.outline).map(Number); return ws.includes(400) ? 400 : ws.reduce((a, b) => (Math.abs(b - 400) < Math.abs(a - 400) ? b : a)); };
+  const introBox = (f, cls) => f.outline
+    ? `<div class="intro-pv ol${cls ? " " + cls : ""}" data-ol-url="${esc(f.outline[olWeight(f)])}" data-ol-text="${esc(state.text || f.name)}" data-ol-name="${esc(f.name)}" data-ol-size="${(OL_SIZE[cls] || [28, 3])[0]}" data-ol-lines="${(OL_SIZE[cls] || [28, 3])[1]}">${f.specimen ? `<img src="${f.specimen}" alt="${esc(f.name)} 견본" loading="lazy">` : ""}<span class="i-cap">원본 폰트 파일로 그린 미리보기 · 입력 문장 적용</span></div>`
+    : f.specimen
     ? `<div class="intro-pv${cls ? " " + cls : ""}"><img src="${f.specimen}" alt="${esc(f.name)} 견본" loading="lazy"><span class="i-cap">원본 폰트 견본 이미지 · 입력 문장 미적용</span></div>`
     : `<div class="intro-pv none${cls ? " " + cls : ""}"><b>${esc(f.name)}</b><span class="i-cap">미리보기 미제공 · 배포처에서 생김새 확인</span></div>`;
   // 출시일 표기: 확인된 정밀도까지만 (2009 → 2009년, 2016-10 → 2016년 10월, 2014-07-15 → 2014.07.15)
@@ -1203,6 +1208,7 @@
   // 문장·크기·굵기 변경은 전체 재렌더 없이 미리보기만 갱신
   function renderPreviews() {
     if (state.view === "ctx" || state.view === "feed") { render(); return; }
+    if (window.LSOutline) $$("[data-ol-url]").forEach((el) => LSOutline.setText(el, state.text || el.dataset.olName));
     $$("[data-id]").forEach((el) => {
       const f = FONTS.find((x) => x.id === el.dataset.id); if (!f) return;
       const pv = el.querySelector(".r-pv"); if (!pv) return;

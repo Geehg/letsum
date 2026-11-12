@@ -381,6 +381,11 @@ footer .fine{margin-top:22px;font-size:12px;color:var(--ink3);line-height:1.7;bo
 .intro-pv .i-cap{font-size:11px;color:var(--ink3);font-family:var(--mono)}
 .intro-pv.big{min-height:150px;margin-top:12px}.intro-pv.big img{max-height:180px}
 .intro-pv.slide{min-height:120px}.intro-pv.ctx{min-height:180px}
+/* 원본 글자 윤곽 미리보기(outline-preview.js) — 입력 문장을 원본 폰트 파일의 윤곽으로 그린 SVG */
+.intro-pv.ol{border-style:solid}
+.intro-pv .ol-svg{display:block;max-width:100%;height:auto;color:var(--ink);overflow:visible}
+.intro-pv.ol-wait .i-cap::after{content:" · 원본 파일 불러오는 중"}
+.intro-pv.ol-fail .i-cap::after{content:" · 불러오지 못해 견본 이미지로 표시"}
 .intro-why{margin-top:10px;padding:10px 12px;border-left:3px solid var(--lime);background:var(--paper);font-size:13.5px;color:var(--ink2);line-height:1.6}
 :root[data-theme="dark"] .intro-pv img{filter:invert(1)}
 

@@ -71,7 +71,7 @@ function page(f, en, db) {
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "LETSUM", item: SITE + "/" + (db ? "dingbat/" : en ? "en/" : "") }, ...(topicsOf(f)[0] ? [{ "@type": "ListItem", position: 2, name: topicsOf(f)[0].short, item: `${SITE}/topics/${topicsOf(f)[0].slug}.html` }] : []), { "@type": "ListItem", position: topicsOf(f)[0] ? 3 : 2, name: f.name, item: `${SITE}/font/${f.id}.html` }] })}</script>
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
-<link rel="stylesheet" href="../css/style.css?v=97">
+<link rel="stylesheet" href="../css/style.css?v=98">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${gf ? `family=${gfam}:wght@${f.weights.join(";")}&` : ""}family=Hahmlet:wght@700;800&display=swap" rel="stylesheet">${faceCss ? `\n<style>${faceCss}</style>` : ""}
 </head>
@@ -92,7 +92,7 @@ function page(f, en, db) {
   <h1>${esc(f.name)} <span style="font-family:var(--mono);font-size:16px;font-weight:500;color:var(--ink3)">${esc(f.en)}</span></h1>
   <p class="sub" data-ui-editorial>${esc(f.desc)}</p>
   ${REASONS[f.id] ? `<div class="why-box"><b>추천 이유</b><p>${esc(REASONS[f.id].why)}</p><p class="note">잘 맞는 곳: ${REASONS[f.id].good.map(esc).join(" · ")}${REASONS[f.id].caution ? `<br>주의: ${esc(REASONS[f.id].caution)}` : ""}</p></div>` : ""}
-  ${f.intro ? `${f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : db ? (f.typeable ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>${esc(f.sample)}</div>` : `<div class="sample db-sample" style="font-family:${esc(f.family)}"><span class="l">견본 기호 · ${esc(f.glyphs)}</span>${(f.icons || []).map((x) => `<i title="${esc(x[1])}">${esc(x[0])}</i>`).join("")}</div>`)
+  ${f.intro ? `${f.outline ? `<div class="intro-pv big ol" data-ol-url="${esc(f.outline[Object.keys(f.outline).map(Number).includes(400) ? 400 : Object.keys(f.outline)[0]])}" data-ol-text="책을 읽는 시간은 언제나 옳다\n다람쥐 헌 쳇바퀴에 타고파\n한글 Hangul 2026" data-ol-size="44" data-ol-lines="4">${f.specimen ? `<img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본">` : ""}<span class="i-cap">원본 폰트 파일로 그린 미리보기(파일 수정 없음)</span></div>` : f.specimen ? `<div class="intro-pv big"><img src="../${esc(f.specimen)}" alt="${esc(f.name)} 견본"><span class="i-cap">원본 폰트 견본 이미지</span></div>` : ""}<div class="intro-why"><b>소개 전용 폰트</b> — ${esc(f.introReason || "")} 아래 원 배포처에서 받을 수 있습니다.</div>` : db ? (f.typeable ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>${esc(f.sample)}</div>` : `<div class="sample db-sample" style="font-family:${esc(f.family)}"><span class="l">견본 기호 · ${esc(f.glyphs)}</span>${(f.icons || []).map((x) => `<i title="${esc(x[1])}">${esc(x[0])}</i>`).join("")}</div>`)
     : en ? `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>The quick brown fox jumps over the lazy dog<br>Reading is always time well spent<br><span style="font-size:28px">ABC abc 0123456789 · $4.50</span></div>`
     : `<div class="sample" style="font-family:${esc(f.family)}"><span class="l">미리보기</span>책을 읽는 시간은 언제나 옳다<br>다람쥐 헌 쳇바퀴에 타고파<br><span style="font-size:28px">한글 Hangul 2026 · ₩4,500</span></div>`}
   <div class="dlrow">
@@ -126,7 +126,7 @@ font-family: ${esc(f.family)};</pre>` : `<h2>웹사이트·앱에 쓸 때</h2><p
 </main>
 <footer><div class="wrap"><p class="fine">LETSUM(렛섬) — 상업용 무료 ${kind} 폰트 · <a href="${home}">전체 폰트 보기</a> · <a href="../guide.html">라이선스 가이드</a> · <a href="../notice.html">저작권·라이선스 고지</a></p></div></footer>
 <script type="application/json" id="instData">${JSON.stringify((() => { const n = NAMES[f.id] || {}; const w = (n.w || {})[400] || Object.values(n.w || {})[0] || {}; return { name: f.name, fam: n.fam || "", win: w.win || "", ps: w.ps || "", gf: /fonts\.google\.com/.test(dl.page || "") }; })()).replace(/</g, "\\u003c")}</script>
-<script src="../js/common.js?v=2" data-base="../"></script>
+<script src="../js/common.js?v=2" data-base="../"></script>${f.outline ? `\n<script src="../js/outline-preview.js?v=42ed738f7f" data-lib="../js/vendor/opentype-1.3.4.min.js" defer></script>` : ""}
 <script src="../js/pv.js?v=2" defer></script>
 </body>
 </html>
@@ -240,7 +240,7 @@ function topicPage(t, list) {
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join("\n")}
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="../favicon.svg?v=20261028"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=20261028">
-<link rel="stylesheet" href="../css/style.css?v=97">
+<link rel="stylesheet" href="../css/style.css?v=98">
 </head>
 <body>
 <header>
