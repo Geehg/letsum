@@ -322,77 +322,14 @@ fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
 const urls = [`${SITE}/contact.html`, `${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/typing.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
-// robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지(내용은 여기서만 고칠 것 — 이 파일이 매번 다시 씀)
+// robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지.
+// 봇 목록은 tools/state/ai_bots.json 하나에서만 관리한다(build_ai_block.py와 같은 형식으로 쓴다 — 여기에 봇 이름을 적지 말 것).
+const AI_BOT_GROUPS = JSON.parse(fs.readFileSync(path.join(__dirname, "state", "ai_bots.json"), "utf8")).groups;
+const AI_BOT_RULES = AI_BOT_GROUPS.map((g) => `# ${g.label}\n` + g.bots.map((b) => `User-agent: ${b}\nDisallow: /\n\n`).join("")).join("");
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `# LETSUM(렛섬) — 검색엔진(구글·네이버·다음·빙)과 링크 미리보기(카카오톡 등)는 허용합니다.
 # AI 학습용 데이터 수집과 대량 수집 봇은 허용하지 않습니다.
 
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: cohere-ai
-Disallow: /
-
-User-agent: cohere-training-data-crawler
-Disallow: /
-
-User-agent: Diffbot
-Disallow: /
-
-User-agent: ImagesiftBot
-Disallow: /
-
-User-agent: Omgilibot
-Disallow: /
-
-User-agent: Timpibot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: PetalBot
-Disallow: /
-
-User-agent: *
+${AI_BOT_RULES}User-agent: *
 Allow: /
 Disallow: /admin.html
 Disallow: /api/

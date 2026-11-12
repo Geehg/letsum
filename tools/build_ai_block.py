@@ -25,7 +25,7 @@ def main():
 
     for path in ROBOTS:
         text = path.read_text()
-        head = text[:text.index("User-agent:")]
+        head = text[:text.index("\n\n") + 2]  # 맨 위 설명 주석 덩어리(빈 줄까지)만 — 첫 그룹 이름 주석은 body가 다시 쓴다
         tail = text[text.index("User-agent: *"):]
         body = "".join(f"# {g['label']}\n" + "".join(f"User-agent: {b}\nDisallow: /\n\n" for b in g["bots"]) for g in groups)
         path.write_text(head + body + tail)
