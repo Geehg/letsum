@@ -4,6 +4,8 @@ body>header .hd:has(.brand-copy){display:grid;grid-template-columns:minmax(280px
 body>header .logo:has(.brand-copy){grid-column:1;grid-row:1;align-items:center;gap:14px;min-width:0}
 body>header .logo .brand-copy{display:flex;flex-direction:column;gap:3px;letter-spacing:0;font-family:inherit}
 body>header .brand-copy strong{font-family:var(--sans,system-ui,sans-serif);font-size:22px;line-height:1.15;font-weight:800}
+/* 사이트명 "렛섬": 빗썸고딕 Original(SIL OFL 1.1) 원본 글리프 윤곽을 그림으로 표시. 폰트 파일(약 935KB)을 받지 않고 글자는 화면 읽기·검색용으로 남긴다. */
+body>header .brand-copy strong{align-self:flex-start;box-sizing:content-box;width:2.05em;height:1em;padding:.08em 0;overflow:hidden;white-space:nowrap;color:transparent;background:var(--ink,#111);-webkit-mask:url(/img/brand-letsum-bithumb.svg) no-repeat left center/contain;mask:url(/img/brand-letsum-bithumb.svg) no-repeat left center/contain}
 body>header .brand-copy small{font-family:var(--sans,system-ui,sans-serif);font-size:11px;line-height:1.4;letter-spacing:0;font-weight:500;color:var(--ink2)}
 body>header .hd:has(.brand-copy)>.sp{display:none}
 body>header .hd:has(.brand-copy)>.hd-search{grid-column:2;grid-row:1;width:100%;min-width:0;box-sizing:border-box;margin:0;padding:9px 12px}

@@ -20,3 +20,6 @@ html[data-preview-rendering="smooth"] :is(.r-pv,.pv-big,.ig-sample,.fp .sample,.
 .pr-example[data-pr-example="auto"]{-webkit-font-smoothing:auto!important;-moz-osx-font-smoothing:auto!important}
 .pr-example[data-pr-example="smooth"]{-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important}
 @media(max-width:600px){.pr-panel{padding:10px}.pr-grid{grid-template-columns:32px minmax(0,1fr) minmax(0,1fr)}.pr-cell{padding:8px 6px}.pr-global{margin-left:0}.pr-compare label{align-items:stretch;flex-direction:column;gap:5px}}
+
+/* 홈 미리보기 바의 "기울임" 버튼: 미리보기 글자만 기울임 */
+html[data-pv-italic] :is(#results [style*="font-family"],.r-pv,.pv-big,.ig-sample,.fp .sample,.cmp .pv){font-style:italic}

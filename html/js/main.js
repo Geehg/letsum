@@ -495,6 +495,8 @@
   $("#sizeRange").addEventListener("input", (e) => { state.size = +e.target.value; $("#sizeV").textContent = state.size + "px"; renderPreviews(); });
   $$("#weightSeg button").forEach((b) => b.addEventListener("click", () => { state.weight = +b.dataset.w; $$("#weightSeg button").forEach((x) => x.classList.toggle("on", x === b)); renderPreviews();
     $$("[data-id]").forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight * 2) ensureFace(idOf(el)); }); })); // 화면 근처 카드의 새 굵기를 바로 받기
+  // 기울임: 미리보기 글자만 기울여 본다(폰트 파일은 그대로, 이탤릭 글꼴이 없으면 브라우저가 기울여 그림)
+  { const ib = $("#italicBtn"); if (ib) ib.addEventListener("click", () => { const on = !ib.classList.contains("on"); ib.classList.toggle("on", on); ib.setAttribute("aria-pressed", String(on)); document.documentElement.toggleAttribute("data-pv-italic", on); }); }
   $$("#viewSeg button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.v)));
   // 열 수 조절(피드·격자 보기): 0 = 자동. 고른 값은 이 브라우저에만 저장
   function setCols(c, quiet) {
