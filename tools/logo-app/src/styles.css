@@ -208,3 +208,5 @@ a.format-badge.is-download:hover,a.format-badge.is-download:focus-visible{backgr
 .biz .cover-kicker{position:relative;z-index:1}
 /* Back: name and colours only (region, formats and image credit removed). */
 .biz-back{aspect-ratio:auto}
+
+.mark-description>p{margin:0 0 14px;line-height:1.85;font-size:16px;max-width:68ch}.mark-description>p.section-intro{font-size:13px;margin-top:6px}

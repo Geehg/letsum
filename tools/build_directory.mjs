@@ -33,6 +33,11 @@ try{groups=JSON.parse(await fs.readFile(path.join(project,'data/groups.json'),'u
 let rank={},downloads={};
 try{for(const [id,row] of Object.entries(JSON.parse(await fs.readFile(path.join(project,'data/popularity.json'),'utf8')).records))rank[id]=row.score;}catch(error){if(error.code!=='ENOENT')throw error;}
 try{for(const [id,rows] of Object.entries(JSON.parse(await fs.readFile(path.join(project,'data/downloads.json'),'utf8')).downloads))downloads[id]=rows.map(({format,inner,label,url,bytes,filename,trusted})=>({format,inner:inner||null,label:label||null,url,bytes:bytes||null,filename:filename||null,trusted:Boolean(trusted)}));}catch(error){if(error.code!=='ENOENT')throw error;}
+// Mark descriptions written from the official CI pages (logos only). When the file exists, auto-surveyed records
+// without a description are kept out of search results (noindex) until one is written; tools/build_navigation.js
+// applies the same rule to the sitemap.
+let descriptions=null;
+try{descriptions=JSON.parse(await fs.readFile(path.join(project,'data/descriptions.json'),'utf8')).descriptions;}catch(error){if(error.code!=='ENOENT')throw error;}
 let colors={};
 try{colors=JSON.parse(await fs.readFile(path.join(project,'data/colors.json'),'utf8')).colors;}catch(error){if(error.code!=='ENOENT')throw error;}
 // Identification thumbnails kept on our server by tools/fetch_logo_thumbs.mjs; the catalog schema itself stays image-free.
@@ -70,6 +75,8 @@ const loadingCss=`.logo-js #app>.static-fallback{display:none}
 @keyframes logo-shimmer{to{background-position:250% 0,0 0,0 96px,0 200px}}
 @media(max-width:700px){.logo-js #app:has(>.static-fallback)::before{background:linear-gradient(#e7e4dc,#e7e4dc) 0 0/80% 48px no-repeat,linear-gradient(#ece9e1,#ece9e1) 0 80px/100% 60px no-repeat,repeating-linear-gradient(90deg,#ece9e1 0 calc(50% - 7px),transparent calc(50% - 7px) 50%) 0 170px/100% 200px no-repeat}}
 @media(prefers-reduced-motion:reduce){.logo-js #app:has(>.static-fallback)::before{animation:none}}`;
+const noindexIds=new Set();
+if(descriptions)for(const r of JSON.parse(await fs.readFile(path.join(project,'data/catalog.json'),'utf8')).records)if(r.review.status==='needs-review'&&!descriptions[r.id])noindexIds.add(r.id);
 for(const page of result.html_pages){
  if(page.route==='/review')continue;
  let html=await fs.readFile(path.join(project,'dist',page.file),'utf8'),bootSrc='',appSrc='';
@@ -81,8 +88,8 @@ for(const page of result.html_pages){
  html=swap(html,'<header class="site-header">',siteHeader+`<div class="logo-app"><header class="site-header" aria-label="${menuLabel}">`,'logo header');
  html=swap(html,/<footer class="site-footer">[\s\S]*?<\/footer>/,`<p class="logo-rights">${rights} · <a href="#/guide">정보 확인 기준</a> · <a href="/contact.html">링크 제보</a></p></div>`+siteFooter,'logo footer');
  html=html.replace(/<script>window.__LETSUM_BOOTSTRAP__ = ([\s\S]*?);<\/script>/,(_,json)=>{const data=JSON.parse(json),route=data.initialRoute;delete data.initialRoute;data.production=true;data.thumbnails=thumbnails;data.colors=colorsLight;const pageSources=data.sources;data.sources={...pageSources,sources:[]};data.groups=groups;data.rank=rank;data.downloads=downloads;const id=route.startsWith('/brand/')?route.slice(7):null,record=id&&data.catalog.records.find(r=>r.id===id);
-  const extra=record?{sources:pageSources.sources.filter(s=>record.source_ids.includes(s.id)),credit:credits[id]||null,colors:colorsFull[id]||null}:null;
-  const inline=`var B=window.__LETSUM_BOOTSTRAP__;B.initialRoute=${JSON.stringify(route)};`+(extra?`var X=${JSON.stringify(extra).replace(/</g,'\\u003c')};B.sources.sources=X.sources;if(X.credit&&B.thumbnails[${JSON.stringify(id)}])Object.assign(B.thumbnails[${JSON.stringify(id)}],X.credit);if(X.colors)B.colors[${JSON.stringify(id)}]=X.colors;`:'');
+  const extra=record?{sources:pageSources.sources.filter(s=>record.source_ids.includes(s.id)),credit:credits[id]||null,colors:colorsFull[id]||null,description:descriptions?.[id]||null}:null;
+  const inline=`var B=window.__LETSUM_BOOTSTRAP__;B.initialRoute=${JSON.stringify(route)};`+(extra?`var X=${JSON.stringify(extra).replace(/</g,'\\u003c')};B.sources.sources=X.sources;if(X.credit&&B.thumbnails[${JSON.stringify(id)}])Object.assign(B.thumbnails[${JSON.stringify(id)}],X.credit);if(X.colors)B.colors[${JSON.stringify(id)}]=X.colors;if(X.description)B.descriptions={[${JSON.stringify(id)}]:X.description};`:'');
   bootSrc=asset('window.__LETSUM_BOOTSTRAP__='+JSON.stringify(data).replace(/</g,'\\u003c')+';','js');
   return `<script src="${bootSrc}"></script><script>${inline}</script>`});
  html=html.replace(/<script type="module">([\s\S]*?)<\/script>/,(_,js)=>{appSrc=asset(applySwaps(js,'app script'),'js');return `<script type="module" src="${appSrc}"></script>`;});
@@ -91,6 +98,13 @@ for(const page of result.html_pages){
  html=html.replace('</body>',`<script>setTimeout(function(){if(document.querySelector('#app>.static-fallback'))document.documentElement.classList.remove('logo-js')},10000)</script></body>`);
  // The fallback (no JavaScript, search engines) keeps names and official links only — no machine-collected notes.
  html=html.replace(/(<li><h2>[^<]*<\/h2>)<p>[^<]*<\/p>/g,'$1').replace(/<p>공식 페이지 본문을 확인한 초기 안내 데이터[^<]*<\/p>/,'').replace(/<p>공식 홈페이지(?:의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다| 정보입니다)[^<]*<\/p>/g,'');
+ if(descriptions&&page.route.startsWith('/brand/')){
+  const id=page.route.slice(7),d=descriptions[id],esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  if(d){
+   html=swap(html,/(<article class="static-fallback"[^>]*>[\s\S]*?<\/h1>)/,(_,head)=>head+`<p>${esc(d.lead)}</p><h2>상징에 담긴 뜻</h2>`+d.body.map(t=>`<p>${esc(t)}</p>`).join(''),'fallback heading');
+   html=swap(html,/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(d.lead)}">`,'meta description');
+  }else if(noindexIds.has(id))html=swap(html,'<link rel="canonical"','<meta name="robots" content="noindex,follow">\n  <link rel="canonical"','canonical');
+ }
  html=html.replace(/href="#\//g,`href="${base}#/`);
  // Swaps apply to the directory's own text only, never to the shared site header and footer.
  html=html.replace(siteHeader,'\u0000HEADER\u0000').replace(siteFooter,'\u0000FOOTER\u0000');
