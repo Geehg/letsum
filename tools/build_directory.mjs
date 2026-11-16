@@ -76,7 +76,10 @@ const loadingCss=`.logo-js #app>.static-fallback{display:none}
 @media(max-width:700px){.logo-js #app:has(>.static-fallback)::before{background:linear-gradient(#e7e4dc,#e7e4dc) 0 0/80% 48px no-repeat,linear-gradient(#ece9e1,#ece9e1) 0 80px/100% 60px no-repeat,repeating-linear-gradient(90deg,#ece9e1 0 calc(50% - 7px),transparent calc(50% - 7px) 50%) 0 170px/100% 200px no-repeat}}
 @media(prefers-reduced-motion:reduce){.logo-js #app:has(>.static-fallback)::before{animation:none}}`;
 const noindexIds=new Set();
-if(descriptions)for(const r of JSON.parse(await fs.readFile(path.join(project,'data/catalog.json'),'utf8')).records)if(r.review.status==='needs-review'&&!descriptions[r.id])noindexIds.add(r.id);
+// A description counts only when it is long enough to stand as the page's own text (150 characters); directories without a
+// descriptions file (mascots) keep every auto-surveyed record out of search results.
+const described=d=>Boolean(d)&&d.lead.length+d.body.join('').length>=150;
+for(const r of JSON.parse(await fs.readFile(path.join(project,'data/catalog.json'),'utf8')).records)if(r.review.status==='needs-review'&&!described(descriptions?.[r.id]))noindexIds.add(r.id);
 for(const page of result.html_pages){
  if(page.route==='/review')continue;
  let html=await fs.readFile(path.join(project,'dist',page.file),'utf8'),bootSrc='',appSrc='';
@@ -98,12 +101,13 @@ for(const page of result.html_pages){
  html=html.replace('</body>',`<script>setTimeout(function(){if(document.querySelector('#app>.static-fallback'))document.documentElement.classList.remove('logo-js')},10000)</script></body>`);
  // The fallback (no JavaScript, search engines) keeps names and official links only — no machine-collected notes.
  html=html.replace(/(<li><h2>[^<]*<\/h2>)<p>[^<]*<\/p>/g,'$1').replace(/<p>공식 페이지 본문을 확인한 초기 안내 데이터[^<]*<\/p>/,'').replace(/<p>공식 홈페이지(?:의 CI·상징 안내 페이지를 자동 수집으로 찾았습니다| 정보입니다)[^<]*<\/p>/g,'');
- if(descriptions&&page.route.startsWith('/brand/')){
-  const id=page.route.slice(7),d=descriptions[id],esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ if(page.route.startsWith('/brand/')){
+  const id=page.route.slice(7),d=descriptions?.[id],esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   if(d){
    html=swap(html,/(<article class="static-fallback"[^>]*>[\s\S]*?<\/h1>)/,(_,head)=>head+`<p>${esc(d.lead)}</p><h2>상징에 담긴 뜻</h2>`+d.body.map(t=>`<p>${esc(t)}</p>`).join(''),'fallback heading');
    html=swap(html,/<meta name="description" content="[^"]*">/,`<meta name="description" content="${esc(d.lead)}">`,'meta description');
-  }else if(noindexIds.has(id))html=swap(html,'<link rel="canonical"','<meta name="robots" content="noindex,follow">\n  <link rel="canonical"','canonical');
+  }
+  if(noindexIds.has(id))html=swap(html,'<link rel="canonical"','<meta name="robots" content="noindex,follow">\n  <link rel="canonical"','canonical');
  }
  html=html.replace(/href="#\//g,`href="${base}#/`);
  // Swaps apply to the directory's own text only, never to the shared site header and footer.

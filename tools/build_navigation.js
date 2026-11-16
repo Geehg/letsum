@@ -25,6 +25,6 @@ exports.build=function(){
  const catalog=JSON.parse(fs.readFileSync(path.join(__dirname,'logo-app/data/catalog.json'),'utf8'));
  // Auto-surveyed records without a written description are noindex (tools/build_directory.mjs) and stay out of the sitemap.
  const described=JSON.parse(fs.readFileSync(path.join(__dirname,'logo-app/data/descriptions.json'),'utf8')).descriptions;
- const urls=['https://letsum.app/logos/',...catalog.records.filter(r=>!['draft','archived'].includes(r.review.status)&&(r.review.status!=='needs-review'||described[r.id])).map(r=>'https://letsum.app/logos/brands/'+r.id+'/')];
+ const urls=['https://letsum.app/logos/',...catalog.records.filter(r=>!['draft','archived'].includes(r.review.status)&&(r.review.status!=='needs-review'||(described[r.id]&&described[r.id].lead.length+described[r.id].body.join('').length>=150))).map(r=>'https://letsum.app/logos/brands/'+r.id+'/')];
  xml=xml.replace('</urlset>',urls.map(url=>`  <url><loc>${url}</loc></url>`).join('\n')+'\n</urlset>');fs.writeFileSync(map,xml);
 };
