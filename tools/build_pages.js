@@ -44,6 +44,15 @@ const relatedOf = (f, list) => {
 const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 const st = (v) => (v === "ok" ? '<span class="st-ok">사용 가능</span>' : v === "no" ? '<span class="st-no">사용 금지</span>' : '<span class="st-cond">조건부</span>');
 
+// 한글 글자수 칸에 덧붙이는 "빠진 글자의 예": 완성형 2,350자에 없지만 실제 글에서 만나는 글자 가운데,
+// 폰트 파일에서 읽은 글자 목록(coverage.json)에 실제로 없는 것만 보여 준다. 목록이 없거나 다 있으면 아무것도 쓰지 않는다.
+const RARE_HANGUL = [["똠", "똠얌꿍"], ["찦", "찦차"], ["샾", "커피샾"], ["됬", "‘됐다’의 오타 ‘됬다’"], ["뙇", ""], ["쌰", "쌰쌰"], ["먄", ""], ["뷁", ""], ["햏", "햏자"]];
+const covBits = {};
+const covHas = (rec, ch) => { if (!rec.h) return true; const b = covBits[rec.h] || (covBits[rec.h] = Buffer.from(rec.h, "base64")); const i = ch.charCodeAt(0) - 0xAC00; return ((b[i >> 3] >> (i & 7)) & 1) === 1; };
+const missingNote = (f) => { const c = coverageData[f.id]; if (!c || f.intro || c.n >= 11172) return "";
+  const miss = RARE_HANGUL.filter(([ch]) => !covHas(c, ch)).slice(0, 4); if (!miss.length) return "";
+  return ` <span class="note">— 빠진 글자의 예: ${miss.map(([ch, w]) => w ? `${ch}(${w})` : ch).join(", ")}. 빠진 글자는 기기 기본 글꼴로 대신 보입니다.</span>`; };
+
 function page(f, en, db) {
   const gfam = f.en.replace(/ /g, "+");
   const home = db ? "../dingbat/" : en ? "../en/" : "../index.html", kind = db ? "딩벳" : en ? "영문" : "한글";
@@ -114,7 +123,7 @@ function page(f, en, db) {
     <tr><th>출시·배포일</th><td>${f.released ? `${f.released.length === 4 ? f.released + "년" : f.released.length === 7 ? f.released.slice(0, 4) + "년 " + (+f.released.slice(5)) + "월" : f.released.replace(/-/g, ".")} <span class="note">— 출처: <a href="${esc(f.releasedUrl)}" target="_blank" rel="noopener">${esc(f.releasedSrc)}</a></span>` : "원 출시일 확인 중"}</td></tr>
     <tr><th>형식</th><td>${f.formats.join(", ")}</td></tr>
 ${!en && !db ? `<tr><th>한자 지원 여부</th><td>${taxonomy.hanja(f, coverageData)} <span class="note">${taxonomy.note}</span></td></tr>` : ""}
-    <tr><th>${db ? "수록 기호" : en ? "지원 문자" : "한글 글자수"}</th><td>${esc(f.glyphs)}</td></tr>
+    <tr><th>${db ? "수록 기호" : en ? "지원 문자" : "한글 글자수"}</th><td>${esc(f.glyphs)}${!en && !db ? missingNote(f) : ""}</td></tr>
     <tr><th>저작권자</th><td>${esc(f.holder)}</td></tr>
     <tr><th>태그</th><td>${[...f.tags, ...f.mood].map(esc).join(", ")}</td></tr>
   </table>
