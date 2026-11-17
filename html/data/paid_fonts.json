@@ -69,20 +69,20 @@
    "vendor": "한양정보통신",
    "url": "https://www.hanyang.co.kr/",
    "bundled": true,
-   "note": "HY 서체는 유료이며, 프로그램에 함께 깔린 것은 그 프로그램 사용권 범위에서만 쓸 수 있습니다. (무료 공개판 '고딕 A1'은 LETSUM에 있어요.)",
+   "note": "HY 서체는 판매본과 프로그램 번들 제공본의 이용조건을 구분해야 합니다. 정품 프로그램으로 허용된 결과물을 만드는 것과 폰트 파일을 복사·재배포·웹서버에 올리는 것은 다릅니다. 설치한 제품·버전의 약관을 먼저 확인하세요. 별도 무료 공개판인 고딕 A1은 LETSUM에 있습니다.",
    "label_en": "HY (Hanyang) typeface",
-   "note_en": "HY typefaces are paid; copies bundled with software may only be used within that software's license. (The free release Gothic A1 is on LETSUM.)"
+   "note_en": "Distinguish retail HY licenses from bundled copies. Creating permitted output is different from copying, redistributing or hosting font files. Check the license of your software and version first. The separately released free Gothic A1 is on LETSUM."
   },
   {
    "id": "hancom",
-   "label": "휴먼·한컴 번들 서체",
-   "re": "^(휴먼(명조|고딕|옛체|엑스포|둥근헤드라인|매직|아미|가는샘|중간샘|굵은샘|각진|모음|편지)|한컴(윤고딕|윤체|바탕|돋움|산뜻|쿨재즈|백제|훈민|솔잎|말랑))",
+   "label": "한컴오피스 번들 서체",
+   "re": "^한컴(?:윤고딕|윤체|바탕|돋움|쿨재즈|백제|솔잎|바겐세일|소망)",
    "vendor": "한컴",
    "url": "https://www.hancom.com/",
    "bundled": true,
-   "note": "휴먼명조·휴먼고딕 같은 휴먼 서체와 한컴 서체는 한컴오피스에 들어 있는 번들 글꼴로, 한컴오피스 사용권 범위에서만 쓸 수 있습니다. 따로 쓰려면 제작사 라이선스를 구매해야 합니다. (함초롬바탕·돋움처럼 무료로 공개된 것은 예외)",
+   "note": "한컴 공식 안내는 정품 한컴오피스 기능으로 만든 결과물의 영리 이용을 허용합니다. 설치된 폰트의 다른 프로그램 이용, 파일 복사·재배포·웹폰트 탑재까지 모두 허용한다는 뜻은 아닙니다. 제품·버전과 개별 글꼴의 이용조건을 확인하세요. 별도로 무료 공개된 서체는 그 공개 라이선스를 따릅니다.",
    "label_en": "Hancom bundled typeface",
-   "note_en": "Human and Hancom typefaces come bundled with Hancom Office and may only be used within its license; using them elsewhere needs a separate license. (Free releases such as Hamchorom are an exception.)"
+   "note_en": "Hancom permits commercial use of output made with licensed Hancom Office features. This does not automatically cover use in other applications, copying, redistribution or webfont hosting. Check your product version and font terms. Separately released free fonts follow their own licenses."
   },
   {
    "id": "myfonts",
@@ -116,5 +116,45 @@
    "note": "이 검색어만으로는 정확한 폰트를 특정하지 못했습니다. 제작사 또는 폰트 파일의 정식 이름으로 다시 검색해 주세요.",
    "note_en": "This query does not identify a specific font. Please search using the maker or the full font file name."
   }
- ]
+ ],
+ "bundleGuidance": {
+  "checked": "2026-11-18",
+  "scope": "공식 제공 목록의 대표 이름과 기존 bundled 규칙에 대한 검색 안내. 폰트 전체의 위험 등급이나 침해 판정이 아님. 제품·버전·출처별 확인 필요.",
+  "patterns": [
+   {
+    "id": "hancom-other",
+    "re": "^(?:(?:굵은|가는|중간)안상수체|안상수200[678](?:굵은|가는|중간)?|휴먼(?:굵은|가는|중간)팸체|펜흘림|태나무|양재(?:본목각|참숯|둘기|다운명조|이니셜|매화|샤넬|소슬|튼튼|와당|꽃게|난초|벨라|백두|깨비|붓꽃|블럭|인장)체|md(?:아롱|아트|이솝|개성|솔)체)(?:[bmls]|폰트|ttf|otf)?$"
+   },
+   {
+    "id": "microsoft",
+    "re": "^(?:맑은고딕|malgungothic|굴림체?|gulim(?:che)?|돋움체?|dotum(?:che)?|바탕체?|batang(?:che)?|궁서체?|gungsuh(?:che)?|arial|calibri|cambria|aptos|timesnewroman|segoeui|tahoma|verdana|맑은고딕체)(?:bold|italic|regular|light|semibold|black|폰트|font|ttf|otf)?$"
+   },
+   {
+    "id": "software",
+    "re": "^(?:(?:hwp|한글|한컴오피스|한글과컴퓨터|워드|ms워드|word|microsoftword|msoffice|오피스|윈도우|windows)(?:기본|번들|설치)?(?:폰트|글꼴)|번들폰트)$"
+   }
+  ],
+  "sources": [
+   {
+    "label": "한컴 공식 글꼴 안내",
+    "url": "https://www.hancom.com/news/notice/detail/6117"
+   },
+   {
+    "label": "Microsoft Windows 글꼴 이용 FAQ",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq"
+   },
+   {
+    "label": "Microsoft Office 클라우드 글꼴 안내",
+    "url": "https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office"
+   },
+   {
+    "label": "한국저작권위원회 분쟁 사례 안내",
+    "url": "https://www.copyright.or.kr/gov/nuri/view.do?brdclasscode=&brdctsno=38194&brdctsstatecode=&list.do%3FpageIndex=1&nationcode=&searchTarget=ALL&searchText=&servicecode=null"
+   },
+   {
+    "label": "한국저작권보호원 2021 상담 사례집",
+    "url": "https://www.kcopa.or.kr/download.do?uuid=0dc7530d-c2be-481d-95ab-4bf3bafd41f0.pdf"
+   }
+  ]
+ }
 }

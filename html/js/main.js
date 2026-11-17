@@ -376,8 +376,9 @@
   });
 
   // ---------- 검색 보조: 유료 폰트 안내 · 다른 표기·오타 제안 (규칙·브라우저 계산만, data/paid_fonts.json) ----------
-  let PAID = [], SEARCH_NOTICES = [];
+  let PAID = [], SEARCH_NOTICES = [], BUNDLE_GUIDANCE = [];
   const paidLoad = fetch("data/paid_fonts.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
+    BUNDLE_GUIDANCE = ((j && j.bundleGuidance && j.bundleGuidance.patterns) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
     SEARCH_NOTICES = ((j && j.notices) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
     PAID = ((j && j.rules) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
   });
@@ -446,6 +447,7 @@
     const uiEn = /^en/.test(document.documentElement.lang || ""); const T = (ko, en) => (uiEn ? en : ko); // 화면 언어(한국어/English 버튼) 기준
     let html = "";
     if (state.qUsed) html += `<div class="sq-note">${T(`‘${esc(q)}’(으)로는 찾은 폰트가 없어 <b>‘${esc(state.qUsed)}’</b>(으)로 찾은 결과입니다.`, `No fonts matched “${esc(q)}”, so these are results for <b>“${esc(state.qUsed)}”</b>.`)}</div>`;
+    const bundle = BUNDLE_GUIDANCE.find((r) => r.rx.test(nk(q)));
     const rule = paidRule(q);
     const notice = SEARCH_NOTICES.find((r) => r.rx.test(nk(q)));
     if (!list.length && !rule && notice) html += `<div class="sq-note"><b>${T("이용조건 확인 중", "License not verified")}</b> · ${esc(uiEn ? notice.note_en || notice.note : notice.note)}</div>`;
@@ -453,6 +455,15 @@
     const note = rule ? esc(uiEn ? rule.note_en || rule.note : rule.note) : "";
     const freeHit = rule && list.some((f) => nk(f.name + f.en).includes(nk(q)));
     const go = rule ? `${esc(rule.vendor)} ${T("바로가기", "")} ↗` : "";
+    if ((bundle || (rule && rule.bundled)) && !freeHit) html += `<aside class="paid-note" role="note" aria-label="${T("번들 폰트 사용·분쟁 주의", "Bundled font use and dispute guidance")}">
+      <p class="pn-h"><span class="pn-tag">${T("이용범위 주의", "Check usage rights")}</span> ${T("한글·워드에 보이는 폰트, 상업 이용 전에 확인하세요", "Fonts shown in HWP or Word: check the terms before commercial use")}</p>
+      <p>${T("설치되어 있다는 사실만으로 모든 용도의 무료 사용권이 생기지는 않습니다. 반대로 <b>번들 폰트의 상업 이용이 모두 금지되는 것도 아닙니다.</b> 정품 제품·버전의 약관과 글꼴의 실제 입수 경로를 확인하세요.", "Installation alone does not grant free use for every purpose. <b>Commercial use of bundled fonts is not universally prohibited either.</b> Check your licensed product, version and the font’s actual source.")}</p>
+      <p>${T("한컴은 정품 한컴오피스로 만든 결과물의 영리 이용을 허용합니다. Microsoft의 Windows 제공 글꼴 안내도 허용된 프로그램에서 만든 인쇄물·이미지 등의 상업 이용과 폰트 파일 재배포를 구분합니다. <b>외부 프로그램 사용·웹폰트 업로드·파일 전달·문서 임베딩은 각각의 조건을 확인하세요.</b>", "Hancom permits commercial use of output from licensed Hancom Office. Microsoft distinguishes commercial output made with Windows-supplied fonts in permitted software from font-file redistribution. <b>Check separate conditions for other applications, web hosting, file sharing and document embedding.</b>")}</p>
+      <p><b>${T("내용증명·고액 패키지 구매 요구 주의", "Caution: demand letters and costly font-package offers")}</b> — ${T("한국저작권위원회는 침해가 없거나 약관 문제인 사안에서 부당한 합의금·패키지 구매로 이어진 사례를 안내합니다. 요구를 받았다는 이유만으로 침해나 지급 의무가 확정되지는 않습니다.", "The Korea Copyright Commission reports cases of unjustified settlements or package purchases where infringement was absent or the issue concerned contract terms. A demand alone does not establish infringement or a duty to pay.")}</p>
+      <p>${T("발신자의 권리·위임 근거, 지목한 파일과 이용 행위, 적용 약관, 금액 근거를 확인하고 구매·설치 기록과 받은 문서를 보관하세요. 바로 결제·합의하지 말고 독립적인 저작권 상담을 받으세요. 법원 서류나 대응 기한은 무시하지 마세요.", "Check the sender’s rights and authority, the specific file and alleged use, applicable terms and the basis for the amount. Keep purchase, installation and correspondence records; seek independent copyright advice before paying or settling. Do not ignore court papers or response deadlines.")}</p>
+      <p class="pn-act"><a class="btn sm" href="/guide.html#bundled-fonts">${T("공식 근거·대응 체크리스트 →", "Official sources and checklist (Korean) →")}</a><small>${T("특정 폰트·제작사·대리인의 위법성을 단정하는 안내가 아닙니다.", "This guidance does not allege wrongdoing by any font maker or representative.")}</small></p>
+    </aside>`;
+
     if (rule && freeHit) html += `<div class="paid-note"><p>${T("아래는 무료로 공개된 폰트만 보여 드립니다.", "Only free releases are listed below.")} ${note} ${T("유료 서체는 라이선스를 구매한 뒤 판매처를 통해 이용할 수 있어요.", "Paid typefaces can be used after buying a license from the vendor.")} <a href="${esc(rule.url)}" target="_blank" rel="noopener nofollow">${go}</a></p></div>`;
     if (rule && !freeHit) {
       const cat = /명조|바탕|serif|myeong/i.test(q) ? "명조" : /고딕|돋움|sans|gothic|helvetica|futura|avenir|frutiger|univers/i.test(q) ? "고딕" : /손글씨|필기|script/i.test(q) ? "손글씨" : "";
