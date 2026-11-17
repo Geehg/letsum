@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-18",
+  "queryPeriod": "2026-10-22 to 2026-11-18 08:03 KST (28-day rolling)",
+  "newFont": "k-griun-myoeun-heullim",
+  "licenseSources": [
+    "https://www.griun.co.kr/fonts/myoeunheullim",
+    "https://humanfont.com/",
+    "https://www.hancom.com/news/notice/detail/6117?artclClss=&searchText=&type=notice"
+  ],
+  "aliases": {
+    "jua": [
+      "배달의민족 주아체",
+      "배민 주아체"
+    ],
+    "k-binggrae2": [
+      "빙그레체2",
+      "빙그레체 II",
+      "빙그레2"
+    ],
+    "k-hakgyoansim-bareondotum": [
+      "바른돋음",
+      "학교안심 바른돋음"
+    ]
+  },
+  "paidNoticeUpdated": "humanfont",
+  "held": [
+    "가는각진",
+    "모아체",
+    "꺾인고딕",
+    "네온 고딕",
+    "Pretty On The Inside",
+    "Sabrina",
+    "a new day every day",
+    "dial phone"
+  ],
+  "notes": [
+    "No Mabyko collection",
+    "No font file redistributed",
+    "Page version 1.1 differs from TTF name version 1.000; no invented release date"
+  ]
+}

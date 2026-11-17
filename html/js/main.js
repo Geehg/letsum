@@ -376,8 +376,9 @@
   });
 
   // ---------- 검색 보조: 유료 폰트 안내 · 다른 표기·오타 제안 (규칙·브라우저 계산만, data/paid_fonts.json) ----------
-  let PAID = [];
+  let PAID = [], SEARCH_NOTICES = [];
   const paidLoad = fetch("data/paid_fonts.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
+    SEARCH_NOTICES = ((j && j.notices) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
     PAID = ((j && j.rules) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
   });
   const paidRule = (q) => { const k = nk(q); return k.length >= 2 ? PAID.find((r) => r.rx.test(k)) || null : null; };
@@ -446,6 +447,9 @@
     let html = "";
     if (state.qUsed) html += `<div class="sq-note">${T(`‘${esc(q)}’(으)로는 찾은 폰트가 없어 <b>‘${esc(state.qUsed)}’</b>(으)로 찾은 결과입니다.`, `No fonts matched “${esc(q)}”, so these are results for <b>“${esc(state.qUsed)}”</b>.`)}</div>`;
     const rule = paidRule(q);
+    const notice = SEARCH_NOTICES.find((r) => r.rx.test(nk(q)));
+    if (!list.length && !rule && notice) html += `<div class="sq-note"><b>${T("이용조건 확인 중", "License not verified")}</b> · ${esc(uiEn ? notice.note_en || notice.note : notice.note)}</div>`;
+    if (!LAT && /^courgette(?:font)?$/.test(nk(q))) html += `<div class="sq-note">${T("Courgette는 영문 폰트 목록에 등록되어 있습니다.", "Courgette is in our Latin font catalogue.")} <a href="en/?q=Courgette">${T("영문 폰트에서 보기 →", "View Latin font →")}</a></div>`;
     const note = rule ? esc(uiEn ? rule.note_en || rule.note : rule.note) : "";
     const freeHit = rule && list.some((f) => nk(f.name + f.en).includes(nk(q)));
     const go = rule ? `${esc(rule.vendor)} ${T("바로가기", "")} ↗` : "";
@@ -670,7 +674,7 @@
       if (state.liveOnly && f.intro) return false; // 확인 중·확인 불가는 '지원'으로 치지 않는다
       if (q) {
         if (isChoQuery(q)) { if (!choseong(f.name).includes(q.replace(/ /g, ""))) return false; }
-        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!FontTaxonomy.matches(f, q) && !hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || nk(f.name + f.en).includes(nk(q)) || nk((f.holder || "") + f.name).includes(nk(q))))) return false; }
+        else { const hay = (f.name + " " + f.en + " " + f.designer + " " + f.tags.join(" ") + " " + f.mood.join(" ")).toLowerCase(); if (!FontTaxonomy.matches(f, q) && !hay.includes(q) && !(nk(q).length >= 2 && ((nameIdx[f.id] || "").includes(nk(q)) || (f.searchAliases || []).some((a) => nk(a) === nk(q)) || nk(f.name + f.en).includes(nk(q)) || nk((f.holder || "") + f.name).includes(nk(q))))) return false; }
       }
       return true;
     });

@@ -13,6 +13,7 @@ const LICENSE_CATS = [
 
 // 라이선스별 표기 — 화면에서 라이선스 이름·조건을 이 표로 보여준다
 const LICENSE_INFO = {
+  "그리운 묘은흘림체 이용조건": {"full": "그리운 묘은흘림체 이용조건", "short": "상업용 무료·파일 수정/판매 금지", "note": "공식 배포처는 모든 사용 범위에서 자유로운 사용을 허용합니다. 폰트 파일의 개작·수정·판매는 금지됩니다. 파일 재배포와 외부 웹폰트 호스팅의 세부 조건은 명시적으로 확인되지 않아 LETSUM은 원본으로 만든 견본 이미지와 공식 다운로드 페이지를 제공합니다.", "url": "https://www.griun.co.kr/fonts/myoeunheullim"},
   "참약사체 이용조건": {"full": "참약사체 이용조건", "short": "부분 무료·업종/용도 제한", "note": "부분 상업 이용만 허용. 약업계·약국·헬스케어 및 플랫폼 사업의 상업적 이용 금지. 제품 패키지·간판·현수막·판넬·외부 시트지, CF·영상광고·신문·잡지 광고물, CI/BI(회사명·브랜드명·상품명·로고·슬로건), 웹사이트·프로그램·E-book·서버·키오스크 폰트 임베딩 금지. 파일 수정·복제·재배포·판매 금지. 일반 인쇄·출판·웹 이미지·영상도 제한 업종과 제작물 제외 조건을 확인하세요. PDF에서 패키지 허용/금지 표기가 겹치므로 제품 패키지는 금지로 안내합니다. 반사회적 제작물 및 권리자에 부정적 영향을 미치는 제작물 금지. 사용 이미지는 참약사 마케팅에 활용될 수 있으며 제외 요청 가능.", "url": "https://charmacist.com/wp-content/themes/charmacist/assets/font/Charmacist-License.pdf"},
   "온글잎 무료폰트 이용조건": {"short": "온글잎 무료 이용", "note": "개인·기업 상업 이용, 인쇄·웹·영상·포장·임베딩·웹서버·BI/CI 및 원본 파일 배포 허용. 폰트 파일 수정과 유료 판매 금지. 사용한 인쇄물·광고물 이미지는 온글잎 홍보에 활용될 수 있음. 수정·재배포의 조건부 표시는 원본 배포만 허용한다는 뜻입니다.", "url": "https://www.ownglyph.com/font", "full": "온글잎 무료폰트 이용조건"},
   "GPTSSAM Caption 이용조건": {"short": "OFL 기반·홍보 활용 조항", "note": "Gmarket Sans 기반 배포 라이선스. 상업 이용·임베딩·수정·재배포 허용, 폰트 단독 판매 금지. 저작권·라이선스 전문 및 예약 이름 조건 유지. 제6항에 따라 사용 제작물 이미지는 권리자 홍보에 활용될 수 있으며 구체적인 제외 요청 가능.", "url": "https://github.com/gptssam/gptssam-caption", "full": "GPTSSAM Caption 이용조건"},
@@ -692,7 +693,7 @@ const FONTS = [
     released: "2021-05-13", releasedSrc: "Google Fonts 최초 공개", releasedUrl: "https://fonts.google.com/specimen/Hahmlet",
     pair: "playfair", pop: 74, added: "2026-09-12",
     desc: "베트남 문자까지 지원하는 세리프. 클래식한 제목용으로 표지·포스터에서 존재감이 있습니다." },
-  { id: "jua", name: "주아체", en: "Jua", family: "'Jua', sans-serif",
+  { id: "jua", searchAliases: ["배달의민족 주아체", "배민 주아체"], name: "주아체", en: "Jua", family: "'Jua', sans-serif",
     designer: "양희재", holder: "양희재", category: "디스플레이",
     tags: ["썸네일", "둥근", "강조"], mood: ["발랄한", "귀여운"], weights: [400], formats: ["TTF","WOFF2"],
     dl: { mirror: "https://github.com/Geehg/letsum-mirror/releases/download/jua/jua.zip" },
@@ -1658,7 +1659,7 @@ const FONTS = [
     released: "2023-07-25", releasedSrc: "공유마당 등록일(제작 기관 배포)", releasedUrl: "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333605&menuNo=200023",
     pair: "playfair", pop: 40, added: "2026-10-11",
     desc: "교과서용으로 만든 바른 바탕체. 책·교재 본문에 오래 읽기 좋습니다." },
-  { id: "k-hakgyoansim-bareondotum", name: "학교안심 바른돋움", en: "Hakgyoansim Bareondotum", family: "'LS hakgyoansim-bareondotum', sans-serif",
+  { id: "k-hakgyoansim-bareondotum", searchAliases: ["바른돋음", "학교안심 바른돋음"], name: "학교안심 바른돋움", en: "Hakgyoansim Bareondotum", family: "'LS hakgyoansim-bareondotum', sans-serif",
     designer: "한국교육학술정보원", holder: "한국교육학술정보원", category: "고딕",
     tags: ["본문", "교과서", "문서"], mood: ["단정한"], weights: [400, 700], formats: ["TTF","OTF"],
     cov: 2350, glyphs: "한글 2,350자", old: false, hanja: false,
@@ -5603,7 +5604,7 @@ const FONTS = [
 
     pair: "inter", pop: 40, added: "2026-10-18",
     desc: "'붕어싸만코'를 담은 손글씨체. 자연스러운 손맛에 붕어빵 모양 특수문자까지 있어 귀여운 SNS·스티커 문구에 씁니다." },
-  { id: "k-binggrae2", name: "빙그레체Ⅱ", en: "BinggraeⅡ", family: "'LS k-binggrae2', sans-serif",
+  { id: "k-binggrae2", searchAliases: ["빙그레체2", "빙그레체 II", "빙그레2"], name: "빙그레체Ⅱ", en: "BinggraeⅡ", family: "'LS k-binggrae2', sans-serif",
     designer: "빙그레", holder: "빙그레", category: "고딕",
     tags: ["둥근", "본문", "옛한글"], mood: ["따뜻한", "단정한"], weights: [400, 700], formats: ["TTF"],
     cov: 11172, glyphs: "한글 11,172자", old: false, hanja: false,
@@ -6735,6 +6736,7 @@ const FONTS = [
     released: "2022", releasedSrc: "산돌구름 제품 정보(출시 연도)", releasedUrl: "https://www.sandollcloud.com/free-font/17895/Insung-IT-Cute-lively-Jisu",
     pair: "inter", pop: 30, added: "2026-11-12",
     desc: "인성아이티가 만든 귀엽고 발랄한 손글씨 서체. 상업적으로 쓸 때는 작업물이나 게시물에 출처를 표시해야 합니다." },
+  {"id": "k-griun-myoeun-heullim", "name": "그리운 묘은흘림체", "en": "Griun Myoeun Heullim", "family": "'LS k-griun-myoeun-heullim', cursive", "designer": "그리운 × 묘은", "holder": "TypeE Corp. & Kim Hyo Eun", "category": "손글씨", "tags": ["손글씨", "필기", "일기", "편지"], "mood": ["단정한", "따뜻한"], "weights": [400], "formats": ["TTF"], "cov": 11172, "glyphs": "공식 원본 윤곽 검사: 한글 11,172자 · 한자 0자", "hanja": false, "old": false, "intro": true, "introReason": "파일 개작·수정·판매가 금지되며 외부 웹폰트 호스팅·재배포 조건은 확인되지 않아, 원본 글꼴로 만든 견본 이미지와 공식 다운로드 링크를 제공합니다. 입력 문장은 견본에 적용되지 않습니다.", "specimen": "img/specimen/k-griun-myoeun-heullim.png", "dl": {"page": "https://www.griun.co.kr/fonts/myoeunheullim", "srcName": "그리운 GRIUN(공식)"}, "license": "그리운 묘은흘림체 이용조건", "matrix": {"print": "ok", "web": "ok", "video": "ok", "embed": "cond", "bici": "ok", "package": "ok", "ofl": "cond"}, "verified": "2026-11-18", "status": "verified", "pair": "inter", "pop": 30, "added": "2026-11-18", "searchAliases": ["묘은", "묘은흘림체", "GriunMyoeunHeullim-Regular"], "desc": "오른쪽으로 살짝 기울어진 펜글씨에 획의 이어짐이 자연스러운 손글씨 서체입니다. 짧은 일기·편지·카드 문구에 어울리며, 파일 수정·판매 금지 조건을 확인하세요."},
 ];
 
 // 관리자 계정 — 비밀번호는 SHA-256 해시로만 보관 (정적 사이트라 브라우저 안에서 검사하는 가벼운 보호임)
