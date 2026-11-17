@@ -62,6 +62,16 @@
       <div class="mt-kpi" id="homeKpi"></div>
       <h2>할 일</h2>
       <ul class="adm-todo" id="homeTodo"></ul>
+      <h2>사이트 표시 설정</h2>
+      <form id="siteDisplayForm">
+        <label><input type="checkbox" id="koreanDirectoryEnabled" disabled> 전체 한글 폰트 이름으로 찾기 표시</label>
+        <p class="note">기본값은 비노출입니다. 켜면 한글 폰트 페이지의 푸터 위에 이름 목록을 펼치는 버튼이 표시됩니다. 저장한 설정은 방문자가 새로고침하거나 다시 접속할 때 적용됩니다.</p>
+        <div class="mt-tools">
+          <button class="btn sm blue" type="submit" id="siteDisplaySave" disabled>저장 — 사이트에 반영</button>
+          <button class="btn sm" type="button" id="siteDisplayReload">설정 새로고침</button>
+          <span class="note" id="siteDisplayMsg" role="status" aria-live="polite"></span>
+        </div>
+      </form>
       <h2>운영 메모</h2>
       <ul class="adm-todo">
         <li>폰트 데이터·라이선스는 저장소(<code>html/js/data.js</code>)에서 관리합니다. 매주 월요일 자동 감시가 배포처 변화를 확인해 GitHub 이슈로 알립니다.</li>
@@ -167,6 +177,6 @@
 <script src="js/data.js?v=13"></script>
 <script src="js/data_en.js?v=1"></script>
 <script src="js/data_db.js?v=1"></script>
-<script src="js/admin.js?v=20"></script>
+<script src="js/admin.js?v=21"></script>
 </body>
 </html>

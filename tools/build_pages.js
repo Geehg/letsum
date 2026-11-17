@@ -171,7 +171,7 @@ function seoIntro(kind) {
 }
 function seoDir(kind) {
   const L = (kind === "db" ? FONTS_DB : kind === "en" ? FONTS_EN : FONTS).slice().sort((a, b) => String(a.name).localeCompare(String(b.name), "ko"));
-  return `<section class="seo-dir"><div class="wrap"><details><summary>전체 ${kind === "db" ? "딩벳" : kind === "en" ? "영문" : "한글"} 폰트 이름으로 찾기 (${L.length}종)</summary><ul>${L.map((f) => `<li><a href="font/${f.id}.html">${esc(f.name)}</a></li>`).join("")}</ul></details></div></section>`;
+  return `<section class="seo-dir"${kind === "ko" ? ' data-korean-font-directory hidden' : ""}><div class="wrap"><details><summary>전체 ${kind === "db" ? "딩벳" : kind === "en" ? "영문" : "한글"} 폰트 이름으로 찾기 (${L.length}종)</summary><ul>${L.map((f) => `<li><a href="font/${f.id}.html">${esc(f.name)}</a></li>`).join("")}</ul></details></div></section>`;
 }
 const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-->/, `<!--SEO:INTRO-->${seoIntro(kind)}<!--/SEO:INTRO-->`).replace(/<!--SEO:DIR-->[\s\S]*?<!--\/SEO:DIR-->/, `<!--SEO:DIR-->${seoDir(kind)}<!--/SEO:DIR-->`);
 {

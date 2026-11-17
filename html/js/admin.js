@@ -69,6 +69,36 @@
     const h = location.hash.slice(1); tab(["home", "brand", "samples", "shots", "cmts", "traffic", "keywords", "monitor", "metrics", "fonts"].includes(h) ? h : "home");
   }
 
+  // ---------- 사이트 표시 설정 ----------
+  let displayBusy = false;
+  async function loadSiteDisplay() {
+    if (displayBusy) return;
+    displayBusy = true;
+    const input = $("#koreanDirectoryEnabled"), button = $("#siteDisplaySave"), msg = $("#siteDisplayMsg");
+    input.disabled = button.disabled = true; msg.textContent = "설정 불러오는 중…";
+    try {
+      const settings = await call("site-display");
+      input.checked = settings.koreanFontDirectory === true;
+      input.disabled = button.disabled = false;
+      msg.textContent = input.checked ? "현재 표시 중" : "현재 비노출";
+    } catch (e) { msg.textContent = "불러오기 실패: " + e.message; }
+    finally { displayBusy = false; }
+  }
+  loaders.home = loadSiteDisplay;
+  $("#siteDisplayReload").addEventListener("click", loadSiteDisplay);
+  $("#siteDisplayForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = $("#koreanDirectoryEnabled"), button = $("#siteDisplaySave"), msg = $("#siteDisplayMsg");
+    if (displayBusy || button.disabled) return;
+    displayBusy = true; input.disabled = button.disabled = true; msg.textContent = "저장 중…";
+    try {
+      const settings = await call("site-display", { koreanFontDirectory: input.checked });
+      input.checked = settings.koreanFontDirectory === true;
+      msg.textContent = input.checked ? "저장 완료 — 방문자에게 표시됩니다." : "저장 완료 — 방문자에게 표시하지 않습니다.";
+    } catch (e) { msg.textContent = "저장 실패: " + e.message + " · 설정 새로고침으로 저장 상태를 확인해 주세요."; }
+    finally { displayBusy = false; input.disabled = button.disabled = false; }
+  });
+
   // ---------- 히어로 노출 목록(사이트와 같은 규칙) ----------
   const heroIds = (() => {
     const dated = FONTS.filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released) || b.pop - a.pop);

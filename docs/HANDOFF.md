@@ -741,3 +741,7 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 2단계 nginx(`nginx/default.conf`): 목록의 User-Agent면 robots.txt를 뺀 모든 주소에 403. 검색엔진(Googlebot·Bingbot·Yeti·Daumoa)과 링크 미리보기(kakaotalk-scrap·facebookexternalhit 등)는 통과. NAS '받아와 재배포'로 반영.
 - 3단계 워커(`/api/*`): 같은 목록이면 403. `cd worker && npx wrangler deploy`로 반영.
 - 한계: Cloudflare가 엣지에 캐시한 파일(이미지 등)은 NAS까지 오지 않아 2단계를 거치지 않고, User-Agent를 브라우저로 위장한 봇은 이름으로 못 막는다 → Cloudflare 대시보드(letsum.app) › Security › Bots에서 'Block AI bots'(모든 페이지)와 'AI Labyrinth'를 켜 두는 것이 가장 강한 단계(운영자 설정).
+
+## 2026-11-17 — 한글 전체 이름 목록 기본 비노출
+- 생성기 `seoDir(ko)`가 `data-korean-font-directory hidden`을 출력. main.js는 `/api/site-display`의 명시적 true만 표시하며 조회 실패 시 숨김 유지. 영문·딩벳 목록은 기존 유지.
+- 관리자 개요 → 사이트 표시 설정에서 체크 후 저장. 기존 settings 테이블 `site_display` 키 사용(스키마 변경 없음), 관리자 인증 및 boolean 검증. 공개 조회/관리자 저장 모두 no-store. 방문자는 새로고침 후 반영.

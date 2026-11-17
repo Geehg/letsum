@@ -343,6 +343,22 @@ async function cfwaReport(url, env) {
   } catch (e) { return json({ configured: true, error: String(e.message || e).slice(0, 300) }); }
 }
 
+// ---------- 사이트 표시 설정 (미설정·손상 시 기본 비노출) ----------
+async function siteDisplayGet(env) {
+  const row = await env.DB.prepare("SELECT data, updated FROM settings WHERE key = ?").bind("site_display").first();
+  let settings = null; try { settings = row ? JSON.parse(row.data) : null; } catch {}
+  return json({ koreanFontDirectory: settings?.koreanFontDirectory === true, updated: row?.updated || null });
+}
+async function siteDisplaySave(req, env) {
+  const settings = await body(req);
+  if (!settings || typeof settings.koreanFontDirectory !== "boolean") return bad("표시 여부는 켜기 또는 끄기로 지정해 주세요");
+  const data = { koreanFontDirectory: settings.koreanFontDirectory };
+  const updated = Date.now();
+  await env.DB.prepare("INSERT INTO settings (key, data, updated) VALUES (?, ?, ?) ON CONFLICT(key) DO UPDATE SET data = excluded.data, updated = excluded.updated")
+    .bind("site_display", JSON.stringify(data), updated).run();
+  return json({ ok: true, ...data, updated });
+}
+
 // ---------- 예시 문장(관리자 편집) ----------
 function cleanSamples(list) {
   if (!Array.isArray(list)) return null;
@@ -421,6 +437,8 @@ async function admin(url, req, env) {
     const r = await env.DB.prepare("SELECT day, name, font, n FROM events WHERE day >= ? ORDER BY day").bind(from).all();
     return json({ from, rows: r.results, diagnostics: await failureReport(env.DB, from) });
   }
+  if (req.method === "GET" && url.pathname === "/api/admin/site-display") return siteDisplayGet(env);
+  if (req.method === "POST" && url.pathname === "/api/admin/site-display") return siteDisplaySave(req, env);
   if (req.method === "POST" && url.pathname === "/api/admin/samples") return samplesSave(req, env);
   if (req.method === "GET" && url.pathname === "/api/admin/traffic") return trafficReport(url, env);
   if (req.method === "GET" && url.pathname === "/api/admin/gsc") return gscReport(url, env);
@@ -489,6 +507,7 @@ export default {
       if (p.startsWith("/api/admin/")) return await admin(url, req, env);
       if (req.method === "GET" && p === "/api/stats") return await stats(url, req, env);
       if (req.method === "GET" && p === "/api/brand") return await brandList(env);
+      if (req.method === "GET" && p === "/api/site-display") return await siteDisplayGet(env);
       if (req.method === "GET" && p === "/api/samples") return await samplesGet(url, env);
       if (req.method === "POST" && p === "/api/like") return await like(req, env);
       if (req.method === "GET" && p === "/api/comments") return await listComments(url, req, env);

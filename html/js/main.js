@@ -15,6 +15,15 @@
   const g1 = (f) => DB ? ((f.icons || [])[0] || [f.sample || "★"])[0] : G1; // 굵기 견본 한 글자
   const esc = (s) => String(s).replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
 
+  // 한글 전체 이름 목록: HTML부터 숨기고, 관리자가 켠 경우에만 표시한다.
+  const koreanDirectory = document.querySelector("[data-korean-font-directory]");
+  if (koreanDirectory) {
+    fetch("/api/site-display", { cache: "no-store" })
+      .then((r) => { if (!r.ok) throw new Error("display settings unavailable"); return r.json(); })
+      .then((settings) => { koreanDirectory.hidden = !settings || settings.koreanFontDirectory !== true; })
+      .catch(() => { koreanDirectory.hidden = true; });
+  }
+
   // ---------- 폰트 로딩: data.js의 굵기 정보로 Google Fonts 링크 생성 ----------
   // 스타일시트가 도착하기 전에 document.fonts.load를 부르면 폰트가 없는 것으로 판정되므로, 링크 로드를 기다린다
   // 웹폰트 두 종류: Google Fonts(한 번에 CSS 링크) / LETSUM 미리보기 웹폰트(f.webfont — 화면에 보일 때만 @font-face 선언)
