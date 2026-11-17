@@ -1,0 +1,33 @@
+{
+  "checked": "2026-11-17",
+  "family": "가위손 / KoreanGWS",
+  "decision": "상업용 무료 카탈로그 등록 보류. 검색 보조 안내와 공식 판매처 링크만 제공. 폰트 파일 수집·변환·임베딩·견본 생성 없음.",
+  "aliases": [
+    "koreangwsl",
+    "KoreanGWS-Light",
+    "KoreanGWS",
+    "가위손",
+    "가위손체",
+    "가위손L"
+  ],
+  "aliasCaveat": "KoreanGWS-Light = 가위손L은 공식 이력에서 확인. koreangwsl은 검색 연결용 축약 별칭이며 실제 파일 내부명으로 확정하지 않음.",
+  "sources": [
+    {
+      "url": "https://www.asiafont.com/asfont/m_page.php?ps_pname=page_history",
+      "finding": "가위손L/M/B의 영문명 KoreanGWS-Light/Medium/Bold 확인"
+    },
+    {
+      "url": "https://www.asiafont.com/asfont/m_view.php?ps_boid=84&ps_db=news",
+      "finding": "2026-01-01부터 학생·교육기관 교육용 무료 이용은 신청 후 정식 라이선스 발급 방식. 오래된 개인 비상업 무료 안내보다 최신 절차 우선"
+    },
+    {
+      "url": "https://www.asiafont.com/asfont/m_page.php?ps_pname=free_licence",
+      "finding": "상업 이용 별도 구매. 승인 없는 수정·복사·재배포 금지. 상업용 별도 표시 예외 있으나 가위손에 대한 예외 확인되지 않음"
+    },
+    {
+      "url": "https://www.asiafont.com/asfont/am_fonttong.php",
+      "finding": "폰트통 프로그램과 제공 폰트 권한 구분. 폰트만 별도 공유·배포 불가"
+    }
+  ],
+  "evidenceAccess": "공식 도메인 검색 색인 본문 확인. 웹 열기 도구는 502/timeout 발생. 개별 사용 허가를 취득한 것은 아님."
+}
