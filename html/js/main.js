@@ -376,8 +376,9 @@
   });
 
   // ---------- 검색 보조: 유료 폰트 안내 · 다른 표기·오타 제안 (규칙·브라우저 계산만, data/paid_fonts.json) ----------
-  let PAID = [], SEARCH_NOTICES = [], BUNDLE_GUIDANCE = [];
-  const paidLoad = fetch("data/paid_fonts.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
+  let PAID = [], SEARCH_NOTICES = [], BUNDLE_GUIDANCE = [], FONT_ALTERNATIVES = [];
+  const paidLoad = Promise.all(["data/paid_fonts.json", "data/font_alternatives.json"].map(url => fetch(url, { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})))).then(([j, alternatives]) => {
+    FONT_ALTERNATIVES = (alternatives.groups || []).map(g => ({...g, rx: g.re ? new RegExp(g.re) : null}));
     BUNDLE_GUIDANCE = ((j && j.bundleGuidance && j.bundleGuidance.patterns) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
     SEARCH_NOTICES = ((j && j.notices) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
     PAID = ((j && j.rules) || []).map((r) => { try { return { ...r, rx: new RegExp(r.re) }; } catch (e) { return null; } }).filter(Boolean);
@@ -466,12 +467,23 @@
 
     if (rule && freeHit) html += `<div class="paid-note"><p>${T("아래는 무료로 공개된 폰트만 보여 드립니다.", "Only free releases are listed below.")} ${note} ${T("유료 서체는 라이선스를 구매한 뒤 판매처를 통해 이용할 수 있어요.", "Paid typefaces can be used after buying a license from the vendor.")} <a href="${esc(rule.url)}" target="_blank" rel="noopener nofollow">${go}</a></p></div>`;
     if (rule && !freeHit) {
-      const cat = /명조|바탕|serif|myeong/i.test(q) ? "명조" : /고딕|돋움|sans|gothic|helvetica|futura|avenir|frutiger|univers/i.test(q) ? "고딕" : /손글씨|필기|script/i.test(q) ? "손글씨" : "";
-      const alts = cat ? FONTS.filter((f) => f.category === cat && !f.intro).sort((a, b) => b.pop - a.pop).slice(0, 5) : [];
       html += `<div class="paid-note"><p class="pn-h"><span class="pn-tag">${rule.bundled ? T("유료·번들", "Paid · bundled") : T("유료", "Paid")}</span> ${T(`‘${esc(q)}’은(는) ${esc(rule.label)}로 보입니다`, `“${esc(q)}” looks like a ${esc(rule.label_en || rule.label)}`)}</p>
         <p>${note} ${rule.bundled ? T("LETSUM에서는 해당 파일을 제공하지 않습니다. <b>이미 보유한 번들·구매 라이선스가 사용 목적을 허용하면 그 범위에서 이용할 수 있으며, 추가 권한이 필요한 경우에만 판매처에 문의하세요.</b>", "LETSUM does not provide this font file. <b>If your existing bundled or purchased license covers your use, you can use it within that scope. Contact the vendor only when additional rights are needed.</b>") : T(`LETSUM은 상업용 무료 폰트만 소개하므로 여기서는 받을 수 없어요. <b>${esc(rule.label)}류는 유료이므로 라이선스를 구매한 뒤 판매처를 통해 이용할 수 있습니다.</b>`, `LETSUM lists only fonts that are free for commercial use, so it is not available here. <b>It is a paid typeface: buy a license and get it from the vendor.</b>`)}</p>
         <p class="pn-act"><a class="btn sm" href="${esc(rule.url)}" target="_blank" rel="noopener nofollow">${go}</a><small>${T("쓰려는 곳(인쇄·웹·영상·앱·로고)이 라이선스 범위에 드는지 판매처에서 꼭 확인하세요.", "Check with the vendor that your use (print, web, video, app, logo) is covered by the license.")}</small></p>
-        ${alts.length ? `<p class="pn-alt">${T(`비슷한 무료 ${cat}`, "Similar free fonts")}: ${alts.map((f) => `<button class="linklike" data-open="${f.id}">${esc(f.name)}</button>`).join(" · ")}</p>` : ""}</div>`;
+        </div>`;
+    }
+    if ((bundle || rule) && !freeHit) {
+      const group = FONT_ALTERNATIVES.find(g => g.rx && g.rx.test(nk(q))) || FONT_ALTERNATIVES.find(g => g.id === (EN ? "general-en" : "general-ko"));
+      const items = group ? group.items.filter(f => {
+        const current = FONTS.find(x => x.id === f.id);
+        return !current || (!current.intro && current.status === "verified" && current.license === "OFL" && ["print","web","video","embed","bici","package","ofl"].every(k => current.matrix[k] === "ok"));
+      }).slice(0,3) : [];
+      if (items.length) html += `<section class="font-alternatives" aria-label="${T("상업용 무료 대체 폰트", "Free commercial-use font alternatives")}">
+        <h3>${T("상업용 무료 대체 폰트", "Free commercial-use font alternatives")}</h3>
+        <p><b>${esc(T(group.title,group.title_en))}</b> · ${esc(T(group.reason,group.reason_en))}${group.source ? ` <a href="${esc(group.source)}" target="_blank" rel="noopener">${T("제작사 설명 ↗", "Designer notes ↗")}</a>` : ""}</p>
+        <div class="font-alt-grid">${items.map(f => `<article class="font-alt-card"><strong>${esc(uiEn ? f.en : f.name)}</strong><span>${f.language === "en" ? T("영문 중심", "Latin-focused") : T("한글 지원", "Korean support")} · ${esc(T(f.category,({"고딕":"Sans serif","명조":"Serif","손글씨":"Handwriting","디스플레이":"Display"})[f.category] || f.category))} · OFL</span><a class="btn sm" href="/font/${encodeURIComponent(f.id)}.html${uiEn ? '?ui=en' : ''}">${T("미리보기·사용 조건 →", "Preview & license →")}</a></article>`).join("")}</div>
+        <p class="font-alt-note">${T("상업 이용 가능한 OFL 검증 폰트입니다. 파일 재배포 시 저작권·라이선스 고지를 유지하고, 수정본은 예약 글꼴 이름 조건을 확인하세요. 교체 후 글자 지원·줄바꿈·굵기를 확인하세요.", "Verified OFL fonts allow commercial use. Keep copyright and license notices when redistributing files and check reserved font names for modified versions. Check glyph coverage, line breaks and weights after replacement.")}</p>
+      </section>`;
     }
     if (!list.length && !rule) {
       const sims = similarFonts(q);

@@ -409,3 +409,5 @@ require("node:child_process").execFileSync(process.execPath, [path.join(__dirnam
   fs.writeFileSync(SP, JSON.stringify(Object.fromEntries(Object.keys(next).sort().map((k) => [k, next[k]])), null, 0).replace(/\],"/g, '],\n"') + "\n");
   console.log(`sitemap lastmod: 그대로 ${kept} · 내용 바뀜 ${changed} · 처음 기록 ${fresh}`);
 }
+
+require("./build_font_alternatives.js");
