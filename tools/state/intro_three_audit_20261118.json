@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-18",
+  "records": [
+    {
+      "id": "k-griun-myoeun-ddobak",
+      "officialPage": "https://www.griun.co.kr/fonts/myoeunddobak",
+      "licenseURL": "https://www.griun.co.kr/fonts/myoeunddobak",
+      "files": [
+        {
+          "file": "myoeunddobak.ttf",
+          "sha256": "bea67f3a2973561ed9e7bc3b48e62f44508ad87720ca7b30e2e32cefc4549656",
+          "names": {
+            "0": "Copyright © TypeE. Corp. & Kim Hyo Eun, All rights reserved. Modification of this file requires prior written permission from © TypeE. Corp.",
+            "1": "Griun Myoeun ddobak",
+            "2": "Regular",
+            "4": "Griun Myoeun ddobak Rg",
+            "5": "Version 1.000",
+            "6": "Griun_Myoeunddobak-Rg",
+            "13": "www.griun.co.kr",
+            "14": "www.griun.co.kr"
+          },
+          "weight": 400,
+          "fsType": 0,
+          "hangul": 11172,
+          "hanja": 0,
+          "valid": true
+        }
+      ],
+      "specimen": "img/specimen/k-griun-myoeun-ddobak.png",
+      "webfontPublished": false
+    },
+    {
+      "id": "k-griun-sobokhee",
+      "officialPage": "https://www.griun.co.kr/fonts/sobokhee",
+      "licenseURL": "https://www.griun.co.kr/fonts/sobokhee",
+      "files": [
+        {
+          "file": "sobokhee-bold.ttf",
+          "sha256": "5a781422450bfcb34f171e29eadcc02559ccafedb36cb6a040ea4e174e11ac25",
+          "names": {
+            "0": "Copyright © TypeE. Corp. & Park So yeon, All rights reserved. Modification of this file requires prior written permission from TypeE. Corp.",
+            "1": "Griun Sobokhee Bold",
+            "2": "Bold",
+            "4": "Griun Sobokhee Bold Bold",
+            "5": "Version 1.000",
+            "6": "GriunSobokheeBold-Bold",
+            "13": "https://www.griun.co.kr/license",
+            "14": "https://www.griun.co.kr/license"
+          },
+          "weight": 700,
+          "fsType": 8,
+          "hangul": 2780,
+          "hanja": 0,
+          "valid": true
+        },
+        {
+          "file": "sobokhee-light.ttf",
+          "sha256": "92eb51907df108cf19ce066c0ebf2ec8d6185cf222a95ea9b32dd0c7077a0951",
+          "names": {
+            "0": "Copyright © TypeE. Corp. & Park So yeon, All rights reserved. Modification of this file requires prior written permission from TypeE. Corp.",
+            "1": "Griun Sobokhee Light",
+            "2": "Light",
+            "4": "Griun Sobokhee Light Light",
+            "5": "Version 1.000",
+            "6": "GriunSobokheeLight-Light",
+            "13": "https://www.griun.co.kr/license",
+            "14": "https://www.griun.co.kr/license"
+          },
+          "weight": 300,
+          "fsType": 8,
+          "hangul": 2780,
+          "hanja": 0,
+          "valid": true
+        },
+        {
+          "file": "sobokhee-regular.otf",
+          "sha256": "d2b8a72e17ba1fa0a003528cccd5a954dd71538673989d6479d6ba345bc3fa8a",
+          "names": {
+            "0": "Copyright © TypeE. Corp. & Park So yeon, All rights reserved. Modification of this file requires prior written permission from TypeE. Corp.",
+            "1": "Griun Sobokhee",
+            "2": "Regular",
+            "4": "Griun Sobokhee Rg",
+            "5": "Version 1.000;Glyphs 3.5 (3532)",
+            "6": "Griun_Sobokhee-Rg",
+            "13": "https://www.griun.co.kr/license",
+            "14": "https://www.griun.co.kr/license"
+          },
+          "weight": 400,
+          "fsType": 0,
+          "hangul": 2780,
+          "hanja": 0,
+          "valid": true
+        }
+      ],
+      "specimen": "img/specimen/k-griun-sobokhee.png",
+      "webfontPublished": false
+    },
+    {
+      "id": "k-sejong-2026-seoyeon",
+      "officialPage": "https://www.xn--ob0but22ae12auiq.org/세종대왕상글꼴배포",
+      "licenseURL": "https://www.xn--ob0but22ae12auiq.org/_files/ugd/a6297e_1ca6e5dab73b49f187a7b82331c55775.pdf",
+      "files": [
+        {
+          "file": "seoyeon.otf",
+          "sha256": "9de7e3d1328b1cdecb64d5348add314cc5eac4a204986a568e546d678a8a0cb5",
+          "names": {
+            "0": "Copyright © 2026 SCF, Soyeon Park. All Rights Reserved.",
+            "1": "King Sejong Award 2026 Seoyeon",
+            "2": "Regular",
+            "4": "King Sejong Award 2026 Seoyeon",
+            "5": "Version 1.000; Build 20261007",
+            "6": "KingSejongAward2026Seoyeon",
+            "13": null,
+            "14": "https://www.scf.or.kr/"
+          },
+          "weight": 400,
+          "fsType": 8,
+          "hangul": 2780,
+          "hanja": 0,
+          "valid": true
+        },
+        {
+          "file": "seoyeon.ttf",
+          "sha256": "eb802af096b8e56c213bc9ffebab7f2343696650c20514ec3f1e7c6989b31553",
+          "names": {
+            "0": "Copyright © 2026 SCF, Soyeon Park. All Rights Reserved.",
+            "1": "King Sejong Award 2026 Seoyeon",
+            "2": "Regular",
+            "4": "King Sejong Award 2026 Seoyeon",
+            "5": "Version 1.000; Build 20261007",
+            "6": "KingSejongAward2026Seoyeon",
+            "13": null,
+            "14": "https://www.scf.or.kr/"
+          },
+          "weight": 400,
+          "fsType": 8,
+          "hangul": 2780,
+          "hanja": 0,
+          "valid": true
+        }
+      ],
+      "specimen": "img/specimen/k-sejong-2026-seoyeon.png",
+      "webfontPublished": false
+    }
+  ],
+  "officialDownloads": {
+    "myoeunddobak.ttf": "https://d26ciffk7xlrlz.cloudfront.net/free-fonts/myoeunddobak/Griun_Myoeunddobak-Rg.ttf",
+    "sobokhee-bold.ttf": "https://d26ciffk7xlrlz.cloudfront.net/free-fonts/sobokhee/bold1/Griun_Sobokhee-Bd.ttf",
+    "sobokhee-regular.otf": "https://d26ciffk7xlrlz.cloudfront.net/free-fonts/sobokhee/regular/Griun_Sobokhee-Rg.otf",
+    "sobokhee-light.ttf": "https://d26ciffk7xlrlz.cloudfront.net/free-fonts/sobokhee/thin2/Griun_Sobokhee-Lg.ttf",
+    "seoyeon.zip": "https://www.xn--ob0but22ae12auiq.org/_files/archives/a6297e_96d8dbf6c15e47fc9ed76a457bc4c06c.zip",
+    "seoyeon-guide.pdf": "https://www.xn--ob0but22ae12auiq.org/_files/ugd/a6297e_1ca6e5dab73b49f187a7b82331c55775.pdf"
+  }
+}
