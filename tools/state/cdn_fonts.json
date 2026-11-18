@@ -4167,5 +4167,12 @@
   "files": {
    "400": "https://ownglyph-out-bucket.s3.ap-northeast-2.amazonaws.com/ffc8bf21-2a21-4c23-9924-067143cda538/%EC%98%A8%EA%B8%80%EC%9E%8E%20%EC%96%80.woff2"
   }
+ },
+ "k-nemobandeut": {
+  "page": "https://peartype.kr/#font-nemo",
+  "css": "https://peartype.kr/embed/nemo.css",
+  "files": {
+   "400": "https://peartype.kr/fonts/Nemobandeut.woff2?v=3"
+  }
  }
 }

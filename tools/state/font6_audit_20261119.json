@@ -1,0 +1,594 @@
+{
+  "date": "2026-11-19",
+  "fonts": [
+    {
+      "id": "k-pear-sans",
+      "name": "페어산스",
+      "en": "Pear Sans",
+      "designer": "이희배 · Pear Type Foundry",
+      "page": "https://peartype.kr/#font-pearsans",
+      "originalUrl": "https://peartype.kr/#font-pearsans",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "axes": {
+        "wght": [
+          100.0,
+          100.0,
+          700.0
+        ]
+      },
+      "variable": true,
+      "hangul": 11172,
+      "hanja": 0,
+      "latin": 26,
+      "copyright": "Copyright 2026 The Pear Sans Project Authors (https://github.com/pearway/pear-sans)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.203",
+      "sha256": "49f57159f11f7e33dce9fcdf3802a0408fc477df7d8afd4d9758d3008b44a716",
+      "bytes": 1017696,
+      "originalUnmodified": true
+    },
+    {
+      "id": "k-nemobandeut",
+      "name": "네모반듯체",
+      "en": "NemoBandeut",
+      "designer": "이희배 · Pear Type Foundry",
+      "page": "https://peartype.kr/#font-nemo",
+      "originalUrl": "https://peartype.kr/fonts/Nemobandeut.woff2?v=3",
+      "weights": [
+        400
+      ],
+      "axes": {},
+      "variable": false,
+      "hangul": 2780,
+      "hanja": 0,
+      "latin": 0,
+      "copyright": "Copyright © 2026 Pear Type Foundry. All Rights Reserved.",
+      "embeddedLicense": null,
+      "version": "Version 1.000",
+      "sha256": "9abf81b2b79ad67f99ffed6d9d1420623f70f54cd462fcc3faf7537dff79b834",
+      "bytes": 84572,
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-allo",
+      "name": "Allo",
+      "en": "Allo",
+      "designer": "Josh Puckett",
+      "page": "https://github.com/joshpuckett/allo",
+      "originalUrl": "https://raw.githubusercontent.com/joshpuckett/allo/main/fonts/variable/AlloVariable.ttf",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "axes": {
+        "opsz": [
+          9.0,
+          14.0,
+          32.0
+        ],
+        "wght": [
+          100.0,
+          400.0,
+          900.0
+        ],
+        "ROND": [
+          0.0,
+          50.0,
+          100.0
+        ]
+      },
+      "variable": true,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "copyright": "Copyright 2026 Josh Puckett (https://joshpuckett.me). Portions Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.003",
+      "sha256": "cdc994466d3a2dc77d5f72bd4f60c1bbf4d65dad5901ac064c7cc04e182c4fe4",
+      "bytes": 1190864,
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-geist-serif",
+      "name": "Geist Serif",
+      "en": "Geist Serif",
+      "designer": "Evil Rabbit · Andrés Briganti · Mark Davis · WORDMARK",
+      "page": "https://github.com/vercel/geist-font",
+      "originalUrl": "https://raw.githubusercontent.com/vercel/geist-font/main/fonts/GeistSerif/ttf/GeistSerif-Regular.ttf",
+      "weights": [
+        400
+      ],
+      "axes": {},
+      "variable": false,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "copyright": "Copyright 2026 The Geist Project Authors (https://github.com/vercel/geist-font)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.003",
+      "sha256": "22c4da0b51f73840378a0a6ea74d018c6e5b476475b01a5f15a3a306f798c9d5",
+      "bytes": 167052,
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-tiny5-mono",
+      "name": "Tiny5 Mono",
+      "en": "Tiny5 Mono",
+      "designer": "Stefan Schmidt · Gissio",
+      "page": "https://github.com/Gissio/font_Tiny5Mono",
+      "originalUrl": "https://raw.githubusercontent.com/Gissio/font_Tiny5Mono/main/fonts/variable/Tiny5Mono%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "axes": {
+        "wght": [
+          100.0,
+          400.0,
+          900.0
+        ],
+        "wdth": [
+          50.0,
+          100.0,
+          200.0
+        ],
+        "ROND": [
+          0.0,
+          0.0,
+          100.0
+        ],
+        "BLED": [
+          0.0,
+          0.0,
+          100.0
+        ],
+        "JITT": [
+          0.0,
+          0.0,
+          100.0
+        ]
+      },
+      "variable": true,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "copyright": "Copyright 2026 The Tiny5 Project Authors (https://github.com/Gissio/font_Tiny5)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 3.002",
+      "sha256": "4e7d717e2be6862b2b6986cabd7433c1744867e18de492d11617226fafc68c5f",
+      "bytes": 1426012,
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-tiny5-code",
+      "name": "Tiny5 Code",
+      "en": "Tiny5 Code",
+      "designer": "Stefan Schmidt · Gissio",
+      "page": "https://github.com/Gissio/font_Tiny5Mono",
+      "originalUrl": "https://raw.githubusercontent.com/Gissio/font_Tiny5Mono/main/fonts/variable/Tiny5Code%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "axes": {
+        "wght": [
+          100.0,
+          400.0,
+          900.0
+        ],
+        "wdth": [
+          50.0,
+          100.0,
+          200.0
+        ],
+        "ROND": [
+          0.0,
+          0.0,
+          100.0
+        ],
+        "BLED": [
+          0.0,
+          0.0,
+          100.0
+        ],
+        "JITT": [
+          0.0,
+          0.0,
+          100.0
+        ]
+      },
+      "variable": true,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "copyright": "Copyright 2026 The Tiny5 Project Authors (https://github.com/Gissio/font_Tiny5)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 3.002",
+      "sha256": "3223b6489a73f894592e86327d4faa77ed8b04e0ff80f3b9e9d972e66a6e2690",
+      "bytes": 1498036,
+      "originalUnmodified": true
+    }
+  ],
+  "browser": [
+    {
+      "id": "k-pear-sans",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "k-nemobandeut",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-allo",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-geist-serif",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-tiny5-mono",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-tiny5-code",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    }
+  ],
+  "originalsUnmodified": true,
+  "browserMirror": [
+    {
+      "id": "k-pear-sans",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "k-nemobandeut",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-allo",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-geist-serif",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-tiny5-mono",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-tiny5-code",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    }
+  ]
+}

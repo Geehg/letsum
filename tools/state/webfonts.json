@@ -6407,5 +6407,165 @@
   ],
   "originalUnmodified": true,
   "sha256": "3eaf7ea1c47c9409464aaaa4cc0a764bd9392c2a1d64fb85c05c06dd5b12cf3b"
+ },
+ "k-pear-sans": {
+  "name": "페어산스",
+  "en": "Pear Sans",
+  "page": "https://peartype.kr/#font-pearsans",
+  "source": "https://peartype.kr/#font-pearsans",
+  "license": "페어산스 OFL 1.1",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/k-pear-sans/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 11172,
+  "bytes": 1017696,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-6-20261119/files/k-pear-sans.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "49f57159f11f7e33dce9fcdf3802a0408fc477df7d8afd4d9758d3008b44a716"
+ },
+ "e-allo": {
+  "name": "Allo",
+  "en": "Allo",
+  "page": "https://github.com/joshpuckett/allo",
+  "source": "https://raw.githubusercontent.com/joshpuckett/allo/main/fonts/variable/AlloVariable.ttf",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-allo/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 1190864,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-6-20261119/files/e-allo.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "cdc994466d3a2dc77d5f72bd4f60c1bbf4d65dad5901ac064c7cc04e182c4fe4"
+ },
+ "e-geist-serif": {
+  "name": "Geist Serif",
+  "en": "Geist Serif",
+  "page": "https://github.com/vercel/geist-font",
+  "source": "https://raw.githubusercontent.com/vercel/geist-font/main/fonts/GeistSerif/ttf/GeistSerif-Regular.ttf",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-geist-serif/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 167052,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-6-20261119/files/e-geist-serif.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "22c4da0b51f73840378a0a6ea74d018c6e5b476475b01a5f15a3a306f798c9d5"
+ },
+ "e-tiny5-mono": {
+  "name": "Tiny5 Mono",
+  "en": "Tiny5 Mono",
+  "page": "https://github.com/Gissio/font_Tiny5Mono",
+  "source": "https://raw.githubusercontent.com/Gissio/font_Tiny5Mono/main/fonts/variable/Tiny5Mono%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-mono/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 1426012,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-6-20261119/files/e-tiny5-mono.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "4e7d717e2be6862b2b6986cabd7433c1744867e18de492d11617226fafc68c5f"
+ },
+ "e-tiny5-code": {
+  "name": "Tiny5 Code",
+  "en": "Tiny5 Code",
+  "page": "https://github.com/Gissio/font_Tiny5Mono",
+  "source": "https://raw.githubusercontent.com/Gissio/font_Tiny5Mono/main/fonts/variable/Tiny5Code%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-code/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 1498036,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-6-20261119/files/e-tiny5-code.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "3223b6489a73f894592e86327d4faa77ed8b04e0ff80f3b9e9d972e66a6e2690"
  }
 }
