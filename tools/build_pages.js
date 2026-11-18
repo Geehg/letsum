@@ -194,7 +194,8 @@ const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-
   R('<meta property="og:url" content="https://letsum.app/">', '<meta property="og:url" content="https://letsum.app/en/">');
   h = h.replace('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/" class="on">영문 폰트</a>');
   R('<a class="logo" href="index.html">', '<a class="logo" href="en/">');
-  h = h.replace(/<script src="js\/data\.js\?v=([\w]+)"><\/script>/, (m) => '<script>window.LS_LANG="en"</script>\n' + m + '\n<script src="js/data_en.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_en.js"))).digest("hex").slice(0, 8) + '"></script>');
+  h = h.replace(/<script src="js\/data\.js\?v=([\w.-]+)"><\/script>/, (m) => '<script>window.LS_LANG="en"</script>\n' + m + '\n<script src="js/data_en.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_en.js"))).digest("hex").slice(0, 8) + '"></script>');
+  if (!h.includes('window.LS_LANG="en"') || !h.includes('src="js/data_en.js?')) throw new Error("en 목록 데이터 연결 누락");
   // 한글 전용 필터(완성형·옛한글·한자, 입력 문장 글자 지원)는 뺀다
   h = h.replace(/\s*<button class="fbtn" data-cov="(11172|old|hanja)">[^<]*<\/button>/g, "");
   h = h.replace(/<label class="fcheck"[^>]*><input type="checkbox" id="coverOnly">[\s\S]*?<\/label>/, '<input type="checkbox" id="coverOnly" hidden>');
@@ -215,7 +216,8 @@ const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-
   R('<meta property="og:url" content="https://letsum.app/">', '<meta property="og:url" content="https://letsum.app/dingbat/">');
   h = h.replace('<a href="index.html" class="on">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/">딩벳 폰트</a>', '<a href="index.html">한글 폰트</a><a href="en/">영문 폰트</a><a href="dingbat/" class="on">딩벳 폰트</a>');
   R('<a class="logo" href="index.html">', '<a class="logo" href="dingbat/">');
-  h = h.replace(/<script src="js\/data\.js\?v=([\w]+)"><\/script>/, (m) => '<script>window.LS_LANG="db"</script>\n' + m + '\n<script src="js/data_db.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_db.js"))).digest("hex").slice(0, 8) + '"></script>');
+  h = h.replace(/<script src="js\/data\.js\?v=([\w.-]+)"><\/script>/, (m) => '<script>window.LS_LANG="db"</script>\n' + m + '\n<script src="js/data_db.js?v=' + require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", "data_db.js"))).digest("hex").slice(0, 8) + '"></script>');
+  if (!h.includes('window.LS_LANG="db"') || !h.includes('src="js/data_db.js?')) throw new Error("db 목록 데이터 연결 누락");
   h = h.replace(/\s*<button class="fbtn" data-cov="(11172|old|hanja)">[^<]*<\/button>/g, "");
   h = h.replace(/<label class="fcheck"[^>]*><input type="checkbox" id="coverOnly">[\s\S]*?<\/label>/, '<input type="checkbox" id="coverOnly" hidden>');
   fs.mkdirSync(path.join(ROOT, "dingbat"), { recursive: true });
@@ -225,7 +227,7 @@ const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-
 {
   const md5 = (f) => require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, "js", f))).digest("hex").slice(0, 8);
   const pp = path.join(ROOT, "pairing.html");
-  if (fs.existsSync(pp)) fs.writeFileSync(pp, fs.readFileSync(pp, "utf8").replace(/js\/data\.js\?v=[\w]+/, "js/data.js?v=" + md5("data.js")).replace(/js\/data_en\.js\?v=[\w]+/, "js/data_en.js?v=" + md5("data_en.js")));
+  if (fs.existsSync(pp)) fs.writeFileSync(pp, fs.readFileSync(pp, "utf8").replace(/js\/data\.js\?v=[\w.-]+/, "js/data.js?v=" + md5("data.js")).replace(/js\/data_en\.js\?v=[\w.-]+/, "js/data_en.js?v=" + md5("data_en.js")));
 }
 const today = new Date().toISOString().slice(0, 10);
 function topicPage(t, list) {
