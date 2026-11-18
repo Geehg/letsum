@@ -67,7 +67,13 @@ def fetch(d):
             continue
     return None  # → 글자 아바타 사용
 
-out, got, miss = {}, {}, set()
+selected = set(sys.argv[sys.argv.index("--ids") + 1].split(",")) if "--ids" in sys.argv else None
+output_path = os.path.join(ROOT, "html", "data", "avatars.json")
+out = json.load(open(output_path, encoding="utf-8")) if selected and os.path.exists(output_path) else {}
+if selected:
+    FONTS = [f for f in FONTS if f["id"] in selected]
+    for fid in selected: out.pop(fid, None)
+got, miss = {}, set()
 for f in FONTS:
     d, label = domain_of(f)
     if not d: continue
@@ -75,4 +81,4 @@ for f in FONTS:
     if got[d]: out[f["id"]] = {"icon": f"img/src/{d}.png", "label": label or d}
     else: miss.add(d)
 json.dump(out, open(os.path.join(ROOT, "html", "data", "avatars.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-print(f"아이콘 {sum(1 for v in got.values() if v)}개 도메인 · 폰트 {len(out)}/{len(FONTS)}종 연결 · 없음: {', '.join(sorted(miss)) or '-'}")
+print(f"아이콘 {sum(1 for v in got.values() if v)}개 도메인 · 대상 {sum(f['id'] in out for f in FONTS)}/{len(FONTS)}종 연결 · 없음: {', '.join(sorted(miss)) or '-'}")

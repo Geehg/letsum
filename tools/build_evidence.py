@@ -10,9 +10,19 @@ from fontTools.ttLib import TTFont
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
 js = "const vm=require('vm'),fs=require('fs');const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(process.argv[1],'utf8')+';this.o=FONTS',c);process.stdout.write(JSON.stringify(c.o))"
 FONTS = json.loads(subprocess.run(["node", "-e", js, os.path.join(ROOT, "html", "js", "data.js")], capture_output=True, text=True, check=True).stdout)
+en_data = os.path.join(ROOT, "html", "js", "data_en.js")
+if os.path.exists(en_data):
+    en_js = "const fs=require('fs');const F=new Function('var window={};'+fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8')+';return FONTS_EN')();console.log(JSON.stringify(F))"
+    FONTS += json.loads(subprocess.run(["node", "-e", en_js, os.path.join(ROOT, "html", "js", "data.js"), en_data], capture_output=True, text=True, check=True).stdout)
 st = lambda n: json.load(open(os.path.join(HERE, "state", n), encoding="utf-8"))
 chk = {r["id"]: r for r in st("license_check.json")}; man = st("license_manual.json"); wf = st("webfonts.json")
-mirror = sys.argv[1] if len(sys.argv) > 1 else None; out = {}
+mirror = sys.argv[1] if len(sys.argv) > 1 else None
+selected = set(sys.argv[sys.argv.index("--ids") + 1].split(",")) if "--ids" in sys.argv else None
+out_path = os.path.join(ROOT, "html", "data", "evidence.json")
+out = json.load(open(out_path, encoding="utf-8")) if selected and os.path.exists(out_path) else {}
+if selected:
+    FONTS = [f for f in FONTS if f["id"] in selected]
+    for fid in selected: out.pop(fid, None)
 for f in FONTS:
     fid = f["id"]; r = {}
     m = man.get(fid); c = chk.get(fid)

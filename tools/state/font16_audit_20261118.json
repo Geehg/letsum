@@ -1,0 +1,898 @@
+{
+  "date": "2026-11-18",
+  "files": [
+    {
+      "id": "e-agrave-pro",
+      "name": "Agrave Pro",
+      "en": "Agrave Pro",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "designer": "Daan Jobsis",
+      "license": "OFL",
+      "page": "https://github.com/daanjobsis/agrave-pro",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/agravepro/AgravePro%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "2fc5eb1c6f3004b2842424230f16b2bf7e859b9310190a6db23604803841388c",
+      "copyright": "Copyright 2026 The Agràve Pro Project Authors (https://github.com/daanjobsis/agrave-pro)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.100",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-asap-sharp",
+      "name": "Asap Sharp",
+      "en": "Asap Sharp",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "designer": "Omnibus-Type",
+      "license": "OFL",
+      "page": "https://github.com/Omnibus-Type/Asap_Sharp",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/asapsharp/AsapSharp%5Bwdth%2Cwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu",
+        "vietnamese"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "0c5f2706889214e8102fc97890e34d5f3a02f5203c198c7711987efcf6124e23",
+      "copyright": "Copyright 2026 The Asap Sharp Project Authors (https://github.com/Omnibus-Type/Asap_Sharp)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 3.002",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-clarity-city",
+      "name": "Clarity City",
+      "en": "Clarity City",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "designer": "VMware, Chris Simpson",
+      "license": "OFL",
+      "page": "https://github.com/googlefonts/clarity-city",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/claritycity/ClarityCity%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "eb7aafb087140dd2fe38612cd82d2b61a18948ad3fd3688b7c4989441e6b942e",
+      "copyright": "Copyright 2019 The Clarity City Project Authors (https://github.com/googlefonts/clarity-city)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.000",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-firjar",
+      "name": "Firjar",
+      "en": "Firjar",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "designer": "Yazeed Omar",
+      "license": "OFL",
+      "page": "https://github.com/Mestaratype/Firjar",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/firjar/Firjar%5Bwdth%2Cwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "arabic",
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "77a23cca553d3d4f992ffe46dfb9687e54261cc82b5e7a4963ad026e64f561be",
+      "copyright": "Copyright 2025 The Firjar Project Authors (https://github.com/Mestaratype/Firjar)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 2.971",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-geomini",
+      "name": "Geomini",
+      "en": "Geomini",
+      "weights": [
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "designer": "FontBob",
+      "license": "OFL",
+      "page": "https://github.com/fontbob/geomini",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/geomini/Geomini%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "baf3fa2b1078c6a5cac05196889c01d63536ed6233e705262c7e6d4fbefffa59",
+      "copyright": "Copyright 2026 The Geomini Project Authors (https://github.com/fontbob/geomini)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1.\nThis license is copied below, and is also available with a FAQ at:\nhttps://openfontlicense.org",
+      "version": "Version 1.000",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-libre-caslon-condensed",
+      "name": "Libre Caslon Condensed",
+      "en": "Libre Caslon Condensed",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "designer": "Pablo Impallari, Rodrigo Fuenzalida, Ertekin Erdin",
+      "license": "OFL",
+      "page": "https://github.com/ertekinno/libre-caslon-condensed",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/librecasloncondensed/LibreCaslonCondensed%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "b73d8ad2f728d7be5276073055cc2b50e90fd3a76bd03d5b4c1660162e613a79",
+      "copyright": "Copyright 2020 The Libre Caslon Condensed Project Authors (https://github.com/ertekinno/libre-caslon-condensed)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 2.000",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-tiny5-duo",
+      "name": "Tiny5 Duo",
+      "en": "Tiny5 Duo",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "designer": "Stefan Schmidt",
+      "license": "OFL",
+      "page": "https://github.com/Gissio/font_tiny5",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/tiny5duo/Tiny5Duo%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "armenian",
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "greek-ext",
+        "latin",
+        "latin-ext",
+        "menu",
+        "vietnamese"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "d7bb7a796691873bf0e5070bc9ff68d720be50254674ad09e56242af6381112e",
+      "copyright": "Copyright 2026 The Tiny5 Project Authors (https://github.com/Gissio/font_tiny5)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 2.007",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-valley-sans",
+      "name": "Valley Sans",
+      "en": "Valley Sans",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "designer": "Niklas Ekholm, Lari Mörö",
+      "license": "OFL",
+      "page": "https://github.com/HelsinkiTypeStudio/valley-sans",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/valleysans/ValleySans%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "fd9f6ded65b97fe6a6d1e747604ce489a47660882250356ad210f2c65df9f9d1",
+      "copyright": "Copyright 2026 The Valley Sans Project Authors (https://github.com/HelsinkiTypeStudio/valley-sans)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.001",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-xmind",
+      "name": "Xmind",
+      "en": "Xmind",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "designer": "lan",
+      "license": "OFL",
+      "page": "https://github.com/lamzhonghang/xmind",
+      "originalUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/xmind/Xmind%5Bwght%5D.ttf",
+      "variable": true,
+      "subsets": [
+        "cyrillic",
+        "cyrillic-ext",
+        "greek",
+        "latin",
+        "latin-ext",
+        "menu"
+      ],
+      "released": "",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "64cd402ec7bb4f9343bad5e6fe63556ee16dcd74ed94e8ccfa248eaee327c3b5",
+      "copyright": "Copyright 2025 The Xmind Project Authors (https://github.com/lamzhonghang/xmind)",
+      "embeddedLicense": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "version": "Version 1.001",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-munjae",
+      "name": "UhBee Munjae",
+      "en": "UhBee Munjae",
+      "koName": "어비 문재체",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeMunjae.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2018",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "8aa95a508ae79ef37a25f229451cf389df3912d2a4e3164d663c75a0b2458ea3",
+      "copyright": "Copyright © UhBee FONT 2018. All Rights Reserved.",
+      "embeddedLicense": "Free License",
+      "version": "Version 1.00 October 26, 2018, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-uky-eng",
+      "name": "UhBee UKY ENG",
+      "en": "UhBee UKY ENG",
+      "koName": "어비 우키체",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeUKYENG.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2018",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "016907999b9fe311cfbc443dc8fa64eac70ee5d968b7eb1cd30f7c6917879a91",
+      "copyright": "Copyright © UhBee FONT 2018. All Rights Reserved.",
+      "embeddedLicense": "Free License",
+      "version": "Version 1.00 October 19, 2018, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-minani-eng",
+      "name": "UhBee MINANI ENG",
+      "en": "UhBee MINANI ENG",
+      "koName": "어비 미나니체",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeMINANIENG.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2018",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "7cd15b680061554372ecf4305c21bfdd9fb99849a109f3b14a49c90a73e334cc",
+      "copyright": "Copyright © UhBee FONT 2018. All Rights Reserved.",
+      "embeddedLicense": "Free License",
+      "version": "Version 1.00 October 19, 2018, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-kimu-bh",
+      "name": "UhBee KIMU BH",
+      "en": "UhBee KIMU BH",
+      "koName": "어비 키무 BH",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeKIMUBH.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2019",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "18c089bb45fe3679d9902456b34d60323379daa31949443240523ec596408ccd",
+      "copyright": "Copyright © UhBee FONT. All Rights Reserved.",
+      "embeddedLicense": null,
+      "version": "Version 1.00 December 3, 2019, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-kimu-hj",
+      "name": "UhBee KIMU HJ",
+      "en": "UhBee KIMU HJ",
+      "koName": "어비 키무 HJ",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeKIMUHJ.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2019",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "810f8135bb1f8a3fe25181b9d9276281fcf9543df9d0c103510ced1fd9f35d05",
+      "copyright": "Copyright © UhBee FONT. All Rights Reserved.",
+      "embeddedLicense": null,
+      "version": "Version 1.00 December 3, 2019, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "e-uhbee-kimu-sw",
+      "name": "UhBee KIMU SW",
+      "en": "UhBee KIMU SW",
+      "koName": "어비 키무 SW",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/en/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeKIMUSW.ttf",
+      "variable": false,
+      "subsets": [
+        "latin"
+      ],
+      "released": "2019",
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "917c0e5b14ba9eadba576811f5a3969b8b7e6ccb01fe17414719de259c8cdfe5",
+      "copyright": "Copyright © UhBee FONT. All Rights Reserved.",
+      "embeddedLicense": null,
+      "version": "Version 1.00 December 3, 2019, initial release",
+      "originalUnmodified": true
+    },
+    {
+      "id": "k-uhbee-minica-choi",
+      "name": "어비 미죵최체",
+      "en": "UhBee minica choi",
+      "weights": [
+        400
+      ],
+      "designer": "어비(송태민)",
+      "license": "어비폰트 무료 배포 라이선스",
+      "page": "https://uhb.kr/uhbeefont/minicachoi/",
+      "originalUrl": "https://uhb.kr/uhbeefont/files/UhBeeminicachoi.ttf",
+      "variable": false,
+      "subsets": [
+        "korean",
+        "latin"
+      ],
+      "released": "2013",
+      "hangul": 2449,
+      "hanja": 0,
+      "latin": 26,
+      "sha256": "3eaf7ea1c47c9409464aaaa4cc0a764bd9392c2a1d64fb85c05c06dd5b12cf3b",
+      "copyright": "Made with Scanahand. Copyright © uhbeefont.com 2013. All Rights Reserved.",
+      "embeddedLicense": null,
+      "version": "Version 1.00 March 5, 2013, initial release",
+      "originalUnmodified": true
+    }
+  ],
+  "browser": [
+    {
+      "id": "e-agrave-pro",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-asap-sharp",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-clarity-city",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-firjar",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-geomini",
+      "weights": [
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-libre-caslon-condensed",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-tiny5-duo",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-valley-sans",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-xmind",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-munjae",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-uky-eng",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-minani-eng",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-kimu-bh",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-kimu-hj",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-uhbee-kimu-sw",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "k-uhbee-minica-choi",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    }
+  ],
+  "originalsUnmodified": true
+}

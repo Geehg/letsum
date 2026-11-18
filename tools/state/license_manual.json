@@ -7911,5 +7911,101 @@
   "page": "https://www.reaticindustry.com/reaticfont",
   "checked": "2026-11-18",
   "evidence": "이미지·영상·인쇄물 등 상업적·비상업적 결과물 제작에 무료로 사용할 수 있습니다. 저작권은 리틱인더스트리에 있으며 폰트 파일(TTF/OTF) 자체의 유료 판매, 임의 수정·가공·무단 재배포는 금지됩니다. 웹폰트·앱 임베딩과 BI/CI의 구체적 허용 범위는 원문에 별도로 명시되어 있지 않아 제작사 확인이 필요합니다. LETSUM은 원본으로 렌더링한 견본 이미지만 제공하며, 폰트 파일은 공식 배포처에서 직접 내려받으세요. 공식 ZIP LICENSE.txt와 각 OTF name 13 이용조건 대조 일치."
+ },
+ "e-agrave-pro": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/agravepro/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-asap-sharp": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/asapsharp/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-clarity-city": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/claritycity/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-firjar": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/firjar/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-geomini": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/geomini/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-libre-caslon-condensed": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/librecasloncondensed/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-tiny5-duo": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/tiny5duo/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-valley-sans": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/valleysans/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-xmind": {
+  "license": "OFL 원본·고지 유지",
+  "page": "https://github.com/google/fonts/blob/main/ofl/xmind/OFL.txt",
+  "checked": "2026-11-18",
+  "evidence": "Google Fonts 공식 저장소 OFL.txt 전문과 원본 TTF name 0·13 대조. 상업 이용·임베딩·수정·재배포 허용. 파일 단독 판매 금지, 저작권 및 라이선스 유지, 수정본 동일 OFL 및 예약 이름 조건 준수. 원본 파일은 변환 없이 보존."
+ },
+ "e-uhbee-munjae": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "e-uhbee-uky-eng": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "e-uhbee-minani-eng": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "e-uhbee-kimu-bh": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "e-uhbee-kimu-hj": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "e-uhbee-kimu-sw": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
+ },
+ "k-uhbee-minica-choi": {
+  "license": "어비폰트 무료 배포 라이선스",
+  "page": "https://uhb.kr/uhbeefont/#license",
+  "checked": "2026-11-18",
+  "evidence": "개인·기업의 상업적 이용, 인쇄·광고·웹·영상·포장·로고/BI·앱 및 웹폰트 임베딩, 변형 후 재배포를 허용합니다. 폰트 파일 자체를 유료로 판매하거나 조건부로 교환하는 행위는 금지합니다. 출처 표기는 의무가 아닙니다. LETSUM은 공식 TTF 원본을 변환 없이 미리보기에 사용하며 다운로드는 제작자의 공식 배포처로 연결합니다."
  }
 }

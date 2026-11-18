@@ -104,12 +104,12 @@ def fontshare_ofl(old):
 
 def entry_js(e):
     ks = ["id", "name", "en", "family", "designer", "holder", "category", "tags", "mood", "weights", "formats", "cov", "glyphs", "subsets", "variable",
-          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "fontshare", "desc", "manual"]
+          "webfont", "webfontSrc", "dl", "license", "matrix", "verified", "status", "released", "releasedSrc", "releasedUrl", "pair", "pop", "added", "fontshare", "desc", "manual", "manualSource", "searchAliases", "intro", "old", "hanja"]
     parts = []
     for k in ks:
         if k not in e: continue
         v = e[k]
-        if k == "matrix": parts.append(f"matrix: OFL_ALL_OK")
+        if k == "matrix": parts.append("matrix: " + ("OFL_ALL_OK" if v == "OFL_ALL_OK" else js(v)))
         elif k == "webfont": parts.append("webfont: { " + ", ".join(f'{w}: {js(u)}' for w, u in v.items()) + " }")
         else: parts.append(f"{k}: {js(v)}")
     return "  { " + ", ".join(parts) + " }"
@@ -121,6 +121,15 @@ def load_existing():
     code = "const fs=require('fs');const src=fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8');const F=new Function('var window={};'+src+';return FONTS_EN')();console.log(JSON.stringify(F))"
     try: return {f["id"]: f for f in json.loads(subprocess.run(["node", "-e", code, os.path.join(ROOT, "html", "js", "data.js"), OUT], capture_output=True, text=True, check=True).stdout)}
     except Exception: return {}
+
+
+def preserve_manual_sources(generated, existing):
+    """Keep verified publisher sources/conditions, even when absent from Google Fonts."""
+    pinned = {fid: f for fid, f in existing.items() if f.get("manualSource")}
+    merged = [pinned.get(f["id"], f) for f in generated]
+    seen = {f["id"] for f in merged}
+    merged.extend(f for fid, f in pinned.items() if fid not in seen)
+    return merged
 
 
 def main():
@@ -175,6 +184,7 @@ def main():
         out.append(e)
         if (i + 1) % 50 == 0: print(f"… {i + 1}/{len(cand)}")
     out += fontshare_ofl(old)
+    out = preserve_manual_sources(out, old)
     body = ",\n".join(entry_js(e) for e in out)
     hdr = ("// LETSUM 영문 폰트 데이터 — tools/build_en_data.py가 Google Fonts 공식 메타데이터로 생성(손으로 고친 항목은 manual: true).\n"
            "// /en/ 페이지에서만 쓴다: data.js 다음에 불러오고, LS_LANG === \"en\"이면 FONTS를 이 목록으로 바꾼다.\n")

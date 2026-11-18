@@ -5963,5 +5963,449 @@
    "files/770--balsa/770Balsa-Regular.ttf"
   ],
   "originalUnmodified": true
+ },
+ "e-agrave-pro": {
+  "name": "Agrave Pro",
+  "en": "Agrave Pro",
+  "page": "https://github.com/daanjobsis/agrave-pro",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/agravepro/AgravePro%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-agrave-pro/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 0,
+  "bytes": 338120,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-agrave-pro.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "2fc5eb1c6f3004b2842424230f16b2bf7e859b9310190a6db23604803841388c"
+ },
+ "e-asap-sharp": {
+  "name": "Asap Sharp",
+  "en": "Asap Sharp",
+  "page": "https://github.com/Omnibus-Type/Asap_Sharp",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/asapsharp/AsapSharp%5Bwdth%2Cwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-asap-sharp/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 221096,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-asap-sharp.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "0c5f2706889214e8102fc97890e34d5f3a02f5203c198c7711987efcf6124e23"
+ },
+ "e-clarity-city": {
+  "name": "Clarity City",
+  "en": "Clarity City",
+  "page": "https://github.com/googlefonts/clarity-city",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/claritycity/ClarityCity%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-clarity-city/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 57756,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-clarity-city.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "eb7aafb087140dd2fe38612cd82d2b61a18948ad3fd3688b7c4989441e6b942e"
+ },
+ "e-firjar": {
+  "name": "Firjar",
+  "en": "Firjar",
+  "page": "https://github.com/Mestaratype/Firjar",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/firjar/Firjar%5Bwdth%2Cwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-firjar/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "cov": 0,
+  "bytes": 143588,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-firjar.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "77a23cca553d3d4f992ffe46dfb9687e54261cc82b5e7a4963ad026e64f561be"
+ },
+ "e-geomini": {
+  "name": "Geomini",
+  "en": "Geomini",
+  "page": "https://github.com/fontbob/geomini",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/geomini/Geomini%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-geomini/400.ttf"
+  },
+  "weights": [
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "cov": 0,
+  "bytes": 180664,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-geomini.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "baf3fa2b1078c6a5cac05196889c01d63536ed6233e705262c7e6d4fbefffa59"
+ },
+ "e-libre-caslon-condensed": {
+  "name": "Libre Caslon Condensed",
+  "en": "Libre Caslon Condensed",
+  "page": "https://github.com/ertekinno/libre-caslon-condensed",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/librecasloncondensed/LibreCaslonCondensed%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-libre-caslon-condensed/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-libre-caslon-condensed/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-libre-caslon-condensed/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-libre-caslon-condensed/400.ttf"
+  },
+  "weights": [
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 0,
+  "bytes": 169304,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-libre-caslon-condensed.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "b73d8ad2f728d7be5276073055cc2b50e90fd3a76bd03d5b4c1660162e613a79"
+ },
+ "e-tiny5-duo": {
+  "name": "Tiny5 Duo",
+  "en": "Tiny5 Duo",
+  "page": "https://github.com/Gissio/font_tiny5",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/tiny5duo/Tiny5Duo%5BBLED%2CJITT%2CROND%2Cwdth%2Cwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-tiny5-duo/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 591832,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-tiny5-duo.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "d7bb7a796691873bf0e5070bc9ff68d720be50254674ad09e56242af6381112e"
+ },
+ "e-valley-sans": {
+  "name": "Valley Sans",
+  "en": "Valley Sans",
+  "page": "https://github.com/HelsinkiTypeStudio/valley-sans",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/valleysans/ValleySans%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-valley-sans/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 148736,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-valley-sans.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "fd9f6ded65b97fe6a6d1e747604ce489a47660882250356ad210f2c65df9f9d1"
+ },
+ "e-xmind": {
+  "name": "Xmind",
+  "en": "Xmind",
+  "page": "https://github.com/lamzhonghang/xmind",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/xmind/Xmind%5Bwght%5D.ttf",
+  "license": "OFL 원본·고지 유지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-xmind/400.ttf"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 145004,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-xmind.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "64cd402ec7bb4f9343bad5e6fe63556ee16dcd74ed94e8ccfa248eaee327c3b5"
+ },
+ "e-uhbee-munjae": {
+  "name": "UhBee Munjae",
+  "en": "UhBee Munjae",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeMunjae.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-munjae/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 16148,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-munjae.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "8aa95a508ae79ef37a25f229451cf389df3912d2a4e3164d663c75a0b2458ea3"
+ },
+ "e-uhbee-uky-eng": {
+  "name": "UhBee UKY ENG",
+  "en": "UhBee UKY ENG",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeUKYENG.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-uky-eng/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 15972,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-uky-eng.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "016907999b9fe311cfbc443dc8fa64eac70ee5d968b7eb1cd30f7c6917879a91"
+ },
+ "e-uhbee-minani-eng": {
+  "name": "UhBee MINANI ENG",
+  "en": "UhBee MINANI ENG",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeMINANIENG.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-minani-eng/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 18396,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-minani-eng.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "7cd15b680061554372ecf4305c21bfdd9fb99849a109f3b14a49c90a73e334cc"
+ },
+ "e-uhbee-kimu-bh": {
+  "name": "UhBee KIMU BH",
+  "en": "UhBee KIMU BH",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeKIMUBH.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-kimu-bh/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 17724,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-kimu-bh.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "18c089bb45fe3679d9902456b34d60323379daa31949443240523ec596408ccd"
+ },
+ "e-uhbee-kimu-hj": {
+  "name": "UhBee KIMU HJ",
+  "en": "UhBee KIMU HJ",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeKIMUHJ.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-kimu-hj/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 15496,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-kimu-hj.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "810f8135bb1f8a3fe25181b9d9276281fcf9543df9d0c103510ced1fd9f35d05"
+ },
+ "e-uhbee-kimu-sw": {
+  "name": "UhBee KIMU SW",
+  "en": "UhBee KIMU SW",
+  "page": "https://uhb.kr/uhbeefont/en/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeKIMUSW.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uhbee-kimu-sw/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 17968,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/e-uhbee-kimu-sw.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "917c0e5b14ba9eadba576811f5a3969b8b7e6ccb01fe17414719de259c8cdfe5"
+ },
+ "k-uhbee-minica-choi": {
+  "name": "어비 미죵최체",
+  "en": "UhBee minica choi",
+  "page": "https://uhb.kr/uhbeefont/minicachoi/",
+  "source": "https://uhb.kr/uhbeefont/files/UhBeeminicachoi.ttf",
+  "license": "어비폰트 무료 배포 라이선스",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-uhbee-minica-choi/400.ttf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2449,
+  "bytes": 671244,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-16-20261118/files/k-uhbee-minica-choi.ttf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "3eaf7ea1c47c9409464aaaa4cc0a764bd9392c2a1d64fb85c05c06dd5b12cf3b"
  }
 }
