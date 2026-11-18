@@ -8838,5 +8838,21 @@
   "license": "OFL",
   "evidence": "직접 확인: 제작자 공식 글 이용조건 표: 인쇄·웹·영상·포장·임베딩·BI/CI 허용, OFL(수정사용/복제/공유 가능), 폰트 파일 자체의 유료 판매 금지. KERIS 공식 상세 GFT202604210000000000005도 OFL로 명시. 공식 WOFF2 v1.001 원본을 무변환 사용. 재배포 시 저작권 고지와 OFL 유지. 파일 name 13/14 없음. 2026-04-07 낉·찵 추가 업데이트.",
   "page": "https://blog.naver.com/hp0/224242936430"
+ },
+ {
+  "id": "k-puradak-gentle-gothic",
+  "name": "푸라닭 젠틀고딕",
+  "expected": "푸라닭 젠틀고딕체 이용조건",
+  "license": "푸라닭 젠틀고딕체 이용조건",
+  "evidence": "직접 확인: 공식 페이지(puradakchicken.com/company/font.asp, 내려받기 /_proc/fontDwn.asp TTF·OTF)는 이미지로만 안내되어 라이선스 문구는 산돌구름 배포 페이지(free-font/17694) '라이선스 원문'으로 확인: 지식재산권 ㈜아이더스에프앤비. 자유롭게 수정·변경해 영리·비영리, 개인·기업 사용 가능. 폰트 파일(otf/ttf) 유상 판매 금지. 사용 범위에 영상·웹·패키지·로고·간판 포함. '지식재산권 안내 및 라이선스' 전문 표시 시 번들·재배포 허용. Copyright © 2024 IDUS FNB, Reserved Font Name 'Puradak Gentle Gothic, Puradak Gentle Gothic OTF'.",
+  "page": "https://puradakchicken.com/company/font.asp"
+ },
+ {
+  "id": "k-hs-hwalgong-gulim",
+  "name": "HS활공굴림",
+  "expected": "HS활공굴림 이용조건",
+  "license": "HS활공굴림 이용조건",
+  "evidence": "직접 확인: 개인·기업의 상업적 이용, 인쇄·웹·영상·포장지·임베딩·BI/CI·슬로건 사용과 폰트 파일 수정·복제·공유를 허용합니다. 폰트 파일 자체의 유료 판매는 금지됩니다. LETSUM 미리보기는 제작자가 배포한 OTF 원본을 변환 없이 사용합니다. 제작자 공식 글 사용 범위 표와 발행일 표 확인.",
+  "page": "https://blog.naver.com/hp0/224471962233"
  }
 ]

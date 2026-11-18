@@ -1,0 +1,461 @@
+{
+  "checked": "2026-11-18",
+  "hs_source": "https://blog.naver.com/hp0/224471962233",
+  "hs_downloads": {
+    "HSHwalgongGulim-Light.otf": "https://download.blog.naver.com/open/a83db40514232296b35e320337d1acd57729dfdb/EFsQa7ZLxb_O9t1ZLuoSggWaFwbSq-x2J2tSdzFkkgIpEI64V3kig6vtX8Rph0N67h150pvxdbPzogguFNsKHTq5/HSHwalgongGulim-Light.otf",
+    "HSHwalgongGulim-SemiLight.otf": "https://download.blog.naver.com/open/6ffa73c3d38d8b577a94f8c4f9166c12b2e210fad6/EFsQa7ZLxb_O9d9eLuoSggWaFwbSq-x2J2tSdzFkkgIpEI-_U34vg57KaekQ9kN67h2C8fl2So_HXIg7kfrzk533/HSHwalgongGulim-SemiLight.otf",
+    "HSHwalgongGulim-Regular.otf": "https://download.blog.naver.com/open/b124ad1963543d81a74a2b132ecfb5ce623859/EFsQa7ZLxb_O9tNbLuoSggWaFwbSq-x2J2tSdzFkkgIpEI-7Vn0jg_rmUOMD8EN67h2RdH6-HlsKPb0p90eYS_-e/HSHwalgongGulim-Regular.otf",
+    "HSHwalgongGulim-Medium.otf": "https://download.blog.naver.com/open/059019aabfe9e13d10fe92ae937c0678d8887a9063/EFsQa7ZLxb_O9t1ZLuoSggWaFwbSq-x2J2tSdzFkkgIpEIy-VXkjg4TDDdNng0N67h3K8erM0hg9ERUjEW-LxDbS/HSHwalgongGulim-Medium.otf",
+    "HSHwalgongGulim-Bold.otf": "https://download.blog.naver.com/open/21b43d8e99c5c51934dab68ab758225cfcac5eb471/EFsQa7ZLxb_O9t9fLuoSggWaFwbSq-x2J2tSdzFkkgIpEIy4VX4vg5-3DuRhg0N67h2JQsSG5hkf6k0uQhqva2CZ/HSHwalgongGulim-Bold.otf"
+  },
+  "hs_weight_mapping": {
+    "Light": 300,
+    "SemiLight": 350,
+    "Regular": 400,
+    "Medium": 500,
+    "Bold": 700
+  },
+  "hs_os2_weight": 400,
+  "hs_original_files_unchanged": true,
+  "reatic_source": "https://www.reaticindustry.com/reaticfont",
+  "reatic_fonts_published": false,
+  "files": [
+    {
+      "file": "HSHwalgongGulim-Bold.otf",
+      "sha256": "68c441e1f26ac6c3fa4aa0331b3f62bea9eef0839e250fc811e1aaa5f1358862",
+      "names": {
+        "0": "2026 Ⓒ RTF Type Study Dept. All Rights Reserved.",
+        "1": "HSHwalgongGulim Bold",
+        "2": "Regular",
+        "4": "HSHwalgongGulim Bold",
+        "5": "Version 1.001;Glyphs 4.2 (4202)",
+        "6": "HSHwalgongGulim-Bold",
+        "13": null,
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 8,
+      "hangul": 2780,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "HSHwalgongGulim-Light.otf",
+      "sha256": "981569079a2e2b4795ab24d6df9838992f50dcb6c40e17bfd185508dd7758b1c",
+      "names": {
+        "0": "2026 Ⓒ RTF Type Study Dept. All Rights Reserved.",
+        "1": "HSHwalgongGulim Light",
+        "2": "Regular",
+        "4": "HSHwalgongGulim Light",
+        "5": "Version 1.001;Glyphs 4.2 (4202)",
+        "6": "HSHwalgongGulim-Light",
+        "13": null,
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 8,
+      "hangul": 2780,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "HSHwalgongGulim-Medium.otf",
+      "sha256": "a18803cc2a7d2e51d39d5775c00ba1ede3767b9a56268fb07e348e96850c4176",
+      "names": {
+        "0": "2026 Ⓒ RTF Type Study Dept. All Rights Reserved.",
+        "1": "HSHwalgongGulim Medium",
+        "2": "Regular",
+        "4": "HSHwalgongGulim Medium",
+        "5": "Version 1.001;Glyphs 4.2 (4202)",
+        "6": "HSHwalgongGulim-Medium",
+        "13": null,
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 8,
+      "hangul": 2780,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "HSHwalgongGulim-Regular.otf",
+      "sha256": "9657b8bf83ca8a04ef8d56548c418358909e76c1843b6e38bfcd3ca6e0f7188c",
+      "names": {
+        "0": "2026 Ⓒ RTF Type Study Dept. All Rights Reserved.",
+        "1": "HSHwalgongGulim",
+        "2": "Regular",
+        "4": "HSHwalgongGulim Regular",
+        "5": "Version 1.001;Glyphs 4.2 (4202)",
+        "6": "HSHwalgongGulim-Regular",
+        "13": null,
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 8,
+      "hangul": 2780,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "HSHwalgongGulim-SemiLight.otf",
+      "sha256": "5274291cf9d2a808b3f9f0e12445dd786c7ef15d653eb9f324e1b8748656c2cd",
+      "names": {
+        "0": "2026 Ⓒ RTF Type Study Dept. All Rights Reserved.",
+        "1": "HSHwalgongGulim SemiLight",
+        "2": "Regular",
+        "4": "HSHwalgongGulim SemiLight",
+        "5": "Version 1.001;Glyphs 4.2 (4202)",
+        "6": "HSHwalgongGulim-SemiLight",
+        "13": null,
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 8,
+      "hangul": 2780,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-Bold.otf",
+      "sha256": "c45838ef6267b0efbc67cad883df1e60a4421226a29647a8c0f76a47dbd959bd",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC",
+        "2": "Bold",
+        "4": "REATIC Bold",
+        "5": "Version 1.0.0",
+        "6": "REATIC-Bold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-Light.otf",
+      "sha256": "65b72c5f56fab25daff8674668cc8c74c82b1e0ecc7897eb610ac195daffde1f",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Light",
+        "2": "Regular",
+        "4": "REATIC Light",
+        "5": "Version 1.0.0",
+        "6": "REATIC-Light",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-Narrow.otf",
+      "sha256": "5c07482ecad7d0bb8cf53e6bbb72687d617d3ec8fc97978894d4b45ff45f1033",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Narrow",
+        "2": "Regular",
+        "4": "REATIC Narrow",
+        "5": "Version 1.0.0",
+        "6": "REATIC-Narrow",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-NarrowBold.otf",
+      "sha256": "005f52c14587b135ca43d0112aca3d5bbe5468da62e3c267ba4f34e0c2bb1c78",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Narrow",
+        "2": "Bold",
+        "4": "REATIC Narrow Bold",
+        "5": "Version 1.0.0",
+        "6": "REATIC-NarrowBold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-NarrowLight.otf",
+      "sha256": "b66b2e8d596e60423f213a73460cc1e5b59fc0148cf03b78805d668f6f236378",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Narrow Light",
+        "2": "Regular",
+        "4": "REATIC Narrow Light",
+        "5": "Version 1.0.0",
+        "6": "REATIC-NarrowLight",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-Regular.otf",
+      "sha256": "e40a4803c83dc48d4ba80a44a9a450cd49283e1ffc097b64125cc59a1e183c26",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC",
+        "2": "Regular",
+        "4": "REATIC Regular",
+        "5": "Version 1.0.0",
+        "6": "REATIC-Regular",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-Wide.otf",
+      "sha256": "8ed8c69da96379a92a7d3932853cde0eff6af4f242146e1407ca9aa7ce19fca0",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Wide",
+        "2": "Regular",
+        "4": "REATIC Wide",
+        "5": "Version 1.0.0",
+        "6": "REATIC-Wide",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-WideBold.otf",
+      "sha256": "1598ae408b8198866bb4916f8a3cb72602d174c6e59a34e9d6f7ca3668ab726a",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Wide",
+        "2": "Bold",
+        "4": "REATIC Wide Bold",
+        "5": "Version 1.0.0",
+        "6": "REATIC-WideBold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATIC-WideLight.otf",
+      "sha256": "f0f8e08b92f46d77862e873f20c0c608b3a9c893a5cbde2960ccbc1a279d76a3",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Wide Light",
+        "2": "Regular",
+        "4": "REATIC Wide Light",
+        "5": "Version 1.0.0",
+        "6": "REATIC-WideLight",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-Bold.otf",
+      "sha256": "b332952c838075ddc76042d95b25ac55b7ac5386b5587c64918853df61182807",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed",
+        "2": "Bold",
+        "4": "REATIC Fixed Bold",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-Bold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-Light.otf",
+      "sha256": "a6121249dc463e135c9f1dd82e740b3950b2454cc8e209f5630e8f3071a85971",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Light",
+        "2": "Regular",
+        "4": "REATIC Fixed Light",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-Light",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-Narrow.otf",
+      "sha256": "92a400198124944add2dfe3ae0fd1d9b6d5b383894c7dffd4be1d351c46d5b81",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Narrow",
+        "2": "Regular",
+        "4": "REATIC Fixed Narrow",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-Narrow",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-NarrowBold.otf",
+      "sha256": "bcb8fca8b0f3824b3b57b2f4315fae52fa19fd14d51dbc727486524a087c3edc",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Narrow",
+        "2": "Bold",
+        "4": "REATIC Fixed Narrow Bold",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-NarrowBold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-NarrowLight.otf",
+      "sha256": "381a8bfb73fd4f565d1c422bc51b86d35d69380fdae49e667c2a7d01582b6da0",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Narrow Light",
+        "2": "Regular",
+        "4": "REATIC Fixed Narrow Light",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-NarrowLight",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-Regular.otf",
+      "sha256": "0f50f747be9b38ce7928abda5703ec314ce4882495dc573e4107ec386f262315",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed",
+        "2": "Regular",
+        "4": "REATIC Fixed Regular",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-Regular",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-Wide.otf",
+      "sha256": "e373d471f96e3904192b1749ab16df923cb1917796526c0e562b05194abddd07",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Wide",
+        "2": "Regular",
+        "4": "REATIC Fixed Wide",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-Wide",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 400,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-WideBold.otf",
+      "sha256": "d5f5506727cf3bd8f481e16f497576bc9cbe4cd25e741951823f0adf005e1ce4",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Wide",
+        "2": "Bold",
+        "4": "REATIC Fixed Wide Bold",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-WideBold",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 700,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    },
+    {
+      "file": "REATICFixed-WideLight.otf",
+      "sha256": "81d80e064f7c2b96e102123db98b720e633bdc1e773cf74d2d0189c33d655055",
+      "names": {
+        "0": "Copyright © 2026 리틱인더스트리",
+        "1": "REATIC Fixed Wide Light",
+        "2": "Regular",
+        "4": "REATIC Fixed Wide Light",
+        "5": "Version 1.0.0",
+        "6": "REATICFixed-WideLight",
+        "13": "본 폰트는 이미지 제작, 영상 제작, 인쇄물 등 상업적 및 비상업적 용도로 모두 자유롭게 활용할 수 있습니다. 본 폰트의 모든 저작권은 '리틱인더스트리'에 있습니다. 폰트 파일(TTF/OTF) 자체를 유료로 판매하는 행위, 임의 수정, 가공, 무단 재배포를 엄격히 금지합니다. 위반 시 저작권법 등 관련 법률에 의해 민·형사상 책임을 질 수 있습니다.",
+        "14": null
+      },
+      "weight": 300,
+      "fsType": 0,
+      "hangul": 11172,
+      "hanja": 0,
+      "valid": true
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const { FONTS, FONTS_EN, FONTS_DB, LICENSE_CATS, LICENSE_INFO } = ctx; // FONTS_
 // 추천 이유(사람이 견본을 보고 쓴 문장) — tools/state/reasons.json → html/data/reasons.json
 // 설치 후 보이는 이름(폰트 파일 이름표) — tools/build_names.py → html/data/names.json
 const NAMES = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "data", "names.json"), "utf8")); } catch (e) { return {}; } })();
-const WN = { 100: "Thin", 200: "ExtraLight", 300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
+const WN = { 100: "Thin", 200: "ExtraLight", 300: "Light", 350: "SemiLight", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
 const namesHTML = (f) => { const n = NAMES[f.id]; if (!n) return ""; return `<h2>설치 후 보이는 이름</h2>
   <p class="note">같은 폰트라도 프로그램마다 이름이 다르게 보입니다. 폰트 파일 속 이름표에서 읽은 값입니다.</p>
   <table class="spec"><tr><th>굵기</th><th>Windows 앱 글꼴 목록</th><th>Mac 서체 관리자·포토샵</th><th>포토샵 '글꼴 누락'(PostScript)</th></tr>

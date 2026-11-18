@@ -29,11 +29,6 @@
   "src": "Google Fonts 최초 공개",
   "url": "https://fonts.google.com/specimen/Hahmlet"
  },
- "jua": {
-  "date": "2014-06-24",
-  "src": "우아한형제들 배포 발표(언론 보도)",
-  "url": "https://www.ajunews.com/view/20140624114159280"
- },
  "do-hyeon": {
   "date": "2015",
   "src": "우아한형제들 서체 연혁(언론 보도)",
@@ -543,11 +538,6 @@
   "date": "2023-07-25",
   "src": "공유마당 등록일(제작 기관 배포)",
   "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333605&menuNo=200023"
- },
- "k-hakgyoansim-bareondotum": {
-  "date": "2023-07-25",
-  "src": "공유마당 등록일(제작 기관 배포)",
-  "url": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333607&menuNo=200023"
  },
  "k-hakgyoansim-bombanghak": {
   "date": "2023-07-25",
@@ -1548,5 +1538,30 @@
   "date": "2026-04-06",
   "src": "제작자 공식 발행일",
   "url": "https://blog.naver.com/hp0/224242936430"
+ },
+ "k-memoment-kkukkkuk": {
+  "date": "2025",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/22692/Memoment-Kkukkkuk"
+ },
+ "k-pinkfong-babyshark": {
+  "date": "2025",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/22456/Pinkfong-Baby-Shark"
+ },
+ "k-puradak-gentle-gothic": {
+  "date": "2022",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/17694/PuradakGentleGothicOTFR"
+ },
+ "k-insungit-cute-lively": {
+  "date": "2022",
+  "src": "산돌구름 제품 정보(출시 연도)",
+  "url": "https://www.sandollcloud.com/free-font/17895/Insung-IT-Cute-lively-Jisu"
+ },
+ "k-hs-hwalgong-gulim": {
+  "date": "2026-11-10",
+  "src": "제작자 공식 블로그 발행일 표",
+  "url": "https://blog.naver.com/hp0/224471962233"
  }
 }

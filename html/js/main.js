@@ -365,7 +365,7 @@
   // ---------- 설치 후 이름(폰트 파일 속 이름표 · data/names.json, tools/build_names.py) ----------
   // Windows 글꼴 목록 · Mac 서체 관리자/Adobe · 포토샵 '글꼴 누락'(PostScript) 이름으로도 찾고, 상세·카드·확인 기록에 표시
   let NAMES = {}; const nameIdx = {};
-  const WN = { 100: "Thin", 200: "ExtraLight", 300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
+  const WN = { 100: "Thin", 200: "ExtraLight", 300: "Light", 350: "SemiLight", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
   const nk = (s) => String(s || "").toLowerCase().replace(/[\s\-_.·,()]/g, "");
   const namesLoad = fetch("data/names.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})).then((j) => {
     NAMES = j || {};
@@ -1835,7 +1835,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     note: ["오늘도 수고했어, 내일은 더 괜찮을 거야", "마음을 담아 꾹꾹 눌러 쓴 한 줄"], grid: ["정보는 또렷하게, 화면은 가볍게", "설정이 저장되었습니다"],
   };
   let spotTimer = null, spotTick = null, spotWt = null, spotIdx = 0, spotList = [], spotPaused = false;
-  const WNAME = { 100: "Thin", 200: "ExtraLight", 300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
+  const WNAME = { 100: "Thin", 200: "ExtraLight", 300: "Light", 350: "SemiLight", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" };
   // 세로획 두께: 'ㅣ'를 200px로 그려 잉크가 칠해진 가로 폭을 잰다(브라우저 측정, 글자 크기 대비 %)
   const stemCache = {};
   async function stemOf(fam, w) {
