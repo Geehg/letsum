@@ -119,7 +119,7 @@
   active=location.hash.split('?')[0]==='#/dot-retro';root.hidden=!active;document.body.classList.toggle('dr-open',active);
   const path=location.hash.split('?')[0];
   for(const a of document.querySelectorAll('header .main a')){const on=a.hash==='#/'?!['#/studio','#/dot-retro'].includes(path):a.hash===path;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');}
-  if(active){document.title='도트레트로 — 사진을 점으로 바꾸는 인쇄 화방 | LETSUM';clearTimeout(window.tbBootTimer);document.documentElement.removeAttribute('data-tb-boot');if(!hasSource)example();else if(dirty)schedule();}
+  if(active){document.title='도트레트로 — 사진을 점으로 바꾸는 인쇄 화방 | '+(document.body.dataset.typingBrand||'LETSUM');clearTimeout(window.tbBootTimer);document.documentElement.removeAttribute('data-tb-boot');if(!hasSource)example();else if(dirty)schedule();}
   else{stop();imageRevision++;loading=false;controls();}
  }
  addEventListener('hashchange',route);addEventListener('pagehide',()=>{stop();imageRevision++;});

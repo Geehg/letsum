@@ -5,7 +5,7 @@ name = "letsum-api"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 workers_dev = false
-routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }, { pattern = "type.letsum.app/api/*", zone_name = "letsum.app" }]
+routes = [{ pattern = "letsum.app/api/*", zone_name = "letsum.app" }, { pattern = "type.letsum.app/api/*", zone_name = "letsum.app" }, { pattern = "type.goyoseoga.com/api/*", zone_name = "goyoseoga.com" }]
 
 # 매일 03:17(UTC): 필사독서 만료 세션·장기 미접속 회원 정리
 [triggers]

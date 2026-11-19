@@ -745,3 +745,11 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 ## 2026-11-17 — 한글 전체 이름 목록 기본 비노출
 - 생성기 `seoDir(ko)`가 `data-korean-font-directory hidden`을 출력. main.js는 `/api/site-display`의 명시적 true만 표시하며 조회 실패 시 숨김 유지. 영문·딩벳 목록은 기존 유지.
 - 관리자 개요 → 사이트 표시 설정에서 체크 후 저장. 기존 settings 테이블 `site_display` 키 사용(스키마 변경 없음), 관리자 인증 및 boolean 검증. 공개 조회/관리자 저장 모두 no-store. 방문자는 새로고침 후 반영.
+
+## 2026-11-19 고요서가 필사독서 독립 서비스
+
+- 새 운영 원본: 별도 비공개 저장소 Geehg/goyo-typing, NAS /volume1/docker/goyo-typing, 컨테이너 goyo-typing-web, 포트 8621, 주소 https://type.goyoseoga.com. 앞으로 새 서비스 UI는 해당 저장소에서 수정한다.
+- LETSUM 메뉴·패밀리 링크와 필사독서 소개를 새 주소로 연결. 기존 type.letsum.app은 미동기화 기록 이전 및 기존 OAuth 콜백을 위해 유지한다. 강제 리디렉션/원본 삭제 없음.
+- 새 주소의 ‘기존 기록 가져오기’는 정확한 origin/창/요청 번호를 검사해 사용자 클릭으로만 복사한다. 파일 백업과 가져오기를 지원하며 병합·중복·용량 오류 롤백 테스트 통과. 실제 브라우저에서 서시 6자 초안/통계 복원 확인.
+- 회원 API는 기존 letsum-api와 동일 D1을 공유한다. 새 도메인은 계정 API만 허용. 기존 OAuth 주소를 거쳐 HttpOnly nonce/2분 만료/1회용 코드로 새 호스트 세션 발급. 비밀값 복사/계정 DB 이관 없음.
+- 검증: test_typing_transfer.cjs 및 test_typing_handoff.mjs 통과, validate.py 오류0. Worker 버전 dee499f2-e086-484d-8600-30e9871e9146 배포. 새 사이트 health/auth-status 정상. 실제 계정 동의/로그인 완료는 운영자 확인 대상.

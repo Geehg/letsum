@@ -14,7 +14,7 @@
 // 비밀값(wrangler secret): AUTH_SALT, KAKAO_CLIENT_SECRET(선택), NAVER_CLIENT_SECRET, GOOGLE_CLIENT_SECRET
 // 공개값(wrangler.toml vars): AUTH_FROM(YYYY-MM-DD, KST), KAKAO_CLIENT_ID, NAVER_CLIENT_ID, GOOGLE_CLIENT_ID
 
-const SITE = "https://type.letsum.app";
+const SITE = "https://type.letsum.app", GOYO = "https://type.goyoseoga.com";
 const DAY = 864e5, SESSION_DAYS = 30, INACTIVE_DAYS = 730;
 const KEY_RE = /^[A-Za-z0-9:_.\-]{1,120}$/;
 const LIM = { items: 300, value: 64 * 1024, body: 768 * 1024, keys: 4000 };
@@ -93,7 +93,7 @@ async function start(p, url, env) {
 
 async function callback(p, url, req, env) {
   const P = PROVIDERS[p], o = (() => { try { return JSON.parse(cookies(req).tb_o || "{}"); } catch (e) { return {}; } })();
-  const back = (msg) => new Response(null, { status: 302, headers: { location: `${safeReturn(o.r)}${msg ? `#/?login=${msg}` : ""}`, "set-cookie": setCookie("tb_o", "", 0, "/api/auth"), "cache-control": "no-store" } });
+  const back = (msg) => new Response(null, { status: 302, headers: { location: safeReturn(o.r).startsWith("/api/auth/handoff?") ? `${safeReturn(o.r)}&failure=${encodeURIComponent(msg || "token")}` : `${safeReturn(o.r)}${msg ? `#/?login=${msg}` : ""}`, "set-cookie": setCookie("tb_o", "", 0, "/api/auth"), "cache-control": "no-store" } });
   if (url.searchParams.get("error")) return back("cancel");
   if (!o.s || o.p !== p || url.searchParams.get("state") !== o.s) return back("state");
   const body = new URLSearchParams({ grant_type: "authorization_code", client_id: P.id(env), redirect_uri: `${SITE}/api/auth/${p}/callback`, code: url.searchParams.get("code") || "", state: o.s });
@@ -120,6 +120,52 @@ async function callback(p, url, req, env) {
   return new Response(null, { status: 302, headers: h });
 }
 
+
+// Cross-origin sign-in handoff. The account DB and provider subject hashes are unchanged.
+// Browser nonce is HttpOnly; exchange codes expire after 120 seconds and are atomically consumed.
+// A handoff hash has a separate namespace and cannot be used as a normal session cookie.
+const redirect = (location, cookies = []) => {
+  const headers = new Headers({ location, "cache-control": "no-store", "referrer-policy": "no-referrer" });
+  cookies.forEach(c => headers.append("set-cookie", c));
+  return new Response(null, { status: 302, headers });
+};
+function goyoStart(p, url) {
+  const n = rand(32), r = safeReturn(url.searchParams.get("r")), age = url.searchParams.get("age14") === "1" ? "1" : "0";
+  return redirect(`${SITE}/api/auth/handoff?p=${p}&n=${n}&age14=${age}`, [setCookie("tb_h", JSON.stringify({ n, p, r }), 600, "/api/auth")]);
+}
+async function authorizeHandoff(req, url, env) {
+  const p = url.searchParams.get("p"), n = url.searchParams.get("n");
+  if (!configured(env).includes(p) || !/^[a-f0-9]{64}$/.test(n || "")) return bad("로그인 요청이 올바르지 않습니다");
+  const failure = url.searchParams.get("failure");
+  if (failure) return redirect(`${GOYO}/api/auth/finish?n=${n}&failure=${encodeURIComponent(failure)}`);
+  const user = await currentUser(req, env);
+  if (!user || user.provider !== p) {
+    const r = url.pathname + url.search;
+    return redirect(`${SITE}/api/auth/${p}/start?age14=${url.searchParams.get("age14") === "1" ? "1" : "0"}&r=${encodeURIComponent(r)}`);
+  }
+  const code = rand(32), now = Date.now();
+  const key = await sha256(`handoff:${code}:${n}:${p}`);
+  await env.DB.prepare("INSERT INTO tb_sessions (token_hash, user_id, created, expires) VALUES (?, ?, ?, ?)").bind(key, user.id, now, now + 120000).run();
+  return redirect(`${GOYO}/api/auth/finish?n=${n}&code=${code}`);
+}
+async function finishHandoff(req, url, env) {
+  let h; try { h = JSON.parse(cookies(req).tb_h || "{}"); } catch (_) { h = {}; }
+  const clear = setCookie("tb_h", "", 0, "/api/auth");
+  const fail = () => redirect("/#/?login=state", [clear]);
+  if (!/^[a-f0-9]{64}$/.test(h.n || "") || h.n !== url.searchParams.get("n") || !configured(env).includes(h.p)) return fail();
+  if (url.searchParams.has("failure")) {
+    const msg = ["cancel", "age", "state", "token"].includes(url.searchParams.get("failure")) ? url.searchParams.get("failure") : "token";
+    return redirect(`${safeReturn(h.r)}#/?login=${msg}`, [clear]);
+  }
+  const code = url.searchParams.get("code"); if (!/^[a-f0-9]{64}$/.test(code || "")) return fail();
+  const key = await sha256(`handoff:${code}:${h.n}:${h.p}`);
+  const row = await env.DB.prepare("DELETE FROM tb_sessions WHERE token_hash = ? AND expires > ? RETURNING user_id").bind(key, Date.now()).first();
+  if (!row) return fail();
+  const token = rand(32), now = Date.now();
+  await env.DB.prepare("INSERT INTO tb_sessions (token_hash, user_id, created, expires) VALUES (?, ?, ?, ?)").bind(await sha256(token), row.user_id, now, now + SESSION_DAYS * DAY).run();
+  return redirect(`${safeReturn(h.r)}#/?login=ok`, [clear, setCookie("tb_s", token, SESSION_DAYS * 86400, "/api")]);
+}
+
 async function syncGet(user, url, env) {
   const since = Math.max(0, +url.searchParams.get("since") || 0);
   const { results } = await env.DB.prepare("SELECT k, v, updated AS u FROM tb_data WHERE user_id = ? AND updated > ? ORDER BY updated LIMIT 5000").bind(user.id, since).all();
@@ -141,7 +187,7 @@ async function syncPut(user, req, env) {
 
 async function exportAll(user, env) {
   const { results } = await env.DB.prepare("SELECT k, v, updated FROM tb_data WHERE user_id = ? ORDER BY k").bind(user.id).all();
-  const data = { service: "LETSUM 필사독서", exported: new Date().toISOString(), account: { provider: user.provider, nickname: user.nickname, created: new Date(user.created).toISOString() }, records: results.map((r) => ({ key: r.k, updated: new Date(r.updated).toISOString(), value: (() => { try { return JSON.parse(r.v); } catch (e) { return r.v; } })() })) };
+  const data = { service: "고요서가 필사독서", exported: new Date().toISOString(), account: { provider: user.provider, nickname: user.nickname, created: new Date(user.created).toISOString() }, records: results.map((r) => ({ key: r.k, updated: new Date(r.updated).toISOString(), value: (() => { try { return JSON.parse(r.v); } catch (e) { return r.v; } })() })) };
   return new Response(JSON.stringify(data, null, 2), { headers: { "content-type": "application/json; charset=utf-8", "content-disposition": `attachment; filename="letsum-typing-${new Date().toISOString().slice(0, 10)}.json"`, "cache-control": "no-store" } });
 }
 
@@ -157,15 +203,19 @@ async function deleteAll(userId, env) {
 export async function account(req, url, env) {
   const p = url.pathname;
   if (!(p.startsWith("/api/auth/") || ["/api/me", "/api/logout", "/api/sync", "/api/export", "/api/account"].includes(p))) return null;
-  if (url.host !== "type.letsum.app") return bad("없는 주소", 404);
+  if (![SITE, GOYO].includes(url.origin)) return bad("없는 주소", 404);
   // 쓰기 요청은 같은 사이트에서만(쿠키가 SameSite=Lax라 이중 방어)
-  if (req.method !== "GET") { const origin = req.headers.get("origin"); if (origin !== SITE) return bad("허용되지 않은 요청", 403); }
+  if (req.method !== "GET") { const origin = req.headers.get("origin"); if (origin !== url.origin) return bad("허용되지 않은 요청", 403); }
   const open = isOpen(env);
   if (p === "/api/auth/status") return json({ open, providers: open ? configured(env) : [], soon: open ? ready(env).filter((x) => paused(env).includes(x)) : [] });
   if (!open) return bad("회원 기능은 시행일부터 열립니다", 403);
+  if (p.startsWith("/api/auth/") && req.method !== "GET") return bad("허용되지 않은 요청", 405);
+  if (p === "/api/auth/handoff") return url.origin === SITE ? authorizeHandoff(req, url, env) : bad("없는 주소", 404);
+  if (p === "/api/auth/finish") return url.origin === GOYO ? finishHandoff(req, url, env) : bad("없는 주소", 404);
   const m = /^\/api\/auth\/(kakao|naver|google)\/(start|callback)$/.exec(p);
   if (m) {
     if (!configured(env).includes(m[1])) return bad("아직 준비 중인 로그인입니다", 503);
+    if (url.origin === GOYO) return m[2] === "start" ? goyoStart(m[1], url) : bad("없는 주소", 404);
     return m[2] === "start" ? start(m[1], url, env) : callback(m[1], url, req, env);
   }
   const user = await currentUser(req, env);

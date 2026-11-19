@@ -132,7 +132,7 @@
       const label = (p) => (p === "kakao" ? "카카오 로그인" : p === "naver" ? "네이버 로그인" : "Google 계정으로 로그인");
       const btn = (p, soon) => `<button type="button" class="tb-login tb-login-${p}${soon ? " tb-login-soon" : ""}"${soon ? ' aria-disabled="true"' : ` data-login="${p}"`} disabled>${ICON[p] || ""}<span>${label(p)}${soon ? " · 준비 중" : ""}</span></button>`;
       const btns = S.providers.map((p) => btn(p)).join("") + S.soon.map((p) => btn(p, true)).join("");
-      body.innerHTML = `<p class="tb-acct-lead">로그인하면 다른 기기에서도<br>진도·찜한 책·학습 기록이 이어집니다.</p>
+      body.innerHTML = `<p class="tb-acct-lead">로그인하면 다른 기기에서도<br>진도·찜한 책·학습 기록이 이어집니다.${location.hostname === "type.goyoseoga.com" ? "<br><small>기존 렛섬 로그인에서 본인 확인 후 고요서가로 돌아옵니다.</small>" : ""}</p>
         <label class="tb-chk tb-age"><input type="checkbox" id="tbAge"> <span>만 14세 이상이며 <a href="https://letsum.app/privacy.html" target="_blank" rel="noopener">개인정보처리방침</a>·<a href="https://letsum.app/terms.html" target="_blank" rel="noopener">이용약관</a>에 동의합니다</span></label>
         <div class="tb-login-btns">${btns || `<p class="tb-mdesc">로그인 준비 중입니다.</p>`}</div>
         <p class="tb-acct-or"><span>안심하고 쓰세요</span></p>

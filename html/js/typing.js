@@ -3,6 +3,7 @@
 //       연속 필사일·오늘 쓴 글자, 완성한 쪽 이미지 저장(shot.js). 기록은 이 브라우저(localStorage)에만 — 서버로 보내지 않음.
 (() => {
   "use strict";
+  const SERVICE = document.body.dataset.typingBrand || "LETSUM 필사독서";
   const STORAGE = "typebook-v1"; // TYPEBOOK과 같은 저장 이름(기록 호환)
   const MAX_FILE_BYTES = 10 * 1024 * 1024, MAX_TEXT_CHARS = 500000;
   const $ = (id) => document.getElementById(id);
@@ -150,7 +151,7 @@
     const out = []; b.pages.forEach((pg, i) => { const t = i === state.page ? state.draft : state.completed.has(i) ? pg : state.drafts[i] || ""; if (t.trim()) out.push(t); });
     if (!out.length) { toast("아직 쓴 쪽이 없습니다."); return; }
     const a = $("tbPrintArea"); a.style.fontFamily = stackOf(state.fontW);
-    a.innerHTML = `<h1>${esc(b.title)}</h1><p class="by">${esc(b.author)} · 나의 필사 ${out.length}쪽 · LETSUM 필사독서</p>` + out.map((t) => `<div class="pp">${esc(t)}</div>`).join("");
+    a.innerHTML = `<h1>${esc(b.title)}</h1><p class="by">${esc(b.author)} · 나의 필사 ${out.length}쪽 · ${esc(SERVICE)}</p>` + out.map((t) => `<div class="pp">${esc(t)}</div>`).join("");
     loadFont(fontById(state.fontW)).then(() => window.print());
   }
 
@@ -276,12 +277,12 @@
     fillFontSelects(); applyFonts(); renderKeys(b.lang === "en"); fillToc();
     const cat = b.lang === "en" ? `English · ${catOf(b)}` : catOf(b), np = (b.partTitles || []).length;
     $("tbInfo").innerHTML = [cat, np > 1 ? `${np}${b.poem ? "편" : "장"}` : "", `${(b.chars || chars(b.text || "").length).toLocaleString()}자`, `${b.pages.length.toLocaleString()}쪽`, b.imported ? "내가 가져온 글" : (b.license || "")].filter(Boolean).map((x) => `<span>${esc(x)}</span>`).join("");
-    $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — LETSUM 필사독서`; $("tbCrumb").textContent = b.title;
+    $("tbShelf").hidden = true; $("tbRead").hidden = false; document.title = `${b.title} 필사 — ${SERVICE}`; $("tbCrumb").textContent = b.title;
     loadPage(Math.max(0, Math.min(b.pages.length - 1, Number(p.index) || 0)), false);
     renderSide(); renderMini();
     scrollTo(0, 0); $("tbInput").focus({ preventScroll: true });
   }
-  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; $("tbSetOpen").hidden = true; close("tbSet"); $("tbCrumb").textContent = "서가"; document.title = "필사독서 — 명작을 따라 쓰는 타이핑 독서 | LETSUM(렛섬)"; renderShelf(); }
+  function showShelf() { if (state.book) storeProgress(); $("tbRead").hidden = true; $("tbShelf").hidden = false; $("tbSetOpen").hidden = true; close("tbSet"); $("tbCrumb").textContent = "서가"; document.title = `필사독서 — 명작을 따라 쓰는 타이핑 독서 | ${SERVICE}`; renderShelf(); }
 
   // ---------- 글꼴 고르기 ----------
   function fillFontSelects() {
@@ -497,12 +498,12 @@
   function shotPage() {
     const b = state.book; const text = b.pages[state.page]; const f = fontById(state.fontW);
     const excerpt = text.length > 260 ? chars(text).slice(0, 250).join("").replace(/\s\S*$/, "") + " …" : text;
-    LSShot.open({ title: `${b.title} 필사 — LETSUM`, file: `letsum-pilsa-${b.id}-${state.page + 1}`, w: 1080, h: 1350, badge: "필사 완료",
+    LSShot.open({ title: `${b.title} 필사 — ${SERVICE}`, file: `letsum-pilsa-${b.id}-${state.page + 1}`, w: 1080, h: 1350, badge: "필사 완료",
       blocks: [{ t: "gap", h: 20 }, { t: "kicker", text: `${b.title} · ${b.author}`, size: 28, after: 28 },
         { t: "text", text: excerpt, family: stackOf(state.fontW), size: 54, min: 30, maxLines: 12, lh: 1.55, after: 20 },
         { t: "rule" }, { t: "meta", text: [`${state.page + 1} / ${b.pages.length}쪽`, `정확도 ${acc()}%`, cpm() ? `분당 ${cpm()}타` : "", `연속 ${streak()}일째`].filter(Boolean).join(" · "), size: 26, weight: 600, color: "#141413", after: 6 },
         { t: "meta", text: `필사 글꼴 ${f ? f.name : "기본"} — LETSUM 무료 폰트`, size: 24, after: 6 }],
-      footer: "읽는 것을 넘어, 쓰는 독서 — LETSUM 필사독서", url: "type.letsum.app", shareText: `「${b.title}」 ${state.page + 1}쪽 필사 완료 — LETSUM 필사독서` });
+      footer: `읽는 것을 넘어, 쓰는 독서 — ${SERVICE}`, url: "type.goyoseoga.com", shareText: `「${b.title}」 ${state.page + 1}쪽 필사 완료 — ${SERVICE}` });
   }
 
   // ---------- 이벤트 ----------
@@ -612,7 +613,7 @@
 
   function route() {
     const room = location.hash.split("?")[0];
-    if (["#/studio", "#/dot-retro"].includes(room)) { showShelf(); document.title = room === "#/studio" ? "화방 — 타자기로 그리는 그림 | LETSUM" : "도트레트로 — 사진을 점으로 바꾸는 인쇄 화방 | LETSUM"; return; }
+    if (["#/studio", "#/dot-retro"].includes(room)) { showShelf(); document.title = room === "#/studio" ? `화방 — 타자기로 그리는 그림 | ${SERVICE}` : `도트레트로 — 사진을 점으로 바꾸는 인쇄 화방 | ${SERVICE}`; return; }
     const m = location.hash.match(/^#\/read\/(.+)$/);
     if (m) return openBook(decodeURIComponent(m[1])); else showShelf();
   }

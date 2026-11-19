@@ -500,6 +500,7 @@ export default {
     }
     try {
       const p = url.pathname;
+      if (url.origin === "https://type.goyoseoga.com") return (await account(req, url, env)) || bad("없는 주소", 404);
       if (req.method === "POST" && p === "/api/contact") return await contact(req, env, await voterOf(req, env));
       if (req.method === "GET" && p === "/api/locale") return localeResponse(req);
       const acc = await account(req, url, env); if (acc) return acc;

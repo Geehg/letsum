@@ -1,5 +1,7 @@
 # GPT(Codex) 인수인계 — LETSUM · 필사독서(type.letsum.app)
 
+> **2026-11-19 변경:** 필사독서는 https://type.goyoseoga.com, 별도 저장소 `Geehg/goyo-typing` 및 NAS 컨테이너 `goyo-typing-web:8621`로 독립했다. 아래 type.letsum.app 설명은 기록 이전·로그인 호환을 위해 유지하는 구 서비스에만 해당한다. 새 UI는 새 저장소 `html/`에서 수정한다. 계정 API/D1은 기존 Worker 공유.
+
 이 문서는 다른 AI가 이 저장소를 바로 이어서 고칠 수 있도록 **지금 상태와 지켜야 할 것**만 모은 요약이다.
 전체 규칙은 `AGENTS.md`, 날짜별 상세 기록은 `docs/HANDOFF.md`. 운영자에게는 **항상 한국어로** 보고한다.
 

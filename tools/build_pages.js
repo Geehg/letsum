@@ -337,8 +337,8 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
       .map(([v, u, k]) => `<div><b>${v}<small>${u}</small></b><span>${k}</span></div>`).join("");
     const picks = idx.themes.flatMap((x) => x.books).filter((x) => x.author !== "필사독서 예문")
       .map((x) => x.cover
-        ? `<a class="ti-book has-img" href="${TS}/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color}" aria-label="${esc(x.title)} — ${esc(x.author)}"><img src="img/typing/${encodeURIComponent(x.id)}.webp?v=${x.cover}" alt="" loading="lazy"><span class="ti-hv"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></span></a>`
-        : `<a class="ti-book" href="${TS}/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color};--ci:${x.ink || "#fff"}"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></a>`).join("");
+        ? `<a class="ti-book has-img" href="https://type.goyoseoga.com/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color}" aria-label="${esc(x.title)} — ${esc(x.author)}"><img src="img/typing/${encodeURIComponent(x.id)}.webp?v=${x.cover}" alt="" loading="lazy"><span class="ti-hv"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></span></a>`
+        : `<a class="ti-book" href="https://type.goyoseoga.com/#/read/${encodeURIComponent(x.id)}" style="--c:${x.color};--ci:${x.ink || "#fff"}"><b>${esc(x.title)}</b><span>${esc(x.author)}</span></a>`).join("");
     let page = fs.readFileSync(ip, "utf8");
     page = page.replace(/<!--TI:STATS-->[\s\S]*?<!--\/TI:STATS-->/, `<!--TI:STATS-->${stats}<!--/TI:STATS-->`).replace(/<!--TI:PICKS-->[\s\S]*?<!--\/TI:PICKS-->/, `<!--TI:PICKS-->${picks}<!--/TI:PICKS-->`);
     fs.writeFileSync(ip, page);
@@ -367,6 +367,7 @@ Sitemap: ${SITE}/sitemap.xml
 fs.writeFileSync(path.join(ROOT, "type", "robots.txt"), fs.readFileSync(path.join(ROOT, "robots.txt"), "utf8").replace("# LETSUM(렛섬)", "# LETSUM 필사독서(type.letsum.app)").replace(`Sitemap: ${SITE}/sitemap.xml`, "Sitemap: https://type.letsum.app/sitemap.xml"));
 console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${FONTS_DB.length} + 주제 ${TOPIC_LISTS.length}(${TOPIC_LISTS.map(([t, l]) => t.short + " " + l.length).join(", ")}), sitemap ${urls.length} urls`);
 
+require("./build_typing_site.js").build();
 require("./build_navigation.js").build();
 // Keep UI translations on generated font, topic and catalogue pages.
 require("./build_ui_language.js");

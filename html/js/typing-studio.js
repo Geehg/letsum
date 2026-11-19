@@ -52,7 +52,7 @@
  function route(){
   active=location.hash.split('?')[0]==='#/studio';root.hidden=!active;document.body.classList.toggle('ts-open',active);
   document.querySelectorAll('header .main a').forEach(a=>{if(a.dataset.studioNav)a.classList.toggle('on',active);else if(a.textContent.trim()==='서가')a.classList.toggle('on',!active&&location.hash.split('?')[0]!=='#/dot-retro');});
-  if(active){document.title='화방 — 타자기로 그리는 그림 | LETSUM';document.documentElement.removeAttribute('data-tb-boot');clearTimeout(window.tbBootTimer);}
+  if(active){document.title='화방 — 타자기로 그리는 그림 | '+(document.body.dataset.typingBrand||'LETSUM');document.documentElement.removeAttribute('data-tb-boot');clearTimeout(window.tbBootTimer);}
   else{pause();cancelMask();cancelTextImport();controls();if(busy){stopJob();status('분석을 중단했어요. 돌아와 다시 그릴 수 있습니다.');controls();}}
  }
  addEventListener('hashchange',route);route();
