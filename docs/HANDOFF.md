@@ -764,3 +764,11 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 비욘드빌리지체, 밝은성모 스마일라식체·시력교정체, Crooli Sans, Baskerville Punch Text 추가. 원본 파일 무변환, 파일 단독 판매 금지 및 개별 조건 표시. 밝은성모 수정 금지/공식 !% 로고 안내, 비욘드 RFN·영문 숫자 없음, Baskerville Text Regular 범위를 명시.
 - 공식 배포 원본 5파일과 13굵기 브라우저 로딩 통과. 한글 실제 윤곽 2,350/11,172/11,172자. BSM 공식 Regular 1종과 파일 내부 weight 800/600 차이를 설명.
 - mirror 48c6c83. 상세 근거 tools/state/font5_audit_20261119.json. 새 폰트 외 기존 카탈로그 보존.
+
+
+## 2026-11-19 — 공식 배포처 영문 18종 등록
+- Collletttivo 공식 목록 16종 전체 대조 + Paper Mono + 추가 조사 Uncut Sans. 기존 1,975종 보존, 영문 796→814종. 신규 출시 주장 없음. 공식 출시 근거 미확보 날짜는 비움.
+- 원본 WOFF2 52개 무변환·SHA-256 동일, OFL 전문 동봉. Chrome 로딩52/52 및 견본 확인. 미리보기는 설명에 밝힌 기본 폭·정적 스타일. 사용 제한/설치명/공식 원문 링크 표시.
+- 어비 마이센·세현·미미: 공식 파일 서버403/다운로드 시간 초과로 보류. 결고딕·순금체 원문 미확보 보류 유지.
+- 조사대장: tools/state/font_survey_ledger_20261119.json. 새 출시/기존 누락/업데이트/보류 구분, 조사 범위와 남은 범위 기록. Mabyko 전 계열 영구 제외.
+- 증거: tools/state/survey_audit_20261119.json 및 /Volumes/AI_dev/web/output/font-register-survey-20261119/.

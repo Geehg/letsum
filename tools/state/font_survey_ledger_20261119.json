@@ -1,0 +1,377 @@
+{
+  "checked_at": "2026-11-19T21:39:28.298478+09:00",
+  "baseline_count": 1975,
+  "baseline_file": "catalogue-20261119.json",
+  "rules": [
+    "신규 출시·기존 누락·업데이트·등록 보류를 구분",
+    "공식 출시일이 없으면 신규 출시로 단정하지 않음",
+    "Mabyko 전 계열 수집 제외",
+    "보류 재발견을 새 후보로 중복 집계하지 않음"
+  ],
+  "sources": [
+    {
+      "url": "https://www.collletttivo.it/typefaces",
+      "scope": "공식 목록에 표시된 16개 패밀리 전부 이름 대조",
+      "name_comparison": "16/16 미등록",
+      "license_review": "공통 공식 OFL 안내 확인, 개별 압축파일 미검증"
+    },
+    {
+      "url": "https://github.com/paper-design/paper-mono",
+      "scope": "단일 프로젝트",
+      "name_comparison": "미등록",
+      "license_review": "OFL 원문 저장"
+    },
+    {
+      "url": "https://uhb.kr/uhbeefont/",
+      "scope": "페이지 수집; 표기95/검색제목96 불일치, 95개 이름 추출",
+      "status": "이름·별칭·별도 데이터셋 대조 추가 필요. 신규 후보 수에 미포함"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Borges",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Ronzino",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Aujournuit",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Absans",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Mazius Display",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Ribes",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Mattone",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Coconat",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Sinistre",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Apfel Grotezk",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Ortica",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Messapia",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Halibut",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Sprat",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Sneaky Times",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Necto Mono",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL (공식 배포처 공통 안내)",
+      "source": "https://www.collletttivo.it/typefaces",
+      "license_source": "https://www.collletttivo.it/licensing",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Paper Mono",
+      "language": "영문/라틴",
+      "catalogue_matches": [],
+      "classification": "기존 미등록 후보; 신규 출시 주장 없음",
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/paper-design/paper-mono",
+      "license_source": "https://github.com/paper-design/paper-mono/blob/main/OFL.txt",
+      "status": "등록 완료; 운영 배포 대기",
+      "restrictions": [
+        "폰트 파일 단독 판매 금지",
+        "재배포 시 저작권·라이선스 유지",
+        "수정 시 예약명 여부 확인"
+      ],
+      "binary_verified": true,
+      "browser_verified": true
+    },
+    {
+      "name": "Uncut Sans",
+      "language": "영문/라틴",
+      "classification": "기존 누락",
+      "status": "등록 완료; 운영 배포 대기",
+      "license": "OFL 1.1",
+      "source": "https://github.com/kaspernordkvist/uncut_sans",
+      "binary_verified": true,
+      "browser_verified": true
+    }
+  ],
+  "held": [
+    {
+      "name": "결고딕",
+      "reason": "11월18일 기존 보류의 재확인. 공식 원문 미확보",
+      "classification": "기존 보류"
+    },
+    {
+      "name": "순금체",
+      "reason": "공식 배포처·라이선스 원문 미확보",
+      "classification": "등록 보류"
+    },
+    {
+      "name": "어비 마이센체",
+      "source": "https://uhb.kr/uhbeefont/mysen/",
+      "classification": "기존 누락 / 등록 보류",
+      "reason": "공식 파일 서버 HTTP403; 마이센 브라우저 다운로드도 시간 초과. 파일 검증 미완료. 라이선스상 상업 이용 허용 확인."
+    },
+    {
+      "name": "어비 세현체",
+      "source": "https://uhb.kr/uhbeefont/se-hyun/",
+      "classification": "기존 누락 / 등록 보류",
+      "reason": "공식 파일 서버 HTTP403; 마이센 브라우저 다운로드도 시간 초과. 파일 검증 미완료. 라이선스상 상업 이용 허용 확인."
+    },
+    {
+      "name": "어비 미미체",
+      "source": "https://uhb.kr/uhbeefont/mimi/",
+      "classification": "기존 누락 / 등록 보류",
+      "reason": "공식 파일 서버 HTTP403; 마이센 브라우저 다운로드도 시간 초과. 파일 검증 미완료. 라이선스상 상업 이용 허용 확인."
+    }
+  ],
+  "duplicates": [
+    {
+      "name": "세방고딕 2.0",
+      "id": "k-sebang-gothic-2",
+      "action": "신규 제외"
+    }
+  ],
+  "remaining": [
+    "어비 3종 공식 파일 서버 접근 복구 후 원본 검증",
+    "어비 나머지 전체 목록 별칭·파일 대조",
+    "결고딕·순금체 공식 원문 확보",
+    "Google Fonts 및 다른 공식 제작사 조사 범위 확장"
+  ],
+  "deployed": false,
+  "registered_this_run": 18,
+  "browser_files_verified": 52
+}
