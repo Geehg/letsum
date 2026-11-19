@@ -21,7 +21,7 @@ function swap(text,from,to,what){const next=text.replace(from,to);if(next===text
 const home=await fs.readFile(path.join(root,'../html/index.html'),'utf8');
 const absolute=text=>text.replace(/\b(href|src)="(?!https?:|\/|#|data:|mailto:)([^"]*)"/g,'$1="/$2"');
 const homeHead=home.match(/<head>([\s\S]*?)<\/head>/)[1];
-const siteHead=[...homeHead.matchAll(/<script>try\{var t=localStorage[\s\S]*?<\/script>|<link rel="(?:icon|apple-touch-icon|preconnect)"[^>]*>|<link rel="stylesheet" href="(?![^"]*preview-rendering)[^"]*">|<link href="https:\/\/fonts\.googleapis\.com[^"]*" rel="stylesheet">|<script src="\/js\/ui-language\.js[^"]*"><\/script>/g)].map(m=>absolute(m[0])).join('\n');
+const siteHead=[...homeHead.matchAll(/<script>try\{var t=localStorage[\s\S]*?<\/script>|<link rel="(?:icon|apple-touch-icon|preconnect)"[^>]*>|<link rel="stylesheet" href="(?![^"]*(?:preview-rendering|font-alternatives))[^"]*">|<link href="https:\/\/fonts\.googleapis\.com[^"]*" rel="stylesheet">|<script src="\/js\/ui-language\.js[^"]*"><\/script>/g)].map(m=>absolute(m[0])).join('\n');
 const siteHeader=absolute(home.match(/<header>[\s\S]*?<\/header>/)[0])
  .replace(/ class="on" aria-current="page"/g,'').replace(`<a href="${base}">`,`<a href="${base}" class="on" aria-current="page">`)
  .replace('<a class="logo" href="/index.html">','<a class="logo" href="/">')

@@ -753,3 +753,8 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 새 주소의 ‘기존 기록 가져오기’는 정확한 origin/창/요청 번호를 검사해 사용자 클릭으로만 복사한다. 파일 백업과 가져오기를 지원하며 병합·중복·용량 오류 롤백 테스트 통과. 실제 브라우저에서 서시 6자 초안/통계 복원 확인.
 - 회원 API는 기존 letsum-api와 동일 D1을 공유한다. 새 도메인은 계정 API만 허용. 기존 OAuth 주소를 거쳐 HttpOnly nonce/2분 만료/1회용 코드로 새 호스트 세션 발급. 비밀값 복사/계정 DB 이관 없음.
 - 검증: test_typing_transfer.cjs 및 test_typing_handoff.mjs 통과, validate.py 오류0. Worker 버전 dee499f2-e086-484d-8600-30e9871e9146 배포. 새 사이트 health/auth-status 정상. 실제 계정 동의/로그인 완료는 운영자 확인 대상.
+
+## 2026-11-19 후속 — 렛섬의 필사독서 노출 종료
+- 독립 이관 후에도 헤더 메뉴와 구 서비스 화면이 남아 있다는 사용자 지적 반영. 모든 공통 헤더에서 필사독서를 제거하고 /typing.html은 고요서가로 이동, 렛섬 사이트맵에서 제외.
+- type.letsum.app 첫 화면은 이전 안내만 제공. 필사 앱 스크립트를 실행하지 않는다. 기존 기록 localStorage·계정 D1·OAuth 콜백과 /transfer.html은 보존. 원본 삭제 없음.
+- 푸터 ‘함께 운영하는 사이트’에는 외부 서비스인 고요서가 필사독서 링크 유지. 새 서비스 소스는 Geehg/goyo-typing.
