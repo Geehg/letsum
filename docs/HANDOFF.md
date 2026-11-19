@@ -780,3 +780,11 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 어비: 상업·BI·임베드 허용, 파일 판매·조건부 교환 금지. 상세의 변형 허용과 메인 생성 README 수정 금지 상충으로 수정·변형 재배포 확인 필요 표시.
 - Tunera: OFL 원문·저작권·예약 이름 보존. 스타일 선택 범위 설명, 영문과 딩벳 분리. dingbat_manual.json을 생성기 입력으로 추가해 재빌드 보존.
 - 증거: tools/state/tunera_uhbee_audit_20261120.json 및 /Volumes/AI_dev/web/output/font-add-tunera-uhbee-20261120/.
+
+
+## 2026-11-20 다국어 폰트 페이지
+- /multilingual/ 개설: 공통 헤더 영문 폰트 다음 메뉴. 15개 언어 탭 / 고유 19패밀리(탭 중복 포함 금지). 기존 한글·영문 카탈로그 수는 변경하지 않음.
+- 원본: tools/state/multilingual.json, 생성기: tools/build_multilingual.js, UI: html/js/multilingual.js + html/css/multilingual.css. build_pages.js가 내비게이션·번역 처리 전에 생성하며 사이트맵에 포함. 생성 HTML 직접 수정 금지.
+- 공식 Google Fonts OFL·메타데이터 및 견본 글자 cmap 검증: tools/state/multilingual_evidence.json. 400/700 두 굵기, 15언어 30개 브라우저 전환 검증. 공식 CSS가 문자별 원본 웹폰트를 공급하며 자체 변환·업로드하지 않음.
+- RTL: ar/he 견본 방향 지정. 직접 입력·크기18~64px·굵기·폰트명 검색·초기화·URL 언어 공유·뒤로가기 지원. 공식 다운로드/원문 라이선스 연결.
+- 검증 기록: /Volumes/AI_dev/web/output/multilingual-20261120/ (로컬 Chrome 15언어/2굵기 성공, 390px 가로 넘침 없음, 영어 UI·다크모드 확인).

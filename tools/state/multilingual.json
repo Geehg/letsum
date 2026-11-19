@@ -1,0 +1,392 @@
+{
+  "verified": "2026-11-20",
+  "tabs": [
+    {
+      "id": "ja",
+      "label": "일본어",
+      "native": "日本語",
+      "sample": "文字で、世界とつながる。",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans JP",
+        "Noto Serif JP"
+      ]
+    },
+    {
+      "id": "zh-Hans",
+      "label": "중국어 간체",
+      "native": "简体中文",
+      "sample": "用文字，连接世界。",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans SC",
+        "Noto Serif SC"
+      ]
+    },
+    {
+      "id": "zh-Hant",
+      "label": "중국어 번체",
+      "native": "繁體中文",
+      "sample": "用文字，連結世界。",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans TC",
+        "Noto Serif TC"
+      ]
+    },
+    {
+      "id": "ar",
+      "label": "아랍어",
+      "native": "العربية",
+      "sample": "الكلمات تفتح نوافذ العالم",
+      "dir": "rtl",
+      "families": [
+        "Noto Sans Arabic",
+        "Noto Naskh Arabic"
+      ]
+    },
+    {
+      "id": "hi",
+      "label": "힌디어",
+      "native": "हिन्दी",
+      "sample": "शब्दों से दुनिया जुड़ती है।",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans Devanagari",
+        "Noto Serif Devanagari"
+      ]
+    },
+    {
+      "id": "th",
+      "label": "태국어",
+      "native": "ภาษาไทย",
+      "sample": "ตัวอักษรเชื่อมโยงโลกเข้าด้วยกัน",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans Thai",
+        "Noto Serif Thai"
+      ]
+    },
+    {
+      "id": "vi",
+      "label": "베트남어",
+      "native": "Tiếng Việt",
+      "sample": "Những con chữ kết nối thế giới.",
+      "dir": "ltr",
+      "families": [
+        "Be Vietnam Pro",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "el",
+      "label": "그리스어",
+      "native": "Ελληνικά",
+      "sample": "Οι λέξεις ενώνουν τον κόσμο.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "ru",
+      "label": "러시아어",
+      "native": "Русский",
+      "sample": "Слова соединяют мир.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "he",
+      "label": "히브리어",
+      "native": "עברית",
+      "sample": "מילים מחברות בין עולמות",
+      "dir": "rtl",
+      "families": [
+        "Noto Sans Hebrew",
+        "Noto Serif Hebrew"
+      ]
+    },
+    {
+      "id": "bn",
+      "label": "벵골어",
+      "native": "বাংলা",
+      "sample": "অক্ষরে অক্ষরে বিশ্বকে জানি।",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans Bengali",
+        "Noto Serif Bengali"
+      ]
+    },
+    {
+      "id": "fr",
+      "label": "프랑스어",
+      "native": "Français",
+      "sample": "Les mots nous ouvrent le monde.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "de",
+      "label": "독일어",
+      "native": "Deutsch",
+      "sample": "Wörter verbinden die Welt.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "es",
+      "label": "스페인어",
+      "native": "Español",
+      "sample": "Las palabras conectan el mundo.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    },
+    {
+      "id": "pt",
+      "label": "포르투갈어",
+      "native": "Português",
+      "sample": "As palavras conectam o mundo.",
+      "dir": "ltr",
+      "families": [
+        "Noto Sans",
+        "Noto Serif"
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "id": "noto-sans-jp",
+      "name": "Noto Sans JP",
+      "path": "notosansjp",
+      "languages": [
+        "ja"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+JP",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-jp",
+      "name": "Noto Serif JP",
+      "path": "notoserifjp",
+      "languages": [
+        "ja"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+JP",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifjp/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-sc",
+      "name": "Noto Sans SC",
+      "path": "notosanssc",
+      "languages": [
+        "zh-Hans"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+SC",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-sc",
+      "name": "Noto Serif SC",
+      "path": "notoserifsc",
+      "languages": [
+        "zh-Hans"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+SC",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-tc",
+      "name": "Noto Sans TC",
+      "path": "notosanstc",
+      "languages": [
+        "zh-Hant"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+TC",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-tc",
+      "name": "Noto Serif TC",
+      "path": "notoseriftc",
+      "languages": [
+        "zh-Hant"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+TC",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoseriftc/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-arabic",
+      "name": "Noto Sans Arabic",
+      "path": "notosansarabic",
+      "languages": [
+        "ar"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+Arabic",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansarabic/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-naskh-arabic",
+      "name": "Noto Naskh Arabic",
+      "path": "notonaskharabic",
+      "languages": [
+        "ar"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Naskh+Arabic",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notonaskharabic/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-devanagari",
+      "name": "Noto Sans Devanagari",
+      "path": "notosansdevanagari",
+      "languages": [
+        "hi"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+Devanagari",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansdevanagari/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-devanagari",
+      "name": "Noto Serif Devanagari",
+      "path": "notoserifdevanagari",
+      "languages": [
+        "hi"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+Devanagari",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifdevanagari/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-thai",
+      "name": "Noto Sans Thai",
+      "path": "notosansthai",
+      "languages": [
+        "th"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+Thai",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansthai/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-thai",
+      "name": "Noto Serif Thai",
+      "path": "notoserifthai",
+      "languages": [
+        "th"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+Thai",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifthai/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;700&display=swap"
+    },
+    {
+      "id": "be-vietnam-pro",
+      "name": "Be Vietnam Pro",
+      "path": "bevietnampro",
+      "languages": [
+        "vi"
+      ],
+      "official": "https://fonts.google.com/specimen/Be+Vietnam+Pro",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/bevietnampro/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif",
+      "name": "Noto Serif",
+      "path": "notoserif",
+      "languages": [
+        "vi",
+        "el",
+        "ru",
+        "fr",
+        "de",
+        "es",
+        "pt"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserif/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans",
+      "name": "Noto Sans",
+      "path": "notosans",
+      "languages": [
+        "el",
+        "ru",
+        "fr",
+        "de",
+        "es",
+        "pt"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-hebrew",
+      "name": "Noto Sans Hebrew",
+      "path": "notosanshebrew",
+      "languages": [
+        "he"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+Hebrew",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshebrew/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-hebrew",
+      "name": "Noto Serif Hebrew",
+      "path": "notoserifhebrew",
+      "languages": [
+        "he"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+Hebrew",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifhebrew/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-sans-bengali",
+      "name": "Noto Sans Bengali",
+      "path": "notosansbengali",
+      "languages": [
+        "bn"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Sans+Bengali",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansbengali/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap"
+    },
+    {
+      "id": "noto-serif-bengali",
+      "name": "Noto Serif Bengali",
+      "path": "notoserifbengali",
+      "languages": [
+        "bn"
+      ],
+      "official": "https://fonts.google.com/specimen/Noto+Serif+Bengali",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifbengali/OFL.txt",
+      "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap"
+    }
+  ]
+}
