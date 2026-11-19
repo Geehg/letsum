@@ -108,8 +108,9 @@ def gf_files(en):
 
 def main():
     only = sys.argv[sys.argv.index("--id") + 1] if "--id" in sys.argv else None
+    selected = set(sys.argv[sys.argv.index("--ids") + 1].split(",")) if "--ids" in sys.argv else None
     cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
-    fonts = [f for f in load_fonts(include_english=True) if not f["intro"] and (not only or f["id"] == only)]
+    fonts = [f for f in load_fonts(include_english=True) if not f["intro"] and (not only or f["id"] == only) and (not selected or f["id"] in selected)]
     out = json.loads(OUT.read_text()) if OUT.exists() else {}
     for f in fonts:
         files = [(int(w), u) for w, u in (f["webfont"] or {}).items()] if f["webfont"] else gf_files(f["en"])

@@ -772,3 +772,11 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 어비 마이센·세현·미미: 공식 파일 서버403/다운로드 시간 초과로 보류. 결고딕·순금체 원문 미확보 보류 유지.
 - 조사대장: tools/state/font_survey_ledger_20261119.json. 새 출시/기존 누락/업데이트/보류 구분, 조사 범위와 남은 범위 기록. Mabyko 전 계열 영구 제외.
 - 증거: tools/state/survey_audit_20261119.json 및 /Volumes/AI_dev/web/output/font-register-survey-20261119/.
+
+
+## 2026-11-20 — Tunera 20종·어비 95종 등록
+- 어비 95 + 영문 18 + 딩벳(Choso·Teranoptia) 2. 공식 원본 198개 무변환. 일반 1,993→2,106종, 딩벳 48→50종.
+- 초기 원본 검사 199개 중 어비 퀸제이 Bold만 glyf 오류 및 Chrome 로딩 실패: Regular만 등록. 카이루 Bold 내부 메타데이터 Regular 중복으로 Regular만 제공. 초성체는 초성 디자인임을 명시.
+- 어비: 상업·BI·임베드 허용, 파일 판매·조건부 교환 금지. 상세의 변형 허용과 메인 생성 README 수정 금지 상충으로 수정·변형 재배포 확인 필요 표시.
+- Tunera: OFL 원문·저작권·예약 이름 보존. 스타일 선택 범위 설명, 영문과 딩벳 분리. dingbat_manual.json을 생성기 입력으로 추가해 재빌드 보존.
+- 증거: tools/state/tunera_uhbee_audit_20261120.json 및 /Volumes/AI_dev/web/output/font-add-tunera-uhbee-20261120/.

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """딩벳(기호·아이콘) 폰트 데이터(html/js/data_db.js) 생성 — 제작사 공식 배포본만.
 
-출처 두 가지(둘 다 변환·보관 없이 공식 웹폰트 주소를 그대로 미리보기에 쓴다):
+출처: 공식 웹폰트와 검증된 원본 배포 파일.
   1) Google Fonts — 이모지·기호·음악 기호·바코드·가림(Redacted)·데이터 표현 글꼴, Material Icons·Symbols
      미리보기는 견본 글자만 담은 공식 CSS(text=·icon_names=)가 알려 주는 fonts.gstatic.com 주소
   2) 제작사 공식 npm 패키지(jsDelivr) — Bootstrap Icons·Tabler·Phosphor·Font Awesome Free 등 아이콘 폰트
      패키지의 CSS에서 아이콘 이름 → 코드포인트를 읽어 견본 아이콘을 고른다
+  3) tools/state/dingbat_manual.json — 원본·라이선스·브라우저 검증을 마친 수동 등록분. 재생성 시 병합.
 라이선스는 각 저장소 원문을 사람이 확인해 아래 표(LIC)에 적었다. 새 폰트를 넣을 때도 원문을 먼저 읽는다.
 손으로 고친 항목(manual: true)의 설명·분류는 덮어쓰지 않는다. 한 번 등록된 id는 바꾸지 않는다.
 
@@ -315,6 +316,11 @@ def load_existing():
 
 
 def write(out):
+    manual_path = os.path.join(ROOT, "tools", "state", "dingbat_manual.json")
+    if os.path.exists(manual_path):
+        reviewed = json.load(open(manual_path, encoding="utf-8"))
+        reviewed_ids = {e["id"] for e in reviewed}
+        out = [e for e in out if e["id"] not in reviewed_ids] + reviewed
     body = ",\n".join("  " + js(e) for e in out)
     hdr = ("// LETSUM 딩벳(기호·아이콘) 폰트 데이터 — tools/build_db_data.py가 제작사 공식 배포본(Google Fonts·공식 npm/GitHub)으로 생성(손으로 고친 항목은 manual: true).\n"
            "// /dingbat/ 페이지에서만 쓴다: data.js 다음에 불러오고, LS_LANG === \"db\"이면 FONTS를 이 목록으로 바꾼다.\n"

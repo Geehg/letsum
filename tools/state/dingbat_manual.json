@@ -1,0 +1,384 @@
+[
+  {
+    "id": "d-choso",
+    "name": "Choso",
+    "en": "Choso",
+    "family": "'LS d-choso', sans-serif",
+    "designer": "Ariel Martín Pérez",
+    "holder": "Tunera · Ariel Martín Pérez",
+    "category": "장식·데이터",
+    "tags": [
+      "장식·데이터"
+    ],
+    "mood": [
+      "강렬한"
+    ],
+    "weights": [
+      400
+    ],
+    "formats": [
+      "WOFF2"
+    ],
+    "cov": 0,
+    "glyphs": "기호·그림 (알파벳 키 입력) · 한자 0자 (공식 원본 윤곽 검사)",
+    "subsets": [
+      "latin"
+    ],
+    "variable": false,
+    "webfont": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/d-choso/400.woff2"
+    },
+    "webfontSrc": "제작자 공식 원본 (무변환)",
+    "dl": {
+      "page": "https://www.tunera.xyz/fonts/choso/",
+      "srcName": "Tunera(공식)"
+    },
+    "license": "OFL 1.1 · 파일 판매 금지",
+    "matrix": {
+      "print": "ok",
+      "web": "ok",
+      "video": "ok",
+      "embed": "ok",
+      "bici": "ok",
+      "package": "ok",
+      "ofl": "cond"
+    },
+    "verified": "2026-11-20",
+    "status": "verified",
+    "pair": "inter",
+    "pop": 0,
+    "added": "2026-11-20",
+    "manual": true,
+    "manualSource": true,
+    "old": false,
+    "hanja": false,
+    "desc": "알파벳 키에 카나리아 제도 주택 외벽에서 착안한 문양을 배치한 그림 폰트입니다. 글자 대신 기하학 무늬가 나타나며 일반 영문 본문용이 아닙니다. Pintado 원본을 제공합니다.",
+    "icons": [
+      [
+        "A",
+        "문양 A",
+        "A"
+      ],
+      [
+        "B",
+        "문양 B",
+        "B"
+      ],
+      [
+        "C",
+        "문양 C",
+        "C"
+      ],
+      [
+        "D",
+        "문양 D",
+        "D"
+      ],
+      [
+        "E",
+        "문양 E",
+        "E"
+      ],
+      [
+        "F",
+        "문양 F",
+        "F"
+      ],
+      [
+        "G",
+        "문양 G",
+        "G"
+      ],
+      [
+        "H",
+        "문양 H",
+        "H"
+      ],
+      [
+        "I",
+        "문양 I",
+        "I"
+      ],
+      [
+        "J",
+        "문양 J",
+        "J"
+      ],
+      [
+        "K",
+        "문양 K",
+        "K"
+      ],
+      [
+        "L",
+        "문양 L",
+        "L"
+      ],
+      [
+        "M",
+        "문양 M",
+        "M"
+      ],
+      [
+        "N",
+        "문양 N",
+        "N"
+      ],
+      [
+        "O",
+        "문양 O",
+        "O"
+      ],
+      [
+        "P",
+        "문양 P",
+        "P"
+      ],
+      [
+        "Q",
+        "문양 Q",
+        "Q"
+      ],
+      [
+        "R",
+        "문양 R",
+        "R"
+      ],
+      [
+        "S",
+        "문양 S",
+        "S"
+      ],
+      [
+        "T",
+        "문양 T",
+        "T"
+      ],
+      [
+        "U",
+        "문양 U",
+        "U"
+      ],
+      [
+        "V",
+        "문양 V",
+        "V"
+      ],
+      [
+        "W",
+        "문양 W",
+        "W"
+      ],
+      [
+        "X",
+        "문양 X",
+        "X"
+      ],
+      [
+        "Y",
+        "문양 Y",
+        "Y"
+      ],
+      [
+        "Z",
+        "문양 Z",
+        "Z"
+      ]
+    ],
+    "sample": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "typeable": true,
+    "nIcons": 132,
+    "liga": false
+  },
+  {
+    "id": "d-teranoptia",
+    "name": "Teranoptia",
+    "en": "Teranoptia",
+    "family": "'LS d-teranoptia', sans-serif",
+    "designer": "Ariel Martín Pérez",
+    "holder": "Tunera · Ariel Martín Pérez",
+    "category": "장식·데이터",
+    "tags": [
+      "장식·데이터"
+    ],
+    "mood": [
+      "강렬한"
+    ],
+    "weights": [
+      400
+    ],
+    "formats": [
+      "WOFF2"
+    ],
+    "cov": 0,
+    "glyphs": "기호·그림 (알파벳 키 입력) · 한자 0자 (공식 원본 윤곽 검사)",
+    "subsets": [
+      "latin"
+    ],
+    "variable": false,
+    "webfont": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/d-teranoptia/400.woff2"
+    },
+    "webfontSrc": "제작자 공식 원본 (무변환)",
+    "dl": {
+      "page": "https://www.tunera.xyz/fonts/teranoptia/",
+      "srcName": "Tunera(공식)"
+    },
+    "license": "OFL 1.1 · 파일 판매 금지",
+    "matrix": {
+      "print": "ok",
+      "web": "ok",
+      "video": "ok",
+      "embed": "ok",
+      "bici": "ok",
+      "package": "ok",
+      "ofl": "cond"
+    },
+    "verified": "2026-11-20",
+    "status": "verified",
+    "pair": "inter",
+    "pop": 0,
+    "added": "2026-11-20",
+    "manual": true,
+    "manualSource": true,
+    "old": false,
+    "hanja": false,
+    "desc": "알파벳 키로 상상 속 생물의 몸통·머리·꼬리를 조합하는 그림 폰트입니다. 일반 글자를 표시하지 않으며 테두리 장식과 일러스트에 활용할 수 있습니다. Furiae 원본을 제공합니다.",
+    "icons": [
+      [
+        "A",
+        "문양 A",
+        "A"
+      ],
+      [
+        "B",
+        "문양 B",
+        "B"
+      ],
+      [
+        "C",
+        "문양 C",
+        "C"
+      ],
+      [
+        "D",
+        "문양 D",
+        "D"
+      ],
+      [
+        "E",
+        "문양 E",
+        "E"
+      ],
+      [
+        "F",
+        "문양 F",
+        "F"
+      ],
+      [
+        "G",
+        "문양 G",
+        "G"
+      ],
+      [
+        "H",
+        "문양 H",
+        "H"
+      ],
+      [
+        "I",
+        "문양 I",
+        "I"
+      ],
+      [
+        "J",
+        "문양 J",
+        "J"
+      ],
+      [
+        "K",
+        "문양 K",
+        "K"
+      ],
+      [
+        "L",
+        "문양 L",
+        "L"
+      ],
+      [
+        "M",
+        "문양 M",
+        "M"
+      ],
+      [
+        "N",
+        "문양 N",
+        "N"
+      ],
+      [
+        "O",
+        "문양 O",
+        "O"
+      ],
+      [
+        "P",
+        "문양 P",
+        "P"
+      ],
+      [
+        "Q",
+        "문양 Q",
+        "Q"
+      ],
+      [
+        "R",
+        "문양 R",
+        "R"
+      ],
+      [
+        "S",
+        "문양 S",
+        "S"
+      ],
+      [
+        "T",
+        "문양 T",
+        "T"
+      ],
+      [
+        "U",
+        "문양 U",
+        "U"
+      ],
+      [
+        "V",
+        "문양 V",
+        "V"
+      ],
+      [
+        "W",
+        "문양 W",
+        "W"
+      ],
+      [
+        "X",
+        "문양 X",
+        "X"
+      ],
+      [
+        "Y",
+        "문양 Y",
+        "Y"
+      ],
+      [
+        "Z",
+        "문양 Z",
+        "Z"
+      ]
+    ],
+    "sample": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "typeable": true,
+    "nIcons": 79,
+    "liga": false
+  }
+]

@@ -14,6 +14,10 @@ en_data = os.path.join(ROOT, "html", "js", "data_en.js")
 if os.path.exists(en_data):
     en_js = "const fs=require('fs');const F=new Function('var window={};'+fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8')+';return FONTS_EN')();console.log(JSON.stringify(F))"
     FONTS += json.loads(subprocess.run(["node", "-e", en_js, os.path.join(ROOT, "html", "js", "data.js"), en_data], capture_output=True, text=True, check=True).stdout)
+db_data = os.path.join(ROOT, "html", "js", "data_db.js")
+if os.path.exists(db_data):
+    db_js = "const fs=require('fs');const F=new Function('var window={};'+fs.readFileSync(process.argv[1],'utf8')+fs.readFileSync(process.argv[2],'utf8')+';return FONTS_DB')();console.log(JSON.stringify(F))"
+    FONTS += json.loads(subprocess.run(["node", "-e", db_js, os.path.join(ROOT, "html", "js", "data.js"), db_data], capture_output=True, text=True, check=True).stdout)
 st = lambda n: json.load(open(os.path.join(HERE, "state", n), encoding="utf-8"))
 chk = {r["id"]: r for r in st("license_check.json")}; man = st("license_manual.json"); wf = st("webfonts.json")
 mirror = sys.argv[1] if len(sys.argv) > 1 else None
