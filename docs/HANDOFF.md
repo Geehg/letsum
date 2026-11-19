@@ -788,3 +788,5 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 공식 Google Fonts OFL·메타데이터 및 견본 글자 cmap 검증: tools/state/multilingual_evidence.json. 400/700 두 굵기, 15언어 30개 브라우저 전환 검증. 공식 CSS가 문자별 원본 웹폰트를 공급하며 자체 변환·업로드하지 않음.
 - RTL: ar/he 견본 방향 지정. 직접 입력·크기18~64px·굵기·폰트명 검색·초기화·URL 언어 공유·뒤로가기 지원. 공식 다운로드/원문 라이선스 연결.
 - 검증 기록: /Volumes/AI_dev/web/output/multilingual-20261120/ (로컬 Chrome 15언어/2굵기 성공, 390px 가로 넘침 없음, 영어 UI·다크모드 확인).
+
+- 2026-11-20 히어로 수정: 슬로건·장식 문자 제거, 폰트 이름 검색 폼을 중앙 배치. 언어 탭과 문장/크기/굵기 조절은 아래 유지. 입력 즉시 필터 및 검색 버튼/Enter 지원.
