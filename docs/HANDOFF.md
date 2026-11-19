@@ -758,3 +758,9 @@ collection_blocks.json + collection_policy.py를 수집 병합/후보 내보내�
 - 독립 이관 후에도 헤더 메뉴와 구 서비스 화면이 남아 있다는 사용자 지적 반영. 모든 공통 헤더에서 필사독서를 제거하고 /typing.html은 고요서가로 이동, 렛섬 사이트맵에서 제외.
 - type.letsum.app 첫 화면은 이전 안내만 제공. 필사 앱 스크립트를 실행하지 않는다. 기존 기록 localStorage·계정 D1·OAuth 콜백과 /transfer.html은 보존. 원본 삭제 없음.
 - 푸터 ‘함께 운영하는 사이트’에는 외부 서비스인 고요서가 필사독서 링크 유지. 새 서비스 소스는 Geehg/goyo-typing.
+
+
+## 2026-11-19 — 신규 한글 3종·영문 2종
+- 비욘드빌리지체, 밝은성모 스마일라식체·시력교정체, Crooli Sans, Baskerville Punch Text 추가. 원본 파일 무변환, 파일 단독 판매 금지 및 개별 조건 표시. 밝은성모 수정 금지/공식 !% 로고 안내, 비욘드 RFN·영문 숫자 없음, Baskerville Text Regular 범위를 명시.
+- 공식 배포 원본 5파일과 13굵기 브라우저 로딩 통과. 한글 실제 윤곽 2,350/11,172/11,172자. BSM 공식 Regular 1종과 파일 내부 weight 800/600 차이를 설명.
+- mirror 48c6c83. 상세 근거 tools/state/font5_audit_20261119.json. 새 폰트 외 기존 카탈로그 보존.

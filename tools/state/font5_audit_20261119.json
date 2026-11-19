@@ -1,0 +1,233 @@
+{
+  "date": "2026-11-19",
+  "fonts": [
+    {
+      "id": "k-beyond-village",
+      "name": "비욘드빌리지체",
+      "en": "BeyondVillage",
+      "local": "files/k-beyond-village.woff2",
+      "page": "https://beyondvillage.kr/font/",
+      "weights": [
+        400
+      ],
+      "variable": false,
+      "hangul": 2350,
+      "hanja": 0,
+      "latin": 0,
+      "digits": 0,
+      "sha256": "a4d18dc0a95561619b8084ff6439104d25805310fe5fe8f5d3eddd79e7bd6d13",
+      "bytes": 287416,
+      "names": {
+        "0": "Copyright 2026 HYEAN, Inc. (https://beyondvillage.kr/font), with Reserved Font Name \"BeyondVillage\" and \"비욘드빌리지체\".",
+        "1": "BeyondVillage",
+        "2": "Regular",
+        "5": "Version 0.500",
+        "8": "HYEAN, Inc.",
+        "9": "HYEAN, Inc.",
+        "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. Commercial use is free.",
+        "14": "https://openfontlicense.org"
+      },
+      "version": "Version 0.500"
+    },
+    {
+      "id": "k-bsm-smile-lasik",
+      "name": "밝은성모 스마일라식체",
+      "en": "BSM Smile Lasik",
+      "local": "files/k-bsm-smile-lasik.woff2",
+      "page": "https://www.oklasik.com/font/",
+      "weights": [
+        800
+      ],
+      "variable": false,
+      "hangul": 11172,
+      "hanja": 0,
+      "latin": 26,
+      "digits": 10,
+      "sha256": "daf98a10c9541e586bf0baf2e94aa52a805fdc3ced9c4ed403298b139261ce90",
+      "bytes": 524780,
+      "names": {
+        "0": "Copyright (c) 2026 BSM EYE CENTER. All rights reserved.",
+        "1": "BSM Smile Lasik",
+        "2": "Regular",
+        "5": "Version 2.000",
+        "8": "BSM EYE CENTER",
+        "9": "Kang Sungwon",
+        "13": "Exclusive brand typeface of BSM EYE CENTER.",
+        "14": "https://oklasik.com"
+      },
+      "version": "Version 2.000"
+    },
+    {
+      "id": "k-bsm-vision-correction",
+      "name": "밝은성모 시력교정체",
+      "en": "BSM Vision Correction",
+      "local": "files/k-bsm-vision-correction.woff2",
+      "page": "https://www.oklasik.com/font/",
+      "weights": [
+        600
+      ],
+      "variable": false,
+      "hangul": 11172,
+      "hanja": 0,
+      "latin": 26,
+      "digits": 10,
+      "sha256": "08247093b8075e1f1cbe893a27337f7e7c270b23ad7d0b4aaeeefb4680f86e72",
+      "bytes": 216028,
+      "names": {
+        "0": "Copyright (c) 2026 BSM EYE CENTER(225-95-11475) All rights reserved.",
+        "1": "BSM Vision Correction",
+        "2": "Regular",
+        "5": "Version 1.000",
+        "8": "BSM EYE CENTER",
+        "9": "Kang Sungwon",
+        "13": "Licensed for use by BSM EYE CENTER. oklasik.com",
+        "14": "https://oklasik.com"
+      },
+      "version": "Version 1.000"
+    },
+    {
+      "id": "e-crooli-sans",
+      "name": "Crooli Sans",
+      "en": "Crooli Sans",
+      "local": "files/e-crooli-sans.woff2",
+      "page": "https://crooli.com/font",
+      "weights": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900
+      ],
+      "variable": true,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "digits": 10,
+      "sha256": "3bd735b702054043c330857dadf8fce29f409cafc703e58d20c53d639bd67e5a",
+      "bytes": 70000,
+      "names": {
+        "0": "Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font). Copyright 2026 The Crooli Sans Project Authors (https://github.com/xandertaylorx/crooli-sans).",
+        "1": "Crooli Sans",
+        "2": "Regular",
+        "5": "Version 1.000",
+        "8": "Crooli",
+        "9": "Crooli; Geist by Basement.studio, Andrés Briganti, Mateo Zaragoza",
+        "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+        "14": "https://openfontlicense.org"
+      },
+      "version": "Version 1.000"
+    },
+    {
+      "id": "e-baskerville-punch",
+      "name": "Baskerville Punch Text",
+      "en": "Baskerville Punch Text",
+      "local": "files/e-baskerville-punch.otf",
+      "page": "https://baskervillepunches.org/baskerville-punch-a-revival-of-baskervilles-type/",
+      "weights": [
+        400
+      ],
+      "variable": false,
+      "hangul": 0,
+      "hanja": 0,
+      "latin": 26,
+      "digits": 10,
+      "sha256": "e8e5c8d4c94fb3e527d303eb11c2b334f7b1b5af5dde6bc0504a2abaf9cfa19d",
+      "bytes": 98728,
+      "names": {
+        "0": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+        "1": "Baskerville Punch Text",
+        "2": "Regular",
+        "5": "Version 0.001;Glyphs 3.5 (3526)",
+        "8": null,
+        "9": null,
+        "13": null,
+        "14": null
+      },
+      "version": "Version 0.001;Glyphs 3.5 (3526)"
+    }
+  ],
+  "browser": [
+    {
+      "id": "k-beyond-village",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "k-bsm-smile-lasik",
+      "weights": [
+        {
+          "weight": 800,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "k-bsm-vision-correction",
+      "weights": [
+        {
+          "weight": 600,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-crooli-sans",
+      "weights": [
+        {
+          "weight": 100,
+          "status": "loaded"
+        },
+        {
+          "weight": 200,
+          "status": "loaded"
+        },
+        {
+          "weight": 300,
+          "status": "loaded"
+        },
+        {
+          "weight": 400,
+          "status": "loaded"
+        },
+        {
+          "weight": 500,
+          "status": "loaded"
+        },
+        {
+          "weight": 600,
+          "status": "loaded"
+        },
+        {
+          "weight": 700,
+          "status": "loaded"
+        },
+        {
+          "weight": 800,
+          "status": "loaded"
+        },
+        {
+          "weight": 900,
+          "status": "loaded"
+        }
+      ]
+    },
+    {
+      "id": "e-baskerville-punch",
+      "weights": [
+        {
+          "weight": 400,
+          "status": "loaded"
+        }
+      ]
+    }
+  ],
+  "originalsUnmodified": true
+}

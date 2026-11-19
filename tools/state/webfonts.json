@@ -6567,5 +6567,121 @@
   ],
   "originalUnmodified": true,
   "sha256": "3223b6489a73f894592e86327d4faa77ed8b04e0ff80f3b9e9d972e66a6e2690"
+ },
+ "k-beyond-village": {
+  "name": "비욘드빌리지체",
+  "en": "BeyondVillage",
+  "page": "https://beyondvillage.kr/font/",
+  "source": "https://beyondvillage.kr/font/BeyondVillage-v0.5.zip",
+  "license": "비욘드빌리지 OFL 1.1",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/k-beyond-village/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 2350,
+  "bytes": 287416,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-5-20261119/files/k-beyond-village.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256": "a4d18dc0a95561619b8084ff6439104d25805310fe5fe8f5d3eddd79e7bd6d13"
+ },
+ "k-bsm-smile-lasik": {
+  "name": "밝은성모 스마일라식체",
+  "en": "BSM Smile Lasik",
+  "page": "https://www.oklasik.com/font/",
+  "source": "https://www.oklasik.com/font/download.php?f=sl-woff2",
+  "license": "밝은성모안과 폰트 이용조건",
+  "files": {
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/k-bsm-smile-lasik/800.woff2"
+  },
+  "weights": [
+   800
+  ],
+  "cov": 11172,
+  "bytes": 524780,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-5-20261119/files/k-bsm-smile-lasik.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256": "daf98a10c9541e586bf0baf2e94aa52a805fdc3ced9c4ed403298b139261ce90"
+ },
+ "k-bsm-vision-correction": {
+  "name": "밝은성모 시력교정체",
+  "en": "BSM Vision Correction",
+  "page": "https://www.oklasik.com/font/",
+  "source": "https://www.oklasik.com/font/download.php?f=vc-woff2",
+  "license": "밝은성모안과 폰트 이용조건",
+  "files": {
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/k-bsm-vision-correction/600.woff2"
+  },
+  "weights": [
+   600
+  ],
+  "cov": 11172,
+  "bytes": 216028,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-5-20261119/files/k-bsm-vision-correction.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256": "08247093b8075e1f1cbe893a27337f7e7c270b23ad7d0b4aaeeefb4680f86e72"
+ },
+ "e-crooli-sans": {
+  "name": "Crooli Sans",
+  "en": "Crooli Sans",
+  "page": "https://crooli.com/font",
+  "source": "https://github.com/xandertaylorx/crooli-sans",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-crooli-sans/400.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800,
+   900
+  ],
+  "cov": 0,
+  "bytes": 70000,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-5-20261119/files/e-crooli-sans.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256": "3bd735b702054043c330857dadf8fce29f409cafc703e58d20c53d639bd67e5a"
+ },
+ "e-baskerville-punch": {
+  "name": "Baskerville Punch Text",
+  "en": "Baskerville Punch Text",
+  "page": "https://baskervillepunches.org/baskerville-punch-a-revival-of-baskervilles-type/",
+  "source": "https://ctan.org/tex-archive/fonts/baskervillepunch",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-baskerville-punch/400.otf"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 98728,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-5-20261119/files/e-baskerville-punch.otf"
+  ],
+  "originalUnmodified": true,
+  "sha256": "e8e5c8d4c94fb3e527d303eb11c2b334f7b1b5af5dde6bc0504a2abaf9cfa19d"
  }
 }
