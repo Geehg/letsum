@@ -8073,5 +8073,113 @@
   "page": "https://ctan.org/tex-archive/fonts/baskervillepunch",
   "checked": "2026-11-19",
   "evidence": "개인·기업의 상업적 이용, 인쇄·웹·영상·상품·로고 및 임베딩을 허용합니다. 폰트 파일 자체의 단독 판매는 금지합니다. 재배포 시 저작권 고지와 OFL 1.1 전문을 유지하고 수정본도 같은 라이선스로 배포해야 합니다. 예약 이름이 있으면 수정본에 사용할 수 없습니다. 원본 name 0·13 및 공식 배포 조건 확인. 변환·서브셋 없이 SHA-256 동일 파일 사용. CTAN README에서 폰트 OTF는 OFL 1.1, LaTeX 지원 파일은 LPPL로 구분. Text Regular만 미리보기."
+ },
+ "e-absans": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/absans",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-apfel-grotezk": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/apfel-grotezk",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-aujournuit": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/aujournuit",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-borges": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/borges",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-coconat": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/coconat",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-halibut": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/halibut",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-mattone": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/mattone",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-mazius-display": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/mazius-display",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-messapia": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/messapia",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-necto-mono": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/necto-mono",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-ortica": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/ortica",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-paper-mono": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/paper-design/paper-mono",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt, OFL.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. "
+ },
+ "e-ribes": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/ribes",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-ronzino": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/ronzino",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-sinistre": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/sinistre",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-sneaky-times": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/sneaky-times",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-sprat": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/collletttivo/sprat",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. 제작사 웹사이트는 디자이너·배포처 크레딧도 요청하므로 상세 제작자 및 원문 링크 표시."
+ },
+ "e-uncut-sans": {
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "page": "https://github.com/kaspernordkvist/uncut_sans",
+  "checked": "2026-11-19",
+  "evidence": "공식 저장소의 LICENSE.txt 및 폰트 name 0·13 확인. SIL OFL 1.1: 상업 이용·임베딩·재배포 허용, 파일 단독 판매 금지. 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약명 제한. 공식 원본 WOFF2를 변환·서브셋 없이 SHA-256 동일하게 미러링. "
  }
 }

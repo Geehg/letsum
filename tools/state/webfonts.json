@@ -6683,5 +6683,537 @@
   ],
   "originalUnmodified": true,
   "sha256": "e8e5c8d4c94fb3e527d303eb11c2b334f7b1b5af5dde6bc0504a2abaf9cfa19d"
+ },
+ "e-absans": {
+  "name": "Absans",
+  "en": "Absans",
+  "page": "https://github.com/collletttivo/absans",
+  "source": "https://github.com/collletttivo/absans",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-absans/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 56656,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-absans-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "d99eeb41d82e7bd23b4c92483267143e10d5c9686ad299056ac057c03a34b68f"
+  }
+ },
+ "e-apfel-grotezk": {
+  "name": "Apfel Grotezk",
+  "en": "Apfel Grotezk",
+  "page": "https://github.com/collletttivo/apfel-grotezk",
+  "source": "https://github.com/collletttivo/apfel-grotezk",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-apfel-grotezk/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-apfel-grotezk/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-apfel-grotezk/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-apfel-grotezk/700.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-apfel-grotezk/900.woff2"
+  },
+  "weights": [
+   300,
+   400,
+   500,
+   700,
+   900
+  ],
+  "cov": 0,
+  "bytes": 115732,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-apfel-grotezk-300.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-apfel-grotezk-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-apfel-grotezk-500.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-apfel-grotezk-700.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-apfel-grotezk-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "300": "661ae837ad5701bfef57ed756e792d1090f2d3ce78943312c6c486ebafb51eba",
+   "400": "5fd817f20d9fac6bcf1eed50b19bad1ccb8c1e14887d9a9f8b7841d4dd460b7b",
+   "500": "869899ef1bdd5b132e098cba769711b15fa1ea14b2263b6accbe9eed08a381bc",
+   "700": "5f799ce6e8fec2b6cf4917ebbef60a422ca132c4c50959ca6560213ea3fa106e",
+   "900": "482b6d9fb6531f59d7b2a7548c934a0a043c0a47fc8a589c03c1d687e506143e"
+  }
+ },
+ "e-aujournuit": {
+  "name": "Aujournuit",
+  "en": "Aujournuit",
+  "page": "https://github.com/collletttivo/aujournuit",
+  "source": "https://github.com/collletttivo/aujournuit",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-aujournuit/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 39284,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-aujournuit-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "2471e991ae677078cd4e7615ab176796282ae43e6d2e20199093c5f65ce1413d"
+  }
+ },
+ "e-borges": {
+  "name": "Borges",
+  "en": "Borges",
+  "page": "https://github.com/collletttivo/borges",
+  "source": "https://github.com/collletttivo/borges",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-borges/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 14928,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-borges-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "24f01cf5804cdd4eac0a268de2e5b9acd35d79f462d0e16ac9327a67a61fa17c"
+  }
+ },
+ "e-coconat": {
+  "name": "Coconat",
+  "en": "Coconat",
+  "page": "https://github.com/collletttivo/coconat",
+  "source": "https://github.com/collletttivo/coconat",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-coconat/400.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-coconat/900.woff2"
+  },
+  "weights": [
+   400,
+   900
+  ],
+  "cov": 0,
+  "bytes": 48088,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-coconat-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-coconat-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "f5b5cd95991f7d184d690d2700bb1b35ae8927ab2a3fb5b07e16cc47e2b6dbba",
+   "900": "fd08aed5840b5a88186c3a6b34808296009ade349f9c3cfce6fb95c67d371abe"
+  }
+ },
+ "e-halibut": {
+  "name": "Halibut",
+  "en": "Halibut",
+  "page": "https://github.com/collletttivo/halibut",
+  "source": "https://github.com/collletttivo/halibut",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-halibut/100.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-halibut/400.woff2"
+  },
+  "weights": [
+   100,
+   400
+  ],
+  "cov": 0,
+  "bytes": 52224,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-halibut-100.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-halibut-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "100": "46dfea1487475b0223673668be9afdb165ac7976f3ad6d7f7fff204e5d7fc086",
+   "400": "e23025aa83f38c5214dca442ba729c097b9629f6a7bc927659e16199f13e7b25"
+  }
+ },
+ "e-mattone": {
+  "name": "Mattone",
+  "en": "Mattone",
+  "page": "https://github.com/collletttivo/mattone",
+  "source": "https://github.com/collletttivo/mattone",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-mattone/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-mattone/700.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-mattone/900.woff2"
+  },
+  "weights": [
+   400,
+   700,
+   900
+  ],
+  "cov": 0,
+  "bytes": 74472,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-mattone-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-mattone-700.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-mattone-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "8de570e06e88561a810f379dfa61420a7d302b7104d91081faf5e77529ec730f",
+   "700": "23aa303315e8fc5f89740d2d20619149c86d616a2376e8963d5889503431e80b",
+   "900": "a247c064a6c5ce14c66a876132eb936612a95798b011ab98eada0bd52bba062d"
+  }
+ },
+ "e-mazius-display": {
+  "name": "Mazius Display",
+  "en": "Mazius Display",
+  "page": "https://github.com/collletttivo/mazius-display",
+  "source": "https://github.com/collletttivo/mazius-display",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-mazius-display/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-mazius-display/700.woff2"
+  },
+  "weights": [
+   400,
+   700
+  ],
+  "cov": 0,
+  "bytes": 41556,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-mazius-display-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-mazius-display-700.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "2220486909addce8dadf31067c02e6f6e9b2d03f9991d71a3d5c0b3cd44e9a2b",
+   "700": "6404b8d08d2caa851d720b9326038695c5312cb16879c1bbb1fab8202e5d66ce"
+  }
+ },
+ "e-messapia": {
+  "name": "Messapia",
+  "en": "Messapia",
+  "page": "https://github.com/collletttivo/messapia",
+  "source": "https://github.com/collletttivo/messapia",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-messapia/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 25732,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-messapia-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "49478110ef7cf3874aa213890ab3e18c316f5c69428e454e7fae750de68585b5"
+  }
+ },
+ "e-necto-mono": {
+  "name": "Necto Mono",
+  "en": "Necto Mono",
+  "page": "https://github.com/collletttivo/necto-mono",
+  "source": "https://github.com/collletttivo/necto-mono",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-necto-mono/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 23724,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-necto-mono-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "92b49265d991b621e6ed90675608f70811caa4e2154f8ac095af073a9738b7e5"
+  }
+ },
+ "e-ortica": {
+  "name": "Ortica",
+  "en": "Ortica",
+  "page": "https://github.com/collletttivo/ortica",
+  "source": "https://github.com/collletttivo/ortica",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-ortica/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-ortica/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-ortica/700.woff2"
+  },
+  "weights": [
+   300,
+   400,
+   700
+  ],
+  "cov": 0,
+  "bytes": 81856,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ortica-300.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ortica-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ortica-700.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "300": "39d8e5d02806cd3158635159ed8dfd5f6762c4f75828bc2fa2f5e32bfc05ee97",
+   "400": "c11d9615de7fc1ba9d934d484cc758e108c2320a1af668a3bdff2d5a3dab7645",
+   "700": "7e63304abfbba90efb7138e76fcd8a3968a91d892efdaa30ce6943c718f78f34"
+  }
+ },
+ "e-paper-mono": {
+  "name": "Paper Mono",
+  "en": "Paper Mono",
+  "page": "https://github.com/paper-design/paper-mono",
+  "source": "https://github.com/paper-design/paper-mono",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/100.woff2",
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/200.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/700.woff2",
+   "800": "https://geehg.github.io/letsum-mirror/webfonts/e-paper-mono/800.woff2"
+  },
+  "weights": [
+   100,
+   200,
+   300,
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  "cov": 0,
+  "bytes": 304212,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-100.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-200.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-300.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-500.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-600.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-700.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-paper-mono-800.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "100": "579598c35d5e361664a3791114a24a7d2b45dd86a285a2979b7c6e0a24deee24",
+   "200": "ce3f3f8fe6f82d8e45d5f754e8ea9921989d763bad2f8aea0f59a9a5003b2545",
+   "300": "949aabf62d9c151aaa8d9084ffa8fbaf47f8a06ebc6d2af1c0567defdc57f4bd",
+   "400": "bb51ddbeb0bf288821b6cc4e16f94fcc475a1e069eedd6832a320afaf70bfecf",
+   "500": "53805a6239b32feb55aae2ec5abff182c027ad267314ed2992f6a8aedc3c442c",
+   "600": "a0bfda31a20fc78a2fc3ca96afbe374a2e1cab6f9ea45ab4cc571b30f12a1353",
+   "700": "1158eb9c6b8d84786b445b61e9e8a60b1586398ca7e35affa92dcddf59ed0a99",
+   "800": "1c7b3adfe3264497d341ea33c4da61241957a04c44506063ac7fe10445f38bb6"
+  }
+ },
+ "e-ribes": {
+  "name": "Ribes",
+  "en": "Ribes",
+  "page": "https://github.com/collletttivo/ribes",
+  "source": "https://github.com/collletttivo/ribes",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "200": "https://geehg.github.io/letsum-mirror/webfonts/e-ribes/200.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-ribes/400.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-ribes/900.woff2"
+  },
+  "weights": [
+   200,
+   400,
+   900
+  ],
+  "cov": 0,
+  "bytes": 58536,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ribes-200.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ribes-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ribes-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "200": "670144e46abe34dc03b9a3b35032c37641c9b879a8f50b82a75e4a644f9cde3b",
+   "400": "75d603191b203ec1f568b0b0b9acb0667a6ba81f972984d0bca7f00d2873c583",
+   "900": "ca2ce567d419bc91cd253e894fd49eafae3a29e0677c7247f74071f74e8873b5"
+  }
+ },
+ "e-ronzino": {
+  "name": "Ronzino",
+  "en": "Ronzino",
+  "page": "https://github.com/collletttivo/ronzino",
+  "source": "https://github.com/collletttivo/ronzino",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-ronzino/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-ronzino/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-ronzino/700.woff2"
+  },
+  "weights": [
+   400,
+   500,
+   700
+  ],
+  "cov": 0,
+  "bytes": 172804,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ronzino-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ronzino-500.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-ronzino-700.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "09db749b24418d4e82df2ca476f800d52c69e163b3d8120191db01f92fad45b1",
+   "500": "27f171925cd2ad209df79ceb0c9eeb33b774b4229a15bec1018399a0d339052f",
+   "700": "f686a12c16f629ceeb71996830ae7c899b6524bc724030f7a97fec63b4d4e625"
+  }
+ },
+ "e-sinistre": {
+  "name": "Sinistre",
+  "en": "Sinistre",
+  "page": "https://github.com/collletttivo/sinistre",
+  "source": "https://github.com/collletttivo/sinistre",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-sinistre/400.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-sinistre/700.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-sinistre/900.woff2"
+  },
+  "weights": [
+   400,
+   700,
+   900
+  ],
+  "cov": 0,
+  "bytes": 176056,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sinistre-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sinistre-700.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sinistre-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "1d7db47ce01fc0a5b4da29837902abfcbc044a37ec3b10974ecc6766ca4a64e8",
+   "700": "712b142a4c5e8a2bb7fdc6c1c38778fa1e9020d3ddfbf3edc29417eef19ecd3e",
+   "900": "3d2d6f93372cc1f1298dd2bb9ef3fdb799376cdf1395eb32d1d43c394586d8ea"
+  }
+ },
+ "e-sneaky-times": {
+  "name": "Sneaky Times",
+  "en": "Sneaky Times",
+  "page": "https://github.com/collletttivo/sneaky-times",
+  "source": "https://github.com/collletttivo/sneaky-times",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-sneaky-times/400.woff2"
+  },
+  "weights": [
+   400
+  ],
+  "cov": 0,
+  "bytes": 43232,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sneaky-times-400.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "400": "afd2c258a3d141506e1e6ed7fe436b83ae258409ef3beb299b2b930feea0d526"
+  }
+ },
+ "e-sprat": {
+  "name": "Sprat",
+  "en": "Sprat",
+  "page": "https://github.com/collletttivo/sprat",
+  "source": "https://github.com/collletttivo/sprat",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "100": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/100.woff2",
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/300.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/500.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/700.woff2",
+   "900": "https://geehg.github.io/letsum-mirror/webfonts/e-sprat/900.woff2"
+  },
+  "weights": [
+   100,
+   300,
+   400,
+   500,
+   700,
+   900
+  ],
+  "cov": 0,
+  "bytes": 146696,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-100.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-300.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-500.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-700.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-sprat-900.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "100": "7f01d35c3486ed4d520c5411a57dfdeb42dd4fdb12cc1fa52fde26a0720fbadd",
+   "300": "fe49b3aba03118517deca37bece809851ac6b3ebea3357f21193ae21721324fe",
+   "400": "a95a0dc5233d4a4f9445f60e4a59db64e519dd55f83812d0d7859e5e2a551cd0",
+   "500": "a762f5497c5d47ca1d34d51e60ae3d8b4fb01cdf875af7b62883b060955b5053",
+   "700": "323494c9031a61371abd674319c5094a79058d0e7eff20ac58aa88e4a92155fc",
+   "900": "bb3c110fee2b3a6753b4bc749e444ac2edbd3476b0127052abc3c0c38062e980"
+  }
+ },
+ "e-uncut-sans": {
+  "name": "Uncut Sans",
+  "en": "Uncut Sans",
+  "page": "https://github.com/kaspernordkvist/uncut_sans",
+  "source": "https://github.com/kaspernordkvist/uncut_sans",
+  "license": "OFL 1.1 · 파일 판매 금지",
+  "files": {
+   "300": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/300.woff2",
+   "350": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/350.woff2",
+   "400": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/400.woff2",
+   "500": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/500.woff2",
+   "600": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/600.woff2",
+   "700": "https://geehg.github.io/letsum-mirror/webfonts/e-uncut-sans/700.woff2"
+  },
+  "weights": [
+   300,
+   350,
+   400,
+   500,
+   600,
+   700
+  ],
+  "cov": 0,
+  "bytes": 236300,
+  "source_files": [
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-300.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-350.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-400.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-500.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-600.woff2",
+   "/Volumes/AI_dev/web/output/font-register-survey-20261119/files/e-uncut-sans-700.woff2"
+  ],
+  "originalUnmodified": true,
+  "sha256ByWeight": {
+   "300": "a147381fd3aaaa7a458d2d9baf5ba97549afc1ee1075e4b93390e53cf5ec3940",
+   "350": "ccdfab87801ad484911e3ecffdbf5ae561ee15d19821ca8292309484203338ac",
+   "400": "766cb8968c143f3c402ec335aff9019fa93a42d8736170c593a7bc5a34c304c3",
+   "500": "f2d6670ba9f03a6345a274410b5fda1c3ff1a72b9a62054a2d97f3a1264c63b6",
+   "600": "3cbaacafef778e5083c228a368907de65d8bd0d0c9ceb864b1321c3e01bdf849",
+   "700": "7980a52af480c1cb2a3b269e9d0081b4221a3369a8900622ee7e50df07263b79"
+  }
  }
 }

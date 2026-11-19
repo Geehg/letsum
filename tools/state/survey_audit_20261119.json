@@ -1,0 +1,1773 @@
+{
+ "date": "2026-11-19",
+ "fonts": [
+  {
+   "id": "e-absans",
+   "group": "absans",
+   "name": "Absans",
+   "page": "https://github.com/collletttivo/absans",
+   "licenses": [
+    "absans/absans-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "absans",
+     "file": "absans/absans-main/fonts/Absans-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": null,
+      "1": "Absans",
+      "2": "Regular",
+      "5": "Version 1.200;Glyphs 3.2 (3217)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Absans",
+      "17": "Regular"
+     },
+     "local": "files/e-absans-400.woff2",
+     "sha256": "d99eeb41d82e7bd23b4c92483267143e10d5c9686ad299056ac057c03a34b68f",
+     "bytes": 56656,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 498
+    }
+   ]
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "group": "apfel-grotezk",
+   "name": "Apfel Grotezk",
+   "page": "https://github.com/collletttivo/apfel-grotezk",
+   "licenses": [
+    "apfel-grotezk/apfel-grotezk-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "apfel-grotezk",
+     "file": "apfel-grotezk/apfel-grotezk-main/fonts/ApfelGrotezk-Brukt.woff2",
+     "weight": 300,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "SIL Open Font License",
+      "1": "Apfel Grotezk Brukt",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": null,
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Apfel Grotezk",
+      "17": "Brukt"
+     },
+     "local": "files/e-apfel-grotezk-300.woff2",
+     "sha256": "661ae837ad5701bfef57ed756e792d1090f2d3ce78943312c6c486ebafb51eba",
+     "bytes": 35484,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 337
+    },
+    {
+     "group": "apfel-grotezk",
+     "file": "apfel-grotezk/apfel-grotezk-main/fonts/ApfelGrotezk-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "SIL Open Font License",
+      "1": "Apfel Grotezk",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": null,
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Apfel Grotezk",
+      "17": "Regular"
+     },
+     "local": "files/e-apfel-grotezk-400.woff2",
+     "sha256": "5fd817f20d9fac6bcf1eed50b19bad1ccb8c1e14887d9a9f8b7841d4dd460b7b",
+     "bytes": 19852,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 337
+    },
+    {
+     "group": "apfel-grotezk",
+     "file": "apfel-grotezk/apfel-grotezk-main/fonts/ApfelGrotezk-Mittel.woff2",
+     "weight": 500,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "SIL Open Font License",
+      "1": "Apfel Grotezk Mittel",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": null,
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Apfel Grotezk",
+      "17": "Mittel"
+     },
+     "local": "files/e-apfel-grotezk-500.woff2",
+     "sha256": "869899ef1bdd5b132e098cba769711b15fa1ea14b2263b6accbe9eed08a381bc",
+     "bytes": 20564,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 337
+    },
+    {
+     "group": "apfel-grotezk",
+     "file": "apfel-grotezk/apfel-grotezk-main/fonts/ApfelGrotezk-Fett.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "SIL Open Font License",
+      "1": "Apfel Grotezk",
+      "2": "Bold",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": null,
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Apfel Grotezk",
+      "17": "Fett"
+     },
+     "local": "files/e-apfel-grotezk-700.woff2",
+     "sha256": "5f799ce6e8fec2b6cf4917ebbef60a422ca132c4c50959ca6560213ea3fa106e",
+     "bytes": 20128,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 337
+    },
+    {
+     "group": "apfel-grotezk",
+     "file": "apfel-grotezk/apfel-grotezk-main/fonts/ApfelGrotezk-Satt.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "SIL Open Font License",
+      "1": "Apfel Grotezk Satt",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": null,
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Apfel Grotezk",
+      "17": "Satt"
+     },
+     "local": "files/e-apfel-grotezk-900.woff2",
+     "sha256": "482b6d9fb6531f59d7b2a7548c934a0a043c0a47fc8a589c03c1d687e506143e",
+     "bytes": 19704,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 337
+    }
+   ]
+  },
+  {
+   "id": "e-aujournuit",
+   "group": "aujournuit",
+   "name": "Aujournuit",
+   "page": "https://github.com/collletttivo/aujournuit",
+   "licenses": [
+    "aujournuit/aujournuit-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "aujournuit",
+     "file": "aujournuit/aujournuit-main/fonts/Aujournuit-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": null,
+      "1": "Aujournuit",
+      "2": "Regular",
+      "5": "Version 1.006;Glyphs 3.2.3 (3260)",
+      "13": null,
+      "14": null,
+      "16": "Aujournuit",
+      "17": "Regular"
+     },
+     "local": "files/e-aujournuit-400.woff2",
+     "sha256": "2471e991ae677078cd4e7615ab176796282ae43e6d2e20199093c5f65ce1413d",
+     "bytes": 39284,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 407
+    }
+   ]
+  },
+  {
+   "id": "e-borges",
+   "group": "borges",
+   "name": "Borges",
+   "page": "https://github.com/collletttivo/borges",
+   "licenses": [
+    "borges/borges-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "borges",
+     "file": "borges/borges-main/fonts/Borges-SquarePixelRegular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 by Matteo Bertin. All rights reserved",
+      "1": "Borges Square Pixel",
+      "2": "Regular",
+      "5": "Version 1.000;Glyphs 3.4.1 (3436)",
+      "13": "Copyright 2025, Matteo Bertin (https://www.matteobertin.it/)\n«Borges»\n«Borges — Square pixel»\n\n\nThis Font Software is licensed under the SIL Open Font License, Version 1.1.\nThis license is copied below, and is also available with a FAQ at:\nhttps://openfontlicense.org\n\n\n-----------------------------------------------------------\nSIL OPEN FONT LICENSE Version 1.1 - 26 February 2007\n-----------------------------------------------------------\n\nPREAMBLE\nThe goals of the Open Font License (OFL) are to stimulate worldwide\ndevelopment of collaborative font projects, to support the font creation\nefforts of academic and linguistic communities, and to provide a free and\nopen framework in which fonts may be shared and improved in partnership\nwith others.\n\nThe OFL allows the licensed fonts to be used, studied, modified and\nredistributed freely as long as they are not sold by themselves. The\nfonts, including any derivative works, can be bundled, embedded,\nredistributed and/or sold with any software provided that any reserved\nnames are not used by derivative works. The fonts and derivatives,\nhowever, cannot be released under any other type of license. The\nrequirement for fonts to remain under this license does not apply\nto any document created using the fonts or their derivatives.\n\nDEFINITIONS\n\"Font Software\" refers to the set of files released by the Copyright\nHolder(s) under this license and clearly marked as such. This may\ninclude source files, build scripts and documentation.\n\n\"Reserved Font Name\" refers to any names specified as such after the\ncopyright statement(s).\n\n\"Original Version\" refers to the collection of Font Software components as\ndistributed by the Copyright Holder(s).\n\n\"Modified Version\" refers to any derivative made by adding to, deleting,\nor substituting -- in part or in whole -- any of the components of the\nOriginal Version, by changing formats or by porting the Font Software to a\nnew environment.\n\n\"Author\" refers to any designer, engineer, programmer, technical\nwriter or other person who contributed to the Font Software.\n\nPERMISSION & CONDITIONS\nPermission is hereby granted, free of charge, to any person obtaining\na copy of the Font Software, to use, study, copy, merge, embed, modify,\nredistribute, and sell modified and unmodified copies of the Font\nSoftware, subject to the following conditions:\n\n1) Neither the Font Software nor any of its individual components,\nin Original or Modified Versions, may be sold by itself.\n\n2) Original or Modified Versions of the Font Software may be bundled,\nredistributed and/or sold with any software, provided that each copy\ncontains the above copyright notice and this license. These can be\nincluded either as stand-alone text files, human-readable headers or\nin the appropriate machine-readable metadata fields within text or\nbinary files as long as those fields can be easily viewed by the user.\n\n3) No Modified Version of the Font Software may use the Reserved Font\nName(s) unless explicit written permission is granted by the corresponding\nCopyright Holder. This restriction only applies to the primary font name as\npresented to the users.\n\n4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font\nSoftware shall not be used to promote, endorse or advertise any\nModified Version, except to acknowledge the contribution(s) of the\nCopyright Holder(s) and the Author(s) or with their explicit written\npermission.\n\n5) The Font Software, modified or unmodified, in part or in whole,\nmust be distributed entirely under this license, and must not be\ndistributed under any other license. The requirement for fonts to\nremain under this license does not apply to any document created\nusing the Font Software.\n\nTERMINATION\nThis license becomes null and void if any of the above conditions are\nnot met.\n\nDISCLAIMER\nTHE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\nOF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE\nCOPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nINCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL\nDAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM\nOTHER DEALINGS IN THE FONT SOFTWARE.",
+      "14": "https://openfontlicense.org/",
+      "16": "Borges",
+      "17": "Square Pixel Regular"
+     },
+     "local": "files/e-borges-400.woff2",
+     "sha256": "24f01cf5804cdd4eac0a268de2e5b9acd35d79f462d0e16ac9327a67a61fa17c",
+     "bytes": 14928,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 359
+    }
+   ]
+  },
+  {
+   "id": "e-coconat",
+   "group": "coconat",
+   "name": "Coconat",
+   "page": "https://github.com/collletttivo/coconat",
+   "licenses": [
+    "coconat/coconat-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "coconat",
+     "file": "coconat/coconat-main/fonts/Coconat-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Collletttivo & Sara Lavazza",
+      "1": "Coconat",
+      "2": "Regular",
+      "5": "Version 1.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Coconat",
+      "17": "Regular"
+     },
+     "local": "files/e-coconat-400.woff2",
+     "sha256": "f5b5cd95991f7d184d690d2700bb1b35ae8927ab2a3fb5b07e16cc47e2b6dbba",
+     "bytes": 23720,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 327
+    },
+    {
+     "group": "coconat",
+     "file": "coconat/coconat-main/fonts/Coconat-Bold.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 8,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Collletttivo & Sara Lavazza",
+      "1": "Coconat",
+      "2": "Bold",
+      "5": "Version 1.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Coconat",
+      "17": "Bold"
+     },
+     "local": "files/e-coconat-900.woff2",
+     "sha256": "fd08aed5840b5a88186c3a6b34808296009ade349f9c3cfce6fb95c67d371abe",
+     "bytes": 24368,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 327
+    }
+   ]
+  },
+  {
+   "id": "e-halibut",
+   "group": "halibut",
+   "name": "Halibut",
+   "page": "https://github.com/collletttivo/halibut",
+   "licenses": [
+    "halibut/halibut-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "halibut",
+     "file": "halibut/halibut-main/fonts/Halibut-Thin.woff2",
+     "weight": 100,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Collletttivo",
+      "1": "Halibut Thin",
+      "2": "Regular",
+      "5": "Version 3.082;Glyphs 3.1.2 (3151)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Halibut",
+      "17": "Thin"
+     },
+     "local": "files/e-halibut-100.woff2",
+     "sha256": "46dfea1487475b0223673668be9afdb165ac7976f3ad6d7f7fff204e5d7fc086",
+     "bytes": 26108,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 340
+    },
+    {
+     "group": "halibut",
+     "file": "halibut/halibut-main/fonts/Halibut-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Collletttivo",
+      "1": "Halibut",
+      "2": "Regular",
+      "5": "Version 3.082;Glyphs 3.1.2 (3151)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Halibut",
+      "17": "Regular"
+     },
+     "local": "files/e-halibut-400.woff2",
+     "sha256": "e23025aa83f38c5214dca442ba729c097b9629f6a7bc927659e16199f13e7b25",
+     "bytes": 26116,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 340
+    }
+   ]
+  },
+  {
+   "id": "e-mattone",
+   "group": "mattone",
+   "name": "Mattone",
+   "page": "https://github.com/collletttivo/mattone",
+   "licenses": [
+    "mattone/mattone-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "mattone",
+     "file": "mattone/mattone-main/fonts/Mattone-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 6,
+     "axes": {},
+     "names": {
+      "0": "© 2022, Nunzio Mazzaferro and Collletttivo",
+      "1": "Mattone",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Mattone",
+      "17": "Regular"
+     },
+     "local": "files/e-mattone-400.woff2",
+     "sha256": "8de570e06e88561a810f379dfa61420a7d302b7104d91081faf5e77529ec730f",
+     "bytes": 24132,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 370
+    },
+    {
+     "group": "mattone",
+     "file": "mattone/mattone-main/fonts/Mattone-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 6,
+     "axes": {},
+     "names": {
+      "0": "© 2022, Nunzio Mazzaferro and Collletttivo",
+      "1": "Mattone",
+      "2": "Bold",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Mattone",
+      "17": "Bold"
+     },
+     "local": "files/e-mattone-700.woff2",
+     "sha256": "23aa303315e8fc5f89740d2d20619149c86d616a2376e8963d5889503431e80b",
+     "bytes": 25408,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 370
+    },
+    {
+     "group": "mattone",
+     "file": "mattone/mattone-main/fonts/Mattone-Black.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 6,
+     "axes": {},
+     "names": {
+      "0": "© 2022, Nunzio Mazzaferro and Collletttivo",
+      "1": "Mattone Black",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Mattone",
+      "17": "Black"
+     },
+     "local": "files/e-mattone-900.woff2",
+     "sha256": "a247c064a6c5ce14c66a876132eb936612a95798b011ab98eada0bd52bba062d",
+     "bytes": 24932,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 370
+    }
+   ]
+  },
+  {
+   "id": "e-mazius-display",
+   "group": "mazius-display",
+   "name": "Mazius Display",
+   "page": "https://github.com/collletttivo/mazius-display",
+   "licenses": [
+    "mazius-display/mazius-display-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "mazius-display",
+     "file": "mazius-display/mazius-display-main/fonts/MaziusDisplay-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Alberto Casagrande & Collletttivo",
+      "1": "Mazius Display",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Mazius Display",
+      "17": "Regular"
+     },
+     "local": "files/e-mazius-display-400.woff2",
+     "sha256": "2220486909addce8dadf31067c02e6f6e9b2d03f9991d71a3d5c0b3cd44e9a2b",
+     "bytes": 20480,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 317
+    },
+    {
+     "group": "mazius-display",
+     "file": "mazius-display/mazius-display-main/fonts/MaziusDisplay-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Alberto Casagrande & Collletttivo",
+      "1": "Mazius Display",
+      "2": "Bold",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Mazius Display",
+      "17": "Bold"
+     },
+     "local": "files/e-mazius-display-700.woff2",
+     "sha256": "6404b8d08d2caa851d720b9326038695c5312cb16879c1bbb1fab8202e5d66ce",
+     "bytes": 21076,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 317
+    }
+   ]
+  },
+  {
+   "id": "e-messapia",
+   "group": "messapia",
+   "name": "Messapia",
+   "page": "https://github.com/collletttivo/messapia",
+   "licenses": [
+    "messapia/messapia-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "messapia",
+     "file": "messapia/messapia-main/fonts/Messapia-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Luca Marsano % Collletttivo",
+      "1": "Messapia",
+      "2": "Regular",
+      "5": "Version 1.000;Glyphs 3.2 (3217)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Messapia",
+      "17": "Regular"
+     },
+     "local": "files/e-messapia-400.woff2",
+     "sha256": "49478110ef7cf3874aa213890ab3e18c316f5c69428e454e7fae750de68585b5",
+     "bytes": 25732,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 339
+    }
+   ]
+  },
+  {
+   "id": "e-necto-mono",
+   "group": "necto-mono",
+   "name": "Necto Mono",
+   "page": "https://github.com/collletttivo/necto-mono",
+   "licenses": [
+    "necto-mono/necto-mono-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "necto-mono",
+     "file": "necto-mono/necto-mono-main/fonts/NectoMono-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Marco Condello & Collletttivo",
+      "1": "Necto Mono",
+      "2": "Regular",
+      "5": "Version 1.500;Glyphs 3.3.1 (3343)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Necto Mono",
+      "17": "Regular"
+     },
+     "local": "files/e-necto-mono-400.woff2",
+     "sha256": "92b49265d991b621e6ed90675608f70811caa4e2154f8ac095af073a9738b7e5",
+     "bytes": 23724,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 411
+    }
+   ]
+  },
+  {
+   "id": "e-ortica",
+   "group": "ortica",
+   "name": "Ortica",
+   "page": "https://github.com/collletttivo/ortica",
+   "licenses": [
+    "ortica/ortica-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "ortica",
+     "file": "ortica/ortica-main/fonts/OrticaLinear-Light.woff2",
+     "weight": 300,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2021, Benedetta Bovani & Colllettivo",
+      "1": "Ortica Linear Light",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ortica Linear",
+      "17": "Light"
+     },
+     "local": "files/e-ortica-300.woff2",
+     "sha256": "39d8e5d02806cd3158635159ed8dfd5f6762c4f75828bc2fa2f5e32bfc05ee97",
+     "bytes": 26952,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 363
+    },
+    {
+     "group": "ortica",
+     "file": "ortica/ortica-main/fonts/OrticaLinear-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2021, Benedetta Bovani & Colllettivo",
+      "1": "Ortica Linear",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ortica Linear",
+      "17": "Regular"
+     },
+     "local": "files/e-ortica-400.woff2",
+     "sha256": "c11d9615de7fc1ba9d934d484cc758e108c2320a1af668a3bdff2d5a3dab7645",
+     "bytes": 27672,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 363
+    },
+    {
+     "group": "ortica",
+     "file": "ortica/ortica-main/fonts/OrticaLinear-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2021, Benedetta Bovani & Colllettivo",
+      "1": "Ortica Linear",
+      "2": "Bold",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ortica Linear",
+      "17": "Bold"
+     },
+     "local": "files/e-ortica-700.woff2",
+     "sha256": "7e63304abfbba90efb7138e76fcd8a3968a91d892efdaa30ce6943c718f78f34",
+     "bytes": 27232,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 363
+    }
+   ]
+  },
+  {
+   "id": "e-paper-mono",
+   "group": "paper-mono",
+   "name": "Paper Mono",
+   "page": "https://github.com/paper-design/paper-mono",
+   "licenses": [
+    "paper-mono/paper-mono-main/LICENSE.txt",
+    "paper-mono/paper-mono-main/OFL.txt"
+   ],
+   "files": [
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-Thin.woff2",
+     "weight": 100,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono Thin",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "Thin"
+     },
+     "local": "files/e-paper-mono-100.woff2",
+     "sha256": "579598c35d5e361664a3791114a24a7d2b45dd86a285a2979b7c6e0a24deee24",
+     "bytes": 37352,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-ExtraLight.woff2",
+     "weight": 200,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono ExtraLight",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "ExtraLight"
+     },
+     "local": "files/e-paper-mono-200.woff2",
+     "sha256": "ce3f3f8fe6f82d8e45d5f754e8ea9921989d763bad2f8aea0f59a9a5003b2545",
+     "bytes": 37840,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-Light.woff2",
+     "weight": 300,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono Light",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "Light"
+     },
+     "local": "files/e-paper-mono-300.woff2",
+     "sha256": "949aabf62d9c151aaa8d9084ffa8fbaf47f8a06ebc6d2af1c0567defdc57f4bd",
+     "bytes": 37736,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": null,
+      "17": null
+     },
+     "local": "files/e-paper-mono-400.woff2",
+     "sha256": "bb51ddbeb0bf288821b6cc4e16f94fcc475a1e069eedd6832a320afaf70bfecf",
+     "bytes": 37868,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-Medium.woff2",
+     "weight": 500,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono Medium",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "Medium"
+     },
+     "local": "files/e-paper-mono-500.woff2",
+     "sha256": "53805a6239b32feb55aae2ec5abff182c027ad267314ed2992f6a8aedc3c442c",
+     "bytes": 38324,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-SemiBold.woff2",
+     "weight": 600,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono SemiBold",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "SemiBold"
+     },
+     "local": "files/e-paper-mono-600.woff2",
+     "sha256": "a0bfda31a20fc78a2fc3ca96afbe374a2e1cab6f9ea45ab4cc571b30f12a1353",
+     "bytes": 38220,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono",
+      "2": "Bold",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": null,
+      "17": null
+     },
+     "local": "files/e-paper-mono-700.woff2",
+     "sha256": "1158eb9c6b8d84786b445b61e9e8a60b1586398ca7e35affa92dcddf59ed0a99",
+     "bytes": 38340,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    },
+    {
+     "group": "paper-mono",
+     "file": "paper-mono/paper-mono-main/fonts/webfonts/PaperMono-ExtraBold.woff2",
+     "weight": 800,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2025 The Paper Mono Project Authors (https://github.com/paper-design/paper-mono)",
+      "1": "Paper Mono ExtraBold",
+      "2": "Regular",
+      "5": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "14": "https://openfontlicense.org",
+      "16": "Paper Mono",
+      "17": "ExtraBold"
+     },
+     "local": "files/e-paper-mono-800.woff2",
+     "sha256": "1c7b3adfe3264497d341ea33c4da61241957a04c44506063ac7fe10445f38bb6",
+     "bytes": 38532,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 657
+    }
+   ]
+  },
+  {
+   "id": "e-ribes",
+   "group": "ribes",
+   "name": "Ribes",
+   "page": "https://github.com/collletttivo/ribes",
+   "licenses": [
+    "ribes/ribes-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "ribes",
+     "file": "ribes/ribes-main/fonts/Ribes-Light.woff2",
+     "weight": 200,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Collletttivo & Luigi Gorlero",
+      "1": "Ribes Light",
+      "2": "Regular",
+      "5": "Version 2.100;Glyphs 3.1.2 (3151)",
+      "13": "SIL OpenFont License",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Ribes",
+      "17": "Light"
+     },
+     "local": "files/e-ribes-200.woff2",
+     "sha256": "670144e46abe34dc03b9a3b35032c37641c9b879a8f50b82a75e4a644f9cde3b",
+     "bytes": 19088,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 321
+    },
+    {
+     "group": "ribes",
+     "file": "ribes/ribes-main/fonts/Ribes-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Collletttivo & Luigi Gorlero",
+      "1": "Ribes",
+      "2": "Regular",
+      "5": "Version 2.100;Glyphs 3.1.2 (3151)",
+      "13": "SIL OpenFont License",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Ribes",
+      "17": "Regular"
+     },
+     "local": "files/e-ribes-400.woff2",
+     "sha256": "75d603191b203ec1f568b0b0b9acb0667a6ba81f972984d0bca7f00d2873c583",
+     "bytes": 19888,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 321
+    },
+    {
+     "group": "ribes",
+     "file": "ribes/ribes-main/fonts/Ribes-Black.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Collletttivo & Luigi Gorlero",
+      "1": "Ribes",
+      "2": "Bold",
+      "5": "Version 2.100;Glyphs 3.1.2 (3151)",
+      "13": "SIL OpenFont License",
+      "14": "http://scripts.sil.org/OFL",
+      "16": "Ribes",
+      "17": "Black"
+     },
+     "local": "files/e-ribes-900.woff2",
+     "sha256": "ca2ce567d419bc91cd253e894fd49eafae3a29e0677c7247f74071f74e8873b5",
+     "bytes": 19560,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 321
+    }
+   ]
+  },
+  {
+   "id": "e-ronzino",
+   "group": "ronzino",
+   "name": "Ronzino",
+   "page": "https://github.com/collletttivo/ronzino",
+   "licenses": [
+    "ronzino/ronzino-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "ronzino",
+     "file": "ronzino/ronzino-main/fonts/Ronzino-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": null,
+      "1": "Ronzino",
+      "2": "Regular",
+      "5": "Version 1.000;Glyphs 3.3 (3337)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ronzino",
+      "17": "Regular"
+     },
+     "local": "files/e-ronzino-400.woff2",
+     "sha256": "09db749b24418d4e82df2ca476f800d52c69e163b3d8120191db01f92fad45b1",
+     "bytes": 56732,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "ronzino",
+     "file": "ronzino/ronzino-main/fonts/Ronzino-Medium.woff2",
+     "weight": 500,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": null,
+      "1": "Ronzino Medium",
+      "2": "Regular",
+      "5": "Version 1.000;Glyphs 3.3 (3337)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ronzino",
+      "17": "Medium"
+     },
+     "local": "files/e-ronzino-500.woff2",
+     "sha256": "27f171925cd2ad209df79ceb0c9eeb33b774b4229a15bec1018399a0d339052f",
+     "bytes": 58120,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "ronzino",
+     "file": "ronzino/ronzino-main/fonts/Ronzino-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": null,
+      "1": "Ronzino",
+      "2": "Bold",
+      "5": "Version 1.000;Glyphs 3.3 (3337)",
+      "13": "SIL OpenFont License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Ronzino",
+      "17": "Bold"
+     },
+     "local": "files/e-ronzino-700.woff2",
+     "sha256": "f686a12c16f629ceeb71996830ae7c899b6524bc724030f7a97fec63b4d4e625",
+     "bytes": 57952,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    }
+   ]
+  },
+  {
+   "id": "e-sinistre",
+   "group": "sinistre",
+   "name": "Sinistre",
+   "page": "https://github.com/collletttivo/sinistre",
+   "licenses": [
+    "sinistre/sinistre-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "sinistre",
+     "file": "sinistre/sinistre-main/fonts/Sinistre-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Jules Durand & Collletttivo",
+      "1": "Sinistre",
+      "2": "Regular",
+      "5": "Version 69.420;Glyphs 3.4.1 (3436)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Sinistre",
+      "17": "Regular"
+     },
+     "local": "files/e-sinistre-400.woff2",
+     "sha256": "1d7db47ce01fc0a5b4da29837902abfcbc044a37ec3b10974ecc6766ca4a64e8",
+     "bytes": 57776,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 463
+    },
+    {
+     "group": "sinistre",
+     "file": "sinistre/sinistre-main/fonts/Sinistre-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Jules Durand & Collletttivo",
+      "1": "Sinistre",
+      "2": "Bold",
+      "5": "Version 69.420;Glyphs 3.4.1 (3436)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Sinistre",
+      "17": "Bold"
+     },
+     "local": "files/e-sinistre-700.woff2",
+     "sha256": "712b142a4c5e8a2bb7fdc6c1c38778fa1e9020d3ddfbf3edc29417eef19ecd3e",
+     "bytes": 59776,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 463
+    },
+    {
+     "group": "sinistre",
+     "file": "sinistre/sinistre-main/fonts/Sinistre-Dark.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2023, Jules Durand & Collletttivo",
+      "1": "Sinistre Dark",
+      "2": "Regular",
+      "5": "Version 69.420;Glyphs 3.4.1 (3436)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Sinistre",
+      "17": "Dark"
+     },
+     "local": "files/e-sinistre-900.woff2",
+     "sha256": "3d2d6f93372cc1f1298dd2bb9ef3fdb799376cdf1395eb32d1d43c394586d8ea",
+     "bytes": 58504,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 463
+    }
+   ]
+  },
+  {
+   "id": "e-sneaky-times",
+   "group": "sneaky-times",
+   "name": "Sneaky Times",
+   "page": "https://github.com/collletttivo/sneaky-times",
+   "licenses": [
+    "sneaky-times/sneaky-times-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "sneaky-times",
+     "file": "sneaky-times/sneaky-times-main/fonts/Sneaky-Times.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Jules Durand",
+      "1": "Sneaky Times",
+      "2": "Regular",
+      "5": "Version 4.002;Glyphs 3.2.3 (3260)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL_web",
+      "16": "Sneaky",
+      "17": "Times"
+     },
+     "local": "files/e-sneaky-times-400.woff2",
+     "sha256": "afd2c258a3d141506e1e6ed7fe436b83ae258409ef3beb299b2b930feea0d526",
+     "bytes": 43232,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 356
+    }
+   ]
+  },
+  {
+   "id": "e-sprat",
+   "group": "sprat",
+   "name": "Sprat",
+   "page": "https://github.com/collletttivo/sprat",
+   "licenses": [
+    "sprat/sprat-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Thin.woff2",
+     "weight": 100,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat Thin",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Thin"
+     },
+     "local": "files/e-sprat-100.woff2",
+     "sha256": "7f01d35c3486ed4d520c5411a57dfdeb42dd4fdb12cc1fa52fde26a0720fbadd",
+     "bytes": 24048,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    },
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Light.woff2",
+     "weight": 300,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat Light",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Light"
+     },
+     "local": "files/e-sprat-300.woff2",
+     "sha256": "fe49b3aba03118517deca37bece809851ac6b3ebea3357f21193ae21721324fe",
+     "bytes": 24632,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    },
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Regular"
+     },
+     "local": "files/e-sprat-400.woff2",
+     "sha256": "a95a0dc5233d4a4f9445f60e4a59db64e519dd55f83812d0d7859e5e2a551cd0",
+     "bytes": 24036,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    },
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Medium.woff2",
+     "weight": 500,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat Medium",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Medium"
+     },
+     "local": "files/e-sprat-500.woff2",
+     "sha256": "a762f5497c5d47ca1d34d51e60ae3d8b4fb01cdf875af7b62883b060955b5053",
+     "bytes": 24740,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    },
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat",
+      "2": "Bold",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Bold"
+     },
+     "local": "files/e-sprat-700.woff2",
+     "sha256": "323494c9031a61371abd674319c5094a79058d0e7eff20ac58aa88e4a92155fc",
+     "bytes": 24912,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    },
+    {
+     "group": "sprat",
+     "file": "sprat/sprat-main/fonts/Sprat-Black.woff2",
+     "weight": 900,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "© 2020, Ethan Nakache",
+      "1": "Sprat Black",
+      "2": "Regular",
+      "5": "Version 2.000;Glyphs 3.2 (3217)",
+      "13": "SIL Open Font License",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Sprat",
+      "17": "Black"
+     },
+     "local": "files/e-sprat-900.woff2",
+     "sha256": "bb3c110fee2b3a6753b4bc749e444ac2edbd3476b0127052abc3c0c38062e980",
+     "bytes": 24328,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 336
+    }
+   ]
+  },
+  {
+   "id": "e-uncut-sans",
+   "group": "uncut-sans",
+   "name": "Uncut Sans",
+   "page": "https://github.com/kaspernordkvist/uncut_sans",
+   "licenses": [
+    "uncut-sans/uncut_sans-main/LICENSE.txt"
+   ],
+   "files": [
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Light.woff2",
+     "weight": 300,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans Light",
+      "2": "Regular",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Light"
+     },
+     "local": "files/e-uncut-sans-300.woff2",
+     "sha256": "a147381fd3aaaa7a458d2d9baf5ba97549afc1ee1075e4b93390e53cf5ec3940",
+     "bytes": 38796,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Book.woff2",
+     "weight": 350,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans Book",
+      "2": "Regular",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Book"
+     },
+     "local": "files/e-uncut-sans-350.woff2",
+     "sha256": "ccdfab87801ad484911e3ecffdbf5ae561ee15d19821ca8292309484203338ac",
+     "bytes": 39300,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Regular.woff2",
+     "weight": 400,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans",
+      "2": "Regular",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Regular"
+     },
+     "local": "files/e-uncut-sans-400.woff2",
+     "sha256": "766cb8968c143f3c402ec335aff9019fa93a42d8736170c593a7bc5a34c304c3",
+     "bytes": 38640,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Medium.woff2",
+     "weight": 500,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans Medium",
+      "2": "Regular",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Medium"
+     },
+     "local": "files/e-uncut-sans-500.woff2",
+     "sha256": "f2d6670ba9f03a6345a274410b5fda1c3ff1a72b9a62054a2d97f3a1264c63b6",
+     "bytes": 39712,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Semibold.woff2",
+     "weight": 600,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans Semibold",
+      "2": "Regular",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Semibold"
+     },
+     "local": "files/e-uncut-sans-600.woff2",
+     "sha256": "3cbaacafef778e5083c228a368907de65d8bd0d0c9ceb864b1321c3e01bdf849",
+     "bytes": 39916,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    },
+    {
+     "group": "uncut-sans",
+     "file": "uncut-sans/uncut_sans-main/Webfonts/UncutSans-Bold.woff2",
+     "weight": 700,
+     "italic": false,
+     "width": 5,
+     "axes": {},
+     "names": {
+      "0": "Copyright 2021 Kasper Nordkvist",
+      "1": "Uncut Sans",
+      "2": "Bold",
+      "5": "Version 1.304;Glyphs 3.2 (3246)",
+      "13": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+      "14": "https://scripts.sil.org/OFL",
+      "16": "Uncut Sans",
+      "17": "Bold"
+     },
+     "local": "files/e-uncut-sans-700.woff2",
+     "sha256": "7980a52af480c1cb2a3b269e9d0081b4221a3369a8900622ee7e50df07263b79",
+     "bytes": 39936,
+     "hangul": 0,
+     "latin": 26,
+     "digits": 10,
+     "cmap_count": 469
+    }
+   ]
+  }
+ ],
+ "browser": [
+  {
+   "id": "e-absans",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "weight": 300,
+   "status": "loaded"
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "weight": 500,
+   "status": "loaded"
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-apfel-grotezk",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-aujournuit",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-borges",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-coconat",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-coconat",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-halibut",
+   "weight": 100,
+   "status": "loaded"
+  },
+  {
+   "id": "e-halibut",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-mattone",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-mattone",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-mattone",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-mazius-display",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-mazius-display",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-messapia",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-necto-mono",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ortica",
+   "weight": 300,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ortica",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ortica",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 100,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 200,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 300,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 500,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 600,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-paper-mono",
+   "weight": 800,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ribes",
+   "weight": 200,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ribes",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ribes",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ronzino",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ronzino",
+   "weight": 500,
+   "status": "loaded"
+  },
+  {
+   "id": "e-ronzino",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sinistre",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sinistre",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sinistre",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sneaky-times",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 100,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 300,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 500,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 700,
+   "status": "loaded"
+  },
+  {
+   "id": "e-sprat",
+   "weight": 900,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 300,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 350,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 400,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 500,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 600,
+   "status": "loaded"
+  },
+  {
+   "id": "e-uncut-sans",
+   "weight": 700,
+   "status": "loaded"
+  }
+ ],
+ "originalsUnmodified": true,
+ "held": [
+  "어비 마이센체",
+  "어비 세현체",
+  "어비 미미체"
+ ],
+ "holdReason": "공식 파일 서버 HTTP403 및 브라우저 다운로드 시간 초과. 대체 공식 files 경로는 폰트가 아닌 응답."
+}
