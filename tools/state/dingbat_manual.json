@@ -185,7 +185,7 @@
         "Z"
       ]
     ],
-    "sample": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "sample": "AB CD EF GH IJ KL MN OP QR ST UV WX YZ",
     "typeable": true,
     "nIcons": 132,
     "liga": false
@@ -376,7 +376,7 @@
         "Z"
       ]
     ],
-    "sample": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "sample": "AB CD EF GH IJ KL MN OP QR ST UV WX YZ",
     "typeable": true,
     "nIcons": 79,
     "liga": false
