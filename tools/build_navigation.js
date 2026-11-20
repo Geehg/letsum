@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.join(__dirname,'../html');
-const entries=[['/','한글 폰트'],['/en/','영문 폰트'],['/multilingual/','다국어 폰트'],['/dingbat/','딩벳&특수'],['/logos/','로고모음'],['/mascots/','마스코트']];
+const entries=[['/','한글 폰트'],['/en/','영문 폰트'],['/multilingual/','다국어 폰트'],['/dingbat/','딩벳&특수'],['/logos/','로고모음'],['/mascots/','캐릭터']];
 function links(active){return entries.map(([url,label])=>`<a href="${url}"${url===active?' class="on" aria-current="page"':''}>${label}</a>`).join('');}
 exports.build=function(){
  // Combine both tools in one document; existing scripts retain their own scoped IDs.
