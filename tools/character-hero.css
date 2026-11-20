@@ -3,3 +3,42 @@
 /* Keep the embedded player's controls and branding unobscured. The video uses two comic cells. */
 .cf-art.is-video{min-height:520px}.cf-comic.with-video{inset:12px 12px 58px;transform:none;opacity:1;grid-template-rows:repeat(2,minmax(210px,1fr))}.cf-comic.with-video .cf-panel:not(.p0){opacity:.45}.cf-comic.with-video .p0{min-width:200px;min-height:200px;clip-path:none}.cf-comic.with-video iframe{filter:none;opacity:1;min-height:200px}.cf-art.is-video .cf-halo{display:none}.cf-art.is-video .cf-star{left:69%;top:18%;width:28%;height:65%;pointer-events:auto}.cf-art.is-video .cf-stamp{top:auto;bottom:76px;left:24px;right:auto}.cf-panel>span{pointer-events:none}
 @media(max-width:760px){.cf-art.is-video{min-height:510px}.cf-comic.with-video{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(200px,1fr))}.cf-comic.with-video .p4{display:none}.cf-art.is-video .cf-star{left:28%;top:auto;bottom:65px;width:48%;height:38%}.cf-art.is-video .cf-stamp{bottom:80px;left:18px}.cf-art-tools{left:12px;right:12px}}
+
+/* Compact hero: about 70% of the previous height, with readable copy and controls. */
+.logo-app .character-feature{padding-top:14px;margin-bottom:24px}
+.logo-app .cf-top h1{font-size:clamp(25px,2.4vw,30px)}
+.cf-eyebrow{margin-bottom:6px}
+.cf-themes{margin:12px 0 12px}
+.cf-spread{min-height:336px}
+.cf-art{min-height:336px}
+.cf-copy{padding:16px 22px}
+.cf-rank{font-size:20px}.cf-rank small{margin-top:3px}
+.cf-theme{margin:12px 0 6px}
+.logo-app .cf-copy h2{font-size:clamp(30px,3vw,40px);margin-bottom:10px}
+.cf-tagline{font-size:14px;margin-bottom:3px}
+.cf-score{margin-top:10px}.cf-score b{font-size:20px}
+.cf-reason{margin:5px 0 12px;line-height:1.6;max-width:none}
+.cf-links{gap:12px}.cf-links a:first-child{padding:8px 12px}
+.cf-arrows{position:absolute;top:14px;right:18px;padding:0;margin:0;gap:8px;height:32px}
+.cf-arrows button{width:32px;height:32px}
+.cf-rail{margin-top:8px;padding-bottom:4px}.cf-thumb{height:42px}
+.cf-rail button{padding-bottom:6px}
+.cf-art.is-video{min-height:364px}
+.cf-comic.with-video{grid-template-rows:minmax(208px,1fr) 76px}
+.cf-art.is-video .cf-stamp{bottom:62px;padding:4px 8px}
+@media(max-width:760px){
+ .cf-art{min-height:238px}
+ .cf-copy{padding:14px 16px}
+ .cf-rank{font-size:18px}.cf-rank small{display:block;margin-left:0;font-size:9px}
+ .cf-arrows{top:12px;right:14px;bottom:auto;gap:6px}
+ .cf-theme{margin-top:10px}
+ .logo-app .cf-copy h2{font-size:30px;margin-bottom:8px}
+ .cf-score{margin-top:8px}
+ .cf-links{padding-right:0}
+ .cf-themes{gap:5px;margin:10px 0}
+ .cf-themes button{padding:7px 9px}
+ .cf-art.is-video{min-height:364px}
+ .cf-comic.with-video{grid-template-rows:minmax(208px,1fr) 76px}
+ .cf-art.is-video .cf-star{bottom:59px;height:21%;width:40%;left:42%}
+ .cf-art.is-video .cf-stamp{bottom:64px;left:16px}
+}
