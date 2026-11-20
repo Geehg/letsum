@@ -1259,8 +1259,14 @@
   }
   function bind(host) {
     host.querySelectorAll("[data-id]").forEach((el) => {
-      el.addEventListener("click", (e) => { if (e.target.closest("button, a")) return; openDetail(el.dataset.id); });
-      el.addEventListener("keydown", (e) => { if (e.key === "Enter") openDetail(el.dataset.id); });
+      const preview = el.querySelector('.ig-track, .r-pv, .intro-pv, .mock');
+      if (preview) { preview.tabIndex = 0; preview.setAttribute('role', 'button'); preview.setAttribute('aria-haspopup', 'dialog'); preview.setAttribute('aria-label', (FONTS.find(f => f.id === el.dataset.id)?.name || '폰트') + ' 상세 보기'); preview.style.cursor = 'pointer'; }
+      let gesture = null;
+      el.addEventListener('pointerdown', e => { gesture = {x:e.clientX,y:e.clientY,moved:false}; }, {passive:true});
+      el.addEventListener('pointermove', e => { if (gesture && e.buttons && Math.hypot(e.clientX-gesture.x,e.clientY-gesture.y)>8) gesture.moved=true; }, {passive:true});
+      el.addEventListener('pointercancel', () => { if (gesture) gesture.moved=true; }, {passive:true});
+      el.addEventListener("click", (e) => { if (e.target.closest("button, a, input, select, textarea") || (e.detail && gesture?.moved)) return; openDetail(el.dataset.id); });
+      el.addEventListener("keydown", (e) => { if ((e.target===el || e.target===preview) && ['Enter',' '].includes(e.key)) { e.preventDefault(); openDetail(el.dataset.id); } });
     });
     host.querySelectorAll("[data-fav]").forEach((b) => b.addEventListener("click", () => { toggleLike(b.dataset.fav); render(); })); // 즐겨찾기 = 좋아요
     host.querySelectorAll("[data-cmp]").forEach((b) => b.addEventListener("click", () => toggleCmp(b.dataset.cmp)));

@@ -230,7 +230,7 @@ import { renderReview, bindReview } from './review.js';
   function renderTile(record) {
     const { mark, size, latin, width } = cardMark(record);
     const thumb = thumbnails[record.id];
-    return `<a class="icon-tile tone-${h(record.category)}" href="${h(detailHref(record.id))}" data-record="${h(record.id)}"${thumbAttrs(thumb)}><span class="tile-face size-${size}" style="--w:${width}" aria-hidden="true">${thumbImg(thumb, 'front', record)}<b${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</b></span><span class="tile-name">${h(record.name)}</span><span class="tile-kind">${h((browse && subLabel(...groupOf(record.id))) || label(categoryLabels, record.category))}</span></a>`;
+    return `<a class="icon-tile tone-${h(record.category)}" href="${h(detailHref(record.id))}" data-record="${h(record.id)}" aria-haspopup="dialog" aria-label="${h(record.name)} 상세 보기"${thumbAttrs(thumb)}><span class="tile-face size-${size}" style="--w:${width}" aria-hidden="true">${thumbImg(thumb, 'front', record)}<b${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</b></span><span class="tile-name">${h(record.name)}</span><span class="tile-kind">${h((browse && subLabel(...groupOf(record.id))) || label(categoryLabels, record.category))}</span></a>`;
   }
 
   function renderCard(record) {
@@ -239,7 +239,7 @@ import { renderReview, bindReview } from './review.js';
     const kicker = mark === record.organization_name ? categoryAbbreviations[record.category] : record.organization_name;
     const thumb = thumbnails[record.id];
     return `<article class="brand-card" data-record="${h(record.id)}">
-      <div class="identity-cover biz tone-${h(record.category)}"${thumbAttrs(thumb)}><div class="biz-front">${thumbImg(thumb, 'front', record)}<div class="cover-kicker"><span>${h(kicker)}</span><a class="bookmark-button source-icon" href="${h(safeUrl(record.source_url) || '#')}" target="_blank" rel="noopener noreferrer" title="공식 출처 (새 창)" aria-label="${h(record.name)} 공식 출처 새 창으로 열기">${icon('arrow', 18)}</a></div>
+      <div class="identity-cover biz tone-${h(record.category)}" role="button" tabindex="0" aria-haspopup="dialog" aria-label="${h(record.name)} 상세 보기"${thumbAttrs(thumb)}><div class="biz-front">${thumbImg(thumb, 'front', record)}<div class="cover-kicker"><span>${h(kicker)}</span><a class="bookmark-button source-icon" href="${h(safeUrl(record.source_url) || '#')}" target="_blank" rel="noopener noreferrer" title="공식 출처 (새 창)" aria-label="${h(record.name)} 공식 출처 새 창으로 열기">${icon('arrow', 18)}</a></div>
       <div class="identity-name size-${size}" style="--w:${width}"${latin.test(mark) ? ' lang="en"' : ''}>${h(mark)}</div></div>
       <div class="biz-back" aria-hidden="true"><div class="biz-head">${thumbImg(thumb, 'back', record)}<span class="biz-mark size-${size}">${h(mark)}</span><span class="biz-role"><em>${h(label(kindLabels, record.kind))}</em><b>${h(record.name)}</b></span></div>
       ${colorDots(record)}</div></div>
@@ -452,6 +452,37 @@ import { renderReview, bindReview } from './review.js';
     }
     lastPath = path;
   }
+
+  // Thumbnail previews keep the current directory, filters and scroll position in place.
+  let previewDialog = null;
+  function openRecordPreview(id, opener) {
+    const record = publicRecord(id); if (!record) return;
+    if (previewDialog?.open) previewDialog.close();
+    const dialog = document.createElement('dialog');
+    previewDialog = dialog; dialog.className = 'record-preview'; dialog.setAttribute('aria-labelledby', 'record-preview-title');
+    const thumb = thumbnails[id];
+    dialog.innerHTML = `<div class="record-preview-bar"><span>상세 미리보기</span><button type="button" class="button light" data-preview-close aria-label="상세 팝업 닫기">닫기 ×</button></div><div class="record-preview-intro"><div class="record-preview-art"${thumbAttrs(thumb)}>${thumbImg(thumb, 'detail', record) || `<strong>${h(record.name)}</strong>`}</div><div><p class="eyebrow">${h(record.organization_name)}</p><h2 id="record-preview-title">${h(record.name)}</h2><p>${h(descriptions[id]?.lead || record.summary)}</p><div class="record-preview-links"><a class="button dark" href="${h(detailHref(id))}">전체 상세 보기 ↗</a>${external(record.source_url, '공식 출처 ↗', 'button light')}</div></div></div>${policySection(record)}${assetSection(record)}<p class="small-copy">식별용 미리보기입니다. 실제 사용 전 공식 출처의 이용 조건을 확인해 주세요.</p>`;
+    (app.closest('.logo-app') || document.body).append(dialog);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; dialog.remove(); if (previewDialog === dialog) previewDialog = null; if (opener?.isConnected) opener.focus({preventScroll:true}); }, {once:true});
+    dialog.querySelector('[data-preview-close]').onclick = () => dialog.close();
+    dialog.addEventListener('click', event => { if (event.target !== dialog) return; const b = dialog.getBoundingClientRect(); if (event.clientX < b.left || event.clientX > b.right || event.clientY < b.top || event.clientY > b.bottom) dialog.close(); });
+    dialog.showModal();
+  }
+  app.addEventListener('click', event => {
+    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const trigger = event.target.closest('.identity-cover, .icon-tile, [data-preview-record]');
+    if (!trigger || event.target.closest('button, a') && event.target.closest('button, a') !== trigger) return;
+    const id = trigger.dataset.previewRecord || trigger.closest('[data-record]')?.dataset.record;
+    if (!id) return; event.preventDefault(); openRecordPreview(id, trigger);
+  });
+  app.addEventListener('keydown', event => {
+    const trigger = event.target.closest('.identity-cover, [data-preview-record]');
+    if (!trigger || event.target !== trigger || !['Enter', ' '].includes(event.key)) return;
+    event.preventDefault(); openRecordPreview(trigger.dataset.previewRecord || trigger.closest('[data-record]')?.dataset.record, trigger);
+  });
+  window.addEventListener('hashchange', () => previewDialog?.close());
 
   window.addEventListener('hashchange', renderRoute);
   document.addEventListener('keydown', event => {
