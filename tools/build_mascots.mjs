@@ -1,5 +1,6 @@
 // Production build of the mascot directory (/mascots/): the logo app with mascot data (tools/mascot-app/data) and wording.
 import path from 'node:path';
+import fs from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {buildDirectory} from './build_directory.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url));
@@ -41,4 +42,4 @@ const extraCss=`.biz[data-thumb="image"] .biz-front .logo-box-front,.icon-tile[d
 .logo-box-detail{inset:5%}
 .logo-box-detail img{height:100%!important;width:100%;object-fit:contain}`;
 await buildDirectory({project:path.join(root,'mascot-app'),base:'/mascots/',out:path.join(root,'../html/mascots'),label:'Mascot directory',menuLabel:'캐릭터 메뉴',
- rights:'캐릭터와 마스코트의 권리는 각 권리자에게 있습니다. 미리보기는 식별용이며, 사용 전 공식 페이지의 이용 조건을 확인해 주세요.',geometryFile:'mascot-geometry.json',swaps,extraCss});
+ rights:'캐릭터와 마스코트의 권리는 각 권리자에게 있습니다. 미리보기는 식별용이며, 사용 전 공식 페이지의 이용 조건을 확인해 주세요.',geometryFile:'mascot-geometry.json',swaps,extraCss:extraCss+await fs.readFile(path.join(root,'character-hero.css'),'utf8'),extraScript:(await fs.readFile(path.join(root,'character-hero.js'),'utf8')).replace('__FEATURED_DATA__',JSON.stringify(JSON.parse(await fs.readFile(path.join(root,'mascot-app/data/featured.json'),'utf8'))).replace(/</g,'\\u003c'))});

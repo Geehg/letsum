@@ -8,7 +8,7 @@ import {createHash} from 'node:crypto';
 import {buildSite} from './logo-app/scripts/build.mjs';
 const root=path.dirname(fileURLToPath(import.meta.url));
 export async function buildDirectory(cfg){
-const {project,srcRoot=path.join(root,'logo-app'),base,out,label,menuLabel,rights,geometryFile='logo-geometry.json',swaps=[],extraCss=''}=cfg;
+const {project,srcRoot=path.join(root,'logo-app'),base,out,label,menuLabel,rights,geometryFile='logo-geometry.json',swaps=[],extraCss='',extraScript=''}=cfg;
 // Every swap must match somewhere (a renamed string in the app fails the build instead of silently showing logo text).
 const used=new Set();
 function applySwaps(text,where,optional=false){for(const [i,[from,to]] of swaps.entries()){const next=text.split(from).join(to);if(next!==text)used.add(i);text=next;}return text;}
@@ -114,6 +114,7 @@ for(const page of result.html_pages){
  html=html.replace(siteHeader,'\u0000HEADER\u0000').replace(siteFooter,'\u0000FOOTER\u0000');
  html=applySwaps(html,'page',true);
  html=html.replace('\u0000HEADER\u0000',siteHeader).replace('\u0000FOOTER\u0000',siteFooter);
+ if(extraScript)html=html.replace('</body>',`<script src="${asset(extraScript,'js')}" defer></script></body>`);
  html=html.replace('</body>','<script src="/js/common.js" data-base="/"></script><script src="/js/pv.js?v=2" defer></script></body>');
  const dest=path.join(out,page.file);await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,html);
 }
