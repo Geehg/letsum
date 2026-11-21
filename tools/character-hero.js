@@ -69,15 +69,23 @@
     </div>`;
   }
 
-  function cutoutMask(portrait) {
+  function cutoutMask(portrait, id) {
     if (!portrait.outline) return '';
-    return `<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><clipPath id="cf-silhouette" clipPathUnits="objectBoundingBox"><path d="${escape(portrait.outline)}"/></clipPath></defs></svg>`;
+    return `<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><clipPath id="${id}" clipPathUnits="objectBoundingBox"><path d="${escape(portrait.outline)}"/></clipPath></defs></svg>`;
   }
 
   function portraitStyle({ centerX, top, bottom }) {
     return `--portrait-height:${100 / (bottom - top)}%;--portrait-x:${-centerX * 100}%;--portrait-y:${-top * 100}%`;
   }
 
+  function noteMarkup(text, side) {
+    let position = 0;
+    const words = text.split(/\s+/).map(word => {
+      const letters = Array.from(word, letter => `<span class="cf-letter" style="--order:${position++}">${escape(letter)}</span>`).join('');
+      return `<span class="cf-word">${letters}</span>`;
+    });
+    return `<p class="cf-note cf-note-${side}"><span class="sr-only">${escape(text)}</span><span class="cf-type" aria-hidden="true">${words.join(' ')}</span></p>`;
+  }
 
   function changeSlide(root, step) {
     const length = entries().length;
@@ -85,51 +93,90 @@
     draw(root);
   }
 
-  function draw(root) {
-    releasePlayer();
-    const item = itemAt(), clip = videoFor(item);
-    lastChange = Date.now();
-    root.innerHTML = `<div class="cf-page-art">
-      ${backdrop(item)}
-      <div class="cf-intro"><p class="cf-byline">${escape(themes[item.theme])}<span aria-hidden="true">/</span>${escape(item.organization)}</p>
-        <h1 id="page-heading">${escape(item.name)}</h1><p class="cf-caption">${escape(item.copy)}</p>
-        <a class="cf-detail" href="${escape(item.detail)}">캐릭터 상세 보기 <span aria-hidden="true">→</span></a>
-      </div>
-      ${cutoutMask(item.portrait)}
-      <button type="button" style="${portraitStyle(item.portrait)}" class="cf-figure" data-preview-record="${escape(item.id)}" aria-label="${escape(item.name)} 상세 미리보기" aria-haspopup="dialog"><img${item.portrait.outline ? ' style="clip-path:url(#cf-silhouette)"' : ''} src="${escape(item.image)}" alt="" decoding="async" fetchpriority="high"></button>
-    </div>
-    <div class="cf-toolbar"><div class="cf-tools-inner">
-      <label class="cf-theme-select"><span class="sr-only">캐릭터 소개 테마</span><select id="character-theme">${Object.entries(themes).filter(([id]) => id === 'all' || slides.some(slide => slide.theme === id)).map(([id, label]) => `<option value="${id}"${theme === id ? ' selected' : ''}>${label}</option>`).join('')}</select></label>
-      <button class="cf-sources" type="button" aria-haspopup="dialog">${(clip || item.stageVideo) ? '영상·출처' : '이미지 출처'}</button>
+  function mountControls(root) {
+    root.innerHTML = `<div class="cf-page-art"></div><div class="cf-toolbar"><div class="cf-tools-inner">
+      <label class="cf-theme-select"><span class="sr-only">캐릭터 소개 테마</span><select id="character-theme">${Object.entries(themes).filter(([id]) => id === 'all' || slides.some(slide => slide.theme === id)).map(([id, label]) => `<option value="${id}">${label}</option>`).join('')}</select></label>
+      <button class="cf-sources" type="button" aria-haspopup="dialog"></button>
       <div class="cf-paging" role="group" aria-label="추천 캐릭터 슬라이드">
-        <button type="button" data-step="-1" aria-label="이전 캐릭터">‹</button><span>${index + 1} <i>/</i> ${entries().length}</span>
+        <button type="button" data-step="-1" aria-label="이전 캐릭터">‹</button><span class="cf-count"></span>
         <button type="button" data-step="1" aria-label="다음 캐릭터">›</button><button class="cf-play" type="button"></button>
       </div>
     </div></div>`;
-    updatePlay(root);
-    root.querySelector('#character-theme').onchange = event => {
-      theme = event.target.value;
+    const select = root.querySelector('#character-theme');
+    select.value = theme;
+    select.onchange = () => {
+      theme = select.value;
       index = 0;
       draw(root);
-      root.querySelector('#character-theme').focus({ preventScroll: true });
     };
     root.querySelectorAll('[data-step]').forEach(button => {
-      button.onclick = () => {
-        const step = button.dataset.step;
-        changeSlide(root, Number(step));
-        root.querySelector(`[data-step="${step}"]`).focus({ preventScroll: true });
-      };
-      button.disabled = entries().length < 2;
+      button.onclick = () => changeSlide(root, Number(button.dataset.step));
     });
     root.querySelector('.cf-play').onclick = () => {
       playing = !playing;
+      if (!playing) {
+        root.querySelector('.cf-page-art').classList.remove('cf-moving');
+        root.querySelector('.cf-leaving')?.remove();
+      }
       syncPlayer();
       lastChange = Date.now();
       updatePlay(root);
     };
-    root.querySelector('.cf-sources').onclick = () => openSources(root, item);
+    root.querySelector('.cf-sources').onclick = () => openSources(root, itemAt());
+  }
+
+  function draw(root) {
+    releasePlayer();
+    const item = itemAt(), profile = item.profile, clip = videoFor(item);
+    const stage = root.querySelector('.cf-page-art');
+    const animate = playing && !motion.matches && stage.dataset.record !== item.id;
+    const oldFigure = animate && stage.querySelector('.cf-figure:not(.cf-leaving)');
+    if (oldFigure) {
+      const style = getComputedStyle(oldFigure);
+      oldFigure.style.setProperty('--exit-from', style.transform === 'none' ? 'translateX(0)' : style.transform);
+      oldFigure.style.setProperty('--exit-opacity', style.opacity);
+    }
+    stage.classList.toggle('cf-moving', animate);
+    stage.classList.toggle('cf-swapping', Boolean(oldFigure));
+    stage.classList.remove('cf-ready');
+    stage.dataset.record = item.id;
+    lastChange = Date.now();
+    const maskId = 'cf-mask-' + item.id;
+    const title = profile.nativeName;
+    const byline = title === item.name ? themes[item.theme] : item.name;
+    stage.innerHTML = `${backdrop(item)}
+      <div class="cf-intro"><p class="cf-byline">${escape(byline)}<span aria-hidden="true">/</span>${escape(item.organization)}</p>
+        <h1 id="page-heading" lang="${/[가-힣]/.test(title) ? 'ko' : 'en'}"${title.length > 13 ? ' class="cf-long-name"' : ''}>${escape(title)}</h1><p class="cf-caption">${escape(item.copy)}</p>
+        <a class="cf-detail" href="${escape(item.detail)}">캐릭터 상세 보기 <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="cf-notes">${noteMarkup(profile.facts[0], 'left')}${noteMarkup(profile.facts[1], 'right')}</div>
+      <button type="button" style="${portraitStyle(item.portrait)}" class="cf-figure" data-preview-record="${escape(item.id)}" aria-label="${escape(item.name)} 상세 미리보기" aria-haspopup="dialog">
+        ${cutoutMask(item.portrait, maskId)}<span class="cf-shadow"><img${item.portrait.outline ? ` style="clip-path:url(#${maskId})"` : ''} src="${escape(item.image)}" alt="" decoding="async" fetchpriority="high"></span>
+      </button>`;
+    if (oldFigure) {
+      oldFigure.classList.add('cf-leaving');
+      oldFigure.inert = true;
+      oldFigure.setAttribute('aria-hidden', 'true');
+      oldFigure.removeAttribute('data-preview-record');
+      stage.append(oldFigure);
+      oldFigure.addEventListener('animationend', () => oldFigure.remove(), { once: true });
+    }
+    const figure = stage.querySelector('.cf-figure:not(.cf-leaving)'), image = figure.querySelector('img');
+    const reveal = () => {
+      if (figure.parentElement === stage && !figure.classList.contains('cf-leaving')) stage.classList.add('cf-ready');
+    };
+    if (image.complete) reveal();
+    else {
+      image.addEventListener('load', reveal, { once: true });
+      image.addEventListener('error', reveal, { once: true });
+    }
+    root.querySelector('.cf-count').innerHTML = `${index + 1} <i>/</i> ${entries().length}`;
+    root.querySelector('.cf-sources').textContent = clip || item.stageVideo ? '영상·출처' : '이미지 출처';
+    root.querySelectorAll('[data-step]').forEach(button => { button.disabled = entries().length < 2; });
+    updatePlay(root);
     attachPlayer(root);
   }
+
 
   function updatePlay(root) {
     const button = root.querySelector('.cf-play');
@@ -164,6 +211,7 @@
       <div class="cf-dialog-actions"><button type="button" data-video-mode>${useVideo ? '배경을 정지 이미지로 보기' : '배경 영상 사용'}</button></div></section>` : ''}
       ${clip ? `<section><h3>관련 공식 영상</h3>${sourceLink('https://www.youtube.com/watch?v=' + clip.id, clip.title)}</section>` : ''}
 
+      <section><h3>캐릭터 정보</h3>${sourceLink(item.profile.factSource, item.organization + ' · 소개 자료')}</section>
       <section><h3>캐릭터 이미지</h3>${sourceLink(foreground?.page_url || item.official, foreground?.author || item.organization)}${foreground?.note ? `<p>${escape(foreground.note)}</p>` : ''}</section>
       ${credit ? `<section><h3>배경 이미지</h3>${sourceLink(credit.page_url, [credit.author, credit.license].filter(Boolean).join(' · '))}<p>원본의 일부를 흑백으로 표시했습니다.</p></section>` : ''}
       <p>캐릭터의 권리는 각 권리자에게 있습니다. 이용 조건은 ${sourceLink(item.official, '공식 안내')}에서 확인하세요.</p>`;
@@ -261,6 +309,7 @@
     root.addEventListener('pointerleave', () => { hovered = false; lastChange = Date.now(); });
     clearInterval(timer);
     timer = setInterval(tick, 500);
+    mountControls(root);
     draw(root);
   };
   motion.addEventListener('change', () => {
