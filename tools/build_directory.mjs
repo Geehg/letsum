@@ -95,7 +95,7 @@ for(const page of result.html_pages){
   const inline=`var B=window.__LETSUM_BOOTSTRAP__;B.initialRoute=${JSON.stringify(route)};`+(extra?`var X=${JSON.stringify(extra).replace(/</g,'\\u003c')};B.sources.sources=X.sources;if(X.credit&&B.thumbnails[${JSON.stringify(id)}])Object.assign(B.thumbnails[${JSON.stringify(id)}],X.credit);if(X.colors)B.colors[${JSON.stringify(id)}]=X.colors;if(X.description)B.descriptions={[${JSON.stringify(id)}]:X.description};`:'');
   bootSrc=asset('window.__LETSUM_BOOTSTRAP__='+JSON.stringify(data).replace(/</g,'\\u003c')+';','js');
   return `<script src="${bootSrc}"></script><script>${inline}</script>`});
- html=html.replace(/<script type="module">([\s\S]*?)<\/script>/,(_,js)=>{appSrc=asset(applySwaps(js,'app script'),'js');return `<script type="module" src="${appSrc}"></script>`;});
+ html=html.replace(/<script type="module">([\s\S]*?)<\/script>/,(_,js)=>{appSrc=asset([extraScript,applySwaps(js,'app script')].filter(Boolean).join('\n'),'js');return `<script type="module" src="${appSrc}"></script>`;});
  // While the app script loads, show a text-free skeleton instead of the no-JavaScript fallback list; the list returns if the app never starts.
  html=swap(html,'</head>',`<script>document.documentElement.classList.add('logo-js')</script>\n<link rel="preload" href="${bootSrc}" as="script">\n<link rel="modulepreload" href="${appSrc}">\n<style>${loadingCss}</style>\n</head>`,'head end');
  html=html.replace('</body>',`<script>setTimeout(function(){if(document.querySelector('#app>.static-fallback'))document.documentElement.classList.remove('logo-js')},10000)</script></body>`);
@@ -114,7 +114,6 @@ for(const page of result.html_pages){
  html=html.replace(siteHeader,'\u0000HEADER\u0000').replace(siteFooter,'\u0000FOOTER\u0000');
  html=applySwaps(html,'page',true);
  html=html.replace('\u0000HEADER\u0000',siteHeader).replace('\u0000FOOTER\u0000',siteFooter);
- if(extraScript)html=html.replace('</body>',`<script src="${asset(extraScript,'js')}" defer></script></body>`);
  html=html.replace('</body>','<script src="/js/common.js" data-base="/"></script><script src="/js/pv.js?v=2" defer></script></body>');
  const dest=path.join(out,page.file);await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,html);
 }
