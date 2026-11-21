@@ -1798,5 +1798,10 @@
   "ratio": 0.7887,
   "tone": "normal",
   "sha": "833bd864f11d46cb"
+ },
+ "pacman-official-character.png": {
+  "ratio": 1.0,
+  "tone": "normal",
+  "sha": "a6b7b1a1c14fc544"
  }
 }

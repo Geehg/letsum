@@ -362,15 +362,15 @@
         "bg": null,
         "ink": null,
         "source": "official-page-image",
-        "source_url": "https://www.pacman.com/images/character/img_pacman_01.png",
+        "source_url": "https://www.pacman.com/images/character/img_pacman_02.png",
         "page_url": "https://www.pacman.com/en/character/",
         "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
         "author": "Bandai Namco Entertainment",
         "fetched_at": "2026-11-22",
         "tone": "normal",
-        "file": "/mascots/featured/pacman-official-cutout.png",
-        "sha256": "a1031f62aa76c95fb99b8888442b3d9706b77c03441987838082f1406e78f2f1",
-        "bytes": 15545
+        "file": "/mascots/featured/pacman-official-character.png",
+        "sha256": "a6b7b1a1c14fc54433cbd4a3909262f07c5462fd33e4fddbd82bd16052f51f77",
+        "bytes": 156823
       }
     }
   }

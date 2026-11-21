@@ -170,7 +170,7 @@
       "organization": "Bandai Namco Entertainment",
       "official": "https://www.pacman.com/en/character/",
       "color": "#f5d54d",
-      "image": "/mascots/featured/pacman-official-cutout.png",
+      "image": "/mascots/featured/pacman-official-character.png",
       "panels": [
         "/mascots/thumbs/w-2717c70cca.png"
       ],
@@ -191,7 +191,7 @@
       "foregroundCredit": {
         "author": "Bandai Namco Entertainment",
         "page_url": "https://www.pacman.com/en/character/",
-        "image_url": "https://www.pacman.com/images/character/img_pacman_01.png",
+        "image_url": "https://www.pacman.com/images/character/img_pacman_02.png",
         "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
       },
       "video": {
@@ -201,8 +201,8 @@
       },
       "portrait": {
         "centerX": 0.5,
-        "top": 0.075,
-        "bottom": 0.91
+        "top": 0.01,
+        "bottom": 0.85
       },
       "stageVideo": {
         "src": "/mascots/featured/pacman-stage.mp4",
