@@ -1,6 +1,6 @@
 {
   "selection": "해외 캐릭터 우선 소개",
-  "checked": "2026-11-21",
+  "checked": "2026-11-22",
   "items": [
     {
       "id": "mw-b97d3d1153",
@@ -52,7 +52,9 @@
         "author": "SEGA",
         "title": "Sonic Colors: Ultimate – Colorful Worlds Spotlight",
         "page": "https://commons.wikimedia.org/wiki/File:Sonic_Colors-_Ultimate_-_Colorful_Worlds_Spotlight.webm",
-        "detail": "/mascots/featured/sonic-detail.jpg"
+        "detail": "/mascots/featured/sonic-detail.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       },
       "profile": {
         "nativeName": "Sonic the Hedgehog",
@@ -113,7 +115,9 @@
         "author": "penguin8622",
         "title": "Nagaoka Festival Fireworks 2015 “Shining Hello Kitty”",
         "page": "https://commons.wikimedia.org/wiki/File:Nagaoka_Festival_Fireworks_2015_%22Shining_Hello_Kitty%22.webm",
-        "detail": "/mascots/featured/hello-kitty-detail.jpg"
+        "detail": "/mascots/featured/hello-kitty-detail.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       },
       "profile": {
         "nativeName": "Hello Kitty",
@@ -206,7 +210,9 @@
         "author": "Bandai Namco Entertainment America",
         "title": "PAC-MAN 256 – Announcement Trailer",
         "page": "https://commons.wikimedia.org/wiki/File:PAC-MAN_256_-_Announcement_Trailer_-_PS4,_XB1,_PC.webm",
-        "detail": "/mascots/featured/pacman-detail.jpg"
+        "detail": "/mascots/featured/pacman-detail.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       },
       "profile": {
         "nativeName": "PAC-MAN",
@@ -295,6 +301,22 @@
           "단단한 나무열매를 전기로 익혀 먹어요."
         ],
         "factSource": "https://www.pokemonkorea.co.kr/pokedex/view/37"
+      },
+      "video": {
+        "id": "ippgmcBIr30",
+        "title": "포켓몬 공식 채널 · 2016년 뉴욕 피카츄 퍼레이드",
+        "checked": "2026-11-22"
+      },
+      "stageVideo": {
+        "title": "뉴욕 추수감사절 퍼레이드",
+        "author": "Adnan Islam",
+        "page": "https://commons.wikimedia.org/wiki/File:Time-lapse-_Macy%27s_Thanksgiving_Day_Parade_2012_(New_York).webm",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "description": "2012년 뉴욕 퍼레이드에서 피카츄 풍선이 거리를 지나는 타임랩스를 느리게 재생합니다.",
+        "src": "/mascots/featured/pikachu-stage.mp4",
+        "poster": "/mascots/featured/pikachu-scene.jpg",
+        "detail": "/mascots/featured/pikachu-detail.jpg"
       }
     },
     {
@@ -342,6 +364,17 @@
           "골프와 테니스에도 능해요."
         ],
         "factSource": "https://www.nintendo.com/jp/character/mario/"
+      },
+      "stageVideo": {
+        "title": "슈퍼 닌텐도 월드 할리우드",
+        "author": "Benoît Prieur",
+        "page": "https://commons.wikimedia.org/wiki/File:VIDEO_Super_Nintendo_World_(Universal_Studios_Hollywood)_July_2023.webm",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "description": "2023년 7월, 마리오의 세계를 재현한 테마파크에서 촬영한 장면입니다.",
+        "src": "/mascots/featured/mario-stage.mp4",
+        "poster": "/mascots/featured/mario-scene.jpg",
+        "detail": "/mascots/featured/mario-detail.jpg"
       }
     },
     {
@@ -389,6 +422,11 @@
           "팝스타에서 푸푸푸랜드를 구했어요."
         ],
         "factSource": "https://kirby.nintendo.com/about/"
+      },
+      "video": {
+        "id": "4IJGXbwWIgI",
+        "title": "한국닌텐도 · 별의 커비 Wii 디럭스 소개 영상",
+        "checked": "2026-11-22"
       }
     },
     {
@@ -438,6 +476,22 @@
           "친구 이야기를 묵묵히 들어줘요."
         ],
         "factSource": "https://linefriends.com/ko-kr/characters-list/ip-linefriends"
+      },
+      "video": {
+        "id": "6MeD1lSJWqE",
+        "title": "LINE FRIENDS · 브라운앤프렌즈 애니메이션 소개",
+        "checked": "2026-11-22"
+      },
+      "stageVideo": {
+        "title": "브라운 클로바 프렌즈 스피커 실물 시연",
+        "author": "yollstory",
+        "page": "https://commons.wikimedia.org/wiki/File:U-우리집AI_쇼핑주문_해보기.webm",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "description": "브라운을 본뜬 스피커 하단의 조명이 음성 명령에 반응하는 장면입니다.",
+        "src": "/mascots/featured/brown-stage.mp4",
+        "poster": "/mascots/featured/brown-scene.jpg",
+        "detail": "/mascots/featured/brown-detail.jpg"
       }
     },
     {
@@ -530,6 +584,11 @@
           "이마에는 구름무늬가 있어요."
         ],
         "factSource": "https://world.seoul.go.kr/seoul-views/seoul-symbols/character-form/"
+      },
+      "video": {
+        "url": "https://culture.seoul.go.kr/culture/culture/cultureImage/view.do?menuNo=200111&searchCate=&youtubeId=15857",
+        "title": "서울문화포털 · 나의 비밀친구 해치 예고편",
+        "checked": "2026-11-22"
       }
     },
     {
@@ -618,6 +677,11 @@
           "타임캡슐 속 알에서 깨어났어요."
         ],
         "factSource": "https://www.cau.ac.kr/cms/FR_CON/index.do?CONTENTS_NO=1&MENU_ID=2540&P_TAB_NO=2"
+      },
+      "video": {
+        "id": "mR0Mi4XQYg8",
+        "title": "중앙대학교 · 푸앙이와 함께하는 푸삐뽀",
+        "checked": "2026-11-22"
       }
     },
     {
@@ -670,6 +734,17 @@
           "기분에 따라 머리 위 별빛이 바뀌어요."
         ],
         "factSource": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=7637"
+      },
+      "stageVideo": {
+        "title": "꿈씨패밀리 뮤직비디오",
+        "author": "대전관광공사",
+        "page": "https://www.data.go.kr/data/15139948/fileData.do",
+        "license": "이용허락범위 제한 없음",
+        "licenseUrl": "https://www.data.go.kr/data/15139948/fileData.do",
+        "description": "꿈돌이와 꿈씨패밀리가 함께 춤추는 공식 뮤직비디오의 한 장면입니다.",
+        "src": "/mascots/featured/kkumdori-stage.mp4",
+        "poster": "/mascots/featured/kkumdori-scene.jpg",
+        "detail": "/mascots/featured/kkumdori-detail.jpg"
       }
     },
     {
@@ -760,6 +835,11 @@
           "이름에는 ‘또 타고 싶다’는 뜻이 담겼어요."
         ],
         "factSource": "https://www.data.go.kr/data/15140337/fileData.do"
+      },
+      "video": {
+        "id": "Or5wErHf-i0",
+        "title": "서울교통공사 · 또타 팝업 현장",
+        "checked": "2026-11-22"
       }
     },
     {
@@ -808,6 +888,11 @@
           "미대생들의 손을 거쳐 2022년 첫선을 보였어요."
         ],
         "factSource": "https://www.sookmyung.ac.kr/kr/news/pr-booklet.do?articleNo=92097&attachNo=44372&mode=download"
+      },
+      "video": {
+        "id": "SPdL0zu3Fnc",
+        "title": "숙명여자대학교 · 눈송이의 데뷔일기 1편",
+        "checked": "2026-11-22"
       }
     },
     {

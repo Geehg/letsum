@@ -5,7 +5,6 @@
   const slides = data.items.filter(item => item.portrait);
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const videoFor = item => item.video || (item.id === 'mm-seoulmetro-ddota' ? { id: 'Or5wErHf-i0', title: '서울교통공사 · 또타 팝업 현장' } : null);
   let theme = 'all', index = 0, playing = !motion.matches, useVideo = !motion.matches;
   let hero = null, timer = null, lastChange = 0, hovered = false, filtersOpen = false;
   let player = null, observer = null, visible = false, requestedPlay = false;
@@ -127,7 +126,7 @@
 
   function draw(root) {
     releasePlayer();
-    const item = itemAt(), profile = item.profile, clip = videoFor(item);
+    const item = itemAt(), profile = item.profile, clip = item.video;
     const stage = root.querySelector('.cf-page-art');
     const animate = playing && !motion.matches && stage.dataset.record !== item.id;
     const oldFigure = animate && stage.querySelector('.cf-figure:not(.cf-leaving)');
@@ -205,11 +204,11 @@
         syncPlayer();
       });
     }
-    const clip = videoFor(item), film = item.stageVideo, credit = item.imageCredit, foreground = item.foregroundCredit;
+    const clip = item.video, film = item.stageVideo, credit = item.imageCredit, foreground = item.foregroundCredit;
     dialog.innerHTML = `<div class="cf-dialog-head"><h2 id="cf-sources-title">${escape(item.name)} · 출처</h2><form method="dialog"><button autofocus aria-label="출처 닫기">닫기</button></form></div>
-      ${film ? `<section><h3>만화 컷 배경 영상</h3>${sourceLink(film.page, film.title)}<p>${escape(film.author)} · ${sourceLink('https://creativecommons.org/licenses/by/3.0/', 'CC BY 3.0')}<br>일부 장면을 발췌해 무음·흑백으로 편집하고 컷 모양에 맞춰 표시했습니다.</p>
+      ${film ? `<section><h3>만화 컷 배경 영상</h3>${sourceLink(film.page, film.title)}${film.description ? `<p>${escape(film.description)}</p>` : ''}<p>${escape(film.author)} · ${sourceLink(film.licenseUrl, film.license)}<br>원본 일부를 무음·흑백으로 편집해 만화 컷에 맞췄습니다.</p>
       <div class="cf-dialog-actions"><button type="button" data-video-mode>${useVideo ? '배경을 정지 이미지로 보기' : '배경 영상 사용'}</button></div></section>` : ''}
-      ${clip ? `<section><h3>관련 공식 영상</h3>${sourceLink('https://www.youtube.com/watch?v=' + clip.id, clip.title)}</section>` : ''}
+      ${clip ? `<section><h3>관련 공식 영상</h3>${sourceLink(clip.url || 'https://www.youtube.com/watch?v=' + clip.id, clip.title)}</section>` : ''}
 
       <section><h3>캐릭터 정보</h3>${sourceLink(item.profile.factSource, item.organization + ' · 소개 자료')}</section>
       <section><h3>캐릭터 이미지</h3>${sourceLink(foreground?.page_url || item.official, foreground?.author || item.organization)}${foreground?.note ? `<p>${escape(foreground.note)}</p>` : ''}</section>
