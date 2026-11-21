@@ -72,26 +72,6 @@
     "label": "관세청 캐릭터 나루나래"
    }
   ],
-  "mc-q140800179": [
-   {
-    "format": "ZIP",
-    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135382&seq=1",
-    "filename": "법제처_새령이_AI.zip",
-    "label": "(원본) 법제처 캐릭터 (원본)",
-    "inner": [
-     "AI"
-    ]
-   },
-   {
-    "format": "ZIP",
-    "url": "https://www.moleg.go.kr/boardDownload.es?bid=ATT&list_no=135383&seq=1",
-    "filename": "법제처_새령이_JPG.zip",
-    "label": "(이미지) 법제처 캐릭터 (이미지)",
-    "inner": [
-     "JPG"
-    ]
-   }
-  ],
   "mc-q11232933": [
    {
     "format": "ZIP",

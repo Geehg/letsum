@@ -12,6 +12,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
+from character_review import apply_review  # noqa: E402
 import crawl  # noqa: E402
 import check_downloads as cd  # noqa: E402
 
@@ -163,6 +164,7 @@ def main():
     for (rid, o), pv in zip(company_rows, company_views):
         rank[rid] = {"score": round(math.log10(pv + 10) + 0.6 * math.log10(o.get("sitelinks", 0) + 1), 3), "pageviews": pv}
 
+    apply_review(records, sources, thumbs, downloads, assign, rank)
     APP.mkdir(parents=True, exist_ok=True)
     catalog = {"schema_version": "1.0", "version": "0.1.0", "updated_at": TODAY, "scope_note": "기관·기업·행사의 공식 캐릭터·마스코트 안내를 모은 자료입니다. 이미지는 식별용 미리보기이며 이용 조건은 공식 출처 원문을 따릅니다.",
                "records": sorted(records, key=lambda r: r["id"])}

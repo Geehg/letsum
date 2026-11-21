@@ -1,0 +1,377 @@
+{
+  "excluded": {
+    "mc-q11664005": {
+      "name": "한국콘텐츠진흥원 캐릭터",
+      "reason": "공식 페이지의 대상은 우리동네캐릭터 공모전 수상작 목록이다. 반달이는 국립공원공단 소속, 포이는 한국산림복지진흥원 소속으로 원문에 표시된다.",
+      "source": "https://www.kocca.kr/kocca/subPage.do?menuNo=205081"
+    },
+    "mc-q12623100": {
+      "name": "모두의 풍속도",
+      "reason": "모두의 풍속도는 참가자가 조선시대 캐릭터를 만드는 궁중문화축전 온라인 참여 프로그램명이다.",
+      "source": "https://www.kh.or.kr/brd/board/715/L/menu/373?bbIdx=119831&brdType=R"
+    },
+    "mc-q12623804": {
+      "name": "한국특허정보원 캐릭터",
+      "reason": "기관 로고 안내의 “칼라 캐릭터” 이미지를 직접 확인했다. 도판은 빨간색과 노란색의 CI 띠 그래픽이다.",
+      "source": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104"
+    },
+    "mc-q12623900": {
+      "name": "한국환경산업기술원 캐릭터",
+      "reason": "공식 페이지가 제시하는 대상은 KEITI 영문 심벌마크와 색상이다. 본문의 캐릭터라는 단어는 보조색이 높여 주는 기관의 시각적 성격을 뜻한다.",
+      "source": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp"
+    },
+    "mc-q140800179": {
+      "name": "공소청 캐릭터",
+      "reason": "공소청 명의로 수집한 법제처 공식 페이지와 섬네일은 법제처 고유 캐릭터 새령이이다. 법제처 항목이 별도로 존재한다.",
+      "source": "https://www.moleg.go.kr/menu.es?mid=a10701040000#tab_2"
+    },
+    "mc-q15623329": {
+      "name": "코레일네트웍스 캐릭터",
+      "reason": "코레일네트웍스 명의로 수집한 경기도청 페이지와 섬네일은 경기도 고유 캐릭터 봉공이이다.",
+      "source": "https://www.gg.go.kr/contents/contents.do?ciIdx=1509&menuId=3423"
+    },
+    "mc-q50374": {
+      "name": "해피봉봉",
+      "reason": "도봉구청이 해피봉봉을 캐릭터송의 곡명으로 명시한다. 등록 자료의 본문은 곡 소개이고 썸네일은 다른 캐릭터 페이지로 이동하는 배너다.",
+      "source": "https://www.dobong.go.kr/Contents.asp?code=10010260"
+    },
+    "mw-2664ecf740": {
+      "name": "M&M's",
+      "reason": "초콜릿 제품 자체의 문서이며 썸네일도 낱알 제품 사진이다. 광고에 등장하는 별도의 이름 있는 캐릭터는 이 카드의 대상이 아니다.",
+      "source": "https://ko.wikipedia.org/wiki/M%26M%27s"
+    },
+    "mw-308b9b9316": {
+      "name": "토트넘 홋스퍼 FC",
+      "reason": "잉글랜드 축구 구단 자체의 문서로 옛 선수단 사진을 쓴다. 구단이 별도로 소개하는 마스코트는 Chirpy와 Lily다.",
+      "source": "https://www.tottenhamhotspur.com/media/28071/schoolofspurs.pdf"
+    },
+    "mw-3cf61d7200": {
+      "name": "오즈번 불",
+      "reason": "도로변에 세운 오스본의 황소 실루엣 옥외 광고판으로, 카드는 실제 설치물 사진을 담고 있다.",
+      "source": "https://www.osborne.es/en/toro-de-osborne-en-el-mundo"
+    },
+    "mw-6fb29a9a62": {
+      "name": "리스타 더 슈팅 스타",
+      "reason": "카드와 출처는 세가가 발매한 1995년 플랫폼 게임을 설명한다. 게임 속 주인공을 소개하는 항목이 아니다.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%8A%A4%ED%83%80_%EB%8D%94_%EC%8A%88%ED%8C%85_%EC%8A%A4%ED%83%80"
+    },
+    "mw-82c702a15e": {
+      "name": "크리타",
+      "reason": "디지털 페인팅 응용프로그램의 문서와 앱 화면이다. 프로젝트가 공식 소개하는 캐릭터의 이름은 키키다.",
+      "source": "https://krita.org/en/about/mascot/"
+    },
+    "mw-8b54041be0": {
+      "name": "다루마",
+      "reason": "달마를 본뜬 일본 전통 인형의 종류 및 일반 제품 사진이다. 개별 캐릭터를 특정하지 않는다.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%A3%A8%EB%A7%88"
+    },
+    "mw-ab4e3048aa": {
+      "name": "올림픽 마스코트",
+      "reason": "여러 시대와 대회를 포괄하는 올림픽 마스코트의 일반 개념과 목록이다.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%98%AC%EB%A6%BC%ED%94%BD_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8"
+    },
+    "mw-b81b34c6dd": {
+      "name": "코피토 데 니에베",
+      "reason": "동물원에 실제로 살았던 고릴라의 생애와 사진이다. 이를 소재로 만든 영화 속 캐릭터를 소개하는 항목과 구분한다.",
+      "source": "https://zoobarcelona.cat/en/snowflake?language=es"
+    },
+    "mw-ddf922e1de": {
+      "name": "카르노브",
+      "reason": "1987년 아케이드 게임 작품 문서다. 출처 본문에서 주인공 진보로브 카르노브스키를 별도로 구별한다.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%B4%EB%85%B8%EB%B8%8C"
+    },
+    "mw-f229b6a7d5": {
+      "name": "FIFA 월드컵 공식 마스코트",
+      "reason": "역대 FIFA 월드컵 공식 마스코트의 총목록이다. 특정 캐릭터나 한 대회의 캐릭터 그룹을 소개하는 항목과 구분한다.",
+      "source": "https://ko.wikipedia.org/wiki/FIFA_%EC%9B%94%EB%93%9C%EC%BB%B5_%EA%B3%B5%EC%8B%9D_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8"
+    },
+    "mw-f28cb27c0e": {
+      "name": "레고 미니피겨",
+      "reason": "여러 캐릭터를 구현할 수 있는 레고 장난감의 제품 유형으로, 개별 창작 캐릭터를 특정하지 않는다.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%A0%88%EA%B3%A0_%EB%AF%B8%EB%8B%88%ED%94%BC%EA%B2%A8"
+    },
+    "mw-f4a8865c8f": {
+      "name": "커널 샌더스",
+      "reason": "등록된 영문명은 Harland Sanders, 설명과 사진은 KFC 창업자 본인의 생애와 초상이다. 브랜드의 캐릭터화된 모습과 구분한다.",
+      "source": "https://global.kfc.com/our-history"
+    },
+    "mw-f94ca07b86": {
+      "name": "닐스 올라프",
+      "reason": "노르웨이 근위대의 마스코트이지만 카드 영문명과 사진은 에든버러 동물원의 실제 임금펭귄 닐스 올라프 3세를 지칭한다.",
+      "source": "https://www.edinburghzoo.org.uk/animals/animal-inhabitants/king-penguin"
+    },
+    "mw-fd206b047a": {
+      "name": "타마 (고양이)",
+      "reason": "일본 기시역에서 역장으로 임명된 실제 고양이의 생애와 사진이다. 캐릭터화된 버전 소개가 아니다.",
+      "source": "https://wakayama-dentetsu.co.jp/cat-stationmaster/"
+    }
+  },
+  "corrections": {
+    "mc-q104099625": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "슈웅",
+        "summary": "김천상무프로축구단의 마스코트 슈웅입니다.",
+        "source_url": "https://www.gimcheonfc.com/fc/mas.php",
+        "guideline_url": "https://www.gimcheonfc.com/fc/mas.php"
+      }
+    },
+    "mc-q12598719": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "하루",
+        "summary": "부산김해경전철의 캐릭터 하루입니다. 얼굴과 머리는 경전철 전면부와 창문에서 따왔습니다.",
+        "source_url": "https://www.bglrt.com/00030/00057/00581.web",
+        "guideline_url": "https://www.bglrt.com/00030/00057/00581.web"
+      },
+      "thumbnail": {
+        "mode": "image",
+        "bg": null,
+        "ink": null,
+        "source": "official-page-image",
+        "source_url": "https://www.bglrt.com/_res/default/img/sub/p00581_img01.png",
+        "page_url": "https://www.bglrt.com/00030/00057/00581.web",
+        "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+        "author": "부산-김해경전철 (기업)",
+        "fetched_at": "2026-11-22",
+        "tone": "normal",
+        "file": "/mascots/thumbs/m-6dcde0517804.png",
+        "sha256": "6dcde05178044222253e1f9bde7df302d28c170dd38bec11ae8569de097455c6",
+        "bytes": 23514
+      }
+    },
+    "mc-q12605671": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "쏠 · 몰리",
+        "summary": "북극곰 쏠(SOL)과 두더지 몰리(MOLI)는 인천 신한은행 에스버드의 S-birds 프렌즈다. 쏠은 농구를 즐기고 몰리는 일대일 대결을 앞두고 남몰래 연습한다.",
+        "source_url": "https://www.sbirds.com/intro/emblem.do",
+        "guideline_url": "https://www.sbirds.com/intro/emblem.do"
+      }
+    },
+    "mc-q129673": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "미타",
+        "summary": "미타(MiTA)는 울산 HD의 호랑이 마스코트다. 이름은 아름다울 미(美)와 타이거(Tiger)에서 따왔다.",
+        "source_url": "https://www.uhdfc.com/board/board_view.php?buid=news_g&no_seq=53293",
+        "guideline_url": "https://www.uhdfc.com/board/board_view.php?buid=news_g&no_seq=53293"
+      }
+    },
+    "mc-q188624": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "청렴 눈동이",
+        "summary": "평창군의 청렴 마스코트로 소개된 눈동이입니다.",
+        "source_url": "https://www.pc.go.kr/portal/participation/upright/emblem/mascot",
+        "guideline_url": "https://www.pc.go.kr/portal/participation/upright/emblem/mascot"
+      }
+    },
+    "mc-q3455793": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "수원화성 4대 장군 · 슈니",
+        "summary": "장안장군, 팔달장군, 창룡장군, 화서장군은 수원화성의 네 성문을 지키는 수원FC 마스코트다. 미래에서 온 슈퍼히어로 슈니가 수원을 지키기 위해 네 장군을 찾아온다.",
+        "source_url": "https://www.suwonfc.com/?p=38",
+        "guideline_url": "https://www.suwonfc.com/?p=38"
+      }
+    },
+    "mc-q42082": {
+      "checked_at": "2026-11-22",
+      "thumbnail": null,
+      "rejected_image_url": "https://www.gimhae.go.kr/_res/portal/img/sub/05/p01047_img3.png"
+    },
+    "mc-q42128": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "별이 · 빛이",
+        "summary": "영천시의 공식 캐릭터 별이·빛이입니다.",
+        "source_url": "https://www.yc.go.kr/portal/contents.do?mId=0404040000",
+        "guideline_url": "https://www.yc.go.kr/portal/contents.do?mId=0404040000"
+      }
+    },
+    "mc-q42150": {
+      "checked_at": "2026-11-22",
+      "thumbnail": {
+        "mode": "image",
+        "bg": null,
+        "ink": null,
+        "source": "official-page-image",
+        "source_url": "https://www.taebaek.go.kr/www/images/contents/cts388_img2.gif",
+        "page_url": "https://www.taebaek.go.kr/www/contents.do?key=388",
+        "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음). 출처: 태백시, 태붐 기본형. 캐릭터 이미지에 적용되는 별도 이용조건 미확인.",
+        "author": "태백시",
+        "fetched_at": "2026-11-22",
+        "tone": "normal",
+        "file": "/mascots/thumbs/m-28d8c5fb56ae.gif",
+        "sha256": "28d8c5fb56ae2eae5fbb141b258889a5033ae33a7d3797b84c2b3e545a07a2b8",
+        "bytes": 13722
+      }
+    },
+    "mc-q42163": {
+      "checked_at": "2026-11-22",
+      "thumbnail": {
+        "mode": "image",
+        "bg": null,
+        "ink": null,
+        "source": "official-page-image",
+        "source_url": "https://www.sangju.go.kr/resources/templates/front/assets/images/subpage/sub3_24_1.png",
+        "page_url": "https://www.sangju.go.kr/page/10063/10422.tc",
+        "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음). 출처: 상주시, 상주시캐릭터(감돌이와 감순이) 기본형. 캐릭터 이미지에 적용되는 별도 이용조건 미확인.",
+        "author": "상주시",
+        "fetched_at": "2026-11-22",
+        "tone": "normal",
+        "file": "/mascots/thumbs/m-10d5a6efca16.png",
+        "sha256": "10d5a6efca16d99b7528a170e0762b7d3d8299b406e26fb9405aefca96fda6cc",
+        "bytes": 55590
+      }
+    },
+    "mc-q482562": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "유티 · 호리",
+        "summary": "인천유나이티드의 마스코트 듀오입니다. 유티는 두루미, 호리는 파랑여우 캐릭터입니다.",
+        "source_url": "https://www.incheonutd.com/fanzone/feeds_view.php?idx=4662&tgbn=feeds_news",
+        "guideline_url": "https://www.incheonutd.com/fanzone/feeds_view.php?idx=4662&tgbn=feeds_news"
+      }
+    },
+    "mc-q482692": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "큐티",
+        "summary": "진주교육대학교의 사슴 캐릭터 큐티입니다.",
+        "source_url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
+        "guideline_url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273"
+      },
+      "thumbnail": {
+        "mode": "image",
+        "bg": null,
+        "ink": null,
+        "source": "official-page-image",
+        "source_url": "https://www.cue.ac.kr/resources/homepage/kor/_Img/Content/mascot_img01.png",
+        "page_url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
+        "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+        "author": "진주교육대학교",
+        "fetched_at": "2026-11-22",
+        "tone": "normal",
+        "file": "/mascots/thumbs/m-2e267af21b66.png",
+        "sha256": "2e267af21b66f8ad44a3a8eb634977bea052d464536d1966c1d78cb1ad01d78e",
+        "bytes": 108428
+      }
+    },
+    "mc-q484569": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "웅심이 · 옹심이",
+        "summary": "강원FC를 응원하는 반달가슴곰 웅심이와 감자 옹심이입니다.",
+        "source_url": "https://gangwon-fc.com/club/mascot",
+        "guideline_url": "https://gangwon-fc.com/club/mascot"
+      }
+    },
+    "mc-q484584": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "자주 · 하나",
+        "summary": "대전하나시티즌의 반달곰 자주와 흰곰 하나는 구단을 응원하는 마스코트다. 구단은 2025년 기존 캐릭터 자주의 새 친구로 축구 유학을 온 하나를 공개했다.",
+        "source_url": "https://www.dhcfc.kr/bd/bd_v.php?buid=g_news&no_seq=26381",
+        "guideline_url": "https://www.dhcfc.kr/bd/bd_v.php?buid=g_news&no_seq=26381"
+      }
+    },
+    "mc-q50241": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "무아니 삼형제",
+        "summary": "무안군의 공식 캐릭터 무아니 삼형제입니다.",
+        "source_url": "http://www.muan.go.kr/www/abountmuan/symbol/character",
+        "guideline_url": "http://www.muan.go.kr/www/abountmuan/symbol/character"
+      }
+    },
+    "mc-q50243": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "의돌이 · 다향이",
+        "summary": "보성군의 공식 캐릭터 의돌이·다향이입니다.",
+        "source_url": "https://www.boseong.go.kr/www/introduce/intro/represent/mascot",
+        "guideline_url": "https://www.boseong.go.kr/www/introduce/intro/represent/mascot"
+      },
+      "thumbnail": null,
+      "rejected_image_url": "https://www.boseong.go.kr/www/introduce/intro/represent/mascot/4u4fk5/screen_qr.png"
+    },
+    "mc-q50247": {
+      "checked_at": "2026-11-22",
+      "thumbnail": null,
+      "rejected_image_url": "https://www.buyeo.go.kr/images/kr/intro/img_intro_050401_13.gif"
+    },
+    "mc-q50253": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "초롱이 · 배꼬비",
+        "summary": "양구군이 공식 마스코트로 소개하는 초롱이와 배꼬비입니다.",
+        "source_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=276",
+        "guideline_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=276"
+      }
+    },
+    "mc-q50310": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "옹이 · 진이",
+        "summary": "옹진군의 공식 캐릭터 옹이·진이입니다.",
+        "source_url": "https://www.ongjin.go.kr/open_content/main/introduction/present/mascot.jsp",
+        "guideline_url": "https://www.ongjin.go.kr/open_content/main/introduction/present/mascot.jsp"
+      },
+      "thumbnail": null,
+      "rejected_image_url": "https://www.ongjin.go.kr/images/qrcode/_open_content_main_introduction_present_mascot.png"
+    },
+    "mc-q50367": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "새랑이 · 게랑이",
+        "summary": "남동구의 공식 캐릭터 새랑이·게랑이입니다.",
+        "source_url": "https://www.namdong.go.kr/main/introduction/present/character.jsp",
+        "guideline_url": "https://www.namdong.go.kr/main/introduction/present/character.jsp"
+      }
+    },
+    "mc-q50439": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "중구할매 · 손자중구",
+        "summary": "대전광역시 중구의 SNS 캐릭터 중구할매와 손자중구입니다.",
+        "source_url": "https://www.djjunggu.go.kr/kr/sub05_02_07.do",
+        "guideline_url": "https://www.djjunggu.go.kr/kr/sub05_02_07.do",
+        "organization_name": "대전광역시 중구"
+      }
+    },
+    "mw-2717c70cca": {
+      "checked_at": "2026-11-22",
+      "record": {
+        "name": "팩맨",
+        "summary": "미로 속에서 점을 먹으며 고스트를 피해 달리는 노란 캐릭터 팩맨입니다.",
+        "source_url": "https://www.pacman.com/en/character/",
+        "guideline_url": "https://www.pacman.com/en/character/",
+        "organization_name": "Bandai Namco Entertainment",
+        "name_en": "PAC-MAN",
+        "aliases": [
+          "PAC-MAN",
+          "PACMAN"
+        ]
+      },
+      "discard_imported_score": true,
+      "language": "en",
+      "thumbnail": {
+        "mode": "image",
+        "bg": null,
+        "ink": null,
+        "source": "official-page-image",
+        "source_url": "https://www.pacman.com/images/character/img_pacman_01.png",
+        "page_url": "https://www.pacman.com/en/character/",
+        "license": "공식 사이트 게시 이미지(권리는 권리자에게 있음)",
+        "author": "Bandai Namco Entertainment",
+        "fetched_at": "2026-11-22",
+        "tone": "normal",
+        "file": "/mascots/featured/pacman-official-cutout.png",
+        "sha256": "a1031f62aa76c95fb99b8888442b3d9706b77c03441987838082f1406e78f2f1",
+        "bytes": 15545
+      }
+    }
+  }
+}

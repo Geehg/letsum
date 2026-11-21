@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "version": "0.1.0",
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-22",
   "scope_note": "기관·기업·행사의 공식 캐릭터·마스코트 안내를 모은 자료입니다. 이미지는 식별용 미리보기이며 이용 조건은 공식 출처 원문을 따릅니다.",
   "records": [
     {
       "id": "mc-q104099625",
       "organization_id": "mc-q104099625",
       "organization_name": "김천 상무 FC",
-      "name": "김천 상무 FC 캐릭터",
+      "name": "슈웅",
       "name_en": null,
       "aliases": [
         "김천 상무 FC 마스코트"
@@ -20,12 +20,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "김천 상무 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "김천상무프로축구단의 마스코트 슈웅입니다.",
       "source_ids": [
         "mc-q104099625-src"
       ],
-      "source_url": "https://www.gimcheonfc.com/fc/ci.php",
-      "guideline_url": "https://www.gimcheonfc.com/fc/ci.php",
+      "source_url": "https://www.gimcheonfc.com/fc/mas.php",
+      "guideline_url": "https://www.gimcheonfc.com/fc/mas.php",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -41,7 +41,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -387,48 +387,6 @@
       "related_fonts": []
     },
     {
-      "id": "mc-q11664005",
-      "organization_id": "mc-q11664005",
-      "organization_name": "한국콘텐츠진흥원",
-      "name": "한국콘텐츠진흥원 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "한국콘텐츠진흥원 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "한국콘텐츠진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q11664005-src"
-      ],
-      "source_url": "https://www.kocca.kr/kocca/subPage.do?menuNo=205081",
-      "guideline_url": "https://www.kocca.kr/kocca/subPage.do?menuNo=205081",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mc-q12583260",
       "organization_id": "mc-q12583260",
       "organization_name": "개인정보보호위원회",
@@ -558,7 +516,7 @@
       "id": "mc-q12598719",
       "organization_id": "mc-q12598719",
       "organization_name": "부산-김해경전철 (기업)",
-      "name": "부산-김해경전철 (기업) 캐릭터",
+      "name": "하루",
       "name_en": null,
       "aliases": [
         "부산-김해경전철 (기업) 마스코트"
@@ -570,7 +528,7 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "부산-김해경전철 (기업)의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "부산김해경전철의 캐릭터 하루입니다. 얼굴과 머리는 경전철 전면부와 창문에서 따왔습니다.",
       "source_ids": [
         "mc-q12598719-src"
       ],
@@ -591,7 +549,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -642,7 +600,7 @@
       "id": "mc-q12605671",
       "organization_id": "mc-q12605671",
       "organization_name": "인천 신한은행 에스버드 WBT",
-      "name": "인천 신한은행 에스버드 WBT 캐릭터",
+      "name": "쏠 · 몰리",
       "name_en": null,
       "aliases": [
         "인천 신한은행 에스버드 WBT 마스코트"
@@ -654,7 +612,7 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "인천 신한은행 에스버드 WBT의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "북극곰 쏠(SOL)과 두더지 몰리(MOLI)는 인천 신한은행 에스버드의 S-birds 프렌즈다. 쏠은 농구를 즐기고 몰리는 일대일 대결을 앞두고 남몰래 연습한다.",
       "source_ids": [
         "mc-q12605671-src"
       ],
@@ -675,7 +633,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -1165,49 +1123,6 @@
       ],
       "source_url": "https://www.krei.re.kr/krei/page/38",
       "guideline_url": "https://www.krei.re.kr/krei/page/38",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mc-q12623100",
-      "organization_id": "mc-q12623100",
-      "organization_name": "국가유산진흥원",
-      "name": "모두의 풍속도",
-      "name_en": null,
-      "aliases": [
-        "국가유산진흥원 캐릭터",
-        "국가유산진흥원 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "국가유산진흥원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 모두의 풍속도.",
-      "source_ids": [
-        "mc-q12623100-src"
-      ],
-      "source_url": "https://www.kh.or.kr/kha",
-      "guideline_url": "https://www.kh.or.kr/kha",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2083,48 +1998,6 @@
       "related_fonts": []
     },
     {
-      "id": "mc-q12623804",
-      "organization_id": "mc-q12623804",
-      "organization_name": "한국특허정보원",
-      "name": "한국특허정보원 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "한국특허정보원 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "한국특허정보원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q12623804-src"
-      ],
-      "source_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
-      "guideline_url": "https://www.kipi.or.kr/EgovPageLink.do?link=/main/sub01/sub0104",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mc-q12623855",
       "organization_id": "mc-q12623855",
       "organization_name": "한국해양과학기술원",
@@ -2188,48 +2061,6 @@
       ],
       "source_url": "https://www.keco.or.kr/web/lay1/S1T34C62/contents.do",
       "guideline_url": "https://www.keco.or.kr/web/lay1/S1T34C62/contents.do",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mc-q12623900",
-      "organization_id": "mc-q12623900",
-      "organization_name": "한국환경산업기술원",
-      "name": "한국환경산업기술원 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "한국환경산업기술원 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "한국환경산업기술원의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q12623900-src"
-      ],
-      "source_url": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
-      "guideline_url": "https://www.keiti.re.kr/site/keiti/01/10105010000002018102909.jsp",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2380,7 +2211,7 @@
       "id": "mc-q129673",
       "organization_id": "mc-q129673",
       "organization_name": "울산 HD FC",
-      "name": "울산 HD FC 캐릭터",
+      "name": "미타",
       "name_en": null,
       "aliases": [
         "울산 HD FC 마스코트"
@@ -2392,12 +2223,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "울산 HD FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "미타(MiTA)는 울산 HD의 호랑이 마스코트다. 이름은 아름다울 미(美)와 타이거(Tiger)에서 따왔다.",
       "source_ids": [
         "mc-q129673-src"
       ],
-      "source_url": "https://www.uhdfc.com/fc/mascot.php",
-      "guideline_url": "https://www.uhdfc.com/fc/mascot.php",
+      "source_url": "https://www.uhdfc.com/board/board_view.php?buid=news_g&no_seq=53293",
+      "guideline_url": "https://www.uhdfc.com/board/board_view.php?buid=news_g&no_seq=53293",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -2413,7 +2244,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -2546,48 +2377,6 @@
       "related_fonts": []
     },
     {
-      "id": "mc-q140800179",
-      "organization_id": "mc-q140800179",
-      "organization_name": "공소청",
-      "name": "공소청 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "공소청 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "공소청의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q140800179-src"
-      ],
-      "source_url": "https://www.moleg.go.kr/menu.es?mid=a10701040000#tab_2",
-      "guideline_url": "https://www.moleg.go.kr/menu.es?mid=a10701040000#tab_2",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mc-q15279945",
       "organization_id": "mc-q15279945",
       "organization_name": "한국상하수도협회",
@@ -2609,48 +2398,6 @@
       ],
       "source_url": "https://www.kwwa.or.kr/kr/contents/mascot/view.do",
       "guideline_url": "https://www.kwwa.or.kr/kr/contents/mascot/view.do",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mc-q15623329",
-      "organization_id": "mc-q15623329",
-      "organization_name": "코레일네트웍스",
-      "name": "코레일네트웍스 캐릭터",
-      "name_en": null,
-      "aliases": [
-        "코레일네트웍스 마스코트"
-      ],
-      "category": "public-organization",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": null,
-      "summary": "코레일네트웍스의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
-      "source_ids": [
-        "mc-q15623329-src"
-      ],
-      "source_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=1509&menuId=3423",
-      "guideline_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=1509&menuId=3423",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -3478,7 +3225,7 @@
       "id": "mc-q188624",
       "organization_id": "mc-q188624",
       "organization_name": "평창군",
-      "name": "평창군 캐릭터",
+      "name": "청렴 눈동이",
       "name_en": null,
       "aliases": [
         "평창군 마스코트"
@@ -3490,12 +3237,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "평창군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "평창군의 청렴 마스코트로 소개된 눈동이입니다.",
       "source_ids": [
         "mc-q188624-src"
       ],
-      "source_url": "https://www.pc.go.kr/portal/participation/upright/emblem",
-      "guideline_url": "https://www.pc.go.kr/portal/participation/upright/emblem",
+      "source_url": "https://www.pc.go.kr/portal/participation/upright/emblem/mascot",
+      "guideline_url": "https://www.pc.go.kr/portal/participation/upright/emblem/mascot",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -3511,7 +3258,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -4462,7 +4209,7 @@
       "id": "mc-q3455793",
       "organization_id": "mc-q3455793",
       "organization_name": "수원 FC",
-      "name": "수원 FC 캐릭터",
+      "name": "수원화성 4대 장군 · 슈니",
       "name_en": null,
       "aliases": [
         "수원 FC 마스코트"
@@ -4474,7 +4221,7 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "수원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "장안장군, 팔달장군, 창룡장군, 화서장군은 수원화성의 네 성문을 지키는 수원FC 마스코트다. 미래에서 온 슈퍼히어로 슈니가 수원을 지키기 위해 네 장군을 찾아온다.",
       "source_ids": [
         "mc-q3455793-src"
       ],
@@ -4495,7 +4242,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -6965,7 +6712,7 @@
       "id": "mc-q42128",
       "organization_id": "mc-q42128",
       "organization_name": "영천시",
-      "name": "별의 도시 영천",
+      "name": "별이 · 빛이",
       "name_en": null,
       "aliases": [
         "영천시 캐릭터",
@@ -6978,7 +6725,7 @@
       ],
       "country": "KR",
       "region": "경상북도",
-      "summary": "영천시의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 별의 도시 영천.",
+      "summary": "영천시의 공식 캐릭터 별이·빛이입니다.",
       "source_ids": [
         "mc-q42128-src"
       ],
@@ -6999,7 +6746,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -8049,7 +7796,7 @@
       "id": "mc-q482562",
       "organization_id": "mc-q482562",
       "organization_name": "인천 유나이티드 FC",
-      "name": "인천 유나이티드 FC 캐릭터",
+      "name": "유티 · 호리",
       "name_en": null,
       "aliases": [
         "인천 유나이티드 FC 마스코트"
@@ -8061,12 +7808,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "인천 유나이티드 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "인천유나이티드의 마스코트 듀오입니다. 유티는 두루미, 호리는 파랑여우 캐릭터입니다.",
       "source_ids": [
         "mc-q482562-src"
       ],
-      "source_url": "https://www.incheonutd.com/club/intro.php",
-      "guideline_url": "https://www.incheonutd.com/club/intro.php",
+      "source_url": "https://www.incheonutd.com/fanzone/feeds_view.php?idx=4662&tgbn=feeds_news",
+      "guideline_url": "https://www.incheonutd.com/fanzone/feeds_view.php?idx=4662&tgbn=feeds_news",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -8082,7 +7829,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -8515,7 +8262,7 @@
       "id": "mc-q482692",
       "organization_id": "mc-q482692",
       "organization_name": "진주교육대학교",
-      "name": "CUE · 큐티",
+      "name": "큐티",
       "name_en": null,
       "aliases": [
         "CUE",
@@ -8530,12 +8277,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "진주교육대학교의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: CUE, 큐티.",
+      "summary": "진주교육대학교의 사슴 캐릭터 큐티입니다.",
       "source_ids": [
         "mc-q482692-src"
       ],
-      "source_url": "http://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
-      "guideline_url": "http://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
+      "source_url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
+      "guideline_url": "https://www.cue.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN273",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -8551,7 +8298,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -9110,7 +8857,7 @@
       "id": "mc-q484569",
       "organization_id": "mc-q484569",
       "organization_name": "강원 FC",
-      "name": "강원 FC 캐릭터",
+      "name": "웅심이 · 옹심이",
       "name_en": null,
       "aliases": [
         "강원 FC 마스코트"
@@ -9122,12 +8869,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "강원 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "강원FC를 응원하는 반달가슴곰 웅심이와 감자 옹심이입니다.",
       "source_ids": [
         "mc-q484569-src"
       ],
-      "source_url": "https://gangwon-fc.com/club/emblem",
-      "guideline_url": "https://gangwon-fc.com/club/emblem",
+      "source_url": "https://gangwon-fc.com/club/mascot",
+      "guideline_url": "https://gangwon-fc.com/club/mascot",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9143,7 +8890,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -9152,7 +8899,7 @@
       "id": "mc-q484584",
       "organization_id": "mc-q484584",
       "organization_name": "대전 하나 시티즌 FC",
-      "name": "대전 하나 시티즌 FC 캐릭터",
+      "name": "자주 · 하나",
       "name_en": null,
       "aliases": [
         "대전 하나 시티즌 FC 마스코트"
@@ -9164,12 +8911,12 @@
       ],
       "country": "KR",
       "region": null,
-      "summary": "대전 하나 시티즌 FC의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "대전하나시티즌의 반달곰 자주와 흰곰 하나는 구단을 응원하는 마스코트다. 구단은 2025년 기존 캐릭터 자주의 새 친구로 축구 유학을 온 하나를 공개했다.",
       "source_ids": [
         "mc-q484584-src"
       ],
-      "source_url": "https://www.dhcfc.kr/cl/mas.php",
-      "guideline_url": "https://www.dhcfc.kr/cl/mas.php",
+      "source_url": "https://www.dhcfc.kr/bd/bd_v.php?buid=g_news&no_seq=26381",
+      "guideline_url": "https://www.dhcfc.kr/bd/bd_v.php?buid=g_news&no_seq=26381",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -9185,7 +8932,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -10944,7 +10691,7 @@
       "id": "mc-q50241",
       "organization_id": "mc-q50241",
       "organization_name": "무안군",
-      "name": "양파",
+      "name": "무아니 삼형제",
       "name_en": null,
       "aliases": [
         "무안군 캐릭터",
@@ -10957,7 +10704,7 @@
       ],
       "country": "KR",
       "region": "전남광주통합특별시",
-      "summary": "무안군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 양파.",
+      "summary": "무안군의 공식 캐릭터 무아니 삼형제입니다.",
       "source_ids": [
         "mc-q50241-src"
       ],
@@ -10978,7 +10725,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -10987,7 +10734,7 @@
       "id": "mc-q50243",
       "organization_id": "mc-q50243",
       "organization_name": "보성군",
-      "name": "보성군 캐릭터",
+      "name": "의돌이 · 다향이",
       "name_en": null,
       "aliases": [
         "보성군 마스코트"
@@ -10999,7 +10746,7 @@
       ],
       "country": "KR",
       "region": "전남광주통합특별시",
-      "summary": "보성군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "보성군의 공식 캐릭터 의돌이·다향이입니다.",
       "source_ids": [
         "mc-q50243-src"
       ],
@@ -11020,7 +10767,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -11381,7 +11128,7 @@
       "id": "mc-q50253",
       "organization_id": "mc-q50253",
       "organization_name": "양구군",
-      "name": "양구군 캐릭터",
+      "name": "초롱이 · 배꼬비",
       "name_en": null,
       "aliases": [
         "양구군 마스코트"
@@ -11393,12 +11140,12 @@
       ],
       "country": "KR",
       "region": "강원특별자치도",
-      "summary": "양구군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "양구군이 공식 마스코트로 소개하는 초롱이와 배꼬비입니다.",
       "source_ids": [
         "mc-q50253-src"
       ],
-      "source_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
-      "guideline_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=275",
+      "source_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=276",
+      "guideline_url": "https://www.yanggu.go.kr/user_sub?gfnc=www&mu_idx=276",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -11414,7 +11161,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -11853,7 +11600,7 @@
       "id": "mc-q50310",
       "organization_id": "mc-q50310",
       "organization_name": "옹진군",
-      "name": "옹진군 캐릭터",
+      "name": "옹이 · 진이",
       "name_en": null,
       "aliases": [
         "옹진군 마스코트"
@@ -11865,7 +11612,7 @@
       ],
       "country": "KR",
       "region": "인천광역시",
-      "summary": "옹진군의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "옹진군의 공식 캐릭터 옹이·진이입니다.",
       "source_ids": [
         "mc-q50310-src"
       ],
@@ -11886,7 +11633,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -13833,7 +13580,7 @@
       "id": "mc-q50367",
       "organization_id": "mc-q50367",
       "organization_name": "남동구",
-      "name": "요정",
+      "name": "새랑이 · 게랑이",
       "name_en": null,
       "aliases": [
         "남동구 캐릭터",
@@ -13846,7 +13593,7 @@
       ],
       "country": "KR",
       "region": "인천광역시",
-      "summary": "남동구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 요정.",
+      "summary": "남동구의 공식 캐릭터 새랑이·게랑이입니다.",
       "source_ids": [
         "mc-q50367-src"
       ],
@@ -13867,7 +13614,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -13936,49 +13683,6 @@
       ],
       "source_url": "https://www.daedeok.go.kr/dpt/goContents.do?link=/dpt/dpt05/DPT050202&menuId=DPT050202",
       "guideline_url": "https://www.daedeok.go.kr/dpt/goContents.do?link=/dpt/dpt05/DPT050202&menuId=DPT050202",
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mc-q50374",
-      "organization_id": "mc-q50374",
-      "organization_name": "도봉구",
-      "name": "해피봉봉",
-      "name_en": null,
-      "aliases": [
-        "도봉구 캐릭터",
-        "도봉구 마스코트"
-      ],
-      "category": "local-government",
-      "kind": "character",
-      "sectors": [
-        "administration"
-      ],
-      "country": "KR",
-      "region": "서울특별시",
-      "summary": "도봉구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다. 페이지에 적힌 캐릭터 이름: 해피봉봉.",
-      "source_ids": [
-        "mc-q50374-src"
-      ],
-      "source_url": "https://www.dobong.go.kr/Contents.asp?code=10010260",
-      "guideline_url": "https://www.dobong.go.kr/Contents.asp?code=10010260",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15274,8 +14978,8 @@
     {
       "id": "mc-q50439",
       "organization_id": "mc-q50439",
-      "organization_name": "중구",
-      "name": "중구 캐릭터",
+      "organization_name": "대전광역시 중구",
+      "name": "중구할매 · 손자중구",
       "name_en": null,
       "aliases": [
         "중구 마스코트"
@@ -15287,12 +14991,12 @@
       ],
       "country": "KR",
       "region": "대전광역시",
-      "summary": "중구의 공식 캐릭터 소개 페이지를 자동 수집으로 찾았습니다.",
+      "summary": "대전광역시 중구의 SNS 캐릭터 중구할매와 손자중구입니다.",
       "source_ids": [
         "mc-q50439-src"
       ],
-      "source_url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000051814Iz5&fileSn=0",
-      "guideline_url": "https://www.djjunggu.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000051814Iz5&fileSn=0",
+      "source_url": "https://www.djjunggu.go.kr/kr/sub05_02_07.do",
+      "guideline_url": "https://www.djjunggu.go.kr/kr/sub05_02_07.do",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -15308,7 +15012,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -18140,52 +17844,15 @@
       "related_fonts": []
     },
     {
-      "id": "mw-2664ecf740",
-      "organization_id": "mw-2664ecf740",
-      "organization_name": "M&M's",
-      "name": "M&M's",
-      "name_en": "M&M's",
-      "aliases": [],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "US",
-      "region": null,
-      "summary": "M&M's(영어: M&M's)는 미국의 마즈에서 생산하는 버튼 모양의 초콜릿으로, '입에서만 녹고 손에서는 안 녹아요'라는 광고 카피가 유명하다.",
-      "source_ids": [
-        "mw-2664ecf740-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/M%26M%27s",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-2717c70cca",
       "organization_id": "mw-2717c70cca",
-      "organization_name": "팩맨 (비디오 게임)",
-      "name": "팩맨 (비디오 게임)",
-      "name_en": null,
-      "aliases": [],
+      "organization_name": "Bandai Namco Entertainment",
+      "name": "팩맨",
+      "name_en": "PAC-MAN",
+      "aliases": [
+        "PAC-MAN",
+        "PACMAN"
+      ],
       "category": "business",
       "kind": "mascot",
       "sectors": [
@@ -18193,12 +17860,12 @@
       ],
       "country": "JP",
       "region": null,
-      "summary": "팩맨 (비디오 게임)에 관한 위키백과 문서입니다.",
+      "summary": "미로 속에서 점을 먹으며 고스트를 피해 달리는 노란 캐릭터 팩맨입니다.",
       "source_ids": [
         "mw-2717c70cca-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%8C%A9%EB%A7%A8_%28%EB%B9%84%EB%94%94%EC%98%A4_%EA%B2%8C%EC%9E%84%29",
-      "guideline_url": null,
+      "source_url": "https://www.pacman.com/en/character/",
+      "guideline_url": "https://www.pacman.com/en/character/",
       "assets": [],
       "usage": {
         "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
@@ -18214,7 +17881,7 @@
       },
       "review": {
         "status": "needs-review",
-        "checked_at": "2026-11-11",
+        "checked_at": "2026-11-22",
         "source_scope": "page"
       },
       "related_fonts": []
@@ -18240,48 +17907,6 @@
         "mw-2f98e8e015-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EC%9C%8C%EB%B2%84_%28%EA%B9%80%ED%94%84%29",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-308b9b9316",
-      "organization_id": "mw-308b9b9316",
-      "organization_name": "토트넘 홋스퍼 FC",
-      "name": "토트넘 홋스퍼 FC",
-      "name_en": "Tottenham Hotspur F.C.",
-      "aliases": [
-        "Tottenham Hotspur F.C."
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "sports"
-      ],
-      "country": "GB",
-      "region": null,
-      "summary": "토트넘 홋스퍼 FC에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-308b9b9316-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%86%A0%ED%8A%B8%EB%84%98_%ED%99%8B%EC%8A%A4%ED%8D%BC_FC",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -18490,48 +18115,6 @@
         "mw-39a33fbb12-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%ED%82%A4%EC%9B%80_%ED%9E%88%EC%96%B4%EB%A1%9C%EC%A6%88%EC%9D%98_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-3cf61d7200",
-      "organization_id": "mw-3cf61d7200",
-      "organization_name": "오즈번 불",
-      "name": "오즈번 불",
-      "name_en": "Osborne bull",
-      "aliases": [
-        "Osborne bull"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "ES",
-      "region": null,
-      "summary": "오즈번 불에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-3cf61d7200-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%A6%88%EB%B2%88_%EB%B6%88",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -19179,48 +18762,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-6fb29a9a62",
-      "organization_id": "mw-6fb29a9a62",
-      "organization_name": "리스타 더 슈팅 스타",
-      "name": "리스타 더 슈팅 스타",
-      "name_en": "Ristar",
-      "aliases": [
-        "Ristar"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "JP",
-      "region": null,
-      "summary": "리스타 더 슈팅 스타(Ristar the Shooting Star, リスター・ザ・シューティングスター)는 1995년 2월 16일에 메가 드라이브와 게임 기어로 발매된 세가의 액션 플랫포머이다.",
-      "source_ids": [
-        "mw-6fb29a9a62-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%8A%A4%ED%83%80_%EB%8D%94_%EC%8A%88%ED%8C%85_%EC%8A%A4%ED%83%80",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-7092324fb7",
       "organization_id": "mw-7092324fb7",
       "organization_name": "헬로키티",
@@ -19559,48 +19100,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-82c702a15e",
-      "organization_id": "mw-82c702a15e",
-      "organization_name": "크리타",
-      "name": "크리타",
-      "name_en": "Krita",
-      "aliases": [
-        "Krita"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "NL",
-      "region": null,
-      "summary": "크리타에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-82c702a15e-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%81%AC%EB%A6%AC%ED%83%80",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-82e5338505",
       "organization_id": "mw-82e5338505",
       "organization_name": "2010년 동계 올림픽과 패럴림픽 마스코트",
@@ -19829,48 +19328,6 @@
         "mw-8aec0d99d4-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/BT21",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-8b54041be0",
-      "organization_id": "mw-8b54041be0",
-      "organization_name": "다루마",
-      "name": "다루마",
-      "name_en": "Daruma doll",
-      "aliases": [
-        "Daruma doll"
-      ],
-      "category": "nonprofit",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "다루마(일본어: だるま)는 불교의 한 유파인 선종 개조의 달마의 좌선 모습을 본떠 일본에서 만든 인형이나 장난감이고 우리말로는 달마라고 부른다.",
-      "source_ids": [
-        "mw-8b54041be0-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%8B%A4%EB%A3%A8%EB%A7%88",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -20311,48 +19768,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-ab4e3048aa",
-      "organization_id": "mw-ab4e3048aa",
-      "organization_name": "올림픽 마스코트",
-      "name": "올림픽 마스코트",
-      "name_en": "Olympic mascot",
-      "aliases": [
-        "Olympic mascot"
-      ],
-      "category": "nonprofit",
-      "kind": "mascot",
-      "sectors": [
-        "sports"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "올림픽 마스코트에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-ab4e3048aa-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%98%AC%EB%A6%BC%ED%94%BD_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-abf85d4ad3",
       "organization_id": "mw-abf85d4ad3",
       "organization_name": "호돌이",
@@ -20708,48 +20123,6 @@
         "mw-b77fa5473d-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EC%8A%88%EC%8A%A4",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-b81b34c6dd",
-      "organization_id": "mw-b81b34c6dd",
-      "organization_name": "코피토 데 니에베",
-      "name": "코피토 데 니에베",
-      "name_en": "Snowflake",
-      "aliases": [
-        "Snowflake"
-      ],
-      "category": "nonprofit",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "코피토 데 니에베에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-b81b34c6dd-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%BD%94%ED%94%BC%ED%86%A0_%EB%8D%B0_%EB%8B%88%EC%97%90%EB%B2%A0",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -21407,48 +20780,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-ddf922e1de",
-      "organization_id": "mw-ddf922e1de",
-      "organization_name": "카르노브",
-      "name": "카르노브",
-      "name_en": "Karnov",
-      "aliases": [
-        "Karnov"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "JP",
-      "region": null,
-      "summary": "카르노브에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-ddf922e1de-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%B9%B4%EB%A5%B4%EB%85%B8%EB%B8%8C",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-decec75783",
       "organization_id": "mw-decec75783",
       "organization_name": "곰꼬미",
@@ -21698,90 +21029,6 @@
       "related_fonts": []
     },
     {
-      "id": "mw-f229b6a7d5",
-      "organization_id": "mw-f229b6a7d5",
-      "organization_name": "FIFA 월드컵 공식 마스코트",
-      "name": "FIFA 월드컵 공식 마스코트",
-      "name_en": "FIFA World Cup mascot",
-      "aliases": [
-        "FIFA World Cup mascot"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "sports"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "FIFA 월드컵 공식 마스코트는 FIFA 월드컵 대회에서 공식적으로 선정되는 마스코트이다.",
-      "source_ids": [
-        "mw-f229b6a7d5-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/FIFA_%EC%9B%94%EB%93%9C%EC%BB%B5_%EA%B3%B5%EC%8B%9D_%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-f28cb27c0e",
-      "organization_id": "mw-f28cb27c0e",
-      "organization_name": "레고 미니피겨",
-      "name": "레고 미니피겨",
-      "name_en": "Lego minifigure",
-      "aliases": [
-        "Lego minifigure"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": "DK",
-      "region": null,
-      "summary": "레고 미니피겨(Lego minifigure) 또는 미니피그(minifig)는 덴마크의 장난감 제조업체 레고 그룹이 생산한 소형 플라스틱 인조 조각상이다.",
-      "source_ids": [
-        "mw-f28cb27c0e-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EA%B3%A0_%EB%AF%B8%EB%8B%88%ED%94%BC%EA%B2%A8",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
       "id": "mw-f47002f414",
       "organization_id": "mw-f47002f414",
       "organization_name": "포돌이",
@@ -21800,48 +21047,6 @@
         "mw-f47002f414-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%ED%8F%AC%EB%8F%8C%EC%9D%B4",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-f4a8865c8f",
-      "organization_id": "mw-f4a8865c8f",
-      "organization_name": "커널 샌더스",
-      "name": "커널 샌더스",
-      "name_en": "Harland Sanders",
-      "aliases": [
-        "Harland Sanders"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "커널 샌더스(Colonel Sanders, 한국어: 샌더스 대령)로 널리 알려져 있는 할랜드 데이비드 샌더스(Harland David Sanders, 1890년 9월 9일~1980년 12월 16일)는 KFC를 창업한 미국의 기업인으로, KFC를 상징하는 마스코트이기도 하다.",
-      "source_ids": [
-        "mw-f4a8865c8f-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%84%90_%EC%83%8C%EB%8D%94%EC%8A%A4",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -21926,48 +21131,6 @@
         "mw-f710cfa4b1-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EB%9D%BC_%EC%BC%80%EB%A6%AC%EA%B1%B4",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-f94ca07b86",
-      "organization_id": "mw-f94ca07b86",
-      "organization_name": "닐스 올라프",
-      "name": "닐스 올라프",
-      "name_en": "Major General Sir Nils Olav III",
-      "aliases": [
-        "Major General Sir Nils Olav III"
-      ],
-      "category": "nonprofit",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "명예 연대장 닐스 올라프 경(Colonel-in-Chief Sir Nils Olav)은 스코틀랜드 에든버러 동물원에 살고 있는 임금펭귄이다.",
-      "source_ids": [
-        "mw-f94ca07b86-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%8B%90%EC%8A%A4_%EC%98%AC%EB%9D%BC%ED%94%84",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -22092,48 +21255,6 @@
         "mw-fbd0ba117e-src"
       ],
       "source_url": "https://ko.wikipedia.org/wiki/%EB%A5%98_%28%EC%8A%A4%ED%8A%B8%EB%A6%AC%ED%8A%B8_%ED%8C%8C%EC%9D%B4%ED%84%B0%29",
-      "guideline_url": null,
-      "assets": [],
-      "usage": {
-        "summary": "자동 수집 자료입니다. 캐릭터 이용 조건은 공식 페이지 원문에서 확인해 주세요.",
-        "approval": "unknown",
-        "redistribution": "unknown",
-        "preview": "unknown",
-        "policy_url": null
-      },
-      "version": {
-        "status": "unconfirmed",
-        "introduced_at": null,
-        "label": null
-      },
-      "review": {
-        "status": "needs-review",
-        "checked_at": "2026-11-11",
-        "source_scope": "page"
-      },
-      "related_fonts": []
-    },
-    {
-      "id": "mw-fd206b047a",
-      "organization_id": "mw-fd206b047a",
-      "organization_name": "타마 (고양이)",
-      "name": "타마 (고양이)",
-      "name_en": "Tama",
-      "aliases": [
-        "Tama"
-      ],
-      "category": "business",
-      "kind": "mascot",
-      "sectors": [
-        "culture-arts"
-      ],
-      "country": null,
-      "region": null,
-      "summary": "타마 (고양이)에 관한 위키백과 문서입니다.",
-      "source_ids": [
-        "mw-fd206b047a-src"
-      ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%83%80%EB%A7%88_%28%EA%B3%A0%EC%96%91%EC%9D%B4%29",
       "guideline_url": null,
       "assets": [],
       "usage": {

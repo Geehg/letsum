@@ -34,11 +34,6 @@
   "tone": "light",
   "sha": "06907a83b33301b0"
  },
- "m-0ac5cfe751.jpg": {
-  "ratio": 1.7794,
-  "tone": "normal",
-  "sha": "061adf0fa132a341"
- },
  "m-0b19b524ee.png": {
   "ratio": 0.6224,
   "tone": "normal",
@@ -83,6 +78,11 @@
   "ratio": 1.3333,
   "tone": "normal",
   "sha": "956adcc6fdbf1e0e"
+ },
+ "m-10d5a6efca16.png": {
+  "ratio": 3.6471,
+  "tone": "normal",
+  "sha": "10d5a6efca16d99b"
  },
  "m-1195551aa1.png": {
   "ratio": 1.0217,
@@ -199,6 +199,11 @@
   "tone": "light",
   "sha": "baf13a50f8873318"
  },
+ "m-28d8c5fb56ae.gif": {
+  "ratio": 1.25,
+  "tone": "normal",
+  "sha": "28d8c5fb56ae2eae"
+ },
  "m-29346e0f15.png": {
   "ratio": 1.2745,
   "tone": "light",
@@ -223,6 +228,11 @@
   "ratio": 1.0155,
   "tone": "normal",
   "sha": "d6006df97c65cd5c"
+ },
+ "m-2e267af21b66.png": {
+  "ratio": 3.4556,
+  "tone": "normal",
+  "sha": "2e267af21b66f8ad"
  },
  "m-2f20c10d7f.png": {
   "ratio": 1.0086,
@@ -283,11 +293,6 @@
   "ratio": 0.9048,
   "tone": "normal",
   "sha": "53710e7a9ad63679"
- },
- "m-394bfa126c.png": {
-  "ratio": 1.0,
-  "tone": "normal",
-  "sha": "e717bc713c104303"
  },
  "m-3a4c3a8314.jpg": {
   "ratio": 1.0714,
@@ -539,11 +544,6 @@
   "tone": "normal",
   "sha": "68faf74a3ded0efb"
  },
- "m-59aee9a092.png": {
-  "ratio": 1.2335,
-  "tone": "normal",
-  "sha": "6e3026bf969f5f42"
- },
  "m-5aae91b7d9.png": {
   "ratio": 0.8286,
   "tone": "normal",
@@ -563,11 +563,6 @@
   "ratio": 0.7753,
   "tone": "light",
   "sha": "443ddf1d6b16c4b1"
- },
- "m-5db1a433e4.png": {
-  "ratio": 1.1124,
-  "tone": "normal",
-  "sha": "181265b3f30d8809"
  },
  "m-5ec38268cd.jpg": {
   "ratio": 1.3237,
@@ -628,6 +623,11 @@
   "ratio": 0.8075,
   "tone": "normal",
   "sha": "14ad77ebe541d9f6"
+ },
+ "m-6dcde0517804.png": {
+  "ratio": 0.9494,
+  "tone": "normal",
+  "sha": "6dcde05178044222"
  },
  "m-6eabc1790c.svg": {
   "ratio": 1.2317,
@@ -703,11 +703,6 @@
   "ratio": 1.7357,
   "tone": "normal",
   "sha": "b430e93083664c32"
- },
- "m-7883a61093.jpg": {
-  "ratio": 1.183,
-  "tone": "normal",
-  "sha": "2aa901a5ef4f820a"
  },
  "m-78a6858b12.png": {
   "ratio": 0.809,
@@ -884,11 +879,6 @@
   "tone": "normal",
   "sha": "5f078b9558548f57"
  },
- "m-9863db2cab.jpg": {
-  "ratio": 1.252,
-  "tone": "normal",
-  "sha": "dded7e0772262e4e"
- },
  "m-99586f5f31.png": {
   "ratio": 0.6262,
   "tone": "normal",
@@ -908,11 +898,6 @@
   "ratio": 0.8214,
   "tone": "normal",
   "sha": "befcaab61fd24984"
- },
- "m-9bf7d0a406.png": {
-  "ratio": 1.9512,
-  "tone": "light",
-  "sha": "7e6b9ca466eea1f4"
  },
  "m-9c416eabbd.png": {
   "ratio": 1.6667,
@@ -1204,11 +1189,6 @@
   "tone": "normal",
   "sha": "6307a1b45f5904fb"
  },
- "m-d6edf74606.jpg": {
-  "ratio": 1.4035,
-  "tone": "normal",
-  "sha": "b3f7b38139d76225"
- },
  "m-d8cacfb913.png": {
   "ratio": 0.8787,
   "tone": "normal",
@@ -1254,11 +1234,6 @@
   "tone": "normal",
   "sha": "fdd80e61c16912ad"
  },
- "m-dd380bbe64.png": {
-  "ratio": 0.9286,
-  "tone": "normal",
-  "sha": "3096f232a65ec91d"
- },
  "m-dd600d7982.png": {
   "ratio": 0.75,
   "tone": "normal",
@@ -1278,11 +1253,6 @@
   "ratio": 1.476,
   "tone": "normal",
   "sha": "0d3b3186523468f4"
- },
- "m-e041954997.png": {
-  "ratio": 1.4631,
-  "tone": "normal",
-  "sha": "20b6e986cbf714ff"
  },
  "m-e11fe85be1.jpg": {
   "ratio": 0.8782,
@@ -1318,11 +1288,6 @@
   "ratio": 1.6913,
   "tone": "normal",
   "sha": "1a2e5bb56749911e"
- },
- "m-e832d64fec.png": {
-  "ratio": 1.5421,
-  "tone": "light",
-  "sha": "c8ef1d0113bb2865"
  },
  "m-e8fabc4fda.jpg": {
   "ratio": 1.6147,
@@ -1479,11 +1444,6 @@
   "tone": "normal",
   "sha": "8349a35a7a4a9f0b"
  },
- "m-fbd1b7f5d6.png": {
-  "ratio": 1.3413,
-  "tone": "normal",
-  "sha": "eb17d885f739f291"
- },
  "m-fbd40285e1.jpg": {
   "ratio": 1.0724,
   "tone": "normal",
@@ -1559,6 +1519,11 @@
   "tone": "normal",
   "sha": "36ceb56087119780"
  },
+ "pacman-official-cutout.png": {
+  "ratio": 1.0,
+  "tone": "normal",
+  "sha": "a1031f62aa76c95f"
+ },
  "w-0144403ec0.jpg": {
   "ratio": 1.518,
   "tone": "normal",
@@ -1604,11 +1569,6 @@
   "tone": "normal",
   "sha": "dab8f719fcbcf1bc"
  },
- "w-2664ecf740.jpg": {
-  "ratio": 1.2945,
-  "tone": "normal",
-  "sha": "92eec917e8bcb201"
- },
  "w-2717c70cca.png": {
   "ratio": 0.7961,
   "tone": "normal",
@@ -1618,11 +1578,6 @@
   "ratio": 1.1412,
   "tone": "normal",
   "sha": "bcc1ca5de3eadbc0"
- },
- "w-308b9b9316.jpg": {
-  "ratio": 1.4733,
-  "tone": "normal",
-  "sha": "5a1e354e2c937d82"
  },
  "w-31591d9b32.jpg": {
   "ratio": 1.5094,
@@ -1643,11 +1598,6 @@
   "ratio": 0.7638,
   "tone": "normal",
   "sha": "5f4980a53945bf81"
- },
- "w-3cf61d7200.jpg": {
-  "ratio": 1.3115,
-  "tone": "normal",
-  "sha": "faaed772eeaf2387"
  },
  "w-40d09b410a.jpg": {
   "ratio": 0.6863,
@@ -1704,11 +1654,6 @@
   "tone": "normal",
   "sha": "2169ee78c235033f"
  },
- "w-82c702a15e.png": {
-  "ratio": 1.5779,
-  "tone": "normal",
-  "sha": "9fdc009dc7ddba28"
- },
  "w-82e5338505.jpg": {
   "ratio": 1.2352,
   "tone": "normal",
@@ -1723,11 +1668,6 @@
   "ratio": 1.6495,
   "tone": "normal",
   "sha": "8c8db887466de85d"
- },
- "w-8b54041be0.jpg": {
-  "ratio": 0.87,
-  "tone": "normal",
-  "sha": "f9d2a6f17221568c"
  },
  "w-918aaaba48.jpg": {
   "ratio": 2.4316,
@@ -1789,11 +1729,6 @@
   "tone": "normal",
   "sha": "8e744cf794b3173a"
  },
- "w-b81b34c6dd.jpg": {
-  "ratio": 0.765,
-  "tone": "normal",
-  "sha": "18e036d336b2675a"
- },
  "w-b97d3d1153.png": {
   "ratio": 0.6388,
   "tone": "normal",
@@ -1854,30 +1789,10 @@
   "tone": "normal",
   "sha": "2bff440cf73997a8"
  },
- "w-f28cb27c0e.jpg": {
-  "ratio": 0.6813,
-  "tone": "normal",
-  "sha": "381ef97ee7c1eb4a"
- },
- "w-f4a8865c8f.jpg": {
-  "ratio": 0.6262,
-  "tone": "normal",
-  "sha": "c37e046e61039cf6"
- },
- "w-f94ca07b86.jpg": {
-  "ratio": 0.6887,
-  "tone": "normal",
-  "sha": "402a09ec2769e2c2"
- },
  "w-f9c43eb75c.png": {
   "ratio": 0.7176,
   "tone": "normal",
   "sha": "3c5fc3f814209c8f"
- },
- "w-fd206b047a.jpg": {
-  "ratio": 1.3089,
-  "tone": "normal",
-  "sha": "1d43beb1fd0d0b25"
  },
  "w-ff6df24b2e.jpg": {
   "ratio": 0.7887,

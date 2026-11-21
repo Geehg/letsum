@@ -753,10 +753,8 @@
       "theme": "city",
       "copy": "김해의 친근한 소통 캐릭터",
       "color": "#a7d4bc",
-      "image": "/mascots/thumbs/m-e041954997.png",
-      "panels": [
-        "/mascots/thumbs/m-e041954997.png"
-      ],
+      "image": null,
+      "panels": [],
       "official": "https://www.gimhae.go.kr/00954/01017/01047.web",
       "organization": "김해시",
       "detail": "/mascots/brands/mc-q42082/",
