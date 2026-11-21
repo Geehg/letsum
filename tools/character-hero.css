@@ -42,3 +42,14 @@
  .cf-art.is-video .cf-star{bottom:59px;height:21%;width:40%;left:42%}
  .cf-art.is-video .cf-stamp{bottom:64px;left:16px}
 }
+
+/* Automatic spotlight, without the ranking strip. */
+.cf-feature-label{font:10px/1.4 monospace;letter-spacing:.08em;color:#6e6b61;margin-bottom:28px}
+.cf-copy{padding-top:18px;padding-bottom:20px;justify-content:center}
+.cf-reason{margin:14px 0 20px;font-size:13px;max-width:36ch}
+.cf-arrows{top:12px;right:14px}
+.cf-art-tools{justify-content:flex-end}
+.cf-spread{animation:cf-slide .55s ease-out}
+@keyframes cf-slide{from{opacity:.5;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.cf-spread{animation:none}}
+@media(max-width:760px){.cf-feature-label{margin-bottom:22px}.cf-reason{max-width:none}.cf-copy{padding-top:16px}.cf-arrows{gap:5px}.cf-arrows button{width:30px;height:30px}}

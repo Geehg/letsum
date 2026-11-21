@@ -18735,11 +18735,12 @@
       ],
       "country": null,
       "region": null,
-      "summary": "피카츄에 관한 위키백과 문서입니다.",
+      "summary": "포켓몬 시리즈의 전기타입 포켓몬. 노란 몸과 번개 모양 꼬리가 특징입니다.",
       "source_ids": [
+        "mw-4bd4fe94ec-official",
         "mw-4bd4fe94ec-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B9%B4%EC%B8%84",
+      "source_url": "https://www.pokemon.com/us/pokedex/pikachu",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -19235,11 +19236,12 @@
       ],
       "country": null,
       "region": null,
-      "summary": "헬로키티(Hello Kitty, ハローキティ 하로키티[*])는 일본의 캐릭터 전문 기업인 산리오에서 캐릭터 상품용으로 만들어낸 캐릭터군(群), 혹은 주인공인 키티를 가리킨다.",
+      "summary": "산리오의 캐릭터 헬로키티를 공식 소개와 함께 만나보세요.",
       "source_ids": [
+        "mw-7092324fb7-official",
         "mw-7092324fb7-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%ED%97%AC%EB%A1%9C%ED%82%A4%ED%8B%B0",
+      "source_url": "https://www.sanrio.co.jp/characters/hellokitty/",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -20281,11 +20283,12 @@
       ],
       "country": null,
       "region": null,
-      "summary": "커비 (캐릭터)에 관한 위키백과 문서입니다.",
+      "summary": "적의 능력을 활용하는 카피 능력으로 모험을 이어가는 별의 커비 시리즈의 주인공입니다.",
       "source_ids": [
+        "mw-a83f17c5ea-official",
         "mw-a83f17c5ea-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%B9%84_%28%EC%BA%90%EB%A6%AD%ED%84%B0%29",
+      "source_url": "https://www.kirby.jp/character/",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -20785,11 +20788,12 @@
       ],
       "country": "US",
       "region": null,
-      "summary": "소닉 더 헤지혹 (캐릭터)에 관한 위키백과 문서입니다.",
+      "summary": "빠른 속도와 자유로운 성격으로 모험을 이어가는 소닉 시리즈의 주인공입니다.",
       "source_ids": [
+        "mw-b97d3d1153-official",
         "mw-b97d3d1153-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EC%86%8C%EB%8B%89_%EB%8D%94_%ED%97%A4%EC%A7%80%ED%98%B9_%28%EC%BA%90%EB%A6%AD%ED%84%B0%29",
+      "source_url": "https://sonic.sega.jp/SonicChannel/character/sonic.html",
       "guideline_url": null,
       "assets": [],
       "usage": {
@@ -22252,11 +22256,12 @@
       ],
       "country": null,
       "region": null,
-      "summary": "마리오(일본어: マリオ, 영어: Mario)는 마리오 시리즈에 등장하는 캐릭터이다.",
+      "summary": "빨간 모자와 파란 멜빵바지의 마리오. 동료들과 여러 세계를 누비는 모험가입니다.",
       "source_ids": [
+        "mw-ff6df24b2e-official",
         "mw-ff6df24b2e-src"
       ],
-      "source_url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%A6%AC%EC%98%A4",
+      "source_url": "https://www.nintendo.com/jp/character/mario/",
       "guideline_url": null,
       "assets": [],
       "usage": {

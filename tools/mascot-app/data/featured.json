@@ -1,7 +1,147 @@
 {
-  "selection": "LETSUM 공개근거 종합순위",
+  "selection": "해외 캐릭터 우선 소개",
   "checked": "2026-11-20",
   "items": [
+    {
+      "id": "mw-b97d3d1153",
+      "name": "소닉",
+      "theme": "world",
+      "copy": "푸른 고슴도치의 질주",
+      "color": "#9ec4ed",
+      "image": "/mascots/thumbs/w-b97d3d1153.png",
+      "panels": [
+        "/mascots/thumbs/w-b97d3d1153.png"
+      ],
+      "official": "https://sonic.sega.jp/SonicChannel/character/sonic.html",
+      "organization": "SEGA",
+      "detail": "/mascots/brands/mw-b97d3d1153/",
+      "foregroundMode": "illustration",
+      "reason": "빠른 속도와 자유로운 성격으로 모험을 이어가는 소닉 시리즈의 주인공입니다.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://sonic.sega.jp/SonicChannel/character/sonic.html"
+        }
+      ],
+      "imageCredit": {
+        "author": "SEGA",
+        "license": "CC BY 3.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Modern_Sonic.png"
+      },
+      "checked": "2026-11-21"
+    },
+    {
+      "id": "mw-4bd4fe94ec",
+      "name": "피카츄",
+      "theme": "world",
+      "copy": "노란 볼에 담긴 전기 에너지",
+      "color": "#f7db65",
+      "image": "/mascots/thumbs/w-4bd4fe94ec.jpg",
+      "panels": [
+        "/mascots/thumbs/w-4bd4fe94ec.jpg"
+      ],
+      "official": "https://www.pokemon.com/us/pokedex/pikachu",
+      "organization": "Pokémon",
+      "detail": "/mascots/brands/mw-4bd4fe94ec/",
+      "foregroundMode": "photo",
+      "reason": "포켓몬 시리즈의 전기타입 포켓몬. 노란 몸과 번개 모양 꼬리가 특징입니다.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://www.pokemon.com/us/pokedex/pikachu"
+        }
+      ],
+      "imageCredit": {
+        "author": "Yoshikazu TAKADA from Tokyo, Japan",
+        "license": "CC BY 2.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Pikachu_Parade_(14905092432).jpg"
+      },
+      "checked": "2026-11-21"
+    },
+    {
+      "id": "mw-7092324fb7",
+      "name": "헬로키티",
+      "theme": "world",
+      "copy": "리본으로 전하는 작은 인사",
+      "color": "#efb9c9",
+      "image": "/mascots/thumbs/w-7092324fb7.jpg",
+      "panels": [
+        "/mascots/thumbs/w-7092324fb7.jpg"
+      ],
+      "official": "https://www.sanrio.co.jp/characters/hellokitty/",
+      "organization": "Sanrio",
+      "detail": "/mascots/brands/mw-7092324fb7/",
+      "foregroundMode": "photo",
+      "reason": "산리오의 캐릭터 헬로키티를 공식 소개와 함께 만나보세요.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://www.sanrio.co.jp/characters/hellokitty/"
+        }
+      ],
+      "imageCredit": {
+        "author": "Halokattiez",
+        "license": "CC BY-SA 4.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:HK_SYP_Sai_Ying_Pun_%E9%A6%99%E6%B8%AF%E5%95%86%E6%A5%AD%E4%B8%AD%E5%BF%83_Hong_Kong_Plaza_%E6%97%A5%E6%9C%AC%E4%B8%80%E7%94%B0%E7%99%BE%E8%B2%A8%E5%BA%97_YATA_department_Store_March_2017_Lnv2_Hello_Kitty_02.jpg"
+      },
+      "checked": "2026-11-21"
+    },
+    {
+      "id": "mw-ff6df24b2e",
+      "name": "마리오",
+      "theme": "world",
+      "copy": "달리고, 점프하고, 모험하다",
+      "color": "#efb5a7",
+      "image": "/mascots/thumbs/w-ff6df24b2e.jpg",
+      "panels": [
+        "/mascots/thumbs/w-ff6df24b2e.jpg"
+      ],
+      "official": "https://www.nintendo.com/jp/character/mario/",
+      "organization": "Nintendo",
+      "detail": "/mascots/brands/mw-ff6df24b2e/",
+      "foregroundMode": "photo",
+      "reason": "빨간 모자와 파란 멜빵바지의 마리오. 동료들과 여러 세계를 누비는 모험가입니다.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://www.nintendo.com/jp/character/mario/"
+        }
+      ],
+      "imageCredit": {
+        "author": "Stefan Linder",
+        "license": "CC BY-SA 3.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Supermario_Kungsbacka.jpg"
+      },
+      "checked": "2026-11-21"
+    },
+    {
+      "id": "mw-a83f17c5ea",
+      "name": "커비",
+      "theme": "world",
+      "copy": "동그란 분홍빛 모험가",
+      "color": "#f2c2da",
+      "image": "/mascots/thumbs/w-a83f17c5ea.jpg",
+      "panels": [
+        "/mascots/thumbs/w-a83f17c5ea.jpg"
+      ],
+      "official": "https://www.kirby.jp/character/",
+      "organization": "Nintendo / HAL Laboratory",
+      "detail": "/mascots/brands/mw-a83f17c5ea/",
+      "foregroundMode": "photo",
+      "reason": "적의 능력을 활용하는 카피 능력으로 모험을 이어가는 별의 커비 시리즈의 주인공입니다.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://www.kirby.jp/character/"
+        }
+      ],
+      "imageCredit": {
+        "author": "Pikawil from Laval, Canada",
+        "license": "CC BY-SA 2.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Montreal_Mini-Comiccon_2014-_Kirby_(15784069358).jpg"
+      },
+      "checked": "2026-11-21"
+    },
     {
       "id": "mm-linefriends",
       "name": "브라운",
@@ -425,5 +565,9 @@
     ],
     "missing": "검색량·Google Trends·구글 색인 규모는 동일 조건 자료 미확보로 전 후보 점수에서 제외했습니다. 구글 검색결과 수는 검색량이 아닙니다. 미확인 근거에는 점수를 부여하지 않지만 인기가 없다는 뜻은 아닙니다. 자료 확보량에 영향을 받는 잠정 순위입니다.",
     "ties": "동점은 공동 순위. 화면 순서는 이름순."
+  },
+  "carousel": {
+    "intervalMs": 7000,
+    "order": "해외 캐릭터 먼저, 국내 캐릭터 이어서. 인기 순위가 아닌 소개 순서."
   }
 }

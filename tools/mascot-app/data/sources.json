@@ -5753,6 +5753,61 @@
       "scope": "page",
       "observation": "서울 서초구가족센터의 마스코트. '서초가족의 사랑'을 뜻하는 이름으로, 분홍 장미의 아기 요정입니다. 센터 누리집 홍보 게시글(2025년 12월)에서 소개했습니다. 서초구청에는 따로 공식 캐릭터 페이지가 없습니다.",
       "note": "수작업 확인(공식 페이지)"
+    },
+    {
+      "id": "mw-b97d3d1153-official",
+      "title": "소닉 공식 소개",
+      "url": "https://sonic.sega.jp/SonicChannel/character/sonic.html",
+      "publisher": "SEGA",
+      "language": "ja",
+      "checked_at": "2026-11-21",
+      "scope": "page",
+      "observation": "해외 캐릭터 히어로의 공식 소개 연결. 이용 허락을 확인한 자료가 아님.",
+      "note": "이미지는 기존 Wikimedia Commons 견본의 출처·이용조건을 유지합니다."
+    },
+    {
+      "id": "mw-4bd4fe94ec-official",
+      "title": "피카츄 공식 소개",
+      "url": "https://www.pokemon.com/us/pokedex/pikachu",
+      "publisher": "Pokémon",
+      "language": "en",
+      "checked_at": "2026-11-21",
+      "scope": "page",
+      "observation": "해외 캐릭터 히어로의 공식 소개 연결. 이용 허락을 확인한 자료가 아님.",
+      "note": "이미지는 기존 Wikimedia Commons 견본의 출처·이용조건을 유지합니다."
+    },
+    {
+      "id": "mw-7092324fb7-official",
+      "title": "헬로키티 공식 소개",
+      "url": "https://www.sanrio.co.jp/characters/hellokitty/",
+      "publisher": "Sanrio",
+      "language": "ja",
+      "checked_at": "2026-11-21",
+      "scope": "page",
+      "observation": "해외 캐릭터 히어로의 공식 소개 연결. 이용 허락을 확인한 자료가 아님.",
+      "note": "이미지는 기존 Wikimedia Commons 견본의 출처·이용조건을 유지합니다."
+    },
+    {
+      "id": "mw-ff6df24b2e-official",
+      "title": "마리오 공식 소개",
+      "url": "https://www.nintendo.com/jp/character/mario/",
+      "publisher": "Nintendo",
+      "language": "ja",
+      "checked_at": "2026-11-21",
+      "scope": "page",
+      "observation": "해외 캐릭터 히어로의 공식 소개 연결. 이용 허락을 확인한 자료가 아님.",
+      "note": "이미지는 기존 Wikimedia Commons 견본의 출처·이용조건을 유지합니다."
+    },
+    {
+      "id": "mw-a83f17c5ea-official",
+      "title": "커비 공식 소개",
+      "url": "https://www.kirby.jp/character/",
+      "publisher": "Nintendo / HAL Laboratory",
+      "language": "ja",
+      "checked_at": "2026-11-21",
+      "scope": "page",
+      "observation": "해외 캐릭터 히어로의 공식 소개 연결. 이용 허락을 확인한 자료가 아님.",
+      "note": "이미지는 기존 Wikimedia Commons 견본의 출처·이용조건을 유지합니다."
     }
   ]
 }
