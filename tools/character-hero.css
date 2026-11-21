@@ -58,3 +58,6 @@
 
 .cf-arrows{white-space:nowrap}.cf-arrows button{flex-shrink:0}.cf-arrows span{white-space:nowrap}
 @media(max-width:760px){.cf-art .cf-star[src*="sonic-official-cutout"]{object-fit:cover}}
+
+/* Decorative overflow must not become a focus-driven inner scroll area. */
+.cf-spread,.cf-art,.cf-art.is-video{overflow:clip}
