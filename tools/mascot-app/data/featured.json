@@ -8,7 +8,7 @@
       "theme": "world",
       "copy": "푸른 고슴도치의 질주",
       "color": "#9ec4ed",
-      "image": "/mascots/thumbs/w-b97d3d1153.png",
+      "image": "/mascots/featured/sonic-official-cutout.webp",
       "panels": [
         "/mascots/thumbs/w-b97d3d1153.png"
       ],
@@ -28,7 +28,13 @@
         "license": "CC BY 3.0",
         "page_url": "https://commons.wikimedia.org/wiki/File:Modern_Sonic.png"
       },
-      "checked": "2026-11-21"
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "SEGA",
+        "page_url": "https://sonic.sega.jp/SonicXShadowGenerations/character.html",
+        "image_url": "https://sonic.sega.jp/SonicXShadowGenerations/assets/images/pc/chara/chara02-01.webp",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      }
     },
     {
       "id": "mw-4bd4fe94ec",
@@ -36,14 +42,14 @@
       "theme": "world",
       "copy": "노란 볼에 담긴 전기 에너지",
       "color": "#f7db65",
-      "image": "/mascots/thumbs/w-4bd4fe94ec.jpg",
+      "image": "/mascots/featured/pikachu-official-cutout.png",
       "panels": [
         "/mascots/thumbs/w-4bd4fe94ec.jpg"
       ],
       "official": "https://www.pokemon.com/us/pokedex/pikachu",
       "organization": "Pokémon",
       "detail": "/mascots/brands/mw-4bd4fe94ec/",
-      "foregroundMode": "photo",
+      "foregroundMode": "illustration",
       "reason": "포켓몬 시리즈의 전기타입 포켓몬. 노란 몸과 번개 모양 꼬리가 특징입니다.",
       "sources": [
         {
@@ -56,7 +62,13 @@
         "license": "CC BY 2.0",
         "page_url": "https://commons.wikimedia.org/wiki/File:Pikachu_Parade_(14905092432).jpg"
       },
-      "checked": "2026-11-21"
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "Pokémon / Nintendo / Creatures / GAME FREAK",
+        "page_url": "https://zukan.pokemon.co.jp/detail/0025",
+        "image_url": "https://zukan.pokemon.co.jp/zukan-api/up/images/index/5bb0cfd44302cd4df0c0c88d37457931.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      }
     },
     {
       "id": "mw-7092324fb7",
@@ -64,14 +76,14 @@
       "theme": "world",
       "copy": "리본으로 전하는 작은 인사",
       "color": "#efb9c9",
-      "image": "/mascots/thumbs/w-7092324fb7.jpg",
+      "image": "/mascots/featured/hello-kitty-official-cutout.png",
       "panels": [
         "/mascots/thumbs/w-7092324fb7.jpg"
       ],
       "official": "https://www.sanrio.co.jp/characters/hellokitty/",
       "organization": "Sanrio",
       "detail": "/mascots/brands/mw-7092324fb7/",
-      "foregroundMode": "photo",
+      "foregroundMode": "illustration",
       "reason": "산리오의 캐릭터 헬로키티를 공식 소개와 함께 만나보세요.",
       "sources": [
         {
@@ -84,7 +96,13 @@
         "license": "CC BY-SA 4.0",
         "page_url": "https://commons.wikimedia.org/wiki/File:HK_SYP_Sai_Ying_Pun_%E9%A6%99%E6%B8%AF%E5%95%86%E6%A5%AD%E4%B8%AD%E5%BF%83_Hong_Kong_Plaza_%E6%97%A5%E6%9C%AC%E4%B8%80%E7%94%B0%E7%99%BE%E8%B2%A8%E5%BA%97_YATA_department_Store_March_2017_Lnv2_Hello_Kitty_02.jpg"
       },
-      "checked": "2026-11-21"
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "Sanrio",
+        "page_url": "https://www.sanrio.co.jp/characters/hellokitty/",
+        "image_url": "https://www.sanrio.co.jp/wp-content/uploads/2022/06/mv-hellokitty.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      }
     },
     {
       "id": "mw-ff6df24b2e",
@@ -92,14 +110,14 @@
       "theme": "world",
       "copy": "달리고, 점프하고, 모험하다",
       "color": "#efb5a7",
-      "image": "/mascots/thumbs/w-ff6df24b2e.jpg",
+      "image": "/mascots/featured/mario-official-cutout.png",
       "panels": [
         "/mascots/thumbs/w-ff6df24b2e.jpg"
       ],
       "official": "https://www.nintendo.com/jp/character/mario/",
       "organization": "Nintendo",
       "detail": "/mascots/brands/mw-ff6df24b2e/",
-      "foregroundMode": "photo",
+      "foregroundMode": "illustration",
       "reason": "빨간 모자와 파란 멜빵바지의 마리오. 동료들과 여러 세계를 누비는 모험가입니다.",
       "sources": [
         {
@@ -112,7 +130,13 @@
         "license": "CC BY-SA 3.0",
         "page_url": "https://commons.wikimedia.org/wiki/File:Supermario_Kungsbacka.jpg"
       },
-      "checked": "2026-11-21"
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "Nintendo",
+        "page_url": "https://www.nintendo.com/jp/character/mario/index.html",
+        "image_url": "https://www.nintendo.com/jp/character/mario/top/img/top/img-mario-01_02.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      }
     },
     {
       "id": "mw-a83f17c5ea",
@@ -120,14 +144,14 @@
       "theme": "world",
       "copy": "동그란 분홍빛 모험가",
       "color": "#f2c2da",
-      "image": "/mascots/thumbs/w-a83f17c5ea.jpg",
+      "image": "/mascots/featured/kirby-official-cutout.png",
       "panels": [
         "/mascots/thumbs/w-a83f17c5ea.jpg"
       ],
       "official": "https://www.kirby.jp/character/",
       "organization": "Nintendo / HAL Laboratory",
       "detail": "/mascots/brands/mw-a83f17c5ea/",
-      "foregroundMode": "photo",
+      "foregroundMode": "illustration",
       "reason": "적의 능력을 활용하는 카피 능력으로 모험을 이어가는 별의 커비 시리즈의 주인공입니다.",
       "sources": [
         {
@@ -140,7 +164,13 @@
         "license": "CC BY-SA 2.0",
         "page_url": "https://commons.wikimedia.org/wiki/File:Montreal_Mini-Comiccon_2014-_Kirby_(15784069358).jpg"
       },
-      "checked": "2026-11-21"
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "Nintendo / HAL Laboratory",
+        "page_url": "https://www.kirby.jp/character/",
+        "image_url": "https://www.kirby.jp/25th/cms/wp-content/themes/kirby-v2/character/imgs/chara-about-kirby.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      }
     },
     {
       "id": "mm-linefriends",
@@ -552,6 +582,61 @@
       "archiveEntry": "03_Hechi_character 3D_out_hechi_basic.ai",
       "method": "공식 AI/PDF의 850px 이미지와 원본 알파 마스크를 SVG로 보존. 캐릭터 윤곽·색상 편집 없음.",
       "sha256": "da7801f05ea668249ede1cf42e73507ae03ca1b31734d87cb7b94345448b5455"
+    },
+    {
+      "file": "sonic-official-cutout.webp",
+      "url": "https://sonic.sega.jp/SonicXShadowGenerations/assets/images/pc/chara/chara02-01.webp",
+      "page_url": "https://sonic.sega.jp/SonicXShadowGenerations/character.html",
+      "checked": "2026-11-21",
+      "width": 1200,
+      "height": 1200,
+      "alpha": true,
+      "method": "공식 투명 원본 바이트 그대로 보존. 확대·재압축·배경 제거 가공 없음.",
+      "sha256": "34bef69e5431c7700ee80bad3a0737029cb531235dd95f3401e5cf57f5e619b3"
+    },
+    {
+      "file": "pikachu-official-cutout.png",
+      "url": "https://zukan.pokemon.co.jp/zukan-api/up/images/index/5bb0cfd44302cd4df0c0c88d37457931.png",
+      "page_url": "https://zukan.pokemon.co.jp/detail/0025",
+      "checked": "2026-11-21",
+      "width": 570,
+      "height": 570,
+      "alpha": true,
+      "method": "공식 투명 원본 바이트 그대로 보존. 확대·재압축·배경 제거 가공 없음.",
+      "sha256": "f473131c0ec0d7c4a0673364bd23f9191bd921932f46a52c92bce07977aef277"
+    },
+    {
+      "file": "hello-kitty-official-cutout.png",
+      "url": "https://www.sanrio.co.jp/wp-content/uploads/2022/06/mv-hellokitty.png",
+      "page_url": "https://www.sanrio.co.jp/characters/hellokitty/",
+      "checked": "2026-11-21",
+      "width": 1004,
+      "height": 560,
+      "alpha": true,
+      "method": "공식 투명 원본 바이트 그대로 보존. 확대·재압축·배경 제거 가공 없음.",
+      "sha256": "b86e6ef8ba8397d00e12816d83ccc9f228c9ff0351642e086d82f5b7d95ffdd7"
+    },
+    {
+      "file": "mario-official-cutout.png",
+      "url": "https://www.nintendo.com/jp/character/mario/top/img/top/img-mario-01_02.png",
+      "page_url": "https://www.nintendo.com/jp/character/mario/index.html",
+      "checked": "2026-11-21",
+      "width": 1546,
+      "height": 2130,
+      "alpha": true,
+      "method": "공식 투명 원본 바이트 그대로 보존. 확대·재압축·배경 제거 가공 없음.",
+      "sha256": "4e62364695fdf1cc857576d79d5022f7025abd28e904e352f75bcfc989eea279"
+    },
+    {
+      "file": "kirby-official-cutout.png",
+      "url": "https://www.kirby.jp/25th/cms/wp-content/themes/kirby-v2/character/imgs/chara-about-kirby.png",
+      "page_url": "https://www.kirby.jp/character/",
+      "checked": "2026-11-21",
+      "width": 634,
+      "height": 648,
+      "alpha": true,
+      "method": "공식 투명 원본 바이트 그대로 보존. 확대·재압축·배경 제거 가공 없음.",
+      "sha256": "bf86f0034e4543f8b5209d4fadd5b49075410c49f6a9d886fa12f3d070d5f8e3"
     }
   ],
   "method": {
