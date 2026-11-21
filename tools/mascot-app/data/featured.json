@@ -1,6 +1,6 @@
 {
   "selection": "해외 캐릭터 우선 소개",
-  "checked": "2026-11-20",
+  "checked": "2026-11-21",
   "items": [
     {
       "id": "mw-b97d3d1153",
@@ -34,40 +34,11 @@
         "page_url": "https://sonic.sega.jp/SonicXShadowGenerations/character.html",
         "image_url": "https://sonic.sega.jp/SonicXShadowGenerations/assets/images/pc/chara/chara02-01.webp",
         "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
-      }
-    },
-    {
-      "id": "mw-4bd4fe94ec",
-      "name": "피카츄",
-      "theme": "world",
-      "copy": "노란 볼에 담긴 전기 에너지",
-      "color": "#f7db65",
-      "image": "/mascots/featured/pikachu-official-cutout.png",
-      "panels": [
-        "/mascots/thumbs/w-4bd4fe94ec.jpg"
-      ],
-      "official": "https://www.pokemon.com/us/pokedex/pikachu",
-      "organization": "Pokémon",
-      "detail": "/mascots/brands/mw-4bd4fe94ec/",
-      "foregroundMode": "illustration",
-      "reason": "포켓몬 시리즈의 전기타입 포켓몬. 노란 몸과 번개 모양 꼬리가 특징입니다.",
-      "sources": [
-        {
-          "title": "공식 캐릭터 소개",
-          "url": "https://www.pokemon.com/us/pokedex/pikachu"
-        }
-      ],
-      "imageCredit": {
-        "author": "Yoshikazu TAKADA from Tokyo, Japan",
-        "license": "CC BY 2.0",
-        "page_url": "https://commons.wikimedia.org/wiki/File:Pikachu_Parade_(14905092432).jpg"
       },
-      "checked": "2026-11-21",
-      "foregroundCredit": {
-        "author": "Pokémon / Nintendo / Creatures / GAME FREAK",
-        "page_url": "https://zukan.pokemon.co.jp/detail/0025",
-        "image_url": "https://zukan.pokemon.co.jp/zukan-api/up/images/index/5bb0cfd44302cd4df0c0c88d37457931.png",
-        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      "video": {
+        "id": "5TcV8h0v-qw",
+        "title": "SEGA · 소닉 캐릭터 소개",
+        "checked": "2026-11-21"
       }
     },
     {
@@ -101,6 +72,150 @@
         "author": "Sanrio",
         "page_url": "https://www.sanrio.co.jp/characters/hellokitty/",
         "image_url": "https://www.sanrio.co.jp/wp-content/uploads/2022/06/mv-hellokitty.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      },
+      "video": {
+        "id": "tCKT1J4NY58",
+        "title": "Sanrio · Hello Kitty and Friends",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "id": "mw-ebb6e39576",
+      "name": "미니언즈",
+      "theme": "world",
+      "copy": "작은 몸짓으로 만드는 유쾌한 장면",
+      "reason": "미니언즈 공식 단편에서 스튜어트와 데이브의 모습을 만나보세요.",
+      "organization": "Illumination",
+      "official": "https://www.illumination.com/movie/minions-monsters/",
+      "color": "#f0d777",
+      "image": "/mascots/thumbs/w-ebb6e39576.jpg",
+      "panels": [
+        "/mascots/thumbs/w-ebb6e39576.jpg"
+      ],
+      "detail": "/mascots/brands/mw-ebb6e39576/",
+      "foregroundMode": "photo",
+      "imageCredit": {
+        "author": "ウィ貴公子",
+        "license": "CC BY-SA 4.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Minion_sculpture_in_Brisbane,_2024.jpg"
+      },
+      "checked": "2026-11-21",
+      "sources": [
+        {
+          "title": "공식 소개",
+          "url": "https://www.illumination.com/movie/minions-monsters/"
+        }
+      ],
+      "video": {
+        "id": "vFTbqrS2vCI",
+        "title": "Illumination · Stuart & Dave",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "id": "mw-2717c70cca",
+      "name": "팩맨",
+      "theme": "world",
+      "copy": "노란 주인공의 새로운 모험",
+      "reason": "공식 애니메이션 Snack Breaks에서 만나는 팩맨의 일상과 모험입니다.",
+      "organization": "Bandai Namco Entertainment",
+      "official": "https://www.pacman.com/en/character/",
+      "color": "#f5d54d",
+      "image": "/mascots/featured/pacman-official-cutout.png",
+      "panels": [
+        "/mascots/thumbs/w-2717c70cca.png"
+      ],
+      "detail": "/mascots/brands/mw-2717c70cca/",
+      "foregroundMode": "illustration",
+      "imageCredit": {
+        "author": "Bandai Namco Entertainment America",
+        "license": "CC BY 3.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Pac-Man_gameplay_(1x_pixel-perfect_recreation).png"
+      },
+      "checked": "2026-11-21",
+      "sources": [
+        {
+          "title": "공식 소개",
+          "url": "https://www.pacman.com/en/character/"
+        }
+      ],
+      "foregroundCredit": {
+        "author": "Bandai Namco Entertainment",
+        "page_url": "https://www.pacman.com/en/character/",
+        "image_url": "https://www.pacman.com/images/character/img_pacman_01.png",
+        "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
+      },
+      "video": {
+        "id": "ul7VVZrc7Lg",
+        "title": "PAC-MAN Official · Snack Breaks",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "id": "mw-1e993a56ed",
+      "name": "티나·밀로",
+      "theme": "world",
+      "copy": "눈 덮인 숲에서 시작되는 이야기",
+      "reason": "밀라노 코르티나 2026 동계 올림픽·패럴림픽 마스코트인 티나와 밀로를 소개합니다.",
+      "organization": "Milano Cortina 2026",
+      "official": "https://www.olympics.com/ioc/news/milano-cortina-2026-unveils-mascots-tina-and-milo-ioc",
+      "color": "#c4d9f3",
+      "image": "/mascots/thumbs/w-1e993a56ed.jpg",
+      "panels": [
+        "/mascots/thumbs/w-1e993a56ed.jpg"
+      ],
+      "detail": "/mascots/brands/mw-1e993a56ed/",
+      "foregroundMode": "photo",
+      "imageCredit": {
+        "author": "Alex Sirac",
+        "license": "CC BY 4.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Mascottes_dans_la_fanzone_de_Milan_2026.jpg"
+      },
+      "checked": "2026-11-21",
+      "sources": [
+        {
+          "title": "공식 소개",
+          "url": "https://www.olympics.com/ioc/news/milano-cortina-2026-unveils-mascots-tina-and-milo-ioc"
+        }
+      ],
+      "video": {
+        "id": "m3tUFN4w5Qc",
+        "title": "Milano Cortina 2026 · Tina & Milo",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "id": "mw-4bd4fe94ec",
+      "name": "피카츄",
+      "theme": "world",
+      "copy": "노란 볼에 담긴 전기 에너지",
+      "color": "#f7db65",
+      "image": "/mascots/featured/pikachu-official-cutout.png",
+      "panels": [
+        "/mascots/thumbs/w-4bd4fe94ec.jpg"
+      ],
+      "official": "https://www.pokemon.com/us/pokedex/pikachu",
+      "organization": "Pokémon",
+      "detail": "/mascots/brands/mw-4bd4fe94ec/",
+      "foregroundMode": "illustration",
+      "reason": "포켓몬 시리즈의 전기타입 포켓몬. 노란 몸과 번개 모양 꼬리가 특징입니다.",
+      "sources": [
+        {
+          "title": "공식 캐릭터 소개",
+          "url": "https://www.pokemon.com/us/pokedex/pikachu"
+        }
+      ],
+      "imageCredit": {
+        "author": "Yoshikazu TAKADA from Tokyo, Japan",
+        "license": "CC BY 2.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Pikachu_Parade_(14905092432).jpg"
+      },
+      "checked": "2026-11-21",
+      "foregroundCredit": {
+        "author": "Pokémon / Nintendo / Creatures / GAME FREAK",
+        "page_url": "https://zukan.pokemon.co.jp/detail/0025",
+        "image_url": "https://zukan.pokemon.co.jp/zukan-api/up/images/index/5bb0cfd44302cd4df0c0c88d37457931.png",
         "note": "공식 페이지의 투명 원본을 무변환으로 사용한 식별용 이미지입니다. 별도 이용 허락을 의미하지 않습니다."
       }
     },
@@ -653,6 +768,7 @@
   },
   "carousel": {
     "intervalMs": 7000,
-    "order": "해외 캐릭터 먼저, 국내 캐릭터 이어서. 인기 순위가 아닌 소개 순서."
+    "order": "해외 캐릭터 먼저, 국내 캐릭터 이어서. 인기 순위가 아닌 소개 순서.",
+    "videoIntervalMs": 20000
   }
 }
