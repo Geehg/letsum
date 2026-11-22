@@ -7,6 +7,7 @@
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let theme = 'ranked', index = 0, playing = !motion.matches, useVideo = !motion.matches;
   let hero = null, timer = null, lastChange = 0, hovered = false, filtersOpen = false;
+  let noteElapsed = 0, noteClock = 0, notePair = 0;
   let player = null, observer = null, visible = false, requestedPlay = false;
   const companies = Object.values(data.companies).sort((a, b) => b.billionYen - a.billionYen);
   const ranked = slides.filter(item => data.companies[item.company]).sort((a, b) =>
@@ -90,6 +91,10 @@
     return `<p class="cf-note cf-note-${side}"><span class="sr-only">${escape(text)}</span><span class="cf-type" aria-hidden="true">${words.join(' ')}</span></p>`;
   }
 
+  function renderNotes(facts, pair) {
+    return noteMarkup(facts[pair * 2], 'left') + noteMarkup(facts[pair * 2 + 1], 'right');
+  }
+
   function changeSlide(root, step) {
     const length = entries().length;
     index = (index + step + length) % length;
@@ -144,6 +149,8 @@
     stage.classList.remove('cf-ready');
     stage.dataset.record = item.id;
     lastChange = Date.now();
+    noteClock = performance.now();
+    noteElapsed = notePair = 0;
     const maskId = 'cf-mask-' + item.id;
     const title = profile.nativeName;
     const company = data.companies[item.company];
@@ -154,7 +161,7 @@
         <h1 id="page-heading" lang="${/[가-힣]/.test(title) ? 'ko' : 'en'}"${title.length > 13 ? ' class="cf-long-name"' : ''}>${escape(title)}</h1><p class="cf-caption">${escape(item.copy)}</p>
         <a class="cf-detail" href="${escape(item.detail)}">캐릭터 상세 보기 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="cf-notes">${noteMarkup(profile.facts[0], 'left')}${noteMarkup(profile.facts[1], 'right')}</div>
+      <div class="cf-notes">${renderNotes(profile.facts, 0)}</div>
       <button type="button" style="${portraitStyle(item.portrait)}" class="cf-figure" data-preview-record="${escape(item.id)}" aria-label="${escape(item.name)} 상세 미리보기" aria-haspopup="dialog">
         ${cutoutMask(item.portrait, maskId)}<span class="cf-shadow"><img${item.portrait.outline ? ` style="clip-path:url(#${maskId})"` : ''} src="${escape(item.image)}" alt="" decoding="async" fetchpriority="high"></span>
       </button>`;
@@ -218,7 +225,7 @@
       <div class="cf-dialog-actions"><button type="button" data-video-mode>${useVideo ? '배경을 정지 이미지로 보기' : '배경 영상 사용'}</button></div></section>` : ''}
       ${clip ? `<section><h3>관련 공식 영상</h3>${sourceLink(clip.url || 'https://www.youtube.com/watch?v=' + clip.id, clip.title)}</section>` : ''}
 
-      <section><h3>캐릭터 정보</h3>${sourceLink(item.profile.factSource, item.organization + ' · 소개 자료')}</section>
+      <section><h3>캐릭터 정보</h3><ul>${item.profile.facts.map(fact => `<li>${escape(fact)}</li>`).join('')}</ul>${sourceLink(item.profile.factSource, item.organization + ' · 소개 자료')}</section>
       <section><h3>캐릭터 이미지</h3>${sourceLink(foreground?.page_url || item.official, foreground?.author || item.organization)}${foreground?.note ? `<p>${escape(foreground.note)}</p>` : ''}</section>
       ${credit ? `<section><h3>배경 이미지</h3>${sourceLink(credit.page_url, [credit.author, credit.license].filter(Boolean).join(' · '))}<p>원본의 일부를 흑백으로 표시했습니다.</p></section>` : ''}
       <p>캐릭터의 권리는 각 권리자에게 있습니다. 이용 조건은 ${sourceLink(item.official, '공식 안내')}에서 확인하세요.</p>`;
@@ -237,6 +244,18 @@
       releasePlayer(); clearInterval(timer); timer = hero = null; return;
     }
     syncPlayer();
+    const now = performance.now();
+    const delta = Math.min(now - noteClock, 750);
+    noteClock = now;
+    const facts = itemAt().profile.facts;
+    if (playing && !document.hidden && !dialogOpen() && hero.querySelector('.cf-ready')) {
+      noteElapsed += delta;
+      const pair = Math.floor(noteElapsed / 5000) % Math.floor(facts.length / 2);
+      if (pair !== notePair) {
+        notePair = pair;
+        hero.querySelector('.cf-notes').innerHTML = renderNotes(facts, pair);
+      }
+    }
     const blocked = !playing || document.hidden || hovered || dialogOpen() || entries().length < 2 ||
       (hero.contains(document.activeElement) && !document.activeElement.matches('.cf-play')) ||
       (player && !visible) || hero.getBoundingClientRect().bottom <= 0;

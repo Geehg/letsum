@@ -60,7 +60,9 @@
         "nativeName": "Sonic the Hedgehog",
         "facts": [
           "키 1m의 고슴도치예요.",
-          "한 번 한 약속은 꼭 지켜요."
+          "한 번 한 약속은 꼭 지켜요.",
+          "소리보다 빠르게 달려요.",
+          "곤경에 빠진 친구를 그냥 지나치지 못해요."
         ],
         "factSource": "https://sonic.sega.jp/SonicChannel/character/sonic.html"
       },
@@ -124,7 +126,9 @@
         "nativeName": "Hello Kitty",
         "facts": [
           "생일은 11월 1일이에요.",
-          "엄마가 구운 사과파이를 좋아해요."
+          "엄마가 구운 사과파이를 좋아해요.",
+          "키는 사과 다섯 개를 쌓은 높이예요.",
+          "쌍둥이 동생의 이름은 미미예요."
         ],
         "factSource": "https://corporate.sanrio.co.jp/en/business-info/brands/hello_kity/index.html"
       },
@@ -220,7 +224,9 @@
         "nativeName": "PAC-MAN",
         "facts": [
           "1980년 오락실 게임으로 데뷔했어요.",
-          "미로를 돌며 작은 점들을 먹어요."
+          "미로를 돌며 작은 점들을 먹어요.",
+          "파워 쿠키를 먹으면 유령을 쫓을 수 있어요.",
+          "미로의 터널은 양쪽 끝을 이어 줘요."
         ],
         "factSource": "https://en.bandainamcoent.eu/pac-man"
       },
@@ -301,7 +307,9 @@
         "nativeName": "Pikachu",
         "facts": [
           "키 40cm의 쥐포켓몬이에요.",
-          "단단한 나무열매를 전기로 익혀 먹어요."
+          "단단한 나무열매를 전기로 익혀 먹어요.",
+          "빨간 볼주머니에 전기를 모아요.",
+          "꼬리 끝이 번개처럼 꺾여 있어요."
         ],
         "factSource": "https://www.pokemonkorea.co.kr/pokedex/view/37"
       },
@@ -364,7 +372,9 @@
         "nativeName": "Mario",
         "facts": [
           "1981년 게임 《동키콩》에 등장했어요.",
-          "골프와 테니스에도 능해요."
+          "골프와 테니스에도 능해요.",
+          "쌍둥이 동생 루이지와 모험해요.",
+          "슈퍼버섯을 먹으면 몸집이 커져요."
         ],
         "factSource": "https://www.nintendo.com/jp/character/mario/"
       },
@@ -423,7 +433,9 @@
         "nativeName": "Kirby",
         "facts": [
           "키는 약 20cm예요.",
-          "팝스타에서 푸푸푸랜드를 구했어요."
+          "팝스타에서 푸푸푸랜드를 구했어요.",
+          "공기를 머금고 하늘을 날아요.",
+          "적을 삼켜 그 능력을 복사해요."
         ],
         "factSource": "https://kirby.nintendo.com/about/"
       },
@@ -478,7 +490,9 @@
         "nativeName": "BROWN",
         "facts": [
           "초코의 오빠예요.",
-          "친구 이야기를 묵묵히 들어줘요."
+          "친구 이야기를 묵묵히 들어줘요.",
+          "표정 변화가 작은 갈색 곰이에요.",
+          "토끼 친구 코니와 어울려요."
         ],
         "factSource": "https://linefriends.com/ko-kr/characters-list/ip-linefriends"
       },
@@ -586,7 +600,9 @@
         "nativeName": "HECHI",
         "facts": [
           "단청에서 따온 분홍빛을 입었어요.",
-          "이마에는 구름무늬가 있어요."
+          "이마에는 구름무늬가 있어요.",
+          "서울을 상징하는 캐릭터예요.",
+          "청룡·백호·주작·현무와 함께해요."
         ],
         "factSource": "https://world.seoul.go.kr/seoul-views/seoul-symbols/character-form/"
       },
@@ -678,7 +694,9 @@
         "nativeName": "PUANG",
         "facts": [
           "한강에 사는 청룡의 후예예요.",
-          "타임캡슐 속 알에서 깨어났어요."
+          "타임캡슐 속 알에서 깨어났어요.",
+          "중앙대학교 캠퍼스에서 만날 수 있어요.",
+          "파란 몸에 뿔이 솟아 있어요."
         ],
         "factSource": "https://www.cau.ac.kr/cms/FR_CON/index.do?CONTENTS_NO=1&MENU_ID=2540&P_TAB_NO=2"
       },
@@ -741,7 +759,9 @@
         "nativeName": "Kkumdori",
         "facts": [
           "1993년 대전엑스포에 온 우주요정이에요.",
-          "기분에 따라 머리 위 별빛이 바뀌어요."
+          "기분에 따라 머리 위 별빛이 바뀌어요.",
+          "대전을 대표하는 캐릭터예요.",
+          "우주에서 온 노란 몸의 요정이에요."
         ],
         "factSource": "https://www.daejeon.go.kr/drh/DrhContentsHtmlView.do?menuSeq=7637"
       },
@@ -840,7 +860,9 @@
         "nativeName": "TTOTA",
         "facts": [
           "전동차 옆모습을 본뜬 얼굴이에요.",
-          "이름에는 ‘또 타고 싶다’는 뜻이 담겼어요."
+          "이름에는 ‘또 타고 싶다’는 뜻이 담겼어요.",
+          "서울 지하철을 대표하는 캐릭터예요.",
+          "역 안의 안전 안내에도 등장해요."
         ],
         "factSource": "https://www.data.go.kr/data/15140337/fileData.do"
       },
@@ -893,7 +915,9 @@
         "nativeName": "눈송이 프렌즈",
         "facts": [
           "교내 공모전에서 태어났어요.",
-          "미대생들의 손을 거쳐 2022년 첫선을 보였어요."
+          "미대생들의 손을 거쳐 2022년 첫선을 보였어요.",
+          "숙명여대를 대표하는 캐릭터들이에요.",
+          "학교 기념품에서도 만날 수 있어요."
         ],
         "factSource": "https://www.sookmyung.ac.kr/kr/news/pr-booklet.do?articleNo=92097&attachNo=44372&mode=download"
       },
@@ -960,7 +984,9 @@
         "nativeName": "Samus Aran",
         "facts": [
           "메트로이드 시리즈의 주인공이에요.",
-          "팔에 장착한 암 캐논을 사용해요."
+          "팔에 장착한 암 캐논을 사용해요.",
+          "몸을 둥글게 말아 모프볼로 변해요.",
+          "좁은 통로도 굴러서 지나가요."
         ],
         "factSource": "https://www.smashbros.com/en_US/fighter/04.html"
       },
@@ -995,7 +1021,9 @@
         "nativeName": "Fox McCloud",
         "facts": [
           "스타폭스 팀의 리더예요.",
-          "전투기 아윙을 조종해요."
+          "전투기 아윙을 조종해요.",
+          "블래스터로 빠르게 연사해요.",
+          "리플렉터로 날아오는 공격을 튕겨 내요."
         ],
         "factSource": "https://www.smashbros.com/en_US/fighter/07.html"
       },
@@ -1027,7 +1055,9 @@
         "nativeName": "Mega Man",
         "facts": [
           "라이트 박사가 만든 로봇이에요.",
-          "상대의 특수 무기를 사용할 수 있어요."
+          "상대의 특수 무기를 사용할 수 있어요.",
+          "팔에 달린 록 버스터로 싸워요.",
+          "로봇 개 러시가 모험을 도와줘요."
         ],
         "factSource": "https://www.smashbros.com/en_US/fighter/46.html"
       },
@@ -1062,7 +1092,9 @@
         "nativeName": "Ryu",
         "facts": [
           "스트리트 파이터 시리즈에 등장해요.",
-          "켄과 함께 수련했어요."
+          "켄과 함께 수련했어요.",
+          "두 손으로 파동권을 날려요.",
+          "진정한 강함을 찾아 세계를 떠돌아요."
         ],
         "factSource": "https://www.smashbros.com/en_US/fighter/60.html"
       },
@@ -1092,7 +1124,9 @@
         "nativeName": "Ken Masters",
         "facts": [
           "류의 친구이자 라이벌이에요.",
-          "승룡권을 사용해요."
+          "승룡권을 사용해요.",
+          "붉은 도복과 금발이 특징이에요.",
+          "불꽃을 두른 승룡권을 날려요."
         ],
         "factSource": "https://www.smashbros.com/en_US/fighter/60e.html"
       },
@@ -1283,7 +1317,7 @@
     "ties": "같은 기업의 캐릭터는 기업 순위가 같으며, 한국어 이름순으로 표시합니다. 공동 권리자는 함께 표기하고 매출을 합산하지 않습니다."
   },
   "carousel": {
-    "intervalMs": 7000,
+    "intervalMs": 11000,
     "order": "첫 화면은 기업 연결 매출순 10선이며, 개별 테마는 별도로 탐색할 수 있습니다.",
     "videoIntervalMs": 20000
   },
