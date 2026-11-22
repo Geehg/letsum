@@ -1,5 +1,5 @@
 {
-  "selection": "해외 캐릭터 우선 소개",
+  "selection": "기업 규모순 캐릭터 10선",
   "checked": "2026-11-22",
   "items": [
     {
@@ -63,7 +63,8 @@
           "한 번 한 약속은 꼭 지켜요."
         ],
         "factSource": "https://sonic.sega.jp/SonicChannel/character/sonic.html"
-      }
+      },
+      "company": "sega"
     },
     {
       "id": "mw-7092324fb7",
@@ -126,7 +127,8 @@
           "엄마가 구운 사과파이를 좋아해요."
         ],
         "factSource": "https://corporate.sanrio.co.jp/en/business-info/brands/hello_kity/index.html"
-      }
+      },
+      "company": "sanrio"
     },
     {
       "id": "mw-ebb6e39576",
@@ -221,7 +223,8 @@
           "미로를 돌며 작은 점들을 먹어요."
         ],
         "factSource": "https://en.bandainamcoent.eu/pac-man"
-      }
+      },
+      "company": "bandai"
     },
     {
       "id": "mw-1e993a56ed",
@@ -375,7 +378,8 @@
         "src": "/mascots/featured/mario-stage.mp4",
         "poster": "/mascots/featured/mario-scene.jpg",
         "detail": "/mascots/featured/mario-detail.jpg"
-      }
+      },
+      "company": "nintendo"
     },
     {
       "id": "mw-a83f17c5ea",
@@ -427,7 +431,8 @@
         "id": "4IJGXbwWIgI",
         "title": "한국닌텐도 · 별의 커비 Wii 디럭스 소개 영상",
         "checked": "2026-11-22"
-      }
+      },
+      "company": "nintendo"
     },
     {
       "id": "mm-linefriends",
@@ -932,6 +937,170 @@
       ],
       "searchVolume": null,
       "rank": 10
+    },
+    {
+      "id": "mw-40d97dc92d",
+      "name": "사무스 아란",
+      "theme": "world",
+      "organization": "Nintendo",
+      "company": "nintendo",
+      "copy": "파워 슈트를 입은 현상금 사냥꾼",
+      "official": "https://www.smashbros.com/en_US/fighter/04.html",
+      "detail": "/mascots/brands/mw-40d97dc92d/",
+      "image": "/mascots/featured/samus-official.webp",
+      "panels": [
+        "/mascots/thumbs/w-40d97dc92d.jpg"
+      ],
+      "portrait": {
+        "centerX": 0.43,
+        "top": 0,
+        "bottom": 0.57
+      },
+      "profile": {
+        "nativeName": "Samus Aran",
+        "facts": [
+          "메트로이드 시리즈의 주인공이에요.",
+          "팔에 장착한 암 캐논을 사용해요."
+        ],
+        "factSource": "https://www.smashbros.com/en_US/fighter/04.html"
+      },
+      "foregroundCredit": {
+        "author": "대난투 스매시브라더스 얼티밋 공식 사이트",
+        "page_url": "https://www.smashbros.com/en_US/fighter/04.html",
+        "image_url": "https://www.smashbros.com/assets_v2/img/fighter/samus/main.png"
+      },
+      "imageCredit": {
+        "author": "Richie S from Brooklyn, NY, United States",
+        "license": "CC BY 2.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:New_York_Comic_Con_2016_-_Samus_(29599246513).jpg"
+      }
+    },
+    {
+      "id": "mw-5d717c55d9",
+      "name": "폭스 맥클라우드",
+      "theme": "world",
+      "organization": "Nintendo",
+      "company": "nintendo",
+      "copy": "스타폭스를 이끄는 파일럿",
+      "official": "https://www.smashbros.com/en_US/fighter/07.html",
+      "detail": "/mascots/brands/mw-5d717c55d9/",
+      "image": "/mascots/featured/fox-official.webp",
+      "panels": [],
+      "portrait": {
+        "centerX": 0.43,
+        "top": 0,
+        "bottom": 0.66
+      },
+      "profile": {
+        "nativeName": "Fox McCloud",
+        "facts": [
+          "스타폭스 팀의 리더예요.",
+          "전투기 아윙을 조종해요."
+        ],
+        "factSource": "https://www.smashbros.com/en_US/fighter/07.html"
+      },
+      "foregroundCredit": {
+        "author": "대난투 스매시브라더스 얼티밋 공식 사이트",
+        "page_url": "https://www.smashbros.com/en_US/fighter/07.html",
+        "image_url": "https://www.smashbros.com/assets_v2/img/fighter/fox/main.png"
+      }
+    },
+    {
+      "id": "mw-acece89c8d",
+      "name": "록맨",
+      "theme": "world",
+      "organization": "CAPCOM",
+      "company": "capcom",
+      "copy": "록 버스터를 장착한 푸른 로봇",
+      "official": "https://www.smashbros.com/en_US/fighter/46.html",
+      "detail": "/mascots/brands/mw-acece89c8d/",
+      "image": "/mascots/featured/megaman-official.webp",
+      "panels": [
+        "/mascots/thumbs/w-acece89c8d.jpg"
+      ],
+      "portrait": {
+        "centerX": 0.49,
+        "top": 0,
+        "bottom": 0.72
+      },
+      "profile": {
+        "nativeName": "Mega Man",
+        "facts": [
+          "라이트 박사가 만든 로봇이에요.",
+          "상대의 특수 무기를 사용할 수 있어요."
+        ],
+        "factSource": "https://www.smashbros.com/en_US/fighter/46.html"
+      },
+      "foregroundCredit": {
+        "author": "대난투 스매시브라더스 얼티밋 공식 사이트",
+        "page_url": "https://www.smashbros.com/en_US/fighter/46.html",
+        "image_url": "https://www.smashbros.com/assets_v2/img/fighter/mega_man/main.png"
+      },
+      "imageCredit": {
+        "author": "Pikawil from Laval, Canada",
+        "license": "CC BY-SA 2.0",
+        "page_url": "https://commons.wikimedia.org/wiki/File:Montreal_Comiccon_2015_-_Mega_Man_(19458555255).jpg"
+      }
+    },
+    {
+      "id": "mw-fbd0ba117e",
+      "name": "류",
+      "theme": "world",
+      "organization": "CAPCOM",
+      "company": "capcom",
+      "copy": "파동권을 연마하는 격투가",
+      "official": "https://www.smashbros.com/en_US/fighter/60.html",
+      "detail": "/mascots/brands/mw-fbd0ba117e/",
+      "image": "/mascots/featured/ryu-official.webp",
+      "panels": [],
+      "portrait": {
+        "centerX": 0.53,
+        "top": 0,
+        "bottom": 0.53
+      },
+      "profile": {
+        "nativeName": "Ryu",
+        "facts": [
+          "스트리트 파이터 시리즈에 등장해요.",
+          "켄과 함께 수련했어요."
+        ],
+        "factSource": "https://www.smashbros.com/en_US/fighter/60.html"
+      },
+      "foregroundCredit": {
+        "author": "대난투 스매시브라더스 얼티밋 공식 사이트",
+        "page_url": "https://www.smashbros.com/en_US/fighter/60.html",
+        "image_url": "https://www.smashbros.com/assets_v2/img/fighter/ryu/main.png"
+      }
+    },
+    {
+      "id": "mw-93a6fce45f",
+      "name": "켄 마스터즈",
+      "theme": "world",
+      "organization": "CAPCOM",
+      "company": "capcom",
+      "copy": "붉은 도복을 입은 격투가",
+      "official": "https://www.smashbros.com/en_US/fighter/60e.html",
+      "detail": "/mascots/brands/mw-93a6fce45f/",
+      "image": "/mascots/featured/ken-official.webp",
+      "panels": [],
+      "portrait": {
+        "centerX": 0.53,
+        "top": 0,
+        "bottom": 0.52
+      },
+      "profile": {
+        "nativeName": "Ken Masters",
+        "facts": [
+          "류의 친구이자 라이벌이에요.",
+          "승룡권을 사용해요."
+        ],
+        "factSource": "https://www.smashbros.com/en_US/fighter/60e.html"
+      },
+      "foregroundCredit": {
+        "author": "대난투 스매시브라더스 얼티밋 공식 사이트",
+        "page_url": "https://www.smashbros.com/en_US/fighter/60e.html",
+        "image_url": "https://www.smashbros.com/assets_v2/img/fighter/ken/main.png"
+      }
     }
   ],
   "assets": [
@@ -1056,23 +1225,93 @@
       "height": 1276,
       "alpha": true,
       "sha256": "a5b56502b44d0646d83f8f685b4bc887986b02e432032c2f57d3c311a1251cfc"
+    },
+    {
+      "file": "samus-official.webp",
+      "url": "https://www.smashbros.com/assets_v2/img/fighter/samus/main.png",
+      "page_url": "https://www.smashbros.com/en_US/fighter/04.html",
+      "checked": "2026-11-22",
+      "width": 1136,
+      "height": 1600,
+      "alpha": true,
+      "sha256": "70b509712aac49f40bb909ca4ec64ea5a60f53956d1805ab8771f858ad8c16bd"
+    },
+    {
+      "file": "fox-official.webp",
+      "url": "https://www.smashbros.com/assets_v2/img/fighter/fox/main.png",
+      "page_url": "https://www.smashbros.com/en_US/fighter/07.html",
+      "checked": "2026-11-22",
+      "width": 1200,
+      "height": 1342,
+      "alpha": true,
+      "sha256": "cb9650be84a67878bfe7509af48685534e24282458fc9471ad79ca362e804aa5"
+    },
+    {
+      "file": "megaman-official.webp",
+      "url": "https://www.smashbros.com/assets_v2/img/fighter/mega_man/main.png",
+      "page_url": "https://www.smashbros.com/en_US/fighter/46.html",
+      "checked": "2026-11-22",
+      "width": 1200,
+      "height": 1244,
+      "alpha": true,
+      "sha256": "721288e1fa5faad7babf6acdc0df579107c858535a98512fdce6b98a259dd3d9"
+    },
+    {
+      "file": "ryu-official.webp",
+      "url": "https://www.smashbros.com/assets_v2/img/fighter/ryu/main.png",
+      "page_url": "https://www.smashbros.com/en_US/fighter/60.html",
+      "checked": "2026-11-22",
+      "width": 1200,
+      "height": 1331,
+      "alpha": true,
+      "sha256": "54ca06142426eb984efe63c643a1c4f8eceedbe6543de52382e2b796f595af7e"
+    },
+    {
+      "file": "ken-official.webp",
+      "url": "https://www.smashbros.com/assets_v2/img/fighter/ken/main.png",
+      "page_url": "https://www.smashbros.com/en_US/fighter/60e.html",
+      "checked": "2026-11-22",
+      "width": 1200,
+      "height": 1590,
+      "alpha": true,
+      "sha256": "30a47588669b7cebbc253d287322c5f8c0f4e1ac7016582ff884d79b53906f4e"
     }
   ],
   "method": {
-    "scope": "등록 캐릭터 중 이미지·공식 출처를 확보해 이번에 심사한 10개 후보 안의 편집 평가입니다. 전체 523종·국내 전체 인기 순위가 아닙니다.",
-    "period": "2026-11-20 확인. 최근 12개월 활동을 우선하되 과거 공개 이력도 포함합니다. 자료별 발행일은 원문에서 확인할 수 있습니다.",
-    "rubric": [
-      "미디어 30점: 공식 소개 1 / 공식 행사·콘텐츠 기사 2 / 독립 국내 보도 3 / 해외 공개 매체·관광 채널 보도 4단계 (단계÷4×30). 기사 총량이 아닌 확인한 노출 범위입니다.",
-      "굿즈 30점: 확인한 상품 유형 수÷5×30, 최대 5유형. 여러 색상·SKU는 별도 유형으로 세지 않습니다. 유형을 확인하지 못한 일반 굿즈 사례는 1로 제한합니다.",
-      "활용 20점: 공식 소개·가이드, 상품, 영상·디지털 콘텐츠 중 확인된 영역 수÷3×20.",
-      "체험 20점: 행사 없음/미확인 0, 한 지역·캠퍼스 행사 1, 복수 행사 또는 해외 행사 2단계 (단계÷2×20)."
-    ],
-    "missing": "검색량·Google Trends·구글 색인 규모는 동일 조건 자료 미확보로 전 후보 점수에서 제외했습니다. 구글 검색결과 수는 검색량이 아닙니다. 미확인 근거에는 점수를 부여하지 않지만 인기가 없다는 뜻은 아닙니다. 자료 확보량에 영향을 받는 잠정 순위입니다.",
-    "ties": "동점은 공동 순위. 화면 순서는 이름순."
+    "scope": "이번 10선은 렛섬에 등록된 일본 게임·캐릭터 기업 5곳의 대표 캐릭터를 소개합니다.",
+    "period": "2025년 4월~2026년 3월에 발생한 권리 보유 기업 그룹의 연간 연결 매출을 엔화로 비교합니다.",
+    "ties": "같은 기업의 캐릭터는 기업 순위가 같으며, 한국어 이름순으로 표시합니다. 공동 권리자는 함께 표기하고 매출을 합산하지 않습니다."
   },
   "carousel": {
     "intervalMs": 7000,
-    "order": "해외 캐릭터 먼저, 국내 캐릭터 이어서. 인기 순위가 아닌 소개 순서.",
+    "order": "첫 화면은 기업 연결 매출순 10선이며, 개별 테마는 별도로 탐색할 수 있습니다.",
     "videoIntervalMs": 20000
+  },
+  "companies": {
+    "nintendo": {
+      "label": "닌텐도",
+      "billionYen": 2313.051,
+      "source": "https://www.nintendo.co.jp/ir/pdf/2026/260508e.pdf"
+    },
+    "bandai": {
+      "label": "반다이남코 홀딩스",
+      "billionYen": 1348.2,
+      "source": "https://www.bandainamco.co.jp/en/ir/library/newsletter82_interview.html"
+    },
+    "sega": {
+      "label": "세가사미 홀딩스",
+      "billionYen": 487.542,
+      "source": "https://www.segasammy.co.jp/cms/wp-content/uploads/pdf/en/ir/20260512_q4_tanshin_e.pdf"
+    },
+    "capcom": {
+      "label": "캡콤",
+      "billionYen": 195.365,
+      "source": "https://www.capcom.co.jp/ir/english/news/html/e260513b.html"
+    },
+    "sanrio": {
+      "label": "산리오",
+      "billionYen": 194.088,
+      "source": "https://kabuyoho-sls-disclose.ifis.co.jp/7f8/140120260623576716.pdf"
+    }
   }
 }

@@ -1,14 +1,18 @@
 (() => {
   'use strict';
   const data = __FEATURED_DATA__;
-  const themes = { all: '모든 테마', world: '해외 캐릭터', city: '도시의 얼굴', campus: '캠퍼스 친구들', daily: '일상 속 안내자', brand: '브랜드 아이콘' };
+  const themes = { ranked: '기업 규모순 10선', all: '모든 테마', world: '해외 캐릭터', city: '도시의 얼굴', campus: '캠퍼스 친구들', daily: '일상 속 안내자', brand: '브랜드 아이콘' };
   const slides = data.items.filter(item => item.portrait);
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  let theme = 'all', index = 0, playing = !motion.matches, useVideo = !motion.matches;
+  let theme = 'ranked', index = 0, playing = !motion.matches, useVideo = !motion.matches;
   let hero = null, timer = null, lastChange = 0, hovered = false, filtersOpen = false;
   let player = null, observer = null, visible = false, requestedPlay = false;
-  const entries = () => slides.filter(item => theme === 'all' || item.theme === theme);
+  const companies = Object.values(data.companies).sort((a, b) => b.billionYen - a.billionYen);
+  const ranked = slides.filter(item => data.companies[item.company]).sort((a, b) =>
+    data.companies[b.company].billionYen - data.companies[a.company].billionYen || a.name.localeCompare(b.name, 'ko')
+  ).slice(0, 10);
+  const entries = () => theme === 'ranked' ? ranked : slides.filter(item => theme === 'all' || item.theme === theme);
   const itemAt = () => entries()[index];
   const optionsDialog = () => document.querySelector('#character-sources');
   const dialogOpen = () => Boolean(document.querySelector('dialog[open]'));
@@ -94,7 +98,7 @@
 
   function mountControls(root) {
     root.innerHTML = `<div class="cf-page-art"></div><div class="cf-toolbar"><div class="cf-tools-inner">
-      <label class="cf-theme-select"><span class="sr-only">캐릭터 소개 테마</span><select id="character-theme">${Object.entries(themes).filter(([id]) => id === 'all' || slides.some(slide => slide.theme === id)).map(([id, label]) => `<option value="${id}">${label}</option>`).join('')}</select></label>
+      <label class="cf-theme-select"><span class="sr-only">캐릭터 소개 테마</span><select id="character-theme">${Object.entries(themes).filter(([id]) => id === 'ranked' || id === 'all' || slides.some(slide => slide.theme === id)).map(([id, label]) => `<option value="${id}">${label}</option>`).join('')}</select></label>
       <button class="cf-sources" type="button" aria-haspopup="dialog"></button>
       <div class="cf-paging" role="group" aria-label="추천 캐릭터 슬라이드">
         <button type="button" data-step="-1" aria-label="이전 캐릭터">‹</button><span class="cf-count"></span>
@@ -142,9 +146,11 @@
     lastChange = Date.now();
     const maskId = 'cf-mask-' + item.id;
     const title = profile.nativeName;
+    const company = data.companies[item.company];
+    const rankLabel = theme === 'ranked' ? '기업 ' + (companies.indexOf(company) + 1) + '위 · ' + company.label : item.organization;
     const byline = title === item.name ? themes[item.theme] : item.name;
     stage.innerHTML = `${backdrop(item)}
-      <div class="cf-intro"><p class="cf-byline">${escape(byline)}<span aria-hidden="true">/</span>${escape(item.organization)}</p>
+      <div class="cf-intro"><p class="cf-byline">${escape(byline)}<span aria-hidden="true">/</span>${escape(rankLabel)}</p>
         <h1 id="page-heading" lang="${/[가-힣]/.test(title) ? 'ko' : 'en'}"${title.length > 13 ? ' class="cf-long-name"' : ''}>${escape(title)}</h1><p class="cf-caption">${escape(item.copy)}</p>
         <a class="cf-detail" href="${escape(item.detail)}">캐릭터 상세 보기 <span aria-hidden="true">→</span></a>
       </div>
@@ -170,7 +176,7 @@
       image.addEventListener('error', reveal, { once: true });
     }
     root.querySelector('.cf-count').innerHTML = `${index + 1} <i>/</i> ${entries().length}`;
-    root.querySelector('.cf-sources').textContent = clip || item.stageVideo ? '영상·출처' : '이미지 출처';
+    root.querySelector('.cf-sources').textContent = theme === 'ranked' ? '선정 기준·출처' : clip || item.stageVideo ? '영상·출처' : '이미지 출처';
     root.querySelectorAll('[data-step]').forEach(button => { button.disabled = entries().length < 2; });
     updatePlay(root);
     attachPlayer(root);
@@ -206,6 +212,8 @@
     }
     const clip = item.video, film = item.stageVideo, credit = item.imageCredit, foreground = item.foregroundCredit;
     dialog.innerHTML = `<div class="cf-dialog-head"><h2 id="cf-sources-title">${escape(item.name)} · 출처</h2><form method="dialog"><button autofocus aria-label="출처 닫기">닫기</button></form></div>
+      ${theme === 'ranked' ? `<section><h3>기업 규모순 캐릭터 10선</h3><p>${escape(data.method.scope)} ${escape(data.method.period)} ${escape(data.method.ties)}</p>
+      <ol>${companies.map(company => `<li>${sourceLink(company.source, company.label)} · ${(company.billionYen * 10).toLocaleString('ko', {maximumFractionDigits: 2})}억 엔<br>${escape(ranked.filter(record => data.companies[record.company] === company).map(record => record.name).join(' · '))}</li>`).join('')}</ol></section>` : ''}
       ${film ? `<section><h3>만화 컷 배경 영상</h3>${sourceLink(film.page, film.title)}${film.description ? `<p>${escape(film.description)}</p>` : ''}<p>${escape(film.author)} · ${sourceLink(film.licenseUrl, film.license)}<br>원본 일부를 무음·흑백으로 편집해 만화 컷에 맞췄습니다.</p>
       <div class="cf-dialog-actions"><button type="button" data-video-mode>${useVideo ? '배경을 정지 이미지로 보기' : '배경 영상 사용'}</button></div></section>` : ''}
       ${clip ? `<section><h3>관련 공식 영상</h3>${sourceLink(clip.url || 'https://www.youtube.com/watch?v=' + clip.id, clip.title)}</section>` : ''}
