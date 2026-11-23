@@ -18,3 +18,14 @@
 #groups h4{font-size:19px}.ex-meta{margin:3px 0 6px}.ex-links{margin:8px 0;font-size:14px}.ex-links span{background:var(--lime);color:var(--lime-ink);padding:2px 7px;font-weight:bold}
 #groups summary{font-size:13px;color:var(--ink2)}
 @media(max-width:650px){.extractor{padding-inline:16px}.ex-download{align-items:flex-start;flex-direction:column}}
+
+.ex-with-alternatives{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.ex-alternatives{min-width:0;border:1px solid var(--rule2);padding:0 14px 10px}
+.ex-alternatives legend{padding:0 5px;font-size:15px;font-weight:700}
+.ex-alternatives p,.ex-download-guide,#download-count{color:var(--ink2);font-size:14px}
+.ex-alternatives p{margin:4px 0 8px;line-height:1.55}
+.ex-option{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--rule)}
+.ex-option label{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:7px 0;min-height:40px;cursor:pointer}
+.ex-option input{width:16px;height:16px;accent-color:var(--ink)}
+.ex-option a{flex:none;text-decoration:underline;text-underline-offset:.2em;font-size:13px}
+@media(max-width:700px){.ex-with-alternatives{grid-template-columns:minmax(0,1fr);gap:12px}}

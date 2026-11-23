@@ -13,4 +13,5 @@ const groups = config.groups.map(g => {
   const {ids,...rest}=g; return {...rest,items};
 });
 fs.writeFileSync(path.join(root,'html/data/font_alternatives.json'),JSON.stringify({checked:config.checked,groups}));
+module.exports = groups;
 console.log('Font alternatives: '+groups.length+' groups, verified OFL only');

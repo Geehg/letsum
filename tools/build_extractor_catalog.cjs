@@ -58,7 +58,11 @@ const bundles = Object.fromEntries(catalogue.filter(f=>f.bundle).map(f=>[f.bundl
 const notes = [...new Set(catalogue.map(f=>f.note).filter(Boolean))];
 const compact = catalogue.map(({note,...font})=>({...font,n:notes.indexOf(note)}));
 const directBases = Object.fromEntries(Object.entries(official).map(([id,d])=>[id,d.base]));
-const payload = JSON.stringify({fonts:compact,notes,bundles,directBases,revision:ofl.revision});
+const downloadable = new Set(catalogue.filter(f => f.verified && f.bundle).map(f => f.id));
+const alternatives = require('./build_font_alternatives.js').map(({id, re, reason, items}) => ({
+  id, re, reason, ids: items.map(f => f.id).filter(id => downloadable.has(id))
+})).filter(group => group.ids.length);
+const payload = JSON.stringify({fonts:compact,notes,bundles,directBases,alternatives,revision:ofl.revision});
 fs.writeFileSync(path.join(root,'html/data/extractor-catalog.json'),payload);
 const hash = require('node:crypto').createHash('sha256').update(payload).update(read('html/data/paid_fonts.json')).digest('hex').slice(0,16);
 const page = path.join(root,'html/font-extractor.html');

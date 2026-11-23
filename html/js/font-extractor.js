@@ -5,7 +5,9 @@
   const filesList = byId('file-list'), results = byId('results'), groups = byId('groups');
   const batch = byId('download-fonts'), downloadStatus = byId('download-status');
   const MB = 1024*1024;
-  let catalogue, findings = [], busy = false, ready = [];
+  let catalogue, findings = [], busy = false;
+  const detected = new Map();
+  const selected = new Map();
   const element = (tag, text) => Object.assign(document.createElement(tag), {textContent:text});
   const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s._-]+/g,'');
   const variants = name => {
@@ -36,9 +38,15 @@
     const rules = paid.rules.map(r=>({...r,pattern:new RegExp(r.re,'i')}));
     for (const entry of paid.bundleGuidance.patterns.filter(e=>e.id!=='software')) {
       const src=paid.bundleGuidance.sources[entry.id==='microsoft'?1:0];
-      rules.push({pattern:new RegExp(entry.re,'i'),note:'제품에 포함될 수 있는 글꼴입니다. 보유한 제품과 사용 목적에 따라 허용 범위가 달라집니다.',vendor:src.label,url:src.url});
+      rules.push({id:entry.id,pattern:new RegExp(entry.re,'i'),note:'제품에 포함될 수 있는 글꼴입니다. 보유한 제품과 사용 목적에 따라 허용 범위가 달라집니다.',vendor:src.label,url:src.url});
     }
-    return {...data,names,rules,notices:paid.notices};
+    const byFontId = new Map(data.fonts.map(font => [font.id, font]));
+    const alternatives = (data.alternatives || []).map(group => ({
+      ...group,
+      pattern: group.re && new RegExp(group.re, 'i'),
+      fonts: group.ids.map(id => byFontId.get(id)).filter(font => font?.verified && data.bundles[font.bundle])
+    }));
+    return {...data,names,rules,alternatives,notices:paid.notices};
   }
   function identify(name) {
     if (!catalogue) return {group:'확인 필요',note:'카탈로그를 불러오지 못했습니다.'};
@@ -56,6 +64,53 @@
     const notice=catalogue.notices.find(r=>keys.some(k=>new RegExp(r.re,'i').test(k)));
     return {group:'확인 필요',note:notice?.note || '렛섬에서 이용조건을 확인한 이름과 일치하지 않습니다.'};
   }
+  function syncDownload() {
+    const total = detected.size + selected.size;
+    batch.disabled = busy || total === 0;
+    batch.textContent = '무료 폰트 일괄받기 (' + total + ')';
+    byId('download-count').textContent = '일괄받기 가능한 문서 글꼴 ' + detected.size + '종 · 선택한 대체 글꼴 ' + selected.size + '종';
+    for (const box of groups.querySelectorAll('input[data-bundle]')) {
+      const included = detected.has(box.dataset.bundle);
+      box.checked = included || selected.has(box.dataset.bundle);
+      box.disabled = busy || included;
+    }
+  }
+
+  function showAlternatives(card, row) {
+    const name = [...row.names][0];
+    const options = catalogue.alternatives;
+    const fallback = row.rule.id === 'myfonts' ? 'general-en' : 'general-ko';
+    const group = options.find(g => g.pattern && g.pattern.test(norm(name))) || options.find(g => g.id === fallback);
+    if (!group?.fonts.length) return;
+
+    const panel = element('fieldset', '');
+    panel.className = 'ex-alternatives';
+    const legend = element('legend', '상업용 무료 대체 폰트');
+    legend.setAttribute('aria-label', name + '의 상업용 무료 대체 폰트');
+    panel.append(legend, element('p', group.reason));
+    for (const font of group.fonts) {
+      const option = element('div', '');
+      option.className = 'ex-option';
+      const label = element('label', '');
+      const box = element('input', '');
+      box.type = 'checkbox';
+      box.dataset.bundle = font.bundle;
+      box.addEventListener('change', () => {
+        if (box.checked) selected.set(font.bundle, font);
+        else selected.delete(font.bundle);
+        downloadStatus.textContent = '';
+        syncDownload();
+      });
+      label.append(box, element('span', font.name));
+      if (detected.has(font.bundle)) label.append(element('small', '이미 ZIP에 포함'));
+      option.append(label);
+      addLink(option, '견본·이용조건', font.detail);
+      panel.append(option);
+    }
+    card.classList.add('ex-with-alternatives');
+    card.append(panel);
+  }
+
   function render() {
     groups.replaceChildren();
     const rows = new Map();
@@ -68,7 +123,10 @@
       if (ref.refs.some(x=>!/ (마스터|레이아웃|테마 후보)$/.test(x))) row.documentRef=true;
       row.refs.push(f.name+' · '+ref.refs.join(', ')+(ref.count>ref.refs.length?' 외 '+(ref.count-ref.refs.length)+'곳':''));
     }
-    ready = [];
+    detected.clear();
+    for (const {font} of rows.values()) {
+      if (font?.bundle) detected.set(font.bundle, font);
+    }
     for (const group of ['무료 · 이용조건 확인','유료·번들 확인','확인 필요']) {
       const list=[...rows.values()].filter(r=>r.group===group);
       if (!list.length) continue;
@@ -76,22 +134,24 @@
       section.append(element('h3',group+' ('+list.length+')'));
       for (const row of list) {
         const card=element('article',''), meta=element('div',''), links=element('div','');
-        card.append(element('h4',row.font?.name || [...row.names][0]));
+        const info=element('div','');
+        info.append(element('h4',row.font?.name || [...row.names][0]));
         meta.className='ex-meta'; meta.textContent=[row.font?.license,...row.names].filter(Boolean).join(' · ');
         if (!row.documentRef) meta.textContent+=' · 테마·레이아웃·마스터에서만 확인';
-        card.append(meta,element('p',row.note));
-        if (row.font?.bundle) { ready.push(row.font); links.append(element('span','ZIP 포함')); }
+        info.append(meta,element('p',row.note));
+        if (row.font?.bundle) links.append(element('span','ZIP 포함'));
         addLink(links,'사용 조건',row.font?.detail); addLink(links,row.rule?.vendor || '공식 배포처',row.rule?.url || row.font?.source);
-        links.className='ex-links'; card.append(links);
+        links.className='ex-links'; info.append(links);
         const refs=element('details',''); refs.append(element('summary','문서 내 참조 위치'));
         for (const where of row.refs) refs.append(element('p',where));
-        card.append(refs); section.append(card);
+        info.append(refs); card.append(info);
+        if (row.rule) showAlternatives(card, row);
+        section.append(card);
       }
       groups.append(section);
     }
     results.hidden=!findings.length;
-    batch.disabled=!ready.length;
-    batch.textContent='무료 폰트 일괄받기 ('+ready.length+')';
+    syncDownload();
   }
   let worker;
   function releaseWorker() {
@@ -111,11 +171,12 @@
   function lock(on) {
     busy=on; input.disabled=on; byId('clear-files').disabled=on;
     drop.setAttribute('aria-busy',String(on));
+    syncDownload();
   }
   async function analyze(files) {
     if (busy || !files.length) return;
     if (files.length>12) {status.textContent='한 번에 12개까지 선택해 주세요.';return;}
-    lock(true); findings=[];filesList.replaceChildren();render();downloadStatus.textContent='';
+    lock(true); selected.clear();findings=[];filesList.replaceChildren();render();downloadStatus.textContent='';
     try {
 
       status.textContent='문서의 글꼴 참조를 읽고 있습니다…';
@@ -136,8 +197,9 @@
     finally {releaseWorker();lock(false);input.value='';}
   }
   async function download() {
+    const ready = [...detected.values(), ...selected.values()];
     if (busy || !ready.length) return;
-    lock(true); batch.disabled=true;
+    lock(true);
     try {
       if (!window.JSZip) await import('/js/jszip.min.js');
       const zip=new JSZip(), failed=[]; let included=0, total=0;
@@ -169,12 +231,12 @@
       }
       downloadStatus.textContent=(included?'ZIP 생성 완료 · '+included+'종':'ZIP을 만들 수 없습니다.')+(failed.length?' · 제외 '+failed.join(', '):'');
     } catch {downloadStatus.textContent='ZIP 생성에 실패했습니다. 공식 배포처 링크를 이용해 주세요.';}
-    finally {lock(false);batch.disabled=!ready.length;}
+    finally {lock(false);}
   }
   input.onchange=()=>analyze([...input.files]);
   for(const evt of ['dragover','dragenter']) drop.addEventListener(evt,e=>{e.preventDefault();drop.dataset.drag='on';});
   drop.ondragleave=()=>delete drop.dataset.drag;
   drop.ondrop=e=>{e.preventDefault();delete drop.dataset.drag;analyze([...e.dataTransfer.files]);};
-  byId('clear-files').onclick=()=>{if(busy)return; findings=[];filesList.replaceChildren();input.value='';status.textContent='';downloadStatus.textContent='';render();};
+  byId('clear-files').onclick=()=>{if(busy)return; selected.clear();findings=[];filesList.replaceChildren();input.value='';status.textContent='';downloadStatus.textContent='';render();};
   batch.onclick=download;
 })();
