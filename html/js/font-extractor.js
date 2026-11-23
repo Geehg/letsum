@@ -160,9 +160,9 @@
   }
   function inspect(file) {
     return new Promise(resolve=>{
-      worker ||= new Worker('/js/font-extractor-worker.js?v=1');
+      worker ||= new Worker('/js/font-extractor-worker.js?v=2');
       const finish=result=>{clearTimeout(timeout);resolve(result);};
-      const timeout=setTimeout(()=>{releaseWorker();finish({error:'분석 시간이 초과되었습니다. 문서를 나누어 다시 시도해 주세요.'});},45000);
+      const timeout=setTimeout(()=>{releaseWorker();finish({error:'분석 시간이 초과되었습니다. 문서를 나누어 다시 시도해 주세요.'});},/\.psd$/i.test(file.name) ? 120000 : 45000);
       worker.onmessage=e=>finish(e.data);
       worker.onerror=()=>{releaseWorker();finish({error:'분석기를 실행할 수 없습니다. 새로고침 후 다시 시도해 주세요.'});};
       worker.postMessage({file});
@@ -184,7 +184,8 @@
         const li=element('li',file.name+' · 분석 중'); filesList.append(li);
         let result;
         if (!/\.(?:psd|pptx?|pdf)$/i.test(file.name)) result={error:'지원하지 않는 파일 형식입니다.'};
-        else if (file.size>100*MB) result={error:'파일당 최대 100 MB까지 분석할 수 있습니다.'};
+        else if (/\.psd$/i.test(file.name) && file.size > 2048*MB) result={error:'PSD는 파일당 최대 2 GB까지 분석할 수 있습니다.'};
+        else if (!/\.psd$/i.test(file.name) && file.size > 100*MB) result={error:'PPT·PPTX·PDF는 파일당 최대 100 MB까지 분석할 수 있습니다.'};
         else result=await inspect(file);
         findings.push({name:file.name,...result});
         li.textContent=file.name+' · '+(result.error || (result.fonts.length ? '글꼴 이름 '+result.fonts.length+'개' : '읽을 수 있는 글꼴 이름이 없습니다.'));

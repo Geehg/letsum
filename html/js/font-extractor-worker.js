@@ -39,21 +39,6 @@ async function readPdf(bytes) {
   pdf.getPages().forEach((p,i) => resources(p.node.Resources(), (i+1)+'쪽 리소스', new Set()));
 }
 
-function readPsd(bytes) {
-  if (!self.agPsd) importScripts(vendor+'ag-psd.min.js');
-  const psd = agPsd.readPsd(bytes, {skipLayerImageData:true,skipCompositeImageData:true,skipThumbnail:true,skipLinkedFilesData:true});
-  const stack = [...(psd.children || [])];
-  let index = 0;
-  while (stack.length) {
-    const layer = stack.pop();
-    if (layer.children) stack.push(...layer.children);
-    if (!layer.text) continue;
-    const where = '문자 레이어 '+(++index);
-    record(layer.text.style?.font?.name, where);
-    for (const run of layer.text.styleRuns || []) record(run.style?.font?.name, where);
-  }
-}
-
 function readPpt(bytes) {
   if (!self.CFB) importScripts(vendor+'cfb.min.js');
   const file = CFB.read(bytes,{type:'array'});
@@ -154,13 +139,17 @@ async function readPptx(bytes) {
 onmessage = async ({data:{file}}) => {
   try {
     evidence.clear();
-    const bytes = new Uint8Array(await file.arrayBuffer());
     const ext = file.name.split('.').pop().toLowerCase();
-    if (ext==='pdf') await readPdf(bytes);
-    else if (ext==='pptx') await readPptx(bytes);
-    else if (ext==='ppt') readPpt(bytes);
-    else if (ext==='psd') readPsd(bytes);
-    else throw Error('지원하지 않는 파일 형식입니다.');
+    if (ext === 'psd') {
+      if (typeof readPsdFonts === 'undefined') importScripts('psd-font-reader.js?v=1');
+      await readPsdFonts(file, record);
+    } else {
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      if (ext === 'pdf') await readPdf(bytes);
+      else if (ext === 'pptx') await readPptx(bytes);
+      else if (ext === 'ppt') readPpt(bytes);
+      else throw Error('지원하지 않는 파일 형식입니다.');
+    }
     postMessage({fonts:Array.from(evidence,([name,refs])=>({name,count:refs.size,refs:[...refs].slice(0,6)}))});
   } catch (error) {
     const message = /encrypt|password/i.test(error.message) ? '암호를 해제한 사본으로 다시 시도해 주세요.' :
