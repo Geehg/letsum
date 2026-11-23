@@ -29,7 +29,7 @@
   "모든 형식 파일당 최대 2 GB · 한 번에 최대 12개": "Up to 2 GB per file across all formats · 12 files per scan",
   "파일 선택": "Choose files",
   "카드와 다른 형식입니다. 맞는 카드를 선택하거나 여러 형식 함께 스캔을 이용하세요.": "This file does not match the card. Choose its format or use the mixed-format scanner.",
-  "포토샵 문서": "Photoshop document",
+  "포토샵 PSD": "Photoshop PSD",
   "편집 가능한 문자 레이어에서 글꼴 이름을 찾습니다.": "Read font names from editable text layers.",
   "PSD 파일 선택": "Choose PSD files",
   "파워포인트 프레젠테이션": "PowerPoint presentation",
