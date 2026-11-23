@@ -103,3 +103,16 @@
 .ex-option input{width:16px;height:16px;accent-color:var(--ink)}
 .ex-option a{flex:none;text-decoration:underline;text-underline-offset:.2em;font-size:13px}
 @media(max-width:700px){.ex-with-alternatives{grid-template-columns:minmax(0,1fr);gap:12px}}
+
+.image-finder { margin: 0 0 24px; padding: 16px 20px; border: 1px solid var(--rule2); border-radius: 8px; background: var(--scanner-card); }
+.image-finder summary { font-size: 18px; font-weight: 700; }
+.image-finder label { display: block; margin: 12px 0; font-weight: 600; }
+.image-finder input { max-width: 100%; }
+.image-finder input[type=file] { display: block; margin-top: 6px; }
+.image-finder input:not([type=file]) { padding: 8px; border: 1px solid var(--rule2); }
+.image-finder button { padding: 8px 14px; border: 1px solid var(--rule2); border-radius: 4px; }
+#im-run { background: var(--ink); color: var(--paper); }
+#im-preview { margin: 10px 0; display: block; max-width: 100%; max-height: 42vh; width: auto; height: auto; touch-action: none; cursor: crosshair; }
+#im-results article { border-top: 1px solid var(--rule2); padding: 10px 0; overflow-wrap: anywhere; }
+#im-results a { text-decoration: underline; }
+#im-results .im-sample { font-size: 26px; color: var(--ink); }

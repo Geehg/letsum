@@ -1,0 +1,98 @@
+[
+  {
+    "id": "k-unpeople-gothic-ks-otf",
+    "name": "유앤피플",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-unpeople-gothic-ks-otf/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  },
+  {
+    "id": "k-hakgyoansim-geurimilgi-ttf",
+    "name": "학교안심 그림일기",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-geurimilgi-ttf/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372620&menuNo=200023"
+  },
+  {
+    "id": "k-hakgyoansim-dunggeunmiso-ttf",
+    "name": "학교안심 둥근미소",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-dunggeunmiso-ttf/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372623&menuNo=200023"
+  },
+  {
+    "id": "k-hakgyoansim-bareondotum",
+    "name": "학교안심 바른돋움",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareondotum/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333607&menuNo=200023"
+  },
+  {
+    "id": "k-hakgyoansim-sangjang-otf-r",
+    "name": "학교안심 상장",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-sangjang-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  },
+  {
+    "id": "k-hakgyoansim-bareonbatang",
+    "name": "학교안심 바른바탕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bareonbatang/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333605&menuNo=200023"
+  },
+  {
+    "id": "k-kim-jung-chul-myungjo",
+    "name": "김정철_명조체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kim-jung-chul-myungjo/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304542&menuNo=200023"
+  },
+  {
+    "id": "k-ridi-batang",
+    "name": "리디바탕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-ridi-batang/400.otf",
+    "source": "https://ridicorp.com/ridibatang/"
+  },
+  {
+    "id": "k-kccdodamdodam",
+    "name": "KCC도담도담체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kccdodamdodam/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13209184&menuNo=200023"
+  },
+  {
+    "id": "k-tlabshinyb",
+    "name": "Tlab신영복체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-tlabshinyb/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13111063&menuNo=200023"
+  },
+  {
+    "id": "k-kcc-eunyoung",
+    "name": "KCC은영체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-eunyoung/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072022&menuNo=200023"
+  },
+  {
+    "id": "k-kcc-kimhoon",
+    "name": "KCC김훈체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-kimhoon/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13072021&menuNo=200023"
+  },
+  {
+    "id": "k-yanolja-yache",
+    "name": "야놀자 야체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-yanolja-yache/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288257&menuNo=200023"
+  },
+  {
+    "id": "k-gabia-solmee",
+    "name": "가비아 솔미체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-gabia-solmee/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288266&menuNo=200023"
+  },
+  {
+    "id": "k-kcc-ganpan",
+    "name": "KCC간판체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-ganpan/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html"
+  },
+  {
+    "id": "k-hakgyoansim-mulgyeol",
+    "name": "학교안심 물결",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mulgyeol/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366495&menuNo=200023"
+  }
+]

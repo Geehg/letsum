@@ -1,4 +1,12 @@
 {
+  "이미지로 한글 폰트 찾기": "Find a Korean font from an image",
+  "글자 한 줄을 선택하고 같은 문구를 입력하면 한글 서체 16종과 비교합니다. 이미지는 기기 안에서 처리합니다.": "Select a line and enter its text to compare 16 Korean typefaces. The image stays on your device.",
+  "이미지 선택": "Choose an image",
+  "한 줄만 있는 이미지는 그대로 비교할 수 있습니다. 여러 줄이면 비교할 영역을 드래그하세요.": "Use the whole image for a single line, or drag to select one line.",
+  "글자 영역 선택": "Select text in the image",
+  "전체 영역 사용": "Use the whole image",
+  "이미지 속 한글 문구": "Korean text in the image",
+  "비슷한 폰트 찾기": "Find similar fonts",
   "한글 폰트": "Korean fonts",
   "영문 폰트": "Latin fonts",
   "딩벳 폰트": "Dingbats",

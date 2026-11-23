@@ -5,7 +5,7 @@
   if (window.LSUI) return;
   // 영어 사전(약 150KB)은 영어로 볼 때만 받는다 — 한국어 방문자(대부분)는 받지 않고, 화면 표시도 막지 않는다.
   let words = {}, wordsState = "none", wordsP = null;
-  const WORDS_URL = "/js/ui-language-en.json?v=3eeb32ba9b";
+  const WORDS_URL = "/js/ui-language-en.json?v=15a4173785";
   function loadWords() {
     if (wordsP) return wordsP;
     wordsState = "loading";
