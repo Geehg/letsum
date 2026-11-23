@@ -347,7 +347,7 @@ fs.writeFileSync(path.join(ROOT, "data", "topics.json"), JSON.stringify(Object.f
 }
 fs.mkdirSync(path.join(ROOT, "topics"), { recursive: true });
 TOPIC_LISTS.forEach(([t, l]) => fs.writeFileSync(path.join(ROOT, "topics", t.slug + ".html"), topicPage(t, l)));
-const urls = [`${SITE}/contact.html`, `${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/multilingual/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
+const urls = [`${SITE}/contact.html`, `${SITE}/about.html`, `${SITE}/`, `${SITE}/en/`, `${SITE}/multilingual/`, `${SITE}/dingbat/`, `${SITE}/symbols.html`, `${SITE}/guide.html`, `${SITE}/font-extractor.html`, `${SITE}/subset.html`, `${SITE}/notice.html`, ...FONTS.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_EN.map((f) => `${SITE}/font/${f.id}.html`), ...FONTS_DB.map((f) => `${SITE}/font/${f.id}.html`), ...TOPIC_LISTS.map(([t]) => `${SITE}/topics/${t.slug}.html`)];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
 // robots.txt: 검색엔진·링크 미리보기는 허용, AI 학습용 수집기·대량 수집 봇은 금지.
 // 봇 목록은 tools/state/ai_bots.json 하나에서만 관리한다(build_ai_block.py와 같은 형식으로 쓴다 — 여기에 봇 이름을 적지 말 것).
@@ -369,6 +369,7 @@ console.log(`font pages ${FONTS.length} + 영문 ${FONTS_EN.length} + 딩벳 ${F
 
 require("./build_typing_site.js").build();
 require("./build_multilingual.js");
+require("./build_extractor_catalog.cjs");
 require("./build_navigation.js").build();
 // Keep UI translations on generated font, topic and catalogue pages.
 require("./build_ui_language.js");

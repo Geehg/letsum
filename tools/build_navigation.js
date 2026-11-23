@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.join(__dirname,'../html');
-const entries=[['/','한글 폰트'],['/en/','영문 폰트'],['/multilingual/','다국어 폰트'],['/dingbat/','딩벳&특수'],['/logos/','로고'],['/mascots/','캐릭터']];
+const entries=[['/','한글 폰트'],['/en/','영문 폰트'],['/multilingual/','다국어 폰트'],['/dingbat/','딩벳&특수'],['/logos/','로고'],['/mascots/','캐릭터'],['/font-extractor.html','폰트추출기']];
 function links(active){return entries.map(([url,label])=>`<a href="${url}"${url===active?' class="on" aria-current="page"':''}>${label}</a>`).join('');}
 exports.build=function(){
  // Combine both tools in one document; existing scripts retain their own scoped IDs.
@@ -20,7 +20,7 @@ exports.build=function(){
  function addDirectory(dir){for(const item of fs.readdirSync(path.join(root,dir),{withFileTypes:true})){const name=dir+'/'+item.name;if(item.isDirectory())addDirectory(name);else if(name.endsWith('.html'))files.push(name);}}
  for(const dir of ['logos','mascots'])if(fs.existsSync(path.join(root,dir)))addDirectory(dir);
  for(const name of files){const file=path.join(root,name);let s=fs.readFileSync(file,'utf8');
- const active=name==='index.html'?'/':name.startsWith('en/')?'/en/':name.startsWith('multilingual/')?'/multilingual/':name.startsWith('dingbat/')?'/dingbat/':name.startsWith('logos/')?'/logos/':name.startsWith('mascots/')?'/mascots/':name==='typing.html'?'/typing.html':null;
+ const active=name==='index.html'?'/':name.startsWith('en/')?'/en/':name.startsWith('multilingual/')?'/multilingual/':name.startsWith('dingbat/')?'/dingbat/':name.startsWith('logos/')?'/logos/':name.startsWith('mascots/')?'/mascots/':name==='font-extractor.html'?'/font-extractor.html':name==='typing.html'?'/typing.html':null;
  s=s.replace(/<nav class="main">[\s\S]*?<\/nav>/,old=>'<nav class="main">'+links(active)+(old.match(/<button[^>]*id="projBtn"[\s\S]*?<\/button>/)?.[0]||'')+'</nav>');
  s=s.replace(/<footer[\s\S]*?<\/footer>/,footer=>footer.replaceAll('https://type.letsum.app/','https://type.goyoseoga.com/').replaceAll('렛섬 필사독서','고요서가 필사독서'));
  s=s.replace(/<footer[\s\S]*?<\/footer>/,footer=>footer.includes('subset.html')?footer:footer.replace('</footer>','<p class="wrap fine"><a href="/subset.html">웹폰트 코드</a></p></footer>'));
