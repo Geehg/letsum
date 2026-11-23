@@ -7,7 +7,7 @@
   "라이선스 가이드": "License guide",
   "폰트 스캐너": "Font Scanner",
   "폰트 스캐너 — LETSUM(렛섬)": "Font Scanner — LETSUM",
-  "문서에 쓰인 글꼴과 이용조건을 확인하세요. 파일은 기기 안에서 분석합니다.": "Check the fonts in your documents and their terms of use. Files are scanned on your device.",
+  "파일에 쓰인 글꼴과 이용조건을 확인하세요. 파일은 기기 안에서 분석합니다.": "Check the fonts in your files and their terms of use. Files are scanned on your device.",
   "지원하는 형식의 파일을 여기에 놓으세요.": "Drop any supported file formats here.",
   "글꼴 표·스타일에만 등록된 후보": "Declared only in a font table or style",
   "글꼴 표나 스타일에만 등록된 이름은 후보로 표시합니다. 이런 후보는 자동 일괄받기에서 제외합니다. HWPX·DOCX·XLSX·IDML은 압축을 푼 XML 한 개가 24 MiB, 분석 대상 XML의 합계가 96 MiB를 넘으면 안내를 표시합니다.": "Fonts found only in a font table or style are marked as candidates and excluded from automatic downloads. For HWPX, DOCX, XLSX and IDML, each XML part can be up to 24 MiB uncompressed and all scanned XML parts up to 96 MiB combined.",
