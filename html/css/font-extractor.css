@@ -116,3 +116,5 @@
 #im-results article { border-top: 1px solid var(--rule2); padding: 10px 0; overflow-wrap: anywhere; }
 #im-results a { text-decoration: underline; }
 #im-results .im-sample { font-size: 26px; color: var(--ink); }
+#im-preview { background: repeating-conic-gradient(#fff 0 25%, #cdcdcd 0 50%) 0 0 / 16px 16px; }
+#im-results article small { display: block; margin-bottom: 4px; color: var(--ink2, var(--ink)); }
