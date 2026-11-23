@@ -9,6 +9,7 @@
 
   function invalidate() {
     revision++;
+    window.ImageFontBoard?.reset();
     results.replaceChildren();
     status.replaceChildren();
     delete status.dataset.confidence;
@@ -185,6 +186,7 @@
   el('run').onclick = async () => {
     invalidate();
     const version = revision, text = el('text').value.trim().normalize('NFC');
+    const publish = el('publish')?.checked;
     if (!picture || !/[가-힣]/.test(text) || Array.from(text).length < 2) {
       status.textContent = '이미지에 보이는 한글을 포함해 두 글자 이상 입력하세요.';
       return;
@@ -227,6 +229,7 @@
       const expectedCount = new Set(faces.map(face => face.row.id)).size;
       const confident = indexed && glyphCount > 0 && shapes.isConfident(target, matches, expectedCount);
       showResults(matches, confident, text);
+      if (publish && el('publish')?.checked) window.ImageFontBoard?.record(matches, confident);
     } catch {
       if (version === revision) status.textContent = '비교 자료를 열 수 없습니다. 다시 시도하세요.';
     } finally { if (version === revision) el('run').disabled = false; }

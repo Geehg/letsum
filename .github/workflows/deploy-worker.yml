@@ -3,7 +3,7 @@ name: deploy-worker
 on:
   push:
     branches: [main]
-    paths: ["worker/**", ".github/workflows/deploy-worker.yml"]
+    paths: ["worker/**", "html/data/image-fonts.json", ".github/workflows/deploy-worker.yml"]
   workflow_dispatch:
 jobs:
   deploy:

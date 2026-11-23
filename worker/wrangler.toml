@@ -44,6 +44,12 @@ name = "ADMIN_RL"
 namespace_id = "1002"
 simple = { limit = 30, period = 60 }
 
+# Public scan board: cap new posts per connection; database stores only scanner results.
+[[ratelimits]]
+name = "SCAN_BOARD_RL"
+namespace_id = "1003"
+simple = { limit = 10, period = 60 }
+
 # Free delivery to the verified operator only; never accept user-supplied recipients.
 [[send_email]]
 name = "CONTACT_EMAIL"

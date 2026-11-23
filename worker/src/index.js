@@ -1,3 +1,4 @@
+import { scanBoard } from './scan-board.js';
 import { contact } from './contact.js';
 import { failureStatement, failureReport } from './preview-diagnostics.js';
 // LETSUM API — 좋아요 수·댓글. 로그인 없음, 개인정보 최소화(IP는 해시로만), AI 없음.
@@ -501,6 +502,7 @@ export default {
     try {
       const p = url.pathname;
       if (url.origin === "https://type.goyoseoga.com") return (await account(req, url, env)) || bad("없는 주소", 404);
+      if (p === "/api/scan-board") return await scanBoard(req, env);
       if (req.method === "POST" && p === "/api/contact") return await contact(req, env, await voterOf(req, env));
       if (req.method === "GET" && p === "/api/locale") return localeResponse(req);
       const acc = await account(req, url, env); if (acc) return acc;

@@ -12,9 +12,9 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261028"><link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="css/style.css?v=84">
-<link rel="stylesheet" href="css/font-extractor.css?v=6">
+<link rel="stylesheet" href="css/font-extractor.css?v=7">
 <!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=cd0152c521"><!--/HEADER_BRAND-->
-<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=45aeb102fd"><script src="/js/ui-language.js?v=45aeb102fd"></script><!--/UI_LANGUAGE-->
+<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=d7346c09b4"><script src="/js/ui-language.js?v=d7346c09b4"></script><!--/UI_LANGUAGE-->
 <!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=828b693505"><!--/FAMILY_SITES--><!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=b8558de9e4"><!--/CONTACT_STYLE--><!--ADSENSE--><meta name="google-adsense-account" content="ca-pub-7515626837780401"><!--/ADSENSE--></head>
 <body>
 <header>
@@ -35,6 +35,8 @@
     <summary>이미지로 한글 폰트 찾기</summary>
     <p>이미지에서 같은 서체로 쓰인 한 줄을 선택하고 보이는 대로 입력하세요. 글자 모양은 이 기기에서 비교합니다.</p>
     <label>이미지 선택 <input id="im-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+    <label class="im-publish-option"><input id="im-publish" type="checkbox" checked aria-describedby="im-publish-note"> 판별 결과를 공개 게시판에 기록</label>
+    <p id="im-publish-note">판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.</p>
     <div id="im-edit" hidden>
       <p>한 줄만 있는 이미지는 그대로 비교할 수 있습니다. 여러 줄이면 비교할 영역을 드래그하세요.</p>
       <canvas id="im-preview" aria-label="글자 영역 선택"></canvas>
@@ -43,6 +45,14 @@
       <button id="im-run" type="button">비슷한 폰트 찾기</button>
     </div>
     <p id="im-status" role="status"></p><div id="im-results"></div>
+    <div class="im-post-feedback"><span id="im-publish-state" role="status"></span><button id="im-publish-retry" type="button" hidden>등록 다시 시도</button></div>
+    <details id="im-board" open>
+      <summary>공개 판별 기록</summary>
+      <div class="im-board-bar"><span>최신순</span><button id="im-board-refresh" type="button">새로고침</button></div>
+      <p id="im-board-state" role="status"></p>
+      <ul id="im-board-list" aria-label="공개 판별 기록"></ul>
+      <button id="im-board-more" type="button" hidden>이전 기록 더 보기</button>
+    </details>
   </details>
   <h2 class="ex-formats-heading" id="formats-title">파일 형식 선택</h2>
   <div class="ex-formats" role="group" aria-labelledby="formats-title">
@@ -132,7 +142,8 @@
 
 <script defer src="/js/image-font-shapes.js?v=1"></script>
 <script defer src="/js/image-font-index.js?v=1"></script>
-<script defer src="/js/image-font-match.js?v=2"></script>
+<script defer src="/js/image-font-board.js?v=1"></script>
+<script defer src="/js/image-font-match.js?v=3"></script>
 <script src="/js/font-extractor.js?v=7"></script>
 <script src="js/common.js?v=219a96aa79" data-base=""></script>
 <script src="js/pv.js?v=1" defer></script>
