@@ -4,6 +4,10 @@
   const input = byId('documents'), drop = byId('drop'), status = byId('status');
   const filesList = byId('file-list'), results = byId('results'), groups = byId('groups');
   const batch = byId('download-fonts'), downloadStatus = byId('download-status');
+  const formatCards = [...document.querySelectorAll('.ex-format[data-format]')];
+  const formats = new Set(formatCards.map(card => card.dataset.format));
+  const extensionOf = file => /\.([^.]+)$/.exec(file.name)?.[1].toLowerCase();
+  const wrongFormat = '카드와 다른 형식입니다. 맞는 카드를 선택하거나 여러 형식 함께 스캔을 이용하세요.';
   const MB = 1024*1024;
   let catalogue, findings = [], busy = false;
   const detected = new Map();
@@ -182,12 +186,17 @@
   }
   function lock(on) {
     busy=on; input.disabled=on; byId('clear-files').disabled=on;
+    for (const card of formatCards) card.querySelector('input').disabled = on;
     drop.setAttribute('aria-busy',String(on));
     syncDownload();
   }
-  async function analyze(files) {
+  async function analyze(files, format) {
     if (busy || !files.length) return;
     if (files.length>12) {status.textContent='한 번에 12개까지 선택해 주세요.';return;}
+    if (format && files.every(file => extensionOf(file) !== format)) {
+      status.textContent = wrongFormat;
+      return;
+    }
     lock(true); selected.clear();findings=[];filesList.replaceChildren();render();downloadStatus.textContent='';
     try {
 
@@ -195,7 +204,9 @@
       for (const file of files) {
         const li=element('li',file.name+' · 분석 중'); filesList.append(li);
         let result;
-        if (!/\.(?:psd|pptx?|pdf)$/i.test(file.name)) result={error:'지원하지 않는 파일 형식입니다.'};
+        const extension = extensionOf(file);
+        if (format && extension !== format) result = {error:wrongFormat};
+        else if (!formats.has(extension)) result={error:'지원하지 않는 파일 형식입니다.'};
         else if (file.size > 2048*MB) result={error:'파일당 최대 2 GB까지 분석할 수 있습니다.'};
         else result=await inspect(file);
         findings.push({name:file.name,...result});
@@ -206,7 +217,7 @@
       if (hasNames && !catalogue) {try {catalogue=await loadCatalogue();} catch {}}
       render();status.textContent='분석 완료'+(catalogue || !hasNames?'':' · 카탈로그 조회 실패. 다시 시도해 주세요.');
     } catch {status.textContent='분석을 마치지 못했습니다. 파일을 다시 선택해 주세요.';render();}
-    finally {releaseWorker();lock(false);input.value='';}
+    finally {releaseWorker();lock(false);}
   }
   async function download() {
     const ready = [...detected.values(), ...selected.values()];
@@ -245,10 +256,30 @@
     } catch {downloadStatus.textContent='ZIP 생성에 실패했습니다. 공식 배포처 링크를 이용해 주세요.';}
     finally {lock(false);}
   }
-  input.onchange=()=>analyze([...input.files]);
-  for(const evt of ['dragover','dragenter']) drop.addEventListener(evt,e=>{e.preventDefault();drop.dataset.drag='on';});
-  drop.ondragleave=()=>delete drop.dataset.drag;
-  drop.ondrop=e=>{e.preventDefault();delete drop.dataset.drag;analyze([...e.dataTransfer.files]);};
+  function bindFileZone(zone, picker, format) {
+    picker.addEventListener('change', () => {
+      const files = [...picker.files];
+      picker.value = '';
+      analyze(files, format);
+    });
+    for (const type of ['dragenter', 'dragover']) {
+      zone.addEventListener(type, event => {
+        event.preventDefault();
+        if (!busy) zone.dataset.drag = 'on';
+      });
+    }
+    zone.addEventListener('dragleave', event => {
+      if (!zone.contains(event.relatedTarget)) delete zone.dataset.drag;
+    });
+    zone.addEventListener('drop', event => {
+      event.preventDefault();
+      delete zone.dataset.drag;
+      analyze([...event.dataTransfer.files], format);
+    });
+  }
+  input.accept = [...formats].map(format => '.' + format).join(',');
+  bindFileZone(drop, input);
+  for (const card of formatCards) bindFileZone(card, card.querySelector('input'), card.dataset.format);
   byId('clear-files').onclick=()=>{if(busy)return; selected.clear();findings=[];filesList.replaceChildren();input.value='';status.textContent='';downloadStatus.textContent='';render();};
   batch.onclick=download;
 })();

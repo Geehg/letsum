@@ -1,12 +1,82 @@
-.extractor{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;padding-block:clamp(32px,6vw,76px);max-width:1040px;min-height:65vh}
-.extractor h1{font-size:clamp(34px,5vw,60px);line-height:1.12;letter-spacing:-.055em}
-.extractor .ex-intro{font-size:clamp(16px,2vw,20px);color:var(--ink2);margin:12px 0 28px;word-break:keep-all}
-.ex-drop{display:grid;justify-items:center;gap:9px;text-align:center;border:2px dashed var(--rule2);padding:clamp(28px,5vw,58px) 12px;background:var(--paper2)}
-.ex-drop[data-drag=on],.ex-drop:focus-within{border-color:var(--ink);background:var(--paper3)}
-.ex-drop strong{font-size:clamp(18px,2.5vw,26px);letter-spacing:-.04em}.ex-drop p{font-family:var(--mono);color:var(--ink2)}
-.ex-pick,.ex-download button{background:var(--ink);color:var(--paper);padding:10px 24px;font-weight:700}
-.ex-pick{position:relative;cursor:pointer;margin:8px 0 2px}.ex-pick:focus-within{outline:3px solid var(--cond);outline-offset:3px}
-.ex-pick input{position:absolute;inset:0;width:100%;opacity:0;cursor:pointer}
+.extractor {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+  max-width: 1120px;
+  min-height: 65vh;
+  padding-block: clamp(30px, 5vw, 68px);
+  --scanner-card: #fff;
+}
+:root[data-theme="dark"] .extractor { --scanner-card: #20201d; }
+.extractor h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.12; letter-spacing: -.055em; }
+.extractor .ex-intro { margin: 12px 0 clamp(24px, 4vw, 44px); color: var(--ink2); font-size: clamp(15px, 2vw, 18px); word-break: keep-all; }
+.ex-formats-heading { margin-bottom: 12px; font-size: 18px; letter-spacing: -.025em; }
+.ex-formats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.ex-format {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid var(--rule2);
+  border-radius: 8px;
+  background: var(--scanner-card);
+  color: var(--ink);
+  cursor: pointer;
+}
+.ex-format[data-format="psd"] { --file-color: #215fad; }
+.ex-format[data-format="pptx"] { --file-color: #ac4220; }
+.ex-format[data-format="ppt"] { --file-color: #88541f; }
+.ex-format[data-format="pdf"] { --file-color: #b42f4a; }
+.ex-format-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.ex-file-icon {
+  display: inline-flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+  width: 43px;
+  height: 48px;
+  padding-bottom: 6px;
+  clip-path: polygon(0 0, 31px 0, 100% 12px, 100% 100%, 0 100%);
+  border-radius: 3px;
+  background: var(--file-color, #445545);
+  color: #fff;
+  font: 700 12px/1 var(--mono);
+}
+.ex-file-icon::after { content: ""; position: absolute; top: 0; right: 0; width: 12px; height: 12px; background: #ffffff70; }
+.ex-open { font-size: 18px; color: var(--ink2); line-height: 1; }
+.ex-format strong { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.35; letter-spacing: -.035em; word-break: keep-all; }
+.ex-scope { color: var(--ink2); font-size: 14px; line-height: 1.55; word-break: keep-all; }
+.ex-format:focus-within, .ex-format[data-drag], .ex-pick:focus-within { outline: 2px solid var(--ink); outline-offset: 2px; }
+@media (hover: hover) { .ex-format:hover { border-color: var(--ink); } }
+.ex-format[data-drag], .ex-drop[data-drag] { background: var(--paper3); }
+.ex-format:has(input:disabled), .ex-pick:has(input:disabled) { opacity: .65; cursor: wait; }
+.ex-format input, .ex-pick input { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+.ex-drop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 18px;
+  margin-top: 16px;
+  padding: 18px clamp(16px, 2vw, 24px);
+  border: 1px dashed var(--rule2);
+  border-radius: 8px;
+  background: var(--paper2);
+}
+.ex-drop strong { font-size: 17px; }
+.ex-drop p { color: var(--ink2); font-size: 14px; }
+.ex-drop small { grid-column: 1; }
+.ex-pick, .ex-download button { background: var(--ink); color: var(--paper); padding: 10px 20px; font-weight: 700; }
+.ex-pick { grid-column: 2; grid-row: 1 / 3; position: relative; border-radius: 4px; cursor: pointer; }
+@media (max-width: 860px) {
+  .ex-formats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .ex-formats { gap: 8px; }
+  .ex-format { padding: 14px; }
+  .ex-format-top { margin-bottom: 6px; }
+  .ex-drop { gap: 8px; }
+  .ex-drop small { grid-column: 1 / -1; }
+  .ex-drop .ex-pick { grid-row: 1; padding-inline: 12px; }
+}
 .extractor small,.ex-meta{font-size:13px;color:var(--ink2)}.ex-help{margin-top:24px;padding-top:16px;border-top:1px solid var(--rule2)}
 .extractor summary{cursor:pointer}.extractor details p{margin-top:9px;color:var(--ink2);font-size:14px}
 .ex-files{list-style:none;overflow-wrap:anywhere}.ex-files li{padding:5px 0}.extractor [role=status]:not(:empty){margin:14px 0;font-weight:650}
