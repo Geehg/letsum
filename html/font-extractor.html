@@ -12,9 +12,9 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261028"><link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="css/style.css?v=84">
-<link rel="stylesheet" href="css/font-extractor.css?v=7">
+<link rel="stylesheet" href="css/font-extractor.css?v=8">
 <!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=cd0152c521"><!--/HEADER_BRAND-->
-<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=d7346c09b4"><script src="/js/ui-language.js?v=d7346c09b4"></script><!--/UI_LANGUAGE-->
+<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=4d1c3b00b6"><script src="/js/ui-language.js?v=4d1c3b00b6"></script><!--/UI_LANGUAGE-->
 <!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=828b693505"><!--/FAMILY_SITES--><!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=b8558de9e4"><!--/CONTACT_STYLE--><!--ADSENSE--><meta name="google-adsense-account" content="ca-pub-7515626837780401"><!--/ADSENSE--></head>
 <body>
 <header>
@@ -32,9 +32,15 @@
   <h1>폰트 스캐너</h1>
   <p class="ex-intro">파일에 쓰인 글꼴과 이용조건을 확인하세요. 파일은 기기 안에서 분석합니다.</p>
   <details id="image-finder" class="image-finder">
-    <summary>이미지로 한글 폰트 찾기</summary>
+    <summary><span>이미지로 한글 폰트 찾기</span> <small class="im-drop-hint">여기에 이미지 놓기</small></summary>
     <p>이미지에서 같은 서체로 쓰인 한 줄을 선택하고 보이는 대로 입력하세요. 글자 모양은 이 기기에서 비교합니다.</p>
-    <label>이미지 선택 <input id="im-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+    <label id="im-drop" class="im-drop" for="im-file">
+      <span class="im-drop-copy"><strong>이미지 한 장을 여기에 놓으세요</strong><small id="im-formats">PNG · JPG · WebP · 최대 25 MB</small></span>
+      <span class="im-pick">이미지 선택</span>
+      <input id="im-file" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" aria-label="이미지 선택" aria-describedby="im-formats">
+    </label>
+    <p id="im-attachment" translate="no"></p>
+    <p id="im-attach-status" role="status"></p>
     <label class="im-publish-option"><input id="im-publish" type="checkbox" checked aria-describedby="im-publish-note"> 판별 결과를 공개 게시판에 기록</label>
     <p id="im-publish-note">판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.</p>
     <div id="im-edit" hidden>
@@ -143,8 +149,8 @@
 <script defer src="/js/image-font-shapes.js?v=1"></script>
 <script defer src="/js/image-font-index.js?v=1"></script>
 <script defer src="/js/image-font-board.js?v=1"></script>
-<script defer src="/js/image-font-match.js?v=3"></script>
-<script src="/js/font-extractor.js?v=7"></script>
+<script defer src="/js/image-font-match.js?v=4"></script>
+<script src="/js/font-extractor.js?v=8"></script>
 <script src="js/common.js?v=219a96aa79" data-base=""></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>

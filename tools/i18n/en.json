@@ -1,4 +1,11 @@
 {
+  "여기에 이미지 놓기": "Drop an image here",
+  "이미지 한 장을 여기에 놓으세요": "Drop one image here",
+  "PNG · JPG · WebP · 최대 25 MB": "PNG · JPG · WebP · Up to 25 MB",
+  "이미지를 한 장씩 놓아주세요.": "Drop one image at a time.",
+  "이미지를 여는 중입니다.": "Opening your image…",
+  "이미지가 첨부되었습니다.": "Image attached.",
+  "기기에 저장한 이미지 파일을 놓아주세요.": "Drop an image file from your device.",
   "판별 결과를 공개 게시판에 기록": "Post my match results to the public board",
   "판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.": "Anyone can see the time, verdict, candidate typefaces and weights. Your image, filename and text are processed only on this device.",
   "공개 판별 기록": "Public font matches",

@@ -33,16 +33,27 @@
     ctx.strokeRect(x, y, w, h);
   }
 
-  el('file').onchange = async event => {
+  const fileInput = el('file'), attachment = el('attachment'), attachStatus = el('attach-status');
+  const formats = new Set(['image/png', 'image/jpeg', 'image/webp']);
+  const isImageFile = file => formats.has(file.type) ||
+    ((!file.type || file.type === 'application/octet-stream') && /\.(png|jpe?g|webp)$/i.test(file.name));
+
+  async function attach(files) {
+    if (!files.length) return;
     invalidate();
-    const version = revision, file = event.target.files[0];
-    start = crop = picture = null;
-    el('edit').hidden = true;
-    if (!file) return;
-    if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type) || file.size > 25 * 1024 * 1024) {
-      status.textContent = '25 MB 이하 PNG, JPG, WebP 이미지를 선택하세요.';
+    const version = revision, file = files[0];
+    if (files.length !== 1) {
+      attachStatus.textContent = '이미지를 한 장씩 놓아주세요.';
       return;
     }
+    if (!isImageFile(file) || file.size > 25 * 1024 * 1024) {
+      attachStatus.textContent = '25 MB 이하 PNG, JPG, WebP 이미지를 선택하세요.';
+      return;
+    }
+    start = crop = picture = null;
+    attachment.textContent = '';
+    el('edit').hidden = true;
+    attachStatus.textContent = '이미지를 여는 중입니다.';
     const url = URL.createObjectURL(file);
     try {
       const img = new Image();
@@ -54,23 +65,56 @@
       preview.width = Math.max(1, Math.round(img.naturalWidth * scale));
       preview.height = Math.max(1, Math.round(img.naturalHeight * scale));
       paint();
+      attachment.textContent = file.name;
       el('edit').hidden = false;
+      attachStatus.textContent = '이미지가 첨부되었습니다.';
     } catch {
-      if (version === revision) status.textContent = '이미지를 열 수 없습니다.';
+      if (version === revision) attachStatus.textContent = '이미지를 열 수 없습니다.';
     } finally { URL.revokeObjectURL(url); }
-  };
+  }
+
+  fileInput.addEventListener('change', () => {
+    const files = Array.from(fileInput.files);
+    fileInput.value = '';
+    attach(files);
+  });
 
   if (location.hash === '#image-finder') panel.open = true;
-  panel.ondragover = event => { if (event.dataTransfer.types.includes('Files')) event.preventDefault(); };
-  panel.ondrop = event => {
+  function isFileDrag(transfer) {
+    return Array.from(transfer.types).includes('Files') || Array.from(transfer.items || []).some(item => item.kind === 'file');
+  }
+  function isLinkOnTarget(event) {
+    return event.target.closest('#im-drop, #image-finder > summary') && Array.from(event.dataTransfer.types).includes('text/uri-list');
+  }
+  for (const name of ['dragenter', 'dragover']) {
+    panel.addEventListener(name, event => {
+      if (!isFileDrag(event.dataTransfer) && !isLinkOnTarget(event)) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy';
+      panel.dataset.drag = 'on';
+    });
+  }
+  panel.addEventListener('dragleave', event => {
+    if (!panel.contains(event.relatedTarget)) delete panel.dataset.drag;
+  });
+  panel.addEventListener('drop', event => {
+    delete panel.dataset.drag;
+    const files = event.dataTransfer.files;
+    if (!files.length && !isFileDrag(event.dataTransfer) && !isLinkOnTarget(event)) return;
     event.preventDefault();
-    if (!event.dataTransfer.files.length) return;
     panel.open = true;
-    const transfer = new DataTransfer();
-    transfer.items.add(event.dataTransfer.files[0]);
-    el('file').files = transfer.files;
-    el('file').dispatchEvent(new Event('change'));
-  };
+    if (files.length) attach(files);
+    else attachStatus.textContent = '기기에 저장한 이미지 파일을 놓아주세요.';
+  });
+
+  // The scanner's general drop area also accepts a single image.
+  window.ImageFontFinder = {acceptDrop(file) {
+    if (!isImageFile(file)) return false;
+    panel.open = true;
+    panel.scrollIntoView({block: 'start'});
+    attach([file]);
+    return true;
+  }};
 
   function point(event) {
     const rect = preview.getBoundingClientRect();

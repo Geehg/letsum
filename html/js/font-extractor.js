@@ -276,7 +276,9 @@
     zone.addEventListener('drop', event => {
       event.preventDefault();
       delete zone.dataset.drag;
-      analyze([...event.dataTransfer.files], format);
+      const files = Array.from(event.dataTransfer.files);
+      if (!format && files.length === 1 && window.ImageFontFinder?.acceptDrop(files[0])) return;
+      analyze(files, format);
     });
   }
   input.accept = [...formats].map(format => '.' + format).join(',');

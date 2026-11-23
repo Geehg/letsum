@@ -137,3 +137,29 @@
 .im-board-ranks a { text-decoration: underline; text-underline-offset: .15em; }
 #im-board-more { margin-top: 8px; }
 @media(max-width:650px) { #im-board-list > li { grid-template-columns: 1fr; } .im-board-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; } }
+
+/* The summary also serves as the image drop target while the finder is collapsed. */
+#image-finder { scroll-margin-top: 9rem; }
+.im-drop-hint { display: inline-block; margin-inline-start: 8px; font-size: .77em; font-weight: 500; color: var(--ink2); }
+#image-finder[open] .im-drop-hint { display: none; }
+.image-finder .im-drop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 18px;
+  border: 1px dashed var(--ink2);
+  border-radius: 8px;
+  background: var(--paper2);
+  cursor: pointer;
+}
+.im-drop-copy { display: grid; gap: 4px; }
+.im-drop-copy small { font-size: 13px; font-weight: 400; color: var(--ink2); }
+.im-pick { padding: 8px 14px; border-radius: 4px; background: var(--ink); color: var(--paper); }
+.image-finder .im-drop input { position: absolute; width: 1px; height: 1px; margin: 0; clip-path: inset(50%); overflow: hidden; }
+.im-drop:focus-within, #image-finder[data-drag]:not([open]), #image-finder[data-drag] .im-drop { outline: 2px solid var(--ink); outline-offset: 2px; }
+#image-finder[data-drag] .im-drop { border-style: solid; background: var(--paper3); }
+#im-attachment, #im-attach-status { margin: 4px 0; font-size: 14px; overflow-wrap: anywhere; }
+#im-attachment:empty, #im-attach-status:empty { margin: 0; }
