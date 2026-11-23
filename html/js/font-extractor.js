@@ -10,6 +10,8 @@
   const selected = new Map();
   const element = (tag, text) => Object.assign(document.createElement(tag), {textContent:text});
   const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s._-]+/g,'');
+  // Some real font files use placeholders or only a style in their name table.
+  const placeholder = /^(?:untitled(?:font)?\d*|unknown(?:font)?|unnamed(?:font)?|newfont\d*|font\d*|(?:extra|ultra|semi|demi)?(?:bold|light)|regular|medium|italic|oblique|bolditalic|thin|normal|black|book|보통|굵게|기본)$/;
   const variants = name => {
     const n = norm(name);
     // PostScript foundry/style suffixes appear frequently in PDFs and PSDs.
@@ -31,7 +33,7 @@
     const names = new Map();
     for (const f of data.fonts) f.note=data.notes[f.n];
     for (const f of data.fonts) for (const a of [f.name,...f.aliases]) {
-      const k=norm(a); if (!k) continue;
+      const k=norm(a); if (!k || placeholder.test(k)) continue;
       if (!names.has(k)) names.set(k,new Set());
       names.get(k).add(f);
     }
@@ -52,8 +54,10 @@
     if (!catalogue) return {group:'확인 필요',note:'카탈로그를 불러오지 못했습니다.'};
     const keys=variants(name);
     for (const k of keys) {
-      const matches=catalogue.names.get(k);
-      if (!matches) continue;
+      const entries=catalogue.names.get(k);
+      if (!entries) continue;
+      const matches = k === keys[0] ? entries : new Set([...entries].filter(f => !f.exactOnly));
+      if (!matches.size) continue;
       if (matches.size>1 && !(new Set([...matches].map(f=>f.bundle || f.id)).size===1)) return {group:'확인 필요',note:'같은 이름의 카탈로그 항목이 여러 개입니다.'};
       const [font]=matches;
       return {group:font.verified?'무료 · 이용조건 확인':'확인 필요',font,note:font.note || font.license};
@@ -62,7 +66,7 @@
     if (rule) return {group:'유료·번들 확인',note:rule.id==='myfonts'
       ? '상용 서체 계열에 해당하는 이름입니다. 보유한 라이선스와 문서·웹·앱 등 사용 범위를 확인하세요.' : rule.note,rule};
     const notice=catalogue.notices.find(r=>keys.some(k=>new RegExp(r.re,'i').test(k)));
-    return {group:'확인 필요',note:notice?.note || '렛섬에서 이용조건을 확인한 이름과 일치하지 않습니다.'};
+    return {group:'확인 필요',note:notice?.note || '문서에서 이 글꼴 이름을 읽었습니다. 대응하는 서체와 이용조건을 확인할 자료가 아직 없습니다.'};
   }
   function syncDownload() {
     const total = detected.size + selected.size;
@@ -135,10 +139,15 @@
       for (const row of list) {
         const card=element('article',''), meta=element('div',''), links=element('div','');
         const info=element('div','');
-        info.append(element('h4',row.font?.name || [...row.names][0]));
-        meta.className='ex-meta'; meta.textContent=[row.font?.license,...row.names].filter(Boolean).join(' · ');
-        if (!row.documentRef) meta.textContent+=' · 테마·레이아웃·마스터에서만 확인';
-        info.append(meta,element('p',row.note));
+        const title = row.font?.name || [...row.names][0];
+        info.append(element('h4',title));
+        const documentNames = [...row.names].filter(name => name !== title);
+        const metadata = [row.font?.license];
+        if (documentNames.length) metadata.push('문서 표기 '+documentNames.join(' · '));
+        if (!row.documentRef) metadata.push('테마·레이아웃·마스터에서만 확인');
+        meta.className='ex-meta'; meta.textContent=metadata.filter(Boolean).join(' · ');
+        if (meta.textContent) info.append(meta);
+        info.append(element('p',row.note));
         if (row.font?.bundle) links.append(element('span','ZIP 포함'));
         addLink(links,'사용 조건',row.font?.detail); addLink(links,row.rule?.vendor || '공식 배포처',row.rule?.url || row.font?.source);
         links.className='ex-links'; info.append(links);

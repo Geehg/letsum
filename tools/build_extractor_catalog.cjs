@@ -36,7 +36,7 @@ const official = {
 const catalogue = data.fonts.map(f => {
   const installed = names[f.id] || {};
   const forms = Object.values(installed.w || {}).flatMap(w => [w.win,w.winEn,w.fam,w.famEn,w.ps]);
-  const aliases = [...new Set([f.en, installed.fam, installed.famEn, installed.file?.replace(/\.(ttf|otf|woff2?)$/i,''), ...forms, ...(f.searchAliases || []), ...(extras.get(f.id) || [])].filter(a => typeof a === 'string' && a && a !== f.name))];
+  const aliases = [...new Set([f.en, installed.fam, installed.famEn, installed.file?.replace(/\.(ttf|otf|woff2?)$/i,''), ...forms, ...(installed.documentNames || []), ...(installed.originalNames || []), ...(f.searchAliases || []), ...(extras.get(f.id) || [])].filter(a => typeof a === 'string' && a && a !== f.name))];
   let source = f.dl?.page || links[f.id]?.url;
   const key = (f.en || f.name).toLowerCase().replace(/[^a-z0-9]/g,'');
   const google = [source,links[f.id]?.url,...Object.values(f.webfont || {})].some(s => /^https:\/\/(?:fonts\.google\.com|fonts\.gstatic\.com)\//.test(s));
@@ -53,6 +53,30 @@ for (const m of multilingual) {
   const eligible = m.licenseUrl?.includes('/ofl/') && ofl.families[m.path];
   catalogue.push({id:'ml-'+m.id, name:m.name, aliases:[], license:eligible?'OFL':'배포처 이용조건 확인',
     verified:!!eligible, source:m.official, note:eligible?data.licenses.OFL.note:'', ...(eligible?{bundle:m.path}:{})});
+}
+// A font can be identified from a document even when LETSUM has no library page for it.
+const references = json('tools/state/extractor_reference_fonts.json');
+for (const reference of references) {
+  const existing = catalogue.find(f => f.id === reference.id);
+  if (existing) {
+    existing.aliases = [...new Set([...existing.aliases, ...reference.aliases])];
+  } else {
+    const {id, name, aliases, license, note, source} = reference;
+    catalogue.push({id, name, aliases, license, note, source, verified:true, exactOnly:true});
+  }
+}
+// Guard verified PostScript identifiers when later catalog imports introduce new names.
+const normalize = name => name.normalize('NFKC').toLowerCase().replace(/[\s._-]+/g,'');
+const fileOwners = new Map();
+for (const font of catalogue) for (const name of [font.name, ...font.aliases]) {
+  const key = normalize(name);
+  if (!fileOwners.has(key)) fileOwners.set(key, new Set());
+  fileOwners.get(key).add(font.id);
+}
+for (const ref of references) for (const file of ref.files) {
+  const owners = fileOwners.get(normalize(file.postScript));
+  if (owners?.size !== 1 || !owners.has(ref.id))
+    throw Error('검증한 PostScript 이름의 대조 결과를 확인하세요: ' + file.postScript);
 }
 const bundles = Object.fromEntries(catalogue.filter(f=>f.bundle).map(f=>[f.bundle, official[f.bundle]?.files || ofl.families[f.bundle]]));
 const notes = [...new Set(catalogue.map(f=>f.note).filter(Boolean))];

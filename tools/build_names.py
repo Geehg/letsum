@@ -12,6 +12,7 @@
 
 입력 파일: 사이트 미리보기·배포처 공식 웹폰트 파일(data.js webfont), Google Fonts 폰트는 google/fonts 저장소의 원본 TTF.
 캐시: tools/state/names_cache.json (주소별 결과 — 매주 새 주소만 받음). 소개 전용(파일 없음)은 건너뜀.
+보관 중인 파일만 재검사: --local-only. 공식 안심글꼴 묶음의 TTF·OTF 이름도 대조: --original-archive.
 필요: fontTools + brotli (pip install fonttools brotli)
 """
 import io, json, re, subprocess, sys, time, urllib.parse, urllib.request
@@ -83,12 +84,66 @@ def variable_instances(t):
     return out
 
 
+def document_names(t):
+    """Names actually embedded in the file, including localized full names and explicit variable instances."""
+    ids = {1, 4, 6, 16, 21}
+    if "fvar" in t:
+        ids.update(inst.postscriptNameID for inst in t["fvar"].instances
+                   if inst.postscriptNameID not in (None, 0xffff))
+    names = set()
+    for entry in t["name"].names:
+        if entry.nameID not in ids:
+            continue
+        try:
+            value = entry.toUnicode().strip()
+        except (UnicodeError, LookupError):
+            continue
+        if value and len(value) <= 220 and value.isprintable():
+            names.add(value)
+    return sorted(names)
+
+
 def read(url, local=None):
     data = open(local, "rb").read() if local and Path(local).exists() else get(url)
-    t = TTFont(io.BytesIO(data), fontNumber=0, lazy=True)
-    if "fvar" in t and any(axis.axisTag == "wght" for axis in t["fvar"].axes):
-        return {"var": variable_instances(t)}
-    return {"one": names_of(t)}
+    with TTFont(io.BytesIO(data), fontNumber=0, lazy=True) as t:
+        result = {"documentNames": document_names(t)}
+        if "fvar" in t and any(axis.axisTag == "wght" for axis in t["fvar"].axes):
+            result["var"] = variable_instances(t)
+        else:
+            result["one"] = names_of(t)
+        return result
+
+
+def add_archived_originals(out, selected_ids):
+    """Inspect paired TTF/OTF originals where the official archive and the site manifest agree."""
+    from build_webfonts import BUNDLE, iter_fonts, names, norm
+    import unicodedata
+    manifest = json.loads((ROOT / "tools/state/webfonts.json").read_text())
+    by_file = {}
+    for fid in selected_ids:
+        entry = manifest.get(fid, {})
+        for filename in entry.get("source_files", []):
+            by_file.setdefault(unicodedata.normalize("NFC", filename), set()).add(fid)
+    collected = {}
+    count = 0
+    for path, raw in iter_fonts(BUNDLE):
+        if not path.lower().endswith((".ttf", ".otf")):
+            continue
+        owners = by_file.get(unicodedata.normalize("NFC", Path(path).name), set())
+        if len(owners) != 1:
+            continue
+        fid = next(iter(owners))
+        with TTFont(io.BytesIO(raw), lazy=True) as font:
+            actual = names(font)
+            expected = manifest[fid]
+            if not ({norm(actual[k]) for k in ("ko", "en") if actual[k]} &
+                    {norm(expected[k]) for k in ("ko", "en", "name") if expected.get(k)}):
+                continue
+            collected.setdefault(fid, set()).update(document_names(font))
+            count += 1
+    for fid, identifiers in collected.items():
+        out[fid]["originalNames"] = sorted(identifiers)
+    print(f"안심글꼴 원본 {count}개 · {len(collected)}종 이름표 확인")
 
 
 def gf_files(en):
@@ -112,31 +167,51 @@ def main():
     cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
     fonts = [f for f in load_fonts(include_english=True) if not f["intro"] and (not only or f["id"] == only) and (not selected or f["id"] in selected)]
     out = json.loads(OUT.read_text()) if OUT.exists() else {}
+    local_only = "--local-only" in sys.argv  # Backfill from archived files without any network requests.
     for f in fonts:
+        if local_only and not f["webfont"]:
+            continue
         files = [(int(w), u) for w, u in (f["webfont"] or {}).items()] if f["webfont"] else gf_files(f["en"])
         per = {}
+        identifiers = set()
         for w, u in files:
-            if u not in cache:
-                fn = f"{w}." + u.split("?")[0].rsplit(".", 1)[-1]
-                loc = ROOT / "tools/archive/cdn" / f["id"] / fn  # 이미 받아 둔 공식 파일이 있으면 그것을 읽음
-                if "/fonts-hosted/" in u: loc = ROOT / "tools/archive/hosted" / f["id"] / fn  # 서버 전용 폰트는 올리기 전 원본
-                try: cache[u] = read(u, loc); time.sleep(0 if loc.exists() else 0.3)
-                except Exception as e: cache[u] = {"err": str(e)[:100]}
-            c = cache[u]
-            if "one" in c: per[str(w)] = c["one"]
+            fn = f"{w}." + u.split("?")[0].rsplit(".", 1)[-1]
+            folder = "hosted" if "/fonts-hosted/" in u else "cdn"
+            loc = ROOT / "tools/archive" / folder / f["id"] / fn
+            cached = cache.get(u, {})
+            if "documentNames" not in cached and (not local_only or loc.is_file()):
+                try:
+                    cache[u] = read(u, loc)
+                    if not loc.is_file():
+                        time.sleep(0.3)
+                except Exception as e:
+                    if not cached:
+                        cache[u] = {"err": str(e)[:100]}
+            c = cache.get(u, {})
+            identifiers.update(c.get("documentNames", []))
+            if "one" in c: per[str(w)] = dict(c["one"])
             elif "var" in c:
                 for iw, v in c["var"].items():
-                    if int(iw) in f["weights"] or not f["weights"]: per[iw] = v
+                    if int(iw) in f["weights"] or not f["weights"]: per[iw] = dict(v)
+        if local_only and f["id"] in out:
+            if identifiers:
+                out[f["id"]]["documentNames"] = sorted(identifiers)
+            continue
         if not per:
             print(f"{f['id']}: 이름 못 읽음 {[cache.get(u, {}).get('err') for _, u in files][:1]}"); continue
         first = per.get("400") or per[sorted(per, key=lambda k: abs(int(k) - 400))[0]]
         item = {"fam": first["fam"], "famEn": first["famEn"], "w": dict(sorted(per.items(), key=lambda x: int(x[0])))}
+        if identifiers: item["documentNames"] = sorted(identifiers)
         if not any(v.get("koWin") for v in per.values()): item["noKoWin"] = True
         z = f["zip"].split("?")[0]
         if re.search(r"\.(ttf|otf|woff2?)$", z, re.I): item["file"] = urllib.parse.unquote(z.rsplit("/", 1)[-1])
         for v in item["w"].values(): v.pop("koWin", None)
+        if "originalNames" in out.get(f["id"], {}):
+            item["originalNames"] = out[f["id"]]["originalNames"]
         out[f["id"]] = item
         print(f"{f['id']}: {item['fam']} / {item['famEn']} · {len(per)}굵기")
+    if "--original-archive" in sys.argv:
+        add_archived_originals(out, {f["id"] for f in fonts if f["id"] in out})
     CACHE.write_text(json.dumps(cache, ensure_ascii=False, separators=(",", ":")) + "\n")
     OUT.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")) + "\n")
     print(f"→ {OUT.relative_to(ROOT)} ({len(out)}종)")

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "k-hikr",
+    "name": "하이커체",
+    "aliases": [
+      "HiKR",
+      "HiKR ExtraBold",
+      "HiKR TTF",
+      "HiKR TTF ExtraBold",
+      "HiKR-ExtraBold",
+      "HiKRtt-ExtraBold",
+      "하이커",
+      "하이커 ExtraBold",
+      "하이커TTF",
+      "하이커TTF ExtraBold"
+    ],
+    "license": "한국관광공사 하이커 폰트 이용 안내",
+    "note": "한국관광공사는 누구나 무료로 이용할 수 있다고 안내합니다. 폰트 파일의 수정·재배포 허용 범위는 명시하지 않아 공식 배포처로 연결합니다.",
+    "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=8653d837-4660-46a2-a419-7b470d89a70c#station_font",
+    "checked": "2026-11-23",
+    "evidence": [
+      "https://drive.google.com/file/d/1Tf5x45v3tJQigNqzc9Kd_3HGjZrmh9vv/view",
+      "https://english.visitkorea.or.kr/public/images/2026/04/09/72583926d73443e8b115992b46e63a34.jpg"
+    ],
+    "files": [
+      {
+        "file": "HiKR-ExtraBold.otf",
+        "sha256": "df76414c3f334d814a4983a3b51aa5ce1e9dd6458bdf16e07ec401c7d5df9dd9",
+        "postScript": "HiKR-ExtraBold"
+      },
+      {
+        "file": "HiKR-ExtraBold.ttf",
+        "sha256": "5e4a305ca81d828d18e3528c66c6450da76dc8399f3ac92dfab04404197babe6",
+        "postScript": "HiKRtt-ExtraBold"
+      }
+    ]
+  },
+  {
+    "id": "k-gabia-dunn",
+    "name": "가비아 던체",
+    "aliases": [
+      "GabiaDunn",
+      "GabiaDunn Regular",
+      "GabiaDunn-Regular",
+      "가비아 던"
+    ],
+    "license": "가비아 글꼴 이용조건",
+    "note": "개인·법인은 상업적 작업물에 무료로 사용할 수 있습니다. 글꼴 자체의 유료 판매, 수정 및 재배포는 금지됩니다. 가비아는 결과물을 홍보에 활용할 수 있으며 사용자는 활용 금지를 요청할 수 있습니다.",
+    "source": "https://font.gabia.com/",
+    "checked": "2026-11-23",
+    "evidence": [
+      "https://static.gabia.com/fonts/project/fonts/Download-font/GabiaDunn.zip",
+      "https://github.com/gabia/fonts#라이선스"
+    ],
+    "files": [
+      {
+        "file": "GabiaDunn.otf",
+        "sha256": "669dc40fb94f3f9f3e3e1f7e217146c991947927284f1c6dc29941d6d49c96fd",
+        "postScript": "GabiaDunn-Regular"
+      },
+      {
+        "file": "GabiaDunn.ttf",
+        "sha256": "fb9c09ad57ca0d81033c4574bcf919448525360293aa01b6c2bbec79d88b4c6e",
+        "postScript": "GabiaDunn-Regular"
+      }
+    ]
+  },
+  {
+    "id": "k-ef-jejudoldam",
+    "name": "제주돌담체",
+    "aliases": [
+      "EF_jejudoldam",
+      "EF_제주돌담"
+    ],
+    "license": "얼리폰트 제주돌담체 이용 안내",
+    "note": "얼리폰트는 문서·인쇄·영상·웹 이미지·상품 제작·CI/BI·앱 UI·이북 등의 사용을 안내합니다. 웹폰트나 앱에 글꼴 파일을 탑재하거나 파일을 재배포할 때는 제작사에 조건을 확인하세요.",
+    "source": "https://earlyfont.com/20/?idx=1",
+    "checked": "2026-11-23",
+    "evidence": [
+      "https://cdn.imweb.me/upload/S20251103f9b7ce0121ab5/7cff222516660.png"
+    ],
+    "files": [
+      {
+        "file": "EF_jejudoldam(OTF).otf",
+        "sha256": "46610a1d06e9101f9e5fddd1878d097f35cfbed9a279f4304d6e10b6eb7d26a0",
+        "postScript": "EF_jejudoldam"
+      }
+    ]
+  }
+]
