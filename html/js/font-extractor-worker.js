@@ -2,13 +2,13 @@
 'use strict';
 const vendor = 'vendor/extractor/';
 const evidence = new Map();
-function record(value, location) {
+function record(value, location, declaration = false) {
   if (typeof value !== 'string') return;
   const name = value.replace(/^[A-Z]{6}\+/, '').trim();
   if (!name || name.length > 220 || /[\u0000-\u001f]/.test(name)) return;
-  if (!evidence.has(name)) evidence.set(name, new Set());
+  if (!evidence.has(name)) evidence.set(name, {direct:new Set(), declared:new Set()});
   if (evidence.size > 2500) throw Error('글꼴 참조 수가 분석 한도를 넘었습니다.');
-  evidence.get(name).add(location);
+  evidence.get(name)[declaration ? 'declared' : 'direct'].add(location);
 }
 
 async function readPdf(bytes) {
@@ -65,49 +65,22 @@ function readPpt(bytes) {
 }
 
 async function readPptx(file) {
-  if (!self.zip) importScripts(vendor+'zip-native.min.js');
-  if (!self.ExtractorXML) importScripts(vendor+'saxes.min.js');
-  class LocalZipReader extends zip.BlobReader {
-    readUint8Array(offset, length) {
-      if (length > 16 * 1024 * 1024) throw Error('PPTX 파일 목록이 분석 한도를 넘었습니다.');
-      return super.readUint8Array(offset, length);
-    }
-  }
-  const reader = new zip.ZipReader(new LocalZipReader(file), {useWebWorkers:false});
-  try {
-    const entries = new Map();
-    for await (const entry of reader.getEntriesGenerator()) {
-      if (/^ppt\/.+\.(?:xml|rels)$/.test(entry.filename)) entries.set(entry.filename, entry);
-    }
-    if (!entries.has('ppt/presentation.xml')) throw Error('PPTX 프레젠테이션을 찾을 수 없습니다.');
-    await readSlides(entries);
-  } finally { await reader.close(); }
+  await withFontArchive(file, name => /^ppt\/.+\.(?:xml|rels)$/.test(name), async archive => {
+    if (!archive.entries.has('ppt/presentation.xml')) throw Error('PPTX 프레젠테이션을 찾을 수 없습니다.');
+    await readSlides(archive);
+  }, 8*1024*1024, 64*1024*1024);
 }
 
-async function readSlides(entries) {
+async function readSlides({entries, parse}) {
   const slides = [...entries.keys()].filter(s=>/^ppt\/slides\/slide\d+\.xml$/.test(s));
   const cache = new Map();
-  let budget = 64*1024*1024;
   async function xml(file) {
     if (cache.has(file)) return cache.get(file);
     const entry = entries.get(file);
     if (!entry) return [];
-    const size = entry.uncompressedSize;
-    if (size > 8*1024*1024 || entry.compressedSize > 9*1024*1024 || (budget-=size)<0)
-      throw Error('문서 내부 XML이 분석 한도를 넘었습니다.');
-    const raw = new Uint8Array(size);
-    let used = 0;
-    await entry.getData(new WritableStream({write(part) {
-      if (used + part.length > size) throw Error('PPTX XML 크기를 확인할 수 없습니다.');
-      raw.set(part, used);
-      used += part.length;
-    }}), {checkSignature:true});
-    if (used !== size) throw Error('PPTX XML 크기를 확인할 수 없습니다.');
-    const encoding = raw[0]===255 && raw[1]===254 ? 'utf-16le' : raw[0]===254 && raw[1]===255 ? 'utf-16be' : 'utf-8';
-    const parser = new ExtractorXML.SaxesParser({xmlns:false});
     const events = [];
     const stack = [];
-    parser.on('opentag',tag=>{
+    await parse(file, {opentag(tag) {
       const local = tag.name.split(':').pop();
       stack.push(local);
       const attrs = tag.attributes;
@@ -115,10 +88,8 @@ async function readSlides(entries) {
       if (attrs.typeface) events.push({type:'font',name:attrs.typeface,script:attrs.script || local,
         theme:stack.includes('majorFont')?'mj':stack.includes('minorFont')?'mn':null});
       if (local==='fontRef' && /^(major|minor)$/.test(attrs.idx)) events.push({type:'ref',family:attrs.idx==='major'?'mj':'mn'});
-    });
-    parser.on('text', s=>{if(stack.at(-1)==='t' && s.trim()) events.push({type:'text',scripts:scriptsOf(s)});});
-    parser.on('closetag',()=>stack.pop());
-    parser.write(new TextDecoder(encoding).decode(raw)).close();
+    }, text(s) { if (stack.at(-1)==='t' && s.trim()) events.push({type:'text',scripts:scriptsOf(s)}); },
+    closetag() { stack.pop(); }}, false);
     cache.set(file,events);
     return events;
   }
@@ -168,8 +139,13 @@ onmessage = async ({data:{file}}) => {
     if (ext === 'psd') {
       if (typeof readPsdFonts === 'undefined') importScripts('psd-font-reader.js?v=1');
       await readPsdFonts(file, record);
-    } else if (ext === 'pptx') {
-      await readPptx(file);
+    } else if (['pptx','docx','xlsx','hwpx','idml'].includes(ext)) {
+      if (typeof withFontArchive === 'undefined') importScripts('font-package-reader.js?v=1');
+      if (ext === 'pptx') await readPptx(file);
+      else {
+        if (typeof readDocumentPackage === 'undefined') importScripts('office-font-reader.js?v=1');
+        await readDocumentPackage(file, ext);
+      }
     } else if (ext === 'pdf' || ext === 'ppt') {
       // Keep the tolerant, inexpensive readers for small documents only.
       if (file.size <= 8*1024*1024) {
@@ -184,7 +160,11 @@ onmessage = async ({data:{file}}) => {
         readPptFonts(file, record);
       }
     } else throw Error('지원하지 않는 파일 형식입니다.');
-    postMessage({fonts:Array.from(evidence,([name,refs])=>({name,count:refs.size,refs:[...refs].slice(0,6)}))});
+    const fonts = Array.from(evidence, ([name, {direct, declared}]) => ({
+      name, declarationOnly:!direct.size, count:direct.size + declared.size,
+      refs:[...direct, ...declared].slice(0,6)
+    }));
+    postMessage({fonts});
   } catch (error) {
     const message = /encrypt|password/i.test(error.message) ? '암호를 해제한 사본으로 다시 시도해 주세요.' :
       /[가-힣]/.test(error.message) ? error.message : '파일을 읽을 수 없습니다. 형식과 손상 여부를 확인해 주세요.';

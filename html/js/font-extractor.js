@@ -128,12 +128,13 @@
       if (!rows.has(key)) rows.set(key,{...result,names:new Set(),refs:[]});
       const row=rows.get(key);
       row.names.add(ref.name);
-      if (ref.refs.some(x=>!/ (마스터|레이아웃|테마 후보)$/.test(x))) row.documentRef=true;
+      if (!ref.declarationOnly) row.includeDocumentFont=true;
+      if (!ref.declarationOnly && ref.refs.some(x=>!/ (마스터|레이아웃|테마 후보)$/.test(x))) row.documentRef=true;
       row.refs.push(f.name+' · '+ref.refs.join(', ')+(ref.count>ref.refs.length?' 외 '+(ref.count-ref.refs.length)+'곳':''));
     }
     detected.clear();
-    for (const {font} of rows.values()) {
-      if (font?.bundle) detected.set(font.bundle, font);
+    for (const {font,includeDocumentFont} of rows.values()) {
+      if (includeDocumentFont && font?.bundle) detected.set(font.bundle, font);
     }
     for (const group of ['무료 · 이용조건 확인','유료·번들 확인','확인 필요']) {
       const list=[...rows.values()].filter(r=>r.group===group);
@@ -148,11 +149,12 @@
         const documentNames = [...row.names].filter(name => name !== title);
         const metadata = [row.font?.license];
         if (documentNames.length) metadata.push('문서 표기 '+documentNames.join(' · '));
-        if (!row.documentRef) metadata.push('테마·레이아웃·마스터에서만 확인');
+        if (!row.includeDocumentFont) metadata.push('글꼴 표·스타일에만 등록된 후보');
+        else if (!row.documentRef) metadata.push('테마·레이아웃·마스터에서만 확인');
         meta.className='ex-meta'; meta.textContent=metadata.filter(Boolean).join(' · ');
         if (meta.textContent) info.append(meta);
         info.append(element('p',row.note));
-        if (row.font?.bundle) links.append(element('span','ZIP 포함'));
+        if (detected.has(row.font?.bundle)) links.append(element('span','ZIP 포함'));
         addLink(links,'사용 조건',row.font?.detail); addLink(links,row.rule?.vendor || '공식 배포처',row.rule?.url || row.font?.source);
         links.className='ex-links'; info.append(links);
         const refs=element('details',''); refs.append(element('summary','문서 내 참조 위치'));
@@ -173,7 +175,7 @@
   }
   function inspect(file) {
     return new Promise(resolve=>{
-      worker ||= new Worker('/js/font-extractor-worker.js?v=3');
+      worker ||= new Worker('/js/font-extractor-worker.js?v=4');
       const finish=result=>{clearTimeout(timeout);resolve(result);};
       const timeout=setTimeout(()=>{releaseWorker();finish({error:'분석 시간이 초과되었습니다. 문서를 나누어 다시 시도해 주세요.'});},120000);
       worker.onmessage=e=>{

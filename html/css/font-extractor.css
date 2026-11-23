@@ -26,6 +26,10 @@
 .ex-format[data-format="pptx"] { --file-color: #ac4220; }
 .ex-format[data-format="ppt"] { --file-color: #88541f; }
 .ex-format[data-format="pdf"] { --file-color: #b42f4a; }
+.ex-format[data-format="hwpx"] { --file-color: #166279; }
+.ex-format[data-format="docx"] { --file-color: #244b95; }
+.ex-format[data-format="xlsx"] { --file-color: #197155; }
+.ex-format[data-format="idml"] { --file-color: #963d70; }
 .ex-format-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
 .ex-file-icon {
   display: inline-flex;
