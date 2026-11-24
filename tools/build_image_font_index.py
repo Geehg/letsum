@@ -27,6 +27,14 @@ k-kccahnjunggeun k-kcc-jeongbeom k-kcc-kimhwanki k-ownglyph-2022-uwy-jae-seon
 k-ownglyph-2022-uwy-si-woo k-ownglyph-2022-uwy-da-gyeong k-hakgyoansim-kkokkoma
 k-hakgyoansim-kossuyeom k-jaemin3-0 k-hakgyoansim-moheomga k-jaemin2-0
 k-hakgyoansim-jiugae k-hakgyoansim-usan k-hakgyoansim-rikodeo k-hakgyoansim-eunhasu k-kcc-sonkeechung
+k-ownglyph-2022-uwy-yoon-yeong k-hakgyoansim-samulham k-hakgyoansim-kkwabaegi
+k-hakgyoansim-yeohaeng k-hakgyoansim-namu k-hakgyoansim-gureum k-hakgyoansim-sonagi
+k-hakgyoansim-dotbogi k-hakgyoansim-mabeopsa k-hakgyoansim-mondangbunfil-otf-r
+k-hakgyoansim-boardmarker-otf-r k-hakgyoansim-sketchbook-otf-r k-kccimkwontaek k-wonju
+k-line-seed-kr k-cafe24-classictype k-cafe24-dangdanghae k-cafe24-danjunghae k-cafe24-dongdong
+k-cafe24-moyamoya k-cafe24-ohsquare k-cafe24-oneprettynight k-cafe24-shiningstar k-gabia-bombaram
+k-gabia-napjakblock k-ghanachocolate k-kcchyerim k-kccbangjeonghwan k-kccmurukmuruk
+k-kim-jung-chul-script k-kim-jung-chul-gothic k-kcc-ahnchangho
 """.split()
 
 
