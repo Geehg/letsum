@@ -141,6 +141,7 @@
 
 /* The summary also serves as the image drop target while the finder is collapsed. */
 #image-finder { scroll-margin-top: 9rem; }
+.im-beta { display: inline-block; padding: .12em .5em; border: 1px solid currentColor; border-radius: 1em; color: var(--ink2); font-size: .7em; font-weight: 600; vertical-align: middle; white-space: nowrap; }
 .im-drop-hint { display: inline-block; margin-inline-start: 8px; font-size: .77em; font-weight: 500; color: var(--ink2); }
 #image-finder[open] .im-drop-hint { display: none; }
 .image-finder .im-drop {

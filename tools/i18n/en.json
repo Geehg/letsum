@@ -35,6 +35,7 @@
   "글자의 획과 굵기를 비교하고 있습니다…": "Comparing letter shapes and stroke weights…",
   "입력한 글자를 지원하는 비교용 서체를 불러오지 못했습니다.": "Could not load any comparison fonts that support the selected text.",
   "비교 자료를 열 수 없습니다. 다시 시도하세요.": "Could not load the comparison data. Please try again.",
+  "베타 서비스": "Beta",
   "이미지로 한글 폰트 찾기": "Find a Korean font from an image",
   "이미지 선택": "Choose an image",
   "한 줄만 있는 이미지는 그대로 비교할 수 있습니다. 여러 줄이면 비교할 영역을 드래그하세요.": "Use the whole image for a single line, or drag to select one line.",
