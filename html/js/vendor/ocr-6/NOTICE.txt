@@ -1,0 +1,9 @@
+Browser OCR components (unmodified npm distributions)
+Tesseract.js 6.0.1 by Naptha and contributors, Apache-2.0.
+https://github.com/naptha/tesseract.js
+Tesseract.js-core 6.0.0, Tesseract and Leptonica WebAssembly build.
+https://github.com/naptha/tesseract.js-core
+Korean LSTM data: @tesseract.js-data/kor 1.0.0, 4.0.0_best_int/kor.traineddata.gz.
+https://github.com/naptha/tessdata
+https://github.com/tesseract-ocr/tessdata_best
+See LICENSE.txt and bundled component notices.

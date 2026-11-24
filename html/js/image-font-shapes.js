@@ -96,6 +96,21 @@
     return {mask, projection, top, bottom, left, right, firstRow, lastRow};
   }
 
+  // Reuse polarity detection for a single faint or reversed line sent to OCR.
+  function inkLine(source, box) {
+    const sample = inkSample(source, box);
+    if (!sample) return null;
+    const {mask} = sample;
+    const ctx = mask.getContext('2d');
+    ctx.globalCompositeOperation = 'source-in';
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, mask.width, mask.height);
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, mask.width, mask.height);
+    return mask;
+  }
+
   function maskPixels(mask, x, y, w, h, width, height) {
     const ctx = canvas(width,height).getContext('2d', {willReadFrequently:true});
     ctx.imageSmoothingQuality = 'high';
@@ -249,5 +264,5 @@
     return [...best.values()].sort((a, b) => b.score - a.score).slice(0, 3);
   }
 
-  window.ImageFontShapes = {prepareTarget, reference, compare, isConfident, distinctiveGlyphs};
+  window.ImageFontShapes = {prepareTarget, reference, compare, isConfident, distinctiveGlyphs, inkLine};
 })();

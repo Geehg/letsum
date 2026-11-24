@@ -8,6 +8,42 @@
   let picture, crop, start, revision = 0, catalog;
 
   let detectedAreas = [];
+  let ocrRequest = 0, recognized = [];
+  const ocrStatus = el('ocr-status');
+
+  function cancelReading() {
+    ocrRequest++;
+    ocrStatus.textContent = '';
+    ocrStatus.removeAttribute('aria-busy');
+  }
+
+  async function readText() {
+    if (!picture) return;
+    const request = ++ocrRequest;
+    const current = () => request === ocrRequest;
+    if (recognized.length && el('text').value === recognized.map(row => row.text).join('\n')) el('text').value = '';
+    recognized = [];
+    ocrStatus.setAttribute('aria-busy', 'true');
+    ocrStatus.textContent = '이 기기에서 한글을 읽고 있습니다…';
+    try {
+      const rows = await window.ImageFontOCR.read(picture, originalCrop(), current);
+      if (!current()) return;
+      if (!rows.length) {
+        ocrStatus.textContent = '한글을 읽기 어렵습니다. 원하는 한 줄을 드래그하거나 직접 입력하세요.';
+        return;
+      }
+      recognized = rows;
+      el('text').value = rows.map(row => row.text).join('\n');
+      detectedAreas = rows.map(row => row.sample.area);
+      paint();
+      ocrStatus.textContent = '문구를 자동으로 채웠습니다. 글자를 확인한 뒤 폰트를 찾아보세요.';
+    } catch {
+      if (current()) ocrStatus.textContent = '자동 읽기를 완료하지 못했습니다. 다시 읽거나 직접 입력하세요.';
+    } finally {
+      if (current()) ocrStatus.removeAttribute('aria-busy');
+    }
+  }
+  el('read').onclick = () => { invalidate(); readText(); };
 
   function invalidate() {
     revision++;
@@ -64,6 +100,9 @@
       attachStatus.textContent = '25 MB 이하 PNG, JPG, WebP 이미지를 선택하세요.';
       return;
     }
+    cancelReading();
+    recognized = [];
+    el('text').value = '';
     start = crop = picture = null;
     attachment.textContent = '';
     el('edit').hidden = true;
@@ -82,6 +121,7 @@
       attachment.textContent = file.name;
       el('edit').hidden = false;
       attachStatus.textContent = '이미지가 첨부되었습니다.';
+      readText();
     } catch {
       if (version === revision) attachStatus.textContent = '이미지를 열 수 없습니다.';
     } finally { URL.revokeObjectURL(url); }
@@ -190,6 +230,7 @@
   preview.onpointerdown = event => {
     if (!event.isPrimary) return;
     invalidate();
+    cancelReading();
     start = point(event);
     preview.setPointerCapture(event.pointerId);
   };
@@ -204,10 +245,16 @@
     preview.onpointermove(event);
     start = null;
     if (crop.w < 3 || crop.h < 3) { crop = null; paint(); }
+    readText();
   };
-  preview.onpointercancel = () => { start = crop = null; paint(); };
-  el('reset').onclick = () => { invalidate(); start = crop = null; paint(); };
-  el('text').oninput = invalidate;
+  preview.onpointercancel = () => { if (start) { start = crop = null; paint(); readText(); } };
+  el('reset').onclick = () => { invalidate(); start = crop = null; paint(); readText(); };
+  el('text').oninput = () => {
+    cancelReading();
+    invalidate();
+    detectedAreas = recognized.map(row => row.sample.area);
+    paint();
+  };
 
   function originalCrop() {
     if (!crop) return null;
@@ -355,6 +402,7 @@
   }
 
   el('run').onclick = async () => {
+    if (!el('text').value.trim() && ocrStatus.hasAttribute('aria-busy')) return;
     invalidate();
     const version = revision, text = el('text').value.trim().normalize('NFC');
     const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
@@ -367,11 +415,14 @@
       status.textContent = '한 번에 두 줄까지, 한 줄에 40자까지 비교할 수 있습니다.';
       return;
     }
+    cancelReading();
     el('run').disabled = true;
     try {
       const shapes = window.ImageFontShapes;
       const selection = originalCrop();
-      const samples = window.ImageFontColor.detect(picture, selection, lines);
+      const samples = recognized.length === lines.length
+        ? recognized.map(row => row.sample)
+        : window.ImageFontColor.detect(picture, selection, lines);
       if (lines.length === 2 && samples.length !== 2) {
         status.textContent = '두 줄의 글자색을 분리하기 어렵습니다. 한 줄을 드래그하고 그 문구만 입력하세요.';
         return;
@@ -432,7 +483,7 @@
         return ranked[0] === matches[0].scores[i] && shapes.isConfident(line, ranked, expectedCount);
       });
       // Automatically isolating a color can trim antialiased edges; close fits are suggestions.
-      const clearColorMatch = !samples.length || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
+      const clearColorMatch = !samples.some(sample => sample.isolatedInk) || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
       const confident = shapes.isConfident(target, matches, expectedCount) && indexed && glyphCount > 0 && agree && clearColorMatch;
       showResults(matches, confident, text);
       showGlyphComparison(matches, lines, targets, samples);

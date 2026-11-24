@@ -126,7 +126,23 @@
     const {image}=raster(source,box,640);
     const colors=palette(image.data);
     const bands=colors.flatMap(c=>findBands(image,c));
-    return selectBands(bands,lines).map(b=>{
+    let selected;
+    if (lines) {
+      selected = selectBands(bands, lines);
+    } else {
+      // Start with the most prominent row, then add a nearby row of comparable size.
+      const ranked = bands.filter(b => b.w >= 1.6*b.h && b.w <= 36*b.h)
+        .sort((a,b) => b.h - a.h || b.w - a.w);
+      const first = ranked[0];
+      if (!first) return [];
+      const second = ranked.slice(1).find(b => {
+        const gap = Math.max(first.y - b.y - b.h, b.y - first.y - first.h);
+        const center = Math.abs(first.x + first.w/2 - b.x - b.w/2);
+        return b.h >= .65*first.h && gap >= -2 && gap <= 1.5*first.h && center <= .45*Math.max(first.w,b.w);
+      });
+      selected = second ? [first, second].sort((a,b) => a.y-b.y) : [first];
+    }
+    return selected.map(b=>{
       const sx=box.w/image.width, sy=box.h/image.height;
       const x=Math.max(0,b.x-1), y=Math.max(0,b.y-1);
       const area={x:box.x+x*sx,y:box.y+y*sy,
@@ -145,7 +161,7 @@
       const ctx=framed.getContext('2d');
       ctx.fillStyle='#fff';ctx.fillRect(0,0,framed.width,framed.height);
       ctx.drawImage(sample.canvas,4,4);
-      return {image:framed, area, content:{x:4, y:4, w:sample.canvas.width, h:sample.canvas.height}};
+      return {image:framed, area, isolatedInk:true, content:{x:4, y:4, w:sample.canvas.width, h:sample.canvas.height}};
     });
   }
   window.ImageFontColor={detect};
