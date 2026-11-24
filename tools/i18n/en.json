@@ -1289,5 +1289,9 @@
   "캐릭터 찾기": "Find characters",
   "캐릭터 둘러보기": "Browse characters",
   "캐릭터 메뉴": "Character menu",
-  "캐릭터모음": "Character collection"
+  "캐릭터모음": "Character collection",
+  "복사한 이미지 붙여넣기": "Paste copied image",
+  "PNG · JPG · WebP · 최대 25 MB · Ctrl+V / ⌘V": "PNG · JPG · WebP · Up to 25 MB · Ctrl+V / ⌘V",
+  "이미지를 복사한 뒤 Ctrl+V 또는 ⌘V로 붙여넣으세요.": "Copy an image, then press Ctrl+V or ⌘V to paste it.",
+  "클립보드에 이미지가 없습니다. 이미지 복사 후 다시 시도하세요.": "No image in the clipboard. Copy an image and try again."
 }

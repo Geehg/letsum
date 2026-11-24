@@ -79,6 +79,58 @@
     attach(files);
   });
 
+  // A native paste already carries the pixels; keyboard and context-menu paste need no clipboard read.
+  function attachPasted(files) {
+    panel.open = true;
+    panel.scrollIntoView({block: 'nearest'});
+    attach(files);
+  }
+
+  document.addEventListener('paste', event => {
+    const data = event.clipboardData;
+    if (!data || event.defaultPrevented) return;
+    const editable = event.target instanceof Element &&
+      (event.target.closest('input, textarea') || event.target.isContentEditable);
+    if (editable && (data.getData('text/plain') || data.getData('text/html'))) return;
+
+    let files = Array.from(data.files);
+    if (!files.length) {
+      files = Array.from(data.items).filter(item => item.kind === 'file')
+        .map(item => item.getAsFile()).filter(Boolean);
+    }
+    if (!files.some(file => file.type.startsWith('image/') || isImageFile(file))) return;
+    event.preventDefault();
+    attachPasted(files);
+  });
+
+  let pasteRequest = 0;
+  el('paste').addEventListener('click', async () => {
+    const request = ++pasteRequest, version = revision;
+    const current = () => request === pasteRequest && version === revision;
+    const shortcut = '이미지를 복사한 뒤 Ctrl+V 또는 ⌘V로 붙여넣으세요.';
+    if (!navigator.clipboard?.read) {
+      attachStatus.textContent = shortcut;
+      return;
+    }
+    try {
+      const items = await navigator.clipboard.read();
+      if (!current()) return;
+      const files = [];
+      for (const item of items) {
+        const type = item.types.find(t => formats.has(t)) || item.types.find(t => t.startsWith('image/'));
+        if (type) {
+          const blob = await item.getType(type);
+          files.push(new File([blob], 'clipboard.' + type.split('/')[1], {type}));
+        }
+      }
+      if (!current()) return;
+      if (files.length) attachPasted(files);
+      else attachStatus.textContent = '클립보드에 이미지가 없습니다. 이미지 복사 후 다시 시도하세요.';
+    } catch {
+      if (current()) attachStatus.textContent = shortcut;
+    }
+  });
+
   if (location.hash === '#image-finder') panel.open = true;
   function isFileDrag(transfer) {
     return Array.from(transfer.types).includes('Files') || Array.from(transfer.items || []).some(item => item.kind === 'file');

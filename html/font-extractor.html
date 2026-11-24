@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css?v=84">
 <link rel="stylesheet" href="css/font-extractor.css?v=8">
 <!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=cd0152c521"><!--/HEADER_BRAND-->
-<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=4d1c3b00b6"><script src="/js/ui-language.js?v=4d1c3b00b6"></script><!--/UI_LANGUAGE-->
+<!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=f5112e8ac5"><script src="/js/ui-language.js?v=f5112e8ac5"></script><!--/UI_LANGUAGE-->
 <!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=828b693505"><!--/FAMILY_SITES--><!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=b8558de9e4"><!--/CONTACT_STYLE--><!--ADSENSE--><meta name="google-adsense-account" content="ca-pub-7515626837780401"><!--/ADSENSE--></head>
 <body>
 <header>
@@ -35,10 +35,11 @@
     <summary><span>이미지로 한글 폰트 찾기</span> <small class="im-drop-hint">여기에 이미지 놓기</small></summary>
     <p>이미지에서 같은 서체로 쓰인 한 줄을 선택하고 보이는 대로 입력하세요. 글자 모양은 이 기기에서 비교합니다.</p>
     <label id="im-drop" class="im-drop" for="im-file">
-      <span class="im-drop-copy"><strong>이미지 한 장을 여기에 놓으세요</strong><small id="im-formats">PNG · JPG · WebP · 최대 25 MB</small></span>
+      <span class="im-drop-copy"><strong>이미지 한 장을 여기에 놓으세요</strong><small id="im-formats">PNG · JPG · WebP · 최대 25 MB · Ctrl+V / ⌘V</small></span>
       <span class="im-pick">이미지 선택</span>
       <input id="im-file" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" aria-label="이미지 선택" aria-describedby="im-formats">
     </label>
+    <button type="button" id="im-paste">복사한 이미지 붙여넣기</button>
     <p id="im-attachment" translate="no"></p>
     <p id="im-attach-status" role="status"></p>
     <label class="im-publish-option"><input id="im-publish" type="checkbox" checked aria-describedby="im-publish-note"> 판별 결과를 공개 게시판에 기록</label>
@@ -149,7 +150,7 @@
 <script defer src="/js/image-font-shapes.js?v=1"></script>
 <script defer src="/js/image-font-index.js?v=1"></script>
 <script defer src="/js/image-font-board.js?v=1"></script>
-<script defer src="/js/image-font-match.js?v=4"></script>
+<script defer src="/js/image-font-match.js?v=5"></script>
 <script src="/js/font-extractor.js?v=8"></script>
 <script src="js/common.js?v=219a96aa79" data-base=""></script>
 <script src="js/pv.js?v=1" defer></script>
