@@ -1,89 +1,523 @@
 [
  {
-  "id": "kr-q50217",
-  "org": "기장군",
-  "title": "기장군 CI 로고 소개 (공식 안내)",
+  "id": "kr-q42128",
+  "org": "영천시",
+  "title": "영천시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
   "tags": [
-   "기장군",
-   "기장군 CI",
-   "기장군 로고",
-   "기장군 로고 다운로드",
+   "영천시",
+   "영천시 CI",
+   "영천시 로고",
+   "영천시 로고 다운로드",
+   "영천시 AI 파일",
    "지방자치단체",
    "CI",
    "로고",
    "로고 다운로드"
   ],
-  "image": "kr-q50217.png",
-  "body": "<p>기장군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.gijang.go.kr/index.gijang\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">기장군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">부산광역시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0E4D98\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0E4D98</code></td><td style=\"padding:4px 12px 4px 0\">RGB 14 77 152</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#00A39B\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#00A39B</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 163 155</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#143272\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#143272</code></td><td style=\"padding:4px 12px 4px 0\">RGB 20 50 114</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.gijang.go.kr/index.gijang\" target=\"_blank\" rel=\"noopener\">https://www.gijang.go.kr/index.gijang</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50217/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 기장군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+  "image": "kr-q42128.png",
+  "body": "<p>영천시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.yc.go.kr/main.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">영천시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상북도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#2E3192\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#2E3192</code></td><td style=\"padding:4px 12px 4px 0\">RGB 46 49 146</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0BAF4D\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0BAF4D</code></td><td style=\"padding:4px 12px 4px 0\">RGB 11 175 77</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0C4DA2\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0C4DA2</code></td><td style=\"padding:4px 12px 4px 0\">RGB 12 77 162</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.yc.go.kr/portal/img/sub04/ci.zip\" target=\"_blank\" rel=\"noopener\">ci.zip</a> — ZIP(안에 AI) · 82KB · 영천시심벌마크</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.yc.go.kr/portal/contents.do?mId=0404000000\" target=\"_blank\" rel=\"noopener\">https://www.yc.go.kr/portal/contents.do?mId=0404000000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42128/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 영천시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
  },
  {
-  "id": "kr-q50255",
-  "org": "양평군",
-  "title": "양평군 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "id": "kr-q50316",
+  "org": "의령군",
+  "title": "의령군 CI 로고 소개 (공식 안내)",
   "tags": [
-   "양평군",
-   "양평군 CI",
-   "양평군 로고",
-   "양평군 로고 다운로드",
-   "양평군 AI 파일",
+   "의령군",
+   "의령군 CI",
+   "의령군 로고",
+   "의령군 로고 다운로드",
    "지방자치단체",
    "CI",
    "로고",
    "로고 다운로드"
   ],
-  "image": "kr-q50255.png",
-  "body": "<p>양평군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.yp21.go.kr/www/index.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">양평군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경기도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#006CB7\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#006CB7</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 108 183</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#004B85\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#004B85</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 75 133</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#80A191\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#80A191</code></td><td style=\"padding:4px 12px 4px 0\">RGB 128 161 145</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.yp21.go.kr/downloadContentsFile.do?key=1846&amp;fileNo=597\" target=\"_blank\" rel=\"noopener\">yp_ci.ai</a> — AI · 264KB · 양평군 CI )</li><li><a href=\"https://www.yp21.go.kr/downloadContentsFile.do?key=1846&amp;fileNo=599\" target=\"_blank\" rel=\"noopener\">yp_bi.ai</a> — AI · 539KB · 양평군 BI )</li><li><a href=\"https://www.yp21.go.kr/downloadContentsFile.do?key=1846&amp;fileNo=598\" target=\"_blank\" rel=\"noopener\">yp_ci.jpg</a> — JPG · 123KB · 양평군 CI )</li><li><a href=\"https://www.yp21.go.kr/downloadContentsFile.do?key=1846&amp;fileNo=600\" target=\"_blank\" rel=\"noopener\">yp_bi.jpg</a> — JPG · 236KB · 양평군 BI )</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.yp21.go.kr/www/contents.do?key=1846\" target=\"_blank\" rel=\"noopener\">https://www.yp21.go.kr/www/contents.do?key=1846</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50255/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 양평군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+  "image": null,
+  "body": "<p>의령군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">의령군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상남도</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.uiryeong.go.kr/english/\" target=\"_blank\" rel=\"noopener\">http://www.uiryeong.go.kr/english/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50316/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 의령군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
  },
  {
-  "id": "kr-q488334",
-  "org": "서울시립대학교",
-  "title": "서울시립대학교 CI 로고 소개 (공식 안내)",
+  "id": "kr-q497488",
+  "org": "인천대학교",
+  "title": "인천대학교 CI 로고 소개 (공식 안내)",
   "tags": [
-   "서울시립대학교",
-   "서울시립대학교 CI",
-   "서울시립대학교 로고",
-   "서울시립대학교 로고 다운로드",
+   "인천대학교",
+   "인천대학교 CI",
+   "인천대학교 로고",
+   "인천대학교 로고 다운로드",
    "대학·교육기관",
    "CI",
    "로고",
    "로고 다운로드"
   ],
-  "image": "kr-q488334.png",
-  "body": "<p>서울시립대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:University_of_Seoul.svg\">File:University_of_Seoul.svg</a> · Public domain · 저작자 University of Seoul</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">서울시립대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#084D9B\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#084D9B</code></td><td style=\"padding:4px 12px 4px 0\">RGB 8 77 155</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.uos.ac.kr/exsignon/sso/sso_index.jsp?RelayState=/common/error.jsp&amp;ReturnUrl=https%3A%2F%2Fwww.uos.ac.kr%2Fkor%2Fhtml%2Fauos%2Fsymbol%2Fui%2Fui.do%3Fmenuid%3D2000001004003000000\" target=\"_blank\" rel=\"noopener\">https://www.uos.ac.kr/exsignon/sso/sso_index.jsp?RelayState=/common/error.jsp&amp;ReturnUrl=https%3A%2F%2Fwww.uos.ac.kr%2Fkor%2Fhtml%2Fauos%2Fsymbol%2Fui%2Fui.do%3Fmenuid%3D2000001004003000000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q488334/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 서울시립대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+  "image": "kr-q497488.png",
+  "body": "<p>인천대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Logo_of_INCHEON_NATIONAL_UNIVERSITY.svg\">File:Logo_of_INCHEON_NATIONAL_UNIVERSITY.svg</a> · Public domain · 저작자 인천대학교</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">인천대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#01499A\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#01499A</code></td><td style=\"padding:4px 12px 4px 0\">RGB 1 73 154</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#FCAF16\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#FCAF16</code></td><td style=\"padding:4px 12px 4px 0\">RGB 252 175 22</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://admission.inu.ac.kr/\" target=\"_blank\" rel=\"noopener\">https://admission.inu.ac.kr/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q497488/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 인천대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
  },
  {
-  "id": "kr-q50252",
-  "org": "신안군",
-  "title": "신안군 CI 로고 소개 (공식 안내)",
+  "id": "kr-q50317",
+  "org": "의성군",
+  "title": "의성군 CI 로고 소개 (공식 안내)",
   "tags": [
-   "신안군",
-   "신안군 CI",
-   "신안군 로고",
-   "신안군 로고 다운로드",
+   "의성군",
+   "의성군 CI",
+   "의성군 로고",
+   "의성군 로고 다운로드",
    "지방자치단체",
    "CI",
    "로고",
    "로고 다운로드"
   ],
-  "image": "kr-q50252.png",
-  "body": "<p>신안군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.shinan.go.kr/\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">신안군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전남광주통합특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#1169AB\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#1169AB</code></td><td style=\"padding:4px 12px 4px 0\">RGB 17 105 171</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#003067\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#003067</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 48 103</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.sinan.go.kr/\" target=\"_blank\" rel=\"noopener\">http://www.sinan.go.kr/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50252/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 신안군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+  "image": "kr-q50317.png",
+  "body": "<p>의성군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Uiseong.svg\">File:Flag_of_Uiseong.svg</a> · Public domain · 저작자 Uiseong County Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">의성군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상북도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#9FC92B\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#9FC92B</code></td><td style=\"padding:4px 12px 4px 0\">RGB 159 201 43</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#007FC8\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#007FC8</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 127 200</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#E94F26\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#E94F26</code></td><td style=\"padding:4px 12px 4px 0\">RGB 233 79 38</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://uiseong.go.kr/ehome/\" target=\"_blank\" rel=\"noopener\">http://uiseong.go.kr/ehome/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50317/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 의성군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
  },
  {
-  "id": "kr-q50374",
-  "org": "도봉구",
-  "title": "도봉구 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "id": "kr-q625952",
+  "org": "백석대학교",
+  "title": "백석대학교 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
   "tags": [
-   "도봉구",
-   "도봉구 CI",
-   "도봉구 로고",
-   "도봉구 로고 다운로드",
-   "도봉구 AI 파일",
+   "백석대학교",
+   "백석대학교 CI",
+   "백석대학교 로고",
+   "백석대학교 로고 다운로드",
+   "백석대학교 AI 파일",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q625952.png",
+  "body": "<p>백석대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"http://www.bu.ac.kr/web/index.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">백석대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#3399CC\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#3399CC</code></td><td style=\"padding:4px 12px 4px 0\">RGB </td><td style=\"padding:4px 12px 4px 0\">CMYK C100 M80 Y0 K10</td><td style=\"padding:4px 0;color:#888\">공식 표기</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#003399\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#003399</code></td><td style=\"padding:4px 12px 4px 0\">RGB </td><td style=\"padding:4px 12px 4px 0\">CMYK C70 M30 Y0 K0</td><td style=\"padding:4px 0;color:#888\">공식 표기</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"http://www.bu.ac.kr/sites/web/files/baekseok_Signature_ai.zip\" target=\"_blank\" rel=\"noopener\">baekseok_Signature_ai.zip</a> — ZIP(안에 AI) · 7.1MB</li><li><a href=\"http://www.bu.ac.kr/sites/web/files/baekseok_Signature_50th_ai.zip\" target=\"_blank\" rel=\"noopener\">baekseok_Signature_50th_ai.zip</a> — ZIP(안에 AI) · 1.3MB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.bu.ac.kr/web/3414/subview.do\" target=\"_blank\" rel=\"noopener\">http://www.bu.ac.kr/web/3414/subview.do</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q625952/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 백석대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50408",
+  "org": "서대문구",
+  "title": "서대문구 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "서대문구",
+   "서대문구 CI",
+   "서대문구 로고",
+   "서대문구 로고 다운로드",
+   "서대문구 AI 파일",
    "지방자치단체",
    "CI",
    "로고",
    "로고 다운로드"
   ],
-  "image": "kr-q50374.png",
-  "body": "<p>도봉구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.dobong.go.kr/\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">도봉구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#2658A8\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#2658A8</code></td><td style=\"padding:4px 12px 4px 0\">RGB 38 88 168</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#04AE44\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#04AE44</code></td><td style=\"padding:4px 12px 4px 0\">RGB 4 174 68</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#444444\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#444444</code></td><td style=\"padding:4px 12px 4px 0\">RGB 68 68 68</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.dobong.go.kr/FILE/link/www/depth06/도봉구_마크.zip\" target=\"_blank\" rel=\"noopener\">도봉구_마크.zip</a> — ZIP(안에 AI, JPG) · 1021KB · 도봉구 상징마크 으로</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.dobong.go.kr/Contents.asp?code=10009553\" target=\"_blank\" rel=\"noopener\">https://www.dobong.go.kr/Contents.asp?code=10009553</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50374/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 도봉구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+  "image": "kr-q50408.png",
+  "body": "<p>서대문구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.sdm.go.kr/index.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">서대문구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#283B50\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#283B50</code></td><td style=\"padding:4px 12px 4px 0\">RGB 40 59 80</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#223291\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#223291</code></td><td style=\"padding:4px 12px 4px 0\">RGB 34 50 145</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#107873\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#107873</code></td><td style=\"padding:4px 12px 4px 0\">RGB 16 120 115</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_ai.zip\" target=\"_blank\" rel=\"noopener\">seodaemun_ai.zip</a> — ZIP(안에 AI) · 61KB</li><li><a href=\"https://www.sdm.go.kr/fileUpload/work/wesdm/general/seodaemun_png.zip\" target=\"_blank\" rel=\"noopener\">seodaemun_png.zip</a> — ZIP(안에 PNG) · 76KB</li><li><a href=\"https://www.sdm.go.kr/fileUpload/work/wesdm/general/ci_jpg.zip\" target=\"_blank\" rel=\"noopener\">ci_jpg.zip</a> — ZIP(안에 JPG) · 59KB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.sdm.go.kr/wesdm/general/symbol.do\" target=\"_blank\" rel=\"noopener\">https://www.sdm.go.kr/wesdm/general/symbol.do</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50408/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 서대문구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q483032",
+  "org": "명지대학교",
+  "title": "명지대학교 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "명지대학교",
+   "명지대학교 CI",
+   "명지대학교 로고",
+   "명지대학교 로고 다운로드",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q483032.png",
+  "body": "<p>명지대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Myongji_university_logo.gif\">File:Myongji_university_logo.gif</a> · Public domain · 저작자 MYONGJI UNIVERSITY</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">명지대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#081748\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#081748</code></td><td style=\"padding:4px 12px 4px 0\">RGB 8 23 72</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#5A90B6\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#5A90B6</code></td><td style=\"padding:4px 12px 4px 0\">RGB 90 144 182</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.mju.ac.kr/sites/mjukr/intro/intro.html\" target=\"_blank\" rel=\"noopener\">https://www.mju.ac.kr/sites/mjukr/intro/intro.html</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q483032/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 명지대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50260",
+  "org": "영덕군",
+  "title": "영덕군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "영덕군",
+   "영덕군 CI",
+   "영덕군 로고",
+   "영덕군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": null,
+  "body": "<p>영덕군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">영덕군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상북도</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://eng.yd.go.kr/\" target=\"_blank\" rel=\"noopener\">http://eng.yd.go.kr/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50260/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 영덕군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50190",
+  "org": "영등포구",
+  "title": "영등포구 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "영등포구",
+   "영등포구 CI",
+   "영등포구 로고",
+   "영등포구 로고 다운로드",
+   "영등포구 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50190.png",
+  "body": "<p>영등포구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.ydp.go.kr/www/index.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">영등포구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#005AAB\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#005AAB</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 90 171</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#70A457\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#70A457</code></td><td style=\"padding:4px 12px 4px 0\">RGB 112 164 87</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#6D6E71\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#6D6E71</code></td><td style=\"padding:4px 12px 4px 0\">RGB 109 110 113</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.ydp.go.kr/DATA/download/www/cts2895_file1.zip\" target=\"_blank\" rel=\"noopener\">cts2895_file1.zip</a> — ZIP(안에 AI, PDF, PNG) · 3.1MB · 심벌마크</li><li><a href=\"https://www.ydp.go.kr/DATA/download/www/cts2895_file2.zip\" target=\"_blank\" rel=\"noopener\">cts2895_file2.zip</a> — ZIP(안에 AI) · 117KB · 심벌마크의 색상활용</li><li><a href=\"https://www.ydp.go.kr/DATA/download/www/cts2895_file3.zip\" target=\"_blank\" rel=\"noopener\">cts2895_file3.zip</a> — ZIP(안에 AI, PNG) · 177KB · 로고타입</li><li><a href=\"https://www.ydp.go.kr/DATA/download/www/cts2895_file4.zip\" target=\"_blank\" rel=\"noopener\">cts2895_file4.zip</a> — ZIP(안에 AI) · 134KB · 시그니처 좌우조합</li><li><a href=\"https://www.ydp.go.kr/DATA/download/www/cts2895_file5.pdf\" target=\"_blank\" rel=\"noopener\">cts2895_file5.pdf</a> — PDF · 8.6MB · CI 활용방안</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.ydp.go.kr/www/contents.do?key=2895&amp;\" target=\"_blank\" rel=\"noopener\">https://www.ydp.go.kr/www/contents.do?key=2895&amp;</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50190/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 영등포구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q42067",
+  "org": "광양시",
+  "title": "광양시 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "광양시",
+   "광양시 CI",
+   "광양시 로고",
+   "광양시 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q42067.png",
+  "body": "<p>광양시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://gwangyang.go.kr/\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">광양시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전남광주통합특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#004E97\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#004E97</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 78 151</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#B3B389\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#B3B389</code></td><td style=\"padding:4px 12px 4px 0\">RGB 179 179 137</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://gwangyang.go.kr/\" target=\"_blank\" rel=\"noopener\">https://gwangyang.go.kr/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42067/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 광양시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50258",
+  "org": "연천군",
+  "title": "연천군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "연천군",
+   "연천군 CI",
+   "연천군 로고",
+   "연천군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": null,
+  "body": "<p>연천군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">연천군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경기도</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.iyc21.net/\" target=\"_blank\" rel=\"noopener\">https://www.iyc21.net/</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50258/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 연천군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50432",
+  "org": "은평구",
+  "title": "은평구 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "은평구",
+   "은평구 CI",
+   "은평구 로고",
+   "은평구 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50432.png",
+  "body": "<p>은평구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Eunpyeong,_Seoul.svg\">File:Flag_of_Eunpyeong,_Seoul.svg</a> · Public domain · 저작자 Eunpyeong District Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">은평구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#176613\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#176613</code></td><td style=\"padding:4px 12px 4px 0\">RGB 23 102 19</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#081059\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#081059</code></td><td style=\"padding:4px 12px 4px 0\">RGB 8 16 89</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.eunpyeong.seoul.kr/404.html\" target=\"_blank\" rel=\"noopener\">http://www.eunpyeong.seoul.kr/404.html</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50432/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 은평구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50334",
+  "org": "칠곡군",
+  "title": "칠곡군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "칠곡군",
+   "칠곡군 CI",
+   "칠곡군 로고",
+   "칠곡군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50334.png",
+  "body": "<p>칠곡군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.chilgok.go.kr/main.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">칠곡군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상북도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0063AC\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0063AC</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 99 172</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0090D3\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0090D3</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 144 211</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#B49C50\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#B49C50</code></td><td style=\"padding:4px 12px 4px 0\">RGB 180 156 80</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.chilgok.go.kr/portal/contents.do?mId=0404030000\" target=\"_blank\" rel=\"noopener\">https://www.chilgok.go.kr/portal/contents.do?mId=0404030000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50334/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 칠곡군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q374457",
+  "org": "서강대학교",
+  "title": "서강대학교 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "서강대학교",
+   "서강대학교 CI",
+   "서강대학교 로고",
+   "서강대학교 로고 다운로드",
+   "서강대학교 AI 파일",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q374457.png",
+  "body": "<p>서강대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Sogang_University_-_logotype_(en).svg\">File:Sogang_University_-_logotype_(en).svg</a> · Public domain · 저작자 Sogang University</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">서강대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#231F20\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#231F20</code></td><td style=\"padding:4px 12px 4px 0\">RGB 35 31 32</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.sogang.ac.kr/file-fe/1.%20교장(Seal).ai\" target=\"_blank\" rel=\"noopener\">1. 교장(Seal).ai</a> — AI · 1.3MB</li><li><a href=\"https://www.sogang.ac.kr/file-fe/emblem.ai\" target=\"_blank\" rel=\"noopener\">emblem.ai</a> — AI · 147KB</li><li><a href=\"https://www.sogang.ac.kr/file-fe/1.%20교장(Seal).zip\" target=\"_blank\" rel=\"noopener\">1. 교장(Seal).zip</a> — ZIP(안에 PNG) · 274KB</li><li><a href=\"https://www.sogang.ac.kr/file-fe/emblem.zip\" target=\"_blank\" rel=\"noopener\">emblem.zip</a> — ZIP(안에 PNG) · 821KB</li><li><a href=\"https://www.sogang.ac.kr/intro/symbol/data/Sogang_UI_renewal.pdf\" target=\"_blank\" rel=\"noopener\">Sogang_UI_renewal.pdf</a> — PDF · 1.4MB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.sogang.ac.kr/ko/symbol/ui\" target=\"_blank\" rel=\"noopener\">https://www.sogang.ac.kr/ko/symbol/ui</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q374457/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 서강대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q42077",
+  "org": "김제시",
+  "title": "김제시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "김제시",
+   "김제시 CI",
+   "김제시 로고",
+   "김제시 로고 다운로드",
+   "김제시 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q42077.png",
+  "body": "<p>김제시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.gimje.go.kr/index.gimje\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">김제시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전북특별자치도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:\"></span></td><td style=\"padding:4px 12px 4px 0\"><code></code></td><td style=\"padding:4px 12px 4px 0\">RGB </td><td style=\"padding:4px 12px 4px 0\">PANTONE 185 C</td><td style=\"padding:4px 0;color:#888\">공식 표기</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:\"></span></td><td style=\"padding:4px 12px 4px 0\"><code></code></td><td style=\"padding:4px 12px 4px 0\">RGB </td><td style=\"padding:4px 12px 4px 0\">PANTONE 334 C</td><td style=\"padding:4px 0;color:#888\">공식 표기</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.gimje.go.kr/images/01_potal/file/sub01/ci_ai.zip\" target=\"_blank\" rel=\"noopener\">ci_ai.zip</a> — ZIP(안에 AI) · 22KB</li><li><a href=\"https://www.gimje.go.kr/images/01_potal/file/sub01/emblem_ai.zip\" target=\"_blank\" rel=\"noopener\">emblem_ai.zip</a> — ZIP(안에 AI) · 94KB</li><li><a href=\"https://www.gimje.go.kr/images/01_potal/file/sub01/ci_jpg.zip\" target=\"_blank\" rel=\"noopener\">ci_jpg.zip</a> — ZIP(안에 JPG) · 81KB</li><li><a href=\"https://www.gimje.go.kr/images/01_potal/file/sub01/signature.zip\" target=\"_blank\" rel=\"noopener\">signature.zip</a> — ZIP · 257KB</li><li><a href=\"https://www.gimje.go.kr/images/01_potal/file/sub01/emblem.zip\" target=\"_blank\" rel=\"noopener\">emblem.zip</a> — ZIP · 233KB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.gimje.go.kr/index.gimje?menuCd=DOM_000000101004002000\" target=\"_blank\" rel=\"noopener\">https://www.gimje.go.kr/index.gimje?menuCd=DOM_000000101004002000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42077/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 김제시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q491511",
+  "org": "홍익대학교",
+  "title": "홍익대학교 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "홍익대학교",
+   "홍익대학교 CI",
+   "홍익대학교 로고",
+   "홍익대학교 로고 다운로드",
+   "홍익대학교 AI 파일",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q491511.png",
+  "body": "<p>홍익대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Hongik_University.svg\">File:Hongik_University.svg</a> · Public domain · 저작자 Hongik University</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">홍익대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#231815\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#231815</code></td><td style=\"padding:4px 12px 4px 0\">RGB 35 24 21</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.hongik.ac.kr/cms/etcResourceDown.do?site=%24cms%24NYJyA&amp;key=%24cms%24BYewdg5glg1g+gZwJ4FsBGIA2KCGAneAQQEkA6HKIA\" target=\"_blank\" rel=\"noopener\">hongik_symbolmark_AI.ai</a> — AI · 255KB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.hongik.ac.kr/kr/introduction/school-mark.do\" target=\"_blank\" rel=\"noopener\">https://www.hongik.ac.kr/kr/introduction/school-mark.do</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q491511/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 홍익대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q494638",
+  "org": "국립경국대학교",
+  "title": "국립경국대학교 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "국립경국대학교",
+   "국립경국대학교 CI",
+   "국립경국대학교 로고",
+   "국립경국대학교 로고 다운로드",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q494638.png",
+  "body": "<p>국립경국대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.gknu.ac.kr/\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">국립경국대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#005BAB\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#005BAB</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 91 171</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#00A9EA\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#00A9EA</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 169 234</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.anu.ac.kr/gknu-redirect.htm?t=1794267183373\" target=\"_blank\" rel=\"noopener\">https://www.anu.ac.kr/gknu-redirect.htm?t=1794267183373</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q494638/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 국립경국대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50203",
+  "org": "가평군",
+  "title": "가평군 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "가평군",
+   "가평군 CI",
+   "가평군 로고",
+   "가평군 로고 다운로드",
+   "가평군 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50203.png",
+  "body": "<p>가평군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"http://www.gp.go.kr/corona_new.jsp\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">가평군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경기도</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.gp.go.kr/site/portal/download/logo.zip\" target=\"_blank\" rel=\"noopener\">logo.zip</a> — ZIP(안에 AI, JPG) · 6.3MB · 심볼마크</li><li><a href=\"https://www.gp.go.kr/site/portal/download/2024/character.zip\" target=\"_blank\" rel=\"noopener\">character.zip</a> — ZIP(안에 AI, JPG) · 8.8MB · 캐릭터</li><li><a href=\"https://www.gp.go.kr/site/portal/download/2025/cts2489_file01.zip\" target=\"_blank\" rel=\"noopener\">cts2489_file01.zip</a> — ZIP(안에 AI) · 1.4MB · 일러스트</li><li><a href=\"https://www.gp.go.kr/site/portal/download/2025/cts2489_file02.zip\" target=\"_blank\" rel=\"noopener\">cts2489_file02.zip</a> — ZIP(안에 PNG, JPG) · 736KB · 이미지</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.gp.go.kr/portal/contents.do?key=749\" target=\"_blank\" rel=\"noopener\">https://www.gp.go.kr/portal/contents.do?key=749</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50203/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 가평군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q482819",
+  "org": "상명대학교",
+  "title": "상명대학교 CI 로고 소개 (공식 다운로드 안내)",
+  "tags": [
+   "상명대학교",
+   "상명대학교 CI",
+   "상명대학교 로고",
+   "상명대학교 로고 다운로드",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q482819.png",
+  "body": "<p>상명대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"http://www.smu.ac.kr/kor/index.do\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">상명대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"http://www.smu.ac.kr/cms/fileDownload.do?path=%2F_res%2Fkor%2Fetc%2Fimg-symbol.png\" target=\"_blank\" rel=\"noopener\">img-symbol.png</a> — PNG · 4KB · 상명대학교 심볼1</li><li><a href=\"http://www.smu.ac.kr/cms/fileDownload.do?path=%2F_res%2Fkor%2Fetc%2Fimg-symbol2.png\" target=\"_blank\" rel=\"noopener\">img-symbol2.png</a> — PNG · 13KB · 상명대학교 심볼2</li><li><a href=\"http://www.smu.ac.kr/cms/fileDownload.do?path=%2F_res%2Fkor%2Fetc%2Fimg-logo.png\" target=\"_blank\" rel=\"noopener\">img-logo.png</a> — PNG · 10KB · 상명대학교 로고</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.smu.ac.kr/kor/intro/symbol1.do\" target=\"_blank\" rel=\"noopener\">http://www.smu.ac.kr/kor/intro/symbol1.do</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q482819/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 상명대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q42087",
+  "org": "남원시",
+  "title": "남원시 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "남원시",
+   "남원시 CI",
+   "남원시 로고",
+   "남원시 로고 다운로드",
+   "남원시 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q42087.png",
+  "body": "<p>남원시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Namwon.svg\">File:Flag_of_Namwon.svg</a> · Public domain · 저작자 Namwon City Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">남원시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전북특별자치도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#E95D97\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#E95D97</code></td><td style=\"padding:4px 12px 4px 0\">RGB 233 93 151</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#DD0042\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#DD0042</code></td><td style=\"padding:4px 12px 4px 0\">RGB 221 0 66</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.namwon.go.kr/resource/www/files/sub05/CI_ai.zip\" target=\"_blank\" rel=\"noopener\">CI_ai.zip</a> — ZIP(안에 AI) · 1010KB</li><li><a href=\"https://www.namwon.go.kr/resource/www/files/sub05/CI_jpg.zip\" target=\"_blank\" rel=\"noopener\">CI_jpg.zip</a> — ZIP(안에 JPG) · 85KB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4\" target=\"_blank\" rel=\"noopener\">https://www.namwon.go.kr/index.do?menuUid=ff8080818e3beff0018e40e5f06e02b4</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42087/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 남원시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50307",
+  "org": "예산군",
+  "title": "예산군 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "예산군",
+   "예산군 CI",
+   "예산군 로고",
+   "예산군 로고 다운로드",
+   "예산군 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50307.png",
+  "body": "<p>예산군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Yesan.svg\">File:Flag_of_Yesan.svg</a> · Public domain · 저작자 Yesan County Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">예산군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">충청남도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#9FC92B\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#9FC92B</code></td><td style=\"padding:4px 12px 4px 0\">RGB 159 201 43</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#007FC8\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#007FC8</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 127 200</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#E94F26\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#E94F26</code></td><td style=\"padding:4px 12px 4px 0\">RGB 233 79 38</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008701Jd6&amp;fileSn=0\" target=\"_blank\" rel=\"noopener\">심벌마크_ai.zip</a> — ZIP(안에 AI) · 725KB</li><li><a href=\"https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008833Iy9&amp;fileSn=0\" target=\"_blank\" rel=\"noopener\">캐릭터_AI.zip</a> — ZIP(안에 AI) · 430KB</li><li><a href=\"https://www.yesan.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_000000008704Ml7&amp;fileSn=0\" target=\"_blank\" rel=\"noopener\">심벌마크_jpg.zip</a> — ZIP(안에 JPG) · 1.7MB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.yesan.go.kr/kor/sub05_02_01.do\" target=\"_blank\" rel=\"noopener\">https://www.yesan.go.kr/kor/sub05_02_01.do</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50307/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 예산군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50246",
+  "org": "부안군",
+  "title": "부안군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "부안군",
+   "부안군 CI",
+   "부안군 로고",
+   "부안군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50246.png",
+  "body": "<p>부안군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Buan.svg\">File:Flag_of_Buan.svg</a> · Public domain · 저작자 Buan County Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">부안군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전북특별자치도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#E95D9D\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#E95D9D</code></td><td style=\"padding:4px 12px 4px 0\">RGB 233 93 157</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#6A016F\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#6A016F</code></td><td style=\"padding:4px 12px 4px 0\">RGB 106 1 111</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0097E0\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0097E0</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 151 224</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.buan.go.kr/english/politic/pol_01.jsp\" target=\"_blank\" rel=\"noopener\">http://www.buan.go.kr/english/politic/pol_01.jsp</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50246/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 부안군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q42064",
+  "org": "과천시",
+  "title": "과천시 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "과천시",
+   "과천시 CI",
+   "과천시 로고",
+   "과천시 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q42064.png",
+  "body": "<p>과천시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Gwacheon.svg\">File:Flag_of_Gwacheon.svg</a> · Public domain · 저작자 Gwacheon City Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">과천시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경기도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#40713A\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#40713A</code></td><td style=\"padding:4px 12px 4px 0\">RGB 64 113 58</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#9FC92B\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#9FC92B</code></td><td style=\"padding:4px 12px 4px 0\">RGB 159 201 43</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#007FC8\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#007FC8</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 127 200</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.gccity.go.kr/portal/contents.do?mId=0511020000\" target=\"_blank\" rel=\"noopener\">https://www.gccity.go.kr/portal/contents.do?mId=0511020000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42064/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 과천시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q42060",
+  "org": "계룡시",
+  "title": "계룡시 CI 로고 소개 (공식 다운로드 안내)",
+  "tags": [
+   "계룡시",
+   "계룡시 CI",
+   "계룡시 로고",
+   "계룡시 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q42060.png",
+  "body": "<p>계룡시의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://gyeryong.go.kr/kr/\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">계룡시</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">충청남도</td></tr></tbody></table>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://gyeryong.go.kr/_prog/download/?file_id=z3hhjzmhmb6577ufhydf2mc890gxu1\" target=\"_blank\" rel=\"noopener\">symbol.jpg</a> — JPG · 40KB</li><li><a href=\"https://gyeryong.go.kr/_prog/download/?file_id=6y5b2483jsdvbfq9fqb8fyxfgm7q78\" target=\"_blank\" rel=\"noopener\">brand.jpg</a> — JPG · 32KB</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://gyeryong.go.kr/kr/html/sub04/040203.html\" target=\"_blank\" rel=\"noopener\">https://gyeryong.go.kr/kr/html/sub04/040203.html</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q42060/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 계룡시</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q26123",
+  "org": "남해군",
+  "title": "남해군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "남해군",
+   "남해군 CI",
+   "남해군 로고",
+   "남해군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q26123.png",
+  "body": "<p>남해군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.namhae.go.kr/tour/eng.web\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">남해군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">경상남도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#5BB230\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#5BB230</code></td><td style=\"padding:4px 12px 4px 0\">RGB 91 178 48</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#14596A\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#14596A</code></td><td style=\"padding:4px 12px 4px 0\">RGB 20 89 106</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#AFBD88\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#AFBD88</code></td><td style=\"padding:4px 12px 4px 0\">RGB 175 189 136</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.namhae.go.kr/tour/00700/00705/00706.web\" target=\"_blank\" rel=\"noopener\">https://www.namhae.go.kr/tour/00700/00705/00706.web</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q26123/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 남해군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q482730",
+  "org": "국립부경대학교",
+  "title": "국립부경대학교 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "국립부경대학교",
+   "국립부경대학교 CI",
+   "국립부경대학교 로고",
+   "국립부경대학교 로고 다운로드",
+   "대학·교육기관",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q482730.jpg",
+  "body": "<p>국립부경대학교의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Pknu_title.jpg\">File:Pknu_title.jpg</a> · Public domain · 저작자 https://www.pknu.ac.kr</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">국립부경대학교</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">대학·교육기관</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#063974\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#063974</code></td><td style=\"padding:4px 12px 4px 0\">RGB 6 57 116</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#42648C\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#42648C</code></td><td style=\"padding:4px 12px 4px 0\">RGB 66 100 140</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#A0B2C6\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#A0B2C6</code></td><td style=\"padding:4px 12px 4px 0\">RGB 160 178 198</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.pknu.ac.kr/intro.html\" target=\"_blank\" rel=\"noopener\">https://www.pknu.ac.kr/intro.html</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q482730/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 국립부경대학교</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50412",
+  "org": "성북구",
+  "title": "성북구 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "성북구",
+   "성북구 CI",
+   "성북구 로고",
+   "성북구 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50412.png",
+  "body": "<p>성북구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Flag_of_Seongbuk,_Seoul.svg\">File:Flag_of_Seongbuk,_Seoul.svg</a> · Public domain · 저작자 Seongbuk District Government</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">성북구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#263450\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#263450</code></td><td style=\"padding:4px 12px 4px 0\">RGB 38 52 80</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#B7CF3F\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#B7CF3F</code></td><td style=\"padding:4px 12px 4px 0\">RGB 183 207 63</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#40713A\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#40713A</code></td><td style=\"padding:4px 12px 4px 0\">RGB 64 113 58</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"http://www.seongbuk.go.kr\" target=\"_blank\" rel=\"noopener\">http://www.seongbuk.go.kr</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50412/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 성북구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50321",
+  "org": "장수군",
+  "title": "장수군 CI 로고 소개 (공식 안내)",
+  "tags": [
+   "장수군",
+   "장수군 CI",
+   "장수군 로고",
+   "장수군 로고 다운로드",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50321.png",
+  "body": "<p>장수군의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: <a href=\"https://www.jangsu.go.kr/index.jangsu\">공식 누리집 게시 이미지</a>(식별 목적 인용, 권리는 권리자에게 있음)</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">장수군</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">전북특별자치도</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#307D54\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#307D54</code></td><td style=\"padding:4px 12px 4px 0\">RGB 48 125 84</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#00498A\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#00498A</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 73 138</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#D01027\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#D01027</code></td><td style=\"padding:4px 12px 4px 0\">RGB 208 16 39</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<p>로그인·신청 없이 바로 받는 파일을 확인하지 못해 직접 받는 링크는 두지 않았습니다. 아래 공식 페이지에서 안내를 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.jangsu.go.kr/index.jangsu?menuCd=DOM_000000103002006000\" target=\"_blank\" rel=\"noopener\">https://www.jangsu.go.kr/index.jangsu?menuCd=DOM_000000103002006000</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50321/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 장수군</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "kr-q50353",
+  "org": "관악구",
+  "title": "관악구 CI 로고 소개 (AI 파일 공식 다운로드 안내)",
+  "tags": [
+   "관악구",
+   "관악구 CI",
+   "관악구 로고",
+   "관악구 로고 다운로드",
+   "관악구 AI 파일",
+   "지방자치단체",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "kr-q50353.jpg",
+  "body": "<p>관악구의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Gwanak_CI_JPG.jpg\">File:Gwanak_CI_JPG.jpg</a> · Public domain · 저작자 The logo is from the Gwanak Official Website. http://www.gwanak.go.kr/site/gwanak/main.do</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">관악구</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">지방자치단체</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">지역</th><td style=\"padding:4px 0\">서울특별시</td></tr></tbody></table>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#009946\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#009946</code></td><td style=\"padding:4px 12px 4px 0\">RGB 0 153 70</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#0B608C\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#0B608C</code></td><td style=\"padding:4px 12px 4px 0\">RGB 11 96 140</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#1E2433\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#1E2433</code></td><td style=\"padding:4px 12px 4px 0\">RGB 30 36 51</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.gwanak.go.kr/common/files/Download.do?cfIdx=CF00093300&amp;cfGroup=COMMON&amp;cfRename=32beaebf-40c5-4787-9aaa-1a50f4fc312e.ai\" target=\"_blank\" rel=\"noopener\">휘장(CI)_AI.ai</a> — AI</li><li><a href=\"https://www.gwanak.go.kr/common/files/Download.do?cfIdx=CF00093299&amp;cfGroup=COMMON&amp;cfRename=c2ace335-a83c-42c7-b036-f9d242663a90.zip\" target=\"_blank\" rel=\"noopener\">휘장(CI)_JPG.zip</a> — ZIP(안에 JPG)</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.gwanak.go.kr/site/gwanak/11/11102010000002016051207.jsp\" target=\"_blank\" rel=\"noopener\">https://www.gwanak.go.kr/site/gwanak/11/11102010000002016051207.jsp</a></li></ul>\n<h4>이용할 때</h4><p>공식 페이지에서 일반 이용 범위를 밝히지 않았습니다. 상업적 사용이나 변형 전에는 기관에 문의하는 것이 안전합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/kr-q50353/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – 관악구</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
+ },
+ {
+  "id": "adobe-brand",
+  "org": "Adobe",
+  "title": "Adobe CI 로고 소개 (공식 다운로드 안내)",
+  "tags": [
+   "Adobe",
+   "Adobe CI",
+   "Adobe 로고",
+   "Adobe 로고 다운로드",
+   "기업",
+   "CI",
+   "로고",
+   "로고 다운로드"
+  ],
+  "image": "adobe-brand.png",
+  "body": "<p>Adobe의 CI(로고)를 정리했습니다. 공식 누리집이 안내하는 로고 파일과 색상, 이용할 때 확인할 점을 모았고, 파일은 이 블로그에 따로 올리지 않고 공식 배포처로 바로 연결해 두었습니다.</p>\n<!-- 여기에 직접 한두 줄: 이 로고를 써 본 경험, 눈에 띄는 점, 작업 팁 등 -->\n<p>@@IMAGE@@</p>\n<p style=\"font-size:12px;color:#888\">이미지: 위키미디어 공용 <a href=\"https://commons.wikimedia.org/wiki/File:Adobe_Corporate_logo.svg\">File:Adobe_Corporate_logo.svg</a> · Public domain · 저작자 Adobe Inc.</p>\n<h3>기본 정보</h3><table style=\"border-collapse:collapse\"><tbody><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">기관</th><td style=\"padding:4px 0\">Adobe</td></tr><tr><th style=\"text-align:left;padding:4px 12px 4px 0\">분류</th><td style=\"padding:4px 0\">기업</td></tr></tbody></table>\n<p>Adobe 기업·제품 로고의 사용 승인 조건과 상표 표기 기준을 안내합니다.</p>\n<h4>색상</h4><table style=\"border-collapse:collapse\"><tbody><tr><td style=\"padding:4px 8px 4px 0\"><span style=\"display:inline-block;width:18px;height:18px;border:1px solid #ddd;vertical-align:middle;background:#FA0C00\"></span></td><td style=\"padding:4px 12px 4px 0\"><code>#FA0C00</code></td><td style=\"padding:4px 12px 4px 0\">RGB 250 12 0</td><td style=\"padding:4px 12px 4px 0\"></td><td style=\"padding:4px 0;color:#888\">로고 이미지에서 뽑은 참고값</td></tr></tbody></table>\n<p style=\"font-size:12px;color:#888\">참고값은 로고 이미지에서 뽑은 색이라 공식 지정색과 다를 수 있습니다. 인쇄·제작에는 공식 매뉴얼의 값을 쓰세요.</p>\n<h4>로고 파일 받기</h4>\n<ul><li><a href=\"https://www.adobe.com/cc-shared/assets/img/product-icons/svg/adobe-corp-logo-2024.svg\" target=\"_blank\" rel=\"noopener\">adobe-corp-logo-2024.svg</a> — SVG · 1KB</li><li><a href=\"https://www.adobe.com/cc-shared/assets/pdf/legal/documents/adobe-trademark-guidelines.pdf\" target=\"_blank\" rel=\"noopener\">adobe-trademark-guidelines.pdf</a> — PDF</li></ul>\n<p style=\"font-size:12px;color:#888\">링크는 공식 누리집의 원본 파일로 연결됩니다. 파일이 바뀌거나 옮겨졌으면 아래 공식 페이지에서 확인해 주세요.</p>\n<ul><li>공식 CI 안내 페이지: <a href=\"https://www.adobe.com/legal/permissions/trademarks.html\" target=\"_blank\" rel=\"noopener\">https://www.adobe.com/legal/permissions/trademarks.html</a></li></ul>\n<h4>이용할 때</h4><p>지정 라이선스 프로그램이나 동등한 승인이 없는 로고 사용을 허용하지 않는다고 안내합니다. 제품명 언급 규칙과 그래픽 로고 이용조건은 별도입니다. 사용 전 승인이 필요하다고 안내합니다.</p>\n<p>더 많은 기관 로고와 색상은 <a href=\"https://letsum.app/logos/brands/adobe-brand/\" target=\"_blank\" rel=\"noopener\">렛섬 로고 모음 – Adobe</a>에서 볼 수 있습니다.</p>\n<p style=\"font-size:12px;color:#888\">*출처: 각 기관 공식 누리집. 상표와 로고의 권리는 각 권리자에게 있으며, 이 글은 안내 목적입니다.</p>"
  }
 ]
