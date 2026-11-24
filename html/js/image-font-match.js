@@ -346,7 +346,7 @@
     if (matches.length < 2) return;
     const pair = matches.slice(0, 2);
     const shapes = window.ImageFontShapes;
-    const references = pair.map(match => lines.map(line => shapes.reference(line, match.family, match.weight)));
+    const references = pair.map(match => lines.map((line, index) => shapes.reference(line, match.family, match.weight, targets[index].height)));
     const chosen = shapes.distinctiveGlyphs(targets, references);
     if (!chosen.length) return;
 
@@ -437,7 +437,7 @@
       if (targets.some(target => !target)) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
       status.textContent = '비교할 서체를 준비하고 있습니다…';
       if (!catalog) {
-        const response = await fetch('/data/image-fonts.json?v=3');
+        const response = await fetch('/data/image-fonts.json?v=4');
         if (!response.ok) throw Error('Catalog unavailable');
         catalog = await response.json();
       }
@@ -460,9 +460,10 @@
           if (version !== revision || !hasGlyphs(family, weight, characters, fallbacks)) return;
           const scores = [];
           for (const [index, line] of lines.entries()) {
-            const reference = shapes.reference(line, family, weight);
+            const reference = shapes.reference(line, family, weight, targets[index].height);
             if (!reference) return;
-            scores.push(shapes.compare(targets[index], reference));
+            const fullSize = targets[index].height < 28 ? shapes.reference(line, family, weight) : null;
+            scores.push(shapes.compare(targets[index], reference, fullSize));
           }
           const measurement = {...scores[0], scores};
           if (scores.length === 2) {

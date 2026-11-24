@@ -57,6 +57,14 @@ test('publishes only catalogue IDs, genuine weights and bounded, same-origin JSO
   assert.deepEqual((await (await query()).json()).entries,[]);
 });
 
+test('uses the actual registered weights for a family without a regular face', async t => {
+  const {post, payload} = setup(t);
+  const id = 'k-gmarket-sans';
+  const sample = {...payload(), candidates:[{id, weight:500}]};
+  assert.equal((await post(sample)).status, 201);
+  assert.equal((await post({...payload(), candidates:[{id, weight:400}]})).status, 400);
+});
+
 test('lists newest first without duplicates across intervening posts', async t => {
   const {query, post, payload} = setup(t);
   for (let i = 0; i < 24; i++) assert.equal((await post(payload())).status,201);

@@ -35,6 +35,28 @@ k-line-seed-kr k-cafe24-classictype k-cafe24-dangdanghae k-cafe24-danjunghae k-c
 k-cafe24-moyamoya k-cafe24-ohsquare k-cafe24-oneprettynight k-cafe24-shiningstar k-gabia-bombaram
 k-gabia-napjakblock k-ghanachocolate k-kcchyerim k-kccbangjeonghwan k-kccmurukmuruk
 k-kim-jung-chul-script k-kim-jung-chul-gothic k-kcc-ahnchangho
+k-joongnajoche k-hakgyoansim-undongjang k-hakgyoansim-ttwimteul
+k-ownglyph-2022-uwy-joo-bin k-hakgyoansim-tuho k-hakgyoansim-badasseugi-ttf
+k-hakgyoansim-nadeuri-ttf k-hakgyoansim-byeolbichhaneul-ttf k-hakgyoansim-chilpanjiugae-ttf
+k-hakgyoansim-allimjang-ttf k-hakgyoansim-chulseokbu-ttf k-hakgyoansim-puzzle-ttf
+k-hakgyoansim-byeoljari-ttf k-hakgyoansim-poster-b k-hakgyoansim-gongryongal-otf-r
+k-hakgyoansim-nalgae-otf-r k-hakgyoansim-manito-otf-r k-hakgyoansim-tteokbokki-b
+k-hakgyoansim-mindeulleholssi-otf-r k-hakgyoansim-siganpyo-otf-r k-hakgyoansim-chaekgalpi-otf-r
+k-hakgyoansim-saekyeonpil-otf-r k-hakgyoansim-jayusigan-otf-r k-hakgyoansim-jayeon-otf-r
+k-hakgyoansim-bombanghak k-hakgyoansim-bunpil k-hakgyoansim-butpen
+k-hakgyoansim-doldam k-hakgyoansim-gaeulsopung k-hakgyoansim-ggooreogi
+k-hakgyoansim-godeunjemok k-hakgyoansim-jeomsimsigan k-hakgyoansim-malgeunnal
+k-hakgyoansim-monggeulmonggeul k-hakgyoansim-santteutbatang k-hakgyoansim-santteutdotumthic
+k-hakgyoansim-wooju k-kccchassam k-gmarket-sans
+k-cafe24-pro-slim k-cafe24-pro-up k-cafe24-simplehae
+k-cafe24-ssukssuk k-cafe24-ssurround k-cafe24-supermagic
+k-cafe24-syongsyong k-neodgm k-mulmaru
+k-hakgyoansim-ocarina k-songam-leehyungsik k-hangeuljaemin6
+k-griun-kimjungwon k-kcc-hanbit k-pak-yong-jun
+k-solmoe-kimdaegeon k-kakao-big-sans k-dancing-peoples
+k-goshin k-pyeojin k-hippie
+k-keris-baeum k-samlip-hopang-basic k-seocho-batang
+k-hs-hwalkong-serif
 """.split()
 
 
@@ -76,7 +98,10 @@ def catalog():
             raise ValueError(f"Font permissions or verification changed: {id_}")
         weights = {k: url for k, url in sorted(font["webfont"].items(), key=lambda pair: int(pair[0]))
                    if url.startswith(f"https://geehg.github.io/letsum-mirror/webfonts/{id_}/")}
-        output.append({"id": id_, "name": row["name"], "url": weights["400"],
+        if not weights:
+            raise ValueError(f"No approved mirror weights: {id_}")
+        default_weight = min(weights, key=lambda weight: abs(int(weight) - 400))
+        output.append({"id": id_, "name": row["name"], "url": weights[default_weight],
                        "source": row["source"], "weights": weights})
     return output
 

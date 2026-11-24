@@ -191,11 +191,20 @@
       distinct:new Set(text.match(/[가-힣]/gu) || []).size};
   }
 
-  function reference(text, family, weight=400) {
+  function reference(text, family, weight=400, targetHeight) {
     const measure = canvas(1,1).getContext('2d');
-    const font = weight + ' 52px "' + family + '", serif';
-    measure.font = font;
-    const metrics = measure.measureText(text);
+    const fontAt = size => weight + ' ' + size + 'px "' + family + '", serif';
+    measure.font = fontAt(52);
+    let metrics = measure.measureText(text);
+    // Small raster text loses strokes to pixel rounding. Compare at a similar ink height.
+    if (targetHeight > 0 && targetHeight < 28) {
+      const inkHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+      if (inkHeight > 0) {
+        measure.font = fontAt(Math.max(8, Math.min(52, Math.round(52 * targetHeight / inkHeight))));
+        metrics = measure.measureText(text);
+      }
+    }
+    const font = measure.font;
     const left = Math.ceil(Math.max(0,metrics.actualBoundingBoxLeft)) + 4;
     const above = Math.ceil(metrics.actualBoundingBoxAscent || 62) + 4;
     const below = Math.ceil(Math.max(0,metrics.actualBoundingBoxDescent || 0)) + 4;
@@ -215,7 +224,7 @@
     return both / Math.max(1,either);
   }
 
-  function compare(target, ref) {
+  function compareShape(target, ref) {
     const line = overlap(target.pixels,ref.pixels) * Math.exp(-.25*Math.abs(Math.log(target.ratio/ref.ratio)));
     let total = 0, weight = 0, possible = 0;
     for (let i=0; i<target.glyphs.length; i++) {
@@ -236,13 +245,26 @@
     return {score, line, glyph, coverage};
   }
 
+  function compare(target, ref, fullSizeRef) {
+    const primary = compareShape(target, ref);
+    if (!fullSizeRef) return primary;
+    // Keep the contour evidence when pixel rounding breaks a fine stroke.
+    const full = compareShape(target, fullSizeRef);
+    return {
+      score: (primary.score + full.score) / 2,
+      glyph: (primary.glyph + full.glyph) / 2,
+      line: (primary.line + full.line) / 2,
+      coverage: Math.min(primary.coverage, full.coverage)
+    };
+  }
+
   function isConfident(target, matches, expectedCount) {
     const best = matches[0], second = matches[1];
     if (!best || !second || target.distinct < 2 || target.minGlyphHeight < 12) return false;
     const required = Math.max(Math.min(4,expectedCount), Math.ceil(.70*expectedCount));
-    if (matches.length < required || best.coverage < .98 || best.glyph < .68) return false;
+    if (matches.length < required || best.coverage < .98 || best.glyph < .77) return false;
     const margin = best.score - second.score;
-    return (best.score >= .74 && margin >= .04) || (best.score >= .70 && margin >= .11);
+    return best.score >= .78 && margin >= .055;
   }
 
   // Rank only samples that resemble at least one candidate. Account for width

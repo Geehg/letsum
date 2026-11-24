@@ -7,7 +7,7 @@
   let pendingIndex;
 
   async function loadIndex() {
-    const response = await fetch('/data/image-font-index-v2.bin?v=3');
+    const response = await fetch('/data/image-font-index-v2.bin?v=4');
     if (!response.ok) throw new Error('Cannot load the Korean glyph index');
     const buffer = await response.arrayBuffer();
     const bytes = new Uint8Array(buffer);
@@ -98,8 +98,8 @@
     scored.sort((a,b) => a.cost-b.cost);
     // Keep distinct families in contention, then verify alternate weights of those families.
     const smallSample = target.minGlyphHeight < 20;
-    const familyLimit = smallSample ? 16 : 10;
-    const faceLimit = smallSample ? 20 : 13;
+    const familyLimit = smallSample ? 24 : 12;
+    const faceLimit = smallSample ? 30 : 16;
     const families = new Set();
     const faces = [];
     for (const face of scored) {

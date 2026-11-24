@@ -593,5 +593,616 @@
     "weights": {
       "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-ahnchangho/400.woff2"
     }
+  },
+  {
+    "id": "k-joongnajoche",
+    "name": "중나좋체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-joongnajoche/500.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13262134&menuNo=200023",
+    "weights": {
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-joongnajoche/500.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-undongjang",
+    "name": "학교안심 운동장",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-undongjang/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366501&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-undongjang/300.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-ttwimteul",
+    "name": "학교안심 뜀틀",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ttwimteul/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366489&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ttwimteul/400.woff2"
+    }
+  },
+  {
+    "id": "k-ownglyph-2022-uwy-joo-bin",
+    "name": "온글잎 의청수 주빈체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-joo-bin/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13329090&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-ownglyph-2022-uwy-joo-bin/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-tuho",
+    "name": "학교안심 투호",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tuho/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366506&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tuho/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-badasseugi-ttf",
+    "name": "학교안심 받아쓰기",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-badasseugi-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372625&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-badasseugi-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-badasseugi-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-nadeuri-ttf",
+    "name": "학교안심 나들이",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nadeuri-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372621&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nadeuri-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nadeuri-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-byeolbichhaneul-ttf",
+    "name": "학교안심 별빛하늘",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeolbichhaneul-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372627&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeolbichhaneul-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeolbichhaneul-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-chilpanjiugae-ttf",
+    "name": "학교안심 칠판지우개",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chilpanjiugae-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372635&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chilpanjiugae-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chilpanjiugae-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-allimjang-ttf",
+    "name": "학교안심 알림장",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-allimjang-ttf/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372631&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-allimjang-ttf/400.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-allimjang-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-chulseokbu-ttf",
+    "name": "학교안심 출석부",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chulseokbu-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372633&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chulseokbu-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chulseokbu-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-puzzle-ttf",
+    "name": "학교안심 퍼즐",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-puzzle-ttf/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372637&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-puzzle-ttf/400.woff2",
+      "900": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-puzzle-ttf/900.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-byeoljari-ttf",
+    "name": "학교안심 별자리",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeoljari-ttf/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13372629&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeoljari-ttf/300.woff2",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-byeoljari-ttf/600.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-poster-b",
+    "name": "학교안심 포스터",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-poster-b/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-poster-b/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-gongryongal-otf-r",
+    "name": "학교안심 공룡알",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gongryongal-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gongryongal-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-nalgae-otf-r",
+    "name": "학교안심 날개",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nalgae-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-nalgae-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-manito-otf-r",
+    "name": "학교안심 마니또",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-manito-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-manito-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-tteokbokki-b",
+    "name": "학교안심 떡볶이",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tteokbokki-b/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-tteokbokki-b/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-mindeulleholssi-otf-r",
+    "name": "학교안심 민들레홀씨",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mindeulleholssi-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-mindeulleholssi-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-siganpyo-otf-r",
+    "name": "학교안심 시간표",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-siganpyo-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-siganpyo-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-chaekgalpi-otf-r",
+    "name": "학교안심 책갈피",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chaekgalpi-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-chaekgalpi-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-saekyeonpil-otf-r",
+    "name": "학교안심 색연필",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-saekyeonpil-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-saekyeonpil-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-jayusigan-otf-r",
+    "name": "학교안심 자유시간",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayusigan-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayusigan-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-jayeon-otf-r",
+    "name": "학교안심 자연",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayeon-otf-r/400.woff2",
+    "source": "https://gongu.copyright.or.kr/freeFontEvent.html",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jayeon-otf-r/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-bombanghak",
+    "name": "학교안심 봄방학",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bombanghak/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333622&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bombanghak/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-bunpil",
+    "name": "학교안심 분필",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bunpil/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333621&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-bunpil/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-butpen",
+    "name": "학교안심 붓펜",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333614&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/300.woff2",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/500.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-butpen/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-doldam",
+    "name": "학교안심 돌담",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333617&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/300.woff2",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/500.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-doldam/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-gaeulsopung",
+    "name": "학교안심 가을소풍",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gaeulsopung/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333603&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gaeulsopung/300.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-gaeulsopung/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-ggooreogi",
+    "name": "학교안심 꾸러기",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ggooreogi/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333613&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ggooreogi/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-godeunjemok",
+    "name": "학교안심 곧은제목",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-godeunjemok/500.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333599&menuNo=200023",
+    "weights": {
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-godeunjemok/500.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-godeunjemok/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-jeomsimsigan",
+    "name": "학교안심 점심시간",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jeomsimsigan/700.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366503&menuNo=200023",
+    "weights": {
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-jeomsimsigan/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-malgeunnal",
+    "name": "학교안심 맑은날",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-malgeunnal/500.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333601&menuNo=200023",
+    "weights": {
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-malgeunnal/500.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-malgeunnal/700.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-monggeulmonggeul",
+    "name": "학교안심 몽글몽글",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-monggeulmonggeul/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13366494&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-monggeulmonggeul/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-santteutbatang",
+    "name": "학교안심 산뜻바탕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutbatang/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333609&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutbatang/300.woff2",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutbatang/500.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-santteutdotumthic",
+    "name": "학교안심 산뜻돋움",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutdotumthic/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333611&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutdotumthic/300.woff2",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-santteutdotumthic/500.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-wooju",
+    "name": "학교안심 우주",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-wooju/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13333620&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-wooju/400.woff2"
+    }
+  },
+  {
+    "id": "k-kccchassam",
+    "name": "KCC차쌤체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kccchassam/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13285736&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kccchassam/400.woff2"
+    }
+  },
+  {
+    "id": "k-gmarket-sans",
+    "name": "G마켓 산스",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-gmarket-sans/300.ttf",
+    "source": "https://corp.gmarket.com/fonts/",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-gmarket-sans/300.ttf",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-gmarket-sans/500.ttf",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-gmarket-sans/700.ttf"
+    }
+  },
+  {
+    "id": "k-cafe24-pro-slim",
+    "name": "카페24 PRO Slim",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-slim/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-slim/300.woff2",
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-slim/400.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-slim/700.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-pro-up",
+    "name": "카페24 PRO UP",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-up/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-pro-up/400.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-simplehae",
+    "name": "카페24 심플해",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-simplehae/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-simplehae/400.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-ssukssuk",
+    "name": "카페24 쑥쑥",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssukssuk/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssukssuk/300.woff2",
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssukssuk/400.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-ssurround",
+    "name": "카페24 써라운드",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssurround/300.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssurround/300.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-ssurround/700.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-supermagic",
+    "name": "카페24 슈퍼매직",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-supermagic/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-supermagic/400.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-supermagic/700.woff2"
+    }
+  },
+  {
+    "id": "k-cafe24-syongsyong",
+    "name": "카페24 숑숑",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-syongsyong/400.woff2",
+    "source": "https://fonts.cafe24.com/",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-cafe24-syongsyong/400.woff2"
+    }
+  },
+  {
+    "id": "k-neodgm",
+    "name": "Neo둥근모",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-neodgm/400.woff2",
+    "source": "https://neodgm.dalgona.dev/",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-neodgm/400.woff2"
+    }
+  },
+  {
+    "id": "k-mulmaru",
+    "name": "물마루",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-mulmaru/400.woff2",
+    "source": "https://github.com/mushsooni/mulmaru",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-mulmaru/400.woff2"
+    }
+  },
+  {
+    "id": "k-hakgyoansim-ocarina",
+    "name": "학교안심 오카리나",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ocarina/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13383114&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hakgyoansim-ocarina/400.woff2"
+    }
+  },
+  {
+    "id": "k-songam-leehyungsik",
+    "name": "송암 이형식체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-songam-leehyungsik/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382879&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-songam-leehyungsik/400.woff2"
+    }
+  },
+  {
+    "id": "k-hangeuljaemin6",
+    "name": "한글재민체6.0",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hangeuljaemin6/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13382163&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hangeuljaemin6/400.woff2"
+    }
+  },
+  {
+    "id": "k-griun-kimjungwon",
+    "name": "그리운김정원체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-griun-kimjungwon/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13381808&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-griun-kimjungwon/400.woff2"
+    }
+  },
+  {
+    "id": "k-kcc-hanbit",
+    "name": "KCC한빛체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-hanbit/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13371550&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kcc-hanbit/400.woff2"
+    }
+  },
+  {
+    "id": "k-pak-yong-jun",
+    "name": "박용준투사회보체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-pak-yong-jun/400.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13304318&menuNo=200023",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-pak-yong-jun/400.woff2"
+    }
+  },
+  {
+    "id": "k-solmoe-kimdaegeon",
+    "name": "솔뫼 김대건체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-solmoe-kimdaegeon/300.woff2",
+    "source": "https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288333&menuNo=200023",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-solmoe-kimdaegeon/300.woff2",
+      "500": "https://geehg.github.io/letsum-mirror/webfonts/k-solmoe-kimdaegeon/500.woff2"
+    }
+  },
+  {
+    "id": "k-kakao-big-sans",
+    "name": "카카오 큰글씨",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-kakao-big-sans/400.woff2",
+    "source": "https://www.kakaocorp.com/page/detail/11571",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-kakao-big-sans/400.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-kakao-big-sans/700.woff2",
+      "800": "https://geehg.github.io/letsum-mirror/webfonts/k-kakao-big-sans/800.woff2"
+    }
+  },
+  {
+    "id": "k-dancing-peoples",
+    "name": "춤추는사람들",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-dancing-peoples/800.woff2",
+    "source": "https://copyright.keris.or.kr/wft/fntDwnld",
+    "weights": {
+      "800": "https://geehg.github.io/letsum-mirror/webfonts/k-dancing-peoples/800.woff2"
+    }
+  },
+  {
+    "id": "k-goshin",
+    "name": "고신고딕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-goshin/400.ttf",
+    "source": "https://copyright.keris.or.kr/wft/fntDwnld",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-goshin/400.ttf",
+      "600": "https://geehg.github.io/letsum-mirror/webfonts/k-goshin/600.ttf",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-goshin/700.ttf",
+      "800": "https://geehg.github.io/letsum-mirror/webfonts/k-goshin/800.ttf"
+    }
+  },
+  {
+    "id": "k-pyeojin",
+    "name": "펴진고딕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/400.woff2",
+    "source": "https://copyright.keris.or.kr/wft/fntDwnld",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/300.woff2",
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/400.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-pyeojin/700.woff2"
+    }
+  },
+  {
+    "id": "k-hippie",
+    "name": "히피체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hippie/400.ttf",
+    "source": "https://copyright.keris.or.kr/wft/fntDwnld",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hippie/400.ttf"
+    }
+  },
+  {
+    "id": "k-keris-baeum",
+    "name": "케리스 배움체",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/400.woff2",
+    "source": "https://copyright.keris.or.kr/wft/fntDwnld",
+    "weights": {
+      "300": "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/300.woff2",
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/400.woff2",
+      "700": "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/700.woff2",
+      "800": "https://geehg.github.io/letsum-mirror/webfonts/k-keris-baeum/800.woff2"
+    }
+  },
+  {
+    "id": "k-samlip-hopang-basic",
+    "name": "삼립호빵체 베이직",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-samlip-hopang-basic/400.ttf",
+    "source": "https://spcsamlip.co.kr/brand/bakery/hopang/typography",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-samlip-hopang-basic/400.ttf"
+    }
+  },
+  {
+    "id": "k-seocho-batang",
+    "name": "서초바탕",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-seocho-batang/400.woff",
+    "source": "https://casedock.cloud/font",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-seocho-batang/400.woff"
+    }
+  },
+  {
+    "id": "k-hs-hwalkong-serif",
+    "name": "HS활공명조",
+    "url": "https://geehg.github.io/letsum-mirror/webfonts/k-hs-hwalkong-serif/400.woff2",
+    "source": "https://blog.naver.com/hp0/224242936430",
+    "weights": {
+      "400": "https://geehg.github.io/letsum-mirror/webfonts/k-hs-hwalkong-serif/400.woff2"
+    }
   }
 ]
