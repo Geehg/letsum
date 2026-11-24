@@ -145,7 +145,7 @@
       const ctx=framed.getContext('2d');
       ctx.fillStyle='#fff';ctx.fillRect(0,0,framed.width,framed.height);
       ctx.drawImage(sample.canvas,4,4);
-      return {image:framed,area};
+      return {image:framed, area, content:{x:4, y:4, w:sample.canvas.width, h:sample.canvas.height}};
     });
   }
   window.ImageFontColor={detect};

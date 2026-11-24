@@ -1298,6 +1298,11 @@
       <div class="m-head"><h2>나란히 비교</h2><span class="en">${list.length}종 · 같은 문장, 같은 조건</span></div>
       <div class="tester" style="border-top:1px solid var(--rule2);margin-top:14px">
         <div class="t-row"><span>문장</span><input id="cText" type="text" value="${esc(state.text)}" style="flex:1;border:1px solid var(--rule2);padding:6px 9px;font-size:14px"></div>
+        ${DB ? "" : `<div class="t-row" role="group" aria-label="구별용 견본">
+          <button class="tbtn on" type="button" data-cmp-sample="custom" aria-pressed="true">내 문장</button>
+          ${EN ? "" : '<button class="tbtn" type="button" data-cmp-sample="hangul" aria-pressed="false">한글 받침</button>'}
+          <button class="tbtn" type="button" data-cmp-sample="latin" aria-pressed="false">영문·숫자</button>
+        </div>`}
         <div class="t-row"><span>크기</span><input type="range" id="cSize" min="14" max="120" value="${t.size}"><b id="cSizeV">${t.size}px</b>
           <span>자간</span><input type="range" id="cLs" min="-5" max="20" value="0"><b id="cLsV">0px</b>
           <span>행간</span><input type="range" id="cLh" min="110" max="220" value="140"><b id="cLhV">140%</b>
@@ -1323,7 +1328,28 @@
         { t: "text", text: DB ? (f.icons || []).slice(0, 10).map((x) => x[0]).join(f.liga ? " " : "") : txt || f.name, family: f.family, weight: wOf(f), size: 66, min: 30, maxLines: 2, lh: 1.25, after: 30 }); });
       LSShot.open({ title: "LETSUM 폰트 비교", file: "letsum-compare", w: 1080, h: "auto", blocks, footer: "같은 문장으로 폰트 비교", url: "letsum.app", shareText: list.map((f) => f.name).join(" vs ") + " — LETSUM" });
     });
-    $("#cText").addEventListener("input", (e) => { const v = e.target.value; pvs.forEach((p) => { p.textContent = v || FONTS.find((x) => x.id === p.closest("[data-cid]").dataset.cid).name; }); });
+    const field = $("#cText");
+    const presets = {hangul:"가 각 간 / 고 곡 공", latin:"Il1 / O0 / B8"};
+    const buttons = [...modal.querySelectorAll("[data-cmp-sample]")];
+    let custom = field.value;
+    function updateSample(key) {
+      for (const button of buttons) {
+        const active = button.dataset.cmpSample === key;
+        button.classList.toggle("on", active);
+        button.setAttribute("aria-pressed", String(active));
+      }
+      for (const pv of pvs) {
+        const font = list.find(f => f.id === pv.closest("[data-cid]").dataset.cid);
+        if (field.value) pv.textContent = field.value;
+        else pv.textContent = font.name;
+      }
+    }
+    field.addEventListener("input", () => { custom = field.value; updateSample("custom"); });
+    for (const button of buttons) button.addEventListener("click", () => {
+      const key = button.dataset.cmpSample;
+      field.value = key === "custom" ? custom : presets[key];
+      updateSample(key);
+    });
     // 눈에 보이는 크기 맞춤: 각 폰트로 '가나다라'를 그려 잉크 높이를 재고, 가운데값에 맞춰 글자 크기를 비례 조정(브라우저 측정)
     let norm = false, ratio = {};
     const inkH = (fam, w) => { const c = document.createElement("canvas"); c.width = 520; c.height = 200; const x = c.getContext("2d", { willReadFrequently: true });

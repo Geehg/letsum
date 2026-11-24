@@ -114,6 +114,12 @@
 #im-run { background: var(--ink); color: var(--paper); }
 #im-preview { margin: 10px 0; display: block; max-width: 100%; max-height: 42vh; width: auto; height: auto; touch-action: none; cursor: crosshair; }
 #im-results article { border-top: 1px solid var(--rule2); padding: 10px 0; overflow-wrap: anywhere; }
+.im-glyph-comparison { width: 100%; max-width: 38rem; table-layout: fixed; border-collapse: collapse; margin-block: 1rem; }
+.im-glyph-comparison caption { text-align: start; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+.im-glyph-comparison th, .im-glyph-comparison td { padding: .35rem; text-align: center; border-bottom: 1px solid var(--rule2); }
+.im-glyph-comparison th { font-size: .85rem; overflow-wrap: anywhere; }
+.im-glyph-comparison canvas { display: block; width: min(100%, 5rem); height: auto; margin: auto; background: #fff; }
+.im-glyph-comparison td:first-child canvas { background: #ccc; }
 #im-results a { text-decoration: underline; }
 #im-text { display: block; box-sizing: border-box; width: min(100%, 36em); padding: 8px; resize: vertical; background: var(--paper); color: var(--ink); font: inherit; border: 1px solid var(--rule2); }
 #im-results .im-sample { white-space: pre-line; font-size: 26px; color: var(--ink); }

@@ -293,6 +293,67 @@
     }
   }
 
+  function showGlyphComparison(matches, lines, targets, samples) {
+    if (matches.length < 2) return;
+    const pair = matches.slice(0, 2);
+    const shapes = window.ImageFontShapes;
+    const references = pair.map(match => lines.map(line => shapes.reference(line, match.family, match.weight)));
+    const chosen = shapes.distinctiveGlyphs(targets, references);
+    if (!chosen.length) return;
+
+    const table = document.createElement('table');
+    table.className = 'im-glyph-comparison';
+    table.createCaption().textContent = '글자 확대 비교';
+    const heading = table.createTHead().insertRow();
+    for (const [index, name] of ['원본 이미지', ...pair.map(match => match.row.name)].entries()) {
+      const th = document.createElement('th');
+      th.scope = 'col';
+      th.textContent = name;
+      if (index > 0) th.translate = false;
+      heading.append(th);
+    }
+    const body = table.createTBody();
+    for (const {source, line} of chosen) {
+      let {x, y, w, h} = source.box;
+      // The color detector surrounds the isolated ink with a clean margin.
+      // Map back through that margin to show the actual, full-color source.
+      if (samples[line]) {
+        const {content, area} = samples[line];
+        x = area.x + (x - content.x) * area.w / content.w;
+        y = area.y + (y - content.y) * area.h / content.h;
+        w *= area.w / content.w;
+        h *= area.h / content.h;
+      }
+      const row = body.insertRow();
+      const canvases = Array.from({length:3}, () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 160;
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute('aria-label', source.char);
+        row.insertCell().append(canvas);
+        return canvas;
+      });
+      const inks = pair.map((match, i) => {
+        const ctx = canvases[i+1].getContext('2d');
+        ctx.font = match.weight + ' 128px "' + match.family + '"';
+        return ctx.measureText(source.char);
+      });
+      const ratios = inks.map(m => (m.actualBoundingBoxLeft + m.actualBoundingBoxRight) /
+        Math.max(1, m.actualBoundingBoxAscent + m.actualBoundingBoxDescent));
+      const height = 138 / Math.max(1, w/h, ...ratios);
+      const width = height * w/h;
+      canvases[0].getContext('2d').drawImage(picture, x, y, w, h, (160-width)/2, (160-height)/2, width, height);
+      inks.forEach((m, i) => {
+        const ctx = canvases[i+1].getContext('2d');
+        const scale = height / Math.max(1, m.actualBoundingBoxAscent + m.actualBoundingBoxDescent);
+        ctx.translate((160 - height*ratios[i])/2, (160-height)/2);
+        ctx.scale(scale, scale);
+        ctx.fillText(source.char, m.actualBoundingBoxLeft, m.actualBoundingBoxAscent);
+      });
+    }
+    results.append(table);
+  }
+
   el('run').onclick = async () => {
     invalidate();
     const version = revision, text = el('text').value.trim().normalize('NFC');
@@ -374,6 +435,7 @@
       const clearColorMatch = !samples.length || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
       const confident = shapes.isConfident(target, matches, expectedCount) && indexed && glyphCount > 0 && agree && clearColorMatch;
       showResults(matches, confident, text);
+      showGlyphComparison(matches, lines, targets, samples);
       if (publish && el('publish')?.checked) window.ImageFontBoard?.record(matches, confident);
     } catch {
       if (version === revision) status.textContent = '비교 자료를 열 수 없습니다. 다시 시도하세요.';

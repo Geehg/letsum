@@ -168,6 +168,8 @@
       const w = end-x+1, h = last-y+1;
       if (/[가-힣]/u.test(char)) minGlyphHeight = Math.min(minGlyphHeight,h);
       return {char, pixels:maskPixels(mask,x,y,w,h,glyphWidth,glyphHeight),
+        box: {x:box.x + x*box.w/mask.width, y:box.y + y*box.h/mask.height,
+          w:w*box.w/mask.width, h:h*box.h/mask.height},
         ratio:w/h, top:(y-firstRow)/height, bottom:(last-firstRow)/height};
     });
     return {pixels, ratio:width/height, height, glyphs, minGlyphHeight,
@@ -228,5 +230,24 @@
     return (best.score >= .74 && margin >= .04) || (best.score >= .70 && margin >= .11);
   }
 
-  window.ImageFontShapes = {prepareTarget, reference, compare, isConfident};
+  // Rank only samples that resemble at least one candidate. Account for width
+  // as well as the normalized mask, which stretches both glyphs to one grid.
+  function distinctiveGlyphs(targets, references) {
+    const best = new Map();
+    targets.forEach((target, line) => target.glyphs.forEach((source, index) => {
+      if (!source.pixels || !/[가-힣]/u.test(source.char) || source.box.h < 10) return;
+      const [a, b] = references.map(ref => ref[line]?.glyphs[index]);
+      if (!a?.pixels || !b?.pixels || a.char !== source.char || b.char !== source.char) return;
+      const fit = Math.max(overlap(source.pixels, a.pixels), overlap(source.pixels, b.pixels));
+      if (fit < .45) return;
+      const difference = 1 - overlap(a.pixels, b.pixels) * Math.exp(-Math.abs(Math.log(a.ratio / b.ratio)));
+      const score = difference * fit * Math.min(1, source.box.h / 32);
+      if (!best.has(source.char) || best.get(source.char).score < score) {
+        best.set(source.char, {source, line, score});
+      }
+    }));
+    return [...best.values()].sort((a, b) => b.score - a.score).slice(0, 3);
+  }
+
+  window.ImageFontShapes = {prepareTarget, reference, compare, isConfident, distinctiveGlyphs};
 })();
