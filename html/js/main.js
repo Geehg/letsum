@@ -375,6 +375,13 @@
     });
   });
 
+  const latinSearchLinks = new Map([
+    ["courgette", "Courgette"], ["courgettefont", "Courgette"],
+    ["pacifico", "Pacifico"], ["pacificoregular", "Pacifico"], ["pacificoregular*", "Pacifico"],
+    ["architectsdaughter", "Architects Daughter"], ["architectsdauhter", "Architects Daughter"],
+    ["permanentmarker", "Permanent Marker"], ["amaticsc", "Amatic SC"], ["kalam", "Kalam"]
+  ]);
+
   // ---------- 검색 보조: 유료 폰트 안내 · 다른 표기·오타 제안 (규칙·브라우저 계산만, data/paid_fonts.json) ----------
   let PAID = [], SEARCH_NOTICES = [], BUNDLE_GUIDANCE = [], FONT_ALTERNATIVES = [];
   const paidLoad = Promise.all(["data/paid_fonts.json", "data/font_alternatives.json"].map(url => fetch(url, { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})))).then(([j, alternatives]) => {
@@ -452,7 +459,10 @@
     const rule = paidRule(q);
     const notice = SEARCH_NOTICES.find((r) => r.rx.test(nk(q)));
     if (!list.length && !rule && notice) html += `<div class="sq-note"><b>${T("이용조건 확인 중", "License not verified")}</b> · ${esc(uiEn ? notice.note_en || notice.note : notice.note)}</div>`;
-    if (!LAT && /^courgette(?:font)?$/.test(nk(q))) html += `<div class="sq-note">${T("Courgette는 영문 폰트 목록에 등록되어 있습니다.", "Courgette is in our Latin font catalogue.")} <a href="en/?q=Courgette">${T("영문 폰트에서 보기 →", "View Latin font →")}</a></div>`;
+    if (!LAT) {
+      const latinName = latinSearchLinks.get(nk(q));
+      if (latinName) html += `<div class="sq-note"><b>${esc(latinName)}</b> · <a href="/en/?q=${encodeURIComponent(latinName)}">${T("영문 폰트에서 보기 →", "View Latin font →")}</a></div>`;
+    }
     const note = rule ? esc(uiEn ? rule.note_en || rule.note : rule.note) : "";
     const freeHit = rule && list.some((f) => nk(f.name + f.en).includes(nk(q)));
     const go = rule ? `${esc(rule.vendor)} ${T("바로가기", "")} ↗` : "";

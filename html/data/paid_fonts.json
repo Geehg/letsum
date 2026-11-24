@@ -2,6 +2,16 @@
  "_설명": "검색어가 유료(또는 프로그램 번들) 폰트 이름으로 보일 때 홈 검색 결과 위에 띄우는 안내. 손으로 관리. re = 정규화한 검색어(소문자, 공백·하이픈·점 제거)에 거는 정규식. url은 판매처 공식 첫 화면만(개별 상품 페이지·제휴 링크 금지). LETSUM에 등록된 무료 폰트 이름과 겹치지 않게 패턴을 좁힐 것(예: '휴먼'은 나눔휴먼·온글잎 휴먼유진이 있어 쓰지 않는다). 판매처 주소는 2026-11-11 접속 확인. label_en·note_en = 영문 페이지(/en/)용 문구.",
  "rules": [
   {
+   "id": "the-pudding",
+   "label": "THE푸딩",
+   "re": "^(?:the|더)푸딩(?:체)?$",
+   "vendor": "잇츠폰트",
+   "url": "https://www.itsfont.com/",
+   "note": "THE푸딩은 잇츠폰트의 THE+TT 유료 패키지에 포함됩니다. 영상·인쇄·로고·임베딩에 사용할 때는 보유한 상품의 허용 범위를 확인하세요.",
+   "label_en": "THE Pudding",
+   "note_en": "THE Pudding is included in the paid THE+TT package. Check your plan for video, print, logo and embedding rights."
+  },
+  {
    "id": "humanfont",
    "label": "휴먼 서체",
    "re": "^(?:휴먼(?:명조|고딕|옛체|엑스포|둥근헤드라인|매직|아미|가는샘|중간샘|굵은샘|각진|모음|편지)|humanmyungjo|hmkmm)",
@@ -96,6 +106,11 @@
   }
  ],
  "notices": [
+  {
+   "re": "^(?:cjonlyone|씨제이온리원)(?:폰트|서체|체|font)?$",
+   "note": "CJ그룹 전용서체입니다. 공식 자료실은 외부 접근이 제한되며, 외부 프로젝트에 적용할 수 있는 공개 이용조건은 확인되지 않았습니다.",
+   "note_en": "This is a proprietary CJ typeface. The official library restricts external access. Public terms for use in external projects have not been verified."
+  },
   {
    "re": "^(가는각진(?:제목체)?|모아체|꺾인고딕|네온고딕)$",
    "note": "이 이름의 폰트는 공식 제작사와 무료 이용조건을 아직 확인하지 못했습니다. 무료 폰트로 등록하지 않았으며, 정확한 제작사·파일 이름을 확인한 뒤 이용해 주세요.",
