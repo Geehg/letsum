@@ -26,7 +26,9 @@
     ocrStatus.setAttribute('aria-busy', 'true');
     ocrStatus.textContent = '이 기기에서 한글을 읽고 있습니다…';
     try {
-      const rows = await window.ImageFontOCR.read(picture, originalCrop(), current);
+      const rows = await window.ImageFontOCR.read(picture, originalCrop(), current, () => {
+        if (current()) ocrStatus.textContent = '작은 글자를 다시 읽고 있습니다. 첫 사용 시 추가 인식 자료를 받습니다…';
+      });
       if (!current()) return;
       if (!rows.length) {
         ocrStatus.textContent = '한글을 읽기 어렵습니다. 원하는 한 줄을 드래그하거나 직접 입력하세요.';

@@ -1311,5 +1311,6 @@
   "이 기기에서 한글을 읽고 있습니다…": "Reading Korean text on this device…",
   "한글을 읽기 어렵습니다. 원하는 한 줄을 드래그하거나 직접 입력하세요.": "Could not read the Korean text. Select one line or type it in.",
   "문구를 자동으로 채웠습니다. 글자를 확인한 뒤 폰트를 찾아보세요.": "Text filled in. Check the letters, then find matching fonts.",
-  "자동 읽기를 완료하지 못했습니다. 다시 읽거나 직접 입력하세요.": "Could not finish reading. Try again or enter the text yourself."
+  "자동 읽기를 완료하지 못했습니다. 다시 읽거나 직접 입력하세요.": "Could not finish reading. Try again or enter the text yourself.",
+  "작은 글자를 다시 읽고 있습니다. 첫 사용 시 추가 인식 자료를 받습니다…": "Rereading small text. Additional recognition files download on first use…"
 }

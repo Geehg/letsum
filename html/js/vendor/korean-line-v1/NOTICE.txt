@@ -1,0 +1,12 @@
+The Korean line OCR runs in the visitor's browser.
+PaddleOCR models: copyright PaddlePaddle Authors, Apache License 2.0.
+https://github.com/PaddlePaddle/PaddleOCR
+korean_PP-OCRv5_mobile_rec ONNX export and decoding dictionary
+https://huggingface.co/monkt/paddleocr-onnx/tree/7b02d0a30a07ba2b92ad1ff5a8941ae2c633de65/languages/korean
+PP-OCRv5_mobile_det ONNX export by Satoru Nakamura
+https://huggingface.co/nakamura196/ppocrv5-mobile-web-onnx/tree/dc7e2271c00d961a4c0a38dcebe23beb735ba33e
+The ONNX graphs are gzip-compressed, with no change to the weights.
+ONNX Runtime Web 1.22.0, Microsoft Corporation. MIT License.
+https://www.npmjs.com/package/onnxruntime-web/v/1.22.0
+Browser WASM-only distribution. The module files use a .js extension for static hosting.
+See the included licenses and third-party notices.
