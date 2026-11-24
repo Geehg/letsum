@@ -115,7 +115,8 @@
 #im-preview { margin: 10px 0; display: block; max-width: 100%; max-height: 42vh; width: auto; height: auto; touch-action: none; cursor: crosshair; }
 #im-results article { border-top: 1px solid var(--rule2); padding: 10px 0; overflow-wrap: anywhere; }
 #im-results a { text-decoration: underline; }
-#im-results .im-sample { font-size: 26px; color: var(--ink); }
+#im-text { display: block; box-sizing: border-box; width: min(100%, 36em); padding: 8px; resize: vertical; background: var(--paper); color: var(--ink); font: inherit; border: 1px solid var(--rule2); }
+#im-results .im-sample { white-space: pre-line; font-size: 26px; color: var(--ink); }
 #im-preview { background: repeating-conic-gradient(#fff 0 25%, #cdcdcd 0 50%) 0 0 / 16px 16px; }
 #im-results article small { display: block; margin-bottom: 4px; color: var(--ink2, var(--ink)); }
 .image-finder .im-publish-option { display: flex; align-items: center; gap: 8px; width: fit-content; margin-bottom: 4px; cursor: pointer; }

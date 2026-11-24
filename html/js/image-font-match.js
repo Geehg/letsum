@@ -7,8 +7,11 @@
   const loaded = new Map();
   let picture, crop, start, revision = 0, catalog;
 
+  let detectedAreas = [];
+
   function invalidate() {
     revision++;
+    if (detectedAreas.length) { detectedAreas = []; paint(); }
     window.ImageFontBoard?.reset();
     results.replaceChildren();
     status.replaceChildren();
@@ -21,6 +24,17 @@
     const ctx = preview.getContext('2d');
     ctx.clearRect(0, 0, preview.width, preview.height);
     ctx.drawImage(picture, 0, 0, preview.width, preview.height);
+    if (detectedAreas.length) {
+      const sx = preview.width / picture.naturalWidth, sy = preview.height / picture.naturalHeight;
+      ctx.save();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#111';
+      for (const box of detectedAreas) ctx.strokeRect(box.x*sx, box.y*sy, box.w*sx, box.h*sy);
+      ctx.setLineDash([5, 5]);
+      ctx.strokeStyle = '#fff';
+      for (const box of detectedAreas) ctx.strokeRect(box.x*sx, box.y*sy, box.w*sx, box.h*sy);
+      ctx.restore();
+    }
     if (!crop) return;
     const {x, y, w, h} = crop;
     ctx.fillStyle = 'rgba(0,0,0,.48)';
@@ -282,22 +296,42 @@
   el('run').onclick = async () => {
     invalidate();
     const version = revision, text = el('text').value.trim().normalize('NFC');
+    const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
     const publish = el('publish')?.checked;
-    if (!picture || !/[가-힣]/.test(text) || Array.from(text).length < 2) {
+    if (!picture || !lines.length || lines.some(line => !/[가-힣]/.test(line) || [...line].length < 2)) {
       status.textContent = '이미지에 보이는 한글을 포함해 두 글자 이상 입력하세요.';
+      return;
+    }
+    if (lines.length > 2 || lines.some(line => [...line].length > 40)) {
+      status.textContent = '한 번에 두 줄까지, 한 줄에 40자까지 비교할 수 있습니다.';
       return;
     }
     el('run').disabled = true;
     try {
       const shapes = window.ImageFontShapes;
-      const target = shapes.prepareTarget(picture, originalCrop(), text);
-      if (!target) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
+      const selection = originalCrop();
+      const samples = window.ImageFontColor.detect(picture, selection, lines);
+      if (lines.length === 2 && samples.length !== 2) {
+        status.textContent = '두 줄의 글자색을 분리하기 어렵습니다. 한 줄을 드래그하고 그 문구만 입력하세요.';
+        return;
+      }
+      detectedAreas = samples.map(sample => sample.area);
+      paint();
+      const targets = lines.map((line, i) => samples[i]
+        ? shapes.prepareTarget(samples[i].image, null, line)
+        : shapes.prepareTarget(picture, selection, line));
+      if (targets.some(target => !target)) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
       status.textContent = '비교할 서체를 준비하고 있습니다…';
       if (!catalog) {
         const response = await fetch('/data/image-fonts.json?v=3');
         if (!response.ok) throw Error('Catalog unavailable');
         catalog = await response.json();
       }
+      const target = {
+        glyphs: targets.flatMap(line => line.glyphs),
+        minGlyphHeight: Math.min(...targets.map(line => line.minGlyphHeight)),
+        distinct: new Set(text.match(/[가-힣]/g)).size
+      };
       const {faces, indexed, glyphCount} = await window.ImageFontIndex.rank(target, catalog);
       if (version !== revision) return;
       trimFaces(new Set(faces.map(face => face.url)));
@@ -310,9 +344,17 @@
           let family;
           try { family = await loadFace(candidate); } catch { return; }
           if (version !== revision || !hasGlyphs(family, weight, characters, fallbacks)) return;
-          const reference = shapes.reference(text, family, weight);
-          if (!reference) return;
-          const measurement = shapes.compare(target, reference);
+          const scores = [];
+          for (const [index, line] of lines.entries()) {
+            const reference = shapes.reference(line, family, weight);
+            if (!reference) return;
+            scores.push(shapes.compare(targets[index], reference));
+          }
+          const measurement = {...scores[0], scores};
+          if (scores.length === 2) {
+            for (const key of ['score', 'glyph', 'line']) measurement[key] = (scores[0][key] + scores[1][key]) / 2;
+            measurement.coverage = Math.min(scores[0].coverage, scores[1].coverage);
+          }
           if (!Number.isFinite(measurement.score)) return;
           const best = bestByFamily.get(row.id);
           if (!best || measurement.score > best.score) bestByFamily.set(row.id, {...measurement, family, weight, row});
@@ -323,7 +365,14 @@
       const matches = [...bestByFamily.values()].sort((a, b) => b.score - a.score);
       if (!matches.length) { status.textContent = '입력한 글자를 지원하는 비교용 서체를 불러오지 못했습니다.'; return; }
       const expectedCount = new Set(faces.map(face => face.row.id)).size;
-      const confident = indexed && glyphCount > 0 && shapes.isConfident(target, matches, expectedCount);
+      // A strong row must not hide a conflicting or weak second row.
+      const agree = targets.length === 1 || targets.every((line, i) => {
+        const ranked = matches.map(match => match.scores[i]).sort((a, b) => b.score - a.score);
+        return ranked[0] === matches[0].scores[i] && shapes.isConfident(line, ranked, expectedCount);
+      });
+      // Automatically isolating a color can trim antialiased edges; close fits are suggestions.
+      const clearColorMatch = !samples.length || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
+      const confident = shapes.isConfident(target, matches, expectedCount) && indexed && glyphCount > 0 && agree && clearColorMatch;
       showResults(matches, confident, text);
       if (publish && el('publish')?.checked) window.ImageFontBoard?.record(matches, confident);
     } catch {
