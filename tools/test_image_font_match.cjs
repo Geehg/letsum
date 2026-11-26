@@ -36,62 +36,134 @@ test('weak, ambiguous or incomplete comparisons only produce alternative suggest
   assert.equal(isConfident(target, tie, 4), false);
 });
 
-test('the scanner indexes align with the public catalogue and cover distinct syllables', () => {
+test('every Korean catalogue family has a comparison method and blocks cover every modern syllable', () => {
   const {gunzipSync} = require('node:zlib');
   const data = path.join(js, '../data');
   const rows = JSON.parse(fs.readFileSync(path.join(data, 'image-fonts.json')));
-  const weights = rows.flatMap(row => Object.keys(row.weights).map(w => row.id + '/' + w));
-  const syllables = new Set();
-  for (const part of ['common', 'extra']) {
-    const file = gunzipSync(fs.readFileSync(path.join(data, 'image-font-index-' + part + '.gz')));
-    assert.equal(file.toString('ascii', 0, 4), 'LFI2');
-    const count = file.readUInt16LE(4);
-    assert.equal(file.readUInt16LE(6), weights.length);
-    let offset = 8;
-    for (let i = 0; i < count; i++, offset += 2) {
-      const char = file.readUInt16LE(offset);
-      assert.ok(!syllables.has(char));
-      syllables.add(char);
-    }
-    for (const expected of weights) {
-      const length = file[offset++];
-      const id = file.toString('ascii', offset, offset + length);
-      offset += length;
-      assert.equal(id + '/' + file.readUInt16LE(offset), expected);
-      offset += 2 + 11 * count;
-    }
-    assert.equal(offset, file.length);
+  const catalogue = vm.runInNewContext(fs.readFileSync(path.join(js, 'data.js'), 'utf8') + '\n; FONTS.map(f => f.id)');
+  assert.deepEqual(rows.map(r => r.id).sort(), Array.from(catalogue).sort());
+  const indexed = rows.filter(row => row.mode !== 'local');
+  for (const row of rows.filter(r => r.mode)) {
+    assert.ok(row.source);
+    assert.ok(!row.url && Object.values(row.weights).every(url => url === null));
+    assert.ok(row.mode === 'local' ? row.aliases.length : row.specimen);
   }
-  assert.equal(syllables.size, 2350);
+  const count = indexed.reduce((sum, r) => sum + Object.keys(r.weights).length, 0);
+  const {characters, revision, blockSize} = rows[0].shapeIndex;
+  assert.equal(new Set(characters).size, 11172);
+  assert.ok([...characters].every(c => c >= '가' && c <= '힣'));
+  for (let start = 0; start < characters.length; start += blockSize) {
+    const filename = Math.floor(start / blockSize) + '.gz';
+    const file = gunzipSync(fs.readFileSync(path.join(data, 'image-font-grid', revision, filename)));
+    const length = Math.min(blockSize, characters.length - start);
+    assert.equal(file.toString('ascii', 0, 4), 'LFI3');
+    assert.equal(file.readUInt16LE(4), start);
+    assert.equal(file.readUInt16LE(6), length);
+    assert.equal(file.readUInt16LE(8), count);
+    assert.equal(file.readUInt16LE(10), 27);
+    assert.equal(file.subarray(12, 28).toString('hex'), revision);
+    assert.equal(file.length, 28 + length * 27 * count);
+  }
 });
 
-test('ranking fetches the supplemental index on demand and retries a failed load', async () => {
-  const {gunzipSync} = require('node:zlib');
+test('on-demand blocks compare every available family, retry failures and avoid a false full result', async () => {
   const data = path.join(js, '../data');
-  const read = part => fs.readFileSync(path.join(data, 'image-font-index-' + part + '.gz'));
-  const common = read('common'), extra = read('extra');
-  const primary = gunzipSync(common), supplemental = gunzipSync(extra);
   const rows = JSON.parse(fs.readFileSync(path.join(data, 'image-fonts.json')));
+  const {characters, revision, blockSize} = rows[0].shapeIndex;
   const calls = [];
-  let failExtra = true;
-  const sandbox = {window:{}, TextDecoder, Response, DecompressionStream, fetch: async url => {
-    calls.push(url);
-    if (url.includes('-common.gz')) return new Response(common);
-    if (!url.includes('-extra.gz')) throw Error('Unexpected request');
-    return failExtra ? new Response(null, {status: 503}) : new Response(extra);
-  }};
+  let fail = true;
+  const sandbox = {window: {}, TextDecoder, Response, DecompressionStream, AbortController, setTimeout, clearTimeout,
+    fetch: async url => {
+      calls.push(url);
+      if (url.endsWith('/1.gz') && fail) return new Response(null, {status:503});
+      return new Response(fs.readFileSync(path.join(data, 'image-font-grid', revision, path.basename(url))));
+    }};
   vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
-  const glyph = (file, offset) => ({char: String.fromCharCode(file.readUInt16LE(offset)), ratio: 1, pixels: new Uint8Array(1280)});
-  const target = {glyphs:[glyph(primary, 8), glyph(primary, 10)], minGlyphHeight:30};
+  const glyph = char => ({char, ratio: 1, pixels: new Uint8Array(1280)});
+  const target = {glyphs:[glyph(characters[0]), glyph(characters[1])]};
   const rank = () => sandbox.window.ImageFontIndex.rank(target, rows);
-  assert.equal((await rank()).indexed, true);
+  const first = await rank();
+  assert.ok(first.indexed && first.compared > 1200 && first.faces.length > first.compared);
+  const {localDistance} = sandbox.window.ImageFontIndex;
+  assert.equal(localDistance(first.targets, target.glyphs), 0);
+  assert.equal(localDistance(first.targets, target.glyphs.slice(0,1)), null);
+  assert.equal(localDistance(first.targets, target.glyphs.slice(0,1), true), .5);
+  assert.equal(localDistance(first.targets, [], true), null);
   assert.equal(calls.length, 1);
-  target.glyphs.push(glyph(supplemental, 8));
-  const interrupted = await rank();
-  assert.equal(interrupted.glyphCount, 2);
-  assert.equal(interrupted.indexed, false);
-  failExtra = false;
+  target.glyphs.push(glyph(characters[blockSize]));
+  const partial = await rank();
+  assert.equal(partial.glyphCount, 2);
+  assert.equal(partial.indexed, false);
+  assert.equal(partial.limited, true);
+  fail = false;
   assert.equal((await rank()).glyphCount, 3);
   assert.equal((await rank()).indexed, true);
   assert.equal(calls.length, 3);
+  assert.equal((await sandbox.window.ImageFontIndex.rank({glyphs:[]}, rows)).compared, 0);
+});
+
+test('older browsers can compare the same catalogue and an unreadable block is never reported as a match', async () => {
+  const data = path.join(js, '../data');
+  const rows = JSON.parse(fs.readFileSync(path.join(data, 'image-fonts.json')));
+  const index = rows[0].shapeIndex;
+  const block = fs.readFileSync(path.join(data, 'image-font-grid', index.revision, '0.gz'));
+  const sandbox = {window: {}, TextDecoder, Response, AbortController, setTimeout, clearTimeout};
+  let unavailable = true, scripts = 0;
+  sandbox.fetch = async () => unavailable ? new Response(null, {status:503}) : new Response(block);
+  sandbox.document = {createElement: () => ({}), head: {append(script) {
+    assert.equal(script.src, '/js/vendor/image-scan/pako-inflate-2.1.0.min.js');
+    scripts++;
+    sandbox.window.pako = require(path.join(js, 'vendor/image-scan/pako-inflate-2.1.0.min.js'));
+    script.onload();
+  }}};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
+  const target = {glyphs: [...index.characters.slice(0,2)].map(char => ({char, ratio:1, pixels:new Uint8Array(1280)}))};
+  const rank = () => sandbox.window.ImageFontIndex.rank(target, rows);
+  await assert.rejects(rank(), /Missing comparison data/);
+  unavailable = false;
+  assert.equal((await rank()).indexed, true);
+  assert.equal(scripts, 1);
+});
+
+test('a contender beyond the old cutoff can win; later faces cannot beat the proven bound', async () => {
+  const sandbox = {window: {}, setTimeout};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
+  const {finalists, resultCost} = sandbox.window.ImageFontIndex;
+  const input = Array.from({length: 130}, (_, i) => ({row: {id: String(i)}, cost: i / 3000, weight: 400}));
+  const seen = [];
+  const measure = async f => {
+    seen.push(f.row.id);
+    const score = f.row.id === '55' ? .99 : .4;
+    return {...f, score, finalCost: resultCost(f, score)};
+  };
+  const {matches} = await finalists(input, measure, () => true, () => {});
+  assert.equal(matches[0].row.id, '55');
+  assert.ok(seen.length > 55 && seen.length < input.length);
+  const exhaustive = input.map(f => ({...f, finalCost: resultCost(f, f.row.id === '55' ? .99 : .4)}))
+    .sort((a, b) => a.finalCost - b.finalCost);
+  assert.deepEqual(Array.from(matches.slice(0, 4), f => f.row.id), exhaustive.slice(0, 4).map(f => f.row.id));
+});
+
+test('local originals use internal font names and ambiguous aliases need explicit assignment', () => {
+  const sandbox = {window: {}, TextDecoder};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-local.js'), 'utf8'), sandbox);
+  const local = sandbox.window.ImageFontLocal;
+  const text = 'SampleFamily-Bold';
+  const data = new ArrayBuffer(72 + text.length * 2), view = new DataView(data);
+  const tag = (offset, value) => [...value].forEach((c, i) => view.setUint8(offset+i, c.charCodeAt(0)));
+  view.setUint32(0, 65536); view.setUint16(4, 2);
+  tag(12, 'name'); view.setUint32(20, 44); view.setUint32(24, 18 + text.length * 2);
+  tag(28, 'OS/2'); view.setUint32(36, data.byteLength - 8); view.setUint32(40, 8);
+  view.setUint16(46, 1); view.setUint16(48, 18); view.setUint16(50, 3);
+  view.setUint16(56, 6); view.setUint16(58, text.length*2);
+  [...text].forEach((c, i) => view.setUint16(62 + 2*i, c.charCodeAt(0)));
+  view.setUint16(data.byteLength - 4, 700);
+  const meta = local.metadata(data);
+  assert.deepEqual(Array.from(meta.names), [text]);
+  assert.equal(meta.weight, 700);
+  const row = {id: 'sample', aliases: ['Sample Family']};
+  assert.equal(local.identify(meta, [row]), row);
+  assert.equal(local.identify(meta, [{aliases: ['Different family']}]), null);
+  assert.equal(local.identify(meta, [row, {aliases:['SampleFamily']}]), null);
+  assert.throws(() => local.metadata(new ArrayBuffer(12)));
 });

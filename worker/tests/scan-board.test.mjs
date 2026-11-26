@@ -78,3 +78,12 @@ test('lists newest first without duplicates across intervening posts', async t =
   assert.equal(last.nextBefore,null);
   assert.equal((await query(undefined,'?before=0')).status,400);
 });
+
+test('signature and local-only candidates publish catalogue IDs and weights only', async t => {
+  const {post, payload, query} = setup(t);
+  const candidates = [{id:'k-bookend-batang', weight:600}, {id:'k-charmacist', weight:400}];
+  const sample = {...payload(), confidence:'low', candidates};
+  assert.equal((await post(sample)).status, 201);
+  assert.deepEqual((await (await query()).json()).entries[0].candidates, candidates);
+  assert.equal((await post({...payload(), candidates:[{...candidates[1], file:'local.ttf'}]})).status, 400);
+});

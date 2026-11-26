@@ -102,6 +102,18 @@ for f in FONTS:
         if f.get("specimen") and not os.path.exists(os.path.join(ROOT, "html", f["specimen"])): err(f"{fid}: 견본 이미지 없음 {f['specimen']}")
     elif f.get("specimen") or f.get("weightsUnknown"): err(f"{fid}: specimen·weightsUnknown은 소개 전용(intro)에서만")
 
+# 한글 카탈로그에 서체를 추가하거나 내리면 이미지 대조 목록도 함께 반영한다.
+with open(os.path.join(ROOT, "html", "data", "image-fonts.json"), encoding="utf-8") as scanner_file:
+    scanner = json.load(scanner_file)
+    scanner_ids = {row["id"] for row in scanner}
+    if scanner_ids != set(ids) or len(scanner) != len(ids):
+        changed = sorted(scanner_ids.symmetric_difference(ids))
+        err(f"폰트 스캐너 목록 동기화 필요 ({', '.join(changed[:8])}). tools/build_image_font_index.py로 대조 자료를 갱신하세요.")
+    protected = {f["id"] for f in FONTS if f.get("intro")}
+    for row in scanner:
+        if row["id"] in protected and (row.get("url") or any(row["weights"].values())):
+            err(f"{row['id']}: 소개 전용 서체의 대조 목록에 폰트 파일 주소가 있음")
+
 # 7) 카탈로그 연결
 cat_path = os.path.join(HERE, "state", "catalog.json")
 if os.path.exists(cat_path):

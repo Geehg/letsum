@@ -5,6 +5,7 @@
   const panel = document.getElementById('image-finder');
   const preview = el('preview'), results = el('results'), status = el('status');
   const loaded = new Map();
+  const msg = (ko, en) => document.documentElement.lang === "en" ? en : ko;
   let picture, crop, start, revision = 0;
 
   let detectedAreas = [];
@@ -53,7 +54,8 @@
     window.ImageFontBoard?.reset();
     results.replaceChildren();
     status.replaceChildren();
-    delete status.dataset.confidence;
+    for (const key of ['confidence', 'compared', 'total', 'localMissing']) delete status.dataset[key];
+    el('cancel').hidden = true;
     el('run').disabled = false;
   }
 
@@ -309,7 +311,7 @@
   }
 
   function trimFaces(needed) {
-    // Each scan has a bounded shortlist. Release old decoded fonts between scans.
+    // Release decoded originals as soon as they can no longer appear in the results.
     for (const [key, entry] of loaded) {
       if (!needed.has(key)) {
         document.fonts.delete(entry.font);
@@ -318,19 +320,53 @@
     }
   }
 
-  function showResults(matches, confident, text, limited) {
-    status.dataset.confidence = confident ? 'high' : 'low';
-    status.textContent = confident ? '글자 모양이 가장 가까운 원본 후보입니다.' : '원본 서체 판별 어려움. 아래는 모양이 비슷한 무료 서체입니다.';
-    if (limited) {
-      const note = document.createElement('small');
-      note.lang = document.documentElement.lang;
-      note.textContent = note.lang === 'en' ? 'Only part of the comparison data was available.' : '이번 판별에는 일부 비교 자료만 사용했습니다.';
-      status.append(' ', note);
+  function sampleElement(match, text) {
+    if (match.row.specimen) {
+      const sample = document.createElement('img');
+      sample.src = match.row.specimen;
+      sample.className = 'im-fixed-specimen';
+      sample.alt = match.row.name + msg(' 공식 원본 견본', ' reference specimen');
+      sample.loading = 'lazy';
+      return sample;
     }
+    if (match.family && !match.row.mode) {
+      const sample = document.createElement('p');
+      sample.className = 'im-sample';
+      sample.translate = false;
+      sample.textContent = text;
+      sample.style.fontFamily = '"' + match.family + '"';
+      sample.style.fontWeight = String(match.weight);
+      return sample;
+    }
+    return null;
+  }
+
+  function showResults(matches, confident, text, limited, count) {
+    status.dataset.confidence = confident ? 'high' : 'low';
+    status.dataset.compared = count.compared;
+    status.dataset.total = count.total;
+    status.dataset.localMissing = count.missing;
+    status.textContent = confident ? '글자 모양이 가장 가까운 원본 후보입니다.'
+      : msg('원본을 특정하기 어렵습니다. 모양이 가까운 후보를 표시합니다.', 'The original is uncertain. These are the closest visual matches.');
+    const coverage = document.createElement('small');
+    const n = value => value.toLocaleString(document.documentElement.lang);
+    const parts = [msg('글자 모양 대조 ', 'Families compared ') + n(count.compared) + ' / ' + n(count.total)];
+    if (count.missing) parts.push(msg('기기 원본 미연결 ', 'Local original unavailable ') + count.missing);
+    if (count.noGlyph) parts.push((count.coverageUnknown
+      ? msg('글자 지원 미확인 ', 'Glyph coverage unverified ')
+      : msg('비교할 글자 없음 ', 'No matching glyphs ')) + count.noGlyph);
+    if (limited) parts.push(msg('일부 비교 자료를 받지 못했습니다.', 'Some comparison data could not be loaded.'));
+    coverage.textContent = parts.join(' · ');
+    coverage.title = msg('입력한 한글 중 실제 윤곽을 하나 이상 비교한 서체 수입니다.', 'Counts families with at least one comparable input syllable.');
+    status.append(' ', coverage);
     for (const [index, match] of matches.slice(0, 3).entries()) {
       const article = document.createElement('article'), title = document.createElement('strong');
       const label = document.createElement('small');
-      label.textContent = confident && index === 0 ? '원본 후보' : '닮은 무료 폰트';
+      label.textContent = confident && index === 0 ? '원본 후보' : msg('닮은 서체', 'Similar typeface');
+      if (match.manual) label.append(' · ', msg('직접 지정한 원본', 'Manually assigned original'));
+      else if (match.row.mode === 'local') label.append(' · ', msg('기기 원본 대조', 'Compared on this device'));
+      if (match.full === false) label.append(' · ', msg('일부 글자만 대조', 'Partial glyph comparison'));
+      else if (!match.family) label.append(' · ', msg('글자 특징 대조', 'Glyph feature match'));
       if (Object.keys(match.row.weights || {}).length > 1) {
         const weightLabel = document.createElement('span');
         weightLabel.textContent = '굵기';
@@ -338,18 +374,15 @@
       }
       title.textContent = match.row.name;
       title.translate = false;
-      const sample = document.createElement('p');
-      sample.className = 'im-sample';
-      sample.translate = false;
-      sample.textContent = text;
-      sample.style.fontFamily = `"${match.family}"`;
-      sample.style.fontWeight = String(match.weight);
+      article.append(label, title);
+      const sample = sampleElement(match, text);
+      if (sample) article.append(sample);
       const detail = document.createElement('a'), source = document.createElement('a');
       detail.href = '/font/' + match.row.id + '.html';
       detail.textContent = '이용조건';
       source.href = match.row.source;
       source.textContent = '공식 배포처';
-      article.append(label, title, sample, detail, ' · ', source);
+      article.append(detail, ' · ', source);
       if (match.row.attribution) {
         const credit = document.createElement('small');
         credit.translate = false;
@@ -360,8 +393,96 @@
     }
   }
 
+  function showAllFamilies(faces, leaders, text, measure, active) {
+    const byId = new Map();
+    for (const face of faces) {
+      if (!byId.has(face.row.id)) byId.set(face.row.id, []);
+      byId.get(face.row.id).push(face);
+    }
+    const families = [...byId.values()].map(group => group.sort((a,b) => a.cost-b.cost))
+      .sort((a,b) => a[0].cost-b[0].cost);
+    const details = document.createElement('details'), summary = document.createElement('summary');
+    details.className = 'im-all-families';
+    summary.textContent = msg('전체 대조 후보 보기', 'All compared families') + ' (' + families.length.toLocaleString() + ')';
+    const input = document.createElement('input'), list = document.createElement('ol'), more = document.createElement('button');
+    input.type = 'search';
+    input.placeholder = msg('대조한 서체 이름 검색', 'Search compared families');
+    input.setAttribute('aria-label', input.placeholder);
+    list.setAttribute('aria-label', msg('획 특징이 가까운 순서', 'Ordered by stroke features'));
+    more.type = 'button';
+    more.textContent = msg('후보 더 보기', 'Show more families');
+    const selected = document.createElement('div');
+    selected.className = 'im-selected-face';
+    selected.setAttribute('role', 'status');
+    let request = 0, limit = 15, opened = false;
+    const keep = new Set(leaders.map(faceKey));
+    const normalize = value => value.normalize('NFKC').toLowerCase().replace(/[\s_-]+/g, '');
+    async function inspect(group) {
+      const current = ++request;
+      selected.textContent = msg('이 서체의 굵기를 비교하고 있습니다…', 'Comparing this family’s weights…');
+      const checked = [];
+      for (let i = 0; i < group.length; i += 2) {
+        if (!active() || request !== current) return;
+        const batch = await Promise.all(group.slice(i, i+2).map(measure));
+        checked.push(...batch.filter(Boolean));
+      }
+      if (!active() || request !== current) return;
+      const best = checked.sort((a,b) => a.finalCost-b.finalCost)[0];
+      if (!best) { selected.textContent = msg('이 문구를 비교할 수 없습니다.', 'This text could not be compared.'); return; }
+      trimFaces(new Set([...keep, faceKey(best)]));
+      const title = document.createElement('strong');
+      title.translate = false;
+      title.textContent = best.row.name;
+      const method = best.full === false ? msg('일부 글자만 대조', 'Partial glyph comparison')
+        : best.family ? msg('원본의 획 대조', 'Original outlines compared') : msg('글자 특징 대조', 'Glyph features compared');
+      const weight = best.row.unknownWeights ? '' : ' · ' + msg('굵기 ', 'Weight ') + best.weight;
+      selected.replaceChildren(title, document.createTextNode(weight + ' · ' + method));
+      const sample = sampleElement(best, text);
+      if (sample) selected.append(sample);
+      const link = document.createElement('a');
+      link.href = '/font/' + best.row.id + '.html';
+      link.textContent = '이용조건';
+      selected.append(' · ', link);
+      if (best.row.attribution) {
+        const credit = document.createElement('small');
+        credit.translate = false;
+        credit.textContent = best.row.attribution;
+        selected.append(document.createElement('br'), credit);
+      }
+    }
+    function render() {
+      const query = normalize(input.value);
+      const found = families.filter(([{row}]) => !query ||
+        [row.name, row.id, ...(row.aliases || [])].some(name => normalize(name).includes(query)));
+      list.replaceChildren();
+      for (const group of found.slice(0,limit)) {
+        const li = document.createElement('li'), button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = group[0].row.name;
+        button.translate = false;
+        button.addEventListener('click', () => inspect(group).catch(() => {
+          if (active()) selected.textContent = msg('다시 선택해 주세요.', 'Please select the family again.');
+        }));
+        li.append(button);
+        list.append(li);
+      }
+      more.hidden = limit >= found.length;
+      if (!found.length) selected.textContent = msg('대조한 후보 중 일치하는 이름이 없습니다.', 'No matching name among the compared families.');
+    }
+    details.addEventListener('toggle', () => {
+      if (details.open && !opened) { opened = true; render(); }
+    });
+    input.addEventListener('input', () => { request++; limit = 15; selected.replaceChildren(); render(); });
+    more.onclick = () => { limit += 30; render(); };
+    const hint = document.createElement('p');
+    hint.textContent = msg('획 특징이 가까운 순서입니다. 이름을 누르면 해당 서체의 굵기별 모양을 비교합니다.',
+      'Ordered by stroke features. Select a name to compare its available weights.');
+    details.append(summary, hint, input, selected, list, more);
+    results.append(details);
+  }
+
   function showGlyphComparison(matches, lines, targets, samples) {
-    if (matches.length < 2) return;
+    if (matches.length < 2 || matches.slice(0, 2).some(m => !m.family || m.row.mode)) return;
     const pair = matches.slice(0, 2);
     const shapes = window.ImageFontShapes;
     const references = pair.map(match => lines.map((line, index) => shapes.reference(line, match.family, match.weight, targets[index].height)));
@@ -421,6 +542,13 @@
     results.append(table);
   }
 
+  window.ImageFontLocal.bind(invalidate);
+  el('cancel').onclick = () => {
+    invalidate();
+    trimFaces(new Set());
+    status.textContent = msg('대조를 중지했습니다.', 'Comparison stopped.');
+  };
+
   el('run').onclick = async () => {
     if (!el('text').value.trim() && ocrStatus.hasAttribute('aria-busy')) return;
     invalidate();
@@ -437,6 +565,7 @@
     }
     cancelReading();
     el('run').disabled = true;
+    el('cancel').hidden = false;
     try {
       const shapes = window.ImageFontShapes;
       const selection = originalCrop();
@@ -460,53 +589,108 @@
         minGlyphHeight: Math.min(...targets.map(line => line.minGlyphHeight)),
         distinct: new Set(text.match(/[가-힣]/g)).size
       };
-      const {faces, indexed, glyphCount, limited} = await window.ImageFontIndex.rank(target, catalog);
-      if (version !== revision) return;
-      trimFaces(new Set(faces.map(faceKey)));
-      const characters = new Set(text.match(/[가-힣]/g)), fallbacks = new Map(), bestByFamily = new Map();
-      status.textContent = '글자의 획과 굵기를 비교하고 있습니다…';
-      for (let i = 0; i < faces.length; i += 3) {
-        if (version !== revision) return;
-        await Promise.all(faces.slice(i, i + 3).map(async candidate => {
-          const {row, weight} = candidate;
-          let family;
-          try { family = await loadFace(candidate); } catch { return; }
-          if (version !== revision || !hasGlyphs(family, weight, characters, fallbacks)) return;
-          const scores = [];
-          for (const [index, line] of lines.entries()) {
-            const reference = shapes.reference(line, family, weight, targets[index].height);
-            if (!reference) return;
-            const fullSize = targets[index].height < 28 ? shapes.reference(line, family, weight) : null;
-            scores.push(shapes.compare(targets[index], reference, fullSize));
-          }
-          const measurement = {...scores[0], scores};
-          if (scores.length === 2) {
-            for (const key of ['score', 'glyph', 'line']) measurement[key] = (scores[0][key] + scores[1][key]) / 2;
-            measurement.coverage = Math.min(scores[0].coverage, scores[1].coverage);
-          }
-          if (!Number.isFinite(measurement.score)) return;
-          const best = bestByFamily.get(row.id);
-          if (!best || measurement.score > best.score) bestByFamily.set(row.id, {...measurement, family, weight, row});
-        }));
-        await new Promise(resolve => setTimeout(resolve, 0));
-      }
-      if (version !== revision) return;
-      const matches = [...bestByFamily.values()].sort((a, b) => b.score - a.score);
-      if (!matches.length) { status.textContent = '입력한 글자를 지원하는 비교용 서체를 불러오지 못했습니다.'; return; }
-      const expectedCount = new Set(faces.map(face => face.row.id)).size;
-      // A strong row must not hide a conflicting or weak second row.
-      const agree = targets.length === 1 || targets.every((line, i) => {
-        const ranked = matches.map(match => match.scores[i]).sort((a, b) => b.score - a.score);
-        return ranked[0] === matches[0].scores[i] && shapes.isConfident(line, ranked, expectedCount);
+      const index = window.ImageFontIndex;
+      const ranked = await index.rank(target, catalog, () => version === revision, (part, total) => {
+        status.textContent = msg('글자 특징 대조 자료 읽는 중 ', 'Reading glyph comparison data ') + part + ' / ' + total;
       });
-      // Automatically isolating a color can trim antialiased edges; close fits are suggestions.
-      const clearColorMatch = !samples.some(sample => sample.isolatedInk) || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
-      const confident = shapes.isConfident(target, matches, expectedCount) && indexed && glyphCount > 0 && agree && clearColorMatch;
-      showResults(matches, confident, text, limited);
+      if (version !== revision) return;
+      if (!ranked.glyphCount) {
+        status.textContent = msg('대조할 글자 윤곽을 분리하기 어렵습니다. 한 줄만 선택하고 문구를 확인하세요.', 'Select one line and check its text so individual glyphs can be compared.');
+        return;
+      }
+      const local = await window.ImageFontLocal.available(catalog);
+      if (version !== revision) return;
+      trimFaces(new Set());
+      const characters = new Set(text.match(/[가-힣]/g)), fallbacks = new Map();
+      const localCompared = new Set();
+      function pixels(candidate, family) {
+        const {row, weight} = candidate;
+        const hasCharacter = c => candidate.coverageTable ? candidate.coverageTable[c.charCodeAt(0) - 0xac00]
+          : hasGlyphs(family, weight, [c], fallbacks);
+        if (![...characters].every(hasCharacter)) {
+          if (row.mode !== 'local') return null;
+          const present = [...ranked.targets.keys()].filter(hasCharacter);
+          const refs = present.flatMap(c => shapes.reference(c, family, weight)?.glyphs || []);
+          const cost = index.localDistance(ranked.targets, refs, true);
+          return cost === null ? null : featureOnly({...candidate, cost, full: false}, false);
+        }
+        const scores = [], glyphs = [];
+        for (const [i, line] of lines.entries()) {
+          const reference = shapes.reference(line, family, weight, targets[i].height);
+          if (!reference) return null;
+          const fullSize = targets[i].height < 28 ? shapes.reference(line, family, weight) : null;
+          scores.push(shapes.compare(targets[i], reference, fullSize));
+          glyphs.push(...reference.glyphs);
+        }
+        const measurement = {...scores[0], scores};
+        if (scores.length === 2) {
+          for (const name of ['score', 'glyph', 'line']) measurement[name] = (scores[0][name] + scores[1][name]) / 2;
+          measurement.coverage = Math.min(scores[0].coverage, scores[1].coverage);
+        }
+        const cost = candidate.cost ?? index.localDistance(ranked.targets, glyphs);
+        if (cost === null || !Number.isFinite(measurement.score)) return null;
+        return {...measurement, row, weight, cost, family, manual: candidate.manual,
+          finalCost: index.resultCost({cost}, measurement.score)};
+      }
+      const faces = ranked.faces;
+      for (const candidate of local) {
+        const match = pixels(candidate, candidate.family);
+        if (match) {
+          localCompared.add(candidate.row.id);
+          faces.push({...candidate, cost: match.cost, measured: match});
+        }
+      }
+      const waiting = catalog.filter(r => r.mode === 'local').length - new Set(local.map(f => f.row.id)).size;
+      const compared = ranked.compared + localCompared.size;
+      const count = {compared, total: catalog.length, missing: waiting, noGlyph: catalog.length - compared - waiting,
+        coverageUnknown: ranked.limited};
+      function featureOnly(candidate, loadFailed) {
+        const loss = Math.min(1, .24 + 1.4 * candidate.cost);
+        return {...candidate, family: null, loadFailed, finalCost: index.resultCost(candidate, 1 - loss)};
+      }
+      async function measure(candidate) {
+        if (candidate.measured) return candidate.measured;
+        if (!candidate.full || !candidate.url) return featureOnly(candidate, false);
+        let family;
+        try { family = await loadFace(candidate); } catch { return featureOnly(candidate, true); }
+        if (version !== revision) return null;
+        return pixels(candidate, family) || featureOnly(candidate, false);
+      }
+      let updated = 0;
+      const active = () => version === revision;
+      status.textContent = msg('글자 특징 대조 완료 · 원본의 획을 비교하고 있습니다…', 'Glyph features compared. Checking original outlines…');
+      const {matches, failed} = await index.finalists(faces, measure, active, (ordered, attempted) => {
+        trimFaces(new Set(ordered.slice(0, 4).map(faceKey)));
+        if (Date.now() - updated < 700) return;
+        updated = Date.now();
+        status.textContent = msg('글자 모양 대조 ' + compared.toLocaleString() + '종 · 세부 확인 ' + attempted + '개 굵기',
+          'Compared ' + compared.toLocaleString() + ' families · checked ' + attempted + ' faces in detail');
+      });
+      if (!active()) return;
+      if (!matches.length) {
+        status.textContent = msg('해당 글자의 모양을 대조할 수 없습니다. 다른 한글을 선택해 주세요.', 'No comparable shapes. Please select other Korean text.');
+        return;
+      }
+      const leaders = matches.slice(0, 4);
+      const raw = leaders.every(m => m.scores && !m.manual);
+      const agree = raw && targets.every((line, i) => {
+        const scores = leaders.map(m => m.scores[i]).sort((a, b) => b.score - a.score);
+        return scores[0] === leaders[0].scores[i] && shapes.isConfident(line, scores, leaders.length);
+      });
+      const clearColorMatch = !samples.some(sample => sample.isolatedInk) ||
+        (leaders.length > 1 && leaders[0].score - leaders[1].score >= .06);
+      const confident = ranked.indexed && !failed && agree && clearColorMatch;
+      showResults(matches, confident, text, ranked.limited || failed > 0, count);
       showGlyphComparison(matches, lines, targets, samples);
-      if (publish && el('publish')?.checked) window.ImageFontBoard?.record(matches, confident);
+      showAllFamilies(faces, leaders, text, measure, active);
+      if (publish && el('publish')?.checked) {
+        if (!matches.slice(0, 3).some(m => m.manual)) window.ImageFontBoard?.record(matches, confident);
+        else el('publish-state').textContent = msg('직접 지정한 후보가 있어 이 기기에만 표시합니다.', 'Results containing a manually assigned original are shown only on this device.');
+      }
     } catch {
       if (version === revision) status.textContent = '비교 자료를 열 수 없습니다. 다시 시도하세요.';
-    } finally { if (version === revision) el('run').disabled = false; }
+    } finally {
+      if (version === revision) { el('run').disabled = false; el('cancel').hidden = true; }
+    }
   };
 })();

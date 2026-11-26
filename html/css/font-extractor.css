@@ -171,3 +171,18 @@
 #image-finder[data-drag] .im-drop { border-style: solid; background: var(--paper3); }
 #im-attachment, #im-attach-status { margin: 4px 0; font-size: 14px; overflow-wrap: anywhere; }
 #im-attachment:empty, #im-attach-status:empty { margin: 0; }
+
+#im-original-panel { margin: .85rem 0; padding-block: .6rem; border-block: 1px solid var(--rule); }
+#im-original-panel summary { cursor: pointer; font-size: .92rem; }
+#im-original-panel label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin: .4rem .8rem .4rem 0; }
+#im-original-panel input, #im-original-panel select { max-width: 100%; font: inherit; }
+#im-original-panel p { margin-block: .4rem; }
+#im-results .im-fixed-specimen { display: block; width: 100%; max-height: 8rem; object-fit: contain; object-position: left; margin-block: .5rem; }
+#im-status small { display: block; font-weight: normal; }
+
+#im-results .im-all-families { margin-top: 1rem; border-top: 1px solid var(--rule); padding-top: .75rem; }
+#im-results .im-all-families summary { font-size: 1rem; cursor: pointer; }
+.im-all-families input { width: min(100%, 28rem); }
+.im-all-families ol { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin-block: .75rem; }
+.im-all-families li button { padding: .35rem .65rem; }
+.im-selected-face:not(:empty) { margin-block: .6rem; padding: .65rem; background: var(--paper2); overflow-wrap: anywhere; }

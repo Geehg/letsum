@@ -21,7 +21,7 @@
   async function fontNames() {
     if (!namesPromise) {
       namesPromise = window.ImageFontIndex.catalog()
-        .then(rows => new Map(rows.map(row => [row.id, row.name])))
+        .then(rows => new Map(rows.map(row => [row.id, {name: row.name, unknownWeights: row.unknownWeights}])))
         .catch(error => { namesPromise = null; throw error; });
     }
     return namesPromise;
@@ -43,7 +43,7 @@
     timestamp.translate = false;
     timestamp.textContent = formatter.format(new Date(entry.createdAt));
     const verdict = document.createElement('strong');
-    verdict.textContent = entry.confidence === 'high' ? '원본 후보 있음' : '판별 어려움 · 닮은 무료 폰트';
+    verdict.textContent = entry.confidence === 'high' ? '원본 후보 있음' : (document.documentElement.lang === 'en' ? 'Uncertain · similar typefaces' : '판별 어려움 · 닮은 서체');
     meta.append(timestamp, verdict);
 
     const ranks = document.createElement('ol');
@@ -52,11 +52,13 @@
       if (!/^[a-z0-9-]+$/.test(id)) continue;
       const candidate = document.createElement('li'), link = document.createElement('a');
       link.href = '/font/' + id + '.html';
-      link.textContent = names.get(id) || id;
+      const font = names.get(id);
+      link.textContent = font?.name || id;
       link.translate = false;
       const weightTag = document.createElement('small'), label = document.createElement('span');
       label.textContent = '굵기';
-      weightTag.append(label, ' ' + weight);
+      if (font?.unknownWeights) weightTag.textContent = document.documentElement.lang === 'en' ? 'Weight unverified' : '굵기 미확인';
+      else weightTag.append(label, ' ' + weight);
       candidate.append(link, ' ', weightTag);
       ranks.append(candidate);
     }
