@@ -145,7 +145,10 @@
   };
   const SPOT_LAYOUT = { "디스플레이": "poster", "명조": "editorial", "손글씨": "note", "고딕": "grid" };
   const SPOT_LINES = { poster: "이걸 몰랐다고?", editorial: "책을 읽는 시간은 언제나 옳다", note: "오늘도 수고했어, 내일은 더 괜찮을 거야", grid: "정보는 또렷하게, 화면은 가볍게" };
-  const BUILTIN = { "k-gs-hyejaroun": { bg: "#b4e3fa", fg: "#0b2c8a", ac: "#1769f0", acInk: "#ffffff", split: 2, style: "sticker", line: ["어제의 혜자보다 오늘 더 혜자롭게", "혜자로운 이야기"], src: "hyejaroun.com" } };
+  const BUILTIN = {
+    "k-hs-hwalgong-gulim": { bg: "#fff100", fg: "#333333", ac: "#333333", acInk: "#fff100", style: "plain", line: ["바닷길 정류장"], src: "https://blog.naver.com/hp0/224471962233" },
+    "k-gs-hyejaroun": { bg: "#b4e3fa", fg: "#0b2c8a", ac: "#1769f0", acInk: "#ffffff", split: 2, style: "sticker", line: ["어제의 혜자보다 오늘 더 혜자롭게", "혜자로운 이야기"], src: "hyejaroun.com" }
+  };
   const STYLE_NAME = { plain: "기본", sticker: "스티커(흰 외곽선)", shadow: "그림자(강조색)" };
 
   let brandAuto = {}, brandAdmin = {}, candidates = { items: {} };

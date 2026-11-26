@@ -2439,6 +2439,71 @@ main.tb[data-skin="ink"] .tb-rh-body .tb-nav.next:not(:disabled){border-color:va
  .sp-corridor .sp-station-title{font-size:24px}
  .sp-corridor .sp-cta{margin:5px 0}
 }
+/* HS활공굴림 — 제작자의 굴림옐로·굴림블랙으로 조판한 바닷가 정류장 견본. */
+.sp-gulim {
+  display: grid;
+  grid-template-columns: max(40%, calc(50% - 136px)) minmax(0, 1fr);
+}
+.hw-copy {
+  min-width: 0;
+  align-self: center;
+  padding: 12px clamp(16px, 2.8vw, 42px) 12px max(60px, calc(50vw - 616px));
+}
+.hw-byline { display: flex; align-items: center; gap: 9px; font-size: 12px; line-height: 1.35; }
+.hw-byline time { padding-left: 9px; border-left: 1px solid #3337; font: 11px/1 var(--mono); }
+.hw-name, .hw-sign { font-family: var(--hw-face); font-weight: var(--hw-weight); font-synthesis: none; }
+.hw-name { margin: 9px 0 7px; font-size: clamp(36px, 4.65vw, 72px); line-height: 1.04; letter-spacing: -.035em; white-space: nowrap; }
+.hw-description { font-family: var(--hw-face); font-weight: 400; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.45; word-break: keep-all; }
+.hw-en, html:lang(en) .hw-ko { display: none; }
+html:lang(en) .hw-en { display: inline; }
+.hw-weights { display: flex; width: max-content; max-width: 100%; min-width: 0; margin: 15px 0 12px; padding: 2px; border: 1px solid #3339; border-radius: 30px; }
+.hw-weights label { position: relative; cursor: pointer; }
+.hw-weights input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.hw-weights label span { display: block; padding: 5px clamp(6px, .63vw, 11px); border-radius: 20px; font-size: 12px; line-height: 1.2; white-space: nowrap; }
+.hw-weights input:checked + span { background: var(--fg); color: var(--bg); }
+.hw-weights input:focus-visible + span, .hw-links :focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+.hw-links { display: flex; align-items: center; gap: 16px; }
+.hw-links button, .hw-links a { padding: 4px 0; color: inherit; font-size: 13px; line-height: 1.2; font-weight: 600; white-space: nowrap; }
+.hw-links button { border-bottom: 1px solid currentColor; }
+.hw-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.hw-load-error { font-size: 11px; }
+.hw-art { position: relative; min-width: 0; min-height: 0; overflow: hidden; container-type: size; background: #d9c8a5; }
+.hw-scene {
+  position: absolute; top: 50%; left: 50%; width: max(100cqw, 300cqh); aspect-ratio: 3 / 1;
+  transform: translate(-50%, -50%); container-type: inline-size;
+}
+.hw-scene img { display: block; width: 100%; height: auto; }
+/* Both the sign and its lettering follow the photograph's un-cropped coordinates. */
+.hw-sign {
+  position: absolute; left: 21.7%; top: 32%; width: 57.3%; height: 18.3%;
+  display: grid; place-items: center; white-space: nowrap; color: #333;
+  font-size: 3.85cqw; line-height: 1; letter-spacing: .015em;
+}
+.hw-art figcaption { position: absolute; right: 12px; bottom: 9px; padding: 2px 6px; background: #26241ee0; color: white; font-size: 10px; line-height: 1.4; }
+@media (min-width: 701px) and (max-width: 960px) {
+  .sp-gulim { grid-template-columns: 46% minmax(0, 1fr); }
+  .hw-copy { padding-inline: 54px 14px; }
+  .hw-weights label span { padding-inline: 6px; }
+}
+@media (max-width: 700px) {
+  .sp-gulim { grid-template: minmax(0, 1fr) auto / minmax(0, 1fr); }
+  .hw-art { grid-row: 1; }
+  .hw-copy {
+    grid-row: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3px 8px; align-items: center; padding: 7px 16px 8px;
+  }
+  .hw-byline { grid-column: 1; font-size: 10px; gap: 6px; }
+  .hw-byline time { font-size: 9px; padding-left: 6px; }
+  .hw-name { grid-column: 1; margin: 1px 0; font-size: clamp(29px, 7.5vw, 38px); }
+  .hw-description { grid-column: 1 / -1; grid-row: 3; font-size: 12px; line-height: 1.25; }
+  .hw-weights { grid-column: 1 / -1; grid-row: 4; margin: 2px 0 0; padding: 1px; }
+  .hw-weights label span { padding: 5px 9px; font-size: 11px; }
+  .hw-links { grid-column: 2; grid-row: 1 / 3; justify-self: end; flex-direction: column; align-items: flex-start; gap: 1px; }
+  .hw-links button, .hw-links a { padding: 4px 0; font-size: 12px; line-height: 1.2; }
+  .hw-art figcaption { right: 6px; bottom: 4px; font-size: 9px; }
+  .hw-load-error { grid-column: 1 / -1; }
+}
+
 /* 검색 보조: 다른 표기로 찾은 결과 · 유료 폰트 안내 · 비슷한 이름 제안 */
 .sq-note{border-left:3px solid var(--ink);padding:8px 12px;margin:0 0 12px;font-size:14px;color:var(--ink2)}
 .paid-note{border:1.5px solid var(--ink);padding:12px 16px;margin:0 0 14px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.6}

@@ -1859,6 +1859,7 @@ import "@fontsource/${f.id}/400.css";</pre>
   // 브랜드 테마: 제작사 공식 소개 페이지의 색·표현을 따른 폰트별 히어로(사람이 확인 후 등록). 없으면 분위기 팔레트
   // split: 제목 앞부분 글자 수만큼 강조색 · style: sticker(흰 외곽선 스티커) | plain
   const BRAND = {
+    "k-hs-hwalgong-gulim": { bg: "#fff100", fg: "#333333", ac: "#333333", acInk: "#fff100", style: "plain", scene: "gulim-stop", line: ["바닷길 정류장"], src: "https://blog.naver.com/hp0/224471962233" },
     "k-gs-hyejaroun": { bg: "#b4e3fa", fg: "#0b2c8a", ac: "#1769f0", acInk: "#ffffff", split: 2, style: "sticker", line: ["어제의 혜자보다 오늘 더 혜자롭게", "혜자로운 이야기"], src: "hyejaroun.com" },
   };
   // 우선순위: 관리자 저장(서버 /api/brand, off면 끔) > 위 기본 등록 > 자동 추출 추천색(data/brand_auto.json, 확인 전에도 게시) > 분위기 팔레트
@@ -1895,6 +1896,25 @@ import "@fontsource/${f.id}/400.css";</pre>
     const [bg, fg, ac] = B ? [B.bg, B.fg, B.ac] : SPOT_PAL[(f.mood || []).find((m) => SPOT_PAL[m])] || SPOT_PAL["단정한"];
     const dl = dlFor(f); const L = LICENSE_CATS.filter((c) => c.key !== "ofl");
     const heavy = f.weights[f.weights.length - 1];
+    if (B?.scene === "gulim-stop") {
+      const weights = f.weights.map(w => `<label><input type="radio" name="gulim-hero-weight" value="${w}"${w === 400 ? " checked" : ""}><span translate="no">${WNAME[w]}</span></label>`).join("");
+      return `<article class="sp sp-gulim${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:${bg};--fg:${fg};--ac:${ac};--hw-face:${f.family};--hw-weight:400" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
+        <div class="hw-copy">
+          <p class="hw-byline"><span translate="no">${esc(f.designer)}</span><time datetime="${f.released}">${fmtRel(f.released)}</time></p>
+          <h2 class="hw-name" lang="ko" translate="no">${esc(f.name)}</h2>
+          <p class="hw-description"><span class="hw-ko" lang="ko">1:1에 가까운 글자꼴과 둥근 획</span><span class="hw-en" lang="en">Near-square letters with softly rounded strokes.</span></p>
+          <fieldset class="hw-weights"><legend class="sr-only">굵기</legend>${weights}</fieldset>
+          <div class="hw-links"><button type="button" data-open="${f.id}">자세히 보기 <span aria-hidden="true">→</span></button>
+            <a data-dl="page" data-fid="${f.id}" href="${esc(dl.page)}" target="_blank" rel="noopener">공식 배포처 <span aria-hidden="true">↗</span></a></div>
+          <small class="hw-load-error" role="status" hidden>선택한 굵기를 불러오지 못했습니다.</small>
+        </div>
+        <figure class="hw-art">
+          <div class="hw-scene"><img src="/img/hero/hs-hwalgong-gulim-stop.webp" srcset="/img/hero/hs-hwalgong-gulim-stop-960.webp 960w, /img/hero/hs-hwalgong-gulim-stop.webp 2172w" sizes="(max-width: 700px) 100vw, max(60vw, 710px)" width="2172" height="724" alt="노란 은행잎 아래 벽돌 정류장 너머로 바다와 등대가 보입니다." loading="${k === 0 ? "eager" : "lazy"}" decoding="async">
+          <span class="hw-sign" lang="ko" translate="no">${esc(B.line[0])}</span></div>
+          <figcaption><span class="hw-ko" lang="ko">렛섬 제작 견본</span><span class="hw-en" lang="en">LETSUM specimen</span></figcaption>
+        </figure>
+      </article>`;
+    }
     if (f.id === "k-busan-dandi-gothic") {
       return `<article class="sp sp-station${k === 0 ? " on" : ""}" data-id="${f.id}" data-k="${k}" style="--bg:#132c35;--fg:#fff;--ac:#f3dfad" aria-roledescription="slide" aria-label="${k + 1} / ${spotList.length}: ${esc(f.name)}">
         <div class="sp-station-art"><img class="sp-station-photo" src="img/hero/busan-dandi-station-blank-v2.webp" width="1672" height="941" alt="바다를 뒤로한 부산 단디 고딕 역. 사람들이 기다리는 승강장 앞으로 오래된 열차가 오른쪽에서 왼쪽으로 들어오는 창작 장면." decoding="async"><span class="sp-station-sign" style="font-family:${f.family};font-weight:700">부산 단디 고딕 역</span></div>
@@ -1960,10 +1980,12 @@ import "@fontsource/${f.id}/400.css";</pre>
     clearInterval(spotTick);
     const p = el.querySelector(".sp-type");
     // 타자 효과
-    const s = p.dataset.line || ""; let n = 0; p.textContent = "";
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) p.textContent = s;
-    spotTick = setInterval(() => { if (!reduce && n <= s.length) p.textContent = s.slice(0, n++); else clearInterval(spotTick); }, 75);
+    if (p) {
+      const s = p.dataset.line || ""; let n = 0;
+      p.textContent = reduce ? s : "";
+      if (!reduce) spotTick = setInterval(() => { if (n <= s.length) p.textContent = s.slice(0, n++); else clearInterval(spotTick); }, 75);
+    }
     // 굵기 돋보기: 2.8초마다 다음 굵기로 천천히 겹쳐 바꾸고, 눈금자 표시를 부드럽게 옮긴다
     clearInterval(spotWt);
     const wt = el.querySelector(".sp-wt"); if (!wt) return;
@@ -1986,12 +2008,14 @@ import "@fontsource/${f.id}/400.css";</pre>
     spotIdx = (i + els.length) % els.length;
     els.forEach((el, k) => { el.classList.toggle("on", k === spotIdx); el.setAttribute("aria-hidden", k === spotIdx ? "false" : "true"); });
     const cur = els[spotIdx], currentFont = idOf(cur);
-    ensureFace(currentFont, true, [currentFont.weights[0], currentFont.weights[currentFont.weights.length - 1], wOf(currentFont)]);
+    const specimenWeight = cur.querySelector(".hw-weights input:checked");
+    ensureFace(currentFont, true, specimenWeight ? [...new Set([400, Number(specimenWeight.value)])]
+      : [currentFont.weights[0], currentFont.weights[currentFont.weights.length - 1], wOf(currentFont)]);
     ensureFace(idOf(els[(spotIdx + 1) % els.length] || cur));
     const spot = $("#spot"); spot.style.setProperty("--spot-ui", cur.style.getPropertyValue("--fg")); spot.style.setProperty("--spot-bg", cur.style.getPropertyValue("--bg"));
     $$("#spotBars i").forEach((b, k) => { b.className = k < spotIdx ? "done" : k === spotIdx ? "run" : ""; });
     spotPlay(cur);
-    clearTimeout(spotTimer); if (!spotPaused) spotTimer = setTimeout(() => spotGo(spotIdx + 1), 7000);
+    clearTimeout(spotTimer); if (!spotPaused && !cur.querySelector(".hw-weights:focus-within")) spotTimer = setTimeout(() => spotGo(spotIdx + 1), 7000);
     if (user) { const bar = $$("#spotBars i")[spotIdx]; if (bar) { bar.className = ""; void bar.offsetWidth; bar.className = spotPaused ? "hold" : "run"; } }
   }
   function renderNew() {
@@ -2007,14 +2031,43 @@ import "@fontsource/${f.id}/400.css";</pre>
     // 보여 주는 순서는 접속·새로고침마다 무작위 — 지난번 첫 폰트가 또 첫 번째로 오지 않게(이 브라우저에만 기억)
     spotList = (week ? weekAll : dated).slice(0, 10);
     for (let i = spotList.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [spotList[i], spotList[j]] = [spotList[j], spotList[i]]; }
-    try { const k = DB ? "ls_spot0_db" : EN ? "ls_spot0_en" : "ls_spot0"; if (spotList.length > 1 && spotList[0].id === localStorage.getItem(k)) spotList.push(spotList.shift()); localStorage.setItem(k, spotList[0].id); } catch (e) {}
     if (!spotList.length) { $(".newband").style.display = "none"; return; }
+    const requested = new URLSearchParams(location.search).get("spot");
+    const requestedIndex = spotList.findIndex(f => f.id === requested);
+    if (requestedIndex > 0) spotList.unshift(spotList.splice(requestedIndex, 1)[0]);
+    try { const k = DB ? "ls_spot0_db" : EN ? "ls_spot0_en" : "ls_spot0"; if (requestedIndex < 0 && spotList.length > 1 && spotList[0].id === localStorage.getItem(k)) spotList.push(spotList.shift()); localStorage.setItem(k, spotList[0].id); } catch (e) {}
     $("#nbLabel").textContent = week ? `이번 주 출시 ${weekAll.length}종` : "최근 출시";
     $("#nbTitle").textContent = week ? `이번 주 출시된 ${DB ? "딩벳" : EN ? "영문" : "한글"} 무료 폰트 ${weekAll.length}종` : `가장 최근 출시된 ${DB ? "딩벳" : EN ? "영문" : "한글"} 무료 폰트`;
     $("#nbMeta").textContent = (week ? `${dot(iso(mon))} 주간` : `이번 주 출시 없음 · 최신 출시 ${dot(dated[0].released)}`) + " · 원 제작사 출시·배포일 기준";
     track.innerHTML = spotList.map((f, k) => spotHTML(f, k, week)).join("");
     $("#spotBars").innerHTML = spotList.map(() => "<i></i>").join("");
     track.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
+    const weights = track.querySelector(".hw-weights");
+    if (weights) {
+      const card = weights.closest(".sp"), font = idOf(card), error = card.querySelector(".hw-load-error");
+      weights.addEventListener("focusin", () => clearTimeout(spotTimer));
+      weights.addEventListener("focusout", e => {
+        if (!weights.contains(e.relatedTarget) && card.classList.contains("on") && !spotPaused) {
+          clearTimeout(spotTimer);
+          spotTimer = setTimeout(() => spotGo(spotIdx + 1), 7000);
+        }
+      });
+      weights.addEventListener("keydown", e => {
+        if (e.key === "ArrowLeft" || e.key === "ArrowRight") e.stopPropagation();
+      });
+      weights.addEventListener("change", async e => {
+        const input = e.target, weight = Number(input.value);
+        if (!font.weights.includes(weight)) return;
+        error.hidden = true;
+        const loaded = await ensureFace(font, true, [weight]);
+        if (!input.checked) return;
+        if (loaded) card.style.setProperty("--hw-weight", String(weight));
+        else {
+          weights.querySelector(`[value="${card.style.getPropertyValue("--hw-weight")}"]`).checked = true;
+          error.hidden = false;
+        }
+      });
+    }
     const spot = $("#spot");
     const pause = (on) => { spotPaused = on; spot.classList.toggle("paused", on); if (on) clearTimeout(spotTimer); else spotGo(spotIdx, true); };
     let hoverPause = false;
