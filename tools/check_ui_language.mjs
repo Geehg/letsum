@@ -78,9 +78,12 @@ try {
   ]) {
     const { page, context } = await scenario(options); await isLanguage(page, expected);
     if (expected === 'ko') {
-      assert.match(await page.title(), /^무료 한글 폰트/);
+      assert.equal(await page.title(), '렛섬(LETSUM) | 무료 한글 폰트 검색·미리보기');
       assert(!await page.evaluate(() => window.__languageHistory.includes('en')), 'Korean page must never flash English');
-    } else assert.equal(new URL(page.url()).searchParams.get('ui'), 'en');
+    } else {
+      assert.equal(new URL(page.url()).searchParams.get('ui'), 'en');
+      assert.equal(await page.title(), dictionary['렛섬(LETSUM) | 무료 한글 폰트 검색·미리보기']);
+    }
     await context.close();
   }
   console.log('PASS: stable Korean default across regions, browser languages, old region caches and failures; explicit/saved choices');

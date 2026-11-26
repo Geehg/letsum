@@ -176,7 +176,7 @@ function seoDir(kind) {
 const fillSeo = (h, kind) => h.replace(/<!--SEO:INTRO-->[\s\S]*?<!--\/SEO:INTRO-->/, `<!--SEO:INTRO-->${seoIntro(kind)}<!--/SEO:INTRO-->`).replace(/<!--SEO:DIR-->[\s\S]*?<!--\/SEO:DIR-->/, `<!--SEO:DIR-->${seoDir(kind)}<!--/SEO:DIR-->`);
 {
   const ip = path.join(ROOT, "index.html"); let h = fs.readFileSync(ip, "utf8");
-  h = fillSeo(h, "ko").replace(/(<title>무료 한글 폰트 · 상업용 무료 폰트 )\d+(종)/, `$1${FONTS.length}$2`).replace(/(무료 한글 폰트\(무료 글꼴\) )\d+(종)/, `$1${FONTS.length}$2`).replace(/(상업용 무료 한글 폰트 )\d+(종">)/, `$1${FONTS.length}$2`);
+  h = fillSeo(h, "ko");
   fs.writeFileSync(ip, h);
 }
 // 영문 폰트 홈(/en/index.html) — 한글 홈(index.html)을 바탕으로 만든다(손으로 고치지 말 것).
