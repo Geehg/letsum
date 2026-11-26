@@ -20,7 +20,7 @@
 
   async function fontNames() {
     if (!namesPromise) {
-      namesPromise = requestJson('/data/image-fonts.json?v=5')
+      namesPromise = window.ImageFontIndex.catalog()
         .then(rows => new Map(rows.map(row => [row.id, row.name])))
         .catch(error => { namesPromise = null; throw error; });
     }

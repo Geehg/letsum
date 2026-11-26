@@ -35,3 +35,63 @@ test('weak, ambiguous or incomplete comparisons only produce alternative suggest
   const tie = [measurements[0], {...measurements[0],score:0.94}, ...measurements.slice(2)];
   assert.equal(isConfident(target, tie, 4), false);
 });
+
+test('the scanner indexes align with the public catalogue and cover distinct syllables', () => {
+  const {gunzipSync} = require('node:zlib');
+  const data = path.join(js, '../data');
+  const rows = JSON.parse(fs.readFileSync(path.join(data, 'image-fonts.json')));
+  const weights = rows.flatMap(row => Object.keys(row.weights).map(w => row.id + '/' + w));
+  const syllables = new Set();
+  for (const part of ['common', 'extra']) {
+    const file = gunzipSync(fs.readFileSync(path.join(data, 'image-font-index-' + part + '.gz')));
+    assert.equal(file.toString('ascii', 0, 4), 'LFI2');
+    const count = file.readUInt16LE(4);
+    assert.equal(file.readUInt16LE(6), weights.length);
+    let offset = 8;
+    for (let i = 0; i < count; i++, offset += 2) {
+      const char = file.readUInt16LE(offset);
+      assert.ok(!syllables.has(char));
+      syllables.add(char);
+    }
+    for (const expected of weights) {
+      const length = file[offset++];
+      const id = file.toString('ascii', offset, offset + length);
+      offset += length;
+      assert.equal(id + '/' + file.readUInt16LE(offset), expected);
+      offset += 2 + 11 * count;
+    }
+    assert.equal(offset, file.length);
+  }
+  assert.equal(syllables.size, 2350);
+});
+
+test('ranking fetches the supplemental index on demand and retries a failed load', async () => {
+  const {gunzipSync} = require('node:zlib');
+  const data = path.join(js, '../data');
+  const read = part => fs.readFileSync(path.join(data, 'image-font-index-' + part + '.gz'));
+  const common = read('common'), extra = read('extra');
+  const primary = gunzipSync(common), supplemental = gunzipSync(extra);
+  const rows = JSON.parse(fs.readFileSync(path.join(data, 'image-fonts.json')));
+  const calls = [];
+  let failExtra = true;
+  const sandbox = {window:{}, TextDecoder, Response, DecompressionStream, fetch: async url => {
+    calls.push(url);
+    if (url.includes('-common.gz')) return new Response(common);
+    if (!url.includes('-extra.gz')) throw Error('Unexpected request');
+    return failExtra ? new Response(null, {status: 503}) : new Response(extra);
+  }};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
+  const glyph = (file, offset) => ({char: String.fromCharCode(file.readUInt16LE(offset)), ratio: 1, pixels: new Uint8Array(1280)});
+  const target = {glyphs:[glyph(primary, 8), glyph(primary, 10)], minGlyphHeight:30};
+  const rank = () => sandbox.window.ImageFontIndex.rank(target, rows);
+  assert.equal((await rank()).indexed, true);
+  assert.equal(calls.length, 1);
+  target.glyphs.push(glyph(supplemental, 8));
+  const interrupted = await rank();
+  assert.equal(interrupted.glyphCount, 2);
+  assert.equal(interrupted.indexed, false);
+  failExtra = false;
+  assert.equal((await rank()).glyphCount, 3);
+  assert.equal((await rank()).indexed, true);
+  assert.equal(calls.length, 3);
+});

@@ -1,15 +1,39 @@
 // Shortlist real preview faces from a fixed on-device map of Korean glyph features.
-// The request for this file is identical for every image and every phrase.
+// Two fixed assets cover 2,350 syllables. No request contains the input text or image.
 (() => {
   'use strict';
 
   const featureSize = 11;
-  let pendingIndex;
+  const files = {
+    common: '/data/image-font-index-common.gz?v=1',
+    extra: '/data/image-font-index-extra.gz?v=1',
+    legacy: '/data/image-font-index-v2.bin?v=5'
+  };
+  const pending = new Map();
+  let catalogPromise;
 
-  async function loadIndex() {
-    const response = await fetch('/data/image-font-index-v2.bin?v=5');
+  function catalog() {
+    if (!catalogPromise) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 20000);
+      catalogPromise = fetch('/data/image-fonts.json?v=6', {credentials: 'omit', signal: controller.signal})
+        .then(response => {
+          if (!response.ok) throw new Error('Cannot load the font catalogue');
+          return response.json();
+        }).catch(error => { catalogPromise = null; throw error; }).finally(() => clearTimeout(timer));
+    }
+    return catalogPromise;
+  }
+
+  async function loadIndex(part) {
+    const response = await fetch(files[part]);
     if (!response.ok) throw new Error('Cannot load the Korean glyph index');
-    const buffer = await response.arrayBuffer();
+    const blob = await response.blob();
+    const signature = new Uint8Array(await blob.slice(0, 2).arrayBuffer());
+    // A host may already have sent Content-Encoding: gzip and the browser decoded it.
+    const buffer = signature[0] === 0x1f && signature[1] === 0x8b
+      ? await new Response(blob.stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer()
+      : await blob.arrayBuffer();
     const bytes = new Uint8Array(buffer);
     const view = new DataView(buffer);
     const decoder = new TextDecoder();
@@ -36,6 +60,16 @@
     return {bytes, syllables, faces};
   }
 
+  function getIndex(part) {
+    if (!pending.has(part)) {
+      pending.set(part, loadIndex(part).catch(error => {
+        pending.delete(part); // A later scan can retry a failed request.
+        throw error;
+      }));
+    }
+    return pending.get(part);
+  }
+
   function glyphFeatures(glyph) {
     // Average each 8×8 tile of the 32×40 tight ink mask, preserving inside spaces.
     const cells = new Float32Array(20);
@@ -60,39 +94,61 @@
   }
 
   function baseline(list) {
-    return {indexed: false, glyphCount: 0,
-      faces: list.slice(0, 16).map(row => ({row, weight: 400, url: row.url}))};
+    return {indexed: false, glyphCount: 0, limited: true,
+      faces: list.slice(0, 16).map(row => {
+        const weight = Object.keys(row.weights).find(w => row.weights[w] === row.url);
+        return {row, weight: Number(weight), url: row.url};
+      })};
   }
 
   async function rank(target, list) {
-    let index;
-    try {
-      pendingIndex ||= loadIndex();
-      index = await pendingIndex;
-    } catch {
-      pendingIndex = null; // Allow a retry on a later scan.
-      return baseline(list);
-    }
-    const glyphs = new Map();
-    const distinctHangul = new Set();
+    const chars = new Set(), targets = new Map();
     for (const glyph of target.glyphs || []) {
       if (!/^[가-힣]$/.test(glyph.char)) continue;
-      distinctHangul.add(glyph.char);
-      if (glyphs.has(glyph.char) || !glyph.pixels || !index.syllables.has(glyph.char)) continue;
-      glyphs.set(glyph.char, {column: index.syllables.get(glyph.char), ...glyphFeatures(glyph)});
+      chars.add(glyph.char);
+      if (glyph.pixels && !targets.has(glyph.char)) targets.set(glyph.char, glyphFeatures(glyph));
     }
-    if (!glyphs.size) return baseline(list);
+    if (!targets.size) return baseline(list);
+
+    let index, extra, limited = false;
+    try {
+      index = await getIndex('common');
+      if ([...targets.keys()].some(char => !index.syllables.has(char))) {
+        try {
+          extra = await getIndex('extra');
+          if (extra.faces.length !== index.faces.length || extra.faces.some((f, i) =>
+            f.id !== index.faces[i].id || f.weight !== index.faces[i].weight)) {
+            throw new Error('Mismatched glyph indexes');
+          }
+        } catch {
+          extra = null;
+          limited = true;
+        }
+      }
+    } catch {
+      // Older browsers and interrupted downloads can still use the original comparison set.
+      try { index = await getIndex('legacy'); } catch { return baseline(list); }
+      limited = true;
+    }
+
+    const glyphs = [];
+    for (const [char, features] of targets) {
+      const part = index.syllables.has(char) ? index : extra;
+      const column = part?.syllables.get(char);
+      if (column !== undefined) glyphs.push({part, column, features});
+    }
+    if (!glyphs.length) return baseline(list);
     const rows = new Map(list.map(row => [row.id, row]));
     const scored = [];
-    for (const face of index.faces) {
+    for (const [i, face] of index.faces.entries()) {
       const row = rows.get(face.id);
       const url = row?.weights?.[face.weight];
       if (!url) continue;
       let cost = 0;
-      for (const glyph of glyphs.values()) {
-        cost += glyphDifference(index.bytes, face.offset + glyph.column * featureSize, glyph);
+      for (const {part, column, features} of glyphs) {
+        cost += glyphDifference(part.bytes, part.faces[i].offset + column * featureSize, features);
       }
-      scored.push({row, weight: face.weight, url, cost: cost / glyphs.size});
+      scored.push({row, weight: face.weight, url, cost: cost / glyphs.length});
     }
     if (!scored.length) return baseline(list);
     scored.sort((a,b) => a.cost-b.cost);
@@ -114,8 +170,8 @@
       if (faces.length >= faceLimit) break;
       faces.push(face);
     }
-    return {faces, indexed: glyphs.size >= 2 && glyphs.size * 2 >= distinctHangul.size, glyphCount: glyphs.size};
+    return {faces, limited, indexed: !limited && glyphs.length >= 2 && glyphs.length * 2 >= chars.size, glyphCount: glyphs.length};
   }
 
-  window.ImageFontIndex = {rank};
+  window.ImageFontIndex = {catalog, rank};
 })();

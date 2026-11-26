@@ -5,7 +5,7 @@
   const panel = document.getElementById('image-finder');
   const preview = el('preview'), results = el('results'), status = el('status');
   const loaded = new Map();
-  let picture, crop, start, revision = 0, catalog;
+  let picture, crop, start, revision = 0;
 
   let detectedAreas = [];
   let ocrRequest = 0, recognized = [];
@@ -285,36 +285,48 @@
     return true;
   }
 
-  function loadFace({row, weight, url}) {
-    if (!loaded.has(url)) {
+  function faceKey({row, weight}) { return row.id + "/" + weight; }
+
+  function loadFace(candidate) {
+    const {row, weight, url} = candidate, key = faceKey(candidate);
+    if (!loaded.has(key)) {
       const font = new FontFace(`im-${row.id}-${weight}`, `url("${url}")`, {weight: String(weight)});
       const entry = {font};
       entry.ready = new Promise((resolve, reject) => {
         const timer = setTimeout(() => reject(Error('Font load timed out')), 12000);
         font.load().then(resolve, reject).finally(() => clearTimeout(timer));
       }).then(() => {
+        if (loaded.get(key) !== entry) throw Error('Superseded font load');
         document.fonts.add(font);
         return font.family;
-      }).catch(error => { loaded.delete(url); throw error; });
-      loaded.set(url, entry);
+      }).catch(error => {
+        if (loaded.get(key) === entry) loaded.delete(key);
+        throw error;
+      });
+      loaded.set(key, entry);
     }
-    return loaded.get(url).ready;
+    return loaded.get(key).ready;
   }
 
   function trimFaces(needed) {
     // Each scan has a bounded shortlist. Release old decoded fonts between scans.
-    for (const [url, entry] of loaded) {
-      if (loaded.size <= 16) break;
-      if (!needed.has(url) && entry.font.status === 'loaded') {
+    for (const [key, entry] of loaded) {
+      if (!needed.has(key)) {
         document.fonts.delete(entry.font);
-        loaded.delete(url);
+        loaded.delete(key);
       }
     }
   }
 
-  function showResults(matches, confident, text) {
+  function showResults(matches, confident, text, limited) {
     status.dataset.confidence = confident ? 'high' : 'low';
     status.textContent = confident ? '글자 모양이 가장 가까운 원본 후보입니다.' : '원본 서체 판별 어려움. 아래는 모양이 비슷한 무료 서체입니다.';
+    if (limited) {
+      const note = document.createElement('small');
+      note.lang = document.documentElement.lang;
+      note.textContent = note.lang === 'en' ? 'Only part of the comparison data was available.' : '이번 판별에는 일부 비교 자료만 사용했습니다.';
+      status.append(' ', note);
+    }
     for (const [index, match] of matches.slice(0, 3).entries()) {
       const article = document.createElement('article'), title = document.createElement('strong');
       const label = document.createElement('small');
@@ -338,6 +350,12 @@
       source.href = match.row.source;
       source.textContent = '공식 배포처';
       article.append(label, title, sample, detail, ' · ', source);
+      if (match.row.attribution) {
+        const credit = document.createElement('small');
+        credit.translate = false;
+        credit.textContent = match.row.attribution;
+        article.append(credit);
+      }
       results.append(article);
     }
   }
@@ -436,19 +454,15 @@
         : shapes.prepareTarget(picture, selection, line));
       if (targets.some(target => !target)) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
       status.textContent = '비교할 서체를 준비하고 있습니다…';
-      if (!catalog) {
-        const response = await fetch('/data/image-fonts.json?v=5');
-        if (!response.ok) throw Error('Catalog unavailable');
-        catalog = await response.json();
-      }
+      const catalog = await window.ImageFontIndex.catalog();
       const target = {
         glyphs: targets.flatMap(line => line.glyphs),
         minGlyphHeight: Math.min(...targets.map(line => line.minGlyphHeight)),
         distinct: new Set(text.match(/[가-힣]/g)).size
       };
-      const {faces, indexed, glyphCount} = await window.ImageFontIndex.rank(target, catalog);
+      const {faces, indexed, glyphCount, limited} = await window.ImageFontIndex.rank(target, catalog);
       if (version !== revision) return;
-      trimFaces(new Set(faces.map(face => face.url)));
+      trimFaces(new Set(faces.map(faceKey)));
       const characters = new Set(text.match(/[가-힣]/g)), fallbacks = new Map(), bestByFamily = new Map();
       status.textContent = '글자의 획과 굵기를 비교하고 있습니다…';
       for (let i = 0; i < faces.length; i += 3) {
@@ -488,7 +502,7 @@
       // Automatically isolating a color can trim antialiased edges; close fits are suggestions.
       const clearColorMatch = !samples.some(sample => sample.isolatedInk) || (matches.length > 1 && matches[0].score - matches[1].score >= .06);
       const confident = shapes.isConfident(target, matches, expectedCount) && indexed && glyphCount > 0 && agree && clearColorMatch;
-      showResults(matches, confident, text);
+      showResults(matches, confident, text, limited);
       showGlyphComparison(matches, lines, targets, samples);
       if (publish && el('publish')?.checked) window.ImageFontBoard?.record(matches, confident);
     } catch {
