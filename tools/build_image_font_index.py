@@ -57,6 +57,17 @@ k-solmoe-kimdaegeon k-kakao-big-sans k-dancing-peoples
 k-goshin k-pyeojin k-hippie
 k-keris-baeum k-samlip-hopang-basic k-seocho-batang
 k-hs-hwalkong-serif
+k-hakgyoansim-eohangkkumigi-b k-hakgyoansim-bandal-l k-hakgyoansim-susukkang-l
+k-hakgyoansim-yieodalligi-l k-hakgyoansim-kidaripungseon-l k-bithumb-gothic-original
+k-bithumb-gothic-basic k-wanted-sans k-kakao-small-sans
+k-a2z k-hada-batang k-hada-round
+k-jayeon-sans k-lxgw-wenkai-kr k-hangulim
+k-neujoh k-keris-kedu k-elice-baeum
+k-elice-coding k-elice-dx-neolli k-myungwon-jaemin4
+k-happiness-sans k-samlip-hopang-outline k-hada-levelup
+k-kkakdugi-drafting k-seocho-dotum k-slei-gothic
+k-foureyes k-grace-serif k-hakgyoansim-deongdeongi
+k-hakgyoansim-bamhaneul k-hakgyoansim-edge
 """.split()
 
 

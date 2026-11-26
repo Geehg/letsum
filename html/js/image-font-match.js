@@ -437,7 +437,7 @@
       if (targets.some(target => !target)) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
       status.textContent = '비교할 서체를 준비하고 있습니다…';
       if (!catalog) {
-        const response = await fetch('/data/image-fonts.json?v=4');
+        const response = await fetch('/data/image-fonts.json?v=5');
         if (!response.ok) throw Error('Catalog unavailable');
         catalog = await response.json();
       }

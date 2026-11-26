@@ -7,7 +7,7 @@
   let pendingIndex;
 
   async function loadIndex() {
-    const response = await fetch('/data/image-font-index-v2.bin?v=4');
+    const response = await fetch('/data/image-font-index-v2.bin?v=5');
     if (!response.ok) throw new Error('Cannot load the Korean glyph index');
     const buffer = await response.arrayBuffer();
     const bytes = new Uint8Array(buffer);
