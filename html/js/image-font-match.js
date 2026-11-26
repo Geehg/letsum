@@ -4,58 +4,86 @@
   const el = id => document.getElementById('im-' + id);
   const panel = document.getElementById('image-finder');
   const preview = el('preview'), results = el('results'), status = el('status');
+  const progress = window.ImageFontProgress;
   const loaded = new Map();
   const msg = (ko, en) => document.documentElement.lang === "en" ? en : ko;
   let picture, crop, start, revision = 0;
 
   let detectedAreas = [];
-  let ocrRequest = 0, recognized = [];
+  let ocrRequest = 0, recognized = [], reader;
+  let pendingPost = null;
   const ocrStatus = el('ocr-status');
 
   function cancelReading() {
     ocrRequest++;
+    reader?.abort();
+    reader = null;
     ocrStatus.textContent = '';
     ocrStatus.removeAttribute('aria-busy');
   }
 
   async function readText() {
     if (!picture) return;
-    const request = ++ocrRequest;
-    const current = () => request === ocrRequest;
+    const request = ++ocrRequest, version = revision;
+    reader = new AbortController();
+    const current = () => request === ocrRequest && version === revision;
     if (recognized.length && el('text').value === recognized.map(row => row.text).join('\n')) el('text').value = '';
     recognized = [];
+    progress.reach(1);
+    progress.note(1, '이미지에서 글줄을 찾고 있습니다.', 'Locating text lines in the image.');
+    el('run').disabled = true;
     ocrStatus.setAttribute('aria-busy', 'true');
     ocrStatus.textContent = '이 기기에서 한글을 읽고 있습니다…';
     try {
       const rows = await window.ImageFontOCR.read(picture, originalCrop(), current, () => {
-        if (current()) ocrStatus.textContent = '작은 글자를 다시 읽고 있습니다. 첫 사용 시 추가 인식 자료를 받습니다…';
-      });
+        if (current()) {
+          ocrStatus.textContent = '작은 글자를 다시 읽고 있습니다. 첫 사용 시 추가 인식 자료를 받습니다…';
+          progress.note(1, '작은 글자를 확대해 다시 읽는 중', 'Rereading small text at a larger scale');
+        }
+      }, reader.signal);
       if (!current()) return;
       if (!rows.length) {
         ocrStatus.textContent = '한글을 읽기 어렵습니다. 원하는 한 줄을 드래그하거나 직접 입력하세요.';
+        progress.note(1, '한 줄을 드래그하거나 문구를 입력하세요.', 'Select one line or enter its text.');
+        progress.stop('review', '문구 확인 필요', 'Text needs review');
         return;
       }
       recognized = rows;
       el('text').value = rows.map(row => row.text).join('\n');
       detectedAreas = rows.map(row => row.sample.area);
       paint();
-      ocrStatus.textContent = '문구를 자동으로 채웠습니다. 글자를 확인한 뒤 폰트를 찾아보세요.';
+      progress.note(1, rows.map(row => row.text).join(' / '));
+      ocrStatus.textContent = msg('자동으로 읽은 문구입니다. 수정한 뒤 다시 대조할 수 있습니다.', 'Automatically read text. Edit it to run another comparison.');
     } catch {
-      if (current()) ocrStatus.textContent = '자동 읽기를 완료하지 못했습니다. 다시 읽거나 직접 입력하세요.';
+      if (current()) {
+        ocrStatus.textContent = '자동 읽기를 완료하지 못했습니다. 다시 읽거나 직접 입력하세요.';
+        progress.note(1, '문구 다시 읽기 또는 직접 입력', 'Retry reading or enter the text');
+        progress.stop('review', '문구 확인 필요', 'Text needs review');
+      }
+      return;
     } finally {
-      if (current()) ocrStatus.removeAttribute('aria-busy');
+      if (current()) {
+        reader = null;
+        ocrStatus.removeAttribute('aria-busy');
+        el('run').disabled = false;
+      }
     }
+    if (current()) return compare(true);
   }
   el('read').onclick = () => { invalidate(); readText(); };
 
-  function invalidate() {
+  function invalidate(keepProgress = false) {
     revision++;
+    cancelReading();
+    pendingPost = null;
+    el('post-result').hidden = true;
+    if (!keepProgress) progress.reset();
+    trimFaces(new Set());
     if (detectedAreas.length) { detectedAreas = []; paint(); }
     window.ImageFontBoard?.reset();
     results.replaceChildren();
     status.replaceChildren();
     for (const key of ['confidence', 'compared', 'total', 'localMissing']) delete status.dataset[key];
-    el('cancel').hidden = true;
     el('run').disabled = false;
   }
 
@@ -94,8 +122,7 @@
 
   async function attach(files) {
     if (!files.length) return;
-    invalidate();
-    const version = revision, file = files[0];
+    const file = files[0];
     if (files.length !== 1) {
       attachStatus.textContent = '이미지를 한 장씩 놓아주세요.';
       return;
@@ -104,12 +131,18 @@
       attachStatus.textContent = '25 MB 이하 PNG, JPG, WebP 이미지를 선택하세요.';
       return;
     }
-    cancelReading();
+    invalidate();
+    const version = revision;
     recognized = [];
     el('text').value = '';
     start = crop = picture = null;
     attachment.textContent = '';
     el('edit').hidden = true;
+    progress.imageSize(0, 0);
+    progress.begin(0);
+    const scan = el('scan');
+    const top = scan.getBoundingClientRect().top;
+    if (top < 0 || top > innerHeight * .65) scan.scrollIntoView({block: 'start'});
     attachStatus.textContent = '이미지를 여는 중입니다.';
     const url = URL.createObjectURL(file);
     try {
@@ -122,12 +155,17 @@
       preview.width = Math.max(1, Math.round(img.naturalWidth * scale));
       preview.height = Math.max(1, Math.round(img.naturalHeight * scale));
       paint();
+      progress.imageSize(img.naturalWidth, img.naturalHeight);
       attachment.textContent = file.name;
       el('edit').hidden = false;
       attachStatus.textContent = '이미지가 첨부되었습니다.';
       readText();
     } catch {
-      if (version === revision) attachStatus.textContent = '이미지를 열 수 없습니다.';
+      if (version === revision) {
+        attachStatus.textContent = '이미지를 열 수 없습니다.';
+        progress.note(0, '다른 PNG, JPG 또는 WebP를 선택하세요.', 'Choose a different PNG, JPG or WebP.');
+        progress.stop('error', '이미지를 열 수 없습니다', 'Could not open image');
+      }
     } finally { URL.revokeObjectURL(url); }
   }
 
@@ -234,7 +272,6 @@
   preview.onpointerdown = event => {
     if (!event.isPrimary) return;
     invalidate();
-    cancelReading();
     start = point(event);
     preview.setPointerCapture(event.pointerId);
   };
@@ -254,7 +291,6 @@
   preview.onpointercancel = () => { if (start) { start = crop = null; paint(); readText(); } };
   el('reset').onclick = () => { invalidate(); start = crop = null; paint(); readText(); };
   el('text').oninput = () => {
-    cancelReading();
     invalidate();
     detectedAreas = recognized.map(row => row.sample.area);
     paint();
@@ -481,6 +517,17 @@
     results.append(details);
   }
 
+  function originalGlyphBox(box, sample) {
+    if (!sample) return box;
+    // The detector can isolate ink with a margin. Map its coordinates back onto the original image.
+    const {content, area} = sample;
+    return {
+      x: area.x + (box.x - content.x) * area.w / content.w,
+      y: area.y + (box.y - content.y) * area.h / content.h,
+      w: box.w * area.w / content.w, h: box.h * area.h / content.h
+    };
+  }
+
   function showGlyphComparison(matches, lines, targets, samples) {
     if (matches.length < 2 || matches.slice(0, 2).some(m => !m.family || m.row.mode)) return;
     const pair = matches.slice(0, 2);
@@ -502,16 +549,7 @@
     }
     const body = table.createTBody();
     for (const {source, line} of chosen) {
-      let {x, y, w, h} = source.box;
-      // The color detector surrounds the isolated ink with a clean margin.
-      // Map back through that margin to show the actual, full-color source.
-      if (samples[line]) {
-        const {content, area} = samples[line];
-        x = area.x + (x - content.x) * area.w / content.w;
-        y = area.y + (y - content.y) * area.h / content.h;
-        w *= area.w / content.w;
-        h *= area.h / content.h;
-      }
+      const {x, y, w, h} = originalGlyphBox(source.box, samples[line]);
       const row = body.insertRow();
       const canvases = Array.from({length:3}, () => {
         const canvas = document.createElement('canvas');
@@ -544,28 +582,46 @@
 
   window.ImageFontLocal.bind(invalidate);
   el('cancel').onclick = () => {
-    invalidate();
-    trimFaces(new Set());
-    status.textContent = msg('대조를 중지했습니다.', 'Comparison stopped.');
+    invalidate(true);
+    progress.stop('stopped', '분석을 중지했습니다', 'Scan stopped', '이 단계에서 중지됨', 'Stopped at this step');
+    status.textContent = msg('분석을 중지했습니다.', 'Scan stopped.');
+    if (!el('edit').hidden) el('run').focus({preventScroll: true});
   };
 
-  el('run').onclick = async () => {
+  function offerPost() { el('post-result').hidden = !pendingPost || !el('publish').checked; }
+  el('publish').addEventListener('change', offerPost);
+  el('post-result').onclick = () => {
+    if (!pendingPost || !el('publish').checked) return;
+    const {matches, confident} = pendingPost;
+    pendingPost = null;
+    offerPost();
+    window.ImageFontBoard?.record(matches, confident);
+  };
+  function review(ko, en, step = 2) {
+    status.textContent = msg(ko, en);
+    progress.note(step, ko, en);
+    progress.stop('review', '문구 확인 필요', 'Text needs review');
+  }
+  el('run').onclick = () => {
     if (!el('text').value.trim() && ocrStatus.hasAttribute('aria-busy')) return;
     invalidate();
+    return compare(false);
+  };
+  async function compare(automatic) {
     const version = revision, text = el('text').value.trim().normalize('NFC');
     const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
-    const publish = el('publish')?.checked;
+    const publish = !automatic && el('publish').checked;
+    if (!automatic) progress.enteredText(lines.join(' / '));
     if (!picture || !lines.length || lines.some(line => !/[가-힣]/.test(line) || [...line].length < 2)) {
-      status.textContent = '이미지에 보이는 한글을 포함해 두 글자 이상 입력하세요.';
+      review('이미지에 보이는 한글을 포함해 두 글자 이상 입력하세요.', 'Enter at least two characters, including Korean text visible in the image.', 1);
       return;
     }
     if (lines.length > 2 || lines.some(line => [...line].length > 40)) {
-      status.textContent = '한 번에 두 줄까지, 한 줄에 40자까지 비교할 수 있습니다.';
+      review('한 번에 두 줄까지, 한 줄에 40자까지 비교할 수 있습니다.', 'Compare up to two lines with 40 characters per line.', 1);
       return;
     }
-    cancelReading();
+    progress.reach(2);
     el('run').disabled = true;
-    el('cancel').hidden = false;
     try {
       const shapes = window.ImageFontShapes;
       const selection = originalCrop();
@@ -573,7 +629,7 @@
         ? recognized.map(row => row.sample)
         : window.ImageFontColor.detect(picture, selection, lines);
       if (lines.length === 2 && samples.length !== 2) {
-        status.textContent = '두 줄의 글자색을 분리하기 어렵습니다. 한 줄을 드래그하고 그 문구만 입력하세요.';
+        review('두 줄의 글자색을 분리하기 어렵습니다. 한 줄을 드래그하고 그 문구만 입력하세요.', 'The two lines could not be separated. Select one line and enter its text.');
         return;
       }
       detectedAreas = samples.map(sample => sample.area);
@@ -581,21 +637,30 @@
       const targets = lines.map((line, i) => samples[i]
         ? shapes.prepareTarget(samples[i].image, null, line)
         : shapes.prepareTarget(picture, selection, line));
-      if (targets.some(target => !target)) { status.textContent = '글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.'; return; }
+      if (targets.some(target => !target)) {
+        review('글자 윤곽을 찾지 못했습니다. 글자 한 줄을 다시 선택하세요.', 'No letter outlines were found. Select one line again.');
+        return;
+      }
       status.textContent = '비교할 서체를 준비하고 있습니다…';
-      const catalog = await window.ImageFontIndex.catalog();
       const target = {
         glyphs: targets.flatMap(line => line.glyphs),
         minGlyphHeight: Math.min(...targets.map(line => line.minGlyphHeight)),
         distinct: new Set(text.match(/[가-힣]/g)).size
       };
+      const measuredGlyphs = targets.flatMap((line, i) => line.glyphs
+        .filter(glyph => glyph.pixels && /^[가-힣]$/.test(glyph.char))
+        .map(glyph => ({...glyph, box: originalGlyphBox(glyph.box, samples[i])})));
+      progress.showInk(measuredGlyphs);
       const index = window.ImageFontIndex;
+      const catalog = await index.catalog();
+      if (version !== revision) return;
       const ranked = await index.rank(target, catalog, () => version === revision, (part, total) => {
-        status.textContent = msg('글자 특징 대조 자료 읽는 중 ', 'Reading glyph comparison data ') + part + ' / ' + total;
+        if (version !== revision) return;
+        progress.note(2, '획 특징 자료 읽는 중 · ' + part + ' / ' + total, 'Reading glyph data · ' + part + ' / ' + total);
       });
       if (version !== revision) return;
       if (!ranked.glyphCount) {
-        status.textContent = msg('대조할 글자 윤곽을 분리하기 어렵습니다. 한 줄만 선택하고 문구를 확인하세요.', 'Select one line and check its text so individual glyphs can be compared.');
+        review('대조할 글자 윤곽을 분리하기 어렵습니다. 한 줄만 선택하고 문구를 확인하세요.', 'Select one line and check its text so individual glyphs can be compared.');
         return;
       }
       const local = await window.ImageFontLocal.available(catalog);
@@ -658,17 +723,22 @@
       }
       let updated = 0;
       const active = () => version === revision;
+      progress.note(2, compared.toLocaleString() + '종의 획 특징 대조', 'Glyphs compared across ' + compared.toLocaleString() + ' families');
+      progress.reach(3);
+      progress.note(3, '가까운 후보의 굵기와 윤곽 확인 중', 'Checking weights and outlines of close matches');
       status.textContent = msg('글자 특징 대조 완료 · 원본의 획을 비교하고 있습니다…', 'Glyph features compared. Checking original outlines…');
       const {matches, failed} = await index.finalists(faces, measure, active, (ordered, attempted) => {
+        if (!active()) return;
         trimFaces(new Set(ordered.slice(0, 4).map(faceKey)));
         if (Date.now() - updated < 700) return;
         updated = Date.now();
-        status.textContent = msg('글자 모양 대조 ' + compared.toLocaleString() + '종 · 세부 확인 ' + attempted + '개 굵기',
-          'Compared ' + compared.toLocaleString() + ' families · checked ' + attempted + ' faces in detail');
+        progress.note(3, '후보 굵기 ' + attempted + '개 확인', 'Checked ' + attempted + ' candidate faces');
       });
       if (!active()) return;
       if (!matches.length) {
         status.textContent = msg('해당 글자의 모양을 대조할 수 없습니다. 다른 한글을 선택해 주세요.', 'No comparable shapes. Please select other Korean text.');
+        progress.note(3, '다른 한글을 선택해 주세요.', 'Select a different Korean line.');
+        progress.stop('review', '대조할 후보가 없습니다', 'No comparable matches');
         return;
       }
       const leaders = matches.slice(0, 4);
@@ -683,14 +753,24 @@
       showResults(matches, confident, text, ranked.limited || failed > 0, count);
       showGlyphComparison(matches, lines, targets, samples);
       showAllFamilies(faces, leaders, text, measure, active);
-      if (publish && el('publish')?.checked) {
-        if (!matches.slice(0, 3).some(m => m.manual)) window.ImageFontBoard?.record(matches, confident);
-        else el('publish-state').textContent = msg('직접 지정한 후보가 있어 이 기기에만 표시합니다.', 'Results containing a manually assigned original are shown only on this device.');
+      const top = matches.slice(0, 3);
+      progress.note(3, top.map(match => match.row.name).join(' · '));
+      progress.finish(top.length);
+      if (top.some(m => m.manual)) {
+        if (el('publish').checked) el('publish-state').textContent = msg('직접 지정한 후보가 있어 이 기기에만 표시합니다.', 'Results containing a manually assigned original are shown only on this device.');
+      } else if (automatic) {
+        pendingPost = {matches: top, confident};
+        offerPost();
+      } else if (publish && el('publish').checked) {
+        window.ImageFontBoard?.record(top, confident);
       }
     } catch {
-      if (version === revision) status.textContent = '비교 자료를 열 수 없습니다. 다시 시도하세요.';
+      if (version === revision) {
+        status.textContent = '비교 자료를 열 수 없습니다. 다시 시도하세요.';
+        progress.stop('error', '대조 자료를 열 수 없습니다', 'Comparison data unavailable', '연결을 확인하고 다시 대조하세요.', 'Check your connection and retry.');
+      }
     } finally {
-      if (version === revision) { el('run').disabled = false; el('cancel').hidden = true; }
+      if (version === revision) el('run').disabled = false;
     }
-  };
+  }
 })();

@@ -142,10 +142,10 @@
   }
 
   // Serialize work so a burst of new selections cannot start several WASM engines.
-  function read(picture, crop, current, onRefine) {
+  function read(picture, crop, current, onRefine, signal) {
     const run = async () => {
       if (!current()) return [];
-      let worker, timeout, finished = false;
+      let worker, timeout, onCancel, finished = false;
       const job = async () => {
         const {default:ocr} = await import(base + '/tesseract.esm.min.js');
         if (finished || !current()) return [];
@@ -159,10 +159,16 @@
       };
       try {
         const deadline = new Promise((_, reject) => { timeout = setTimeout(() => reject(Error('OCR timed out')), 60000); });
-        return await Promise.race([job(), deadline]);
+        const cancelled = new Promise(resolve => {
+          onCancel = () => resolve([]);
+          if (signal?.aborted) onCancel();
+          else signal?.addEventListener('abort', onCancel, {once:true});
+        });
+        return await Promise.race([job(), deadline, cancelled]);
       } finally {
         finished = true;
         clearTimeout(timeout);
+        signal?.removeEventListener('abort', onCancel);
         if (worker) await worker.terminate();
       }
     };

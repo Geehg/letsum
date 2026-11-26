@@ -12,7 +12,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261028"><link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="css/style.css?v=84">
-<link rel="stylesheet" href="css/font-extractor.css?v=12">
+<link rel="stylesheet" href="css/font-extractor.css?v=13">
 <!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=cd0152c521"><!--/HEADER_BRAND-->
 <!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=a60f4033cd"><script src="/js/ui-language.js?v=a60f4033cd"></script><!--/UI_LANGUAGE-->
 <!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=828b693505"><!--/FAMILY_SITES--><!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=b8558de9e4"><!--/CONTACT_STYLE--><!--ADSENSE--><meta name="google-adsense-account" content="ca-pub-7515626837780401"><!--/ADSENSE--></head>
@@ -34,7 +34,7 @@
   <details id="image-finder" class="image-finder" open>
     <summary><span>이미지로 한글 폰트 찾기</span> <small class="im-beta">베타 서비스</small> <small><span data-ko="한글 목록" data-en="Korean catalogue">한글 목록</span> <span id="im-family-count">1,274종</span></small> <small class="im-drop-hint">여기에 이미지 놓기</small></summary>
     <p class="im-coverage"><span data-ko="자동 대조" data-en="Automatic comparison">자동 대조</span> <strong id="im-auto-count">1,268종</strong> · <span data-ko="기기 원본 대조" data-en="Local originals">기기 원본 대조</span> <strong id="im-local-count">6종</strong></p>
-    <p>이미지를 넣으면 한글 문구를 이 기기에서 자동으로 읽습니다. 잘못 읽은 글자는 직접 고칠 수 있습니다.</p>
+    <p data-ko="이미지를 넣으면 이 기기에서 한글을 읽고 닮은 폰트를 찾습니다. 잘못 읽은 문구는 직접 고칠 수 있습니다." data-en="Add an image to read its Korean text and find matching fonts on this device. You can edit the transcription.">이미지를 넣으면 이 기기에서 한글을 읽고 닮은 폰트를 찾습니다. 잘못 읽은 문구는 직접 고칠 수 있습니다.</p>
     <label id="im-drop" class="im-drop" for="im-file">
       <span class="im-drop-copy"><strong>이미지 한 장을 여기에 놓으세요</strong><small id="im-formats">PNG · JPG · WebP · 최대 25 MB · Ctrl+V / ⌘V</small></span>
       <span class="im-pick">이미지 선택</span>
@@ -43,6 +43,37 @@
     <button type="button" id="im-paste">복사한 이미지 붙여넣기</button>
     <p id="im-attachment" translate="no"></p>
     <p id="im-attach-status" role="status"></p>
+    <section id="im-scan" class="im-scan" hidden aria-labelledby="im-scan-title">
+      <div class="im-scan-head">
+        <span class="im-scan-light" aria-hidden="true"></span>
+        <h3 id="im-scan-title" role="status"></h3>
+        <button id="im-cancel" type="button" hidden data-ko="분석 중지" data-en="Stop scan">분석 중지</button>
+        <a id="im-fix" href="#im-text" hidden data-ko="문구 확인 ↓" data-en="Review text ↓">문구 확인 ↓</a>
+        <a id="im-ready" href="#im-results" hidden></a>
+      </div>
+      <div class="im-scan-body">
+        <div class="im-viewfinder">
+          <div class="im-glass" id="im-glass" hidden>
+            <canvas id="im-preview" aria-label="글자 영역 선택"></canvas>
+            <div class="im-optics" aria-hidden="true"><i></i><span id="im-boxes"></span></div>
+          </div>
+        </div>
+        <ol id="im-steps" class="im-steps">
+          <li><b data-ko="이미지 열기" data-en="Open image">이미지 열기</b><small></small></li>
+          <li><b data-ko="한글 읽기" data-en="Read Korean text">한글 읽기</b><small translate="no"></small></li>
+          <li><b data-ko="글자 획 대조" data-en="Compare glyphs">글자 획 대조</b><small></small><span id="im-ink" class="im-ink" aria-hidden="true"></span></li>
+          <li><b data-ko="후보 폰트 선별" data-en="Rank matching fonts">후보 폰트 선별</b><small></small></li>
+        </ol>
+      </div>
+    </section>
+    <div id="im-edit" hidden>
+      <p>다른 문구를 읽으려면 이미지에서 원하는 글자 영역을 드래그하세요.</p>
+      <button id="im-reset" type="button">전체 영역 사용</button>
+      <button id="im-read" type="button">문구 다시 읽기</button>
+      <p id="im-ocr-status" role="status"></p>
+      <label>이미지 속 한글 문구 <textarea id="im-text" rows="2" maxlength="81" placeholder="예: 봄날의 기록" autocomplete="off"></textarea></label>
+      <button id="im-run" type="button">비슷한 폰트 찾기</button>
+    </div>
     <details id="im-original-panel">
       <summary><span data-ko="기기 원본으로 추가 대조" data-en="Compare local originals">기기 원본으로 추가 대조</span></summary>
       <p id="im-original-guide"><span data-ko="아래 서체는 기기에 설치돼 있으면 함께 대조합니다. 브라우저에서 찾지 못한 서체는 보유한 TTF·OTF 원본을 선택하세요." data-en="The families listed here use an installed face. If your browser cannot access one, select your own TTF or OTF original.">아래 서체는 기기에 설치돼 있으면 함께 대조합니다. 브라우저에서 찾지 못한 서체는 보유한 TTF·OTF 원본을 선택하세요.</span></p>
@@ -57,19 +88,9 @@
       <button id="im-original-clear" type="button" hidden data-ko="원본 연결 해제" data-en="Clear selected originals">원본 연결 해제</button>
     </details>
     <label class="im-publish-option"><input id="im-publish" type="checkbox" checked aria-describedby="im-publish-note"> 판별 결과를 공개 게시판에 기록</label>
-    <p id="im-publish-note">판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.</p>
-    <div id="im-edit" hidden>
-      <p>다른 문구를 읽으려면 이미지에서 원하는 글자 영역을 드래그하세요.</p>
-      <canvas id="im-preview" aria-label="글자 영역 선택"></canvas>
-      <button id="im-reset" type="button">전체 영역 사용</button>
-      <button id="im-read" type="button">문구 다시 읽기</button>
-      <p id="im-ocr-status" role="status"></p>
-      <label>이미지 속 한글 문구 <textarea id="im-text" rows="2" maxlength="81" placeholder="예: 봄날의 기록" autocomplete="off"></textarea></label>
-      <button id="im-run" type="button">비슷한 폰트 찾기</button>
-      <button id="im-cancel" type="button" hidden data-ko="대조 중지" data-en="Stop comparison">대조 중지</button>
-    </div>
-    <p id="im-status" role="status"></p><div id="im-results"></div>
-    <div class="im-post-feedback"><span id="im-publish-state" role="status"></span><button id="im-publish-retry" type="button" hidden>등록 다시 시도</button></div>
+    <p id="im-publish-note"><span data-ko="자동으로 찾은 후보는 결과를 본 뒤 게시할 수 있습니다." data-en="You can post automatic matches after reviewing the results.">자동으로 찾은 후보는 결과를 본 뒤 게시할 수 있습니다.</span> 판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.</p>
+    <p id="im-status" role="status"></p><div id="im-results" tabindex="-1"></div>
+    <div class="im-post-feedback"><button id="im-post-result" type="button" hidden data-ko="이 결과를 공개 게시판에 기록" data-en="Post this result to the public board">이 결과를 공개 게시판에 기록</button><span id="im-publish-state" role="status"></span><button id="im-publish-retry" type="button" hidden>등록 다시 시도</button></div>
     <details id="im-board" open>
       <summary>공개 판별 기록</summary>
       <div class="im-board-bar"><span>최신순</span><button id="im-board-refresh" type="button">새로고침</button></div>
@@ -168,9 +189,10 @@
 <script defer src="/js/image-font-index.js?v=8"></script>
 <script defer src="/js/image-font-board.js?v=6"></script>
 <script defer src="/js/image-font-color.js?v=3"></script>
-<script defer src="/js/image-font-ocr.js?v=2"></script>
+<script defer src="/js/image-font-ocr.js?v=3"></script>
 <script defer src="/js/image-font-local.js?v=1"></script>
-<script defer src="/js/image-font-match.js?v=15"></script>
+<script defer src="/js/image-font-progress.js?v=1"></script>
+<script defer src="/js/image-font-match.js?v=16"></script>
 <script src="/js/font-extractor.js?v=8"></script>
 <script src="js/common.js?v=219a96aa79" data-base=""></script>
 <script src="js/pv.js?v=1" defer></script>
