@@ -8871,5 +8871,29 @@
   "page": "https://www.tunera.xyz/fonts/brassia/",
   "checked": "2026-11-20",
   "evidence": "공식 Tunera 상세 페이지와 원본 ZIP의 LICENSE.txt(SIL OFL 1.1) 및 name 0·13 확인. 상업 이용·임베딩 허용. 파일 단독 판매 금지, 재배포 시 저작권·라이선스 전문 유지, 수정본 동일 라이선스 및 예약 이름(RFN) 제한. 공식 원본 무변환·무서브셋. Tunera와 제작자 크레딧 표시."
+ },
+ "k-heejoy": {
+  "license": "OFL",
+  "page": "https://heejoykim.com/fonts/heejoy",
+  "checked": "2026-11-28",
+  "evidence": "상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 배포본 1.002의 OFL.txt와 설치 파일 9개의 이름표를 확인했습니다. 미리보기에는 글자 윤곽과 자간을 유지한 웹폰트를 사용합니다."
+ },
+ "k-dalmoori": {
+  "license": "Apache 2.0",
+  "page": "https://github.com/RanolP/dalmoori-font/blob/897f0e71224d9964a84b888f2596b2bfd7f98def/README.md",
+  "checked": "2026-11-28",
+  "evidence": "제작자 현재 안내와 0.200 배포 ZIP의 LICENSE에 Apache License 2.0이 명시돼 있습니다. 배포 ZIP의 TTF·WOFF2는 제작자 웹사이트 안정판과 일치합니다. 상업용 이용·수정·재배포가 가능하며, 파일 재배포 시 라이선스 전문과 해당 저작권 고지를 유지하고 수정한 파일에는 변경 사실을 표시해야 합니다. 제작자의 상표권은 부여되지 않습니다."
+ },
+ "k-cef-fonts-cjk": {
+  "license": "OFL",
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/f6377c860fad7a466cfd9273649a797ae7a0272d/LICENSE",
+  "checked": "2026-11-28",
+  "evidence": "상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 저장소의 LICENSE와 파일 이름표를 대조했습니다. 이 판의 파일 버전은 2.28입니다. 제작자는 한자 이외 영역의 유지보수를 종료했다고 안내합니다."
+ },
+ "k-cef-fonts-cjk-mono": {
+  "license": "OFL",
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/f6377c860fad7a466cfd9273649a797ae7a0272d/LICENSE",
+  "checked": "2026-11-28",
+  "evidence": "상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 저장소의 LICENSE와 파일 이름표를 대조했습니다. 이 판의 파일 버전은 2.26입니다. 제작자는 한자 이외 영역의 유지보수를 종료했다고 안내합니다."
  }
 }

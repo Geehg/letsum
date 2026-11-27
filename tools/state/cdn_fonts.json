@@ -4174,5 +4174,23 @@
   "files": {
    "400": "https://peartype.kr/fonts/Nemobandeut.woff2?v=3"
   }
+ },
+ "k-dalmoori": {
+  "page": "https://github.com/RanolP/dalmoori-font/releases/tag/v0.200",
+  "files": {
+   "400": "https://ranolp.github.io/dalmoori-font/latest-stable/dalmoori.woff2"
+  }
+ },
+ "k-cef-fonts-cjk": {
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk",
+  "files": {
+   "400": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJK-Regular.ttf"
+  }
+ },
+ "k-cef-fonts-cjk-mono": {
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk",
+  "files": {
+   "400": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJKMono-Regular.ttf"
+  }
  }
 }

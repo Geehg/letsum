@@ -3,7 +3,7 @@
   'use strict';
 
   const featureSize = 27;
-  const version = '8';
+  const version = '9';
   const pending = new Map();
   let catalogPromise, inflaterPromise;
 

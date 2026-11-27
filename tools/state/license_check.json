@@ -8878,5 +8878,37 @@
   "license": "네모반듯체 OFL 1.1",
   "evidence": "직접 확인: 개인·기업의 상업적 이용, 인쇄·웹·영상·굿즈·로고/BI·앱 및 웹폰트 임베딩, 수정·재배포를 허용합니다. 폰트 파일 자체의 단독 판매는 금지합니다. 재배포·번들 시 저작권 고지와 OFL 1.1 전문을 유지하고, 수정한 폰트도 OFL로 배포해야 합니다. 제작자가 지정한 예약 이름이 있으면 수정본에 사용할 수 없습니다. 수정·파생본에는 원본 이름 네모반듯체/NemoBandeut을 사용할 수 없습니다. 제작자는 이 서체로 만든 인쇄물·광고·온라인 콘텐츠 이미지를 파운드리 홍보에 소개할 수 있다고 안내합니다. 원치 않으면 공식 배포처의 문의 이메일로 제외를 요청할 수 있습니다. 공식 원문 및 파일 name 0·13 확인. 공식 CSS 및 CORS 허용 확인, 공식 WOFF2를 그대로 호출.",
   "page": "https://peartype.kr/#font-nemo"
+ },
+ {
+  "id": "k-heejoy",
+  "name": "히조이체",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 배포본 1.002의 OFL.txt와 설치 파일 9개의 이름표를 확인했습니다. 미리보기에는 글자 윤곽과 자간을 유지한 웹폰트를 사용합니다.",
+  "page": "https://heejoykim.com/fonts/heejoy"
+ },
+ {
+  "id": "k-dalmoori",
+  "name": "달무리",
+  "expected": "Apache 2.0",
+  "license": "Apache 2.0",
+  "evidence": "직접 확인: 제작자 현재 안내와 0.200 배포 ZIP의 LICENSE에 Apache License 2.0이 명시돼 있습니다. 배포 ZIP의 TTF·WOFF2는 제작자 웹사이트 안정판과 일치합니다. 상업용 이용·수정·재배포가 가능하며, 파일 재배포 시 라이선스 전문과 해당 저작권 고지를 유지하고 수정한 파일에는 변경 사실을 표시해야 합니다. 제작자의 상표권은 부여되지 않습니다.",
+  "page": "https://github.com/RanolP/dalmoori-font/blob/897f0e71224d9964a84b888f2596b2bfd7f98def/README.md"
+ },
+ {
+  "id": "k-cef-fonts-cjk",
+  "name": "CEF Fonts CJK",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 저장소의 LICENSE와 파일 이름표를 대조했습니다. 이 판의 파일 버전은 2.28입니다. 제작자는 한자 이외 영역의 유지보수를 종료했다고 안내합니다.",
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/f6377c860fad7a466cfd9273649a797ae7a0272d/LICENSE"
+ },
+ {
+  "id": "k-cef-fonts-cjk-mono",
+  "name": "CEF Fonts CJK Mono",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 저장소의 LICENSE와 파일 이름표를 대조했습니다. 이 판의 파일 버전은 2.26입니다. 제작자는 한자 이외 영역의 유지보수를 종료했다고 안내합니다.",
+  "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/f6377c860fad7a466cfd9273649a797ae7a0272d/LICENSE"
  }
 ]

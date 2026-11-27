@@ -140,5 +140,71 @@
   "keep_re": [
    "-12px-(monospaced|proportional)-(otf|ttf|otf\\.woff2)-v"
   ]
+ },
+ "k-heejoy": {
+  "keep_re": [
+   "https://heejoykim\\.com/font\\-assets/heejoy/1\\.002/HEEJOY\\-1\\.002\\.zip$",
+   "https://heejoykim\\.com/font\\-assets/heejoy/1\\.002/HEEJOY\\-1\\.002\\-web\\.zip$"
+  ],
+  "add": [
+   {
+    "url": "https://heejoykim.com/font-assets/heejoy/1.002/HEEJOY-1.002.zip",
+    "fmt": "TTF (ZIP)",
+    "w": "9개 굵기",
+    "file": "HEEJOY-1.002.zip"
+   },
+   {
+    "url": "https://heejoykim.com/font-assets/heejoy/1.002/HEEJOY-1.002-web.zip",
+    "fmt": "WOFF2 (ZIP)",
+    "w": "웹용 CSS 포함",
+    "file": "HEEJOY-1.002-web.zip"
+   }
+  ]
+ },
+ "k-dalmoori": {
+  "keep_re": [
+   "https://github\\.com/RanolP/dalmoori\\-font/releases/download/v0\\.200/dalmoori\\-font\\.zip$",
+   "https://ranolp\\.github\\.io/dalmoori\\-font/latest\\-stable/dalmoori\\.woff2$"
+  ],
+  "add": [
+   {
+    "url": "https://github.com/RanolP/dalmoori-font/releases/download/v0.200/dalmoori-font.zip",
+    "fmt": "ZIP",
+    "w": "TTF·WOFF·WOFF2",
+    "file": "dalmoori-font.zip"
+   },
+   {
+    "url": "https://ranolp.github.io/dalmoori-font/latest-stable/dalmoori.woff2",
+    "fmt": "WOFF2",
+    "w": "Regular",
+    "file": "dalmoori.woff2"
+   }
+  ]
+ },
+ "k-cef-fonts-cjk": {
+  "keep_re": [
+   "https://raw\\.githubusercontent\\.com/Partyb0ssishere/cef\\-fonts\\-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJK\\-Regular\\.ttf$"
+  ],
+  "add": [
+   {
+    "url": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJK-Regular.ttf",
+    "fmt": "TTF",
+    "w": "Regular",
+    "file": "CEFFontsCJK-Regular.ttf"
+   }
+  ]
+ },
+ "k-cef-fonts-cjk-mono": {
+  "keep_re": [
+   "https://raw\\.githubusercontent\\.com/Partyb0ssishere/cef\\-fonts\\-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJKMono\\-Regular\\.ttf$"
+  ],
+  "add": [
+   {
+    "url": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJKMono-Regular.ttf",
+    "fmt": "TTF",
+    "w": "Regular",
+    "file": "CEFFontsCJKMono-Regular.ttf"
+   }
+  ]
  }
 }

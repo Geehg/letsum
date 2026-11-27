@@ -1568,5 +1568,20 @@
   "date": "2013",
   "src": "제작자 공식 폰트 소개 연도",
   "url": "https://uhb.kr/uhbeefont/minicachoi/"
+ },
+ "k-heejoy": {
+  "date": "2026-11-02",
+  "src": "제작자가 배포한 README의 1.000 최초 공개일",
+  "url": "https://heejoykim.com/font-assets/heejoy/1.002/HEEJOY-1.002.zip"
+ },
+ "k-dalmoori": {
+  "date": "2020-12-13",
+  "src": "제작자 공개 릴리스 v0.100",
+  "url": "https://github.com/RanolP/dalmoori-font/releases/tag/v0.100"
+ },
+ "k-cef-fonts-cjk": {
+  "date": "2022",
+  "src": "제작자의 2022년 정식판 1.07 공개 기록",
+  "url": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/712c8065a056d0887af0fae296af7553ede6cc9c/README.md"
  }
 }
