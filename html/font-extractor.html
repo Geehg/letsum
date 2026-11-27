@@ -12,7 +12,7 @@
 <script>try{var t=localStorage.getItem("ls_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=20261028"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261028"><link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=20261028">
 <link rel="stylesheet" href="css/style.css?v=84">
-<link rel="stylesheet" href="css/font-extractor.css?v=14">
+<link rel="stylesheet" href="css/font-extractor.css?v=15">
 <!--HEADER_BRAND--><link rel="stylesheet" href="/css/header-brand.css?v=cd0152c521"><!--/HEADER_BRAND-->
 <!--UI_LANGUAGE--><link rel="stylesheet" href="/css/ui-language.css?v=a60f4033cd"><script src="/js/ui-language.js?v=a60f4033cd"></script><!--/UI_LANGUAGE-->
 <!--FAMILY_SITES--><link rel="stylesheet" href="/css/family-sites.css?v=828b693505"><!--/FAMILY_SITES--><!--CONTACT_STYLE--><link rel="stylesheet" href="/css/contact.css?v=b8558de9e4"><!--/CONTACT_STYLE--><!--ADSENSE--><meta name="google-adsense-account" content="ca-pub-7515626837780401"><!--/ADSENSE--></head>
@@ -33,7 +33,7 @@
   <p class="ex-intro">파일에 쓰인 글꼴과 이용조건을 확인하세요. 파일은 기기 안에서 분석합니다.</p>
   <details id="image-finder" class="image-finder" open>
     <summary><span>이미지로 한글 폰트 찾기</span> <small class="im-beta">베타 서비스</small> <small><span data-ko="한글 목록" data-en="Korean catalogue">한글 목록</span> <span id="im-family-count">1,274종</span></small> <small class="im-drop-hint">여기에 이미지 놓기</small></summary>
-    <p class="im-coverage"><span data-ko="자동 대조" data-en="Automatic comparison">자동 대조</span> <strong id="im-auto-count">1,268종</strong> · <span data-ko="기기 원본 대조" data-en="Local originals">기기 원본 대조</span> <strong id="im-local-count">6종</strong></p>
+    <p class="im-coverage"><span data-ko="자동 대조" data-en="Automatic comparison">자동 대조</span> <strong id="im-auto-count">1,268종</strong> · <span data-ko="기기 원본 대조" data-en="Local originals">기기 원본 대조</span> <strong id="im-local-count">6종</strong> · <a href="#im-original-panel" id="im-paid-link" data-ko="유료 서체 3종 추가 연결" data-en="Connect 3 commercial families">유료 서체 3종 추가 연결</a></p>
     <p data-ko="이미지를 넣으면 이 기기에서 한글을 읽고 닮은 폰트를 찾습니다. 잘못 읽은 문구는 직접 고칠 수 있습니다." data-en="Add an image to read its Korean text and find matching fonts on this device. You can edit the transcription.">이미지를 넣으면 이 기기에서 한글을 읽고 닮은 폰트를 찾습니다. 잘못 읽은 문구는 직접 고칠 수 있습니다.</p>
     <label id="im-drop" class="im-drop" for="im-file">
       <span class="im-drop-copy"><strong>이미지 한 장을 여기에 놓으세요</strong><small id="im-formats">PNG · JPG · WebP · 최대 25 MB · Ctrl+V / ⌘V</small></span>
@@ -88,20 +88,26 @@
     </div>
     <details id="im-original-panel">
       <summary><span data-ko="기기 원본으로 추가 대조" data-en="Compare local originals">기기 원본으로 추가 대조</span></summary>
-      <p id="im-original-guide"><span data-ko="아래 서체는 기기에 설치돼 있으면 함께 대조합니다. 브라우저에서 찾지 못한 서체는 보유한 TTF·OTF 원본을 선택하세요." data-en="The families listed here use an installed face. If your browser cannot access one, select your own TTF or OTF original.">아래 서체는 기기에 설치돼 있으면 함께 대조합니다. 브라우저에서 찾지 못한 서체는 보유한 TTF·OTF 원본을 선택하세요.</span></p>
+      <p data-ko="산돌 격동고딕(2014), 윤고딕 740, 윤명조 740을 이미지와 대조할 수 있습니다." data-en="Compare images with Sandoll GyeokdongGothic (2014), Yoon Gothic 740 and Yoon Myungjo 740.">산돌 격동고딕(2014), 윤고딕 740, 윤명조 740을 이미지와 대조할 수 있습니다.</p>
+      <button id="im-paid-installed" type="button" data-ko="설치된 유료 서체 연결" data-en="Connect installed commercial fonts">설치된 유료 서체 연결</button>
+      <p id="im-original-guide"><span data-ko="사용권이 있는 TTF·OTF 파일을 직접 선택할 수도 있습니다. 파일은 이 탭에서만 사용하며, 유료 서체는 파일 안의 이름을 확인해 연결합니다." data-en="You can also select TTF or OTF files you are licensed to use. Files stay in this tab. Commercial families are matched by the names inside the file.">사용권이 있는 TTF·OTF 파일을 직접 선택할 수도 있습니다. 파일은 이 탭에서만 사용하며, 유료 서체는 파일 안의 이름을 확인해 연결합니다.</span></p>
       <label><span data-ko="서체 연결" data-en="Match family">서체 연결</span>
         <select id="im-original-family"><option value="" data-ko="파일 안의 이름으로 연결" data-en="Match the name inside the file">파일 안의 이름으로 연결</option></select>
       </label>
       <label><span data-ko="기기 원본" data-en="Original files">기기 원본</span>
         <input id="im-originals" type="file" accept=".ttf,.otf" multiple aria-describedby="im-original-guide">
       </label>
-      <p><small data-ko="서체를 직접 지정하면 해당 후보가 나온 결과는 이 기기에서만 표시합니다." data-en="Results containing a manually assigned family stay on this device.">서체를 직접 지정하면 해당 후보가 나온 결과는 이 기기에서만 표시합니다.</small></p>
+      <p><small data-ko="유료 서체 또는 직접 지정한 서체가 상위 후보에 들면 결과는 이 기기에서만 표시합니다." data-en="Results with a commercial or manually assigned family among the top matches stay on this device.">유료 서체 또는 직접 지정한 서체가 상위 후보에 들면 결과는 이 기기에서만 표시합니다.</small></p>
       <p id="im-original-status" role="status"></p>
       <button id="im-original-clear" type="button" hidden data-ko="원본 연결 해제" data-en="Clear selected originals">원본 연결 해제</button>
     </details>
     <label class="im-publish-option"><input id="im-publish" type="checkbox" checked aria-describedby="im-publish-note"> 판별 결과를 공개 게시판에 기록</label>
     <p id="im-publish-note"><span data-ko="자동으로 찾은 후보는 결과를 본 뒤 게시할 수 있습니다." data-en="You can post automatic matches after reviewing the results.">자동으로 찾은 후보는 결과를 본 뒤 게시할 수 있습니다.</span> 판별 시각과 판정, 후보 서체와 굵기를 누구나 볼 수 있습니다. 이미지·파일명·입력 문구는 이 기기에서만 처리합니다.</p>
     <p id="im-status" role="status"></p><div id="im-results" tabindex="-1"></div>
+    <div id="im-bundle" hidden>
+      <div class="ex-download"><button type="button" id="im-download-fonts" disabled>무료 폰트 일괄받기 (0)</button><span id="im-download-count"></span></div>
+      <p id="im-download-status" role="status"></p>
+    </div>
     <div class="im-post-feedback"><button id="im-post-result" type="button" hidden data-ko="이 결과를 공개 게시판에 기록" data-en="Post this result to the public board">이 결과를 공개 게시판에 기록</button><span id="im-publish-state" role="status"></span><button id="im-publish-retry" type="button" hidden>등록 다시 시도</button></div>
     <details id="im-board" open>
       <summary>공개 판별 기록</summary>
@@ -202,10 +208,10 @@
 <script defer src="/js/image-font-board.js?v=6"></script>
 <script defer src="/js/image-font-color.js?v=3"></script>
 <script defer src="/js/image-font-ocr.js?v=3"></script>
-<script defer src="/js/image-font-local.js?v=1"></script>
+<script defer src="/js/image-font-local.js?v=2"></script>
 <script defer src="/js/image-font-progress.js?v=2"></script>
-<script defer src="/js/image-font-match.js?v=17"></script>
-<script src="/js/font-extractor.js?v=8"></script>
+<script defer src="/js/image-font-match.js?v=18"></script>
+<script src="/js/font-extractor.js?v=9"></script>
 <script src="js/common.js?v=219a96aa79" data-base=""></script>
 <script src="js/pv.js?v=1" defer></script>
 </body>

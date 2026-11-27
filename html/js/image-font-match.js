@@ -82,6 +82,7 @@
     if (detectedAreas.length) { detectedAreas = []; paint(); }
     window.ImageFontBoard?.reset();
     results.replaceChildren();
+    window.FontScannerAlternatives?.reset();
     status.replaceChildren();
     for (const key of ['confidence', 'compared', 'total', 'localMissing']) delete status.dataset[key];
     el('run').disabled = false;
@@ -387,6 +388,7 @@
     const coverage = document.createElement('small');
     const n = value => value.toLocaleString(document.documentElement.lang);
     const parts = [msg('글자 모양 대조 ', 'Families compared ') + n(count.compared) + ' / ' + n(count.total)];
+    if (count.paid) parts.push(msg('연결한 유료 서체 ' + count.paid + '종', 'Connected commercial families ' + count.paid));
     if (count.missing) parts.push(msg('기기 원본 미연결 ', 'Local original unavailable ') + count.missing);
     if (count.noGlyph) parts.push((count.coverageUnknown
       ? msg('글자 지원 미확인 ', 'Glyph coverage unverified ')
@@ -399,7 +401,8 @@
       const article = document.createElement('article'), title = document.createElement('strong');
       const label = document.createElement('small');
       label.textContent = confident && index === 0 ? '원본 후보' : msg('닮은 서체', 'Similar typeface');
-      if (match.manual) label.append(' · ', msg('직접 지정한 원본', 'Manually assigned original'));
+      if (match.row.paid) label.textContent = msg('유료 서체 후보 · 기기 원본 대조', 'Commercial candidate · compared on this device');
+      else if (match.manual) label.append(' · ', msg('직접 지정한 원본', 'Manually assigned original'));
       else if (match.row.mode === 'local') label.append(' · ', msg('기기 원본 대조', 'Compared on this device'));
       if (match.full === false) label.append(' · ', msg('일부 글자만 대조', 'Partial glyph comparison'));
       else if (!match.family) label.append(' · ', msg('글자 특징 대조', 'Glyph feature match'));
@@ -410,6 +413,14 @@
       }
       title.textContent = match.row.name;
       title.translate = false;
+      if (match.row.paid) {
+        const info = paidDetails(match.row);
+        info.prepend(label, title);
+        article.append(info);
+        results.append(article);
+        window.FontScannerAlternatives.attach(article, match.row);
+        continue;
+      }
       article.append(label, title);
       const sample = sampleElement(match, text);
       if (sample) article.append(sample);
@@ -427,6 +438,20 @@
       }
       results.append(article);
     }
+  }
+
+  function paidDetails(row) {
+    const info = document.createElement('div'), note = document.createElement('p');
+    note.textContent = msg('사용하려는 매체와 보유한 이용권의 허용 범위를 확인하세요.',
+      'Check whether your licence covers the intended use.');
+    const source = document.createElement('a'), terms = document.createElement('a');
+    source.href = row.source;
+    source.textContent = msg('공식 서체 소개', 'Official typeface');
+    terms.href = row.terms;
+    terms.textContent = msg('제작사 이용조건', 'Foundry licence terms');
+    for (const link of [source, terms]) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+    info.append(note, source, ' · ', terms);
+    return info;
   }
 
   function showAllFamilies(faces, leaders, text, measure, active) {
@@ -469,6 +494,16 @@
       const title = document.createElement('strong');
       title.translate = false;
       title.textContent = best.row.name;
+      if (best.row.paid) {
+        const card = document.createElement('div'), info = paidDetails(best.row), label = document.createElement('small');
+        label.textContent = msg('유료 서체 후보 · 기기 원본 대조', 'Commercial candidate · compared on this device');
+        if (best.full === false) label.append(' · ', msg('일부 글자만 대조', 'Partial glyph comparison'));
+        info.prepend(label, title);
+        card.append(info);
+        selected.replaceChildren(card);
+        window.FontScannerAlternatives.attach(card, best.row);
+        return;
+      }
       const method = best.full === false ? msg('일부 글자만 대조', 'Partial glyph comparison')
         : best.family ? msg('원본의 획 대조', 'Original outlines compared') : msg('글자 특징 대조', 'Glyph features compared');
       const weight = best.row.unknownWeights ? '' : ' · ' + msg('굵기 ', 'Weight ') + best.weight;
@@ -712,9 +747,11 @@
           faces.push({...candidate, cost: match.cost, measured: match});
         }
       }
-      const waiting = catalog.filter(r => r.mode === 'local').length - new Set(local.map(f => f.row.id)).size;
+      const paid = new Set(local.filter(f => f.row.paid).map(f => f.row.id)).size;
+      const total = catalog.length + paid;
+      const waiting = catalog.filter(r => r.mode === 'local').length - new Set(local.filter(f => !f.row.paid).map(f => f.row.id)).size;
       const compared = ranked.compared + localCompared.size;
-      const count = {compared, total: catalog.length, missing: waiting, noGlyph: catalog.length - compared - waiting,
+      const count = {compared, total, paid, missing: waiting, noGlyph: total - compared - waiting,
         coverageUnknown: ranked.limited};
       function featureOnly(candidate, loadFailed) {
         const loss = Math.min(1, .24 + 1.4 * candidate.cost);
@@ -759,8 +796,8 @@
       const top = matches.slice(0, 3);
       progress.note(3, top.map(match => match.row.name).join(' · '));
       progress.finish(top.length);
-      if (top.some(m => m.manual)) {
-        if (el('publish').checked) el('publish-state').textContent = msg('직접 지정한 후보가 있어 이 기기에만 표시합니다.', 'Results containing a manually assigned original are shown only on this device.');
+      if (top.some(m => m.manual || m.row.paid)) {
+        if (el('publish').checked) el('publish-state').textContent = msg('유료 서체 또는 직접 지정한 후보가 있어 이 기기에만 표시합니다.', 'Results with commercial or manually assigned candidates stay on this device.');
       } else if (automatic) {
         pendingPost = {matches: top, confident};
         offerPost();

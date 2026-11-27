@@ -4,14 +4,17 @@
   const input = byId('documents'), drop = byId('drop'), status = byId('status');
   const filesList = byId('file-list'), results = byId('results'), groups = byId('groups');
   const batch = byId('download-fonts'), downloadStatus = byId('download-status');
+  const imageBatch = byId('im-download-fonts'), imageTray = byId('im-bundle'), imageStatus = byId('im-download-status');
+  const msg = (ko,en) => document.documentElement.lang === 'en' ? en : ko;
   const formatCards = [...document.querySelectorAll('.ex-format[data-format]')];
   const formats = new Set(formatCards.map(card => card.dataset.format));
   const extensionOf = file => /\.([^.]+)$/.exec(file.name)?.[1].toLowerCase();
   const wrongFormat = '카드와 다른 형식입니다. 맞는 카드를 선택하거나 여러 형식 함께 스캔을 이용하세요.';
   const MB = 1024*1024;
-  let catalogue, findings = [], busy = false;
+  let catalogue, catalogueRequest, findings = [], busy = false;
   const detected = new Map();
   const selected = new Map();
+  const imageSelected = new Map();
   const element = (tag, text) => Object.assign(document.createElement(tag), {textContent:text});
   const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s._-]+/g,'');
   // Some real font files use placeholders or only a style in their name table.
@@ -54,6 +57,11 @@
     }));
     return {...data,names,rules,alternatives,notices:paid.notices};
   }
+  function ensureCatalogue() {
+    catalogueRequest ||= loadCatalogue().then(data => (catalogue = data))
+      .catch(error => { catalogueRequest = null; throw error; });
+    return catalogueRequest;
+  }
   function identify(name) {
     if (!catalogue) return {group:'확인 필요',note:'카탈로그를 불러오지 못했습니다.'};
     const keys=variants(name);
@@ -66,36 +74,43 @@
       const [font]=matches;
       return {group:font.verified?'무료 · 이용조건 확인':'확인 필요',font,note:font.note || font.license};
     }
+    const local = window.ImageFontLocal;
+    const paid = local?.identify({names:[name]}, local.paidFamilies);
+    if (paid) return {group:'유료·번들 확인',note:'유료 서체입니다. 사용하려는 매체와 보유한 이용권의 허용 범위를 확인하세요.',
+      rule:{id:paid.id, vendor:'공식 서체 소개', url:paid.source}, paid};
     const rule=catalogue.rules.find(r=>keys.some(k=>r.pattern.test(k)));
     if (rule) return {group:'유료·번들 확인',note:rule.id==='myfonts'
       ? '상용 서체 계열에 해당하는 이름입니다. 보유한 라이선스와 문서·웹·앱 등 사용 범위를 확인하세요.' : rule.note,rule};
     const notice=catalogue.notices.find(r=>keys.some(k=>new RegExp(r.re,'i').test(k)));
     return {group:'확인 필요',note:notice?.note || '문서에서 이 글꼴 이름을 읽었습니다. 대응하는 서체와 이용조건을 확인할 자료가 아직 없습니다.'};
   }
+  function downloadFonts() {
+    return new Map([...imageSelected, ...selected, ...detected]);
+  }
   function syncDownload() {
-    const total = detected.size + selected.size;
-    batch.disabled = busy || total === 0;
-    batch.textContent = '무료 폰트 일괄받기 (' + total + ')';
-    byId('download-count').textContent = '일괄받기 가능한 문서 글꼴 ' + detected.size + '종 · 선택한 대체 글꼴 ' + selected.size + '종';
-    for (const box of groups.querySelectorAll('input[data-bundle]')) {
+    const total = downloadFonts().size;
+    for (const button of [batch, imageBatch]) {
+      button.disabled = busy || total === 0;
+      button.textContent = msg('무료 폰트 일괄받기', 'Download free fonts') + ' (' + total + ')';
+    }
+    const count = msg('일괄받기 가능한 문서 글꼴 ' + detected.size + '종 · 선택한 대체 글꼴 ' + (total - detected.size) + '종',
+      'Document fonts ' + detected.size + ' · Selected alternatives ' + (total - detected.size));
+    byId('download-count').textContent = count;
+    byId('im-download-count').textContent = count;
+    for (const box of document.querySelectorAll('.ex-alternatives input[data-bundle]')) {
       const included = detected.has(box.dataset.bundle);
-      box.checked = included || selected.has(box.dataset.bundle);
+      box.checked = included || selected.has(box.dataset.bundle) || imageSelected.has(box.dataset.bundle);
       box.disabled = busy || included;
     }
   }
 
-  function showAlternatives(card, row) {
-    const name = [...row.names][0];
-    const options = catalogue.alternatives;
-    const fallback = row.rule.id === 'myfonts' ? 'general-en' : 'general-ko';
-    const group = options.find(g => g.pattern && g.pattern.test(norm(name))) || options.find(g => g.id === fallback);
-    if (!group?.fonts.length) return;
-
+  function showAlternatives(card, name, group, choices) {
+    if (!group?.fonts.length) return false;
     const panel = element('fieldset', '');
     panel.className = 'ex-alternatives';
-    const legend = element('legend', '상업용 무료 대체 폰트');
-    legend.setAttribute('aria-label', name + '의 상업용 무료 대체 폰트');
-    panel.append(legend, element('p', group.reason));
+    const legend = element('legend', msg('상업용 무료 대체 폰트', 'Free alternatives for commercial use'));
+    legend.setAttribute('aria-label', name + ' · ' + legend.textContent);
+    panel.append(legend, element('p', msg(group.reason, group.reason_en || group.reason)));
     for (const font of group.fonts) {
       const option = element('div', '');
       option.className = 'ex-option';
@@ -104,20 +119,48 @@
       box.type = 'checkbox';
       box.dataset.bundle = font.bundle;
       box.addEventListener('change', () => {
-        if (box.checked) selected.set(font.bundle, font);
-        else selected.delete(font.bundle);
+        if (box.checked) choices.set(font.bundle, font);
+        else { selected.delete(font.bundle); imageSelected.delete(font.bundle); }
         downloadStatus.textContent = '';
+        imageStatus.textContent = '';
         syncDownload();
       });
       label.append(box, element('span', font.name));
-      if (detected.has(font.bundle)) label.append(element('small', '이미 ZIP에 포함'));
+      if (detected.has(font.bundle)) label.append(element('small', msg('이미 ZIP에 포함', 'Already included')));
       option.append(label);
-      addLink(option, '견본·이용조건', font.detail);
+      addLink(option, msg('견본·이용조건', 'Sample and licence'), font.detail);
       panel.append(option);
     }
     card.classList.add('ex-with-alternatives');
     card.append(panel);
+    return true;
   }
+
+  window.FontScannerAlternatives = {
+    async attach(card, row) {
+      try {
+        const data = await ensureCatalogue();
+        if (!card.isConnected) return;
+        const group = data.alternatives.find(item => item.id === row.alternativeGroup);
+        if (showAlternatives(card, row.name, group, imageSelected)) {
+          imageTray.hidden = false;
+          syncDownload();
+        }
+      } catch {
+        if (!card.isConnected) return;
+        const retry = element('button', msg('무료 대체 폰트 다시 불러오기', 'Retry loading free alternatives'));
+        retry.type = 'button';
+        retry.onclick = () => { retry.remove(); this.attach(card, row); };
+        card.append(retry);
+      }
+    },
+    reset() {
+      imageSelected.clear();
+      imageTray.hidden = true;
+      imageStatus.textContent = '';
+      syncDownload();
+    }
+  };
 
   function render() {
     groups.replaceChildren();
@@ -155,12 +198,19 @@
         if (meta.textContent) info.append(meta);
         info.append(element('p',row.note));
         if (detected.has(row.font?.bundle)) links.append(element('span','ZIP 포함'));
-        addLink(links,'사용 조건',row.font?.detail); addLink(links,row.rule?.vendor || '공식 배포처',row.rule?.url || row.font?.source);
+        addLink(links,'사용 조건',row.paid?.terms || row.font?.detail); addLink(links,row.rule?.vendor || '공식 배포처',row.rule?.url || row.font?.source);
         links.className='ex-links'; info.append(links);
         const refs=element('details',''); refs.append(element('summary','문서 내 참조 위치'));
         for (const where of row.refs) refs.append(element('p',where));
         info.append(refs); card.append(info);
-        if (row.rule) showAlternatives(card, row);
+        if (row.rule) {
+          const name = [...row.names][0];
+          const fallback = row.rule.id === 'myfonts' ? 'general-en' : 'general-ko';
+          const group = catalogue.alternatives.find(g => g.id === row.paid?.alternativeGroup) ||
+            catalogue.alternatives.find(g => g.pattern?.test(norm(name))) ||
+            catalogue.alternatives.find(g => g.id === fallback);
+          showAlternatives(card, name, group, selected);
+        }
         section.append(card);
       }
       groups.append(section);
@@ -216,15 +266,16 @@
       }
       releaseWorker();
       const hasNames=findings.some(r=>r.fonts?.length);
-      if (hasNames && !catalogue) {try {catalogue=await loadCatalogue();} catch {}}
+      if (hasNames && !catalogue) {try {await ensureCatalogue();} catch {}}
       render();status.textContent='분석 완료'+(catalogue || !hasNames?'':' · 카탈로그 조회 실패. 다시 시도해 주세요.');
     } catch {status.textContent='분석을 마치지 못했습니다. 파일을 다시 선택해 주세요.';render();}
     finally {releaseWorker();lock(false);}
   }
   async function download() {
-    const ready = [...detected.values(), ...selected.values()];
+    const ready = [...downloadFonts().values()];
     if (busy || !ready.length) return;
     lock(true);
+    function report(text) { downloadStatus.textContent = text; imageStatus.textContent = text; }
     try {
       if (!window.JSZip) await import('/js/jszip.min.js');
       const zip=new JSZip(), failed=[]; let included=0, total=0;
@@ -232,7 +283,7 @@
         const files=catalogue.bundles[font.bundle];
         const size=Object.values(files).reduce((a,b)=>a+b,0);
         if (total+size>150*MB) {failed.push(font.name+' (150 MB 한도)');continue;}
-        downloadStatus.textContent=font.name+' 원본과 라이선스를 받는 중…';
+        report(msg(font.name+' 원본과 라이선스를 받는 중…', 'Downloading '+font.name+' and its licence…'));
         const contents=[];
         try {
           for (const [file,expected] of Object.entries(files)) {
@@ -254,8 +305,8 @@
         link.download='LETSUM-fonts.zip'; link.href=url; document.body.append(link);link.click();link.remove();
         setTimeout(()=>URL.revokeObjectURL(url),60000);
       }
-      downloadStatus.textContent=(included?'ZIP 생성 완료 · '+included+'종':'ZIP을 만들 수 없습니다.')+(failed.length?' · 제외 '+failed.join(', '):'');
-    } catch {downloadStatus.textContent='ZIP 생성에 실패했습니다. 공식 배포처 링크를 이용해 주세요.';}
+      report((included?msg('ZIP 생성 완료 · '+included+'종', 'ZIP ready · '+included+' families'):msg('ZIP을 만들 수 없습니다.', 'Could not create the ZIP.'))+(failed.length?msg(' · 제외 ', ' · Excluded ')+failed.join(', '):''));
+    } catch {report(msg('ZIP 생성에 실패했습니다. 공식 배포처 링크를 이용해 주세요.', 'Could not create the ZIP. Use the official source link.'));}
     finally {lock(false);}
   }
   function bindFileZone(zone, picker, format) {
@@ -286,4 +337,5 @@
   for (const card of formatCards) bindFileZone(card, card.querySelector('input'), card.dataset.format);
   byId('clear-files').onclick=()=>{if(busy)return; selected.clear();findings=[];filesList.replaceChildren();input.value='';status.textContent='';downloadStatus.textContent='';render();};
   batch.onclick=download;
+  imageBatch.onclick=download;
 })();

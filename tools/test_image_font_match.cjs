@@ -223,3 +223,21 @@ test('local originals use internal font names and ambiguous aliases need explici
   assert.equal(local.identify(meta, [row, {aliases:['SampleFamily']}]), null);
   assert.throws(() => local.metadata(new ArrayBuffer(12)));
 });
+
+test('commercial candidates need a matching edition, and have only official reference links', () => {
+  const sandbox = {window:{}, TextDecoder};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-local.js'), 'utf8'), sandbox);
+  const {identify, paidFamilies} = sandbox.window.ImageFontLocal;
+  const match = (...names) => identify({names}, paidFamilies);
+  assert.equal(match('Sandoll GyeokdongGothic-Regular').alternativeGroup, 'display');
+  assert.equal(match('Yoon 윤고딕 740', 'Yoon Gothic 700 40').alternativeGroup, 'sans');
+  assert.equal(match('YoonMyungjoPro740').alternativeGroup, 'serif');
+  for (const name of ['산돌 격동고딕2', 'Sandoll GyeokdongGothic2-Regular', '윤명조 780', 'Yoon Gothic 700', 'Yoon Gothic 700 80'])
+    assert.equal(match(name), null);
+  assert.equal(match('윤고딕 740','윤명조 740'), null);
+  for (const row of paidFamilies) {
+    assert.ok(row.paid && row.mode === 'local');
+    assert.ok(row.source.startsWith('https:') && row.terms.startsWith('https:'));
+    assert.ok(!row.url && !row.specimen && !row.bundle);
+  }
+});

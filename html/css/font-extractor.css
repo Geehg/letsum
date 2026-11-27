@@ -177,6 +177,10 @@
 #im-original-panel label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin: .4rem .8rem .4rem 0; }
 #im-original-panel input, #im-original-panel select { max-width: 100%; font: inherit; }
 #im-original-panel p { margin-block: .4rem; }
+#im-paid-link { text-decoration: underline; text-underline-offset: .2em; }
+#im-paid-installed { padding: .45rem .75rem; margin-block: .3rem; }
+#im-bundle[hidden] { display: none; }
+.im-selected-face .ex-with-alternatives small, .im-selected-face .ex-with-alternatives strong { display: block; }
 #im-results .im-fixed-specimen { display: block; width: 100%; max-height: 8rem; object-fit: contain; object-position: left; margin-block: .5rem; }
 #im-status small { display: block; font-weight: normal; }
 
