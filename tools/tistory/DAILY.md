@@ -1,12 +1,13 @@
 # 티스토리 로고 글 매일 게시 절차
 
-블로그 https://leicax.tistory.com 의 '로고_Logo' 카테고리에 렛섬 로고 모음 글을 하루 30건씩 올린다.
+블로그 https://leicax.tistory.com 의 '로고_Logo' 카테고리에 렛섬 로고 모음 글을 하루 10건씩 올린다.
 2026-11-12 운영자 요청("매일 꾸준히 20건씩"). 첫 20건은 그날 직접 올렸다(posted.json).
 2026-11-16 운영자가 하루 30건(티스토리 한도)으로 늘렸다.
 2026-11-22 잠시 25건으로 바꿨다가 2026-11-23 운영자가 다시 하루 30건으로 정했다.
+2026-11-27 발행 때마다 카카오 CAPTCHA가 떠서 세 번 연속 0건이 되자, 운영자가 하루 10건·글 사이 1~3분(매번 다르게)으로 줄였다.
 
 ## 원칙
-- 하루 30건까지만. 티스토리 자체 한도가 **하루 새 공개글 30개** — 넘기면 post.json이 403 "하루에 새롭게 공개 발행할 수 있는 글은 최대 30개까지입니다."(2026-11-15 확인). 이 응답이 오면 즉시 멈추고 그때까지 올린 것만 기록한다. 밀린 분량이 있어도 그날 합계 30건을 넘기지 않는다. 글 사이 15초 이상 간격. 같은 기관을 두 번 올리지 않는다(posted.json 확인).
+- 하루 10건까지만(운영자 결정, 2026-11-27). 참고로 티스토리 자체 한도는 **하루 새 공개글 30개** — 넘기면 post.json이 403 "하루에 새롭게 공개 발행할 수 있는 글은 최대 30개까지입니다."(2026-11-15 확인). 이 응답이 오면 즉시 멈추고 그때까지 올린 것만 기록한다. 밀린 분량이 있어도 그날 합계 10건을 넘기지 않는다. 글 사이 간격은 60~180초 사이에서 매번 다르게 고른다(같은 간격을 되풀이하지 않는다). 발행 때 CAPTCHA(dkaptcha.kakao.com 등)가 뜨면 풀지 말고 그 자리에서 멈춰 그때까지 올린 것만 기록한다. 같은 기관을 두 번 올리지 않는다(posted.json 확인).
 - 파일은 블로그에 올리지 않고 공식 배포처 링크만(초안이 그렇게 만들어져 있음). 본문은 초안 그대로.
 - 공개 발행, 카테고리 '로고_Logo', 대표이미지(썸네일) = 그 글의 로고 이미지.
 - 로그인은 운영자 몫. 로그인 화면이 나오면 멈추고 운영자에게 로그인을 부탁한다(비밀번호 입력 금지).
@@ -15,7 +16,7 @@
 ## 1. 오늘 묶음 만들기 (저장소 /Volumes/Works/LETSUM/letsum)
 ```bash
 tools/run.sh start claude-tistory
-python3 -I tools/tistory/build_drafts.py --next 30
+python3 -I tools/tistory/build_drafts.py --next 10
 git add tools/tistory/upload && git commit -m "티스토리 게시 묶음 $(date +%F)" && git push
 ```
 (커밋 메시지 끝에 Co-Authored-By 줄. 잠금이 이미 있으면 다른 작업 중이니 멈추고 보고.)
@@ -60,7 +61,7 @@ if(p.image){ const b=await (await fetch(R+p.image)).blob(); const type=p.image.e
   pub:!![...document.querySelectorAll('button')].find(b=>b.innerText.trim()==='공개 발행')})
 ```
    title==want, cat=='로고_Logo', open, (이미지가 있으면) thumb, pub 가 모두 맞을 때만 다음으로.
-6. 발행: `setTimeout(()=>[...document.querySelectorAll('button')].find(b=>b.innerText.trim()==='공개 발행').click(),50)` → 6초 기다림 → 15초 쉼.
+6. 발행: `setTimeout(()=>[...document.querySelectorAll('button')].find(b=>b.innerText.trim()==='공개 발행').click(),50)` → 6초 기다림 → 60~180초 사이 매번 다른 시간 쉼.
 
 ## 3. 마무리
 - 카테고리 목록(`/category/로고_Logo?page=1..`)에서 오늘 제목이 모두 있는지, 중복이 없는지 확인.
