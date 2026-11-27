@@ -144,6 +144,62 @@ test('a contender beyond the old cutoff can win; later faces cannot beat the pro
   assert.deepEqual(Array.from(matches.slice(0, 4), f => f.row.id), exhaustive.slice(0, 4).map(f => f.row.id));
 });
 
+test('overlapping original reads preserve measured weights, failures, ties and the confidence runner-up', async () => {
+  const sandbox = {window: {}, setTimeout};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
+  const {finalists, resultCost} = sandbox.window.ImageFontIndex;
+  const faces = Array.from({length: 75}, (_, i) => ({
+    row: {id: String(i % 19)}, weight: 100 * (1 + Math.floor(i / 19)), cost: Math.floor(i / 3) / 500, i
+  }));
+  async function run(slots) {
+    const seen = [], snapshots = [];
+    const result = await finalists(faces, async face => {
+      seen.push(face.i);
+      await new Promise(resolve => setTimeout(resolve, face.i % 3 === 0 ? 6 : 0));
+      if (face.i % 11 === 0) return null;
+      return {...face, loadFailed: face.i % 7 === 0, finalCost: resultCost(face, (face.i % 5) / 4)};
+    }, () => true, () => {}, s => snapshots.push(s), slots);
+    assert.equal(new Set(seen).size, seen.length);
+    assert.equal(snapshots.at(-1).completed, result.attempted);
+    assert.equal(snapshots.at(-1).limit, result.attempted);
+    assert.ok(snapshots.some(s => s.inFlight.length === slots));
+    let lastCount = 0, lastLimit = Infinity;
+    for (const s of snapshots) {
+      assert.ok(s.inFlight.length <= slots && s.completed >= lastCount);
+      if (s.limit !== null) {
+        assert.ok(s.completed <= s.limit && s.limit <= lastLimit);
+        lastLimit = s.limit;
+      }
+      lastCount = s.completed;
+    }
+    return {seen: seen.sort((a,b) => a-b), failed: result.failed,
+      leaders: Array.from(result.matches.slice(0,4), m => [m.row.id, m.weight, m.finalCost])};
+  }
+  const sequentialBatches = await run(3);
+  assert.deepEqual(await run(4), sequentialBatches);
+  assert.deepEqual(await run(6), sequentialBatches);
+});
+
+test('a cancelled comparison does not publish delayed results or start another batch', async () => {
+  const sandbox = {window: {}, setTimeout};
+  vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-index.js'), 'utf8'), sandbox);
+  let active = true, measured = 0, updates = 0;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  const faces = Array.from({length:20}, (_, i) => ({row:{id:String(i)}, cost:i / 100}));
+  const pending = sandbox.window.ImageFontIndex.finalists(faces, async f => {
+    measured++; await gate; return {...f, finalCost:f.cost};
+  }, () => active, () => assert.fail('cancelled batch committed'), () => updates++);
+  await Promise.resolve();
+  const before = updates;
+  active = false;
+  release();
+  const result = await pending;
+  assert.equal(result.attempted, 0);
+  assert.equal(updates, before);
+  assert.equal(measured, 6);
+});
+
 test('local originals use internal font names and ambiguous aliases need explicit assignment', () => {
   const sandbox = {window: {}, TextDecoder};
   vm.runInNewContext(fs.readFileSync(path.join(js, 'image-font-local.js'), 'utf8'), sandbox);

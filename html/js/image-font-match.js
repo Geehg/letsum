@@ -668,7 +668,7 @@
       trimFaces(new Set());
       const characters = new Set(text.match(/[가-힣]/g)), fallbacks = new Map();
       const localCompared = new Set();
-      function pixels(candidate, family) {
+      function pixels(candidate, family, showOutline) {
         const {row, weight} = candidate;
         const hasCharacter = c => candidate.coverageTable ? candidate.coverageTable[c.charCodeAt(0) - 0xac00]
           : hasGlyphs(family, weight, [c], fallbacks);
@@ -680,12 +680,18 @@
           return cost === null ? null : featureOnly({...candidate, cost, full: false}, false);
         }
         const scores = [], glyphs = [];
+        let pair;
         for (const [i, line] of lines.entries()) {
           const reference = shapes.reference(line, family, weight, targets[i].height);
           if (!reference) return null;
           const fullSize = targets[i].height < 28 ? shapes.reference(line, family, weight) : null;
           scores.push(shapes.compare(targets[i], reference, fullSize));
           glyphs.push(...reference.glyphs);
+          if (showOutline && !row.mode && !pair) {
+            const j = targets[i].glyphs.findIndex((g, n) => g.pixels && /^[가-힣]$/.test(g.char) &&
+              reference.glyphs[n]?.char === g.char && reference.glyphs[n].pixels);
+            if (j >= 0) pair = [targets[i].glyphs[j], reference.glyphs[j]];
+          }
         }
         const measurement = {...scores[0], scores};
         if (scores.length === 2) {
@@ -694,6 +700,7 @@
         }
         const cost = candidate.cost ?? index.localDistance(ranked.targets, glyphs);
         if (cost === null || !Number.isFinite(measurement.score)) return null;
+        if (pair) showOutline(pair[0], pair[1], candidate);
         return {...measurement, row, weight, cost, family, manual: candidate.manual,
           finalCost: index.resultCost({cost}, measurement.score)};
       }
@@ -713,27 +720,23 @@
         const loss = Math.min(1, .24 + 1.4 * candidate.cost);
         return {...candidate, family: null, loadFailed, finalCost: index.resultCost(candidate, 1 - loss)};
       }
-      async function measure(candidate) {
+      async function measure(candidate, showOutline) {
         if (candidate.measured) return candidate.measured;
         if (!candidate.full || !candidate.url) return featureOnly(candidate, false);
         let family;
         try { family = await loadFace(candidate); } catch { return featureOnly(candidate, true); }
         if (version !== revision) return null;
-        return pixels(candidate, family) || featureOnly(candidate, false);
+        return pixels(candidate, family, showOutline) || featureOnly(candidate, false);
       }
-      let updated = 0;
       const active = () => version === revision;
       progress.note(2, compared.toLocaleString() + '종의 획 특징 대조', 'Glyphs compared across ' + compared.toLocaleString() + ' families');
       progress.reach(3);
       progress.note(3, '가까운 후보의 굵기와 윤곽 확인 중', 'Checking weights and outlines of close matches');
       status.textContent = msg('글자 특징 대조 완료 · 원본의 획을 비교하고 있습니다…', 'Glyph features compared. Checking original outlines…');
-      const {matches, failed} = await index.finalists(faces, measure, active, (ordered, attempted) => {
-        if (!active()) return;
-        trimFaces(new Set(ordered.slice(0, 4).map(faceKey)));
-        if (Date.now() - updated < 700) return;
-        updated = Date.now();
-        progress.note(3, '후보 굵기 ' + attempted + '개 확인', 'Checked ' + attempted + ' candidate faces');
-      });
+      const parallelism = navigator.connection?.saveData ? 3 : matchMedia('(max-width: 650px)').matches ? 4 : 6;
+      const {matches, failed} = await index.finalists(faces, face => measure(face, progress.showOutline), active,
+        (ordered, attempted, ahead) => trimFaces(new Set([...ordered.slice(0, 4), ...ahead].map(faceKey))),
+        progress.updateWork, parallelism);
       if (!active()) return;
       if (!matches.length) {
         status.textContent = msg('해당 글자의 모양을 대조할 수 없습니다. 다른 한글을 선택해 주세요.', 'No comparable shapes. Please select other Korean text.');
@@ -752,7 +755,7 @@
       const confident = ranked.indexed && !failed && agree && clearColorMatch;
       showResults(matches, confident, text, ranked.limited || failed > 0, count);
       showGlyphComparison(matches, lines, targets, samples);
-      showAllFamilies(faces, leaders, text, measure, active);
+      showAllFamilies(faces, leaders, text, face => measure(face), active);
       const top = matches.slice(0, 3);
       progress.note(3, top.map(match => match.row.name).join(' · '));
       progress.finish(top.length);

@@ -193,33 +193,71 @@
 
   // Each face's feature distance is a lower bound on its final cost. The exact pixel
   // comparison only adds a nonnegative penalty, so a face outside the bound cannot
-  // change the first three families. There is no fixed limit on contenders or weights.
+  // change the first four families (the fourth is also used to test confidence).
   const pixelWeight = .045;
   function resultCost(face, score) {
     return face.cost + pixelWeight * (1 - Math.min(1, Math.max(0, score)));
   }
-  async function finalists(faces, measure, active, progress) {
-    const best = new Map();
+  async function finalists(faces, measure, active, progress, update = () => {}, parallelism = 6) {
+    const best = new Map(), jobs = new Map(), inFlight = new Set();
     const sorted = faces.slice().sort((a, b) => a.cost - b.cost);
-    let threshold = Infinity, attempted = 0, failed = 0;
+    let limit = sorted.length, bounded = false, completed = 0, attempted = 0, failed = 0;
+    let ordered = [];
     const order = (a, b) => a.finalCost - b.finalCost || a.row.id.localeCompare(b.row.id) || a.weight - b.weight;
-    for (let i = 0; i < sorted.length && active() && sorted[i].cost <= threshold; i += 3) {
-      const batch = sorted.slice(i, i + 3).filter(face => face.cost <= threshold);
-      const checked = await Promise.all(batch.map(measure));
+    const report = () => {
+      if (active()) update({completed, limit: bounded ? limit : null, inFlight: [...inFlight]});
+    };
+    function start(i) {
+      if (jobs.has(i)) return;
+      const face = sorted[i];
+      inFlight.add(face);
+      // A lookahead error is observed when its batch is consumed, even if another
+      // face is still loading or the scan has already been cancelled.
+      const job = Promise.resolve().then(() => active() ? measure(face) : null)
+        .then(match => ({match}), error => ({error})).finally(() => {
+          inFlight.delete(face);
+          completed++;
+          report();
+        });
+      jobs.set(i, job);
+    }
+    for (let i = 0; i < limit && active(); i += 3) {
+      const end = Math.min(i + 3, limit);
+      const optimistic = new Map(ordered.slice(0, 4).map(m => [m.row.id, m.finalCost]));
+      for (let j = i; j < end; j++) {
+        start(j);
+        const face = sorted[j];
+        optimistic.set(face.row.id, Math.min(face.cost, optimistic.get(face.row.id) ?? Infinity));
+      }
+      // Even if every current face scores perfectly, the next cutoff cannot go
+      // below this value. Only overlap downloads the next batch must use anyway.
+      const floor = [...optimistic.values()].sort((a, b) => a - b)[3] ?? Infinity;
+      const ahead = Math.min(i + parallelism, end + 3, limit);
+      for (let j = end; j < ahead && sorted[j].cost <= floor; j++) start(j);
+      report();
+      const checked = await Promise.all(sorted.slice(i, end).map((_, j) => jobs.get(i + j)));
       if (!active()) break;
-      for (const match of checked) {
+      for (let j = i; j < end; j++) jobs.delete(j);
+      for (const result of checked) {
+        if ('error' in result) throw result.error;
+        const {match} = result;
         attempted++;
         if (!match) continue;
         if (match.loadFailed) failed++;
         const previous = best.get(match.row.id);
         if (!previous || order(match, previous) < 0) best.set(match.row.id, match);
       }
-      const ordered = [...best.values()].sort(order);
-      if (ordered.length >= 4) threshold = ordered[3].finalCost;
-      progress(ordered, attempted);
-      await new Promise(resolve => setTimeout(resolve, 0));
+      ordered = [...best.values()].sort(order);
+      if (ordered.length >= 4) {
+        bounded = true;
+        while (limit > end && sorted[limit - 1].cost > ordered[3].finalCost) limit--;
+      }
+      progress(ordered, attempted, [...jobs.keys()].map(j => sorted[j]));
+      report();
+      if (end < limit) await new Promise(resolve => setTimeout(resolve, 0));
     }
-    return {matches: [...best.values()].sort(order), attempted, failed};
+    if (active()) update({completed: attempted, limit: attempted, inFlight: []});
+    return {matches: ordered, attempted, failed};
   }
 
   window.ImageFontIndex = {catalog, rank, localDistance, resultCost, finalists};

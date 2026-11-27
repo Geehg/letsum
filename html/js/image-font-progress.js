@@ -4,9 +4,10 @@
   const el = id => document.getElementById('im-' + id);
   const scan = el('scan'), glass = el('glass'), rows = [...el('steps').children];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const dwell = [1000, 2000, 3000, 4000];
+  const dwell = [1000, 2000, 3000, 0];
   let visible = 0, reached = 0, since = 0, timer;
   let sourceWidth = 0, sourceHeight = 0;
+  let work, workTimer, clockTimer;
 
   function label(node, ko, en = ko) {
     node.dataset.ko = ko;
@@ -39,6 +40,7 @@
   }
   function reset() {
     clearTimeout(timer);
+    clearWork();
     reached = -1;
     paint(-1);
     scan.hidden = glass.hidden;
@@ -61,6 +63,7 @@
   }
   function reach(step) {
     if (scan.dataset.state !== 'running') begin(step);
+    else if (step === 3) { clearTimeout(timer); reached = step; paint(step); }
     else { reached = Math.max(reached, step); advanceDisplay(); }
   }
   function imageSize(width, height) {
@@ -79,6 +82,7 @@
   }
   function stop(state, ko, en, detailKo, detailEn) {
     clearTimeout(timer);
+    clearWork();
     reached = Math.max(0, Math.min(reached, 3));
     paint(reached);
     if (detailKo) note(reached, detailKo, detailEn);
@@ -89,6 +93,12 @@
     el('ready').hidden = el('cancel').hidden = true;
   }
   function finish(count) {
+    if (work) {
+      work.done = true;
+      clearInterval(clockTimer);
+      clearTimeout(workTimer);
+      renderWork();
+    }
     scan.dataset.state = 'ready';
     label(el('scan-title'), '분석 과정', 'Scan breakdown');
     label(el('ready'), '후보 ' + count + '개 보기 ↓', 'View matches (' + count + ') ↓');
@@ -111,6 +121,86 @@
   reduced.addEventListener('change', advanceDisplay);
   document.addEventListener('visibilitychange', advanceDisplay);
 
+  function clearWork() {
+    clearInterval(clockTimer);
+    clearTimeout(workTimer);
+    workTimer = work = null;
+    el('work').hidden = el('work-pair').hidden = true;
+    el('work-bar').removeAttribute('value');
+  }
+  function scheduleWork() {
+    if (!workTimer) workTimer = setTimeout(renderWork, 100);
+  }
+  function updateWork(snapshot) {
+    if (scan.dataset.state !== 'running' || reached !== 3) return;
+    const now = performance.now();
+    const first = !work;
+    if (first) {
+      work = {start: now, lastCompletion: now, completed: 0};
+      el('work').hidden = false;
+      clockTimer = setInterval(scheduleWork, 1000);
+    }
+    if (snapshot.completed > work.completed) work.lastCompletion = now;
+    Object.assign(work, snapshot);
+    if (first) renderWork();
+    else scheduleWork();
+  }
+  function showOutline(source, candidate, face) {
+    if (!work) return;
+    work.pair = {source, candidate, face};
+    scheduleWork();
+  }
+  function drawMask(tile, pixels, r, g, b) {
+    const ctx = tile.getContext('2d'), mask = ctx.createImageData(32, 40);
+    for (let p = 0; p < pixels.length; p++) {
+      const i = p * 4;
+      mask.data[i] = r; mask.data[i+1] = g; mask.data[i+2] = b; mask.data[i+3] = pixels[p];
+    }
+    ctx.putImageData(mask, 0, 0);
+  }
+  function renderWork() {
+    workTimer = null;
+    if (!work) return;
+    const {completed, limit, inFlight, done, pair} = work;
+    const now = performance.now(), elapsed = (now - work.start) / 1000, seconds = Math.floor(elapsed);
+    const bar = el('work-bar');
+    let ko = completed + '개 굵기 대조', en = completed + ' weights checked';
+    if (done) { ko += ' 완료'; en += ' · complete'; }
+    else if (limit !== null) { ko += ' / 최대 ' + limit + '개'; en += ' / up to ' + limit; }
+    label(el('work-count'), ko, en);
+    if (done || limit > 0) {
+      bar.value = done ? 100 : Math.min(99, Math.floor(100 * completed / limit));
+      el('work-percent').textContent = bar.value + '%';
+    } else {
+      bar.removeAttribute('value');
+      el('work-percent').textContent = '';
+    }
+    const face = inFlight[0];
+    const rest = inFlight.length - 1;
+    if (face && !done) {
+      const name = face.row.name + ' ' + face.weight;
+      label(el('work-active'), name + (rest > 0 ? ' 외 ' + rest + '개' : '') + ' 대조 중',
+        'Comparing ' + name + (rest > 0 ? ' +' + rest : ''));
+    } else label(el('work-active'), done ? '' : '후보 순위 계산 중', done ? '' : 'Ranking candidates');
+    let timeKo = '경과 ' + seconds + '초', timeEn = seconds + 's elapsed';
+    if (!done && now - work.lastCompletion > 4500 && face) {
+      timeKo += ' · 원본 응답 대기'; timeEn += ' · awaiting originals';
+    } else if (!done && limit > completed && completed >= 4 && elapsed >= 1) {
+      const remaining = Math.max(1, Math.ceil(elapsed * (limit - completed) / completed));
+      timeKo += ' · 약 ' + remaining + '초 남음'; timeEn += ' · ~' + remaining + 's left';
+    } else if (!done && face) {
+      timeKo += ' · 남은 시간 계산 중'; timeEn += ' · estimating time';
+    }
+    label(el('work-time'), timeKo, timeEn);
+    if (pair) {
+      drawMask(el('work-source'), pair.source.pixels, 240, 245, 241);
+      drawMask(el('work-ref'), pair.candidate.pixels, 194, 246, 121);
+      el('work-face').textContent = pair.face.row.name + ' ' + pair.face.weight + ' · ' + pair.source.char;
+      el('work-pair').hidden = false;
+      work.pair = null;
+    }
+  }
+
   // These are the scanner's actual 32 × 40 normalized ink masks, including antialiasing.
   function showInk(glyphs) {
     const markers = document.createDocumentFragment();
@@ -129,17 +219,11 @@
       seen.add(glyph.char);
       const tile = document.createElement('canvas');
       tile.width = 32; tile.height = 40;
-      const ctx = tile.getContext('2d'), mask = ctx.createImageData(tile.width, tile.height);
-      for (let p = 0; p < glyph.pixels.length; p++) {
-        const i = p * 4;
-        mask.data[i] = 194; mask.data[i+1] = 246; mask.data[i+2] = 121;
-        mask.data[i+3] = glyph.pixels[p];
-      }
-      ctx.putImageData(mask, 0, 0);
+      drawMask(tile, glyph.pixels, 194, 246, 121);
       tiles.append(tile);
       if (seen.size === 4) break;
     }
     el('ink').replaceChildren(tiles);
   }
-  window.ImageFontProgress = {begin, reach, note, enteredText, imageSize, showInk, reset, stop, finish};
+  window.ImageFontProgress = {begin, reach, note, enteredText, imageSize, showInk, updateWork, showOutline, reset, stop, finish};
 })();
