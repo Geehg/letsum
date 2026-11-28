@@ -4192,5 +4192,37 @@
   "files": {
    "400": "https://raw.githubusercontent.com/Partyb0ssishere/cef-fonts-cjk/f6377c860fad7a466cfd9273649a797ae7a0272d/CEFFontsCJKMono-Regular.ttf"
   }
+ },
+ "k-mona12-text-kr": {
+  "page": "https://github.com/MonadABXY/mona-font/releases/tag/2026.10.09",
+  "files": {
+   "400": "https://raw.githubusercontent.com/MonadABXY/mona-font/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/web/Mona12TextKR.woff2",
+   "700": "https://raw.githubusercontent.com/MonadABXY/mona-font/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/web/Mona12TextKR-Bold.woff2"
+  }
+ },
+ "k-monas12-text-kr": {
+  "page": "https://github.com/MonadABXY/mona-font/releases/tag/2026.10.09",
+  "files": {
+   "400": "https://raw.githubusercontent.com/MonadABXY/mona-font/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/web/MonaS12TextKR.woff2",
+   "700": "https://raw.githubusercontent.com/MonadABXY/mona-font/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/web/MonaS12TextKR-Bold.woff2"
+  }
+ },
+ "e-borel": {
+  "page": "https://fonts.google.com/specimen/Borel",
+  "files": {
+   "400": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/borel/Borel-Regular.ttf"
+  }
+ },
+ "e-tacone": {
+  "page": "https://fonts.google.com/specimen/Tac+One",
+  "files": {
+   "400": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/tacone/TacOne-Regular.ttf"
+  }
+ },
+ "e-lacquer": {
+  "page": "https://fonts.google.com/specimen/Lacquer",
+  "files": {
+   "400": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/lacquer/Lacquer-Regular.ttf"
+  }
  }
 }

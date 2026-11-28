@@ -206,5 +206,70 @@
     "file": "CEFFontsCJKMono-Regular.ttf"
    }
   ]
+ },
+ "k-mona12-text-kr": {
+  "keep_re": [
+   "https://github\\.com/MonadABXY/mona\\-font/releases/download/2026\\.10\\.09/MonaFont\\-ttf\\.zip$"
+  ],
+  "add": [
+   {
+    "url": "https://github.com/MonadABXY/mona-font/releases/download/2026.10.09/MonaFont-ttf.zip",
+    "fmt": "ZIP",
+    "w": "한국 자형 포함 전체 TTF",
+    "file": "MonaFont-ttf.zip"
+   }
+  ]
+ },
+ "k-monas12-text-kr": {
+  "keep_re": [
+   "https://github\\.com/MonadABXY/mona\\-font/releases/download/2026\\.10\\.09/MonaFont\\-ttf\\.zip$"
+  ],
+  "add": [
+   {
+    "url": "https://github.com/MonadABXY/mona-font/releases/download/2026.10.09/MonaFont-ttf.zip",
+    "fmt": "ZIP",
+    "w": "한국 자형 포함 전체 TTF",
+    "file": "MonaFont-ttf.zip"
+   }
+  ]
+ },
+ "e-borel": {
+  "keep_re": [
+   "https://raw\\.githubusercontent\\.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/borel/Borel\\-Regular\\.ttf$"
+  ],
+  "add": [
+   {
+    "url": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/borel/Borel-Regular.ttf",
+    "fmt": "TTF",
+    "w": "Regular",
+    "file": "Borel-Regular.ttf"
+   }
+  ]
+ },
+ "e-tacone": {
+  "keep_re": [
+   "https://raw\\.githubusercontent\\.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/tacone/TacOne\\-Regular\\.ttf$"
+  ],
+  "add": [
+   {
+    "url": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/tacone/TacOne-Regular.ttf",
+    "fmt": "TTF",
+    "w": "Regular",
+    "file": "TacOne-Regular.ttf"
+   }
+  ]
+ },
+ "e-lacquer": {
+  "keep_re": [
+   "https://raw\\.githubusercontent\\.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/lacquer/Lacquer\\-Regular\\.ttf$"
+  ],
+  "add": [
+   {
+    "url": "https://raw.githubusercontent.com/google/fonts/5026800714d07231937d92eb4cceabf06e05d74e/ofl/lacquer/Lacquer-Regular.ttf",
+    "fmt": "TTF",
+    "w": "Regular",
+    "file": "Lacquer-Regular.ttf"
+   }
+  ]
  }
 }

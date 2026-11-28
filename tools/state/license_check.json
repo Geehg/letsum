@@ -8910,5 +8910,45 @@
   "license": "OFL",
   "evidence": "직접 확인: 상업용 인쇄·웹·영상·상품·로고와 앱 임베딩에 쓸 수 있습니다. 폰트 파일만 단독으로 판매할 수 없습니다. 재배포할 때 저작권 고지와 OFL 1.1 전문을 동봉하고 수정본도 같은 라이선스로 배포해야 합니다. 제작자 저장소의 LICENSE와 파일 이름표를 대조했습니다. 이 판의 파일 버전은 2.26입니다. 제작자는 한자 이외 영역의 유지보수를 종료했다고 안내합니다.",
   "page": "https://github.com/Partyb0ssishere/cef-fonts-cjk/blob/f6377c860fad7a466cfd9273649a797ae7a0272d/LICENSE"
+ },
+ {
+  "id": "k-mona12-text-kr",
+  "name": "모나 12 한글",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·앱 임베딩이 가능합니다. 폰트 파일 단독 판매는 금지되며 재배포 시 저작권 고지와 OFL 1.1 전문을 동봉하고 같은 라이선스를 유지해야 합니다. 예약 이름 Mona는 수정본에 쓰려면 권리자의 서면 허락이 필요합니다. 배포본의 구성 요소별 저작권·라이선스 고지도 유지하세요. 이 견본은 이모지 전용판이 아닙니다.",
+  "page": "https://github.com/MonadABXY/mona-font/blob/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/OFL.txt"
+ },
+ {
+  "id": "k-monas12-text-kr",
+  "name": "모나S 12 한글",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·앱 임베딩이 가능합니다. 폰트 파일 단독 판매는 금지되며 재배포 시 저작권 고지와 OFL 1.1 전문을 동봉하고 같은 라이선스를 유지해야 합니다. 예약 이름 Mona는 수정본에 쓰려면 권리자의 서면 허락이 필요합니다. 배포본의 구성 요소별 저작권·라이선스 고지도 유지하세요. 이 견본은 이모지 전용판이 아닙니다.",
+  "page": "https://github.com/MonadABXY/mona-font/blob/07029e3c1f4e3491b0ed707b27953d1ace78d9b2/OFL.txt"
+ },
+ {
+  "id": "e-borel",
+  "name": "Borel",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·앱 임베딩이 가능합니다. 폰트 파일 단독 판매는 금지되며 재배포 시 저작권 고지와 OFL 1.1 전문을 동봉하고 같은 라이선스를 유지해야 합니다. 수정 배포 시 원문에 지정된 예약 이름 조건을 확인하세요.",
+  "page": "https://github.com/google/fonts/blob/5026800714d07231937d92eb4cceabf06e05d74e/ofl/borel/OFL.txt"
+ },
+ {
+  "id": "e-tacone",
+  "name": "Tac One",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·앱 임베딩이 가능합니다. 폰트 파일 단독 판매는 금지되며 재배포 시 저작권 고지와 OFL 1.1 전문을 동봉하고 같은 라이선스를 유지해야 합니다. 수정 배포 시 원문에 지정된 예약 이름 조건을 확인하세요.",
+  "page": "https://github.com/google/fonts/blob/5026800714d07231937d92eb4cceabf06e05d74e/ofl/tacone/OFL.txt"
+ },
+ {
+  "id": "e-lacquer",
+  "name": "Lacquer",
+  "expected": "OFL",
+  "license": "OFL",
+  "evidence": "직접 확인: 상업용 인쇄·웹·영상·앱 임베딩이 가능합니다. 폰트 파일 단독 판매는 금지되며 재배포 시 저작권 고지와 OFL 1.1 전문을 동봉하고 같은 라이선스를 유지해야 합니다. 수정 배포 시 원문에 지정된 예약 이름 조건을 확인하세요.",
+  "page": "https://github.com/google/fonts/blob/5026800714d07231937d92eb4cceabf06e05d74e/ofl/lacquer/OFL.txt"
  }
 ]
