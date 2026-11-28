@@ -1,6 +1,7 @@
 (()=>{'use strict';
 const data=JSON.parse(document.getElementById('ml-data').textContent),cards=[...document.querySelectorAll('.ml-card')],tabs=[...document.querySelectorAll('[data-lang]')];
 const query=document.getElementById('ml-search'),input=document.getElementById('ml-text'),size=document.getElementById('ml-size'),weight=document.getElementById('ml-weight');
+const allLanguagesHint = input.placeholder;
 const byId=new Map(data.fonts.map(f=>[f.id,f])),styles=new Map();let active='all';
 const grid=document.getElementById('ml-grid'),viewButtons=[...document.querySelectorAll('[data-ml-view]')],colButtons=[...document.querySelectorAll('[data-ml-cols]')];
 let prefs={view:'feed',cols:'0',context:'poster'};
@@ -11,11 +12,43 @@ const feed=window.LSMultilingualFeed({cards,data,css,weight});applyView();
 function css(f){if(styles.has(f.id))return styles.get(f.id);const promise=new Promise((resolve,reject)=>{const link=document.createElement('link');link.rel='stylesheet';link.href=f.css;link.onload=resolve;link.onerror=()=>reject(Error('stylesheet'));document.head.append(link)});styles.set(f.id,promise);return promise;}
 async function preview(card){const f=byId.get(card.dataset.font),sample=card.querySelector('.ml-specimen'),state=card.querySelector('.ml-load'),stamp=(card._stamp||0)+1;card._stamp=stamp;const text=sample.textContent,w=weight.value;state.textContent='미리보기 불러오는 중';card.dataset.preview='loading';try{await css(f);const loaded=await document.fonts.load(`${w} 36px "${f.name}"`,text);if(card._stamp!==stamp)return;if(!loaded.length)throw Error('no matching face');feed.loaded(card,f);sample.style.fontFamily=`"${f.name}", sans-serif`;state.textContent='공식 웹폰트 미리보기';card.dataset.preview='loaded';}catch(e){if(card._stamp!==stamp)return;state.textContent='미리보기를 불러오지 못했습니다. 공식 배포처에서 확인해 주세요.';card.dataset.preview='failed';card.querySelector('.ml-feed-status').textContent=state.textContent;}}
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting&&!e.target.hidden){observer.unobserve(e.target);preview(e.target)}}),{rootMargin:'160px'});
-function render(){const selected=data.tabs.find(t=>t.id===active),q=query.value.trim().toLowerCase();let count=0;
-for(const card of cards){const f=byId.get(card.dataset.font),show=(!selected||f.languages.includes(active))&&f.name.toLowerCase().includes(q);card.hidden=!show;card._stamp=(card._stamp||0)+1;observer.unobserve(card);if(!show)continue;count++;const t=selected||data.tabs.find(t=>t.id===f.languages[0]),el=card.querySelector('.ml-specimen');el.textContent=input.value||t.sample;el.lang=t.id;el.dir=input.value?'auto':t.dir;feed.update(card,f,t,input.value||t.sample);card.dataset.preview='pending';observer.observe(card);}
+function render() {
+  const selected = data.tabs.find(tab => tab.id === active);
+  const q = query.value.trim().toLowerCase();
+  const custom = input.value.trim() ? input.value : '';
+  input.placeholder = selected ? selected.sample : allLanguagesHint;
+  input.dir = custom || !selected ? 'auto' : selected.dir;
+  let count = 0;
+  for (const card of cards) {
+    const font = byId.get(card.dataset.font);
+    card.hidden = (selected && !font.languages.includes(active)) || !font.name.toLowerCase().includes(q);
+    card._stamp = (card._stamp || 0) + 1;
+    observer.unobserve(card);
+    if (card.hidden) continue;
+    count++;
+    const tab = selected || data.tabs.find(item => item.id === font.languages[0]);
+    const text = custom || tab.sample;
+    const sample = card.querySelector('.ml-specimen');
+    sample.textContent = text;
+    sample.lang = tab.id;
+    sample.dir = custom ? 'auto' : tab.dir;
+    feed.update(card, font, tab, text, sample.dir);
+    card.dataset.preview = 'pending';
+    observer.observe(card);
+  }
 tabs.forEach(a=>{if(a.dataset.lang===active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});document.getElementById('ml-title').textContent=selected?selected.label+' 폰트':'전체 다국어 폰트';document.getElementById('ml-count').textContent=count+'종';document.getElementById('ml-empty').hidden=!!count;}
-function fromURL(){const u=new URL(location.href),lang=u.searchParams.get('lang');active=data.tabs.some(t=>t.id===lang)?lang:'all';query.value=u.searchParams.get('q')||'';render();}
+function fromURL(){const u=new URL(location.href),lang=u.searchParams.get('lang');active=data.tabs.some(t=>t.id===lang)?lang:'all';query.value=u.searchParams.get('q')||'';input.value='';render();}
 tabs.forEach(a=>a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();const u=new URL(location.href);active=a.dataset.lang;if(active==='all')u.searchParams.delete('lang');else u.searchParams.set('lang',active);u.searchParams.delete('q');query.value='';input.value='';history.pushState(null,'',u);render()}));
 document.getElementById('ml-search-form').addEventListener('submit',e=>{e.preventDefault();clearTimeout(timer);render()});
-let timer;query.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(render,120)});input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(render,250)});size.addEventListener('input',()=>{document.documentElement.style.setProperty('--ml-size',size.value+'px');document.documentElement.style.setProperty('--ml-scale',Number(size.value)/36);document.getElementById('ml-size-label').textContent=size.value+'px'});weight.addEventListener('change',()=>{document.documentElement.style.setProperty('--ml-weight',weight.value);render()});document.getElementById('ml-reset').addEventListener('click',()=>{query.value='';input.value='';size.value='36';weight.value='400';size.dispatchEvent(new Event('input'));weight.dispatchEvent(new Event('change'))});window.addEventListener('popstate',fromURL);fromURL();
+let timer;query.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(render,120)});input.addEventListener('input', () => {
+  clearTimeout(timer);
+  render();
+});
+input.addEventListener('blur', () => {
+  if (input.value && !input.value.trim()) {
+    input.value = '';
+    render();
+  }
+});
+size.addEventListener('input',()=>{document.documentElement.style.setProperty('--ml-size',size.value+'px');document.documentElement.style.setProperty('--ml-scale',Number(size.value)/36);document.getElementById('ml-size-label').textContent=size.value+'px'});weight.addEventListener('change',()=>{document.documentElement.style.setProperty('--ml-weight',weight.value);render()});document.getElementById('ml-reset').addEventListener('click',()=>{query.value='';input.value='';size.value='36';weight.value='400';size.dispatchEvent(new Event('input'));weight.dispatchEvent(new Event('change'))});window.addEventListener('popstate',fromURL);fromURL();
 })();
