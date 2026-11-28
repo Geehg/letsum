@@ -527,12 +527,33 @@
     const p = TEXT_PRESETS.find((x) => x.id === e.target.value); if (!p) return;
     setText(p.t); e.target.value = "";
   });
-  $("#previewText").addEventListener("input", (e) => setText(e.target.value, true));
+  const previewInput = $("#previewText");
+  const emptyHint = previewInput.placeholder;
+  let sampleText = state.text;
+  previewInput.addEventListener("input", () => syncPreviewText(true));
+  previewInput.addEventListener("blur", () => {
+    if (previewInput.value && !previewInput.value.trim()) {
+      previewInput.value = "";
+      syncPreviewText();
+    }
+  });
   let evTyped = false;
   // 주제 예시 문장: 주제 칩을 누르면 그 주제 문장 중 하나로 바뀐다(직접 입력한 문장은 건드리지 않음). 주제를 해제하면 원래 문장으로.
   let topicLines = null, beforeTopic = null, typedOwn = false;
-  function setText(t, fromInput) {
-    state.text = t; if (!fromInput) $("#previewText").value = t; typedOwn = !!fromInput && !!t.trim();
+  function setText(sample) {
+    sampleText = sample;
+    previewInput.placeholder = sample || emptyHint;
+    previewInput.value = "";
+    syncPreviewText();
+  }
+  function useSavedText(text) {
+    previewInput.value = text;
+    syncPreviewText();
+  }
+  function syncPreviewText(fromInput = false) {
+    typedOwn = !!previewInput.value.trim();
+    const t = typedOwn ? previewInput.value : sampleText;
+    state.text = t;
     const src = $("#textSrc"); if (src) { const sm = SAMPLES.find((x) => x.t === t); src.textContent = topicLines && topicLines.lines.includes(t) ? "주제 예시 · " + topicLines.name : sm ? srcLabel(sm) : ""; }
     if (fromInput && !evTyped && t.trim().length >= 2) { evTyped = true; ev("text_custom"); } // 직접 문장을 입력한 방문 수(내용은 보내지 않음)
     renderPreviews(); scheduleCoverage();
@@ -1208,7 +1229,12 @@
   let TOPIC_DATA = null;
   const topicLoad = () => TOPIC_DATA ? Promise.resolve(TOPIC_DATA) : fetch("data/topics.json").then((r) => (r.ok ? r.json() : {})).then((j) => (TOPIC_DATA = j)).catch(() => ({}));
   function topicTextBack() { // 주제를 해제하면, 주제 문장을 그대로 쓰고 있을 때만 원래 문장으로 되돌린다
-    if (topicLines && topicLines.lines.includes(state.text) && beforeTopic != null) { const b = beforeTopic; topicLines = null; beforeTopic = null; setText(b); }
+    if (topicLines && topicLines.lines.includes(sampleText) && beforeTopic != null) {
+      sampleText = beforeTopic;
+      previewInput.placeholder = sampleText || emptyHint;
+      topicLines = null;
+      syncPreviewText();
+    }
     topicLines = null; beforeTopic = null;
   }
   function topicUrl(slug) {
@@ -2210,9 +2236,9 @@ import "@fontsource/${f.id}/400.css";</pre>
     modal.querySelectorAll("[data-rmv]").forEach((b) => b.addEventListener("click", () => { p.items.splice(+b.dataset.rmv, 1); touch(); updateProjBtn(); openProject(pid); }));
     modal.querySelectorAll("[data-ack]").forEach((b) => b.addEventListener("click", () => { const it = p.items[+b.dataset.ack]; it.snap = snap(FONTS.find((x) => x.id === it.id)); touch(); updateProjBtn(); openProject(pid); }));
     modal.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openDetail(b.dataset.open)));
-    $("#pjUseText")?.addEventListener("click", () => { setText(p.text); closeModal(); });
+    $("#pjUseText")?.addEventListener("click", () => { useSavedText(p.text); closeModal(); });
     $("#pjBrowse")?.addEventListener("click", closeModal);
-    $("#pjCmp").addEventListener("click", () => { cmp.clear(); p.items.slice(0, 4).forEach((x) => cmp.add(x.id)); if (p.text) setText(p.text); renderTray(); render(); openCompare(); });
+    $("#pjCmp").addEventListener("click", () => { cmp.clear(); p.items.slice(0, 4).forEach((x) => cmp.add(x.id)); if (p.text) useSavedText(p.text); renderTray(); render(); openCompare(); });
     $("#pjProof").addEventListener("click", (e) => { ev("record", "project"); saveReport(p.items.map((it) => [FONTS.find((x) => x.id === it.id), it.note]).filter(([f]) => f), p.name, e.currentTarget); });
     $("#pjShare").addEventListener("click", async (e) => { const u = shareUrl(p); ev("proj_share"); try { await navigator.clipboard.writeText(u); const t = e.currentTarget.querySelector("b"); t.textContent = "✓ 복사됨"; setTimeout(() => (t.textContent = "🔗 링크 복사"), 1500); } catch (x) { prompt("이 링크를 복사하세요", u); } });
     $("#pjDel").addEventListener("click", () => { if (!confirm(`'${p.name}' 폴더를 삭제할까요? 되돌릴 수 없습니다.`)) return; projects = projects.filter((x) => x.id !== pid); saveProjects(); updateProjBtn(); openProjects(); });
@@ -2230,7 +2256,7 @@ import "@fontsource/${f.id}/400.css";</pre>
     overlay.classList.add("open");
     $("#mx").addEventListener("click", closeModal);
     $("#pjTake").addEventListener("click", () => { const p = newProject(String(j.n || "공유받은 모음").slice(0, 40)); p.text = String(j.t || "").slice(0, 80); addToProject(p, ids.map((x) => x[0])); ids.forEach(([id, note]) => { const it = p.items.find((x) => x.id === id); if (it) it.note = String(note || "").slice(0, 300); }); saveProjects(); try { history.replaceState(null, "", location.pathname); } catch (e) {} openProject(p.id); });
-    $("#pjPeek").addEventListener("click", () => { cmp.clear(); ids.slice(0, 4).forEach(([id]) => cmp.add(id)); if (j.t) setText(String(j.t).slice(0, 80)); renderTray(); render(); openCompare(); });
+    $("#pjPeek").addEventListener("click", () => { cmp.clear(); ids.slice(0, 4).forEach(([id]) => cmp.add(id)); if (j.t) useSavedText(String(j.t).slice(0, 80)); renderTray(); render(); openCompare(); });
   }
   // 즐겨찾기: 담을 때의 조건을 기억해 두고, 재방문 때 바뀐 폰트를 알린다
   const FK = "ls_favsnap"; const favSnap = LS(FK, {});
@@ -2257,14 +2283,14 @@ import "@fontsource/${f.id}/400.css";</pre>
   paidLoad.then(() => { if (state.q) render(); });
   document.addEventListener("ls:ui-language", () => { if (state.q) render(); }); // 검색 안내 문구를 바뀐 화면 언어로
   namesLoad.then(() => { render(); const m = location.hash.match(/^#f=([\w-]+)/); if (m && overlay.classList.contains("open") && $("#nameSec")) openDetail(m[1]); });
-  $("#previewText").value = state.text; { const src = $("#textSrc"); if (src) src.textContent = srcLabel(curSample); }
+  previewInput.value = ""; previewInput.placeholder = sampleText || emptyHint; { const src = $("#textSrc"); if (src) src.textContent = srcLabel(curSample); }
   // 관리자가 고친 예시 문장 목록을 받아 두고(다음 방문용), 이번 방문 문장이 그 목록에 없으면 목록에서 다시 고른다(직접 입력 전일 때만)
   (DB ? new Promise(() => {}) : getJSON("/api/samples" + (EN ? "?lang=en" : ""))).then((j) => { // 딩벳은 예시 문장을 쓰지 않음
     const L = j && Array.isArray(j.items) && j.items.length ? j.items : null;
     const SK = EN ? "ls_samples_en" : "ls_samples";
     try { if (L) localStorage.setItem(SK, JSON.stringify(L)); else localStorage.removeItem(SK); } catch (e) {}
     const next = L || SAMPLE_LINES; const same = JSON.stringify(next) === JSON.stringify(SAMPLES); SAMPLES = next;
-    if (!same && state.text === curSample.t && !SAMPLES.some((x) => x.t === state.text)) { curSample = pickSample(); setText(curSample.t); }
+    if (!same && !typedOwn && state.text === curSample.t && !SAMPLES.some((x) => x.t === state.text)) { curSample = pickSample(); setText(curSample.t); }
   });
   render();
   renderTray();
